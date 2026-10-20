@@ -1,5 +1,7 @@
 # 架构决策、冲突及待用户决定事项
 
+2026-10-21最新：本次SDK/hash报告承认Gemini执行受阻，不能按技术PASS视作专项完整通过。开发方补充原始ZIP及数据/SDK核对已实际完成，独立执行缺口仍需补齐或由用户明确决定接受；未发生该决定。详见audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md；下列既有D-012等非阻断意见保留历史来源，不代替本次用户决定。
+
 Phase0已发布且Gate PASS/F-001 CLOSED，证据在audits/phase-0。用户现已授权Phase1，选择合成数据/通用契约及Python3.13.16，原话见audits/phase-1/AUTHORIZATION.json；Phase1计划/实现审查和补充勘误确认均PASS，当前等待用户Phase1人工验收；未来阶段profile及业务假设仍按各项条件批准。
 
 | ID | 类型 / 事项 | 当前处理与提案 | 决策者 / 截止关卡 |

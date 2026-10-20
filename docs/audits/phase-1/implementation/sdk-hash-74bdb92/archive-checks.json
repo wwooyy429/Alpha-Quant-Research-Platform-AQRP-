@@ -1,0 +1,297 @@
+{
+  "date": "2026-10-21",
+  "developer_checks_not_independent_audit": true,
+  "report_sha256": "9fff9ee3da601e31aac5f2bbc77b09c38c5aa1050359d9c1513025c5824f5933",
+  "raw_report_matches_user_source": true,
+  "raw_evidence_files": 5,
+  "prior_scope_diff": [
+    "M\tAGENTS.md",
+    "M\tREADME.md",
+    "M\tdocs/CHANGELOG.md",
+    "M\tdocs/DECISIONS.md",
+    "M\tdocs/PROGRESS.md",
+    "M\tdocs/ROADMAP.md",
+    "M\tdocs/TRACEABILITY.md",
+    "A\tdocs/audits/phase-1/ERRATA_CONFIRMATION_RECONCILIATION.md",
+    "A\tdocs/audits/phase-1/IMPLEMENTATION_AUDIT_ERRATA.json",
+    "A\tdocs/audits/phase-1/IMPLEMENTATION_AUDIT_RESPONSE.md",
+    "M\tdocs/audits/phase-1/IMPLEMENTATION_FINDINGS.md",
+    "M\tdocs/audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md",
+    "A\tdocs/audits/phase-1/gemini/ERRATA_CONFIRMATION_INDEX.json",
+    "A\tdocs/audits/phase-1/gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json",
+    "A\tdocs/audits/phase-1/gemini/aqrp_phase1_implementation_audit_errata_confirmation.md",
+    "A\tdocs/audits/phase-1/gemini/aqrp_phase1_implementation_audit_report.md",
+    "A\tdocs/audits/phase-1/implementation/AUDIT_RESPONSE_MANIFEST.json",
+    "A\tdocs/audits/phase-1/implementation/CONFIRMATION_MANIFEST.json",
+    "A\tdocs/audits/phase-1/implementation/CURRENT_AUDIT_RUN.json",
+    "M\tdocs/audits/phase-1/implementation/EVIDENCE_INDEX.json",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/checks.json",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/ci-39476816120.json",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/ci-39476825340.json",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/golden-directory-collection.log",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/junit.xml",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/math-check.log",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/metadata.json",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/reference.log",
+    "A\tdocs/audits/phase-1/implementation/audit-response-74bdb92/tests.log"
+  ],
+  "protected_diff": "",
+  "phase0_frozen_hash_checks": [
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "2965b9380778c2802aee5961e662cc49e977f6c95e79b93d244844cd05fe29c5",
+      "pass": true
+    },
+    {
+      "path": "docs/BACKTEST_CONTRACT.md",
+      "sha256": "0397adb64808d6387564d57fdfc815a49f1eef5fac9730120c4d0648389ea81f",
+      "pass": true
+    },
+    {
+      "path": "docs/DATA_CONTRACT.md",
+      "sha256": "34c13329ab011101da7f62ae1973d8afa614a948145a8df43a34684abacc3597",
+      "pass": true
+    },
+    {
+      "path": "docs/INTERFACES.md",
+      "sha256": "d649b9c16e075bf8b69f202709d0c386bdb0c2fbb8f6c2d289b1de664594395d",
+      "pass": true
+    },
+    {
+      "path": "docs/REQUIREMENTS.md",
+      "sha256": "ade965cb2c938d8568a42f16603352e504fea8cac8379b1fec76196ca11ca207",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/ARCHITECTURE_REVIEW.md",
+      "sha256": "52b7d6659c7a2517ec851a1887ebec01588b858337c71fe8f01b7d8a47169d34",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/CHANGE_IMPACT.md",
+      "sha256": "f0118a1f93f59390d8f846de40f7212a76b298cc7be1ccd194093d5fb69e5dc2",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/COMMAND_LOG.txt",
+      "sha256": "e61fee4a4cc237ebbf57c31fcc57d6c4ca1b0b1f1e060edbcdbf2b6715dfcc38",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/COVERAGE_AUDIT.md",
+      "sha256": "b82409d7576d9f4993795b45b493ab82957d543f36bb9243ec127fa24d40dcc3",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/DELIVERY_REPORT.md",
+      "sha256": "713bef339ef9b027a5d8780620c702c170eda69633b92fc6b42ef69719fb7d5f",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/GITHUB_GATE_OBSERVATION.json",
+      "sha256": "9a7e28ef0c8d2326f7bc6656ea2b61468d9a2af6e3c0983cec9e5ccfc3f79975",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/MANIFEST.json",
+      "sha256": "47bbe15990fa6ce62d6b3409989c862a2706e45687496bcec837f3ea56225511",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/PLAN.md",
+      "sha256": "9be26ecda5b6470b39a4e4f59cc6d040816b03da22cc94fcb4a16ca8250045ed",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/RELEASE_GATE_AUDIT.json",
+      "sha256": "806a0e7f069c3871d9a4014f2e657fc2b1fadb32671d95f50fd47a78bd4d3e23",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/REVIEW_ANCHOR.json",
+      "sha256": "9405393f92e6ccd3423e32491f530aa080bcbf376dd37735938b8c9cb894f5ef",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/REVIEW_PACKAGE.md",
+      "sha256": "8c81b1fd0cc4a6e4c8a02e90c5c35e3bb2729a054aa28702c0c9717a549730bb",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/SELF_CHECK.json",
+      "sha256": "a9eaedac8f3e7ecaf890a4a0a6686a823d31315d5404e28986c37a2cefd7f701",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/SELF_REVIEW_NOTES.md",
+      "sha256": "fb7afabfa8a6714c6f11b120607125a8136dfd7ae05b02f928550dde46a91710",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/SPECIAL_AUDITS.md",
+      "sha256": "384dc425dcfdcbcadb47794ced46e3d5dcae7b25f6db97c1f89ac9e8c5032254",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/BUSINESS_TAXONOMY_CORRECTION_SUBMITTED.md",
+      "sha256": "4d1cfa8911cdc876db7d84f0cf6a858f533e5e34a796d025a158bd8c243e9f92",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/DEVELOPER_RESPONSE.md",
+      "sha256": "36ecf274a4c47fbae3c2a559be1727019bdcb7a644a1c879b4cb57644f2b1442",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/EVIDENCE_INDEX.json",
+      "sha256": "20f0a2fe336d0012a0c7d01025fe5ada54250369c4e8e861aa7b4abe9d5477ca",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/FINAL_EVIDENCE_INDEX.json",
+      "sha256": "8a1f5ded17c977a704ffb89ea279f5d70c32a036a614f6f4cddc0184cbbfba98",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json",
+      "sha256": "ae035760a825c975fe759e6e81fffaf14dea6b9919420ff309c62c37132f9ad4",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/FINAL_RECONCILIATION.md",
+      "sha256": "ef502bdc5c26c0b585450bd03dee34e1c2a9e7de7961a9a0aacc0533a7dcd729",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json",
+      "sha256": "59d6b8926ef7dbbad041ef36e237bf6eeabea8e1cd079a6e451dc2620bf6e591",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/INCREMENTAL_EVIDENCE_INDEX.json",
+      "sha256": "de7595b1f69ea4dae684785740b3d77e9b7a4cc3b64726f8dcf021d466e41447",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/INCREMENTAL_RECONCILIATION.md",
+      "sha256": "b03b96a750258b83605922b1e010ee81f4a55099773b7d8ff6796ff44c13c001",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/REQUIREMENTS_TAXONOMY_VERIFICATION.md",
+      "sha256": "6b9e270ffac18354c557c32cdea8c16e3e7a88182ce354ee4678963d9084fafc",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/REV2_EVIDENCE_INDEX.json",
+      "sha256": "d4c715126ca07f0a22697562f3726e67bbc564b9a566c7de175d5f7a07f72150",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/REV2_RECONCILIATION.md",
+      "sha256": "87066fc005df3ed3111dc205cfafb5b6fbbc2435919f7171df5ab19b25ffcf57",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_audit_report.md",
+      "sha256": "8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md",
+      "sha256": "aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md",
+      "sha256": "1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md",
+      "sha256": "57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md",
+      "sha256": "e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_requirements_taxonomy_errata.md",
+      "sha256": "c05416efe31b205dc8e567800f2cedae5cc04498959fac542c85938f63c272a0",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/history/INITIAL_REVIEW_ANCHOR.json",
+      "sha256": "0c39516cb6010cbea172b3dd78363e2a81935984f30bdde1a0e08c928b8a0c78",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/publication/APPROVAL.json",
+      "sha256": "8cf97cbb8a07acf4cca8a051b6fdbc61fd48903c265420747dd43c67f2715fea",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/publication/MERGED_MAIN_COMMAND_LOG.txt",
+      "sha256": "4e6d200c33c98ca3467e7316a97e9e92c7e8292702d695f8c0dd8d9b7c77769d",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/publication/MERGED_MAIN_SELF_CHECK.json",
+      "sha256": "40bada871201e45a38a9d516379291115c8d8c94a26871df39422d384b960509",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/publication/MERGE_VERIFICATION.json",
+      "sha256": "8a9b64cb36630c98048e25bf842054f5f512cd5005bbd91d1f6ed849c0e53e3a",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/tools/build_catalog.py",
+      "sha256": "e85d5712bf7f9bf40e6a6897ac5cbb428cdcd77eaa7344cf3b9408fe3f5e7c74",
+      "pass": true
+    },
+    {
+      "path": "docs/audits/phase-0/tools/check_documents.py",
+      "sha256": "3ffbc5166e8a5c736d3bdb3354d107d757e293fa757e196036a65159cdb066d1",
+      "pass": true
+    },
+    {
+      "path": "docs/requirements.csv",
+      "sha256": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1",
+      "pass": true
+    },
+    {
+      "path": "docs/sources/AQRP_V3.0.md",
+      "sha256": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc",
+      "pass": true
+    },
+    {
+      "path": "docs/sources/AQRP_V3.1.md",
+      "sha256": "18facd65a1344d7d74b8004d7d90e5e96b77fb841e1fb298c16a8c869be91855",
+      "pass": true
+    },
+    {
+      "path": "docs/sources/AQRP_V3.2.md",
+      "sha256": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5",
+      "pass": true
+    },
+    {
+      "path": "docs/sources/AQRP_V3.2_BASELINE_GATE.md",
+      "sha256": "b281bbe5dc5514021788e28a2ef207adfd025cc6ce65cd7fbc4e6755c08332b1",
+      "pass": true
+    },
+    {
+      "path": "docs/sources/README.md",
+      "sha256": "422c78ea77b6dc9a1e22812baba10e1afb48f96467a93ea91e08efb39e6adcaf",
+      "pass": true
+    }
+  ],
+  "requirements": 106,
+  "prefix_groups": 16,
+  "all_checks_passed": true,
+  "archive_secret_scan": "PASS: pinned scanner and positive/negative controls; empty project findings",
+  "business_tests_this_round": "NOT RERUN; code/tests/tools/CI/locks unchanged; existing CI JUnit inspected and a fresh developer SDK smoke executed",
+  "diff_whitespace_check_scope": "Authored files with CR-at-EOL accepted for Windows raw evidence; original user report/evidence excluded to preserve bytes"
+}

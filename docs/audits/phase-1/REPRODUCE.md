@@ -1,5 +1,9 @@
 # Phase1复现及证据
 
+2026-10-21最新核对：SDK/hash原报告与5份原始资料已归档。Gemini指定环境SDK/ZIP/内部快照/跨平台实际执行仍BLOCKED / NOT RUN；其技术PASS仅为建议。本轮开发方取得原始ZIP并完成可用文件/八表/结果hash及SDK回放，证据独立分级，不能替代Gemini执行。当前专项PARTIAL / GEMINI EXECUTION BLOCKED，用户未验收/未发布；不合并、不打标签、不进入Phase2。详见[最新专项核对](SDK_HASH_VERIFICATION_RECONCILIATION.md)和[原件索引](gemini/SDK_HASH_VERIFICATION_INDEX.json)。
+
+以下既有段落保留为各轮历史；当前执行范围与状态以上述专项核对为准。
+
 使用用户批准的标准GIL/x64 CPython3.13.16。从PR固定SHA检出干净工作区，不浮动使用分支head。设置AQRP_RUN_ROOT到非同步本地目录，再运行`python tools/ci.py`。解释器版本不符、工作区不干净或任何适用检查失败即停止。
 
 该入口使用锁定pip26.2.1 wheel及预审公开SHA引导新venv，按requirements.lock进行require-hashes/only-binary安装及pip check；从git archive固定Commit的副本以no-deps/no-build-isolation/no-index构建本地wheel，记录实际wheel SHA，再离线安装。静态、测试和扫描也运行该固定副本，避免源目录并发编辑污染结果。

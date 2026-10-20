@@ -1,5 +1,7 @@
 # Alpha Quant Research Platform（AQRP）
 
+最新核对：Phase1实现审查建议PASS；[SDK/hash专项](docs/audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md)仅部分完成，Gemini实际SDK/ZIP验证受阻。开发方已补充原始ZIP/hash/八表及SDK冒烟证据，不替代独立执行；等待用户验收，未合并/发布，不进入Phase2。以下历史状态以最新专项记录为准。
+
 Phase 0 已发布。Phase 1 计划经 Gemini 对固定380d9f8预审PASS，现已实现合成日频数据基础，已收到Gemini对74bdb92的实现PASS报告及独立勘误确认PASS，当前等待人工验收。阶段验收、main合并、发布及Phase 2均尚未获授权。
 
 本阶段提供稳定证券标识、Decimal单位、UTC微秒时间与固定IANA规则、日历、PIT可见修订、历史股票池/状态、拆股与分红研究视图、质量报告、不可变Parquet快照和可重建DuckDB索引。首版只支持明确的SYNTHETIC_V1测试profile，真实市场接入另行确定。

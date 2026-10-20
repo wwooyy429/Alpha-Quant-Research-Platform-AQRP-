@@ -1,0 +1,25 @@
+=== SYSTEM AND OS PROBE ===
+Linux 8185ee48d3c2 4.19.0-gvisor #1 SMP Sun Jan 10 15:06:54 PST 2016 x86_64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+
+=== PYTHON ENVIRONMENT ===
+Path: /usr/bin/python3
+Version: Python 3.11.2
+Executable: /usr/bin/python3
+Prefix: /usr
+Version info: sys.version_info(major=3, minor=11, micro=2, releaselevel='final', serial=0)
+
+=== TARGET CPYTHON 3.13.16 PROBE ===
+Command: which python3.13
+Output: python3.13 not found in PATH
+Status: CPython 3.13.16 Standard GIL is NOT installed in local reviewer environment.
+
+=== NETWORK CONNECTIVITY PROBE ===
+DNS Resolution: api.github.com -> FAILED (curl: (6) Could not resolve host: api.github.com)
+Outbound Network Access: BLOCKED (Sandbox has no external internet access)
+Package Installation: DISABLED (pip/uv/apt restricted)

@@ -1,5 +1,9 @@
 # Phase1实现审查包
 
+2026-10-21最新核对：SDK/hash原报告与5份原始资料已归档。Gemini指定环境SDK/ZIP/内部快照/跨平台实际执行仍BLOCKED / NOT RUN；其技术PASS仅为建议。本轮开发方取得原始ZIP并完成可用文件/八表/结果hash及SDK回放，证据独立分级，不能替代Gemini执行。当前专项PARTIAL / GEMINI EXECUTION BLOCKED，用户未验收/未发布；不合并、不打标签、不进入Phase2。详见[最新专项核对](SDK_HASH_VERIFICATION_RECONCILIATION.md)和[原件索引](gemini/SDK_HASH_VERIFICATION_INDEX.json)。
+
+以下既有段落保留为各轮历史；当前执行范围与状态以上述专项核对为准。
+
 2026-10-21最新状态：已收到Gemini补充勘误确认PASS，核心算术/执行口径争议已确认，当前AUDIT PASSED / AWAITING HUMAN ACCEPTANCE。完整状态与非阻断限制见ERRATA_CONFIRMATION_RECONCILIATION.md和gemini/ERRATA_CONFIRMATION_INDEX.json；以下旧待澄清描述为前轮历史，不再代表当前状态。
 
 状态更新：已收到Gemini对74bdb92的实现PASS报告；原件不变，数学/路径/执行证据勘误待Gemini确认，详见IMPLEMENTATION_AUDIT_RESPONSE.md。以下保留提交审查时资料；本文件及测试由开发方提供。用户已授权开发，尚未验收Phase1，禁止合并main、打标签或进入Phase2。PR固定审查SHA以PR #2的AQRP_FIXED_REVIEW_SHA及交接回执为准；380d9f8计划PASS不能覆盖实现。

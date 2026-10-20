@@ -1,5 +1,14 @@
 # 变更记录
 
+## 2026-10-21 · SDK/hash报告归档、证据分级及开发方原始产物核对
+
+- 按原字节归档新Gemini报告（SHA256 9fff9ee3da601e31aac5f2bbc77b09c38c5aa1050359d9c1513025c5824f5933）及5份原始资料，不改原结论；独立执行受阻不能标为专项整体PASS。
+- 单独登记7项报告勘误/范围澄清：变更路径、在线依赖安装、float参考差0、静态验证等级、Manifest/类型边界、实际缺失文件及SDK证据归属；实现/答案/阈值不改。
+- 本轮开发方成功下载Run39476825340的两份原始ZIP，实际SHA与GitHub一致；11/14根文件每平台通过，3个未上传项明确列出；8表schema/逻辑值/封存hash、SDK回放、跨OS smoke字节及新SDK冒烟通过，原始ZIP/脚本/输出留存。
+- 核实CI实际检出f093faca临时合并提交，与74bdb92完整tree相同。读取原始JUnit每平台102通过及coverage门槛通过，不冒称本轮重跑102项或Gemini已执行SDK。
+- 技术审查建议PASS保留，专项PARTIAL / GEMINI EXECUTION BLOCKED；等待人工验收，未ACCEPTED/RELEASED。本次不合并、不打标签、不进入Phase2，main/P0标签不动。
+
+
 ## 2026-10-20 · Phase1启动授权与实施前计划准备
 
 - 用户正式授权Phase1，进一步选定合成数据/通用契约、真实源另定，及Python3.13.16；原话见audits/phase-1/AUTHORIZATION.json。
