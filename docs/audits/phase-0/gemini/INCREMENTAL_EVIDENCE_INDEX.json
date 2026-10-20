@@ -1,0 +1,82 @@
+{
+  "received_at_utc": "2026-10-20T13:54:22.563021+00:00",
+  "audit_date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "reviewer": "Gemini",
+  "provenance": "User supplied incremental Markdown report; byte-preserving copy, not edited by GPT",
+  "source_file": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase0_incremental_audit_report.md",
+  "report_path": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md",
+  "report_sha256": "57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140",
+  "source_archive_byte_equal": true,
+  "previous_report_sha256": "8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662",
+  "reviewed_commit": "d4c8218315a9152166cbe56fde54384dc99fb094",
+  "previous_design_commit": "ed6666985bfac8cc94fa302c72e2e6333c679a6f",
+  "base_commit": "e87d0082a5e448e9550129a486ba965f13a155f8",
+  "repository": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+  "pr_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1",
+  "overall_verdict": "PASS WITH CONDITIONS",
+  "design_subverdict": "PASS",
+  "auditor_human_acceptance_readiness": "YES (advisory)",
+  "developer_closure": "PARTIAL: requirement-group errata still contradict canonical CSV; release conditions not fulfilled",
+  "all_report_errata_closed": false,
+  "release_conditions_closed": false,
+  "reconciliation_path": "docs/audits/phase-0/gemini/INCREMENTAL_RECONCILIATION.md",
+  "developer_verification": {
+    "canonical_requirement_total": 106,
+    "canonical_group_count": 16,
+    "canonical_group_counts": {
+      "ARCH": 3,
+      "BT": 10,
+      "DATA": 13,
+      "ENV": 3,
+      "EXP": 4,
+      "EXT": 1,
+      "FACTOR": 12,
+      "GOV": 10,
+      "INT": 6,
+      "PORT": 4,
+      "QA": 7,
+      "RESEARCH": 9,
+      "RISK": 4,
+      "SEC": 4,
+      "UI": 8,
+      "VALID": 8
+    },
+    "nonexistent_report_prefixes": [
+      "FREG",
+      "VAL",
+      "BACK"
+    ],
+    "report_stated_group_count": 12,
+    "report_enumerated_group_count": 13,
+    "actual_signal_fields": [
+      "signal_time",
+      "security_id",
+      "factor_value"
+    ],
+    "report_tuple_fields_are_not_contract": true,
+    "math_design_precision_check": {
+      "reference_method": "Python standard-library Decimal, 60 digits; no AQRP business function or Gemini sandbox reused",
+      "reference_formula": "19/(2*sqrt(113))",
+      "pearson_reference": "0.893684824964417428106120868954234381492823101385262535996195",
+      "reported_displayed_value": "0.89368482496441737",
+      "displayed_value_absolute_difference": "5.8106120868954234381492823101385262535996195E-17",
+      "within_1e_12": true
+    }
+  },
+  "execution_evidence_scope": "Gemini independent execution is stated in its report; no standalone source script/raw stdout/stderr supplied. Developer Decimal reference check is separate and not a rerun of Gemini sandbox.",
+  "raw_execution_scripts_supplied": false,
+  "raw_execution_logs_supplied": false,
+  "finding_disposition": {
+    "F-001": "Release/phase gate; OPEN/GATED, not closed",
+    "F-002": "P1 first task; planned, not implemented",
+    "F-003": "Design advisory; P1 timestamp validation/tests planned",
+    "F-004": "Byte-preservation explanation; no config normalization or physical workspace isolation executed"
+  },
+  "user_phase0_accepted": false,
+  "merge_release_authorized": false,
+  "phase0_released": false,
+  "phase1_status": "BLOCKED",
+  "new_record_commit_scope": "Report archive/status/evidence only; later commits do not inherit reviewed_commit verdict",
+  "report_recommendations_are_not_user_action_authorization": true
+}

@@ -1,0 +1,55 @@
+{
+  "received_at_utc": "2026-10-20T13:35:48.769726+00:00",
+  "audit_date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "reviewer": "Gemini",
+  "provenance": "User supplied original Markdown file and confirmed Gemini authorship; not authored or edited by GPT",
+  "source_file": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase0_audit_report.md",
+  "report_path": "docs/audits/phase-0/gemini/aqrp_phase0_audit_report.md",
+  "report_sha256": "8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662",
+  "source_archive_byte_equal": true,
+  "source_formatting_preserved": true,
+  "repository": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+  "pr_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1",
+  "reviewed_commit": "ed6666985bfac8cc94fa302c72e2e6333c679a6f",
+  "base_commit": "e87d0082a5e448e9550129a486ba965f13a155f8",
+  "overall_verdict": "PASS WITH CONDITIONS",
+  "design_subverdict": "PASS",
+  "phase1_status": "BLOCKED",
+  "raw_execution_scripts_supplied": false,
+  "raw_execution_logs_supplied": false,
+  "execution_evidence_scope": "Independent execution is stated by Gemini in its report; no claim GPT reran or verified the original sandbox logs",
+  "findings": [
+    {
+      "id": "F-001",
+      "severity": "High",
+      "reported_status": "Open / Gated"
+    },
+    {
+      "id": "F-002",
+      "severity": "Medium",
+      "reported_status": "Open / Deferred to Phase 1 start"
+    },
+    {
+      "id": "F-003",
+      "severity": "Medium",
+      "reported_status": "Documented Advisory"
+    },
+    {
+      "id": "F-004",
+      "severity": "Low",
+      "reported_status": "Mitigated by developer"
+    }
+  ],
+  "developer_response_path": "docs/audits/phase-0/gemini/DEVELOPER_RESPONSE.md",
+  "report_clarifications": [
+    "Requirement ID ranges do not match catalog",
+    "Script paths in report differ from actual repository paths",
+    "Reported rounded Pearson and tolerance do not establish tighter project Golden tolerances",
+    "Google search links are not direct repository links"
+  ],
+  "user_phase0_accepted": false,
+  "design_merge_release_authorized": false,
+  "phase0_released": false,
+  "metadata_delta_note": "Report applies to reviewed_commit only. Later archive/status/evidence commits require separate diff review and do not inherit this verdict."
+}

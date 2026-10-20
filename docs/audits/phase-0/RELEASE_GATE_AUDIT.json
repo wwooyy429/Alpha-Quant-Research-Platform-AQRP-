@@ -1,0 +1,175 @@
+{
+  "observed_at_utc": "2026-10-20T13:11:00.572676+00:00",
+  "scope": "Repository initialization and Phase0 release-gate observation, not a release approval",
+  "main_exists": true,
+  "main_sha": "e87d0082a5e448e9550129a486ba965f13a155f8",
+  "remote_main_sha": "e87d0082a5e448e9550129a486ba965f13a155f8",
+  "default_branch": "main",
+  "main_initialization_only": true,
+  "main_verified_file_list": [],
+  "main_contains_approved_phase0_documents": false,
+  "development_commits_observed_before_final_package_commit": [
+    "0b64148d9235c507d9ccd18b76663ab33f0711d9",
+    "04deeccbccf809bf4648eca5420ded47f89db187",
+    "65ae3d3c59a8643f6c1152585d56e4478af7b342",
+    "6554dfe07b3a7ef20a65227ed27940ddc15e8034"
+  ],
+  "fixed_current_review_sha_location": "PR #1 description AQRP_FIXED_REVIEW_SHA after final package commit",
+  "gemini_actual_reviewed_sha": null,
+  "gemini_audit_evidence": "No report received; GitHub PR reviews empty at observation",
+  "user_initialization_and_pr_authorized": true,
+  "user_phase0_accepted": false,
+  "user_design_merge_release_authorized": false,
+  "audit_passed": "NOT VERIFIED",
+  "accepted": false,
+  "released": false,
+  "phase0_baseline_tag": null,
+  "release_gate_satisfied": false,
+  "phase1_status": "BLOCKED",
+  "approved_file_versions": [],
+  "candidate_file_list": "MANIFEST.json, not approved release contents",
+  "github_observation_file": "GITHUB_GATE_OBSERVATION.json",
+  "github_default_branch_observed": "main",
+  "history_preserved": true,
+  "force_push_used": false,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "exit_code": 0,
+      "stdout": "e87d0082a5e448e9550129a486ba965f13a155f8\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "e87d0082a5e448e9550129a486ba965f13a155f8\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "--symref",
+        "origin",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "ref: refs/heads/main\tHEAD\ne87d0082a5e448e9550129a486ba965f13a155f8\tHEAD\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-tree",
+        "-r",
+        "--name-only",
+        "main"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "--tags",
+        "origin"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "tag",
+        "--list"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "main",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "e87d0082a5e448e9550129a486ba965f13a155f8\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "log",
+        "--all",
+        "--oneline",
+        "--decorate",
+        "--graph",
+        "-10"
+      ],
+      "exit_code": 0,
+      "stdout": "*   6554dfe (HEAD -> feature/phase-0-v3.2-design, origin/feature/phase-0-v3.2-design) chore: connect authorized empty main baseline for Phase 0 review PR\n|\\  \n| * e87d008 (origin/main, main) chore: initialize empty main baseline\n* 65ae3d3 docs: attach immutable review content SHA and verified remote evidence\n* 04deecc docs: harden evidence manifest against sync metadata and preserve self-review findings\n* 0b64148 docs: prepare AQRP Phase 0 design under V3.0 V3.1 V3.2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "0b64148d9235c507d9ccd18b76663ab33f0711d9",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "04deeccbccf809bf4648eca5420ded47f89db187",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "65ae3d3c59a8643f6c1152585d56e4478af7b342",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "6554dfe07b3a7ef20a65227ed27940ddc15e8034\n",
+      "stderr": ""
+    }
+  ]
+}
