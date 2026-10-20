@@ -236,3 +236,6 @@
 | .gitattributes | DATA-007，EXP-001（固定字节避免检出换行转换破坏hash） |
 
 P0文件的精确列表/hash以审查包 MANIFEST.json 为准。源文件、作者工具和自查不是独立审计；任何新增业务模块必须有已批准需求，当前不存在业务实现。
+
+
+2026-10-21状态增量：Gemini对380d9f8计划预审PASS，当前Phase1 IMPLEMENTING。原文/证据索引及报告勘误在audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json和DEVELOPER_RESPONSE.md。此状态替代此前等待计划预审描述；验收、main合并、打标、Phase2仍未授权。

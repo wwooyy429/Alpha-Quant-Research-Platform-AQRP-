@@ -70,3 +70,6 @@
 - 建立双AI审查、ReviewPackage、A–F验收模板和缺陷闭环规则；禁止冒充Gemini报告或以CI替代独立审查。
 - 创建编号需求/双向追踪与文档核查工具；当前不包含业务实现，不声称运行测试、环境锁定、Gemini审查或发布成功。
 - 未决事项与影响分析见DECISIONS和 `audits/phase-0/CHANGE_IMPACT.md`。
+
+
+2026-10-21状态增量：Gemini对380d9f8计划预审PASS，当前Phase1 IMPLEMENTING。原文/证据索引及报告勘误在audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json和DEVELOPER_RESPONSE.md。此状态替代此前等待计划预审描述；验收、main合并、打标、Phase2仍未授权。

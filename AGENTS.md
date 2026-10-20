@@ -2,9 +2,9 @@
 
 ## 当前权限
 
-用户已于2026-10-20明确授权Phase1开发，选择先做合成数据与通用契约、真实源另定，并批准Python3.13.16；原话及核实main起点见docs/audits/phase-1/AUTHORIZATION.json。Phase0验收/发布记录保留。当前Phase1为PLAN REVIEW REQUIRED，实施须先完成本阶段Gemini计划预审；Phase2–7及P1合并/发布尚未授权。
+用户已于2026-10-20明确授权Phase1开发，选择先做合成数据与通用契约、真实源另定，并批准Python3.13.16；原话及核实main起点见docs/audits/phase-1/AUTHORIZATION.json。Phase0验收/发布记录保留。当前Phase1为IMPLEMENTING；Gemini对固定380d9f86467db874033a06a9e6487fd3998e205f计划预审PASS，原件/勘误见docs/audits/phase-1/gemini及DEVELOPER_RESPONSE.md；Phase2–7及P1合并/发布尚未授权。
 
-Phase0已ACCEPTED并RELEASED，Gemini对7de1d0e81385ae97f98ea673fe05dd726f0b577b的Gate给PASS、F-001 CLOSED，索引见docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json，稳定标签不移动。Phase1从核实main 502c6931dcfce50bee2f71a80524475fae6396bf创建feature/phase-1-data-system；启动授权已取得，当前执行实施前计划准备/独立预审，业务代码尚未开始。不得重复把它标为等待用户启动许可，也不得冒称Gemini预审已完成。
+Phase0已ACCEPTED并RELEASED，Gemini对7de1d0e81385ae97f98ea673fe05dd726f0b577b的Gate给PASS、F-001 CLOSED，索引见docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json，稳定标签不移动。Phase1从核实main 502c6931dcfce50bee2f71a80524475fae6396bf创建feature/phase-1-data-system；启动授权已取得，当前执行已授权Phase1实施，预审PASS不等于实现验收。不得重复请求启动许可，不得以旧SHA预审覆盖新实现。
 
 开始任务先读本文件及 docs 中的 PROJECT_CHARTER、ARCHITECTURE、INTERFACES、REQUIREMENTS、TRACEABILITY、ROADMAP、PROGRESS、DECISIONS，再检查实际 Git 状态和上一阶段批准记录。发现文档与代码冲突先报告，不覆盖既有修改。
 

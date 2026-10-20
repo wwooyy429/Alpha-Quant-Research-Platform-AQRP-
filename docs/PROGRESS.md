@@ -20,3 +20,7 @@
 ## 停止点
 
 Phase0已发布；Phase1当前执行步骤为实施前计划/接口/答案预审资料准备。将固定SHA草稿PR和可直接交Gemini的指令交付，收到计划预审原报告并处理阻断事项后开展已授权P1实现。尚未创建业务包、安装业务环境或执行CI；P1验收/合并/发布及P2另行控制。
+
+## 2026-10-21：Phase1计划预审归档
+
+Gemini对380d9f8计划预审PASS；原始字节与SHA-256见audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json，勘误/逐项处置见DEVELOPER_RESPONSE.md。当前状态IMPLEMENTING，按M1.1开始环境锁、隔离及真实CI验证；上述旧日期PLAN REVIEW REQUIRED已由本记录替代。业务验收尚未发生，所有未验证条件仍OPEN。main/稳定标签不变，禁止合并、标签、Phase2。
