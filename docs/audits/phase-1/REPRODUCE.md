@@ -13,3 +13,6 @@ CI为Windows x64及Ubuntu24.04 x64，Python精确3.13.16，无依赖缓存命中
 本地源BaiduSyncdisk目录反复出现索引写入/锁故障；自动审批拒绝删除index.lock后，使用LOCALAPPDATA/AQRP/checkouts下独立克隆，逐文件复制并校验未提交实现。原目录未reset/强推/删除，详见implementation/CHECKOUT_TRANSFER.json；后续提交和验证均注明这个独立工作副本。它不等于自动更改用户项目的默认路径。
 
 当前实现尚需Gemini对新固定SHA复核和用户阶段验收，不合并、不打标签、不进入Phase2。未运行/未附原始证据的项必须NOT VERIFIED；不得使用本地PASS代替双平台CI、用计划PASS代替代码审查。
+
+
+最终执行更新：修复提交b6c369974052a00d4cc57388d5a2eb3708a6e114在本地干净安装及GitHub PR run39475976555（Windows/Ubuntu）全部PASS。本地102项及覆盖率/扫描/数据smoke原始产物已归档；两端decoded job logs已归档。GitHub完整artifact存在且API给出digest，但连接器向blob输出主机传输失败，远端完整JUnit/coverage/environment/快照未在本地取得或独立核验hash，跨OS smoke hash逐字比较NOT VERIFIED；需Gemini从Actions取得，不掩盖此证据限制。后续归档提交仅增加文档/证据，不外推Gemini计划PASS为代码PASS。

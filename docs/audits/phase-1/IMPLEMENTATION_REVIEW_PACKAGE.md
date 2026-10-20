@@ -19,3 +19,6 @@
 15. **验收前条件**：最终固定SHA全部适用CI与原始证据齐备；Gemini独立实现审查、勘误和阻断问题关闭；用户明确Phase1验收。后续main合并/标签/Phase2各需另行授权。本次不申请自动验收，也不执行发布。
 
 具体边界：仅SYNTHETIC_V1；不证明供应商历史可得性；日历非交易所认证；日频间隔多个不同生效时点拆股明确拒绝，不猜测中间状态；索引每次重建，无持久性能缓存；无规模SLA。源Baidu工作区保留未提交副本和旧HEAD，实际继续工作副本在CHECKOUT_TRANSFER.json，未重置或清理其Git锁。
+
+
+最终执行更新：修复提交b6c369974052a00d4cc57388d5a2eb3708a6e114在本地干净安装及GitHub PR run39475976555（Windows/Ubuntu）全部PASS。本地102项及覆盖率/扫描/数据smoke原始产物已归档；两端decoded job logs已归档。GitHub完整artifact存在且API给出digest，但连接器向blob输出主机传输失败，远端完整JUnit/coverage/environment/快照未在本地取得或独立核验hash，跨OS smoke hash逐字比较NOT VERIFIED；需Gemini从Actions取得，不掩盖此证据限制。后续归档提交仅增加文档/证据，不外推Gemini计划PASS为代码PASS。

@@ -15,3 +15,6 @@
 误报处理：新校验清单使用{path,sha256}记录，保留原历史artifacts.json字节；.gitleaks.toml仅允许该固定历史原件路径和精确完整SHA所在完整JSON行，已独立重算为实际脱敏日志hash。其他路径/其他hash/任意真实密钥不在例外中。扫描结果用--redact=100及JSON报告；无需、也没有宽泛忽略fixture或关闭默认规则。Gemini应重点核对这一唯一例外。
 
 仍需：最终固定SHA双平台证据全部PASS、Gemini实现审查与缺陷复核、用户Phase1验收。main合并/打标签/Phase2另需明确授权。此处不宣称Phase1 ACCEPTED或RELEASED。
+
+
+最终执行更新：修复提交b6c369974052a00d4cc57388d5a2eb3708a6e114在本地干净安装及GitHub PR run39475976555（Windows/Ubuntu）全部PASS。本地102项及覆盖率/扫描/数据smoke原始产物已归档；两端decoded job logs已归档。GitHub完整artifact存在且API给出digest，但连接器向blob输出主机传输失败，远端完整JUnit/coverage/environment/快照未在本地取得或独立核验hash，跨OS smoke hash逐字比较NOT VERIFIED；需Gemini从Actions取得，不掩盖此证据限制。后续归档提交仅增加文档/证据，不外推Gemini计划PASS为代码PASS。

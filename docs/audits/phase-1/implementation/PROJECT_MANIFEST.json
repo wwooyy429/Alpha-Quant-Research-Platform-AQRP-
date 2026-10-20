@@ -1,5 +1,5 @@
 {
-  "scope": "Current tracked/nonignored files except this self-referential manifest; Git commit remains authority",
+  "scope": "Current project files except this manifest, no self-referential Git SHA. Commit remains authority.",
   "files": [
     {
       "path": ".gitattributes",
@@ -358,13 +358,13 @@
     },
     {
       "path": "docs/audits/phase-1/IMPLEMENTATION_FINDINGS.md",
-      "sha256": "4df51a7a49cfaddcf760caba5464644afb41905735fdd8ec4b17ffe6a9042612",
-      "size": 2787
+      "sha256": "3f9323606ba90fc64786f529a8424bc0f9e26fe98d707fee0293f081f5d50dda",
+      "size": 3405
     },
     {
       "path": "docs/audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md",
-      "sha256": "ce3248e2ef3c6bc987d00a6097d8033067f2e199337fd004734fcf87f7fa0e97",
-      "size": 4750
+      "sha256": "b0b1118c97bb894640a2236e0b0af409936f2768e0224f3e487ed51f9d15fbcf",
+      "size": 5368
     },
     {
       "path": "docs/audits/phase-1/IMPLEMENTATION_TRACEABILITY.md",
@@ -388,8 +388,8 @@
     },
     {
       "path": "docs/audits/phase-1/REPRODUCE.md",
-      "sha256": "13c97752593bb3614b73da3044f8cf45f255b060317bf2694a1da76c502f0d65",
-      "size": 2694
+      "sha256": "150c638c822360d18dc8625d552c4644af0c6d7698c1a44ec28add855a959b47",
+      "size": 3312
     },
     {
       "path": "docs/audits/phase-1/SELF_CHECK.json",
@@ -398,8 +398,8 @@
     },
     {
       "path": "docs/audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json",
-      "sha256": "9b8d4c548050f658572989d202c5a019eafe672d5e119de9b36a878788260583",
-      "size": 941
+      "sha256": "32514a65805b73516ec3a11633a35ba362d71a798ab3e9966de364d77f0e7ccb",
+      "size": 1236
     },
     {
       "path": "docs/audits/phase-1/gemini/aqrp_phase1_plan_pre_review_report.md",
@@ -418,8 +418,123 @@
     },
     {
       "path": "docs/audits/phase-1/implementation/EVIDENCE_INDEX.json",
-      "sha256": "43d5c7775b3a37ed6052b6fad49f05dd16d136a3fd12b8407710106c2e192efc",
-      "size": 1397
+      "sha256": "8d6b4b5b498b8247f5c40947b2ec21053bce3015a4c5ab570ecc63b61457c1d5",
+      "size": 3681
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/RUNTIME_INSTALLATION.json",
+      "sha256": "d7ca94255132839f03a626db5d8ff8d8e60f3ca7746d948c2cedd890ae6f8af3",
+      "size": 603
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/ci-b6c3699-ubuntu.log",
+      "sha256": "1e9a2a98ebff82d8b8531f4e2cccd7f4c5f3d54ab265ae240191292adc42a074",
+      "size": 18103
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/ci-b6c3699-windows.log",
+      "sha256": "a94c0f9c47e27f2ab1787f88e09570dcb4ba28909b605bb9f16c9dcb31f4a7ae",
+      "size": 17872
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/artifacts.json",
+      "sha256": "95daaa1ba0ba051205743694e78f2bcde94708b124587f87189621b1a15bf981",
+      "size": 1753
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/commands.log",
+      "sha256": "95a25f8f4e7666d5886fe3356ef3cd8616ba0af8ac35256f1ad83bd1ef2edbf6",
+      "size": 13825
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/coverage.json",
+      "sha256": "9e090109b6e7a8e0827e79c087b05193c68dd10b409e8ac1088b4d4e023f0568",
+      "size": 79027
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/adjustment_factors.parquet",
+      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+      "size": 3159
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/bars_daily.parquet",
+      "sha256": "eea3df263015d9df5b2a98e5a790c17ba72bf60317b2a725d2d6d948e2fc5af1",
+      "size": 9281
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/calendar.parquet",
+      "sha256": "63897eb77dbca715cda092c781992e326a5acc6407d346212e0540e4e119fa61",
+      "size": 5314
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/corporate_actions.parquet",
+      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+      "size": 4199
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/manifest.json",
+      "sha256": "73b7a2b9354f251f954f6ff4c2df342aa65acad9ca468227ac5cb37789c81a85",
+      "size": 3099
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/security_master.parquet",
+      "sha256": "f49b234846aeec3c6a02288f2c144e485bb28b282fae2b020ae951a9743c59c5",
+      "size": 6050
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/security_status.parquet",
+      "sha256": "8ec5e4463f73cc49b63725a05f88fd8f3238eeb20bc441567722abcb792557ab",
+      "size": 4888
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/symbol_alias.parquet",
+      "sha256": "cc02e449015fd21e90da2fc777da13ced65f9d966a0a608d51fda0d0a6528c78",
+      "size": 5133
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/dataset/3371e58d-0ed8-4a28-a96f-6ce152d06539/universe_membership.parquet",
+      "sha256": "952e1d4ae0f7416ca44b994a3277b22c82854b345273d65fec9139a3e3f468bc",
+      "size": 4891
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/environment.json",
+      "sha256": "966b515ef6af68a6efabf9c87da160377383eb04f1c31690a3fa58548d4bdeb1",
+      "size": 1025
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/junit.xml",
+      "sha256": "26ec595ec2ac9170165cce4d461feb6e1623660697ee7cc901c50398b8109d71",
+      "size": 15000
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/scan-findings.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/secret-scan.log",
+      "sha256": "f7bca6a53baa81570b26d0e0b7407cdc6a9f1bd144e2ec49345ce925bb6702d0",
+      "size": 237
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/smoke-config.json",
+      "sha256": "20aff10603d2f26486221e6ef9533bd27b8a6e373d992ea319a37b69ca680884",
+      "size": 363
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/smoke-result.json",
+      "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "size": 617
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/smoke-run.json",
+      "sha256": "65a745f23f37ea36c98a2e7e82d21805e12498ebf151e15568c2ba8cb45a29c2",
+      "size": 712
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/local-final-b6c3699/smoke-snapshot.json",
+      "sha256": "73b7a2b9354f251f954f6ff4c2df342aa65acad9ca468227ac5cb37789c81a85",
+      "size": 3099
     },
     {
       "path": "docs/audits/phase-1/implementation/local-history/aqrp-2c106cd2-5c2a-4e2d-94ac-93975e586c8f/commands.log",
