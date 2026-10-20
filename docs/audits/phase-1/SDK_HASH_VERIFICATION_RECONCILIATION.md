@@ -1,5 +1,9 @@
 # Phase1 SDK执行与远端哈希报告接收、勘误及补充验证
 
+2026-10-21增量复核接收：Gemini对8bf189d明确PASS、七项ERR-P1-SDK-001～007全部AGREE。认可说明与实际执行完成分开登记；SDK全量仍未独立运行，ZIP/内部数据/跨OS执行方法未附新原始记录，不能按全部闭环登记。原件及新细节勘误/剩余门禁见SDK_HASH_INCREMENTAL_RECONCILIATION.md和gemini/SDK_HASH_INCREMENTAL_INDEX.json；用户未接受限制、未验收/发布，不合并、不打标签、不进入Phase2。
+
+以下各轮文字保留为历史；当前状态优先以上述增量核对为准。
+
 2026-10-21（Asia/Shanghai）。本文件由开发方编写，不是Gemini签署的更正报告，也不代表用户验收。用户本次授权核对、归档、处理问题并更新PR #2；明确不合并、不打标签、不进入Phase2。
 
 ## 原件与版本

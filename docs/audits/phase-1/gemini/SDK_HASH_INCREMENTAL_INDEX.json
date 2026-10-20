@@ -1,0 +1,84 @@
+{
+  "received_date": "2026-10-21",
+  "source": "User-supplied Gemini incremental report; advisory, not user acceptance",
+  "raw_report": "aqrp_phase1_sdk_hash_incremental_recheck_report.md",
+  "sha256": "725557d5ff2fc1c94d03c614bf7e40706f33aa0422c6b44f80289806b2e69cf0",
+  "bytes": 15246,
+  "raw_copy_matches_user_source": true,
+  "fixed_review_sha": "8bf189d76f15273a89eb4c2672c86e05a81aa148",
+  "business_implementation_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
+  "prior_materials_sha": "d82536ae9ac7f61153747e63d044a640fea17b50",
+  "reviewer_verdict": "PASS; all seven errata AGREE; recommends human acceptance",
+  "seven_errata": {
+    "ERR-P1-SDK-001": {
+      "reviewer_decision": "AGREE",
+      "source": "Section VI",
+      "registered_scope": "Clarification/handling acknowledged; does not close independent execution gap"
+    },
+    "ERR-P1-SDK-002": {
+      "reviewer_decision": "AGREE",
+      "source": "Section VI",
+      "registered_scope": "Clarification/handling acknowledged; does not close independent execution gap"
+    },
+    "ERR-P1-SDK-003": {
+      "reviewer_decision": "AGREE",
+      "source": "Section VI",
+      "registered_scope": "Clarification/handling acknowledged; does not close independent execution gap"
+    },
+    "ERR-P1-SDK-004": {
+      "reviewer_decision": "AGREE",
+      "source": "Section VI",
+      "registered_scope": "Clarification/handling acknowledged; does not close independent execution gap"
+    },
+    "ERR-P1-SDK-005": {
+      "reviewer_decision": "AGREE",
+      "source": "Section VI",
+      "registered_scope": "Clarification/handling acknowledged; does not close independent execution gap"
+    },
+    "ERR-P1-SDK-006": {
+      "reviewer_decision": "AGREE",
+      "source": "Section VI",
+      "registered_scope": "Clarification/handling acknowledged; does not close independent execution gap"
+    },
+    "ERR-P1-SDK-007": {
+      "reviewer_decision": "AGREE",
+      "source": "Section VI",
+      "registered_scope": "Clarification/handling acknowledged; does not close independent execution gap"
+    }
+  },
+  "evidence_grades": {
+    "gemini_original_report_and_five_hashes": "REVIEWER REPORTED EXECUTED; listed values match archived bytes; no new command/script/stdout supplied",
+    "gemini_zip_hash": "REVIEWER REPORTED MATCH; actual binary acquisition/computation method and raw output not evidenced",
+    "gemini_full_sdk_entry": "NOT RUN / NOT VERIFIED, explicitly acknowledged",
+    "gemini_internal_snapshot_cross_os_execution": "No new independently verifiable execution record supplied",
+    "developer_current_hash_manifest_topology_math": "EXECUTED; checks.json contains actual filenames and values",
+    "developer_prior_sdk_smoke_replay": "Prior-round execution remains documented; not rerun this round"
+  },
+  "new_execution_attachments_received": [],
+  "current_execution_gap": "P1-SDK-EXEC-OPEN; independent execution evidence outstanding or explicit user decision required",
+  "report_detail_corrections": [
+    "Actual 11 verified root entries differ from reported filenames; artifacts.json and dataset are not their own root-manifest entries",
+    "Three missing root entries plus separately absent project-wheel bytes; project-wheel hash is in environment.json, not the 14-entry root manifest",
+    "Exact float 0.05 error is approximately 2.77555756e-18, not 2.78e-17",
+    "Config comparison excludes snapshot_id and manifest_hash only; fixed as_of remains compared, no path/time blanket exclusion",
+    "8bf189d changes 36 audit/status files, including AGENTS/README/CHANGELOG/DECISIONS/ROADMAP outside audit directory",
+    "8bf189d developer receipt explicitly says full_ci_entry_rerun=false; historical full runs do not become new executions",
+    "Governance prerequisites are project requirements; Phase2 still needs separate user kickoff authorization after release"
+  ],
+  "reconciliation": "../SDK_HASH_INCREMENTAL_RECONCILIATION.md",
+  "current_phase1_status": "ADVISORY AUDIT PASS / SEVEN ERRATA AGREED / FULL INDEPENDENT EXECUTION NOT VERIFIED / AWAITING HUMAN ACCEPTANCE",
+  "human_accepted": false,
+  "user_accepted_execution_limitations": false,
+  "released": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase2_authorized": false,
+  "phase2_status": "BLOCKED",
+  "historical_findings": {
+    "F-002": "CLOSED in original scope",
+    "F-003": "CLOSED in original scope",
+    "F-P1-PRE-001": "CLOSED in original scope",
+    "F-P1-PRE-003": "CLOSED in original scope",
+    "F-P1-PRE-002": "MITIGATED only"
+  }
+}

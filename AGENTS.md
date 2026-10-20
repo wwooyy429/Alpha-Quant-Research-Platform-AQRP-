@@ -2,9 +2,11 @@
 
 ## 当前权限
 
+2026-10-21本次增量：Gemini七项勘误全部AGREE、技术建议PASS；本轮未附新的ZIP/SDK独立执行原始记录，完整独立执行仍NOT VERIFIED。最新依据docs/audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md和gemini/SDK_HASH_INCREMENTAL_INDEX.json，优先于以下旧轮状态。用户未接受限制/验收/发布；不合并、不打标签、不进入Phase2。
+
 2026-10-21最新SDK/hash核对：原报告及5份资料已按字节归档；Gemini未运行指定SDK/下载ZIP，专项未完整通过。开发方实际取得两个原始ZIP并核对hash、八表/结果及SDK回放，证据不能冒充Gemini执行。最新状态和剩余门禁见docs/audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md、gemini/SDK_HASH_VERIFICATION_INDEX.json；此前非阻断建议不等于用户接受本次独立执行缺口。未ACCEPTED/RELEASED，不合并、不打标签、不进入Phase2。
 
-用户已于2026-10-20明确授权Phase1开发，选择先做合成数据与通用契约、真实源另定，并批准Python3.13.16；原话及核实main起点见docs/audits/phase-1/AUTHORIZATION.json。Phase0验收/发布记录保留。当前Phase1实现审查建议PASS，SDK/hash专项PARTIAL / GEMINI EXECUTION BLOCKED、等待人工验收；Gemini对固定380d9f86467db874033a06a9e6487fd3998e205f计划预审PASS，原件/勘误见docs/audits/phase-1/gemini及DEVELOPER_RESPONSE.md；Phase2–7及P1合并/发布尚未授权。
+用户已于2026-10-20明确授权Phase1开发，选择先做合成数据与通用契约、真实源另定，并批准Python3.13.16；原话及核实main起点见docs/audits/phase-1/AUTHORIZATION.json。Phase0验收/发布记录保留。当前Phase1实现审查建议PASS、七项勘误获认可，完整独立执行仍NOT VERIFIED、等待人工验收；Gemini对固定380d9f86467db874033a06a9e6487fd3998e205f计划预审PASS，原件/勘误见docs/audits/phase-1/gemini及DEVELOPER_RESPONSE.md；Phase2–7及P1合并/发布尚未授权。
 
 Phase0已ACCEPTED并RELEASED，Gemini对7de1d0e81385ae97f98ea673fe05dd726f0b577b的Gate给PASS、F-001 CLOSED，索引见docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json，稳定标签不移动。Phase1从核实main 502c6931dcfce50bee2f71a80524475fae6396bf创建feature/phase-1-data-system；启动授权已取得，当前已收到Gemini对74bdb9216c585d27de91123605aff0266ca028cc的实现PASS报告；原件与处理见docs/audits/phase-1/gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json及IMPLEMENTATION_AUDIT_RESPONSE.md。Gemini补充勘误确认已收到且PASS，原件/证据分级及非阻断限制见docs/audits/phase-1/gemini/ERRATA_CONFIRMATION_INDEX.json和ERRATA_CONFIRMATION_RECONCILIATION.md；当前可提交人工验收，但不得把报告PASS或用户转交报告登记成用户ACCEPTED/RELEASED。不得重复请求启动许可，不得以旧SHA预审覆盖新实现。
 

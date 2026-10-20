@@ -1,0 +1,279 @@
+{
+  "date": "2026-10-21",
+  "execution_by": "Codex developer report reconciliation; not Gemini execution",
+  "reviewed_sha": "8bf189d76f15273a89eb4c2672c86e05a81aa148",
+  "business_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
+  "new_report_sha256": "725557d5ff2fc1c94d03c614bf7e40706f33aa0422c6b44f80289806b2e69cf0",
+  "new_report_bytes": 15246,
+  "git_scope_8bf_vs_d825": [
+    "AGENTS.md",
+    "README.md",
+    "docs/CHANGELOG.md",
+    "docs/DECISIONS.md",
+    "docs/PROGRESS.md",
+    "docs/ROADMAP.md",
+    "docs/audits/phase-1/IMPLEMENTATION_FINDINGS.md",
+    "docs/audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md",
+    "docs/audits/phase-1/REPRODUCE.md",
+    "docs/audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md",
+    "docs/audits/phase-1/gemini/SDK_HASH_VERIFICATION_INDEX.json",
+    "docs/audits/phase-1/gemini/aqrp_phase1_sdk_and_remote_hash_verification_report.md",
+    "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/env_probe.log",
+    "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/independent_math_verification.log",
+    "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/independent_math_verification.py",
+    "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/remote_download_attempt.log",
+    "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/task_status_matrix.json",
+    "docs/audits/phase-1/implementation/EVIDENCE_INDEX.json",
+    "docs/audits/phase-1/implementation/SDK_HASH_MANIFEST.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/12288679676.zip",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/12288989083.zip",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/RUN_RECEIPT.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/archive-checks.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/archive-scan-findings.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/archive-scan.log",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/coverage-12288679676.log",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/coverage-12288989083.log",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/developer-smoke.log",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/float-reference-clarification.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/gemini-script-developer-rerun.stderr.log",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/gemini-script-developer-rerun.stdout.log",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/github-artifacts-metadata.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/github-run-metadata.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/verification.json",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/verification.log",
+    "docs/audits/phase-1/implementation/sdk-hash-74bdb92/verify_artifacts.py"
+  ],
+  "prior_8bf_manifest_checks": {
+    "files": 223,
+    "all_match": true
+  },
+  "original_report_and_five_evidence_hashes": "PASS",
+  "protected_assets": {
+    "business_code_tests_tools_ci_locks_unchanged": true,
+    "phase0_files": 50,
+    "requirements": 106,
+    "groups": 16
+  },
+  "artifacts": [
+    {
+      "artifact_id": 12288989083,
+      "sha256": "73385602dad830f3157dba8f5629616127777511830b02675fd06df517f93e7c",
+      "zip_bytes": 35678,
+      "verified_root_paths": [
+        "commands.log",
+        "coverage.json",
+        "coverage.xml",
+        "environment.json",
+        "junit.xml",
+        "scan-findings.json",
+        "secret-scan.log",
+        "smoke-config.json",
+        "smoke-result.json",
+        "smoke-run.json",
+        "smoke-snapshot.json"
+      ],
+      "missing_root_paths": [
+        ".coverage",
+        "gitleaks",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "root_entries": 14,
+      "actual_uploaded_root_members": [
+        "artifacts.json",
+        "commands.log",
+        "coverage.json",
+        "coverage.xml",
+        "environment.json",
+        "junit.xml",
+        "scan-findings.json",
+        "secret-scan.log",
+        "smoke-config.json",
+        "smoke-result.json",
+        "smoke-run.json",
+        "smoke-snapshot.json"
+      ],
+      "project_wheel_hash_location": "environment.json.wheel_sha256; not artifacts.json",
+      "tables": [
+        {
+          "table": "adjustment_factors",
+          "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+          "pass": true
+        },
+        {
+          "table": "bars_daily",
+          "sha256": "74d9668d4abfdc8b43e6b0a2d794523dd339ac0b8d45b48cea296fd8a74197ae",
+          "pass": true
+        },
+        {
+          "table": "calendar",
+          "sha256": "6e23a5562cec7ab515f0345b65429e542fbf50c9b8176545d3f3530bc7842775",
+          "pass": true
+        },
+        {
+          "table": "corporate_actions",
+          "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+          "pass": true
+        },
+        {
+          "table": "security_master",
+          "sha256": "5c8d8882b3bdf7b48724ea8dd8e40c0aa6e8d78b938ff9b7a289cbe28267eb5d",
+          "pass": true
+        },
+        {
+          "table": "security_status",
+          "sha256": "8e36e5f675235fa71bd8d6abe9d51ce32c049c300d34568ee8656efdd2fae640",
+          "pass": true
+        },
+        {
+          "table": "symbol_alias",
+          "sha256": "05fc4599999a7172c14487cd537c1d64aef18a1ce4878e9b5cb81ab88723183c",
+          "pass": true
+        },
+        {
+          "table": "universe_membership",
+          "sha256": "d309c3499bcb1680456b5ecc9d04a160d123f0316c1f15ec5a3e2017dbb5fffd",
+          "pass": true
+        }
+      ],
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "result_sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "query_config_keys": [
+        "as_of",
+        "calendar_id",
+        "fields",
+        "manifest_hash",
+        "market_id",
+        "price_basis",
+        "profile_id",
+        "security_ids",
+        "session_range",
+        "snapshot_id"
+      ]
+    },
+    {
+      "artifact_id": 12288679676,
+      "sha256": "8f092b7214202292995276a4dab3187063cd481d8a6556ac342e450738b64ea5",
+      "zip_bytes": 35648,
+      "verified_root_paths": [
+        "commands.log",
+        "coverage.json",
+        "coverage.xml",
+        "environment.json",
+        "junit.xml",
+        "scan-findings.json",
+        "secret-scan.log",
+        "smoke-config.json",
+        "smoke-result.json",
+        "smoke-run.json",
+        "smoke-snapshot.json"
+      ],
+      "missing_root_paths": [
+        ".coverage",
+        "gitleaks.exe",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "root_entries": 14,
+      "actual_uploaded_root_members": [
+        "artifacts.json",
+        "commands.log",
+        "coverage.json",
+        "coverage.xml",
+        "environment.json",
+        "junit.xml",
+        "scan-findings.json",
+        "secret-scan.log",
+        "smoke-config.json",
+        "smoke-result.json",
+        "smoke-run.json",
+        "smoke-snapshot.json"
+      ],
+      "project_wheel_hash_location": "environment.json.wheel_sha256; not artifacts.json",
+      "tables": [
+        {
+          "table": "adjustment_factors",
+          "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+          "pass": true
+        },
+        {
+          "table": "bars_daily",
+          "sha256": "12e0ef934522e11734dd0fd3761377e809403f38583e8ea0de6064b10259d552",
+          "pass": true
+        },
+        {
+          "table": "calendar",
+          "sha256": "2fc4082ea192fdc23f9a2b60e1f193ed362b280e9d5871e603d1d864461f6d68",
+          "pass": true
+        },
+        {
+          "table": "corporate_actions",
+          "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+          "pass": true
+        },
+        {
+          "table": "security_master",
+          "sha256": "038a1bb487c0152b92c510f82d6964fbb110f1753599b86356c8c9ed7800d860",
+          "pass": true
+        },
+        {
+          "table": "security_status",
+          "sha256": "c147ff3236bd188754f8350f33704736792baa1dd35718a6bd0766db5a2cbcab",
+          "pass": true
+        },
+        {
+          "table": "symbol_alias",
+          "sha256": "ce1b7a28414e1323368360bc3b195c827626c87b8bf666d5e16a06f5a3feaab1",
+          "pass": true
+        },
+        {
+          "table": "universe_membership",
+          "sha256": "e5a9c03f10d31d142e2c4c8e95ddc3c9f74e13cae9a7446a48eb292295b43d5a",
+          "pass": true
+        }
+      ],
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "result_sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "query_config_keys": [
+        "as_of",
+        "calendar_id",
+        "fields",
+        "manifest_hash",
+        "market_id",
+        "price_basis",
+        "profile_id",
+        "security_ids",
+        "session_range",
+        "snapshot_id"
+      ]
+    }
+  ],
+  "cross_os_smoke_bytes_match": true,
+  "merge_tree": "66dc03a5cf38e8db9968873f2a0f1349b45eda09",
+  "merge_parents": [
+    "502c6931dcfce50bee2f71a80524475fae6396bf",
+    "74bdb9216c585d27de91123605aff0266ca028cc"
+  ],
+  "exact_float_errors": {
+    "0.05": {
+      "exact_fraction": "1/360287970189639680",
+      "absolute_error": "2.77555756156289135105907917022705078125E-18",
+      "within_original_tolerances": true
+    },
+    "0.1": {
+      "exact_fraction": "1/180143985094819840",
+      "absolute_error": "5.5511151231257827021181583404541015625E-18",
+      "within_original_tolerances": true
+    }
+  },
+  "new_reviewer_execution_attachments": "None newly supplied beyond incremental report; original five files are previous round",
+  "checks_passed": true
+}

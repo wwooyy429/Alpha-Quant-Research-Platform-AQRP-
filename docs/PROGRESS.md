@@ -1,17 +1,17 @@
 # 当前真实项目状态
 
-2026-10-21（Asia/Shanghai）。**Phase1实现技术审查建议PASS；SDK/远端哈希专项 = PARTIAL / GEMINI EXECUTION BLOCKED，等待人工验收。** 用户尚未ACCEPTED，Phase1未RELEASED；PR #2保持Draft/Open。不合并、不打标签、不进入Phase2。
+2026-10-21（Asia/Shanghai）。**Phase1技术审查建议PASS，Gemini已明确认可七项SDK/hash勘误；完整专项独立执行仍NOT VERIFIED，等待人工验收。** 用户未接受执行限制、未ACCEPTED/RELEASED；PR #2继续Draft/Open，不合并、不打标签、不进入Phase2。
 
-Phase0 = RELEASED。main仍502c6931dcfce50bee2f71a80524475fae6396bf；phase0-baseline目标7de1d0e81385ae97f98ea673fe05dd726f0b577b，标签对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0不变，无phase1-baseline。
+Phase0已RELEASED。main仍502c6931dcfce50bee2f71a80524475fae6396bf；phase0-baseline目标7de1d0e81385ae97f98ea673fe05dd726f0b577b、对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0保持不变，无phase1-baseline。
 
-Phase1授权限合成数据/通用契约、精确CPython3.13.16。14项实现、102项自动化测试及真实双平台CI证据见audits/phase-1/IMPLEMENTATION_TRACEABILITY.md及implementation/EVIDENCE_INDEX.json。业务锚点74bdb9216c585d27de91123605aff0266ca028cc；本轮只追加审查归档/开发方定向核对/状态记录，不修改src/tests/tools/CI/锁/Golden或50份P0冻结资产，106条/16组目录不变。
+最新Gemini增量报告固定审查8bf189d76f15273a89eb4c2672c86e05a81aa148，业务锚点74bdb9216c585d27de91123605aff0266ca028cc，原报告SHA256为725557d5ff2fc1c94d03c614bf7e40706f33aa0422c6b44f80289806b2e69cf0，原字节已归档。接收索引audits/phase-1/gemini/SDK_HASH_INCREMENTAL_INDEX.json，逐项确认/新报告细节更正/剩余门禁见audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md；旧报告与索引保持历史来源。
 
-审查链：380d9f8计划PASS → 74bdb92实现PASS → 578fb51开发方勘误 → Gemini补充确认PASS、d82536a归档 → 本轮SDK/hash报告及5份原始资料接收。新报告hash9fff9ee3da601e31aac5f2bbc77b09c38c5aa1050359d9c1513025c5824f5933，原件保持原字节；最新索引gemini/SDK_HASH_VERIFICATION_INDEX.json，核对处理SDK_HASH_VERIFICATION_RECONCILIATION.md。此前原件/索引/失败日志保持历史快照，不覆盖。
+七项AGREE仅关闭相应说明/处理意见争议，不关闭实际执行缺口。增量报告自述旧报告及5文件hash复算，ZIP列MATCH，但本次未附新脚本/命令/输出；SDK全量执行仍明确未做，ZIP/内部数据/跨OS独立执行方法尚无新原始记录支撑。不能用技术PASS、静态阅读或开发方结果追认Gemini实际运行。
 
-本次Gemini明确未运行3.13.16 SDK、未下载ZIP；数学脚本/日志现已附送，只证明其数学/静态分析范围。报告整体PASS/READY为技术咨询意见，不能推导专项完整执行或用户接受限制。依赖“整套离线”误述、float对同值字面量差0、静态跨平台PASS等均以开发方独立勘误注明。独立SDK/哈希执行仍BLOCKED / NOT RUN。
+开发方本轮再次核对两个原始ZIP、14条根清单中的11个可用文件、Manifest及每平台8表文件hash、smoke原字节、JUnit及Git树，通过；8bf189d清单223个hash在更新前全匹配。原ZIP/SDK回放/新冒烟资料仍在implementation/sdk-hash-74bdb92/，本轮检查在implementation/sdk-hash-incremental-8bf189d/。未重跑SDK/全量102测试，不改变其既有真实CI及上轮执行事实。
 
-本次开发方已实际下载Run39476825340的Ubuntu/Windows原始ZIP，SHA-256与GitHub digest一致；两平台各11/14根清单文件hash通过，3个未上传文件（.coverage、扫描器、引导wheel）不可复算。八表封存hash/schema/逻辑值、快照SDK验证及查询回放通过；两端smoke字节/hash一致，结果hash70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6。CI checkout f093faca是main502c693与74bdb92的临时合并提交，与74bdb92完整tree相同。开发方另做一次新SDK冒烟并复跑附送数学脚本，均成功；没有本轮重跑102测试或冒充Gemini。原始ZIP/校验脚本/输出见implementation/sdk-hash-74bdb92/。
+新报告文件名/11条列表、根清单3缺项与项目wheel单独缺失、0.05实数误差应为约2.7756e-18、配置比较未排除固定as_of、变更范围及本地执行归属等已独立注明，不修改原件，不改正确答案/容差。三个未上传根文件及项目wheel原始字节仍不可复算；Gemini对其非阻断意见不等于用户接受限制。
 
-因此，旧“开发方尚未取得远端ZIP/跨OS未比较”已由本轮实际证据补足；Gemini独立执行仍未完成，两个事实分别登记。F-002/F-003/PRE-001/PRE-003保留原审查CLOSED；PRE-002仍MITIGATED，原Baidu源码未重置/迁移。继续工作副本仍是CHECKOUT_TRANSFER记录的非同步克隆，默认项目路径未自动改变。
+14项Phase1实现/102项测试的实际映射和来源保留。src/tests/tools/CI/依赖锁/Golden及50份P0冻结文件不变，106项/16组目录不变。本轮当前文件清单为implementation/SDK_HASH_INCREMENTAL_MANIFEST.json，旧清单属于各固定SHA历史快照。F-002/F-003/PRE-001/PRE-003限定范围CLOSED；PRE-002仍MITIGATED，原Baidu源码/锁/未提交内容未重置或自动迁移。
 
-发布前仍需：独立执行证据缺口补齐或用户明确决定接受限制、用户Phase1验收、另行授权main合并/标签、最终主干内容及检查/基线核验；Phase2须另获启动授权。转交报告及Gemini建议不代替这些授权。本次停止于PR审查记录更新，不执行发布。
+停止于审查记录更新。尚需独立执行补齐或用户明确接受限制、用户阶段验收、分别授权合并/标签、最终主干内容及检查/追溯和稳定基线核验；Phase2须单独启动授权。任何报告建议均不代替这些决定。

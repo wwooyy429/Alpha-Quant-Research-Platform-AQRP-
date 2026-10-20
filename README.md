@@ -1,5 +1,7 @@
 # Alpha Quant Research Platform（AQRP）
 
+最新增量：Gemini已认可七项SDK/hash勘误、技术审查建议PASS；[本轮核对](docs/audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md)保留独立SDK/产物执行证据缺口及新报告细节勘误。用户未接受限制、未验收/发布；PR保持Draft，不合并、不打标签、不进入Phase2。以下各轮文字作为历史，当前以本轮核对为准。
+
 最新核对：Phase1实现审查建议PASS；[SDK/hash专项](docs/audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md)仅部分完成，Gemini实际SDK/ZIP验证受阻。开发方已补充原始ZIP/hash/八表及SDK冒烟证据，不替代独立执行；等待用户验收，未合并/发布，不进入Phase2。以下历史状态以最新专项记录为准。
 
 Phase 0 已发布。Phase 1 计划经 Gemini 对固定380d9f8预审PASS，现已实现合成日频数据基础，已收到Gemini对74bdb92的实现PASS报告及独立勘误确认PASS，当前等待人工验收。阶段验收、main合并、发布及Phase 2均尚未获授权。
