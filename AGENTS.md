@@ -2,6 +2,8 @@
 
 ## 当前权限
 
+2026-10-21补充包最新依据：旧报告/五文件hash校验现已收到Gemini脚本和日志；只是文件hash范围，不补齐SDK/Actions ZIP/Git拓扑实际执行，脚本缺输入也正常结束。见docs/audits/phase-1/VERIFICATION_PACKAGE_RECONCILIATION.md、gemini/VERIFICATION_PACKAGE_INDEX.json；以下未附脚本说法属于历史。七项AGREE保留，用户未接受限制/验收/发布，完整独立执行仍NOT VERIFIED，不合并、不打标签、不进入Phase2。
+
 2026-10-21本次增量：Gemini七项勘误全部AGREE、技术建议PASS；本轮未附新的ZIP/SDK独立执行原始记录，完整独立执行仍NOT VERIFIED。最新依据docs/audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md和gemini/SDK_HASH_INCREMENTAL_INDEX.json，优先于以下旧轮状态。用户未接受限制/验收/发布；不合并、不打标签、不进入Phase2。
 
 2026-10-21最新SDK/hash核对：原报告及5份资料已按字节归档；Gemini未运行指定SDK/下载ZIP，专项未完整通过。开发方实际取得两个原始ZIP并核对hash、八表/结果及SDK回放，证据不能冒充Gemini执行。最新状态和剩余门禁见docs/audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md、gemini/SDK_HASH_VERIFICATION_INDEX.json；此前非阻断建议不等于用户接受本次独立执行缺口。未ACCEPTED/RELEASED，不合并、不打标签、不进入Phase2。

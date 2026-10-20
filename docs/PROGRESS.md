@@ -1,5 +1,7 @@
 # 当前真实项目状态
 
+最新补充：用户提供10成员验证包，外包SHA256为318323ff77651537cc47470fe20d32930bb07495bb51fd71f0772f80c11c023d。Gemini旧文件hash脚本/日志现已附送，六个输入hash在完整输入复跑中一致；包自身缺三份输入，脚本缺文件仍返回0，Git/七项裁定为常量输出，未运行Actions ZIP或SDK。完整独立执行仍NOT VERIFIED，用户未接受限制/验收/发布；不合并、不打标签、不进入Phase2。最新索引audits/phase-1/gemini/VERIFICATION_PACKAGE_INDEX.json及核对audits/phase-1/VERIFICATION_PACKAGE_RECONCILIATION.md；当前清单implementation/VERIFICATION_PACKAGE_MANIFEST.json。以下旧轮“未附新记录”等为接收本包前的状态，不是当前没有脚本日志。
+
 2026-10-21（Asia/Shanghai）。**Phase1技术审查建议PASS，Gemini已明确认可七项SDK/hash勘误；完整专项独立执行仍NOT VERIFIED，等待人工验收。** 用户未接受执行限制、未ACCEPTED/RELEASED；PR #2继续Draft/Open，不合并、不打标签、不进入Phase2。
 
 Phase0已RELEASED。main仍502c6931dcfce50bee2f71a80524475fae6396bf；phase0-baseline目标7de1d0e81385ae97f98ea673fe05dd726f0b577b、对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0保持不变，无phase1-baseline。

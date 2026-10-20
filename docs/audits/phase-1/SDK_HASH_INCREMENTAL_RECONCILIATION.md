@@ -1,5 +1,7 @@
 # Gemini SDK/hash增量复核接收与开发方事实核对
 
+2026-10-21补充包已接收：现已取得Gemini文件hash校验脚本/日志/清单，补齐此前未附送原始材料的子项；脚本不执行Actions ZIP/SDK/Git拓扑核验，缺输入也返回0。完整独立执行仍未闭环，用户未接受限制/验收/发布。最新依据VERIFICATION_PACKAGE_RECONCILIATION.md及gemini/VERIFICATION_PACKAGE_INDEX.json；以下“未附脚本”等描述保留收到本包前的历史范围。
+
 2026-10-21（Asia/Shanghai）。本记录由开发方编写，不是修改后的Gemini报告或用户验收。用户授权核对、归档并更新PR #2，明确不合并、不打标签、不进入Phase2。
 
 ## 原件及锚点
