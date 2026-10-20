@@ -15,8 +15,10 @@
 | 开发分支 | feature/phase-0-v3.2-design，保留0b64148→04deecc→65ae3d3原始历史，6554dfe将空main接入共同祖先 |
 | 设计PR | https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1，Draft、Open、未合并 |
 | 固定设计审查SHA | `ed6666985bfac8cc94fa302c72e2e6333c679a6f`，与Gemini报告及PR字段一致；后来证据/状态提交不自动归入已审范围 |
-| Gemini实际审查SHA/报告 | 已收到用户提供的Gemini原文件，报告明确head为上述SHA、base为e87d008…；原文保存在 `audits/phase-0/gemini/aqrp_phase0_audit_report.md`，SHA-256为8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662 |
+| 最新增量复核SHA | `d4c8218315a9152166cbe56fde54384dc99fb094`；原报告与新增增量报告分别明确绑定两个版本，当前归档/记录更新不自动计入d4已审范围 |
+| Gemini原设计审查报告 | 原报告明确head为ed6666985bfac8cc94fa302c72e2e6333c679a6f、base为e87d008…；原文保存在 `audits/phase-0/gemini/aqrp_phase0_audit_report.md`，SHA-256为8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662 |
 | 审计建议及条件 | 总体PASS WITH CONDITIONS、设计子结论PASS；F-001 High仍OPEN/GATED，P1 BLOCKED。报告所述沙箱执行按审计方陈述登记，原脚本/原始日志未附，不称开发方已复跑 |
+| 增量复核及闭环差异 | 新原报告在同目录aqrp_phase0_incremental_audit_report.md，hash为57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140；Gemini给人工验收就绪YES，但实际16组与报告“12组”及非正式前缀仍有冲突，开发方判断部分闭环。详见INCREMENTAL_RECONCILIATION，不改审计原文 |
 | 用户正式批准Phase0 | 未批准；初始化/建PR授权不是ACCEPTED |
 | main中的已批准Phase0文件 | 无；尚无已批准设计内容 |
 | phase0-baseline标签 | 不存在，当前不创建 |
@@ -33,7 +35,7 @@
 
 ## 正式发布前必须填齐并核实
 
-1. Gemini原报告位置、审查范围、审查完整SHA、结论已取得，详见上述归档和EVIDENCE_INDEX。仍需处理其条件/澄清及管理资料更新，并保存关键问题修复复核；旧SHA结论不能覆盖新内容。报告要求合并后Gemini核对main追溯闭环，尚未完成。
+1. 原及增量Gemini报告均已取得，分别绑定ed666698与d4c8218。主要技术澄清已有，但分组/编号勘误仍未完全符合CSV，应另补勘误，不能改正确设计迎合报告。人工验收就绪YES是审计方建议，用户未批准；旧SHA不覆盖新管理资料。最终main主干核验仍未执行。
 2. 用户明确批准Phase0的原文/可信记录、日期、范围、精确SHA、条件；另记录合并/发布授权。
 3. 已批准需求/架构版本及逐文件路径和hash：至少AGENTS、PROJECT_CHARTER、REQUIREMENTS/CSV、TRACEABILITY、ARCHITECTURE、INTERFACES、DATA_CONTRACT、BACKTEST_CONTRACT、RESEARCH_PROTOCOL、ROADMAP、ACCEPTANCE、TESTING、DECISIONS、环境安全与Golden设计、审计/证据/进度文件。当前批准清单为空。
 4. PR最终head/base、已核对diff、适用文档/配置检查命令和结果；所有批准范围外变化必须重新批准。

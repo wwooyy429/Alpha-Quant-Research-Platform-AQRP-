@@ -147,7 +147,9 @@ def main():
     for command in [['git','status','--short','--branch'], ['git','remote','-v'], ['git','--version']]:
         result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         commands.append({'argv':command,'exit_code':result.returncode,'stdout':result.stdout,'stderr':result.stderr})
-    review_evidence = AUDIT/'gemini/EVIDENCE_INDEX.json'
+    review_evidence = AUDIT/'gemini/INCREMENTAL_EVIDENCE_INDEX.json'
+    if not review_evidence.is_file():
+        review_evidence = AUDIT/'gemini/EVIDENCE_INDEX.json'
     gemini_status = 'NOT VERIFIED'
     if review_evidence.is_file():
         supplied_review = json.loads(review_evidence.read_text(encoding='utf-8'))
@@ -156,7 +158,8 @@ def main():
                         'reviewed_commit':supplied_review['reviewed_commit'],
                         'report_path':supplied_review['report_path'],
                         'report_sha256':supplied_review['report_sha256'],
-                        'execution_scope':supplied_review['execution_evidence_scope']}
+                        'execution_scope':supplied_review['execution_evidence_scope'],
+                        'developer_closure':supplied_review.get('developer_closure','See developer response; no automatic finding closure')}
     summary = {'scope':'Phase0文档结构与候选算式开发方自查；不是业务测试、CI或Gemini审计',
        'started_at_utc': started, 'finished_at_utc':datetime.now(timezone.utc).isoformat(),
        'python':sys.version,'platform':platform.platform(),'requirements':len(rows),
