@@ -1,6 +1,6 @@
 # 需求覆盖审计（开发方自查）
 
-关联GOV-003、QA-005。审计对象为V3.0原文全部章节、V3.1八条、V3.2九章及目前实际设计文件。105条分组编号需求见REQUIREMENTS/requirements.csv，每组definition显式列子能力，输入输出、等级、阶段、依赖及验收均完整。
+关联GOV-003、QA-005。审计对象为V3.0原文全部章节、V3.1八条、V3.2九章、后续Main Baseline Release Gate六条及目前实际设计文件。106条分组编号需求见REQUIREMENTS/requirements.csv，每组definition显式列子能力，输入输出、等级、阶段、依赖及验收均完整。
 
 ## 功能覆盖索引
 
@@ -22,6 +22,7 @@
 | 章节19–22 报告/禁令/连续性/本次任务 | GOV-001–009，SEC-001–004，QA-005–007 | P0起持续 |
 | V3.1条款1–8全部 | GOV-003/004，DATA，BT，VALID，ENV，SEC，QA-005 | 六专项见SPECIAL_AUDITS |
 | V3.2章节1–9全部 | GOV-001/002/005–009，SEC-004，QA-006–007 | 角色/事实源/分支/九步骤/15项包/阻断/阶段审查/禁令/模板 |
+| V3.2 Main Baseline Release Gate条款1–6 | GOV-010 | main/默认分支/历史/审查与批准/文件/标签核对，三类状态、BASELINE、发布一致性及P1 BLOCKED |
 
 ## 正向/反向及证据限度
 

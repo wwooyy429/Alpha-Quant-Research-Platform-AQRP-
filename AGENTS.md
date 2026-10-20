@@ -4,6 +4,8 @@
 
 只授权 Phase 0 需求审计与架构设计。当前状态以 `docs/PROGRESS.md` 为准。全部设计是待审提案；不得开发 Phase 1–7 业务软件。不得将文件存在等同于阶段已验收。
 
+2026-10-20 用户另行授权建立空初始化main与Phase0设计PR，明确不代表Phase0验收。初始化main不是已发布设计基线；当前 `PHASE 1 STATUS = BLOCKED`。发布门禁见 `docs/BASELINE.md` 及来源 `AQRP_V3.2_BASELINE_GATE.md`。
+
 开始任务先读本文件及 docs 中的 PROJECT_CHARTER、ARCHITECTURE、INTERFACES、REQUIREMENTS、TRACEABILITY、ROADMAP、PROGRESS、DECISIONS，再检查实际 Git 状态和上一阶段批准记录。发现文档与代码冲突先报告，不覆盖既有修改。
 
 ## 权威及角色
@@ -31,6 +33,8 @@ Phase 0 可以准备待审设计和资料包；Gemini 预审前不得宣称正�
 ## 开发与证据
 
 分支：main 为已验收稳定版本；feature/phase-X-*、fix/*；audit/phase-X-* 仅经授权的独立测试。不得未经批准合并 main、发布标签或修改 Gemini 原报告。空仓库基线建立方式见 DECISIONS，不自动建立已验收稳定版本。
+
+Phase0须区分 AUDIT PASSED（Gemini建议通过）、ACCEPTED（用户明确批准）、RELEASED（获批内容已在main形成核实稳定版）。空main初始化是一次性授权例外，不算RELEASED。仅在Gemini证据、用户阶段批准及合并/发布授权齐全后更新main，创建 `phase0-baseline`，维护BASELINE/PROGRESS/CHANGELOG并核对标签与main目标一致；合并新SHA须核对范围及适用检查。不得强推/重写现有历史。Phase1需Phase0为RELEASED、标签/main/文件及证据可核实，并另获Phase1授权，必须从核实main创建独立分支。
 
 每项实现必须追溯 REQUIREMENTS 中的 ID；新范围列变更，不扩大阶段。关键金融计算须已知答案、边界、性质测试及独立参考核对。不能用待测函数生成期望值；不删失败测试、不迎合错误实现修改正确答案、不隐藏 CI 失败。
 

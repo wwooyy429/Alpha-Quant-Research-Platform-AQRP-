@@ -4,14 +4,16 @@
 
 - 当前授权：仅 Phase 0，需求审计与架构设计；V3.0/V3.1/V3.2合并。
 - 当前阶段状态：REVIEW REQUIRED（设计提案供Gemini预审）。
-- 当前稳定版本：无。尚未创建已批准main、发布标签或已验收业务版本。
+- 当前稳定版本：无。main已存在但只含授权的空初始化提交 `e87d0082a5e448e9550129a486ba965f13a155f8`；无已批准Phase0内容/稳定标签，不算RELEASED。
 - 上一阶段：无；Phase 0尚未获人工验收。
 - 功能实现：数据、Registry、研究、组合、风险、回测、网页全部Planned；高级研究Deferred；真实执行Unsupported。
 - 当前本地分支：feature/phase-0-v3.2-design；精确Git状态及同步结果见审查资料包/实际命令记录，不能据分支名推定固定SHA。
-- 仓库：用户提供的GitHub地址已克隆，初始为空。尚无稳定基线及PR，远端交付状态以证据为准。
+- 仓库：默认分支已设为main；Phase0设计草稿PR为 <https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1>，未合并。当前固定待审SHA以PR描述 `AQRP_FIXED_REVIEW_SHA` 为准，历史锚点不替代当前审查目标。
 - Gemini计划预审：NOT VERIFIED（未收到）。Gemini固定SHA审查：NOT VERIFIED（未发生）。
 - 开发方自查：只允许文档结构/追踪/依赖/案例算式核查，实际结果见 `audits/phase-0/SELF_CHECK.json`，不等同独立语义审核。
-- 人工验收/合并/发布/下一阶段授权：均未获得。
+- 用户仅授权空main初始化与创建Phase0设计PR，明确不是验收通过。Phase0正式验收、设计合并/发布及Phase1授权均未获得。
+- Phase0发布门禁：AUDIT PASSED=NOT VERIFIED；ACCEPTED=未批准；RELEASED=否；phase0-baseline标签=不存在。
+- **PHASE 1 STATUS = BLOCKED**。正式发布及核实main/标签之前不得从草稿分支启动P1，即使发布也仍需P1明确授权。
 
 ## 本次交付范围
 
@@ -19,4 +21,4 @@
 
 ## 继续工作的门槛
 
-先解决DECISIONS中的Gemini访问及空仓库PR基线，提交固定SHA可核实资料；Gemini完成计划/架构审查、关键待决事项/阻断项闭环后才具备Phase0人工验收申请条件。用户明确验收不自动授权Phase1；当前必须停止在Phase0。
+初始化main与PR前提已落实，仍需Gemini完成固定SHA计划/架构审查、关键待决事项/阻断项闭环及用户Phase0明确验收。随后仅凭合并/发布授权更新main、核实最终内容并建立phase0-baseline/BASELINE发布证据后才可标RELEASED；Phase1仍需单独授权。当前停止在Phase0。

@@ -5,7 +5,7 @@
 | Phase / 状态 | 范围、输入前提及允许文件 | 输出与适用验收 / 禁止越界 |
 |---|---|---|
 | 0 / REVIEW REQUIRED | V3.0–3.2；仅文档、来源、审计资料与文档核查工具 | 需求、架构、所有契约、Golden设计、专项审计及模板；不开发业务包/网页/引擎 |
-| 1 / PLANNED | P0人工批准+P1启动授权；数据契约和环境/profile决定；未来 src/aqrp/core,data 与 tests/data、CI/锁文件 | 骨架、精确依赖、DuckDB/Parquet、合成OHLCV、加载清洗/PIT/日历/标准答案、pytest/CI；不实现因子研究或撮合 |
+| 1 / BLOCKED | P0必须RELEASED：批准内容已在main，phase0-baseline与main目标一致，BASELINE及审计/批准记录可核实；另需P1启动授权；从核实main新建独立分支；未来 src/aqrp/core,data 与 tests/data、CI/锁文件 | 骨架、精确依赖、DuckDB/Parquet、合成OHLCV、加载清洗/PIT/日历/标准答案、pytest/CI；当前禁止启动，不能用P0草稿代正式基线 |
 | 2 / PLANNED | P1验收+P2授权；Data API可用；未来 factors 与 tests/factors | Factor API/Registry、元数据/参数/版本、Momentum/Reversal/Volume、注册/替换/回滚/major兼容；不要求研究/回测E2E |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
@@ -21,7 +21,7 @@
 2. **自测后**：固定 Commit SHA + PR + Review Package，Gemini 阅读该版本实际文档/代码及原始证据；P0 审设计，P1数据，P2插件，P3统计/OOS，P4组合/风险，P5时序/账本，P6界面一致性，P7全链/部署/比赛。
 3. **修复后**：新 SHA 映射缺陷，重跑受影响及回归测试；Gemini 对新 SHA 复核关键问题。不得沿用旧 SHA 的 PASS 覆盖新实现。
 4. **人工验收前**：证据齐全、适用测试及独立审查完成、阻断问题关闭才提交验收申请。尚缺 Gemini 时只能请求审查/决策，不申请正常通过。
-5. **人工批准后**：只执行已获授权的合并/版本标签，保存实际结果；即使阶段通过也停止，等待下一阶段单独授权。
+5. **人工批准后**：只执行已获授权的合并/版本标签，保存实际结果；Phase0需main稳定内容、phase0-baseline、BASELINE记录及最终SHA/范围核验后才能标RELEASED。即使已RELEASED也停止，等待下一阶段单独授权；审查建议通过或ACCEPTED本身不够启动P1。
 
 ## 功能级别
 

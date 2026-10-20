@@ -14,6 +14,8 @@
 
 阶段完成需范围内交付、适用测试、Gemini 固定 SHA 审查、阻断问题闭环、人工批准。合并、发布、下一阶段分别需明确授权。不可用口头 AI 共识替代证据，不可把同一模型另一会话当作独立正确性保证。
 
+用户补充Phase0 Main Baseline Release Gate：AUDIT PASSED、ACCEPTED、RELEASED分别记录；P0文档必须经授权在main形成可核实稳定内容并创建phase0-baseline标签，P1才具备前置条件且仍需单独启动授权。当前main仅为空初始化提交，PR#1待审，不构成发布。详见BASELINE。
+
 四级范围以 REQUIREMENTS 为准：MVP（最小可研究/模拟主链及质量治理）、Competition Ready（完整 V3.0 功能和已知比赛规则）、Advanced Research（公式/机器学习/自动挖掘）、Production Extensions（真实执行等另行授权）。分级不删除 V3.0 必须需求，也不改变 Phase 0–7 固定阶段。
 
 所有依赖未具备的测试仅 Planned。任何未实现能力标 Planned、Deferred 或 Unsupported。禁止模拟数据冒充真实市场接入或比赛认证。架构、接口、通过标准及未决问题见对应文档，均待 Gemini 与用户批准。

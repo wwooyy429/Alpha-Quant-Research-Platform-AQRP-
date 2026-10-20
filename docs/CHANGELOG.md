@@ -1,5 +1,12 @@
 # 变更记录
 
+## 2026-10-20 · main初始化与Phase0发布门禁（未发布）
+
+- 依据用户明确授权，创建空main初始化提交e87d0082a5e448e9550129a486ba965f13a155f8，保留既有开发历史；仅将该空提交接入开发分支以建立PR共同祖先，无强推、无设计合入main。
+- 设置默认分支main并创建Phase0草稿PR#1；最终待审SHA由PR描述固定，不使用漂移分支头或旧锚点代替。
+- 纳入Main Baseline Release Gate，新增BASELINE登记、发布前核验/phase0-baseline/main一致性规则。区分AUDIT PASSED、ACCEPTED、RELEASED；当前未审、未验收、未发布，P1 BLOCKED。
+- 未创建稳定标签、未合并设计、未执行Phase1业务开发；初始化授权不代表Phase0通过。
+
 ## 2026-10-20 · V3.2 Phase 0 待审设计（未发布）
 
 - 初始空仓库；保留V3.0原文，归档V3.1/V3.2来源，建立正式规范。

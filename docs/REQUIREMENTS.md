@@ -1,6 +1,6 @@
 # 正式需求清单 V3.2（待审）
 
-共 105 条编号需求，规范源表为 `requirements.csv`；本文件由同目录审计编制工具生成。每条均保留输入、输出、来源、优先级、模块、阶段、等级、依赖、验收、设计及未来代码/测试位置。
+共 106 条编号需求，规范源表为 `requirements.csv`；本文件由同目录审计编制工具生成。每条均保留输入、输出、来源、优先级、模块、阶段、等级、依赖、验收、设计及未来代码/测试位置。
 
 设计状态 DRAFT_PRESENT 只指设计已编写；能力状态 Planned/Deferred/Unsupported 均表示尚未实现。所有未来代码/测试路径是规划位置，不是现有文件。Phase 0 治理/设计实际文件由交付清单核实，执行强制控制仍未实施。
 
@@ -78,6 +78,14 @@
 - 输入：审查发现。输出：缺陷闭环及阻断判断。依赖：GOV-008。
 - 验收：Critical/High未关闭禁止正常通过，Medium按金融安全判断。
 - 设计：[契约/方案](ACCEPTANCE.md)；拟代码：`docs/ACCEPTANCE.md`；拟测试：`docs/audits/phase-0/`。
+- 能力状态：Planned；设计状态：DRAFT_PRESENT；实际实现/测试证据：尚无（P0文档证据另见审查包）。
+
+## GOV-010 · Phase0审计建议/用户验收/main稳定发布分离，核对main默认分支历史/实际提交/审查SHA/批准/文件/标签并维护BASELINE；Phase1发布门禁
+
+- 来源：V3.2-Baseline§1;V3.2-Baseline§2;V3.2-Baseline§3;V3.2-Baseline§4;V3.2-Baseline§5;V3.2-Baseline§6；等级：MVP；阶段：0；优先级：P0；模块：governance。
+- 输入：Gemini原证据/用户批准及发布授权/批准内容SHA。输出：main稳定版/phase0-baseline/BASELINE发布登记或明确BLOCKED。依赖：GOV-005;GOV-006;GOV-008。
+- 验收：未正式批准不得合并发布或打稳定标签；最终main与标签一致、清单核实、合并新SHA复查；P1只从核实main独立分支且需P0 RELEASED及单独授权。
+- 设计：[契约/方案](BASELINE.md)；拟代码：`docs/BASELINE.md`；拟测试：`docs/audits/phase-0/`。
 - 能力状态：Planned；设计状态：DRAFT_PRESENT；实际实现/测试证据：尚无（P0文档证据另见审查包）。
 
 ## ARCH-001 · 固定PythonCore/Streamlit/Registry/独立回测，13模块明确边界和依赖图

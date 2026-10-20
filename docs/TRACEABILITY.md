@@ -13,6 +13,7 @@
 | GOV-007 | V3.0§21;V3.2§2 | MVP / 0 | GOV-002 | [PROJECT_CHARTER.md](PROJECT_CHARTER.md) | `docs/PROJECT_CHARTER.md` / `docs/audits/phase-0/` | Planned，设计待审 |
 | GOV-008 | V3.0§16;V3.2§1;V3.2§4;V3.2§5;V3.2§7 | MVP / 0 | GOV-004 | [ACCEPTANCE.md](ACCEPTANCE.md) | `docs/ACCEPTANCE.md` / `docs/audits/phase-0/` | Planned，设计待审 |
 | GOV-009 | V3.0§16;V3.0§20;V3.2§4.6;V3.2§6;V3.2§8 | MVP / 0 | GOV-008 | [ACCEPTANCE.md](ACCEPTANCE.md) | `docs/ACCEPTANCE.md` / `docs/audits/phase-0/` | Planned，设计待审 |
+| GOV-010 | V3.2-Baseline§1;V3.2-Baseline§2;V3.2-Baseline§3;V3.2-Baseline§4;V3.2-Baseline§5;V3.2-Baseline§6 | MVP / 0 | GOV-005;GOV-006;GOV-008 | [BASELINE.md](BASELINE.md) | `docs/BASELINE.md` / `docs/audits/phase-0/` | Planned，设计待审 |
 | ARCH-001 | V3.0§2.1;V3.0§2.3;V3.0§9 | MVP / 0 | GOV-001 | [ARCHITECTURE.md](ARCHITECTURE.md) | `docs/ARCHITECTURE.md` / `docs/audits/phase-0/` | Planned，设计待审 |
 | ARCH-002 | V3.0§2.2 | MVP / 0 | ARCH-001 | [ARCHITECTURE.md](ARCHITECTURE.md) | `docs/ARCHITECTURE.md` / `docs/audits/phase-0/` | Planned，设计待审 |
 | ARCH-003 | V3.0§2.4;V3.1§2;V3.1§3 | MVP / 0 | ARCH-001 | [INTERFACES.md](INTERFACES.md) | `docs/INTERFACES.md` / `docs/audits/phase-0/` | Planned，设计待审 |
@@ -198,6 +199,12 @@
 | V3.1§6 | QA-001, QA-002, QA-004 |
 | V3.1§7 | DATA-007, FACTOR-012, EXP-001, EXP-004, ENV-001, SEC-001, SEC-002, SEC-003 |
 | V3.1§8 | GOV-003, QA-005 |
+| V3.2-Baseline§1 | GOV-010 |
+| V3.2-Baseline§2 | GOV-010 |
+| V3.2-Baseline§3 | GOV-010 |
+| V3.2-Baseline§4 | GOV-010 |
+| V3.2-Baseline§5 | GOV-010 |
+| V3.2-Baseline§6 | GOV-010 |
 | V3.2§1 | GOV-008, SEC-004, QA-004 |
 | V3.2§2 | GOV-002, GOV-007 |
 | V3.2§3 | GOV-006, SEC-001, SEC-002, SEC-004 |

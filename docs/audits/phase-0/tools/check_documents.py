@@ -85,12 +85,18 @@ def main():
             if not any(s == token or s.startswith(token + '.') for s in source_tokens):
                 uncovered.append(token)
         source_stats[version] = len(sections)
+    gate = (ROOT/'docs/sources/AQRP_V3.2_BASELINE_GATE.md').read_text(encoding='utf-8')
+    gate_sections = re.findall(r'^##\s+(\d+)\.\s', gate, re.M)
+    for section in gate_sections:
+        if f'V3.2-Baseline§{section}' not in source_tokens:
+            uncovered.append(f'V3.2-Baseline§{section}')
+    source_stats['3.2-Baseline'] = len(gate_sections)
     check('numbered_source_sections_mapped_structurally', not uncovered, {'counts': source_stats, 'unmapped': uncovered,
           'limitation': '节存在映射不证明逐句语义完整，需Gemini审查。'})
     required = ['AGENTS.md','README.md'] + ['docs/'+n+'.md' for n in [
         'PROJECT_CHARTER','REQUIREMENTS','ARCHITECTURE','INTERFACES','ACCEPTANCE','TRACEABILITY',
         'ROADMAP','DECISIONS','PROGRESS','TESTING','CHANGELOG','DATA_CONTRACT','BACKTEST_CONTRACT',
-        'RESEARCH_PROTOCOL','GOLDEN_DATASET','ENVIRONMENT_AND_SECURITY']]
+        'RESEARCH_PROTOCOL','GOLDEN_DATASET','ENVIRONMENT_AND_SECURITY','BASELINE']]
     required += ['docs/audits/templates/'+n+'.md' for n in ['DUAL_AI_AUDIT_REPORT','REVIEW_PACKAGE','PHASE_ACCEPTANCE_REPORT']]
     required += ['tests/'+n+'/README.md' for n in ['golden','integration','e2e']]
     check('required_deliverables_exist', all((ROOT/p).is_file() for p in required), required)

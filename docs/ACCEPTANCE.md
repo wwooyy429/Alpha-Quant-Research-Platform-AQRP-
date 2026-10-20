@@ -6,6 +6,8 @@
 
 阶段状态：PLANNED、IN PROGRESS、TESTING、REVIEW REQUIRED、BLOCKED、ACCEPTED、RELEASED、NOT VERIFIED；ACCEPTED 只凭用户明确阶段验收记录，RELEASED 还需实际合并/标签。能力状态单列 Planned/Deferred/Unsupported/Implemented，不能与文档存在或阶段状态混同。
 
+Phase0另单列 `AUDIT PASSED` 审计里程碑，仅表示Gemini建议通过，不替代ACCEPTED。RELEASED要求获批文档实际在main、完整SHA/批准/审计/清单可核对，且 `phase0-baseline` 标签与发布时main目标一致。空初始化main不算Phase0稳定基线。门禁及当前事实见BASELINE；P0未RELEASED或不可验证时 `PHASE 1 STATUS = BLOCKED`。
+
 开发方报告结论 PASS / PASS WITH CONDITIONS / BLOCKED / NOT VERIFIED；Gemini 报告另允许 FAIL。PASS 仅对所审 SHA 与适用范围有效，不等于用户批准。CI 通过、Gemini 通过、用户批准分别记录。未运行、未见证据、模板字段为空均不得写 PASS。
 
 ## 强制门禁
@@ -22,7 +24,7 @@ G4：Critical/High 全关闭；Medium 按金融正确性/风险/安全/标准判
 
 G5：满足上述条件才可提交用户人工验收。批准记录含用户原意证据、Phase、完整 SHA、批准范围、条件、时间；“继续”“不错”不构成明确批准。
 
-G6：按另行授权合并 main、创建实际标签并保存日志，更新 PROGRESS/CHANGELOG/TRACEABILITY；任何失败不报已发布。下一阶段需新的明确授权。
+G6：按另行授权合并 main、创建实际标签并保存日志，更新 PROGRESS/CHANGELOG/TRACEABILITY；P0还必须维护BASELINE，创建phase0-baseline，核对main与标签指向同一发布SHA及批准文件清单/版本/审计/用户批准。合并产生新SHA时检查最终差异未超批准范围、重新执行受影响检查；有内容变化须Gemini按新SHA复核。任何失败不报已发布。P1仅可从核实main基线新建独立分支，且必须P0已RELEASED并有新的明确启动授权。
 
 ## 各阶段适用标准
 
