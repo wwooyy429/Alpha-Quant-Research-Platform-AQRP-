@@ -1,0 +1,49 @@
+{
+  "developer_not_gemini": true,
+  "source_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\aqrp-53420e8f-81ac-4b40-a547-54938a899c74\\venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/golden",
+        "--collect-only",
+        "-q",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\audit-response-a8cc1259-74e2-43ab-b82a-37dfef596c28\\pytest-cache"
+      ],
+      "output": "golden-directory-collection.log",
+      "exit_code": 5,
+      "expected_exit_code": 5,
+      "as_expected": true
+    },
+    {
+      "command": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\aqrp-53420e8f-81ac-4b40-a547-54938a899c74\\venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\audit-response-a8cc1259-74e2-43ab-b82a-37dfef596c28\\pytest-cache",
+        "--basetemp=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\audit-response-a8cc1259-74e2-43ab-b82a-37dfef596c28\\tmp",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\audit-response-a8cc1259-74e2-43ab-b82a-37dfef596c28\\junit.xml"
+      ],
+      "output": "tests.log",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "as_expected": true
+    },
+    {
+      "command": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\aqrp-53420e8f-81ac-4b40-a547-54938a899c74\\venv\\Scripts\\python.exe",
+        "tools/independent_reference.py"
+      ],
+      "output": "reference.log",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "as_expected": true
+    }
+  ],
+  "purpose": "Corroborate implementation and identify report command/path/arithmetic errors; does not reproduce Gemini sandbox"
+}
