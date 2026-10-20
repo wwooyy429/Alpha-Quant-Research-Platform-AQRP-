@@ -5,129 +5,498 @@
   "target_checkout": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
   "reason": "Repeated cloud sync index lock/write failures; deletion rejected by automatic policy; no force or history rewrite",
   "method": "Clone existing authorized feature branch, copy each tracked/nonignored project file and verify bytes before committing",
-  "copied_files": {
-    ".gitattributes": "0adb722fe134c54002e90058f8ebbef5f87fd6674be840dd774201b618d2a57d",
-    ".github/workflows/ci.yml": "1d956606907199042fd77e2bc4daed02b42af79533fd135950f18ed4a7261dff",
-    ".gitignore": "4514295f314cfd68e5d876b22aeaa9f402d9a4767f57e5c8a0da791fe8638802",
-    ".python-version": "2d82946ffb2ecf549699ebb86ecbbe663bbc19d53c49c681a1a425f003f80ddb",
-    "AGENTS.md": "7b28881bd621a08bc24ea8e6c41e5b56db9694f7a479c892b78df574818264ca",
-    "README.md": "e94f37284e36347576609d5376be92b11fd00814befd19ec79c06601129447c2",
-    "docs/ACCEPTANCE.md": "8cefde80b16fd72c8e06a2c32541ab3daded478ce59630b18bc43e268103f3d5",
-    "docs/ARCHITECTURE.md": "2965b9380778c2802aee5961e662cc49e977f6c95e79b93d244844cd05fe29c5",
-    "docs/BACKTEST_CONTRACT.md": "0397adb64808d6387564d57fdfc815a49f1eef5fac9730120c4d0648389ea81f",
-    "docs/BASELINE.md": "78506b66c9ac9a3d49893a0a2ef5c6b07ece2ae0b3c196af32fd1f66eb5121e4",
-    "docs/CHANGELOG.md": "da11c420fa4694d7c9c8df6322ccfc7c23b5a3dc72b1f376c8f80f09500cdcaa",
-    "docs/DATA_CONTRACT.md": "34c13329ab011101da7f62ae1973d8afa614a948145a8df43a34684abacc3597",
-    "docs/DECISIONS.md": "7fb2a905cd4fc84c1c2833d3bf3b72279bbaeaf55d8a48dad03d8f8fd2300611",
-    "docs/ENVIRONMENT_AND_SECURITY.md": "5c3d292045d9a5c940074e64358ca6de9d9d8d1752c686e71602783e4c8dcf0f",
-    "docs/GOLDEN_DATASET.md": "c46151552686af4158ea43a14b2cea5e1e390d6efffda8c873d0d3bcbcef2d0e",
-    "docs/INTERFACES.md": "d649b9c16e075bf8b69f202709d0c386bdb0c2fbb8f6c2d289b1de664594395d",
-    "docs/PROGRESS.md": "554c0086c19a1657b24204efc91887d2d6d3c7f8f9a5c9d7f3d0cb92890bdf75",
-    "docs/PROJECT_CHARTER.md": "068f6d453307dc02985f7969dd14a9de9bd63b0599e8314c013446598b96a9e6",
-    "docs/REQUIREMENTS.md": "ade965cb2c938d8568a42f16603352e504fea8cac8379b1fec76196ca11ca207",
-    "docs/RESEARCH_PROTOCOL.md": "268a4a3f23354a6f5c8e6771a5e05e059c88ed9a7ff22020218d36ed50f22a26",
-    "docs/ROADMAP.md": "95cd3e91913a7f17bc88b2585cecfa651de5cff598d39f6cd49bf56fe90b13d8",
-    "docs/TESTING.md": "3f87679a14b1e58c7a2ce64496758644f7e043cf84adf39f653af3b3153be8cb",
-    "docs/TRACEABILITY.md": "9058563d9a6646ba46dae3354dbbffc791e4890ddc9c98c22d8f7c1759333639",
-    "docs/audits/phase-0/ARCHITECTURE_REVIEW.md": "52b7d6659c7a2517ec851a1887ebec01588b858337c71fe8f01b7d8a47169d34",
-    "docs/audits/phase-0/CHANGE_IMPACT.md": "f0118a1f93f59390d8f846de40f7212a76b298cc7be1ccd194093d5fb69e5dc2",
-    "docs/audits/phase-0/COMMAND_LOG.txt": "e61fee4a4cc237ebbf57c31fcc57d6c4ca1b0b1f1e060edbcdbf2b6715dfcc38",
-    "docs/audits/phase-0/COVERAGE_AUDIT.md": "b82409d7576d9f4993795b45b493ab82957d543f36bb9243ec127fa24d40dcc3",
-    "docs/audits/phase-0/DELIVERY_REPORT.md": "713bef339ef9b027a5d8780620c702c170eda69633b92fc6b42ef69719fb7d5f",
-    "docs/audits/phase-0/GITHUB_GATE_OBSERVATION.json": "9a7e28ef0c8d2326f7bc6656ea2b61468d9a2af6e3c0983cec9e5ccfc3f79975",
-    "docs/audits/phase-0/MANIFEST.json": "47bbe15990fa6ce62d6b3409989c862a2706e45687496bcec837f3ea56225511",
-    "docs/audits/phase-0/PLAN.md": "9be26ecda5b6470b39a4e4f59cc6d040816b03da22cc94fcb4a16ca8250045ed",
-    "docs/audits/phase-0/RELEASE_GATE_AUDIT.json": "806a0e7f069c3871d9a4014f2e657fc2b1fadb32671d95f50fd47a78bd4d3e23",
-    "docs/audits/phase-0/REVIEW_ANCHOR.json": "9405393f92e6ccd3423e32491f530aa080bcbf376dd37735938b8c9cb894f5ef",
-    "docs/audits/phase-0/REVIEW_PACKAGE.md": "8c81b1fd0cc4a6e4c8a02e90c5c35e3bb2729a054aa28702c0c9717a549730bb",
-    "docs/audits/phase-0/SELF_CHECK.json": "a9eaedac8f3e7ecaf890a4a0a6686a823d31315d5404e28986c37a2cefd7f701",
-    "docs/audits/phase-0/SELF_REVIEW_NOTES.md": "fb7afabfa8a6714c6f11b120607125a8136dfd7ae05b02f928550dde46a91710",
-    "docs/audits/phase-0/SPECIAL_AUDITS.md": "384dc425dcfdcbcadb47794ced46e3d5dcae7b25f6db97c1f89ac9e8c5032254",
-    "docs/audits/phase-0/gemini/BUSINESS_TAXONOMY_CORRECTION_SUBMITTED.md": "4d1cfa8911cdc876db7d84f0cf6a858f533e5e34a796d025a158bd8c243e9f92",
-    "docs/audits/phase-0/gemini/DEVELOPER_RESPONSE.md": "36ecf274a4c47fbae3c2a559be1727019bdcb7a644a1c879b4cb57644f2b1442",
-    "docs/audits/phase-0/gemini/EVIDENCE_INDEX.json": "20f0a2fe336d0012a0c7d01025fe5ada54250369c4e8e861aa7b4abe9d5477ca",
-    "docs/audits/phase-0/gemini/FINAL_EVIDENCE_INDEX.json": "8a1f5ded17c977a704ffb89ea279f5d70c32a036a614f6f4cddc0184cbbfba98",
-    "docs/audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json": "ae035760a825c975fe759e6e81fffaf14dea6b9919420ff309c62c37132f9ad4",
-    "docs/audits/phase-0/gemini/FINAL_RECONCILIATION.md": "ef502bdc5c26c0b585450bd03dee34e1c2a9e7de7961a9a0aacc0533a7dcd729",
-    "docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json": "59d6b8926ef7dbbad041ef36e237bf6eeabea8e1cd079a6e451dc2620bf6e591",
-    "docs/audits/phase-0/gemini/INCREMENTAL_EVIDENCE_INDEX.json": "de7595b1f69ea4dae684785740b3d77e9b7a4cc3b64726f8dcf021d466e41447",
-    "docs/audits/phase-0/gemini/INCREMENTAL_RECONCILIATION.md": "b03b96a750258b83605922b1e010ee81f4a55099773b7d8ff6796ff44c13c001",
-    "docs/audits/phase-0/gemini/REQUIREMENTS_TAXONOMY_VERIFICATION.md": "6b9e270ffac18354c557c32cdea8c16e3e7a88182ce354ee4678963d9084fafc",
-    "docs/audits/phase-0/gemini/REV2_EVIDENCE_INDEX.json": "d4c715126ca07f0a22697562f3726e67bbc564b9a566c7de175d5f7a07f72150",
-    "docs/audits/phase-0/gemini/REV2_RECONCILIATION.md": "87066fc005df3ed3111dc205cfafb5b6fbbc2435919f7171df5ab19b25ffcf57",
-    "docs/audits/phase-0/gemini/aqrp_phase0_audit_report.md": "8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662",
-    "docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md": "aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1",
-    "docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md": "1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc",
-    "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md": "57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140",
-    "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md": "e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b",
-    "docs/audits/phase-0/gemini/aqrp_phase0_requirements_taxonomy_errata.md": "c05416efe31b205dc8e567800f2cedae5cc04498959fac542c85938f63c272a0",
-    "docs/audits/phase-0/history/INITIAL_REVIEW_ANCHOR.json": "0c39516cb6010cbea172b3dd78363e2a81935984f30bdde1a0e08c928b8a0c78",
-    "docs/audits/phase-0/publication/APPROVAL.json": "8cf97cbb8a07acf4cca8a051b6fdbc61fd48903c265420747dd43c67f2715fea",
-    "docs/audits/phase-0/publication/MERGED_MAIN_COMMAND_LOG.txt": "4e6d200c33c98ca3467e7316a97e9e92c7e8292702d695f8c0dd8d9b7c77769d",
-    "docs/audits/phase-0/publication/MERGED_MAIN_SELF_CHECK.json": "40bada871201e45a38a9d516379291115c8d8c94a26871df39422d384b960509",
-    "docs/audits/phase-0/publication/MERGE_VERIFICATION.json": "8a9b64cb36630c98048e25bf842054f5f512cd5005bbd91d1f6ed849c0e53e3a",
-    "docs/audits/phase-0/tools/build_catalog.py": "e85d5712bf7f9bf40e6a6897ac5cbb428cdcd77eaa7344cf3b9408fe3f5e7c74",
-    "docs/audits/phase-0/tools/check_documents.py": "3ffbc5166e8a5c736d3bdb3354d107d757e293fa757e196036a65159cdb066d1",
-    "docs/audits/phase-1/AUTHORIZATION.json": "7944b349536b5377283c0491d887404f51d97c237384009b85319ab200d11480",
-    "docs/audits/phase-1/COMMAND_LOG.txt": "05e9a14e8a0d7c2f486fec8098498a2b1aaab5e3fac90d15f4138dbbc0813a42",
-    "docs/audits/phase-1/DATA_IMPLEMENTATION_SPEC.md": "6ca8faad3e519db906c2f9fe2f61b00d0888339b1644fe38af664b92b8ee7c41",
-    "docs/audits/phase-1/DEPENDENCY_CANDIDATES.json": "b11c7cc658b7c72c0af0f4c6089827fa48c976e87aee14e2df0146d014cdf806",
-    "docs/audits/phase-1/DEVELOPER_RESPONSE.md": "e2769baf4460ed9df2e108411ab51d436cd78de19a8612a9b0b8b83b1e0a4113",
-    "docs/audits/phase-1/ENVIRONMENT_PLAN.md": "d27934f53557585f8b9bd7bdd034d5e3524a3f37b6e6616aff4be0fb504e6a7b",
-    "docs/audits/phase-1/GOLDEN_REFERENCE.md": "40954c47b87707a2098d5be24660e82faf61e2c67d48a7e28425c5eff6d2724c",
-    "docs/audits/phase-1/MANIFEST.json": "08554a7659376381121471414a54566f448b59c8c873d0dbd296611f5a3c5a72",
-    "docs/audits/phase-1/PLAN.md": "fc3193a1df546d23d80b15e399fe339f121534813649fa18e80f01506cf785c5",
-    "docs/audits/phase-1/PRE_REVIEW_PACKAGE.md": "2e530ef354509acec5803f41b73e1c6c73c103951a62e6539427beca5d1f88dd",
-    "docs/audits/phase-1/SELF_CHECK.json": "2cf25607c4c744daf28d1c7a2134ee94475855feac5baf2ab09f3c59293ebee0",
-    "docs/audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json": "9b8d4c548050f658572989d202c5a019eafe672d5e119de9b36a878788260583",
-    "docs/audits/phase-1/gemini/aqrp_phase1_plan_pre_review_report.md": "109ec7c92a3e5fd5329d1380abbf381a570bf2690d8f1536a478b96da54f2809",
-    "docs/audits/templates/DUAL_AI_AUDIT_REPORT.md": "234b3e95ec736c75c36b4253b185b541ecd08ee2c246150348814332e7c06f77",
-    "docs/audits/templates/PHASE_ACCEPTANCE_REPORT.md": "ed649d201571433b7a689cfe8aa0cf9d77e060fe5fe1b005bf45e4518def42f0",
-    "docs/audits/templates/REVIEW_PACKAGE.md": "e1add72f441b3bff4e81c2e556ded7db531bca5139a66a3919f3f46ac16cddd8",
-    "docs/requirements.csv": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1",
-    "docs/sources/AQRP_V3.0.md": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc",
-    "docs/sources/AQRP_V3.1.md": "18facd65a1344d7d74b8004d7d90e5e96b77fb841e1fb298c16a8c869be91855",
-    "docs/sources/AQRP_V3.2.md": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5",
-    "docs/sources/AQRP_V3.2_BASELINE_GATE.md": "b281bbe5dc5514021788e28a2ef207adfd025cc6ce65cd7fbc4e6755c08332b1",
-    "docs/sources/README.md": "422c78ea77b6dc9a1e22812baba10e1afb48f96467a93ea91e08efb39e6adcaf",
-    "pyproject.toml": "3a9c846b367b9013d5098f7717d8ac949b4b3fff68a5f3a8573c4e8d7e41145e",
-    "requirements.lock": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
-    "src/aqrp/__init__.py": "8d250a308119d1abe2c1fbe1b3a99b418f2873824636e44dc0cf0666891c7e0a",
-    "src/aqrp/core/__init__.py": "cfe70a553490b59514d6d98929fe0b0ac04368394b9bdfc33d7e7049a6c26448",
-    "src/aqrp/core/canonical.py": "1bd6ada40737205058f9641fe2649761aa878a8744d6233af60d651c41f1da30",
-    "src/aqrp/core/contracts.py": "51a89980e72ae18db2a8621650b791075cf46bb1e8fc60b13b444ad852edff7d",
-    "src/aqrp/core/errors.py": "c5c72b128a89cbe3c58b4b85cc35d4d50e43989667ffe97f6dfba1d2dc37f6a9",
-    "src/aqrp/core/math.py": "027fd74593444277a1fed83928d5a3002240ea29a2ecf8445b350de64c5668c2",
-    "src/aqrp/core/time.py": "e588ec0ecb2b0561e33e1484f4043a598a4d47e49d0ad3452a0e68781e61b8fe",
-    "src/aqrp/core/units.py": "5226e0a590353c9d27d42199a44b2b59f79a069c8a324e20feb27fd63f38e98a",
-    "src/aqrp/data/__init__.py": "ae6a6a312cabe10abbd61c98a099b73ab7737768aa5b8216d2676b8c3fc10955",
-    "src/aqrp/data/actions.py": "0dd59968eeb3ecc150656b745ad699176af347c5a564c7d2465f2fbbffdabe9d",
-    "src/aqrp/data/pit.py": "ad1cf99d11532e54ac99fd32a206efc2c1adf0a0f6b8100130a157c628a27e37",
-    "src/aqrp/data/quality.py": "23ad6735504e4ea84e18b616a54cdaf4b7444b28f9ade7124ad8e81c9ee2e542",
-    "src/aqrp/data/query.py": "b4c385568f47c3bd138764cca7bc43f0fb7ea271edf40070b1a756cf3928179f",
-    "src/aqrp/data/schemas.py": "6565845912a46b5f0ee390b1f213ed86150e2a144ae9ba38e3a61dd2469183fc",
-    "src/aqrp/data/snapshot.py": "d8fe10741718146046f1bfb0ea81fe7deb334666353252b769a8b10f3a2a71aa",
-    "src/aqrp/data/store.py": "b26b244289ba3d82d8b96a3bcb79eb6b603e3e11c9d36f3476a9c397e5be67ac",
-    "src/aqrp/data/synthetic.py": "4557605a9535b4e9a132fd8164302e056219ef5236d67054f6217cbd30630fd3",
-    "tests/conftest.py": "ca9d7967c6db8a9024f9997300cf451389faa21180d14ba8ea299b8587b00e4f",
-    "tests/data/test_pit_query.py": "1463b181152e6737f8ffb5d9a058c046ad657be854158ce78240250e168a6180",
-    "tests/data/test_quality.py": "a9dbf70f206a3d92bc7682f5769ab9e55f37c486d32e3c1f555d79e5b8c9685d",
-    "tests/data/test_revision_integrity.py": "4ecdbb89cb6c1136fcbb8833f8e1ed9292991e5907258a92ea816d334a9d38c2",
-    "tests/data/test_snapshot_actions.py": "0cc5f84fd607d79f4ecf4eb0b46ebaf86e47111f6ef11b61dbbdb2d8dadfccb7",
-    "tests/data/test_time_units.py": "fb8e2bed60bc1c0fdf3b99a6d0d9271b58a5ca9a62dfcfb6c5bca0c80ae383e8",
-    "tests/e2e/README.md": "81cd5afffcfa077e13687b990f13f6b092c44750991e4c70a2886ca86908f7ed",
-    "tests/environment/test_installation.py": "24f79b8fdfaa13440c663f107caddbd6e00f3c1b12a293dacef27da02d165add",
-    "tests/golden/README.md": "2e16bb2ce35c0ffa71b159a4d3e7ae0b37aba8b7192830fbef7a884a282b024e",
-    "tests/golden/phase1_answers.json": "c6fecc6d2bc281f91eb8f235ba1be747f282c9302c3e6819b33e621a70b3ec5d",
-    "tests/golden/phase1_answers_manifest.json": "d85031e8be0a1390dd187a604659f93bfa2548c1b957278bda339a17e33077f7",
-    "tests/golden/phase1_input.json": "a89f52800db6d8abd004764edc2586ac3d609c21e9ef009f510120cfd9d65bfb",
-    "tests/golden/phase1_input_manifest.json": "8285bba1f48671f3a7fba9b5b180d6aebe1233190590bff1969d34589e250776",
-    "tests/integration/README.md": "7987b516f3500b0bae34069739aa2f5059b702b67587cb52c4ac38947dba1e98",
-    "tests/integration/test_phase1_pipeline.py": "17de5c64b073de5ebbe2a8e2c7fe2cab8c53241751267629ae7550555ef8c961",
-    "tools/check_coverage.py": "3de5109faeaa33af86313df8f9aa85cccf0db0ba80e116a2556a39ca61005d4c",
-    "tools/ci.py": "6daac370862c1d6599e41b6b5ed700bfd27f0672aeee76b9f270d6e222a6d6e4",
-    "tools/data_smoke.py": "7318c0ec0877f805a59142f45e72fa10c0db066cf309e3604b8fbd1f1762cf73",
-    "tools/independent_reference.py": "d99dd3eb32e5657ea528db1cde19acdddf6bc9feaeb982a105372e7658911d86",
-    "tools/secret_scan.py": "bbe9f4c68a3ab43ea27326ae517d33c7b7a61890fd12bae12ebd97b0543fb700"
-  }
+  "copied_files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "0adb722fe134c54002e90058f8ebbef5f87fd6674be840dd774201b618d2a57d"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "1d956606907199042fd77e2bc4daed02b42af79533fd135950f18ed4a7261dff"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "4514295f314cfd68e5d876b22aeaa9f402d9a4767f57e5c8a0da791fe8638802"
+    },
+    {
+      "path": ".python-version",
+      "sha256": "2d82946ffb2ecf549699ebb86ecbbe663bbc19d53c49c681a1a425f003f80ddb"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "7b28881bd621a08bc24ea8e6c41e5b56db9694f7a479c892b78df574818264ca"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e94f37284e36347576609d5376be92b11fd00814befd19ec79c06601129447c2"
+    },
+    {
+      "path": "docs/ACCEPTANCE.md",
+      "sha256": "8cefde80b16fd72c8e06a2c32541ab3daded478ce59630b18bc43e268103f3d5"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "2965b9380778c2802aee5961e662cc49e977f6c95e79b93d244844cd05fe29c5"
+    },
+    {
+      "path": "docs/BACKTEST_CONTRACT.md",
+      "sha256": "0397adb64808d6387564d57fdfc815a49f1eef5fac9730120c4d0648389ea81f"
+    },
+    {
+      "path": "docs/BASELINE.md",
+      "sha256": "78506b66c9ac9a3d49893a0a2ef5c6b07ece2ae0b3c196af32fd1f66eb5121e4"
+    },
+    {
+      "path": "docs/CHANGELOG.md",
+      "sha256": "da11c420fa4694d7c9c8df6322ccfc7c23b5a3dc72b1f376c8f80f09500cdcaa"
+    },
+    {
+      "path": "docs/DATA_CONTRACT.md",
+      "sha256": "34c13329ab011101da7f62ae1973d8afa614a948145a8df43a34684abacc3597"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "sha256": "7fb2a905cd4fc84c1c2833d3bf3b72279bbaeaf55d8a48dad03d8f8fd2300611"
+    },
+    {
+      "path": "docs/ENVIRONMENT_AND_SECURITY.md",
+      "sha256": "5c3d292045d9a5c940074e64358ca6de9d9d8d1752c686e71602783e4c8dcf0f"
+    },
+    {
+      "path": "docs/GOLDEN_DATASET.md",
+      "sha256": "c46151552686af4158ea43a14b2cea5e1e390d6efffda8c873d0d3bcbcef2d0e"
+    },
+    {
+      "path": "docs/INTERFACES.md",
+      "sha256": "d649b9c16e075bf8b69f202709d0c386bdb0c2fbb8f6c2d289b1de664594395d"
+    },
+    {
+      "path": "docs/PROGRESS.md",
+      "sha256": "554c0086c19a1657b24204efc91887d2d6d3c7f8f9a5c9d7f3d0cb92890bdf75"
+    },
+    {
+      "path": "docs/PROJECT_CHARTER.md",
+      "sha256": "068f6d453307dc02985f7969dd14a9de9bd63b0599e8314c013446598b96a9e6"
+    },
+    {
+      "path": "docs/REQUIREMENTS.md",
+      "sha256": "ade965cb2c938d8568a42f16603352e504fea8cac8379b1fec76196ca11ca207"
+    },
+    {
+      "path": "docs/RESEARCH_PROTOCOL.md",
+      "sha256": "268a4a3f23354a6f5c8e6771a5e05e059c88ed9a7ff22020218d36ed50f22a26"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "sha256": "95cd3e91913a7f17bc88b2585cecfa651de5cff598d39f6cd49bf56fe90b13d8"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "sha256": "3f87679a14b1e58c7a2ce64496758644f7e043cf84adf39f653af3b3153be8cb"
+    },
+    {
+      "path": "docs/TRACEABILITY.md",
+      "sha256": "9058563d9a6646ba46dae3354dbbffc791e4890ddc9c98c22d8f7c1759333639"
+    },
+    {
+      "path": "docs/audits/phase-0/ARCHITECTURE_REVIEW.md",
+      "sha256": "52b7d6659c7a2517ec851a1887ebec01588b858337c71fe8f01b7d8a47169d34"
+    },
+    {
+      "path": "docs/audits/phase-0/CHANGE_IMPACT.md",
+      "sha256": "f0118a1f93f59390d8f846de40f7212a76b298cc7be1ccd194093d5fb69e5dc2"
+    },
+    {
+      "path": "docs/audits/phase-0/COMMAND_LOG.txt",
+      "sha256": "e61fee4a4cc237ebbf57c31fcc57d6c4ca1b0b1f1e060edbcdbf2b6715dfcc38"
+    },
+    {
+      "path": "docs/audits/phase-0/COVERAGE_AUDIT.md",
+      "sha256": "b82409d7576d9f4993795b45b493ab82957d543f36bb9243ec127fa24d40dcc3"
+    },
+    {
+      "path": "docs/audits/phase-0/DELIVERY_REPORT.md",
+      "sha256": "713bef339ef9b027a5d8780620c702c170eda69633b92fc6b42ef69719fb7d5f"
+    },
+    {
+      "path": "docs/audits/phase-0/GITHUB_GATE_OBSERVATION.json",
+      "sha256": "9a7e28ef0c8d2326f7bc6656ea2b61468d9a2af6e3c0983cec9e5ccfc3f79975"
+    },
+    {
+      "path": "docs/audits/phase-0/MANIFEST.json",
+      "sha256": "47bbe15990fa6ce62d6b3409989c862a2706e45687496bcec837f3ea56225511"
+    },
+    {
+      "path": "docs/audits/phase-0/PLAN.md",
+      "sha256": "9be26ecda5b6470b39a4e4f59cc6d040816b03da22cc94fcb4a16ca8250045ed"
+    },
+    {
+      "path": "docs/audits/phase-0/RELEASE_GATE_AUDIT.json",
+      "sha256": "806a0e7f069c3871d9a4014f2e657fc2b1fadb32671d95f50fd47a78bd4d3e23"
+    },
+    {
+      "path": "docs/audits/phase-0/REVIEW_ANCHOR.json",
+      "sha256": "9405393f92e6ccd3423e32491f530aa080bcbf376dd37735938b8c9cb894f5ef"
+    },
+    {
+      "path": "docs/audits/phase-0/REVIEW_PACKAGE.md",
+      "sha256": "8c81b1fd0cc4a6e4c8a02e90c5c35e3bb2729a054aa28702c0c9717a549730bb"
+    },
+    {
+      "path": "docs/audits/phase-0/SELF_CHECK.json",
+      "sha256": "a9eaedac8f3e7ecaf890a4a0a6686a823d31315d5404e28986c37a2cefd7f701"
+    },
+    {
+      "path": "docs/audits/phase-0/SELF_REVIEW_NOTES.md",
+      "sha256": "fb7afabfa8a6714c6f11b120607125a8136dfd7ae05b02f928550dde46a91710"
+    },
+    {
+      "path": "docs/audits/phase-0/SPECIAL_AUDITS.md",
+      "sha256": "384dc425dcfdcbcadb47794ced46e3d5dcae7b25f6db97c1f89ac9e8c5032254"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/BUSINESS_TAXONOMY_CORRECTION_SUBMITTED.md",
+      "sha256": "4d1cfa8911cdc876db7d84f0cf6a858f533e5e34a796d025a158bd8c243e9f92"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/DEVELOPER_RESPONSE.md",
+      "sha256": "36ecf274a4c47fbae3c2a559be1727019bdcb7a644a1c879b4cb57644f2b1442"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/EVIDENCE_INDEX.json",
+      "sha256": "20f0a2fe336d0012a0c7d01025fe5ada54250369c4e8e861aa7b4abe9d5477ca"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/FINAL_EVIDENCE_INDEX.json",
+      "sha256": "8a1f5ded17c977a704ffb89ea279f5d70c32a036a614f6f4cddc0184cbbfba98"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json",
+      "sha256": "ae035760a825c975fe759e6e81fffaf14dea6b9919420ff309c62c37132f9ad4"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/FINAL_RECONCILIATION.md",
+      "sha256": "ef502bdc5c26c0b585450bd03dee34e1c2a9e7de7961a9a0aacc0533a7dcd729"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json",
+      "sha256": "59d6b8926ef7dbbad041ef36e237bf6eeabea8e1cd079a6e451dc2620bf6e591"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/INCREMENTAL_EVIDENCE_INDEX.json",
+      "sha256": "de7595b1f69ea4dae684785740b3d77e9b7a4cc3b64726f8dcf021d466e41447"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/INCREMENTAL_RECONCILIATION.md",
+      "sha256": "b03b96a750258b83605922b1e010ee81f4a55099773b7d8ff6796ff44c13c001"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/REQUIREMENTS_TAXONOMY_VERIFICATION.md",
+      "sha256": "6b9e270ffac18354c557c32cdea8c16e3e7a88182ce354ee4678963d9084fafc"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/REV2_EVIDENCE_INDEX.json",
+      "sha256": "d4c715126ca07f0a22697562f3726e67bbc564b9a566c7de175d5f7a07f72150"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/REV2_RECONCILIATION.md",
+      "sha256": "87066fc005df3ed3111dc205cfafb5b6fbbc2435919f7171df5ab19b25ffcf57"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_audit_report.md",
+      "sha256": "8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md",
+      "sha256": "aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md",
+      "sha256": "1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md",
+      "sha256": "57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md",
+      "sha256": "e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b"
+    },
+    {
+      "path": "docs/audits/phase-0/gemini/aqrp_phase0_requirements_taxonomy_errata.md",
+      "sha256": "c05416efe31b205dc8e567800f2cedae5cc04498959fac542c85938f63c272a0"
+    },
+    {
+      "path": "docs/audits/phase-0/history/INITIAL_REVIEW_ANCHOR.json",
+      "sha256": "0c39516cb6010cbea172b3dd78363e2a81935984f30bdde1a0e08c928b8a0c78"
+    },
+    {
+      "path": "docs/audits/phase-0/publication/APPROVAL.json",
+      "sha256": "8cf97cbb8a07acf4cca8a051b6fdbc61fd48903c265420747dd43c67f2715fea"
+    },
+    {
+      "path": "docs/audits/phase-0/publication/MERGED_MAIN_COMMAND_LOG.txt",
+      "sha256": "4e6d200c33c98ca3467e7316a97e9e92c7e8292702d695f8c0dd8d9b7c77769d"
+    },
+    {
+      "path": "docs/audits/phase-0/publication/MERGED_MAIN_SELF_CHECK.json",
+      "sha256": "40bada871201e45a38a9d516379291115c8d8c94a26871df39422d384b960509"
+    },
+    {
+      "path": "docs/audits/phase-0/publication/MERGE_VERIFICATION.json",
+      "sha256": "8a9b64cb36630c98048e25bf842054f5f512cd5005bbd91d1f6ed849c0e53e3a"
+    },
+    {
+      "path": "docs/audits/phase-0/tools/build_catalog.py",
+      "sha256": "e85d5712bf7f9bf40e6a6897ac5cbb428cdcd77eaa7344cf3b9408fe3f5e7c74"
+    },
+    {
+      "path": "docs/audits/phase-0/tools/check_documents.py",
+      "sha256": "3ffbc5166e8a5c736d3bdb3354d107d757e293fa757e196036a65159cdb066d1"
+    },
+    {
+      "path": "docs/audits/phase-1/AUTHORIZATION.json",
+      "sha256": "7944b349536b5377283c0491d887404f51d97c237384009b85319ab200d11480"
+    },
+    {
+      "path": "docs/audits/phase-1/COMMAND_LOG.txt",
+      "sha256": "05e9a14e8a0d7c2f486fec8098498a2b1aaab5e3fac90d15f4138dbbc0813a42"
+    },
+    {
+      "path": "docs/audits/phase-1/DATA_IMPLEMENTATION_SPEC.md",
+      "sha256": "6ca8faad3e519db906c2f9fe2f61b00d0888339b1644fe38af664b92b8ee7c41"
+    },
+    {
+      "path": "docs/audits/phase-1/DEPENDENCY_CANDIDATES.json",
+      "sha256": "b11c7cc658b7c72c0af0f4c6089827fa48c976e87aee14e2df0146d014cdf806"
+    },
+    {
+      "path": "docs/audits/phase-1/DEVELOPER_RESPONSE.md",
+      "sha256": "e2769baf4460ed9df2e108411ab51d436cd78de19a8612a9b0b8b83b1e0a4113"
+    },
+    {
+      "path": "docs/audits/phase-1/ENVIRONMENT_PLAN.md",
+      "sha256": "d27934f53557585f8b9bd7bdd034d5e3524a3f37b6e6616aff4be0fb504e6a7b"
+    },
+    {
+      "path": "docs/audits/phase-1/GOLDEN_REFERENCE.md",
+      "sha256": "40954c47b87707a2098d5be24660e82faf61e2c67d48a7e28425c5eff6d2724c"
+    },
+    {
+      "path": "docs/audits/phase-1/MANIFEST.json",
+      "sha256": "08554a7659376381121471414a54566f448b59c8c873d0dbd296611f5a3c5a72"
+    },
+    {
+      "path": "docs/audits/phase-1/PLAN.md",
+      "sha256": "fc3193a1df546d23d80b15e399fe339f121534813649fa18e80f01506cf785c5"
+    },
+    {
+      "path": "docs/audits/phase-1/PRE_REVIEW_PACKAGE.md",
+      "sha256": "2e530ef354509acec5803f41b73e1c6c73c103951a62e6539427beca5d1f88dd"
+    },
+    {
+      "path": "docs/audits/phase-1/SELF_CHECK.json",
+      "sha256": "2cf25607c4c744daf28d1c7a2134ee94475855feac5baf2ab09f3c59293ebee0"
+    },
+    {
+      "path": "docs/audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json",
+      "sha256": "9b8d4c548050f658572989d202c5a019eafe672d5e119de9b36a878788260583"
+    },
+    {
+      "path": "docs/audits/phase-1/gemini/aqrp_phase1_plan_pre_review_report.md",
+      "sha256": "109ec7c92a3e5fd5329d1380abbf381a570bf2690d8f1536a478b96da54f2809"
+    },
+    {
+      "path": "docs/audits/templates/DUAL_AI_AUDIT_REPORT.md",
+      "sha256": "234b3e95ec736c75c36b4253b185b541ecd08ee2c246150348814332e7c06f77"
+    },
+    {
+      "path": "docs/audits/templates/PHASE_ACCEPTANCE_REPORT.md",
+      "sha256": "ed649d201571433b7a689cfe8aa0cf9d77e060fe5fe1b005bf45e4518def42f0"
+    },
+    {
+      "path": "docs/audits/templates/REVIEW_PACKAGE.md",
+      "sha256": "e1add72f441b3bff4e81c2e556ded7db531bca5139a66a3919f3f46ac16cddd8"
+    },
+    {
+      "path": "docs/requirements.csv",
+      "sha256": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1"
+    },
+    {
+      "path": "docs/sources/AQRP_V3.0.md",
+      "sha256": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc"
+    },
+    {
+      "path": "docs/sources/AQRP_V3.1.md",
+      "sha256": "18facd65a1344d7d74b8004d7d90e5e96b77fb841e1fb298c16a8c869be91855"
+    },
+    {
+      "path": "docs/sources/AQRP_V3.2.md",
+      "sha256": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5"
+    },
+    {
+      "path": "docs/sources/AQRP_V3.2_BASELINE_GATE.md",
+      "sha256": "b281bbe5dc5514021788e28a2ef207adfd025cc6ce65cd7fbc4e6755c08332b1"
+    },
+    {
+      "path": "docs/sources/README.md",
+      "sha256": "422c78ea77b6dc9a1e22812baba10e1afb48f96467a93ea91e08efb39e6adcaf"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "3a9c846b367b9013d5098f7717d8ac949b4b3fff68a5f3a8573c4e8d7e41145e"
+    },
+    {
+      "path": "requirements.lock",
+      "sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb"
+    },
+    {
+      "path": "src/aqrp/__init__.py",
+      "sha256": "8d250a308119d1abe2c1fbe1b3a99b418f2873824636e44dc0cf0666891c7e0a"
+    },
+    {
+      "path": "src/aqrp/core/__init__.py",
+      "sha256": "cfe70a553490b59514d6d98929fe0b0ac04368394b9bdfc33d7e7049a6c26448"
+    },
+    {
+      "path": "src/aqrp/core/canonical.py",
+      "sha256": "1bd6ada40737205058f9641fe2649761aa878a8744d6233af60d651c41f1da30"
+    },
+    {
+      "path": "src/aqrp/core/contracts.py",
+      "sha256": "51a89980e72ae18db2a8621650b791075cf46bb1e8fc60b13b444ad852edff7d"
+    },
+    {
+      "path": "src/aqrp/core/errors.py",
+      "sha256": "c5c72b128a89cbe3c58b4b85cc35d4d50e43989667ffe97f6dfba1d2dc37f6a9"
+    },
+    {
+      "path": "src/aqrp/core/math.py",
+      "sha256": "027fd74593444277a1fed83928d5a3002240ea29a2ecf8445b350de64c5668c2"
+    },
+    {
+      "path": "src/aqrp/core/time.py",
+      "sha256": "e588ec0ecb2b0561e33e1484f4043a598a4d47e49d0ad3452a0e68781e61b8fe"
+    },
+    {
+      "path": "src/aqrp/core/units.py",
+      "sha256": "5226e0a590353c9d27d42199a44b2b59f79a069c8a324e20feb27fd63f38e98a"
+    },
+    {
+      "path": "src/aqrp/data/__init__.py",
+      "sha256": "ae6a6a312cabe10abbd61c98a099b73ab7737768aa5b8216d2676b8c3fc10955"
+    },
+    {
+      "path": "src/aqrp/data/actions.py",
+      "sha256": "0dd59968eeb3ecc150656b745ad699176af347c5a564c7d2465f2fbbffdabe9d"
+    },
+    {
+      "path": "src/aqrp/data/pit.py",
+      "sha256": "ad1cf99d11532e54ac99fd32a206efc2c1adf0a0f6b8100130a157c628a27e37"
+    },
+    {
+      "path": "src/aqrp/data/quality.py",
+      "sha256": "23ad6735504e4ea84e18b616a54cdaf4b7444b28f9ade7124ad8e81c9ee2e542"
+    },
+    {
+      "path": "src/aqrp/data/query.py",
+      "sha256": "b4c385568f47c3bd138764cca7bc43f0fb7ea271edf40070b1a756cf3928179f"
+    },
+    {
+      "path": "src/aqrp/data/schemas.py",
+      "sha256": "6565845912a46b5f0ee390b1f213ed86150e2a144ae9ba38e3a61dd2469183fc"
+    },
+    {
+      "path": "src/aqrp/data/snapshot.py",
+      "sha256": "d8fe10741718146046f1bfb0ea81fe7deb334666353252b769a8b10f3a2a71aa"
+    },
+    {
+      "path": "src/aqrp/data/store.py",
+      "sha256": "b26b244289ba3d82d8b96a3bcb79eb6b603e3e11c9d36f3476a9c397e5be67ac"
+    },
+    {
+      "path": "src/aqrp/data/synthetic.py",
+      "sha256": "4557605a9535b4e9a132fd8164302e056219ef5236d67054f6217cbd30630fd3"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "ca9d7967c6db8a9024f9997300cf451389faa21180d14ba8ea299b8587b00e4f"
+    },
+    {
+      "path": "tests/data/test_pit_query.py",
+      "sha256": "1463b181152e6737f8ffb5d9a058c046ad657be854158ce78240250e168a6180"
+    },
+    {
+      "path": "tests/data/test_quality.py",
+      "sha256": "a9dbf70f206a3d92bc7682f5769ab9e55f37c486d32e3c1f555d79e5b8c9685d"
+    },
+    {
+      "path": "tests/data/test_revision_integrity.py",
+      "sha256": "4ecdbb89cb6c1136fcbb8833f8e1ed9292991e5907258a92ea816d334a9d38c2"
+    },
+    {
+      "path": "tests/data/test_snapshot_actions.py",
+      "sha256": "0cc5f84fd607d79f4ecf4eb0b46ebaf86e47111f6ef11b61dbbdb2d8dadfccb7"
+    },
+    {
+      "path": "tests/data/test_time_units.py",
+      "sha256": "fb8e2bed60bc1c0fdf3b99a6d0d9271b58a5ca9a62dfcfb6c5bca0c80ae383e8"
+    },
+    {
+      "path": "tests/e2e/README.md",
+      "sha256": "81cd5afffcfa077e13687b990f13f6b092c44750991e4c70a2886ca86908f7ed"
+    },
+    {
+      "path": "tests/environment/test_installation.py",
+      "sha256": "24f79b8fdfaa13440c663f107caddbd6e00f3c1b12a293dacef27da02d165add"
+    },
+    {
+      "path": "tests/golden/README.md",
+      "sha256": "2e16bb2ce35c0ffa71b159a4d3e7ae0b37aba8b7192830fbef7a884a282b024e"
+    },
+    {
+      "path": "tests/golden/phase1_answers.json",
+      "sha256": "c6fecc6d2bc281f91eb8f235ba1be747f282c9302c3e6819b33e621a70b3ec5d"
+    },
+    {
+      "path": "tests/golden/phase1_answers_manifest.json",
+      "sha256": "d85031e8be0a1390dd187a604659f93bfa2548c1b957278bda339a17e33077f7"
+    },
+    {
+      "path": "tests/golden/phase1_input.json",
+      "sha256": "a89f52800db6d8abd004764edc2586ac3d609c21e9ef009f510120cfd9d65bfb"
+    },
+    {
+      "path": "tests/golden/phase1_input_manifest.json",
+      "sha256": "8285bba1f48671f3a7fba9b5b180d6aebe1233190590bff1969d34589e250776"
+    },
+    {
+      "path": "tests/integration/README.md",
+      "sha256": "7987b516f3500b0bae34069739aa2f5059b702b67587cb52c4ac38947dba1e98"
+    },
+    {
+      "path": "tests/integration/test_phase1_pipeline.py",
+      "sha256": "17de5c64b073de5ebbe2a8e2c7fe2cab8c53241751267629ae7550555ef8c961"
+    },
+    {
+      "path": "tools/check_coverage.py",
+      "sha256": "3de5109faeaa33af86313df8f9aa85cccf0db0ba80e116a2556a39ca61005d4c"
+    },
+    {
+      "path": "tools/ci.py",
+      "sha256": "6daac370862c1d6599e41b6b5ed700bfd27f0672aeee76b9f270d6e222a6d6e4"
+    },
+    {
+      "path": "tools/data_smoke.py",
+      "sha256": "7318c0ec0877f805a59142f45e72fa10c0db066cf309e3604b8fbd1f1762cf73"
+    },
+    {
+      "path": "tools/independent_reference.py",
+      "sha256": "d99dd3eb32e5657ea528db1cde19acdddf6bc9feaeb982a105372e7658911d86"
+    },
+    {
+      "path": "tools/secret_scan.py",
+      "sha256": "bbe9f4c68a3ab43ea27326ae517d33c7b7a61890fd12bae12ebd97b0543fb700"
+    }
+  ]
 }

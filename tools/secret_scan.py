@@ -61,7 +61,19 @@ def main():
             )
             assert result.returncode == (1 if positive else 0), "Scanner control failed"
         result = subprocess.run(
-            [str(exe), "dir", str(root), "--redact=100", "--no-banner"], stdout=log, stderr=log
+            [
+                str(exe),
+                "dir",
+                str(root),
+                "--redact=100",
+                "--no-banner",
+                "--report-format",
+                "json",
+                "--report-path",
+                str(out / "scan-findings.json"),
+            ],
+            stdout=log,
+            stderr=log,
         )
         assert result.returncode == 0, "Secret scan failed; inspect redacted evidence"
     print("Secret scan and positive/negative controls PASS")

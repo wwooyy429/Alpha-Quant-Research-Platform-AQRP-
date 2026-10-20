@@ -19,3 +19,6 @@
 四级范围以 REQUIREMENTS 为准：MVP（最小可研究/模拟主链及质量治理）、Competition Ready（完整 V3.0 功能和已知比赛规则）、Advanced Research（公式/机器学习/自动挖掘）、Production Extensions（真实执行等另行授权）。分级不删除 V3.0 必须需求，也不改变 Phase 0–7 固定阶段。
 
 所有依赖未具备的测试仅Planned，未实现能力标Planned、Deferred或Unsupported。禁止模拟数据冒充真实市场接入或比赛认证。Phase0设计已验收发布；后续实施标准、阈值与未决事项按对应文档及阶段另行批准，基线门禁通过不代替未来能力验证。
+
+
+2026-10-21实现增量：Phase1计划预审PASS后完成合成数据/通用契约14项实现和102项测试，当前IMPLEMENTATION REVIEW REQUIRED；实际证据和旧失败以audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md及implementation/EVIDENCE_INDEX.json为准。本增量替代此前等待计划预审/尚无业务代码的当前状态描述；初始计划和授权快照保留。main、稳定标签及P0核心契约不变；未验收/未合并/未发布，不进入Phase2。

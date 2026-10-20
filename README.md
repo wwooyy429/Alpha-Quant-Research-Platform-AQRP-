@@ -1,11 +1,11 @@
 # Alpha Quant Research Platform（AQRP）
 
-专业 Alpha 因子研究、验证与量化交易回测平台。
+Phase 0 已发布。Phase 1 计划经 Gemini 对固定380d9f8预审PASS，现已实现合成日频数据基础，正在提交实现复核。阶段验收、main合并、发布及Phase 2均尚未获授权。
 
-**Phase0已验收发布，独立基线门禁PASS；Phase1已获用户授权，正在准备实施前计划预审。** 首版范围为合成数据与通用数据契约，Python3.13.16；业务实现尚未开始，暂无可运行研究平台、回测引擎或网页。
+本阶段提供稳定证券标识、Decimal单位、UTC微秒时间与固定IANA规则、日历、PIT可见修订、历史股票池/状态、拆股与分红研究视图、质量报告、不可变Parquet快照和可重建DuckDB索引。首版只支持明确的SYNTHETIC_V1测试profile，真实市场接入另行确定。
 
-从[项目章程](docs/PROJECT_CHARTER.md)、[当前进度](docs/PROGRESS.md)、[需求清单](docs/REQUIREMENTS.md)开始；[Phase0基线](docs/BASELINE.md)记录已发布版本，[Phase1计划](docs/audits/phase-1/PLAN.md)及[预审包](docs/audits/phase-1/PRE_REVIEW_PACKAGE.md)记录本阶段范围与待审事项。
+当前范围和真实验证见[Phase1实现审查包](docs/audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md)、[数据SDK使用说明](docs/audits/phase-1/DATA_SDK.md)和[进度](docs/PROGRESS.md)。[独立计划预审原件及索引](docs/audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json)保持原字节。380d9f8中的PLAN、SELF_CHECK、MANIFEST和COMMAND_LOG仍为历史计划快照，不能当作当前实现测试结果。
 
-固定架构：Python Quant Core + Streamlit Dashboard + Factor Registry + Independent Event-Driven Backtest Engine。
+业务环境精确CPython3.13.16标准GIL/x64，直接与传递依赖固定在requirements.lock。安装及完整验证入口为`python tools/ci.py`，须在干净、已提交工作区和已核实解释器下运行；它把venv/构建/缓存/测试产物放入非同步临时路径，哈希安装依赖，从固定Commit离线构建并安装本项目wheel，执行静态/单元/性质/契约/集成/泄漏/覆盖率/秘密扫描及数据smoke。详见[复现说明](docs/audits/phase-1/REPRODUCE.md)。
 
-Phase1业务实施遵守Gemini计划预审关卡；P1合并/发布、P2及真实交易尚未授权。未实现能力均按Planned/Deferred/Unsupported标记，不用计划或合成数据冒充真实接入。
+因子Registry、因子研究、组合/风险、回测账本、网页及对应业务CLI仍Planned；高级扩展Deferred，真实交易与任意外部代码执行Unsupported。不存在真实凭证、供应商或订单接入。

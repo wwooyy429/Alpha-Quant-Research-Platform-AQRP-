@@ -141,7 +141,10 @@ def main():
         for p in RUN.iterdir()
         if p.is_file() and p.name != "artifacts.json"
     }
-    (RUN / "artifacts.json").write_text(json.dumps(hashes, indent=2), encoding="utf-8")
+    (RUN / "artifacts.json").write_text(
+        json.dumps([{"path": k, "sha256": v} for k, v in sorted(hashes.items())], indent=2),
+        encoding="utf-8",
+    )
     print(f"PASS: {RUN}")
 
 

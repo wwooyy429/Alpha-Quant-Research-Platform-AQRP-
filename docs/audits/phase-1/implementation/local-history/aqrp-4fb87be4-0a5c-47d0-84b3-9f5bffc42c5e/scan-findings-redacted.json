@@ -1,0 +1,42 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 10,
+  "EndLine": 10,
+  "StartColumn": 5,
+  "EndColumn": 88,
+  "Match": "secret-scan.log\": \"REDACTED\"",
+  "Secret": "REDACTED",
+  "File": "docs/audits/phase-1/implementation/local-history/aqrp-3261ca7b-86e1-4f60-b77f-966595712fa9/artifacts.json",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 3.8419824,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "docs/audits/phase-1/implementation/local-history/aqrp-3261ca7b-86e1-4f60-b77f-966595712fa9/artifacts.json:generic-api-key:10"
+ },
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 131,
+  "EndLine": 131,
+  "StartColumn": 13,
+  "EndColumn": 95,
+  "Match": "secret_scan.py\": \"REDACTED\"",
+  "Secret": "REDACTED",
+  "File": "docs/audits/phase-1/implementation/CHECKOUT_TRANSFER.json",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 3.876353,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "docs/audits/phase-1/implementation/CHECKOUT_TRANSFER.json:generic-api-key:131"
+ }
+]

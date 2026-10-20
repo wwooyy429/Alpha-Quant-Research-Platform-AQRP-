@@ -1,0 +1,104 @@
+...........................................................F............ [ 84%]
+.............                                                            [100%]
+================================== FAILURES ===================================
+_________________________ test_data_004_action_edges __________________________
+
+tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+
+    def test_data_004_action_edges(tables):
+        bars = deepcopy(tables["bars_daily"][:2])
+        sessions = [date(2024, 1, 2), date(2024, 1, 3)]
+        action = record(
+            "corporate_actions",
+            action_id="s1",
+            revision_id=1,
+            security_id="SYN_A:001",
+            type="SPLIT",
+            effective_at=utc("2024-01-03T00:00:00Z"),
+            announcement_at=utc("2024-01-01T00:00:00Z"),
+            split_ratio=Decimal(2),
+            ex_date=date(2024, 1, 3),
+            currency="SYNCCY",
+        )
+        assert validate_table("corporate_actions", [action]).report.valid == 1
+        for field, bad in [
+            ("type", "UNKNOWN"),
+            ("split_ratio", None),
+            ("split_ratio", Decimal(0)),
+            ("announcement_at", None),
+            ("effective_at", None),
+            ("event_time", utc("2024-01-02T00:00:00Z")),
+            ("available_at", utc("2023-12-31T00:00:00Z")),
+        ]:
+            changed = deepcopy(action)
+            changed[field] = bad
+            assert validate_table("corporate_actions", [changed]).report.rejected == 1
+        div = deepcopy(action)
+        div.update(
+            type="CASH_DIVIDEND",
+            split_ratio=None,
+            cash_per_share=Decimal(2),
+            dividend_basis="PER_OLD_SHARE",
+        )
+        for field, bad in [
+            ("cash_per_share", None),
+            ("cash_per_share", Decimal(-1)),
+            ("dividend_basis", "PER_NEW_SHARE"),
+        ]:
+            changed = deepcopy(div)
+            changed[field] = bad
+            assert validate_table("corporate_actions", [changed]).report.rejected == 1
+        broken = deepcopy(div)
+        broken["dividend_basis"] = "UNKNOWN"
+        with pytest.raises(DataQualityError, match="BASIS"):
+            action_view(bars, [broken], "total_return", sessions)
+        assert validate_table("corporate_actions", [div]).report.valid == 1
+        with pytest.raises(DataQualityError, match="UNKNOWN_PRICE_BASIS"):
+            action_view(bars, [], "bad", sessions)
+        null = deepcopy(bars)
+        null[0]["close"] = None
+        null[0]["volume"] = None
+        adjusted = action_view(null, [action], "split_adjusted", sessions)
+        assert adjusted[0]["close"] is None and adjusted[0]["volume"] is None
+        with pytest.raises(DataQualityError, match="RETURN_GAP"):
+            action_view(null, [], "total_return", sessions)
+>       with pytest.raises(DataQualityError, match="SESSION_GAP"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_snapshot_actions.py:247: Failed
+============================== warnings summary ===============================
+tests/data/test_pit_query.py: 352 warnings
+tests/data/test_snapshot_actions.py: 24 warnings
+  B:\BaiduSyncdisk\学习\投资\量化\量化交易比赛\Alpha Quant Research Platform (AQRP)\src\aqrp\data\store.py:17: DeprecationWarning: fetch_arrow_table() is deprecated, use to_arrow_table() instead.
+    connection.execute("SELECT * FROM verified").fetch_arrow_table().cast(table.schema)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Name                         Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------------------
+src\aqrp\__init__.py             1      0      0      0   100%
+src\aqrp\core\__init__.py        0      0      0      0   100%
+src\aqrp\core\canonical.py      17      0      6      0   100%
+src\aqrp\core\contracts.py      55      0      6      0   100%
+src\aqrp\core\errors.py         17      0      0      0   100%
+src\aqrp\core\math.py           17      0      4      0   100%
+src\aqrp\core\time.py           48      0     26      0   100%
+src\aqrp\core\units.py          44      0     16      0   100%
+src\aqrp\data\__init__.py        0      0      0      0   100%
+src\aqrp\data\actions.py        53      2     36      3    94%   44, 53, 57->54
+src\aqrp\data\pit.py            25      0     14      0   100%
+src\aqrp\data\quality.py       151      0    108      2    99%   106->110, 110->113
+src\aqrp\data\query.py          78      2     24      2    96%   48, 134
+src\aqrp\data\schemas.py         8      0      0      0   100%
+src\aqrp\data\snapshot.py       89      1     32      1    98%   128
+src\aqrp\data\store.py          13      0      2      0   100%
+src\aqrp\data\synthetic.py      31      0      8      1    97%   45->47
+------------------------------------------------------------------------
+TOTAL                          647      5    282      9    98%
+Coverage JSON written to file C:\Users\11638\AppData\Local/AQRP/runs/dev-coverage.json
+=========================== short test summary info ===========================
+FAILED tests/data/test_snapshot_actions.py::test_data_004_action_edges - Fail...
+1 failed, 84 passed, 376 warnings in 15.13s

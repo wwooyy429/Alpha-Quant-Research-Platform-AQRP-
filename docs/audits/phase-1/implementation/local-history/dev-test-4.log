@@ -1,0 +1,28 @@
+........................................................................ [ 76%]
+......................                                                   [100%]
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Name                         Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------------------
+src\aqrp\__init__.py             1      0      0      0   100%
+src\aqrp\core\__init__.py        0      0      0      0   100%
+src\aqrp\core\canonical.py      17      0      6      0   100%
+src\aqrp\core\contracts.py      55      0      6      0   100%
+src\aqrp\core\errors.py         17      0      0      0   100%
+src\aqrp\core\math.py           17      0      4      0   100%
+src\aqrp\core\time.py           48      0     26      0   100%
+src\aqrp\core\units.py          44      0     16      0   100%
+src\aqrp\data\__init__.py        0      0      0      0   100%
+src\aqrp\data\actions.py        53      0     36      1    99%   57->54
+src\aqrp\data\pit.py            25      0     14      0   100%
+src\aqrp\data\quality.py       163      0    116      2    99%   142->146, 146->149
+src\aqrp\data\query.py          78      1     24      1    98%   48
+src\aqrp\data\schemas.py         8      0      0      0   100%
+src\aqrp\data\snapshot.py       98      3     36      3    96%   128, 167, 178
+src\aqrp\data\store.py          13      0      2      0   100%
+src\aqrp\data\synthetic.py      31      0      8      1    97%   45->47
+------------------------------------------------------------------------
+TOTAL                          668      4    294      8    99%
+Coverage JSON written to file C:\Users\11638\AppData\Local/AQRP/runs/dev-coverage.json
+94 passed in 12.77s
