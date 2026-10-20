@@ -11,8 +11,8 @@
 - 仓库：默认分支main；PR#1未合并。最新已复核SHA为 `d4c8218315a9152166cbe56fde54384dc99fb094`，原设计SHA为 `ed6666985bfac8cc94fa302c72e2e6333c679a6f`；PR字段与原/增量报告分别关联。随后归档本次报告和更新状态的新提交不自动继承已审d4结论。
 - Gemini原报告已收到：`audits/phase-0/gemini/aqrp_phase0_audit_report.md`；总体PASS WITH CONDITIONS，设计子结论PASS，P1建议BLOCKED。base/head与报告一致，来源文件字节hash核对通过；本次不重新声称运行了Gemini沙箱或验证了未附原始日志。
 - Finding F-001 High仍OPEN/GATED；F-002 CI列P1首项；F-003为P1时间验证建议；F-004保留缓解状态并登记配置建议。编号/脚本路径/容差等报告澄清见同目录DEVELOPER_RESPONSE；GPT不改原文、不自行关闭Gemini问题。
-- 最新增量原报告：`audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md`，SHA-256为57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140；闭环事实核对见INCREMENTAL_RECONCILIATION，来源和数学/CSV核对值见INCREMENTAL_EVIDENCE_INDEX。
-- 增量核对：工具路径、数值处理职责、Pearson精度及Finding阶段归属已基本澄清；报告仍把实际16组写成12组并使用FREG/VAL/BACK等非正式前缀，SignalBatch示意字段也非实际契约字段，不能登记“报告勘误全部完成”。Gemini的人工验收就绪YES建议与开发方部分闭环判断分别保留。
+- 最新增量原报告Rev 2：`audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md`，SHA-256为e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b；配套勘误表aqrp_phase0_requirements_taxonomy_errata.md的SHA-256为c05416efe31b205dc8e567800f2cedae5cc04498959fac542c85938f63c272a0。旧Rev 1及其核对记录保留，最新事实核对见REV2_RECONCILIATION与REV2_EVIDENCE_INDEX。
+- Rev 2已纠正12→16组、撤销FREG/VAL/BACK等非正式前缀；工具路径、数值职责、Pearson精度及Finding阶段归属主要澄清已登记。附录16行业务能力分类并非CSV的16个正式前缀，EXP-001至004实际均为P3而非附录P5–7，SignalBatch示意字段也非实际契约字段；勘误仍部分闭环。正式前缀/数量/阶段见REQUIREMENTS_TAXONOMY_VERIFICATION；Gemini就绪YES建议不等于用户批准。
 - 开发方自查：只允许文档结构/追踪/依赖/案例算式核查，实际结果见 `audits/phase-0/SELF_CHECK.json`，不等同独立语义审核。
 - 用户仅授权空main初始化与创建Phase0设计PR，明确不是验收通过。Phase0正式验收、设计合并/发布及Phase1授权均未获得。
 - Phase0发布门禁：最新审计建议=PASS WITH CONDITIONS（仅d4c8218，非无条件PASS）；勘误=部分闭环；ACCEPTED=未批准；RELEASED=否；phase0-baseline标签=不存在。
@@ -24,4 +24,4 @@
 
 ## 继续工作的门槛
 
-已收到增量复核，但需求分组勘误仍需Gemini校正；最终审批范围应覆盖明确版本及管理资料差异。用户Phase0验收及合并/发布授权尚未获得，本次明确不执行发布。获授权后才可核实最终main/标签/文件及Gemini主干闭环，达到RELEASED后P1仍需独立授权。当前停止在Phase0。
+已收到Rev 2与勘误表，两项旧计数/前缀错误已纠正；仍需Gemini区分能力视图与正式前缀并校正EXP阶段等说明。最终审批范围须覆盖明确版本及后续管理资料差异。用户Phase0验收及合并/发布授权尚未获得，本次明确不执行发布。获授权后才可核实最终main/标签/文件及Gemini主干闭环，达到RELEASED后P1仍需独立授权。当前停止在Phase0。

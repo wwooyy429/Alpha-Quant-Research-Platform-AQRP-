@@ -1,0 +1,326 @@
+{
+  "received_at_utc": "2026-10-20T14:12:50.762882+00:00",
+  "audit_date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "reviewer": "Gemini",
+  "provenance": "User supplied Rev 2 and taxonomy errata, copied byte-for-byte to new archive paths; no historical original overwritten",
+  "report_path": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md",
+  "report_sha256": "e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b",
+  "source_file": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase0_incremental_audit_report.md",
+  "source_archive_byte_equal": true,
+  "taxonomy_errata_path": "docs/audits/phase-0/gemini/aqrp_phase0_requirements_taxonomy_errata.md",
+  "taxonomy_errata_sha256": "c05416efe31b205dc8e567800f2cedae5cc04498959fac542c85938f63c272a0",
+  "taxonomy_source_file": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase0_requirements_taxonomy_errata.md",
+  "reviewed_commit": "d4c8218315a9152166cbe56fde54384dc99fb094",
+  "previous_design_commit": "ed6666985bfac8cc94fa302c72e2e6333c679a6f",
+  "base_commit": "e87d0082a5e448e9550129a486ba965f13a155f8",
+  "repository": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+  "pr_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1",
+  "overall_verdict": "PASS WITH CONDITIONS",
+  "design_subverdict": "PASS",
+  "auditor_human_acceptance_readiness": "YES (advisory)",
+  "developer_closure": "PARTIAL: original count/prefix errors corrected; appendix is capability view, not one-to-one CSV taxonomy, and EXP Phase3 is omitted; release conditions not fulfilled",
+  "closed_errata": [
+    "12 groups corrected to 16",
+    "FREG/VAL/BACK explicitly withdrawn",
+    "66 source sections distinguished from 106 requirements"
+  ],
+  "remaining_clarifications": [
+    "Capability-domain table versus canonical ID-prefix groups",
+    "EXP-001..004 implement in Phase3, not only Phase5-7",
+    "Illustrative signal tuple is not actual schema",
+    "Finding labels QA-001 and DATA-005 are broader in report than canonical definitions"
+  ],
+  "all_report_errata_closed": false,
+  "release_conditions_closed": false,
+  "canonical_csv_sha256": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1",
+  "canonical_csv_matches_reviewed_d4": true,
+  "canonical_requirement_total": 106,
+  "canonical_group_count": 16,
+  "canonical_groups": [
+    {
+      "prefix": "ARCH",
+      "count": 3,
+      "ids": [
+        "ARCH-001",
+        "ARCH-002",
+        "ARCH-003"
+      ],
+      "phases": [
+        "0"
+      ]
+    },
+    {
+      "prefix": "BT",
+      "count": 10,
+      "ids": [
+        "BT-001",
+        "BT-002",
+        "BT-003",
+        "BT-004",
+        "BT-005",
+        "BT-006",
+        "BT-007",
+        "BT-008",
+        "BT-009",
+        "BT-010"
+      ],
+      "phases": [
+        "5"
+      ]
+    },
+    {
+      "prefix": "DATA",
+      "count": 13,
+      "ids": [
+        "DATA-001",
+        "DATA-002",
+        "DATA-003",
+        "DATA-004",
+        "DATA-005",
+        "DATA-006",
+        "DATA-007",
+        "DATA-008",
+        "DATA-009",
+        "DATA-010",
+        "DATA-011",
+        "DATA-012",
+        "DATA-013"
+      ],
+      "phases": [
+        "1",
+        "3",
+        "7",
+        "POST7"
+      ]
+    },
+    {
+      "prefix": "ENV",
+      "count": 3,
+      "ids": [
+        "ENV-001",
+        "ENV-002",
+        "ENV-003"
+      ],
+      "phases": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "prefix": "EXP",
+      "count": 4,
+      "ids": [
+        "EXP-001",
+        "EXP-002",
+        "EXP-003",
+        "EXP-004"
+      ],
+      "phases": [
+        "3"
+      ]
+    },
+    {
+      "prefix": "EXT",
+      "count": 1,
+      "ids": [
+        "EXT-001"
+      ],
+      "phases": [
+        "POST7"
+      ]
+    },
+    {
+      "prefix": "FACTOR",
+      "count": 12,
+      "ids": [
+        "FACTOR-001",
+        "FACTOR-002",
+        "FACTOR-003",
+        "FACTOR-004",
+        "FACTOR-005",
+        "FACTOR-006",
+        "FACTOR-007",
+        "FACTOR-008",
+        "FACTOR-009",
+        "FACTOR-010",
+        "FACTOR-011",
+        "FACTOR-012"
+      ],
+      "phases": [
+        "2",
+        "3",
+        "POST7"
+      ]
+    },
+    {
+      "prefix": "GOV",
+      "count": 10,
+      "ids": [
+        "GOV-001",
+        "GOV-002",
+        "GOV-003",
+        "GOV-004",
+        "GOV-005",
+        "GOV-006",
+        "GOV-007",
+        "GOV-008",
+        "GOV-009",
+        "GOV-010"
+      ],
+      "phases": [
+        "0"
+      ]
+    },
+    {
+      "prefix": "INT",
+      "count": 6,
+      "ids": [
+        "INT-001",
+        "INT-002",
+        "INT-003",
+        "INT-004",
+        "INT-005",
+        "INT-006"
+      ],
+      "phases": [
+        "3",
+        "5",
+        "7"
+      ]
+    },
+    {
+      "prefix": "PORT",
+      "count": 4,
+      "ids": [
+        "PORT-001",
+        "PORT-002",
+        "PORT-003",
+        "PORT-004"
+      ],
+      "phases": [
+        "4",
+        "POST7"
+      ]
+    },
+    {
+      "prefix": "QA",
+      "count": 7,
+      "ids": [
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "QA-004",
+        "QA-005",
+        "QA-006",
+        "QA-007"
+      ],
+      "phases": [
+        "0",
+        "1",
+        "3",
+        "5"
+      ]
+    },
+    {
+      "prefix": "RESEARCH",
+      "count": 9,
+      "ids": [
+        "RESEARCH-001",
+        "RESEARCH-002",
+        "RESEARCH-003",
+        "RESEARCH-004",
+        "RESEARCH-005",
+        "RESEARCH-006",
+        "RESEARCH-007",
+        "RESEARCH-008",
+        "RESEARCH-009"
+      ],
+      "phases": [
+        "3"
+      ]
+    },
+    {
+      "prefix": "RISK",
+      "count": 4,
+      "ids": [
+        "RISK-001",
+        "RISK-002",
+        "RISK-003",
+        "RISK-004"
+      ],
+      "phases": [
+        "4"
+      ]
+    },
+    {
+      "prefix": "SEC",
+      "count": 4,
+      "ids": [
+        "SEC-001",
+        "SEC-002",
+        "SEC-003",
+        "SEC-004"
+      ],
+      "phases": [
+        "0",
+        "1",
+        "2",
+        "POST7"
+      ]
+    },
+    {
+      "prefix": "UI",
+      "count": 8,
+      "ids": [
+        "UI-001",
+        "UI-002",
+        "UI-003",
+        "UI-004",
+        "UI-005",
+        "UI-006",
+        "UI-007",
+        "UI-008"
+      ],
+      "phases": [
+        "6"
+      ]
+    },
+    {
+      "prefix": "VALID",
+      "count": 8,
+      "ids": [
+        "VALID-001",
+        "VALID-002",
+        "VALID-003",
+        "VALID-004",
+        "VALID-005",
+        "VALID-006",
+        "VALID-007",
+        "VALID-008"
+      ],
+      "phases": [
+        "3"
+      ]
+    }
+  ],
+  "canonical_table_path": "docs/audits/phase-0/gemini/REQUIREMENTS_TAXONOMY_VERIFICATION.md",
+  "reconciliation_path": "docs/audits/phase-0/gemini/REV2_RECONCILIATION.md",
+  "taxonomy_appendix_explicit_review_sha": null,
+  "taxonomy_version_binding": "Associated as user-supplied companion to Rev2, not an independently signed full-SHA statement",
+  "execution_evidence_scope": "Gemini independent execution remains reported in document; no standalone source script/raw stdout/stderr supplied. Prior developer Decimal reference supports design tolerance and is not a rerun of Gemini sandbox.",
+  "raw_execution_scripts_supplied": false,
+  "raw_execution_logs_supplied": false,
+  "finding_disposition": {
+    "F-001": "OPEN/GATED, release/phase transition",
+    "F-002": "SCHEDULED FOR P1 START",
+    "F-003": "DESIGN VERIFIED / P1 IMPLEMENTATION GUARDRAIL",
+    "F-004": "MITIGATED WITH GUARDRAILS; no physical relocation executed"
+  },
+  "user_phase0_accepted": false,
+  "merge_release_authorized": false,
+  "phase0_released": false,
+  "phase1_status": "BLOCKED",
+  "report_recommendations_are_not_user_action_authorization": true,
+  "new_record_scope": "Administrative archive/status only; not automatically included in d4 audit verdict"
+}

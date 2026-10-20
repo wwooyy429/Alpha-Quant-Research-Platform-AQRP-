@@ -8,15 +8,15 @@ Phase0：V3.0/V3.1/V3.2及Main Baseline Release Gate整合设计。106条需求�
 
 文档编制工具生成106条；文档核查工具实际结果以SELF_CHECK与COMMAND_LOG为准，既有17项结构/候选算式核查范围还包括新增Baseline六条来源映射及BASELINE文件存在性。覆盖ID/字段/依赖无环/无未来依赖/实际设计文件/需求渲染/本地链接/原文编号小节映射/阶段替换/来源复制/两组候选算式。节映射不证明逐句语义完整。仓库门禁观察见RELEASE_GATE_AUDIT，门禁未满足不能因核查命令成功而称发布通过。
 
-实际命令：`python docs/audits/phase-0/tools/build_catalog.py`；`python docs/audits/phase-0/tools/check_documents.py --source-v30 <用户V3.0原附件> --source-v32 <用户V3.2原附件>`；完整实际路径、环境、时间、输出见COMMAND_LOG。自查使用标准库，不安装业务依赖。业务测试/回归/覆盖率/CI/网页/回测未运行；不以“0失败”代指业务通过。Golden仍待Gemini核验。
+历史编制命令：`python docs/audits/phase-0/tools/build_catalog.py`；本次文档核查：`python docs/audits/phase-0/tools/check_documents.py --source-v30 <用户V3.0原附件> --source-v32 <用户V3.2原附件>`；完整实际路径、环境、时间、输出见COMMAND_LOG。自查使用标准库，不安装业务依赖。本次不重生成需求清单；业务测试/回归/覆盖率/CI/网页/回测未运行。Gemini报告的独立算式结果按其陈述登记，不扩大为全部Golden业务验证通过。
 
 ## C · 技术及独立审查
 
-固定架构未改。原报告审查ed666698，新增增量报告审查d4c8218，均PASS WITH CONDITIONS；增量报告给人工验收就绪YES建议。开发方核对数学/工具路径/职责及Finding阶段归属已主要澄清，但CSV实际16组与报告12组/非正式前缀仍不一致，不能宣布勘误全部闭环。原文及索引/闭环核对在gemini目录。原脚本/日志未附，不称开发方复跑其沙箱；F-001仍OPEN/GATED，新管理资料不自动归入已审范围。
+固定架构未改。原报告审查ed666698，增量Rev 1/2审查d4c8218，均PASS WITH CONDITIONS；Gemini给人工验收就绪YES建议。Rev 2已纠正12→16组及虚构前缀；新附录业务能力分类仍非正式前缀一一对照，EXP应为P3，示意字段须区分真实schema，勘误总体部分闭环。数学/工具路径/职责及Finding阶段归属主要澄清已登记。最新核对及正式分组表为gemini/REV2_RECONCILIATION与REQUIREMENTS_TAXONOMY_VERIFICATION，来源hash在REV2_EVIDENCE_INDEX；旧报告不覆盖。原脚本/日志未附，不称开发方复跑其沙箱；F-001仍OPEN/GATED，新管理资料不自动归入已审范围。
 
 ## D · 版本
 
-本地feature/phase-0-v3.2-design；main空初始化SHA=e87d0082a5e448e9550129a486ba965f13a155f8，默认main；草稿PR#1已建立，未合并。当前最终待审完整SHA在PR描述AQRP_FIXED_REVIEW_SHA记录；历史锚点不代替本轮目标。无已验收/发布内容或phase0-baseline。固定数据快照/业务锁文件不存在；来源与自查文件hash不是业务可运行证明。
+本地feature/phase-0-v3.2-design；main空初始化SHA=e87d0082a5e448e9550129a486ba965f13a155f8，默认main；草稿PR#1未合并。PR的AQRP_FIXED_REVIEW_SHA登记最新Gemini已审d4c8218，AQRP_EVIDENCE_HEAD_SHA单独登记后续证据提交；不得将证据头误称已独立审查。无已验收/发布内容或phase0-baseline。固定数据快照/业务锁文件不存在；来源与自查文件hash不是业务可运行证明。
 
 ## E · 结论
 
