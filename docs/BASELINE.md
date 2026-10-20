@@ -1,55 +1,41 @@
 # Phase 0 main 基线登记与发布门禁
 
-**发布状态：NOT RELEASED。PHASE 1 STATUS = BLOCKED。**
+**用户验收：ACCEPTED。PR #1：已合并。最终主干独立核验：待Gemini完成。PHASE 1 STATUS = BLOCKED。**
 
-日期2026-10-20（Asia/Shanghai）。需求GOV-010；来源 `docs/sources/AQRP_V3.2_BASELINE_GATE.md`。本文件是事实登记及待发布清单，不是发布证书。
+日期2026-10-20（Asia/Shanghai）。GOV-010及Main Baseline Release Gate继续适用。本文件登记已发生的合并及本次标签绑定规则，不以文档文字代替实际Git推送或Gemini复核。
 
-## 已核实的仓库事实
+## 版本与证据
 
-| 项目 | 当前状态 |
+| 项目 | 登记内容 |
 |---|---|
-| 仓库 | https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP- |
-| main | 存在，空初始化基线；完整SHA `e87d0082a5e448e9550129a486ba965f13a155f8` |
-| main tree | `4b825dc642cb6eb9a060e54bf8d69288fbee4904`，文件列表为空 |
-| 默认分支 | main（已设置并须以GitHub再核实记录为准） |
-| 开发分支 | feature/phase-0-v3.2-design，保留0b64148→04deecc→65ae3d3原始历史，6554dfe将空main接入共同祖先 |
-| 设计PR | https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1，Draft、Open、未合并 |
-| 固定设计审查SHA | `ed6666985bfac8cc94fa302c72e2e6333c679a6f`，与Gemini报告及PR字段一致；后来证据/状态提交不自动归入已审范围 |
-| 最新最终复核SHA | `1830b152ea4b2497fbfc54d4d506a77e3c2abb5f`；历史增量d4c8218/原设计ed666698报告保留；本次归档/记录更新不自动计入1830b15已审范围 |
-| Gemini原设计审查报告 | 原报告明确head为ed6666985bfac8cc94fa302c72e2e6333c679a6f、base为e87d008…；原文保存在 `audits/phase-0/gemini/aqrp_phase0_audit_report.md`，SHA-256为8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662 |
-| 最新审计建议及条件 | 最终报告设计PASS、人工验收就绪READY，非用户ACCEPTED或发布通过。F-001 High仍OPEN/GATED，P1 BLOCKED；沙箱执行按审计方陈述登记，原脚本/原始日志未附 |
-| 最终报告及事实差异 | 同目录aqrp_phase0_final_audit_and_acceptance_report.md的hash为1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc。核心分类/阶段/接口勘误已闭环；F-004物理隔离尚未验证，部分执行证据/数值措辞需限定，不能称全部报告事实闭环。详见FINAL_RECONCILIATION与FINAL_EVIDENCE_INDEX；历次原件不改 |
-| 用户正式批准Phase0 | 未批准；初始化/建PR授权不是ACCEPTED |
-| main中的已批准Phase0文件 | 无；尚无已批准设计内容 |
-| phase0-baseline标签 | 不存在，当前不创建 |
-| 稳定发布SHA/版本 | 无；RELEASED = 否 |
-| Phase1启动条件 | 不满足；即使后续RELEASED仍需另获P1明确启动授权 |
+| 仓库 / 默认分支 | https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP- / main |
+| 用户验收与授权 | 用户明确“验收已通过，可以将PR #1 合并入 main 并打上标签”；逐字原话及版本绑定见audits/phase-0/publication/APPROVAL.json |
+| 获批PR固定head | 228190a0c46595cf2927125fdc7d4f1c51b39ccf；原话未列SHA，此值为授权时核实的PR版本 |
+| 最新Gemini已审SHA | 1830b152ea4b2497fbfc54d4d506a77e3c2abb5f；最终报告设计PASS、人工验收就绪READY |
+| 最终报告原文/hash | audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md；1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc |
+| 原设计/增量审查 | ed6666985bfac8cc94fa302c72e2e6333c679a6f / d4c8218315a9152166cbe56fde54384dc99fb094；历次原件保留 |
+| 合并前main | e87d0082a5e448e9550129a486ba965f13a155f8，原空初始化；现为历史版本 |
+| PR #1合并提交 | 8c37e952be61054c6c72b5aaf573026c0355647b；merge保留历史；两个父提交与内容树均已核对 |
+| 合并内容一致性 | 合并提交tree与获批228190a完全一致，无额外业务差异 |
+| 后续发布登记 | 本提交仅补充批准/基线/进度/审查与自查证据，不改变获批需求、架构或业务契约；完整diff由Git及PR发布回执关联 |
+| 基线标签名 | phase0-baseline；绑定包含本登记文件的最终main提交，不绑定较早的空初始化或仅设计草稿 |
+| 标签目标完整SHA | 通过Git解析phase0-baseline^{commit}并与远端main核对；实际发布结果及完整SHA在PR #1发布回执记录，避免文件自引用SHA占位符 |
+| 正式RELEASED | 待标签/main实际核对及Gemini最终主干链路复核；当前不冒充该独立复核已完成 |
+| Phase1 | BLOCKED，尚无Phase1明确启动授权 |
 
-## 已有用户授权的精确范围
+## 实际核查与文件版本
 
-用户原文：
+- 合并前：65个清单文件hash一致；已提交17项文档自查通过。GitHub无status及PR workflow runs，CI按ENV-002留P1，不能称CI通过。
+- 合并后8c37e95：重跑文档自查17通过/0失败，完整证据为audits/phase-0/publication/MERGED_MAIN_SELF_CHECK.json和MERGED_MAIN_COMMAND_LOG.txt。
+- 本发布登记提交：当前SELF_CHECK.json、COMMAND_LOG.txt与MANIFEST.json记录适用自查及逐文件版本/hash；清单不包含自身hash，不代替Git Commit身份。
+- 获批需求106条/16组；CSV hash为20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1。ARCHITECTURE、INTERFACES、DATA_CONTRACT、BACKTEST_CONTRACT、RESEARCH_PROTOCOL、GOLDEN_DATASET等核心内容保持获批版本。
+- 用户批准范围的完整66文件快照可从获批228190a及其MANIFEST核验；最终main新增/修改仅为授权发布记录和自查证据，逐文件最终版本见当前MANIFEST及Git diff。
+- 实际合并回执、父提交、范围核对见audits/phase-0/publication/MERGE_VERIFICATION.json；标签推送后的实际远端核对回执保存在PR #1。
 
-> 我授权你建立仓库初始化所需的 main 基线，并创建 Phase 0 设计 PR；这不代表 Phase 0 验收通过。完成后给我一份可直接交给 Gemini 的审查指令，包含仓库地址、固定 SHA 和审查资料位置，不要进入 Phase 1。
+## 尚需完成的独立门禁
 
-用户随后Main Baseline Release Gate再次明确：未正式批准不得自行发布；审查通过不等于发布；Phase1仅可在P0 RELEASED且main基线可验证之后启动。当前授权只支持空main、默认分支设置、待审PR及门禁文档；不支持合入设计、打稳定标签、发布或P1开发。
+F-001的获批、合并、main内容与标签步骤分别登记；Gemini最终main/标签/审计/批准/文件链路核验尚未执行，当前不自行将其标为CLOSED。最终独立核验通过后才能登记完整RELEASED；即使RELEASED也须等待用户另行授权Phase1，并从核实main建立独立分支。
 
-## 正式发布前必须填齐并核实
+F-004物理云同步隔离仍未验证；原始执行日志未附等已披露证据边界继续保留，用户验收不被解释为已实现这些措施或逐项风险豁免。CI、timestamp验证、业务代码/测试仍按原定阶段实施；比赛profile、依赖精确版本、研究阈值等未来阶段前置事项不因本次验收自动确定。
 
-1. 原/增量/最终报告分别绑定ed666698、d4c8218、1830b15；最终报告已确认核心分类/阶段/接口勘误并给设计PASS、READY建议。F-004物理隔离陈述等仍须澄清或取得证据，不把报告自述当全部环境事实。用户未批准，1830b15不自动覆盖后续管理资料；最终main核验未执行。
-2. 用户明确批准Phase0的原文/可信记录、日期、范围、精确SHA、条件；另记录合并/发布授权。
-3. 已批准需求/架构版本及逐文件路径和hash：至少AGENTS、PROJECT_CHARTER、REQUIREMENTS/CSV、TRACEABILITY、ARCHITECTURE、INTERFACES、DATA_CONTRACT、BACKTEST_CONTRACT、RESEARCH_PROTOCOL、ROADMAP、ACCEPTANCE、TESTING、DECISIONS、环境安全与Golden设计、审计/证据/进度文件。当前批准清单为空。
-4. PR最终head/base、已核对diff、适用文档/配置检查命令和结果；所有批准范围外变化必须重新批准。
-5. 按授权合并后的main完整SHA及tree；若生成新合并SHA，核对最终内容/批准范围并重新执行受影响检查，必要时Gemini对新SHA复核。不是仅复用合并前测试数字。
-6. 只有上述条件齐全才创建 `phase0-baseline` 标签并验证其解析Commit与发布时main一致；标签/推送实际成功后才填写发布记录。不移动/覆盖既有稳定标签掩盖错误。
-7. 更新本文件、PROGRESS与CHANGELOG，并核对实际main文件/证据与清单。当前不填写不存在的批准人、报告、版本或标签。
-
-正式发布后本文件应登记发布main SHA、标签名、已批准文件版本/清单、Gemini及用户原始证据；发布提交自身SHA通过Git标签/PR发布记录关联，避免把自引用占位符当可核验值。
-
-## 已验证文件与证据位置
-
-- main文件列表：空；原始初始化证据见 `audits/phase-0/RELEASE_GATE_AUDIT.json`，本次远端分支/标签/默认分支/PR观察见 `audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json`。
-- 开发分支待审文件：`audits/phase-0/MANIFEST.json`（当前内容快照逐文件hash，不代表批准）。
-- 开发方文档自查：SELF_CHECK.json、COMMAND_LOG.txt；没有业务测试/CI/Gemini通过声明。
-- 审查资料包：`audits/phase-0/REVIEW_PACKAGE.md`；Gemini原报告及索引：`audits/phase-0/gemini/`。原文保持不变，开发方意见另文件记录，不冒充审计方结论。
-
-不得以空main、草稿PR、17项自查或未来拟建标签代替Phase0稳定发布。
+本次完成授权的合并、标签发布及必要记录维护后停止，不进入Phase1。

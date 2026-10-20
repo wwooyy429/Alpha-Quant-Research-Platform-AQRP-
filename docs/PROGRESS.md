@@ -1,27 +1,22 @@
 # 当前真实项目状态
 
-日期：2026-10-20（Asia/Shanghai）。本文件不授予权限。
+日期：2026-10-20（Asia/Shanghai）。权限以用户原话和publication/APPROVAL.json为据，本文不自行授予权限。
 
-- 当前授权：仅 Phase 0，需求审计与架构设计；V3.0/V3.1/V3.2合并。
-- 当前阶段状态：REVIEW REQUIRED（Gemini最终报告对1830b15给设计PASS、人工验收就绪READY建议；核心分类/阶段/接口勘误已闭环，物理隔离等事实证据仍有限定；用户尚未验收或授权发布）。
-- 当前稳定版本：无。main已存在但只含授权的空初始化提交 `e87d0082a5e448e9550129a486ba965f13a155f8`；无已批准Phase0内容/稳定标签，不算RELEASED。
-- 上一阶段：无；Phase 0尚未获人工验收。
-- 功能实现：数据、Registry、研究、组合、风险、回测、网页全部Planned；高级研究Deferred；真实执行Unsupported。
-- 当前本地分支：feature/phase-0-v3.2-design；精确Git状态及同步结果见审查资料包/实际命令记录，不能据分支名推定固定SHA。
-- 仓库：默认分支main；PR#1未合并。最新已复核SHA为 `1830b152ea4b2497fbfc54d4d506a77e3c2abb5f`，历史增量d4c8218与原设计ed666698分别保留；PR区分最终已审版本与后续证据头。本次归档/管理更新不自动继承1830b15结论。
-- Gemini原报告已收到：`audits/phase-0/gemini/aqrp_phase0_audit_report.md`；总体PASS WITH CONDITIONS，设计子结论PASS，P1建议BLOCKED。base/head与报告一致，来源文件字节hash核对通过；本次不重新声称运行了Gemini沙箱或验证了未附原始日志。
-- Finding F-001 High仍OPEN/GATED；F-002 CI列P1首项；F-003为P1时间验证建议；F-004保留缓解状态并登记配置建议。编号/脚本路径/容差等报告澄清见同目录DEVELOPER_RESPONSE；GPT不改原文、不自行关闭Gemini问题。
-- 最新原报告：`audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md`，SHA-256为1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc；最新事实核对与证据索引为FINAL_RECONCILIATION及FINAL_EVIDENCE_INDEX。原报告、Rev 1/2、旧勘误表和旧开发方意见均保留。
-- 最终核对：16组/106条及全部阶段映射与CSV一致，EXP首次P3、能力视图与编号分组、SignalBatch真实字段、RESEARCH/VALID及分数权已明确，核心勘误闭环。报告F-004称物理隔离但当前仍在百度同步目录，缺少隔离完成证据；浮点零误差/执行日志/部分Finding引用仍需限定。不能登记所有报告事实已验证。原字节及开发方分类建议稿另存证；详见FINAL_RECONCILIATION。
-- 开发方自查：只允许文档结构/追踪/依赖/案例算式核查，实际结果见 `audits/phase-0/SELF_CHECK.json`，不等同独立语义审核。
-- 用户仅授权空main初始化与创建Phase0设计PR，明确不是验收通过。Phase0正式验收、设计合并/发布及Phase1授权均未获得。
-- Phase0发布门禁：最新设计审计建议=PASS（仅1830b15），人工验收就绪=READY（Gemini建议）；核心勘误=闭环，全部环境/执行事实=未全部验证；ACCEPTED=未批准；RELEASED=否；phase0-baseline标签=不存在。
-- **PHASE 1 STATUS = BLOCKED**。正式发布及核实main/标签之前不得从草稿分支启动P1，即使发布也仍需P1明确授权。
+- Phase0用户验收：**ACCEPTED**；用户明确授权PR#1合并main及创建phase0-baseline。无Phase1启动授权。
+- PR#1获批head：228190a0c46595cf2927125fdc7d4f1c51b39ccf。
+- 实际合并提交：8c37e952be61054c6c72b5aaf573026c0355647b；已核对tree与获批head完全一致，父提交/历史保留，无业务改动。
+- 当前分支：main。本次后续提交仅维护批准、基线、进度、审查及自查证据；标签phase0-baseline绑定最终main登记提交，完整SHA及实际远端推送结果由PR#1发布回执记录。
+- 审计建议：Gemini对1830b152ea4b2497fbfc54d4d506a77e3c2abb5f设计PASS、人工验收就绪READY；后续获批管理记录不自动继承该审计结论。
+- 核心勘误：16组106条、所有阶段、EXP首次P3、真实字段及职责已闭环。历史报告及来源hash保持原状。
+- 已披露限制：F-004物理云同步隔离未验证，原始Gemini脚本/运行日志未附，部分数值/引用措辞受证据范围限定；不得声称用户验收使这些措施自动实现。
+- F-001：用户验收和main合并步骤已有证据；标签/main实际核对见发布回执，Gemini最终主干独立核验仍待完成，不自行关闭整个门禁。
+- F-002 CI留P1首项；F-003的P1时间验证实现仍Planned；F-004保留审计方MITIGATED和开发方证据限定。
+- 合并后8c37e95文档自查：17通过/0失败；原始结果另存publication/MERGED_MAIN_SELF_CHECK.json及MERGED_MAIN_COMMAND_LOG.txt。本次登记提交的检查见当前SELF_CHECK/COMMAND_LOG/MANIFEST。
+- 正式RELEASED：**待Gemini最终主干链路核验**，不将用户ACCEPTED或标签创建单独等同完整门禁闭环。
+- **PHASE 1 STATUS = BLOCKED**：独立主干核验及Phase1单独启动授权尚不齐全。
+- 功能实现：数据、Registry、研究、组合、风控、回测、网页及相应业务测试仍Planned；高级扩展Deferred；真实执行Unsupported。未执行任何Phase1开发。
+- 环境/市场/比赛profile、研究阈值及各后续阶段前置事项仍按DECISIONS与ROADMAP分别确定。
 
-## 本次交付范围
+## 当前交付与停止点
 
-12份要求文档、统一数据/事件账本/研究/环境安全契约、编号需求和CSV/双向追踪、Golden设计、六项专项审计、架构评审自查、Gemini与ReviewPackage模板、实际文件清单及核查日志。tests下仅目录说明，没有业务测试或功能。所有设计细节与验收数值是待审基线。
-
-## 继续工作的门槛
-
-最终报告已确认核心设计勘误；不再把EXP/字段/正式分组列为未纠正。物理隔离陈述缺乏实际证据，应澄清或验证，不以报告自述替代事实。最终审批仍须明确版本、范围及后续管理资料差异；用户验收与合并/发布授权未获得，本次不执行发布。未来按授权核实main/标签/文件、合并后适用检查及Gemini主干链路，达到RELEASED后P1仍需独立授权。当前停止在Phase0。
+已验收Phase0文档/规范，按授权完成main合并及基线标签发布和核对后停止。BASELINE登记报告、获批版本、合并SHA、标签解析与文件清单规则；实际标签推送成功及目标SHA以PR#1发布回执为准。下一项独立审查是Gemini对最终固定main/标签版本核验；该审查不构成Phase1授权。

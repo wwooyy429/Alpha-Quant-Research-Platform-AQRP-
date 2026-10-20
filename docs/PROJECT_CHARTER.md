@@ -1,4 +1,4 @@
-# 项目章程 V3.2（待审草案）
+# 项目章程 V3.2（Phase0已获用户验收）
 
 日期：2026-10-20（Asia/Shanghai）。来源：V3.0 全文、V3.1 §§1–8、V3.2 §§1–9；修订只覆盖明确变更，其余原要求保留。项目仓库：<https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP->。
 
@@ -10,12 +10,12 @@
 
 当前授权仅 Phase 0。允许原文归档、编号需求、接口/时序设计、阶段计划、测试设计、审计草案及审查模板。当前禁止业务实现、环境安装、批量挖掘、真实交易、自动 Phase 1。准备设计不等同于 Gemini 预审通过。
 
-角色按 AGENTS：GPT Work 开发；Gemini 独立审查；用户拥有最终决定权。GitHub 固定 Commit、PR、可信测试记录为事实源。新仓库尚无稳定版本；本地证据不自动成为远端证据。
+角色按 AGENTS：GPT Work 开发；Gemini 独立审查；用户拥有最终决定权。GitHub固定Commit、PR、可信测试记录为事实源。用户已验收Phase0并授权PR#1合并及基线标签，记录见BASELINE；最终Gemini主干独立核验仍待完成，本地证据不自动成为远端证据。
 
 阶段完成需范围内交付、适用测试、Gemini 固定 SHA 审查、阻断问题闭环、人工批准。合并、发布、下一阶段分别需明确授权。不可用口头 AI 共识替代证据，不可把同一模型另一会话当作独立正确性保证。
 
-用户补充Phase0 Main Baseline Release Gate：AUDIT PASSED、ACCEPTED、RELEASED分别记录；P0文档必须经授权在main形成可核实稳定内容并创建phase0-baseline标签，P1才具备前置条件且仍需单独启动授权。当前main仅为空初始化提交，PR#1待审，不构成发布。详见BASELINE。
+用户补充Phase0 Main Baseline Release Gate：AUDIT PASSED、ACCEPTED、RELEASED分别记录；P0文档须经授权合入main、创建phase0-baseline并核实最终内容及独立审查链路，P1还需单独启动授权。当前用户ACCEPTED且PR#1已合并，标签/main实际结果见PR发布回执，Gemini最终主干核验仍待完成。详见BASELINE。
 
 四级范围以 REQUIREMENTS 为准：MVP（最小可研究/模拟主链及质量治理）、Competition Ready（完整 V3.0 功能和已知比赛规则）、Advanced Research（公式/机器学习/自动挖掘）、Production Extensions（真实执行等另行授权）。分级不删除 V3.0 必须需求，也不改变 Phase 0–7 固定阶段。
 
-所有依赖未具备的测试仅 Planned。任何未实现能力标 Planned、Deferred 或 Unsupported。禁止模拟数据冒充真实市场接入或比赛认证。架构、接口、通过标准及未决问题见对应文档，均待 Gemini 与用户批准。
+所有依赖未具备的测试仅Planned，未实现能力标Planned、Deferred或Unsupported。禁止模拟数据冒充真实市场接入或比赛认证。Phase0架构/接口设计已获用户验收；后续实施标准、具体阈值与未决事项按对应文档及阶段另行批准，最终Gemini主干链路核验仍待完成。

@@ -1,0 +1,41 @@
+{
+  "record_kind": "Actual GitHub merge receipt and developer post-merge verification before publication-metadata commit",
+  "repository": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+  "pr_number": 1,
+  "approved_head": "228190a0c46595cf2927125fdc7d4f1c51b39ccf",
+  "previous_main": "e87d0082a5e448e9550129a486ba965f13a155f8",
+  "merge_method": "merge",
+  "merge_commit": "8c37e952be61054c6c72b5aaf573026c0355647b",
+  "api_result": {
+    "merged": true,
+    "message": "Pull Request successfully merged"
+  },
+  "merged_tree_identical_to_approved_head": true,
+  "parents_verified": [
+    "e87d0082a5e448e9550129a486ba965f13a155f8",
+    "228190a0c46595cf2927125fdc7d4f1c51b39ccf"
+  ],
+  "premerge_manifest_hashes_verified": 65,
+  "premerge_recorded_document_checks": {
+    "passed": 17,
+    "failed": 0
+  },
+  "github_statuses": [],
+  "github_pr_workflow_runs": [],
+  "github_reviews": [],
+  "github_review_threads": [],
+  "ci_interpretation": "No GitHub CI configured, planned from Phase1; empty API lists do not mean CI passed.",
+  "postmerge_checks": {
+    "passed": 17,
+    "failed": 0,
+    "check_kind": "Phase0 document/traceability/candidate arithmetic developer checks",
+    "evidence": "MERGED_MAIN_SELF_CHECK.json",
+    "raw_command_log": "MERGED_MAIN_COMMAND_LOG.txt"
+  },
+  "publication_metadata_scope": "A following main commit contains only authorized approval/baseline/progress/review/check bookkeeping. Final baseline SHA is resolved from phase0-baseline^{commit}, recorded in PR #1 publication receipt after actual push.",
+  "tag_name": "phase0-baseline",
+  "final_remote_tag_verification": "Recorded after actual push in PR #1 publication receipt; not prefilled as completed here",
+  "gemini_final_main_verification": "PENDING",
+  "phase0_released": false,
+  "phase1_status": "BLOCKED"
+}

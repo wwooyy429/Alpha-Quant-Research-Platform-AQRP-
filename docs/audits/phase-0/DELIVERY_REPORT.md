@@ -16,12 +16,12 @@ Phase0：V3.0/V3.1/V3.2及Main Baseline Release Gate整合设计。106条需求�
 
 ## D · 版本
 
-本地feature/phase-0-v3.2-design；main空初始化SHA=e87d0082a5e448e9550129a486ba965f13a155f8，默认main；草稿PR#1未合并。PR的AQRP_FIXED_REVIEW_SHA登记最新Gemini已审1830b15，AQRP_EVIDENCE_HEAD_SHA单独登记后续证据提交；不得将证据头误称已独立审查。无已验收/发布内容或phase0-baseline。固定数据快照/业务锁文件不存在；来源与自查文件hash不是业务可运行证明。
+当前本地main；PR#1已按用户授权合并，实际提交8c37e952be61054c6c72b5aaf573026c0355647b且tree与获批228190a一致。后续发布登记提交由phase0-baseline绑定，完整SHA/推送结果见PR发布回执。最新Gemini已审仍是1830b15，不能将新main管理提交误称已独立审查；固定业务数据快照/锁文件仍无，不以hash冒充业务可运行证明。
 
 ## E · 结论
 
-阶段状态REVIEW REQUIRED（用户未验收）；Gemini对1830b15给设计PASS、人工验收就绪READY，核心设计勘误已闭环。物理隔离等事实证据尚未全部核实；用户未验收/授权发布，main为空且无标签，当前 **BLOCKED（稳定发布闭环/Phase1启动）**。ACCEPTED未批准、RELEASED否；本次明确不执行合并/标签/P1，不能用提供最终报告代替用户授权。
+阶段用户验收ACCEPTED，明确合并/标签授权已存证并执行main合并；合并后17项文档检查通过。核心勘误闭环，物理隔离等证据限制保留。最终标签/main实际核对见PR发布回执，Gemini主干独立核验尚待完成，完整RELEASED门禁仍未关闭。**PHASE1 BLOCKED**，未获启动授权。
 
 ## F · 下一步及停止点
 
-Gemini按固定完整SHA审查原文/全部设计/原始证据；提出问题后由GPT修复并以新SHA复核。关键待决事项须用户决定。条件齐全后才可提出Phase0人工验收；获合并/发布授权后才更新main并建立phase0-baseline、核对最终内容及BASELINE登记，达到RELEASED后仍需单独P1授权。当前停留Phase0，不自动实施。
+按本次明确授权完成main合并、必要发布记录及phase0-baseline推送核对后停止。Gemini需对最终固定main/标签及批准/审计/文件链路独立复核；不得假称该复核已通过，未来阶段待决事项也未自动确定。达到RELEASED后仍需用户单独授权Phase1。

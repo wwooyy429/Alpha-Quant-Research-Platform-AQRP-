@@ -2,9 +2,9 @@
 
 ## 当前权限
 
-只授权 Phase 0 需求审计与架构设计。当前状态以 `docs/PROGRESS.md` 为准。全部设计是待审提案；不得开发 Phase 1–7 业务软件。不得将文件存在等同于阶段已验收。
+当前仅Phase 0范围。用户已于2026-10-20明确验收Phase0并授权PR#1合并main及创建phase0-baseline，批准记录见docs/audits/phase-0/publication/APPROVAL.json。当前状态以docs/PROGRESS.md为准；未授权Phase1–7业务开发，未来阶段未决事项仍按各自前置条件批准。
 
-2026-10-20 用户另行授权建立空初始化main与Phase0设计PR，明确不代表Phase0验收。初始化main不是已发布设计基线；当前 `PHASE 1 STATUS = BLOCKED`。发布门禁见 `docs/BASELINE.md` 及来源 `AQRP_V3.2_BASELINE_GATE.md`。
+历史空main初始化/建PR授权不含验收，现已由用户本次明确验收及合并/标签授权更新。获批设计已合入main；最终主干/标签与Gemini独立闭环仍须分别核实。当前 `PHASE 1 STATUS = BLOCKED`，无Phase1启动授权。发布门禁见docs/BASELINE.md及来源AQRP_V3.2_BASELINE_GATE.md。
 
 开始任务先读本文件及 docs 中的 PROJECT_CHARTER、ARCHITECTURE、INTERFACES、REQUIREMENTS、TRACEABILITY、ROADMAP、PROGRESS、DECISIONS，再检查实际 Git 状态和上一阶段批准记录。发现文档与代码冲突先报告，不覆盖既有修改。
 

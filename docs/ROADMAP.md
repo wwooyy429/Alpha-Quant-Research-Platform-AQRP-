@@ -4,7 +4,7 @@
 
 | Phase / 状态 | 范围、输入前提及允许文件 | 输出与适用验收 / 禁止越界 |
 |---|---|---|
-| 0 / REVIEW REQUIRED | V3.0–3.2；仅文档、来源、审计资料与文档核查工具 | 需求、架构、所有契约、Golden设计、专项审计及模板；不开发业务包/网页/引擎 |
+| 0 / ACCEPTED，主干最终独立核验待完成 | V3.0–3.2；仅文档、来源、审计资料与文档核查工具；用户已验收并授权main合并/标签 | PR#1已合并8c37e95；发布登记和phase0-baseline核对后仍须Gemini主干链路核验；不开发业务包/网页/引擎 |
 | 1 / BLOCKED | P0必须RELEASED：批准内容已在main，phase0-baseline与main目标一致，BASELINE及审计/批准记录可核实；另需P1启动授权；从核实main新建独立分支；未来 src/aqrp/core,data 与 tests/data、CI/锁文件 | 骨架、精确依赖、DuckDB/Parquet、合成OHLCV、加载清洗/PIT/日历/标准答案、pytest/CI；当前禁止启动，不能用P0草稿代正式基线 |
 | 2 / PLANNED | P1验收+P2授权；Data API可用；未来 factors 与 tests/factors | Factor API/Registry、元数据/参数/版本、Momentum/Reversal/Volume、注册/替换/回滚/major兼容；不要求研究/回测E2E |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |

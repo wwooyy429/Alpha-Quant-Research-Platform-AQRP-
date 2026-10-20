@@ -1,0 +1,26 @@
+{
+  "recorded_at_utc": "2026-10-20 14:53:40 UTC",
+  "approval_date_local": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "source": "Direct human user message in this Codex task; not an attached auditor instruction",
+  "verbatim_user_message": "验收已通过，可以将PR #1 合并入 `main`  并打上标签",
+  "phase": 0,
+  "user_phase0_accepted": true,
+  "merge_authorized": true,
+  "baseline_tag_authorized": true,
+  "tag_name": "phase0-baseline",
+  "phase1_authorized": false,
+  "pr_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1",
+  "approved_pr_head": "228190a0c46595cf2927125fdc7d4f1c51b39ccf",
+  "version_binding": "The human named PR #1 without spelling a SHA. The fixed SHA is the verified PR head at authorization, identified from task context; this is developer version binding, not part of the verbatim quote.",
+  "scope": "Accepted Phase0 PR contents and authorized main merge/tag; routine approval/baseline/progress/check evidence maintenance is recorded separately. No business/contract changes or Phase1 implementation.",
+  "gemini_final_reviewed_commit": "1830b152ea4b2497fbfc54d4d506a77e3c2abb5f",
+  "gemini_report": "docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md",
+  "disclosed_limits_preserved": [
+    "F-004 physical cloud-sync isolation not verified",
+    "Raw Gemini execution scripts/logs absent",
+    "CI and business implementations remain assigned to later phases"
+  ],
+  "does_not_assert_explicit_risk_waiver": true,
+  "does_not_claim_gemini_final_main_verification": true
+}

@@ -164,11 +164,20 @@ def main():
                         'report_sha256':supplied_review['report_sha256'],
                         'execution_scope':supplied_review['execution_evidence_scope'],
                         'developer_closure':supplied_review.get('developer_closure','See developer response; no automatic finding closure')}
+    approval_path = AUDIT/'publication/APPROVAL.json'
+    human_approval = 'NOT VERIFIED'
+    if approval_path.is_file():
+        recorded_approval = json.loads(approval_path.read_text(encoding='utf-8'))
+        human_approval = {'status':'Human approval record present; this tool does not grant authorization',
+                          'path':approval_path.relative_to(ROOT).as_posix(),
+                          'phase0_accepted':recorded_approval.get('user_phase0_accepted',False),
+                          'approved_pr_head':recorded_approval.get('approved_pr_head'),
+                          'phase1_authorized':recorded_approval.get('phase1_authorized',False)}
     summary = {'scope':'Phase0文档结构与候选算式开发方自查；不是业务测试、CI或Gemini审计',
        'started_at_utc': started, 'finished_at_utc':datetime.now(timezone.utc).isoformat(),
        'python':sys.version,'platform':platform.platform(),'requirements':len(rows),
        'checks_passed':len(checks)-len(errors),'checks_failed':len(errors),'checks':checks,
-       'business_tests':'NOT RUN / Planned','gemini_review':gemini_status,'human_approval':'NOT VERIFIED',
+       'business_tests':'NOT RUN / Planned','gemini_review':gemini_status,'human_approval':human_approval,
        'ci':'NOT ESTABLISHED; Phase1 planned','attachment_copy':copied,'git_commands':commands}
     (AUDIT/'SELF_CHECK.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     log = ['PHASE0 DOCUMENT SELF-CHECK — RAW CAPTURE',f'Start UTC: {started}',
