@@ -1,5 +1,12 @@
 # 变更记录
 
+## 2026-10-20 · Gemini Baseline Verification Gate报告归档与发布状态闭环
+
+- 按用户“归档本报告并更新状态”授权，将门禁原件逐字节归档；SHA-256为aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1。Gate固定审查7de1d0e81385ae97f98ea673fe05dd726f0b577b，PASS、Phase0 RELEASED、F-001 RESOLVED/CLOSED已登记。
+- phase0-baseline附注标签对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0及目标7de1d0e保持不动；本次main仅追加报告、状态和自查资料，不将新归档提交冒称已被Gate覆盖，也不反向改写发布快照。
+- Phase1基线前置门禁改为UNBLOCKED，执行状态为AWAITING USER AUTHORIZATION / NOT STARTED。未取得Phase1启动授权；不创建P1分支、环境、CI或业务模块。未来计划预审及前置决策仍保留。
+- 106条需求、核心契约、历史审计/批准/发布证据不改；F-002/F-003后续实现及F-004物理隔离等已披露限制保留。本次只对归档/状态适用文档检查。
+
 ## 2026-10-20 · 用户验收、PR #1合并与基线标签发布登记
 
 - 用户明确“验收已通过，可以将PR #1 合并入 main 并打上标签”；按授权时实际PR head 228190a0c46595cf2927125fdc7d4f1c51b39ccf绑定批准范围，原话与绑定依据分别保存在publication/APPROVAL.json，不伪称原话列出了SHA。

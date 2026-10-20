@@ -4,8 +4,8 @@
 
 | Phase / 状态 | 范围、输入前提及允许文件 | 输出与适用验收 / 禁止越界 |
 |---|---|---|
-| 0 / ACCEPTED，主干最终独立核验待完成 | V3.0–3.2；仅文档、来源、审计资料与文档核查工具；用户已验收并授权main合并/标签 | PR#1已合并8c37e95；发布登记和phase0-baseline核对后仍须Gemini主干链路核验；不开发业务包/网页/引擎 |
-| 1 / BLOCKED | P0必须RELEASED：批准内容已在main，phase0-baseline与main目标一致，BASELINE及审计/批准记录可核实；另需P1启动授权；从核实main新建独立分支；未来 src/aqrp/core,data 与 tests/data、CI/锁文件 | 骨架、精确依赖、DuckDB/Parquet、合成OHLCV、加载清洗/PIT/日历/标准答案、pytest/CI；当前禁止启动，不能用P0草稿代正式基线 |
+| 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
+| 1 / AWAITING USER AUTHORIZATION，未启动 | P0基线前置门禁已UNBLOCKED；另需用户P1启动授权、阶段计划/预审及适用前置决策；从核实main新建独立分支并核对相对固定基线的归档差异；未来 src/aqrp/core,data 与 tests/data、CI/锁文件 | 骨架、精确依赖、DuckDB/Parquet、合成OHLCV、加载清洗/PIT/日历/标准答案、pytest/CI；当前尚未授权实施，不以Gemini建议代替用户授权 |
 | 2 / PLANNED | P1验收+P2授权；Data API可用；未来 factors 与 tests/factors | Factor API/Registry、元数据/参数/版本、Momentum/Reversal/Volume、注册/替换/回滚/major兼容；不要求研究/回测E2E |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
@@ -17,7 +17,7 @@
 
 ## 每阶段 Gemini 审查时点
 
-1. **实施前**：阶段计划、需求ID、允许/禁止文件、接口、预期答案、风险及标准送 Gemini。P0 当前提供全套待审提案，不声称已完成预审。
+1. **实施前**：阶段计划、需求ID、允许/禁止文件、接口、预期答案、风险及标准送Gemini。P0已发布且主干门禁闭环；后续阶段仍分别执行计划预审，不能沿用P0结论代替。
 2. **自测后**：固定 Commit SHA + PR + Review Package，Gemini 阅读该版本实际文档/代码及原始证据；P0 审设计，P1数据，P2插件，P3统计/OOS，P4组合/风险，P5时序/账本，P6界面一致性，P7全链/部署/比赛。
 3. **修复后**：新 SHA 映射缺陷，重跑受影响及回归测试；Gemini 对新 SHA 复核关键问题。不得沿用旧 SHA 的 PASS 覆盖新实现。
 4. **人工验收前**：证据齐全、适用测试及独立审查完成、阻断问题关闭才提交验收申请。尚缺 Gemini 时只能请求审查/决策，不申请正常通过。

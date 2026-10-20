@@ -1,6 +1,6 @@
 # 架构决策、冲突及待用户决定事项
 
-Gemini已对1830b15设计给出PASS及人工验收就绪READY建议；用户现已明确验收Phase0并授权PR#1合并main及打标签，批准记录见publication/APPROVAL.json。未来阶段选型、profile和业务假设仍按各项前置条件批准，不因Phase0验收自动确定；Phase1未获启动授权。任何批准须记录时间、范围、证据及完整SHA。
+Gemini已对1830b15设计给PASS/READY，用户已验收并授权合并/标签；Gemini现已对发布基线7de1d0e给Gate PASS、Phase0 RELEASED及F-001 CLOSED。批准见publication/APPROVAL.json，门禁来源见gemini/GATE_EVIDENCE_INDEX.json。未来阶段选型、profile和业务假设仍按各项前置条件批准，Phase1尚未获启动授权。
 
 | ID | 类型 / 事项 | 当前处理与提案 | 决策者 / 截止关卡 |
 |---|---|---|---|
@@ -10,12 +10,12 @@ Gemini已对1830b15设计给出PASS及人工验收就绪READY建议；用户现�
 | D-004 | 未决：样本划分/通过门槛 | 实际日期、期限网格、最小n、试验预算、IC/成本后收益/风险门槛尚未指定；缺项不能正式批准因子 | 用户+Gemini；P3正式评估前，P5补交易门槛 |
 | D-005 | 未决：数学/执行定义提案 | ddof=1、平均并列秩、next-open标签、非年化ICIR、移动均价成本法、Decimal舍入、单币种和合成开盘容量等为提案 | 用户+Gemini；对应阶段计划批准前 |
 | D-006 | 未决：不可信代码隔离 | P2先限已审随库因子；任意外部插件上传执行Unsupported；独立进程/OS沙箱方案须威胁建模及权限确认 | 用户+Gemini；开放外部执行前 |
-| D-007 | 核心勘误闭环；用户已验收，最终主干独立核验待完成 | 最终报告审查1830b15，设计PASS/就绪READY；核心分类/阶段/字段职责已纠正。F-004物理隔离、浮点/执行日志等证据边界保留。用户批准228190a的PR成果，已合并8c37e95；本次仅维护发布证据 | Gemini最终main/标签核验尚待完成；不据用户验收虚构环境隔离或启动P1 |
+| D-007 | 核心勘误及独立主干门禁闭环 | 设计1830b15 PASS/READY；用户批准228190a，合并8c37e95，发布7de1d0e；Gemini Gate PASS并关闭F-001。F-004物理隔离及执行日志等证据边界保留，本次归档不移动标签 | Phase0 RELEASED；Phase1基线门禁UNBLOCKED，但需用户单独授权及阶段预审，不自动启动 |
 | D-008 | 未决：性能与资源 | 证券数量/年份/数据量/内存/耗时目标未知；不预设无依据SLA，不提前分布式实现 | 用户；必要性能测试前 |
 | D-009 | 未决：能力分级与覆盖率 | 四级划分和测试覆盖门槛已提出；CompetitionReady中的V3.0必需功能不能自动延期 | 用户+Gemini；P0设计批准前 |
-| D-010 | 初始化历史保留；用户已验收并授权合并/标签 | 旧授权仅空main/建PR；最新明确验收及合并标签授权已记录。PR#1合并为8c37e952be61054c6c72b5aaf573026c0355647b，tree与获批228190a一致；最终登记提交由phase0-baseline绑定 | 批准见publication/APPROVAL.json，合并见MERGE_VERIFICATION.json；标签实际结果见PR发布回执 |
+| D-010 | 初始化/批准/合并/标签/独立核验已追溯 | PR#1合并8c37e95的tree与获批228190a一致；phase0-baseline固定7de1d0e，附注对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0，Gemini已完成主干链路核验 | APPROVAL、MERGE_VERIFICATION及GATE_EVIDENCE_INDEX分别存证；新归档提交不是替代基线 |
 | D-011 | 未决：PIT证据不足历史源 | 供应商无历史available_at证据时仅Exploratory，不能用抓取时间倒填历史；需独立来源核对方案 | 用户+Gemini；正式PIT验收前 |
-| D-012 | 已有用户补充规则：P0发布门禁 | AUDIT PASSED→用户ACCEPTED→按授权main稳定内容/phase0-baseline/BASELINE证据核实后RELEASED；P1从核实main另建分支且需单独授权。当前P1 BLOCKED | 用户最新Main Baseline Release Gate指令；不得把初始化授权当发布授权 |
+| D-012 | P0发布门禁已通过，P1授权另行取得 | AUDIT/ACCEPTED/main发布/phase0-baseline/独立Gate证据齐备，固定基线7de1d0e为RELEASED。P1基线门禁UNBLOCKED，执行状态为AWAITING USER AUTHORIZATION / NOT STARTED | 不把Gemini启动建议当用户授权；获授权后仍须核实main差异并完成阶段计划预审 |
 
 ## 已识别冲突及处理
 
@@ -24,7 +24,7 @@ Gemini已对1830b15设计给出PASS及人工验收就绪READY建议；用户现�
 3. V3.2要求实施前Gemini预审，而本次无Gemini连接：当前成果全是供预审的提案，无业务实现；不得视为G1已通过。
 4. V3.0批准因子输入P4但实用性需P5成本/限制：拆分Reviewed、ResearchValidated和StrategyApproved。P4纯组合可用研究已验证的精确分数和显式夹具；正式策略执行须P5后的最终审批证据。
 5. V3.0要求第一版多空/中性化等，V3.1要求MVP分离：仅作交付层级，不删除/静默延期原必须项；完整系统阶段需对应CompetitionReady需求，扩展能力另授权。
-6. 原空仓库无base/PR的问题已按初始化授权解决，旧空main和原开发历史保留。用户现已验收并授权PR#1合并/标签，实际合并8c37e95；最终发布登记/标签及Gemini主干核验分别追踪。清单hash不替代Git SHA、CI或独立复核。
+6. 原空仓库无base/PR的问题已解决，空main及开发历史保留。批准、合并8c37e95、标签7de1d0e及Gemini Gate PASS现均有证据；归档记录随后追加main，稳定标签不移动。清单hash仍不替代Git SHA、CI或独立复核。
 
 ## 变更控制
 

@@ -4,7 +4,7 @@
 
 当前仅Phase 0范围。用户已于2026-10-20明确验收Phase0并授权PR#1合并main及创建phase0-baseline，批准记录见docs/audits/phase-0/publication/APPROVAL.json。当前状态以docs/PROGRESS.md为准；未授权Phase1–7业务开发，未来阶段未决事项仍按各自前置条件批准。
 
-历史空main初始化/建PR授权不含验收，现已由用户本次明确验收及合并/标签授权更新。获批设计已合入main；最终主干/标签与Gemini独立闭环仍须分别核实。当前 `PHASE 1 STATUS = BLOCKED`，无Phase1启动授权。发布门禁见docs/BASELINE.md及来源AQRP_V3.2_BASELINE_GATE.md。
+Phase0已ACCEPTED并RELEASED，Gemini对7de1d0e81385ae97f98ea673fe05dd726f0b577b的Baseline Verification Gate给PASS、F-001 CLOSED；原件及索引见docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json。phase0-baseline保持固定，不因后续报告归档移动。Phase1基线阻断已解除，执行状态为AWAITING USER AUTHORIZATION / NOT STARTED，尚无Phase1启动授权。发布登记见docs/BASELINE.md。
 
 开始任务先读本文件及 docs 中的 PROJECT_CHARTER、ARCHITECTURE、INTERFACES、REQUIREMENTS、TRACEABILITY、ROADMAP、PROGRESS、DECISIONS，再检查实际 Git 状态和上一阶段批准记录。发现文档与代码冲突先报告，不覆盖既有修改。
 

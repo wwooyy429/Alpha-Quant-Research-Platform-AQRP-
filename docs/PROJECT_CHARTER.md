@@ -10,12 +10,12 @@
 
 当前授权仅 Phase 0。允许原文归档、编号需求、接口/时序设计、阶段计划、测试设计、审计草案及审查模板。当前禁止业务实现、环境安装、批量挖掘、真实交易、自动 Phase 1。准备设计不等同于 Gemini 预审通过。
 
-角色按 AGENTS：GPT Work 开发；Gemini 独立审查；用户拥有最终决定权。GitHub固定Commit、PR、可信测试记录为事实源。用户已验收Phase0并授权PR#1合并及基线标签，记录见BASELINE；最终Gemini主干独立核验仍待完成，本地证据不自动成为远端证据。
+角色按AGENTS：GPT Work开发，Gemini独立审查，用户拥有最终决定权。GitHub固定Commit、PR、可信记录为事实源。Phase0已验收，main/标签已核实，Gemini主干门禁PASS，基线7de1d0e已RELEASED；报告及批准见BASELINE。后续归档不移动稳定标签，不自动获下一阶段授权。
 
 阶段完成需范围内交付、适用测试、Gemini 固定 SHA 审查、阻断问题闭环、人工批准。合并、发布、下一阶段分别需明确授权。不可用口头 AI 共识替代证据，不可把同一模型另一会话当作独立正确性保证。
 
-用户补充Phase0 Main Baseline Release Gate：AUDIT PASSED、ACCEPTED、RELEASED分别记录；P0文档须经授权合入main、创建phase0-baseline并核实最终内容及独立审查链路，P1还需单独启动授权。当前用户ACCEPTED且PR#1已合并，标签/main实际结果见PR发布回执，Gemini最终主干核验仍待完成。详见BASELINE。
+用户补充Phase0 Main Baseline Release Gate：AUDIT PASSED、ACCEPTED、RELEASED分别记录。当前三者已齐备，Gemini已核实固定main基线/标签/批准/文件链路并关闭F-001；Phase1基线前置门禁解除，但尚无单独启动授权，不能自动实施。详见BASELINE。
 
 四级范围以 REQUIREMENTS 为准：MVP（最小可研究/模拟主链及质量治理）、Competition Ready（完整 V3.0 功能和已知比赛规则）、Advanced Research（公式/机器学习/自动挖掘）、Production Extensions（真实执行等另行授权）。分级不删除 V3.0 必须需求，也不改变 Phase 0–7 固定阶段。
 
-所有依赖未具备的测试仅Planned，未实现能力标Planned、Deferred或Unsupported。禁止模拟数据冒充真实市场接入或比赛认证。Phase0架构/接口设计已获用户验收；后续实施标准、具体阈值与未决事项按对应文档及阶段另行批准，最终Gemini主干链路核验仍待完成。
+所有依赖未具备的测试仅Planned，未实现能力标Planned、Deferred或Unsupported。禁止模拟数据冒充真实市场接入或比赛认证。Phase0设计已验收发布；后续实施标准、阈值与未决事项按对应文档及阶段另行批准，基线门禁通过不代替未来能力验证。

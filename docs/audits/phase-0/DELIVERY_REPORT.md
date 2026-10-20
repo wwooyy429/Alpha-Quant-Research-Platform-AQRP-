@@ -1,4 +1,4 @@
-# Phase 0 提案交付报告（A–F）
+# Phase 0 正式发布与门禁归档报告（A–F）
 
 ## A · 完成情况
 
@@ -12,16 +12,16 @@ Phase0：V3.0/V3.1/V3.2及Main Baseline Release Gate整合设计。106条需求�
 
 ## C · 技术及独立审查
 
-固定架构未改。Gemini最终报告明确审查1830b15，设计PASS、人工验收就绪READY；原报告ed666698与增量d4c8218历史结论保留。16组106条及全部阶段、EXP首次P3、SignalBatch真实字段、研究/验证及分数权勘误已闭环。F-004物理隔离尚无实际证据，数值零误差/原始执行日志及部分引用仍需限定；不能声称所有报告事实已验证。最新核对/来源hash为gemini/FINAL_RECONCILIATION与FINAL_EVIDENCE_INDEX；原文及先前处理记录保留，独立执行按审计方陈述登记。F-001仍OPEN/GATED，本次新管理提交不自动归入1830已审范围。
+固定架构未改。Gemini设计报告审查1830b15给PASS/READY；最新Gate报告明确核验发布基线7de1d0e，给PASS、Phase0 RELEASED及F-001 RESOLVED/CLOSED，原件和来源hash见gemini/GATE_EVIDENCE_INDEX.json。16组106条、阶段/字段/职责勘误已闭环；F-004物理隔离、原始执行日志等已披露边界保留，不因门禁通过自动验证。历史原文不改，新归档记录不自动归入7de1d0e审计范围。
 
 ## D · 版本
 
-当前本地main；PR#1已按用户授权合并，实际提交8c37e952be61054c6c72b5aaf573026c0355647b且tree与获批228190a一致。后续发布登记提交由phase0-baseline绑定，完整SHA/推送结果见PR发布回执。最新Gemini已审仍是1830b15，不能将新main管理提交误称已独立审查；固定业务数据快照/锁文件仍无，不以hash冒充业务可运行证明。
+当前本地main；PR#1实际合并8c37e952be61054c6c72b5aaf573026c0355647b且tree与获批228190a一致。稳定标签phase0-baseline及最新Gate已审版本均为7de1d0e81385ae97f98ea673fe05dd726f0b577b；本次main仅追加报告/状态归档，不移动标签，不冒称新提交已独立审查。固定业务数据快照/锁文件仍无，不以hash冒充业务可运行证明。
 
 ## E · 结论
 
-阶段用户验收ACCEPTED，明确合并/标签授权已存证并执行main合并；合并后17项文档检查通过。核心勘误闭环，物理隔离等证据限制保留。最终标签/main实际核对见PR发布回执，Gemini主干独立核验尚待完成，完整RELEASED门禁仍未关闭。**PHASE1 BLOCKED**，未获启动授权。
+阶段验收ACCEPTED、main/标签发布和Gemini独立Gate核验均完成，**Phase0 RELEASED / F-001 CLOSED**。Phase1基线门禁UNBLOCKED；执行为**AWAITING USER AUTHORIZATION / NOT STARTED**，不能把Gemini启动建议当作用户授权。未来能力仍未实现，既有证据限制保留。
 
 ## F · 下一步及停止点
 
-按本次明确授权完成main合并、必要发布记录及phase0-baseline推送核对后停止。Gemini需对最终固定main/标签及批准/审计/文件链路独立复核；不得假称该复核已通过，未来阶段待决事项也未自动确定。达到RELEASED后仍需用户单独授权Phase1。
+按用户授权归档Gate原件、更新发布状态及PR记录后停止。固定7de1d0e基线与标签保留，main随后仅追加归档记录；等待用户单独授权Phase1，届时仍须阶段计划预审和适用前置决策，不自动实施。

@@ -1,22 +1,22 @@
 # 当前真实项目状态
 
-日期：2026-10-20（Asia/Shanghai）。权限以用户原话和publication/APPROVAL.json为据，本文不自行授予权限。
+日期2026-10-20（Asia/Shanghai）。用户批准见publication/APPROVAL.json，独立门禁结论见gemini/GATE_EVIDENCE_INDEX.json。
 
-- Phase0用户验收：**ACCEPTED**；用户明确授权PR#1合并main及创建phase0-baseline。无Phase1启动授权。
-- PR#1获批head：228190a0c46595cf2927125fdc7d4f1c51b39ccf。
-- 实际合并提交：8c37e952be61054c6c72b5aaf573026c0355647b；已核对tree与获批head完全一致，父提交/历史保留，无业务改动。
-- 当前分支：main。本次后续提交仅维护批准、基线、进度、审查及自查证据；标签phase0-baseline绑定最终main登记提交，完整SHA及实际远端推送结果由PR#1发布回执记录。
-- 审计建议：Gemini对1830b152ea4b2497fbfc54d4d506a77e3c2abb5f设计PASS、人工验收就绪READY；后续获批管理记录不自动继承该审计结论。
-- 核心勘误：16组106条、所有阶段、EXP首次P3、真实字段及职责已闭环。历史报告及来源hash保持原状。
-- 已披露限制：F-004物理云同步隔离未验证，原始Gemini脚本/运行日志未附，部分数值/引用措辞受证据范围限定；不得声称用户验收使这些措施自动实现。
-- F-001：用户验收和main合并步骤已有证据；标签/main实际核对见发布回执，Gemini最终主干独立核验仍待完成，不自行关闭整个门禁。
-- F-002 CI留P1首项；F-003的P1时间验证实现仍Planned；F-004保留审计方MITIGATED和开发方证据限定。
-- 合并后8c37e95文档自查：17通过/0失败；原始结果另存publication/MERGED_MAIN_SELF_CHECK.json及MERGED_MAIN_COMMAND_LOG.txt。本次登记提交的检查见当前SELF_CHECK/COMMAND_LOG/MANIFEST。
-- 正式RELEASED：**待Gemini最终主干链路核验**，不将用户ACCEPTED或标签创建单独等同完整门禁闭环。
-- **PHASE 1 STATUS = BLOCKED**：独立主干核验及Phase1单独启动授权尚不齐全。
-- 功能实现：数据、Registry、研究、组合、风控、回测、网页及相应业务测试仍Planned；高级扩展Deferred；真实执行Unsupported。未执行任何Phase1开发。
-- 环境/市场/比赛profile、研究阈值及各后续阶段前置事项仍按DECISIONS与ROADMAP分别确定。
+- **Phase0 = RELEASED**。用户已ACCEPTED；PR#1已合并；phase0-baseline已推送；Gemini已对固定基线完成Baseline Verification Gate并给出PASS。
+- **F-001 / GOV-010 = RESOLVED / CLOSED**，按Gemini门禁报告登记，不再沿用此前等待最终复核的状态。
+- **发布基线SHA：7de1d0e81385ae97f98ea673fe05dd726f0b577b**。
+- 附注标签：phase0-baseline；对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0，目标为上述发布基线。该标签不移动、不重建。
+- PR#1获批head：228190a0c46595cf2927125fdc7d4f1c51b39ccf；实际merge：8c37e952be61054c6c72b5aaf573026c0355647b；merge tree与获批版本一致。
+- Gemini此前设计审查版本1830b15给PASS/READY；本次独立主干核验明确覆盖发布基线7de1d0e，原报告按字节归档。
+- 门禁原报告：audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md；SHA-256：aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1。
+- **Phase1基线前置门禁 = UNBLOCKED**；**Phase1执行状态 = AWAITING USER AUTHORIZATION / NOT STARTED**。用户尚未单独授权Phase1，本次仅归档及更新状态，不创建P1分支、环境或业务模块。
+- 获得Phase1授权后，仍须完成阶段计划、适用前置决策及Gemini预审，从核实main创建独立分支；不能把基线门禁通过解释为所有实施条件自动满足。
+- 当前main仅追加本次报告/状态/自查记录；经审发布基线仍为7de1d0e。新归档提交不自动计入Gemini已审范围，不能再宣称后续main head永远等于旧标签目标；逐文件版本见当前MANIFEST和Git diff。
+- 核心需求保持106条/16组；CSV hash为20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1，核心金融/数据/接口契约不变。
+- F-002 CI、F-003时间戳实现及测试留在P1；F-004物理云同步隔离未验证，原始Gemini执行脚本/日志未附等已披露限制保留。本次门禁PASS不自动验证这些其他能力。
+- 数据、Registry、研究、组合、风控、回测、网页及相应业务测试仍Planned；高级扩展Deferred，真实执行Unsupported。市场/profile、精确环境版本、研究阈值仍按DECISIONS和阶段条件确定。
+- 本次文档自查见当前SELF_CHECK/COMMAND_LOG/MANIFEST；合并后原始17项检查证据及先前报告保持原状。开发方文档核查不是业务测试或Gemini独立执行。
 
-## 当前交付与停止点
+## 停止点
 
-已验收Phase0文档/规范，按授权完成main合并及基线标签发布和核对后停止。BASELINE登记报告、获批版本、合并SHA、标签解析与文件清单规则；实际标签推送成功及目标SHA以PR#1发布回执为准。下一项独立审查是Gemini对最终固定main/标签版本核验；该审查不构成Phase1授权。
+Phase0已正式发布并完成独立主干门禁闭环。本次按用户授权归档门禁原报告、更新状态及PR审查记录后停止；等待Phase1单独启动授权。

@@ -1,7 +1,7 @@
 {
   "scope": "Phase0文档结构与候选算式开发方自查；不是业务测试、CI或Gemini审计",
-  "started_at_utc": "2026-10-20T14:58:22.822260+00:00",
-  "finished_at_utc": "2026-10-20T14:58:23.666537+00:00",
+  "started_at_utc": "2026-10-20T15:24:13.541006+00:00",
+  "finished_at_utc": "2026-10-20T15:24:14.716409+00:00",
   "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
   "platform": "Windows-10-10.0.26300-SP0",
   "requirements": 106,
@@ -160,12 +160,12 @@
   "business_tests": "NOT RUN / Planned",
   "gemini_review": {
     "status": "Original report received; verdict applies only to reviewed_commit",
-    "verdict": "DESIGN PASS; RELEASE NOT RELEASED (separate report verdicts)",
-    "reviewed_commit": "1830b152ea4b2497fbfc54d4d506a77e3c2abb5f",
-    "report_path": "docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md",
-    "report_sha256": "1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc",
-    "execution_scope": "Gemini sandbox execution is reported by auditor; no standalone scripts/raw stdout/stderr supplied. Developer Decimal calculation is separate design arithmetic verification, not a rerun of Gemini environment or business tests.",
-    "developer_closure": "CORE DESIGN ERRATA CLOSED: taxonomy, all 106 phase mappings, EXP P3, schema and responsibilities agree; environment/evidence statements not fully verified; release conditions remain open"
+    "verdict": "GATE PASS; PHASE0 RELEASED",
+    "reviewed_commit": "7de1d0e81385ae97f98ea673fe05dd726f0b577b",
+    "report_path": "docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md",
+    "report_sha256": "aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1",
+    "execution_scope": "Auditor reports independent GitHub read-only verification. Developer separately checked remote refs, PR merge, baseline file presence and CSV hash/count. No standalone auditor command logs supplied; no business tests or new sandbox execution claimed.",
+    "developer_closure": "Phase0 baseline gate closed for fixed 7de1d0e; no Phase1 authorization. New archival/status commit does not move or replace the verified tag and is not automatically included in the audit."
   },
   "human_approval": {
     "status": "Human approval record present; this tool does not grant authorization",
@@ -194,7 +194,7 @@
         "--branch"
       ],
       "exit_code": 0,
-      "stdout": "## main...origin/main\n M AGENTS.md\n M docs/BASELINE.md\n M docs/CHANGELOG.md\n M docs/DECISIONS.md\n M docs/PROGRESS.md\n M docs/PROJECT_CHARTER.md\n M docs/ROADMAP.md\n M docs/audits/phase-0/COMMAND_LOG.txt\n M docs/audits/phase-0/DELIVERY_REPORT.md\n M docs/audits/phase-0/MANIFEST.json\n M docs/audits/phase-0/REVIEW_ANCHOR.json\n M docs/audits/phase-0/REVIEW_PACKAGE.md\n M docs/audits/phase-0/SELF_CHECK.json\n M docs/audits/phase-0/tools/check_documents.py\n?? docs/audits/phase-0/publication/\n",
+      "stdout": "## main...origin/main\n M AGENTS.md\n M docs/BASELINE.md\n M docs/CHANGELOG.md\n M docs/DECISIONS.md\n M docs/PROGRESS.md\n M docs/PROJECT_CHARTER.md\n M docs/ROADMAP.md\n M docs/audits/phase-0/DELIVERY_REPORT.md\n M docs/audits/phase-0/REVIEW_ANCHOR.json\n M docs/audits/phase-0/REVIEW_PACKAGE.md\n M docs/audits/phase-0/tools/check_documents.py\n?? docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json\n?? docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md\n",
       "stderr": ""
     },
     {
