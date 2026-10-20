@@ -2,10 +2,10 @@
 
 专业 Alpha 因子研究、验证与量化交易回测平台。
 
-当前仅有 **Phase 0 待审设计文档**，无可运行研究平台、回测引擎或网页。规范合并 V3.0、V3.1、V3.2，尚未经过 Gemini 独立审查与用户验收。
+**Phase0已验收发布，独立基线门禁PASS；Phase1已获用户授权，正在准备实施前计划预审。** 首版范围为合成数据与通用数据契约，Python3.13.16；业务实现尚未开始，暂无可运行研究平台、回测引擎或网页。
 
-从 [项目章程](docs/PROJECT_CHARTER.md)、[当前进度](docs/PROGRESS.md)、[需求清单](docs/REQUIREMENTS.md) 开始；[Phase 0 审查资料](docs/audits/phase-0/REVIEW_PACKAGE.md) 记录证据与缺项。
+从[项目章程](docs/PROJECT_CHARTER.md)、[当前进度](docs/PROGRESS.md)、[需求清单](docs/REQUIREMENTS.md)开始；[Phase0基线](docs/BASELINE.md)记录已发布版本，[Phase1计划](docs/audits/phase-1/PLAN.md)及[预审包](docs/audits/phase-1/PRE_REVIEW_PACKAGE.md)记录本阶段范围与待审事项。
 
 固定架构：Python Quant Core + Streamlit Dashboard + Factor Registry + Independent Event-Driven Backtest Engine。
 
-业务开发、真实交易及下一阶段未获授权。所有能力状态、阶段边界和待决定事项以项目正式文档为准。
+Phase1业务实施遵守Gemini计划预审关卡；P1合并/发布、P2及真实交易尚未授权。未实现能力均按Planned/Deferred/Unsupported标记，不用计划或合成数据冒充真实接入。

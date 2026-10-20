@@ -1,5 +1,12 @@
 # 变更记录
 
+## 2026-10-20 · Phase1启动授权与实施前计划准备
+
+- 用户正式授权Phase1，进一步选定合成数据/通用契约、真实源另定，及Python3.13.16；原话见audits/phase-1/AUTHORIZATION.json。
+- 从核实main 502c6931dcfce50bee2f71a80524475fae6396bf创建feature/phase-1-data-system，P0稳定标签保持7de1d0e；对比确认此前归档不改核心契约/106条需求。
+- 准备14项需求映射、PIT/行动/快照接口、Golden候选、精确环境与CI方案、公开依赖wheel元数据和Review Package。候选不是完整锁或安装证明；Gemini本阶段预审尚未取得。
+- 当前只有计划与授权/状态资料，不含src/业务测试/CI/环境安装；按V3.2先完成独立计划预审，再执行已授权P1实现；P1合并发布及P2均未授权。
+
 ## 2026-10-20 · Gemini Baseline Verification Gate报告归档与发布状态闭环
 
 - 按用户“归档本报告并更新状态”授权，将门禁原件逐字节归档；SHA-256为aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1。Gate固定审查7de1d0e81385ae97f98ea673fe05dd726f0b577b，PASS、Phase0 RELEASED、F-001 RESOLVED/CLOSED已登记。

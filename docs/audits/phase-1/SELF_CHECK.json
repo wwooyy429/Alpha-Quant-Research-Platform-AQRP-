@@ -1,0 +1,187 @@
+{
+  "scope": "Phase1 preimplementation documentation and candidate arithmetic developer checks only",
+  "check_run_id": "p1-plan-880c1155-257a-4c4a-8f47-1107a43d7b18",
+  "started_at_utc": "2026-10-20T15:43:57.543223+00:00",
+  "finished_at_utc": "2026-10-20T15:43:59.849352+00:00",
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "requirements_planned": 14,
+  "checks_passed": 10,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "direct_user_authorization_and_choices",
+      "result": "PASS",
+      "detail": {
+        "phase1_authorized": true,
+        "data_scope": "Synthetic data and general contracts; real-market ingestion separately determined",
+        "python": "3.13.16",
+        "gemini_pre_review": "NOT RECEIVED"
+      }
+    },
+    {
+      "name": "independent_branch_from_verified_main",
+      "result": "PASS",
+      "detail": {
+        "branch": "feature/phase-1-data-system",
+        "preplan_parent": "502c6931dcfce50bee2f71a80524475fae6396bf",
+        "fixed_phase0_tag": "7de1d0e81385ae97f98ea673fe05dd726f0b577b"
+      }
+    },
+    {
+      "name": "approved_contracts_and_phase0_evidence_preserved",
+      "result": "PASS",
+      "detail": {
+        "files_checked": 55,
+        "different": []
+      }
+    },
+    {
+      "name": "all_14_phase1_requirements_mapped",
+      "result": "PASS",
+      "detail": {
+        "count": 14,
+        "ids": [
+          "DATA-001",
+          "DATA-002",
+          "DATA-003",
+          "DATA-004",
+          "DATA-005",
+          "DATA-006",
+          "DATA-007",
+          "DATA-008",
+          "DATA-009",
+          "DATA-011",
+          "ENV-001",
+          "ENV-002",
+          "QA-002",
+          "SEC-002"
+        ],
+        "csv_sha256": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1"
+      }
+    },
+    {
+      "name": "review_package_files_and_local_links",
+      "result": "PASS",
+      "detail": {
+        "required_files": [
+          "AUTHORIZATION.json",
+          "PLAN.md",
+          "DATA_IMPLEMENTATION_SPEC.md",
+          "GOLDEN_REFERENCE.md",
+          "ENVIRONMENT_PLAN.md",
+          "DEPENDENCY_CANDIDATES.json",
+          "PRE_REVIEW_PACKAGE.md"
+        ],
+        "missing": [],
+        "broken_links": []
+      }
+    },
+    {
+      "name": "dependency_candidates_not_misrepresented_as_lock",
+      "result": "PASS",
+      "detail": {
+        "candidate_packages": 13,
+        "invalid": [],
+        "install_and_lock_status": "NOT VERIFIED / NOT CREATED"
+      }
+    },
+    {
+      "name": "no_business_implementation_before_gemini_review",
+      "result": "PASS",
+      "detail": {
+        "forbidden_before_review_present": [],
+        "business_tests": "NOT RUN",
+        "CI": "NOT CREATED"
+      }
+    },
+    {
+      "name": "independent_candidate_arithmetic_only",
+      "result": "PASS",
+      "detail": {
+        "reference": {
+          "raw_return": "0.1",
+          "split_total_return": "0",
+          "dividend_total_return": "0",
+          "shares": "300",
+          "amount": "1250.00",
+          "exact_decimal_sum": "0.30"
+        },
+        "scope": "standard library Decimal arithmetic only; not business function tests or Gemini audit"
+      }
+    },
+    {
+      "name": "candidate_offset_arithmetic_only",
+      "result": "PASS",
+      "detail": {
+        "UTC_values": [
+          "2024-03-08T14:30:00+00:00",
+          "2024-03-11T13:30:00+00:00",
+          "2024-04-01T16:30:00+00:00"
+        ],
+        "limitation": "Fixed-offset arithmetic, not IANA DST implementation verification"
+      }
+    },
+    {
+      "name": "current_status_records_authorization_and_review_gate",
+      "result": "PASS",
+      "detail": {
+        "phase0": "RELEASED",
+        "phase1": "AUTHORIZED / PLAN REVIEW REQUIRED",
+        "phase1_acceptance": "NOT GRANTED",
+        "main_merge": "NOT AUTHORIZED FOR P1"
+      }
+    }
+  ],
+  "business_tests": "NOT RUN",
+  "gemini_plan_pre_review": "NOT RECEIVED",
+  "python31316_installation": "NOT PERFORMED",
+  "dependency_lock": "NOT CREATED",
+  "ci": "NOT CREATED",
+  "git_commands": [
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stdout": "feature/phase-1-data-system\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "502c6931dcfce50bee2f71a80524475fae6396bf\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "phase0-baseline^{commit}"
+      ],
+      "exit_code": 0,
+      "stdout": "7de1d0e81385ae97f98ea673fe05dd726f0b577b\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-tree",
+        "-r",
+        "--name-only",
+        "502c6931dcfce50bee2f71a80524475fae6396bf",
+        "docs/audits/phase-0/",
+        "docs/sources/"
+      ],
+      "exit_code": 0,
+      "stdout": "docs/audits/phase-0/ARCHITECTURE_REVIEW.md\ndocs/audits/phase-0/CHANGE_IMPACT.md\ndocs/audits/phase-0/COMMAND_LOG.txt\ndocs/audits/phase-0/COVERAGE_AUDIT.md\ndocs/audits/phase-0/DELIVERY_REPORT.md\ndocs/audits/phase-0/GITHUB_GATE_OBSERVATION.json\ndocs/audits/phase-0/MANIFEST.json\ndocs/audits/phase-0/PLAN.md\ndocs/audits/phase-0/RELEASE_GATE_AUDIT.json\ndocs/audits/phase-0/REVIEW_ANCHOR.json\ndocs/audits/phase-0/REVIEW_PACKAGE.md\ndocs/audits/phase-0/SELF_CHECK.json\ndocs/audits/phase-0/SELF_REVIEW_NOTES.md\ndocs/audits/phase-0/SPECIAL_AUDITS.md\ndocs/audits/phase-0/gemini/BUSINESS_TAXONOMY_CORRECTION_SUBMITTED.md\ndocs/audits/phase-0/gemini/DEVELOPER_RESPONSE.md\ndocs/audits/phase-0/gemini/EVIDENCE_INDEX.json\ndocs/audits/phase-0/gemini/FINAL_EVIDENCE_INDEX.json\ndocs/audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json\ndocs/audits/phase-0/gemini/FINAL_RECONCILIATION.md\ndocs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json\ndocs/audits/phase-0/gemini/INCREMENTAL_EVIDENCE_INDEX.json\ndocs/audits/phase-0/gemini/INCREMENTAL_RECONCILIATION.md\ndocs/audits/phase-0/gemini/REQUIREMENTS_TAXONOMY_VERIFICATION.md\ndocs/audits/phase-0/gemini/REV2_EVIDENCE_INDEX.json\ndocs/audits/phase-0/gemini/REV2_RECONCILIATION.md\ndocs/audits/phase-0/gemini/aqrp_phase0_audit_report.md\ndocs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md\ndocs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md\ndocs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md\ndocs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md\ndocs/audits/phase-0/gemini/aqrp_phase0_requirements_taxonomy_errata.md\ndocs/audits/phase-0/history/INITIAL_REVIEW_ANCHOR.json\ndocs/audits/phase-0/publication/APPROVAL.json\ndocs/audits/phase-0/publication/MERGED_MAIN_COMMAND_LOG.txt\ndocs/audits/phase-0/publication/MERGED_MAIN_SELF_CHECK.json\ndocs/audits/phase-0/publication/MERGE_VERIFICATION.json\ndocs/audits/phase-0/tools/build_catalog.py\ndocs/audits/phase-0/tools/check_documents.py\ndocs/sources/AQRP_V3.0.md\ndocs/sources/AQRP_V3.1.md\ndocs/sources/AQRP_V3.2.md\ndocs/sources/AQRP_V3.2_BASELINE_GATE.md\ndocs/sources/README.md\n",
+      "stderr": ""
+    }
+  ]
+}

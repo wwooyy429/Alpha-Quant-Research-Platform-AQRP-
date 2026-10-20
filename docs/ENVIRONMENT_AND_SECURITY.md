@@ -1,16 +1,16 @@
 # 环境、版本与安全方案
 
-关联 ENV-001–003、SEC-001–004、EXP-001。Phase 0 只制定方案，不安装/升级运行库。
+关联ENV-001–003、SEC-001–004、EXP-001。Phase0仅方案；当前Phase1已授权且用户选Python3.13.16，实施前环境/CI计划见audits/phase-1/ENVIRONMENT_PLAN.md，尚未安装/升级业务运行库。
 
 | 项目 | 当前实际 | 拟定/验收要求 |
 |---|---|---|
 | 本次文档核查 Python | 3.10.11 | 仅标准库审计脚本使用；不是业务批准基线 |
 | Git | 2.47.1.windows.2 | 保存所有审查与批准对应完整 SHA |
-| 业务 Python | 尚未选择/安装验证 | Phase 1 前批准一个精确 patch 版本；建议评估 3.12 系列，不假定已兼容 |
+| 业务 Python | 用户已选CPython3.13.16，尚未安装验证 | 选择原话见P1 AUTHORIZATION；标准GIL x64，预审后核验安装/依赖组合，不能称已兼容 |
 | 依赖锁 | 尚未生成 | Phase 1 解析直接/传递精确版本及 wheel 哈希；Windows 与 Linux CI 均验证 |
 | CI | 未建立 | Phase 1 开始代码时建立 GitHub Actions |
 
-Phase 1 产物必须含精确 Python/OS/架构标识、含传递依赖与哈希的锁文件、安装器版本、环境清单；安装不得浮动 latest。业务包优先列表来自章程，按阶段加入并锁定，避免先装 Advanced/Production 全家桶。稳定结果的 environment_hash 包括 Python patch、锁文件、原生依赖/OS；版本升级必须影响分析、回归、独立审查与用户批准。当前不能宣称环境已固定或清洁安装通过，D-003 是明确待决事项。
+Phase1产物须含精确Python/OS/架构、完整传递依赖/hash锁、安装器版本和环境清单，不浮动latest。按阶段加入必要库，不提前安装高级研究/生产依赖。environment_hash包含Python patch、锁和原生依赖/OS，升级需影响分析、回归及审批。D-003的Python选择已获用户确认，锁/兼容/干净安装仍待实际验证；DEPENDENCY_CANDIDATES只是元数据候选。
 
 CI 从已锁定来源安装，执行格式/静态检查、分阶段单元/契约/集成/性质/回归及覆盖率，上传原始日志、JUnit/coverage、manifest 与失败工件。第三方 Actions pin 完整 SHA；外部 PR 使用无密钥只读 token，不用有写权限的工作流直接执行不可信 PR。缓存包含锁文件和 OS 哈希，不能掩盖干净安装失败。
 

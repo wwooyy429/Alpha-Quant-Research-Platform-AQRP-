@@ -2,6 +2,8 @@
 
 源要求→需求ID→设计/未来实现→分阶段测试；实际实现后须把规划路径替换/补充为真实文件、测试ID、Commit及证据。空缺不能当已实现。需求的完整输入输出/验收定义见 REQUIREMENTS 和 requirements.csv。
 
+当前实施跟踪：用户已授权Phase1，其14项需求与拟实现/测试映射见[audits/phase-1/PLAN.md](audits/phase-1/PLAN.md)。状态为计划预审待完成，以下正式ID/依赖及未来业务能力仍未改为已实现；P0已发布基线版本保持不变。
+
 | ID | 来源 | 等级/阶段 | 前提需求 | 设计 | 未来代码 / 测试 | 状态 |
 |---|---|---|---|---|---|---|
 | GOV-001 | V3.0§1.1;V3.0§1.2;V3.0§1.3;V3.0§22;V3.1§5;V3.2§9 | MVP / 0 | NONE | [PROJECT_CHARTER.md](PROJECT_CHARTER.md) | `docs/PROJECT_CHARTER.md` / `docs/audits/phase-0/` | Planned，设计待审 |

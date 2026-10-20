@@ -1,11 +1,11 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
-当前仅 P0 获授权；以下均为阶段提案，不是启动指令。需求 ID、等级及细化依赖以 REQUIREMENTS/TRACEABILITY 为准。每阶段必须先读正式文档、检查 Git、核对上一阶段验收和本阶段明确授权，再提交阶段计划、测试预期和接口供 Gemini 预审；阻断设计问题解决后才实施。
+Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范围，阶段计划见audits/phase-1/PLAN.md。后续阶段仍为提案，需求ID/等级/依赖以REQUIREMENTS/TRACEABILITY为准。每阶段须核对基线/授权、提交计划/接口/答案供Gemini预审，阻断问题解决后才实施。
 
 | Phase / 状态 | 范围、输入前提及允许文件 | 输出与适用验收 / 禁止越界 |
 |---|---|---|
 | 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
-| 1 / AWAITING USER AUTHORIZATION，未启动 | P0基线前置门禁已UNBLOCKED；另需用户P1启动授权、阶段计划/预审及适用前置决策；从核实main新建独立分支并核对相对固定基线的归档差异；未来 src/aqrp/core,data 与 tests/data、CI/锁文件 | 骨架、精确依赖、DuckDB/Parquet、合成OHLCV、加载清洗/PIT/日历/标准答案、pytest/CI；当前尚未授权实施，不以Gemini建议代替用户授权 |
+| 1 / AUTHORIZED；PLAN REVIEW REQUIRED | P0已RELEASED，用户已授权合成数据/通用契约并选Python3.13.16；从核实main 502c693建立feature/phase-1-data-system；业务实施前仍需本阶段Gemini预审 | 14项P1需求：core/data、快照/PIT/单位/日历/行动/质量/合成数据、环境锁/CI及测试；先审PLAN/DATA_IMPLEMENTATION_SPEC/GOLDEN_REFERENCE，未预审不先写业务代码 |
 | 2 / PLANNED | P1验收+P2授权；Data API可用；未来 factors 与 tests/factors | Factor API/Registry、元数据/参数/版本、Momentum/Reversal/Volume、注册/替换/回滚/major兼容；不要求研究/回测E2E |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
