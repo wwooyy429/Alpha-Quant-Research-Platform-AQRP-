@@ -8,7 +8,9 @@
       "reported": "100×10、50×20却写500.00",
       "verified_correction": "两边均1000.00；这里是研究价格×成交量的单位/名义量守恒，不能冒称P5持仓账本/账户权益已实现。",
       "evidence": "tests/golden/phase1_answers.json:P1-SPLIT；tests/integration/test_phase1_pipeline.py::test_data_004_split_exact_conservation；本轮math-check.log",
-      "status": "开发方已核对；待Gemini确认勘误"
+      "status": "CLOSED BY REVIEWER CONFIRMATION",
+      "status_at_initial_developer_check": "开发方已核对；待Gemini确认勘误",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     },
     {
       "id": "ERR-P1-IMPL-002",
@@ -16,7 +18,9 @@
       "reported": "models.py、calendar.py、universe.py等实现路径；test_storage_roundtrip.py、tests/golden/test_p1_golden.py测试路径",
       "verified_correction": "这些文件在74bdb92不存在。证券模型为core/contracts.py与data/schemas.py；日历为data/synthetic.py/quality.py及core/time.py；股票池为data/query.py/pit.py。往返在tests/data/test_snapshot_actions.py和tests/integration/test_phase1_pipeline.py；G-RET为core/math.py及tests/data/test_time_units.py。",
       "evidence": "IMPLEMENTATION_TRACEABILITY.md；git ls-tree固定SHA",
-      "status": "对照表已修正；原报告保留，待Gemini确认真实审阅路径"
+      "status": "CONFIRMED WITH NONBLOCKING REFERENCE NOTE",
+      "status_at_initial_developer_check": "对照表已修正；原报告保留，待Gemini确认真实审阅路径",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     },
     {
       "id": "ERR-P1-IMPL-003",
@@ -24,7 +28,9 @@
       "reported": "pytest tests/golden/：Gemini沙箱 Independently Executed",
       "verified_correction": "该目录只有固定输入/答案JSON及说明，--collect-only返回exit5、no tests collected。不能把这一命令作为成功的SDK独立测试。3.11.2标准库独立数学复算可能成立，但需另附实际脚本/命令/输出；SDK环境须按项目精确3.13.16，开发方重跑不是Gemini执行。",
       "evidence": "本轮golden-directory-collection.log、checks.json及tests.log；pyproject.toml",
-      "status": "执行证据澄清OPEN；不能自动认定正常验收证据已齐"
+      "status": "RESOLVED BY EVIDENCE RECLASSIFICATION; LOCAL SDK NOT VERIFIED",
+      "status_at_initial_developer_check": "执行证据澄清OPEN；不能自动认定正常验收证据已齐",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     },
     {
       "id": "ERR-P1-IMPL-004",
@@ -32,7 +38,9 @@
       "reported": "绝对误差0.00e+00、严格优于容差/极限精度",
       "verified_correction": "100→105返回float 0.05、100→110返回0.10，均满足abs1e-12/rel1e-10；打印值或与同一float常量差0不证明对实数精确无误差。float0.05与Decimal0.05差约2.77555756e-18；不修改既定答案、公式或容差。",
       "evidence": "core/math.py；本轮math-check.log；固定Golden",
-      "status": "开发方澄清；待Gemini修正表述"
+      "status": "CONFIRMED TOLERANCE; NO EXACT/BITWISE EVIDENCE INFERRED",
+      "status_at_initial_developer_check": "开发方澄清；待Gemini修正表述",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     },
     {
       "id": "ERR-P1-IMPL-005",
@@ -40,7 +48,9 @@
       "reported": "gitleaks detect / 0Leaks；CI离线无源码安装",
       "verified_correction": "实际是固定gitleaks8.30.1 dir --redact=100（含JSON报告）；正向假凭证控制预期exit1、项目/负例exit0。第三方依赖通过PyPI在线require-hashes/only-binary安装；仅项目wheel构建/安装no-index且no-deps/no-build-isolation。",
       "evidence": "tools/secret_scan.py、tools/ci.py及原始commands.log",
-      "status": "实现无需改变；待报告纠正命令与安装边界"
+      "status": "CONFIRMED EXECUTION BOUNDARIES",
+      "status_at_initial_developer_check": "实现无需改变；待报告纠正命令与安装边界",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     },
     {
       "id": "ERR-P1-IMPL-006",
@@ -48,7 +58,9 @@
       "reported": "数据层所有输出严格DataView；彻底消除未来风险；后续Registry可无缝衔接",
       "verified_correction": "query返回独立DataView；lookup返回tuple中的独立dict副本，合成加载/验证另有明确返回类型。测试证明已列边界，不构成消除所有风险或P2集成已验收。P0保护以50份实际逐字节清单为准，未指定18份集合不作为完整清单。",
       "evidence": "core/contracts.py、data/query.py、DATA_SDK.md、CORE_PRESERVATION.json",
-      "status": "范围澄清；不扩展测试/实现到P2/P5"
+      "status": "SCOPE RECORDED; NO FUTURE-PHASE VALIDATION INFERRED",
+      "status_at_initial_developer_check": "范围澄清；不扩展测试/实现到P2/P5",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     },
     {
       "id": "ERR-P1-IMPL-007",
@@ -56,7 +68,9 @@
       "reported": "Google搜索包装仓库/PR链接、旧PR标题、Workflow Run #8",
       "verified_correction": "使用直接GitHub链接。Run#8是真实push运行39476816120；PR Run#9为39476825340，两者同SHA74bdb92且Windows/Ubuntu成功。原Run#8不是不存在或错误运行，只需补齐event/run_id/jobs。归档本地coverage原执行SHA为b6c3699，代码与74一致，不改写为74原始执行。",
       "evidence": "本轮ci-39476816120.json与ci-39476825340.json；原environment.json",
-      "status": "开发方核实，CI事实闭环；补充精确定位"
+      "status": "CI ANCHORS VERIFIED AND CONFIRMED",
+      "status_at_initial_developer_check": "开发方核实，CI事实闭环；补充精确定位",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     },
     {
       "id": "ERR-P1-IMPL-008",
@@ -64,7 +78,11 @@
       "reported": "F-002/F-003/F-P1-PRE-001关闭；建议验收/发布/解锁下一阶段",
       "verified_correction": "按Gemini原文登记三项审查方RESOLVED/CLOSED，保留证据限定；F-P1-PRE-002/003未明确给关闭结论，不推定关闭。报告未说明已下载CI完整artifact或直接核对双OS结果hash，原NOT VERIFIED保留。人工ACCEPTED/RELEASED仍未发生；即使以后发布仍需用户另行Phase2授权。",
       "evidence": "本轮IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json；既有AGENTS及用户本次禁止指令",
-      "status": "三项关闭建议已登记；其他状态与证据缺口明确保留"
+      "status": "FINDING STATES CONFIRMED; EVIDENCE LIMITATIONS NONBLOCKING PER REVIEWER",
+      "status_at_initial_developer_check": "三项关闭建议已登记；其他状态与证据缺口明确保留",
+      "confirmation_source": "gemini/aqrp_phase1_implementation_audit_errata_confirmation.md"
     }
-  ]
+  ],
+  "confirmation_index": "gemini/ERRATA_CONFIRMATION_INDEX.json",
+  "current_summary": "Reviewer confirmation received; ready for human acceptance with disclosed limitations and nonblocking editorial notes"
 }

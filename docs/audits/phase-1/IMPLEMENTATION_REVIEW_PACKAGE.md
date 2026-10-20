@@ -1,5 +1,7 @@
 # Phase1实现审查包
 
+2026-10-21最新状态：已收到Gemini补充勘误确认PASS，核心算术/执行口径争议已确认，当前AUDIT PASSED / AWAITING HUMAN ACCEPTANCE。完整状态与非阻断限制见ERRATA_CONFIRMATION_RECONCILIATION.md和gemini/ERRATA_CONFIRMATION_INDEX.json；以下旧待澄清描述为前轮历史，不再代表当前状态。
+
 状态更新：已收到Gemini对74bdb92的实现PASS报告；原件不变，数学/路径/执行证据勘误待Gemini确认，详见IMPLEMENTATION_AUDIT_RESPONSE.md。以下保留提交审查时资料；本文件及测试由开发方提供。用户已授权开发，尚未验收Phase1，禁止合并main、打标签或进入Phase2。PR固定审查SHA以PR #2的AQRP_FIXED_REVIEW_SHA及交接回执为准；380d9f8计划PASS不能覆盖实现。
 
 1. **目标**：合成数据与通用契约；14项P1需求完整映射在IMPLEMENTATION_TRACEABILITY.md。真实源、真实交易、P2–7不在范围。

@@ -1,5 +1,7 @@
 # Phase1发现处置及剩余关卡
 
+2026-10-21最新状态：已收到Gemini补充勘误确认PASS，核心算术/执行口径争议已确认，当前AUDIT PASSED / AWAITING HUMAN ACCEPTANCE。完整状态与非阻断限制见ERRATA_CONFIRMATION_RECONCILIATION.md和gemini/ERRATA_CONFIRMATION_INDEX.json；以下旧待澄清描述为前轮历史，不再代表当前状态。
+
 开发方处理，不等于Gemini签署关闭。原报告和勘误见DEVELOPER_RESPONSE.md及gemini/PRE_REVIEW_EVIDENCE_INDEX.json。最终固定SHA及真实CI结果由implementation/EVIDENCE_INDEX.json和PR描述对应。
 
 | Finding | 已采取措施 | 关闭条件 / 当前责任 |

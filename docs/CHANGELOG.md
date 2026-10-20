@@ -79,3 +79,6 @@
 
 
 2026-10-21实现审计接收：Gemini对74bdb92原文PASS并关闭F-002/F-003/F-P1-PRE-001；开发方核对发现500应为1000、数个文件路径及tests/golden独立执行证据表述不符等勘误。报告按字节归档，完整处置见audits/phase-1/IMPLEMENTATION_AUDIT_RESPONSE.md及gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json；本次不改业务代码/答案/阈值。当前AUDIT PASS AS REPORTED / REPORT ERRATA CLARIFICATION REQUIRED，尚非ACCEPTED/RELEASED；无合并、标签或Phase2授权。
+
+
+2026-10-21：按原字节归档Gemini Phase1勘误确认（hash9eccef880347de87ea7256ebf2ae4c4cc0121912f6492ddb32d3ab2117918c18），原实现报告保留。审查方确认PASS/可人工验收，PRE-002 MITIGATED非阻断、PRE-003 CLOSED；本地SDK/远端rehash/跨OS比对仍NOT VERIFIED。新增逐项核对及少量非阻断引用备注，更新状态AUDIT PASSED / AWAITING HUMAN ACCEPTANCE；代码/答案/阈值/CI/环境锁不改，不合并、不打标、不进入P2。

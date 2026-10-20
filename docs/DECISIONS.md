@@ -1,6 +1,6 @@
 # 架构决策、冲突及待用户决定事项
 
-Phase0已发布且Gate PASS/F-001 CLOSED，证据在audits/phase-0。用户现已授权Phase1，选择合成数据/通用契约及Python3.13.16，原话见audits/phase-1/AUTHORIZATION.json；当前须完成Gemini计划预审，未来阶段profile及业务假设仍按各项条件批准。
+Phase0已发布且Gate PASS/F-001 CLOSED，证据在audits/phase-0。用户现已授权Phase1，选择合成数据/通用契约及Python3.13.16，原话见audits/phase-1/AUTHORIZATION.json；Phase1计划/实现审查和补充勘误确认均PASS，当前等待用户Phase1人工验收；未来阶段profile及业务假设仍按各项条件批准。
 
 | ID | 类型 / 事项 | 当前处理与提案 | 决策者 / 截止关卡 |
 |---|---|---|---|
@@ -15,7 +15,7 @@ Phase0已发布且Gate PASS/F-001 CLOSED，证据在audits/phase-0。用户现�
 | D-009 | 未决：能力分级与覆盖率 | 四级划分和测试覆盖门槛已提出；CompetitionReady中的V3.0必需功能不能自动延期 | 用户+Gemini；P0设计批准前 |
 | D-010 | 初始化/批准/合并/标签/独立核验已追溯 | PR#1合并8c37e95的tree与获批228190a一致；phase0-baseline固定7de1d0e，附注对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0，Gemini已完成主干链路核验 | APPROVAL、MERGE_VERIFICATION及GATE_EVIDENCE_INDEX分别存证；新归档提交不是替代基线 |
 | D-011 | 未决：PIT证据不足历史源 | 供应商无历史available_at证据时仅Exploratory，不能用抓取时间倒填历史；需独立来源核对方案 | 用户+Gemini；正式PIT验收前 |
-| D-012 | P0发布及P1启动授权齐备，P1计划预审待完成 | 固定基线7de1d0e RELEASED；用户明确授权P1，从核实main502c693建立独立分支；当前PLAN REVIEW REQUIRED，未获P1验收/合并/发布或P2授权 | 不重复请求已有P1启动许可；执行原有Gemini计划预审和固定SHA实现审查，阶段分别验收 |
+| D-012 | P1独立审查通过，用户验收未发生 | 74bdb92实现报告及针对578fb51的补充确认均PASS；保留本地SDK与远端hash未验证的非阻断限制，详见ERRATA_CONFIRMATION_RECONCILIATION | 用户决定人工验收；main合并、标签/基线发布及Phase2各自另行授权，不能用转交报告代替 |
 
 ## 已识别冲突及处理
 
