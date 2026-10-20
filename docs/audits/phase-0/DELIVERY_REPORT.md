@@ -12,15 +12,15 @@ Phase0：V3.0/V3.1/V3.2及Main Baseline Release Gate整合设计。106条需求�
 
 ## C · 技术及独立审查
 
-固定架构未改。原报告审查ed666698，增量Rev 1/2审查d4c8218，均PASS WITH CONDITIONS；Gemini给人工验收就绪YES建议。Rev 2已纠正12→16组及虚构前缀；新附录业务能力分类仍非正式前缀一一对照，EXP应为P3，示意字段须区分真实schema，勘误总体部分闭环。数学/工具路径/职责及Finding阶段归属主要澄清已登记。最新核对及正式分组表为gemini/REV2_RECONCILIATION与REQUIREMENTS_TAXONOMY_VERIFICATION，来源hash在REV2_EVIDENCE_INDEX；旧报告不覆盖。原脚本/日志未附，不称开发方复跑其沙箱；F-001仍OPEN/GATED，新管理资料不自动归入已审范围。
+固定架构未改。Gemini最终报告明确审查1830b15，设计PASS、人工验收就绪READY；原报告ed666698与增量d4c8218历史结论保留。16组106条及全部阶段、EXP首次P3、SignalBatch真实字段、研究/验证及分数权勘误已闭环。F-004物理隔离尚无实际证据，数值零误差/原始执行日志及部分引用仍需限定；不能声称所有报告事实已验证。最新核对/来源hash为gemini/FINAL_RECONCILIATION与FINAL_EVIDENCE_INDEX；原文及先前处理记录保留，独立执行按审计方陈述登记。F-001仍OPEN/GATED，本次新管理提交不自动归入1830已审范围。
 
 ## D · 版本
 
-本地feature/phase-0-v3.2-design；main空初始化SHA=e87d0082a5e448e9550129a486ba965f13a155f8，默认main；草稿PR#1未合并。PR的AQRP_FIXED_REVIEW_SHA登记最新Gemini已审d4c8218，AQRP_EVIDENCE_HEAD_SHA单独登记后续证据提交；不得将证据头误称已独立审查。无已验收/发布内容或phase0-baseline。固定数据快照/业务锁文件不存在；来源与自查文件hash不是业务可运行证明。
+本地feature/phase-0-v3.2-design；main空初始化SHA=e87d0082a5e448e9550129a486ba965f13a155f8，默认main；草稿PR#1未合并。PR的AQRP_FIXED_REVIEW_SHA登记最新Gemini已审1830b15，AQRP_EVIDENCE_HEAD_SHA单独登记后续证据提交；不得将证据头误称已独立审查。无已验收/发布内容或phase0-baseline。固定数据快照/业务锁文件不存在；来源与自查文件hash不是业务可运行证明。
 
 ## E · 结论
 
-阶段状态REVIEW REQUIRED；Gemini对d4c8218总体PASS WITH CONDITIONS、设计PASS、人工验收就绪YES；开发方事实核对为部分闭环。用户未验收，合并/发布未授权，main为空且无标签，当前 **BLOCKED（稳定发布闭环/Phase1启动）**。ACCEPTED未批准、RELEASED否；本次用户明确不执行合并/标签/P1，不能用提供复核报告代替授权。
+阶段状态REVIEW REQUIRED（用户未验收）；Gemini对1830b15给设计PASS、人工验收就绪READY，核心设计勘误已闭环。物理隔离等事实证据尚未全部核实；用户未验收/授权发布，main为空且无标签，当前 **BLOCKED（稳定发布闭环/Phase1启动）**。ACCEPTED未批准、RELEASED否；本次明确不执行合并/标签/P1，不能用提供最终报告代替用户授权。
 
 ## F · 下一步及停止点
 

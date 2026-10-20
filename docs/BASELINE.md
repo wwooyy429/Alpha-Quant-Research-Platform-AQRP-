@@ -15,10 +15,10 @@
 | 开发分支 | feature/phase-0-v3.2-design，保留0b64148→04deecc→65ae3d3原始历史，6554dfe将空main接入共同祖先 |
 | 设计PR | https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1，Draft、Open、未合并 |
 | 固定设计审查SHA | `ed6666985bfac8cc94fa302c72e2e6333c679a6f`，与Gemini报告及PR字段一致；后来证据/状态提交不自动归入已审范围 |
-| 最新增量复核SHA | `d4c8218315a9152166cbe56fde54384dc99fb094`；原报告与新增增量报告分别明确绑定两个版本，当前归档/记录更新不自动计入d4已审范围 |
+| 最新最终复核SHA | `1830b152ea4b2497fbfc54d4d506a77e3c2abb5f`；历史增量d4c8218/原设计ed666698报告保留；本次归档/记录更新不自动计入1830b15已审范围 |
 | Gemini原设计审查报告 | 原报告明确head为ed6666985bfac8cc94fa302c72e2e6333c679a6f、base为e87d008…；原文保存在 `audits/phase-0/gemini/aqrp_phase0_audit_report.md`，SHA-256为8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662 |
-| 审计建议及条件 | 总体PASS WITH CONDITIONS、设计子结论PASS；F-001 High仍OPEN/GATED，P1 BLOCKED。报告所述沙箱执行按审计方陈述登记，原脚本/原始日志未附，不称开发方已复跑 |
-| 增量复核及闭环差异 | Rev 1保留；最新aqrp_phase0_incremental_audit_report_rev2.md的hash为e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b，配套分类勘误表hash为c05416efe31b205dc8e567800f2cedae5cc04498959fac542c85938f63c272a0。Rev 2已纠正组数/虚构前缀；附录能力视图与正式前缀仍混同，EXP阶段仍需校正。Gemini就绪YES与开发方部分闭环判断分别记录，详见REV2_RECONCILIATION |
+| 最新审计建议及条件 | 最终报告设计PASS、人工验收就绪READY，非用户ACCEPTED或发布通过。F-001 High仍OPEN/GATED，P1 BLOCKED；沙箱执行按审计方陈述登记，原脚本/原始日志未附 |
+| 最终报告及事实差异 | 同目录aqrp_phase0_final_audit_and_acceptance_report.md的hash为1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc。核心分类/阶段/接口勘误已闭环；F-004物理隔离尚未验证，部分执行证据/数值措辞需限定，不能称全部报告事实闭环。详见FINAL_RECONCILIATION与FINAL_EVIDENCE_INDEX；历次原件不改 |
 | 用户正式批准Phase0 | 未批准；初始化/建PR授权不是ACCEPTED |
 | main中的已批准Phase0文件 | 无；尚无已批准设计内容 |
 | phase0-baseline标签 | 不存在，当前不创建 |
@@ -35,7 +35,7 @@
 
 ## 正式发布前必须填齐并核实
 
-1. 原及增量Gemini报告均已取得，分别绑定ed666698与d4c8218。Rev 2已纠正组数与虚构前缀；附录须区分能力视图和正式编号组，EXP阶段须按既定P3澄清，不能改正确设计迎合报告。人工验收就绪YES是审计方建议，用户未批准；旧SHA不覆盖新管理资料。最终main主干核验仍未执行。
+1. 原/增量/最终报告分别绑定ed666698、d4c8218、1830b15；最终报告已确认核心分类/阶段/接口勘误并给设计PASS、READY建议。F-004物理隔离陈述等仍须澄清或取得证据，不把报告自述当全部环境事实。用户未批准，1830b15不自动覆盖后续管理资料；最终main核验未执行。
 2. 用户明确批准Phase0的原文/可信记录、日期、范围、精确SHA、条件；另记录合并/发布授权。
 3. 已批准需求/架构版本及逐文件路径和hash：至少AGENTS、PROJECT_CHARTER、REQUIREMENTS/CSV、TRACEABILITY、ARCHITECTURE、INTERFACES、DATA_CONTRACT、BACKTEST_CONTRACT、RESEARCH_PROTOCOL、ROADMAP、ACCEPTANCE、TESTING、DECISIONS、环境安全与Golden设计、审计/证据/进度文件。当前批准清单为空。
 4. PR最终head/base、已核对diff、适用文档/配置检查命令和结果；所有批准范围外变化必须重新批准。
@@ -47,7 +47,7 @@
 
 ## 已验证文件与证据位置
 
-- main文件列表：空；见 `audits/phase-0/RELEASE_GATE_AUDIT.json` 的实际Git命令结果。
+- main文件列表：空；原始初始化证据见 `audits/phase-0/RELEASE_GATE_AUDIT.json`，本次远端分支/标签/默认分支/PR观察见 `audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json`。
 - 开发分支待审文件：`audits/phase-0/MANIFEST.json`（当前内容快照逐文件hash，不代表批准）。
 - 开发方文档自查：SELF_CHECK.json、COMMAND_LOG.txt；没有业务测试/CI/Gemini通过声明。
 - 审查资料包：`audits/phase-0/REVIEW_PACKAGE.md`；Gemini原报告及索引：`audits/phase-0/gemini/`。原文保持不变，开发方意见另文件记录，不冒充审计方结论。

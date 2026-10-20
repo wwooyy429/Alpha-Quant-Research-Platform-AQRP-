@@ -1,7 +1,7 @@
 {
   "scope": "Phase0文档结构与候选算式开发方自查；不是业务测试、CI或Gemini审计",
-  "started_at_utc": "2026-10-20T14:15:59.237973+00:00",
-  "finished_at_utc": "2026-10-20T14:15:59.770334+00:00",
+  "started_at_utc": "2026-10-20T14:46:36.794402+00:00",
+  "finished_at_utc": "2026-10-20T14:46:37.500852+00:00",
   "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
   "platform": "Windows-10-10.0.26300-SP0",
   "requirements": 106,
@@ -160,12 +160,12 @@
   "business_tests": "NOT RUN / Planned",
   "gemini_review": {
     "status": "Original report received; verdict applies only to reviewed_commit",
-    "verdict": "PASS WITH CONDITIONS",
-    "reviewed_commit": "d4c8218315a9152166cbe56fde54384dc99fb094",
-    "report_path": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md",
-    "report_sha256": "e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b",
-    "execution_scope": "Gemini independent execution remains reported in document; no standalone source script/raw stdout/stderr supplied. Prior developer Decimal reference supports design tolerance and is not a rerun of Gemini sandbox.",
-    "developer_closure": "PARTIAL: original count/prefix errors corrected; appendix is capability view, not one-to-one CSV taxonomy, and EXP Phase3 is omitted; release conditions not fulfilled"
+    "verdict": "DESIGN PASS; RELEASE NOT RELEASED (separate report verdicts)",
+    "reviewed_commit": "1830b152ea4b2497fbfc54d4d506a77e3c2abb5f",
+    "report_path": "docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md",
+    "report_sha256": "1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc",
+    "execution_scope": "Gemini sandbox execution is reported by auditor; no standalone scripts/raw stdout/stderr supplied. Developer Decimal calculation is separate design arithmetic verification, not a rerun of Gemini environment or business tests.",
+    "developer_closure": "CORE DESIGN ERRATA CLOSED: taxonomy, all 106 phase mappings, EXP P3, schema and responsibilities agree; environment/evidence statements not fully verified; release conditions remain open"
   },
   "human_approval": "NOT VERIFIED",
   "ci": "NOT ESTABLISHED; Phase1 planned",
@@ -188,7 +188,7 @@
         "--branch"
       ],
       "exit_code": 0,
-      "stdout": "## feature/phase-0-v3.2-design...origin/feature/phase-0-v3.2-design\n M docs/BASELINE.md\n M docs/CHANGELOG.md\n M docs/DECISIONS.md\n M docs/PROGRESS.md\n M docs/audits/phase-0/DELIVERY_REPORT.md\n M docs/audits/phase-0/REVIEW_ANCHOR.json\n M docs/audits/phase-0/REVIEW_PACKAGE.md\n M docs/audits/phase-0/tools/check_documents.py\n?? docs/audits/phase-0/gemini/REQUIREMENTS_TAXONOMY_VERIFICATION.md\n?? docs/audits/phase-0/gemini/REV2_EVIDENCE_INDEX.json\n?? docs/audits/phase-0/gemini/REV2_RECONCILIATION.md\n?? docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md\n?? docs/audits/phase-0/gemini/aqrp_phase0_requirements_taxonomy_errata.md\n",
+      "stdout": "## feature/phase-0-v3.2-design...origin/feature/phase-0-v3.2-design\n M docs/BASELINE.md\n M docs/CHANGELOG.md\n M docs/DECISIONS.md\n M docs/PROGRESS.md\n M docs/audits/phase-0/COMMAND_LOG.txt\n M docs/audits/phase-0/DELIVERY_REPORT.md\n M docs/audits/phase-0/MANIFEST.json\n M docs/audits/phase-0/REVIEW_ANCHOR.json\n M docs/audits/phase-0/REVIEW_PACKAGE.md\n M docs/audits/phase-0/SELF_CHECK.json\n M docs/audits/phase-0/tools/check_documents.py\n?? docs/audits/phase-0/gemini/BUSINESS_TAXONOMY_CORRECTION_SUBMITTED.md\n?? docs/audits/phase-0/gemini/FINAL_EVIDENCE_INDEX.json\n?? docs/audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json\n?? docs/audits/phase-0/gemini/FINAL_RECONCILIATION.md\n?? docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md\n",
       "stderr": ""
     },
     {

@@ -147,7 +147,9 @@ def main():
     for command in [['git','status','--short','--branch'], ['git','remote','-v'], ['git','--version']]:
         result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         commands.append({'argv':command,'exit_code':result.returncode,'stdout':result.stdout,'stderr':result.stderr})
-    review_evidence = AUDIT/'gemini/REV2_EVIDENCE_INDEX.json'
+    review_evidence = AUDIT/'gemini/FINAL_EVIDENCE_INDEX.json'
+    if not review_evidence.is_file():
+        review_evidence = AUDIT/'gemini/REV2_EVIDENCE_INDEX.json'
     if not review_evidence.is_file():
         review_evidence = AUDIT/'gemini/INCREMENTAL_EVIDENCE_INDEX.json'
     if not review_evidence.is_file():

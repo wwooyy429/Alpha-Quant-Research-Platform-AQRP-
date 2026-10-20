@@ -1,0 +1,35 @@
+{
+  "observation_kind": "Read-only snapshot before final-report archival commit; historical snapshots not overwritten",
+  "observed_at_utc": "2026-10-20 14:46:08 UTC",
+  "repository": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+  "default_branch": "main",
+  "repository_allows_auto_merge": false,
+  "pr": {
+    "url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1",
+    "number": 1,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "base": "main",
+    "base_sha": "e87d0082a5e448e9550129a486ba965f13a155f8",
+    "head": "feature/phase-0-v3.2-design",
+    "head_sha_before_document_updates": "1830b152ea4b2497fbfc54d4d506a77e3c2abb5f"
+  },
+  "remote_refs_command": "git -c http.sslBackend=schannel ls-remote --symref origin HEAD refs/heads/main refs/heads/feature/phase-0-v3.2-design refs/tags/*",
+  "remote_refs_exit_code": 0,
+  "remote_refs_stdout": "ref: refs/heads/main\tHEAD\ne87d0082a5e448e9550129a486ba965f13a155f8\tHEAD\n1830b152ea4b2497fbfc54d4d506a77e3c2abb5f\trefs/heads/feature/phase-0-v3.2-design\ne87d0082a5e448e9550129a486ba965f13a155f8\trefs/heads/main\n",
+  "phase0_baseline_tag_exists": false,
+  "main_tree": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+  "main_files": [],
+  "main_tree_evidence": "Local git ls-tree -r --name-only e87d0082a5e448e9550129a486ba965f13a155f8 returned no files; commit matches observed remote main",
+  "gemini_final_reviewed_sha": "1830b152ea4b2497fbfc54d4d506a77e3c2abb5f",
+  "user_phase0_accepted": false,
+  "merge_release_authorized": false,
+  "phase0_released": false,
+  "phase1_status": "BLOCKED",
+  "authorization_scope": "Final report verification and PR review record updates only; explicit no merge/tag/Phase1",
+  "source_endpoints": [
+    "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pulls/1"
+  ]
+}
