@@ -1,0 +1,204 @@
+{
+  "scope": "Phase0文档结构与候选算式开发方自查；不是业务测试、CI或Gemini审计",
+  "started_at_utc": "2026-10-20T12:34:06.124041+00:00",
+  "finished_at_utc": "2026-10-20T12:34:06.651655+00:00",
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "requirements": 105,
+  "checks_passed": 17,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "unique_requirement_ids",
+      "result": "PASS",
+      "detail": {
+        "rows": 105,
+        "unique": 105
+      }
+    },
+    {
+      "name": "all_required_fields_present",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "tier_phase_unimplemented_status",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "dependency_ids_exist",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "no_future_phase_prerequisite",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "dependency_graph_acyclic",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "requirement_design_files_exist",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "all_requirements_rendered_and_traced",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "numbered_source_sections_mapped_structurally",
+      "result": "PASS",
+      "detail": {
+        "counts": {
+          "3.0": 66,
+          "3.1": 8,
+          "3.2": 9
+        },
+        "unmapped": [],
+        "limitation": "节存在映射不证明逐句语义完整，需Gemini审查。"
+      }
+    },
+    {
+      "name": "required_deliverables_exist",
+      "result": "PASS",
+      "detail": [
+        "AGENTS.md",
+        "README.md",
+        "docs/PROJECT_CHARTER.md",
+        "docs/REQUIREMENTS.md",
+        "docs/ARCHITECTURE.md",
+        "docs/INTERFACES.md",
+        "docs/ACCEPTANCE.md",
+        "docs/TRACEABILITY.md",
+        "docs/ROADMAP.md",
+        "docs/DECISIONS.md",
+        "docs/PROGRESS.md",
+        "docs/TESTING.md",
+        "docs/CHANGELOG.md",
+        "docs/DATA_CONTRACT.md",
+        "docs/BACKTEST_CONTRACT.md",
+        "docs/RESEARCH_PROTOCOL.md",
+        "docs/GOLDEN_DATASET.md",
+        "docs/ENVIRONMENT_AND_SECURITY.md",
+        "docs/audits/templates/DUAL_AI_AUDIT_REPORT.md",
+        "docs/audits/templates/REVIEW_PACKAGE.md",
+        "docs/audits/templates/PHASE_ACCEPTANCE_REPORT.md",
+        "tests/golden/README.md",
+        "tests/integration/README.md",
+        "tests/e2e/README.md"
+      ]
+    },
+    {
+      "name": "local_markdown_links_resolve",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "name": "no_future_business_implementation",
+      "result": "PASS",
+      "detail": {
+        "src_files": [],
+        "business_tests": []
+      }
+    },
+    {
+      "name": "replacement_test_stage_assignment",
+      "result": "PASS",
+      "detail": {
+        "FACTOR-011": "2",
+        "RESEARCH-009": "3",
+        "BT-010": "5",
+        "UI-007": "6",
+        "INT-005": "7"
+      }
+    },
+    {
+      "name": "source_attachment_byte_copy_3.0",
+      "result": "PASS",
+      "detail": {
+        "equal": true,
+        "archived_sha256": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc"
+      }
+    },
+    {
+      "name": "source_attachment_byte_copy_3.2",
+      "result": "PASS",
+      "detail": {
+        "equal": true,
+        "archived_sha256": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5"
+      }
+    },
+    {
+      "name": "golden_candidate_ic_arithmetic_only",
+      "result": "PASS",
+      "detail": {
+        "sxx": "10",
+        "syy": "0.004520",
+        "sxy": "0.190",
+        "pearson": "0.89368482496441742810612086895423438149282310138527",
+        "limitation": "开发方标准库算式自查；无待测业务函数，不是Gemini核验或业务Golden测试。"
+      }
+    },
+    {
+      "name": "golden_candidate_ledger_arithmetic_only",
+      "result": "PASS",
+      "detail": {
+        "cash": "799",
+        "market_value": "210",
+        "equity": "1009"
+      }
+    }
+  ],
+  "business_tests": "NOT RUN / Planned",
+  "gemini_review": "NOT VERIFIED",
+  "human_approval": "NOT VERIFIED",
+  "ci": "NOT ESTABLISHED; Phase1 planned",
+  "attachment_copy": {
+    "3.0": {
+      "equal": true,
+      "archived_sha256": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc"
+    },
+    "3.2": {
+      "equal": true,
+      "archived_sha256": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5"
+    }
+  },
+  "git_commands": [
+    {
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "exit_code": 0,
+      "stdout": "## No commits yet on feature/phase-0-v3.2-design\nAM .gitattributes\nA  .gitignore\nA  AGENTS.md\nA  README.md\nA  docs/ACCEPTANCE.md\nA  docs/ARCHITECTURE.md\nA  docs/BACKTEST_CONTRACT.md\nA  docs/CHANGELOG.md\nA  docs/DATA_CONTRACT.md\nA  docs/DECISIONS.md\nA  docs/ENVIRONMENT_AND_SECURITY.md\nA  docs/GOLDEN_DATASET.md\nA  docs/INTERFACES.md\nA  docs/PROGRESS.md\nA  docs/PROJECT_CHARTER.md\nAM docs/REQUIREMENTS.md\nA  docs/RESEARCH_PROTOCOL.md\nA  docs/ROADMAP.md\nA  docs/TESTING.md\nAM docs/TRACEABILITY.md\nA  docs/audits/phase-0/ARCHITECTURE_REVIEW.md\nA  docs/audits/phase-0/CHANGE_IMPACT.md\nA  docs/audits/phase-0/COMMAND_LOG.txt\nA  docs/audits/phase-0/COVERAGE_AUDIT.md\nA  docs/audits/phase-0/DELIVERY_REPORT.md\nA  docs/audits/phase-0/MANIFEST.json\nA  docs/audits/phase-0/PLAN.md\nA  docs/audits/phase-0/REVIEW_PACKAGE.md\nA  docs/audits/phase-0/SELF_CHECK.json\nA  docs/audits/phase-0/SPECIAL_AUDITS.md\nAM docs/audits/phase-0/tools/build_catalog.py\nAM docs/audits/phase-0/tools/check_documents.py\nA  docs/audits/templates/DUAL_AI_AUDIT_REPORT.md\nA  docs/audits/templates/PHASE_ACCEPTANCE_REPORT.md\nA  docs/audits/templates/REVIEW_PACKAGE.md\nAM docs/requirements.csv\nA  docs/sources/AQRP_V3.0.md\nA  docs/sources/AQRP_V3.1.md\nA  docs/sources/AQRP_V3.2.md\nA  docs/sources/README.md\nA  tests/e2e/README.md\nA  tests/golden/README.md\nA  tests/integration/README.md\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "origin\thttps://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git (fetch)\norigin\thttps://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git (push)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "git version 2.47.1.windows.2\n",
+      "stderr": ""
+    }
+  ]
+}

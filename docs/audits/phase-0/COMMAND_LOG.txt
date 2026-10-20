@@ -1,0 +1,91 @@
+PHASE0 DOCUMENT SELF-CHECK — RAW CAPTURE
+Start UTC: 2026-10-20T12:34:06.124041+00:00
+Actual argv: C:\Users\11638\AppData\Local\Programs\Python\Python310\python.exe docs/audits/phase-0/tools/check_documents.py --source-v30 C:\Users\11638\.codex\attachments\b3b92465-ec0d-4988-8ba9-566814156eaa\已粘贴的文本.txt --source-v32 C:\Users\11638\.codex\attachments\bd3d2545-e333-4cf4-9f6d-e4bd9b988e65\已粘贴的文本.txt
+CWD: B:\BaiduSyncdisk\学习\投资\量化\量化交易比赛\Alpha Quant Research Platform (AQRP)
+Python: 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
+Platform: Windows-10-10.0.26300-SP0
+NOTE: 仅文档自查，不是业务测试或独立审查。
+PASS unique_requirement_ids {"rows": 105, "unique": 105}
+PASS all_required_fields_present []
+PASS tier_phase_unimplemented_status []
+PASS dependency_ids_exist []
+PASS no_future_phase_prerequisite []
+PASS dependency_graph_acyclic []
+PASS requirement_design_files_exist []
+PASS all_requirements_rendered_and_traced []
+PASS numbered_source_sections_mapped_structurally {"counts": {"3.0": 66, "3.1": 8, "3.2": 9}, "unmapped": [], "limitation": "节存在映射不证明逐句语义完整，需Gemini审查。"}
+PASS required_deliverables_exist ["AGENTS.md", "README.md", "docs/PROJECT_CHARTER.md", "docs/REQUIREMENTS.md", "docs/ARCHITECTURE.md", "docs/INTERFACES.md", "docs/ACCEPTANCE.md", "docs/TRACEABILITY.md", "docs/ROADMAP.md", "docs/DECISIONS.md", "docs/PROGRESS.md", "docs/TESTING.md", "docs/CHANGELOG.md", "docs/DATA_CONTRACT.md", "docs/BACKTEST_CONTRACT.md", "docs/RESEARCH_PROTOCOL.md", "docs/GOLDEN_DATASET.md", "docs/ENVIRONMENT_AND_SECURITY.md", "docs/audits/templates/DUAL_AI_AUDIT_REPORT.md", "docs/audits/templates/REVIEW_PACKAGE.md", "docs/audits/templates/PHASE_ACCEPTANCE_REPORT.md", "tests/golden/README.md", "tests/integration/README.md", "tests/e2e/README.md"]
+PASS local_markdown_links_resolve []
+PASS no_future_business_implementation {"src_files": [], "business_tests": []}
+PASS replacement_test_stage_assignment {"FACTOR-011": "2", "RESEARCH-009": "3", "BT-010": "5", "UI-007": "6", "INT-005": "7"}
+PASS source_attachment_byte_copy_3.0 {"equal": true, "archived_sha256": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc"}
+PASS source_attachment_byte_copy_3.2 {"equal": true, "archived_sha256": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5"}
+PASS golden_candidate_ic_arithmetic_only {"sxx": "10", "syy": "0.004520", "sxy": "0.190", "pearson": "0.89368482496441742810612086895423438149282310138527", "limitation": "开发方标准库算式自查；无待测业务函数，不是Gemini核验或业务Golden测试。"}
+PASS golden_candidate_ledger_arithmetic_only {"cash": "799", "market_value": "210", "equity": "1009"}
+COMMAND git status --short --branch
+EXIT 0
+STDOUT
+## No commits yet on feature/phase-0-v3.2-design
+AM .gitattributes
+A  .gitignore
+A  AGENTS.md
+A  README.md
+A  docs/ACCEPTANCE.md
+A  docs/ARCHITECTURE.md
+A  docs/BACKTEST_CONTRACT.md
+A  docs/CHANGELOG.md
+A  docs/DATA_CONTRACT.md
+A  docs/DECISIONS.md
+A  docs/ENVIRONMENT_AND_SECURITY.md
+A  docs/GOLDEN_DATASET.md
+A  docs/INTERFACES.md
+A  docs/PROGRESS.md
+A  docs/PROJECT_CHARTER.md
+AM docs/REQUIREMENTS.md
+A  docs/RESEARCH_PROTOCOL.md
+A  docs/ROADMAP.md
+A  docs/TESTING.md
+AM docs/TRACEABILITY.md
+A  docs/audits/phase-0/ARCHITECTURE_REVIEW.md
+A  docs/audits/phase-0/CHANGE_IMPACT.md
+A  docs/audits/phase-0/COMMAND_LOG.txt
+A  docs/audits/phase-0/COVERAGE_AUDIT.md
+A  docs/audits/phase-0/DELIVERY_REPORT.md
+A  docs/audits/phase-0/MANIFEST.json
+A  docs/audits/phase-0/PLAN.md
+A  docs/audits/phase-0/REVIEW_PACKAGE.md
+A  docs/audits/phase-0/SELF_CHECK.json
+A  docs/audits/phase-0/SPECIAL_AUDITS.md
+AM docs/audits/phase-0/tools/build_catalog.py
+AM docs/audits/phase-0/tools/check_documents.py
+A  docs/audits/templates/DUAL_AI_AUDIT_REPORT.md
+A  docs/audits/templates/PHASE_ACCEPTANCE_REPORT.md
+A  docs/audits/templates/REVIEW_PACKAGE.md
+AM docs/requirements.csv
+A  docs/sources/AQRP_V3.0.md
+A  docs/sources/AQRP_V3.1.md
+A  docs/sources/AQRP_V3.2.md
+A  docs/sources/README.md
+A  tests/e2e/README.md
+A  tests/golden/README.md
+A  tests/integration/README.md
+
+STDERR
+
+COMMAND git remote -v
+EXIT 0
+STDOUT
+origin	https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git (fetch)
+origin	https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git (push)
+
+STDERR
+
+COMMAND git --version
+EXIT 0
+STDOUT
+git version 2.47.1.windows.2
+
+STDERR
+
+Check exit code: 0
+End UTC: 2026-10-20T12:34:06.651655+00:00
