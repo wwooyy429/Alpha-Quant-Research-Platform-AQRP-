@@ -147,11 +147,21 @@ def main():
     for command in [['git','status','--short','--branch'], ['git','remote','-v'], ['git','--version']]:
         result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         commands.append({'argv':command,'exit_code':result.returncode,'stdout':result.stdout,'stderr':result.stderr})
+    review_evidence = AUDIT/'gemini/EVIDENCE_INDEX.json'
+    gemini_status = 'NOT VERIFIED'
+    if review_evidence.is_file():
+        supplied_review = json.loads(review_evidence.read_text(encoding='utf-8'))
+        gemini_status = {'status':'Original report received; verdict applies only to reviewed_commit',
+                        'verdict':supplied_review['overall_verdict'],
+                        'reviewed_commit':supplied_review['reviewed_commit'],
+                        'report_path':supplied_review['report_path'],
+                        'report_sha256':supplied_review['report_sha256'],
+                        'execution_scope':supplied_review['execution_evidence_scope']}
     summary = {'scope':'Phase0文档结构与候选算式开发方自查；不是业务测试、CI或Gemini审计',
        'started_at_utc': started, 'finished_at_utc':datetime.now(timezone.utc).isoformat(),
        'python':sys.version,'platform':platform.platform(),'requirements':len(rows),
        'checks_passed':len(checks)-len(errors),'checks_failed':len(errors),'checks':checks,
-       'business_tests':'NOT RUN / Planned','gemini_review':'NOT VERIFIED','human_approval':'NOT VERIFIED',
+       'business_tests':'NOT RUN / Planned','gemini_review':gemini_status,'human_approval':'NOT VERIFIED',
        'ci':'NOT ESTABLISHED; Phase1 planned','attachment_copy':copied,'git_commands':commands}
     (AUDIT/'SELF_CHECK.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     log = ['PHASE0 DOCUMENT SELF-CHECK — RAW CAPTURE',f'Start UTC: {started}',
