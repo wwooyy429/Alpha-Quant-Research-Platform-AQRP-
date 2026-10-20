@@ -160,12 +160,15 @@ def main():
     log += [f'Check exit code: {1 if errors else 0}',f'End UTC: {summary["finished_at_utc"]}']
     (AUDIT/'COMMAND_LOG.txt').write_text('\n'.join(log)+'\n',encoding='utf-8',newline='\n')
     files=[]
-    for p in sorted(ROOT.rglob('*')):
+    inventory = subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=ROOT)
+    inventory_paths = sorted(set(inventory.decode('utf-8').split('\0')) - {''})
+    for relative in inventory_paths:
+        p = ROOT / relative
         if not p.is_file() or '.git' in p.parts or '__pycache__' in p.parts or '.baiduyun.' in p.name or p == AUDIT/'MANIFEST.json':
             continue
         files.append({'path':p.relative_to(ROOT).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)})
     canonical = json.dumps(files, ensure_ascii=False,sort_keys=True,separators=(',',':')).encode('utf-8')
-    manifest={'scope':'当前交付工作文件，排除.git/__pycache__/百度同步临时元数据/本manifest自身；非Git SHA替代品',
+    manifest={'scope':'Git跟踪或未忽略的交付文件，排除.git/__pycache__/同步临时元数据与已确认同义副本/本manifest自身；非Git SHA替代品',
               'generated_at_utc':datetime.now(timezone.utc).isoformat(),
               'entries_sha256':hashlib.sha256(canonical).hexdigest(),'files':files}
     (AUDIT/'MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')

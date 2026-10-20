@@ -1,5 +1,5 @@
 PHASE0 DOCUMENT SELF-CHECK — RAW CAPTURE
-Start UTC: 2026-10-20T12:34:06.124041+00:00
+Start UTC: 2026-10-20T12:35:34.759150+00:00
 Actual argv: C:\Users\11638\AppData\Local\Programs\Python\Python310\python.exe docs/audits/phase-0/tools/check_documents.py --source-v30 C:\Users\11638\.codex\attachments\b3b92465-ec0d-4988-8ba9-566814156eaa\已粘贴的文本.txt --source-v32 C:\Users\11638\.codex\attachments\bd3d2545-e333-4cf4-9f6d-e4bd9b988e65\已粘贴的文本.txt
 CWD: B:\BaiduSyncdisk\学习\投资\量化\量化交易比赛\Alpha Quant Research Platform (AQRP)
 Python: 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
@@ -25,50 +25,10 @@ PASS golden_candidate_ledger_arithmetic_only {"cash": "799", "market_value": "21
 COMMAND git status --short --branch
 EXIT 0
 STDOUT
-## No commits yet on feature/phase-0-v3.2-design
-AM .gitattributes
-A  .gitignore
-A  AGENTS.md
-A  README.md
-A  docs/ACCEPTANCE.md
-A  docs/ARCHITECTURE.md
-A  docs/BACKTEST_CONTRACT.md
-A  docs/CHANGELOG.md
-A  docs/DATA_CONTRACT.md
-A  docs/DECISIONS.md
-A  docs/ENVIRONMENT_AND_SECURITY.md
-A  docs/GOLDEN_DATASET.md
-A  docs/INTERFACES.md
-A  docs/PROGRESS.md
-A  docs/PROJECT_CHARTER.md
-AM docs/REQUIREMENTS.md
-A  docs/RESEARCH_PROTOCOL.md
-A  docs/ROADMAP.md
-A  docs/TESTING.md
-AM docs/TRACEABILITY.md
-A  docs/audits/phase-0/ARCHITECTURE_REVIEW.md
-A  docs/audits/phase-0/CHANGE_IMPACT.md
-A  docs/audits/phase-0/COMMAND_LOG.txt
-A  docs/audits/phase-0/COVERAGE_AUDIT.md
-A  docs/audits/phase-0/DELIVERY_REPORT.md
-A  docs/audits/phase-0/MANIFEST.json
-A  docs/audits/phase-0/PLAN.md
-A  docs/audits/phase-0/REVIEW_PACKAGE.md
-A  docs/audits/phase-0/SELF_CHECK.json
-A  docs/audits/phase-0/SPECIAL_AUDITS.md
-AM docs/audits/phase-0/tools/build_catalog.py
-AM docs/audits/phase-0/tools/check_documents.py
-A  docs/audits/templates/DUAL_AI_AUDIT_REPORT.md
-A  docs/audits/templates/PHASE_ACCEPTANCE_REPORT.md
-A  docs/audits/templates/REVIEW_PACKAGE.md
-AM docs/requirements.csv
-A  docs/sources/AQRP_V3.0.md
-A  docs/sources/AQRP_V3.1.md
-A  docs/sources/AQRP_V3.2.md
-A  docs/sources/README.md
-A  tests/e2e/README.md
-A  tests/golden/README.md
-A  tests/integration/README.md
+## feature/phase-0-v3.2-design
+ M .gitignore
+ M docs/audits/phase-0/tools/check_documents.py
+?? docs/audits/phase-0/SELF_REVIEW_NOTES.md
 
 STDERR
 
@@ -88,4 +48,4 @@ git version 2.47.1.windows.2
 STDERR
 
 Check exit code: 0
-End UTC: 2026-10-20T12:34:06.651655+00:00
+End UTC: 2026-10-20T12:35:35.304841+00:00
