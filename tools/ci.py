@@ -23,6 +23,8 @@ os.environ["PIP_CACHE_DIR"] = str(RUN / "pip-cache")
 os.environ["UV_CACHE_DIR"] = str(RUN / "uv-cache")
 os.environ["HYPOTHESIS_STORAGE_DIRECTORY"] = str(RUN / "hypothesis")
 os.environ["RUFF_CACHE_DIR"] = str(RUN / "ruff-cache")
+os.environ["PYTHONUTF8"] = "1"
+os.environ["COVERAGE_FILE"] = str(RUN / ".coverage")
 
 
 def command(args, cwd=ROOT):
@@ -31,7 +33,7 @@ def command(args, cwd=ROOT):
         log.flush()
         result = subprocess.run(args, cwd=cwd, stdout=log, stderr=subprocess.STDOUT)
         if result.returncode:
-            print((RUN / "commands.log").read_text(encoding="utf-8")[-12000:])
+            print((RUN / "commands.log").read_text(encoding="utf-8", errors="replace")[-12000:])
             raise SystemExit(result.returncode)
 
 
@@ -106,8 +108,8 @@ def main():
     project_wheel = next((RUN / "wheel").glob("aqrp-*.whl"))
     env["wheel_sha256"] = hashlib.sha256(project_wheel.read_bytes()).hexdigest()
     command([str(py), "-m", "pip", "install", "--no-index", "--no-deps", str(project_wheel)])
-    command([str(py), "-m", "ruff", "check", "src", "tests", "tools"])
-    command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"])
+    command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
+    command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
     command(
         [
             str(py),
@@ -121,10 +123,13 @@ def main():
             f"--cov-report=json:{RUN / 'coverage.json'}",
             f"--cov-report=xml:{RUN / 'coverage.xml'}",
             f"--junitxml={RUN / 'junit.xml'}",
-        ]
+        ],
+        cwd=source,
     )
-    command([str(py), str(ROOT / "tools/check_coverage.py"), str(RUN / "coverage.json")])
-    command([str(py), str(ROOT / "tools/secret_scan.py"), str(RUN)])
+    command(
+        [str(py), str(source / "tools/check_coverage.py"), str(RUN / "coverage.json")], cwd=source
+    )
+    command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
     env["complete"] = True
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
     hashes = {

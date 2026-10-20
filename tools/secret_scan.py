@@ -3,6 +3,8 @@
 import hashlib
 import io
 import os
+import random
+import string
 import subprocess
 import sys
 import tarfile
@@ -41,7 +43,13 @@ def main():
             control = out / ("positive-control" if positive else "negative-control")
             control.mkdir()
             value = (
-                ("gh" + "p_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+                (
+                    "gh"
+                    + "p_"
+                    + "".join(
+                        random.Random(718).choices(string.ascii_letters + string.digits, k=36)
+                    )
+                )
                 if positive
                 else "SYNTHETIC_NO_CREDENTIAL"
             )

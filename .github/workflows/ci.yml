@@ -12,8 +12,6 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-24.04]
     runs-on: ${{ matrix.os }}
-    env:
-      AQRP_RUN_ROOT: ${{ runner.temp }}/aqrp-evidence
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -23,6 +21,8 @@ jobs:
           python-version: '3.13.16'
           architecture: x64
       - name: Clean hashed install, wheel, tests and evidence
+        env:
+          AQRP_RUN_ROOT: ${{ runner.temp }}/aqrp-evidence
         run: python tools/ci.py
       - name: Upload raw evidence including failures
         if: always()
