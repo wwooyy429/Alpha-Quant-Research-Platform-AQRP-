@@ -37,6 +37,7 @@ class QuerySpec:
             or len(set(self.security_ids)) != len(self.security_ids)
             or not isinstance(self.fields, tuple)
             or not self.fields
+            or any(not isinstance(f, str) or not f for f in self.fields)
             or len(set(self.fields)) != len(self.fields)
         ):
             raise ContractError("INVALID_QUERY_KEYS", "QuerySpec", self.request_id)

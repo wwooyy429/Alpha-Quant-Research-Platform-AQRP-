@@ -51,6 +51,7 @@ def main():
         "ImageVersion": os.environ.get("ImageVersion"),
         "code_commit": commit,
         "dirty": bool(dirty),
+        "complete": False,
         "workspace": str(ROOT),
         "run_root": str(RUN.resolve()),
         "lock_sha256": hashlib.sha256((ROOT / "requirements.lock").read_bytes()).hexdigest(),
@@ -107,6 +108,7 @@ def main():
     )
     project_wheel = next((RUN / "wheel").glob("aqrp-*.whl"))
     env["wheel_sha256"] = hashlib.sha256(project_wheel.read_bytes()).hexdigest()
+    (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
     command([str(py), "-m", "pip", "install", "--no-index", "--no-deps", str(project_wheel)])
     command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
     command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
@@ -129,6 +131,8 @@ def main():
     command(
         [str(py), str(source / "tools/check_coverage.py"), str(RUN / "coverage.json")], cwd=source
     )
+    command([str(py), str(source / "tools/independent_reference.py")], cwd=source)
+    command([str(py), str(source / "tools/data_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
     env["complete"] = True
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")

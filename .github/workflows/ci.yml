@@ -33,5 +33,6 @@ jobs:
             ${{ runner.temp }}/aqrp-evidence/*/*.log
             ${{ runner.temp }}/aqrp-evidence/*/*.json
             ${{ runner.temp }}/aqrp-evidence/*/*.xml
+            ${{ runner.temp }}/aqrp-evidence/*/dataset/**/*
           if-no-files-found: error
           retention-days: 30

@@ -54,8 +54,12 @@ def _effective(name, rows, cutoff, filters):
     records = [r for r in records if all(r[k] == v for k, v in filters.items())]
     if name == "corporate_actions":
         records = [r for r in records if r["effective_at"] <= cutoff]
-    if name in ("security_status", "symbol_alias"):
-        keys = ("security_id",) if name == "security_status" else ("market_id", "symbol")
+    if name in ("security_status", "symbol_alias", "universe_membership"):
+        keys = {
+            "security_status": ("security_id",),
+            "symbol_alias": ("market_id", "symbol"),
+            "universe_membership": ("universe_id", "security_id"),
+        }[name]
         seen = set()
         for r in records:
             key = tuple(r[k] for k in keys)

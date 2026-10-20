@@ -10,7 +10,7 @@ from aqrp.core.errors import ContractError, DataQualityError
 from aqrp.core.time import iana, utc
 from aqrp.core.units import PROFILE, convert, decimal
 
-from .schemas import KEYS, QUALITY, SCHEMAS
+from .schemas import KEYS, LOGICAL_KEYS, QUALITY, SCHEMAS
 
 
 @dataclass(frozen=True)
@@ -34,16 +34,22 @@ def normalize(name, row):
     if set(row) != set(schema.names):
         raise ContractError("FIELDS_MISMATCH", name)
     r = dict(row)
+    iana(r["source_timezone"])
     for field in schema:
         v = r[field.name]
         if v is None:
             continue
         if pa.types.is_timestamp(field.type):
-            r[field.name] = (
-                utc(v, r["source_timezone"], field.name)
-                if field.name == "event_time"
-                else utc(v, field=field.name)
-            )
+            # Persistent timestamps are canonical UTC; offset-bearing source clocks
+            # must additionally agree with the retained source IANA zone.
+            if isinstance(v, str):
+                r[field.name] = utc(v, field=field.name)
+                original = datetime.fromisoformat(v)
+            else:
+                r[field.name] = utc(v, field=field.name)
+                original = v
+            if original.utcoffset().total_seconds() != 0:
+                utc(original, r["source_timezone"], field.name)
         elif pa.types.is_decimal(field.type):
             r[field.name] = decimal(v, field.name)
         elif pa.types.is_date(field.type):
@@ -72,6 +78,36 @@ def normalize(name, row):
         raise ContractError("REQUIRED_LINEAGE_OR_KEY", name)
     if r["quality_status"] not in QUALITY:
         raise ContractError("UNKNOWN_QUALITY", name)
+    mandatory = {
+        "security_master": (
+            "market_id",
+            "venue_mic",
+            "asset_type",
+            "currency",
+            "listing_at",
+            "known_at",
+        ),
+        "calendar": ("market_id", "open_at", "close_at", "calendar_version"),
+        "bars_daily": ("market_id", "calendar_id", "currency", "price_basis", "source_scale"),
+        "symbol_alias": ("security_id",),
+        "security_status": ("status",),
+        "corporate_actions": (
+            "security_id",
+            "type",
+            "announcement_at",
+            "effective_at",
+            "ex_date",
+            "currency",
+        ),
+        "adjustment_factors": ("ratio", "action_id", "method", "view_cutoff"),
+        "universe_membership": (),
+    }
+    if any(r[k] is None for k in mandatory[name]):
+        raise ContractError("REQUIRED_TABLE_FIELD", name)
+    if name == "security_master" and (
+        r["known_at"] > r["available_at"] if r["available_at"] is not None else False
+    ):
+        raise ContractError("MASTER_KNOWN_AFTER_AVAILABLE", name)
     if r["available_at"] is None:
         r["quality_status"] = "UNKNOWN_AVAILABILITY"
         r["reason_code"] = "NO_HISTORICAL_AVAILABILITY"
@@ -198,7 +234,10 @@ def validate_dataset(tables, *, exploratory=False):
         master[r["security_id"]] = identity
     sessions = {(r["calendar_id"], r["session_date"]): r for r in rows["calendar"]}
     for n, records in rows.items():
+        revisions = {}
         for r in records:
+            if "revision_id" in r:
+                revisions.setdefault(tuple(r[k] for k in LOGICAL_KEYS[n]), []).append(r)
             if "security_id" in r and r["security_id"] not in master:
                 raise DataQualityError("UNKNOWN_SECURITY", n)
             if (
@@ -215,4 +254,25 @@ def validate_dataset(tables, *, exploratory=False):
                     or session["market_id"] != r["market_id"]
                 ):
                     raise DataQualityError("BAR_SESSION_MISMATCH", n)
+        for group in revisions.values():
+            ordered = sorted(
+                (r for r in group if r["available_at"] is not None), key=lambda r: r["revision_id"]
+            )
+            if any(a["available_at"] > b["available_at"] for a, b in zip(ordered, ordered[1:])):
+                raise DataQualityError("NONMONOTONIC_REVISION", n)
+    for factor in rows["adjustment_factors"]:
+        matches = [
+            a
+            for a in rows["corporate_actions"]
+            if a["action_id"] == factor["action_id"]
+            and a["security_id"] == factor["security_id"]
+            and a["type"] == "SPLIT"
+            and a["effective_at"] == factor["effective_at"]
+            and a["split_ratio"] == factor["ratio"]
+            and a["available_at"] is not None
+            and factor["available_at"] is not None
+            and a["available_at"] <= factor["available_at"]
+        ]
+        if not matches:
+            raise DataQualityError("UNVERIFIABLE_ADJUSTMENT_FACTOR", "action_id")
     return validated

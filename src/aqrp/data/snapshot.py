@@ -58,6 +58,11 @@ def publish_snapshot(tables, provenance, destination, *, snapshot_id=None, explo
     ):
         raise ContractError("MISSING_PROVENANCE", "provenance")
     validated = validate_dataset(tables, exploratory=exploratory)
+    if any(
+        r["calendar_version"] != provenance["calendar_version"]
+        for r in validated["calendar"].table.to_pylist()
+    ):
+        raise ContractError("CALENDAR_VERSION_MISMATCH", "calendar_version")
     root = Path(destination).resolve()
     root.mkdir(parents=True, exist_ok=True)
     sid = str(uuid.uuid4()) if snapshot_id is None else snapshot_id
@@ -156,8 +161,33 @@ def _verify(directory, sid, expected_hash):
                 raise SnapshotMismatch("SCHEMA_OR_ROW_COUNT", name)
             if any(r["snapshot_id"] != sid for r in table.to_pylist()):
                 raise SnapshotMismatch("MIXED_SNAPSHOT", name)
+            records = table.to_pylist()
+            times = [r["event_time"] for r in records]
+            summary = {
+                "security_ids": sorted({r["security_id"] for r in records if "security_id" in r}),
+                "event_min": min(times) if times else None,
+                "event_max": max(times) if times else None,
+            }
+            if canonical(summary) != canonical({k: item[k] for k in summary}):
+                raise SnapshotMismatch("RANGE_SUMMARY_MISMATCH", name)
+            q = item["quality"]
+            if (
+                any(
+                    type(q[k]) is not int or q[k] < 0
+                    for k in ("input", "valid", "duplicate", "missing", "rejected")
+                )
+                or q["input"] != q["valid"] + q["duplicate"] + q["missing"] + q["rejected"]
+                or q["valid"] + q["missing"] != table.num_rows
+                or q["rejected"] != 0
+            ):
+                raise SnapshotMismatch("QUALITY_COUNT_MISMATCH", name)
             tables[name] = table
         validate_dataset(tables, exploratory=manifest["pit_status"] == "EXPLORATORY_ONLY")
+        if any(
+            r["calendar_version"] != manifest["provenance"]["calendar_version"]
+            for r in tables["calendar"].to_pylist()
+        ):
+            raise SnapshotMismatch("CALENDAR_VERSION_MISMATCH", "calendar")
         return manifest, tables
     except (OSError, ValueError, KeyError, TypeError, ContractError) as e:
         if isinstance(e, SnapshotMismatch):

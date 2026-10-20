@@ -134,6 +134,10 @@ def rewrite_manifest(ref, mutate):
         lambda m: m.update(pit_status="bad"),
         lambda m: m["tables"].pop("calendar"),
         lambda m: m["provenance"].pop("unit_version"),
+        lambda m: m["tables"]["bars_daily"].update(event_min=None),
+        lambda m: m["tables"]["bars_daily"]["quality"].update(input=-1),
+        lambda m: m["tables"]["bars_daily"]["quality"].update(input=99),
+        lambda m: m["provenance"].update(calendar_version="wrong"),
     ],
 )
 def test_data_007_forged_manifest_semantics(tables, make_snapshot, change):
