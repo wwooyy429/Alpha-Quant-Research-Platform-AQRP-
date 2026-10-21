@@ -1,5 +1,7 @@
 # Phase 2 集成 0.1.1 修复审查包
 
+当前：DEVELOPER VALIDATION PASS / FIXED-SHA RE-REVIEW REQUIRED。新完整SDK run aqrp-30463983-572f-481d-b0c1-30d466fccee4，392 passed；原始外置16 passed；CI run39631435026/attempt1双OS各392 passed。Windows ZIP12359171840 / Ubuntu12359990804官方大小及digest、各46项选择文件、真实wheel/.coverage、两套八表及查询回放、3个因子结果均通过。原件在sdk/与ci/*.zip，逐项结论见LOCAL_VERIFICATION.json、ci/*-verification.json、EVIDENCE_INDEX.json。新PR最终固定审查SHA在PR #3描述的AQRP_FIXED_REVIEW_SHA字段锁定；本目录执行原件固定业务566f0ec，不冒充其他SHA的新SDK。
+
 用户明确授权集成已发布 main 后交审。本目录是新一轮集成资料，不覆盖旧 Gemini 报告/254项SDK/原始ZIP。
 
 Phase2 原 head：947467b9d094905cab0af37ec5cc53f1d187e755。集成的已发布 main：fb1ba4fd51202a303115e4449ee49db09ccc071c（v0.1.1）。使用保留双父历史的 merge；包候选版本继续0.2.0，无新发布。
@@ -10,4 +12,4 @@ CODE_REVIEW_EVIDENCE.json记录开发方对共享代码的实际准入审查、�
 
 新增tests/factors/test_p1_patch_integration.py共6项，分别在host阻断秒/offset超微秒、未知calendar/universe探索快照、共享time/PIT代码漂移；断言均不得进入因子compute。需求映射DATA-002、FACTOR-012、SEC-001；既有132项数据修复回归一并保留，全部原数学答案和容差不改。
 
-新SDK、CI原始ZIP及清单按实际执行另行添加。旧报告十二项勘误/两项Low处理及报告事实冲突仍见../MATH_INCREMENTAL_RECONCILIATION.md，未宣称已全部闭环；Gemini完整SDK独立执行及新版本复核、用户验收、合并/发布仍待完成。用户对Phase1的指定代执行授权不能自动扩展为Phase2独立审查豁免。
+新SDK及CI原始ZIP已按实际执行归档。旧报告十二项勘误/两项Low处理及报告事实冲突仍见../MATH_INCREMENTAL_RECONCILIATION.md，未宣称已全部闭环；Gemini完整SDK独立执行及新版本复核、用户验收、合并/发布仍待完成。用户对Phase1的指定代执行授权不能自动扩展为Phase2独立审查豁免。

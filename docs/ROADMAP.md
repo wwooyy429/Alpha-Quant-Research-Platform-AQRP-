@@ -1,6 +1,6 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
-2026-10-22 当前：用户已授权将已发布 **v0.1.1 / main fb1ba4fd51202a303115e4449ee49db09ccc071c** 集成到Phase2。当前候选包保持 **0.2.0**，三处共享源码精确采用已发布修复，原132项修复回归并入；重新审查并更新完整bundle/TEST_ONLY receipt，新增6项host精度、未知可得性和共享代码漂移阻断回归。当前 **INTEGRATED / VERIFICATION AND FIXED-SHA RE-REVIEW REQUIRED**；新完整SDK/双平台CI及原始ZIP证据按实际运行补充，旧254项证据只对应旧版本。资料见 `docs/audits/phase-2/integration-011/`。本次未验收Phase2，不合并main、不打标签、不进入Phase3；以下旧状态保留为历史。
+2026-10-22 当前：**Phase2 = INTEGRATED / DEVELOPER VALIDATION PASS / FIXED-SHA RE-REVIEW REQUIRED**。已按用户授权以双父merge集成v0.1.1/main fb1ba4fd51202a303115e4449ee49db09ccc071c，业务提交566f0ece4175fddb2703daab3b5b26ff0e4e245f，候选包保持0.2.0。共享源码重审后新bundle为fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7，仅ENGINEERING_APPROVED / TEST_ONLY / financial_approval=NONE。新干净wheel SDK和双OS CI各392项通过，原始外置16项通过；当前两份原始ZIP/46项选择文件hash/八表及查询回放/三个因子结果已核实。详见 `docs/audits/phase-2/integration-011/`。这是开发方验证，Gemini须审新固定SHA；旧报告事实对齐及独立执行限制未自动关闭。未Phase2人工验收，不合并main、不打标签、不进入Phase3；以下旧状态保留为历史。
 
 Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范围，阶段计划见audits/phase-1/PLAN.md。后续阶段仍为提案，需求ID/等级/依赖以REQUIREMENTS/TRACEABILITY为准。每阶段须核对基线/授权、提交计划/接口/答案供Gemini预审，阻断问题解决后才实施。
 

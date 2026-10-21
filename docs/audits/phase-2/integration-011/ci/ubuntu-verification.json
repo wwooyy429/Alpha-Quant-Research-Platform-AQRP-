@@ -1,0 +1,82 @@
+{
+  "environment": {
+    "run_id": "aqrp-3f7d2081-b13a-4193-9802-d451f6f0d6d9",
+    "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+    "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "ImageOS": "ubuntu24",
+    "ImageVersion": "20261018.339.1",
+    "code_commit": "89e16e997aa81cd47a44bd8136174d1aa44ffcac",
+    "dirty": false,
+    "complete": true,
+    "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-3f7d2081-b13a-4193-9802-d451f6f0d6d9",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39631435026",
+    "github_run_attempt": "1",
+    "github_sha": "89e16e997aa81cd47a44bd8136174d1aa44ffcac",
+    "wheel_sha256": "e792920089c8ca2b0d706dea0481cbe97d6eb2026b0900b2c3aafbcf87ea9ad1"
+  },
+  "junit": {
+    "tests": 392,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "selected_hashes_verified": 46,
+  "root_inventory_verified": true,
+  "wheel_bytes_and_all_python_members_verified": true,
+  "receipt": {
+    "implementation_hash": "fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7",
+    "review_ref": "docs/audits/phase-2/CODE_REVIEW.md",
+    "state": "ENGINEERING_APPROVED",
+    "environment": "TEST_ONLY",
+    "financial_approval": "NONE"
+  },
+  "snapshot_and_query_replay": [
+    {
+      "kind": "dataset",
+      "snapshot_id": "f19258fd-5396-4bd5-9b88-3c54ca3e0a04",
+      "manifest_hash": "b640e170ab173334faac511a23a3ae9915ca65dd699802c4564f930acac58f46",
+      "tables": 8
+    },
+    {
+      "kind": "factor-dataset",
+      "snapshot_id": "39597653-3351-40df-948e-779840b5e81b",
+      "manifest_hash": "4694000ec64604a96fa96d33321bcc5196eed5a3a2f3a07cbba54a01d5a0a355",
+      "tables": 8
+    }
+  ],
+  "factor_results": {
+    "momentum": {
+      "logical_hash": "452f4825c51914c97b1f4e7e8608c00eef607cab0d302142f5ecf45b70e63460",
+      "value": 0.21
+    },
+    "reversal": {
+      "logical_hash": "0e93a7f6b6067e7d4651f5bf64f9a3b86745fc647c14f06063a209cd135f486f",
+      "value": -0.21
+    },
+    "volume": {
+      "logical_hash": "59f5be81415da416c53577019653f574f3fff6e07ac1e200f5d153bb27c925ea",
+      "value": 0.6
+    }
+  },
+  "factor_runs_manifest_hashes_verified": 3,
+  "coverage_gate": "Module line/branch coverage gates PASS",
+  "checkout_parents": [
+    "fb1ba4fd51202a303115e4449ee49db09ccc071c",
+    "566f0ece4175fddb2703daab3b5b26ff0e4e245f"
+  ],
+  "tree_equals_implementation": true,
+  "omitted_local_tools": [
+    "gitleaks",
+    "pip-26.2.1-py3-none-any.whl"
+  ],
+  "secret_findings": 0,
+  "executor": "Codex developer; remote Ubuntu bytes replayed on Windows SDK, not a fresh local Linux install or independent Gemini execution",
+  "artifact_id": 12359990804,
+  "artifact_name": "phase2-ubuntu-24.04-1",
+  "zip_sha256": "4ef8ba12586f6582d333f5c4bbb4b0a6d53458109b95bd287abe04787b1227e8",
+  "zip_bytes": 148221,
+  "crc_and_safe_paths": "PASS"
+}

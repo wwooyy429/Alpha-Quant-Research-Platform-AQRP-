@@ -1,6 +1,6 @@
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
-2026-10-22 当前：用户已授权将已发布 **v0.1.1 / main fb1ba4fd51202a303115e4449ee49db09ccc071c** 集成到Phase2。当前候选包保持 **0.2.0**，三处共享源码精确采用已发布修复，原132项修复回归并入；重新审查并更新完整bundle/TEST_ONLY receipt，新增6项host精度、未知可得性和共享代码漂移阻断回归。当前 **INTEGRATED / VERIFICATION AND FIXED-SHA RE-REVIEW REQUIRED**；新完整SDK/双平台CI及原始ZIP证据按实际运行补充，旧254项证据只对应旧版本。资料见 `docs/audits/phase-2/integration-011/`。本次未验收Phase2，不合并main、不打标签、不进入Phase3；以下旧状态保留为历史。
+2026-10-22 当前：**Phase2 = INTEGRATED / DEVELOPER VALIDATION PASS / FIXED-SHA RE-REVIEW REQUIRED**。已按用户授权以双父merge集成v0.1.1/main fb1ba4fd51202a303115e4449ee49db09ccc071c，业务提交566f0ece4175fddb2703daab3b5b26ff0e4e245f，候选包保持0.2.0。共享源码重审后新bundle为fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7，仅ENGINEERING_APPROVED / TEST_ONLY / financial_approval=NONE。新干净wheel SDK和双OS CI各392项通过，原始外置16项通过；当前两份原始ZIP/46项选择文件hash/八表及查询回放/三个因子结果已核实。详见 `docs/audits/phase-2/integration-011/`。这是开发方验证，Gemini须审新固定SHA；旧报告事实对齐及独立执行限制未自动关闭。未Phase2人工验收，不合并main、不打标签、不进入Phase3；以下旧状态保留为历史。
 
 2026-10-21 当前：**Phase2 = INCREMENTAL AUDIT PASS AS REPORTED / CORE MATH VERIFIED / REPORT ALIGNMENT AND EXECUTION LIMITS OPEN**。Gemini对0b5107f增量报告PASS、十二项AGREE/CLOSED及两项Low继续CLOSED已接收；修订数学.py/.log原件已收到，Volume两输入、证券B推导、非零浮点误差经开发方复跑/独立核算通过，旧数学错误不再作为当前未修项。报告解释仍有PR标题/BASELINE、FACTOR-011、源码路径等事实冲突，详见docs/audits/phase-2/MATH_INCREMENTAL_RECONCILIATION.md及gemini/MATH_INCREMENTAL_INDEX.json。SDK独立执行仍NOT VERIFIED、ZIP本轮Evidence Reviewed Only；未人工验收/接受限制，main/稳定标签不动，不合并、不打标签、不进入Phase3。
 
