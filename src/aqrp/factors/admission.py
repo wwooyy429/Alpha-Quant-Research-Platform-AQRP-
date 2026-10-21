@@ -11,7 +11,7 @@ from aqrp.core.security import static_guard
 
 from .contracts import FactorSpec
 
-BUILTINS = ("momentum", "reversal", "volume")
+BUILTINS = ("momentum", "reversal", "volume", "price_volume")
 PACKAGE = Path(__file__).resolve().parents[1]
 LOCK_HASH = "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb"
 
@@ -72,7 +72,7 @@ def validate_admission(spec):
     return policy
 
 
-def builtin_spec(factor_id, factor_version="1.0.0", *, api_compatibility=">=1.0.0,<2.0.0"):
+def builtin_spec(factor_id, factor_version="1.1.0", *, api_compatibility=">=1.0.0,<2.0.0"):
     if factor_id not in BUILTINS:
         raise ContractError("UNKNOWN_OR_EXTERNAL_FACTOR", "factor_id")
     policy = reviewed_policy()
@@ -80,7 +80,9 @@ def builtin_spec(factor_id, factor_version="1.0.0", *, api_compatibility=">=1.0.
         factor_id,
         factor_id.title(),
         factor_version,
-        required_fields=("volume",) if factor_id == "volume" else ("close",),
+        required_fields=("close", "volume")
+        if factor_id == "price_volume"
+        else (("volume",) if factor_id == "volume" else ("close",)),
         implementation_version=policy["bundle_sha256"],
         review_ref=policy["review_ref"],
         api_compatibility=api_compatibility,

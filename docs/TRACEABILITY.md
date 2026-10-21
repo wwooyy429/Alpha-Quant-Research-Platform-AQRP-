@@ -1,5 +1,8 @@
 # 双向需求追踪矩阵（待审）
 
+2026-10-22 Phase3：G1固定3861已由用户确认PLAN PASS，U-001/U-002设计已确认，26项实现候选及必要自测进行中。实际代码/测试映射见docs/audits/phase-3/IMPLEMENTATION_TRACEABILITY.md；真实权限部署未授权，正式Test/金融批准/独立实现审核/阶段验收未完成，不合并、不打标签、不进入P4。以下旧轮状态按其时间保留。
+
+
 最新审查指针：Gemini对8bf189d七项勘误全部AGREE，技术建议PASS；完整独立执行仍NOT VERIFIED，用户未验收。实际需求目录不变，当前证据等级与门禁见[audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md](audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md)；下表和旧轮状态保留各自来源。
 
 源要求→需求ID→设计/未来实现→分阶段测试；实际实现后须把规划路径替换/补充为真实文件、测试ID、Commit及证据。空缺不能当已实现。需求的完整输入输出/验收定义见 REQUIREMENTS 和 requirements.csv。

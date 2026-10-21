@@ -1,0 +1,18 @@
+........................................................................ [ 12%]
+........................................................................ [ 25%]
+........................................................................ [ 38%]
+........................................................................ [ 51%]
+........................................................................ [ 64%]
+........................................................................ [ 77%]
+........................................................................ [ 90%]
+........................................................                 [100%]
+============================== warnings summary ===============================
+tests/research/test_service.py::test_cli_module_entry_is_thin
+  <frozen runpy>:130: RuntimeWarning: 'aqrp.services.cli' found in sys.modules after import of package 'aqrp.services', but prior to execution of 'aqrp.services.cli'; this may result in unpredictable behaviour
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Coverage JSON written to file C:/Users/11638/AppData/Local/AQRP/runs/p3-implementation-20261022/coverage-full-first.json
+560 passed, 1 warning in 185.53s (0:03:05)

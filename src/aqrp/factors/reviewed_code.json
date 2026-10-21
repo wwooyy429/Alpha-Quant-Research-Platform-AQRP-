@@ -2,14 +2,15 @@
   "allowed_factor_ids": [
     "momentum",
     "reversal",
-    "volume"
+    "volume",
+    "price_volume"
   ],
-  "bundle_sha256": "51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d",
+  "bundle_sha256": "ec7cf95d7d6e75d8743e9461c0b935216cfde0fcbf070aab527a2cb51c1fabc6",
   "environment": "TEST_ONLY",
   "financial_approval": "NONE",
   "review_date": "2026-10-22",
-  "review_ref": "docs/audits/phase-2/CODE_REVIEW.md",
-  "reviewer": "Codex developer; not Gemini",
+  "review_ref": "docs/audits/phase-3/CODE_REVIEW.md",
+  "reviewer": "Codex developer; not GPT Work independent review",
   "state": "ENGINEERING_APPROVED",
   "trust_boundary": "Fixed receipt packaged with reviewed source, not plugin/config input; not cryptographic attestation or OS sandbox"
 }

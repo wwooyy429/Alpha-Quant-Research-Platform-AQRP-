@@ -1,0 +1,47 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\data\snapshot.py", line 139, in _verify
+    raw = safe_path(directory, "manifest.json").read_bytes()
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\data\snapshot.py", line 33, in safe_path
+    root = Path(root).resolve(strict=True)
+  File "E:\WORK\Anaconda\envs\aqrp-p1\Lib\pathlib\_local.py", line 670, in resolve
+    return self.with_segments(os.path.realpath(self, strict=strict))
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen ntpath>", line 709, in realpath
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\docs\\audits\\phase-2\\publication\\sdk\\factor-dataset\\45a6830b-bd91-409c-98a2-eb70e5833b2a\\45a6830b-bd91-409c-98a2-eb70e5833b2a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\src\aqrp\experiments\replay_worker.py", line 97, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\11638\AppData\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\src\aqrp\experiments\replay_worker.py", line 79, in main
+    batch = FactorEngine(registry).run(
+        spec.ref,
+    ...<4 lines>...
+        seed=request["seed"],
+    )
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\factors\engine.py", line 28, in run
+    return self.run_pinned(
+           ~~~~~~~~~~~~~~~^
+        self.registry.resolve(ref), query_spec, decision_time, snapshot_ref, **options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\factors\engine.py", line 58, in run_pinned
+    view = query(query_spec, cutoff, snapshot_ref)
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\data\query.py", line 102, in query
+    cutoff, manifest, tables = _load(snapshot_ref, as_of)
+                               ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\data\query.py", line 44, in _load
+    manifest, tables = read_snapshot(ref)
+                       ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\data\store.py", line 9, in read_snapshot
+    manifest, tables = verify_snapshot(ref)
+                       ~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\data\snapshot.py", line 202, in verify_snapshot
+    return _verify(directory, ref.snapshot_id, ref.manifest_hash)
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p2-release-20261022\formal\aqrp-aa4741d8-294c-45eb-8a11-838267e1cdca\venv\Lib\site-packages\aqrp\data\snapshot.py", line 195, in _verify
+    raise SnapshotMismatch("SNAPSHOT_INVALID", "manifest") from e
+aqrp.core.errors.SnapshotMismatch: SNAPSHOT_INVALID: manifest

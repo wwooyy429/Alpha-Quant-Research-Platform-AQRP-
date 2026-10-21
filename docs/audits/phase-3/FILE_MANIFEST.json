@@ -1,11 +1,11 @@
 {
-  "scope": "P3 e26 report reconciliation and new design-only visibility/growing-HAC proposals; no business implementation",
+  "scope": "Phase3 G1 history plus implementation candidate and developer evidence; not independent acceptance",
   "self_excluded": true,
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 326,
-      "sha256": "ceabc0273d89ee9e994c77eeaab9eaa14dfb1b7f86c594906a29c83d4a67de47"
+      "bytes": 414,
+      "sha256": "7c2b76cbde7e22c6552192aea570033909b625be107bb4ef7639ca5fbd9a3bb1"
     },
     {
       "path": "AUTHORIZATION.json",
@@ -16,6 +16,11 @@
       "path": "BASELINE_VERIFICATION.json",
       "bytes": 1338,
       "sha256": "58d5672bd8f2e14dd24c1cbc058f5321cb194d7b6ce033db3573db9d25fe09d0"
+    },
+    {
+      "path": "CODE_REVIEW.md",
+      "bytes": 4436,
+      "sha256": "c76987b65186fe489e6cdb6bc1de94ec3562cd2264eafc15a4d7fc4922975b7e"
     },
     {
       "path": "COMPOSITE_RESEARCH.md",
@@ -276,6 +281,166 @@
       "path": "HAC_INFERENCE_PROFILE.md",
       "bytes": 6544,
       "sha256": "3d99532d36b9968274e8c06b14c4b0064e9e1fdc646c079e413a5a2ef057f8df"
+    },
+    {
+      "path": "implementation/developer-iterations/coverage-full-first.json",
+      "bytes": 258173,
+      "sha256": "15e71a0a05cc3737365f1ec1bb2b0ae18cfd7a3917dc8723ab8ec35d58e3cb6e"
+    },
+    {
+      "path": "implementation/developer-iterations/coverage-p3-first.json",
+      "bytes": 246622,
+      "sha256": "4584627efea2b8cea7fe49ca62695970c803aadc46eec59bbc69bedfa6d814d1"
+    },
+    {
+      "path": "implementation/developer-iterations/coverage-p3-fourth.json",
+      "bytes": 257068,
+      "sha256": "725b5048d3fd8da631c850f359a7cc2fb42a0ab1e5c6716560b4eb433d254ee9"
+    },
+    {
+      "path": "implementation/developer-iterations/coverage-p3-second.json",
+      "bytes": 247115,
+      "sha256": "8378b018bf73d5323d64308995128868df0e112671add5d975a25b465f998859"
+    },
+    {
+      "path": "implementation/developer-iterations/coverage-p3-third.json",
+      "bytes": 251446,
+      "sha256": "6094aadb11ba780ba4fee69f83e0a72ae9d6bc125656912f2faddc35da04f31b"
+    },
+    {
+      "path": "implementation/developer-iterations/diff-check-candidate.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/developer-iterations/documents-first.log",
+      "bytes": 175,
+      "sha256": "9178f5ab5699e7ac97de7976cccad0433110126758f403682cb09b16df06e4ff"
+    },
+    {
+      "path": "implementation/developer-iterations/full-first.log",
+      "bytes": 1408,
+      "sha256": "9920eeb2658c5f0b25d15e3d75baa2a61551afa9fef7c1a3d82252ad90aca8f5"
+    },
+    {
+      "path": "implementation/developer-iterations/full-first.xml",
+      "bytes": 75732,
+      "sha256": "a179d786435b2f232bfc6d0d524a0a0510ae9bb0703a668b42118aad143bfb19"
+    },
+    {
+      "path": "implementation/developer-iterations/INDEX.json",
+      "bytes": 4907,
+      "sha256": "48368d031dc46f119760910bd24ab85783f0db23d9aa8c71192aedf796c1adba"
+    },
+    {
+      "path": "implementation/developer-iterations/labels-initial.xml",
+      "bytes": 2651,
+      "sha256": "031e584a6dbad1044d3cbb5d84c5ca62e70d46e852a7215b78e4065800c1b5a7"
+    },
+    {
+      "path": "implementation/developer-iterations/legacy-checker-output/COMMAND_LOG.txt",
+      "bytes": 32954,
+      "sha256": "e9adce8a07ae315fbae5c29d4184c0c50012c115f11bf7619a519c15c7a82433"
+    },
+    {
+      "path": "implementation/developer-iterations/legacy-checker-output/MANIFEST.json",
+      "bytes": 446914,
+      "sha256": "84fd087761b93b3b27e3aedaabc821e831047bcbe3b665f9443dddd2a35900ff"
+    },
+    {
+      "path": "implementation/developer-iterations/legacy-checker-output/SELF_CHECK.json",
+      "bytes": 38827,
+      "sha256": "406402373b151a18b86fe358c93a52e64070d704dda80836185f86b8b75a70d6"
+    },
+    {
+      "path": "implementation/developer-iterations/math-initial.xml",
+      "bytes": 6117,
+      "sha256": "527792e0f793a0ae02e2e41e3a64d15006d09fdea6a057434d8c34846e0390b8"
+    },
+    {
+      "path": "implementation/developer-iterations/old-environment-initial.json",
+      "bytes": 2422,
+      "sha256": "f9bf367774b767775ffeb9cbdd7ad0a1c96dd4d1ac4876e4e82d05c5788ca849"
+    },
+    {
+      "path": "implementation/developer-iterations/original-published-failure.log",
+      "bytes": 4303,
+      "sha256": "824d05c886a801b2afba714440825169bd451ba572cf4c54952a8f5b44f6c42f"
+    },
+    {
+      "path": "implementation/developer-iterations/original-published-replay-second.json",
+      "bytes": 23485,
+      "sha256": "4fb9273b9f79343e8d5cc2a04d9b220a537b885ae9817284019defb00e56b8d5"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-first.log",
+      "bytes": 23821,
+      "sha256": "2899437d1e2d8f7cb1c02c025803cf65add7be936216b42e7b2791fc0bef268b"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-first.xml",
+      "bytes": 35960,
+      "sha256": "693f49188d13abb9c1aad3ce759dd2a7ad9c58175a02e7cb26e087ca5dd6819f"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-fourth.log",
+      "bytes": 11834,
+      "sha256": "13f3b2ced43d56ba06ed48885e385b93f483282d1c448f1ea5fe562a988a3c3a"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-fourth.xml",
+      "bytes": 29161,
+      "sha256": "7fc9716da462922013392f57c2c648f33f9ffc58d7eda05e55c31c25896c99de"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-second.log",
+      "bytes": 16496,
+      "sha256": "7016af26eb2a133db4ee75c84d443891d9de41c945e84fd543e2b2bc89a5dd10"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-second.xml",
+      "bytes": 28447,
+      "sha256": "a1aa03e95345120f52b315c66fce2296fe259df83af618634e75441d2e6095c0"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-third.log",
+      "bytes": 478,
+      "sha256": "8b2f37d0e265b25006c7a18dadd0d6f8a0f710102dd2c5902174cdb598a29a4f"
+    },
+    {
+      "path": "implementation/developer-iterations/p3-third.xml",
+      "bytes": 14499,
+      "sha256": "6dff8d3286a25628f32567b9723004196f2812aa225b59cc05543015348f84dc"
+    },
+    {
+      "path": "implementation/developer-iterations/regression-initial.xml",
+      "bytes": 57948,
+      "sha256": "c1efc91bb2c2239f9ce7680446137cd75dab17923c1dbba131c09c5b0abb267e"
+    },
+    {
+      "path": "IMPLEMENTATION_AUTHORIZATION.json",
+      "bytes": 1698,
+      "sha256": "23aa1bdd47a79907faa8052a64f5ead988187a6833d0a544abb76b50b76fd6a2"
+    },
+    {
+      "path": "IMPLEMENTATION_IDENTITY.json",
+      "bytes": 393404,
+      "sha256": "bb30f5ce96f0c37a5df33d9b529204ceea3df62837d3eed9ef10e0f6a15bca93"
+    },
+    {
+      "path": "IMPLEMENTATION_NOTES.md",
+      "bytes": 4622,
+      "sha256": "272e303402494dd8c1b877d26fa5ac39ef81ba952d4d8c6580426b89cdf90e02"
+    },
+    {
+      "path": "IMPLEMENTATION_REVIEW_PACKAGE.md",
+      "bytes": 4452,
+      "sha256": "8ecce2e99780a6a1c087886225524285e7255f3d9258abfcb4e8c193a44ed24c"
+    },
+    {
+      "path": "IMPLEMENTATION_TRACEABILITY.md",
+      "bytes": 7143,
+      "sha256": "361702a42836cceccd959fd7cc9e07d507440e3d2d9c97617efe6e7eb4f58e31"
     },
     {
       "path": "INTERFACE_DRAFT.md",

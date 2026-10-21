@@ -1,0 +1,517 @@
+........................................................................ [ 70%]
+..F..........F.......F........                                           [100%]
+================================== FAILURES ===================================
+___________________ test_five_stages_and_ols_pit_reference ____________________
+
+self = NumpyBlock: 12 dtype: int64, indexer = (array([0, 1, 2, 3, 4, 5]),)
+value = [1.0, 2.0, 3.0, 4.0, 6.0, 8.0]
+
+    def setitem(self, indexer, value) -> Block:
+        """
+        Attempt self.values[indexer] = value, possibly creating a new array.
+    
+        Parameters
+        ----------
+        indexer : tuple, list-like, array-like, slice, int
+            The subset of self.values to set
+        value : object
+            The value being set
+    
+        Returns
+        -------
+        Block
+    
+        Notes
+        -----
+        `indexer` is a direct slice/positional indexer. `value` must
+        be a compatible shape.
+        """
+    
+        value = self._standardize_fill_value(value)
+    
+        values = cast(np.ndarray, self.values)
+        if self.ndim == 2:
+            values = values.T
+    
+        # length checking
+        check_setitem_lengths(indexer, value, values)
+    
+        if self.dtype != _dtype_obj:
+            # GH48933: extract_array would convert a pd.Series value to np.ndarray
+            value = extract_array(value, extract_numpy=True)
+        try:
+>           casted = np_can_hold_element(values.dtype, value)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\blocks.py:1115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dtype = dtype('int64'), element = [1.0, 2.0, 3.0, 4.0, 6.0, 8.0]
+
+    def np_can_hold_element(dtype: np.dtype, element: Any) -> Any:
+        """
+        Raise if we cannot losslessly set this element into an ndarray with this dtype.
+    
+        Specifically about places where we disagree with numpy.  i.e. there are
+        cases where numpy will raise in doing the setitem that we do not check
+        for here, e.g. setting str "X" into a numeric ndarray.
+    
+        Returns
+        -------
+        Any
+            The element, potentially cast to the dtype.
+    
+        Raises
+        ------
+        ValueError : If we cannot losslessly store this element with this dtype.
+        """
+        if dtype == _dtype_obj:
+            return element
+    
+        tipo = _maybe_infer_dtype_type(element)
+    
+        if dtype.kind in "iu":
+            if isinstance(element, range):
+                if _dtype_can_hold_range(element, dtype):
+                    return element
+                raise LossySetitemError
+    
+            if is_integer(element) or (is_float(element) and element.is_integer()):
+                # e.g. test_setitem_series_int8 if we have a python int 1
+                #  tipo may be np.int32, despite the fact that it will fit
+                #  in smaller int dtypes.
+                info = np.iinfo(dtype)
+                if info.min <= element <= info.max:
+                    return dtype.type(element)
+                raise LossySetitemError
+    
+            if tipo is not None:
+                if tipo.kind not in "iu":
+                    if isinstance(element, np.ndarray) and element.dtype.kind == "f":
+                        # If all can be losslessly cast to integers, then we can hold them
+                        with np.errstate(invalid="ignore"):
+                            # We check afterwards if cast was losslessly, so no need to show
+                            # the warning
+                            casted = element.astype(dtype)
+                        comp = casted == element
+                        if comp.all():
+                            # Return the casted values bc they can be passed to
+                            #  np.putmask, whereas the raw values cannot.
+                            #  see TestSetitemFloatNDarrayIntoIntegerSeries
+                            return casted
+                        raise LossySetitemError
+    
+                    elif isinstance(element, ABCExtensionArray) and isinstance(
+                        element.dtype, CategoricalDtype
+                    ):
+                        # GH#52927 setting Categorical value into non-EA frame
+                        # TODO: general-case for EAs?
+                        try:
+                            casted = element.astype(dtype)
+                        except (ValueError, TypeError) as err:
+                            raise LossySetitemError from err
+                        # Check for cases of either
+                        #  a) lossy overflow/rounding or
+                        #  b) semantic changes like dt64->int64
+                        comp = casted == element
+                        if not comp.all():
+                            raise LossySetitemError
+                        return casted
+    
+                    # Anything other than integer we cannot hold
+>                   raise LossySetitemError
+E                   pandas.errors.LossySetitemError
+
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\dtypes\cast.py:1725: LossySetitemError
+
+During handling of the above exception, another exception occurred:
+
+make_snapshot = <function make_snapshot.<locals>.make at 0x0000025EB3BABE20>
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Temp/pytest-of-11638/pytest-2/test_five_stages_and_ols_pit_r0')
+
+    def test_five_stages_and_ols_pit_reference(make_snapshot, tmp_path):
+        s = make_snapshot(load_synthetic(sessions=[(date(2024, 1, 4), "12:00:00")]))
+        ref = publish_exposures(exposures(), s, tmp_path / "exposures")
+>       stages = pipeline(
+            frame(),
+            {
+                "clean": {"method": "mad", "k": 3},
+                "standardized": {"method": "zscore"},
+                "neutralize": True,
+            },
+            ref,
+            market="SYN_A",
+            currency="SYNCCY",
+        )
+
+tests\research\test_pipeline.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\research\pipeline.py:118: in pipeline
+    current.loc[group.index, "score"] = result
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:938: in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:1953: in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:1997: in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:2181: in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\managers.py:1541: in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\managers.py:620: in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\managers.py:445: in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\blocks.py:1118: in setitem
+    nb = self.coerce_to_target_dtype(value, raise_on_upcast=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = NumpyBlock: 12 dtype: int64, other = [1.0, 2.0, 3.0, 4.0, 6.0, 8.0]
+raise_on_upcast = True
+
+    @final
+    def coerce_to_target_dtype(self, other, raise_on_upcast: bool) -> Block:
+        """
+        coerce the current block to a dtype compat for other
+        we will return a block, possibly object, and not raise
+    
+        we can also safely try to coerce to the same dtype
+        and will receive the same block
+        """
+        new_dtype = find_result_type(self.values.dtype, other)
+        if new_dtype == self.dtype:
+            # GH#52927 avoid RecursionError
+            raise AssertionError(
+                "Something has gone wrong, please report a bug at "
+                "https://github.com/pandas-dev/pandas/issues"
+            )
+    
+        # In a future version of pandas, the default will be that
+        # setting `nan` into an integer series won't raise.
+        if (
+            is_scalar(other)
+            and is_integer_dtype(self.values.dtype)
+            and isna(other)
+            and other is not NaT
+            and not (
+                isinstance(other, (np.datetime64, np.timedelta64)) and np.isnat(other)
+            )
+        ):
+            raise_on_upcast = False
+        elif (
+            isinstance(other, np.ndarray)
+            and other.ndim == 1
+            and is_integer_dtype(self.values.dtype)
+            and is_float_dtype(other.dtype)
+            and lib.has_only_ints_or_nan(other)
+        ):
+            raise_on_upcast = False
+    
+        if raise_on_upcast:
+>           raise TypeError(f"Invalid value '{other}' for dtype '{self.values.dtype}'")
+E           TypeError: Invalid value '[1.0, 2.0, 3.0, 4.0, 6.0, 8.0]' for dtype 'int64'
+
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\blocks.py:468: TypeError
+___________________ test_operator_grid_and_composite_stage ____________________
+
+self = NumpyBlock: 24 dtype: float64, indexer = (array([0, 1, 2, 3, 4, 5]),)
+value = [None, None, None, None, None, None]
+
+    def setitem(self, indexer, value) -> Block:
+        """
+        Attempt self.values[indexer] = value, possibly creating a new array.
+    
+        Parameters
+        ----------
+        indexer : tuple, list-like, array-like, slice, int
+            The subset of self.values to set
+        value : object
+            The value being set
+    
+        Returns
+        -------
+        Block
+    
+        Notes
+        -----
+        `indexer` is a direct slice/positional indexer. `value` must
+        be a compatible shape.
+        """
+    
+        value = self._standardize_fill_value(value)
+    
+        values = cast(np.ndarray, self.values)
+        if self.ndim == 2:
+            values = values.T
+    
+        # length checking
+        check_setitem_lengths(indexer, value, values)
+    
+        if self.dtype != _dtype_obj:
+            # GH48933: extract_array would convert a pd.Series value to np.ndarray
+            value = extract_array(value, extract_numpy=True)
+        try:
+>           casted = np_can_hold_element(values.dtype, value)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\blocks.py:1115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dtype = dtype('float64'), element = [None, None, None, None, None, None]
+
+    def np_can_hold_element(dtype: np.dtype, element: Any) -> Any:
+        """
+        Raise if we cannot losslessly set this element into an ndarray with this dtype.
+    
+        Specifically about places where we disagree with numpy.  i.e. there are
+        cases where numpy will raise in doing the setitem that we do not check
+        for here, e.g. setting str "X" into a numeric ndarray.
+    
+        Returns
+        -------
+        Any
+            The element, potentially cast to the dtype.
+    
+        Raises
+        ------
+        ValueError : If we cannot losslessly store this element with this dtype.
+        """
+        if dtype == _dtype_obj:
+            return element
+    
+        tipo = _maybe_infer_dtype_type(element)
+    
+        if dtype.kind in "iu":
+            if isinstance(element, range):
+                if _dtype_can_hold_range(element, dtype):
+                    return element
+                raise LossySetitemError
+    
+            if is_integer(element) or (is_float(element) and element.is_integer()):
+                # e.g. test_setitem_series_int8 if we have a python int 1
+                #  tipo may be np.int32, despite the fact that it will fit
+                #  in smaller int dtypes.
+                info = np.iinfo(dtype)
+                if info.min <= element <= info.max:
+                    return dtype.type(element)
+                raise LossySetitemError
+    
+            if tipo is not None:
+                if tipo.kind not in "iu":
+                    if isinstance(element, np.ndarray) and element.dtype.kind == "f":
+                        # If all can be losslessly cast to integers, then we can hold them
+                        with np.errstate(invalid="ignore"):
+                            # We check afterwards if cast was losslessly, so no need to show
+                            # the warning
+                            casted = element.astype(dtype)
+                        comp = casted == element
+                        if comp.all():
+                            # Return the casted values bc they can be passed to
+                            #  np.putmask, whereas the raw values cannot.
+                            #  see TestSetitemFloatNDarrayIntoIntegerSeries
+                            return casted
+                        raise LossySetitemError
+    
+                    elif isinstance(element, ABCExtensionArray) and isinstance(
+                        element.dtype, CategoricalDtype
+                    ):
+                        # GH#52927 setting Categorical value into non-EA frame
+                        # TODO: general-case for EAs?
+                        try:
+                            casted = element.astype(dtype)
+                        except (ValueError, TypeError) as err:
+                            raise LossySetitemError from err
+                        # Check for cases of either
+                        #  a) lossy overflow/rounding or
+                        #  b) semantic changes like dt64->int64
+                        comp = casted == element
+                        if not comp.all():
+                            raise LossySetitemError
+                        return casted
+    
+                    # Anything other than integer we cannot hold
+                    raise LossySetitemError
+                if (
+                    dtype.kind == "u"
+                    and isinstance(element, np.ndarray)
+                    and element.dtype.kind == "i"
+                ):
+                    # see test_where_uint64
+                    casted = element.astype(dtype)
+                    if (casted == element).all():
+                        # TODO: faster to check (element >=0).all()?  potential
+                        #  itemsize issues there?
+                        return casted
+                    raise LossySetitemError
+                if dtype.itemsize < tipo.itemsize:
+                    raise LossySetitemError
+                if not isinstance(tipo, np.dtype):
+                    # i.e. nullable IntegerDtype; we can put this into an ndarray
+                    #  losslessly iff it has no NAs
+                    arr = element._values if isinstance(element, ABCSeries) else element
+                    if arr._hasna:
+                        raise LossySetitemError
+                    return element
+    
+                return element
+    
+            raise LossySetitemError
+    
+        if dtype.kind == "f":
+            if lib.is_integer(element) or lib.is_float(element):
+                casted = dtype.type(element)
+                if np.isnan(casted) or casted == element:
+                    return casted
+                # otherwise e.g. overflow see TestCoercionFloat32
+                raise LossySetitemError
+    
+            if tipo is not None:
+                # TODO: itemsize check?
+    
+                if isinstance(tipo, CategoricalDtype):
+                    # GH#56376
+                    if tipo.categories.dtype.kind not in "iuf":
+                        # Anything other than float/integer we cannot hold
+                        raise LossySetitemError
+                    casted = np.asarray(element, dtype=dtype)
+                    if np.array_equal(casted, element, equal_nan=True):
+                        return casted
+                    raise LossySetitemError
+    
+                if tipo.kind not in "iuf":
+                    # Anything other than float/integer we cannot hold
+>                   raise LossySetitemError
+E                   pandas.errors.LossySetitemError
+
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\dtypes\cast.py:1775: LossySetitemError
+
+During handling of the above exception, another exception occurred:
+
+    def test_operator_grid_and_composite_stage():
+        f = frame()
+        f.loc[0, "stage"] = "raw"
+        with pytest.raises(ContractError, match="COMPOSITE_STAGE_MISMATCH"):
+            compose(f, composition())
+        f = pd.concat([frame().assign(session="2024-01-03"), frame()], ignore_index=True)
+>       out = operators(
+            f,
+            [
+                {"op": "delta", "length": 1},
+                {"op": "rank"},
+                {"op": "conditional", "comparison": "gt", "threshold": 0.5, "otherwise": 0},
+            ],
+        )
+
+tests\research\test_pipeline.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\research\pipeline.py:22: in operators
+    result.loc[section.index, "score"] = standardize(section["score"], "rank")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:938: in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:1953: in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:1997: in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\indexing.py:2181: in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\managers.py:1541: in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\managers.py:620: in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\managers.py:445: in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\blocks.py:1118: in setitem
+    nb = self.coerce_to_target_dtype(value, raise_on_upcast=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = NumpyBlock: 24 dtype: float64
+other = [None, None, None, None, None, None], raise_on_upcast = True
+
+    @final
+    def coerce_to_target_dtype(self, other, raise_on_upcast: bool) -> Block:
+        """
+        coerce the current block to a dtype compat for other
+        we will return a block, possibly object, and not raise
+    
+        we can also safely try to coerce to the same dtype
+        and will receive the same block
+        """
+        new_dtype = find_result_type(self.values.dtype, other)
+        if new_dtype == self.dtype:
+            # GH#52927 avoid RecursionError
+            raise AssertionError(
+                "Something has gone wrong, please report a bug at "
+                "https://github.com/pandas-dev/pandas/issues"
+            )
+    
+        # In a future version of pandas, the default will be that
+        # setting `nan` into an integer series won't raise.
+        if (
+            is_scalar(other)
+            and is_integer_dtype(self.values.dtype)
+            and isna(other)
+            and other is not NaT
+            and not (
+                isinstance(other, (np.datetime64, np.timedelta64)) and np.isnat(other)
+            )
+        ):
+            raise_on_upcast = False
+        elif (
+            isinstance(other, np.ndarray)
+            and other.ndim == 1
+            and is_integer_dtype(self.values.dtype)
+            and is_float_dtype(other.dtype)
+            and lib.has_only_ints_or_nan(other)
+        ):
+            raise_on_upcast = False
+    
+        if raise_on_upcast:
+>           raise TypeError(f"Invalid value '{other}' for dtype '{self.values.dtype}'")
+E           TypeError: Invalid value '[None, None, None, None, None, None]' for dtype 'float64'
+
+E:\WORK\Anaconda\envs\aqrp-p1\Lib\site-packages\pandas\core\internals\blocks.py:468: TypeError
+___________________ test_full_chain_cache_reproduce_and_cli ___________________
+
+inputs = ({'schema': 'research/1', 'purpose': 'ENGINEERING_DEMO', 'seed': 17, 'market_id': 'SYN_A', ...}, SnapshotRef(root=Wind...024-01-25T12:10:00Z","revision_id":1}]}', checksum='75481979df8ab73e08e8ff8f79af6a0a188494b0ae9fa2e02ccc596e865f03a4'))
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Temp/pytest-of-11638/pytest-2/test_full_chain_cache_reproduc0')
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025EB1A8ECF0>
+
+    def test_full_chain_cache_reproduce_and_cli(inputs, tmp_path, capsys):
+        req = request(inputs)
+        result = research(req, tmp_path / "runs")
+        run_id = result["run_id"]
+        ledger = ExperimentLedger(tmp_path / "runs")
+        root = ledger.path(run_id)
+        assert result["manifest"]["status"] == "SUCCEEDED"
+        assert result["report"]["financial_approval"] == "NONE"
+        assert not result["report"]["independence_verified"]
+        for stage in ("raw", "clean", "standardized", "neutralized", "final"):
+            artifact = json.loads((root / (stage + ".json")).read_bytes())
+            assert artifact["status"] == "EXECUTED"
+            assert artifact["rows"]
+        labels = json.loads((root / "labels.json").read_bytes())
+        assert all(r["label"] is not None for r in labels)
+        assert result["report"]["metrics"]["decay"]
+>       assert json.loads((root / "oos.json").read_bytes())["train_for_validation"]["train"]
+E       assert []
+
+tests\research\test_service.py:54: AssertionError
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Coverage JSON written to file C:/Users/11638/AppData/Local/AQRP/runs/p3-implementation-20261022/coverage-p3-first.json
+=========================== short test summary info ===========================
+FAILED tests/research/test_pipeline.py::test_five_stages_and_ols_pit_reference
+FAILED tests/research/test_pipeline.py::test_operator_grid_and_composite_stage
+FAILED tests/research/test_service.py::test_full_chain_cache_reproduce_and_cli
+3 failed, 99 passed in 39.77s
