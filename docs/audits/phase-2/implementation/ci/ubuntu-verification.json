@@ -1,0 +1,111 @@
+{
+  "environment": {
+    "run_id": "aqrp-755ee3bd-28bf-4de7-90d3-3c8ec9eccc87",
+    "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+    "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "ImageOS": "ubuntu24",
+    "ImageVersion": "20261018.339.1",
+    "code_commit": "6ff410928a34df1696fb1bf36072adb3e9312147",
+    "dirty": false,
+    "complete": true,
+    "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-755ee3bd-28bf-4de7-90d3-3c8ec9eccc87",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39590967220",
+    "github_run_attempt": "1",
+    "github_sha": "6ff410928a34df1696fb1bf36072adb3e9312147",
+    "wheel_sha256": "2f48d3de738b358f67d720a29f047b3e977efa86f826eec74f581e42b5088c7f"
+  },
+  "junit": {
+    "tests": 254,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_totals": {
+    "covered_lines": 1171,
+    "num_statements": 1174,
+    "percent_covered": 99.45255474452554,
+    "percent_covered_display": "99",
+    "missing_lines": 3,
+    "excluded_lines": 3,
+    "percent_statements_covered": 99.74446337308348,
+    "percent_statements_covered_display": "99",
+    "num_branches": 470,
+    "num_partial_branches": 6,
+    "covered_branches": 464,
+    "missing_branches": 6,
+    "percent_branches_covered": 98.72340425531915,
+    "percent_branches_covered_display": "99"
+  },
+  "coverage_gate": "Module line/branch coverage gates PASS",
+  "checkout_parents": [
+    "f579b2c99e762085772de6e70ba1fa98792a7add",
+    "8183b3762b56c466b989d9062a720b5f0d31172a"
+  ],
+  "checkout_tree": "1b4313a7f51033b4e58082fd0b0177c97bc1f86c",
+  "implementation_tree": "1b4313a7f51033b4e58082fd0b0177c97bc1f86c",
+  "checkout_tree_matches_implementation": true,
+  "selected_files_verified": 46,
+  "explicit_omissions": [
+    "gitleaks",
+    "pip-26.2.1-py3-none-any.whl"
+  ],
+  "snapshots": [
+    {
+      "kind": "dataset",
+      "snapshot_id": "7e112fc3-5cef-40a5-931e-69f71102d083",
+      "manifest_hash": "0fd771d6b8fd5ea39be7ee80151c2fb55ecb640737f64876ffb62359cb6ae6c2",
+      "tables": 8,
+      "result": "PASS"
+    },
+    {
+      "kind": "factor-dataset",
+      "snapshot_id": "f843f444-e397-4c12-96ef-2a226a58d9b8",
+      "manifest_hash": "7b59636ba2fdc764139ca2a680ea348a677a3845fbe1ed017da3981b1aa72db2",
+      "tables": 8,
+      "result": "PASS"
+    }
+  ],
+  "factor_runs": [
+    {
+      "run_id": "1ac671b5-7ae8-46c6-b5a7-694b583fe943",
+      "logical_hash": "4ec7005f28ad99d0cd28b23a50239613d564a0f2347be21a23ff16023fd55513",
+      "artifacts": 3
+    },
+    {
+      "run_id": "702799d3-1779-44d9-b1a8-0f770da7f89f",
+      "logical_hash": "989fa784b2b362a5d89c64aba5364ea8fcedfe9a0927b68c845e1eedf92d8a2a",
+      "artifacts": 3
+    },
+    {
+      "run_id": "edf7f66e-3894-4942-88f7-34fbf402f08d",
+      "logical_hash": "3a72974456e9cbe2f4949a4cf742db556d37dc6bef92be7a340a6380d40ed102",
+      "artifacts": 3
+    }
+  ],
+  "factor_result": {
+    "momentum": {
+      "logical_hash": "3a72974456e9cbe2f4949a4cf742db556d37dc6bef92be7a340a6380d40ed102",
+      "value": 0.21
+    },
+    "reversal": {
+      "logical_hash": "4ec7005f28ad99d0cd28b23a50239613d564a0f2347be21a23ff16023fd55513",
+      "value": -0.21
+    },
+    "volume": {
+      "logical_hash": "989fa784b2b362a5d89c64aba5364ea8fcedfe9a0927b68c845e1eedf92d8a2a",
+      "value": 0.6
+    }
+  },
+  "root_inventory_verified": true,
+  "wheel_sha256_verified": true,
+  "secret_findings": 0,
+  "artifact_id": 12342621298,
+  "artifact_name": "phase2-ubuntu-24.04-1",
+  "raw_zip_sha256": "e816a54fc6d181904500adae860c21e12b255cb913af731c805855e0961b58da",
+  "raw_zip_bytes": 143927,
+  "zip_safe_paths_and_crc": "PASS",
+  "performed_by": "Codex developer; original GitHub hosted-runner evidence, not Gemini"
+}

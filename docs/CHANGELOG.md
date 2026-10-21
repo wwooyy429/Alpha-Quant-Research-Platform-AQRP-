@@ -1,5 +1,13 @@
 # 变更记录
 
+## 2026-10-21 · Phase2预审接收与实现待复核
+
+- 按字节归档Gemini计划报告，固定4f8b0de、PLAN PASS、无阻断；单列需求编号、Volume/DAG、Python AST、浮点误差和时间语义等勘误，不修改审查原文。
+- 在已授权10项内实现Factor协议/SignalBatch、精确版本Registry/停用/回滚/pin、三内置因子、P1 PIT输入、工程准入及不可变运行产物；TEST_ONLY不授予金融批准，外部插件和OS沙箱Unsupported。
+- 业务固定8183b37：完整干净wheel SDK 254项通过（P1回归102/P2新增152），语句99.7445%、分支98.7234%，逐模块门槛通过；锁未升级。中间覆盖率失败及修复事实另记，不降低门槛。
+- Windows/Ubuntu CI各254通过，原始ZIP与API digest/size一致，包内清单、两快照/三运行/wheel及跨平台逻辑结果核对通过；日志/原始ZIP/开发方复核证据归档implementation/。
+- 两项Low按本阶段受控内置范围开发方关闭，待Gemini确认；新实现尚未独立审查/用户验收，不合并、不打标签、不进入Phase3。
+
 ## 2026-10-21 · Phase2正式启动与计划预审包
 
 - 按用户明确启动授权，从main/phase1-baseline f579b2c创建独立分支，519项P1发布hash核对通过。

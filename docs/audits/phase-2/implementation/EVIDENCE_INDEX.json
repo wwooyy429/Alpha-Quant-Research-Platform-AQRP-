@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-10-21T11:28:24.705253+00:00",
+  "performed_by": "Codex developer; not independent Gemini execution",
+  "status": "IMPLEMENTATION REVIEW REQUIRED",
+  "implementation_commit": "8183b3762b56c466b989d9062a720b5f0d31172a",
+  "gemini_plan_review_commit": "4f8b0de01b5991ef172f52f6a81e64b855a32d68",
+  "gemini_plan_verdict": "PLAN PASS",
+  "gemini_implementation_verdict": "NOT RECEIVED",
+  "raw_report_sha256": "5b6abe40bc78d088b40f19f883ddd0cfe551c52c6b625c8f6606c28a590aa35e",
+  "gemini_named_raw_math_script_log_received": false,
+  "local_formal_run": "aqrp-9c608d21-ea7a-4357-9e9e-3bd088b9b798",
+  "local_formal_wheel_sha256": "cfbafad3e8f88cb6e52f2639eaf99e9c95720c5ce9f48b450e1af3fe1c51c488",
+  "local_junit": {
+    "tests": 254,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_totals": {
+    "covered_lines": 1171,
+    "num_statements": 1174,
+    "percent_covered": 99.45255474452554,
+    "percent_covered_display": "99",
+    "missing_lines": 3,
+    "excluded_lines": 3,
+    "percent_statements_covered": 99.74446337308348,
+    "percent_statements_covered_display": "99",
+    "num_branches": 470,
+    "num_partial_branches": 6,
+    "covered_branches": 464,
+    "missing_branches": 6,
+    "percent_branches_covered": 98.72340425531915,
+    "percent_branches_covered_display": "99"
+  },
+  "remote_workflow_run_id": 39590967220,
+  "remote_run_attempt": 1,
+  "remote_jobs": {
+    "ubuntu": 119191513902,
+    "windows": 119191514330
+  },
+  "remote_original_zip_verification": "PASS",
+  "remote_junit_each": {
+    "tests": 254,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cross_os_and_local_logical_results": "PASS",
+  "archive_policy": "local-archive-map.json; ci/*-verification.json. Scanner/bootstrap binaries intentionally omitted, no original bytes falsely claimed. Does not repair historical Phase1 missing bytes.",
+  "main_and_phase1_baseline": "f579b2c99e762085772de6e70ba1fa98792a7add",
+  "human_accepted": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase3_authorized": false
+}

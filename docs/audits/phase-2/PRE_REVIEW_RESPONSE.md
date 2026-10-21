@@ -22,6 +22,8 @@
 | 数学原脚本/日志 | 声称附两命名文件 | 本次只收到报告，未附aqrp_phase2_math_verification.py/.log。记录为审查方自述执行，不能伪造原件或报已独立复跑 |
 | 启动授权范围 | 仅许可计划编制 | 用户原始启动+本次继续开发授权有效；Gemini不拥有批准用户范围的权力 |
 
-F-P2-PRE-001采纳：代码枚举使用ENGINEERING_APPROVED，批准用途严格TEST_ONLY，Financial approval为NONE，不产生ResearchValidated/StrategyApproved。F-P2-PRE-002采纳：仅审查内置与加载前hash白名单，补充AST linter，明确不可信插件Unsupported及OS沙箱未实现。两项是实施要求，待真实测试和证据核实后再标实现关闭；当前为ACCEPTED FOR IMPLEMENTATION。
+F-P2-PRE-001采纳：代码枚举使用ENGINEERING_APPROVED，批准用途严格TEST_ONLY，Financial approval为NONE，不产生ResearchValidated/StrategyApproved。F-P2-PRE-002采纳：仅审查内置与加载前hash白名单，补充AST linter，明确不可信插件Unsupported及OS沙箱未实现。两项现为DEVELOPER CLOSED — GEMINI CONFIRMATION PENDING，仅限本阶段受控内置范围。证据：registry.py EngineeringState及三因子receipt显式ENGINEERING_APPROVED/TEST_ONLY/NONE；test_no_unapproved_execution_modes、test_unknown_code_rejected_before_loading、test_code_receipt_denial、test_sec_001_static_rules_are_supplemental及完整SDK/双OS CI通过，见IMPLEMENTATION_TRACEABILITY.md和implementation/EVIDENCE_INDEX.json。不把AST或Python对象称为OS沙箱，不把工程审批当金融批准。Gemini尚未复核本次实现，不代替审查方关闭发现。
 
 以上均属对原方案的事实更正/术语细化，未扩大范围或破坏P0/P1契约，未发现需阻断整个阶段的设计冲突。错误需求分类不用于实现；以canonical CSV及本阶段10项追踪为准。报告PASS不覆盖新实现，完成后固定新SHA送Gemini实现复核。不得合并、打标签或进入P3。
+
+实施增量：业务固定8183b3762b56c466b989d9062a720b5f0d31172a，254测试及双OS CI通过，原始ZIP/hash检查通过。完整实现审查入口IMPLEMENTATION_REVIEW_PACKAGE.md；上述表的勘误为开发方意见，尚待Gemini逐项确认。原4f计划/SELF_CHECK/MANIFEST保持历史原件，不以旧“未实现”字段覆盖当前状态。
