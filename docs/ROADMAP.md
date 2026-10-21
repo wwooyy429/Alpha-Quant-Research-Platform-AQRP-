@@ -1,5 +1,7 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
+2026-10-22 最新复核接收：**Phase2 = GPT WORK SUPPLEMENTAL TECHNICAL PASS / HUMAN ACCEPTANCE PENDING**。GPT Work针对固定c8362953f555606795b6804cdfe28ff690c2364d确认001–003全部CLOSED（补充技术复核），无新业务修复。所附新SDK/双OS各417、原16和原四项通过；接收已核对256项hash、官方原ZIP/26模块wheel/八表/完整Signal回放及12项原查询身份。资料见 `docs/audits/phase-2/recheck-c836/`。这不是Gemini本人执行或用户验收；Gemini新完整SDK/历史原件限制保留，未接受限制/合并/标签发布/P3授权。仅归档及状态更新，业务708b83b/代码bundle51933fe…不改；以下旧OPEN/待复核为历史。
+
 2026-10-22 当前：**Phase2 = REPAIR DEVELOPER VALIDATION PASS / FIXED-SHA RE-REVIEW REQUIRED**。GPT Work对c70727c的001集成补充PASS已接收；002/003两项Medium阻断已开发方复现并修复，业务708b83be1dd597395b41f2ff6e10702749175bbf。新干净wheel SDK及双OS CI各417项、未编辑原16项及原四探针4项全部通过，原两失败及错误成功产物保留；新两份原始ZIP官方hash/46项内部清单/数据与因子重放通过。26模块新bundle51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d，经开发方实际重审，仅ENGINEERING_APPROVED / TEST_ONLY / NONE。详情 `docs/audits/phase-2/lineage-fix/`；002/003待审查方新固定SHA确认，不以自测代为CLOSED。Gemini本人执行及人工验收/发布仍分开保留；不合并main、不打标签、不进入Phase3。以下旧状态为历史。
 
 2026-10-22 当前：**Phase2 = INTEGRATED / DEVELOPER VALIDATION PASS / FIXED-SHA RE-REVIEW REQUIRED**。已按用户授权以双父merge集成v0.1.1/main fb1ba4fd51202a303115e4449ee49db09ccc071c，业务提交566f0ece4175fddb2703daab3b5b26ff0e4e245f，候选包保持0.2.0。共享源码重审后新bundle为fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7，仅ENGINEERING_APPROVED / TEST_ONLY / financial_approval=NONE。新干净wheel SDK和双OS CI各392项通过，原始外置16项通过；当前两份原始ZIP/46项选择文件hash/八表及查询回放/三个因子结果已核实。详见 `docs/audits/phase-2/integration-011/`。这是开发方验证，Gemini须审新固定SHA；旧报告事实对齐及独立执行限制未自动关闭。未Phase2人工验收，不合并main、不打标签、不进入Phase3；以下旧状态保留为历史。
@@ -10,7 +12,7 @@ Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范
 |---|---|---|
 | 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
 | 1 / ACCEPTED / RELEASED | 用户人工验收及单独合并/标签授权，PR #2已合并；稳定phase1-baseline，详见audits/phase-1/BASELINE.md | 102测试及适用检查通过；历史独立执行/字节限制保留；用户已另行授权Phase2，进入其计划预审 |
-| 2 / INCREMENTAL AUDIT PASS AS REPORTED；核心数学已核验，报告对齐/执行限制OPEN | Gemini对0b5107f增量PASS、十二项AGREE/CLOSED按原文接收；Volume/B/精度修订原件及复跑通过，业务8183不变 | 部分裁定解释仍与真实标题/需求职责/源码路径冲突；SDK独立执行未验证、ZIP审阅级，未人工验收/发布，不合并/标签/P3 |
+| 2 / GPT WORK SUPPLEMENTAL TECHNICAL PASS；待人工验收 | c836固定版001–003补充CLOSED；417/16/4及当前CI原件接收核实，业务708b83b不变；见recheck-c836 | Gemini本人新执行及历史原件范围限制保留，用户验收/接受限制/合并/标签/基线未完成；不进入P3 |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
 | 5 / PLANNED | P4验收+P5授权；事件及账户/profile批准；backtest,execution,performance与模拟services/CLI | 订单/部分成交/拒绝取消/成本滑点/流动性/交收/行动/账本/净值/绩效、独立资金答案、组合回测替换；策略批准需此阶段证据；不提前网页 |
@@ -59,7 +61,7 @@ Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范
 |---|---|---|
 | 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
 | 1 / ACCEPTED / RELEASED | 用户人工验收及单独合并/标签授权，PR #2已合并；稳定phase1-baseline，详见audits/phase-1/BASELINE.md | 102测试及适用检查通过；历史独立执行/字节限制保留；Phase2未授权，停止等待 |
-| 2 / PLANNED | P1验收+P2授权；Data API可用；未来 factors 与 tests/factors | Factor API/Registry、元数据/参数/版本、Momentum/Reversal/Volume、注册/替换/回滚/major兼容；不要求研究/回测E2E |
+| 2 / GPT WORK SUPPLEMENTAL TECHNICAL PASS；待人工验收 | c836固定版001–003补充CLOSED；417/16/4及当前CI原件接收核实，业务708b83b不变；见recheck-c836 | Gemini本人新执行及历史原件范围限制保留，用户验收/接受限制/合并/标签/基线未完成；不进入P3 |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
 | 5 / PLANNED | P4验收+P5授权；事件及账户/profile批准；backtest,execution,performance与模拟services/CLI | 订单/部分成交/拒绝取消/成本滑点/流动性/交收/行动/账本/净值/绩效、独立资金答案、组合回测替换；策略批准需此阶段证据；不提前网页 |

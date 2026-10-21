@@ -1,0 +1,32 @@
+{
+  "audit": "GPT Work 补充审核",
+  "target_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+  "scope": "Technical findings disposition in this supplemental review; no formal repository status changes, Gemini execution claim or human acceptance",
+  "findings": [
+    {
+      "id": "WORK-P2-001",
+      "original_severity": "High",
+      "status": "CLOSED — GPT Work supplemental recheck PASS",
+      "target_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+      "basis": "Reviewed P1 source unchanged; controlled integration, exact main match, original16 and UNKNOWN-calendar-to-factor regression all PASS."
+    },
+    {
+      "id": "WORK-P2-002",
+      "original_severity": "Medium blocking",
+      "status": "CLOSED — GPT Work supplemental recheck PASS",
+      "target_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+      "file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p2-c836295\\src\\aqrp\\factors\\engine.py",
+      "line": 137,
+      "basis": "Equivalent JSON canonicalized, batch/config/content hash consistent, actual stored artifact bytes SHA256 verified; original failing probe and formal roundtrip/duplicate-key tests PASS."
+    },
+    {
+      "id": "WORK-P2-003",
+      "original_severity": "Medium blocking",
+      "status": "CLOSED — GPT Work supplemental recheck PASS",
+      "target_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+      "file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p2-c836295\\src\\aqrp\\factors\\contracts.py",
+      "line": 270,
+      "basis": "Schema reconstruction, exact frozen parameter projection and recomputed hash checked against config/each Signal; old-hash and new-hash relabeling rejected; lookback1=0.1 and lookback2=0.21 controls PASS."
+    }
+  ]
+}

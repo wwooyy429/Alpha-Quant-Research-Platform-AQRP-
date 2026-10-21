@@ -1,0 +1,477 @@
+{
+  "audit": "GPT Work 补充审核",
+  "target_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+  "started_at": "2026-10-22T00:59:20.764736+08:00",
+  "checks": {
+    "runtime": {
+      "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p2-c836295\\runs\\aqrp-a4001fd1-4cd2-499a-bd40-3e6be14af9fe\\venv\\Scripts\\python.exe",
+      "sdk_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p2-c836295\\runs\\aqrp-a4001fd1-4cd2-499a-bd40-3e6be14af9fe\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+      "installed_modules": 26,
+      "active_locked_packages": [
+        {
+          "name": "colorama",
+          "version": "0.4.6"
+        },
+        {
+          "name": "coverage",
+          "version": "7.16.2"
+        },
+        {
+          "name": "duckdb",
+          "version": "1.5.6"
+        },
+        {
+          "name": "hypothesis",
+          "version": "6.170.5"
+        },
+        {
+          "name": "iniconfig",
+          "version": "2.3.1"
+        },
+        {
+          "name": "numpy",
+          "version": "2.5.4"
+        },
+        {
+          "name": "packaging",
+          "version": "26.3"
+        },
+        {
+          "name": "pandas",
+          "version": "3.0.6"
+        },
+        {
+          "name": "pip",
+          "version": "26.2.1"
+        },
+        {
+          "name": "pluggy",
+          "version": "1.7.0"
+        },
+        {
+          "name": "pyarrow",
+          "version": "26.0.0"
+        },
+        {
+          "name": "pygments",
+          "version": "2.21.0"
+        },
+        {
+          "name": "pytest",
+          "version": "9.1.1"
+        },
+        {
+          "name": "pytest-cov",
+          "version": "7.1.0"
+        },
+        {
+          "name": "python-dateutil",
+          "version": "2.9.0.post0"
+        },
+        {
+          "name": "ruff",
+          "version": "0.17.1"
+        },
+        {
+          "name": "setuptools",
+          "version": "84.2.0"
+        },
+        {
+          "name": "six",
+          "version": "1.17.0"
+        },
+        {
+          "name": "sortedcontainers",
+          "version": "2.4.0"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026.5"
+        },
+        {
+          "name": "uv",
+          "version": "0.13.4"
+        },
+        {
+          "name": "wheel",
+          "version": "0.48.0"
+        }
+      ],
+      "policy": {
+        "allowed_factor_ids": [
+          "momentum",
+          "reversal",
+          "volume"
+        ],
+        "bundle_sha256": "51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d",
+        "environment": "TEST_ONLY",
+        "financial_approval": "NONE",
+        "review_date": "2026-10-22",
+        "review_ref": "docs/audits/phase-2/CODE_REVIEW.md",
+        "reviewer": "Codex developer; not Gemini",
+        "state": "ENGINEERING_APPROVED",
+        "trust_boundary": "Fixed receipt packaged with reviewed source, not plugin/config input; not cryptographic attestation or OS sandbox"
+      }
+    },
+    "preservation": {
+      "latest_manifest_files": 335,
+      "frozen_files": 50,
+      "canonical_requirements": 106,
+      "phase2_requirements": 10,
+      "golden_answers_equal_preimplementation": true
+    },
+    "shared_data_equals_released_main": true,
+    "controlled_integration": {
+      "merge_parents": [
+        "947467b9d094905cab0af37ec5cc53f1d187e755",
+        "fb1ba4fd51202a303115e4449ee49db09ccc071c"
+      ],
+      "changed_source": [
+        "src/aqrp/core/time.py",
+        "src/aqrp/data/pit.py",
+        "src/aqrp/data/quality.py",
+        "src/aqrp/factors/contracts.py",
+        "src/aqrp/factors/engine.py",
+        "src/aqrp/factors/reviewed_code.json"
+      ],
+      "shared_files_equal_previously_reviewed_business": true,
+      "factor_formulas_and_input_unchanged": true,
+      "implementation_to_target_protected_diff": []
+    },
+    "original16": {
+      "junit": {
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "exit": 0,
+      "classification": "all original16 and unchanged original4 probes PASS on newly installed fixed target"
+    },
+    "new-probe": {
+      "junit": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "exit": 0,
+      "classification": "all original16 and unchanged original4 probes PASS on newly installed fixed target"
+    },
+    "original16_scripts_unchanged": [
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p01-round2-20261021\\test_round2_regressions.py",
+        "sha256": "43a8d0b6c6878ba1608a6bd83cbf8668fa2e3a4f3767aa51e1cc2e94bc5e0b0a"
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\test_work_p1_regressions.py",
+        "sha256": "e077602b2d41c2320fd3bd10703279122a86ee288513a2bcc8197d535beb56b8"
+      }
+    ],
+    "original4_p2_probes_unchanged": "78bef6937965483269fa3256a21003547859a393a4f86e03c6c1ca8aa3d08c4e",
+    "received_prior_evidence": {
+      "source_entries_verified": 248,
+      "copies_matching_original_bytes": 245,
+      "explicit_verified_omissions": 3,
+      "original_manifest_unchanged": true
+    },
+    "repair_scope": {
+      "changed_source": [
+        "src/aqrp/factors/contracts.py",
+        "src/aqrp/factors/engine.py",
+        "src/aqrp/factors/reviewed_code.json"
+      ],
+      "candidate_version": "0.2.0",
+      "shared_P1_source_preserved": true
+    },
+    "math_scripts": {
+      "revised_raw_sha256": "a4d6ab561cf81040411a9980adc4d72dbd69b79661cebaaf395da2312baae92c",
+      "revised_exit": 0,
+      "scope": "arithmetic only; not SDK correctness proof; execution provenance GPT Work"
+    },
+    "ci_topology": {
+      "commit": "d1feaae218b25741e57fdfa024c0072f87f32e67",
+      "parents": [
+        "fb1ba4fd51202a303115e4449ee49db09ccc071c",
+        "c8362953f555606795b6804cdfe28ff690c2364d"
+      ],
+      "tree": "6023eca7e69ab480341f3f5af0df8177b5d6d0d0",
+      "equals_target_tree": true
+    },
+    "new_local_sdk": {
+      "environment": {
+        "run_id": "aqrp-a4001fd1-4cd2-499a-bd40-3e6be14af9fe",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "os": "Windows-11-10.0.26300-SP0",
+        "ImageOS": null,
+        "ImageVersion": null,
+        "code_commit": "c8362953f555606795b6804cdfe28ff690c2364d",
+        "dirty": false,
+        "complete": true,
+        "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p2-c836295",
+        "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c836295\\runs\\aqrp-a4001fd1-4cd2-499a-bd40-3e6be14af9fe",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": null,
+        "github_run_attempt": null,
+        "github_sha": null,
+        "wheel_sha256": "c856ab38fdc2452f623e1434aa8e7c8399bd737adf35028ecff5ffa1aa115a33"
+      },
+      "junit": {
+        "tests": 417,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "selected_hashes": 46,
+      "root_hashes": 14,
+      "omitted_tools": [
+        "gitleaks.exe",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "wheel_sha256": "c856ab38fdc2452f623e1434aa8e7c8399bd737adf35028ecff5ffa1aa115a33",
+      "coverage_gate": "PASS",
+      "snapshots": {
+        "dataset": {
+          "snapshot_id": "444656eb-4f48-43e9-85d7-c8422d15ced9",
+          "manifest_hash": "d6cdd6cc03ca22c83d3498118d20d68102a84ef12b450b3ca41ff15402d854a9",
+          "tables": 8,
+          "rows": {
+            "adjustment_factors": 0,
+            "bars_daily": 4,
+            "calendar": 4,
+            "corporate_actions": 0,
+            "security_master": 2,
+            "security_status": 2,
+            "symbol_alias": 2,
+            "universe_membership": 2
+          }
+        },
+        "factor-dataset": {
+          "snapshot_id": "f97f01c0-5616-4bff-a23f-a108c8a1fc0e",
+          "manifest_hash": "01465185a8d12247148a98e37ebeaf923078453609b282eb80f6ff9eb99bc90e",
+          "tables": 8,
+          "rows": {
+            "adjustment_factors": 0,
+            "bars_daily": 6,
+            "calendar": 6,
+            "corporate_actions": 0,
+            "security_master": 2,
+            "security_status": 2,
+            "symbol_alias": 2,
+            "universe_membership": 2
+          }
+        }
+      },
+      "factors_replayed": [
+        {
+          "factor": "momentum",
+          "value": 0.21,
+          "logical_hash": "b7e089af3b71c8a8a783765311a05ed330f3cd1ecf000d957ea8f40521948515",
+          "exact_signal_rows_replayed": true
+        },
+        {
+          "factor": "volume",
+          "value": 0.6,
+          "logical_hash": "5bd4723114a702857c173b6d23a6bc4ece170e948d7de0693715beae6cb11872",
+          "exact_signal_rows_replayed": true
+        },
+        {
+          "factor": "reversal",
+          "value": -0.21,
+          "logical_hash": "c1d11155a0e276c8ed093dd32aec9edb1e36cbe200ed5b9d22f5992d7e052051",
+          "exact_signal_rows_replayed": true
+        }
+      ],
+      "scan_findings": 0
+    },
+    "raw_current_ci_zip": [
+      {
+        "environment": {
+          "run_id": "aqrp-eddd1a9a-ffe8-4ce6-86f3-6dad06d60e7b",
+          "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+          "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+          "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "ImageOS": "ubuntu24",
+          "ImageVersion": "20261012.334.1",
+          "code_commit": "d1feaae218b25741e57fdfa024c0072f87f32e67",
+          "dirty": false,
+          "complete": true,
+          "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-eddd1a9a-ffe8-4ce6-86f3-6dad06d60e7b",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39637043080",
+          "github_run_attempt": "1",
+          "github_sha": "d1feaae218b25741e57fdfa024c0072f87f32e67",
+          "wheel_sha256": "ab7605c4deff282ace12cd8e3a371c3b5723050114a1636403f9597c2996aeab"
+        },
+        "junit": {
+          "tests": 417,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "selected_hashes": 46,
+        "root_hashes": 14,
+        "omitted_tools": [
+          "gitleaks",
+          "pip-26.2.1-py3-none-any.whl"
+        ],
+        "wheel_sha256": "ab7605c4deff282ace12cd8e3a371c3b5723050114a1636403f9597c2996aeab",
+        "coverage_gate": "PASS",
+        "snapshots": {
+          "dataset": {
+            "snapshot_id": "7c807d01-0d42-4405-9a76-3a6ce223f938",
+            "manifest_hash": "76fb57665f3976058b54c0dccf20ec1e6bc48e6105869f3e9418643411d548e3",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 4,
+              "calendar": 4,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          },
+          "factor-dataset": {
+            "snapshot_id": "fbaa31c5-780f-4393-ab33-6b7625be88ff",
+            "manifest_hash": "787514e1ad174a3c0c8c93e8208faa8d86104cfb56e871c7b7b1968dc62d5235",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 6,
+              "calendar": 6,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          }
+        },
+        "factors_replayed": [
+          {
+            "factor": "volume",
+            "value": 0.6,
+            "logical_hash": "5bd4723114a702857c173b6d23a6bc4ece170e948d7de0693715beae6cb11872",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "momentum",
+            "value": 0.21,
+            "logical_hash": "b7e089af3b71c8a8a783765311a05ed330f3cd1ecf000d957ea8f40521948515",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "reversal",
+            "value": -0.21,
+            "logical_hash": "c1d11155a0e276c8ed093dd32aec9edb1e36cbe200ed5b9d22f5992d7e052051",
+            "exact_signal_rows_replayed": true
+          }
+        ],
+        "scan_findings": 0,
+        "artifact_id": 12363175606,
+        "zip_sha256": "1df7d45c6fe543b48ed36b116687a7932b84db9defada2b72061dd0269298637",
+        "zip_bytes": 149725,
+        "name": "phase2-ubuntu-24.04-1"
+      },
+      {
+        "environment": {
+          "run_id": "aqrp-3b09e57f-5870-4d6b-a4f1-95b68c04d57f",
+          "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+          "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+          "os": "Windows-2025Server-10.0.26100-SP0",
+          "ImageOS": "win25-vs2026",
+          "ImageVersion": "20261007.264.1",
+          "code_commit": "d1feaae218b25741e57fdfa024c0072f87f32e67",
+          "dirty": false,
+          "complete": true,
+          "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-3b09e57f-5870-4d6b-a4f1-95b68c04d57f",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39637043080",
+          "github_run_attempt": "1",
+          "github_sha": "d1feaae218b25741e57fdfa024c0072f87f32e67",
+          "wheel_sha256": "239d1578a74fee7511546e0e22cf65f4d3d6263be1e6948dd94ce675326de7af"
+        },
+        "junit": {
+          "tests": 417,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "selected_hashes": 46,
+        "root_hashes": 14,
+        "omitted_tools": [
+          "gitleaks.exe",
+          "pip-26.2.1-py3-none-any.whl"
+        ],
+        "wheel_sha256": "239d1578a74fee7511546e0e22cf65f4d3d6263be1e6948dd94ce675326de7af",
+        "coverage_gate": "PASS",
+        "snapshots": {
+          "dataset": {
+            "snapshot_id": "6d8c3408-05b8-4107-900e-042804a13777",
+            "manifest_hash": "f12ece0bede3d6f04d055f034ef675f0da457b372f92e3c7c06d02919ce1fab0",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 4,
+              "calendar": 4,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          },
+          "factor-dataset": {
+            "snapshot_id": "fe49799b-8a95-4f15-aa8a-07822323b3e0",
+            "manifest_hash": "0a8c6ceba9b5eecf5bd9df37d43a07e9b81874e33ecef7c36d0b8cce03907309",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 6,
+              "calendar": 6,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          }
+        },
+        "factors_replayed": [
+          {
+            "factor": "reversal",
+            "value": -0.21,
+            "logical_hash": "c1d11155a0e276c8ed093dd32aec9edb1e36cbe200ed5b9d22f5992d7e052051",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "momentum",
+            "value": 0.21,
+            "logical_hash": "b7e089af3b71c8a8a783765311a05ed330f3cd1ecf000d957ea8f40521948515",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "volume",
+            "value": 0.6,
+            "logical_hash": "5bd4723114a702857c173b6d23a6bc4ece170e948d7de0693715beae6cb11872",
+            "exact_signal_rows_replayed": true
+          }
+        ],
+        "scan_findings": 0,
+        "artifact_id": 12363130787,
+        "zip_sha256": "b3491d86f641ada3e579d36e08a8b94fe0b4a218fcd81afadd8ab1d0ee542bcf",
+        "zip_bytes": 149909,
+        "name": "phase2-windows-latest-1"
+      }
+    ],
+    "cross_os_and_local": "PASS: both eight-table datasets, data query/config, and three factors; exclude snapshot_id in table rows and snapshot_id/manifest_hash in data config; exact original signal rows replayed with original UUIDs; no comparison of path-sensitive query/config hashes"
+  },
+  "status": "EVIDENCE VERIFIED; NO BLOCKING FINDING IN REVIEWED SCOPE",
+  "finished_at": "2026-10-22T00:59:28.662224+08:00"
+}
