@@ -40,8 +40,8 @@ Gate报告描述的是核验时main与标签都指向7de1d0e的事实。本次�
 
 ## 后续状态与保留条件
 
-**Phase1基线前置门禁：UNBLOCKED；Phase1用户启动授权：未获得；执行状态：AWAITING USER AUTHORIZATION / NOT STARTED。**
+**Phase1基线前置门禁：UNBLOCKED；用户现已明确启动授权；本阶段状态：PLAN REVIEW REQUIRED。**
 
-Gemini报告建议启动下一阶段不等于用户授权，也不代替Phase1计划预审及市场/环境等前置决策。本次不创建Phase1分支或业务实现。
+本次用户已另行明确授权P1，批准先做合成数据及Python3.13.16，证据见audits/phase-1/AUTHORIZATION.json；已从核实main 502c693创建独立分支。Gemini门禁报告仍只覆盖固定P0基线；P1实施须先完成自己的计划预审，不以本次启动授权替代独立审查。
 
 F-002 CI、F-003时间戳实现/测试留P1；F-004物理云同步隔离仍未验证。Gemini原始运行脚本/日志未附等已披露边界保留，Gate PASS不等于其他能力均已验证。当前门禁报告中的Google搜索仓库链接原样保留，直接GitHub地址和完整SHA由索引提供。

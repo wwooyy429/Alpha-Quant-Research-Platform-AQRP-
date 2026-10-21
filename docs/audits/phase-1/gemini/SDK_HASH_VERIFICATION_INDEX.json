@@ -1,0 +1,67 @@
+{
+  "received_date": "2026-10-21",
+  "source": "User-supplied Gemini report and accompanying evidence directory",
+  "raw_report": "aqrp_phase1_sdk_and_remote_hash_verification_report.md",
+  "sha256": "9fff9ee3da601e31aac5f2bbc77b09c38c5aa1050359d9c1513025c5824f5933",
+  "raw_report_bytes": 16036,
+  "implementation_target_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
+  "review_material_sha": "d82536ae9ac7f61153747e63d044a640fea17b50",
+  "raw_evidence": [
+    {
+      "path": "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/env_probe.log",
+      "sha256": "a8c3d334a9aa536cd8be9b826b446a0d463d4e85182e3363e2d66441be1af587",
+      "bytes": 910
+    },
+    {
+      "path": "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/independent_math_verification.log",
+      "sha256": "498537274c5ef96c9e56cea9634bb69ff2dbb6f65e8d06cb8a0e16fe5d071784",
+      "bytes": 3065
+    },
+    {
+      "path": "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/independent_math_verification.py",
+      "sha256": "82ba6de3e62cef538b3e24a162ca526076dad14164f27ca306fc617f5fcd40e9",
+      "bytes": 7298
+    },
+    {
+      "path": "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/remote_download_attempt.log",
+      "sha256": "690bd34d4e3f310e867527363be67c6531a07f39390821d8ebf4fd35ba774eb3",
+      "bytes": 1294
+    },
+    {
+      "path": "docs/audits/phase-1/gemini/aqrp_phase1_sdk_hash_evidence/task_status_matrix.json",
+      "sha256": "2dd74d8cab697de0e99a6ea885b5f5576f14f0d6464f034009a59e740e67485c",
+      "bytes": 7066
+    }
+  ],
+  "report_and_raw_copies_byte_verified": true,
+  "reviewer_verdict_as_written": "PASS (technical audit and mathematics); recommends human acceptance",
+  "developer_reconciled_special_verification_status": "PARTIAL / GEMINI EXECUTION BLOCKED",
+  "gemini_tasks": {
+    "A1": "BLOCKED; missing exact runtime/network in reviewer environment",
+    "A2": "NOT RUN; remote CI quotation is not Gemini SDK execution",
+    "A3": "Reviewer-supplied standard-library math script/log; not SDK execution",
+    "B1_B2": "GitHub metadata/record quotation; independently refreshed by developer",
+    "B3": "BLOCKED / NOT RUN; no Gemini ZIP rehash",
+    "B4_B5": "STATIC REVIEW ONLY; Gemini did not actually read downloaded snapshots or compare datasets"
+  },
+  "developer_additional_execution": {
+    "evidence": "../implementation/sdk-hash-74bdb92/verification.json",
+    "both_raw_zip_hashes": "PASS",
+    "root_manifest_hashes": "11/14 each; .coverage/scanner/bootstrap wheel not uploaded",
+    "snapshot_hashes_and_sdk_replay": "PASS",
+    "cross_os_all_8_tables_and_smoke_bytes": "PASS",
+    "fresh_sdk_smoke": "PASS",
+    "supplied_math_script_developer_rerun": "PASS; different environment, not original execution attestation",
+    "full_ci_entry_rerun": false,
+    "independent_gemini_execution": false
+  },
+  "reconciliation": "../SDK_HASH_VERIFICATION_RECONCILIATION.md",
+  "implementation_advisory_status": "AUDIT PASSED",
+  "human_accepted": false,
+  "released": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase2_authorized": false,
+  "phase2_status": "BLOCKED",
+  "remaining_gate": "Independent execution gap unresolved; user acceptance of limitations not inferred"
+}

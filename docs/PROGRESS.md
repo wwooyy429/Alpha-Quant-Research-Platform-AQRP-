@@ -1,22 +1,26 @@
 # 当前真实项目状态
 
-日期2026-10-20（Asia/Shanghai）。用户批准见publication/APPROVAL.json，独立门禁结论见gemini/GATE_EVIDENCE_INDEX.json。
+2026-10-21 最新人工决定：用户明确表示“phase 1验收已完成”，现登记 **Phase1 = ACCEPTED，尚未 RELEASED**。验收对应接收时PR #2的71cc044d5f4e2079426049c0f7c6f747fee01692（业务74bdb92），原话与范围见 docs/audits/phase-1/acceptance/ACCEPTANCE.json。此前“等待验收/未ACCEPTED”仅为历史；Gemini独立执行和原远端缺字节事实继续保留，本次未伪造逐项限制豁免。合并main、打标签及Phase2均未授权。
 
-- **Phase0 = RELEASED**。用户已ACCEPTED；PR#1已合并；phase0-baseline已推送；Gemini已对固定基线完成Baseline Verification Gate并给出PASS。
-- **F-001 / GOV-010 = RESOLVED / CLOSED**，按Gemini门禁报告登记，不再沿用此前等待最终复核的状态。
-- **发布基线SHA：7de1d0e81385ae97f98ea673fe05dd726f0b577b**。
-- 附注标签：phase0-baseline；对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0，目标为上述发布基线。该标签不移动、不重建。
-- PR#1获批head：228190a0c46595cf2927125fdc7d4f1c51b39ccf；实际merge：8c37e952be61054c6c72b5aaf573026c0355647b；merge tree与获批版本一致。
-- Gemini此前设计审查版本1830b15给PASS/READY；本次独立主干核验明确覆盖发布基线7de1d0e，原报告按字节归档。
-- 门禁原报告：audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md；SHA-256：aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1。
-- **Phase1基线前置门禁 = UNBLOCKED**；**Phase1执行状态 = AWAITING USER AUTHORIZATION / NOT STARTED**。用户尚未单独授权Phase1，本次仅归档及更新状态，不创建P1分支、环境或业务模块。
-- 获得Phase1授权后，仍须完成阶段计划、适用前置决策及Gemini预审，从核实main创建独立分支；不能把基线门禁通过解释为所有实施条件自动满足。
-- 当前main仅追加本次报告/状态/自查记录；经审发布基线仍为7de1d0e。新归档提交不自动计入Gemini已审范围，不能再宣称后续main head永远等于旧标签目标；逐文件版本见当前MANIFEST和Git diff。
-- 核心需求保持106条/16组；CSV hash为20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1，核心金融/数据/接口契约不变。
-- F-002 CI、F-003时间戳实现及测试留在P1；F-004物理云同步隔离未验证，原始Gemini执行脚本/日志未附等已披露限制保留。本次门禁PASS不自动验证这些其他能力。
-- 数据、Registry、研究、组合、风控、回测、网页及相应业务测试仍Planned；高级扩展Deferred，真实执行Unsupported。市场/profile、精确环境版本、研究阈值仍按DECISIONS和阶段条件确定。
-- 本次文档自查见当前SELF_CHECK/COMMAND_LOG/MANIFEST；合并后原始17项检查证据及先前报告保持原状。开发方文档核查不是业务测试或Gemini独立执行。
+以下既有状态段落保留为各轮历史，当前人工验收状态以上述记录为准。
 
-## 停止点
+2026-10-21 最新本地验证：已按用户授权配置 Conda aqrp-p1（CPython3.13.16）和独立 VS Code 工作区；完整 SDK、Conda 直接运行的同一组102测试、两份 Actions 原始ZIP/八表/SDK回放均通过。实际命令配置与原始日志见 docs/audits/phase-1/implementation/conda-vscode-74bdb92/README.md。执行者为 Codex 开发方，不能补记为 Gemini 独立执行；远端3项根文件及项目wheel原字节缺口、独立执行/人工验收/发布门禁保留。未合并、未打标签、不进入Phase2。
 
-Phase0已正式发布并完成独立主干门禁闭环。本次按用户授权归档门禁原报告、更新状态及PR审查记录后停止；等待Phase1单独启动授权。
+
+最新补充：用户提供10成员验证包，外包SHA256为318323ff77651537cc47470fe20d32930bb07495bb51fd71f0772f80c11c023d。Gemini旧文件hash脚本/日志现已附送，六个输入hash在完整输入复跑中一致；包自身缺三份输入，脚本缺文件仍返回0，Git/七项裁定为常量输出，未运行Actions ZIP或SDK。完整独立执行仍NOT VERIFIED，用户未接受限制/验收/发布；不合并、不打标签、不进入Phase2。最新索引audits/phase-1/gemini/VERIFICATION_PACKAGE_INDEX.json及核对audits/phase-1/VERIFICATION_PACKAGE_RECONCILIATION.md；当前清单implementation/VERIFICATION_PACKAGE_MANIFEST.json。以下旧轮“未附新记录”等为接收本包前的状态，不是当前没有脚本日志。
+
+2026-10-21（Asia/Shanghai）。**Phase1技术审查建议PASS，Gemini已明确认可七项SDK/hash勘误；完整专项独立执行仍NOT VERIFIED，等待人工验收。** 用户未接受执行限制、未ACCEPTED/RELEASED；PR #2继续Draft/Open，不合并、不打标签、不进入Phase2。
+
+Phase0已RELEASED。main仍502c6931dcfce50bee2f71a80524475fae6396bf；phase0-baseline目标7de1d0e81385ae97f98ea673fe05dd726f0b577b、对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0保持不变，无phase1-baseline。
+
+最新Gemini增量报告固定审查8bf189d76f15273a89eb4c2672c86e05a81aa148，业务锚点74bdb9216c585d27de91123605aff0266ca028cc，原报告SHA256为725557d5ff2fc1c94d03c614bf7e40706f33aa0422c6b44f80289806b2e69cf0，原字节已归档。接收索引audits/phase-1/gemini/SDK_HASH_INCREMENTAL_INDEX.json，逐项确认/新报告细节更正/剩余门禁见audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md；旧报告与索引保持历史来源。
+
+七项AGREE仅关闭相应说明/处理意见争议，不关闭实际执行缺口。增量报告自述旧报告及5文件hash复算，ZIP列MATCH，但本次未附新脚本/命令/输出；SDK全量执行仍明确未做，ZIP/内部数据/跨OS独立执行方法尚无新原始记录支撑。不能用技术PASS、静态阅读或开发方结果追认Gemini实际运行。
+
+开发方本轮再次核对两个原始ZIP、14条根清单中的11个可用文件、Manifest及每平台8表文件hash、smoke原字节、JUnit及Git树，通过；8bf189d清单223个hash在更新前全匹配。原ZIP/SDK回放/新冒烟资料仍在implementation/sdk-hash-74bdb92/，本轮检查在implementation/sdk-hash-incremental-8bf189d/。未重跑SDK/全量102测试，不改变其既有真实CI及上轮执行事实。
+
+新报告文件名/11条列表、根清单3缺项与项目wheel单独缺失、0.05实数误差应为约2.7756e-18、配置比较未排除固定as_of、变更范围及本地执行归属等已独立注明，不修改原件，不改正确答案/容差。三个未上传根文件及项目wheel原始字节仍不可复算；Gemini对其非阻断意见不等于用户接受限制。
+
+14项Phase1实现/102项测试的实际映射和来源保留。src/tests/tools/CI/依赖锁/Golden及50份P0冻结文件不变，106项/16组目录不变。本轮当前文件清单为implementation/SDK_HASH_INCREMENTAL_MANIFEST.json，旧清单属于各固定SHA历史快照。F-002/F-003/PRE-001/PRE-003限定范围CLOSED；PRE-002仍MITIGATED，原Baidu源码/锁/未提交内容未重置或自动迁移。
+
+停止于审查记录更新。尚需独立执行补齐或用户明确接受限制、用户阶段验收、分别授权合并/标签、最终主干内容及检查/追溯和稳定基线核验；Phase2须单独启动授权。任何报告建议均不代替这些决定。

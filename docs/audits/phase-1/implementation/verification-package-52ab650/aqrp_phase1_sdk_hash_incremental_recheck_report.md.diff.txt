@@ -1,0 +1,22 @@
+--- existing archive
++++ bundled variant
+@@ -4,8 +4,8 @@
+ ## 一、 审查元数据与版本边界 (Metadata & Anchors)
+ 
+ * **审查阶段**：Phase 1 — 新增审查资料、原始归档 ZIP、开发方哈希验证证据与七项勘误独立增量复核
+-* **项目仓库**：[wwooyy429/Alpha-Quant-Research-Platform-AQRP-](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fwwooyy429%2FAlpha-Quant-Research-Platform-AQRP-)
+-* **Pull Request**：[PR #2: Phase 1 data system plan for independent pre-review #2](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fwwooyy429%2FAlpha-Quant-Research-Platform-AQRP-%2Fpull%2F2) (Draft / Open)
++* **项目仓库**：[wwooyy429/Alpha-Quant-Research-Platform-AQRP-](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-)
++* **Pull Request**：[PR #2: Phase 1 data system plan for independent pre-review #2](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/2) (Draft / Open)
+ * **本次最新固定审查 SHA**：`8bf189d76f15273a89eb4c2672c86e05a81aa148` (严格固定，绝不随分支浮动)
+ * **业务实现审查锚点 SHA**：`74bdb9216c585d27de91123605aff0266ca028cc` (核心代码与测试实现的唯一物理基准)
+ * **上一轮审查资料 SHA**：`d82536ae9ac7f61153747e63d044a640fea17b50`
+@@ -54,7 +54,7 @@
+ ## 四、 原始归档 ZIP、解压清单与合并提交核验 (Raw ZIP & Artifact Audit)
+ 
+ ### 1. 原始 Actions 运行与归档 ZIP 哈希核对
+-* **目标运行**：[GitHub Actions Run 39476825340](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fwwooyy429%2FAlpha-Quant-Research-Platform-AQRP-%2Factions%2Fruns%2F39476825340) (Run #9, Attempt 1, PR #2, Head SHA `74bdb92`)
++* **目标运行**：[GitHub Actions Run 39476825340](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39476825340) (Run #9, Attempt 1, PR #2, Head SHA `74bdb92`)
+ * **归档 ZIP 文件与哈希比对**：
+   | 平台 | 仓库归档文件路径 | Artifact ID | 官方记录/预期 SHA-256 | 审查核对结论 | 验证级别 |
+   | :--- | :--- | :---: | :--- | :---: | :---: |

@@ -1,0 +1,34 @@
+{
+  "audit_target_sha": "8bf189d76f15273a89eb4c2672c86e05a81aa148",
+  "business_anchor_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
+  "previous_review_sha": "d82536ae9ac7f61153747e63d044a640fea17b50",
+  "main_base_sha": "502c6931dcfce50bee2f71a80524475fae6396bf",
+  "phase0_baseline_tag_sha": "7de1d0e81385ae97f98ea673fe05dd726f0b577b",
+  "original_gemini_report_sha256": "9fff9ee3da601e31aac5f2bbc77b09c38c5aa1050359d9c1513025c5824f5933",
+  "evidence_files": {
+    "independent_math_verification.log": {
+      "sha256": "498537274c5ef96c9e56cea9634bb69ff2dbb6f65e8d06cb8a0e16fe5d071784",
+      "size": 3065
+    },
+    "independent_math_verification.py": {
+      "sha256": "82ba6de3e62cef538b3e24a162ca526076dad14164f27ca306fc617f5fcd40e9",
+      "size": 7298
+    }
+  },
+  "errata_review": {
+    "ERR-P1-SDK-001": "AGREE",
+    "ERR-P1-SDK-002": "AGREE",
+    "ERR-P1-SDK-003": "AGREE",
+    "ERR-P1-SDK-004": "AGREE",
+    "ERR-P1-SDK-005": "AGREE",
+    "ERR-P1-SDK-006": "AGREE",
+    "ERR-P1-SDK-007": "AGREE"
+  },
+  "gate_status": {
+    "technical_audit_verdict": "PASS (Advisory)",
+    "human_acceptance": "NOT ACCEPTED (Pending User Formal Action)",
+    "pr_merge_status": "DRAFT / UNMERGED",
+    "phase1_release_status": "NOT RELEASED",
+    "phase2_kickoff": "BLOCKED"
+  }
+}

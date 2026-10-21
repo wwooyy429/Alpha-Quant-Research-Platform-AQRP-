@@ -1,0 +1,90 @@
+PHASE1 PLAN DOCUMENT SELF-CHECK — developer raw capture
+Actual entrypoint: python - (PowerShell literal here-string)
+CWD: B:\BaiduSyncdisk\学习\投资\量化\量化交易比赛\Alpha Quant Research Platform (AQRP)
+Start UTC: 2026-10-20T15:43:57.543223+00:00
+Python: 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
+Platform: Windows-10-10.0.26300-SP0
+No business package imported; no runtime/dependency installation; no Gemini result generated.
+PASS direct_user_authorization_and_choices {"phase1_authorized": true, "data_scope": "Synthetic data and general contracts; real-market ingestion separately determined", "python": "3.13.16", "gemini_pre_review": "NOT RECEIVED"}
+PASS independent_branch_from_verified_main {"branch": "feature/phase-1-data-system", "preplan_parent": "502c6931dcfce50bee2f71a80524475fae6396bf", "fixed_phase0_tag": "7de1d0e81385ae97f98ea673fe05dd726f0b577b"}
+PASS approved_contracts_and_phase0_evidence_preserved {"files_checked": 55, "different": []}
+PASS all_14_phase1_requirements_mapped {"count": 14, "ids": ["DATA-001", "DATA-002", "DATA-003", "DATA-004", "DATA-005", "DATA-006", "DATA-007", "DATA-008", "DATA-009", "DATA-011", "ENV-001", "ENV-002", "QA-002", "SEC-002"], "csv_sha256": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1"}
+PASS review_package_files_and_local_links {"required_files": ["AUTHORIZATION.json", "PLAN.md", "DATA_IMPLEMENTATION_SPEC.md", "GOLDEN_REFERENCE.md", "ENVIRONMENT_PLAN.md", "DEPENDENCY_CANDIDATES.json", "PRE_REVIEW_PACKAGE.md"], "missing": [], "broken_links": []}
+PASS dependency_candidates_not_misrepresented_as_lock {"candidate_packages": 13, "invalid": [], "install_and_lock_status": "NOT VERIFIED / NOT CREATED"}
+PASS no_business_implementation_before_gemini_review {"forbidden_before_review_present": [], "business_tests": "NOT RUN", "CI": "NOT CREATED"}
+PASS independent_candidate_arithmetic_only {"reference": {"raw_return": "0.1", "split_total_return": "0", "dividend_total_return": "0", "shares": "300", "amount": "1250.00", "exact_decimal_sum": "0.30"}, "scope": "standard library Decimal arithmetic only; not business function tests or Gemini audit"}
+PASS candidate_offset_arithmetic_only {"UTC_values": ["2024-03-08T14:30:00+00:00", "2024-03-11T13:30:00+00:00", "2024-04-01T16:30:00+00:00"], "limitation": "Fixed-offset arithmetic, not IANA DST implementation verification"}
+PASS current_status_records_authorization_and_review_gate {"phase0": "RELEASED", "phase1": "AUTHORIZED / PLAN REVIEW REQUIRED", "phase1_acceptance": "NOT GRANTED", "main_merge": "NOT AUTHORIZED FOR P1"}
+COMMAND git branch --show-current
+EXIT 0
+STDOUT
+feature/phase-1-data-system
+
+STDERR
+
+COMMAND git rev-parse HEAD
+EXIT 0
+STDOUT
+502c6931dcfce50bee2f71a80524475fae6396bf
+
+STDERR
+
+COMMAND git rev-parse phase0-baseline^{commit}
+EXIT 0
+STDOUT
+7de1d0e81385ae97f98ea673fe05dd726f0b577b
+
+STDERR
+
+COMMAND git ls-tree -r --name-only 502c6931dcfce50bee2f71a80524475fae6396bf docs/audits/phase-0/ docs/sources/
+EXIT 0
+STDOUT
+docs/audits/phase-0/ARCHITECTURE_REVIEW.md
+docs/audits/phase-0/CHANGE_IMPACT.md
+docs/audits/phase-0/COMMAND_LOG.txt
+docs/audits/phase-0/COVERAGE_AUDIT.md
+docs/audits/phase-0/DELIVERY_REPORT.md
+docs/audits/phase-0/GITHUB_GATE_OBSERVATION.json
+docs/audits/phase-0/MANIFEST.json
+docs/audits/phase-0/PLAN.md
+docs/audits/phase-0/RELEASE_GATE_AUDIT.json
+docs/audits/phase-0/REVIEW_ANCHOR.json
+docs/audits/phase-0/REVIEW_PACKAGE.md
+docs/audits/phase-0/SELF_CHECK.json
+docs/audits/phase-0/SELF_REVIEW_NOTES.md
+docs/audits/phase-0/SPECIAL_AUDITS.md
+docs/audits/phase-0/gemini/BUSINESS_TAXONOMY_CORRECTION_SUBMITTED.md
+docs/audits/phase-0/gemini/DEVELOPER_RESPONSE.md
+docs/audits/phase-0/gemini/EVIDENCE_INDEX.json
+docs/audits/phase-0/gemini/FINAL_EVIDENCE_INDEX.json
+docs/audits/phase-0/gemini/FINAL_GATE_OBSERVATION.json
+docs/audits/phase-0/gemini/FINAL_RECONCILIATION.md
+docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json
+docs/audits/phase-0/gemini/INCREMENTAL_EVIDENCE_INDEX.json
+docs/audits/phase-0/gemini/INCREMENTAL_RECONCILIATION.md
+docs/audits/phase-0/gemini/REQUIREMENTS_TAXONOMY_VERIFICATION.md
+docs/audits/phase-0/gemini/REV2_EVIDENCE_INDEX.json
+docs/audits/phase-0/gemini/REV2_RECONCILIATION.md
+docs/audits/phase-0/gemini/aqrp_phase0_audit_report.md
+docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md
+docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md
+docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md
+docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md
+docs/audits/phase-0/gemini/aqrp_phase0_requirements_taxonomy_errata.md
+docs/audits/phase-0/history/INITIAL_REVIEW_ANCHOR.json
+docs/audits/phase-0/publication/APPROVAL.json
+docs/audits/phase-0/publication/MERGED_MAIN_COMMAND_LOG.txt
+docs/audits/phase-0/publication/MERGED_MAIN_SELF_CHECK.json
+docs/audits/phase-0/publication/MERGE_VERIFICATION.json
+docs/audits/phase-0/tools/build_catalog.py
+docs/audits/phase-0/tools/check_documents.py
+docs/sources/AQRP_V3.0.md
+docs/sources/AQRP_V3.1.md
+docs/sources/AQRP_V3.2.md
+docs/sources/AQRP_V3.2_BASELINE_GATE.md
+docs/sources/README.md
+
+STDERR
+
+Exit code: 0
+End UTC: 2026-10-20T15:43:59.849352+00:00

@@ -1,0 +1,323 @@
+{
+  "observed_at_utc": "2026-10-20T15:32:33.054843+00:00",
+  "scope": "Read-only primary package metadata for Phase1 plan; not a dependency lock or installation proof",
+  "python_user_selected": "3.13.16",
+  "platform_targets": [
+    "Windows x64 standard GIL CPython",
+    "Linux x64 standard GIL CPython"
+  ],
+  "packages": [
+    {
+      "name": "numpy",
+      "candidate_version": "2.5.4",
+      "metadata_url": "https://pypi.org/pypi/numpy/2.5.4/json",
+      "metadata_response_sha256": "a42b40d53fac5388e974f21aa1f01d3b47440ad8181fc827b08023bf8ca3cc96",
+      "requires_python": ">=3.12",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "sha256": "6ffa07666f8da0eef81d149934a626d0d95fbd6838432a33e66245423a9062c0",
+          "url": "https://files.pythonhosted.org/packages/da/24/3bd070f3269dc609d8f26b2643f62ef91bb415841c0b294805aaf7fe06da/numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "numpy-2.5.4-cp313-cp313-win_amd64.whl",
+          "sha256": "8b4d2fd2d34e5f8c9235ee787de5631a37a28402b15cb80814df973d2be54129",
+          "url": "https://files.pythonhosted.org/packages/90/8c/140a40398a66b4471211be1affdb6ed24c486d581bd28d07b7f2fcb69540/numpy-2.5.4-cp313-cp313-win_amd64.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "pandas",
+      "candidate_version": "3.0.6",
+      "metadata_url": "https://pypi.org/pypi/pandas/3.0.6/json",
+      "metadata_response_sha256": "ea78ab4387dcc2f27bf36d97007f897e5ba2d31a658c08925bdd9a362375ca2a",
+      "requires_python": ">=3.11",
+      "base_requires_dist": [
+        "numpy>=1.26.0; python_version < \"3.14\"",
+        "numpy>=2.3.3; python_version >= \"3.14\"",
+        "python-dateutil>=2.8.2",
+        "tzdata; sys_platform == \"win32\"",
+        "tzdata; sys_platform == \"emscripten\""
+      ],
+      "candidate_wheels": [
+        {
+          "filename": "pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+          "sha256": "1e92d9fa834c7d877130027cddc0cad8dcff97c1f6cca26bd6310f847228b658",
+          "url": "https://files.pythonhosted.org/packages/50/fa/96d50e1e6cd0b08b5e2b7c838f65ae644940f75a124063380b5ef73b6866/pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "pandas-3.0.6-cp313-cp313-win_amd64.whl",
+          "sha256": "f3ce8a6968045481e91a3990e797e348ce13db45ee164a7095bbc824e26c09dd",
+          "url": "https://files.pythonhosted.org/packages/c0/bd/63cb67e6903ef6d9c2871916dbcbc09d254da0fe8b870cf62e16b21945f2/pandas-3.0.6-cp313-cp313-win_amd64.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "pyarrow",
+      "candidate_version": "26.0.0",
+      "metadata_url": "https://pypi.org/pypi/pyarrow/26.0.0/json",
+      "metadata_response_sha256": "820e0086a99265aeb261219e687d72eae106dba6290a66683315b4fe85276be5",
+      "requires_python": ">=3.11",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "pyarrow-26.0.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+          "sha256": "240bd18a7487f8767616a948a69dd4e740a8bc36a1c9da49e4dc9a32c5c2faed",
+          "url": "https://files.pythonhosted.org/packages/4f/d6/e95834b29360092376fe4da9956ba41bb7b021869efe6ee9d4172d05cb15/pyarrow-26.0.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "pyarrow-26.0.0-cp313-cp313-win_amd64.whl",
+          "sha256": "3de30a7432b48b98b9decbd9e25a53bb9251d202c2e6c5a29a50869592ccb117",
+          "url": "https://files.pythonhosted.org/packages/c0/ed/138d29fddaf803b90f4527e124bb6aaddc18aaf4a6c50fd0a5f577c94989/pyarrow-26.0.0-cp313-cp313-win_amd64.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "duckdb",
+      "candidate_version": "1.5.6",
+      "metadata_url": "https://pypi.org/pypi/duckdb/1.5.6/json",
+      "metadata_response_sha256": "a23afd6b35f77fd68ffe495d11eeadb1079dcbf08f7c3ce4a83cac5e8721c957",
+      "requires_python": ">=3.10.0",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "duckdb-1.5.6-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+          "sha256": "644f54ce99b3b61844bc9a3fe80e0aecb1ea4084b1fffc4396d1569db6111679",
+          "url": "https://files.pythonhosted.org/packages/70/21/61dd2876bbaa69cf77d7b5c620e52e8b25faae7096f4d2e4a812b52095d7/duckdb-1.5.6-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "duckdb-1.5.6-cp313-cp313-win_amd64.whl",
+          "sha256": "ced693d33ddcee2e5345f077d342c87d2aaa80e41c514e64c9ff2d4e5963c251",
+          "url": "https://files.pythonhosted.org/packages/4a/4a/100730e7785e85268be4d4d5bd62cfc8314e261d2f42efa208243eef35cb/duckdb-1.5.6-cp313-cp313-win_amd64.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "tzdata",
+      "candidate_version": "2026.5",
+      "metadata_url": "https://pypi.org/pypi/tzdata/2026.5/json",
+      "metadata_response_sha256": "27547051b51333cb7ba03f91b91fc7c92179937ccb62bb81ce46dc943c69873b",
+      "requires_python": ">=2",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "tzdata-2026.5-py2.py3-none-any.whl",
+          "sha256": "b683bd1b6659ddcd810ff02ad09ba821d4bf1065072805063eb35c49617905ac",
+          "url": "https://files.pythonhosted.org/packages/94/21/1e5995a1c920cce14e4bffae20c665ec10e7ed03ab25e006cd741092b718/tzdata-2026.5-py2.py3-none-any.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "pytest",
+      "candidate_version": "9.1.1",
+      "metadata_url": "https://pypi.org/pypi/pytest/9.1.1/json",
+      "metadata_response_sha256": "8ed48304ba7fd0ae974a041f117487b499d553b40e5ce55a9ece677e946f68dd",
+      "requires_python": ">=3.10",
+      "base_requires_dist": [
+        "colorama>=0.4; sys_platform == \"win32\"",
+        "exceptiongroup>=1; python_version < \"3.11\"",
+        "iniconfig>=1.0.1",
+        "packaging>=22",
+        "pluggy<2,>=1.5",
+        "pygments>=2.7.2",
+        "tomli>=1; python_version < \"3.11\""
+      ],
+      "candidate_wheels": [
+        {
+          "filename": "pytest-9.1.1-py3-none-any.whl",
+          "sha256": "37a86b45efb9a47a61a36449063e8e18d0cab3161329fc099eb21783169c4f0c",
+          "url": "https://files.pythonhosted.org/packages/24/25/1de2678b631f5a49215c6c96fff41ba892b0a34df68d6d80292b1b48aa7f/pytest-9.1.1-py3-none-any.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "pytest-cov",
+      "candidate_version": "7.1.0",
+      "metadata_url": "https://pypi.org/pypi/pytest-cov/7.1.0/json",
+      "metadata_response_sha256": "2f14c20e86c2a4aece613433b31653ba37f4dd9dce122c9a66ba13df4d1adbaa",
+      "requires_python": ">=3.9",
+      "base_requires_dist": [
+        "coverage[toml]>=7.10.6",
+        "pluggy>=1.2",
+        "pytest>=7"
+      ],
+      "candidate_wheels": [
+        {
+          "filename": "pytest_cov-7.1.0-py3-none-any.whl",
+          "sha256": "a0461110b7865f9a271aa1b51e516c9a95de9d696734a2f71e3e78f46e1d4678",
+          "url": "https://files.pythonhosted.org/packages/9d/7a/d968e294073affff457b041c2be9868a40c1c71f4a35fcc1e45e5493067b/pytest_cov-7.1.0-py3-none-any.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "hypothesis",
+      "candidate_version": "6.170.5",
+      "metadata_url": "https://pypi.org/pypi/hypothesis/6.170.5/json",
+      "metadata_response_sha256": "b44acca4d6a93921690aabe4c94bfc8023bc4f8b67db47b8182481c793233c06",
+      "requires_python": ">=3.11",
+      "base_requires_dist": [
+        "sortedcontainers<3.0.0,>=2.1.0"
+      ],
+      "candidate_wheels": [
+        {
+          "filename": "hypothesis-6.170.5-cp311-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "01ab2e0ffb72baad5c0ebc6157540d3f6e5c35f6b9cc082debf358cd9070d383",
+          "url": "https://files.pythonhosted.org/packages/d3/24/dc2d4e86b108d7f0e3a9ebdda572925697f99ace4105a6a6df8dc086c8d6/hypothesis-6.170.5-cp311-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "hypothesis-6.170.5-cp311-abi3-win_amd64.whl",
+          "sha256": "152824724ecaeacf808441b0f1b7fdf79d09a53bd48d771f0a001f4c6d52881b",
+          "url": "https://files.pythonhosted.org/packages/29/87/13eb06ca89fbe598ed9b324b8a697388b3a6d5373d4921aa5a51581d826c/hypothesis-6.170.5-cp311-abi3-win_amd64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "hypothesis-6.170.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "97326beccad05d80c44504cfc29a0306961de9a5b52f21f863ed446486fc9439",
+          "url": "https://files.pythonhosted.org/packages/80/55/8d2079ea55211cdddf50fef1fee03c8f8c10705fd918e85d857a1e247907/hypothesis-6.170.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "hypothesis-6.170.5-cp313-cp313-win_amd64.whl",
+          "sha256": "f2e42806da58dfb7fab2c888d8dd9aa692743be1d9210167a3aa8bde55d73d97",
+          "url": "https://files.pythonhosted.org/packages/08/07/138165628bf295d598004cedfcf822b816d6e3077bdb1fb03b516641e8a7/hypothesis-6.170.5-cp313-cp313-win_amd64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "hypothesis-6.170.5-cp315-abi3.abi3t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "40cdf1c17af80cb18ae0abf419a76dd28fba54d7d0f696d1ace404f04f968b57",
+          "url": "https://files.pythonhosted.org/packages/42/38/de3cd2b7b624c14ab32be12cb0116069038abf9d6c113ee96a90c68568b1/hypothesis-6.170.5-cp315-abi3.abi3t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "hypothesis-6.170.5-cp315-abi3.abi3t-win_amd64.whl",
+          "sha256": "42fb68a80c06739a99ac855a6f339f3f68774e324a2a1a3bca80ee4fd1689c7d",
+          "url": "https://files.pythonhosted.org/packages/2c/c6/960111740a57cb3be918c6664ed14283ae20212e549cf75804986d927deb/hypothesis-6.170.5-cp315-abi3.abi3t-win_amd64.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "ruff",
+      "candidate_version": "0.17.1",
+      "metadata_url": "https://pypi.org/pypi/ruff/0.17.1/json",
+      "metadata_response_sha256": "ab19d131524b999f40cb213baa08dfc01998b0e631a71e0661bab06bce5f1474",
+      "requires_python": ">=3.7",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "ruff-0.17.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "a6ef98e51de8ef38082f90653ceeb84944bd7673783eea13e1647c5b9b064189",
+          "url": "https://files.pythonhosted.org/packages/62/86/5566290219708ce2928f3a29c4f843a1185b341ec6111c4631a33c5ceced/ruff-0.17.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "ruff-0.17.1-py3-none-win_amd64.whl",
+          "sha256": "5df76f16580fab58d0f6c98a3ac254a4abceb7b2489b8b678335869cff77b3d7",
+          "url": "https://files.pythonhosted.org/packages/6a/2e/da3d9589bae8e8b58f3a48bd5bc0b980232fb14a83bf02c3be7660f87c1b/ruff-0.17.1-py3-none-win_amd64.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "pip",
+      "candidate_version": "26.2.1",
+      "metadata_url": "https://pypi.org/pypi/pip/26.2.1/json",
+      "metadata_response_sha256": "4f5abeb5acacd5eaaad5e6982f5721dee3592795e59fc5a4067fcca92eed70e1",
+      "requires_python": ">=3.10",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "pip-26.2.1-py3-none-any.whl",
+          "sha256": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+          "url": "https://files.pythonhosted.org/packages/f3/6e/1736e5b4ae2b778ef2f81c47d797de9f891d4d8acb047a24ca37a60294dd/pip-26.2.1-py3-none-any.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "uv",
+      "candidate_version": "0.13.4",
+      "metadata_url": "https://pypi.org/pypi/uv/0.13.4/json",
+      "metadata_response_sha256": "e34eed2649aaa26193d9b8f720c8ad1c8d8487661a39ae1796c7afc4db6e2c7a",
+      "requires_python": ">=3.8",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "uv-0.13.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "05e4332791b4d55b6dde8695b7fa6079b26991519f44760887c5dfbd5ca4fe53",
+          "url": "https://files.pythonhosted.org/packages/4b/a1/de02c0913726728eca56ee258875cbba9c7b0572c63f494fd9f55c7852e3/uv-0.13.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "yanked": false
+        },
+        {
+          "filename": "uv-0.13.4-py3-none-win_amd64.whl",
+          "sha256": "b2ff80397273fff0e02c20eacae6882834c811827d6fc08f658db156fe754386",
+          "url": "https://files.pythonhosted.org/packages/2f/b9/b526eab6c72eacc705a58378f6850fde046b28c86fed01bd42da61367c6b/uv-0.13.4-py3-none-win_amd64.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "setuptools",
+      "candidate_version": "84.2.0",
+      "metadata_url": "https://pypi.org/pypi/setuptools/json",
+      "metadata_response_sha256": "c878408e596991854c9c6901365776617dc1e7cad4d1c3b5a5580cfce4b119ce",
+      "requires_python": ">=3.10",
+      "base_requires_dist": [],
+      "candidate_wheels": [
+        {
+          "filename": "setuptools-84.2.0-py3-none-any.whl",
+          "sha256": "8cc107ac7a403105dc8d6477664171f36135fab26adf8b5e0edaebc313f39b21",
+          "url": "https://files.pythonhosted.org/packages/dd/a2/2e1af99d56c8145aa69496026c7e5fd7b6ec759b500c3ad697e2062832dc/setuptools-84.2.0-py3-none-any.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    },
+    {
+      "name": "wheel",
+      "candidate_version": "0.48.0",
+      "metadata_url": "https://pypi.org/pypi/wheel/json",
+      "metadata_response_sha256": "113f8abc907676e530c9dca238f3b2bd26e2b142747d16d7d4775810e1155980",
+      "requires_python": ">=3.9",
+      "base_requires_dist": [
+        "packaging>=24.0"
+      ],
+      "candidate_wheels": [
+        {
+          "filename": "wheel-0.48.0-py3-none-any.whl",
+          "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab",
+          "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+          "yanked": false
+        }
+      ],
+      "status": "METADATA ONLY; not installed or resolved as a complete environment"
+    }
+  ],
+  "all_transitive_dependencies_resolved": false,
+  "installation_verified": false,
+  "ci_verified": false
+}

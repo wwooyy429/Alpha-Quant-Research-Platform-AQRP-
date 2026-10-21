@@ -1,21 +1,29 @@
 # 架构决策、冲突及待用户决定事项
 
-Gemini已对1830b15设计给PASS/READY，用户已验收并授权合并/标签；Gemini现已对发布基线7de1d0e给Gate PASS、Phase0 RELEASED及F-001 CLOSED。批准见publication/APPROVAL.json，门禁来源见gemini/GATE_EVIDENCE_INDEX.json。未来阶段选型、profile和业务假设仍按各项前置条件批准，Phase1尚未获启动授权。
+2026-10-21 最新人工决定：用户明确表示“phase 1验收已完成”，现登记 **Phase1 = ACCEPTED，尚未 RELEASED**。验收对应接收时PR #2的71cc044d5f4e2079426049c0f7c6f747fee01692（业务74bdb92），原话与范围见 docs/audits/phase-1/acceptance/ACCEPTANCE.json。此前“等待验收/未ACCEPTED”仅为历史；Gemini独立执行和原远端缺字节事实继续保留，本次未伪造逐项限制豁免。合并main、打标签及Phase2均未授权。
+
+以下既有状态段落保留为各轮历史，当前人工验收状态以上述记录为准。
+
+2026-10-21本轮决定边界：新增Gemini报告认可全部七项勘误、技术PASS；完整独立执行仍未获可核验原始证据，用户未接受限制。当前依据audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md，以下旧轮非阻断建议不代替用户决定。人工验收、合并/标签、主干基线和Phase2授权仍未发生。
+
+2026-10-21最新：本次SDK/hash报告承认Gemini执行受阻，不能按技术PASS视作专项完整通过。开发方补充原始ZIP及数据/SDK核对已实际完成，独立执行缺口仍需补齐或由用户明确决定接受；未发生该决定。详见audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md；下列既有D-012等非阻断意见保留历史来源，不代替本次用户决定。
+
+Phase0已发布且Gate PASS/F-001 CLOSED，证据在audits/phase-0。用户现已授权Phase1，选择合成数据/通用契约及Python3.13.16，原话见audits/phase-1/AUTHORIZATION.json；Phase1计划/实现审查和补充勘误确认均PASS，当前等待用户Phase1人工验收；未来阶段profile及业务假设仍按各项条件批准。
 
 | ID | 类型 / 事项 | 当前处理与提案 | 决策者 / 截止关卡 |
 |---|---|---|---|
 | D-001 | 已有指令：固定架构与P0范围 | V3.0架构继续；当前只做设计；V3.2覆盖审查协作 | 用户原始指令；未来变更需新批准 |
-| D-002 | 外部：比赛/市场/数据供应商规则 | 未指定市场/日历/货币/费用/税/涨跌幅/整手/T+N/借券/价格限额/数据许可与PIT可信度；全部用versioned profile，不擅自假定某交易所 | 用户；P1数据接入前定市场，P4/P5前定交易规则，P7前定比赛规范 |
-| D-003 | 未决：环境精确版本 | 本机Python3.10.11仅文档工具；业务建议评估Python3.12及优先库的精确patch/hash，P1建锁文件和跨平台安装证据 | 用户+Gemini预审；P1实施前 |
+| D-002 | P1合成范围已批准；真实市场/源另定 | 用户明确先做合成数据与通用契约。P1采用显式测试profile/日历，不能宣称符合任何交易所；真实市场/供应商/许可、费用/税/限制等仍未指定 | P1按合成计划预审实施；真实源接入前及P4/P5/P7按阶段确定相应规则 |
+| D-003 | 用户已批准Python3.13.16；兼容/锁/安装待验证 | 本机3.10.11仅文档工具，注册3.11无法启动；业务3.13.16尚未安装。候选依赖/工具精确版本及主源wheel元数据见phase-1/ENVIRONMENT_PLAN与DEPENDENCY_CANDIDATES，不能当作已锁定或安装通过 | 本阶段Gemini计划预审后解析完整锁并验证Windows/Linux实际环境，变更精确版本仍需记录依据 |
 | D-004 | 未决：样本划分/通过门槛 | 实际日期、期限网格、最小n、试验预算、IC/成本后收益/风险门槛尚未指定；缺项不能正式批准因子 | 用户+Gemini；P3正式评估前，P5补交易门槛 |
 | D-005 | 未决：数学/执行定义提案 | ddof=1、平均并列秩、next-open标签、非年化ICIR、移动均价成本法、Decimal舍入、单币种和合成开盘容量等为提案 | 用户+Gemini；对应阶段计划批准前 |
 | D-006 | 未决：不可信代码隔离 | P2先限已审随库因子；任意外部插件上传执行Unsupported；独立进程/OS沙箱方案须威胁建模及权限确认 | 用户+Gemini；开放外部执行前 |
-| D-007 | 核心勘误及独立主干门禁闭环 | 设计1830b15 PASS/READY；用户批准228190a，合并8c37e95，发布7de1d0e；Gemini Gate PASS并关闭F-001。F-004物理隔离及执行日志等证据边界保留，本次归档不移动标签 | Phase0 RELEASED；Phase1基线门禁UNBLOCKED，但需用户单独授权及阶段预审，不自动启动 |
+| D-007 | 核心勘误及P0独立主干门禁闭环 | 发布7de1d0e已Gate PASS/F-001 CLOSED，P0标签保留，物理隔离等原限制不抹除。用户现已授权P1并选范围/版本，P0报告不能替代P1预审 | Phase1先提交计划/接口/独立答案候选，未取得本阶段Gemini预审不写业务代码 |
 | D-008 | 未决：性能与资源 | 证券数量/年份/数据量/内存/耗时目标未知；不预设无依据SLA，不提前分布式实现 | 用户；必要性能测试前 |
 | D-009 | 未决：能力分级与覆盖率 | 四级划分和测试覆盖门槛已提出；CompetitionReady中的V3.0必需功能不能自动延期 | 用户+Gemini；P0设计批准前 |
 | D-010 | 初始化/批准/合并/标签/独立核验已追溯 | PR#1合并8c37e95的tree与获批228190a一致；phase0-baseline固定7de1d0e，附注对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0，Gemini已完成主干链路核验 | APPROVAL、MERGE_VERIFICATION及GATE_EVIDENCE_INDEX分别存证；新归档提交不是替代基线 |
 | D-011 | 未决：PIT证据不足历史源 | 供应商无历史available_at证据时仅Exploratory，不能用抓取时间倒填历史；需独立来源核对方案 | 用户+Gemini；正式PIT验收前 |
-| D-012 | P0发布门禁已通过，P1授权另行取得 | AUDIT/ACCEPTED/main发布/phase0-baseline/独立Gate证据齐备，固定基线7de1d0e为RELEASED。P1基线门禁UNBLOCKED，执行状态为AWAITING USER AUTHORIZATION / NOT STARTED | 不把Gemini启动建议当用户授权；获授权后仍须核实main差异并完成阶段计划预审 |
+| D-012 | P1独立审查通过，用户验收未发生 | 74bdb92实现报告及针对578fb51的补充确认均PASS；保留本地SDK与远端hash未验证的非阻断限制，详见ERRATA_CONFIRMATION_RECONCILIATION | 用户决定人工验收；main合并、标签/基线发布及Phase2各自另行授权，不能用转交报告代替 |
 
 ## 已识别冲突及处理
 
@@ -29,3 +37,12 @@ Gemini已对1830b15设计给PASS/READY，用户已验收并授权合并/标签�
 ## 变更控制
 
 变更记录需change_id、源要求、原因、影响需求/接口/阶段、测试及迁移、风险、批准人/证据、实施SHA。分级变化、依赖变更、Golden修订与稳定接口变化均不能靠改文档消除未通过项。未知比赛规则可以明确列待决，不应擅自填入；影响当前设计的关键争议未处理前不宣布架构验收通过。
+
+
+2026-10-21状态增量：Gemini对380d9f8计划预审PASS，当前Phase1 IMPLEMENTING。原文/证据索引及报告勘误在audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json和DEVELOPER_RESPONSE.md。此状态替代此前等待计划预审描述；验收、main合并、打标、Phase2仍未授权。
+
+
+2026-10-21实现增量：Phase1计划预审PASS后完成合成数据/通用契约14项实现和102项测试，当前IMPLEMENTATION REVIEW REQUIRED；实际证据和旧失败以audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md及implementation/EVIDENCE_INDEX.json为准。本增量替代此前等待计划预审/尚无业务代码的当前状态描述；初始计划和授权快照保留。main、稳定标签及P0核心契约不变；未验收/未合并/未发布，不进入Phase2。
+
+
+2026-10-21实现审计接收：Gemini对74bdb92原文PASS并关闭F-002/F-003/F-P1-PRE-001；开发方核对发现500应为1000、数个文件路径及tests/golden独立执行证据表述不符等勘误。报告按字节归档，完整处置见audits/phase-1/IMPLEMENTATION_AUDIT_RESPONSE.md及gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json；本次不改业务代码/答案/阈值。当前AUDIT PASS AS REPORTED / REPORT ERRATA CLARIFICATION REQUIRED，尚非ACCEPTED/RELEASED；无合并、标签或Phase2授权。

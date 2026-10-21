@@ -1,0 +1,66 @@
+{
+  "received_date": "2026-10-21",
+  "report_file": "aqrp_phase1_implementation_audit_report.md",
+  "report_sha256": "54b1fde673a809e3af0f99e2148355813423d1348c0071cff2e38e8f42d035e7",
+  "reviewed_commit": "74bdb9216c585d27de91123605aff0266ca028cc",
+  "source": "Original user-supplied Gemini report; recommendations are advisory, not user authorization",
+  "reported_verdict": "PASS",
+  "reported_ready_for_human_acceptance": true,
+  "developer_cross_check_status": "SUPPLEMENTARY CONFIRMATION RECEIVED; AUDIT PASSED / AWAITING HUMAN ACCEPTANCE",
+  "report_altered": false,
+  "developer_response": "../IMPLEMENTATION_AUDIT_RESPONSE.md",
+  "errata": "../IMPLEMENTATION_AUDIT_ERRATA.json",
+  "developer_raw_verification": "../implementation/audit-response-74bdb92",
+  "human_accepted": false,
+  "released": false,
+  "merge_tag_phase2_authorized": false,
+  "phase2_status": "BLOCKED; needs released verified baseline AND separate user authorization",
+  "findings": {
+    "F-002": {
+      "auditor_status": "RESOLVED / CLOSED",
+      "scope": "Fixed74bdb92, real CI evidence; no human acceptance inferred"
+    },
+    "F-003": {
+      "auditor_status": "RESOLVED / CLOSED",
+      "scope": "Fixed74bdb92 timestamp/PIT scope; no universal no-leakage claim"
+    },
+    "F-P1-PRE-001": {
+      "auditor_status": "RESOLVED / CLOSED",
+      "scope": "Exact hashed online dependency install and offline local project wheel; not entirely offline installation"
+    },
+    "F-P1-PRE-002": {
+      "auditor_status": "MITIGATED / NONBLOCKING, supplementary section2.6",
+      "developer_status": "Implemented evidence retained, source default workspace not migrated"
+    },
+    "F-P1-PRE-003": {
+      "auditor_status": "RESOLVED / CLOSED, supplementary section2.6",
+      "developer_status": "Exact tzdata/package-only IANA implemented evidence retained"
+    }
+  },
+  "unresolved_evidence": [
+    "Local SDK execution by reviewer NOT VERIFIED, explicitly disclosed; CI execution separate",
+    "Independent math raw script/stdout not attached, reviewer-reported execution only",
+    "Remote full-artifact rehash and cross-OS smoke comparison remain NOT VERIFIED; reviewer assesses nonblocking"
+  ],
+  "ci": [
+    {
+      "event": "push",
+      "run_number": 8,
+      "run_id": 39476816120,
+      "conclusion": "success"
+    },
+    {
+      "event": "pull_request",
+      "run_number": 9,
+      "run_id": 39476825340,
+      "conclusion": "success"
+    }
+  ],
+  "developer_cross_check_status_at_initial_receipt": "REPORT ERRATA / EVIDENCE CLARIFICATION REQUIRED",
+  "supplementary_confirmation": "ERRATA_CONFIRMATION_INDEX.json",
+  "prior_unresolved_evidence": [
+    "ERR-P1-IMPL-001: report500 vs actual1000 needs reviewer acknowledgment",
+    "ERR-P1-IMPL-002/003: nonexistent paths and zero tests in tests/golden; actual independent execution statement needs correction/source",
+    "Original remote full-artifact transfer/hash-comparison limitations remain NOT VERIFIED locally"
+  ]
+}

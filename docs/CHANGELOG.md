@@ -1,5 +1,50 @@
 # 变更记录
 
+## 2026-10-21 · Phase 1 用户验收完成
+
+- 按用户原话“phase 1验收已完成”登记ACCEPTED，对应当前交付71cc044d、业务74bdb92；原话及SHA绑定方式记录在audits/phase-1/acceptance/。
+- 更新当前状态、路线图、审查包和证据索引；历史Gemini报告/原始产物/旧清单保持原字节，业务代码和答案不变。
+- 未授权main合并、标签、发布或Phase2；独立执行及原远端缺字节事实保留，不伪造已执行或逐项豁免。
+
+## 2026-10-21 · Conda / VS Code 本机完整验证
+
+- 配置现有 aqrp-p1 Python3.13.16、hash锁定依赖和独立工作区；固定74bdb92完整SDK、Conda直接102测试、两项工作区process任务及原始Actions ZIP校验通过，保留原始命令、JUnit、覆盖率、快照和分级证据。
+- 本轮为Codex开发方执行；Gemini独立执行缺口及远端缺字节限制保留，未验收/发布、不进入Phase2。详见audits/phase-1/implementation/conda-vscode-74bdb92/README.md。
+
+## 2026-10-21 · 验证补充包与原始脚本日志接收
+
+- 原字节归档33832字节/10成员补充包，SHA256 318323ff77651537cc47470fe20d32930bb07495bb51fd71f0772f80c11c023d；4条包内清单hash/大小通过，新脚本/日志/JSON及两份报告变体另存，不覆盖规范原件。
+- Gemini六个旧文件hash核对现在有脚本/日志支撑；包只含五证据中的2份，另3份可从仓库规范原件补齐。受控复跑完整输入6个hash匹配；包内输入/空目录均缺文件仍exit0，成功页脚不能证明完整。
+- 新脚本只打印Git拓扑和七项裁定常量，没有Actions原始ZIP、Parquet、SDK、pytest或Git实际调用。独立执行缺口不因此关闭，不冒充原审查环境。
+- 两份报告变体仅链接/Markdown样式变化，原件保持各自hash；当前执行材料范围更新，不把此前“未附送”继续当成现状。核心代码/测试/CI/锁/Golden/P0冻结资产不改。
+- 用户未接受限制、未ACCEPTED/RELEASED，本轮不合并、不打标签、不进入Phase2，main/P0稳定标签不动。
+
+
+## 2026-10-21 · Gemini SDK/hash增量认可归档与执行缺口保留
+
+- 原字节归档增量报告（SHA256 725557d5ff2fc1c94d03c614bf7e40706f33aa0422c6b44f80289806b2e69cf0），固定审查8bf189d、业务74bdb92；七项AGREE与技术PASS按审查方原文登记。
+- 原报告/五份旧证据hash、上轮223项清单、两个原始ZIP/11个可用根文件/Manifest/八表文件hash/跨OS smoke/JUnit/合并tree再次核对通过；未重跑SDK或102项业务测试，不重复归属原执行。
+- 新报告错误文件名和清单层级、float误差数量级、配置排除字段、变更范围及执行归属另行注明，不改原件、正确代码/答案/阈值。
+- 本次未新附审查方脚本/命令/stdout，SDK全量仍未执行，ZIP/内部数据/跨OS完整独立执行尚不可核验；七项说明认可不关闭该缺口。
+- 用户未接受限制、未ACCEPTED/RELEASED；PR继续Draft，不合并、不打标签、不进入Phase2。main/P0标签及50份冻结资产不变。
+
+
+## 2026-10-21 · SDK/hash报告归档、证据分级及开发方原始产物核对
+
+- 按原字节归档新Gemini报告（SHA256 9fff9ee3da601e31aac5f2bbc77b09c38c5aa1050359d9c1513025c5824f5933）及5份原始资料，不改原结论；独立执行受阻不能标为专项整体PASS。
+- 单独登记7项报告勘误/范围澄清：变更路径、在线依赖安装、float参考差0、静态验证等级、Manifest/类型边界、实际缺失文件及SDK证据归属；实现/答案/阈值不改。
+- 本轮开发方成功下载Run39476825340的两份原始ZIP，实际SHA与GitHub一致；11/14根文件每平台通过，3个未上传项明确列出；8表schema/逻辑值/封存hash、SDK回放、跨OS smoke字节及新SDK冒烟通过，原始ZIP/脚本/输出留存。
+- 核实CI实际检出f093faca临时合并提交，与74bdb92完整tree相同。读取原始JUnit每平台102通过及coverage门槛通过，不冒称本轮重跑102项或Gemini已执行SDK。
+- 技术审查建议PASS保留，专项PARTIAL / GEMINI EXECUTION BLOCKED；等待人工验收，未ACCEPTED/RELEASED。本次不合并、不打标签、不进入Phase2，main/P0标签不动。
+
+
+## 2026-10-20 · Phase1启动授权与实施前计划准备
+
+- 用户正式授权Phase1，进一步选定合成数据/通用契约、真实源另定，及Python3.13.16；原话见audits/phase-1/AUTHORIZATION.json。
+- 从核实main 502c6931dcfce50bee2f71a80524475fae6396bf创建feature/phase-1-data-system，P0稳定标签保持7de1d0e；对比确认此前归档不改核心契约/106条需求。
+- 准备14项需求映射、PIT/行动/快照接口、Golden候选、精确环境与CI方案、公开依赖wheel元数据和Review Package。候选不是完整锁或安装证明；Gemini本阶段预审尚未取得。
+- 当前只有计划与授权/状态资料，不含src/业务测试/CI/环境安装；按V3.2先完成独立计划预审，再执行已授权P1实现；P1合并发布及P2均未授权。
+
 ## 2026-10-20 · Gemini Baseline Verification Gate报告归档与发布状态闭环
 
 - 按用户“归档本报告并更新状态”授权，将门禁原件逐字节归档；SHA-256为aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1。Gate固定审查7de1d0e81385ae97f98ea673fe05dd726f0b577b，PASS、Phase0 RELEASED、F-001 RESOLVED/CLOSED已登记。
@@ -63,3 +108,15 @@
 - 建立双AI审查、ReviewPackage、A–F验收模板和缺陷闭环规则；禁止冒充Gemini报告或以CI替代独立审查。
 - 创建编号需求/双向追踪与文档核查工具；当前不包含业务实现，不声称运行测试、环境锁定、Gemini审查或发布成功。
 - 未决事项与影响分析见DECISIONS和 `audits/phase-0/CHANGE_IMPACT.md`。
+
+
+2026-10-21状态增量：Gemini对380d9f8计划预审PASS，当前Phase1 IMPLEMENTING。原文/证据索引及报告勘误在audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json和DEVELOPER_RESPONSE.md。此状态替代此前等待计划预审描述；验收、main合并、打标、Phase2仍未授权。
+
+
+2026-10-21实现增量：Phase1计划预审PASS后完成合成数据/通用契约14项实现和102项测试，当前IMPLEMENTATION REVIEW REQUIRED；实际证据和旧失败以audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md及implementation/EVIDENCE_INDEX.json为准。本增量替代此前等待计划预审/尚无业务代码的当前状态描述；初始计划和授权快照保留。main、稳定标签及P0核心契约不变；未验收/未合并/未发布，不进入Phase2。
+
+
+2026-10-21实现审计接收：Gemini对74bdb92原文PASS并关闭F-002/F-003/F-P1-PRE-001；开发方核对发现500应为1000、数个文件路径及tests/golden独立执行证据表述不符等勘误。报告按字节归档，完整处置见audits/phase-1/IMPLEMENTATION_AUDIT_RESPONSE.md及gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json；本次不改业务代码/答案/阈值。当前AUDIT PASS AS REPORTED / REPORT ERRATA CLARIFICATION REQUIRED，尚非ACCEPTED/RELEASED；无合并、标签或Phase2授权。
+
+
+2026-10-21：按原字节归档Gemini Phase1勘误确认（hash9eccef880347de87ea7256ebf2ae4c4cc0121912f6492ddb32d3ab2117918c18），原实现报告保留。审查方确认PASS/可人工验收，PRE-002 MITIGATED非阻断、PRE-003 CLOSED；本地SDK/远端rehash/跨OS比对仍NOT VERIFIED。新增逐项核对及少量非阻断引用备注，更新状态AUDIT PASSED / AWAITING HUMAN ACCEPTANCE；代码/答案/阈值/CI/环境锁不改，不合并、不打标、不进入P2。

@@ -1,0 +1,25 @@
+{
+  "received_date": "2026-10-21",
+  "reviewer": "Gemini (user-supplied report)",
+  "report": "docs/audits/phase-1/gemini/aqrp_phase1_plan_pre_review_report.md",
+  "sha256": "109ec7c92a3e5fd5329d1380abbf381a570bf2690d8f1536a478b96da54f2809",
+  "reviewed_commit": "380d9f86467db874033a06a9e6487fd3998e205f",
+  "verdict": "PASS",
+  "gate": "PLAN PRE-REVIEW ONLY",
+  "implementation_authorized_by": "prior human instruction, reiterated 2026-10-21",
+  "implementation_acceptance": "NOT REQUESTED",
+  "merge_release_phase2": "NOT AUTHORIZED",
+  "findings": {
+    "F-P1-PRE-001": "OPEN: full hashed lock + clean Windows/Linux installs required",
+    "F-P1-PRE-002": "OPEN: physical venv/cache isolation evidence required",
+    "F-P1-PRE-003": "OPEN: exact tzdata pin on both platforms, package-only ZoneInfo lookup required",
+    "F-002": "OPEN until actual CI evidence and review",
+    "F-003": "OPEN until implementation tests and review"
+  },
+  "implementation_follow_up": {
+    "package": "../IMPLEMENTATION_REVIEW_PACKAGE.md",
+    "evidence": "../implementation/EVIDENCE_INDEX.json",
+    "status": "Developer implementation checks PASS; independent implementation review REQUIRED",
+    "does_not_change_original_plan_report": true
+  }
+}

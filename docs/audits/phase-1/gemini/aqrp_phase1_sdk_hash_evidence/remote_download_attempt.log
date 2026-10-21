@@ -1,0 +1,31 @@
+=== ATTEMPTING NETWORK CONNECTIVITY FOR ARTIFACT DOWNLOAD ===
+Timestamp: 2026-10-21T03:50:00+08:00
+Tool: /usr/bin/curl -v -m 5
+
+Target 1: GitHub API Artifact Endpoint Ubuntu (12288989083)
+URL: https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12288989083
+Output:
+* Could not resolve host: api.github.com
+* Closing connection 0
+curl: (6) Could not resolve host: api.github.com
+Exit Code: 6
+
+Target 2: GitHub API Artifact Endpoint Windows (12288679676)
+URL: https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12288679676
+Output:
+* Could not resolve host: api.github.com
+* Closing connection 0
+curl: (6) Could not resolve host: api.github.com
+Exit Code: 6
+
+Target 3: Direct ZIP Download Ubuntu (12288989083/zip)
+URL: https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12288989083/zip
+Output:
+* Could not resolve host: api.github.com
+* Closing connection 0
+curl: (6) Could not resolve host: api.github.com
+Exit Code: 6
+
+Analysis & Boundary:
+The failure is strictly due to local sandbox network isolation (DNS resolution blocked).
+This evidence demonstrates local network connector restriction, and MUST NOT be interpreted as GitHub remote artifact absence or expiration.

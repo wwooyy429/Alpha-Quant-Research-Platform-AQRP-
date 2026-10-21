@@ -1,11 +1,11 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
-当前仅 P0 获授权；以下均为阶段提案，不是启动指令。需求 ID、等级及细化依赖以 REQUIREMENTS/TRACEABILITY 为准。每阶段必须先读正式文档、检查 Git、核对上一阶段验收和本阶段明确授权，再提交阶段计划、测试预期和接口供 Gemini 预审；阻断设计问题解决后才实施。
+Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范围，阶段计划见audits/phase-1/PLAN.md。后续阶段仍为提案，需求ID/等级/依赖以REQUIREMENTS/TRACEABILITY为准。每阶段须核对基线/授权、提交计划/接口/答案供Gemini预审，阻断问题解决后才实施。
 
 | Phase / 状态 | 范围、输入前提及允许文件 | 输出与适用验收 / 禁止越界 |
 |---|---|---|
 | 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
-| 1 / AWAITING USER AUTHORIZATION，未启动 | P0基线前置门禁已UNBLOCKED；另需用户P1启动授权、阶段计划/预审及适用前置决策；从核实main新建独立分支并核对相对固定基线的归档差异；未来 src/aqrp/core,data 与 tests/data、CI/锁文件 | 骨架、精确依赖、DuckDB/Parquet、合成OHLCV、加载清洗/PIT/日历/标准答案、pytest/CI；当前尚未授权实施，不以Gemini建议代替用户授权 |
+| 1 / ACCEPTED；未RELEASED | 用户2026-10-21明确“phase 1验收已完成”；对应PR #2接收时71cc044d、业务74bdb92，合成数据/通用契约14项实现；记录audits/phase-1/acceptance/ACCEPTANCE.json | 人工验收已登记；Gemini完整独立执行及原远端缺字节事实仍保留。尚未授权合并/标签/发布或P2；稳定main基线及后续启动分别核验 |
 | 2 / PLANNED | P1验收+P2授权；Data API可用；未来 factors 与 tests/factors | Factor API/Registry、元数据/参数/版本、Momentum/Reversal/Volume、注册/替换/回滚/major兼容；不要求研究/回测E2E |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
@@ -31,3 +31,12 @@
 - Production Extensions：真实交易和运维扩展，当前 Unsupported，另立需求、审批和安全设计。
 
 因子替换里程碑：P2 Registry/元数据兼容 → P3 完整研究 → P5 组合/风控/撮合/账本 → P6 CLI/UI同核 → P7 固定数据与组合配置的 Momentum→Reversal 全链；每次切换只改因子配置，记录信号/订单变化及底层核心未改的 diff/hash 证据，不要求收益相同。
+
+
+2026-10-21状态增量：Gemini对380d9f8计划预审PASS，当前Phase1 IMPLEMENTING。原文/证据索引及报告勘误在audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json和DEVELOPER_RESPONSE.md。此状态替代此前等待计划预审描述；验收、main合并、打标、Phase2仍未授权。
+
+
+2026-10-21实现增量：Phase1计划预审PASS后完成合成数据/通用契约14项实现和102项测试，当前IMPLEMENTATION REVIEW REQUIRED；实际证据和旧失败以audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md及implementation/EVIDENCE_INDEX.json为准。本增量替代此前等待计划预审/尚无业务代码的当前状态描述；初始计划和授权快照保留。main、稳定标签及P0核心契约不变；未验收/未合并/未发布，不进入Phase2。
+
+
+2026-10-21实现审计接收：Gemini对74bdb92原文PASS并关闭F-002/F-003/F-P1-PRE-001；开发方核对发现500应为1000、数个文件路径及tests/golden独立执行证据表述不符等勘误。报告按字节归档，完整处置见audits/phase-1/IMPLEMENTATION_AUDIT_RESPONSE.md及gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json；本次不改业务代码/答案/阈值。当前AUDIT PASS AS REPORTED / REPORT ERRATA CLARIFICATION REQUIRED，尚非ACCEPTED/RELEASED；无合并、标签或Phase2授权。

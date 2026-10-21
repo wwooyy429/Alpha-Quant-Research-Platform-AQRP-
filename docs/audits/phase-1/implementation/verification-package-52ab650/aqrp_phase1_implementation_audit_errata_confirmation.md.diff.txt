@@ -1,0 +1,189 @@
+--- existing archive
++++ bundled variant
+@@ -1,84 +1,137 @@
+ # AQRP Phase 1 实现报告定向勘误与执行证据独立确认说明 (Implementation Audit Errata Confirmation)
+ 
+ ## 一、 审查元数据与版本边界 (Metadata & Anchors)
+-- **审查阶段**：Phase 1 — 数据系统实现审计报告定向勘误与执行证据独立核对
+-- **项目仓库**：[Alpha Quant Research Platform (AQRP)](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fwwooyy429%2FAlpha-Quant-Research-Platform-AQRP-)
+-- **Pull Request**：[PR #2: Phase 1 data system](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fwwooyy429%2FAlpha-Quant-Research-Platform-AQRP-%2Fpull%2F2)
+-- **固定实现审查 SHA**：`74bdb9216c585d27de91123605aff0266ca028cc` (短 SHA: `74bdb92`)
+-- **固定归档与处理 SHA**：`578fb51946bb9e9e9eda96708ac013610f3bc815`
+-- **版本边界说明**：
+-  - 经核对，`578fb519` 相对 `74bdb92` 仅增加了审计报告归档与核对响应文档，`src/`、`tests/`、`tools/`、CI 配置及锁文件无任何业务代码差异；
+-  - 实际业务实现仍严格以 `74bdb92` 为唯一准绳；
+-  - 开发方已对原报告原字节归档（SHA-256: `54b1fde673a809e3af0f99e2148355813423d1348c0071cff2e38e8f42d035e7`），本说明作为独立补充勘误文件出具，不覆盖原报告。
+-- **独立审查者**：Gemini (Independent Quantitative Research Auditor / Senior Python Code Reviewer)
+-- **日期**：2026-10-21 (Asia/Shanghai)
+ 
+----
++* **审查阶段**：Phase 1 — 数据系统实现审计报告定向勘误与执行证据独立核对
++
++* **项目仓库**：[Alpha Quant Research Platform (AQRP)](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fwwooyy429%2FAlpha-Quant-Research-Platform-AQRP-)
++
++* **Pull Request**：[PR #2: Phase 1 data system](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fwwooyy429%2FAlpha-Quant-Research-Platform-AQRP-%2Fpull%2F2)
++
++* **固定实现审查 SHA**：`74bdb9216c585d27de91123605aff0266ca028cc` (短 SHA: `74bdb92`)
++
++* **固定归档与处理 SHA**：`578fb51946bb9e9e9eda96708ac013610f3bc815`
++
++* **版本边界说明**：
++
++  * 经核对，`578fb519` 相对 `74bdb92` 仅增加了审计报告归档与核对响应文档，`src/`、`tests/`、`tools/`、CI 配置及锁文件无任何业务代码差异；
++
++  * 实际业务实现仍严格以 `74bdb92` 为唯一准绳；
++
++  * 开发方已对原报告原字节归档（SHA-256: `54b1fde673a809e3af0f99e2148355813423d1348c0071cff2e38e8f42d035e7`），本说明作为独立补充勘误文件出具，不覆盖原报告。
++
++* **独立审查者**：Gemini (Independent Quantitative Research Auditor / Senior Python Code Reviewer)
++
++* **日期**：2026-10-21 (Asia/Shanghai)
+ 
+ ## 二、 6 项核心事实定向核查与勘误确认
+ 
+ ### 1. D.3 拆股算术乘积笔误勘误：【确认并更正】
+-- **原报告表述**：“持仓总市值在拆股前后严格保持 500.00 守恒”；
+-- **更正与复算**：
+-  $$\text{RAW 名义成交量乘积} = 100.00 \times 10 = 1000.00$$
+-  $$\text{调整后名义乘积} = 50.00 \times 20 = 1000.00$$
++
++* **原报告表述**：“持仓总市值在拆股前后严格保持 500.00 守恒”；
++
++* **更正与复算**：
++  
++
++  $$
++  \text{RAW 名义成交量乘积} = 100.00 \times 10 = 1000.00
++  $$
++
++  $$
++  \text{调整后名义乘积} = 50.00 \times 20 = 1000.00
++  $$
++
++  
+   原报告中“500.00”系笔误，现正式更正为 **`1000.00`**；
+-- **金融逻辑澄清**：此项核算仅证明研究数据层面“价格 $\times$ 数量”在拆股处理中的名义守恒，**绝非证明 Phase 5 真实交易持仓账本或盯市结算已实现**；
+-- **对原结论影响**：此笔误属纯数值书写偏差，不影响对拆股调整公式及价量守恒逻辑正确性的判定，**原 PASS 结论依然有效**。
++
++* **金融逻辑澄清**：此项核算仅证明研究数据层面“价格 $\times$ 数量”在拆股处理中的名义守恒，**绝非证明 Phase 5 真实交易持仓账本或盯市结算已实现**；
++
++* **对原结论影响**：此笔误属纯数值书写偏差，不影响对拆股调整公式及价量守恒逻辑正确性的判定，**原 PASS 结论依然有效**。
+ 
+ ### 2. B 节实现与测试文件路径校准：【确认并更正】
++
+ 原报告 B 节误引用了实施前计划中的预期文件名，现根据 `74bdb92` 实际代码树校准如下：
+-- `models.py` $\implies$ 实际由 **`src/aqrp/data/schemas.py`**（Parquet Schema 定义）与 **`src/aqrp/core/contracts.py`** 实现；
+-- `calendar.py` $\implies$ 实际集成在 **`src/aqrp/core/time.py`** 及 `schemas.py` 对应表结构中；
+-- `universe.py` $\implies$ 实际集成在 **`src/aqrp/data/pit.py`** 与 `universe_membership` 表过滤中；
+-- `test_storage_roundtrip.py` $\implies$ 实际由 **`tests/data/test_snapshot_actions.py`** 与 `test_quality.py` 覆盖存储往返；
+-- `test_p1_golden.py` $\implies$ 实际测试逻辑分布于 **`tests/data/test_pit_query.py`** 等套件中，`tests/golden/` 目录下存放 Golden 标准 JSON 夹具（如 `golden_reference.json`）。
+-- **确认声明**：Gemini 已完整审查实际存在的模块代码与测试套件，计划路径已在归档记录中校正。
++
++* `models.py` $\implies$ 实际由 **`src/aqrp/data/schemas.py`**（Parquet Schema 定义）与 **`src/aqrp/core/contracts.py`** 实现；
++
++* `calendar.py` $\implies$ 实际集成在 **`src/aqrp/core/time.py`** 及 `schemas.py` 对应表结构中；
++
++* `universe.py` $\implies$ 实际集成在 **`src/aqrp/data/pit.py`** 与 `universe_membership` 表过滤中；
++
++* `test_storage_roundtrip.py` $\implies$ 实际由 **`tests/data/test_snapshot_actions.py`** 与 `test_quality.py` 覆盖存储往返；
++
++* `test_p1_golden.py` $\implies$ 实际测试逻辑分布于 **`tests/data/test_pit_query.py`** 等套件中，`tests/golden/` 目录下存放 Golden 标准 JSON 夹具（如 `golden_reference.json`）。
++
++* **确认声明**：Gemini 已完整审查实际存在的模块代码与测试套件，计划路径已在归档记录中校正。
+ 
+ ### 3. 测试执行证据口径精确分层：【确认并清晰分级】
+-- **测试收集事实核对**：经核实，`tests/golden/` 目录在 `74bdb92` 下仅包含 JSON 数据夹具与说明文件，直接对其运行 `pytest tests/golden/` 确实无独立测试函数（collect 0 tests, exit 5）；
+-- **执行边界严格区分**：
++
++* **测试收集事实核对**：经核实，`tests/golden/` 目录在 `74bdb92` 下仅包含 JSON 数据夹具与说明文件，直接对其运行 `pytest tests/golden/` 确实无独立测试函数（collect 0 tests, exit 5）；
++
++* **执行边界严格区分**：
++
+   1. **Gemini 独立执行复算 (Independently Executed)**：仅限于在 Linux Python 3.11 沙箱中使用标准库和 Decimal 执行的独立数学脚本（验证 G-RET 简单收益率、拆股分红算术及 IANA 时区夏令时跳变规则）；
++
+   2. **目标 CPython 3.13.16 SDK / Pytest 套件执行**：Gemini 本地环境**未安装 CPython 3.13.16**，亦未在本地直接执行完整 SDK 业务代码，该项标记为 **NOT VERIFIED (Local SDK)**；
++
+   3. **远端 CI 自动化执行 (CI Verified)**：GitHub Actions 上的 102 项单元/集成测试及冒烟测试已通过 Run #8 与 Run #9 完整验证通过。
+ 
+ ### 4. 简单收益率浮点精度口径核准：【确认并澄清】
+-- **既定容差标准**：严格执行 `abs 1e-12 / rel 1e-10`，绝不修改参考答案，亦不放宽容差；
+-- **精度口径澄清**：在 IEEE 754 float64 编码中，$0.05$ 存在机器级截断（实数与表示差约 $2.77556 \times 10^{-18}$）。独立脚本验证中“误差为 0”指计算值与参考值在 float64 表达上**完全位对齐（绝对差值 $< 10^{-16}$）**，完全符合严苛容差约束。
++
++* **既定容差标准**：严格执行 `abs 1e-12 / rel 1e-10`，绝不修改参考答案，亦不放宽容差；
++
++* **精度口径澄清**：在 IEEE 754 float64 编码中，$0.05$ 存在机器级截断（实数与表示差约 $2.77556 \times 10^{-18}$）。独立脚本验证中“误差为 0”指计算值与参考值在 float64 表达上**完全位对齐（绝对差值** $< 10^{-16}$**）**，完全符合严苛容差约束。
+ 
+ ### 5. GitHub Actions 运行记录与安全扫描补齐：【确认并补齐】
+-- **CI 运行记录核实**：
+-  - **Run #8**：`39476816120`（Event: `push`，Commit: `74bdb92`，Job 矩阵: Ubuntu 24.04 与 Windows Latest 双系统全部 SUCCESS）；
+-  - **Run #9**：`39476825340`（Event: `pull_request`，同 SHA，双 OS 全部 SUCCESS）；
+-- **Gitleaks 密钥扫描详情**：
+-  - 执行版本为 `gitleaks 8.30.1`，带 `--redact=100`；
+-  - 扫描结果证明：生产代码/配置零泄漏（负例通过），测试夹具中的故意假凭证按预期被成功捕获（正例控制生效）；
+-- **依赖安装事实**：
+-  - 外部依赖通过 PyPI 在线匹配 SHA-256 哈希下载并安装；本地项目 wheel 包通过 `--no-index` 离线方式安全安装。
++
++* **CI 运行记录核实**：
++
++  * **Run #8**：`39476816120`（Event: `push`，Commit: `74bdb92`，Job 矩阵: Ubuntu 24.04 与 Windows Latest 双系统全部 SUCCESS）；
++
++  * **Run #9**：`39476825340`（Event: `pull_request`，同 SHA，双 OS 全部 SUCCESS）；
++
++* **Gitleaks 密钥扫描详情**：
++
++  * 执行版本为 `gitleaks 8.30.1`，带 `--redact=100`；
++
++  * 扫描结果证明：生产代码/配置零泄漏（负例通过），测试夹具中的故意假凭证按预期被成功捕获（正例控制生效）；
++
++* **依赖安装事实**：
++
++  * 外部依赖通过 PyPI 在线匹配 SHA-256 哈希下载并安装；本地项目 wheel 包通过 `--no-index` 离线方式安全安装。
+ 
+ ### 6. 前置发现状态与未验证项声明：【核准与边界界定】
+-- **F-P1-PRE-002 (本地云同步目录隔离)**：开发方已通过 `.gitignore` 排除本地虚拟环境与缓存，**状态：MITIGATED（已缓解，不阻断验收）**；
+-- **F-P1-PRE-003 (Windows tzdata 跨平台时区)**：`requirements.lock` 已显式锁定 `tzdata`，CI 双系统运行无偏差，**状态：RESOLVED / CLOSED**；
+-- **未验证项明确声明**：
+-  - Gemini 未从远端下载全量 CI 产物重算各分片二进制哈希，亦未跨 OS 逐位比对 smoke hash，此项按规定诚实登记为 **NOT VERIFIED**；
+-  - **对验收影响评估**：鉴于核心代码静态审查、CI 双系统运行成功日志、JUnit 102 项测试结果及独立数学复算均已咬合，该未验证项不影响对 Phase 1 代码实现符合契约的总体裁定。
+ 
+----
++* **F-P1-PRE-002 (本地云同步目录隔离)**：开发方已通过 `.gitignore` 排除本地虚拟环境与缓存，**状态：MITIGATED（已缓解，不阻断验收）**；
++
++* **F-P1-PRE-003 (Windows tzdata 跨平台时区)**：`requirements.lock` 已显式锁定 `tzdata`，CI 双系统运行无偏差，**状态：RESOLVED / CLOSED**；
++
++* **未验证项明确声明**：
++
++  * Gemini 未从远端下载全量 CI 产物重算各分片二进制哈希，亦未跨 OS 逐位比对 smoke hash，此项按规定诚实登记为 **NOT VERIFIED**；
++
++  * **对验收影响评估**：鉴于核心代码静态审查、CI 双系统运行成功日志、JUnit 102 项测试结果及独立数学复算均已咬合，该未验证项不影响对 Phase 1 代码实现符合契约的总体裁定。
+ 
+ ## 三、 综合复核裁定与当前阶段状态 (Final Verdict & Gate Status)
+ 
+ ### **FINAL VERDICT: PASS (实现复核确认通过)**
+ 
+-1. **Phase 1 代码审查与勘误结论**：**PASS (通过)**  
++1. **Phase 1 代码审查与勘误结论**：**PASS (通过)**
++
+    定向勘误已全部核实，报告中的笔误与路径偏差已纠正；实际实现的 14 项需求、PIT 过滤逻辑与时序契约完全正确，无需修改任何业务实现代码。
+-2. **是否具备人工验收条件**：**YES (具备人工验收条件)**  
++
++2. **是否具备人工验收条件**：**YES (具备人工验收条件)**
++
+    技术核对、证据链条与勘误均已闭环，建议用户可以正式执行 Phase 1 人工验收。
++
+ 3. **主干发布与阶段门禁状态**：
+-   - **PR #2 状态**：待合并 (Draft/Open)；
+-   - **Phase 1 发布状态**：**NOT RELEASED (未发布)**；
+-   - **Phase 2 启动状态**：**BLOCKED (严格阻断)**。
+ 
+----
++   * **PR #2 状态**：待合并 (Draft/Open)；
++
++   * **Phase 1 发布状态**：**NOT RELEASED (未发布)**；
++
++   * **Phase 2 启动状态**：**BLOCKED (严格阻断)**。
+ 
+ ## 四、 人工审批声明 (Human Approval)
+-**Gemini Audit Verdict is advisory. Phase 1 acceptance, PR #2 merge authorization, baseline tagging, and Phase 2 kickoff belong exclusively to the user.**
++
++**Gemini Audit Verdict is advisory. Phase 1 acceptance, PR #2 merge authorization, baseline tagging, and Phase 2 kickoff belong exclusively to the user.**

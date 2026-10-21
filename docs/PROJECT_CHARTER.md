@@ -8,14 +8,17 @@
 
 质量顺序：数据与时间 → 数学统计 → 撮合账本 → 因子解耦 → 测试审查复现 → 维护扩展 → 界面。历史结果不代表未来收益，平均 IC 为正或 UI 正常不构成有效性证明。
 
-当前授权仅 Phase 0。允许原文归档、编号需求、接口/时序设计、阶段计划、测试设计、审计草案及审查模板。当前禁止业务实现、环境安装、批量挖掘、真实交易、自动 Phase 1。准备设计不等同于 Gemini 预审通过。
+当前用户已授权Phase1，首版限合成数据及通用契约，并批准Python3.13.16；详见audits/phase-1/AUTHORIZATION.json。先完成阶段计划/接口/答案和Gemini预审，再实施范围内数据、环境/CI及测试。未授权后续阶段、真实源/账户接入或P1合并发布；计划准备不等同预审通过。
 
 角色按AGENTS：GPT Work开发，Gemini独立审查，用户拥有最终决定权。GitHub固定Commit、PR、可信记录为事实源。Phase0已验收，main/标签已核实，Gemini主干门禁PASS，基线7de1d0e已RELEASED；报告及批准见BASELINE。后续归档不移动稳定标签，不自动获下一阶段授权。
 
 阶段完成需范围内交付、适用测试、Gemini 固定 SHA 审查、阻断问题闭环、人工批准。合并、发布、下一阶段分别需明确授权。不可用口头 AI 共识替代证据，不可把同一模型另一会话当作独立正确性保证。
 
-用户补充Phase0 Main Baseline Release Gate：AUDIT PASSED、ACCEPTED、RELEASED分别记录。当前三者已齐备，Gemini已核实固定main基线/标签/批准/文件链路并关闭F-001；Phase1基线前置门禁解除，但尚无单独启动授权，不能自动实施。详见BASELINE。
+用户补充Phase0 Main Baseline Release Gate：AUDIT PASSED、ACCEPTED、RELEASED分别记录。当前三者齐备、F-001 CLOSED，用户现另行授权Phase1；本阶段仍遵守计划预审→实施→独立复核→人工验收→授权发布制度，不沿用P0报告代替P1审查。
 
 四级范围以 REQUIREMENTS 为准：MVP（最小可研究/模拟主链及质量治理）、Competition Ready（完整 V3.0 功能和已知比赛规则）、Advanced Research（公式/机器学习/自动挖掘）、Production Extensions（真实执行等另行授权）。分级不删除 V3.0 必须需求，也不改变 Phase 0–7 固定阶段。
 
 所有依赖未具备的测试仅Planned，未实现能力标Planned、Deferred或Unsupported。禁止模拟数据冒充真实市场接入或比赛认证。Phase0设计已验收发布；后续实施标准、阈值与未决事项按对应文档及阶段另行批准，基线门禁通过不代替未来能力验证。
+
+
+2026-10-21实现增量：Phase1计划预审PASS后完成合成数据/通用契约14项实现和102项测试，当前IMPLEMENTATION REVIEW REQUIRED；实际证据和旧失败以audits/phase-1/IMPLEMENTATION_REVIEW_PACKAGE.md及implementation/EVIDENCE_INDEX.json为准。本增量替代此前等待计划预审/尚无业务代码的当前状态描述；初始计划和授权快照保留。main、稳定标签及P0核心契约不变；未验收/未合并/未发布，不进入Phase2。

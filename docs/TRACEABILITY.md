@@ -1,6 +1,10 @@
 # 双向需求追踪矩阵（待审）
 
+最新审查指针：Gemini对8bf189d七项勘误全部AGREE，技术建议PASS；完整独立执行仍NOT VERIFIED，用户未验收。实际需求目录不变，当前证据等级与门禁见[audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md](audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md)；下表和旧轮状态保留各自来源。
+
 源要求→需求ID→设计/未来实现→分阶段测试；实际实现后须把规划路径替换/补充为真实文件、测试ID、Commit及证据。空缺不能当已实现。需求的完整输入输出/验收定义见 REQUIREMENTS 和 requirements.csv。
+
+当前实施跟踪：用户已授权Phase1，其14项需求与拟实现/测试映射见[audits/phase-1/PLAN.md](audits/phase-1/PLAN.md)。计划预审已PASS；实际14项实现/测试见[audits/phase-1/IMPLEMENTATION_TRACEABILITY.md](audits/phase-1/IMPLEMENTATION_TRACEABILITY.md)，当前74bdb92实现报告与补充勘误确认均PASS，等待人工验收；执行证据分级和非阻断限制见audits/phase-1/ERRATA_CONFIRMATION_RECONCILIATION.md。下表保留冻结设计目录；其Planned/设计待审是原编制时状态，不代表当前P0/P1进展；P0已发布基线版本保持不变。
 
 | ID | 来源 | 等级/阶段 | 前提需求 | 设计 | 未来代码 / 测试 | 状态 |
 |---|---|---|---|---|---|---|
@@ -234,3 +238,6 @@
 | .gitattributes | DATA-007，EXP-001（固定字节避免检出换行转换破坏hash） |
 
 P0文件的精确列表/hash以审查包 MANIFEST.json 为准。源文件、作者工具和自查不是独立审计；任何新增业务模块必须有已批准需求，当前不存在业务实现。
+
+
+2026-10-21状态增量：Gemini对380d9f8计划预审PASS，当前Phase1 IMPLEMENTING。原文/证据索引及报告勘误在audits/phase-1/gemini/PRE_REVIEW_EVIDENCE_INDEX.json和DEVELOPER_RESPONSE.md。此状态替代此前等待计划预审描述；验收、main合并、打标、Phase2仍未授权。
