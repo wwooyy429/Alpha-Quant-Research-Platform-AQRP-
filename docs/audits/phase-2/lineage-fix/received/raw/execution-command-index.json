@@ -1,0 +1,55 @@
+{
+  "target_sha": "c70727c39182f81ee142730da9a9833a51581cd1",
+  "sdk": {
+    "argv": [
+      "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+      "-u",
+      "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p2-c70727c\\tools\\ci.py"
+    ],
+    "AQRP_RUN_ROOT": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\runs",
+    "exit": 0,
+    "stdout": "sdk.stdout.log",
+    "stderr": "sdk.stderr.log"
+  },
+  "external_tests": [
+    {
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p2-c70727c\\runs\\aqrp-83298496-36f9-41b9-9562-81fabcc62910\\venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--showlocals",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\original-pytest-cache",
+        "--basetemp",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\original-tmp",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\original16-junit.xml",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p01-round2-20261021\\test_round2_regressions.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\test_work_p1_regressions.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c",
+      "exit": 0,
+      "stdout": "original16.stdout.log",
+      "stderr": "original16.stderr.log"
+    },
+    {
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p2-c70727c\\runs\\aqrp-83298496-36f9-41b9-9562-81fabcc62910\\venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--showlocals",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\new-probe-pytest-cache",
+        "--basetemp",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\new-probe-tmp",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\new-probe-junit.xml",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\test_work_p2_regressions.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c",
+      "exit": 1,
+      "stdout": "new-probe.stdout.log",
+      "stderr": "new-probe.stderr.log"
+    }
+  ]
+}

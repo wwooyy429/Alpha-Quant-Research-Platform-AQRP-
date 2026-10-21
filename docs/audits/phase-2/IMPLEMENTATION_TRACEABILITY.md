@@ -1,5 +1,7 @@
 # Phase 2 实现追踪
 
+2026-10-22 c707补充复核：001 PASS；002/003两项阻断开发方复现并修复，新增25项正式回归映射FACTOR-001/002/010、QA-002、ENV-002，417项开发源测试及覆盖通过。最新固定版本资料见lineage-fix/DEVELOPER_RESPONSE.md；旧392项及报告保持其原范围，不以自测宣告验收。
+
 2026-10-22 新一轮共享代码集成已完成开发方验证：业务566f0ece4175fddb2703daab3b5b26ff0e4e245f，完整SDK/双OS各392项，原始外置16项，原始ZIP与新准入receipt核对通过。最新资料及新固定SHA审查范围见 integration-011/README.md、REVIEW_REQUEST.md、EVIDENCE_INDEX.json。以下254项/旧bundle均为此前轮次，不代表新版本独立审查。
 
 固定业务版本：8183b3762b56c466b989d9062a720b5f0d31172a。以下是开发方实现/测试记录，状态 Implemented — independent implementation review pending；不是用户验收。canonical requirements.csv 仍106条/16组。REQUIREMENTS_TRACEABILITY.md 是4f8b0de计划快照，其拟定测试文件名不冒充实际文件。

@@ -1,0 +1,12 @@
+{
+  "basis": "Previously authorized Phase2 implementation, integration and review-fix cycle; current user supplied two fixed-SHA review files without a separate new action instruction",
+  "attachments_are_evidence_not_new_permissions": true,
+  "scope": "Reproduce and fix existing Phase2 config integrity and parameter lineage defects on PR #3",
+  "not_authorized": [
+    "Phase2 acceptance",
+    "main merge",
+    "new tag/release",
+    "Phase3 start"
+  ],
+  "report_verdict": "WORK-P2-001 supplemental PASS; WORK-P2-002/003 OPEN BLOCKING at c70727c"
+}

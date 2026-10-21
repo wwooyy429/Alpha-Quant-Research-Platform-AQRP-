@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/3",
+    "number": 3,
+    "state": "open",
+    "merged": false,
+    "mergeable": true,
+    "draft": true,
+    "body": "已按用户授权将已发布的 **v0.1.1 / main** 集成至 Phase2。三处数据/时间/PIT共享实现精确继承发布版，保留0.2.0候选版与P2因子代码；共享代码重新审查后更新工程准入bundle。新完整 SDK、原始外置回归及集成业务提交双OS CI/原始ZIP核验均通过，等待Gemini对本次固定SHA复核与用户验收。\n\nAQRP_PHASE: 2\nAQRP_CURRENT_STATUS: INTEGRATED / DEVELOPER VALIDATION PASS / FIXED-SHA RE-REVIEW REQUIRED\nAQRP_FIXED_REVIEW_SHA: c70727c39182f81ee142730da9a9833a51581cd1\nAQRP_IMPLEMENTATION_SHA: 566f0ece4175fddb2703daab3b5b26ff0e4e245f\nAQRP_INTEGRATED_MAIN_SHA: fb1ba4fd51202a303115e4449ee49db09ccc071c\nAQRP_PREVIOUS_PHASE2_HEAD: 947467b9d094905cab0af37ec5cc53f1d187e755\nAQRP_FACTOR_CODE_BUNDLE_SHA256: fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7\nAQRP_HUMAN_ACCEPTED: false\nAQRP_MERGE_AUTHORIZED: false\nAQRP_TAG_AUTHORIZED: false\nAQRP_PHASE3_AUTHORIZED: false\n\n### 变化与冲突处理\n\n用户原话：“请集成到phase 2，然后更新完发给我我去审核”。以普通双父merge566f0ec保留原P2与已发布main历史，未rebase/强推。包保持0.2.0候选；CI/runner保留P2分支触发、因子smoke、数据/factor-runs/真实wheel/.coverage上传；两侧历史文档都保留并登记最新状态。\n\n三处core/time.py、data/pit.py、data/quality.py与main逐字节相同；因子Python逻辑、API、锁、正确Golden及50项冻结资产未改。内置加载前的完整bundle由cfabe293…改为上面的fc1b501…，实际开发方审查依据在CODE_REVIEW_EVIDENCE.json；ENGINEERING_APPROVED / TEST_ONLY / financial_approval=NONE。旧FactorRef不可静默升级，新运行按新receipt注册；不是Gemini独立批准或OS沙箱能力。\n\n### 新执行与原始证据\n\n- 干净wheel SDK run **aqrp-30463983-572f-481d-b0c1-30d466fccee4**，CPython3.13.16，真实0.2.0 wheel，**392 passed**；未编辑的原始外置回归 **16 passed**。\n- 392 = 原254 + P1修复132 + 本轮6。6项集成测试覆盖host秒/offset亚微秒、未知calendar/universe探索快照、共享time/PIT代码漂移，均在compute前拒绝；映射DATA-002、FACTOR-012、SEC-001。\n- [业务集成 CI run39631435026/attempt1](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39631435026) Windows/Ubuntu各392通过。原始Windows ZIP12359171840 / 148498bytes / SHA256 a1320050f675f4522befd72ed774a57a5c8d8687bf7b46141c8e0ee7f62883fc；Ubuntu12359990804 / 148221bytes / 4ef8ba12586f6582d333f5c4bbb4b0a6d53458109b95bd287abe04787b1227e8。\n- 两ZIP官方digest/大小、CRC/路径、各46项选择文件hash、根清单、实际wheel与.coverage、两组8表/查询回放及3个因子产物均核实；本地/两OS因子与数据结果一致。CI临时merge89e16e997aa81cd47a44bd8136174d1aa44ffcac父为main+566f0ec，tree与566f0ec一致。\n- 最终c70727c39182f81ee142730da9a9833a51581cd1仅新增本轮证据/状态文档，src/tests/tools/CI/构建/锁与566f0ec相同。该固定头的新[CI run39632670690](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39632670690)现已completed/success，Windows job119334797379与Ubuntu job119334797738均success；此为最终头实际完整流水线，归档的深度ZIP仍明确对应前述566f0ec业务轮，不混用产物身份。\n- 归档校验器首次错误假定query_hash跨存储路径不变；实际契约包含SnapshotRef.root，已用原记录root独立重算原hash并回放结果hash。原脚本/失败日志及修正依据保留，未改产品或金融答案。\n\n### 审查入口与未闭环条件\n\n[可直接交给Gemini的复核指令](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/c70727c39182f81ee142730da9a9833a51581cd1/docs/audits/phase-2/integration-011/REVIEW_REQUEST.md) · [本轮资料入口](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/c70727c39182f81ee142730da9a9833a51581cd1/docs/audits/phase-2/integration-011/README.md) · [十二项勘误与待闭环条件](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/c70727c39182f81ee142730da9a9833a51581cd1/docs/audits/phase-2/integration-011/REPORT_FACTS_AND_OPEN_GATES.md) · [执行证据索引](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/c70727c39182f81ee142730da9a9833a51581cd1/docs/audits/phase-2/integration-011/EVIDENCE_INDEX.json) · [逐文件清单](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/c70727c39182f81ee142730da9a9833a51581cd1/docs/audits/phase-2/integration-011/FILE_MANIFEST.json)。\n\n本轮全部为开发方实际验证；不是Gemini独立SDK执行。旧报告十二项AGREE中仍有标题/BASELINE、FACTOR-011、源码路径、TEST_ONLY和信号可得性说明需对齐，旧综合AST/math/hash工具原件仍NOT VERIFIED。两项Low的既有关闭限工程TEST_ONLY范围，新bundle需复核；旧数学实质修订保留已验证结论。Gemini完整SDK独立执行仍NOT VERIFIED，须补证或由用户明确决定是否接受限制；本次集成授权不包含限制豁免或阶段验收。\n\nmain仍fb1ba4f，历史标签对象/目标均不变。PR继续Draft/Open；Phase2用户验收、main合并/标签发布及最终基线关卡未完成，Phase3未授权。",
+    "title": "feat: Phase 2 Factor Registry and reviewed builtin signals",
+    "base": "main",
+    "base_sha": "fb1ba4fd51202a303115e4449ee49db09ccc071c",
+    "head": "feature/phase-2-factor-registry",
+    "head_sha": "c70727c39182f81ee142730da9a9833a51581cd1",
+    "head_repo_id": 1426974778,
+    "head_repo_full_name": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "merge_commit_sha": "adcf22b877e731e2b8de98aa556cf90b6ff2725a",
+    "user": {
+      "login": "wwooyy429",
+      "name": "wwooyy429",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/80371541?v=4",
+      "id": 80371541
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-21T10:27:00Z",
+    "updated_at": "2026-10-21T16:15:19Z",
+    "closed_at": null,
+    "merged_at": null,
+    "commits": 9,
+    "changed_files": 254,
+    "additions": 28444,
+    "deletions": 10,
+    "display_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/3",
+    "display_title": "feat: Phase 2 Factor Registry and reviewed builtin signals"
+  },
+  "isError": false
+}

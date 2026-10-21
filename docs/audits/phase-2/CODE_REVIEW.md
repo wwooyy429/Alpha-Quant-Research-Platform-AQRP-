@@ -1,5 +1,7 @@
 # Phase2 开发方代码测试准入审查
 
+2026-10-22 WORK-P2-002/003修复重审：逐项阅读contracts.py与engine.py的配置唯一键/参数schema重算、规范化字节及实际文件hash修复，26模块AST解析通过；其余Python实现不改，无公式/依赖/Golden改变。新bundle `51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d`，替换旧fc1b501…；细节见lineage-fix/CODE_REVIEW_EVIDENCE.json。开发方工程TEST_ONLY准入，financial_approval=NONE，不冒称Gemini审查；新固定SHA仍待补充复核。
+
 2026-10-22 共享依赖集成重审：已逐项核对来自已发布v0.1.1/main fb1ba4f的core/time.py、data/pit.py、data/quality.py三处修复，所有其他Python实现与原Phase2一致；完整源码AST解析、内置静态guard、host/query/PIT调用边界及不变依赖锁通过开发方审查，未在准入前运行因子compute。新bundle：`fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7`。明确保留ENGINEERING_APPROVED / TEST_ONLY / financial_approval=NONE；这是开发方准入审查，仍须Gemini针对新固定SHA复核。详细逐文件新旧hash及旧bundle见 integration-011/CODE_REVIEW_EVIDENCE.json，历史原receipt可由947467b9追溯。旧factor ref/hash不自动升级，新运行须从新receipt构建spec并重新注册，旧审查结论不外推。
 
 以下为此前固定bundle的历史审查记录。

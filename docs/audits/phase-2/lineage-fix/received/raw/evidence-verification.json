@@ -1,0 +1,460 @@
+{
+  "audit": "GPT Work 补充审核",
+  "target_sha": "c70727c39182f81ee142730da9a9833a51581cd1",
+  "started_at": "2026-10-22T00:21:35.709642+08:00",
+  "checks": {
+    "runtime": {
+      "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p2-c70727c\\runs\\aqrp-83298496-36f9-41b9-9562-81fabcc62910\\venv\\Scripts\\python.exe",
+      "sdk_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p2-c70727c\\runs\\aqrp-83298496-36f9-41b9-9562-81fabcc62910\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+      "installed_modules": 26,
+      "active_locked_packages": [
+        {
+          "name": "colorama",
+          "version": "0.4.6"
+        },
+        {
+          "name": "coverage",
+          "version": "7.16.2"
+        },
+        {
+          "name": "duckdb",
+          "version": "1.5.6"
+        },
+        {
+          "name": "hypothesis",
+          "version": "6.170.5"
+        },
+        {
+          "name": "iniconfig",
+          "version": "2.3.1"
+        },
+        {
+          "name": "numpy",
+          "version": "2.5.4"
+        },
+        {
+          "name": "packaging",
+          "version": "26.3"
+        },
+        {
+          "name": "pandas",
+          "version": "3.0.6"
+        },
+        {
+          "name": "pip",
+          "version": "26.2.1"
+        },
+        {
+          "name": "pluggy",
+          "version": "1.7.0"
+        },
+        {
+          "name": "pyarrow",
+          "version": "26.0.0"
+        },
+        {
+          "name": "pygments",
+          "version": "2.21.0"
+        },
+        {
+          "name": "pytest",
+          "version": "9.1.1"
+        },
+        {
+          "name": "pytest-cov",
+          "version": "7.1.0"
+        },
+        {
+          "name": "python-dateutil",
+          "version": "2.9.0.post0"
+        },
+        {
+          "name": "ruff",
+          "version": "0.17.1"
+        },
+        {
+          "name": "setuptools",
+          "version": "84.2.0"
+        },
+        {
+          "name": "six",
+          "version": "1.17.0"
+        },
+        {
+          "name": "sortedcontainers",
+          "version": "2.4.0"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026.5"
+        },
+        {
+          "name": "uv",
+          "version": "0.13.4"
+        },
+        {
+          "name": "wheel",
+          "version": "0.48.0"
+        }
+      ],
+      "policy": {
+        "allowed_factor_ids": [
+          "momentum",
+          "reversal",
+          "volume"
+        ],
+        "bundle_sha256": "fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7",
+        "environment": "TEST_ONLY",
+        "financial_approval": "NONE",
+        "review_date": "2026-10-22",
+        "review_ref": "docs/audits/phase-2/CODE_REVIEW.md",
+        "reviewer": "Codex developer; not Gemini",
+        "state": "ENGINEERING_APPROVED",
+        "trust_boundary": "Fixed receipt packaged with reviewed source, not plugin/config input; not cryptographic attestation or OS sandbox"
+      }
+    },
+    "preservation": {
+      "latest_manifest_files": 82,
+      "frozen_files": 50,
+      "canonical_requirements": 106,
+      "phase2_requirements": 10,
+      "golden_answers_equal_preimplementation": true
+    },
+    "shared_data_equals_released_main": true,
+    "controlled_integration": {
+      "merge_parents": [
+        "947467b9d094905cab0af37ec5cc53f1d187e755",
+        "fb1ba4fd51202a303115e4449ee49db09ccc071c"
+      ],
+      "changed_source": [
+        "src/aqrp/core/time.py",
+        "src/aqrp/data/pit.py",
+        "src/aqrp/data/quality.py",
+        "src/aqrp/factors/reviewed_code.json"
+      ],
+      "shared_files_equal_previously_reviewed_business": true,
+      "factor_python_logic_unchanged": true,
+      "implementation_to_target_protected_diff": []
+    },
+    "original16": {
+      "junit": {
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "exit": 0,
+      "classification": "original16 now PASS; unchanged P2 probes retain WORK-P2-002/003 failures"
+    },
+    "new-probe": {
+      "junit": {
+        "tests": 4,
+        "failures": 2,
+        "errors": 0,
+        "skipped": 0
+      },
+      "exit": 1,
+      "classification": "original16 now PASS; unchanged P2 probes retain WORK-P2-002/003 failures"
+    },
+    "original16_scripts_unchanged": [
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p01-round2-20261021\\test_round2_regressions.py",
+        "sha256": "43a8d0b6c6878ba1608a6bd83cbf8668fa2e3a4f3767aa51e1cc2e94bc5e0b0a"
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\test_work_p1_regressions.py",
+        "sha256": "e077602b2d41c2320fd3bd10703279122a86ee288513a2bcc8197d535beb56b8"
+      }
+    ],
+    "original4_p2_probes_unchanged": "78bef6937965483269fa3256a21003547859a393a4f86e03c6c1ca8aa3d08c4e",
+    "math_scripts": {
+      "revised_raw_sha256": "a4d6ab561cf81040411a9980adc4d72dbd69b79661cebaaf395da2312baae92c",
+      "revised_exit": 0,
+      "scope": "arithmetic only; not SDK correctness proof; execution provenance GPT Work"
+    },
+    "ci_topology": {
+      "commit": "adcf22b877e731e2b8de98aa556cf90b6ff2725a",
+      "parents": [
+        "fb1ba4fd51202a303115e4449ee49db09ccc071c",
+        "c70727c39182f81ee142730da9a9833a51581cd1"
+      ],
+      "tree": "773acb1a5a236f12f73de817cec89f97c829caec",
+      "equals_target_tree": true
+    },
+    "new_local_sdk": {
+      "environment": {
+        "run_id": "aqrp-83298496-36f9-41b9-9562-81fabcc62910",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "os": "Windows-11-10.0.26300-SP0",
+        "ImageOS": null,
+        "ImageVersion": null,
+        "code_commit": "c70727c39182f81ee142730da9a9833a51581cd1",
+        "dirty": false,
+        "complete": true,
+        "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p2-c70727c",
+        "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\runs\\aqrp-83298496-36f9-41b9-9562-81fabcc62910",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": null,
+        "github_run_attempt": null,
+        "github_sha": null,
+        "wheel_sha256": "959a2eacf2a019a82a12211cfec26855f77689999e2b9eeb3558538ca21d57aa"
+      },
+      "junit": {
+        "tests": 392,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "selected_hashes": 46,
+      "root_hashes": 14,
+      "omitted_tools": [
+        "gitleaks.exe",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "wheel_sha256": "959a2eacf2a019a82a12211cfec26855f77689999e2b9eeb3558538ca21d57aa",
+      "coverage_gate": "PASS",
+      "snapshots": {
+        "dataset": {
+          "snapshot_id": "7b44a560-5605-45e2-83d5-f3d002bad5aa",
+          "manifest_hash": "3b359c1307d705df617b7c06ba44d87864704ee1d1ca61c52bb649a110ea0cb2",
+          "tables": 8,
+          "rows": {
+            "adjustment_factors": 0,
+            "bars_daily": 4,
+            "calendar": 4,
+            "corporate_actions": 0,
+            "security_master": 2,
+            "security_status": 2,
+            "symbol_alias": 2,
+            "universe_membership": 2
+          }
+        },
+        "factor-dataset": {
+          "snapshot_id": "89565599-763d-460e-b688-fb9cc3fa7a07",
+          "manifest_hash": "dc7f63701b2c3e9824d1161b03b255f99d92808663d43a66518d4bca9c3787c1",
+          "tables": 8,
+          "rows": {
+            "adjustment_factors": 0,
+            "bars_daily": 6,
+            "calendar": 6,
+            "corporate_actions": 0,
+            "security_master": 2,
+            "security_status": 2,
+            "symbol_alias": 2,
+            "universe_membership": 2
+          }
+        }
+      },
+      "factors_replayed": [
+        {
+          "factor": "volume",
+          "value": 0.6,
+          "logical_hash": "59f5be81415da416c53577019653f574f3fff6e07ac1e200f5d153bb27c925ea",
+          "exact_signal_rows_replayed": true
+        },
+        {
+          "factor": "reversal",
+          "value": -0.21,
+          "logical_hash": "0e93a7f6b6067e7d4651f5bf64f9a3b86745fc647c14f06063a209cd135f486f",
+          "exact_signal_rows_replayed": true
+        },
+        {
+          "factor": "momentum",
+          "value": 0.21,
+          "logical_hash": "452f4825c51914c97b1f4e7e8608c00eef607cab0d302142f5ecf45b70e63460",
+          "exact_signal_rows_replayed": true
+        }
+      ],
+      "scan_findings": 0
+    },
+    "raw_current_ci_zip": [
+      {
+        "environment": {
+          "run_id": "aqrp-2a931d88-c361-4fa2-a78f-7dd0318d4311",
+          "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+          "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+          "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "ImageOS": "ubuntu24",
+          "ImageVersion": "20261018.339.1",
+          "code_commit": "adcf22b877e731e2b8de98aa556cf90b6ff2725a",
+          "dirty": false,
+          "complete": true,
+          "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-2a931d88-c361-4fa2-a78f-7dd0318d4311",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39632670690",
+          "github_run_attempt": "1",
+          "github_sha": "adcf22b877e731e2b8de98aa556cf90b6ff2725a",
+          "wheel_sha256": "025ffd7b3ec6b8e0721fc03a41a82259094ec93f424f30efd69c803ccd681f8d"
+        },
+        "junit": {
+          "tests": 392,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "selected_hashes": 46,
+        "root_hashes": 14,
+        "omitted_tools": [
+          "gitleaks",
+          "pip-26.2.1-py3-none-any.whl"
+        ],
+        "wheel_sha256": "025ffd7b3ec6b8e0721fc03a41a82259094ec93f424f30efd69c803ccd681f8d",
+        "coverage_gate": "PASS",
+        "snapshots": {
+          "dataset": {
+            "snapshot_id": "8fd4e5de-cf1d-4b78-90fe-a6cfa764fba7",
+            "manifest_hash": "04d279f19c4dffbea8920fce1bb229971d0142d1dd140461a8f6870859f57818",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 4,
+              "calendar": 4,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          },
+          "factor-dataset": {
+            "snapshot_id": "18ed6b04-838c-4e5e-b394-bdd425b9f0f7",
+            "manifest_hash": "cf87190b39124f7de0810d9b48f80c4f4cd21c39ea4c04e29ee337e977d984f0",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 6,
+              "calendar": 6,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          }
+        },
+        "factors_replayed": [
+          {
+            "factor": "momentum",
+            "value": 0.21,
+            "logical_hash": "452f4825c51914c97b1f4e7e8608c00eef607cab0d302142f5ecf45b70e63460",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "reversal",
+            "value": -0.21,
+            "logical_hash": "0e93a7f6b6067e7d4651f5bf64f9a3b86745fc647c14f06063a209cd135f486f",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "volume",
+            "value": 0.6,
+            "logical_hash": "59f5be81415da416c53577019653f574f3fff6e07ac1e200f5d153bb27c925ea",
+            "exact_signal_rows_replayed": true
+          }
+        ],
+        "scan_findings": 0,
+        "artifact_id": 12360341395,
+        "zip_sha256": "04e9e704e23573afa80c0513d65165f1198bb44fe27eb7e35fcb725e740dff88",
+        "zip_bytes": 148105,
+        "name": "phase2-ubuntu-24.04-1"
+      },
+      {
+        "environment": {
+          "run_id": "aqrp-838516fd-f4bb-4e86-a287-7278800f00d1",
+          "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+          "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+          "os": "Windows-2025Server-10.0.26100-SP0",
+          "ImageOS": "win25-vs2026",
+          "ImageVersion": "20261007.264.1",
+          "code_commit": "adcf22b877e731e2b8de98aa556cf90b6ff2725a",
+          "dirty": false,
+          "complete": true,
+          "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-838516fd-f4bb-4e86-a287-7278800f00d1",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39632670690",
+          "github_run_attempt": "1",
+          "github_sha": "adcf22b877e731e2b8de98aa556cf90b6ff2725a",
+          "wheel_sha256": "626d9f7767667d90c177556912eadc2c4a7db243ca2ea80113c2593e1e217371"
+        },
+        "junit": {
+          "tests": 392,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "selected_hashes": 46,
+        "root_hashes": 14,
+        "omitted_tools": [
+          "gitleaks.exe",
+          "pip-26.2.1-py3-none-any.whl"
+        ],
+        "wheel_sha256": "626d9f7767667d90c177556912eadc2c4a7db243ca2ea80113c2593e1e217371",
+        "coverage_gate": "PASS",
+        "snapshots": {
+          "dataset": {
+            "snapshot_id": "3431aa4f-9922-4d93-8190-ab172bd21de4",
+            "manifest_hash": "37278748ecb7c826ebf1ad7be13db9e9b7c259d666514de1ae11219a1e52e818",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 4,
+              "calendar": 4,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          },
+          "factor-dataset": {
+            "snapshot_id": "53bfd07a-c8a8-437c-ac73-10aa9ef4cf79",
+            "manifest_hash": "b8bd41db113c866ae334a1a0e968f29fc71d3261a18f6c2253ad947218ec2336",
+            "tables": 8,
+            "rows": {
+              "adjustment_factors": 0,
+              "bars_daily": 6,
+              "calendar": 6,
+              "corporate_actions": 0,
+              "security_master": 2,
+              "security_status": 2,
+              "symbol_alias": 2,
+              "universe_membership": 2
+            }
+          }
+        },
+        "factors_replayed": [
+          {
+            "factor": "momentum",
+            "value": 0.21,
+            "logical_hash": "452f4825c51914c97b1f4e7e8608c00eef607cab0d302142f5ecf45b70e63460",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "reversal",
+            "value": -0.21,
+            "logical_hash": "0e93a7f6b6067e7d4651f5bf64f9a3b86745fc647c14f06063a209cd135f486f",
+            "exact_signal_rows_replayed": true
+          },
+          {
+            "factor": "volume",
+            "value": 0.6,
+            "logical_hash": "59f5be81415da416c53577019653f574f3fff6e07ac1e200f5d153bb27c925ea",
+            "exact_signal_rows_replayed": true
+          }
+        ],
+        "scan_findings": 0,
+        "artifact_id": 12359462724,
+        "zip_sha256": "0ef646f2732954edcc633af5bb11b9d5ba4d60457e31e3c2d126d6fc8db03cad",
+        "zip_bytes": 148462,
+        "name": "phase2-windows-latest-1"
+      }
+    ],
+    "cross_os_and_local": "PASS: both eight-table datasets, data query/config, and three factors; exclude snapshot_id in table rows and snapshot_id/manifest_hash in data config; exact original signal rows replayed with original UUIDs; no comparison of path-sensitive query/config hashes"
+  },
+  "status": "EVIDENCE VERIFIED; PROJECT REVIEW BLOCKING",
+  "finished_at": "2026-10-22T00:21:42.885658+08:00"
+}

@@ -1,0 +1,46 @@
+.FF.                                                                     [100%]
+================================== FAILURES ===================================
+____ test_work_p2_reformatted_valid_config_cannot_create_bad_artifact_hash ____
+
+case = (<aqrp.factors.registry.FactorRegistry object at 0x000002922E7E5950>, FactorSpec(factor_id='momentum', factor_name='Mo...lated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}'))
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p2-lineage-fix-20261022/probe-before-tmp/test_work_p2_reformatted_valid0')
+
+    def test_work_p2_reformatted_valid_config_cannot_create_bad_artifact_hash(case,tmp_path):
+        registry,_,_,_,batch=case
+        reformatted=json.dumps(json.loads(batch.config_snapshot),indent=2).encode()
+        assert json.loads(reformatted)==json.loads(batch.config_snapshot)
+        try:
+            roundtrip=SignalBatch(batch.rows,reformatted)
+            root=write_run(roundtrip,tmp_path/'roundtrip-runs',registry)
+        except ContractError:
+            return  # Rejecting noncanonical config is also a valid contract response.
+        manifest=json.loads((root/'manifest.json').read_bytes())
+        entry=next(item for item in manifest['artifacts'] if item['path']=='config.json')
+        actual=hashlib.sha256((root/'config.json').read_bytes()).hexdigest()
+>       assert entry['sha256']==actual, {'declared':entry['sha256'],'actual':actual,'status':manifest['status']}
+E       AssertionError: {'declared': 'ae895a3c5cec75cf6ac09febb4244e4ccddd3d01e65b5a6c5ddbf530c0df228e', 'actual': '44978cb524ec477b299cd1176d5065c2c66fc0b526c5440291ce1d7b800d6cb0', 'status': 'SUCCEEDED'}
+E       assert 'ae895a3c5cec...bf530c0df228e' == '44978cb524ec...e1d7b800d6cb0'
+E         
+E         - 44978cb524ec477b299cd1176d5065c2c66fc0b526c5440291ce1d7b800d6cb0
+E         + ae895a3c5cec75cf6ac09febb4244e4ccddd3d01e65b5a6c5ddbf530c0df228e
+
+..\..\reviews\work-p2-c70727c\test_work_p2_regressions.py:66: AssertionError
+______________ test_work_p2_parameters_must_match_their_own_hash ______________
+
+case = (<aqrp.factors.registry.FactorRegistry object at 0x000002922E7E6210>, FactorSpec(factor_id='momentum', factor_name='Mo...lated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}'))
+
+    def test_work_p2_parameters_must_match_their_own_hash(case):
+        _,_,_,_,batch=case
+        config=json.loads(batch.config_snapshot)
+        config['params']=[['lookback',1]]
+        assert dict(json.loads(batch.config_snapshot)['params'])=={'lookback':2}
+        assert config['params_hash']==batch.rows[0].params_hash
+>       with pytest.raises(ContractError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+..\..\reviews\work-p2-c70727c\test_work_p2_regressions.py:75: Failed
+=========================== short test summary info ===========================
+FAILED ..\..\reviews\work-p2-c70727c\test_work_p2_regressions.py::test_work_p2_reformatted_valid_config_cannot_create_bad_artifact_hash
+FAILED ..\..\reviews\work-p2-c70727c\test_work_p2_regressions.py::test_work_p2_parameters_must_match_their_own_hash
+2 failed, 2 passed in 3.85s

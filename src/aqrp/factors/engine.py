@@ -1,12 +1,13 @@
 """Trusted host queries P1 per decision; only admitted builtins receive DataView."""
 
+import hashlib
 import json
 import platform
 import uuid
 from dataclasses import asdict
 from pathlib import Path
 
-from aqrp.core.canonical import canonical, digest
+from aqrp.core.canonical import canonical
 from aqrp.core.contracts import QuerySpec
 from aqrp.core.errors import ContractError
 from aqrp.core.time import utc
@@ -133,11 +134,11 @@ def write_run(batch, output_root, registry):
         "content_hash": batch.content_hash,
         "logical_hash": batch.logical_hash,
         "artifacts": [
-            {"path": name, "sha256": digest(json.loads(data))}
+            {"path": name, "sha256": hashlib.sha256((root / name).read_bytes()).hexdigest()}
             for name, data in sorted(payloads.items())
         ],
     }
-    # canonical JSON bytes have exactly the digest represented above.
+    # Artifact hashes bind actual persisted bytes; logical projections are separate.
     (root / "manifest.json").write_bytes(canonical(manifest))
     return root
 

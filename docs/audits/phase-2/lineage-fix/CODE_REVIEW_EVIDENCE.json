@@ -1,0 +1,27 @@
+{
+  "reviewer": "Codex developer; not Gemini",
+  "previous_bundle": "fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7",
+  "current_bundle": "51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d",
+  "modules_parsed": 26,
+  "changed_source": [
+    {
+      "path": "src/aqrp/factors/contracts.py",
+      "before_sha256": "82a88e06dc94a10f72dadcc1e32f501bab3aba22632e5af2db26d29da0dbd767",
+      "after_sha256": "34d328cab41877723d7fb9651dd473c992cf595f030c7ff64c45aa341fb2c793"
+    },
+    {
+      "path": "src/aqrp/factors/engine.py",
+      "before_sha256": "55b8a7d7b0d4b5306536a9669695785217c53518416935f42c15135093700412",
+      "after_sha256": "08d50d4f738405d9a0fdbe499d67f1c41a9873567e3a9d16331d523ccd238c66"
+    }
+  ],
+  "scope": "Existing Phase2 defects, no new functionality or mathematical formulas",
+  "review_checks": [
+    "SignalBatch parses unique JSON object keys; validates FactorSpec parameter schema before freezing params",
+    "Parameter list must equal frozen schema projection (duplicates/missing/unknown/type/range rejected), checksum equals config and every Signal",
+    "Accepted equivalent JSON normalized once to canonical immutable bytes, so batch content hash and persisted config agree",
+    "write_run derives each artifact SHA256 from actual on-disk bytes, not a JSON projection",
+    "Original factor formulas/admission guard/data sources/lock/Golden unchanged"
+  ],
+  "approval": "ENGINEERING_APPROVED / TEST_ONLY / financial_approval NONE; fixed new SHA review still required"
+}

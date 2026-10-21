@@ -248,13 +248,32 @@ class SignalBatch:
             tuple(sorted(unique.values(), key=lambda r: (r.signal_time, r.security_id))),
         )
         try:
-            config = json.loads(self.config_snapshot)
+            config = json.loads(self.config_snapshot, object_pairs_hook=_unique_config_object)
             run_id = uuid_value(config["run_id"])
             computation_id = uuid_value(config["computation_id"])
+            spec_config = config["spec"]
+            spec = FactorSpec(
+                **(
+                    spec_config
+                    | {
+                        "parameters": tuple(tuple(p) for p in spec_config["parameters"]),
+                        "required_fields": tuple(spec_config["required_fields"]),
+                    }
+                )
+            )
+            params = config["params"]
+            if not isinstance(params, list) or any(
+                not isinstance(pair, list) or len(pair) != 2 or not isinstance(pair[0], str)
+                for pair in params
+            ):
+                raise ContractError("INVALID_FACTOR_PARAMETERS", "params")
+            frozen, checksum = freeze_parameters(spec, dict(params))
+            if params != [list(pair) for pair in frozen] or config["params_hash"] != checksum:
+                raise ContractError("PARAMETER_LINEAGE_MISMATCH", "params")
             expected = {
                 "run_id": run_id,
                 "computation_id": computation_id,
-                "params_hash": config["params_hash"],
+                "params_hash": checksum,
                 "snapshot_id": config["snapshot_id"],
                 "factor_id": config["spec"]["factor_id"],
                 "factor_version": config["spec"]["factor_version"],
@@ -268,7 +287,10 @@ class SignalBatch:
                 for row in self.rows
             ):
                 raise ContractError("SIGNAL_RUN_LINEAGE_MISMATCH", "SignalBatch")
-        except (KeyError, TypeError, json.JSONDecodeError) as exc:
+            object.__setattr__(self, "config_snapshot", canonical(config))
+        except ContractError:
+            raise
+        except (KeyError, TypeError, ValueError) as exc:
             raise ContractError("INVALID_FACTOR_CONFIG_SNAPSHOT", "SignalBatch") from exc
 
     @property
@@ -291,3 +313,10 @@ class Factor(Protocol):
 
 def config_bytes(context):
     return canonical(asdict(context))
+
+
+def _unique_config_object(pairs):
+    result = dict(pairs)
+    if len(result) != len(pairs):
+        raise ContractError("DUPLICATE_FACTOR_CONFIG_KEY", "config_snapshot")
+    return result

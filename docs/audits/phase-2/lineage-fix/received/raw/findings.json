@@ -1,0 +1,52 @@
+{
+  "audit": "GPT Work 补充审核",
+  "target_sha": "c70727c39182f81ee142730da9a9833a51581cd1",
+  "findings": [
+    {
+      "id": "WORK-P2-001",
+      "original_severity": "High",
+      "target_sha": "c70727c39182f81ee142730da9a9833a51581cd1",
+      "status": "SUPPLEMENTAL RECHECK PASS",
+      "blocking": false,
+      "evidence": "Shared source equals released main and reviewed business8902ba0; original16 all pass; original UNKNOWN-calendar-to-factor probe now passes; actual bundle and merge topology verified.",
+      "formal_repository_status_modified": false
+    },
+    {
+      "id": "WORK-P2-002",
+      "severity": "Medium",
+      "target_sha": "c70727c39182f81ee142730da9a9833a51581cd1",
+      "status": "OPEN",
+      "blocking": true,
+      "file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p2-c70727c\\src\\aqrp\\factors\\engine.py",
+      "line": 136,
+      "requirements": [
+        "FACTOR-002",
+        "FACTOR-010",
+        "QA-002",
+        "ENV-002"
+      ],
+      "expected": "Reject or consistently normalize noncanonical config; manifest SHA256 matches exact persisted bytes.",
+      "actual": "Same semantic JSON with indentation is accepted; write_run persists original bytes, hashes canonical projection, and records SUCCEEDED.",
+      "declared_config_sha256": "bb3022f0eeda6f043552b89f7b3e856adfcea00510aff5013023c6e269f415af",
+      "actual_config_sha256": "16492d0b949c19d4a0b4e5c62076a58a1c5a000082f62d916415f538fcb9640d",
+      "repro_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p2-c70727c\\new-probe-tmp\\test_work_p2_reformatted_valid0\\roundtrip-runs\\c26f3d0f-8a08-4faa-a0cf-bbd97a629b36"
+    },
+    {
+      "id": "WORK-P2-003",
+      "severity": "Medium",
+      "target_sha": "c70727c39182f81ee142730da9a9833a51581cd1",
+      "status": "OPEN",
+      "blocking": true,
+      "file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p2-c70727c\\src\\aqrp\\factors\\contracts.py",
+      "line": 257,
+      "requirements": [
+        "FACTOR-001",
+        "FACTOR-002",
+        "FACTOR-010",
+        "QA-002"
+      ],
+      "expected": "Recompute parameter hash from validated config.params and verify it against config and Signal rows.",
+      "actual": "Changing canonical config lookback2 to1 while retaining hash/rows is accepted with result0.21; real lookback1 gives0.1 and a different hash."
+    }
+  ]
+}
