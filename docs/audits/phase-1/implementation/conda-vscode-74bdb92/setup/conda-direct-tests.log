@@ -1,0 +1,24 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.16, pytest-9.1.1, pluggy-1.7.0
+cachedir: C:\Users\11638\AppData\Local\AQRP\runs\conda-vscode-1792572943050\conda-direct\pytest-cache
+rootdir: C:\Users\11638\AppData\Local\AQRP\runs\conda-vscode-1792572943050\formal-sdk\aqrp-40720065-cee8-4340-9ca5-20b76583e684\source
+configfile: pyproject.toml
+testpaths: tests
+plugins: hypothesis-6.170.5, cov-7.1.0
+collected 102 items
+
+tests\data\test_pit_query.py .......                                     [  6%]
+tests\data\test_quality.py ..............................                [ 36%]
+tests\data\test_revision_integrity.py ...                                [ 39%]
+tests\data\test_snapshot_actions.py ...........................          [ 65%]
+tests\data\test_time_units.py .......................                    [ 88%]
+tests\environment\test_installation.py ..                                [ 90%]
+tests\integration\test_phase1_pipeline.py ..........                     [100%]
+
+- generated xml file: C:\Users\11638\AppData\Local\AQRP\runs\conda-vscode-1792572943050\conda-direct\junit.xml -
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Coverage XML written to file C:\Users\11638\AppData\Local\AQRP\runs\conda-vscode-1792572943050\conda-direct\coverage.xml
+Coverage JSON written to file C:\Users\11638\AppData\Local\AQRP\runs\conda-vscode-1792572943050\conda-direct\coverage.json
+============================ 102 passed in 16.27s =============================

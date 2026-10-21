@@ -1,5 +1,8 @@
 # Alpha Quant Research Platform（AQRP）
 
+2026-10-21 最新本地验证：已按用户授权配置 Conda aqrp-p1（CPython3.13.16）和独立 VS Code 工作区；完整 SDK、Conda 直接运行的同一组102测试、两份 Actions 原始ZIP/八表/SDK回放均通过。实际命令配置与原始日志见 docs/audits/phase-1/implementation/conda-vscode-74bdb92/README.md。执行者为 Codex 开发方，不能补记为 Gemini 独立执行；远端3项根文件及项目wheel原字节缺口、独立执行/人工验收/发布门禁保留。未合并、未打标签、不进入Phase2。
+
+
 最新补充包：[脚本/日志接收核对](docs/audits/phase-1/VERIFICATION_PACKAGE_RECONCILIATION.md)。文件hash子项材料已补齐，完整SDK/原始产物独立执行仍未闭环；七项认可保留，未验收/发布、不进入Phase2。下列“未附脚本”是此前接收状态。
 
 最新增量：Gemini已认可七项SDK/hash勘误、技术审查建议PASS；[本轮核对](docs/audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md)保留独立SDK/产物执行证据缺口及新报告细节勘误。用户未接受限制、未验收/发布；PR保持Draft，不合并、不打标签、不进入Phase2。以下各轮文字作为历史，当前以本轮核对为准。

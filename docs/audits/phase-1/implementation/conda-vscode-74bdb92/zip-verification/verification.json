@@ -1,0 +1,419 @@
+{
+  "performed_by": "Codex developer; not independent Gemini execution",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "pyarrow": "26.0.0",
+  "execution_target": "74bdb9216c585d27de91123605aff0266ca028cc",
+  "ci_checkout_commit": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+  "ci_checkout_parents": [
+    "502c6931dcfce50bee2f71a80524475fae6396bf",
+    "74bdb9216c585d27de91123605aff0266ca028cc"
+  ],
+  "ci_checkout_tree": "66dc03a5cf38e8db9968873f2a0f1349b45eda09",
+  "ci_checkout_tree_matches_target": true,
+  "artifacts": [
+    {
+      "id": 12288989083,
+      "zip_sha256": "73385602dad830f3157dba8f5629616127777511830b02675fd06df517f93e7c",
+      "zip_bytes": 35678,
+      "zip_hash_status": "PASS",
+      "environment": {
+        "run_id": "aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261018.339.1",
+        "code_commit": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39476825340",
+        "github_run_attempt": "1",
+        "github_sha": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "wheel_sha256": "c76a24d3f632339d8791ccdc479585833150f3aff7034631362d54bbe457a6fe"
+      },
+      "file_checks": [
+        {
+          "path": ".coverage",
+          "expected_sha256": "1c92e2e61232b1166ccd1e98b69b71442bb837562a95cdaca26f8895a07fff77",
+          "actual_sha256": null,
+          "status": "NOT UPLOADED"
+        },
+        {
+          "path": "commands.log",
+          "expected_sha256": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033",
+          "actual_sha256": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033",
+          "status": "PASS"
+        },
+        {
+          "path": "coverage.json",
+          "expected_sha256": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09",
+          "actual_sha256": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09",
+          "status": "PASS"
+        },
+        {
+          "path": "coverage.xml",
+          "expected_sha256": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd",
+          "actual_sha256": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd",
+          "status": "PASS"
+        },
+        {
+          "path": "environment.json",
+          "expected_sha256": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10",
+          "actual_sha256": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10",
+          "status": "PASS"
+        },
+        {
+          "path": "gitleaks",
+          "expected_sha256": "88f91962aa2f93ac6ab281d553b9e125f5197bbbce38f9f2437f7299c32e5509",
+          "actual_sha256": null,
+          "status": "NOT UPLOADED"
+        },
+        {
+          "path": "junit.xml",
+          "expected_sha256": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1",
+          "actual_sha256": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1",
+          "status": "PASS"
+        },
+        {
+          "path": "pip-26.2.1-py3-none-any.whl",
+          "expected_sha256": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+          "actual_sha256": null,
+          "status": "NOT UPLOADED"
+        },
+        {
+          "path": "scan-findings.json",
+          "expected_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "actual_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "status": "PASS"
+        },
+        {
+          "path": "secret-scan.log",
+          "expected_sha256": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411",
+          "actual_sha256": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-config.json",
+          "expected_sha256": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a",
+          "actual_sha256": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-result.json",
+          "expected_sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "actual_sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-run.json",
+          "expected_sha256": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184",
+          "actual_sha256": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-snapshot.json",
+          "expected_sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
+          "actual_sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
+          "status": "PASS"
+        }
+      ],
+      "unlisted_members": [
+        "artifacts.json",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/adjustment_factors.parquet",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/bars_daily.parquet",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/calendar.parquet",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/corporate_actions.parquet",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/manifest.json",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/security_master.parquet",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/security_status.parquet",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/symbol_alias.parquet",
+        "dataset/08e27061-7a93-459b-bedd-021363f27c77/universe_membership.parquet"
+      ],
+      "tables": [
+        {
+          "table": "adjustment_factors",
+          "rows": 0,
+          "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\neffective_at: timestamp[us, tz=UTC]\nrevision_id: int64\nratio: decimal128(28, 8)\naction_id: string\nmethod: string\nview_cutoff: timestamp[us, tz=UTC]",
+          "status": "PASS"
+        },
+        {
+          "table": "bars_daily",
+          "rows": 4,
+          "sha256": "74d9668d4abfdc8b43e6b0a2d794523dd339ac0b8d45b48cea296fd8a74197ae",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\nmarket_id: string\ncalendar_id: string\nsession_date: date32[day]\nrevision_id: int64\ncurrency: string\nopen: decimal128(28, 8)\nhigh: decimal128(28, 8)\nlow: decimal128(28, 8)\nclose: decimal128(28, 8)\nvolume: decimal128(28, 8)\namount: decimal128(28, 8)\nprice_basis: string\nsource_scale: int64\nsource_volume_unit: string\nsource_amount_unit: string\nsource_volume: string\nsource_amount: string\nlot_size: decimal128(28, 8)",
+          "status": "PASS"
+        },
+        {
+          "table": "calendar",
+          "rows": 4,
+          "sha256": "6e23a5562cec7ab515f0345b65429e542fbf50c9b8176545d3f3530bc7842775",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\ncalendar_id: string\nmarket_id: string\nsession_date: date32[day]\nopen_at: timestamp[us, tz=UTC]\nclose_at: timestamp[us, tz=UTC]\ncalendar_version: string",
+          "status": "PASS"
+        },
+        {
+          "table": "corporate_actions",
+          "rows": 0,
+          "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\naction_id: string\nrevision_id: int64\nsecurity_id: string\ntype: string\nannouncement_at: timestamp[us, tz=UTC]\neffective_at: timestamp[us, tz=UTC]\nex_date: date32[day]\nrecord_date: date32[day]\npay_date: date32[day]\nsplit_ratio: decimal128(28, 8)\ncash_per_share: decimal128(28, 8)\ncurrency: string\ndividend_basis: string",
+          "status": "PASS"
+        },
+        {
+          "table": "security_master",
+          "rows": 2,
+          "sha256": "5c8d8882b3bdf7b48724ea8dd8e40c0aa6e8d78b938ff9b7a289cbe28267eb5d",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\nrevision_id: int64\nmarket_id: string\nvenue_mic: string\nasset_type: string\ncurrency: string\nlisting_at: timestamp[us, tz=UTC]\ndelisting_at: timestamp[us, tz=UTC]\nknown_at: timestamp[us, tz=UTC]",
+          "status": "PASS"
+        },
+        {
+          "table": "security_status",
+          "rows": 2,
+          "sha256": "8e36e5f675235fa71bd8d6abe9d51ce32c049c300d34568ee8656efdd2fae640",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64\nstatus: string",
+          "status": "PASS"
+        },
+        {
+          "table": "symbol_alias",
+          "rows": 2,
+          "sha256": "05fc4599999a7172c14487cd537c1d64aef18a1ce4878e9b5cb81ab88723183c",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nmarket_id: string\nsymbol: string\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64",
+          "status": "PASS"
+        },
+        {
+          "table": "universe_membership",
+          "rows": 2,
+          "sha256": "d309c3499bcb1680456b5ecc9d04a160d123f0316c1f15ec5a3e2017dbb5fffd",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nuniverse_id: string\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64",
+          "status": "PASS"
+        }
+      ],
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "coverage_gate": "PASS",
+      "snapshot_sdk_verify": "PASS",
+      "downloaded_snapshot_query_replay": "PASS",
+      "result_hash": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "query_hash_original": "96001067e5b73b2e4d22d070d694450c2b29740805e1b9c0d9e1c0dc713f31b6",
+      "query_hash_relocated": "3779fc4dac5f84f74fd0fef163ea3e41afce82c1f952733cb858e5b656dcf211",
+      "root_hash_coverage": "11/14 referenced root files verified; 3 not uploaded",
+      "project_wheel_binary_rehash": "NOT VERIFIED; wheel bytes not uploaded"
+    },
+    {
+      "id": 12288679676,
+      "zip_sha256": "8f092b7214202292995276a4dab3187063cd481d8a6556ac342e450738b64ea5",
+      "zip_bytes": 35648,
+      "zip_hash_status": "PASS",
+      "environment": {
+        "run_id": "aqrp-16db7366-3882-46eb-b658-2b7306e17c07",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261018.275.1",
+        "code_commit": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-16db7366-3882-46eb-b658-2b7306e17c07",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39476825340",
+        "github_run_attempt": "1",
+        "github_sha": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "wheel_sha256": "a7fb359af416744c78beb24e8cb339428e42d336020022129371bbf0d450e810"
+      },
+      "file_checks": [
+        {
+          "path": ".coverage",
+          "expected_sha256": "014c95fd4b8363e394cf5b7d4db7e4961b5264c35bcf7f80abf246c54abfa042",
+          "actual_sha256": null,
+          "status": "NOT UPLOADED"
+        },
+        {
+          "path": "commands.log",
+          "expected_sha256": "b9b49fe9b3c626d7198f1b786fae25c9ce183229a1fe74c4c2dbc0e357b8e83c",
+          "actual_sha256": "b9b49fe9b3c626d7198f1b786fae25c9ce183229a1fe74c4c2dbc0e357b8e83c",
+          "status": "PASS"
+        },
+        {
+          "path": "coverage.json",
+          "expected_sha256": "dbbc0ca049deb766a9d130d6df10ad12c29a6af493ee76f6ba1812899bacf21c",
+          "actual_sha256": "dbbc0ca049deb766a9d130d6df10ad12c29a6af493ee76f6ba1812899bacf21c",
+          "status": "PASS"
+        },
+        {
+          "path": "coverage.xml",
+          "expected_sha256": "8a5894de27bf1d9f75007a6230184640fb2b7bbcb24f6a1b9dff5d1378292033",
+          "actual_sha256": "8a5894de27bf1d9f75007a6230184640fb2b7bbcb24f6a1b9dff5d1378292033",
+          "status": "PASS"
+        },
+        {
+          "path": "environment.json",
+          "expected_sha256": "f544d536e8355e97ddc87e2f08554d3c3cb7f34a92f8eb899976ddaf6de2518a",
+          "actual_sha256": "f544d536e8355e97ddc87e2f08554d3c3cb7f34a92f8eb899976ddaf6de2518a",
+          "status": "PASS"
+        },
+        {
+          "path": "gitleaks.exe",
+          "expected_sha256": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c",
+          "actual_sha256": null,
+          "status": "NOT UPLOADED"
+        },
+        {
+          "path": "junit.xml",
+          "expected_sha256": "eb9cd9c616003a9a4f88eb76568b77ffa2e362a6ccb04788918738112fa74c87",
+          "actual_sha256": "eb9cd9c616003a9a4f88eb76568b77ffa2e362a6ccb04788918738112fa74c87",
+          "status": "PASS"
+        },
+        {
+          "path": "pip-26.2.1-py3-none-any.whl",
+          "expected_sha256": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+          "actual_sha256": null,
+          "status": "NOT UPLOADED"
+        },
+        {
+          "path": "scan-findings.json",
+          "expected_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "actual_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "status": "PASS"
+        },
+        {
+          "path": "secret-scan.log",
+          "expected_sha256": "6cc1ec6d05f4dde7740f4c78240302d66d778ee5738ebf9e531e433ee74988dd",
+          "actual_sha256": "6cc1ec6d05f4dde7740f4c78240302d66d778ee5738ebf9e531e433ee74988dd",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-config.json",
+          "expected_sha256": "6639840c235ae48a9bc40573e810a8bcc41213de1f8270f580f73397de12c885",
+          "actual_sha256": "6639840c235ae48a9bc40573e810a8bcc41213de1f8270f580f73397de12c885",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-result.json",
+          "expected_sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "actual_sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-run.json",
+          "expected_sha256": "2515256becb6a2596370f8602d7c1016ca0ccf449be76a7c03f6b68999ecb15e",
+          "actual_sha256": "2515256becb6a2596370f8602d7c1016ca0ccf449be76a7c03f6b68999ecb15e",
+          "status": "PASS"
+        },
+        {
+          "path": "smoke-snapshot.json",
+          "expected_sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
+          "actual_sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
+          "status": "PASS"
+        }
+      ],
+      "unlisted_members": [
+        "artifacts.json",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/adjustment_factors.parquet",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/bars_daily.parquet",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/calendar.parquet",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/corporate_actions.parquet",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/manifest.json",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_master.parquet",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_status.parquet",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/symbol_alias.parquet",
+        "dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/universe_membership.parquet"
+      ],
+      "tables": [
+        {
+          "table": "adjustment_factors",
+          "rows": 0,
+          "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\neffective_at: timestamp[us, tz=UTC]\nrevision_id: int64\nratio: decimal128(28, 8)\naction_id: string\nmethod: string\nview_cutoff: timestamp[us, tz=UTC]",
+          "status": "PASS"
+        },
+        {
+          "table": "bars_daily",
+          "rows": 4,
+          "sha256": "12e0ef934522e11734dd0fd3761377e809403f38583e8ea0de6064b10259d552",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\nmarket_id: string\ncalendar_id: string\nsession_date: date32[day]\nrevision_id: int64\ncurrency: string\nopen: decimal128(28, 8)\nhigh: decimal128(28, 8)\nlow: decimal128(28, 8)\nclose: decimal128(28, 8)\nvolume: decimal128(28, 8)\namount: decimal128(28, 8)\nprice_basis: string\nsource_scale: int64\nsource_volume_unit: string\nsource_amount_unit: string\nsource_volume: string\nsource_amount: string\nlot_size: decimal128(28, 8)",
+          "status": "PASS"
+        },
+        {
+          "table": "calendar",
+          "rows": 4,
+          "sha256": "2fc4082ea192fdc23f9a2b60e1f193ed362b280e9d5871e603d1d864461f6d68",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\ncalendar_id: string\nmarket_id: string\nsession_date: date32[day]\nopen_at: timestamp[us, tz=UTC]\nclose_at: timestamp[us, tz=UTC]\ncalendar_version: string",
+          "status": "PASS"
+        },
+        {
+          "table": "corporate_actions",
+          "rows": 0,
+          "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\naction_id: string\nrevision_id: int64\nsecurity_id: string\ntype: string\nannouncement_at: timestamp[us, tz=UTC]\neffective_at: timestamp[us, tz=UTC]\nex_date: date32[day]\nrecord_date: date32[day]\npay_date: date32[day]\nsplit_ratio: decimal128(28, 8)\ncash_per_share: decimal128(28, 8)\ncurrency: string\ndividend_basis: string",
+          "status": "PASS"
+        },
+        {
+          "table": "security_master",
+          "rows": 2,
+          "sha256": "038a1bb487c0152b92c510f82d6964fbb110f1753599b86356c8c9ed7800d860",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\nrevision_id: int64\nmarket_id: string\nvenue_mic: string\nasset_type: string\ncurrency: string\nlisting_at: timestamp[us, tz=UTC]\ndelisting_at: timestamp[us, tz=UTC]\nknown_at: timestamp[us, tz=UTC]",
+          "status": "PASS"
+        },
+        {
+          "table": "security_status",
+          "rows": 2,
+          "sha256": "c147ff3236bd188754f8350f33704736792baa1dd35718a6bd0766db5a2cbcab",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64\nstatus: string",
+          "status": "PASS"
+        },
+        {
+          "table": "symbol_alias",
+          "rows": 2,
+          "sha256": "ce1b7a28414e1323368360bc3b195c827626c87b8bf666d5e16a06f5a3feaab1",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nmarket_id: string\nsymbol: string\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64",
+          "status": "PASS"
+        },
+        {
+          "table": "universe_membership",
+          "rows": 2,
+          "sha256": "e5a9c03f10d31d142e2c4c8e95ddc3c9f74e13cae9a7446a48eb292295b43d5a",
+          "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nuniverse_id: string\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64",
+          "status": "PASS"
+        }
+      ],
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "coverage_gate": "PASS",
+      "snapshot_sdk_verify": "PASS",
+      "downloaded_snapshot_query_replay": "PASS",
+      "result_hash": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "query_hash_original": "e0b2cc54a4c499a2cb9ffbcc7afbdcf62f40b2046e7462868cbef25d8e23421d",
+      "query_hash_relocated": "d3cabd0d9768e1b394b063b313e3eb0c83c6762462cdc747a21eb4ea87790d48",
+      "root_hash_coverage": "11/14 referenced root files verified; 3 not uploaded",
+      "project_wheel_binary_rehash": "NOT VERIFIED; wheel bytes not uploaded"
+    }
+  ],
+  "gemini_sdk_execution": "NOT RUN",
+  "cross_platform": {
+    "smoke_bytes_and_result_hash": "PASS",
+    "all_8_table_schemas_and_logical_records": "PASS",
+    "only_ignored_table_field": "snapshot_id",
+    "equivalent_query_config": "PASS",
+    "whole_zip_or_parquet_or_wheel_equality_required": false
+  },
+  "developer_fresh_sdk_smoke": {
+    "exit_code": 0,
+    "result_matches_both_ci_platforms": true,
+    "full_ci_entry_rerun": false,
+    "source": "74bdb9216c585d27de91123605aff0266ca028cc",
+    "not_gemini": true
+  }
+}

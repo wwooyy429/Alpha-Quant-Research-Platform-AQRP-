@@ -1,5 +1,8 @@
 # 当前真实项目状态
 
+2026-10-21 最新本地验证：已按用户授权配置 Conda aqrp-p1（CPython3.13.16）和独立 VS Code 工作区；完整 SDK、Conda 直接运行的同一组102测试、两份 Actions 原始ZIP/八表/SDK回放均通过。实际命令配置与原始日志见 docs/audits/phase-1/implementation/conda-vscode-74bdb92/README.md。执行者为 Codex 开发方，不能补记为 Gemini 独立执行；远端3项根文件及项目wheel原字节缺口、独立执行/人工验收/发布门禁保留。未合并、未打标签、不进入Phase2。
+
+
 最新补充：用户提供10成员验证包，外包SHA256为318323ff77651537cc47470fe20d32930bb07495bb51fd71f0772f80c11c023d。Gemini旧文件hash脚本/日志现已附送，六个输入hash在完整输入复跑中一致；包自身缺三份输入，脚本缺文件仍返回0，Git/七项裁定为常量输出，未运行Actions ZIP或SDK。完整独立执行仍NOT VERIFIED，用户未接受限制/验收/发布；不合并、不打标签、不进入Phase2。最新索引audits/phase-1/gemini/VERIFICATION_PACKAGE_INDEX.json及核对audits/phase-1/VERIFICATION_PACKAGE_RECONCILIATION.md；当前清单implementation/VERIFICATION_PACKAGE_MANIFEST.json。以下旧轮“未附新记录”等为接收本包前的状态，不是当前没有脚本日志。
 
 2026-10-21（Asia/Shanghai）。**Phase1技术审查建议PASS，Gemini已明确认可七项SDK/hash勘误；完整专项独立执行仍NOT VERIFIED，等待人工验收。** 用户未接受执行限制、未ACCEPTED/RELEASED；PR #2继续Draft/Open，不合并、不打标签、不进入Phase2。

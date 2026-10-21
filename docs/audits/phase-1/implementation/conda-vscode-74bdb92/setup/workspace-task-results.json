@@ -1,0 +1,69 @@
+{
+  "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\vscode\\AQRP-Phase1-aqrp-p1.code-workspace",
+  "tasks": [
+    {
+      "label": "AQRP: 完整 SDK 验证（固定 74bdb92）",
+      "command": [
+        "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+        "run",
+        "--no-capture-output",
+        "--prefix",
+        "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+        "python",
+        "-X",
+        "utf8",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92\\tools\\ci.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92",
+      "exit_code": 0,
+      "log": "workspace-sdk-task.log",
+      "execution": "Exact workspace task process configuration executed through CLI; no GUI click claim",
+      "output": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\vscode-sdk\\aqrp-35ca7260-f992-4b3f-a84d-9e0fe337eeb6",
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "environment": {
+        "run_id": "aqrp-35ca7260-f992-4b3f-a84d-9e0fe337eeb6",
+        "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+        "executable": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+        "os": "Windows-11-10.0.26300-SP0",
+        "ImageOS": null,
+        "ImageVersion": null,
+        "code_commit": "74bdb9216c585d27de91123605aff0266ca028cc",
+        "dirty": false,
+        "complete": true,
+        "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92",
+        "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\vscode-sdk\\aqrp-35ca7260-f992-4b3f-a84d-9e0fe337eeb6",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": null,
+        "github_run_attempt": null,
+        "github_sha": null,
+        "wheel_sha256": "f0c1d32fc3d946374910adda288d9121bf601d5a68f3b9ef3ee882fe39e1e8c2"
+      }
+    },
+    {
+      "label": "AQRP: Actions 原始 ZIP 校验",
+      "command": [
+        "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+        "run",
+        "--no-capture-output",
+        "--prefix",
+        "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+        "python",
+        "-X",
+        "utf8",
+        "-c",
+        "from pathlib import Path; import subprocess,sys,uuid; out=Path(r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs')/('vscode-zip-'+str(uuid.uuid4())); print(\"Artifacts: \"+str(out),flush=True); raise SystemExit(subprocess.call([sys.executable,'-X','utf8',r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\verify_artifacts.py',r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29',r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\actions-original-zips',str(out)]))"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "exit_code": 0,
+      "log": "workspace-zip-task.log",
+      "execution": "Exact workspace task process configuration executed through CLI; no GUI click claim",
+      "output": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\vscode-zip-a5439df6-b92b-4d4b-8b48-163dc45936fa",
+      "result": "PASS, explicit missing-upload limits retained"
+    }
+  ]
+}

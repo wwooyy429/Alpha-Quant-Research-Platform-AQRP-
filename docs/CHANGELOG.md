@@ -1,5 +1,10 @@
 # 变更记录
 
+## 2026-10-21 · Conda / VS Code 本机完整验证
+
+- 配置现有 aqrp-p1 Python3.13.16、hash锁定依赖和独立工作区；固定74bdb92完整SDK、Conda直接102测试、两项工作区process任务及原始Actions ZIP校验通过，保留原始命令、JUnit、覆盖率、快照和分级证据。
+- 本轮为Codex开发方执行；Gemini独立执行缺口及远端缺字节限制保留，未验收/发布、不进入Phase2。详见audits/phase-1/implementation/conda-vscode-74bdb92/README.md。
+
 ## 2026-10-21 · 验证补充包与原始脚本日志接收
 
 - 原字节归档33832字节/10成员补充包，SHA256 318323ff77651537cc47470fe20d32930bb07495bb51fd71f0772f80c11c023d；4条包内清单hash/大小通过，新脚本/日志/JSON及两份报告变体另存，不覆盖规范原件。

@@ -1,0 +1,91 @@
+{
+  "folders": [
+    {
+      "name": "AQRP Phase 1",
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29"
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "python.condaPath": "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+      "tests"
+    ],
+    "python.analysis.extraPaths": [
+      "${workspaceFolder}/src"
+    ],
+    "terminal.integrated.profiles.windows": {
+      "AQRP Conda (aqrp-p1)": {
+        "path": "C:\\Windows\\System32\\cmd.exe",
+        "args": [
+          "/d",
+          "/k",
+          "E:\\WORK\\Anaconda\\Scripts\\activate.bat E:\\WORK\\Anaconda\\envs\\aqrp-p1"
+        ]
+      }
+    },
+    "terminal.integrated.defaultProfile.windows": "AQRP Conda (aqrp-p1)"
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "AQRP: 完整 SDK 验证（固定 74bdb92）",
+        "type": "process",
+        "command": "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+        "args": [
+          "run",
+          "--no-capture-output",
+          "--prefix",
+          "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+          "python",
+          "-X",
+          "utf8",
+          "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92\\tools\\ci.py"
+        ],
+        "options": {
+          "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92",
+          "env": {
+            "AQRP_RUN_ROOT": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\vscode-sdk",
+            "PYTHONUTF8": "1"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        }
+      },
+      {
+        "label": "AQRP: Actions 原始 ZIP 校验",
+        "type": "process",
+        "command": "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+        "args": [
+          "run",
+          "--no-capture-output",
+          "--prefix",
+          "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+          "python",
+          "-X",
+          "utf8",
+          "-c",
+          "from pathlib import Path; import subprocess,sys,uuid; out=Path(r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs')/('vscode-zip-'+str(uuid.uuid4())); print(\"Artifacts: \"+str(out),flush=True); raise SystemExit(subprocess.call([sys.executable,'-X','utf8',r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\verify_artifacts.py',r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29',r'C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\actions-original-zips',str(out)]))"
+        ],
+        "options": {
+          "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+          "env": {
+            "PYTHONUTF8": "1"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        }
+      }
+    ]
+  }
+}

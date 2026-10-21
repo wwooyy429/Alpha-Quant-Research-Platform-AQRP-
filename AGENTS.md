@@ -1,5 +1,8 @@
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
+2026-10-21 最新本地验证：已按用户授权配置 Conda aqrp-p1（CPython3.13.16）和独立 VS Code 工作区；完整 SDK、Conda 直接运行的同一组102测试、两份 Actions 原始ZIP/八表/SDK回放均通过。实际命令配置与原始日志见 docs/audits/phase-1/implementation/conda-vscode-74bdb92/README.md。执行者为 Codex 开发方，不能补记为 Gemini 独立执行；远端3项根文件及项目wheel原字节缺口、独立执行/人工验收/发布门禁保留。未合并、未打标签、不进入Phase2。
+
+
 ## 当前权限
 
 2026-10-21补充包最新依据：旧报告/五文件hash校验现已收到Gemini脚本和日志；只是文件hash范围，不补齐SDK/Actions ZIP/Git拓扑实际执行，脚本缺输入也正常结束。见docs/audits/phase-1/VERIFICATION_PACKAGE_RECONCILIATION.md、gemini/VERIFICATION_PACKAGE_INDEX.json；以下未附脚本说法属于历史。七项AGREE保留，用户未接受限制/验收/发布，完整独立执行仍NOT VERIFIED，不合并、不打标签、不进入Phase2。

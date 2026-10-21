@@ -1,0 +1,291 @@
+[
+  {
+    "label": "conda-before",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\runtime_probe.py"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 10.9,
+    "log": "conda-before.log"
+  },
+  {
+    "label": "clone-fixed-source",
+    "args": [
+      "git",
+      "clone",
+      "--no-hardlinks",
+      "--no-checkout",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 3.41,
+    "log": "clone-fixed-source.log"
+  },
+  {
+    "label": "longpaths",
+    "args": [
+      "git",
+      "config",
+      "core.longpaths",
+      "true"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92",
+    "exit_code": 0,
+    "seconds": 0.21,
+    "log": "longpaths.log"
+  },
+  {
+    "label": "checkout-fixed",
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "74bdb9216c585d27de91123605aff0266ca028cc"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92",
+    "exit_code": 0,
+    "seconds": 1.52,
+    "log": "checkout-fixed.log"
+  },
+  {
+    "label": "conda-install-lock",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "pip",
+      "--isolated",
+      "install",
+      "--index-url",
+      "https://pypi.org/simple",
+      "--require-hashes",
+      "--only-binary=:all:",
+      "-r",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92\\requirements.lock"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 36.53,
+    "log": "conda-install-lock.log"
+  },
+  {
+    "label": "conda-pip-check",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 5.05,
+    "log": "conda-pip-check.log"
+  },
+  {
+    "label": "formal-clean-sdk",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92\\tools\\ci.py"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\source-74bdb92",
+    "exit_code": 0,
+    "seconds": 89.88,
+    "log": "formal-clean-sdk.log"
+  },
+  {
+    "label": "conda-install-project-wheel",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "pip",
+      "install",
+      "--no-index",
+      "--no-deps",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\wheel\\aqrp-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 5.68,
+    "log": "conda-install-project-wheel.log"
+  },
+  {
+    "label": "conda-after",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\runtime_probe.py"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 4.73,
+    "log": "conda-after.log"
+  },
+  {
+    "label": "conda-pip-check-final",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 4.8,
+    "log": "conda-pip-check-final.log"
+  },
+  {
+    "label": "conda-direct-tests",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "-o",
+      "cache_dir=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\conda-direct\\pytest-cache",
+      "--basetemp=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\conda-direct\\tmp",
+      "--cov=aqrp",
+      "--cov-branch",
+      "--cov-report=json:C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\conda-direct\\coverage.json",
+      "--cov-report=xml:C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\conda-direct\\coverage.xml",
+      "--junitxml=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\conda-direct\\junit.xml"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\source",
+    "exit_code": 0,
+    "seconds": 22.62,
+    "log": "conda-direct-tests.log"
+  },
+  {
+    "label": "conda-direct-coverage",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\source\\tools\\check_coverage.py",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\conda-direct\\coverage.json"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\source",
+    "exit_code": 0,
+    "seconds": 5.2,
+    "log": "conda-direct-coverage.log"
+  },
+  {
+    "label": "conda-direct-reference",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\source\\tools\\independent_reference.py"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\source",
+    "exit_code": 0,
+    "seconds": 4.72,
+    "log": "conda-direct-reference.log"
+  },
+  {
+    "label": "conda-direct-smoke",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\source\\tools\\data_smoke.py",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\conda-direct"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\formal-sdk\\aqrp-40720065-cee8-4340-9ca5-20b76583e684\\source",
+    "exit_code": 0,
+    "seconds": 5.54,
+    "log": "conda-direct-smoke.log"
+  },
+  {
+    "label": "conda-actions-zip-verification",
+    "args": [
+      "E:\\WORK\\Anaconda\\Scripts\\conda.exe",
+      "run",
+      "--no-capture-output",
+      "--prefix",
+      "E:\\WORK\\Anaconda\\envs\\aqrp-p1",
+      "python",
+      "-X",
+      "utf8",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\verify_artifacts.py",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\actions-original-zips",
+      "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050\\zip-verification"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\conda-vscode-1792572943050",
+    "exit_code": 0,
+    "seconds": 8.17,
+    "log": "conda-actions-zip-verification.log"
+  }
+]
