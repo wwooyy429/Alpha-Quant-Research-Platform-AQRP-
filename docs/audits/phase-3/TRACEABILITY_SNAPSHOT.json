@@ -1,0 +1,240 @@
+{
+  "phase": 3,
+  "count": 26,
+  "requirements": [
+    {
+      "id": "DATA-012",
+      "tier": "Competition Ready",
+      "dependencies": "DATA-002",
+      "planned_code": "src/aqrp/data/exposures.py",
+      "planned_test": "tests/data/test_data_012.py",
+      "contract": "INTERFACE_DRAFT.md / ExposureSnapshotRef",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "FACTOR-007",
+      "tier": "Competition Ready",
+      "dependencies": "FACTOR-003",
+      "planned_code": "src/aqrp/factors/price_volume.py + admission/contracts",
+      "planned_test": "tests/factors/test_factor_007.py",
+      "contract": "INTERFACE_DRAFT.md / Price-Volume",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "FACTOR-009",
+      "tier": "MVP",
+      "dependencies": "FACTOR-003;VALID-008",
+      "planned_code": "src/aqrp/validation/approvals.py + experiments",
+      "planned_test": "tests/factors/test_factor_009.py",
+      "contract": "INTERFACE_DRAFT.md / ApprovalProposal",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-001",
+      "tier": "MVP",
+      "dependencies": "FACTOR-003",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_001.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-002",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-001",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_002.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-003",
+      "tier": "Competition Ready",
+      "dependencies": "RESEARCH-002;DATA-012",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_003.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-004",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-001",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_004.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-005",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-004",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_005.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-006",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-002",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_006.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-007",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-006",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_007.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-008",
+      "tier": "MVP",
+      "dependencies": "EXP-001;RESEARCH-001",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_008.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "RESEARCH-009",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-001;VALID-001",
+      "planned_code": "src/aqrp/research/",
+      "planned_test": "tests/research/test_research_009.py",
+      "contract": "INTERFACE_DRAFT.md / ResearchRequest, StageScores, research",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-001",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-006",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_001.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-002",
+      "tier": "MVP",
+      "dependencies": "VALID-001",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_002.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-003",
+      "tier": "MVP",
+      "dependencies": "VALID-001",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_003.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-004",
+      "tier": "MVP",
+      "dependencies": "VALID-003;EXP-002",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_004.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-005",
+      "tier": "MVP",
+      "dependencies": "VALID-001",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_005.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-006",
+      "tier": "MVP",
+      "dependencies": "EXP-002;VALID-004",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_006.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-007",
+      "tier": "MVP",
+      "dependencies": "VALID-005;VALID-006",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_007.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "VALID-008",
+      "tier": "MVP",
+      "dependencies": "VALID-004;VALID-007",
+      "planned_code": "src/aqrp/validation/",
+      "planned_test": "tests/validation/test_valid_008.py",
+      "contract": "INTERFACE_DRAFT.md / LabelBatch, SplitSpec, MetricResult, TestEvaluator",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "EXP-001",
+      "tier": "MVP",
+      "dependencies": "DATA-007;FACTOR-003",
+      "planned_code": "src/aqrp/experiments/",
+      "planned_test": "tests/experiments/test_exp_001.py",
+      "contract": "INTERFACE_DRAFT.md / ExperimentLedger, reproduce, ApprovalProposal",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "EXP-002",
+      "tier": "MVP",
+      "dependencies": "EXP-001",
+      "planned_code": "src/aqrp/experiments/",
+      "planned_test": "tests/experiments/test_exp_002.py",
+      "contract": "INTERFACE_DRAFT.md / ExperimentLedger, reproduce, ApprovalProposal",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "EXP-003",
+      "tier": "MVP",
+      "dependencies": "EXP-001",
+      "planned_code": "src/aqrp/experiments/",
+      "planned_test": "tests/experiments/test_exp_003.py",
+      "contract": "INTERFACE_DRAFT.md / ExperimentLedger, reproduce, ApprovalProposal",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "EXP-004",
+      "tier": "MVP",
+      "dependencies": "VALID-008;EXP-001",
+      "planned_code": "src/aqrp/experiments/",
+      "planned_test": "tests/experiments/test_exp_004.py",
+      "contract": "INTERFACE_DRAFT.md / ExperimentLedger, reproduce, ApprovalProposal",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "QA-004",
+      "tier": "MVP",
+      "dependencies": "QA-001;VALID-001",
+      "planned_code": "docs/audits/phase-3/golden* + future tests/golden",
+      "planned_test": "tests/quality/test_qa_004.py",
+      "contract": "GOLDEN_REFERENCE.md / independent answers",
+      "status": "Planned; G1 pending"
+    },
+    {
+      "id": "INT-001",
+      "tier": "MVP",
+      "dependencies": "RESEARCH-009;VALID-003;EXP-001",
+      "planned_code": "src/aqrp/services/research.py + cli/reports",
+      "planned_test": "tests/integration/test_int_001.py",
+      "contract": "INTERFACE_DRAFT.md / complete research service",
+      "status": "Planned; G1 pending"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # 架构决策、冲突及待用户决定事项
 
+2026-10-22 当前：**Phase2已ACCEPTED / RELEASED；Phase3 START AUTHORIZED / PLAN PRE-REVIEW REQUIRED**。核实main与phase2-baseline/v0.2.0同点f26255fc40a3080bfa883ad64938f60036a14759，已创建feature/phase-3-alpha-research。P3限既定26项（23 MVP/3 Competition Ready）、沿用合成数据及Python3.13.16；计划/接口/数值候选/风险与测试在docs/audits/phase-3/。本轮无P3业务实现，Gemini G1预审及阻断设计闭环后才实施；不重复索取启动授权，不把P2报告或旧417回归当P3通过。P3验收/合并发布/P4启动尚未授权，历史执行身份与缺原件事实保留。以下旧状态为历史。
+
 2026-10-22 最新人工决定与发布登记：用户明确“验收通过，请合并打标签后进入phase 3开发”。**Phase2 ACCEPTED**，PR #3批准头e50cd75已合并main bb6076f，tree与批准头完全一致；合并后新干净SDK417、原16/四探针均通过。发布登记与 `phase2-baseline` / `v0.2.0` 远端main原子同点发布并核验后为 **RELEASED**。Phase3启动已授权，从核实基线新分支先走Gemini计划预审，不重复索取启动许可。原报告身份/执行与历史缺原件事实不改，未泛化为逐项豁免；详见docs/audits/phase-2/BASELINE.md及publication/。P3业务实施受既有G1预审门禁，P3合并发布/P4–7尚未授权；以下旧待验收/未授权为历史。
 
 2026-10-22 最新复核接收：**Phase2 = GPT WORK SUPPLEMENTAL TECHNICAL PASS / HUMAN ACCEPTANCE PENDING**。GPT Work针对固定c8362953f555606795b6804cdfe28ff690c2364d确认001–003全部CLOSED（补充技术复核），无新业务修复。所附新SDK/双OS各417、原16和原四项通过；接收已核对256项hash、官方原ZIP/26模块wheel/八表/完整Signal回放及12项原查询身份。资料见 `docs/audits/phase-2/recheck-c836/`。这不是Gemini本人执行或用户验收；Gemini新完整SDK/历史原件限制保留，未接受限制/合并/标签发布/P3授权。仅归档及状态更新，业务708b83b/代码bundle51933fe…不改；以下旧OPEN/待复核为历史。

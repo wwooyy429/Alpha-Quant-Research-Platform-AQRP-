@@ -1,5 +1,7 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
+2026-10-22 当前：**Phase2已ACCEPTED / RELEASED；Phase3 START AUTHORIZED / PLAN PRE-REVIEW REQUIRED**。核实main与phase2-baseline/v0.2.0同点f26255fc40a3080bfa883ad64938f60036a14759，已创建feature/phase-3-alpha-research。P3限既定26项（23 MVP/3 Competition Ready）、沿用合成数据及Python3.13.16；计划/接口/数值候选/风险与测试在docs/audits/phase-3/。本轮无P3业务实现，Gemini G1预审及阻断设计闭环后才实施；不重复索取启动授权，不把P2报告或旧417回归当P3通过。P3验收/合并发布/P4启动尚未授权，历史执行身份与缺原件事实保留。以下旧状态为历史。
+
 2026-10-22 最新人工决定与发布登记：用户明确“验收通过，请合并打标签后进入phase 3开发”。**Phase2 ACCEPTED**，PR #3批准头e50cd75已合并main bb6076f，tree与批准头完全一致；合并后新干净SDK417、原16/四探针均通过。发布登记与 `phase2-baseline` / `v0.2.0` 远端main原子同点发布并核验后为 **RELEASED**。Phase3启动已授权，从核实基线新分支先走Gemini计划预审，不重复索取启动许可。原报告身份/执行与历史缺原件事实不改，未泛化为逐项豁免；详见docs/audits/phase-2/BASELINE.md及publication/。P3业务实施受既有G1预审门禁，P3合并发布/P4–7尚未授权；以下旧待验收/未授权为历史。
 
 2026-10-22 最新复核接收：**Phase2 = GPT WORK SUPPLEMENTAL TECHNICAL PASS / HUMAN ACCEPTANCE PENDING**。GPT Work针对固定c8362953f555606795b6804cdfe28ff690c2364d确认001–003全部CLOSED（补充技术复核），无新业务修复。所附新SDK/双OS各417、原16和原四项通过；接收已核对256项hash、官方原ZIP/26模块wheel/八表/完整Signal回放及12项原查询身份。资料见 `docs/audits/phase-2/recheck-c836/`。这不是Gemini本人执行或用户验收；Gemini新完整SDK/历史原件限制保留，未接受限制/合并/标签发布/P3授权。仅归档及状态更新，业务708b83b/代码bundle51933fe…不改；以下旧OPEN/待复核为历史。
@@ -14,8 +16,8 @@ Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范
 |---|---|---|
 | 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
 | 1 / ACCEPTED / RELEASED | 用户人工验收及单独合并/标签授权，PR #2已合并；稳定phase1-baseline，详见audits/phase-1/BASELINE.md | 102测试及适用检查通过；历史独立执行/字节限制保留；用户已另行授权Phase2，进入其计划预审 |
-| 2 / ACCEPTED / RELEASED upon verified remote publication | 用户明确验收并授权main合并/标签；PR #3已合并、合并后417/16/4通过，phase2-baseline/v0.2.0同点核验 | 0.2.0基线及旧限制见audits/phase-2/BASELINE.md；Phase3另已明确启动授权，先计划预审 |
-| 3 / START AUTHORIZED；PLAN PRE-REVIEW REQUIRED | 从核实Phase2发布main新分支；研究/验证/实验/研究services/CLI与报告26项既定需求；正式门槛及隔离方案先预审 | 未Gemini计划PASS不写业务；研究替换仅P3链，不提前组合/回测/UI；P3合并发布另行授权 |
+| 2 / ACCEPTED / RELEASED | main/phase2-baseline/v0.2.0固定f26255f；合并后417/16/4及原始证据发布核实 | 用户已另行授权P3；真实审查身份/原限制继续保留 |
+| 3 / START AUTHORIZED；PLAN PRE-REVIEW REQUIRED | 分支feature/phase-3-alpha-research从核实main f26255f；26项既定需求计划/接口/答案候选 | Gemini计划预审前不写业务；真实Test权限/正式标准/统计方法待审，不提前组合回测UI；P3发布另授权 |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
 | 5 / PLANNED | P4验收+P5授权；事件及账户/profile批准；backtest,execution,performance与模拟services/CLI | 订单/部分成交/拒绝取消/成本滑点/流动性/交收/行动/账本/净值/绩效、独立资金答案、组合回测替换；策略批准需此阶段证据；不提前网页 |
 | 6 / PLANNED | P5验收+P6授权；services/CLI已可运行；ui与对应适配测试 | 六页面、任务/错误/日志/图表、因子选择/版本权重、CLI/服务/网页同配置研究及回测一致；不再写核心算法 |
@@ -63,8 +65,8 @@ Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范
 |---|---|---|
 | 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
 | 1 / ACCEPTED / RELEASED | 用户人工验收及单独合并/标签授权，PR #2已合并；稳定phase1-baseline，详见audits/phase-1/BASELINE.md | 102测试及适用检查通过；历史独立执行/字节限制保留；Phase2未授权，停止等待 |
-| 2 / ACCEPTED / RELEASED upon verified remote publication | 用户明确验收并授权main合并/标签；PR #3已合并、合并后417/16/4通过，phase2-baseline/v0.2.0同点核验 | 0.2.0基线及旧限制见audits/phase-2/BASELINE.md；Phase3另已明确启动授权，先计划预审 |
-| 3 / START AUTHORIZED；PLAN PRE-REVIEW REQUIRED | 从核实Phase2发布main新分支；研究/验证/实验/研究services/CLI与报告26项既定需求；正式门槛及隔离方案先预审 | 未Gemini计划PASS不写业务；研究替换仅P3链，不提前组合/回测/UI；P3合并发布另行授权 |
+| 2 / ACCEPTED / RELEASED | main/phase2-baseline/v0.2.0固定f26255f；合并后417/16/4及原始证据发布核实 | 用户已另行授权P3；真实审查身份/原限制继续保留 |
+| 3 / START AUTHORIZED；PLAN PRE-REVIEW REQUIRED | 分支feature/phase-3-alpha-research从核实main f26255f；26项既定需求计划/接口/答案候选 | Gemini计划预审前不写业务；真实Test权限/正式标准/统计方法待审，不提前组合回测UI；P3发布另授权 |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
 | 5 / PLANNED | P4验收+P5授权；事件及账户/profile批准；backtest,execution,performance与模拟services/CLI | 订单/部分成交/拒绝取消/成本滑点/流动性/交收/行动/账本/净值/绩效、独立资金答案、组合回测替换；策略批准需此阶段证据；不提前网页 |
 | 6 / PLANNED | P5验收+P6授权；services/CLI已可运行；ui与对应适配测试 | 六页面、任务/错误/日志/图表、因子选择/版本权重、CLI/服务/网页同配置研究及回测一致；不再写核心算法 |
