@@ -41,7 +41,7 @@ def identity():
     return str(os.geteuid())
 
 
-def _windows_permissions(path, allowed, research, *, readonly=False):
+def _windows_permissions(path, allowed, research, *, readonly=False, auditor=None):
     import base64
 
     literal = str(path).replace("'", "''")
@@ -63,6 +63,10 @@ def _windows_permissions(path, allowed, research, *, readonly=False):
         for e in data["entries"]
     ):
         raise ContractError("UNVERIFIED_ISOLATION")
+    if auditor is not None and any(
+        e["type"] == "Allow" and e["sid"] == auditor and e["writable"] for e in data["entries"]
+    ):
+        raise ContractError("WRITABLE_AUDITOR_DOMAIN")
     if readonly and any(
         e["type"] == "Allow"
         and e["sid"] not in (data["owner"], "S-1-5-18", "S-1-5-32-544")
@@ -87,7 +91,9 @@ def readonly_runtime(path, owner, allowed, research):
 class OperatorPolicy:
     """Constructed by the trusted operator, never deserialized from a research request."""
 
-    def __init__(self, root, key_file, *, evaluator, research, trusted_owner, allowed_group_ids=()):
+    def __init__(
+        self, root, key_file, *, evaluator, research, auditor, trusted_owner, allowed_group_ids=()
+    ):
         for raw in (Path(root).absolute(), Path(key_file).absolute()):
             if any(p.is_symlink() or p.is_junction() for p in (raw, *raw.parents)):
                 raise ContractError("SEALED_PATH_LINK")
@@ -95,11 +101,25 @@ class OperatorPolicy:
         self.key_file = Path(key_file).resolve(strict=True)
         self.evaluator = str(evaluator)
         self.research = str(research)
+        self.auditor = str(auditor)
         self.owner = str(trusted_owner)
         self.groups = set(allowed_group_ids)
 
+    @property
+    def principals(self):
+        return {
+            "evaluator": self.evaluator,
+            "research": self.research,
+            "auditor": self.auditor,
+            "trusted_owner": self.owner,
+        }
+
     def verify_host(self):
-        if identity() != self.evaluator or self.evaluator in (self.research, self.owner):
+        if (
+            identity() != self.evaluator
+            or len(set(self.principals.values())) != 4
+            or any(not v for v in self.principals.values())
+        ):
             raise ContractError("WRONG_EVALUATOR_PRINCIPAL")
         if IS_WINDOWS:
             groups = subprocess.check_output(["whoami", "/groups", "/fo", "csv", "/nh"], text=True)
@@ -121,10 +141,17 @@ class OperatorPolicy:
             import pwd
 
             researcher = pwd.getpwuid(int(self.research))
+            audit_user = pwd.getpwuid(int(self.auditor))
+            auditor_groups = set(os.getgrouplist(audit_user.pw_name, audit_user.pw_gid))
             research_groups = set(os.getgrouplist(researcher.pw_name, researcher.pw_gid))
-            if os.geteuid() == 0 or research_groups & self.groups:
+            if (
+                os.geteuid() == 0
+                or self.research == "0"
+                or self.auditor == "0"
+                or research_groups & self.groups
+            ):
                 raise ContractError("SHARED_OR_ELEVATED_PRINCIPAL")
-        allowed = {self.owner, self.evaluator, "S-1-5-18", "S-1-5-32-544"}
+        allowed = {self.owner, self.evaluator, self.auditor, "S-1-5-18", "S-1-5-32-544"}
         for path in [self.root, self.key_file, *self.root.rglob("*")]:
             if (
                 path.is_symlink()
@@ -133,11 +160,27 @@ class OperatorPolicy:
             ):
                 raise ContractError("SEALED_PATH_LINK")
             if IS_WINDOWS:
-                owner = _windows_permissions(path, allowed, self.research)
+                owner = _windows_permissions(
+                    path,
+                    allowed - ({self.auditor} if path == self.key_file else set()),
+                    self.research,
+                    auditor=self.auditor,
+                )
                 if path in (self.root, self.key_file) and owner != self.owner:
                     raise ContractError("UNTRUSTED_OPERATOR_KEY_OWNER")
             else:
                 s = path.stat()
+                if any(
+                    name in ("system.posix_acl_access", "system.posix_acl_default")
+                    for name in os.listxattr(path)
+                ):
+                    raise ContractError("UNVERIFIED_EXTENDED_ACL")
+                if (
+                    path == self.key_file
+                    and stat.S_IMODE(s.st_mode) & 0o040
+                    and s.st_gid in auditor_groups
+                ):
+                    raise ContractError("OPERATOR_KEY_SHARED_WITH_AUDITOR")
                 if (
                     str(s.st_uid) not in (self.owner, self.evaluator)
                     or stat.S_IMODE(s.st_mode) & 0o027
@@ -156,6 +199,7 @@ class OperatorPolicy:
         claims = verify_seal(json.loads((self.root / "authorization.json").read_bytes()), key)
         if (
             claims["bindings"] != bindings
+            or claims.get("principals") != self.principals
             or claims["scope"] != "FINAL_TEST"
             or claims["profile"] != "P3-ISO-OS-1"
             or not claims["human_approval_record"]
@@ -184,7 +228,7 @@ class OperatorPolicy:
             readonly_runtime(
                 self.root / row["path"],
                 self.owner,
-                {self.owner, self.evaluator, "S-1-5-18", "S-1-5-32-544"},
+                {self.owner, self.evaluator, self.auditor, "S-1-5-18", "S-1-5-32-544"},
                 self.research,
             )
         return claims

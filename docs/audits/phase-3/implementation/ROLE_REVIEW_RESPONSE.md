@@ -1,0 +1,11 @@
+# 开发方追加自查：U-001四主体约束
+
+初始实现提交0926745c6be4b9b8e8b3f69203e357dfc6008de9的干净SDK、双OS CI及560项测试通过。这些是实际自动化结果；后续人工源码自查仍发现设计落实缺口，不能因此宣布实现验收或独立通过。
+
+问题：初始入口只排除了evaluator与research/owner重合，没有排除research=owner；Windows的允许SID集合也未完整纳入单独auditor。前者会在错误配置下把保管者权限交给研究主体，后者会拒绝符合设计的审查账户；旧正负测试没有覆盖这两种情况。未发生真实部署、数据泄露或真实Test执行。
+
+修正：OperatorPolicy强制提供evaluator/research/auditor/trusted_owner四个互异、非空主体，签封授权绑定同一四主体字典。Windows允许auditor读取数据与只读运行制品，拒绝其写权限，且把auditor排除在operator key允许集合外。POSIX按既定mode/group边界验证，拒绝研究/审查root身份、operator key与auditor共享读组及未经解析的扩展/default ACL；没有静默忽略ACL。需要扩展ACL的实际部署须先补充审查验证，不能自动配权或宣称已部署。
+
+新增反例：research=owner、auditor=owner、缺主体；auditor允许读但不能写/读operator key；授权主体被替换；POSIX扩展ACL及审查共享key组。实际targeted执行为role-closure.xml的14项通过，evaluator/approvals行与分支均100%。这些模拟验证不是实际SID/UID隔离证据。更改后整个包bundle和所有新Ref随之更新；将重新执行干净SDK/双OS，而不是把0926745结果外推。
+
+原560源环境/SDK/双OS成功、所有失败及本轮修复记录均保留。新固定提交/完整验证结果见 IMPLEMENTATION_VALIDATION.json与PR描述，仍需GPT Work独立实现审核。未合并、标签、P4、账户/ACL/服务/调度变更。

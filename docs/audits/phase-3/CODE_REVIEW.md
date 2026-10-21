@@ -19,3 +19,5 @@
 - CLI为同一研究服务的JSON入口。HTML转义所有报告字符串。没有eval、自定义模块/工厂、pickle、任意子进程命令或真实交易接入。旧环境子进程为固定审查过的脚本，`-I`、清理凭据/Python配置、独立cwd及严格原制品字节核对；它不是恶意插件沙箱。
 
 新增测试及清洁SDK检查结果以 IMPLEMENTATION_VALIDATION.json、原始JUnit/coverage/log及Actions ZIP为准。开发迭代失败全部单列留存，不删除失败用例或修改金融正确答案迎合实现。固定SHA实现审核仍交GPT Work，不能引用本文件作为独立PASS。
+
+追加源码复查发现并修复四主体约束遗漏：强制research/evaluator/auditor/owner互异、授权签封绑定主体；auditor对数据及制品只读且不能读operator key。POSIX对未经解析的扩展/default ACL拒绝，防止只检查mode而漏掉额外授权；本轮不创建或修改ACL。详implementation/ROLE_REVIEW_RESPONSE.md。该修复重新生成整个包receipt，不把前一实现的成功SDK/CI外推为新bundle验证。

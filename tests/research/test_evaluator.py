@@ -29,6 +29,7 @@ def test_no_deployment_denies_before_callback(tmp_path):
         key,
         evaluator="deliberately-not-current-identity",
         research="research",
+        auditor="auditor",
         trusted_owner="owner",
     )
     with pytest.raises(ContractError, match="WRONG_EVALUATOR_PRINCIPAL"):
@@ -92,7 +93,12 @@ def test_authorization_evidence_and_hashes(tmp_path, monkeypatch):
     key = b"test-only-generated-fixture-key-00000000"
     (tmp_path / "key").write_bytes(key)
     p = OperatorPolicy(
-        tmp_path, tmp_path / "key", evaluator="eval", research="research", trusted_owner="owner"
+        tmp_path,
+        tmp_path / "key",
+        evaluator="eval",
+        research="research",
+        auditor="auditor",
+        trusted_owner="owner",
     )
     monkeypatch.setattr(p, "verify_host", lambda: key)
     from aqrp.validation import evaluator as module
@@ -101,6 +107,7 @@ def test_authorization_evidence_and_hashes(tmp_path, monkeypatch):
     bindings = {"fixed": "protocol"}
     claims = {
         "bindings": bindings,
+        "principals": p.principals,
         "scope": "FINAL_TEST",
         "profile": "P3-ISO-OS-1",
         "human_approval_record": "test-simulation",
@@ -130,6 +137,12 @@ def test_authorization_evidence_and_hashes(tmp_path, monkeypatch):
     )
     write()
     assert p.authorize(bindings)["holdout_lineage_id"] == "mock-only"
+    claims["principals"] = {**p.principals, "research": "changed-subject"}
+    write()
+    with pytest.raises(ContractError, match="FINAL_TEST_NOT_AUTHORIZED"):
+        p.authorize(bindings)
+    claims["principals"] = p.principals
+    write()
     e = TestEvaluator(tmp_path / "control", policy=p)
     assert e.process(bindings, lambda: {"mock_only": True}, purpose="FINAL_TEST")[
         "independence_verified"
