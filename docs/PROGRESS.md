@@ -1,5 +1,7 @@
 # 当前真实项目状态
 
+2026-10-21 用户指定代执行接收：已从原审查对话实际userMessage核实“请代替Gemini执行证据”。固定31a548b的WORK-P1-004登记USER-AUTHORIZED SUBSTITUTE EXECUTION PASS，真实执行者GPT Work而非Gemini；新SDK234项、原始16项及当前CI两份原始ZIP/拓扑/三套数据结果证据已收到并核对。七项修复补充通过保持；005历史缺字节NOT VERIFIED。详情docs/audits/phase-1/repairs/data-validation/delegated-31a548b/。修复仍待用户验收及单独合并/发布授权；本次不授权Phase2纳入，不改main/稳定标签/Phase2分支，不进入Phase3。以下旧OPEN为当时状态。
+
 2026-10-21 指定旧修复版复核接收：GPT Work 对3ab93b3的001–003补充复核通过、005新产物策略获核实；006–009在旧版仍OPEN，但本报告未审后续8902ba0/16083e1，不能外推当前修复失败或通过。当前新SHA独立复核及004指定执行仍待办。16083e1双平台CI现已确认success；本轮仅归档和证据核对，不改业务代码、不重新运行SDK。详见docs/audits/phase-1/repairs/data-validation/recheck-3ab93b3/RECONCILIATION.md。未验收/未发布修复，不合并、不打标签、不进入Phase3；main/稳定标签/Phase2分支不变。
 
 2026-10-21 第二轮补充审查：报告目标是已发布 f579，不是 PR #4。开发方在上一修复 SDK 复现新增 WORK-P1-006–009（16 项外置用例 7 失败/9 通过，旧三项回归保持通过）；现于同一独立修复 PR 按既有 Phase1 数据契约纠正，源代码全套 234 项通过，新完整 SDK、双平台 CI 和原始 ZIP 校验已通过；固定 SHA 独立复核仍待完成。详情 docs/audits/phase-1/repairs/data-validation/round2/。修复版本尚未验收/发布；main、稳定标签和 Phase2 分支不变，不合并、不打标签、不进入Phase3。以下各轮数字/状态保留其时点。

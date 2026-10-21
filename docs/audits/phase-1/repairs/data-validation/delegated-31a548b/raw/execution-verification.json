@@ -1,0 +1,296 @@
+{
+  "executor": "GPT Work / user-designated substitute, not Gemini",
+  "target_sha": "31a548b8790bc1abe0f5ffbe3c55e10917a9503e",
+  "started_at": "2026-10-21T23:12:19.609085+08:00",
+  "checks": {
+    "new_local_sdk": {
+      "environment": {
+        "run_id": "aqrp-d073e336-f30d-4379-8b65-411b4c00d43c",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "os": "Windows-11-10.0.26300-SP0",
+        "ImageOS": null,
+        "ImageVersion": null,
+        "code_commit": "31a548b8790bc1abe0f5ffbe3c55e10917a9503e",
+        "dirty": false,
+        "complete": true,
+        "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p1-31a548b",
+        "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p1-delegated-31a548b\\runs\\aqrp-d073e336-f30d-4379-8b65-411b4c00d43c",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": null,
+        "github_run_attempt": null,
+        "github_sha": null,
+        "wheel_sha256": "57136631dae92ac1298cb598692b46de68e828ebe16bef5ef464b25505801b4a"
+      },
+      "junit": {
+        "tests": 234,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "active_locked_packages": [
+        {
+          "name": "colorama",
+          "version": "0.4.6"
+        },
+        {
+          "name": "coverage",
+          "version": "7.16.2"
+        },
+        {
+          "name": "duckdb",
+          "version": "1.5.6"
+        },
+        {
+          "name": "hypothesis",
+          "version": "6.170.5"
+        },
+        {
+          "name": "iniconfig",
+          "version": "2.3.1"
+        },
+        {
+          "name": "numpy",
+          "version": "2.5.4"
+        },
+        {
+          "name": "packaging",
+          "version": "26.3"
+        },
+        {
+          "name": "pandas",
+          "version": "3.0.6"
+        },
+        {
+          "name": "pip",
+          "version": "26.2.1"
+        },
+        {
+          "name": "pluggy",
+          "version": "1.7.0"
+        },
+        {
+          "name": "pyarrow",
+          "version": "26.0.0"
+        },
+        {
+          "name": "pygments",
+          "version": "2.21.0"
+        },
+        {
+          "name": "pytest",
+          "version": "9.1.1"
+        },
+        {
+          "name": "pytest-cov",
+          "version": "7.1.0"
+        },
+        {
+          "name": "python-dateutil",
+          "version": "2.9.0.post0"
+        },
+        {
+          "name": "ruff",
+          "version": "0.17.1"
+        },
+        {
+          "name": "setuptools",
+          "version": "84.2.0"
+        },
+        {
+          "name": "six",
+          "version": "1.17.0"
+        },
+        {
+          "name": "sortedcontainers",
+          "version": "2.4.0"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026.5"
+        },
+        {
+          "name": "uv",
+          "version": "0.13.4"
+        },
+        {
+          "name": "wheel",
+          "version": "0.48.0"
+        }
+      ],
+      "installed_module_matches": 17,
+      "wheel_matches_source": true,
+      "runtime": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-delegated-31a548b\\runs\\aqrp-d073e336-f30d-4379-8b65-411b4c00d43c\\venv\\Scripts\\python.exe",
+      "sdk_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-delegated-31a548b\\runs\\aqrp-d073e336-f30d-4379-8b65-411b4c00d43c\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+      "standard_gil": true,
+      "pointer_bits": 64,
+      "snapshot_replay": {
+        "tables": 8,
+        "rows": {
+          "adjustment_factors": 0,
+          "bars_daily": 4,
+          "calendar": 4,
+          "corporate_actions": 0,
+          "security_master": 2,
+          "security_status": 2,
+          "symbol_alias": 2,
+          "universe_membership": 2
+        },
+        "manifest_digest": "79a6f2ff1979711cf90a8caee3f01a250c62e0c9893f31d9f6fa64287a3c3050",
+        "query_result_hash": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6"
+      }
+    },
+    "original16": {
+      "junit": {
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "original_unchanged_test_hashes": [
+        {
+          "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p01-round2-20261021\\test_round2_regressions.py",
+          "sha256": "43a8d0b6c6878ba1608a6bd83cbf8668fa2e3a4f3767aa51e1cc2e94bc5e0b0a"
+        },
+        {
+          "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\test_work_p1_regressions.py",
+          "sha256": "e077602b2d41c2320fd3bd10703279122a86ee288513a2bcc8197d535beb56b8"
+        }
+      ],
+      "golden_fixtures_equal_target": true
+    },
+    "actual_git_topology": {
+      "commit": "fa1d53620be60d683538b428a2a9cd29035b0127",
+      "parents": [
+        "f579b2c99e762085772de6e70ba1fa98792a7add",
+        "31a548b8790bc1abe0f5ffbe3c55e10917a9503e"
+      ],
+      "tree": "995849f2c7b2d73fbcacb38de84d1cc143d0b2f8",
+      "equals_target_tree": true,
+      "not_a_main_merge": true
+    },
+    "current_raw_ci_zip": [
+      {
+        "artifact_id": 12354398467,
+        "name": "phase1-repair-windows-latest-1",
+        "sha256": "ee5bf17daeb5a705c5753c066af523120d2ce451fcae5706609b52a0a2bcc727",
+        "bytes": 86172,
+        "environment": {
+          "run_id": "aqrp-046fc8d3-e0d4-4b0f-ab64-cc21d19e65d7",
+          "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+          "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+          "os": "Windows-2025Server-10.0.26100-SP0",
+          "ImageOS": "win25-vs2026",
+          "ImageVersion": "20261018.275.1",
+          "code_commit": "fa1d53620be60d683538b428a2a9cd29035b0127",
+          "dirty": false,
+          "complete": true,
+          "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-046fc8d3-e0d4-4b0f-ab64-cc21d19e65d7",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39620574953",
+          "github_run_attempt": "1",
+          "github_sha": "fa1d53620be60d683538b428a2a9cd29035b0127",
+          "wheel_sha256": "0ce560cbdfb05a9fe949d60e59e1a682d37f14c650785cd423efa4dbd1999854"
+        },
+        "zip_files": 24,
+        "selected_hashes_matched": 23,
+        "root_hashes_matched": 12,
+        "explicit_omitted_tools": [
+          "gitleaks.exe",
+          "pip-26.2.1-py3-none-any.whl"
+        ],
+        "wheel_source_modules_matched": 17,
+        "wheel_hash": "0ce560cbdfb05a9fe949d60e59e1a682d37f14c650785cd423efa4dbd1999854",
+        "coverage_raw_sqlite": true,
+        "coverage_gate": "PASS",
+        "junit": {
+          "tests": 234,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "snapshot_replay": {
+          "tables": 8,
+          "rows": {
+            "adjustment_factors": 0,
+            "bars_daily": 4,
+            "calendar": 4,
+            "corporate_actions": 0,
+            "security_master": 2,
+            "security_status": 2,
+            "symbol_alias": 2,
+            "universe_membership": 2
+          },
+          "manifest_digest": "7eb37823a1884b7f5cf61a06a29f74736e32d9976ea0e9814096f83c789c8b3e",
+          "query_result_hash": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6"
+        }
+      },
+      {
+        "artifact_id": 12353309625,
+        "name": "phase1-repair-ubuntu-24.04-1",
+        "sha256": "ec785d2767051c64f456241bc67a8e7ea51254ba1cc10127d48bab94f5d9ee3a",
+        "bytes": 86036,
+        "environment": {
+          "run_id": "aqrp-eb152b85-77c6-459b-8115-f32f6f0604f5",
+          "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+          "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+          "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "ImageOS": "ubuntu24",
+          "ImageVersion": "20261012.334.1",
+          "code_commit": "fa1d53620be60d683538b428a2a9cd29035b0127",
+          "dirty": false,
+          "complete": true,
+          "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-eb152b85-77c6-459b-8115-f32f6f0604f5",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39620574953",
+          "github_run_attempt": "1",
+          "github_sha": "fa1d53620be60d683538b428a2a9cd29035b0127",
+          "wheel_sha256": "73a21888154d96479db2a8362414f9f45b8dd8ca31400b706dcffb97c39c4ac2"
+        },
+        "zip_files": 24,
+        "selected_hashes_matched": 23,
+        "root_hashes_matched": 12,
+        "explicit_omitted_tools": [
+          "gitleaks",
+          "pip-26.2.1-py3-none-any.whl"
+        ],
+        "wheel_source_modules_matched": 17,
+        "wheel_hash": "73a21888154d96479db2a8362414f9f45b8dd8ca31400b706dcffb97c39c4ac2",
+        "coverage_raw_sqlite": true,
+        "coverage_gate": "PASS",
+        "junit": {
+          "tests": 234,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "snapshot_replay": {
+          "tables": 8,
+          "rows": {
+            "adjustment_factors": 0,
+            "bars_daily": 4,
+            "calendar": 4,
+            "corporate_actions": 0,
+            "security_master": 2,
+            "security_status": 2,
+            "symbol_alias": 2,
+            "universe_membership": 2
+          },
+          "manifest_digest": "bb1b96c60197312d0996d779f03e5d2e9995d5788db1e6b438f58f34540d716c",
+          "query_result_hash": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6"
+        }
+      }
+    ],
+    "cross_os_and_new_local_match": {
+      "status": "PASS",
+      "compared": "all eight logical tables, query rows and config",
+      "exclusions": "snapshot_id in table rows; snapshot_id and manifest_hash in config only",
+      "scope": "Windows and Ubuntu original CI evidence replayed using newly installed Windows SDK; not a new Linux installation"
+    }
+  },
+  "status": "PASS",
+  "finished_at": "2026-10-21T23:12:29.441924+08:00"
+}
