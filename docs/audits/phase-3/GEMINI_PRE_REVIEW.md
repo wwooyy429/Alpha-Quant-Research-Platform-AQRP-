@@ -1,5 +1,7 @@
 # 可直接交给Gemini的Phase3计划预审指令
 
+当前主审入口已依用户明确指令改为GPT_WORK_REVIEW.md；本文件保留为此前准备及可选Gemini补充参考，不再是强制重复门禁。历史原件与实际执行者不改。
+
 仓库 https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP- 。Phase3 PR完整固定SHA由PR描述AQRP_FIXED_REVIEW_SHA锁定，先记录40位值并checkout该版本，禁止审漂移HEAD。
 
 用户已明确验收Phase2并授权合并/标签后启动P3；main/phase2-baseline/v0.2.0同点f26255fc40a3080bfa883ad64938f60036a14759，PR #3 merge bb6076f，发布后SDK417+原16/4通过，证据在../phase-2/BASELINE.md和publication/。这不是请求再次批准P3启动，而是必需G1计划预审；目前无P3业务实现。

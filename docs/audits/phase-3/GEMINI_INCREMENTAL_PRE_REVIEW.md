@@ -1,5 +1,7 @@
 # 可直接转交Gemini：P3 G1修订固定SHA复核
 
+当前主审入口已依用户明确指令改为GPT_WORK_REVIEW.md；本文件保留为此前准备及可选Gemini补充参考，不再是强制重复门禁。历史原件与实际执行者不改。
+
 仓库 https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP- ；PR https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/5 。先记录PR描述AQRP_FIXED_REVIEW_SHA的完整40位SHA并checkout，起止核验，禁止审漂移HEAD；审查报告必须写出实际值。旧审查d10a55a7dd4bc9ca7793ed474bdc1b056916e96e，稳定main/phase2-baseline/v0.2.0=f26255fc40a3080bfa883ad64938f60036a14759。P3启动已授权，无业务实现，当前PLAN BLOCKED。
 
 1. 先核g1-d10/原报告/任务/原始ZIP、RECEIPT逐项hash、审查身份GPT Work及开发方DEVELOPER_RESPONSE。原15组75断言PASS不能当Gemini G1放行；双OS原始417仅P2回归。五项开发方修订都未自行CLOSED。不得回写旧报告/正确Golden。

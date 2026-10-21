@@ -1,5 +1,7 @@
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
+2026-10-22 审核分工更新（用户明确授权）：**后续审核、验证和测试以GPT Work为主；Codex负责开发/修复/必要自测，Gemini为可选补充，不再强制重复取得Gemini预审。** 详情见docs/REVIEW_PROTOCOL.md及docs/audits/phase-3/REVIEW_AUTHORITY_CHANGE.json。固定SHA、独立证据、阻断闭环、用户验收/合并/发布/阶段授权制度不变；不能将开发方自查改名为独立审查。当前Phase3 G1仍PLAN BLOCKED，五项待GPT Work主审复核，未获G1放行；以下旧Gemini专属安排为历史。
+
 2026-10-22 当前：**Phase3 G1 = PLAN BLOCKED / DESIGN REVISED / FIXED-SHA RE-REVIEW REQUIRED**。GPT Work对d10a55a补充发现2High/3Medium已按原字节归档，五项具体方案/新候选及开发方处理见docs/audits/phase-3/DEVELOPER_RESPONSE.md。未自判CLOSED；Test主体/权限与合成经济假设待用户具体确认，Gemini G1尚无PASS。P3启动授权保持，本轮仅设计修订，无业务实现、无账户/ACL部署、不合并、不打标签、不进入P4。以下较早状态为历史。
 
 2026-10-22 当前：**Phase2已ACCEPTED / RELEASED；Phase3 START AUTHORIZED / PLAN PRE-REVIEW REQUIRED**。核实main与phase2-baseline/v0.2.0同点f26255fc40a3080bfa883ad64938f60036a14759，已创建feature/phase-3-alpha-research。P3限既定26项（23 MVP/3 Competition Ready）、沿用合成数据及Python3.13.16；计划/接口/数值候选/风险与测试在docs/audits/phase-3/。本轮无P3业务实现，Gemini G1预审及阻断设计闭环后才实施；不重复索取启动授权，不把P2报告或旧417回归当P3通过。P3验收/合并发布/P4启动尚未授权，历史执行身份与缺原件事实保留。以下旧状态为历史。
@@ -53,13 +55,13 @@ Phase0已ACCEPTED并RELEASED，Gemini对7de1d0e81385ae97f98ea673fe05dd726f0b577b
 
 用户最新明确指令优先；V3.2 修订协作流程，V3.1 修订阶段依赖及质量契约，其余保留 V3.0。原文见 `docs/sources/`。GitHub 仓库及与固定 SHA 关联的可信证据为项目事实来源；未推送的本地成果只能称待同步草案。
 
-- GPT Work：主要开发、测试、文档、功能分支及 PR、修复审查缺陷。
-- Gemini：独立计划预审、指定 SHA 审查、独立核对答案及有权限时补充测试。初始只读；独立测试分支与 PR 须用户授权。不能用 GPT 自查、GPT 子代理或模板冒充 Gemini 审查。
+- Codex开发方：主要开发、修复、文档、必要自测/CI、功能分支及PR；实际执行身份必须如实记录。
+- GPT Work审查方（主要）：独立计划预审、指定SHA审查、数学答案/SDK/Actions ZIP与哈希验证及适用测试；初始只读，独立测试分支/PR另需授权。Gemini为可选补充；不能用开发方自查、子代理或模板冒充主审实际执行。
 - 用户：批准需求/架构变更、阶段验收、main 合并、发布及下一阶段启动。各项授权分别记录，不推定相互包含。
 
 ## 必经关卡
 
-阶段计划与接口草案 → Gemini 计划预审 → 解决阻断设计问题 → 已授权范围实现/自测 → PR + 完整 Commit SHA → Gemini 固定 SHA 审查 → 修复新 SHA 并复核 → 人工验收 → 按授权合并/标签 → 停止等待下一阶段明确授权。
+阶段计划与接口草案 → GPT Work主审计划预审 → 解决阻断设计问题 → 已授权范围实现/自测 → PR + 完整Commit SHA → GPT Work固定SHA审查与验证 → 修复新SHA并复核 → 人工验收 → 按授权合并/标签 → 停止等待下一阶段明确授权。
 
 Phase 0 可以准备待审设计和资料包；Gemini 预审前不得宣称正式设计基线已批准或开始业务实现。审查者不得审查漂移的分支头部。Critical/High 未解决则阻断；Medium 根据金融正确性、安全与验收标准判定是否阻断。CI、Gemini 和用户批准是不同事实。
 
@@ -128,13 +130,13 @@ Phase0已ACCEPTED并RELEASED，Gemini对7de1d0e81385ae97f98ea673fe05dd726f0b577b
 
 用户最新明确指令优先；V3.2 修订协作流程，V3.1 修订阶段依赖及质量契约，其余保留 V3.0。原文见 `docs/sources/`。GitHub 仓库及与固定 SHA 关联的可信证据为项目事实来源；未推送的本地成果只能称待同步草案。
 
-- GPT Work：主要开发、测试、文档、功能分支及 PR、修复审查缺陷。
-- Gemini：独立计划预审、指定 SHA 审查、独立核对答案及有权限时补充测试。初始只读；独立测试分支与 PR 须用户授权。不能用 GPT 自查、GPT 子代理或模板冒充 Gemini 审查。
+- Codex开发方：主要开发、修复、文档、必要自测/CI、功能分支及PR；实际执行身份必须如实记录。
+- GPT Work审查方（主要）：独立计划预审、指定SHA审查、数学答案/SDK/Actions ZIP与哈希验证及适用测试；初始只读，独立测试分支/PR另需授权。Gemini为可选补充；不能用开发方自查、子代理或模板冒充主审实际执行。
 - 用户：批准需求/架构变更、阶段验收、main 合并、发布及下一阶段启动。各项授权分别记录，不推定相互包含。
 
 ## 必经关卡
 
-阶段计划与接口草案 → Gemini 计划预审 → 解决阻断设计问题 → 已授权范围实现/自测 → PR + 完整 Commit SHA → Gemini 固定 SHA 审查 → 修复新 SHA 并复核 → 人工验收 → 按授权合并/标签 → 停止等待下一阶段明确授权。
+阶段计划与接口草案 → GPT Work主审计划预审 → 解决阻断设计问题 → 已授权范围实现/自测 → PR + 完整Commit SHA → GPT Work固定SHA审查与验证 → 修复新SHA并复核 → 人工验收 → 按授权合并/标签 → 停止等待下一阶段明确授权。
 
 Phase 0 可以准备待审设计和资料包；Gemini 预审前不得宣称正式设计基线已批准或开始业务实现。审查者不得审查漂移的分支头部。Critical/High 未解决则阻断；Medium 根据金融正确性、安全与验收标准判定是否阻断。CI、Gemini 和用户批准是不同事实。
 

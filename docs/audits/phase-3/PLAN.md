@@ -1,8 +1,8 @@
-# Phase 3 Alpha Research & Validation 计划（待Gemini预审）
+# Phase 3 Alpha Research & Validation 计划（待GPT Work主审预审）
 
-当前修订：**PLAN BLOCKED / DESIGN REVISED / FIXED-SHA RE-REVIEW REQUIRED**。GPT Work d10五项设计发现及处理见DEVELOPER_RESPONSE.md；以下初始计划由文末专项设计补充，未获Gemini G1放行。
+当前修订：**PLAN BLOCKED / DESIGN REVISED / FIXED-SHA RE-REVIEW REQUIRED**。GPT Work d10五项设计发现及处理见DEVELOPER_RESPONSE.md；以下初始计划由文末专项设计补充，未获当前主审G1放行。
 
-启动已授权，起点为已验收发布main/phase2-baseline/v0.2.0同点f26255fc40a3080bfa883ad64938f60036a14759。本轮仅文档、需求映射和独立手算候选，不新建P3业务包，不改发布源码/正式测试/工具/CI/锁/Golden/旧审计原件。状态PLAN PRE-REVIEW REQUIRED；不得把启动授权当Gemini计划PASS。
+启动已授权，起点为已验收发布main/phase2-baseline/v0.2.0同点f26255fc40a3080bfa883ad64938f60036a14759。本轮仅文档、需求映射和独立手算候选，不新建P3业务包，不改发布源码/正式测试/工具/CI/锁/Golden/旧审计原件。状态PLAN PRE-REVIEW REQUIRED；不得把启动授权当主审计划PASS。
 
 范围固定canonical phase=3共26项：23 MVP、3 Competition Ready，逐项见REQUIREMENTS_TRACEABILITY.md及原条目快照；不删除DATA-012、FACTOR-007、RESEARCH-003三项Competition Ready，不增加研究DAG或外部插件执行需求。阶段支持日频SYNTHETIC_V1，真实市场/源仍另行确定；Python仍3.13.16标准GIL/x64、既有22包requirements.lock。拟先用既有NumPy做OLS/数值、标准库做明确统计投影；是否需另锁SciPy/statsmodels由预审评估，任何安装/升级均先列候选和兼容证据，不在计划轮静默改锁。
 
@@ -14,7 +14,7 @@ G1后实施顺序：
 4. P3.4：Validation标签端独立生成next-open→horizon-open含行动收益，IC/Rank/ICIR/分组/TMB/衰减/年度/因子相关，严格按同cutoff/股票池/stage对齐。
 5. P3.5：时序split、purge/embargo与walk-forward、受控Test访问；HAC及多重检验/全部候选记录/重复指纹/预算和污染门禁；预先标准缺失则正式审批拒绝，不能自动ResearchValidated。
 6. P3.6：统一research服务及最薄CLI、静态JSON/HTML研究报告和实验重现，Momentum→Reversal只改精确Ref跑完整研究；真实错误/失败落账，不靠mock或占位成功。P4组合/风险、P5订单账本回测、P6网页、P7全链/比赛仍Planned。
-7. P3.7：独立答案+边界/性质、已发布417基线回归和原16/4、干净wheel/双OS/原始ZIP核验、冻结完整SHA给Gemini实现复核，再申请用户验收；P3合并/标签与P4启动另行授权。
+7. P3.7：独立答案+边界/性质、已发布417基线回归和原16/4、干净wheel/双OS/原始ZIP核验、冻结完整SHA给GPT Work主审实现复核，再申请用户验收；P3合并/标签与P4启动另行授权。
 
 预计改动范围（预审后）：data/exposures.py与独立sidecar快照；factors的Price-Volume及必要兼容元数据；research/{contracts,operators,pipeline,neutralize,cache,engine}、validation/{labels,metrics,splits,inference,approvals}、experiments/{contracts,ledger,reproduce}、研究专用services/cli/reports，按最终接口精简，不能为了目录填空。相关tests和新P3 Golden、CI覆盖/上传/版本候选0.3.0仅实施时变更。原factor数据API签名/三公式不能破坏；必要修改先记录影响、兼容/原Ref重放及全bundle审查，不重写P1数学。
 
