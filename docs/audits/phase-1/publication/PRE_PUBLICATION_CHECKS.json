@@ -1,0 +1,21 @@
+{
+  "stage": "Prepared and checked before atomic remote publication; not a claim that push or tag publication already happened",
+  "performed_by": "Codex developer",
+  "verified_merged_main_sha": "9b843b17ccf362cf5b7a5351269559a627c55b32",
+  "merged_main_tree_matches_authorized_pr_head": true,
+  "merged_main_full_sdk": "PASS: 102 tests, no failures/errors/skips; full entry log archived",
+  "publication_delta": "Only baseline/authorization/status docs and raw execution evidence, no business changes",
+  "business_file_hash_checks": 45,
+  "phase0_frozen_file_hash_checks": 50,
+  "requirements": 106,
+  "groups": 16,
+  "secret_scan_and_positive_negative_controls": "PASS",
+  "secret_findings": [],
+  "remote_refs_before_atomic_publication": [
+    "9b843b17ccf362cf5b7a5351269559a627c55b32\trefs/heads/main",
+    "0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0\trefs/tags/phase0-baseline",
+    "7de1d0e81385ae97f98ea673fe05dd726f0b577b\trefs/tags/phase0-baseline^{}"
+  ],
+  "next_step": "Commit only release records; create annotated phase1-baseline; atomically fast-forward main and create tag; verify remote SHA, peeled tag, ancestry, manifests and PR state. Actual final SHA and verification receipt recorded in PR #2 and external post-publication receipt.",
+  "phase2_authorized": false
+}

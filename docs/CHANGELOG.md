@@ -1,5 +1,12 @@
 # 变更记录
 
+## 2026-10-21 · Phase1合并与基线发布
+
+- 用户分别明确验收和合并/标签授权；PR #2保留历史合并为9b843b17ccf362cf5b7a5351269559a627c55b32，tree与获批PR head一致。
+- 合并后在main运行完整SDK，102测试、覆盖率/数学/数据smoke/秘密扫描正负控制通过；原始日志、快照和wheel按字节归档。
+- 维护BASELINE/授权/合并/文件版本/进度记录；最终登记main与附注标签phase1-baseline原子发布，发布后核对完整SHA及内容。Phase0标签保持不变。
+- 不修改业务/测试/CI/锁/Golden，不伪造Gemini实际执行或豁免原话；Phase2未授权。
+
 ## 2026-10-21 · Phase 1 用户验收完成
 
 - 按用户原话“phase 1验收已完成”登记ACCEPTED，对应当前交付71cc044d、业务74bdb92；原话及SHA绑定方式记录在audits/phase-1/acceptance/。

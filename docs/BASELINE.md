@@ -1,3 +1,9 @@
+# 已发布项目基线登记
+
+Phase1已获用户验收及单独合并/标签授权；本次基线为 `phase1-baseline`，完整追溯见 [Phase1发布登记](audits/phase-1/BASELINE.md)。最终Commit通过标签解析及PR #2发布回执核实。Phase2未授权。
+
+以下为Phase0历史发布登记，稳定标签和原审计证据保持不变。
+
 # Phase 0 已发布main基线与门禁闭环登记
 
 **AUDIT：PASS。ACCEPTED：YES。Phase0：RELEASED。F-001：RESOLVED / CLOSED。**
