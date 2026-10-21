@@ -133,6 +133,7 @@ def main():
     )
     command([str(py), str(source / "tools/independent_reference.py")], cwd=source)
     command([str(py), str(source / "tools/data_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/factor_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
     env["complete"] = True
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
@@ -142,7 +143,48 @@ def main():
         if p.is_file() and p.name != "artifacts.json"
     }
     (RUN / "artifacts.json").write_text(
-        json.dumps([{"path": k, "sha256": v} for k, v in sorted(hashes.items())], indent=2),
+        json.dumps(
+            [
+                {
+                    "path": k,
+                    "sha256": v,
+                    "uploaded": k not in ("gitleaks.exe", "gitleaks", bootstrap.name),
+                }
+                for k, v in sorted(hashes.items())
+            ],
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    selected = []
+    for path in sorted(RUN.rglob("*")):
+        relative = path.relative_to(RUN)
+        if path.is_file() and (
+            (
+                len(relative.parts) == 1
+                and (path.suffix in (".log", ".json", ".xml") or path.name == ".coverage")
+            )
+            or relative.parts[0] in ("dataset", "factor-dataset", "factor-runs", "wheel")
+        ):
+            selected.append(
+                {
+                    "path": relative.as_posix(),
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                }
+            )
+    (RUN / "upload-selection.json").write_text(
+        json.dumps(
+            {
+                "files": selected,
+                "self_excluded": True,
+                "omitted_local_tools": [
+                    "gitleaks.exe" if os.name == "nt" else "gitleaks",
+                    bootstrap.name,
+                ],
+                "policy": "Exact selected file hashes; omitted tools remain independently pinned and locally verified, not falsely claimed as uploaded",
+            },
+            indent=2,
+        ),
         encoding="utf-8",
     )
     print(f"PASS: {RUN}")

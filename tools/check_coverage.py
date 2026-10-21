@@ -12,7 +12,21 @@ def main():
         s = data["summary"]
         line = 100 * s["covered_lines"] / max(1, s["num_statements"])
         branch = 100 * s["covered_branches"] / s["num_branches"] if s["num_branches"] else 100
-        minimum = (95, 90) if file.replace("\\", "/").split("/")[-1] in critical else (90, 85)
+        normalized = file.replace("\\", "/")
+        factor_critical = "/factors/" in normalized and normalized.split("/")[-1] in {
+            "contracts.py",
+            "input.py",
+            "admission.py",
+            "builtins.py",
+            "engine.py",
+        }
+        minimum = (
+            (95, 90)
+            if normalized.split("/")[-1] in critical
+            or factor_critical
+            or "/core/security/" in normalized
+            else (90, 85)
+        )
         if s["num_statements"] and (line < minimum[0] or branch < minimum[1]):
             failures.append(f"{file}: line={line:.2f}, branch={branch:.2f}, required={minimum}")
     if failures:

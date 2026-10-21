@@ -1,0 +1,55 @@
+{
+  "performed_by": "Codex developer, not original Gemini execution",
+  "method": "Fraction.from_float, compares binary64 to exact rational; same-float comparison can be zero without exact rational equality",
+  "results": [
+    {
+      "rational": "21/100",
+      "float_repr": "0.21",
+      "error_vs_exact_rational": "7/900719925474099200",
+      "error_float": 7.771561172376097e-18,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "-21/100",
+      "float_repr": "-0.21",
+      "error_vs_exact_rational": "7/900719925474099200",
+      "error_float": 7.771561172376097e-18,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "3/5",
+      "float_repr": "0.6",
+      "error_vs_exact_rational": "1/45035996273704960",
+      "error_float": 2.2204460492503132e-17,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "-1/5",
+      "float_repr": "-0.2",
+      "error_vs_exact_rational": "1/90071992547409920",
+      "error_float": 1.1102230246251566e-17,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "1/5",
+      "float_repr": "0.2",
+      "error_vs_exact_rational": "1/90071992547409920",
+      "error_float": 1.1102230246251566e-17,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "0",
+      "float_repr": "0.0",
+      "error_vs_exact_rational": "0",
+      "error_float": 0.0,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "-1/100",
+      "float_repr": "-0.01",
+      "error_vs_exact_rational": "3/14411518807585587200",
+      "error_float": 2.0816681711721684e-19,
+      "within_abs_1e_12": true
+    }
+  ]
+}
