@@ -12,6 +12,6 @@
 
 仅factors/contracts.py和engine.py两处Python实现改变；core/data及因子公式/输入/Git Golden/依赖锁/版本0.2.0不改。完整26模块bundle由fc1b501…更新为51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d，详见CODE_REVIEW_EVIDENCE.json及active ../CODE_REVIEW.md/../CODE_BUNDLE.json、随库receipt。实际开发方审查不等于Gemini独立批准或金融批准，仍ENGINEERING_APPROVED / TEST_ONLY / NONE。
 
-25项正式回归位于tests/factors/test_config_integrity.py，追踪FACTOR-001/002/010、QA-002、ENV-002；原外置探针保持原字节供独立复跑，不改正确答案消除失败。开发源417项通过、覆盖率门槛通过；新完整安装SDK、未编辑原16/四探针、双OS CI及原始ZIP按实际执行追加。本轮附件是审查资料，授权仍来自先前Phase2开发/修复范围，不新增main合并、标签发布、阶段验收或P3权限。
+25项正式回归位于tests/factors/test_config_integrity.py，追踪FACTOR-001/002/010、QA-002、ENV-002；原外置探针保持原字节供独立复跑，不改正确答案消除失败。开发源417项通过、覆盖率门槛通过；新完整安装SDK及双OS CI各417通过，未编辑原16/四探针分别16/4通过，两份原始ZIP的官方digest/大小、CRC/路径、46项内部hash、实际wheel/.coverage、两套八表及查询/三因子产物已实际核对通过，原件在sdk/与ci/。执行业务708b83b；最终审查资料提交仅改证据/状态，需对新固定SHA独立复核。本轮附件是审查资料，授权仍来自先前Phase2开发/修复范围，不新增main合并、标签发布、阶段验收或P3权限。
 
 仍需新完整40位SHA复核、002/003由实际审查方裁定、旧报告事实/执行限制如实处理，以及用户Phase2人工验收和分别授权的合并发布。Gemini本人新的完整SDK仍NOT VERIFIED；本次GPT Work真实新SDK和ZIP复核证据单独登记，不相互替代。

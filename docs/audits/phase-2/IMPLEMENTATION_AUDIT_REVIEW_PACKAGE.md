@@ -1,6 +1,6 @@
 # Phase2 实现报告接收后的增量复核入口
 
-2026-10-22 c707补充复核：001 PASS；002/003两项阻断开发方复现并修复，新增25项正式回归映射FACTOR-001/002/010、QA-002、ENV-002，417项开发源测试及覆盖通过。最新固定版本资料见lineage-fix/DEVELOPER_RESPONSE.md；旧392项及报告保持其原范围，不以自测宣告验收。
+2026-10-22 c707补充复核：001 PASS；002/003两项阻断开发方复现并修复，新增25项正式回归映射FACTOR-001/002/010、QA-002、ENV-002，新干净SDK/双OS各417通过，原16/四探针全部通过，原始ZIP已核对。最新固定版本资料见lineage-fix/DEVELOPER_RESPONSE.md；旧392项及报告保持其原范围，不以自测宣告验收。
 
 2026-10-22 新一轮共享代码集成已完成开发方验证：业务566f0ece4175fddb2703daab3b5b26ff0e4e245f，完整SDK/双OS各392项，原始外置16项，原始ZIP与新准入receipt核对通过。最新资料及新固定SHA审查范围见 integration-011/README.md、REVIEW_REQUEST.md、EVIDENCE_INDEX.json。以下254项/旧bundle均为此前轮次，不代表新版本独立审查。
 
