@@ -1,0 +1,77 @@
+{
+  "scope": "Developer byte/contract verification; not independent audit or OS deployment",
+  "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-implementation-20261022\\clean-sdk\\aqrp-8f6226b8-5727-45b5-a08f-ed14aaa22673",
+  "head_sha": "07e7c88745c031feeaee5d1e374a02caada77777",
+  "executed_sha": "07e7c88745c031feeaee5d1e374a02caada77777",
+  "source_tree": "0299aacd38dc8e94d896a93459346e74fb0d1404",
+  "executed_parents": [
+    "0926745c6be4b9b8e8b3f69203e357dfc6008de9"
+  ],
+  "source_binding": "EXACT_COMMIT",
+  "environment": {
+    "run_id": "aqrp-8f6226b8-5727-45b5-a08f-ed14aaa22673",
+    "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "os": "Windows-11-10.0.26300-SP0",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "code_commit": "07e7c88745c031feeaee5d1e374a02caada77777",
+    "dirty": false,
+    "complete": true,
+    "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+    "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p3-implementation-20261022\\clean-sdk\\aqrp-8f6226b8-5727-45b5-a08f-ed14aaa22673",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "github_sha": null,
+    "wheel_sha256": "34895665aa2635b5bde33598333e32fc09170de34e04af9bab72b3c51b44cc08"
+  },
+  "zip_sha256": null,
+  "zip_bytes": null,
+  "crc": "NOT_APPLICABLE_DIRECTORY",
+  "selected_files": 185,
+  "upload_selection_sha256": "9a19f279d814389e0d9b5a87354964cbc20568cd1aa3dcc81498e0e96172d8ea",
+  "junit": {
+    "tests": 564,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_gates": "PASS",
+  "wheel_sha256": "34895665aa2635b5bde33598333e32fc09170de34e04af9bab72b3c51b44cc08",
+  "python_modules": 45,
+  "dependency_wheels": 22,
+  "snapshots": [
+    {
+      "path": "dataset/9ff411f0-6c08-4c52-a2de-6fb566c822eb",
+      "hash": "d4b377a8dd3253a2997056b4c6bf49767f2959b68bec865892ec152807c3eb47"
+    },
+    {
+      "path": "factor-dataset/1e125b3b-dbfa-425c-9ee3-0942b1372a6d",
+      "hash": "d7067c971ac89324d52ec33ee5544210210cd2d9e0bd4e5d1938b43c013159d3"
+    },
+    {
+      "path": "reproduction/dataset/1f922c03-53b8-429c-8917-0f116af02e77",
+      "hash": "e59e2372327987365b3a7500311ad5029b5369571c5562a65daed545daa81590"
+    },
+    {
+      "path": "research/inputs/dataset/7998ad62-da78-46f1-a0ca-eedfabf86a66",
+      "hash": "9650361e2a1c0081d6fc18e0f90230795a81ade98ddf6a4de83276428b8b11b6"
+    },
+    {
+      "path": "research/replacement-inputs/dataset/23f914fe-3647-4e4c-94fe-e457b24b06fd",
+      "hash": "d20339807762ae5c7bb781c65a8ca10516e4045ffa8ec366e002b5984be41162"
+    }
+  ],
+  "verified_runs": [
+    "d2a55fdf-2fc8-4876-b3a5-cb1560a7d565",
+    "826873ac-7112-4114-8518-1ae98b5c11d9",
+    "cc6793dd-fe5a-492d-b3e0-1bca63d86bdf"
+  ],
+  "engine_batches": 95,
+  "factor_runs": 3,
+  "engineering_reports": 3,
+  "original_published_files": 66,
+  "original_runs_replayed": 3,
+  "result": "PASS"
+}
