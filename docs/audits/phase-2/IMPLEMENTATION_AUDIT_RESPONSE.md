@@ -1,5 +1,7 @@
 # Phase 2 实现审计接收与开发方核对
 
+最新增量：修订数学源/日志与增量报告已收到，Volume/证券B/非零误差核心问题核对通过；本文件以下旧版缺陷或“未收到”表述按历史时点解释，不代表当前仍未修。Gemini十二项均标AGREE/CLOSED，但部分解释仍与真实标题/需求职责/路径冲突，最新事实及执行限制见MATH_INCREMENTAL_RECONCILIATION.md和gemini/MATH_INCREMENTAL_INDEX.json；尚未人工验收/发布。
+
 当前补充：用户已提供旧预审命名的数学脚本/日志，原件已按本轮时间补收；复跑相符但存在错误公式和验证范围不足。此前“未收到”的文字按历史接收时点解释，完整当前核对见MATH_SUPPLEMENT_RECONCILIATION.md。实现报告所称新数学/hash执行证据仍未匹配，不能以旧文件名或相同最终数字补齐。
 
 Gemini审查固定2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1，业务8183b3762b56c466b989d9062a720b5f0d31172a。报告原件按字节归档于gemini/aqrp_phase2_implementation_audit_report.md，SHA256为395eadf04145e5a23b624687c3576def8a9b23260cb75a53037c7218e30a3d0f，17062 bytes。来源/用户授权边界见gemini/IMPLEMENTATION_AUDIT_INDEX.json。

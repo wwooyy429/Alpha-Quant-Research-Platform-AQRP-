@@ -1,0 +1,154 @@
+{
+  "run_id": "p2-revised-math-2580bfee-c6e6-4ff3-a95c-f59d9d209c26",
+  "received_at_utc": "2026-10-21T13:24:31.442948+00:00",
+  "performed_by": "Codex developer; original sources identify Gemini, replay does not authenticate original execution provenance",
+  "incoming_sha": "0b5107fa611af9d3a858440261b5321c83ca9fa4",
+  "received_files": [
+    {
+      "source": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_math_verification_revised.py",
+      "bytes": 9527,
+      "sha256": "a4d6ab561cf81040411a9980adc4d72dbd69b79661cebaaf395da2312baae92c"
+    },
+    {
+      "source": "B:\\迅雷下载\\aqrp_phase2_math_verification_revised.log",
+      "bytes": 5702,
+      "sha256": "b211a417759654981eff08309415bcf9f0fd8b682bc9a91711d3750e2b23ffee"
+    },
+    {
+      "source": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_math_and_errata_incremental_recheck_report.md",
+      "bytes": 20041,
+      "sha256": "3df97ed8a3902463a8c7139cc406789b32d08ac9ec554ca38aa560d57c0868d0"
+    }
+  ],
+  "manual_static_review": "Full source read, standard library arithmetic/print/assert only; no network/files/dynamic execution before isolated replay",
+  "imports": [
+    "import sys",
+    "from decimal import Decimal",
+    "from fractions import Fraction"
+  ],
+  "argv": [
+    "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "-I",
+    "-S",
+    "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\phase2-revised-math\\aqrp_phase2_math_verification_revised.py"
+  ],
+  "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\phase2-revised-math",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "returncode": 0,
+  "stdout_sha256": "0981de829e421aa4ec55df468ff0f43f717792fa7109d992adc4eb13f444e5a1",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "supplied_log_runtime": "3.11.2",
+  "developer_replay_runtime": "3.13.16",
+  "all_other_log_content_matches_after_only_newlines_and_one_runtime_banner_normalization": true,
+  "byte_identical_log": false,
+  "script_target_sha_declared": "0b5107fa611af9d3a858440261b5321c83ca9fa4",
+  "script_does_not_programmatically_verify_git_target": true,
+  "volume_formula_and_security_B_derivation": "PASS OF ARITHMETIC SCOPE",
+  "independent_developer_fraction_checks": [
+    {
+      "name": "mom",
+      "exact": "21/100",
+      "float": 0.21,
+      "absolute_error_exact": "7/900719925474099200",
+      "absolute_error_float": 7.771561172376097e-18,
+      "relative_error_exact": "1/27021597764222976",
+      "relative_error_status": "CALCULATED"
+    },
+    {
+      "name": "rev",
+      "exact": "-21/100",
+      "float": -0.21,
+      "absolute_error_exact": "7/900719925474099200",
+      "absolute_error_float": 7.771561172376097e-18,
+      "relative_error_exact": "1/27021597764222976",
+      "relative_error_status": "CALCULATED"
+    },
+    {
+      "name": "volume_raw_old_input",
+      "exact": "3/5",
+      "float": 0.6,
+      "absolute_error_exact": "1/45035996273704960",
+      "absolute_error_float": 2.2204460492503132e-17,
+      "relative_error_exact": "1/27021597764222976",
+      "relative_error_status": "CALCULATED"
+    },
+    {
+      "name": "volume_formal_old_input",
+      "exact": "-2/5",
+      "float": -0.4,
+      "absolute_error_exact": "1/45035996273704960",
+      "absolute_error_float": 2.2204460492503132e-17,
+      "relative_error_exact": "1/18014398509481984",
+      "relative_error_status": "CALCULATED"
+    },
+    {
+      "name": "golden_A_volume",
+      "exact": "3/5",
+      "float": 0.6,
+      "absolute_error_exact": "1/45035996273704960",
+      "absolute_error_float": 2.2204460492503132e-17,
+      "relative_error_exact": "1/27021597764222976",
+      "relative_error_status": "CALCULATED"
+    },
+    {
+      "name": "golden_B_mom",
+      "exact": "-1/5",
+      "float": -0.2,
+      "absolute_error_exact": "1/90071992547409920",
+      "absolute_error_float": 1.1102230246251566e-17,
+      "relative_error_exact": "1/18014398509481984",
+      "relative_error_status": "CALCULATED"
+    },
+    {
+      "name": "golden_B_rev",
+      "exact": "1/5",
+      "float": 0.2,
+      "absolute_error_exact": "1/90071992547409920",
+      "absolute_error_float": 1.1102230246251566e-17,
+      "relative_error_exact": "1/18014398509481984",
+      "relative_error_status": "CALCULATED"
+    },
+    {
+      "name": "golden_B_volume",
+      "exact": "0",
+      "float": 0.0,
+      "absolute_error_exact": "0",
+      "absolute_error_float": 0.0,
+      "relative_error_exact": null,
+      "relative_error_status": "N/A reference zero"
+    }
+  ],
+  "zero_relative_error_display": "Provided script prints0 but skips relative assertion for zero; interpret N/A, not computed zero",
+  "tolerance_operator_display": "Source asserts strict< but prints<=; current cases strictly inside both, no business threshold changed",
+  "contains_hash_zip_sdk_verification": false,
+  "report_claim_script_bytes": 9528,
+  "report_claim_script_hash_prefix": "4d71b9db4c2362e3",
+  "provided_script_matches_report_size_and_prefix": false,
+  "diagnostic_append_one_lf_not_applied": {
+    "bytes": 9528,
+    "sha256": "4d71b9db4c2362e399b7edcd08a2a875c1a7240ec331078b79e7ef66336933be",
+    "matches_report_16_hex_prefix_4d71b9db4c2362e3": true
+  },
+  "report_log_size_and_hash_prefix_matches": true,
+  "report_twelve_errata_verdict": "ALL AGREE/CLOSED as reported; some explanations contradict actual repository facts",
+  "old_current_manifest_files_verified": 663,
+  "protected_files_verified": 50,
+  "source_tests_tools_ci_lock_golden_unchanged": true,
+  "main_and_tags": {
+    "refs/heads/main": "f579b2c99e762085772de6e70ba1fa98792a7add",
+    "refs/tags/phase0-baseline": "0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0",
+    "refs/tags/phase0-baseline^{}": "7de1d0e81385ae97f98ea673fe05dd726f0b577b",
+    "refs/tags/phase1-baseline": "1a8e47ee4be910aa7eeeefa430015e683a8aa6f5",
+    "refs/tags/phase1-baseline^{}": "f579b2c99e762085772de6e70ba1fa98792a7add"
+  },
+  "phase2_tag_exists": false,
+  "sync_conflicts": [],
+  "gemini_sdk_independent_execution": "NOT VERIFIED",
+  "zip_scope_per_report": "Evidence Reviewed Only; no new independent remote download/execution claimed",
+  "human_accepted": false,
+  "user_accepted_limits": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase3_authorized": false
+}

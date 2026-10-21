@@ -1,5 +1,7 @@
 # Phase2 数学脚本/日志补充接收与核对
 
+最新增量：修订数学源/日志与增量报告已收到，Volume/证券B/非零误差核心问题核对通过；本文件以下旧版缺陷或“未收到”表述按历史时点解释，不代表当前仍未修。Gemini十二项均标AGREE/CLOSED，但部分解释仍与真实标题/需求职责/路径冲突，最新事实及执行限制见MATH_INCREMENTAL_RECONCILIATION.md和gemini/MATH_INCREMENTAL_INDEX.json；尚未人工验收/发布。
+
 用户在前轮实现报告核对后提供aqrp_phase2_math_verification.py及.log，并答复“已提供”。两文件已按原字节归档，未改写、未更名冒充其他原件。当前固定入站PR head为79c91e4bf7b4341c810705a00648283e80ab805a；本次只是补充接收，不能倒填此前提交已经包含这些文件。
 
 | 文件 | 原始来源 | bytes | SHA256 |

@@ -1,5 +1,7 @@
 # Phase2 计划预审接收、勘误及开发方处理
 
+最新增量：修订数学源/日志与增量报告已收到，Volume/证券B/非零误差核心问题核对通过；本文件以下旧版缺陷或“未收到”表述按历史时点解释，不代表当前仍未修。Gemini十二项均标AGREE/CLOSED，但部分解释仍与真实标题/需求职责/路径冲突，最新事实及执行限制见MATH_INCREMENTAL_RECONCILIATION.md和gemini/MATH_INCREMENTAL_INDEX.json；尚未人工验收/发布。
+
 最新补充：旧预审数学.py/.log已收到并复跑日志相符；参考Volume错式、证券B常量比较及无hash/SDK/ZIP验证等详见MATH_SUPPLEMENT_RECONCILIATION.md。原接收记录保留历史事实；新增核对仍待Gemini确认，不能据此关闭全部实现执行缺口。
 
 当前增量：Gemini已在2a70dc6实现报告中认可八项勘误，并关闭F-P2-PRE-001/002（限定受审内置工程范围）。以下“待确认”等为此前开发方处理快照；当前原件、12项新增事实更正与执行证据缺口见IMPLEMENTATION_AUDIT_RESPONSE.md及gemini/IMPLEMENTATION_AUDIT_INDEX.json，不能据PASS宣告全部证据闭环或用户验收。
