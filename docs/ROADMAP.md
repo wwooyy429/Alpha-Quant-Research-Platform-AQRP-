@@ -5,8 +5,8 @@ Phase0已发布；用户现已授权Phase1开发及合成数据/Python3.13.16范
 | Phase / 状态 | 范围、输入前提及允许文件 | 输出与适用验收 / 禁止越界 |
 |---|---|---|
 | 0 / RELEASED | V3.0–3.2；用户ACCEPTED，PR#1已合并，phase0-baseline固定7de1d0e，Gemini Gate PASS及F-001 CLOSED | 规范/契约/Golden设计与审计基线已发布；本次仅追加报告归档，不开发业务包/网页/引擎 |
-| 1 / ACCEPTED / RELEASED | 用户人工验收及单独合并/标签授权，PR #2已合并；稳定phase1-baseline，详见audits/phase-1/BASELINE.md | 102测试及适用检查通过；历史独立执行/字节限制保留；Phase2未授权，停止等待 |
-| 2 / PLANNED | P1验收+P2授权；Data API可用；未来 factors 与 tests/factors | Factor API/Registry、元数据/参数/版本、Momentum/Reversal/Volume、注册/替换/回滚/major兼容；不要求研究/回测E2E |
+| 1 / ACCEPTED / RELEASED | 用户人工验收及单独合并/标签授权，PR #2已合并；稳定phase1-baseline，详见audits/phase-1/BASELINE.md | 102测试及适用检查通过；历史独立执行/字节限制保留；用户已另行授权Phase2，进入其计划预审 |
+| 2 / PLAN PRE-REVIEW REQUIRED；启动已授权 | 已核实P1 main/tag f579b2c；独立feature/phase-2-factor-registry；10项MVP需求，计划见audits/phase-2/PLAN.md | Gemini计划预审后实施Factor API/Registry/三因子/准入；当前只有计划，无P2业务代码；不提前研究/回测，不合并/发布或进入P3 |
 | 3 / PLANNED | P2验收+P3授权；统计/样本外协议冻结；research,validation,experiments,研究services/CLI与报告 | 处理链/算子/Price-Volume、IC/Rank/ICIR/分组/衰减/相关/显著性/OOS、实验记录、完整研究链替换；不调用未实现组合/回测。因子仅ResearchValidated |
 | 4 / PLANNED | P3验收+P4授权；风险/交易约束profile批准；portfolio,risk | 单/多因子、等权/分数权、long-only/short、单票/gross/net/杠杆/行业/Beta/换手/借券/不可行测试；账户输入用明确夹具，不声称已撮合 |
 | 5 / PLANNED | P4验收+P5授权；事件及账户/profile批准；backtest,execution,performance与模拟services/CLI | 订单/部分成交/拒绝取消/成本滑点/流动性/交收/行动/账本/净值/绩效、独立资金答案、组合回测替换；策略批准需此阶段证据；不提前网页 |
