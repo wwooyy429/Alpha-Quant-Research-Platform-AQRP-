@@ -33,3 +33,7 @@ Prior evidence16083e1 workflow39616587448, previously queued, is now confirmed A
 Next independent review must use that complete new review SHA, with business8902ba0 as the code anchor, and inspect round2/REVIEW_PACKAGE.md and round2/EXECUTION_EVIDENCE.md (234 SDK tests,16 original cases and round2 original ZIPs). Do not ask the reviewer to rerun3ab when validating the newer correction.
 
 Gemini/designated evidence, independent current-SHA review, user correction acceptance and separate merge/release authorization remain pending. Phase2 PR #3 still requires controlled incorporation, shared-code approval hash/receipt review and fresh Phase2 validation. main/Phase0+1 tags/Phase2 branch stay unchanged. No merge, tag, Phase3 or new business implementation in this intake.
+
+## Windows checkout path correction
+
+Receipt commit837983f triggered run39620003625: Ubuntu PASS; Windows Git checkout failed with Filename too long before SDK start, then always-upload had no run artifacts. Full decoded job log and API steps are retained in WINDOWS_CHECKOUT_FAILURE files. The original SDK run directory is relocated to sdk/ inside this receipt, with per-file before/after path and identical SHA256 in RECEIPT_INDEX.json. Original source manifest, report bytes and all financial/code assets remain unchanged. No workflow policy is changed or failed test suppressed.
