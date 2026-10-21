@@ -1,0 +1,258 @@
+{
+  "audit": "GPT Work 补充审核",
+  "time": "2026-10-21T21:36:32.502343+08:00",
+  "commands": [
+    {
+      "name": "p0-merge",
+      "argv": [
+        "git",
+        "show",
+        "-s",
+        "--format=%H%n%P%n%T",
+        "8c37e952be61054c6c72b5aaf573026c0355647b"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p1-18d51fb",
+      "exit_code": 0
+    },
+    {
+      "name": "p0-head",
+      "argv": [
+        "git",
+        "show",
+        "-s",
+        "--format=%H%n%P%n%T",
+        "228190a0c46595cf2927125fdc7d4f1c51b39ccf"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p1-18d51fb",
+      "exit_code": 0
+    },
+    {
+      "name": "p0-baseline",
+      "argv": [
+        "git",
+        "show",
+        "-s",
+        "--format=%H%n%P%n%T",
+        "7de1d0e81385ae97f98ea673fe05dd726f0b577b"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p1-18d51fb",
+      "exit_code": 0
+    },
+    {
+      "name": "p1-merge",
+      "argv": [
+        "git",
+        "show",
+        "-s",
+        "--format=%H%n%P%n%T",
+        "9b843b17ccf362cf5b7a5351269559a627c55b32"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p1-18d51fb",
+      "exit_code": 0
+    },
+    {
+      "name": "p0-release-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--stat",
+        "228190a0c46595cf2927125fdc7d4f1c51b39ccf",
+        "7de1d0e81385ae97f98ea673fe05dd726f0b577b"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p1-18d51fb",
+      "exit_code": 0
+    },
+    {
+      "name": "p1-pr-release-code-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--stat",
+        "18d51fbecc4a1526f2ab75d34874a0b25d00f6c1",
+        "f579b2c99e762085772de6e70ba1fa98792a7add",
+        "--",
+        "src",
+        "tests",
+        "tools",
+        ".github",
+        "requirements.lock",
+        "pyproject.toml",
+        ".gitleaks.toml"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p1-18d51fb",
+      "exit_code": 0
+    },
+    {
+      "name": "remote-refs",
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git",
+        "refs/heads/main",
+        "refs/pull/1/head",
+        "refs/pull/2/head",
+        "refs/tags/phase0-baseline",
+        "refs/tags/phase0-baseline^{}",
+        "refs/tags/phase1-baseline",
+        "refs/tags/phase1-baseline^{}"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p1-18d51fb",
+      "exit_code": 0
+    }
+  ],
+  "phases": {
+    "phase0": {
+      "sha": "7de1d0e81385ae97f98ea673fe05dd726f0b577b",
+      "requirement_total": 106,
+      "unique_ids": 106,
+      "groups": {
+        "GOV": 10,
+        "ARCH": 3,
+        "DATA": 13,
+        "FACTOR": 12,
+        "RESEARCH": 9,
+        "VALID": 8,
+        "PORT": 4,
+        "RISK": 4,
+        "BT": 10,
+        "UI": 8,
+        "EXP": 4,
+        "ENV": 3,
+        "SEC": 4,
+        "QA": 7,
+        "INT": 6,
+        "EXT": 1
+      },
+      "missing_dependencies": [],
+      "future_dependencies": [],
+      "cycles": [],
+      "untraced": [],
+      "missing_design": [],
+      "empty_fields": [],
+      "manifest_total": 69,
+      "manifest_matched": 69,
+      "src_files": 0,
+      "business_test_files": 0
+    },
+    "phase1": {
+      "sha": "f579b2c99e762085772de6e70ba1fa98792a7add",
+      "requirement_total": 106,
+      "unique_ids": 106,
+      "groups": {
+        "GOV": 10,
+        "ARCH": 3,
+        "DATA": 13,
+        "FACTOR": 12,
+        "RESEARCH": 9,
+        "VALID": 8,
+        "PORT": 4,
+        "RISK": 4,
+        "BT": 10,
+        "UI": 8,
+        "EXP": 4,
+        "ENV": 3,
+        "SEC": 4,
+        "QA": 7,
+        "INT": 6,
+        "EXT": 1
+      },
+      "missing_dependencies": [],
+      "future_dependencies": [],
+      "cycles": [],
+      "untraced": [],
+      "missing_design": [],
+      "empty_fields": [],
+      "manifest_total": 519,
+      "manifest_matched": 519,
+      "src_files": 17,
+      "business_test_files": 8
+    }
+  },
+  "phase0_candidate_arithmetic": {
+    "G-RET": "1/10",
+    "G-MOM": "21/100",
+    "G-VOL": "1",
+    "G-IC": "0.8936848249644174281061208689542343814928231013852625359961974182488522",
+    "G-RANK": "9/10",
+    "G-TIE": "0.8660254037844386467637231707529361834714026269051903140279034897259665",
+    "G-Z-sample-variance": "2.5",
+    "G-ICIR": "2",
+    "G-W": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "G-CASH": [
+      799,
+      210,
+      1009
+    ],
+    "G-SELL": [
+      908,
+      1,
+      1018
+    ],
+    "G-PART": [
+      796,
+      2,
+      1002
+    ],
+    "G-SPLIT": [
+      4,
+      200,
+      200
+    ],
+    "G-DIV": [
+      1009,
+      1009
+    ],
+    "G-DD": "1/4"
+  },
+  "phase0_report_checks": [
+    {
+      "index": "EVIDENCE_INDEX.json",
+      "report": "docs/audits/phase-0/gemini/aqrp_phase0_audit_report.md",
+      "expected": "8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662",
+      "actual": "8c04ebb122f33853ef2ae4c59c79e32e941c6f34e168e564f6f8d3ed14762662",
+      "match": true
+    },
+    {
+      "index": "FINAL_EVIDENCE_INDEX.json",
+      "report": "docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md",
+      "expected": "1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc",
+      "actual": "1300075acf2a30b34c4053ae256315bdaae1604eb62b26b145e81bf3179556fc",
+      "match": true
+    },
+    {
+      "index": "GATE_EVIDENCE_INDEX.json",
+      "report": "docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md",
+      "expected": "aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1",
+      "actual": "aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1",
+      "match": true
+    },
+    {
+      "index": "INCREMENTAL_EVIDENCE_INDEX.json",
+      "report": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report.md",
+      "expected": "57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140",
+      "actual": "57a9d7025230ba2924093be4511254a233613548d0271a39324b1c5e2f5fd140",
+      "match": true
+    },
+    {
+      "index": "REV2_EVIDENCE_INDEX.json",
+      "report": "docs/audits/phase-0/gemini/aqrp_phase0_incremental_audit_report_rev2.md",
+      "expected": "e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b",
+      "actual": "e604da87cbedbbeac068f3f7e4acb99dd034c6f9699ad81f9a4f64a3a6b8e83b",
+      "match": true
+    }
+  ],
+  "phase0_core_unchanged": {
+    "ARCHITECTURE": true,
+    "INTERFACES": true,
+    "REQUIREMENTS": true,
+    "DATA_CONTRACT": true,
+    "BACKTEST_CONTRACT": true,
+    "RESEARCH_PROTOCOL": true,
+    "GOLDEN_DATASET": true,
+    "TESTING": true
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "audit": "GPT Work 补充审核",
+  "scope": "Read and verify developer release evidence, not rerun developer original full SDK",
+  "target_sha": "f579b2c99e762085772de6e70ba1fa98792a7add",
+  "original_execution_commit": "9b843b17ccf362cf5b7a5351269559a627c55b32",
+  "original_execution_actor": "Codex developer, not Gemini",
+  "original_junit": {
+    "tests": 102,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "root_file_hashes": [
+    {
+      "name": ".coverage",
+      "archive_name": "coverage.sqlite",
+      "match": true
+    },
+    {
+      "name": "commands.log",
+      "archive_name": "commands.log",
+      "match": true
+    },
+    {
+      "name": "coverage.json",
+      "archive_name": "coverage.json",
+      "match": true
+    },
+    {
+      "name": "coverage.xml",
+      "archive_name": "coverage-report.xml",
+      "match": true
+    },
+    {
+      "name": "environment.json",
+      "archive_name": "environment.json",
+      "match": true
+    },
+    {
+      "name": "junit.xml",
+      "archive_name": "junit.xml",
+      "match": true
+    },
+    {
+      "name": "scan-findings.json",
+      "archive_name": "scan-findings.json",
+      "match": true
+    },
+    {
+      "name": "secret-scan.log",
+      "archive_name": "secret-scan.log",
+      "match": true
+    },
+    {
+      "name": "smoke-config.json",
+      "archive_name": "smoke-config.json",
+      "match": true
+    },
+    {
+      "name": "smoke-result.json",
+      "archive_name": "smoke-result.json",
+      "match": true
+    },
+    {
+      "name": "smoke-run.json",
+      "archive_name": "smoke-run.json",
+      "match": true
+    },
+    {
+      "name": "smoke-snapshot.json",
+      "archive_name": "smoke-snapshot.json",
+      "match": true
+    }
+  ],
+  "wheel_sha256": "5c6f8ac12923cedd9a8594a0afd7c87ccdfb38fe9bda7affb236423cff42c412",
+  "wheel_python_modules_match_release_source": [
+    "aqrp/__init__.py",
+    "aqrp/core/canonical.py",
+    "aqrp/core/contracts.py",
+    "aqrp/core/errors.py",
+    "aqrp/core/math.py",
+    "aqrp/core/time.py",
+    "aqrp/core/units.py",
+    "aqrp/core/__init__.py",
+    "aqrp/data/actions.py",
+    "aqrp/data/pit.py",
+    "aqrp/data/quality.py",
+    "aqrp/data/query.py",
+    "aqrp/data/schemas.py",
+    "aqrp/data/snapshot.py",
+    "aqrp/data/store.py",
+    "aqrp/data/synthetic.py",
+    "aqrp/data/__init__.py"
+  ],
+  "sdk_snapshot_verify": "PASS",
+  "sdk_relocated_query_replay": "PASS",
+  "table_count": 8
+}

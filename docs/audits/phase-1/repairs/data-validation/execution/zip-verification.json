@@ -1,0 +1,113 @@
+{
+  "executor": "Codex developer; NOT Gemini independent execution",
+  "business_sha": "cdb11cd913e965a43572ceb86efb0a39d1f618df",
+  "time_utc": "2026-10-21T13:59:39.957639+00:00",
+  "command": [
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p1-fix-20261021\\formal\\aqrp-44857d53-7400-4119-87db-13b4f51b6ffc\\venv\\Scripts\\python.exe",
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p1-fix-20261021\\verify_repair_zips.py"
+  ],
+  "results": [
+    {
+      "artifact_id": 12351655951,
+      "name": "phase1-repair-windows-latest-1",
+      "sha256": "098ad1a3ecebfe8e71fee739d7b116fdd75631e4d8a5148e1c6a84a6887fae35",
+      "bytes": 83982,
+      "environment": {
+        "run_id": "aqrp-adf61f1f-b2a2-434e-982b-c21edc3787de",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261018.275.1",
+        "code_commit": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-adf61f1f-b2a2-434e-982b-c21edc3787de",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39612329694",
+        "github_run_attempt": "1",
+        "github_sha": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "wheel_sha256": "bc4383d7605dbcde884fb648858b539486b3934622aaaba8c598463aca79256f"
+      },
+      "checkout_topology": [
+        "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "f579b2c99e762085772de6e70ba1fa98792a7add cdb11cd913e965a43572ceb86efb0a39d1f618df",
+        "e0c4d288d16fc3e117fc5f0622f2783742120b6c"
+      ],
+      "checkout_tree_matches_business": true,
+      "selected_files_verified": 23,
+      "unlisted_files": [],
+      "root_inventory_uploaded_verified": 12,
+      "root_inventory_omitted": [
+        "gitleaks.exe",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "wheel_sha256_matches_installed_receipt": true,
+      "wheel_code_bytes_match_business": true,
+      "coverage_raw_bytes_present": true,
+      "junit": {
+        "tests": 148,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "module_coverage_gate": "Module line/branch coverage gates PASS",
+      "tables_verified": 8,
+      "independent_manifest_hash": "PASS",
+      "installed_SDK_query_replay": "PASS"
+    },
+    {
+      "artifact_id": 12350412606,
+      "name": "phase1-repair-ubuntu-24.04-1",
+      "sha256": "54e013322b660832d3707097513306fe6f7a0502d83c69800490e506916b236b",
+      "bytes": 83907,
+      "environment": {
+        "run_id": "aqrp-24d85503-6e69-40ce-a797-638c6d61d380",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261018.339.1",
+        "code_commit": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-24d85503-6e69-40ce-a797-638c6d61d380",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39612329694",
+        "github_run_attempt": "1",
+        "github_sha": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "wheel_sha256": "a03c6538632b49ac2bc80c35560e9fbd9a92d8014669f39c21b60a86f3990cac"
+      },
+      "checkout_topology": [
+        "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "f579b2c99e762085772de6e70ba1fa98792a7add cdb11cd913e965a43572ceb86efb0a39d1f618df",
+        "e0c4d288d16fc3e117fc5f0622f2783742120b6c"
+      ],
+      "checkout_tree_matches_business": true,
+      "selected_files_verified": 23,
+      "unlisted_files": [],
+      "root_inventory_uploaded_verified": 12,
+      "root_inventory_omitted": [
+        "gitleaks",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "wheel_sha256_matches_installed_receipt": true,
+      "wheel_code_bytes_match_business": true,
+      "coverage_raw_bytes_present": true,
+      "junit": {
+        "tests": 148,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "module_coverage_gate": "Module line/branch coverage gates PASS",
+      "tables_verified": 8,
+      "independent_manifest_hash": "PASS",
+      "installed_SDK_query_replay": "PASS"
+    }
+  ],
+  "cross_os": "MATCH: 8 logical tables, smoke rows/config; only snapshot_id and manifest_hash excluded where appropriate",
+  "historical_missing_bytes": "NOT VERIFIED; new evidence does not recreate old bytes"
+}

@@ -1,0 +1,63 @@
+FFFF..                                                                   [100%]
+================================== FAILURES ===================================
+____________ test_work_p1_001_reject_wrong_unit_dimension[change0] ____________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-fix-20261021/before/tmp/test_work_p1_001_reject_wrong_0')
+change = {'volume': '1.25', 'source_volume': '1.25', 'source_volume_unit': 'currency'}
+
+    @pytest.mark.parametrize('change',[
+        {'volume':'1.25','source_volume':'1.25','source_volume_unit':'currency'},
+        {'amount':'3','source_amount':'3','source_amount_unit':'share'},
+    ])
+    def test_work_p1_001_reject_wrong_unit_dimension(tmp_path,change):
+        tables=deepcopy(BASE);tables['bars_daily'][0].update(change)
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\work-p1-18d51fb-20261021\test_work_p1_regressions.py:19: Failed
+____________ test_work_p1_001_reject_wrong_unit_dimension[change1] ____________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-fix-20261021/before/tmp/test_work_p1_001_reject_wrong_1')
+change = {'amount': '3', 'source_amount': '3', 'source_amount_unit': 'share'}
+
+    @pytest.mark.parametrize('change',[
+        {'volume':'1.25','source_volume':'1.25','source_volume_unit':'currency'},
+        {'amount':'3','source_amount':'3','source_amount_unit':'share'},
+    ])
+    def test_work_p1_001_reject_wrong_unit_dimension(tmp_path,change):
+        tables=deepcopy(BASE);tables['bars_daily'][0].update(change)
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\work-p1-18d51fb-20261021\test_work_p1_regressions.py:19: Failed
+_______________ test_work_p1_002_reject_action_exdate_conflict ________________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-fix-20261021/before/tmp/test_work_p1_002_reject_action0')
+
+    def test_work_p1_002_reject_action_exdate_conflict(tmp_path):
+        tables=deepcopy(BASE)
+        tables['corporate_actions']=[record('corporate_actions',action_id='div-1',revision_id=1,security_id='SYN_A:001',type='CASH_DIVIDEND',announcement_at=utc('2024-01-01T00:00:00Z'),effective_at=utc('2024-01-03T00:00:00Z'),ex_date=date(2024,1,4),cash_per_share=Decimal(2),currency='SYNCCY',dividend_basis='PER_OLD_SHARE')]
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\work-p1-18d51fb-20261021\test_work_p1_regressions.py:24: Failed
+_________ test_work_p1_003_reject_known_ohlc_contradictions_with_null _________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-fix-20261021/before/tmp/test_work_p1_003_reject_known_0')
+
+    def test_work_p1_003_reject_known_ohlc_contradictions_with_null(tmp_path):
+        tables=deepcopy(BASE);tables['bars_daily'][0].update(open='100',high='90',low='95',close=None)
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\work-p1-18d51fb-20261021\test_work_p1_regressions.py:28: Failed
+=========================== short test summary info ===========================
+FAILED ::test_work_p1_001_reject_wrong_unit_dimension[change0] - Failed: DID ...
+FAILED ::test_work_p1_001_reject_wrong_unit_dimension[change1] - Failed: DID ...
+FAILED ::test_work_p1_002_reject_action_exdate_conflict - Failed: DID NOT RAI...
+FAILED ::test_work_p1_003_reject_known_ohlc_contradictions_with_null - Failed...
+4 failed, 2 passed in 5.74s

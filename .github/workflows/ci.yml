@@ -1,8 +1,8 @@
-name: Phase 1 quality
+name: Phase 1 data validation repair quality
 on:
   pull_request:
   push:
-    branches: [feature/phase-1-data-system]
+    branches: [feature/phase-1-data-system, fix/phase-1-data-validation]
 permissions:
   contents: read
 jobs:
@@ -28,11 +28,14 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: phase1-${{ matrix.os }}-${{ github.run_attempt }}
+          name: phase1-repair-${{ matrix.os }}-${{ github.run_attempt }}
           path: |
             ${{ runner.temp }}/aqrp-evidence/*/*.log
             ${{ runner.temp }}/aqrp-evidence/*/*.json
             ${{ runner.temp }}/aqrp-evidence/*/*.xml
             ${{ runner.temp }}/aqrp-evidence/*/dataset/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/.coverage
+            ${{ runner.temp }}/aqrp-evidence/*/wheel/*.whl
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 30

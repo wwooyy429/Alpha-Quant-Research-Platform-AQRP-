@@ -1,0 +1,41 @@
+{
+  "audit": "GPT Work 补充审核",
+  "target_sha": "f579b2c99e762085772de6e70ba1fa98792a7add",
+  "actual": "FORMAL_UNIVERSE_LOOKUP_RETURNED_UNKNOWN_AVAILABILITY",
+  "rows": [
+    {
+      "schema_version": "data/1.0.0",
+      "snapshot_id": "unknown-flag-universe_membership",
+      "source_id": "SYNTHETIC",
+      "source_record_id": "synthetic-row",
+      "ingested_at": "2024-02-01 00:00:00+00:00",
+      "quality_status": "UNKNOWN_AVAILABILITY",
+      "reason_code": "SOURCE_HISTORY_UNVERIFIED",
+      "source_timezone": "UTC",
+      "event_time": "2024-01-01 00:00:00+00:00",
+      "available_at": "2024-01-01 00:00:00+00:00",
+      "universe_id": "SYN_U",
+      "security_id": "SYN_A:001",
+      "effective_from": "2024-01-01 00:00:00+00:00",
+      "effective_to": null,
+      "revision_id": 1
+    },
+    {
+      "schema_version": "data/1.0.0",
+      "snapshot_id": "unknown-flag-universe_membership",
+      "source_id": "SYNTHETIC",
+      "source_record_id": "synthetic-row",
+      "ingested_at": "2024-02-01 00:00:00+00:00",
+      "quality_status": "VALID",
+      "reason_code": "NONE",
+      "source_timezone": "UTC",
+      "event_time": "2024-01-01 00:00:00+00:00",
+      "available_at": "2024-01-01 00:00:00+00:00",
+      "universe_id": "SYN_U",
+      "security_id": "SYN_B:001",
+      "effective_from": "2024-01-01 00:00:00+00:00",
+      "effective_to": null,
+      "revision_id": 1
+    }
+  ]
+}

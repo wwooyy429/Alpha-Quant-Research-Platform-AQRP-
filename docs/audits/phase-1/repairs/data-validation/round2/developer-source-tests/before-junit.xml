@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="16" time="3.680" timestamp="2026-10-21T22:08:46.727821+08:00" hostname="天音"><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_work_p1_006_unknown_flag_cannot_be_formal_pit[bars_daily]" time="1.506"><failure message="Failed: DID NOT RAISE any of (ContractError, DataQualityError)">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_0')
+table = 'bars_daily'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+&gt;       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed</failure></testcase><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_work_p1_006_unknown_flag_cannot_be_formal_pit[security_master]" time="0.111"><failure message="Failed: DID NOT RAISE any of (ContractError, DataQualityError)">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_1')
+table = 'security_master'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+&gt;       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed</failure></testcase><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_work_p1_006_unknown_flag_cannot_be_formal_pit[calendar]" time="0.104"><failure message="Failed: DID NOT RAISE any of (ContractError, DataQualityError)">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_2')
+table = 'calendar'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+&gt;       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed</failure></testcase><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_work_p1_006_unknown_flag_cannot_be_formal_pit[universe_membership]" time="0.107"><failure message="Failed: DID NOT RAISE any of (ContractError, DataQualityError)">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_3')
+table = 'universe_membership'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+&gt;       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed</failure></testcase><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_work_p1_007_timezone_must_not_be_external_file" time="0.006"><failure message="Failed: DID NOT RAISE ContractError">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_007_timezone_must0')
+
+    def test_work_p1_007_timezone_must_not_be_external_file(tmp_path):
+        zone=tmp_path/'outside.tzif';zone.write_bytes(importlib.resources.files('tzdata.zoneinfo').joinpath('UTC').read_bytes())
+&gt;       with pytest.raises(ContractError):iana(str(zone))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:21: Failed</failure></testcase><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_work_p1_008_revision_overflow_is_counted_rejected" time="0.002"><failure message="OverflowError: int too big to convert">def test_work_p1_008_revision_overflow_is_counted_rejected():
+        r=deepcopy(BASE['bars_daily'][0]);r['revision_id']=2**63
+&gt;       v=validate_table('bars_daily',[r])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\runs\p1-fix-20261021\formal\aqrp-44857d53-7400-4119-87db-13b4f51b6ffc\venv\Lib\site-packages\aqrp\data\quality.py:250: in validate_table
+    pa.Table.from_pylist(accepted, schema=SCHEMAS[name]),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyarrow/table.pxi:2051: in pyarrow.lib._Tabular.from_pylist
+    ???
+pyarrow/table.pxi:6495: in pyarrow.lib._from_pylist
+    ???
+pyarrow/table.pxi:4877: in pyarrow.lib.Table.from_arrays
+    ???
+pyarrow/table.pxi:1633: in pyarrow.lib._sanitize_arrays
+    ???
+pyarrow/array.pxi:454: in pyarrow.lib.asarray
+    ???
+pyarrow/array.pxi:424: in pyarrow.lib.array
+    ???
+pyarrow/array.pxi:52: in pyarrow.lib._sequence_to_array
+    ???
+pyarrow/error.pxi:155: in pyarrow.lib.pyarrow_internal_check_status
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   ???
+E   OverflowError: int too big to convert
+
+pyarrow/error.pxi:89: OverflowError</failure></testcase><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_work_p1_009_offset_submicrosecond_precision_rejected" time="0.001"><failure message="Failed: DID NOT RAISE TimestampResolutionError">def test_work_p1_009_offset_submicrosecond_precision_rejected():
+&gt;       with pytest.raises(TimestampResolutionError):utc('2024-01-02T16:00:00.000000+00:00:00.000000001')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimestampResolutionError
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:27: Failed</failure></testcase><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_control_known_availability_is_publishable" time="0.095" /><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_control_max_int64_revision_accepted" time="0.002" /><testcase classname="reviews.work-p01-round2-20261021.test_round2_regressions" name="test_control_utc_microsecond_preserved" time="0.001" /><testcase classname="reviews.work-p1-18d51fb-20261021.test_work_p1_regressions" name="test_work_p1_001_reject_wrong_unit_dimension[change0]" time="0.019" /><testcase classname="reviews.work-p1-18d51fb-20261021.test_work_p1_regressions" name="test_work_p1_001_reject_wrong_unit_dimension[change1]" time="0.019" /><testcase classname="reviews.work-p1-18d51fb-20261021.test_work_p1_regressions" name="test_work_p1_002_reject_action_exdate_conflict" time="0.021" /><testcase classname="reviews.work-p1-18d51fb-20261021.test_work_p1_regressions" name="test_work_p1_003_reject_known_ohlc_contradictions_with_null" time="0.018" /><testcase classname="reviews.work-p1-18d51fb-20261021.test_work_p1_regressions" name="test_positive_valid_frozen_input" time="0.099" /><testcase classname="reviews.work-p1-18d51fb-20261021.test_work_p1_regressions" name="test_positive_valid_partial_ohlc" time="0.097" /></testsuite></testsuites>

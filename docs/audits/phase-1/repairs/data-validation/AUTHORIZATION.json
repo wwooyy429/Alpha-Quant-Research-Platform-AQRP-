@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-21",
+  "user_quote": "核对、归档并修复，提交独立修复 PR（推荐）",
+  "scope": [
+    "verify and archive two supplied review files",
+    "repair three Phase 1 data validation defects",
+    "independent repair branch and new PR"
+  ],
+  "forbidden": [
+    "merge",
+    "tag",
+    "Phase 3 development",
+    "automatic integration into Phase 2"
+  ],
+  "base_main": "f579b2c99e762085772de6e70ba1fa98792a7add",
+  "branch": "fix/phase-1-data-validation",
+  "phase2_separate_head": "947467b9d094905cab0af37ec5cc53f1d187e755",
+  "historical_phase1_acceptance_release": "preserved"
+}

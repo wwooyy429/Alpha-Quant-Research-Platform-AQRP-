@@ -1,0 +1,27 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.16, pytest-9.1.1, pluggy-1.7.0
+cachedir: C:\Users\11638\AppData\Local\AQRP\runs\p1-round2-fix-20261021\source-cache
+rootdir: C:\Users\11638\AppData\Local\AQRP\checkouts\p1-fix-20261021
+configfile: pyproject.toml
+testpaths: tests
+plugins: hypothesis-6.170.5, cov-7.1.0
+collected 234 items
+
+tests\data\test_pit_query.py .......                                     [  2%]
+tests\data\test_quality.py ..............................                [ 15%]
+tests\data\test_revision_integrity.py ...                                [ 17%]
+tests\data\test_snapshot_actions.py ...........................          [ 28%]
+tests\data\test_time_units.py .......................                    [ 38%]
+tests\data\test_work_p1_round2.py ...................................... [ 54%]
+................................................                         [ 75%]
+tests\data\test_work_p1_validation.py .................................. [ 89%]
+............                                                             [ 94%]
+tests\environment\test_installation.py ..                                [ 95%]
+tests\integration\test_phase1_pipeline.py ..........                     [100%]
+
+- generated xml file: C:\Users\11638\AppData\Local\AQRP\runs\p1-round2-fix-20261021\source-junit.xml -
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Coverage JSON written to file C:\Users\11638\AppData\Local\AQRP\runs\p1-round2-fix-20261021\source-coverage.json
+============================ 234 passed in 25.84s =============================

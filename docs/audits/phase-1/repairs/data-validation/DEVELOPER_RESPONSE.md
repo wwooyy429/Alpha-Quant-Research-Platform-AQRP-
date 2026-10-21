@@ -1,0 +1,19 @@
+# Developer response and outstanding gates
+
+Latest authorized execution receipt: delegated-31a548b/RECONCILIATION.md and CURRENT_DISPOSITION.json. WORK-P1-004 at31a548b is USER-AUTHORIZED SUBSTITUTE EXECUTION PASS, actual executor GPT Work, not Gemini; human quote verified from actual app userMessage. New234+16 execution/current raw ZIPs supplied. Earlier OPEN/awaiting-execution paragraphs below are historical. Seven repairs have supplemental execution PASS; historical005 missing bytes and separate user acceptance/merge/release/Phase2 integration gates remain.
+
+Latest receipt: recheck-3ab93b3/RECONCILIATION.md records GPT Work supplemental PASS for001–003 at3ab93b3 and confirmation of005 new upload policy. Later006–009 fixes at8902ba0 are outside that report; current fixed-SHA independent review and004 remain pending. No new business changes or test executions in this receipt.
+
+Latest round 2 corrective work: see round2/RECONCILIATION.md and round2/REVIEW_PACKAGE.md. The newly supplied report targets released f579, not repaired PR #4. Four additional confirmed implementation defects (WORK-P1-006–009) are being corrected within the previously authorized Phase 1 data-contract repair scope. Round 2 adds 86 semantic cases (234 total source tests passing); new clean SDK234tests, original16cases, dual-OS CI and original ZIP checks PASS at8902ba0; see round2/EXECUTION_EVIDENCE.md. Prior text below is first-round evidence at 3ab93b35c0b5e4e7b5e85c27f641748aa86cb24f, not proof that the new defects are independently closed. Core contracts and Golden answers remain frozen.
+
+The supplied GPT Work review is supplemental evidence, not a Gemini report or user acceptance. Original reports are archived without editing. Independent review reproduced 4 failures / 2 passes in six probes; developer repeated these against the existing Phase 2 installed wheel. Developer-authored 46 boundary regressions initially had 19 failures / 27 passes against the unpatched Phase 1 source. These are test cases, not 19 separate defects. After correction, all 148 source tests and module line/branch coverage gates pass.
+
+| Finding | Handling | Closure status |
+|---|---|---|
+| WORK-P1-001 High | Field dimensions and normalized share increments validated; five invalid dimension cases, null-unit cases, legal conversions and fractional boundaries tested | Implemented; fixed-SHA independent review pending |
+| WORK-P1-002 High | Unambiguous market ex-session, local-date and close boundary checked; future/late revision, UTC/local boundary and unsupported convention tests | Implemented; fixed-SHA independent review pending |
+| WORK-P1-003 Medium blocking | Validate all known OHLC inequalities across partial missing combinations | Implemented; fixed-SHA independent review pending |
+| WORK-P1-004 Medium | Actual executor and scope retained. No newly received Gemini full SDK/ZIP run | OPEN: independent fixed-SHA execution/review or explicit user decision on limitations required |
+| WORK-P1-005 Medium | Future upload policy includes project wheel and .coverage; scanner/bootstrap explicitly omitted; exact selected hashes provided | New policy verified in actual Windows/Ubuntu ZIPs (run 39612329694). Historical missing bytes remain NOT VERIFIED |
+
+Installed-wheel SDK (148 passed), original six review regressions (6 passed), remote Windows/Ubuntu CI and both original ZIP checks now pass at cdb11cd; see EXECUTION_EVIDENCE.md. These developer executions do not close the independent review gate. Historical Phase 1 ACCEPTED/RELEASED remains recorded; the new corrective release is NOT ACCEPTED/NOT RELEASED. Phase 2 inherits these data defects and cannot receive a normal technical pass until the reviewed correction is incorporated and relevant tests/code hashes are rerun. PR #3 branch is untouched. Merge, tags and Phase 3 remain unauthorized.

@@ -1,0 +1,104 @@
+{
+  "audit": "GPT Work 补充审核",
+  "target_sha": "3ab93b35c0b5e4e7b5e85c27f641748aa86cb24f",
+  "evidence_business_sha": "cdb11cd913e965a43572ceb86efb0a39d1f618df",
+  "runtime": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-recheck-3ab93b3\\runs\\aqrp-693e8864-c8ff-4369-86c3-defabf81dffd\\venv\\Scripts\\python.exe",
+  "sdk_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-recheck-3ab93b3\\runs\\aqrp-693e8864-c8ff-4369-86c3-defabf81dffd\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+  "time_utc": "2026-10-21T14:32:03.662203+00:00",
+  "results": [
+    {
+      "artifact_id": 12351655951,
+      "sha256": "098ad1a3ecebfe8e71fee739d7b116fdd75631e4d8a5148e1c6a84a6887fae35",
+      "size": 83982,
+      "environment": {
+        "run_id": "aqrp-adf61f1f-b2a2-434e-982b-c21edc3787de",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261018.275.1",
+        "code_commit": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-adf61f1f-b2a2-434e-982b-c21edc3787de",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39612329694",
+        "github_run_attempt": "1",
+        "github_sha": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "wheel_sha256": "bc4383d7605dbcde884fb648858b539486b3934622aaaba8c598463aca79256f"
+      },
+      "topology": [
+        "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "f579b2c99e762085772de6e70ba1fa98792a7add cdb11cd913e965a43572ceb86efb0a39d1f618df",
+        "e0c4d288d16fc3e117fc5f0622f2783742120b6c"
+      ],
+      "selected_file_hashes_matched": 23,
+      "root_uploaded_matched": 12,
+      "omitted": [
+        "gitleaks.exe",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "wheel_hash": "bc4383d7605dbcde884fb648858b539486b3934622aaaba8c598463aca79256f",
+      "wheel_source_modules_matched": 17,
+      "coverage_raw_bytes": true,
+      "junit": {
+        "tests": 148,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "module_coverage_gate": "Module line/branch coverage gates PASS",
+      "eight_tables_and_sdk_replay": "PASS"
+    },
+    {
+      "artifact_id": 12350412606,
+      "sha256": "54e013322b660832d3707097513306fe6f7a0502d83c69800490e506916b236b",
+      "size": 83907,
+      "environment": {
+        "run_id": "aqrp-24d85503-6e69-40ce-a797-638c6d61d380",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261018.339.1",
+        "code_commit": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-24d85503-6e69-40ce-a797-638c6d61d380",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39612329694",
+        "github_run_attempt": "1",
+        "github_sha": "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "wheel_sha256": "a03c6538632b49ac2bc80c35560e9fbd9a92d8014669f39c21b60a86f3990cac"
+      },
+      "topology": [
+        "ccf0e9f1861a83a6995be10149239737a85214ec",
+        "f579b2c99e762085772de6e70ba1fa98792a7add cdb11cd913e965a43572ceb86efb0a39d1f618df",
+        "e0c4d288d16fc3e117fc5f0622f2783742120b6c"
+      ],
+      "selected_file_hashes_matched": 23,
+      "root_uploaded_matched": 12,
+      "omitted": [
+        "gitleaks",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "wheel_hash": "a03c6538632b49ac2bc80c35560e9fbd9a92d8014669f39c21b60a86f3990cac",
+      "wheel_source_modules_matched": 17,
+      "coverage_raw_bytes": true,
+      "junit": {
+        "tests": 148,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "module_coverage_gate": "Module line/branch coverage gates PASS",
+      "eight_tables_and_sdk_replay": "PASS"
+    }
+  ],
+  "cross_os": "PASS: eight logical tables, smoke bytes/config; snapshot_id and config manifest_hash exclusions explicit",
+  "gemini_execution": "NOT VERIFIED; this is GPT Work execution",
+  "historical_missing_bytes": "Remain NOT VERIFIED"
+}

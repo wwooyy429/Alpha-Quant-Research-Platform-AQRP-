@@ -60,6 +60,9 @@ def normalize(name, row):
         elif pa.types.is_integer(field.type):
             if type(v) is not int or v < 0:
                 raise ContractError("NONNEGATIVE_INTEGER_REQUIRED", field.name)
+            bits = field.type.bit_width - int(pa.types.is_signed_integer(field.type))
+            if v > (1 << bits) - 1:
+                raise ContractError("INTEGER_OUT_OF_RANGE", field.name)
         elif not isinstance(v, str) or not v:
             raise ContractError("NONEMPTY_STRING_REQUIRED", field.name)
     required = {
@@ -135,11 +138,26 @@ def normalize(name, row):
         prices = [r[f] for f in ("open", "high", "low", "close")]
         if any(v is not None and (v <= 0 or v % PROFILE.tick) for v in prices):
             raise ContractError("INVALID_PRICE", name)
-        if all(v is not None for v in prices) and not (
-            r["low"] <= min(r["open"], r["close"]) <= max(r["open"], r["close"]) <= r["high"]
-        ):
+        bounds = (
+            ("low", "high"),
+            ("low", "open"),
+            ("open", "high"),
+            ("low", "close"),
+            ("close", "high"),
+        )
+        if any(r[a] is not None and r[b] is not None and r[a] > r[b] for a, b in bounds):
             raise ContractError("OHLC_ORDER", name)
+        # Known source dimensions remain invalid even when the observation is null.
+        for field, allowed in (
+            ("volume", ("share", "lot")),
+            ("amount", ("currency", "thousand_currency")),
+        ):
+            unit = r[f"source_{field}_unit"]
+            if unit is not None and unit not in allowed:
+                raise ContractError(f"INVALID_{field.upper()}_UNIT", name)
         if r["volume"] is not None:
+            if r["volume"] % PROFILE.share_unit:
+                raise ContractError("INVALID_QUANTITY", "volume")
             expected = convert(r["source_volume"], r["source_volume_unit"], lot_size=r["lot_size"])
             if r["volume"] != expected:
                 raise ContractError("VOLUME_UNIT_MISMATCH", name)
@@ -148,7 +166,9 @@ def normalize(name, row):
                 raise ContractError("AMOUNT_UNIT_MISMATCH", name)
         if r["available_at"] is not None and r["available_at"] < r["event_time"]:
             raise ContractError("BAR_BEFORE_CLOSE", name)
-        if any(r[f] is None for f in ("open", "high", "low", "close", "volume", "amount")):
+        if r["quality_status"] in ("VALID", "MISSING") and any(
+            r[f] is None for f in ("open", "high", "low", "close", "volume", "amount")
+        ):
             r["quality_status"], r["reason_code"] = "MISSING", "NULL_OBSERVATION"
     if name == "corporate_actions":
         if (
@@ -176,6 +196,31 @@ def normalize(name, row):
     ):
         raise ContractError("INVALID_ADJUSTMENT", name)
     return r
+
+
+def validate_action_sessions(actions, master, calendar):
+    """Resolve ex-session using the market calendar, not the feed or UTC date.
+
+    SYNTHETIC_V1 supports unambiguous sessions within one local civil date.
+    Unknown/ambiguous calendars and overnight action conventions are rejected,
+    rather than assigning cash to a different research-return period.
+    """
+    for action in actions:
+        candidates = {
+            (s["open_at"], s["close_at"], s["source_timezone"])
+            for s in calendar
+            if s["market_id"] == master[action["security_id"]][0]
+            and s["session_date"] == action["ex_date"]
+        }
+        if len(candidates) != 1:
+            raise DataQualityError("ACTION_EX_SESSION_UNRESOLVED", "ex_date")
+        _, close, zone_name = next(iter(candidates))
+        zone = iana(zone_name)
+        if close.astimezone(zone).date() != action["ex_date"]:
+            raise DataQualityError("ACTION_SESSION_UNSUPPORTED", "ex_date")
+        effective = action["effective_at"]
+        if effective.astimezone(zone).date() != action["ex_date"] or effective > close:
+            raise DataQualityError("ACTION_EX_DATE_MISMATCH", "effective_at")
 
 
 def validate_table(name, rows):
@@ -224,7 +269,11 @@ def validate_dataset(tables, *, exploratory=False):
     rows = {n: v.table.to_pylist() for n, v in validated.items()}
     if not rows["security_master"] or not rows["calendar"]:
         raise DataQualityError("EMPTY_MASTER_OR_CALENDAR", "tables")
-    if not exploratory and any(r["available_at"] is None for t in rows.values() for r in t):
+    if not exploratory and any(
+        r["available_at"] is None or r["quality_status"] == "UNKNOWN_AVAILABILITY"
+        for t in rows.values()
+        for r in t
+    ):
         raise DataQualityError("UNKNOWN_AVAILABILITY", "available_at")
     master = {}
     for r in rows["security_master"]:
@@ -260,6 +309,7 @@ def validate_dataset(tables, *, exploratory=False):
             )
             if any(a["available_at"] > b["available_at"] for a, b in zip(ordered, ordered[1:])):
                 raise DataQualityError("NONMONOTONIC_REVISION", n)
+    validate_action_sessions(rows["corporate_actions"], master, rows["calendar"])
     for factor in rows["adjustment_factors"]:
         matches = [
             a
