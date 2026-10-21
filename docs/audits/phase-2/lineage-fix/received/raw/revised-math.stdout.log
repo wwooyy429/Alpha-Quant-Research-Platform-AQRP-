@@ -1,0 +1,87 @@
+[REVISED_VERIFY] ================================================================================
+[REVISED_VERIFY] AQRP Phase 2 Independent Mathematical Verification (Revised Audit Suite)
+[REVISED_VERIFY] Review SHA: 0b5107fa611af9d3a858440261b5321c83ca9fa4 | Python: 3.13.16
+[REVISED_VERIFY] ================================================================================
+[REVISED_VERIFY] 
+--- 1. Momentum Benchmark ---
+[REVISED_VERIFY] 1. Momentum:
+[REVISED_VERIFY]    Exact Rational : 21/100
+[REVISED_VERIFY]    Float64 Value  : 0.209999999999999992
+[REVISED_VERIFY]    Exact Float Rational: 7566047373982433/36028797018963968
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=7.77e-18 (7.772e-18), rel_err=3.70e-17
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY] 
+--- 2. Reversal Benchmark ---
+[REVISED_VERIFY] 2. Reversal:
+[REVISED_VERIFY]    Exact Rational : -21/100
+[REVISED_VERIFY]    Float64 Value  : -0.209999999999999992
+[REVISED_VERIFY]    Exact Float Rational: -7566047373982433/36028797018963968
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=7.77e-18 (7.772e-18), rel_err=3.70e-17
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY] 
+--- 3. Volume Factor Benchmarks (Raw Ratio vs. Formal Normalized Factor) ---
+[REVISED_VERIFY] [Case A - Original Script Inputs: Hist=[1000..5000], Curr=1800]
+[REVISED_VERIFY] 3.1.A Raw Volume Ratio (Omitted -1):
+[REVISED_VERIFY]    Exact Rational : 3/5
+[REVISED_VERIFY]    Float64 Value  : 0.599999999999999978
+[REVISED_VERIFY]    Exact Float Rational: 5404319552844595/9007199254740992
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=2.22e-17 (2.220e-17), rel_err=3.70e-17
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY] 3.1.B Formal Volume Factor (With -1):
+[REVISED_VERIFY]    Exact Rational : -2/5
+[REVISED_VERIFY]    Float64 Value  : -0.400000000000000022
+[REVISED_VERIFY]    Exact Float Rational: -3602879701896397/9007199254740992
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=2.22e-17 (2.220e-17), rel_err=5.55e-17
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY]    Notice: Original reference script computed 1800/3000=0.60 (raw ratio). Formal factor is -0.40.
+[REVISED_VERIFY] [Case B - Frozen Golden G-P2-A Inputs: Vols=[100, 150, 200], Lookback=2]
+[REVISED_VERIFY] 3.2 Golden G-P2-A Formal Volume Factor:
+[REVISED_VERIFY]    Exact Rational : 3/5
+[REVISED_VERIFY]    Float64 Value  : 0.599999999999999978
+[REVISED_VERIFY]    Exact Float Rational: 5404319552844595/9007199254740992
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=2.22e-17 (2.220e-17), rel_err=3.70e-17
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY]    Notice: Golden G-P2-A correctly applies (200/125 - 1) = 0.60. Formal business code is 100% correct.
+[REVISED_VERIFY] 
+--- 4. Security B Multi-Factor Independent Derivation ---
+[REVISED_VERIFY] 4.1 Security B Momentum:
+[REVISED_VERIFY]    Exact Rational : -1/5
+[REVISED_VERIFY]    Float64 Value  : -0.200000000000000011
+[REVISED_VERIFY]    Exact Float Rational: -3602879701896397/18014398509481984
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=1.11e-17 (1.110e-17), rel_err=5.55e-17
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY] 4.2 Security B Reversal:
+[REVISED_VERIFY]    Exact Rational : 1/5
+[REVISED_VERIFY]    Float64 Value  : 0.200000000000000011
+[REVISED_VERIFY]    Exact Float Rational: 3602879701896397/18014398509481984
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=1.11e-17 (1.110e-17), rel_err=5.55e-17
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY] 4.3 Security B Volume Factor:
+[REVISED_VERIFY]    Exact Rational : 0
+[REVISED_VERIFY]    Float64 Value  : 0.000000000000000000
+[REVISED_VERIFY]    Exact Float Rational: 0
+[REVISED_VERIFY]    Float-to-Float diff : 0.00e+00
+[REVISED_VERIFY]    Binary64 vs Rational: abs_err=0.00e+00 (0.000e+3), rel_err=0.00e+00
+[REVISED_VERIFY]    -> PASS (Within abs <= 1e-12, rel <= 1e-10)
+[REVISED_VERIFY]    Notice: [-0.2, 0.2, 0.0] represents Security B's 3 Factor Values (Mom, Rev, Vol), NOT multi-period returns.
+[REVISED_VERIFY] 
+--- 5. Corporate Actions & Return Adjustments ---
+[REVISED_VERIFY] 5.1 Split Adjusted Return: p_adj_prev=50.0, p_curr=50.00, ret=0.0 -> EXACT 0.0
+[REVISED_VERIFY] 5.2 Dividend Pure Price Return: -0.0100 (expected -0.01), Total Return: 0.0000 (expected 0.0)
+[REVISED_VERIFY] 
+================================================================================
+[REVISED_VERIFY] REVISED MATHEMATICAL AUDIT SUMMARY:
+[REVISED_VERIFY] 1. All 6 mathematical benchmark cases verified with exact rational error analysis.
+[REVISED_VERIFY] 2. Binary64 machine errors evaluated against real rational numbers (all < 3e-17).
+[REVISED_VERIFY] 3. Volume Factor -1 omission identified in reference script; Golden G-P2-A confirmed correct.
+[REVISED_VERIFY] 4. Security B vector [-0.2, 0.2, 0.0] derived from raw inputs and classified as 3 factor outputs.
+[REVISED_VERIFY] SCOPE NOTE: This mathematical script validates arithmetic formulas only.
+[REVISED_VERIFY] It does NOT substitute for full CPython 3.13 SDK execution, AST runtime security, or CI pipeline.
+[REVISED_VERIFY] ================================================================================

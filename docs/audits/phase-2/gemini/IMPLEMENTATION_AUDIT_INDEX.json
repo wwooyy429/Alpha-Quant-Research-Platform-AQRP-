@@ -1,0 +1,46 @@
+{
+  "received_at_utc": "2026-10-21T12:34:24.333159+00:00",
+  "source": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_implementation_audit_report.md",
+  "report_path": "docs/audits/phase-2/gemini/aqrp_phase2_implementation_audit_report.md",
+  "report_sha256": "395eadf04145e5a23b624687c3576def8a9b23260cb75a53037c7218e30a3d0f",
+  "report_bytes": 17062,
+  "reviewed_commit": "2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1",
+  "implementation_commit": "8183b3762b56c466b989d9062a720b5f0d31172a",
+  "reported_verdict": "PASS",
+  "reported_human_acceptance_readiness": "READY (advisory only)",
+  "reported_errata_adjudication": {
+    "ERR-P2-001": "AGREE / CLOSED",
+    "ERR-P2-002": "AGREE / CLOSED",
+    "ERR-P2-003": "AGREE / CLOSED",
+    "ERR-P2-004": "AGREE / CLOSED",
+    "ERR-P2-005": "AGREE / CLOSED",
+    "ERR-P2-006": "AGREE / CLOSED",
+    "ERR-P2-007": "AGREE / CLOSED",
+    "ERR-P2-008": "AGREE / CLOSED"
+  },
+  "reported_finding_closure": {
+    "F-P2-PRE-001": "CLOSED within reviewed builtin engineering scope",
+    "F-P2-PRE-002": "CLOSED; not an OS sandbox"
+  },
+  "new_critical_high_findings_reported": 0,
+  "gemini_full_sdk_independent_execution": "NOT VERIFIED; report explicitly states runtime unavailable",
+  "gemini_new_math_hash_execution": "Reviewer-reported fresh execution; named raw script/log not received, cannot verify execution provenance here",
+  "named_new_math_files": [
+    "aqrp_phase2_implementation_math_and_hash_audit.py",
+    "aqrp_phase2_implementation_math_and_hash_audit.log"
+  ],
+  "named_new_math_files_received": false,
+  "old_plan_raw_math_files_received": false,
+  "gemini_zip_hash_claim": "MATCH as reported; raw per-command evidence and fresh API responses not supplied with report",
+  "developer_new_zip_and_remote_api_checks": "PASS; implementation-audit/RECEIPT_CHECKS.json, attributed to Codex not Gemini",
+  "developer_response": "docs/audits/phase-2/IMPLEMENTATION_AUDIT_RESPONSE.md",
+  "new_report_errata_count": 12,
+  "new_report_errata_gemini_confirmation": "PENDING",
+  "current_status": "AUDIT PASS AS REPORTED / REPORT ERRATA AND EXECUTION EVIDENCE OPEN",
+  "user_request": "这是 Gemini 的 Phase 2 实现复核报告，请核对并归档，处理审查发现并更新 PR #3 的审查记录，明确仍未闭环的条件；暂不合并、打标签或进入 Phase 3。",
+  "human_accepted": false,
+  "execution_limitations_accepted_by_user": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase3_authorized": false
+}

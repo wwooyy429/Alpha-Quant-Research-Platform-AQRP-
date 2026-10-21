@@ -1,0 +1,7 @@
+{
+  "first_check_failed": "Incorrect assumption that query_hash is invariant under storage-root relocation",
+  "existing_contract": "data/query.py digest explicitly includes SnapshotRef.root",
+  "correction": "Replay data rows/result hash; reconstruct original query hash using recorded original dataset root and fixed spec/provenance/cutoff",
+  "product_code_or_expected_financial_answers_changed": false,
+  "original_failure_and_checker_retained": true
+}

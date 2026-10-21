@@ -133,6 +133,7 @@ def main():
     )
     command([str(py), str(source / "tools/independent_reference.py")], cwd=source)
     command([str(py), str(source / "tools/data_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/factor_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
     env["complete"] = True
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
@@ -163,7 +164,7 @@ def main():
                 len(relative.parts) == 1
                 and (path.suffix in (".log", ".json", ".xml") or path.name == ".coverage")
             )
-            or relative.parts[0] in ("dataset", "wheel")
+            or relative.parts[0] in ("dataset", "factor-dataset", "factor-runs", "wheel")
         ):
             selected.append(
                 {
@@ -180,7 +181,7 @@ def main():
                     "gitleaks.exe" if os.name == "nt" else "gitleaks",
                     bootstrap.name,
                 ],
-                "policy": "Exact successful-run upload selection; pinned scanner/bootstrap binaries intentionally omitted. Historical missing bytes remain unverified.",
+                "policy": "Exact selected file hashes; omitted tools remain independently pinned and locally verified, not falsely claimed as uploaded",
             },
             indent=2,
         ),

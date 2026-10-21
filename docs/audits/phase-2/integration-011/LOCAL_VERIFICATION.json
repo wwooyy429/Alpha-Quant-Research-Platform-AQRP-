@@ -1,0 +1,77 @@
+{
+  "environment": {
+    "run_id": "aqrp-30463983-572f-481d-b0c1-30d466fccee4",
+    "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "os": "Windows-11-10.0.26300-SP0",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "code_commit": "566f0ece4175fddb2703daab3b5b26ff0e4e245f",
+    "dirty": false,
+    "complete": true,
+    "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+    "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p2-integrate-011-20261021\\formal\\aqrp-30463983-572f-481d-b0c1-30d466fccee4",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "github_sha": null,
+    "wheel_sha256": "9352e89bd17be72462d01b7fa9b0d0156289e9bff1b7a9bae4e8e87a6ffb6072"
+  },
+  "junit": {
+    "tests": 392,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "selected_hashes_verified": 46,
+  "root_inventory_verified": true,
+  "wheel_bytes_and_all_python_members_verified": true,
+  "receipt": {
+    "implementation_hash": "fc1b50110c02efbe4a53168c43d7fe4972e5ebab3edc3091aeaf58ac72a11fc7",
+    "review_ref": "docs/audits/phase-2/CODE_REVIEW.md",
+    "state": "ENGINEERING_APPROVED",
+    "environment": "TEST_ONLY",
+    "financial_approval": "NONE"
+  },
+  "snapshot_and_query_replay": [
+    {
+      "kind": "dataset",
+      "snapshot_id": "d379b8e8-a1d3-49d1-b052-b8879bdb53d4",
+      "manifest_hash": "0e85065692f56387bbcd3c5be1f4e8ee6644bac4d6e5344dfd1071add024fc9b",
+      "tables": 8
+    },
+    {
+      "kind": "factor-dataset",
+      "snapshot_id": "597c2dcd-be24-4707-8b62-c6ffcc61678f",
+      "manifest_hash": "c6c843b302c95d3f1dafe2892972d1392cd3b9ebf52b229e9eed094e5136b5ed",
+      "tables": 8
+    }
+  ],
+  "factor_results": {
+    "momentum": {
+      "logical_hash": "452f4825c51914c97b1f4e7e8608c00eef607cab0d302142f5ecf45b70e63460",
+      "value": 0.21
+    },
+    "reversal": {
+      "logical_hash": "0e93a7f6b6067e7d4651f5bf64f9a3b86745fc647c14f06063a209cd135f486f",
+      "value": -0.21
+    },
+    "volume": {
+      "logical_hash": "59f5be81415da416c53577019653f574f3fff6e07ac1e200f5d153bb27c925ea",
+      "value": 0.6
+    }
+  },
+  "factor_runs_manifest_hashes_verified": 3,
+  "coverage_gate": "Module line/branch coverage gates PASS",
+  "checkout_parents": [
+    "947467b9d094905cab0af37ec5cc53f1d187e755",
+    "fb1ba4fd51202a303115e4449ee49db09ccc071c"
+  ],
+  "tree_equals_implementation": true,
+  "omitted_local_tools": [
+    "gitleaks.exe",
+    "pip-26.2.1-py3-none-any.whl"
+  ],
+  "secret_findings": 0,
+  "executor": "Codex developer; remote Ubuntu bytes replayed on Windows SDK, not a fresh local Linux install or independent Gemini execution"
+}

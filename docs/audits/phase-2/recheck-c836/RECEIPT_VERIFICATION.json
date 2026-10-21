@@ -1,0 +1,63 @@
+{
+  "scope": "Developer validates receipt/raw evidence and replays received datasets, not a new SDK audit execution",
+  "review_target": "c8362953f555606795b6804cdfe28ff690c2364d",
+  "provided_manifest_entries_verified": 256,
+  "provided_sdk_and_two_ci_runs": [
+    {
+      "run_id": "aqrp-a4001fd1-4cd2-499a-bd40-3e6be14af9fe",
+      "code_commit": "c8362953f555606795b6804cdfe28ff690c2364d",
+      "junit": {
+        "tests": 417,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "selected_hashes": 46,
+      "wheel_sha256": "c856ab38fdc2452f623e1434aa8e7c8399bd737adf35028ecff5ffa1aa115a33",
+      "tables_each_dataset": 8,
+      "replayed_signals": 3,
+      "coverage_gate": "PASS"
+    },
+    {
+      "run_id": "aqrp-eddd1a9a-ffe8-4ce6-86f3-6dad06d60e7b",
+      "code_commit": "d1feaae218b25741e57fdfa024c0072f87f32e67",
+      "junit": {
+        "tests": 417,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "selected_hashes": 46,
+      "wheel_sha256": "ab7605c4deff282ace12cd8e3a371c3b5723050114a1636403f9597c2996aeab",
+      "tables_each_dataset": 8,
+      "replayed_signals": 3,
+      "coverage_gate": "PASS"
+    },
+    {
+      "run_id": "aqrp-3b09e57f-5870-4d6b-a4f1-95b68c04d57f",
+      "code_commit": "d1feaae218b25741e57fdfa024c0072f87f32e67",
+      "junit": {
+        "tests": 417,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "selected_hashes": 46,
+      "wheel_sha256": "239d1578a74fee7511546e0e22cf65f4d3d6263be1e6948dd94ce675326de7af",
+      "tables_each_dataset": 8,
+      "replayed_signals": 3,
+      "coverage_gate": "PASS"
+    }
+  ],
+  "original16": 16,
+  "original4": 4,
+  "original_query_identities_recomputed": 12,
+  "protected_assets": 50,
+  "previous_lineage_manifest_entries_verified": 335,
+  "previous_review_inputs_hash_verified": 248,
+  "original_probes_unchanged": true,
+  "current_official_ci_artifact_digests": "MATCH both IDs",
+  "full_sdk_newly_run_by_receiver": false,
+  "actual_report_reviewer": "GPT Work; external conversation identity not independently authenticated",
+  "conclusion": "Receipt supports supplemental technical PASS on fixed target; 001/002/003 closure scoped to this report; no human acceptance/release"
+}

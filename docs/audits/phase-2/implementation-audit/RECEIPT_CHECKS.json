@@ -1,0 +1,73 @@
+{
+  "run_id": "p2-audit-receipt-77b87b7b-ce95-4ff9-aeb2-046df87cf6a1",
+  "time_utc": "2026-10-21T12:30:56.731644+00:00",
+  "performed_by": "Codex developer, not Gemini",
+  "reviewed_commit": "2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1",
+  "report_source": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_implementation_audit_report.md",
+  "report_sha256": "395eadf04145e5a23b624687c3576def8a9b23260cb75a53037c7218e30a3d0f",
+  "report_bytes": 17062,
+  "prior_current_manifest_files_verified": 636,
+  "phase0_protected_files_verified": 50,
+  "old_audit_files_preserved": 448,
+  "requirements": 106,
+  "groups": 16,
+  "business_source_tests_tools_ci_lock_unchanged": true,
+  "protocol_excluded_lines_actual": [
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\phase2-implementation-20261021\\formal\\aqrp-9c608d21-ea7a-4357-9e9e-3bd088b9b798\\venv\\Lib\\site-packages\\aqrp\\factors\\contracts.py",
+      "excluded_lines": [
+        289,
+        290,
+        291
+      ]
+    }
+  ],
+  "volume_and_exact_float_recheck": "developer-math-recheck.json",
+  "archive_and_fresh_remote_metadata_checks": [
+    {
+      "file": "12342621298-ubuntu.zip",
+      "id": 12342621298,
+      "sha256": "e816a54fc6d181904500adae860c21e12b255cb913af731c805855e0961b58da",
+      "bytes": 143927,
+      "fresh_remote_api_metadata_match": true,
+      "safe_paths_crc": true,
+      "selection_member_hashes_verified": 46,
+      "junit": {
+        "tests": 254,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "file": "12342066424-windows.zip",
+      "id": 12342066424,
+      "sha256": "6346c1fb51ab1dba310fa9d8f65a32be686c2ce9c58e96bccf74a8ec5df5dde3",
+      "bytes": 144114,
+      "fresh_remote_api_metadata_match": true,
+      "safe_paths_crc": true,
+      "selection_member_hashes_verified": 46,
+      "junit": {
+        "tests": 254,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "remote_refs": {
+    "refs/heads/feature/phase-2-factor-registry": "2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1",
+    "refs/heads/main": "f579b2c99e762085772de6e70ba1fa98792a7add",
+    "refs/tags/phase0-baseline": "0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0",
+    "refs/tags/phase0-baseline^{}": "7de1d0e81385ae97f98ea673fe05dd726f0b577b",
+    "refs/tags/phase1-baseline": "1a8e47ee4be910aa7eeeefa430015e683a8aa6f5",
+    "refs/tags/phase1-baseline^{}": "f579b2c99e762085772de6e70ba1fa98792a7add"
+  },
+  "phase2_tag_exists": false,
+  "gemini_named_new_math_files_found": [],
+  "gemini_new_math_raw_evidence_received": false,
+  "gemini_full_sdk_independent_execution": "NOT VERIFIED; reviewer explicitly did not execute exact runtime",
+  "new_full_sdk_run_this_receipt": false,
+  "reason_no_sdk_rerun": "Only report/status/evidence reconciliation, no business or test changes; preserve original local and CI evidence; new head CI will run after push",
+  "sync_conflicts": []
+}

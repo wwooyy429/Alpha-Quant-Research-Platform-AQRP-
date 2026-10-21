@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aqrp"
-version = "0.1.1"
-description = "Synthetic point-in-time research data contracts (Phase 1)"
+version = "0.2.0"
+description = "Point-in-time data and reviewed builtin factor registry (Phase 2)"
 requires-python = "==3.13.16"
 dependencies = [
   "numpy==2.5.4", "pandas==3.0.6", "pyarrow==26.0.0",
@@ -21,6 +21,9 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"aqrp.factors" = ["reviewed_code.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

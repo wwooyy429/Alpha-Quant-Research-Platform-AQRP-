@@ -1,0 +1,87 @@
+{
+  "received_at_utc": "2026-10-21T13:28:20.253343+00:00",
+  "source": "User supplied revised script/log then incremental report in current conversation",
+  "incoming_review_sha": "0b5107fa611af9d3a858440261b5321c83ca9fa4",
+  "implementation_sha": "8183b3762b56c466b989d9062a720b5f0d31172a",
+  "files": [
+    {
+      "source": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_math_verification_revised.py",
+      "bytes": 9527,
+      "sha256": "a4d6ab561cf81040411a9980adc4d72dbd69b79661cebaaf395da2312baae92c",
+      "archive_path": "docs/audits/phase-2/gemini/revised-math/aqrp_phase2_math_verification_revised.py"
+    },
+    {
+      "source": "B:\\迅雷下载\\aqrp_phase2_math_verification_revised.log",
+      "bytes": 5702,
+      "sha256": "b211a417759654981eff08309415bcf9f0fd8b682bc9a91711d3750e2b23ffee",
+      "archive_path": "docs/audits/phase-2/gemini/revised-math/aqrp_phase2_math_verification_revised.log"
+    },
+    {
+      "source": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_math_and_errata_incremental_recheck_report.md",
+      "bytes": 20041,
+      "sha256": "3df97ed8a3902463a8c7139cc406789b32d08ac9ec554ca38aa560d57c0868d0",
+      "archive_path": "docs/audits/phase-2/gemini/revised-math/aqrp_phase2_math_and_errata_incremental_recheck_report.md"
+    }
+  ],
+  "reported_verdict": "PASS",
+  "reported_readiness": "READY advisory, not human acceptance",
+  "reported_errata_adjudication": {
+    "ERR-P2-IMPL-001": "AGREE/CLOSED",
+    "ERR-P2-IMPL-002": "AGREE/CLOSED",
+    "ERR-P2-IMPL-003": "AGREE/CLOSED",
+    "ERR-P2-IMPL-004": "AGREE/CLOSED",
+    "ERR-P2-IMPL-005": "AGREE/CLOSED",
+    "ERR-P2-IMPL-006": "AGREE/CLOSED",
+    "ERR-P2-IMPL-007": "AGREE/CLOSED",
+    "ERR-P2-IMPL-008": "AGREE/CLOSED",
+    "ERR-P2-IMPL-009": "AGREE/CLOSED",
+    "ERR-P2-IMPL-010": "AGREE/CLOSED",
+    "ERR-P2-IMPL-011": "AGREE/CLOSED",
+    "ERR-P2-IMPL-012": "AGREE/CLOSED"
+  },
+  "reported_low_findings": {
+    "F-P2-PRE-001": "CLOSED",
+    "F-P2-PRE-002": "CLOSED"
+  },
+  "developer_math_results": {
+    "volume_two_input_sets": "VERIFIED/CLOSED",
+    "security_B_input_derivation": "VERIFIED/CLOSED",
+    "exact_nonzero_float_error": "VERIFIED CORE RESOLVED",
+    "zero_relative_display": "Code skips zero relative assertion, prints0; interpret N/A",
+    "operator_display": "assert< vs printed<=; all current samples strictly inside, no changed production tolerance"
+  },
+  "developer_report_fact_alignment": {
+    "ERR-P2-IMPL-001": "PARTIAL: wrong title/BASELINE delta repeated",
+    "ERR-P2-IMPL-002": "PARTIAL: wrong FACTOR-011 topology meaning repeated",
+    "ERR-P2-IMPL-003": "ACCEPTED",
+    "ERR-P2-IMPL-004": "NOT FACTUALLY ALIGNED: nonexistent security.py/protocols.py repeated",
+    "ERR-P2-IMPL-005": "PARTIAL: TEST_ONLY is environment not state",
+    "ERR-P2-IMPL-006": "VERIFIED/CLOSED math",
+    "ERR-P2-IMPL-007": "VERIFIED CORE RESOLVED with display notes",
+    "ERR-P2-IMPL-008": "PARTIAL: generic decision cutoff not universal after-close time",
+    "ERR-P2-IMPL-009": "ACCEPTED",
+    "ERR-P2-IMPL-010": "PARTIAL: revised math received, comprehensive hash/AST tool still not supplied",
+    "ERR-P2-IMPL-011": "ACCEPTED scope disclosure, ZIP review only and SDK not executed",
+    "ERR-P2-IMPL-012": "ACCEPTED user authority"
+  },
+  "provided_script_raw_hash_vs_report": "9527 bytes/a4d6... actual; report9528/4d71... prefix explained by one trailing LF diagnostic candidate, original not altered",
+  "developer_replay": {
+    "run_id": "p2-revised-math-2580bfee-c6e6-4ff3-a95c-f59d9d209c26",
+    "returncode": 0,
+    "provided_runtime": "3.11.2",
+    "replay_runtime": "3.13.16",
+    "match_scope": "All body content matches after line ending/final-newline normalization plus one runtime-version banner only, not byte-identical"
+  },
+  "new_math_source_and_log_received": true,
+  "original_comprehensive_math_hash_ast_tool_received": false,
+  "gemini_sdk_independent_execution": "NOT VERIFIED as reviewer explicitly states",
+  "gemini_zip_execution_scope": "Evidence Reviewed Only per incremental report, not newly independently downloaded/replayed",
+  "reconciliation": "docs/audits/phase-2/MATH_INCREMENTAL_RECONCILIATION.md",
+  "developer_evidence": "docs/audits/phase-2/revised-math/checks.json",
+  "current_status": "INCREMENTAL AUDIT PASS AS REPORTED / CORE MATH VERIFIED / REPORT ALIGNMENT AND EXECUTION LIMITS OPEN",
+  "human_accepted": false,
+  "user_accepted_limits": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase3_authorized": false
+}

@@ -1,0 +1,64 @@
+{
+  "performed_by": "Codex developer reference, not Gemini",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "input_sha256": "4f9c2debea76c39f15f0d90bf080a2b1da9a22e09e94a63e7cda2e34ed28575b",
+  "results": [
+    {
+      "case": "G-P2-A",
+      "rational": {
+        "momentum": "21/100",
+        "reversal": "-21/100",
+        "volume": "3/5"
+      },
+      "exact_match": true
+    },
+    {
+      "case": "G-P2-B",
+      "rational": {
+        "momentum": "-1/5",
+        "reversal": "1/5",
+        "volume": "0"
+      },
+      "exact_match": true
+    },
+    {
+      "case": "G-P2-SPLIT",
+      "rational": {
+        "momentum": "0",
+        "reversal": "0",
+        "volume": "0"
+      },
+      "exact_match": true
+    },
+    {
+      "case": "G-P2-DIV",
+      "rational": {
+        "momentum": "-1/100",
+        "reversal": "1/100",
+        "volume": "0"
+      },
+      "exact_match": true
+    },
+    {
+      "case": "G-P2-CURRENT-ZERO",
+      "rational": {
+        "momentum": "0",
+        "reversal": "0",
+        "volume": "-1"
+      },
+      "exact_match": true
+    },
+    {
+      "case": "G-P2-SCALE",
+      "rational": {
+        "momentum": "21/100",
+        "reversal": "-21/100",
+        "volume": "3/5"
+      },
+      "exact_match": true
+    }
+  ],
+  "manual_checks": "split units, dividend total-return distinction, zero historical volume",
+  "invalid_case_contracts": "STATIC PLAN ONLY; no future factor implementation executed",
+  "result": "PASS: six exact rational cases"
+}

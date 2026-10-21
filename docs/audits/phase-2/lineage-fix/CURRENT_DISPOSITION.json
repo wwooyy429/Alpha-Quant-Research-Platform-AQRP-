@@ -1,0 +1,29 @@
+{
+  "reported_target": "c70727c39182f81ee142730da9a9833a51581cd1",
+  "new_implementation": "708b83be1dd597395b41f2ff6e10702749175bbf",
+  "findings": [
+    {
+      "id": "WORK-P2-001",
+      "status": "GPT Work supplemental recheck PASS on c707; applicable regression retained"
+    },
+    {
+      "id": "WORK-P2-002",
+      "status": "DEVELOPER FIX VERIFIED / RECHECK REQUIRED",
+      "reported_severity": "Medium blocking on c707",
+      "original_probe": "failed before, passed after; original source unchanged"
+    },
+    {
+      "id": "WORK-P2-003",
+      "status": "DEVELOPER FIX VERIFIED / RECHECK REQUIRED",
+      "reported_severity": "Medium blocking on c707",
+      "original_probe": "failed before, passed after; original source unchanged"
+    }
+  ],
+  "current_sdk_tests": 417,
+  "original_p1_tests": 16,
+  "original_p2_probes": 4,
+  "gemini_new_full_sdk_execution": "NOT VERIFIED",
+  "human_phase2_accepted": false,
+  "merge_or_release_authorized": false,
+  "phase3_authorized": false
+}

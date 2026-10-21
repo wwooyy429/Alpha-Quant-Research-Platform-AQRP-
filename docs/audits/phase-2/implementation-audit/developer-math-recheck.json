@@ -1,0 +1,64 @@
+{
+  "performed_by": "Codex developer, new receipt check, not Gemini or replacement for missing raw reviewer execution",
+  "golden_volume": {
+    "input": [
+      "100",
+      "150",
+      "200"
+    ],
+    "historical_mean": "125",
+    "formula": "200 / ((100+150)/2) - 1",
+    "exact_result": "3/5"
+  },
+  "precision": [
+    {
+      "rational": "21/100",
+      "float": 0.21,
+      "exact_binary64_error": "7/900719925474099200",
+      "absolute_error": 7.771561172376097e-18,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "-21/100",
+      "float": -0.21,
+      "exact_binary64_error": "7/900719925474099200",
+      "absolute_error": 7.771561172376097e-18,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "3/5",
+      "float": 0.6,
+      "exact_binary64_error": "1/45035996273704960",
+      "absolute_error": 2.2204460492503132e-17,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "-1/5",
+      "float": -0.2,
+      "exact_binary64_error": "1/90071992547409920",
+      "absolute_error": 1.1102230246251566e-17,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "1/5",
+      "float": 0.2,
+      "exact_binary64_error": "1/90071992547409920",
+      "absolute_error": 1.1102230246251566e-17,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "0",
+      "float": 0.0,
+      "exact_binary64_error": "0",
+      "absolute_error": 0.0,
+      "within_abs_1e_12": true
+    },
+    {
+      "rational": "-1/100",
+      "float": -0.01,
+      "exact_binary64_error": "3/14411518807585587200",
+      "absolute_error": 2.0816681711721684e-19,
+      "within_abs_1e_12": true
+    }
+  ]
+}

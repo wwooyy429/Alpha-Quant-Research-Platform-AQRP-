@@ -1,0 +1,63 @@
+.FF.                                                                     [100%]
+================================== FAILURES ===================================
+____ test_work_p2_reformatted_valid_config_cannot_create_bad_artifact_hash ____
+
+case = (<aqrp.factors.registry.FactorRegistry object at 0x000002BB8E6C3890>, FactorSpec(factor_id='momentum', factor_name='Mo...lated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}'))
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p2-c70727c/new-probe-tmp/test_work_p2_reformatted_valid0')
+
+    def test_work_p2_reformatted_valid_config_cannot_create_bad_artifact_hash(case,tmp_path):
+        registry,_,_,_,batch=case
+        reformatted=json.dumps(json.loads(batch.config_snapshot),indent=2).encode()
+        assert json.loads(reformatted)==json.loads(batch.config_snapshot)
+        try:
+            roundtrip=SignalBatch(batch.rows,reformatted)
+            root=write_run(roundtrip,tmp_path/'roundtrip-runs',registry)
+        except ContractError:
+            return  # Rejecting noncanonical config is also a valid contract response.
+        manifest=json.loads((root/'manifest.json').read_bytes())
+        entry=next(item for item in manifest['artifacts'] if item['path']=='config.json')
+        actual=hashlib.sha256((root/'config.json').read_bytes()).hexdigest()
+>       assert entry['sha256']==actual, {'declared':entry['sha256'],'actual':actual,'status':manifest['status']}
+E       AssertionError: {'declared': 'bb3022f0eeda6f043552b89f7b3e856adfcea00510aff5013023c6e269f415af', 'actual': '16492d0b949c19d4a0b4e5c62076a58a1c5a000082f62d916415f538fcb9640d', 'status': 'SUCCEEDED'}
+E       assert 'bb3022f0eeda...3c6e269f415af' == '16492d0b949c...5f538fcb9640d'
+E         
+E         - 16492d0b949c19d4a0b4e5c62076a58a1c5a000082f62d916415f538fcb9640d
+E         + bb3022f0eeda6f043552b89f7b3e856adfcea00510aff5013023c6e269f415af
+
+_          = SnapshotRef(root=WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/r...ba1f78f-c459-499b-bfdc-ec44a5b8a0f1', manifest_hash='53db6699e5d240acff7630d25a6da8dff0eaceb542a93342f881993168bd7ecb')
+actual     = '16492d0b949c19d4a0b4e5c62076a58a1c5a000082f62d916415f538fcb9640d'
+batch      = SignalBatch(rows=(Signal(signal_time=datetime.datetime(2024, 1, 4, 12, 0, tzinfo=datetime.timezone.utc), security_id='...ulated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}')
+case       = (<aqrp.factors.registry.FactorRegistry object at 0x000002BB8E6C3890>, FactorSpec(factor_id='momentum', factor_name='Mo...lated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}'))
+entry      = {'path': 'config.json', 'sha256': 'bb3022f0eeda6f043552b89f7b3e856adfcea00510aff5013023c6e269f415af'}
+manifest   = {'artifacts': [{'path': 'config.json', 'sha256': 'bb3022f0eeda6f043552b89f7b3e856adfcea00510aff5013023c6e269f415af'}, ... 'financial_approval': 'NONE', 'logical_hash': '452f4825c51914c97b1f4e7e8608c00eef607cab0d302142f5ecf45b70e63460', ...}
+reformatted = b'{\n  "calendar_id": "SYN_A_CAL",\n  "calendar_version": "synthetic-calendar/1",\n  "computation_id": "a9a07f49-8bdf-...daily"\n  },\n  "symbols": [\n    [\n      "SYN_A:001",\n      "DUP"\n    ]\n  ],\n  "target_session": "2024-01-04"\n}'
+registry   = <aqrp.factors.registry.FactorRegistry object at 0x000002BB8E6C3890>
+root       = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p2-c70727c/new-probe-tmp/test_work_p2_reformatted_valid0/roundtrip-runs/c26f3d0f-8a08-4faa-a0cf-bbd97a629b36')
+roundtrip  = SignalBatch(rows=(Signal(signal_time=datetime.datetime(2024, 1, 4, 12, 0, tzinfo=datetime.timezone.utc), security_id='...aily"\n  },\n  "symbols": [\n    [\n      "SYN_A:001",\n      "DUP"\n    ]\n  ],\n  "target_session": "2024-01-04"\n}')
+tmp_path   = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p2-c70727c/new-probe-tmp/test_work_p2_reformatted_valid0')
+
+test_work_p2_regressions.py:66: AssertionError
+______________ test_work_p2_parameters_must_match_their_own_hash ______________
+
+case = (<aqrp.factors.registry.FactorRegistry object at 0x000002BB8E60C2D0>, FactorSpec(factor_id='momentum', factor_name='Mo...lated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}'))
+
+    def test_work_p2_parameters_must_match_their_own_hash(case):
+        _,_,_,_,batch=case
+        config=json.loads(batch.config_snapshot)
+        config['params']=[['lookback',1]]
+        assert dict(json.loads(batch.config_snapshot)['params'])=={'lookback':2}
+        assert config['params_hash']==batch.rows[0].params_hash
+>       with pytest.raises(ContractError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+_          = SnapshotRef(root=WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/r...a2f75dd-6040-40b8-ae58-13f6101166d0', manifest_hash='712299972baa6d685bc9968ba0fde1ee5cd99652bc7a12c0c3da45c2ae63f05f')
+batch      = SignalBatch(rows=(Signal(signal_time=datetime.datetime(2024, 1, 4, 12, 0, tzinfo=datetime.timezone.utc), security_id='...ulated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}')
+case       = (<aqrp.factors.registry.FactorRegistry object at 0x000002BB8E60C2D0>, FactorSpec(factor_id='momentum', factor_name='Mo...lated compute delay=0","supported_frequency":"daily"},"symbols":[["SYN_A:001","DUP"]],"target_session":"2024-01-04"}'))
+config     = {'calendar_id': 'SYN_A_CAL', 'calendar_version': 'synthetic-calendar/1', 'computation_id': '2e1f08ac-c34e-449e-87af-2ef3703fd79c', 'decision_time': '2024-01-04T12:05:00.000000+00:00', ...}
+
+test_work_p2_regressions.py:75: Failed
+=========================== short test summary info ===========================
+FAILED test_work_p2_regressions.py::test_work_p2_reformatted_valid_config_cannot_create_bad_artifact_hash
+FAILED test_work_p2_regressions.py::test_work_p2_parameters_must_match_their_own_hash
+2 failed, 2 passed in 5.41s

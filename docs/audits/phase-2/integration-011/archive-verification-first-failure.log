@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\runs\p2-integrate-011-20261021\verify_and_archive.py", line 89, in <module>
+    local_result=verify_run(local)
+  File "C:\Users\11638\AppData\Local\AQRP\runs\p2-integrate-011-20261021\verify_and_archive.py", line 73, in verify_run
+    assert view.query_hash==json.loads((run/'smoke-run.json').read_bytes())['query_hash']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

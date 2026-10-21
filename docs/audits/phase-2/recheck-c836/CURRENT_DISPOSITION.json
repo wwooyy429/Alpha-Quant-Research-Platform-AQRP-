@@ -1,0 +1,37 @@
+{
+  "reviewed_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+  "actual_reviewer": "GPT Work supplemental review, not Gemini",
+  "verdict": "SUPPLEMENTAL TECHNICAL PASS; no blocker reported in tested scope",
+  "findings": [
+    {
+      "id": "WORK-P2-001",
+      "status": "CLOSED — GPT Work supplemental recheck PASS",
+      "reviewed_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+      "basis": "Reviewed P1 source unchanged; controlled integration, exact main match, original16 and UNKNOWN-calendar-to-factor regression all PASS."
+    },
+    {
+      "id": "WORK-P2-002",
+      "status": "CLOSED — GPT Work supplemental recheck PASS",
+      "reviewed_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+      "basis": "Equivalent JSON canonicalized, batch/config/content hash consistent, actual stored artifact bytes SHA256 verified; original failing probe and formal roundtrip/duplicate-key tests PASS."
+    },
+    {
+      "id": "WORK-P2-003",
+      "status": "CLOSED — GPT Work supplemental recheck PASS",
+      "reviewed_sha": "c8362953f555606795b6804cdfe28ff690c2364d",
+      "basis": "Schema reconstruction, exact frozen parameter projection and recomputed hash checked against config/each Signal; old-hash and new-hash relabeling rejected; lookback1=0.1 and lookback2=0.21 controls PASS."
+    }
+  ],
+  "received_sdk_tests": 417,
+  "received_original16": 16,
+  "received_original4": 4,
+  "gemini_new_full_sdk_execution": "NOT VERIFIED",
+  "historical_unuploaded_p1_bytes": "NOT VERIFIED; not restored by new execution",
+  "old_comprehensive_ast_math_hash_tool": "Original missing; not replaced by mathematical or developer scripts",
+  "human_phase2_accepted": false,
+  "user_accepted_limits": false,
+  "main_merge_authorized": false,
+  "tag_or_release_authorized": false,
+  "phase3_authorized": false,
+  "receiver_scope": "Receipt verification/replay only; no new full SDK run, no code changes"
+}
