@@ -1,0 +1,23 @@
+{
+  "scope": "Developer executed scanner behavior; synthetic credential only",
+  "results": [
+    {
+      "case": "exact_event",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "case": "same_digest_other_path",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass": true
+    },
+    {
+      "case": "changed_line_synthetic_credential",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass": true
+    }
+  ]
+}

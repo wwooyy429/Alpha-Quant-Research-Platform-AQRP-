@@ -7,3 +7,11 @@ condition = "AND"
 paths = ['''docs/audits/phase-1/implementation/local-history/aqrp-3261ca7b-86e1-4f60-b77f-966595712fa9/artifacts\.json$''']
 regexTarget = "line"
 regexes = ['''^\s*"secret-scan\.log": "274b2f11da75e61139784d4f975193c507870a1ffe3ce75f6b3cef7a774b9da9",?\s*$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Exact immutable Phase3 cache-hit event: independently recomputed SHA-256 of public synthetic cache inputs, not a credential. Exact path AND exact extracted SHA-256 only."
+condition = "AND"
+paths = ['''docs/audits/phase\-3/implementation/validation\-07e7c88/sdk/research/runs/826873ac\-7112\-4114\-8518\-1ae98b5c11d9/events\.jsonl$''']
+regexTarget = "secret"
+regexes = ['''^69266f2ffa606b5e7b3f052cb193dcf9de2e8c0b70a71467217e8b848332c554$''']

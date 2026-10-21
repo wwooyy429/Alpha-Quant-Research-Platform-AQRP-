@@ -318,5 +318,13 @@
   "main_merge": false,
   "tag_created": false,
   "phase4_started": false,
-  "final_review_binding": "No self-referential commit SHA invented. Evidence commit must preserve all src/tests/tools/lock/workflow bytes from business_execution_commit. PR AQRP_FIXED_REVIEW_SHA locks final 40-character review commit; its CI can be registered there without rewriting prior run identities."
+  "final_review_binding": "No self-referential commit SHA invented. Evidence commit must preserve all src/tests/tools/lock/workflow bytes from business_execution_commit. PR AQRP_FIXED_REVIEW_SHA locks final 40-character review commit; its CI can be registered there without rewriting prior run identities. The reviewed narrow .gitleaks.toml exception is an explicit final configuration delta; previous CI does not cover it.",
+  "archive_scan_correction": {
+    "failed_head": "bc99dc671d7292a8cb9e77cea17d91e84193bc6d",
+    "failed_run": 39682778261,
+    "both_jobs": "FAILURE_SECRET_SCAN",
+    "finding": "Verified public cache digest; generic-api-key rule only, exact historical path AND exact extracted SHA-256",
+    "evidence": "implementation/archive-scan-correction/RESPONSE.md",
+    "final_ci": "Register final fixed commit outcome and original ZIPs in PR receipt; no pass inferred from earlier run"
+  }
 }
