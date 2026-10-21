@@ -1,0 +1,47 @@
+{
+  "received_at_utc": "2026-10-21T12:45:46.050494+00:00",
+  "user_confirmed_provided": true,
+  "files": [
+    {
+      "path": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_math_verification.py",
+      "bytes": 3760,
+      "sha256": "88637a72c494abb4893d9312e974c2057a0fa28bef84fbeb1e5328c96fe1729e",
+      "archived_path": "docs/audits/phase-2/gemini/math-supplement/aqrp_phase2_math_verification.py"
+    },
+    {
+      "path": "B:\\迅雷下载\\aqrp_phase2_math_verification.log",
+      "bytes": 1022,
+      "sha256": "e64db0afd63779d39f2f1398117687ba0c9ccbda544fb209769eb024a011946e",
+      "archived_path": "docs/audits/phase-2/gemini/math-supplement/aqrp_phase2_math_verification.log"
+    }
+  ],
+  "incoming_fixed_pr_head": "79c91e4bf7b4341c810705a00648283e80ab805a",
+  "self_identified_scope": "Phase 2 Plan Pre-Review Mathematical Verification Script",
+  "old_plan_named_math_files_now_received": true,
+  "no_retroactive_old_submission_claim": true,
+  "implementation_report_named_new_math_hash_file_identity_matched": false,
+  "implementation_report_named_new_math_hash_files": [
+    "aqrp_phase2_implementation_math_and_hash_audit.py",
+    "aqrp_phase2_implementation_math_and_hash_audit.log"
+  ],
+  "provided_code_contains_hash_sdk_zip_verification": false,
+  "source_fixed_sha_binding": false,
+  "developer_replay": {
+    "run_id": "p2-math-supplement-f79a53e8-5c2d-4581-b1c9-2258486f931e",
+    "returncode": 0,
+    "normalized_log_match": true,
+    "scope": "Codex developer isolated standard-library replay, not Gemini SDK execution"
+  },
+  "formal_volume_reference_evidence": "FAIL AS FORMAL FACTOR EVIDENCE: supplied code raw ratio3/5 differs from formal same-input factor-2/5",
+  "security_b_reference_evidence": "Constants compared with same constants, no input-derived factors",
+  "precision_scope": "Same float comparison; relative difference printed literal0, not exact rational error verification",
+  "gemini_full_sdk_execution": "NOT VERIFIED",
+  "gemini_zip_hash_execution_gap_closed": false,
+  "reconciliation": "docs/audits/phase-2/MATH_SUPPLEMENT_RECONCILIATION.md",
+  "raw_originals_unchanged": true,
+  "human_accepted": false,
+  "user_execution_limitations_accepted": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase3_authorized": false
+}

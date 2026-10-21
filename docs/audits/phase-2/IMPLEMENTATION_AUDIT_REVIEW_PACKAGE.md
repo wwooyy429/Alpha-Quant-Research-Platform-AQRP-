@@ -1,5 +1,7 @@
 # Phase2 实现报告接收后的增量复核入口
 
+最新补充：旧预审数学.py/.log已收到并复跑日志相符；参考Volume错式、证券B常量比较及无hash/SDK/ZIP验证等详见MATH_SUPPLEMENT_RECONCILIATION.md。原接收记录保留历史事实；新增核对仍待Gemini确认，不能据此关闭全部实现执行缺口。
+
 审查原件固定2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1，业务8183b3762b56c466b989d9062a720b5f0d31172a。PR #3 AQRP_FIXED_REVIEW_SHA提供本次新归档头，避免自引用SHA；不审漂移分支。原实现审查包与全SDK/ZIP原件继续位于IMPLEMENTATION_REVIEW_PACKAGE.md和implementation/，不改其历史文件或执行归属。
 
 请按以下顺序复核：

@@ -1,5 +1,7 @@
 # Phase 2 实现审计接收与开发方核对
 
+当前补充：用户已提供旧预审命名的数学脚本/日志，原件已按本轮时间补收；复跑相符但存在错误公式和验证范围不足。此前“未收到”的文字按历史接收时点解释，完整当前核对见MATH_SUPPLEMENT_RECONCILIATION.md。实现报告所称新数学/hash执行证据仍未匹配，不能以旧文件名或相同最终数字补齐。
+
 Gemini审查固定2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1，业务8183b3762b56c466b989d9062a720b5f0d31172a。报告原件按字节归档于gemini/aqrp_phase2_implementation_audit_report.md，SHA256为395eadf04145e5a23b624687c3576def8a9b23260cb75a53037c7218e30a3d0f，17062 bytes。来源/用户授权边界见gemini/IMPLEMENTATION_AUDIT_INDEX.json。
 
 当前：**AUDIT PASS AS REPORTED / REPORT ERRATA AND EXECUTION EVIDENCE OPEN**。Gemini给出PASS、建议READY；八项ERR-P2-001..008均AGREE/CLOSED，F-P2-PRE-001/002均获Gemini正式CLOSED，限受审内置工程测试。没有新Critical/High发现或可复现业务缺陷。以上审查意见已经接收；不将原件的事实误述和未附执行文件一并当成已验证，不把转交报告登记成用户验收或限制豁免。
@@ -25,7 +27,7 @@ Gemini审查固定2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1，业务8183b3762b56c
 | ERR-P2-IMPL-007 | 数学绝对误差0.00e+00，完全位对齐 | 同float比较可为0，但相对精确有理数的binary64误差：±0.21为7.771561172376097e-18，0.6为2.2204460492503132e-17，均非零且满足既定容差。既有MATH_PRECISION_RECHECK.json及本轮Fraction核对支持，不改答案或放宽容差。 |
 | ERR-P2-IMPL-008 | decision/依赖/available_at均严格按“盘后安全发布时点对齐” | decision_time是冻结请求cutoff，依赖event/available必须<=cutoff，输出available_at保守=decision_time（合成logical_compute_delay=0）。依赖时间不必相等；通用契约不能推定真实市场盘后时刻。坏目标/未来目标输出invalid，不能把无效占位的signal_time当可执行信号。 |
 | ERR-P2-IMPL-009 | “不存在越权执行漏洞” | 能确认受审内置准入与既有负例；无法由静态语义/有限测试证明不存在全部漏洞。同权限恶意维护者、反射/原生扩展等不由本阶段Python/AST隔离；外部插件/OS沙箱Unsupported的限制继续保留，报告绝对措辞待澄清。 |
-| ERR-P2-IMPL-010 | 本次新.py/.log已生成，原数学证据缺口已闭环 | 只收到报告；同目录指定aqrp_phase2_implementation_math_and_hash_audit.py/.log未发现，未附字节/命令/输出/hash。可登记“Gemini自述新执行”，不能登记原始执行证据已归档或复跑成功。旧预审未交原件的历史事实不能追溯改写；新证据到齐后可另行评价本次验证范围。 |
+| ERR-P2-IMPL-010 | 本次新.py/.log已生成，原数学证据缺口已闭环 | 后续已收到aqrp_phase2_math_verification.py/.log，文件自述Plan Pre-Review，不含hash/SDK/ZIP校验且Volume公式错误；两原件已归档、开发方复跑相符。旧预审同名缺件当前补齐，但不是实现报告指定的新implementation_math_and_hash_audit文件身份/范围证明，不能登记新数学/hash证据匹配或全部闭环。详见MATH_SUPPLEMENT_RECONCILIATION.md，不追溯改写旧接收事实。 |
 | ERR-P2-IMPL-011 | CI Verified/归档MATCH即可视为独立SDK/远端验证闭环 | 报告明确未运行3.13.16 SDK；CI与开发方日志审阅不等于Gemini独立SDK。ZIP实际执行清单/哈希脚本与新远端API响应未随报告提供，审查方的MATCH按报告自述保留，开发方新API核对不得替其补证。沙箱无网与外部只读工具可分开说明，不据此猜测审查者做过哪些操作。 |
 | ERR-P2-IMPL-012 | “法定”四条件；main gate后解除Phase3启动阻断 | 属项目治理条件，不是法律结论。报告提出phase2-baseline/主干复核不构成本轮合并/标签授权。用户阶段验收与限制决定、另行合并/标签授权、获批范围合并后核验/基线发布仍未完成；即使RELEASED，Phase3还需用户独立明确启动授权，不能自动解除并开发。 |
 
@@ -34,7 +36,7 @@ Gemini审查固定2a70dc6251ce2e7d014d76f3c1bd26cdddb3aac1，业务8183b3762b56c
 ## 当前未闭环条件
 
 1. 本表12项报告事实更正与执行范围澄清尚未获Gemini确认；不能将八项旧勘误AGREE推广为对新增勘误已AGREE。
-2. Gemini声称本轮新执行的数学/hash脚本与日志原件尚未收到；旧预审两原件缺口也不追溯改写。补证须绑定固定SHA/输入/命令/完整输出/hash；无法提供则如实标Reported only。
+2. 旧预审数学两原件现已收到，开发方复跑相符，原始文件接收缺件当前关闭；但Volume错式、证券B常量比较、浮点口径等仍需新修订证据。实现报告所称新数学/hash文件身份与执行范围尚未匹配，补证需绑定固定SHA/正确输入/实际命令/输出/hash，不追溯改写旧历史。
 3. Gemini在CPython3.13.16的完整独立SDK执行仍NOT VERIFIED。可以补充真实执行；如无法执行，由用户在人工验收时明确决定是否接受该限制，当前用户没有作此决定。不能把用户本次“请归档处理报告”当作接受限制。
 4. 原始ZIP开发方校验及远端API校验已通过；Gemini独立执行/原始记录范围与证据缺口需澄清，不能以另一执行者的证据补记。
 5. 新归档SHA仅审查记录增量，业务与已审2a70/8183相同；Gemini对新增记录/勘误复核后，后续若发现金融/安全阻断缺陷须修复、新SHA、适用测试再复核。

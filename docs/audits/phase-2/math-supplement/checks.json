@@ -1,0 +1,130 @@
+{
+  "run_id": "p2-math-supplement-f79a53e8-5c2d-4581-b1c9-2258486f931e",
+  "time_utc": "2026-10-21T12:42:37.985384+00:00",
+  "performed_by": "Codex developer; supplied file header attributes original work to Gemini, historical execution provenance not authenticated by replay",
+  "starting_commit": "79c91e4bf7b4341c810705a00648283e80ab805a",
+  "received": [
+    {
+      "path": "B:\\BaiduSyncdisk\\学习\\投资\\量化\\量化交易比赛\\审查\\aqrp_phase2_math_verification.py",
+      "bytes": 3760,
+      "sha256": "88637a72c494abb4893d9312e974c2057a0fa28bef84fbeb1e5328c96fe1729e"
+    },
+    {
+      "path": "B:\\迅雷下载\\aqrp_phase2_math_verification.log",
+      "bytes": 1022,
+      "sha256": "e64db0afd63779d39f2f1398117687ba0c9ccbda544fb209769eb024a011946e"
+    }
+  ],
+  "manual_static_review": "Read entire source; standard-library-only arithmetic/print/assert, no network/file access or dynamic execution, imports checked before isolated replay",
+  "imports": [
+    "import sys",
+    "from decimal import Decimal",
+    "from fractions import Fraction"
+  ],
+  "argv": [
+    "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "-I",
+    "-S",
+    "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\phase2-math-supplement\\aqrp_phase2_math_verification.py"
+  ],
+  "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\phase2-math-supplement",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "returncode": 0,
+  "stdout_sha256": "5914ee9cf54f57051e6cfd68088c56e2f0e4bd46b38fd5370d97e6c464a65a8c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "supplied_log_matches_replay_after_only_line_endings_and_final_newlines_normalization": true,
+  "replay_result": "PASS AS WRITTEN; not PASS of AQRP formal factor verification",
+  "source_self_identified_scope": "Phase 2 Plan Pre-Review Mathematical Verification Script",
+  "source_binds_fixed_commit": false,
+  "source_verifies_hashes_or_zips_or_sdk": false,
+  "source_security_b_computes_from_inputs": false,
+  "source_volume_example": {
+    "historical": [
+      1000,
+      2000,
+      3000,
+      4000,
+      5000
+    ],
+    "current": 1800,
+    "mean": "3000",
+    "script_raw_ratio": "3/5",
+    "formal_factor_same_inputs": "-2/5",
+    "formal_factor_same_inputs_float": -0.4,
+    "formal_factor_disagreement": true
+  },
+  "developer_formal_golden_checks": {
+    "G-P2-A": {
+      "inputs": {
+        "prices": [
+          "100",
+          "110",
+          "121"
+        ],
+        "volumes": [
+          "100",
+          "150",
+          "200"
+        ]
+      },
+      "derived": {
+        "momentum": "21/100",
+        "reversal": "-21/100",
+        "volume": "3/5"
+      }
+    },
+    "G-P2-B": {
+      "inputs": {
+        "prices": [
+          "200",
+          "180",
+          "160"
+        ],
+        "volumes": [
+          "40",
+          "60",
+          "50"
+        ]
+      },
+      "derived": {
+        "momentum": "-1/5",
+        "reversal": "1/5",
+        "volume": "0"
+      }
+    }
+  },
+  "exact_float_precision": [
+    {
+      "exact": "21/100",
+      "binary64_error": "7/900719925474099200"
+    },
+    {
+      "exact": "-21/100",
+      "binary64_error": "7/900719925474099200"
+    },
+    {
+      "exact": "3/5",
+      "binary64_error": "1/45035996273704960"
+    }
+  ],
+  "earlier_current_manifest_files_verified": 650,
+  "phase0_protected_files_verified": 50,
+  "source_tests_ci_lock_unchanged": true,
+  "old_audit_files_unchanged": true,
+  "remote_refs": {
+    "refs/heads/main": "f579b2c99e762085772de6e70ba1fa98792a7add",
+    "refs/tags/phase0-baseline": "0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0",
+    "refs/tags/phase0-baseline^{}": "7de1d0e81385ae97f98ea673fe05dd726f0b577b",
+    "refs/tags/phase1-baseline": "1a8e47ee4be910aa7eeeefa430015e683a8aa6f5",
+    "refs/tags/phase1-baseline^{}": "f579b2c99e762085772de6e70ba1fa98792a7add"
+  },
+  "phase2_tag_exists": false,
+  "sync_conflicts": [],
+  "gemini_full_sdk_execution": "NOT VERIFIED",
+  "new_implementation_math_and_hash_evidence_matched": false,
+  "human_accepted": false,
+  "merge_authorized": false,
+  "tag_authorized": false,
+  "phase3_authorized": false
+}
