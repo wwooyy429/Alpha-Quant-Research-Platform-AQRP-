@@ -25,4 +25,4 @@
 - LabelSpec必须pin SYNTHETIC_V1_LABEL_1；LabelBatch分开price interval、entitlement interval、information interval、label_available_at与revision lineage，拟合cutoff与purge按LABEL_ACTION_PROFILE.md。
 - 新CompositeSpec/CompositeScores/RedundancyReport及compose服务严格按COMPOSITE_RESEARCH.md；输出研究分数而非账户权重。
 - reproduce必须pin EnvironmentArchiveRef并路由旧wheel独立环境，旧Ref与新Ref/API矩阵、projection及错误见REPRODUCTION_PROFILE.md。
-- InferenceProfileRef=P3-HAC-BARTLETT-1：min252、n>=20(q+1)、q=max(h-1,5)和假设/批准证据全部显式；详HAC_INFERENCE_PROFILE.md。这些均为本轮具体设计提案，未部署/未批准，不把新设计挂在旧review_sha上。
+- 当前InferenceProfileRef=P3-HAC-GROWING-MDEP-2：在预定N/h/m0上固定q=max(h-1,m0,floor(N^(1/5)))，有界严格平稳m-dependent过程证据与主审方法认可/用户协议均必需；不得用旧固定q或n门槛当通用正式依据。原profile仅历史/算术。详HAC_INFERENCE_PROFILE.md，仍待新固定SHA复核。

@@ -38,3 +38,5 @@
 - VALID-001/002/003、QA-004、INT-001：SYNTHETIC_V1_LABEL_1及LabelCoverageRef/label_available_at/fit/purge，新行动边界候选。
 - FACTOR-007、RESEARCH-008、EXP-003：P3-REPRO-ARTIFACT-1原0.2制品/环境路线及明确失败/投影。
 - VALID-005/007/008、QA-004：HAC-BARTLETT-1固定候选/拒绝、非零p/全family失败项。
+
+当前003/004关闭仅指e26设计发现，RESEARCH-007/EXP-003等实际能力仍Planned。001/002/005新资料对应既有VALID004/001–003/005–008、QA004/INT001，无删减26项；具体用户方案/visibility_v2/增长带宽按最新PROFILE和RECHECK_E26_RESPONSE，不采用旧固定q作为当前formal候选。

@@ -25,3 +25,7 @@ G1后实施顺序：
 旧固定d10a55a被判PLAN BLOCKED（2High/3Medium），原件与ZIP完整归档g1-d10/。本轮仅设计修订，五项逐条处理及外部批准边界见DEVELOPER_RESPONSE.md；没有开发方代审查方CLOSED。
 
 实施顺序补充：P3.1先落实获批P3-ISO-OS-1主体/输入投影/预算原子性及LabelCoverageRef；标签按SYNTHETIC_V1_LABEL_1。P3.3后实施compose固定研究分数与冗余报告并接INT-001。P3.5按P3-HAC-BARTLETT-1显式工程门槛且正式标准缺失拒绝批准。P3.6采用P3-REPRO-ARTIFACT-1旧wheel独立环境重放，不原地迁移旧Ref；全部业务仍Planned。只有G1固定新SHA预审通过、High设计闭环及所需用户决定到位后才实施。
+
+## e26增量复核后当前状态
+
+003/004仅设计关闭，001/002/005仍OPEN；本轮ff4未被原审覆盖。具体用户方案、label_visibility_v2自包含输入及P3-HAC-GROWING-MDEP-2增长带宽/受限依赖方法按RECHECK_E26_RESPONSE待新SHA主审，不沿用旧固定q正式候选。G1未放行，不开始业务。

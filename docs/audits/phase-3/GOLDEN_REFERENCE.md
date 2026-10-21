@@ -9,3 +9,7 @@ float最终数值abs1e-12/rel1e-10，P0旧近似文本只按原abs1e-8比对；D
 ## G1修订新增候选
 
 原15组/75断言获GPT Work补充独立算术核对，原JSON/脚本/log字节不变；不是Gemini QA-004全项批准。supplemental_cases.json另列28组手工输入/预期，supplemental_reference.log为开发方标准库122断言（全部通过），未来业务/OS权限/正式统计准入均未执行。新候选待独立复算，不能倒填成旧d10已审；旧公式/容差未改。
+
+## e26之后独立输入v2
+
+原15/28及其参考原字节保持，GPT Work在e26独立75+146=221断言核对，普通visibility当时仍有未明前提，不能扩张已核输入。新label_visibility_v2.json 17组自包含时间与coverage，hac_growth_cases.json另列反例/增长规则/有限量；recheck_reference_v2.log为开发方141断言，非formal或独立复核，新输入/方法待主审。旧固定q工程谓词只属历史，不改旧正确expected来迎合新方法。

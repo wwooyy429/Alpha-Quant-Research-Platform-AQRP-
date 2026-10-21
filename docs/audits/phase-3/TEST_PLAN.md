@@ -27,3 +27,7 @@ G1后每次完整SDK从干净Git归档构建安装真实wheel，Ruff、pytest+br
 | WORK-P3-005 | HAC_INFERENCE_PROFILE；validation/inference；test_valid_005/007/008与QA004 | 非零均值q1/q2及高精度p；251/252、399/400、lag/空洞/假设/未批拒绝；m4含失败项且批准拒绝 |
 
 新增supplemental_cases.json在业务实现前手工定义；supplemental_reference.py仅开发方标准库核算，新候选QA-004独立复核待办，不能代为签收。旧15组/75断言是GPT Work补充执行记录；新开发方复算不冒充该身份。
+
+## 当前e26之后的实施映射（仍Planned）
+
+001以USER_DECISIONS具体方案及真实双OS主体证据验收；002以label_visibility_v2显式数据边界验收（禁止reference补时点）；005以HAC_GROWING_MDEP_2的新冻结N/整数根/q/依赖证明/不匹配拒绝验收，另独立核反例及有限N误差声明。003/004是e26设计关闭，完整INT001合成与旧三Ref真实重放仍是未来必交，不重复声明设计未补齐，也不提前宣称实现完成。

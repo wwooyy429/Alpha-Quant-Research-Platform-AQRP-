@@ -1,0 +1,51 @@
+{
+  "executor": "GPT Work supplementary reviewer",
+  "scope": "Analytical evidence for continuing WORK-P3-005; no production formal gate executed",
+  "process": "x_t=(epsilon_t+epsilon_(t-1))/2; iid Rademacher epsilon; x in {-1,0,1}; stationary 1-dependent",
+  "construction": "Enumerated all 16 combinations of four independent signs to compute population gamma0/1/2 exactly",
+  "gamma": [
+    "1/2",
+    "1/4",
+    "0"
+  ],
+  "true_long_run_variance": "1",
+  "fixed_h_profiles": [
+    {
+      "h": 1,
+      "q": 5,
+      "n_gate": 252,
+      "true_long_run_variance": "1",
+      "fixed_q_estimator_probability_limit": "11/12",
+      "relative_underestimate": "1/12",
+      "se_ratio": 0.9574271077563381
+    },
+    {
+      "h": 5,
+      "q": 5,
+      "n_gate": 252,
+      "true_long_run_variance": "1",
+      "fixed_q_estimator_probability_limit": "11/12",
+      "relative_underestimate": "1/12",
+      "se_ratio": 0.9574271077563381
+    },
+    {
+      "h": 10,
+      "q": 9,
+      "n_gate": 252,
+      "true_long_run_variance": "1",
+      "fixed_q_estimator_probability_limit": "19/20",
+      "relative_underestimate": "1/20",
+      "se_ratio": 0.9746794344808963
+    },
+    {
+      "h": 20,
+      "q": 19,
+      "n_gate": 400,
+      "true_long_run_variance": "1",
+      "fixed_q_estimator_probability_limit": "39/40",
+      "relative_underestimate": "1/40",
+      "se_ratio": 0.9874208829065749
+    }
+  ],
+  "limitation": "This does not claim the proposed unapproved FORMAL_INFERENCE actually admitted the process. It shows stationarity/short memory/CLT plus min_n and coverage of nonzero lag do not alone justify fixed-q Bartlett p values; acceptable taper bias must be substantively defined or the formal profile changed."
+}

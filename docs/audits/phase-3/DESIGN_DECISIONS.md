@@ -1,15 +1,16 @@
-# G1修订决定与外部批准（WORK-P3-001–005）
+# G1当前设计决定与独立复核范围
 
-状态 **PLAN BLOCKED / REVISED DESIGN PROPOSED**。原d10的GPT Work报告不是Gemini G1 PASS。以下是开发方选定的具体方案，不能自行登记用户批准或审查CLOSED。
+GPT Work固定e26：PLAN BLOCKED；003/004仅设计CLOSED，001/002/005 OPEN。报告不覆盖ff4；当前新SHA另审，不能仅因内容延续宣布整体PASS。
 
-| ID | 选定设计 / 资料 | 剩余条件 |
+| 项目 | 当前设计 / 证据 | 剩余条件 |
 |---|---|---|
-| P3-D01 | 合成日频、PIT行业/市值侧车，不改原8表；其余定义保留 | 新侧车实施/完整性/PIT测试及审查 |
-| P3-D02 / WORK-P3-001 | P3-ISO-OS-1；Windows11 NTFS+3独立非admin账户、可信管理员保管；Ubuntu同构UID/ACL，原始Test/seed/标签/反馈全私有，完整权限矩阵见TEST_ISOLATION_PROFILE | 用户确认主体/可信保管/实际路径/部署授权，审查核方案；实际双OS权限/攻击证据NOT VERIFIED，无条件formal拒绝且VALID-004未验收 |
-| P3-D03 | 正式金融样本/日期/预算/alpha/稳定性等D-004仍无批准；缺项EXPLORATORY、Formal ResearchValidated拒绝 | 用户在具体protocol上确认；非本轮自动批准，不影响提交无关算术设计 |
-| P3-D04 / WORK-P3-002/005 | SYNTHETIC_V1_LABEL_1冻结行动顺序/旧股单位/label可用与fit/purge；HAC-BARTLETT-1选工程候选252/20(q+1)/max(h-1,5)，见两专项profile | 用户确认合成经济假设与正式数值；独立复算新候选/统计假设，未把工程门槛当理论保证 |
-| P3-D05 | 本阶段明确仅用已锁NumPy+stdlib有限方法；保留原架构未来SciPy/statsmodels能力，不为引用而安装 | 无新包/无锁变更；若方法需新包重新列精确候选/哈希/双OS审查 |
-| P3-D06 / WORK-P3-004 | P3-REPRO-ARTIFACT-1：旧0.2原wheel/22锁/receipt独立解释器子进程，新P3完整bundle新审，具体API/Ref矩阵与比较投影 | 核具体制品保管/旧env可达，实施后原三Ref重放/负例；不在新env重标旧Ref |
-| P3-D07 / WORK-P3-003 | 固定2+研究分数合成/共同交集z/方向权重/冗余规则见COMPOSITE_RESEARCH；26条23MVP+3CR保留 | 独立候选复核，未来真实研究服务/报告验收；不是P4账户组合 |
+| P3-D01 | 合成/PIT侧车/原8表不变 | 实施后完整性/PIT/需求验收 |
+| P3-D02 / 001 | TEST_ISOLATION_PROFILE+USER_DECISIONS U-001为具体账户/路径/保管/权限候选 | 用户明确确认方案/责任主体，实际部署另授权；真实SID/UID/ACL及双OS负例仍NOT VERIFIED，formal fail closed |
+| P3-D03 | 正式样本/阈值/金融预算等D-004未获批准 | 用户协议与实际证据；不能用显著p自动ResearchValidated |
+| P3-D04 / 002 | SYNTHETIC_V1_LABEL_1及新label_visibility_v2完整输入；原15/28正确答案不改 | U-002经济口径确认、完整输入主审复核；不是已执行P1真实快照/权限测试 |
+| P3-D04 / 005 | 固定q通用formal候选已撤回，改P3-HAC-GROWING-MDEP-2；q=max(h-1,m0,floor(N^(1/5)))，预定N，受限有界平稳m-dependent及定理/CLT特化 | 主审核方法与能力边界，具体过程依赖论证/正式protocol与真实隔离；有限N误差没有校准保证，不自签关闭 |
+| P3-D05 | 既有22包NumPy+stdlib有限方法，不安装新包 | 若新增库另列精确版本/hash/双OS方案；原架构未来库能力不删除 |
+| P3-D06 / 004 | REPRODUCTION_PROFILE原wheel独立env/原Ref方案在e26设计CLOSED，文件不改 | G2完整EnvironmentArchiveRef、原三Ref真实路由重放/负例；不能全Unsupported称通过 |
+| P3-D07 / 003 | COMPOSITE_RESEARCH固定合成/冗余设计在e26 CLOSED，文件不改；26项23MVP+3CR保持 | 未来真实研究服务/报告/ledger/INT001验收，不是P4账户组合 |
 
-用户启动授权不重复申请；本轮部署、正式经济/统计标准属于具体新决定，不能因“进入P3”泛化为已批准。本轮只提供可审材料，账户/ACL未变、Test未运行、金融未批准，P3合并发布与P4尚未授权。
+具体设计确认不等于部署执行或金融批准；当前仍未G1放行，不进入业务实现/合并/标签/P4。历史主审分工及报告真实身份保持。

@@ -1,0 +1,2307 @@
+{
+  "schema": "p3-label-visibility-candidates/2",
+  "status": "HAND-DEFINED COMPLETE VISIBILITY INPUTS; ECONOMIC CONFIRMATION AND INDEPENDENT REVIEW REQUIRED",
+  "old_15_and_28_unchanged": true,
+  "runtime_fallbacks_allowed": false,
+  "claims_full_p1_snapshot": false,
+  "cases": [
+    {
+      "id": "LABEL-NONE",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-NONE",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "110",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [],
+      "actions": [],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-NONE-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/10",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-INTERIOR-OLD-UNIT",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-INTERIOR-OLD-UNIT",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-INTERIOR-OLD-UNIT-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-INTERIOR-OLD-UNIT-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-INTERIOR-OLD-UNIT-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-ENTRY-SAME",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-ENTRY-SAME",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "50",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-05T16:00:00.000000Z",
+          "event_time": "2026-01-05T16:00:00.000000Z",
+          "available_at": "2026-01-05T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-ENTRY-SAME-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T09:00:00.000000Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-ENTRY-SAME-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T09:00:00.000000Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-ENTRY-SAME-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-ENTRY-MINUS-US",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-ENTRY-MINUS-US",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "50",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-05T16:00:00.000000Z",
+          "event_time": "2026-01-05T16:00:00.000000Z",
+          "available_at": "2026-01-05T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-ENTRY-MINUS-US-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T08:59:59.999999Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-ENTRY-MINUS-US-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T08:59:59.999999Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-ENTRY-MINUS-US-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-ENTRY-PLUS-US",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-ENTRY-PLUS-US",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-05T16:00:00.000000Z",
+          "event_time": "2026-01-05T16:00:00.000000Z",
+          "available_at": "2026-01-05T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-ENTRY-PLUS-US-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T09:00:00.000001Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-ENTRY-PLUS-US-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T09:00:00.000001Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-ENTRY-PLUS-US-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-EXIT-SAME",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-EXIT-SAME",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-07T16:00:00.000000Z",
+          "event_time": "2026-01-07T16:00:00.000000Z",
+          "available_at": "2026-01-07T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-EXIT-SAME-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-08T09:00:00.000000Z",
+          "ex_date": "2026-01-08",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-07T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-EXIT-SAME-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-08T09:00:00.000000Z",
+          "ex_date": "2026-01-08",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-07T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-EXIT-SAME-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-EXIT-MINUS-US",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-EXIT-MINUS-US",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-07T16:00:00.000000Z",
+          "event_time": "2026-01-07T16:00:00.000000Z",
+          "available_at": "2026-01-07T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-EXIT-MINUS-US-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-08T08:59:59.999999Z",
+          "ex_date": "2026-01-08",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-07T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-EXIT-MINUS-US-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-08T08:59:59.999999Z",
+          "ex_date": "2026-01-08",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-07T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-EXIT-MINUS-US-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-EXIT-PLUS-US",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-EXIT-PLUS-US",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "102",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-07T16:00:00.000000Z",
+          "event_time": "2026-01-07T16:00:00.000000Z",
+          "available_at": "2026-01-07T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-EXIT-PLUS-US-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-08T09:00:00.000001Z",
+          "ex_date": "2026-01-08",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-07T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-EXIT-PLUS-US-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-08T09:00:00.000001Z",
+          "ex_date": "2026-01-08",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-07T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-EXIT-PLUS-US-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "102",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-05T16:00:00.000000Z",
+          "event_time": "2026-01-05T16:00:00.000000Z",
+          "available_at": "2026-01-05T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-DIV-ENTRY-NO-ENTITLEMENT-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T09:00:00.000000Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-DIV-ENTRY-NO-ENTITLEMENT-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-DIV-EXIT-ENTITLEMENT",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "102",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-07T16:00:00.000000Z",
+          "event_time": "2026-01-07T16:00:00.000000Z",
+          "available_at": "2026-01-07T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-DIV-EXIT-ENTITLEMENT-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-08T09:00:00.000000Z",
+          "ex_date": "2026-01-08",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-07T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-DIV-EXIT-ENTITLEMENT-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "1",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-LATE-VISIBLE",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-LATE-VISIBLE",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-LATE-VISIBLE-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-09T12:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-LATE-VISIBLE-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-09T12:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-LATE-VISIBLE-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-09T12:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-09T12:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-LATE-NOT-VISIBLE",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-LATE-NOT-VISIBLE",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-08T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-LATE-NOT-VISIBLE-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-09T12:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-LATE-NOT-VISIBLE-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-09T12:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-LATE-NOT-VISIBLE-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-09T12:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": null,
+        "credit": null,
+        "return": null,
+        "label_available_at": null,
+        "eventual_label_available_at_oracle_only": "2026-01-09T12:00:00.000001Z",
+        "status": "NOT_YET_AVAILABLE"
+      }
+    },
+    {
+      "id": "LABEL-REVISION-OLD-ASOF",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-REVISION-OLD-ASOF",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-09T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-REVISION-OLD-ASOF-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-REVISION-OLD-ASOF-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-REVISION-OLD-ASOF-CASH_DIVIDEND",
+          "revision_id": 2,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-10T11:59:59.999999Z",
+          "event_time": "2026-01-10T11:59:59.999999Z",
+          "available_at": "2026-01-10T12:00:00.000000Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "4",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-REVISION-OLD-ASOF-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        },
+        {
+          "coverage_id": "LABEL-REVISION-OLD-ASOF-coverage",
+          "revision_id": 2,
+          "source_version": "INPUT-V2",
+          "event_time": "2026-01-10T11:59:59.999999Z",
+          "available_at": "2026-01-10T12:00:00.000000Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-REVISION-NEW-ASOF",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-REVISION-NEW-ASOF",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-10T12:00:00.000000Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-REVISION-NEW-ASOF-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-REVISION-NEW-ASOF-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-REVISION-NEW-ASOF-CASH_DIVIDEND",
+          "revision_id": 2,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-10T11:59:59.999999Z",
+          "event_time": "2026-01-10T11:59:59.999999Z",
+          "available_at": "2026-01-10T12:00:00.000000Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "4",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-REVISION-NEW-ASOF-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        },
+        {
+          "coverage_id": "LABEL-REVISION-NEW-ASOF-coverage",
+          "revision_id": 2,
+          "source_version": "INPUT-V2",
+          "event_time": "2026-01-10T11:59:59.999999Z",
+          "available_at": "2026-01-10T12:00:00.000000Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "4",
+        "return": "3/50",
+        "label_available_at": "2026-01-10T12:00:00.000000Z"
+      }
+    },
+    {
+      "id": "LABEL-ANCHOR-RESET",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "supplemental_cases.json#LABEL-ANCHOR-RESET",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-05T16:00:00.000000Z",
+          "event_time": "2026-01-05T16:00:00.000000Z",
+          "available_at": "2026-01-05T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-ANCHOR-RESET-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-06T12:00:00.000000Z",
+          "ex_date": "2026-01-06",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-09",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-05T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-ANCHOR-RESET-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-05T08:00:00.000001Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-09",
+          "split_ratio": null,
+          "cash_per_share": "1",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-ANCHOR-RESET-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "ratio_anchor_to_dividend": "1",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "New hand-specified availability boundary; old expected not changed",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-08T16:00:00.000001Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-INTERIOR-OLD-UNIT-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000002Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-INTERIOR-OLD-UNIT-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000002Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-INTERIOR-OLD-UNIT-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000002Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": null,
+        "credit": null,
+        "return": null,
+        "label_available_at": null,
+        "status": "NOT_YET_AVAILABLE"
+      }
+    },
+    {
+      "id": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "profile": "SYNTHETIC_V1_LABEL_1",
+      "source_kind": "PUBLIC_SYNTHETIC_INPUT_FRAGMENTS_NOT_A_P1_EIGHT_TABLE_SNAPSHOT",
+      "source_case_ref": "New hand-specified availability boundary; old expected not changed",
+      "security_id": "SYN-A",
+      "market_id": "SYN",
+      "calendar_id": "SYN-UTC",
+      "currency": "SYN_CCY",
+      "price_basis": "RAW",
+      "dividend_basis": "PER_OLD_SHARE",
+      "signal_decision_time": "2026-01-05T16:00:00.000001Z",
+      "entry_at": "2026-01-06T09:00:00.000000Z",
+      "exit_at": "2026-01-08T09:00:00.000000Z",
+      "h": 2,
+      "evaluation_cutoff": "2026-01-08T16:00:00.000002Z",
+      "calendar": {
+        "version": "SYN-CAL-1",
+        "event_time": "2026-01-01T00:00:00.000000Z",
+        "available_at": "2026-01-01T00:00:00.000001Z",
+        "sessions": [
+          {
+            "date": "2026-01-05",
+            "open_at": "2026-01-05T09:00:00.000000Z",
+            "close_at": "2026-01-05T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-06",
+            "open_at": "2026-01-06T09:00:00.000000Z",
+            "close_at": "2026-01-06T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-07",
+            "open_at": "2026-01-07T09:00:00.000000Z",
+            "close_at": "2026-01-07T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-08",
+            "open_at": "2026-01-08T09:00:00.000000Z",
+            "close_at": "2026-01-08T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-09",
+            "open_at": "2026-01-09T09:00:00.000000Z",
+            "close_at": "2026-01-09T16:00:00.000000Z"
+          },
+          {
+            "date": "2026-01-12",
+            "open_at": "2026-01-12T09:00:00.000000Z",
+            "close_at": "2026-01-12T16:00:00.000000Z"
+          }
+        ]
+      },
+      "bars": [
+        {
+          "key": "entry",
+          "session_date": "2026-01-06",
+          "open": "100",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        },
+        {
+          "key": "exit",
+          "session_date": "2026-01-08",
+          "open": "51",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "anchor_rows": [
+        {
+          "close_at": "2026-01-06T16:00:00.000000Z",
+          "event_time": "2026-01-06T16:00:00.000000Z",
+          "available_at": "2026-01-06T16:00:00.000001Z",
+          "revision_id": 1
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "LABEL-INTERIOR-OLD-UNIT-SPLIT",
+          "revision_id": 1,
+          "type": "SPLIT",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000002Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": "2",
+          "cash_per_share": null,
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        },
+        {
+          "action_id": "LABEL-INTERIOR-OLD-UNIT-CASH_DIVIDEND",
+          "revision_id": 1,
+          "type": "CASH_DIVIDEND",
+          "security_id": "SYN-A",
+          "announcement_at": "2026-01-05T08:00:00.000000Z",
+          "event_time": "2026-01-05T08:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000002Z",
+          "effective_at": "2026-01-07T09:00:00.000000Z",
+          "ex_date": "2026-01-07",
+          "record_date": "2026-01-09",
+          "pay_date": "2026-01-12",
+          "split_ratio": null,
+          "cash_per_share": "2",
+          "dividend_basis": "PER_OLD_SHARE",
+          "currency": "SYN_CCY",
+          "unit_anchor_close": "2026-01-06T16:00:00.000000Z"
+        }
+      ],
+      "coverage_versions": [
+        {
+          "coverage_id": "LABEL-INTERIOR-OLD-UNIT-coverage",
+          "revision_id": 1,
+          "source_version": "INPUT-V1",
+          "event_time": "2026-01-08T16:00:00.000000Z",
+          "available_at": "2026-01-08T16:00:00.000002Z",
+          "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+          "signature_status": "PROPOSED_UNSIGNED",
+          "validation_scope": "ENGINEERING_ONLY"
+        }
+      ],
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000002Z"
+      }
+    }
+  ]
+}

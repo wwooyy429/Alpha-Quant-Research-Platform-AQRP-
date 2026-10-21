@@ -1,0 +1,25 @@
+{
+  "fixed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+  "previous_reviewed_sha": "d10a55a7dd4bc9ca7793ed474bdc1b056916e96e",
+  "start_local": "2026-10-22T02:36:22.3784388+08:00",
+  "executor": "GPT Work supplementary reviewer, not Gemini",
+  "source_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e26d4bbfe28262c35396f66daa183771573a988e/docs/audits/phase-3/GEMINI_INCREMENTAL_PRE_REVIEW.md",
+  "github_reads": {
+    "pull": 5,
+    "workflow_run": 39653524560,
+    "jobs": [
+      119407707727,
+      119407708316
+    ],
+    "artifacts": [
+      12370449123,
+      12370309429
+    ],
+    "actual_merge": "3d626c92b56903a1b8e9edc7ad30bd66b409b01e"
+  },
+  "download_steps": "github_download_workflow_artifact(repo_full_name, artifact_id) -> connector temporary download_url -> Invoke-WebRequest -Uri <ephemeral URL> -OutFile artifact-ID.zip -TimeoutSec 30; SHA256 compared with official metadata. Temporary bearer URLs omitted.",
+  "job_logs": "Connector-decoded source text saved with normalized LF; original raw SDK bytes preserved in ZIPs.",
+  "reviewer_helper_attempt1": "supplemental-independent.command.json/stdout/stderr record exit1 TypeError mixing float/Decimal in quadrature root initial guess. Original helper saved as independent_supplemental-attempt1.py. Corrected only reviewer code; attempt2 exit0. No candidate expected/tolerance/repository change.",
+  "repo_mutations": "None; only independent clone detach/archive. No commits, pushes, source/test/golden/lock/status edits, ACL/accounts/tasks/deployment, PR edits, merge or tags. No P4.",
+  "formal_profiles": "User has not supplied actual Test principal/authority or economic-profile confirmation in this review request. NOT VERIFIED deployment and UNAPPROVED formal financial protocol are separate."
+}

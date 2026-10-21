@@ -1,5 +1,7 @@
 # 架构决策、冲突及待用户决定事项
 
+2026-10-22 当前G1增量：**GPT Work对固定e26判PLAN BLOCKED；003/004仅设计CLOSED，001/002/005 OPEN**。原报告明确ff4未审。接收与处置见docs/audits/phase-3/RECHECK_E26_RESPONSE.md；001具体方案/002经济口径待用户确认，新visibility候选及005增长带宽受限方法待新SHA主审；不扩张原审查范围。未业务、未部署/金融批准、未合并标签/P4。以下早期状态为历史。
+
 2026-10-22 审核分工更新（用户明确授权）：**后续审核、验证和测试以GPT Work为主；Codex负责开发/修复/必要自测，Gemini为可选补充，不再强制重复取得Gemini预审。** 详情见docs/REVIEW_PROTOCOL.md及docs/audits/phase-3/REVIEW_AUTHORITY_CHANGE.json。固定SHA、独立证据、阻断闭环、用户验收/合并/发布/阶段授权制度不变；不能将开发方自查改名为独立审查。当前Phase3 G1仍PLAN BLOCKED，五项待GPT Work主审复核，未获G1放行；以下旧Gemini专属安排为历史。
 
 2026-10-22 当前：**Phase3 G1 = PLAN BLOCKED / DESIGN REVISED / FIXED-SHA RE-REVIEW REQUIRED**。GPT Work对d10a55a补充发现2High/3Medium已按原字节归档，五项具体方案/新候选及开发方处理见docs/audits/phase-3/DEVELOPER_RESPONSE.md。未自判CLOSED；Test主体/权限与合成经济假设待用户具体确认，Gemini G1尚无PASS。P3启动授权保持，本轮仅设计修订，无业务实现、无账户/ACL部署、不合并、不打标签、不进入P4。以下较早状态为历史。

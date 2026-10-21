@@ -15,3 +15,7 @@ P1 dividend_basis始终 `PER_OLD_SHARE`，本profile明确old share锚定到acti
 输出分别记录：price holding闭区间[entry,exit]；entitlement开闭区间(entry,exit]；information closed interval **[signal_decision_time,label_available_at]**。purge使用information interval与heldout保护interval闭区间交集，接触也删除，比只看持有期更保守；embargo保持预注册session网格。跨期Train拟合须label_available_at<=fit_cutoff且signal/dependencies/fit rows在Train许可范围，未来1微秒拒绝；当日截面z/OLS只读当日decision可见score/exposure，不能借label可用条件放宽。
 
 新增手工候选见supplemental_cases.json：entry/exit同刻拆股/分红、两端±1微秒、PER_OLD_SHARE转换、次日锚点重置、晚到/修订、付款晚于退出、bar直到close可见、label fit截止±1微秒以及purge闭接触。每例给股数、credit/应收+已付、收益及label_available_at；纯算术参考不冒充真实PIT实现测试。Formal Test中的完整原始行动和coverage只在隔离评估端，不能从研究侧读取未来行。
+
+## e26补充：自包含可用时间候选v2
+
+原supplemental_cases.json/脚本/log保持。新label_visibility_v2.json逐例显式给entry/exit/anchor/calendar、每个action的announcement_at=event_time、available_at、effective_at、原P1单位/修订以及coverage版本/event/available/complete_through/状态。所有时间在JSON，不在参考程序填默认；这是合成输入片段与侧车证据设计，不冒充已提交P1八表快照或真实签名。保管者签名状态PROPOSED_UNSIGNED，正式路径拒绝。新增边界覆盖最后水位后1微秒，原可用时间答案在补全前提下不改。经济口径仍待USER_DECISIONS中U-002明确确认。

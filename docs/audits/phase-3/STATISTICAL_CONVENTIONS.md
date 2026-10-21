@@ -16,3 +16,5 @@
 ## G1修订补充（覆盖此前未选定机制，仍待审）
 
 HAC的正式工程候选/模式、数值边界与拒绝契约现具体冻结于HAC_INFERENCE_PROFILE.md，尚需统计预审及正式用户标准；不使用任意自动lag。行动标签及label_available_at/fit/purge采用LABEL_ACTION_PROFILE.md；研究级合成与冗余采用COMPOSITE_RESEARCH.md，不能只交相关矩阵。原公式与15组正确候选不变，新独立候选单列supplemental_cases.json。
+
+当前覆盖：固定q formal提案已在005复核后撤回；采用HAC_INFERENCE_PROFILE的P3-HAC-GROWING-MDEP-2新候选，旧252/20/5只保留历史/算术。旧数值公式与Golden仍正确；正式方法待新SHA独立复核。

@@ -1,0 +1,197 @@
+{
+  "schema": "p3-hac-growth-proposal/2",
+  "status": "HAND-SPECIFIED REFERENCES; NOT FORMAL INFERENCE OR COVERAGE CALIBRATION",
+  "fixed_population_targets": [
+    {
+      "q": 5,
+      "S": "11/12",
+      "bias": "1/12"
+    },
+    {
+      "q": 9,
+      "S": "19/20",
+      "bias": "1/20"
+    },
+    {
+      "q": 19,
+      "S": "39/40",
+      "bias": "1/40"
+    }
+  ],
+  "integer_root_boundaries": [
+    {
+      "N": 31,
+      "r": 1
+    },
+    {
+      "N": 32,
+      "r": 2
+    },
+    {
+      "N": 242,
+      "r": 2
+    },
+    {
+      "N": 243,
+      "r": 3
+    },
+    {
+      "N": 1023,
+      "r": 3
+    },
+    {
+      "N": 1024,
+      "r": 4
+    },
+    {
+      "N": 3124,
+      "r": 4
+    },
+    {
+      "N": 3125,
+      "r": 5
+    }
+  ],
+  "growing_ma1_population": [
+    {
+      "N": 252,
+      "h": 1,
+      "m0": 1,
+      "q": 3,
+      "S_population": "7/8",
+      "bias_population": "1/8"
+    },
+    {
+      "N": 1024,
+      "h": 1,
+      "m0": 1,
+      "q": 4,
+      "S_population": "9/10",
+      "bias_population": "1/10"
+    },
+    {
+      "N": 3125,
+      "h": 1,
+      "m0": 1,
+      "q": 5,
+      "S_population": "11/12",
+      "bias_population": "1/12"
+    },
+    {
+      "N": 7776,
+      "h": 1,
+      "m0": 1,
+      "q": 6,
+      "S_population": "13/14",
+      "bias_population": "1/14"
+    },
+    {
+      "N": 32768,
+      "h": 1,
+      "m0": 1,
+      "q": 8,
+      "S_population": "17/18",
+      "bias_population": "1/18"
+    },
+    {
+      "N": 100000,
+      "h": 1,
+      "m0": 1,
+      "q": 10,
+      "S_population": "21/22",
+      "bias_population": "1/22"
+    }
+  ],
+  "profile_cases": [
+    {
+      "N": 252,
+      "h": 1,
+      "m0": 1,
+      "q": 3,
+      "numeric_screen": true
+    },
+    {
+      "N": 252,
+      "h": 5,
+      "m0": 1,
+      "q": 4,
+      "numeric_screen": true
+    },
+    {
+      "N": 252,
+      "h": 10,
+      "m0": 1,
+      "q": 9,
+      "numeric_screen": true
+    },
+    {
+      "N": 399,
+      "h": 20,
+      "m0": 1,
+      "q": 19,
+      "numeric_screen": false
+    },
+    {
+      "N": 400,
+      "h": 20,
+      "m0": 1,
+      "q": 19,
+      "numeric_screen": true
+    },
+    {
+      "N": 252,
+      "h": 1,
+      "m0": 12,
+      "q": 12,
+      "numeric_screen": false
+    },
+    {
+      "N": 400,
+      "h": 1,
+      "m0": 12,
+      "q": 12,
+      "numeric_screen": true
+    }
+  ],
+  "ma1_exact_finite_quantities": {
+    "N": 252,
+    "q": 3,
+    "known_mean_covariance_weighted_expectation": "587/672",
+    "exact_variance_sample_mean": "503/127008",
+    "note": "Not the expectation of the actual demeaned HAC or a tail-coverage guarantee"
+  },
+  "formal_rejections": [
+    {
+      "N": 252,
+      "n_actual": 251,
+      "bounded_stationary_mdep_proved": true,
+      "profile_reviewed": true,
+      "user_protocol_approved": true,
+      "reason": "PLANNED_SAMPLE_MISMATCH"
+    },
+    {
+      "N": 252,
+      "n_actual": 252,
+      "bounded_stationary_mdep_proved": false,
+      "profile_reviewed": true,
+      "user_protocol_approved": true,
+      "reason": "DEPENDENCE_MODEL_UNVERIFIED"
+    },
+    {
+      "N": 252,
+      "n_actual": 252,
+      "bounded_stationary_mdep_proved": true,
+      "profile_reviewed": false,
+      "user_protocol_approved": true,
+      "reason": "METHOD_REVIEW_REQUIRED"
+    },
+    {
+      "N": 252,
+      "n_actual": 252,
+      "bounded_stationary_mdep_proved": true,
+      "profile_reviewed": true,
+      "user_protocol_approved": false,
+      "reason": "FORMAL_PROTOCOL_UNAPPROVED"
+    }
+  ]
+}

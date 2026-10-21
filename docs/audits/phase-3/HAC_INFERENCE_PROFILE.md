@@ -1,19 +1,39 @@
-# P3-HAC-BARTLETT-1：固定统计profile提案
+# P3-HAC-GROWING-MDEP-2：受限模型与随样本增长带宽提案
 
-对应WORK-P3-005、VALID-005/007/008、QA-004。选用已锁NumPy+标准库；本轮不安装SciPy/statsmodels，不变22包锁。HAC公式不变：demean，gamma_k分母n，Bartlett权重，Var(mean)=S/n，small_sample_correction=none，normal双侧p=erfc(|mean|/sqrt(2Var(mean)))。原n=4/mean0仅算术例，保持原件。
+WORK-P3-005仍OPEN / FIXED-SHA RE-REVIEW REQUIRED。开发方接受e26反例，**撤回P3-HAC-BARTLETT-1的固定q=max(h-1,5)作为通用正式准入候选**。原profile及原正确n4算术/28组候选保持为历史/ARITHMETIC，不改旧expected、容差或原报告；其n251/252等状态只说明旧工程谓词，不是当前正式门禁。
 
-三个明确模式：ARITHMETIC_REFERENCE仅验证公式（允许n小但绝不标inferential p）；ENGINEERING_DEMO允许打印带non_formal标记的候选p以测数值；FORMAL_INFERENCE必须满足下述全部条件及预注册/批准证据。p值有效不等于因子金融批准，更不等于策略可交易。
+选定新路线是**预先固定长度下的增长带宽 + 可证明的有界有限依赖模型**，不是再换一个固定q或泛称弱平稳就放行。继续已有22锁包/NumPy+stdlib，无新安装。HAC原始gamma/S/SE定义、demean、分母n、Bartlett与correction=none不变。
 
-**开发方选定工程候选，尚非用户批准阈值：** 预注册h∈{1,5,10,20}个session，lag `q=max(h-1,5)` 在看Validation/Test前冻结，同一协议不可按结果自动换q。min_hac_n=252，实际所需连续有效观测 `n>=max(252,20*(q+1))`；整数0<=q<n。例h1/5/10分别q5/5/9、min252；h20 q19、min400。252是约一年度规模的保守工程候选（合成日历未宣称252交易日真实市场规律），20*(q+1)是避免带宽相对样本过大的工程安全系数，**都不是任何有限样本或所有依赖结构的理论保证**。额外lag5是显式候选，不宣称覆盖全部自相关。改变h/q/min_n要在开发期新protocol/family试验；不能用Test诊断结果调lag。其它h只支持算术/探索，正式若需扩大须新profile预审和批准，不能静默作为缺省准入。
+### 1. 冻结规则及模式
 
-准入同时要求：预注册protocol_hash/family/all candidates、用户批准的正式样本/标准与实验预算；IC同stage/horizon/股票池，预定session网格完整、连续等间隔于该日历，无dropna压缩时间（任何失效IC记缺失、formal拒绝，不选好看的最长子段）。IC有限，双方有效横截面n及group等标准冻结。正S/Var与非零SE；非平稳/结构断点已知标记、缺样本、lag不足/未冻结、意外有效区间选择拒绝。不自动把日历休市当缺失，但缺一个scheduled session算空洞。
+协议在看Validation/Test任何值前锁定精确IC session网格、计划长度N、h、依赖上界m0、过程/生成器/算子依赖论证、候选全family及用户正式标准。h和m0为与渐近样本序列无关的固定整数，h∈{1,5,10,20}、m0>=0。
 
-方法假设需预先写进 `dependence_assessment_ref`，由统计预审核验：弱平稳、短记忆/可求和自协方差、适用的渐近中心极限定理条件、该带宽截断可接受的Train/领域依据及局限；IC有界并不能推出平稳/弱依赖。h-1只覆盖机械标签重叠，不能证明更长依赖不存在；已知更长依赖而profile q不足，返回DEPENDENCE_PROFILE_UNSUPPORTED。不得把某个Train检验不显著当假设已证明，也不能在最终Test上作诊断后重选协议。资料无依据=ASSUMPTIONS_UNVERIFIED，缺正式用户标准=FORMAL_PROTOCOL_UNAPPROVED；二者均不可拿p做正式family批准。
+`r(N)=floor(N^(1/5))`，以整数五次幂比较求根，避免浮点边界；`q(N,h,m0)=max(h-1,m0,r(N))`。一个冻结实验的q是事前计算的确定整数，但比较N→∞的估计量序列时q增长。不是按样本相关/显著性/缺失后的有效n或Test值自动选lag。每个窗自己的计划N/h/m0与q在首次验证/最终Test前封存，session不足/缺失则拒绝，不缩短N重算。
 
-拒绝codes：INVALID_HORIZON_OR_LAG、LAG_BELOW_OVERLAP、INSUFFICIENT_HAC_SAMPLE、IRREGULAR_OR_MISSING_IC、NONFINITE_INPUT、NONPOSITIVE_LONG_RUN_VARIANCE、ASSUMPTIONS_UNVERIFIED、DEPENDENCE_PROFILE_UNSUPPORTED、FORMAL_PROTOCOL_UNAPPROVED、CONTAMINATED_OR_OVER_BUDGET。保留n/q/assumption refs/拒绝原因，p=null。无效边际p不能伪装成有效p=1；全family失败项可按事前保守政策另映射p_for_adjustment=1并保留原始null/reason，报告family不完整/无法批准。
+ARITHMETIC_REFERENCE只核算定义；ENGINEERING_DEMO可给明确non_formal标记的近似p。FORMAL_ASYMPTOTIC仅在方法/依赖论证获主审认可、用户protocol已批、隔离/预算/污染等齐备后输出标记ASYMPTOTIC_NORMAL的p，绝不标有限样本校准保证。
 
-family：确认性Holm、探索BY；BH仅预先有适用依赖依据。不删除失败/未完成候选，m为事前全体；Holm/BY不修复无效边际p、可选停止、Test污染。新增m4案例保留失败p原始null、保守校正输入1并公开原因。正式family只要缺有效证据/污染/预算失败则拒绝ResearchValidated，即使校正数显著。
+工程筛查仍可要求N>=max(252,20*(q+1))、0<=q<N及h重叠覆盖；这是计算质量与样本带宽比例筛查，**不宣称它控制有限样本I类错误或保证任何N的尾概率精度**。252/20也需在protocol列作工程设定，金融标准另批。增长规则不以这些筛查获得数学有效性。
 
-新增非零均值算术：IC=[1/2,0,1/2,0]，mean1/4，gamma0=1/16，gamma1=-3/64，gamma2=1/32；q1 S1/64, Var1/256, SE1/16, z4；q2 S1/48, Var1/192, SE1/(8sqrt3), z2sqrt3。双侧候选p分别0.00006334248366623984、约0.0005320055051392504。用独立高精度erf级数核对float erfc，**n4不可formal**。n251/252及h20的399/400、q边界、空洞和全family失败见supplemental_cases.json；状态是设计预期，不冒充执行了未来门禁。
+### 2. 明确可准入的过程与论证
 
-方法参考：[statsmodels官方cov_hac](https://www.statsmodels.org/stable/generated/statsmodels.stats.sandwich_covariance.cov_hac.html)的等间隔、Bartlett、显式lag及修正选项。该来源不为本项目252/20/5候选背书；数值和带宽适用性须独立复核/用户标准确认。
+本版本正式路线只拟准入：在事前固定的同stage/股票池/期限下，IC_t为**严格平稳、有界、m0-dependent**标量过程，长期方差S>0；IC样本/预测窗口/研究构造来自完整的过程推导或保管者封存的已知生成机制，能证明相隔超过m0的整个变量集合独立。单个ACF不显著、样本相关近0、给一个assumption_ref字符串、只说因子lookback有限或标签重叠h-1，都不能证明该条件。若横截面股票池/暴露/变换、滚动训练或生成器引入公共潜变量、持久状态、跨日共享参数等，必须计入推导；无法证明则DEPENDENCE_MODEL_UNVERIFIED，**不降成同一formal路径默认可用**。
+
+这是技术能力边界/待审方法profile，不删除VALID-005/007/008。对真实市场或一般长记忆/mixing过程，当前不提供通用正式推断保证；可保留明确探索统计，正式需单独提供适用定理/条件的新增profile后审。当前授权首版为合成数据，因此已知生成模型是可验证的路线，但不能把任意合成IC都当平稳m-dependent。
+
+对上述受限类，有界性给出所需矩和均值估计的sqrt(N)有界性；m-dependent给出所需混合尾条件，正S配合有限依赖CLT。令估计方程h_t(theta)=IC_t-theta，导数为-1、局部包络有界。Newey–West(1987) Theorem2（p705）的核权重条件由Bartlett满足；本规则固定h,m0时q→∞且q/N^(1/4)→0，满足其带宽增长条件。协方差一致性与另行适用的均值CLT/Slutsky结合，才是渐近正态p的依据；并非只凭核正半定或n门槛推p有效。
+
+均值CLT的开发方特化说明（待主审核，不是声称另读未引用论文）：中心化IC有界，取大块长度floor(N^(1/3))、相邻大块之间删除m0个观测。有限依赖使大块总和相互独立；被删间隔与末端余项的方差/N趋0，大块合计方差/N趋S。每块中心化和的绝对值<=常数*N^(1/3)=o(sqrt(N))，满足独立块的Lindeberg条件；再把小方差间隔加回得sqrt(N)*(mean-mu)渐近N(0,S)。与NW协方差一致性相结合才得studentized渐近正态。若m0随N增长、潜在全局状态破坏块独立、或S=0，该论证不适用并须拒绝。
+
+主源：[作者论文全文（大学公开阅读副本）](https://www.ssc.wisc.edu/~bhansen/718/NeweyWest1987.pdf)，实读p704公式(5)、p705 Theorem2/说明；来源入口为[University of Wisconsin课程阅读页](https://users.ssc.wisc.edu/~behansen/718/readings.htm)。NBER两个PDF地址本轮403，未声称读其正文；成功副本SHA256与页面说明见g1-e26/PRIMARY_SOURCE.json。本项目r(N)=N^(1/5)是开发方选的满足已读增长条件的确定序列，**不是声称论文推荐此具体经验带宽/样本门槛**，独立主审须核这一特化推导。
+
+### 3. 独立反例的承认与可复核差异
+
+审查方MA1：IC_t=(eps_t+eps_(t-1))/2，eps iid Rademacher，gamma0=1/2、gamma1=1/4、其余0，真S=1。固定q的加权人口目标是 `1-1/(2(q+1))`，q5/9/19分别11/12、19/20、39/40；增加N不改此人口taper偏差。
+
+换为q_N时，人口taper偏差为1/(2(q_N+1))→0。**有限N仍有偏差**，如N252/h1/m01给q3、人口目标7/8（比旧q5的11/12还低），不能包装成“小样本精度改善”。分母N的已知真均值样本协方差另有边缘项，MA1下其加权期望为 `1/2+(1-1/(q+1))*(1-1/N)/2`；实际demean还会有额外有限样本效应。exact Var(mean)=(N-1/2)/N²，不能用人口目标当有限样本已知分布。新候选保留这几层区别，证明增长条件/反例修复的方向，**不把表格当覆盖率校准实验**。
+
+### 4. 拒绝、family与未决条件
+
+输入缺失/不等session、实际n!=冻结N、q>=N、h不支持、非有限IC、S<=0、未知生成依赖、m0不覆盖共享状态、未获统计预审或正式用户protocol、权限/预算/污染失败，全部formal p=null+结构化reason；可单独记录非formal数值，不能自动塞入正式family。原始无效p保留null/reason，预登记保守校正槽可为1，但缺证据的family不能因此批准。
+
+Holm/BY及BH依赖证据要求保持；校正不修复无效边际p或自适应挑选/污染。正式ResearchValidated仍需独立统计证据、用户金融样本/阈值/预算批准、Test真实隔离；本文件/用户同意数字均不替代数学审查。005当前是**新方法设计待复核**，未自签CLOSED，无方法/金融/部署放行。

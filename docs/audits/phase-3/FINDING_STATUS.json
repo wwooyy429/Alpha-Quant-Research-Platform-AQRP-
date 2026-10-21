@@ -1,0 +1,48 @@
+{
+  "reviewed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+  "excluded_by_report": [
+    "ff4c546b9a8f6652ff70804055d9435ac08f63b3"
+  ],
+  "verdict_at_reviewed_sha": "PLAN BLOCKED",
+  "current_gate": "PLAN BLOCKED / REVISED METHOD AND INPUTS REQUIRE NEW-SHA REVIEW",
+  "items": [
+    {
+      "id": "WORK-P3-001",
+      "severity": "High",
+      "reviewer_status": "OPEN",
+      "developer_action": "Concrete USER_DECISIONS U-001 table submitted; explicit human decision pending",
+      "deployment": "NOT VERIFIED"
+    },
+    {
+      "id": "WORK-P3-002",
+      "severity": "High",
+      "reviewer_status": "OPEN",
+      "developer_action": "17 self-contained visibility-v2 cases; economic U-002 and independent recheck pending"
+    },
+    {
+      "id": "WORK-P3-003",
+      "severity": "Medium",
+      "reviewer_status": "CLOSED",
+      "closure_scope": "Design gap only at e26",
+      "technical_profile_bytes_unchanged": true,
+      "capability": "Planned; not implemented or accepted"
+    },
+    {
+      "id": "WORK-P3-004",
+      "severity": "Medium",
+      "reviewer_status": "CLOSED",
+      "closure_scope": "Design gap only at e26",
+      "technical_profile_bytes_unchanged": true,
+      "environment_reproduction": "NOT VERIFIED; G2 delivery required"
+    },
+    {
+      "id": "WORK-P3-005",
+      "severity": "Medium",
+      "reviewer_status": "OPEN",
+      "developer_action": "Accept exact MA1 counterexample; retire general fixed-q formal proposal; growing-q bounded stationary m-dependent profile subject to primary review"
+    }
+  ],
+  "human_phase3_acceptance": false,
+  "implementation_started": false,
+  "user_specific_design_decisions": "Pending explicit replies; no approval inferred from attachment or elapsed time"
+}
