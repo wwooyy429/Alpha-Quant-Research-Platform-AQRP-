@@ -1,5 +1,14 @@
 # 变更记录
 
+## 2026-10-21 · Phase2实现复核报告接收与证据分层
+
+- 按字节归档Gemini对2a70dc6的PASS原件，八项AGREE及两项Low CLOSED如实登记；不把报告转交等同用户验收或接受执行限制。
+- 单列12项新报告事实更正：真实路径/字段、Volatility POST7、Volume减1、非零精确浮点误差、时序/安全边界及证据归属；原件不改，待Gemini确认。
+- 本轮开发方重核636项旧清单、50项保护资产、两原始ZIP/hash/新远端API元数据/上传成员/JUnit与独立Fraction算术，均通过；没有新业务缺陷，源码/测试/工具/CI/锁及原始证据不变。
+- Gemini新数学/hash脚本与日志未随报告提供；完整3.13.16 SDK独立执行明确NOT VERIFIED。证据缺口和人工验收/授权发布/main核验及P3独立授权仍OPEN。
+- 当前AUDIT PASS AS REPORTED / REPORT ERRATA AND EXECUTION EVIDENCE OPEN，不合并、不打标签、不进入Phase3。
+
+
 ## 2026-10-21 · Phase2预审接收与实现待复核
 
 - 按字节归档Gemini计划报告，固定4f8b0de、PLAN PASS、无阻断；单列需求编号、Volume/DAG、Python AST、浮点误差和时间语义等勘误，不修改审查原文。

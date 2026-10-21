@@ -1,5 +1,7 @@
 # Phase2 计划预审接收、勘误及开发方处理
 
+当前增量：Gemini已在2a70dc6实现报告中认可八项勘误，并关闭F-P2-PRE-001/002（限定受审内置工程范围）。以下“待确认”等为此前开发方处理快照；当前原件、12项新增事实更正与执行证据缺口见IMPLEMENTATION_AUDIT_RESPONSE.md及gemini/IMPLEMENTATION_AUDIT_INDEX.json，不能据PASS宣告全部证据闭环或用户验收。
+
 用户转交Gemini报告，原字节保存在gemini/aqrp_phase2_plan_pre_review_report.md，hash及来源见PRE_REVIEW_INDEX.json。固定4f8b0de正确，正式基线f579b2c正确，报告PLAN PASS且仅两项Low、没有Critical/High；用户本次明确允许无阻断继续已授权开发。状态进入IMPLEMENTING，不等于实现审查或人工验收。正文错误单独纠正，不修改报告原件或正确Golden答案。
 
 | 项 | 报告文字 | 规范/处理 |
