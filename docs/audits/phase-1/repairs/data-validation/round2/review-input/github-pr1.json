@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1",
+    "number": 1,
+    "state": "closed",
+    "merged": true,
+    "mergeable": false,
+    "draft": false,
+    "body": "**Phase0 = RELEASED；Gemini Baseline Verification Gate = PASS；F-001 / GOV-010 = RESOLVED / CLOSED。** 用户验收、PR合并、固定基线标签及Gemini独立主干链路已闭环。**Phase1基线前置门禁 = UNBLOCKED；执行状态 = AWAITING USER AUTHORIZATION / NOT STARTED**，未获单独启动授权，未创建Phase1分支或业务实现。\n\nAQRP_FIXED_REVIEW_SHA: `7de1d0e81385ae97f98ea673fe05dd726f0b577b`\nAQRP_AUDITED_BASELINE_SHA: `7de1d0e81385ae97f98ea673fe05dd726f0b577b`\nAQRP_PUBLISHED_BASELINE_SHA: `7de1d0e81385ae97f98ea673fe05dd726f0b577b`\nAQRP_BASELINE_TAG: `phase0-baseline`\nAQRP_TAG_OBJECT_SHA: `0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0`\nAQRP_ACCEPTED_PR_HEAD_SHA: `228190a0c46595cf2927125fdc7d4f1c51b39ccf`\nAQRP_PR_MERGE_SHA: `8c37e952be61054c6c72b5aaf573026c0355647b`\nAQRP_DESIGN_REVIEW_SHA: `1830b152ea4b2497fbfc54d4d506a77e3c2abb5f`\nAQRP_EVIDENCE_HEAD_SHA: `502c6931dcfce50bee2f71a80524475fae6396bf`\nAQRP_ARCHIVAL_HEAD_SHA: `502c6931dcfce50bee2f71a80524475fae6396bf`\n\n本次直接用户授权：“麻烦你归档本报告并更新状态”。据此将Gemini门禁原报告按字节归档，更新状态/追踪/自查及本PR回执；未执行Phase1开发。当前main已从已审基线7de1d0e追加到归档提交502c693；**标签不移动、不重建，发布基线仍是7de1d0e**。新归档提交不冒充已获Gemini追加审计，也不替换已发布设计基线。\n\n最新Gate证据：\n\n- [Gemini Baseline Verification Gate原报告](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md)；SHA-256：`aa9761ef9ef20a5645d22297ab2ef9ee18455521c912226a2e342c1ff65129b1`，与用户来源文件逐字节一致。\n- [Gate来源、固定版本、裁定与远端观察](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json)。报告核验7de1d0e，明确GATE PASS / RELEASED / F-001 CLOSED；原搜索链接保持字节不变，实际仓库/PR以本GitHub直接地址及完整SHA为准。\n- [BASELINE](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/BASELINE.md)、[PROGRESS](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/PROGRESS.md)、[CHANGELOG](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/CHANGELOG.md)、[ROADMAP](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/ROADMAP.md)、[Review Package](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/REVIEW_PACKAGE.md)。\n- [用户验收与授权](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/publication/APPROVAL.json)、[实际合并及范围核查](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/publication/MERGE_VERIFICATION.json)、[合并后原始自查](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/publication/MERGED_MAIN_SELF_CHECK.json)、[合并后原始日志](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/publication/MERGED_MAIN_COMMAND_LOG.txt)。\n- [当前MANIFEST](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/MANIFEST.json)、[当前SELF_CHECK](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/SELF_CHECK.json)、[当前命令日志](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/COMMAND_LOG.txt)。\n- [此前最终设计报告](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/gemini/aqrp_phase0_final_audit_and_acceptance_report.md)、[此前开发方事实核对](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/502c6931dcfce50bee2f71a80524475fae6396bf/docs/audits/phase-0/gemini/FINAL_RECONCILIATION.md)；旧报告/接收索引中的“待最终核验”等是历史快照，原文不覆盖，最新状态由Gate报告及当前登记更新。\n\n追溯链及当前状态：\n\n| 项目 | 实际事实 |\n|---|---|\n| 用户Phase0验收 / 合并标签授权 | 已取得；原话及当时PR版本绑定分别记录于APPROVAL |\n| PR #1 | 已合并，实际merge SHA为8c37e952be61054c6c72b5aaf573026c0355647b，保留历史 |\n| 合并内容 | merge tree与获批228190a完全一致 |\n| 经审发布基线 | 7de1d0e81385ae97f98ea673fe05dd726f0b577b |\n| 稳定附注标签 | phase0-baseline，对象0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0，目标仍为7de1d0e |\n| Gemini Gate | PASS，Phase0 RELEASED，F-001 RESOLVED / CLOSED |\n| 当前main | 502c6931dcfce50bee2f71a80524475fae6396bf，仅在基线之上追加16份报告/状态/自查文件变化 |\n| 后续main与旧标签 | 归档后main前移是已说明的记录变化；不再声称当前main head始终等于旧标签 |\n| Phase1基线前置门禁 | UNBLOCKED |\n| Phase1用户启动授权 / 执行 | 未获得 / NOT STARTED；未来仍需阶段计划预审及适用前置决策 |\n\n本次核查：\n\n- 17项文档自查通过、0失败；72个项目文件中71个清单hash逐项与提交内容一致（MANIFEST不自包含）。\n- Gate原件与来源字节一致；39份既有核心契约/来源/历史审计与批准发布记录相对7de1d0e保持字节不变。\n- 106条需求/16组及CSV hash `20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1` 不变。\n- 作者文本格式检查通过；新外部报告只按原字节核对，不改原文格式。\n- 推送后远端main为502c693，tag对象仍为0b2230c、剥离目标仍为7de1d0e；工作区干净，无强推或标签移动。\n\nF-002 CI与F-003时间戳实现/测试留P1；F-004物理云同步隔离未验证，原始Gemini执行日志未附等已披露限制保留。Gate PASS只关闭P0发布门禁，不将其他未来能力标为已实现。市场/profile、精确环境及研究阈值等仍按原阶段前置条件确定；报告中的启动建议不是用户启动授权。\n\n本次归档及状态同步完成，停留在已发布Phase0，等待用户单独授权Phase1。\n",
+    "title": "docs: Phase 0 architecture and main baseline release gate",
+    "base": "main",
+    "base_sha": "e87d0082a5e448e9550129a486ba965f13a155f8",
+    "head": "feature/phase-0-v3.2-design",
+    "head_sha": "228190a0c46595cf2927125fdc7d4f1c51b39ccf",
+    "head_repo_id": 1426974778,
+    "head_repo_full_name": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "merge_commit_sha": "8c37e952be61054c6c72b5aaf573026c0355647b",
+    "user": {
+      "login": "wwooyy429",
+      "name": "wwooyy429",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/80371541?v=4",
+      "id": 80371541
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-20T13:04:49Z",
+    "updated_at": "2026-10-20T15:26:15Z",
+    "closed_at": "2026-10-20T14:52:56Z",
+    "merged_at": "2026-10-20T14:52:56Z",
+    "commits": 10,
+    "changed_files": 66,
+    "additions": 7317,
+    "deletions": 0,
+    "display_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/1",
+    "display_title": "docs: Phase 0 architecture and main baseline release gate"
+  },
+  "isError": false
+}

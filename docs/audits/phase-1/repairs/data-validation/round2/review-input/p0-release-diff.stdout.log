@@ -1,0 +1,19 @@
+ AGENTS.md                                          |   4 +-
+ docs/BASELINE.md                                   |  84 ++++----
+ docs/CHANGELOG.md                                  |   7 +
+ docs/DECISIONS.md                                  |   8 +-
+ docs/PROGRESS.md                                   |  39 ++--
+ docs/PROJECT_CHARTER.md                            |   8 +-
+ docs/ROADMAP.md                                    |   2 +-
+ docs/audits/phase-0/COMMAND_LOG.txt                |  15 +-
+ docs/audits/phase-0/DELIVERY_REPORT.md             |   6 +-
+ docs/audits/phase-0/MANIFEST.json                  |  76 +++++---
+ docs/audits/phase-0/REVIEW_ANCHOR.json             |  13 +-
+ docs/audits/phase-0/REVIEW_PACKAGE.md              |  10 +-
+ docs/audits/phase-0/SELF_CHECK.json                |  14 +-
+ docs/audits/phase-0/publication/APPROVAL.json      |  26 +++
+ .../publication/MERGED_MAIN_COMMAND_LOG.txt        |  48 +++++
+ .../publication/MERGED_MAIN_SELF_CHECK.json        | 214 +++++++++++++++++++++
+ .../phase-0/publication/MERGE_VERIFICATION.json    |  41 ++++
+ docs/audits/phase-0/tools/check_documents.py       |  11 +-
+ 18 files changed, 492 insertions(+), 134 deletions(-)

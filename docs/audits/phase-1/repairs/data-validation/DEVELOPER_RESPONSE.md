@@ -1,5 +1,7 @@
 # Developer response and outstanding gates
 
+Latest round 2 corrective work: see round2/RECONCILIATION.md and round2/REVIEW_PACKAGE.md. The newly supplied report targets released f579, not repaired PR #4. Four additional confirmed implementation defects (WORK-P1-006–009) are being corrected within the previously authorized Phase 1 data-contract repair scope. Round 2 adds 86 semantic cases (234 total source tests passing); new clean SDK/CI evidence is pending. Prior text below is first-round evidence at 3ab93b35c0b5e4e7b5e85c27f641748aa86cb24f, not proof that the new defects are independently closed. Core contracts and Golden answers remain frozen.
+
 The supplied GPT Work review is supplemental evidence, not a Gemini report or user acceptance. Original reports are archived without editing. Independent review reproduced 4 failures / 2 passes in six probes; developer repeated these against the existing Phase 2 installed wheel. Developer-authored 46 boundary regressions initially had 19 failures / 27 passes against the unpatched Phase 1 source. These are test cases, not 19 separate defects. After correction, all 148 source tests and module line/branch coverage gates pass.
 
 | Finding | Handling | Closure status |

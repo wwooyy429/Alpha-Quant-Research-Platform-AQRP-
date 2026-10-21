@@ -1,5 +1,7 @@
 # Correction traceability
 
+Latest round 2 corrective work: see round2/RECONCILIATION.md and round2/REVIEW_PACKAGE.md. The newly supplied report targets released f579, not repaired PR #4. Four additional confirmed implementation defects (WORK-P1-006–009) are being corrected within the previously authorized Phase 1 data-contract repair scope. Round 2 adds 86 semantic cases (234 total source tests passing); new clean SDK/CI evidence is pending. Prior text below is first-round evidence at 3ab93b35c0b5e4e7b5e85c27f641748aa86cb24f, not proof that the new defects are independently closed. Core contracts and Golden answers remain frozen.
+
 | Finding | Requirements | Implementation | Regression/evidence |
 |---|---|---|---|
 | WORK-P1-001 | DATA-001, DATA-006, DATA-011, QA-002 | src/aqrp/data/quality.py normalize | tests/data/test_work_p1_validation.py field dimension, increments, null units; review-input/test_work_p1_regressions.py |

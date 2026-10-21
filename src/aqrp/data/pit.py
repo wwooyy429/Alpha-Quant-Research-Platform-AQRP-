@@ -10,7 +10,7 @@ def visible_rows(name, records, as_of):
     as_of = utc(as_of, field="as_of")
     groups = {}
     for r in records:
-        if r["available_at"] is None:
+        if r["available_at"] is None or r.get("quality_status") == "UNKNOWN_AVAILABILITY":
             raise TimeLeakageError("UNKNOWN_AVAILABILITY", name)
         if r["event_time"] > as_of or r["available_at"] > as_of:
             continue

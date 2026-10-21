@@ -60,6 +60,9 @@ def normalize(name, row):
         elif pa.types.is_integer(field.type):
             if type(v) is not int or v < 0:
                 raise ContractError("NONNEGATIVE_INTEGER_REQUIRED", field.name)
+            bits = field.type.bit_width - int(pa.types.is_signed_integer(field.type))
+            if v > (1 << bits) - 1:
+                raise ContractError("INTEGER_OUT_OF_RANGE", field.name)
         elif not isinstance(v, str) or not v:
             raise ContractError("NONEMPTY_STRING_REQUIRED", field.name)
     required = {
@@ -163,7 +166,9 @@ def normalize(name, row):
                 raise ContractError("AMOUNT_UNIT_MISMATCH", name)
         if r["available_at"] is not None and r["available_at"] < r["event_time"]:
             raise ContractError("BAR_BEFORE_CLOSE", name)
-        if any(r[f] is None for f in ("open", "high", "low", "close", "volume", "amount")):
+        if r["quality_status"] in ("VALID", "MISSING") and any(
+            r[f] is None for f in ("open", "high", "low", "close", "volume", "amount")
+        ):
             r["quality_status"], r["reason_code"] = "MISSING", "NULL_OBSERVATION"
     if name == "corporate_actions":
         if (
@@ -264,7 +269,11 @@ def validate_dataset(tables, *, exploratory=False):
     rows = {n: v.table.to_pylist() for n, v in validated.items()}
     if not rows["security_master"] or not rows["calendar"]:
         raise DataQualityError("EMPTY_MASTER_OR_CALENDAR", "tables")
-    if not exploratory and any(r["available_at"] is None for t in rows.values() for r in t):
+    if not exploratory and any(
+        r["available_at"] is None or r["quality_status"] == "UNKNOWN_AVAILABILITY"
+        for t in rows.values()
+        for r in t
+    ):
         raise DataQualityError("UNKNOWN_AVAILABILITY", "available_at")
     master = {}
     for r in rows["security_master"]:
