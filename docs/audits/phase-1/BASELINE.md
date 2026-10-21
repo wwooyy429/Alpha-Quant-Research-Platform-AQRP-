@@ -1,5 +1,7 @@
 # Phase 1 已发布基线登记
 
+2026-10-21 当前修复发布：用户已验收固定 `6858c183ab97e270c9b4852cf1885fb55873327c`，PR #4 已合并 main `93b87b4ad5da5e737973ce8882e5dc9d0b656844`，包版本 **0.1.1**。补丁 **ACCEPTED**；本登记与新标签 `v0.1.1` 远端同点发布并核验后为 **RELEASED**。合并树与获批 head 完全一致，合并后干净 SDK 234 项及未编辑原始外置 16 项通过。原阶段基线标签不移动；历史缺字节 NOT VERIFIED 与指定 GPT Work 代执行事实保留。发布证据：`docs/audits/phase-1/repairs/data-validation/publication-v0.1.1/BASELINE.md`。Phase 2 分支不改，受控纳入及重新验证另办，不进入 Phase 3。以下旧状态仅作历史，以本段和实际远端 Git 为准。
+
 **人工验收：ACCEPTED；发布：RELEASED。** 生效依据为本登记所在提交与 `phase1-baseline` 同时发布到远端 main 并经核验；仅生成本地文件不构成发布。
 
 日期：2026-10-21（Asia/Shanghai）。用户分别明确“phase 1验收已完成”和“请开始合并并打标签”，原话、SHA绑定及权限范围见 publication/APPROVAL.json。未授权 Phase 2。
