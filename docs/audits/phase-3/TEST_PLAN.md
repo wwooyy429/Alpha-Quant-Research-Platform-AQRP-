@@ -15,3 +15,15 @@
 | INT-001/RESEARCH-009 | 固定合成数据+协议仅换Momentum→Reversal精确Ref，完整计算/五stage/IC/分组/OOS/报告/实验均真实；预注册方向+1下raw及正向线性处理后的final相反，相关符号/组别按独立答案，核心统计/账户代码不改；不得要求未实现回测 |
 
 G1后每次完整SDK从干净Git归档构建安装真实wheel，Ruff、pytest+branch coverage、独立参考、data/factor/research smoke、秘密扫描正负控制、Windows/Ubuntu都运行；原ZIP官方digest/每文件清单、真实wheel/.coverage/全部运行config/数据/失败及精确SHA/tree相互核对。长路径预检，不把临时CImerge当main，省略工具字节必须明确披露。
+
+## 五项修订的实施验收映射（仍Planned）
+
+| 发现 | 具体资料 / 未来代码与测试 | 必要断言 |
+|---|---|---|
+| WORK-P3-001 | TEST_ISOLATION_PROFILE；validation/evaluator+experiments控制ledger；tests/validation/test_valid_004.py及双OS受管profile实证 | 真SID/UID及权限拒绝原始Test/seed/label/cache/log/report，批准evaluator正向；并发/断进程/改名/反馈泄露拒绝；同用户mock不替代 |
+| WORK-P3-002 | LABEL_ACTION_PROFILE；validation/labels,splits；test_valid_001/002/003及QA004 | 两端同刻/±1us，old-share转换/日锚点，晚到修订/coverage/支付应收，日barclose及fit1us/闭区间purge |
+| WORK-P3-003 | COMPOSITE_RESEARCH；research/composite；test_research_007及INT001 | 固定两因子/尺度/方向/交集重新z/缺失/零权重/阈值未定，冗余原/方向后矩阵，未来变化不改过去 |
+| WORK-P3-004 | REPRODUCTION_PROFILE；experiments/reproduce；test_exp_003及P2回归 | 原0.2环境3原Ref重放/原字节manifest，P3新Ref；缺失篡改/旧receipt配新bundle/不同路径投影拒绝 |
+| WORK-P3-005 | HAC_INFERENCE_PROFILE；validation/inference；test_valid_005/007/008与QA004 | 非零均值q1/q2及高精度p；251/252、399/400、lag/空洞/假设/未批拒绝；m4含失败项且批准拒绝 |
+
+新增supplemental_cases.json在业务实现前手工定义；supplemental_reference.py仅开发方标准库核算，新候选QA-004独立复核待办，不能代为签收。旧15组/75断言是GPT Work补充执行记录；新开发方复算不冒充该身份。

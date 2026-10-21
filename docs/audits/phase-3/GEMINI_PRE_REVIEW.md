@@ -14,3 +14,7 @@
 6. 核对本轮仅计划/文档及独立答案候选；src/tests/tools/CI/锁/版本/已发布业务与main基线完全相同。现有CI417是P2基线回归，不是P3测试通过。旧执行身份/历史限制保留，不把P2 GPT Work复核补写为Gemini执行或P3预审已完成。
 
 输出指定完整SHA、范围/需求覆盖、接口/数学/安全/阶段依赖意见、每个发现严重度/位置/依据/处置、你的实际执行与原始命令/环境/日志/hash、未验证与待用户决定、PLAN PASS/PASS WITH CONDITIONS/BLOCKED。无权执行明确NOT VERIFIED；计划PASS不等于实现通过或用户验收，不合并、不打标签、不进入P4。
+
+## 后续修订入口
+
+收到GPT Work对d10的PLAN BLOCKED后，新增五专项具体设计与原件归档；本轮优先使用GEMINI_INCREMENTAL_PRE_REVIEW.md审PR新固定SHA，不能将旧d10挂成新方案已审。

@@ -1,0 +1,4 @@
+# Preserve raw reviewer/command evidence including its original CR/LF bytes.
+# Scope only archived evidence; authored design/source still receives normal checks.
+g1-d10/** whitespace=-blank-at-eol
+supplemental_reference.log whitespace=cr-at-eol

@@ -18,3 +18,11 @@
 | ApprovalProposal / record_decision | 冻结标准+实际指标/不确定性/校正+全部试验/访问+独立Golden及审查证据；标准/审批身份不足返回拒绝原因，不自动批准。P3只可研究有效性，StrategyApproved需要P4/P5，未实现绝不授予 |
 
 普通开发请求只持Train及协议允许的Validation能力，不持Test标签对象/存储句柄。最终评估只有在隔离profile可验证、单次授权、候选冻结后受控执行。异常/系统失败返回结构化错误并写失败run；合法小样本/缺数据返回null+reason，不伪造成功统计。
+
+## G1补充复核后的具体契约（待审）
+
+- TestEvaluator采用TEST_ISOLATION_PROFILE.md的P3-ISO-OS-1多OS主体方案，新增IsolationDeploymentRef（SID/UID、ACL/账户/私有输入投影/实际负证据/批准人），缺项拒绝formal；LabelCoverageRef含独立行动完整性水位及修订。
+- LabelSpec必须pin SYNTHETIC_V1_LABEL_1；LabelBatch分开price interval、entitlement interval、information interval、label_available_at与revision lineage，拟合cutoff与purge按LABEL_ACTION_PROFILE.md。
+- 新CompositeSpec/CompositeScores/RedundancyReport及compose服务严格按COMPOSITE_RESEARCH.md；输出研究分数而非账户权重。
+- reproduce必须pin EnvironmentArchiveRef并路由旧wheel独立环境，旧Ref与新Ref/API矩阵、projection及错误见REPRODUCTION_PROFILE.md。
+- InferenceProfileRef=P3-HAC-BARTLETT-1：min252、n>=20(q+1)、q=max(h-1,5)和假设/批准证据全部显式；详HAC_INFERENCE_PROFILE.md。这些均为本轮具体设计提案，未部署/未批准，不把新设计挂在旧review_sha上。

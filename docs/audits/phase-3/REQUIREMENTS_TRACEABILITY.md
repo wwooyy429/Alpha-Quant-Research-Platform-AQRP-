@@ -30,3 +30,11 @@
 | EXP-004 | MVP | VALID-008;EXP-001 | INTERFACE_DRAFT.md / ExperimentLedger, reproduce, ApprovalProposal | src/aqrp/experiments/ / tests/experiments/test_exp_004.py |
 | QA-004 | MVP | QA-001;VALID-001 | GOLDEN_REFERENCE.md / independent answers | docs/audits/phase-3/golden* + future tests/golden / tests/quality/test_qa_004.py |
 | INT-001 | MVP | RESEARCH-009;VALID-003;EXP-001 | INTERFACE_DRAFT.md / complete research service | src/aqrp/services/research.py + cli/reports / tests/integration/test_int_001.py |
+
+## 补充行为追踪（不改变canonical）
+
+- RESEARCH-007：compose(CompositeSpec,StageScoreRefs)->CompositeScores+RedundancyReport，固定w/d、共同交集z、相关/冗余诊断；COMPOSITE_RESEARCH.md；未来research/composite.py、test_research_007.py、INT001。
+- VALID-004/006/008、FACTOR-009、EXP-004：P3-ISO-OS-1真实主体/ACL/封存输入与预算；部署证据未验证，不判需求已完成。
+- VALID-001/002/003、QA-004、INT-001：SYNTHETIC_V1_LABEL_1及LabelCoverageRef/label_available_at/fit/purge，新行动边界候选。
+- FACTOR-007、RESEARCH-008、EXP-003：P3-REPRO-ARTIFACT-1原0.2制品/环境路线及明确失败/投影。
+- VALID-005/007/008、QA-004：HAC-BARTLETT-1固定候选/拒绝、非零p/全family失败项。

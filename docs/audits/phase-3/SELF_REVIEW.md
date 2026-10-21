@@ -1,13 +1,13 @@
-# Phase3计划自查与交付范围
+# Phase3 G1修订自查
 
-A 功能：本轮是已授权P3的G1计划准备；26项/23MVP+3Competition Ready逐条映射，接口/统计/OOS/权限/实验与15组独立手工答案候选已提供。全部P3业务能力Planned，未改src/tests/tools/CI/锁/已发布Phase2原件，不以文档存在声明实现。
+A 范围：原GPT Work报告/任务/ZIP原字节归档，五项设计具体修订，26项23MVP+3CR及canonical106不变，无业务实现。
 
-B 验证：SELF_CHECK.json为真实结构/范围/hash/保护资产检查，reference_arithmetic.log为开发方标准库15项复算。没有P3业务测试、没有Gemini QA-004核验；现有CI若自动运行417项，属于已发布P2基线回归。
+B 验证：SELF_CHECK含50冻结资产/旧15原件/P2全原件及源码测试工具CI锁比对；旧15参考重新核算15通过，新28组候选开发方122断言通过。66项原证据manifest/hash/ZIP CRC及两个旧CI原417/26模块wheel核对通过。secret scan通过。不是本轮完整SDK重跑或P3业务测试。原GPT Work独立75断言身份保留，Gemini尚未预审。
 
-C 技术：DESIGN_DECISIONS列明Test真实权限、正式标准、HAC样本/lag、库选择及P2准入兼容边界；均待G1，不因开发授权自动批准设计。真实源/账户/OS不可信插件沙箱不在本轮。
+C 修订：P3-ISO-OS-1、SYNTHETIC_V1_LABEL_1、固定研究合成/冗余、P3-REPRO-ARTIFACT-1、P3-HAC-BARTLETT-1均具体供固定新SHA审。用户具体决定/真实部署/正式金融标准仍未到位。
 
-D 版本：分支feature/phase-3-alpha-research，起点与phase2-baseline/v0.2.0为f26255fc40a3080bfa883ad64938f60036a14759；最终完整SHA由PR描述固定，文件hash在FILE_MANIFEST.json。原Python3.13.16与22包lock不变。
+D 版本：独立P3分支，main/phase2-baseline/v0.2.0不动；原d10报告和原正确Golden不改。FILE_MANIFEST为本修订实际字节，旧manifest在g1-d10另封存；新SHA由PR描述锁定。
 
-E 结论：开发方计划自查通过，P3状态PLAN PRE-REVIEW REQUIRED；不宣称Gemini预审PASS或实现通过，不是用户P3验收。
+E 状态：PLAN BLOCKED / DESIGN REVISED / RE-REVIEW REQUIRED，无自签CLOSED、无P3验收。
 
-F 下一步：按GEMINI_PRE_REVIEW.md对固定SHA审计划/接口/答案与关键设计决定。G1 PASS及阻断闭环后才进入已授权P3实现；如设计涉及额外权限/正式数值标准则单独明确，禁止默示批准。P3合并/标签、P4启动仍未授权。
+F 后续：GEMINI_INCREMENTAL_PRE_REVIEW.md固定新SHA复核，确认具体设计/权限与经济假设；G1通过并关闭阻断后才实施。实际OS隔离/正式金融批准仍独立验证，P3发布/P4未授权。

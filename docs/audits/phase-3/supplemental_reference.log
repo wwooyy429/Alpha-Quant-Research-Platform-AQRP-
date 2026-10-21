@@ -1,0 +1,1001 @@
+{
+  "run_id": "p3-design-reference-2dd2385b-9965-4a28-bbdd-0ead4eefba7f",
+  "actual_executor": "Codex developer, not independent reviewer/Gemini",
+  "started_at_utc": "2026-10-21T18:28:50.259124+00:00",
+  "finished_at_utc": "2026-10-21T18:28:50.260964+00:00",
+  "argv": [
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\docs\\audits\\phase-3\\supplemental_reference.py"
+  ],
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "source_sha256": "21ef09832d29d3f7da72f51c0f90efa55280b2b17291e87f5e8b036ba919f896",
+  "reference_script_sha256": "86b99eb4b83ff0c98e0001378303b9331531afc6e2bc94a9587130e7d9d5fdd9",
+  "fixture_groups": 28,
+  "assertions": 122,
+  "passed": 122,
+  "failed": 0,
+  "scope": "Developer arithmetic and candidate-state predicates only. No P3 business, OS isolation or formal finance execution.",
+  "checks": [
+    {
+      "case": "LABEL-NONE",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "return",
+      "actual": "1/10",
+      "expected": "1/10",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "label_available_at",
+      "actual": "2026-01-09 12:00:00.000001+00:00",
+      "expected": "2026-01-09 12:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "label_available_at",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "status",
+      "actual": "NOT_YET_AVAILABLE",
+      "expected": "NOT_YET_AVAILABLE",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "shares",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "credit",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "return",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-10 12:00:00+00:00",
+      "expected": "2026-01-10 12:00:00+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "credit",
+      "actual": "4",
+      "expected": "4",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "return",
+      "actual": "3/50",
+      "expected": "3/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "ratio_anchor_to_dividend",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "visible_at_exit_open",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_before",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_equal",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_after",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-TRAIN-FIT",
+      "field": "fit_allowed",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "PURGE-INFORMATION-CONTACT",
+      "field": "purge",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "score_0",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "score_1",
+      "actual": "0.0",
+      "expected": "0.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "score_2",
+      "actual": "1.0",
+      "expected": "1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "raw_correlation",
+      "actual": "-1.0",
+      "expected": "-1",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "signed_correlation",
+      "actual": "1.0",
+      "expected": "1",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance_0",
+      "actual": "1.0",
+      "expected": "1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance_1",
+      "actual": "0.0",
+      "expected": "0.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance_2",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "score_0",
+      "actual": "-0.5",
+      "expected": "-0.5",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "score_1",
+      "actual": "0.0",
+      "expected": "0.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "score_2",
+      "actual": "0.5",
+      "expected": "0.5",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "score_0",
+      "actual": "-0.7071067811865475",
+      "expected": "-0.7071067811865475",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "score_1",
+      "actual": "0.7071067811865475",
+      "expected": "0.7071067811865475",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "kept_indices",
+      "actual": "[0, 2]",
+      "expected": "[0, 2]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "all_zero",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "one_positive",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "empty",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "missing_thresholds",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "REDUNDANCY-PREDECLARED",
+      "field": "flag",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "mean",
+      "actual": "1/4",
+      "expected": "1/4",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "gamma_0",
+      "actual": "1/16",
+      "expected": "1/16",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "gamma_1",
+      "actual": "-3/64",
+      "expected": "-3/64",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "S",
+      "actual": "1/64",
+      "expected": "1/64",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "variance",
+      "actual": "1/256",
+      "expected": "1/256",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "SE",
+      "actual": "0.0625",
+      "expected": "0.0625",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "z",
+      "actual": "4",
+      "expected": "4",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "high_precision_p_vs_hand_constant",
+      "actual": "0.00006334248366623984250754151344430259688766675096055301709866344415717033831490",
+      "expected": "0.00006334248366623984",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "libm_p_vs_decimal_series",
+      "actual": "6.334248366623993e-05",
+      "expected": "0.00006334248366623984250754151344430259688766675096055301709866344415717033831490",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "sample_not_formal",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "mean",
+      "actual": "1/4",
+      "expected": "1/4",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma_0",
+      "actual": "1/16",
+      "expected": "1/16",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma_1",
+      "actual": "-3/64",
+      "expected": "-3/64",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma_2",
+      "actual": "1/32",
+      "expected": "1/32",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "S",
+      "actual": "1/48",
+      "expected": "1/48",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "variance",
+      "actual": "1/192",
+      "expected": "1/192",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "SE",
+      "actual": "0.072168783648703220563643597562744681955950218908765859502325290810497209037866668",
+      "expected": "0.07216878364870323",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "z",
+      "actual": "3.4641016151377545870548926830117447338856105076207612561116139589038660338176001",
+      "expected": "3.4641016151377544",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "high_precision_p_vs_hand_constant",
+      "actual": "0.00053200550513924969928988213323829378557937294755749404746146212512734563016741",
+      "expected": "0.0005320055051392504",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "libm_p_vs_decimal_series",
+      "actual": "0.0005320055051392503",
+      "expected": "0.00053200550513924969928988213323829378557937294755749404746146212512734563016741",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "sample_not_formal",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "lags",
+      "actual": "[5, 5, 9, 19]",
+      "expected": "[5, 5, 9, 19]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "minimum_ns",
+      "actual": "[252, 252, 252, 400]",
+      "expected": "[252, 252, 252, 400]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h1_n251",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h1_n252",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h20_n399",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h20_n400",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "short_lag",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "LAG_BELOW_OVERLAP"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "lag_equal_n",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "INVALID_HORIZON_OR_LAG"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "missing_session",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "IRREGULAR_OR_MISSING_IC"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "no_assumptions",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "ASSUMPTIONS_UNVERIFIED"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "no_approval",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "FORMAL_PROTOCOL_UNAPPROVED"
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "Holm",
+      "actual": "[Fraction(1, 25), Fraction(9, 100), Fraction(9, 100), Fraction(1, 1)]",
+      "expected": "[Fraction(1, 25), Fraction(9, 100), Fraction(9, 100), Fraction(1, 1)]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BY",
+      "actual": "[Fraction(1, 12), Fraction(1, 9), Fraction(1, 9), Fraction(1, 1)]",
+      "expected": "[Fraction(1, 12), Fraction(1, 9), Fraction(1, 9), Fraction(1, 1)]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BH",
+      "actual": "[Fraction(1, 25), Fraction(4, 75), Fraction(4, 75), Fraction(1, 1)]",
+      "expected": "[Fraction(1, 25), Fraction(4, 75), Fraction(4, 75), Fraction(1, 1)]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "formal_family_approvable",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    }
+  ]
+}

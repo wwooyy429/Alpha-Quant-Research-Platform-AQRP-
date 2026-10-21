@@ -12,3 +12,7 @@
 - 财务标签按一致拆股/现金红利权益口径；不当作P5账本收益。可见公司行动不得在signal cutoff前注入，标签只在evaluation_cutoff有全部必要信息后生成。现金再投资/税/退市未知规则不虚构，先限明确合成profile，正式规则缺失返回Unsupported/invalid。
 
 已阅读的主源（2026-10-22）：[HAC假设、Bartlett、修正参数](https://www.statsmodels.org/stable/generated/statsmodels.stats.sandwich_covariance.cov_hac.html)、[Holm/BH/BY接口](https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html)、[lstsq rank/rcond与residuals](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html)。仅作为方法边界参考，不声称当前已安装statsmodels或已独立核验所有库，亦不代替锁版本核验和Golden。资料中的默认参数不自动成为本项目默认。
+
+## G1修订补充（覆盖此前未选定机制，仍待审）
+
+HAC的正式工程候选/模式、数值边界与拒绝契约现具体冻结于HAC_INFERENCE_PROFILE.md，尚需统计预审及正式用户标准；不使用任意自动lag。行动标签及label_available_at/fit/purge采用LABEL_ACTION_PROFILE.md；研究级合成与冗余采用COMPOSITE_RESEARCH.md，不能只交相关矩阵。原公式与15组正确候选不变，新独立候选单列supplemental_cases.json。

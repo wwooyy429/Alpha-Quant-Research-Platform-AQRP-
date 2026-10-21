@@ -1,0 +1,614 @@
+{
+  "schema": "p3-supplemental-golden-proposal/1",
+  "status": "HAND-DEFINED BEFORE BUSINESS IMPLEMENTATION; INDEPENDENT REVIEW REQUIRED",
+  "original_15_cases_unchanged": true,
+  "float_abs_tol": "1e-12",
+  "float_rel_tol": "1e-10",
+  "label_defaults": {
+    "profile": "SYNTHETIC_V1_LABEL_1",
+    "decision_time": "2026-01-05T16:00:00.000001Z",
+    "calendar_sessions": [
+      {
+        "date": "2026-01-05",
+        "open_at": "2026-01-05T09:00:00.000000Z",
+        "close_at": "2026-01-05T16:00:00.000000Z"
+      },
+      {
+        "date": "2026-01-06",
+        "open_at": "2026-01-06T09:00:00.000000Z",
+        "close_at": "2026-01-06T16:00:00.000000Z"
+      },
+      {
+        "date": "2026-01-07",
+        "open_at": "2026-01-07T09:00:00.000000Z",
+        "close_at": "2026-01-07T16:00:00.000000Z"
+      },
+      {
+        "date": "2026-01-08",
+        "open_at": "2026-01-08T09:00:00.000000Z",
+        "close_at": "2026-01-08T16:00:00.000000Z"
+      }
+    ],
+    "entry_at": "2026-01-06T09:00:00.000000Z",
+    "exit_at": "2026-01-08T09:00:00.000000Z",
+    "h": 2,
+    "evaluation_cutoff": "2026-01-11T16:00:00.000001Z",
+    "entry_bar_available_at": "2026-01-06T16:00:00.000001Z",
+    "exit_bar_available_at": "2026-01-08T16:00:00.000001Z",
+    "coverage_available_at": "2026-01-08T16:00:00.000001Z",
+    "actions_complete_through": "2026-01-08T09:00:00.000000Z",
+    "dividend_basis": "PER_OLD_SHARE",
+    "pay_date": "2026-01-12",
+    "record_date": "2026-01-09",
+    "cash_credit_convention": "receivable plus paid, all default dividends unpaid at exit; no reinvestment"
+  },
+  "label_cases": [
+    {
+      "id": "LABEL-NONE",
+      "action_at": null,
+      "entry_price": "100",
+      "exit_price": "110",
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/10",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-INTERIOR-OLD-UNIT",
+      "action_at": "2026-01-07T09:00:00.000000Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-ENTRY-SAME",
+      "action_at": "2026-01-06T09:00:00.000000Z",
+      "entry_price": "50",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-ENTRY-MINUS-US",
+      "action_at": "2026-01-06T08:59:59.999999Z",
+      "entry_price": "50",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-ENTRY-PLUS-US",
+      "action_at": "2026-01-06T09:00:00.000001Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-EXIT-SAME",
+      "action_at": "2026-01-08T09:00:00.000000Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-EXIT-MINUS-US",
+      "action_at": "2026-01-08T08:59:59.999999Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-EXIT-PLUS-US",
+      "action_at": "2026-01-08T09:00:00.000001Z",
+      "entry_price": "100",
+      "exit_price": "102",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "action_at": "2026-01-06T09:00:00.000000Z",
+      "entry_price": "100",
+      "exit_price": "102",
+      "split": "1",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "1",
+        "credit": "0",
+        "return": "1/50",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "action_at": "2026-01-08T09:00:00.000000Z",
+      "entry_price": "100",
+      "exit_price": "102",
+      "split": "1",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "1",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-LATE-VISIBLE",
+      "action_at": "2026-01-07T09:00:00.000000Z",
+      "action_available_at": "2026-01-09T12:00:00.000001Z",
+      "coverage_available_at": "2026-01-09T12:00:00.000001Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-09T12:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-LATE-NOT-VISIBLE",
+      "action_at": "2026-01-07T09:00:00.000000Z",
+      "action_available_at": "2026-01-09T12:00:00.000001Z",
+      "coverage_available_at": "2026-01-09T12:00:00.000001Z",
+      "evaluation_cutoff": "2026-01-08T16:00:00.000001Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "expected": {
+        "shares": null,
+        "credit": null,
+        "return": null,
+        "label_available_at": null,
+        "eventual_label_available_at_oracle_only": "2026-01-09T12:00:00.000001Z",
+        "status": "NOT_YET_AVAILABLE"
+      }
+    },
+    {
+      "id": "LABEL-REVISION-OLD-ASOF",
+      "action_at": "2026-01-07T09:00:00.000000Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "revision_id": "1",
+      "revised_dividend_per_old_share": "4",
+      "revision_available_at": "2026-01-10T12:00:00.000000Z",
+      "evaluation_cutoff": "2026-01-09T16:00:00.000001Z",
+      "expected": {
+        "shares": "2",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-REVISION-NEW-ASOF",
+      "action_at": "2026-01-07T09:00:00.000000Z",
+      "entry_price": "100",
+      "exit_price": "51",
+      "split": "2",
+      "dividend_per_old_share": "2",
+      "revision_id": "1",
+      "revised_dividend_per_old_share": "4",
+      "revision_available_at": "2026-01-10T12:00:00.000000Z",
+      "evaluation_cutoff": "2026-01-10T12:00:00.000000Z",
+      "expected": {
+        "shares": "2",
+        "credit": "4",
+        "return": "3/50",
+        "label_available_at": "2026-01-10T12:00:00.000000Z"
+      }
+    }
+  ],
+  "other_cases": [
+    {
+      "id": "LABEL-ANCHOR-RESET",
+      "input": {
+        "entry_price": "100",
+        "split_at": "2026-01-06T12:00:00.000000Z",
+        "split": "2",
+        "dividend_at": "2026-01-07T09:00:00.000000Z",
+        "anchor_at": "2026-01-06T16:00:00.000000Z",
+        "dividend_per_old_share": "1",
+        "exit_price": "51",
+        "pay_date": "2026-01-09"
+      },
+      "expected": {
+        "shares": "2",
+        "ratio_anchor_to_dividend": "1",
+        "credit": "2",
+        "return": "1/25",
+        "label_available_at": "2026-01-08T16:00:00.000001Z"
+      }
+    },
+    {
+      "id": "LABEL-BAR-CLOSE-AND-FIT",
+      "input": {
+        "exit_open_at": "2026-01-08T09:00:00.000000Z",
+        "exit_bar_event_at": "2026-01-08T16:00:00.000000Z",
+        "exit_bar_available_at": "2026-01-08T16:00:00.000001Z",
+        "fit_cutoff_before": "2026-01-08T16:00:00.000000Z",
+        "fit_cutoff_equal": "2026-01-08T16:00:00.000001Z",
+        "fit_cutoff_after": "2026-01-08T16:00:00.000002Z"
+      },
+      "expected": {
+        "visible_at_exit_open": false,
+        "fit_before": false,
+        "fit_equal": true,
+        "fit_after": true
+      }
+    },
+    {
+      "id": "LABEL-LATE-TRAIN-FIT",
+      "input": {
+        "label_available_at": "2026-01-09T12:00:00.000001Z",
+        "fit_cutoff": "2026-01-09T12:00:00.000000Z"
+      },
+      "expected": {
+        "fit_allowed": false
+      }
+    },
+    {
+      "id": "PURGE-INFORMATION-CONTACT",
+      "input": {
+        "train_information_interval": [
+          "2026-01-05T16:00:00.000001Z",
+          "2026-01-08T16:00:00.000001Z"
+        ],
+        "heldout_protected_interval": [
+          "2026-01-08T16:00:00.000001Z",
+          "2026-01-12T16:00:00.000001Z"
+        ]
+      },
+      "expected": {
+        "purge": true
+      }
+    },
+    {
+      "id": "COMPOSITE-SIGNED-SCALE",
+      "input": {
+        "A": [
+          "-1",
+          "0",
+          "1"
+        ],
+        "B": [
+          "100",
+          "0",
+          "-100"
+        ],
+        "weights": [
+          "3",
+          "1"
+        ],
+        "directions": [
+          1,
+          -1
+        ],
+        "normalization": "cross_sectional_sample_z",
+        "ids": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "expected": {
+        "composite": [
+          "-1",
+          "0",
+          "1"
+        ],
+        "raw_correlation": "-1",
+        "signed_correlation": "1"
+      }
+    },
+    {
+      "id": "COMPOSITE-POSITIVE-DIRECTION",
+      "input": {
+        "A": [
+          "-1",
+          "0",
+          "1"
+        ],
+        "B": [
+          "100",
+          "0",
+          "-100"
+        ],
+        "weights": [
+          "3",
+          "1"
+        ],
+        "directions": [
+          1,
+          1
+        ],
+        "normalization": "cross_sectional_sample_z"
+      },
+      "expected": {
+        "composite": [
+          "-1/2",
+          "0",
+          "1/2"
+        ]
+      }
+    },
+    {
+      "id": "COMPOSITE-MISSING-INTERSECTION",
+      "input": {
+        "A": [
+          "-1",
+          "0",
+          "1"
+        ],
+        "B": [
+          "100",
+          null,
+          "-100"
+        ],
+        "weights": [
+          "3",
+          "1"
+        ],
+        "directions": [
+          1,
+          -1
+        ],
+        "min_composite_n": 2,
+        "normalization": "cross_sectional_sample_z"
+      },
+      "expected": {
+        "kept_indices": [
+          0,
+          2
+        ],
+        "composite_formula": [
+          "-1/sqrt(2)",
+          "1/sqrt(2)"
+        ],
+        "excluded_indices": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "COMPOSITE-REJECTIONS",
+      "input": {
+        "weights_zero": [
+          "0",
+          "0"
+        ],
+        "weights_one_positive": [
+          "1",
+          "0"
+        ],
+        "missing_all": true,
+        "thresholds": null
+      },
+      "expected": {
+        "all_zero": "INVALID_WEIGHTS",
+        "one_positive": "INSUFFICIENT_COMPONENTS",
+        "empty": "INSUFFICIENT_INTERSECTION",
+        "missing_thresholds": "UNCLASSIFIED"
+      }
+    },
+    {
+      "id": "REDUNDANCY-PREDECLARED",
+      "input": {
+        "absolute_rho": "1",
+        "tau": "9/10",
+        "pair_n": 3,
+        "min_pair_n": 3,
+        "eligible_days": 1,
+        "min_days": 1,
+        "hit_fraction": "1",
+        "min_fraction": "1"
+      },
+      "expected": {
+        "flag": true,
+        "automatic_weight_change": false,
+        "account_write": false
+      }
+    },
+    {
+      "id": "HAC-NONZERO-Q1",
+      "input": {
+        "IC": [
+          "1/2",
+          "0",
+          "1/2",
+          "0"
+        ],
+        "q": 1,
+        "h": 1,
+        "mode": "ARITHMETIC_REFERENCE"
+      },
+      "expected": {
+        "mean": "1/4",
+        "gamma": [
+          "1/16",
+          "-3/64"
+        ],
+        "S": "1/64",
+        "variance": "1/256",
+        "se": "1/16",
+        "z": "4",
+        "p_formula": "erfc(2*sqrt(2))",
+        "p_approx": "0.00006334248366623984",
+        "formal_eligible": false
+      }
+    },
+    {
+      "id": "HAC-NONZERO-Q2",
+      "input": {
+        "IC": [
+          "1/2",
+          "0",
+          "1/2",
+          "0"
+        ],
+        "q": 2,
+        "h": 1,
+        "mode": "ARITHMETIC_REFERENCE"
+      },
+      "expected": {
+        "mean": "1/4",
+        "gamma": [
+          "1/16",
+          "-3/64",
+          "1/32"
+        ],
+        "S": "1/48",
+        "variance": "1/192",
+        "se_formula": "1/(8*sqrt(3))",
+        "z_formula": "2*sqrt(3)",
+        "p_formula": "erfc(sqrt(6))",
+        "p_approx": "0.0005320055051392504",
+        "formal_eligible": false
+      }
+    },
+    {
+      "id": "HAC-PROFILE-BOUNDARIES",
+      "input": {
+        "horizons": [
+          1,
+          5,
+          10,
+          20
+        ]
+      },
+      "expected": {
+        "lags": [
+          5,
+          5,
+          9,
+          19
+        ],
+        "minimum_ns": [
+          252,
+          252,
+          252,
+          400
+        ],
+        "h1_n251": false,
+        "h1_n252": true,
+        "h20_n399": false,
+        "h20_n400": true,
+        "NOTE": "true means numeric sample gate only, not all formal gates or financial approval"
+      }
+    },
+    {
+      "id": "HAC-REJECTION-CONTRACT",
+      "input": {
+        "n": 252,
+        "h": 5,
+        "q_overlap_too_short": 3,
+        "q_equal_n": 252,
+        "contains_missing_session": true,
+        "dependence_assessment_ref": null,
+        "user_formal_protocol_approved": false
+      },
+      "expected": {
+        "short_lag": "LAG_BELOW_OVERLAP",
+        "lag_equal_n": "INVALID_HORIZON_OR_LAG",
+        "missing_session": "IRREGULAR_OR_MISSING_IC",
+        "no_assumptions": "ASSUMPTIONS_UNVERIFIED",
+        "no_approval": "FORMAL_PROTOCOL_UNAPPROVED"
+      }
+    },
+    {
+      "id": "MULTI-FAILED-FAMILY",
+      "input": {
+        "raw_p": [
+          "1/100",
+          "1/25",
+          "3/100",
+          null
+        ],
+        "failure_reason": "CANDIDATE_FAILED",
+        "conservative_adjustment_p": [
+          "1/100",
+          "1/25",
+          "3/100",
+          "1"
+        ],
+        "m": 4
+      },
+      "expected": {
+        "Holm": [
+          "1/25",
+          "9/100",
+          "9/100",
+          "1"
+        ],
+        "BY": [
+          "1/12",
+          "1/9",
+          "1/9",
+          "1"
+        ],
+        "BH": [
+          "1/25",
+          "4/75",
+          "4/75",
+          "1"
+        ],
+        "formal_family_approvable": false,
+        "bh_dependency_evidence_required": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,821 @@
+{
+  "executor": "GPT Work supplementary reviewer; not Gemini",
+  "golden_sha256": "75e25b25bb024428a0323c7e5f3941ca6a33fc488adabaad0b24d8440c296bd5",
+  "reviewer_script_sha256": "5370af8de2c459f59f69f7bff686a6f32c59ab9b8ba2b0121bc713b6f99877f5",
+  "imports_aqrp": false,
+  "imports_developer_reference": false,
+  "cases": 15,
+  "scalar_checks": 75,
+  "passed": 75,
+  "failed": 0,
+  "tolerance": {
+    "absolute": "1e-12",
+    "relative": "1e-10",
+    "exact_for": "Fraction/Decimal rationals, indices, boolean state, hashes",
+    "floating_rule": "abs(a-e)<=max(atol,rtol*abs(e)); no tolerance relaxation"
+  },
+  "checks": [
+    {
+      "case": "P3-PV",
+      "field": "expected",
+      "actual": "3/50",
+      "expected": "3/50",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-PV",
+      "field": "formula",
+      "actual": "3/50",
+      "expected": "0.06",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-PV-ZERO-CURRENT",
+      "field": "expected",
+      "actual": "-1/10",
+      "expected": "-1/10",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-PV-ZERO-CURRENT",
+      "field": "formula",
+      "actual": "-1/10",
+      "expected": "-0.1",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-IC",
+      "field": "expected_formula",
+      "actual": "0.89368482496441742810612086895423438149282310138526253599619741824885242830357631",
+      "expected": "0.89368482496441742810612086895423438149282310138526253599619741824885242830357631",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-IC",
+      "field": "expected_spearman",
+      "actual": "0.9",
+      "expected": "9/10",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-TIE",
+      "field": "expected_ranks/0",
+      "actual": "3/2",
+      "expected": "3/2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-TIE",
+      "field": "expected_ranks/1",
+      "actual": "3/2",
+      "expected": "3/2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-TIE",
+      "field": "expected_ranks/2",
+      "actual": "3",
+      "expected": "3",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-TIE",
+      "field": "expected_spearman_formula",
+      "actual": "0.86602540378443864676372317075293618347140262690519031402790348972596650845440002",
+      "expected": "0.8660254037844386467637231707529361834714026269051903140279034897259665084544000",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_z_formula/0",
+      "actual": "-1.2649110640673517327995574177730874134878220557300867307430019411170377754556953",
+      "expected": "-1.2649110640673517327995574177730874134878220557300867307430019411170377754556953",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_z_formula/1",
+      "actual": "-0.63245553203367586639977870888654370674391102786504336537150097055851888772784765",
+      "expected": "-0.63245553203367586639977870888654370674391102786504336537150097055851888772784765",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_z_formula/2",
+      "actual": "0E+79",
+      "expected": "0E+79",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_z_formula/3",
+      "actual": "0.63245553203367586639977870888654370674391102786504336537150097055851888772784765",
+      "expected": "0.63245553203367586639977870888654370674391102786504336537150097055851888772784765",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_z_formula/4",
+      "actual": "1.2649110640673517327995574177730874134878220557300867307430019411170377754556953",
+      "expected": "1.2649110640673517327995574177730874134878220557300867307430019411170377754556953",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_ic_mean",
+      "actual": "1/5",
+      "expected": "1/5",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_ic_sample_std",
+      "actual": "0.1",
+      "expected": "1/10",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-Z-ICIR",
+      "field": "expected_icir",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/mean",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/std_ddof1",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/sum",
+      "actual": "6",
+      "expected": "6",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/min",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/max",
+      "actual": "3",
+      "expected": "3",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/correlation",
+      "actual": "-1",
+      "expected": "-1",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/delay1",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/delta1",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-ROLL",
+      "field": "expected/ts_rank",
+      "actual": "5/6",
+      "expected": "5/6",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-WINSOR",
+      "field": "expected/0",
+      "actual": "3/4",
+      "expected": "3/4",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-WINSOR",
+      "field": "expected/1",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-WINSOR",
+      "field": "expected/2",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-WINSOR",
+      "field": "expected/3",
+      "actual": "53/2",
+      "expected": "53/2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MAD",
+      "field": "median",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MAD",
+      "field": "MAD",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MAD",
+      "field": "expected/0",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MAD",
+      "field": "expected/1",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MAD",
+      "field": "expected/2",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MAD",
+      "field": "expected/3",
+      "actual": "3",
+      "expected": "3",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MAD",
+      "field": "expected/4",
+      "actual": "5",
+      "expected": "5",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-OLS",
+      "field": "expected_beta/0",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-OLS",
+      "field": "expected_beta/1",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-OLS",
+      "field": "expected_beta/2",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-OLS",
+      "field": "expected_residual/0",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-OLS",
+      "field": "expected_residual/1",
+      "actual": "-1",
+      "expected": "-1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-OLS",
+      "field": "expected_residual/2",
+      "actual": "-1",
+      "expected": "-1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-OLS",
+      "field": "expected_residual/3",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-GROUP",
+      "field": "expected_group_mean/0",
+      "actual": "-1/50",
+      "expected": "-1/50",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-GROUP",
+      "field": "expected_group_mean/1",
+      "actual": "1/100",
+      "expected": "1/100",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-GROUP",
+      "field": "expected_group_mean/2",
+      "actual": "1/20",
+      "expected": "1/20",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-GROUP",
+      "field": "expected_tmb",
+      "actual": "7/100",
+      "expected": "7/100",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-GROUP",
+      "field": "expected_monotonicity",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-HAC",
+      "field": "expected/mean",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-HAC",
+      "field": "expected/gamma0",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-HAC",
+      "field": "expected/gamma1",
+      "actual": "-3/4",
+      "expected": "-3/4",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-HAC",
+      "field": "expected/S",
+      "actual": "1/4",
+      "expected": "1/4",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-HAC",
+      "field": "expected/var_mean",
+      "actual": "1/16",
+      "expected": "1/16",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-HAC",
+      "field": "expected/se",
+      "actual": "0.25",
+      "expected": "1/4",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_holm/0",
+      "actual": "3/100",
+      "expected": "3/100",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_holm/1",
+      "actual": "3/50",
+      "expected": "3/50",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_holm/2",
+      "actual": "3/50",
+      "expected": "3/50",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_by/0",
+      "actual": "11/200",
+      "expected": "11/200",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_by/1",
+      "actual": "11/150",
+      "expected": "11/150",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_by/2",
+      "actual": "11/150",
+      "expected": "11/150",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_bh/0",
+      "actual": "3/100",
+      "expected": "3/100",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_bh/1",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "expected_bh/2",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-MULTI",
+      "field": "bh_requires_dependency_evidence",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-LABEL",
+      "field": "expected_entry_session",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-LABEL",
+      "field": "expected_exit_session",
+      "actual": "3",
+      "expected": "3",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-LABEL",
+      "field": "expected_return",
+      "actual": "1/10",
+      "expected": "1/10",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-LABEL-ACTION",
+      "field": "expected_return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-LABEL-ACTION",
+      "field": "formula",
+      "actual": "1/25",
+      "expected": "0.04",
+      "comparison": "max(abs_tol,rel_tol*abs(expected))",
+      "ok": true
+    },
+    {
+      "case": "P3-PURGE",
+      "field": "expected_purge",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-PURGE",
+      "field": "expected_safe_overlap",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-PURGE",
+      "field": "expected_post_holdout_blocked_sessions/0",
+      "actual": "7",
+      "expected": "7",
+      "comparison": "exact",
+      "ok": true
+    },
+    {
+      "case": "P3-PURGE",
+      "field": "expected_post_holdout_blocked_sessions/1",
+      "actual": "8",
+      "expected": "8",
+      "comparison": "exact",
+      "ok": true
+    }
+  ],
+  "details": [
+    {
+      "id": "P3-PV",
+      "note": {
+        "one_session_return": "1/10",
+        "volume_surprise": "3/5",
+        "wrong_L_return_product": "63/500"
+      }
+    },
+    {
+      "id": "P3-PV-ZERO-CURRENT",
+      "note": {
+        "one_session_return": "1/10",
+        "volume_surprise": "-1",
+        "wrong_L_return_product": "-21/100"
+      }
+    },
+    {
+      "id": "P3-IC",
+      "note": {
+        "x_sum": "0",
+        "y_sum": "3/100",
+        "cross_centered": "19/100",
+        "pearson": "0.89368482496441742810612086895423438149282310138526253599619741824885242830357631",
+        "rank_y": [
+          "1",
+          "3",
+          "2",
+          "4",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "P3-TIE",
+      "note": {
+        "spearman": "0.86602540378443864676372317075293618347140262690519031402790348972596650845440002"
+      }
+    },
+    {
+      "id": "P3-Z-ICIR",
+      "note": {
+        "x_variance": "5/2",
+        "z": [
+          "-1.2649110640673517327995574177730874134878220557300867307430019411170377754556953",
+          "-0.63245553203367586639977870888654370674391102786504336537150097055851888772784765",
+          "0E+79",
+          "0.63245553203367586639977870888654370674391102786504336537150097055851888772784765",
+          "1.2649110640673517327995574177730874134878220557300867307430019411170377754556953"
+        ],
+        "ic_variance": "1/100"
+      }
+    },
+    {
+      "id": "P3-ROLL",
+      "note": {}
+    },
+    {
+      "id": "P3-WINSOR",
+      "note": {
+        "lower": "3/4",
+        "upper": "53/2"
+      }
+    },
+    {
+      "id": "P3-MAD",
+      "note": {}
+    },
+    {
+      "id": "P3-OLS",
+      "note": {
+        "fitted": [
+          "1",
+          "3",
+          "3",
+          "5"
+        ],
+        "orthogonal_basis": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "-1/2",
+            "-1/2",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "-1",
+            "1",
+            "-1",
+            "1"
+          ]
+        ],
+        "X_transpose_e": [
+          "0",
+          "0",
+          "0"
+        ],
+        "sse": "4"
+      }
+    },
+    {
+      "id": "P3-GROUP",
+      "note": {
+        "bins": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "P3-HAC",
+      "note": {
+        "kernel": [
+          [
+            "1",
+            "1/2",
+            "0",
+            "0"
+          ],
+          [
+            "1/2",
+            "1",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1",
+            "1/2"
+          ],
+          [
+            "0",
+            "0",
+            "1/2",
+            "1"
+          ]
+        ],
+        "q0_var": "1/4",
+        "with_n_over_n_minus_1_correction": "1/12",
+        "formal_p": "NOT VERIFIED / arithmetic only, n=4 not validated for inference"
+      }
+    },
+    {
+      "id": "P3-MULTI",
+      "note": {
+        "whole_family_with_failed_p1": {
+          "holm": [
+            "1/25",
+            "9/100",
+            "9/100",
+            "1"
+          ],
+          "by": [
+            "1/12",
+            "1/9",
+            "1/9",
+            "1"
+          ],
+          "bh": [
+            "1/25",
+            "4/75",
+            "4/75",
+            "1"
+          ]
+        },
+        "harmonic": "11/6",
+        "method": "original hypothesis order restored"
+      }
+    },
+    {
+      "id": "P3-LABEL",
+      "note": {
+        "available_at": "not supplied; clock/effective/availability boundary NOT VERIFIED"
+      }
+    },
+    {
+      "id": "P3-LABEL-ACTION",
+      "note": {
+        "terminal_stock": "102",
+        "dividend_receivable": "2",
+        "return_if_no_entitlement": "1/50",
+        "limitation": "No ex/effective/record/pay/available/entry/exit instants in input; 4% conditional on entitlement, boundary NOT VERIFIED"
+      }
+    },
+    {
+      "id": "P3-PURGE",
+      "note": {}
+    }
+  ],
+  "implementation_validation": "NOT VERIFIED / no P3 implementation",
+  "formal_test_isolation": "NOT VERIFIED",
+  "formal_financial_approval": "NOT VERIFIED"
+}
