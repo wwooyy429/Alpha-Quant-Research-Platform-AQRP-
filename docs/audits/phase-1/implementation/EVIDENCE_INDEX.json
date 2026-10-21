@@ -1,7 +1,7 @@
 {
   "date": "2026-10-21",
   "phase": 1,
-  "state": "Implementation and incremental advisory PASS; seven errata AGREED; full independent execution NOT VERIFIED; human acceptance pending",
+  "state": "Phase1 ACCEPTED by user; not RELEASED; evidence limitations retained; main merge/tag/Phase2 not authorized",
   "reviewer": "Gemini implementation and supplemental errata confirmation PASS for74bdb92; not human acceptance",
   "plan_review_commit": "380d9f86467db874033a06a9e6487fd3998e205f",
   "latest_business_code_commit": "75c3139ed6d0cd0bf4c8d40c5e23f8328e380003",
@@ -93,7 +93,7 @@
   "historical_limitation_update": "Older NOT DOWNLOADED statements describe their original runs. Current developer downloaded exact Run39476825340 artifacts and verified both ZIPs/available files/datasets; Gemini actual execution remains blocked.",
   "incremental_sdk_hash_report": "../gemini/SDK_HASH_INCREMENTAL_INDEX.json",
   "current_incremental_developer_checks": "sdk-hash-incremental-8bf189d/checks.json",
-  "current_manifest": "VERIFICATION_PACKAGE_MANIFEST.json",
+  "current_manifest": "../acceptance/MANIFEST.json",
   "verification_package": "../gemini/VERIFICATION_PACKAGE_INDEX.json",
   "package_developer_checks": "verification-package-52ab650/checks.json",
   "evidence_update": "Reviewer hash script/log now supplied; previous no-new-attachments descriptions are historical. Full independent SDK/Actions artifact execution remains unverified.",
@@ -108,5 +108,8 @@
     "gemini_independent_execution": false,
     "human_accepted": false,
     "released": false
-  }
+  },
+  "human_accepted": true,
+  "human_acceptance": "../acceptance/ACCEPTANCE.json",
+  "historical_execution_status_note": "Earlier per-run human_accepted=false and missing-execution statements remain historical. Current human acceptance is in ../acceptance/ACCEPTANCE.json; independent execution facts unchanged."
 }

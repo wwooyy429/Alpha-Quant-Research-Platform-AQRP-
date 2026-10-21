@@ -1,5 +1,9 @@
 # Phase1实现审查包
 
+2026-10-21 最新人工决定：用户明确表示“phase 1验收已完成”，现登记 **Phase1 = ACCEPTED，尚未 RELEASED**。验收对应接收时PR #2的71cc044d5f4e2079426049c0f7c6f747fee01692（业务74bdb92），原话与范围见 docs/audits/phase-1/acceptance/ACCEPTANCE.json。此前“等待验收/未ACCEPTED”仅为历史；Gemini独立执行和原远端缺字节事实继续保留，本次未伪造逐项限制豁免。合并main、打标签及Phase2均未授权。
+
+以下既有状态段落保留为各轮历史，当前人工验收状态以上述记录为准。
+
 2026-10-21增量复核接收：Gemini对8bf189d明确PASS、七项ERR-P1-SDK-001～007全部AGREE。认可说明与实际执行完成分开登记；SDK全量仍未独立运行，ZIP/内部数据/跨OS执行方法未附新原始记录，不能按全部闭环登记。原件及新细节勘误/剩余门禁见SDK_HASH_INCREMENTAL_RECONCILIATION.md和gemini/SDK_HASH_INCREMENTAL_INDEX.json；用户未接受限制、未验收/发布，不合并、不打标签、不进入Phase2。
 
 以下各轮文字保留为历史；当前状态优先以上述增量核对为准。

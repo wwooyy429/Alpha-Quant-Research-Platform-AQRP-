@@ -1,5 +1,9 @@
 # 架构决策、冲突及待用户决定事项
 
+2026-10-21 最新人工决定：用户明确表示“phase 1验收已完成”，现登记 **Phase1 = ACCEPTED，尚未 RELEASED**。验收对应接收时PR #2的71cc044d5f4e2079426049c0f7c6f747fee01692（业务74bdb92），原话与范围见 docs/audits/phase-1/acceptance/ACCEPTANCE.json。此前“等待验收/未ACCEPTED”仅为历史；Gemini独立执行和原远端缺字节事实继续保留，本次未伪造逐项限制豁免。合并main、打标签及Phase2均未授权。
+
+以下既有状态段落保留为各轮历史，当前人工验收状态以上述记录为准。
+
 2026-10-21本轮决定边界：新增Gemini报告认可全部七项勘误、技术PASS；完整独立执行仍未获可核验原始证据，用户未接受限制。当前依据audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md，以下旧轮非阻断建议不代替用户决定。人工验收、合并/标签、主干基线和Phase2授权仍未发生。
 
 2026-10-21最新：本次SDK/hash报告承认Gemini执行受阻，不能按技术PASS视作专项完整通过。开发方补充原始ZIP及数据/SDK核对已实际完成，独立执行缺口仍需补齐或由用户明确决定接受；未发生该决定。详见audits/phase-1/SDK_HASH_VERIFICATION_RECONCILIATION.md；下列既有D-012等非阻断意见保留历史来源，不代替本次用户决定。
