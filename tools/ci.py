@@ -142,7 +142,48 @@ def main():
         if p.is_file() and p.name != "artifacts.json"
     }
     (RUN / "artifacts.json").write_text(
-        json.dumps([{"path": k, "sha256": v} for k, v in sorted(hashes.items())], indent=2),
+        json.dumps(
+            [
+                {
+                    "path": k,
+                    "sha256": v,
+                    "uploaded": k not in ("gitleaks.exe", "gitleaks", bootstrap.name),
+                }
+                for k, v in sorted(hashes.items())
+            ],
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    selected = []
+    for path in sorted(RUN.rglob("*")):
+        relative = path.relative_to(RUN)
+        if path.is_file() and (
+            (
+                len(relative.parts) == 1
+                and (path.suffix in (".log", ".json", ".xml") or path.name == ".coverage")
+            )
+            or relative.parts[0] in ("dataset", "wheel")
+        ):
+            selected.append(
+                {
+                    "path": relative.as_posix(),
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                }
+            )
+    (RUN / "upload-selection.json").write_text(
+        json.dumps(
+            {
+                "files": selected,
+                "self_excluded": True,
+                "omitted_local_tools": [
+                    "gitleaks.exe" if os.name == "nt" else "gitleaks",
+                    bootstrap.name,
+                ],
+                "policy": "Exact successful-run upload selection; pinned scanner/bootstrap binaries intentionally omitted. Historical missing bytes remain unverified.",
+            },
+            indent=2,
+        ),
         encoding="utf-8",
     )
     print(f"PASS: {RUN}")
