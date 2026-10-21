@@ -1,5 +1,9 @@
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
+2026-10-21 Phase2计划预审接收：Gemini对4f8b0de报告PLAN PASS、无阻断项；用户明确允许继续已授权范围。报告原件/需求职责与分支/数学勘误见docs/audits/phase-2/gemini/PRE_REVIEW_INDEX.json及PRE_REVIEW_RESPONSE.md。当前IMPLEMENTING；只实现10项既定需求和Momentum/Reversal/Volume，不按报告误写新增Volatility/DAG。未验收/合并/发布，不进入P3。
+
+以下为历史状态，当前以上述预审接收为准。
+
 2026-10-21 最新授权：用户明确“请正式开始进入phase 2”。已从核实main / phase1-baseline f579b2c99e762085772de6e70ba1fa98792a7add创建feature/phase-2-factor-registry；**Phase2 = PLAN PRE-REVIEW REQUIRED**。计划与10项需求映射见docs/audits/phase-2/PLAN.md和AUTHORIZATION.json；Gemini计划预审前不编写本阶段业务实现。Phase1已发布，既有执行限制保留；P2验收/合并/标签及P3尚未授权。此前“Phase2未授权”仅为历史。
 
 以下各轮状态保留历史来源；当前阶段权限以上述启动记录为准。
