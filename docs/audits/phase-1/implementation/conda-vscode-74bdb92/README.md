@@ -27,3 +27,7 @@
 原始命令/退出码、依赖安装、版本探针及任务日志在 `setup/`；两次正式入口的原始清单和已归档数据在 `formal-sdk/`、`workspace-sdk/`。`ARCHIVE_POLICY.json` 逐项核对本地完整清单：scanner/bootstrap wheel/venv/cache 留在非同步完整运行目录，不把这些大型第三方文件提交仓库；`.coverage` / `coverage.xml` 原字节分别以 `coverage.sqlite` / `coverage-report.xml` 归档，原清单不改。
 
 远端原始 ZIP 每平台仍有根清单 **3 项未上传**（`.coverage`、scanner、bootstrap pip wheel），项目 wheel 原始字节也未上传。新本地 wheel/文件不补齐旧远端字节，不宣称 14/14 全部复算；本地两次项目 wheel 的不同构建 hash 仅归属各自运行。Gemini 七项 AGREE 保留，但本轮执行不能登记成 Gemini 运行；完整独立执行缺口仍须补齐或由用户明确接受限制。此后仍需人工 Phase 1 验收、分别授权 main 合并/标签、最终 main 检查和稳定基线核验；Phase 2 需单独启动授权。用户当前没有作出这些批准。
+
+## 本轮 CI 路径修正
+
+初次归档85bcb34触发Run39576582339：Ubuntu通过，Windows在checkout因新增解包副本路径过长失败，业务步骤未执行；随后无产物上传为连带失败。原始job记录和解码日志见CI_FAILURE_39576582339.json。将本轮两组ZIP解包目录的artifact/run_id前缀缩短为ubuntu/windows，文件内容及原ZIP不变，映射在ARCHIVE_POLICY.json；不改CI或业务代码、不掩盖该次失败。修正提交须重新核对远端CI。

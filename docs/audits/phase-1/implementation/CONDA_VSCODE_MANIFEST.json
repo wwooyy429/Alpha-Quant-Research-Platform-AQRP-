@@ -1,7 +1,7 @@
 {
   "scope": "Current tracked and unignored delivery files, excluding self; previous manifests remain historical snapshots",
   "business_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
-  "source_before_archive": "7f4981b86fae7e293de8424a2631a873d90a62f3",
+  "source_before_archive": "85bcb3415d919dcd3d7bc4bab9c6d128e15f055c",
   "performed_by": "Codex developer",
   "full_independent_execution_verified": false,
   "human_accepted": false,
@@ -659,8 +659,8 @@
     },
     {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/ARCHIVE_POLICY.json",
-      "sha256": "1c2e16cb79e1ba5868a969e9968f21cca52b27625a0e958bf28b25f3159868f3",
-      "bytes": 8002
+      "sha256": "69d0d64f05463a7815ad278e5aa5f7ac94855c151af5dcacdf88207f5a8c3fd2",
+      "bytes": 43187
     },
     {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/AUTHORIZATION.json",
@@ -673,9 +673,14 @@
       "bytes": 3041
     },
     {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/CI_FAILURE_39576582339.json",
+      "sha256": "2838ac9cf396ba4bc7420714a4e389764b9db383accef858aba37b3bb3291eec",
+      "bytes": 25816
+    },
+    {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/README.md",
-      "sha256": "cdede3bcf8dc3a5784dfeae358cfd9d4c00c625ddd945fe1ca6afc83e8b8f2ec",
-      "bytes": 4933
+      "sha256": "aa4ad0aaf35b201ad18798b13535d9ae6a0a1b8a47e6b555154819a510e14a99",
+      "bytes": 5434
     },
     {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/conda-direct/coverage-report.xml",
@@ -884,7 +889,7 @@
     },
     {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/secret-scan.log",
-      "sha256": "c500bfa2c66bb2dd214ab0f98c35572547a9ceca27d7a20940e454174492a5ed",
+      "sha256": "313764d0d0b7253aa1b4bab0b95dce40a3cd4ee4642b029347b8e1c9292f3fda",
       "bytes": 240
     },
     {
@@ -1183,216 +1188,6 @@
       "bytes": 20215
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/artifacts.json",
-      "sha256": "4f9a34a79f1216b09839eff119c03ae1c5d78229f48303a09e516a42c0cc0b97",
-      "bytes": 1753
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/commands.log",
-      "sha256": "b9b49fe9b3c626d7198f1b786fae25c9ce183229a1fe74c4c2dbc0e357b8e83c",
-      "bytes": 11814
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/coverage-report.xml",
-      "sha256": "8a5894de27bf1d9f75007a6230184640fb2b7bbcb24f6a1b9dff5d1378292033",
-      "bytes": 37422
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/coverage.json",
-      "sha256": "dbbc0ca049deb766a9d130d6df10ad12c29a6af493ee76f6ba1812899bacf21c",
-      "bytes": 77769
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/adjustment_factors.parquet",
-      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
-      "bytes": 3159
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/bars_daily.parquet",
-      "sha256": "12e0ef934522e11734dd0fd3761377e809403f38583e8ea0de6064b10259d552",
-      "bytes": 9281
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/calendar.parquet",
-      "sha256": "2fc4082ea192fdc23f9a2b60e1f193ed362b280e9d5871e603d1d864461f6d68",
-      "bytes": 5314
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/corporate_actions.parquet",
-      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
-      "bytes": 4199
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/manifest.json",
-      "sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
-      "bytes": 3099
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_master.parquet",
-      "sha256": "038a1bb487c0152b92c510f82d6964fbb110f1753599b86356c8c9ed7800d860",
-      "bytes": 6050
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_status.parquet",
-      "sha256": "c147ff3236bd188754f8350f33704736792baa1dd35718a6bd0766db5a2cbcab",
-      "bytes": 4888
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/symbol_alias.parquet",
-      "sha256": "ce1b7a28414e1323368360bc3b195c827626c87b8bf666d5e16a06f5a3feaab1",
-      "bytes": 5133
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/universe_membership.parquet",
-      "sha256": "e5a9c03f10d31d142e2c4c8e95ddc3c9f74e13cae9a7446a48eb292295b43d5a",
-      "bytes": 4891
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/environment.json",
-      "sha256": "f544d536e8355e97ddc87e2f08554d3c3cb7f34a92f8eb899976ddaf6de2518a",
-      "bytes": 945
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/junit.xml",
-      "sha256": "eb9cd9c616003a9a4f88eb76568b77ffa2e362a6ccb04788918738112fa74c87",
-      "bytes": 15011
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/scan-findings.json",
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "bytes": 3
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/secret-scan.log",
-      "sha256": "6cc1ec6d05f4dde7740f4c78240302d66d778ee5738ebf9e531e433ee74988dd",
-      "bytes": 395
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-config.json",
-      "sha256": "6639840c235ae48a9bc40573e810a8bcc41213de1f8270f580f73397de12c885",
-      "bytes": 363
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-result.json",
-      "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
-      "bytes": 617
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-run.json",
-      "sha256": "2515256becb6a2596370f8602d7c1016ca0ccf449be76a7c03f6b68999ecb15e",
-      "bytes": 638
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-snapshot.json",
-      "sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
-      "bytes": 3099
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/artifacts.json",
-      "sha256": "37280c1d33cf5c61b8ea25a95aba5ce5a100fbefbfda44c253fab091b63e7062",
-      "bytes": 1692
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/commands.log",
-      "sha256": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033",
-      "bytes": 13061
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/coverage-report.xml",
-      "sha256": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd",
-      "bytes": 37114
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/coverage.json",
-      "sha256": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09",
-      "bytes": 78008
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/adjustment_factors.parquet",
-      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
-      "bytes": 3159
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/bars_daily.parquet",
-      "sha256": "74d9668d4abfdc8b43e6b0a2d794523dd339ac0b8d45b48cea296fd8a74197ae",
-      "bytes": 9281
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/calendar.parquet",
-      "sha256": "6e23a5562cec7ab515f0345b65429e542fbf50c9b8176545d3f3530bc7842775",
-      "bytes": 5314
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/corporate_actions.parquet",
-      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
-      "bytes": 4199
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/manifest.json",
-      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
-      "bytes": 3099
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_master.parquet",
-      "sha256": "5c8d8882b3bdf7b48724ea8dd8e40c0aa6e8d78b938ff9b7a289cbe28267eb5d",
-      "bytes": 6050
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_status.parquet",
-      "sha256": "8e36e5f675235fa71bd8d6abe9d51ce32c049c300d34568ee8656efdd2fae640",
-      "bytes": 4888
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/symbol_alias.parquet",
-      "sha256": "05fc4599999a7172c14487cd537c1d64aef18a1ce4878e9b5cb81ab88723183c",
-      "bytes": 5133
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/universe_membership.parquet",
-      "sha256": "d309c3499bcb1680456b5ecc9d04a160d123f0316c1f15ec5a3e2017dbb5fffd",
-      "bytes": 4891
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/environment.json",
-      "sha256": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10",
-      "bytes": 910
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/junit.xml",
-      "sha256": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1",
-      "bytes": 15010
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/scan-findings.json",
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "bytes": 3
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/secret-scan.log",
-      "sha256": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411",
-      "bytes": 395
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-config.json",
-      "sha256": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a",
-      "bytes": 363
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-result.json",
-      "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
-      "bytes": 617
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-run.json",
-      "sha256": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184",
-      "bytes": 646
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-snapshot.json",
-      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
-      "bytes": 3099
-    },
-    {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/coverage-12288679676.log",
       "sha256": "671dce3add38adfeb404749fc4d68a4536a8e011e5d52abb7595d5d4515bf83b",
       "bytes": 40
@@ -1473,218 +1268,218 @@
       "bytes": 3099
     },
     {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/artifacts.json",
+      "sha256": "37280c1d33cf5c61b8ea25a95aba5ce5a100fbefbfda44c253fab091b63e7062",
+      "bytes": 1692
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/commands.log",
+      "sha256": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033",
+      "bytes": 13061
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/coverage-report.xml",
+      "sha256": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd",
+      "bytes": 37114
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/coverage.json",
+      "sha256": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09",
+      "bytes": 78008
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/adjustment_factors.parquet",
+      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+      "bytes": 3159
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/bars_daily.parquet",
+      "sha256": "74d9668d4abfdc8b43e6b0a2d794523dd339ac0b8d45b48cea296fd8a74197ae",
+      "bytes": 9281
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/calendar.parquet",
+      "sha256": "6e23a5562cec7ab515f0345b65429e542fbf50c9b8176545d3f3530bc7842775",
+      "bytes": 5314
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/corporate_actions.parquet",
+      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+      "bytes": 4199
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/manifest.json",
+      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
+      "bytes": 3099
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_master.parquet",
+      "sha256": "5c8d8882b3bdf7b48724ea8dd8e40c0aa6e8d78b938ff9b7a289cbe28267eb5d",
+      "bytes": 6050
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_status.parquet",
+      "sha256": "8e36e5f675235fa71bd8d6abe9d51ce32c049c300d34568ee8656efdd2fae640",
+      "bytes": 4888
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/symbol_alias.parquet",
+      "sha256": "05fc4599999a7172c14487cd537c1d64aef18a1ce4878e9b5cb81ab88723183c",
+      "bytes": 5133
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/universe_membership.parquet",
+      "sha256": "d309c3499bcb1680456b5ecc9d04a160d123f0316c1f15ec5a3e2017dbb5fffd",
+      "bytes": 4891
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/environment.json",
+      "sha256": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10",
+      "bytes": 910
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/junit.xml",
+      "sha256": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1",
+      "bytes": 15010
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/scan-findings.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/secret-scan.log",
+      "sha256": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411",
+      "bytes": 395
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/smoke-config.json",
+      "sha256": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a",
+      "bytes": 363
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/smoke-result.json",
+      "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "bytes": 617
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/smoke-run.json",
+      "sha256": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184",
+      "bytes": 646
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/ubuntu/smoke-snapshot.json",
+      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
+      "bytes": 3099
+    },
+    {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/verification.json",
       "sha256": "b8b0c81d8a610e4eff06f28e52226f4bc5713d7562b831fbb27c231621589632",
       "bytes": 25748
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/artifacts.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/artifacts.json",
       "sha256": "4f9a34a79f1216b09839eff119c03ae1c5d78229f48303a09e516a42c0cc0b97",
       "bytes": 1753
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/commands.log",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/commands.log",
       "sha256": "b9b49fe9b3c626d7198f1b786fae25c9ce183229a1fe74c4c2dbc0e357b8e83c",
       "bytes": 11814
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/coverage-report.xml",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/coverage-report.xml",
       "sha256": "8a5894de27bf1d9f75007a6230184640fb2b7bbcb24f6a1b9dff5d1378292033",
       "bytes": 37422
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/coverage.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/coverage.json",
       "sha256": "dbbc0ca049deb766a9d130d6df10ad12c29a6af493ee76f6ba1812899bacf21c",
       "bytes": 77769
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/adjustment_factors.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/adjustment_factors.parquet",
       "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
       "bytes": 3159
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/bars_daily.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/bars_daily.parquet",
       "sha256": "12e0ef934522e11734dd0fd3761377e809403f38583e8ea0de6064b10259d552",
       "bytes": 9281
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/calendar.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/calendar.parquet",
       "sha256": "2fc4082ea192fdc23f9a2b60e1f193ed362b280e9d5871e603d1d864461f6d68",
       "bytes": 5314
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/corporate_actions.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/corporate_actions.parquet",
       "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
       "bytes": 4199
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/manifest.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/manifest.json",
       "sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
       "bytes": 3099
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_master.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_master.parquet",
       "sha256": "038a1bb487c0152b92c510f82d6964fbb110f1753599b86356c8c9ed7800d860",
       "bytes": 6050
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_status.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_status.parquet",
       "sha256": "c147ff3236bd188754f8350f33704736792baa1dd35718a6bd0766db5a2cbcab",
       "bytes": 4888
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/symbol_alias.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/symbol_alias.parquet",
       "sha256": "ce1b7a28414e1323368360bc3b195c827626c87b8bf666d5e16a06f5a3feaab1",
       "bytes": 5133
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/universe_membership.parquet",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/universe_membership.parquet",
       "sha256": "e5a9c03f10d31d142e2c4c8e95ddc3c9f74e13cae9a7446a48eb292295b43d5a",
       "bytes": 4891
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/environment.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/environment.json",
       "sha256": "f544d536e8355e97ddc87e2f08554d3c3cb7f34a92f8eb899976ddaf6de2518a",
       "bytes": 945
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/junit.xml",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/junit.xml",
       "sha256": "eb9cd9c616003a9a4f88eb76568b77ffa2e362a6ccb04788918738112fa74c87",
       "bytes": 15011
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/scan-findings.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/scan-findings.json",
       "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
       "bytes": 3
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/secret-scan.log",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/secret-scan.log",
       "sha256": "6cc1ec6d05f4dde7740f4c78240302d66d778ee5738ebf9e531e433ee74988dd",
       "bytes": 395
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-config.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/smoke-config.json",
       "sha256": "6639840c235ae48a9bc40573e810a8bcc41213de1f8270f580f73397de12c885",
       "bytes": 363
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-result.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/smoke-result.json",
       "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
       "bytes": 617
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-run.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/smoke-run.json",
       "sha256": "2515256becb6a2596370f8602d7c1016ca0ccf449be76a7c03f6b68999ecb15e",
       "bytes": 638
     },
     {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/smoke-snapshot.json",
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/windows/smoke-snapshot.json",
       "sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
-      "bytes": 3099
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/artifacts.json",
-      "sha256": "37280c1d33cf5c61b8ea25a95aba5ce5a100fbefbfda44c253fab091b63e7062",
-      "bytes": 1692
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/commands.log",
-      "sha256": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033",
-      "bytes": 13061
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/coverage-report.xml",
-      "sha256": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd",
-      "bytes": 37114
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/coverage.json",
-      "sha256": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09",
-      "bytes": 78008
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/adjustment_factors.parquet",
-      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
-      "bytes": 3159
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/bars_daily.parquet",
-      "sha256": "74d9668d4abfdc8b43e6b0a2d794523dd339ac0b8d45b48cea296fd8a74197ae",
-      "bytes": 9281
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/calendar.parquet",
-      "sha256": "6e23a5562cec7ab515f0345b65429e542fbf50c9b8176545d3f3530bc7842775",
-      "bytes": 5314
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/corporate_actions.parquet",
-      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
-      "bytes": 4199
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/manifest.json",
-      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
-      "bytes": 3099
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_master.parquet",
-      "sha256": "5c8d8882b3bdf7b48724ea8dd8e40c0aa6e8d78b938ff9b7a289cbe28267eb5d",
-      "bytes": 6050
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_status.parquet",
-      "sha256": "8e36e5f675235fa71bd8d6abe9d51ce32c049c300d34568ee8656efdd2fae640",
-      "bytes": 4888
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/symbol_alias.parquet",
-      "sha256": "05fc4599999a7172c14487cd537c1d64aef18a1ce4878e9b5cb81ab88723183c",
-      "bytes": 5133
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/universe_membership.parquet",
-      "sha256": "d309c3499bcb1680456b5ecc9d04a160d123f0316c1f15ec5a3e2017dbb5fffd",
-      "bytes": 4891
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/environment.json",
-      "sha256": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10",
-      "bytes": 910
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/junit.xml",
-      "sha256": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1",
-      "bytes": 15010
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/scan-findings.json",
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "bytes": 3
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/secret-scan.log",
-      "sha256": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411",
-      "bytes": 395
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-config.json",
-      "sha256": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a",
-      "bytes": 363
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-result.json",
-      "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
-      "bytes": 617
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-run.json",
-      "sha256": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184",
-      "bytes": 646
-    },
-    {
-      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/smoke-snapshot.json",
-      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
       "bytes": 3099
     },
     {
@@ -1768,9 +1563,219 @@
       "bytes": 3099
     },
     {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/artifacts.json",
+      "sha256": "37280c1d33cf5c61b8ea25a95aba5ce5a100fbefbfda44c253fab091b63e7062",
+      "bytes": 1692
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/commands.log",
+      "sha256": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033",
+      "bytes": 13061
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/coverage-report.xml",
+      "sha256": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd",
+      "bytes": 37114
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/coverage.json",
+      "sha256": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09",
+      "bytes": 78008
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/adjustment_factors.parquet",
+      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+      "bytes": 3159
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/bars_daily.parquet",
+      "sha256": "74d9668d4abfdc8b43e6b0a2d794523dd339ac0b8d45b48cea296fd8a74197ae",
+      "bytes": 9281
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/calendar.parquet",
+      "sha256": "6e23a5562cec7ab515f0345b65429e542fbf50c9b8176545d3f3530bc7842775",
+      "bytes": 5314
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/corporate_actions.parquet",
+      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+      "bytes": 4199
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/manifest.json",
+      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
+      "bytes": 3099
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_master.parquet",
+      "sha256": "5c8d8882b3bdf7b48724ea8dd8e40c0aa6e8d78b938ff9b7a289cbe28267eb5d",
+      "bytes": 6050
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_status.parquet",
+      "sha256": "8e36e5f675235fa71bd8d6abe9d51ce32c049c300d34568ee8656efdd2fae640",
+      "bytes": 4888
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/symbol_alias.parquet",
+      "sha256": "05fc4599999a7172c14487cd537c1d64aef18a1ce4878e9b5cb81ab88723183c",
+      "bytes": 5133
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/dataset/08e27061-7a93-459b-bedd-021363f27c77/universe_membership.parquet",
+      "sha256": "d309c3499bcb1680456b5ecc9d04a160d123f0316c1f15ec5a3e2017dbb5fffd",
+      "bytes": 4891
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/environment.json",
+      "sha256": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10",
+      "bytes": 910
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/junit.xml",
+      "sha256": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1",
+      "bytes": 15010
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/scan-findings.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/secret-scan.log",
+      "sha256": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411",
+      "bytes": 395
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/smoke-config.json",
+      "sha256": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a",
+      "bytes": 363
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/smoke-result.json",
+      "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "bytes": 617
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/smoke-run.json",
+      "sha256": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184",
+      "bytes": 646
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/ubuntu/smoke-snapshot.json",
+      "sha256": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
+      "bytes": 3099
+    },
+    {
       "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/verification.json",
       "sha256": "0a84a143248c5c49ab6400c950e98bc5d72152916ca07cf10c918063679e432c",
       "bytes": 25748
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/artifacts.json",
+      "sha256": "4f9a34a79f1216b09839eff119c03ae1c5d78229f48303a09e516a42c0cc0b97",
+      "bytes": 1753
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/commands.log",
+      "sha256": "b9b49fe9b3c626d7198f1b786fae25c9ce183229a1fe74c4c2dbc0e357b8e83c",
+      "bytes": 11814
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/coverage-report.xml",
+      "sha256": "8a5894de27bf1d9f75007a6230184640fb2b7bbcb24f6a1b9dff5d1378292033",
+      "bytes": 37422
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/coverage.json",
+      "sha256": "dbbc0ca049deb766a9d130d6df10ad12c29a6af493ee76f6ba1812899bacf21c",
+      "bytes": 77769
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/adjustment_factors.parquet",
+      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+      "bytes": 3159
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/bars_daily.parquet",
+      "sha256": "12e0ef934522e11734dd0fd3761377e809403f38583e8ea0de6064b10259d552",
+      "bytes": 9281
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/calendar.parquet",
+      "sha256": "2fc4082ea192fdc23f9a2b60e1f193ed362b280e9d5871e603d1d864461f6d68",
+      "bytes": 5314
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/corporate_actions.parquet",
+      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+      "bytes": 4199
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/manifest.json",
+      "sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
+      "bytes": 3099
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_master.parquet",
+      "sha256": "038a1bb487c0152b92c510f82d6964fbb110f1753599b86356c8c9ed7800d860",
+      "bytes": 6050
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_status.parquet",
+      "sha256": "c147ff3236bd188754f8350f33704736792baa1dd35718a6bd0766db5a2cbcab",
+      "bytes": 4888
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/symbol_alias.parquet",
+      "sha256": "ce1b7a28414e1323368360bc3b195c827626c87b8bf666d5e16a06f5a3feaab1",
+      "bytes": 5133
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/universe_membership.parquet",
+      "sha256": "e5a9c03f10d31d142e2c4c8e95ddc3c9f74e13cae9a7446a48eb292295b43d5a",
+      "bytes": 4891
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/environment.json",
+      "sha256": "f544d536e8355e97ddc87e2f08554d3c3cb7f34a92f8eb899976ddaf6de2518a",
+      "bytes": 945
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/junit.xml",
+      "sha256": "eb9cd9c616003a9a4f88eb76568b77ffa2e362a6ccb04788918738112fa74c87",
+      "bytes": 15011
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/scan-findings.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/secret-scan.log",
+      "sha256": "6cc1ec6d05f4dde7740f4c78240302d66d778ee5738ebf9e531e433ee74988dd",
+      "bytes": 395
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/smoke-config.json",
+      "sha256": "6639840c235ae48a9bc40573e810a8bcc41213de1f8270f580f73397de12c885",
+      "bytes": 363
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/smoke-result.json",
+      "sha256": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+      "bytes": 617
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/smoke-run.json",
+      "sha256": "2515256becb6a2596370f8602d7c1016ca0ccf449be76a7c03f6b68999ecb15e",
+      "bytes": 638
+    },
+    {
+      "path": "docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/windows/smoke-snapshot.json",
+      "sha256": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
+      "bytes": 3099
     },
     {
       "path": "docs/audits/phase-1/implementation/local-final-b6c3699/artifacts.json",

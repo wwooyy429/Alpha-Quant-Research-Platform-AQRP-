@@ -1,0 +1,188 @@
+{
+  "run_id": 39576582339,
+  "sha": "85bcb3415d919dcd3d7bc4bab9c6d128e15f055c",
+  "jobs": {
+    "total_count": 2,
+    "jobs": [
+      {
+        "id": 119143481474,
+        "run_id": 39576582339,
+        "workflow_name": "Phase 1 quality",
+        "head_branch": "feature/phase-1-data-system",
+        "run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39576582339",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVQ3oOs8AAAAbvYFAgg",
+        "head_sha": "85bcb3415d919dcd3d7bc4bab9c6d128e15f055c",
+        "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/jobs/119143481474",
+        "html_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39576582339/job/119143481474",
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-21T09:23:30Z",
+        "started_at": "2026-10-21T09:23:31Z",
+        "completed_at": "2026-10-21T09:24:14Z",
+        "name": "data-contracts (ubuntu-24.04)",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-21T09:23:32Z",
+            "completed_at": "2026-10-21T09:23:33Z"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-21T09:23:33Z",
+            "completed_at": "2026-10-21T09:23:34Z"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-21T09:23:34Z",
+            "completed_at": "2026-10-21T09:23:35Z"
+          },
+          {
+            "name": "Clean hashed install, wheel, tests and evidence",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-21T09:23:35Z",
+            "completed_at": "2026-10-21T09:24:11Z"
+          },
+          {
+            "name": "Upload raw evidence including failures",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-21T09:24:11Z",
+            "completed_at": "2026-10-21T09:24:12Z"
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9,
+            "started_at": "2026-10-21T09:24:12Z",
+            "completed_at": "2026-10-21T09:24:12Z"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10,
+            "started_at": "2026-10-21T09:24:12Z",
+            "completed_at": "2026-10-21T09:24:12Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11,
+            "started_at": "2026-10-21T09:24:12Z",
+            "completed_at": "2026-10-21T09:24:12Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/check-runs/119143481474",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 1000000038,
+        "runner_name": "GitHub Actions 1000000038",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      },
+      {
+        "id": 119143482808,
+        "run_id": 39576582339,
+        "workflow_name": "Phase 1 quality",
+        "head_branch": "feature/phase-1-data-system",
+        "run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39576582339",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVQ3oOs8AAAAbvYFFuA",
+        "head_sha": "85bcb3415d919dcd3d7bc4bab9c6d128e15f055c",
+        "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/jobs/119143482808",
+        "html_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39576582339/job/119143482808",
+        "status": "completed",
+        "conclusion": "failure",
+        "created_at": "2026-10-21T09:23:30Z",
+        "started_at": "2026-10-21T09:23:33Z",
+        "completed_at": "2026-10-21T09:23:46Z",
+        "name": "data-contracts (windows-latest)",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-21T09:23:34Z",
+            "completed_at": "2026-10-21T09:23:35Z"
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 2,
+            "started_at": "2026-10-21T09:23:35Z",
+            "completed_at": "2026-10-21T09:23:43Z"
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 3,
+            "started_at": "2026-10-21T09:23:43Z",
+            "completed_at": "2026-10-21T09:23:43Z"
+          },
+          {
+            "name": "Clean hashed install, wheel, tests and evidence",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 4,
+            "started_at": "2026-10-21T09:23:43Z",
+            "completed_at": "2026-10-21T09:23:43Z"
+          },
+          {
+            "name": "Upload raw evidence including failures",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 5,
+            "started_at": "2026-10-21T09:23:43Z",
+            "completed_at": "2026-10-21T09:23:43Z"
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10,
+            "started_at": "2026-10-21T09:23:43Z",
+            "completed_at": "2026-10-21T09:23:45Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11,
+            "started_at": "2026-10-21T09:23:45Z",
+            "completed_at": "2026-10-21T09:23:45Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/check-runs/119143482808",
+        "labels": [
+          "windows-latest"
+        ],
+        "runner_id": 1000000039,
+        "runner_name": "GitHub Actions 1000000039",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      }
+    ]
+  },
+  "windows_job_log": "﻿2026-10-21T09:23:34.4901888Z Current runner version: '2.337.0'\r\n2026-10-21T09:23:34.5110967Z ##[group]Runner Image Provisioner\r\n2026-10-21T09:23:34.5111792Z Hosted Compute Agent\r\n2026-10-21T09:23:34.5112387Z Version: 20261015.610\r\n2026-10-21T09:23:34.5113042Z Commit: 267fdb4e8bbec4ab5ea31367f3a00d5c480c7656\r\n2026-10-21T09:23:34.5113746Z Build Date: 2026-10-14T17:06:54Z\r\n2026-10-21T09:23:34.5114409Z Worker ID: {f24ea29d-5e3f-4e64-8895-4371b69b5a7d}\r\n2026-10-21T09:23:34.5115076Z Region: eastus2\r\n2026-10-21T09:23:34.5115623Z Cloud: Azure\r\n2026-10-21T09:23:34.5116150Z ##[endgroup]\r\n2026-10-21T09:23:34.5118181Z ##[group]Operating System\r\n2026-10-21T09:23:34.5118910Z Microsoft Windows Server 2025\r\n2026-10-21T09:23:34.5119500Z 10.0.26100\r\n2026-10-21T09:23:34.5119983Z Datacenter\r\n2026-10-21T09:23:34.5120504Z ##[endgroup]\r\n2026-10-21T09:23:34.5121018Z ##[group]Runner Image\r\n2026-10-21T09:23:34.5121636Z Image: windows-2025-vs2026\r\n2026-10-21T09:23:34.5122274Z Version: 20261018.275.1\r\n2026-10-21T09:23:34.5123809Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261018.275/images/windows/Windows2025-VS2026-Readme.md\r\n2026-10-21T09:23:34.5125506Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261018.275\r\n2026-10-21T09:23:34.5126452Z ##[endgroup]\r\n2026-10-21T09:23:34.5127551Z ##[group]GITHUB_TOKEN Permissions\r\n2026-10-21T09:23:34.5129534Z Contents: read\r\n2026-10-21T09:23:34.5130126Z Metadata: read\r\n2026-10-21T09:23:34.5130666Z ##[endgroup]\r\n2026-10-21T09:23:34.5132689Z Secret source: Actions\r\n2026-10-21T09:23:34.5133552Z Cache mode: write\r\n2026-10-21T09:23:34.5134376Z Prepare workflow directory\r\n2026-10-21T09:23:34.6051406Z Prepare all required actions\r\n2026-10-21T09:23:34.6099205Z Getting action download info\r\n2026-10-21T09:23:34.7708211Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)\r\n2026-10-21T09:23:34.9468544Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)\r\n2026-10-21T09:23:35.1574580Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)\r\n2026-10-21T09:23:35.8080394Z Complete job name: data-contracts (windows-latest)\r\n2026-10-21T09:23:36.3830780Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262\r\n2026-10-21T09:23:36.3832345Z with:\r\n2026-10-21T09:23:36.3832801Z   persist-credentials: false\r\n2026-10-21T09:23:36.3833504Z   repository: wwooyy429/Alpha-Quant-Research-Platform-AQRP-\r\n2026-10-21T09:23:36.3840521Z   token: ***\r\n2026-10-21T09:23:36.3841014Z   ssh-strict: true\r\n2026-10-21T09:23:36.3841457Z   ssh-user: git\r\n2026-10-21T09:23:36.3841885Z   clean: true\r\n2026-10-21T09:23:36.3842332Z   sparse-checkout-cone-mode: true\r\n2026-10-21T09:23:36.3842890Z   fetch-depth: 1\r\n2026-10-21T09:23:36.3843318Z   fetch-tags: false\r\n2026-10-21T09:23:36.3843763Z   show-progress: true\r\n2026-10-21T09:23:36.3844223Z   lfs: false\r\n2026-10-21T09:23:36.3844671Z   submodules: false\r\n2026-10-21T09:23:36.3845115Z   set-safe-directory: true\r\n2026-10-21T09:23:36.3845643Z   allow-unsafe-pr-checkout: false\r\n2026-10-21T09:23:36.3846535Z ##[endgroup]\r\n2026-10-21T09:23:36.5798628Z Syncing repository: wwooyy429/Alpha-Quant-Research-Platform-AQRP-\r\n2026-10-21T09:23:36.5800688Z ##[group]Getting Git version info\r\n2026-10-21T09:23:36.5801831Z Working directory is 'D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-'\r\n2026-10-21T09:23:36.6777760Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" version\r\n2026-10-21T09:23:36.9894218Z git version 2.56.0.windows.2\r\n2026-10-21T09:23:36.9945546Z ##[endgroup]\r\n2026-10-21T09:23:36.9978644Z Temporarily overriding HOME='D:\\a\\_temp\\c8586b66-f85f-4d02-9cc3-d1f1e2323dfd' before making global git config changes\r\n2026-10-21T09:23:36.9982126Z Adding repository directory to the temporary git global config as a safe directory\r\n2026-10-21T09:23:36.9986899Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --global --add safe.directory D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-\r\n2026-10-21T09:23:37.0635822Z Deleting the contents of 'D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-'\r\n2026-10-21T09:23:37.0642182Z ##[group]Initializing the repository\r\n2026-10-21T09:23:37.0650584Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" init D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-\r\n2026-10-21T09:23:37.1545281Z Initialized empty Git repository in D:/a/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-/.git/\r\n2026-10-21T09:23:37.1590719Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" remote add origin https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-\r\n2026-10-21T09:23:37.2258581Z ##[endgroup]\r\n2026-10-21T09:23:37.2260038Z ##[group]Disabling automatic garbage collection\r\n2026-10-21T09:23:37.2266546Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local gc.auto 0\r\n2026-10-21T09:23:37.2625835Z ##[endgroup]\r\n2026-10-21T09:23:37.2627621Z ##[group]Setting up auth\r\n2026-10-21T09:23:37.2637063Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp core\\.sshCommand\r\n2026-10-21T09:23:37.2997959Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"sh -c \\\"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\\\"\"\r\n2026-10-21T09:23:38.8801603Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\r\n2026-10-21T09:23:38.9180676Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"sh -c \\\"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\\\"\"\r\n2026-10-21T09:23:39.4944245Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp ^includeIf\\.gitdir:\r\n2026-10-21T09:23:39.5321760Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"git config --local --show-origin --name-only --get-regexp remote.origin.url\"\r\n2026-10-21T09:23:40.0712667Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local http.https://github.com/.extraheader \"AUTHORIZATION: basic ***\"\r\n2026-10-21T09:23:40.1097220Z ##[endgroup]\r\n2026-10-21T09:23:40.1097716Z ##[group]Fetching the repository\r\n2026-10-21T09:23:40.1117190Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +985445be3fb7722d9fcaac56876f9d741de8a844:refs/remotes/pull/2/merge\r\n2026-10-21T09:23:41.2538797Z From https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-\r\n2026-10-21T09:23:41.2539483Z  * [new ref]         985445be3fb7722d9fcaac56876f9d741de8a844 -> pull/2/merge\r\n2026-10-21T09:23:41.2579775Z ##[endgroup]\r\n2026-10-21T09:23:41.2580274Z ##[group]Determining the checkout info\r\n2026-10-21T09:23:41.2582829Z ##[endgroup]\r\n2026-10-21T09:23:41.2591863Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" sparse-checkout disable\r\n2026-10-21T09:23:41.3098859Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --unset-all extensions.worktreeConfig\r\n2026-10-21T09:23:41.3503121Z ##[group]Checking out the ref\r\n2026-10-21T09:23:41.3512427Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" checkout --progress --force refs/remotes/pull/2/merge\r\n2026-10-21T09:23:41.4717871Z warning: unable to access 'docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/.gitattributes': Filename too long\r\n2026-10-21T09:23:41.4744457Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/adjustment_factors.parquet: Filename too long\r\n2026-10-21T09:23:41.4752986Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/bars_daily.parquet: Filename too long\r\n2026-10-21T09:23:41.4757461Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/calendar.parquet: Filename too long\r\n2026-10-21T09:23:41.4760311Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/corporate_actions.parquet: Filename too long\r\n2026-10-21T09:23:41.4763855Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_master.parquet: Filename too long\r\n2026-10-21T09:23:41.4767895Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/security_status.parquet: Filename too long\r\n2026-10-21T09:23:41.4772000Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/symbol_alias.parquet: Filename too long\r\n2026-10-21T09:23:41.4775302Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb/universe_membership.parquet: Filename too long\r\n2026-10-21T09:23:41.4777404Z warning: unable to access 'docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/.gitattributes': Filename too long\r\n2026-10-21T09:23:41.4780668Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/adjustment_factors.parquet: Filename too long\r\n2026-10-21T09:23:41.4783611Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/bars_daily.parquet: Filename too long\r\n2026-10-21T09:23:41.4786440Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/calendar.parquet: Filename too long\r\n2026-10-21T09:23:41.4789293Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/corporate_actions.parquet: Filename too long\r\n2026-10-21T09:23:41.4792281Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_master.parquet: Filename too long\r\n2026-10-21T09:23:41.4795494Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/security_status.parquet: Filename too long\r\n2026-10-21T09:23:41.4798394Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/symbol_alias.parquet: Filename too long\r\n2026-10-21T09:23:41.4801430Z ##[error]error: unable to create file docs/audits/phase-1/implementation/conda-vscode-74bdb92/workspace-zip/12288989083/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09/dataset/08e27061-7a93-459b-bedd-021363f27c77/universe_membership.parquet: Filename too long\r\n2026-10-21T09:23:41.4854314Z ##[error]fatal: cannot create directory at 'docs/audits/phase-1/implementation/conda-vscode-74bdb92/zip-verification/12288679676/aqrp-16db7366-3882-46eb-b658-2b7306e17c07/dataset/e45fcfe7-1dc6-44e5-a3c7-6e47810faccb': Filename too long\r\n2026-10-21T09:23:41.4894878Z ##[group]Removing auth\r\n2026-10-21T09:23:41.4972249Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp core\\.sshCommand\r\n2026-10-21T09:23:41.5288391Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"sh -c \\\"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\\\"\"\r\n2026-10-21T09:23:42.0665846Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\r\n2026-10-21T09:23:42.0989966Z http.https://github.com/.extraheader\r\n2026-10-21T09:23:42.1032336Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --unset-all http.https://github.com/.extraheader\r\n2026-10-21T09:23:42.1393631Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"sh -c \\\"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\\\"\"\r\n2026-10-21T09:23:42.6964798Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp ^includeIf\\.gitdir:\r\n2026-10-21T09:23:42.7338570Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"git config --local --show-origin --name-only --get-regexp remote.origin.url\"\r\n2026-10-21T09:23:43.3371379Z ##[endgroup]\r\n2026-10-21T09:23:43.3408931Z ##[error]The process 'C:\\Program Files\\Git\\bin\\git.exe' failed with exit code 128\r\n2026-10-21T09:23:43.3814840Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\r\n2026-10-21T09:23:43.3815288Z with:\r\n2026-10-21T09:23:43.3815483Z   name: phase1-windows-latest-1\r\n2026-10-21T09:23:43.3816064Z   path: D:\\a\\_temp/aqrp-evidence/*/*.log\nD:\\a\\_temp/aqrp-evidence/*/*.json\nD:\\a\\_temp/aqrp-evidence/*/*.xml\nD:\\a\\_temp/aqrp-evidence/*/dataset/**/*\n\r\n2026-10-21T09:23:43.3816645Z   if-no-files-found: error\r\n2026-10-21T09:23:43.3816848Z   retention-days: 30\r\n2026-10-21T09:23:43.3817041Z   compression-level: 6\r\n2026-10-21T09:23:43.3817229Z   overwrite: false\r\n2026-10-21T09:23:43.3817417Z   include-hidden-files: false\r\n2026-10-21T09:23:43.3817635Z ##[endgroup]\r\n2026-10-21T09:23:43.5744379Z (node:8892) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\r\n2026-10-21T09:23:43.5747092Z (Use `node --trace-deprecation ...` to show where the warning was created)\r\n2026-10-21T09:23:43.5798238Z ##[error]No files were found with the provided path: D:\\a\\_temp/aqrp-evidence/*/*.log\nD:\\a\\_temp/aqrp-evidence/*/*.json\nD:\\a\\_temp/aqrp-evidence/*/*.xml\nD:\\a\\_temp/aqrp-evidence/*/dataset/**/*. No artifacts will be uploaded.\r\n2026-10-21T09:23:43.6203473Z Post job cleanup.\r\n2026-10-21T09:23:43.8143737Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" version\r\n2026-10-21T09:23:43.8494785Z git version 2.56.0.windows.2\r\n2026-10-21T09:23:43.8577917Z Temporarily overriding HOME='D:\\a\\_temp\\08738e9b-8c20-40c8-aef1-466d55b267bc' before making global git config changes\r\n2026-10-21T09:23:43.8579112Z Adding repository directory to the temporary git global config as a safe directory\r\n2026-10-21T09:23:43.8590598Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --global --add safe.directory D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-\r\n2026-10-21T09:23:43.9000854Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp core\\.sshCommand\r\n2026-10-21T09:23:43.9392689Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"sh -c \\\"git config --local --name-only --get-regexp 'core\\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\\\"\"\r\n2026-10-21T09:23:44.5323821Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp http\\.https\\:\\/\\/github\\.com\\/\\.extraheader\r\n2026-10-21T09:23:44.5691955Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"sh -c \\\"git config --local --name-only --get-regexp 'http\\.https\\:\\/\\/github\\.com\\/\\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\\\"\"\r\n2026-10-21T09:23:45.1051988Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" config --local --name-only --get-regexp ^includeIf\\.gitdir:\r\n2026-10-21T09:23:45.1417052Z [command]\"C:\\Program Files\\Git\\bin\\git.exe\" submodule foreach --recursive \"git config --local --show-origin --name-only --get-regexp remote.origin.url\"\r\n2026-10-21T09:23:45.7243626Z Cleaning up orphan processes\r\n2026-10-21T09:23:45.7281183Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\r\n",
+  "decoded_api_log": true,
+  "diagnosis": "Windows checkout failed: Filename too long in nested archived ZIP copies; Ubuntu passed. Compact archive paths preserve bytes; workflow/source unchanged."
+}
