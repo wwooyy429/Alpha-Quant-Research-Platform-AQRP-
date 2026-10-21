@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/2",
+    "number": 2,
+    "state": "closed",
+    "merged": true,
+    "mergeable": false,
+    "draft": false,
+    "body": "**Phase 1 已验收并发布：ACCEPTED / RELEASED。PR #2 已合并。** 用户先明确“phase 1验收已完成”，随后单独授权“请开始合并并打标签”。本次保留Git历史合并，再追加发布文档和原始主干验证证据，以原子推送同时更新main与附注标签。Phase2未授权、未启动。\n\nAQRP_PHASE: `1`\nAQRP_CURRENT_STATUS: `ACCEPTED / RELEASED / PHASE2 NOT AUTHORIZED`\nAQRP_FIXED_REVIEW_SHA: `18d51fbecc4a1526f2ab75d34874a0b25d00f6c1`（获准合并的PR head）\nAQRP_ACCEPTED_DELIVERY_SHA: `71cc044d5f4e2079426049c0f7c6f747fee01692`\nAQRP_AUDITED_IMPLEMENTATION_SHA: `74bdb9216c585d27de91123605aff0266ca028cc`\nAQRP_GEMINI_INCREMENTAL_REVIEW_SHA: `8bf189d76f15273a89eb4c2672c86e05a81aa148`\nAQRP_MERGE_SHA: `9b843b17ccf362cf5b7a5351269559a627c55b32`\nAQRP_RELEASE_SHA: `f579b2c99e762085772de6e70ba1fa98792a7add`\nAQRP_RELEASE_TAG: `phase1-baseline`\nAQRP_ANNOTATED_TAG_OBJECT: `1a8e47ee4be910aa7eeeefa430015e683a8aa6f5`\nAQRP_HUMAN_ACCEPTED: `true`\nAQRP_MERGE_AUTHORIZED: `true`\nAQRP_TAG_AUTHORIZED: `true`\nAQRP_RELEASED: `true`\nAQRP_PHASE2_AUTHORIZED: `false`\nAQRP_FULL_GEMINI_INDEPENDENT_EXECUTION_VERIFIED: `false`\nAQRP_USER_SPECIFIC_EXECUTION_LIMITATIONS_WAIVER: `NOT SEPARATELY SPECIFIED`\n\n发布资料：\n\n- [Phase1固定基线登记](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/BASELINE.md)、[全项目基线入口](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/BASELINE.md)。\n- [用户验收原话及绑定](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/acceptance/ACCEPTANCE.json)、[本次合并/标签授权原话与范围](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/publication/APPROVAL.json)。\n- [实际合并、双父/tree、完整SDK结果和原始产物逐项hash](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/publication/MERGE_VERIFICATION.json)、[合并后主干原始JUnit/coverage/环境/日志/快照/wheel](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/publication/sdk)。\n- [45份业务/测试/工具/CI/契约版本文件清单](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/publication/BASELINE_FILES.json)、[519项最终发布文件hash清单](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/publication/MANIFEST.json)（排除自身）、[发布前适用检查](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/publication/PRE_PUBLICATION_CHECKS.json)。\n- [当前进度](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/PROGRESS.md)、[路线图](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/ROADMAP.md)、[变更记录](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/CHANGELOG.md)。\n- [Gemini实现审查索引](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json)、[七项勘误AGREE及核对](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md)、[补充脚本/日志接收核对](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/VERIFICATION_PACKAGE_RECONCILIATION.md)、[此前Conda SDK/原始ZIP实际验证](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/f579b2c99e762085772de6e70ba1fa98792a7add/docs/audits/phase-1/implementation/conda-vscode-74bdb92/README.md)。\n\n实际发布核验：\n\n1. 合并前当前487项清单hash全部匹配；[CI Run39581713605](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39581713605) Windows/Ubuntu全部适用步骤成功，无GitHub未解决review线程或CHANGES_REQUESTED记录。\n2. PR以merge方式合并为9b843b17，父提交为原main502c693与PR head18d51fb；完整tree `16aa34f613f0b0a094dc6ce3f44465224ea54299` 与获准head一致，未引入额外内容。\n3. 在该合并后的干净main实际运行完整SDK：run_id `aqrp-04427a93-6375-4f62-9719-45b05084a7ad`，**102测试/0失败/0错误/0跳过**，锁定安装、wheel构建安装、静态/格式、模块覆盖率、独立参考数学、数据smoke、gitleaks/正负控制全部通过。执行者为Codex开发方，不冒充Gemini。\n4. 最终f579b2c仅追加41个发布/状态/证据文件变化，不改业务src/tests/tools/CI/锁/Golden，50份P0冻结资产与106条/16组保持不变；45项版本hash、519项最终清单hash与适用文档/秘密扫描通过。完整SDK运行归属合并提交9b843b17，最终记录提交仅文档变化，未声称在该提交重新跑同一套SDK。现有workflow仅在PR/feature push触发，不伪造main-push CI。\n5. `git push --atomic` 成功同时将main前进到f579b2c并创建phase1-baseline；远端Git refs、GitHub main API、PR merged状态、tag剥离SHA、main/tag完整内容一致及获准head/业务锚点祖先关系均核实。稳定标签不移动。\n6. phase0-baseline目标仍`7de1d0e81385ae97f98ea673fe05dd726f0b577b`，附注对象仍`0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0`。原B盘旧工作树未重置或自动迁移。\n\n范围与保留事实：\n\nPhase1只交付合成数据/通用契约14项需求、环境与质量工具。真实市场接入、因子Registry、研究、组合、回测、网页和后续阶段仍按既定范围Planned/Unsupported，不用模拟结果冒充完整系统。GUI信任和aqrp-p1解释器已由[实际补查](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/2#issuecomment-6312817278)确认。\n\n用户验收及发布授权已落实；Gemini全量SDK/原始Actions ZIP独立执行证据仍不完整，旧远端每平台3项根清单文件及项目wheel原字节仍缺失。原件、差异、失败历史和执行归属保持真实，不宣称Gemini已核验最终main Gate，也不伪造用户逐项豁免原话。今后的业务变化不自动沿用本次验收。**Phase2必须另获明确启动授权，并从核实main稳定基线创建独立分支；本次到此停止。**\n",
+    "title": "feat: Phase 1 synthetic point-in-time data system",
+    "base": "main",
+    "base_sha": "502c6931dcfce50bee2f71a80524475fae6396bf",
+    "head": "feature/phase-1-data-system",
+    "head_sha": "18d51fbecc4a1526f2ab75d34874a0b25d00f6c1",
+    "head_repo_id": 1426974778,
+    "head_repo_full_name": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "merge_commit_sha": "9b843b17ccf362cf5b7a5351269559a627c55b32",
+    "user": {
+      "login": "wwooyy429",
+      "name": "wwooyy429",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/80371541?v=4",
+      "id": 80371541
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-20T15:45:55Z",
+    "updated_at": "2026-10-21T10:14:17Z",
+    "closed_at": "2026-10-21T10:08:01Z",
+    "merged_at": "2026-10-21T10:08:01Z",
+    "commits": 15,
+    "changed_files": 427,
+    "additions": 34074,
+    "deletions": 41,
+    "display_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/2",
+    "display_title": "feat: Phase 1 synthetic point-in-time data system"
+  },
+  "isError": false
+}

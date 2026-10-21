@@ -1,0 +1,17 @@
+# Correction traceability
+
+Latest authorized execution receipt: delegated-31a548b/RECONCILIATION.md and CURRENT_DISPOSITION.json. WORK-P1-004 at31a548b is USER-AUTHORIZED SUBSTITUTE EXECUTION PASS, actual executor GPT Work, not Gemini; human quote verified from actual app userMessage. New234+16 execution/current raw ZIPs supplied. Earlier OPEN/awaiting-execution paragraphs below are historical. Seven repairs have supplemental execution PASS; historical005 missing bytes and separate user acceptance/merge/release/Phase2 integration gates remain.
+
+Latest receipt: recheck-3ab93b3/RECONCILIATION.md records GPT Work supplemental PASS for001–003 at3ab93b3 and confirmation of005 new upload policy. Later006–009 fixes at8902ba0 are outside that report; current fixed-SHA independent review and004 remain pending. No new business changes or test executions in this receipt.
+
+Latest round 2 corrective work: see round2/RECONCILIATION.md and round2/REVIEW_PACKAGE.md. The newly supplied report targets released f579, not repaired PR #4. Four additional confirmed implementation defects (WORK-P1-006–009) are being corrected within the previously authorized Phase 1 data-contract repair scope. Round 2 adds 86 semantic cases (234 total source tests passing); new clean SDK234tests, original16cases, dual-OS CI and original ZIP checks PASS at8902ba0; see round2/EXECUTION_EVIDENCE.md. Prior text below is first-round evidence at 3ab93b35c0b5e4e7b5e85c27f641748aa86cb24f, not proof that the new defects are independently closed. Core contracts and Golden answers remain frozen.
+
+| Finding | Requirements | Implementation | Regression/evidence |
+|---|---|---|---|
+| WORK-P1-001 | DATA-001, DATA-006, DATA-011, QA-002 | src/aqrp/data/quality.py normalize | tests/data/test_work_p1_validation.py field dimension, increments, null units; review-input/test_work_p1_regressions.py |
+| WORK-P1-002 | DATA-002, DATA-004, DATA-006, QA-002 | quality.py validate_action_sessions, validate_dataset | ex-date/effective boundary, local timezone, revision timing, ambiguous/overnight rejection |
+| WORK-P1-003 | DATA-006, QA-002 | quality.py known OHLC pairs | partial contradictory pairs; all 16 missing masks |
+| WORK-P1-004 | QA-001, QA-007 | evidence attribution only | review-input originals; DEVELOPER_RESPONSE; independent execution still open |
+| WORK-P1-005 | ENV-001, QA-001, QA-007 | tools/ci.py, .github/workflows/ci.yml | exact upload selection, wheel hash, coverage bytes; raw ZIP verification to follow |
+
+No new requirement IDs or taxonomy groups. Original 106 requirements, 16 groups and frozen Phase 0 files remain unchanged. Package version assertion changes to 0.1.1; original 102 tests retained and 46 semantic tests added.

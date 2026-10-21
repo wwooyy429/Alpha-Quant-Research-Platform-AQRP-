@@ -1,0 +1,59 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.16, pytest-9.1.1, pluggy-1.7.0
+cachedir: C:\Users\11638\AppData\Local\AQRP\runs\p1-round2-fix-20261021\source-cache
+rootdir: C:\Users\11638\AppData\Local\AQRP\checkouts\p1-fix-20261021
+configfile: pyproject.toml
+testpaths: tests
+plugins: hypothesis-6.170.5, cov-7.1.0
+collected 234 items
+
+tests\data\test_pit_query.py .....F.                                     [  2%]
+tests\data\test_quality.py ..............................                [ 15%]
+tests\data\test_revision_integrity.py ...                                [ 17%]
+tests\data\test_snapshot_actions.py ...........................          [ 28%]
+tests\data\test_time_units.py .......................                    [ 38%]
+tests\data\test_work_p1_round2.py ...................................... [ 54%]
+................................................                         [ 75%]
+tests\data\test_work_p1_validation.py .................................. [ 89%]
+............                                                             [ 94%]
+tests\environment\test_installation.py ..                                [ 95%]
+tests\integration\test_phase1_pipeline.py ..........                     [100%]
+
+================================== FAILURES ===================================
+__________________ test_data_009_order_independent_reference __________________
+
+    @given(st.permutations([0, 1, 2, 3]))
+>   def test_data_009_order_independent_reference(order):
+                   ^^^
+
+tests\data\test_pit_query.py:224: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\data\test_pit_query.py:243: in test_data_009_order_independent_reference
+    result = visible_rows("bars_daily", [records[i] for i in order], "2024-01-03T10:00:00Z")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'bars_daily'
+records = [{'security_id': 'A', 'session_date': datetime.date(2024, 1, 2), 'revision_id': 1, 'event_time': datetime.datetime(202...(2024, 1, 2), 'revision_id': 3, 'event_time': datetime.datetime(2024, 1, 2, 16, 0, tzinfo=datetime.timezone.utc), ...}]
+as_of = datetime.datetime(2024, 1, 3, 10, 0, tzinfo=datetime.timezone.utc)
+
+    def visible_rows(name, records, as_of):
+        as_of = utc(as_of, field="as_of")
+        groups = {}
+        for r in records:
+>           if r["available_at"] is None or r["quality_status"] == "UNKNOWN_AVAILABILITY":
+                                            ^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'quality_status'
+E           Failing test case: test_data_009_order_independent_reference(
+E               order=[0, 1, 2, 3],  # or any other generated value
+E           )
+
+src\aqrp\data\pit.py:13: KeyError
+- generated xml file: C:\Users\11638\AppData\Local\AQRP\runs\p1-round2-fix-20261021\source-junit.xml -
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Coverage JSON written to file C:\Users\11638\AppData\Local\AQRP\runs\p1-round2-fix-20261021\source-coverage.json
+=========================== short test summary info ===========================
+FAILED tests/data/test_pit_query.py::test_data_009_order_independent_reference
+======================= 1 failed, 233 passed in 24.97s ========================

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="33" skipped="0" tests="86" time="8.776" timestamp="2026-10-21T22:12:14.647212+08:00" hostname="天音"><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-adjustment_factors]" time="1.080"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002797ECEC400&gt;
+table = 'adjustment_factors', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-bars_daily]" time="0.113"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002791D0FE840&gt;
+table = 'bars_daily', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-calendar]" time="0.101"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002791D0FE520&gt;
+table = 'calendar', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-corporate_actions]" time="0.081"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002791D0FE980&gt;
+table = 'corporate_actions', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-security_master]" time="0.083"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002791D0FEFC0&gt;
+table = 'security_master', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-security_status]" time="0.083"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002791D0FF420&gt;
+table = 'security_status', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-symbol_alias]" time="0.081"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002791D0FF6A0&gt;
+table = 'symbol_alias', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[False-universe_membership]" time="0.093"><failure message="Failed: DID NOT RAISE DataQualityError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002791D0FEAC0&gt;
+table = 'universe_membership', missing_time = False
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    @pytest.mark.parametrize("missing_time", [False, True])
+    def test_work_p1_006_unknown_formal_rejected(populated, make_snapshot, table, missing_time):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        if missing_time:
+            row["available_at"] = None
+&gt;       with pytest.raises(DataQualityError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataQualityError
+
+tests\data\test_work_p1_round2.py:76: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-adjustment_factors]" time="0.015" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-bars_daily]" time="0.016" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-calendar]" time="0.015" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-corporate_actions]" time="0.014" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-security_master]" time="0.014" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-security_status]" time="0.014" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-symbol_alias]" time="0.015" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_unknown_formal_rejected[True-universe_membership]" time="0.012" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[adjustment_factors]" time="0.117" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[bars_daily]" time="0.125" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[calendar]" time="0.123" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[corporate_actions]" time="0.121" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[security_master]" time="0.118" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[security_status]" time="0.128" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[symbol_alias]" time="0.140" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_exploratory_preserves_unknown[universe_membership]" time="0.150" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_all_formal_entries_reject_exploratory[query]" time="0.293" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_all_formal_entries_reject_exploratory[universe]" time="0.235" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_all_formal_entries_reject_exploratory[status]" time="0.236" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_all_formal_entries_reject_exploratory[aliases]" time="0.218" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_all_formal_entries_reject_exploratory[actions]" time="0.211" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_all_formal_entries_reject_exploratory[announcements]" time="0.232" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_missing_price_must_not_erase_unknown" time="0.006"><failure message="AssertionError: assert 'MISSING' == 'UNKNOWN_AVAILABILITY'&#10;  &#10;  - UNKNOWN_AVAILABILITY&#10;  + MISSING">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795E20B560&gt;
+
+    def test_work_p1_006_missing_price_must_not_erase_unknown(tables, make_snapshot):
+        row = tables["bars_daily"][0]
+        row.update(close=None, quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        result = validate_table("bars_daily", [row])
+&gt;       assert result.table.to_pylist()[0]["quality_status"] == "UNKNOWN_AVAILABILITY"
+E       AssertionError: assert 'MISSING' == 'UNKNOWN_AVAILABILITY'
+E         
+E         - UNKNOWN_AVAILABILITY
+E         + MISSING
+
+tests\data\test_work_p1_round2.py:118: AssertionError</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[adjustment_factors]" time="0.001"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'adjustment_factors'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[bars_daily]" time="0.002"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'bars_daily'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[calendar]" time="0.001"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'calendar'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[corporate_actions]" time="0.002"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'corporate_actions'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[security_master]" time="0.002"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'security_master'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[security_status]" time="0.001"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'security_status'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[symbol_alias]" time="0.001"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'symbol_alias'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_visible_boundary_checks_flag_even_future[universe_membership]" time="0.002"><failure message="Failed: DID NOT RAISE TimeLeakageError">populated = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+table = 'universe_membership'
+
+    @pytest.mark.parametrize("table", sorted(SCHEMAS))
+    def test_work_p1_006_visible_boundary_checks_flag_even_future(populated, table):
+        row = populated[table][0]
+        row.update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+&gt;       with pytest.raises(TimeLeakageError, match="UNKNOWN_AVAILABILITY"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimeLeakageError
+
+tests\data\test_work_p1_round2.py:128: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_resealed_formal_claim_is_revalidated[bars_daily]" time="0.174"><failure message="Failed: DID NOT RAISE SnapshotMismatch">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795E1F4C20&gt;
+table = 'bars_daily'
+
+    @pytest.mark.parametrize("table", ["bars_daily", "security_master", "calendar", "universe_membership"])
+    def test_work_p1_006_resealed_formal_claim_is_revalidated(tables, make_snapshot, table):
+        tables[table][0].update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        ref = make_snapshot(tables, exploratory=True)
+        path = ref.root / ref.snapshot_id / "manifest.json"
+        manifest, _ = verify_snapshot(ref)
+        manifest["pit_status"] = "PIT_VERIFIED"
+        # Adversarial input construction, not an expected-value oracle.
+        manifest["manifest_hash"] = manifest_digest(manifest)
+        path.write_bytes(canonical(manifest))
+&gt;       with pytest.raises(SnapshotMismatch, match="SNAPSHOT_INVALID"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE SnapshotMismatch
+
+tests\data\test_work_p1_round2.py:142: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_resealed_formal_claim_is_revalidated[security_master]" time="0.181"><failure message="Failed: DID NOT RAISE SnapshotMismatch">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795E1F5440&gt;
+table = 'security_master'
+
+    @pytest.mark.parametrize("table", ["bars_daily", "security_master", "calendar", "universe_membership"])
+    def test_work_p1_006_resealed_formal_claim_is_revalidated(tables, make_snapshot, table):
+        tables[table][0].update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        ref = make_snapshot(tables, exploratory=True)
+        path = ref.root / ref.snapshot_id / "manifest.json"
+        manifest, _ = verify_snapshot(ref)
+        manifest["pit_status"] = "PIT_VERIFIED"
+        # Adversarial input construction, not an expected-value oracle.
+        manifest["manifest_hash"] = manifest_digest(manifest)
+        path.write_bytes(canonical(manifest))
+&gt;       with pytest.raises(SnapshotMismatch, match="SNAPSHOT_INVALID"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE SnapshotMismatch
+
+tests\data\test_work_p1_round2.py:142: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_resealed_formal_claim_is_revalidated[calendar]" time="0.176"><failure message="Failed: DID NOT RAISE SnapshotMismatch">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795E1F4400&gt;
+table = 'calendar'
+
+    @pytest.mark.parametrize("table", ["bars_daily", "security_master", "calendar", "universe_membership"])
+    def test_work_p1_006_resealed_formal_claim_is_revalidated(tables, make_snapshot, table):
+        tables[table][0].update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        ref = make_snapshot(tables, exploratory=True)
+        path = ref.root / ref.snapshot_id / "manifest.json"
+        manifest, _ = verify_snapshot(ref)
+        manifest["pit_status"] = "PIT_VERIFIED"
+        # Adversarial input construction, not an expected-value oracle.
+        manifest["manifest_hash"] = manifest_digest(manifest)
+        path.write_bytes(canonical(manifest))
+&gt;       with pytest.raises(SnapshotMismatch, match="SNAPSHOT_INVALID"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE SnapshotMismatch
+
+tests\data\test_work_p1_round2.py:142: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_006_resealed_formal_claim_is_revalidated[universe_membership]" time="0.186"><failure message="Failed: DID NOT RAISE SnapshotMismatch">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795E1F4900&gt;
+table = 'universe_membership'
+
+    @pytest.mark.parametrize("table", ["bars_daily", "security_master", "calendar", "universe_membership"])
+    def test_work_p1_006_resealed_formal_claim_is_revalidated(tables, make_snapshot, table):
+        tables[table][0].update(quality_status="UNKNOWN_AVAILABILITY", reason_code="SOURCE_HISTORY_UNVERIFIED")
+        ref = make_snapshot(tables, exploratory=True)
+        path = ref.root / ref.snapshot_id / "manifest.json"
+        manifest, _ = verify_snapshot(ref)
+        manifest["pit_status"] = "PIT_VERIFIED"
+        # Adversarial input construction, not an expected-value oracle.
+        manifest["manifest_hash"] = manifest_digest(manifest)
+        path.write_bytes(canonical(manifest))
+&gt;       with pytest.raises(SnapshotMismatch, match="SNAPSHOT_INVALID"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE SnapshotMismatch
+
+tests\data\test_work_p1_round2.py:142: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[C:\\outside.tzif]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[C:/outside.tzif]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[C:outside.tzif]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[\\\\server\\clock]" time="2.670" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[\\UTC]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[/UTC]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[Etc\\UTC]" time="0.002"><failure message="Failed: DID NOT RAISE ContractError">bad = 'Etc\\UTC'
+
+    @pytest.mark.parametrize(
+        "bad",
+        ["C:\\outside.tzif", "C:/outside.tzif", "C:outside.tzif", "\\\\server\\clock", "\\UTC", "/UTC", "Etc\\UTC", "../UTC", "Etc/../UTC", "Etc/./UTC", "Etc//UTC", "UTC/", " UTC", "UTC\x00"],
+    )
+    def test_work_p1_007_timezone_key_namespace(bad):
+&gt;       with pytest.raises(ContractError, match="INVALID_TIMEZONE"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+tests\data\test_work_p1_round2.py:151: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[../UTC]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[Etc/../UTC]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[Etc/./UTC]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[Etc//UTC]" time="0.000" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[UTC/]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[ UTC]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_timezone_key_namespace[UTC\x00]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_real_iana_keys[UTC]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_real_iana_keys[Etc/GMT+12]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_real_iana_keys[America/New_York]" time="0.002" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_real_iana_keys[Asia/Shanghai]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_007_external_bytes_cannot_affect_fixed_snapshot" time="0.007"><failure message="Failed: DID NOT RAISE ContractError">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/regression-tmp/test_work_p1_007_external_byte0')
+tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795F218900&gt;
+spec = QuerySpec(security_ids=('SYN_A:001',), market_id='SYN_A', calendar_id='SYN_A_CAL', session_range=(datetime.date(2024, ...se', 'volume'), price_basis='RAW', request_id='b8accbc3-d5d8-4771-b572-f95b80bfd8d7', schema_version='contracts/1.0.0')
+
+    def test_work_p1_007_external_bytes_cannot_affect_fixed_snapshot(tmp_path, tables, make_snapshot, spec):
+        outside = tmp_path / "external.tzif"
+        outside.write_bytes(files("tzdata.zoneinfo").joinpath("UTC").read_bytes())
+&gt;       with pytest.raises(ContractError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+tests\data\test_work_p1_round2.py:163: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_int64_bad_row_counted[9223372036854775808]" time="0.007"><failure message="OverflowError: int too big to convert">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795F218A40&gt;
+bad = 9223372036854775808
+
+    @pytest.mark.parametrize("bad", [2**63, 2**100, -(2**63)-1, -1, True, "1", 1.0])
+    def test_work_p1_008_int64_bad_row_counted(tables, make_snapshot, bad):
+        row = tables["bars_daily"][0]
+        row["revision_id"] = bad
+&gt;       result = validate_table("bars_daily", [row])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\data\test_work_p1_round2.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\data\quality.py:250: in validate_table
+    pa.Table.from_pylist(accepted, schema=SCHEMAS[name]),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyarrow/table.pxi:2051: in pyarrow.lib._Tabular.from_pylist
+    ???
+pyarrow/table.pxi:6495: in pyarrow.lib._from_pylist
+    ???
+pyarrow/table.pxi:4877: in pyarrow.lib.Table.from_arrays
+    ???
+pyarrow/table.pxi:1633: in pyarrow.lib._sanitize_arrays
+    ???
+pyarrow/array.pxi:454: in pyarrow.lib.asarray
+    ???
+pyarrow/array.pxi:424: in pyarrow.lib.array
+    ???
+pyarrow/array.pxi:52: in pyarrow.lib._sequence_to_array
+    ???
+pyarrow/error.pxi:155: in pyarrow.lib.pyarrow_internal_check_status
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   ???
+E   OverflowError: int too big to convert
+
+pyarrow/error.pxi:89: OverflowError</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_int64_bad_row_counted[1267650600228229401496703205376]" time="0.006"><failure message="OverflowError: int too big to convert">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x000002795F219EE0&gt;
+bad = 1267650600228229401496703205376
+
+    @pytest.mark.parametrize("bad", [2**63, 2**100, -(2**63)-1, -1, True, "1", 1.0])
+    def test_work_p1_008_int64_bad_row_counted(tables, make_snapshot, bad):
+        row = tables["bars_daily"][0]
+        row["revision_id"] = bad
+&gt;       result = validate_table("bars_daily", [row])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\data\test_work_p1_round2.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\data\quality.py:250: in validate_table
+    pa.Table.from_pylist(accepted, schema=SCHEMAS[name]),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyarrow/table.pxi:2051: in pyarrow.lib._Tabular.from_pylist
+    ???
+pyarrow/table.pxi:6495: in pyarrow.lib._from_pylist
+    ???
+pyarrow/table.pxi:4877: in pyarrow.lib.Table.from_arrays
+    ???
+pyarrow/table.pxi:1633: in pyarrow.lib._sanitize_arrays
+    ???
+pyarrow/array.pxi:454: in pyarrow.lib.asarray
+    ???
+pyarrow/array.pxi:424: in pyarrow.lib.array
+    ???
+pyarrow/array.pxi:52: in pyarrow.lib._sequence_to_array
+    ???
+pyarrow/error.pxi:155: in pyarrow.lib.pyarrow_internal_check_status
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+&gt;   ???
+E   OverflowError: int too big to convert
+
+pyarrow/error.pxi:89: OverflowError</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_int64_bad_row_counted[-9223372036854775809]" time="0.014" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_int64_bad_row_counted[-1]" time="0.013" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_int64_bad_row_counted[True]" time="0.017" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_int64_bad_row_counted[1]" time="0.017" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_int64_bad_row_counted[1.0]" time="0.023" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_008_mixed_rows_conserve_counts_and_locate_field" time="0.002"><failure message="Failed: DID NOT RAISE ContractError">tables = {'security_master': [{'schema_version': 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_... 'data/1.0.0', 'snapshot_id': 'unpublished', 'source_id': 'SYNTHETIC', 'source_record_id': 'synthetic-row', ...}], ...}
+
+    def test_work_p1_008_mixed_rows_conserve_counts_and_locate_field(tables):
+        good = tables["bars_daily"][0]
+        maximum = deepcopy(good)
+        maximum["revision_id"] = 2**63-1
+        overflow = deepcopy(good)
+        overflow["revision_id"] = 2**63
+&gt;       with pytest.raises(ContractError) as exc:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+tests\data\test_work_p1_round2.py:192: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_all_fractional_parts_lossless[2024-01-02T16:00:00.000000+00:00:00.000000001]" time="0.001"><failure message="Failed: DID NOT RAISE TimestampResolutionError">value = '2024-01-02T16:00:00.000000+00:00:00.000000001'
+
+    @pytest.mark.parametrize(
+        "value",
+        ["2024-01-02T16:00:00.000000+00:00:00.000000001", "2024-01-02T16:00:00+00:00:00.000000001", "2024-01-02T16:00:00.000000-01:00:00.000000001", "2024-01-02T16:00:00,000000+01:00:00,000000001", "2024-01-02T16:00:00.123456001+00:00:00.000000000"],
+    )
+    def test_work_p1_009_all_fractional_parts_lossless(value):
+&gt;       with pytest.raises(TimestampResolutionError, match="SUB_MICROSECOND"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimestampResolutionError
+
+tests\data\test_work_p1_round2.py:207: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_all_fractional_parts_lossless[2024-01-02T16:00:00+00:00:00.000000001]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_all_fractional_parts_lossless[2024-01-02T16:00:00.000000-01:00:00.000000001]" time="0.001"><failure message="Failed: DID NOT RAISE TimestampResolutionError">value = '2024-01-02T16:00:00.000000-01:00:00.000000001'
+
+    @pytest.mark.parametrize(
+        "value",
+        ["2024-01-02T16:00:00.000000+00:00:00.000000001", "2024-01-02T16:00:00+00:00:00.000000001", "2024-01-02T16:00:00.000000-01:00:00.000000001", "2024-01-02T16:00:00,000000+01:00:00,000000001", "2024-01-02T16:00:00.123456001+00:00:00.000000000"],
+    )
+    def test_work_p1_009_all_fractional_parts_lossless(value):
+&gt;       with pytest.raises(TimestampResolutionError, match="SUB_MICROSECOND"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimestampResolutionError
+
+tests\data\test_work_p1_round2.py:207: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_all_fractional_parts_lossless[2024-01-02T16:00:00,000000+01:00:00,000000001]" time="0.001"><failure message="Failed: DID NOT RAISE TimestampResolutionError">value = '2024-01-02T16:00:00,000000+01:00:00,000000001'
+
+    @pytest.mark.parametrize(
+        "value",
+        ["2024-01-02T16:00:00.000000+00:00:00.000000001", "2024-01-02T16:00:00+00:00:00.000000001", "2024-01-02T16:00:00.000000-01:00:00.000000001", "2024-01-02T16:00:00,000000+01:00:00,000000001", "2024-01-02T16:00:00.123456001+00:00:00.000000000"],
+    )
+    def test_work_p1_009_all_fractional_parts_lossless(value):
+&gt;       with pytest.raises(TimestampResolutionError, match="SUB_MICROSECOND"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimestampResolutionError
+
+tests\data\test_work_p1_round2.py:207: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_all_fractional_parts_lossless[2024-01-02T16:00:00.123456001+00:00:00.000000000]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_exact_offset_and_zero_tails[2024-01-02T16:00:00.123456000Z-expected0]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_exact_offset_and_zero_tails[2024-01-02T16:00:00.123456+00:00:00.000001-expected1]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_exact_offset_and_zero_tails[2024-01-02T16:00:00.123456-00:00:00.000001-expected2]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_exact_offset_and_zero_tails[2024-01-02T16:00:00+01:02:03.123456000-expected3]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_exact_offset_and_zero_tails[2024-01-02T00:30:00+08:00-expected4]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_exact_offset_and_zero_tails[2024-01-02 16:00:00,123456+00:00:00,000000000-expected5]" time="0.002" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_unsupported_offset_grammar[+00:99]" time="0.001"><failure message="Failed: DID NOT RAISE ContractError">suffix = '+00:99'
+
+    @pytest.mark.parametrize("suffix", ["+00:99", "+00:00:99", "+24:00", "+00.1", "+00:00.1"])
+    def test_work_p1_009_unsupported_offset_grammar(suffix):
+&gt;       with pytest.raises(ContractError, match="INVALID_TIMESTAMP"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+tests\data\test_work_p1_round2.py:228: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_unsupported_offset_grammar[+00:00:99]" time="0.001"><failure message="Failed: DID NOT RAISE ContractError">suffix = '+00:00:99'
+
+    @pytest.mark.parametrize("suffix", ["+00:99", "+00:00:99", "+24:00", "+00.1", "+00:00.1"])
+    def test_work_p1_009_unsupported_offset_grammar(suffix):
+&gt;       with pytest.raises(ContractError, match="INVALID_TIMESTAMP"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+tests\data\test_work_p1_round2.py:228: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_unsupported_offset_grammar[+24:00]" time="0.001" /><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_unsupported_offset_grammar[+00.1]" time="0.001"><failure message="Failed: DID NOT RAISE ContractError">suffix = '+00.1'
+
+    @pytest.mark.parametrize("suffix", ["+00:99", "+00:00:99", "+24:00", "+00.1", "+00:00.1"])
+    def test_work_p1_009_unsupported_offset_grammar(suffix):
+&gt;       with pytest.raises(ContractError, match="INVALID_TIMESTAMP"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+tests\data\test_work_p1_round2.py:228: Failed</failure></testcase><testcase classname="tests.data.test_work_p1_round2" name="test_work_p1_009_unsupported_offset_grammar[+00:00.1]" time="0.001"><failure message="Failed: DID NOT RAISE ContractError">suffix = '+00:00.1'
+
+    @pytest.mark.parametrize("suffix", ["+00:99", "+00:00:99", "+24:00", "+00.1", "+00:00.1"])
+    def test_work_p1_009_unsupported_offset_grammar(suffix):
+&gt;       with pytest.raises(ContractError, match="INVALID_TIMESTAMP"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+tests\data\test_work_p1_round2.py:228: Failed</failure></testcase></testsuite></testsuites>

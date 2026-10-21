@@ -1,0 +1,491 @@
+{
+  "audit": "GPT Work 补充审核",
+  "time_utc": "2026-10-21T13:21:41.565660+00:00",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\runs\\aqrp-b3151194-e140-41c1-ab75-baaf42589142\\venv\\Scripts\\python.exe",
+  "results": [
+    {
+      "artifact_id": 12338115029,
+      "sha256": "13cea520aa96ac63619e353fb55a45e580571cdd8da85485a820f119894d3864",
+      "bytes": 35670,
+      "head_sha": "18d51fbecc4a1526f2ab75d34874a0b25d00f6c1",
+      "environment": {
+        "run_id": "aqrp-9534d65b-f610-4660-9ca8-f9c40ac38c4a",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261018.275.1",
+        "code_commit": "c0dd568dcaf2e74e82c3df4c417279b5d9166c1f",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-9534d65b-f610-4660-9ca8-f9c40ac38c4a",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39581713605",
+        "github_run_attempt": "1",
+        "github_sha": "c0dd568dcaf2e74e82c3df4c417279b5d9166c1f",
+        "wheel_sha256": "2c8028b9d0ce9e744a647dcc799b1c24a31dcff3f25a414325cfa2747e6687f3"
+      },
+      "topology": {
+        "exit_code": 128,
+        "stdout": "",
+        "stderr": "fatal: bad object c0dd568dcaf2e74e82c3df4c417279b5d9166c1f\n"
+      },
+      "root_hashes_matched": 11,
+      "root_hashes_total": 14,
+      "missing": [
+        ".coverage",
+        "gitleaks.exe",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "project_wheel_present": false,
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "sdk_snapshot_verification": "PASS",
+      "sdk_query_replay": "PASS",
+      "independent_manifest_hash": "PASS",
+      "table_count": 8,
+      "coverage_gate": "Module line/branch coverage gates PASS",
+      "file_checks": [
+        {
+          "path": ".coverage",
+          "expected": "2ccf9cc543c900a5c17a92f56f508884750657f2568a2cc8465454ed367f2902",
+          "actual": null
+        },
+        {
+          "path": "commands.log",
+          "expected": "d9301c7e0ad26579d6df8a221253b54d027784eba42e21808960dbb6a902c716",
+          "actual": "d9301c7e0ad26579d6df8a221253b54d027784eba42e21808960dbb6a902c716"
+        },
+        {
+          "path": "coverage.json",
+          "expected": "8d6f07cd344196b6a53049819d8e5f29f6043ebafbabd96d3e7038f353b35729",
+          "actual": "8d6f07cd344196b6a53049819d8e5f29f6043ebafbabd96d3e7038f353b35729"
+        },
+        {
+          "path": "coverage.xml",
+          "expected": "8836465cf15d99875445c1db235e8449779c158e079eee0902b7bd9e42468676",
+          "actual": "8836465cf15d99875445c1db235e8449779c158e079eee0902b7bd9e42468676"
+        },
+        {
+          "path": "environment.json",
+          "expected": "d1720e2433907f57e5cbd8a24cce487316418eb31d16f28fc99eddeec316e196",
+          "actual": "d1720e2433907f57e5cbd8a24cce487316418eb31d16f28fc99eddeec316e196"
+        },
+        {
+          "path": "gitleaks.exe",
+          "expected": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c",
+          "actual": null
+        },
+        {
+          "path": "junit.xml",
+          "expected": "fcaa9e28e93436f203d88926ff4284028fd1f4a6e965e38184238a4a202c366c",
+          "actual": "fcaa9e28e93436f203d88926ff4284028fd1f4a6e965e38184238a4a202c366c"
+        },
+        {
+          "path": "pip-26.2.1-py3-none-any.whl",
+          "expected": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+          "actual": null
+        },
+        {
+          "path": "scan-findings.json",
+          "expected": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "actual": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+        },
+        {
+          "path": "secret-scan.log",
+          "expected": "3c42b92159d8983a220c305c8d053dc8cf71a6b2689743c8a6f7d2fa7baaca82",
+          "actual": "3c42b92159d8983a220c305c8d053dc8cf71a6b2689743c8a6f7d2fa7baaca82"
+        },
+        {
+          "path": "smoke-config.json",
+          "expected": "6312515b7d751fb0c003d1cb70a35866ab06799cc848010a8aca98eca654d485",
+          "actual": "6312515b7d751fb0c003d1cb70a35866ab06799cc848010a8aca98eca654d485"
+        },
+        {
+          "path": "smoke-result.json",
+          "expected": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "actual": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6"
+        },
+        {
+          "path": "smoke-run.json",
+          "expected": "31c7a7fd12883b11742701fbfb630d1bb9920c40e3971343d8db23fc51afc649",
+          "actual": "31c7a7fd12883b11742701fbfb630d1bb9920c40e3971343d8db23fc51afc649"
+        },
+        {
+          "path": "smoke-snapshot.json",
+          "expected": "7ac8f7df154abedb881fb6df92f29216ede14c858bda55bbd59b8b23c8f29e17",
+          "actual": "7ac8f7df154abedb881fb6df92f29216ede14c858bda55bbd59b8b23c8f29e17"
+        }
+      ]
+    },
+    {
+      "artifact_id": 12336921248,
+      "sha256": "075094178e27d6a3bc829cd273fbdf044e1f4ab32387a42cb40668a9f760377f",
+      "bytes": 35678,
+      "head_sha": "18d51fbecc4a1526f2ab75d34874a0b25d00f6c1",
+      "environment": {
+        "run_id": "aqrp-0e2786b9-6054-4c5e-abf3-f3791b6e3351",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261012.334.1",
+        "code_commit": "c0dd568dcaf2e74e82c3df4c417279b5d9166c1f",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-0e2786b9-6054-4c5e-abf3-f3791b6e3351",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39581713605",
+        "github_run_attempt": "1",
+        "github_sha": "c0dd568dcaf2e74e82c3df4c417279b5d9166c1f",
+        "wheel_sha256": "590a8495aeae272fe4e95b9d5aa25c52bfe4404442e5167804eaf6e6dc6d7b93"
+      },
+      "topology": {
+        "exit_code": 128,
+        "stdout": "",
+        "stderr": "fatal: bad object c0dd568dcaf2e74e82c3df4c417279b5d9166c1f\n"
+      },
+      "root_hashes_matched": 11,
+      "root_hashes_total": 14,
+      "missing": [
+        ".coverage",
+        "gitleaks",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "project_wheel_present": false,
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "sdk_snapshot_verification": "PASS",
+      "sdk_query_replay": "PASS",
+      "independent_manifest_hash": "PASS",
+      "table_count": 8,
+      "coverage_gate": "Module line/branch coverage gates PASS",
+      "file_checks": [
+        {
+          "path": ".coverage",
+          "expected": "d6895deb2e8c75451a81ee972d2e39c3ea4bf931ba5f65b20aa391e0b34f1a28",
+          "actual": null
+        },
+        {
+          "path": "commands.log",
+          "expected": "c256a974552c72db7e97b002e99b1c343b598d1ce13013e4d75a6b4f48bee19f",
+          "actual": "c256a974552c72db7e97b002e99b1c343b598d1ce13013e4d75a6b4f48bee19f"
+        },
+        {
+          "path": "coverage.json",
+          "expected": "d3bed5a71bd1f35e2f4e99eb6186453e80ff5cd476a9d7fba6c316d885594acf",
+          "actual": "d3bed5a71bd1f35e2f4e99eb6186453e80ff5cd476a9d7fba6c316d885594acf"
+        },
+        {
+          "path": "coverage.xml",
+          "expected": "880501d01f71f23dc0e9a91754a999bef4247f917af62726f2974121f0965e03",
+          "actual": "880501d01f71f23dc0e9a91754a999bef4247f917af62726f2974121f0965e03"
+        },
+        {
+          "path": "environment.json",
+          "expected": "1ddbbfc9bf1c43dbf0a809ebe42e390342d110f11c3c46e728f2f6564ce1a2d2",
+          "actual": "1ddbbfc9bf1c43dbf0a809ebe42e390342d110f11c3c46e728f2f6564ce1a2d2"
+        },
+        {
+          "path": "gitleaks",
+          "expected": "88f91962aa2f93ac6ab281d553b9e125f5197bbbce38f9f2437f7299c32e5509",
+          "actual": null
+        },
+        {
+          "path": "junit.xml",
+          "expected": "0e977ea62804fa569abd28665b53816e77523d4472deacb8c7315a719a943f69",
+          "actual": "0e977ea62804fa569abd28665b53816e77523d4472deacb8c7315a719a943f69"
+        },
+        {
+          "path": "pip-26.2.1-py3-none-any.whl",
+          "expected": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+          "actual": null
+        },
+        {
+          "path": "scan-findings.json",
+          "expected": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "actual": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+        },
+        {
+          "path": "secret-scan.log",
+          "expected": "9b3ee3fb5b164a3ba5775ea9cfd918b5b5e5c2837c7af90f5210bbafb2a1197c",
+          "actual": "9b3ee3fb5b164a3ba5775ea9cfd918b5b5e5c2837c7af90f5210bbafb2a1197c"
+        },
+        {
+          "path": "smoke-config.json",
+          "expected": "a93477d017075e734cde01629acc2c2d5474663ebab33ec173f18c5e56f7d805",
+          "actual": "a93477d017075e734cde01629acc2c2d5474663ebab33ec173f18c5e56f7d805"
+        },
+        {
+          "path": "smoke-result.json",
+          "expected": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "actual": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6"
+        },
+        {
+          "path": "smoke-run.json",
+          "expected": "778b4fb0a86af847747462cfbc463a32f189bdec709482f89b5c9a18bdf08755",
+          "actual": "778b4fb0a86af847747462cfbc463a32f189bdec709482f89b5c9a18bdf08755"
+        },
+        {
+          "path": "smoke-snapshot.json",
+          "expected": "5ca1d14a550caf208f27aa0c7c03e10b9951dfcf6a7eb013a3af4c7c95167282",
+          "actual": "5ca1d14a550caf208f27aa0c7c03e10b9951dfcf6a7eb013a3af4c7c95167282"
+        }
+      ]
+    },
+    {
+      "artifact_id": 12288679676,
+      "sha256": "8f092b7214202292995276a4dab3187063cd481d8a6556ac342e450738b64ea5",
+      "bytes": 35648,
+      "head_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
+      "environment": {
+        "run_id": "aqrp-16db7366-3882-46eb-b658-2b7306e17c07",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261018.275.1",
+        "code_commit": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-16db7366-3882-46eb-b658-2b7306e17c07",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39476825340",
+        "github_run_attempt": "1",
+        "github_sha": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "wheel_sha256": "a7fb359af416744c78beb24e8cb339428e42d336020022129371bbf0d450e810"
+      },
+      "topology": {
+        "exit_code": 0,
+        "stdout": "f093faca9a9dd4977caa1142267ff494766d3c7e\n502c6931dcfce50bee2f71a80524475fae6396bf 74bdb9216c585d27de91123605aff0266ca028cc\n66dc03a5cf38e8db9968873f2a0f1349b45eda09\n",
+        "stderr": "",
+        "tree_matches_target": true
+      },
+      "root_hashes_matched": 11,
+      "root_hashes_total": 14,
+      "missing": [
+        ".coverage",
+        "gitleaks.exe",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "project_wheel_present": false,
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "sdk_snapshot_verification": "PASS",
+      "sdk_query_replay": "PASS",
+      "independent_manifest_hash": "PASS",
+      "table_count": 8,
+      "coverage_gate": "Module line/branch coverage gates PASS",
+      "file_checks": [
+        {
+          "path": ".coverage",
+          "expected": "014c95fd4b8363e394cf5b7d4db7e4961b5264c35bcf7f80abf246c54abfa042",
+          "actual": null
+        },
+        {
+          "path": "commands.log",
+          "expected": "b9b49fe9b3c626d7198f1b786fae25c9ce183229a1fe74c4c2dbc0e357b8e83c",
+          "actual": "b9b49fe9b3c626d7198f1b786fae25c9ce183229a1fe74c4c2dbc0e357b8e83c"
+        },
+        {
+          "path": "coverage.json",
+          "expected": "dbbc0ca049deb766a9d130d6df10ad12c29a6af493ee76f6ba1812899bacf21c",
+          "actual": "dbbc0ca049deb766a9d130d6df10ad12c29a6af493ee76f6ba1812899bacf21c"
+        },
+        {
+          "path": "coverage.xml",
+          "expected": "8a5894de27bf1d9f75007a6230184640fb2b7bbcb24f6a1b9dff5d1378292033",
+          "actual": "8a5894de27bf1d9f75007a6230184640fb2b7bbcb24f6a1b9dff5d1378292033"
+        },
+        {
+          "path": "environment.json",
+          "expected": "f544d536e8355e97ddc87e2f08554d3c3cb7f34a92f8eb899976ddaf6de2518a",
+          "actual": "f544d536e8355e97ddc87e2f08554d3c3cb7f34a92f8eb899976ddaf6de2518a"
+        },
+        {
+          "path": "gitleaks.exe",
+          "expected": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c",
+          "actual": null
+        },
+        {
+          "path": "junit.xml",
+          "expected": "eb9cd9c616003a9a4f88eb76568b77ffa2e362a6ccb04788918738112fa74c87",
+          "actual": "eb9cd9c616003a9a4f88eb76568b77ffa2e362a6ccb04788918738112fa74c87"
+        },
+        {
+          "path": "pip-26.2.1-py3-none-any.whl",
+          "expected": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+          "actual": null
+        },
+        {
+          "path": "scan-findings.json",
+          "expected": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "actual": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+        },
+        {
+          "path": "secret-scan.log",
+          "expected": "6cc1ec6d05f4dde7740f4c78240302d66d778ee5738ebf9e531e433ee74988dd",
+          "actual": "6cc1ec6d05f4dde7740f4c78240302d66d778ee5738ebf9e531e433ee74988dd"
+        },
+        {
+          "path": "smoke-config.json",
+          "expected": "6639840c235ae48a9bc40573e810a8bcc41213de1f8270f580f73397de12c885",
+          "actual": "6639840c235ae48a9bc40573e810a8bcc41213de1f8270f580f73397de12c885"
+        },
+        {
+          "path": "smoke-result.json",
+          "expected": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "actual": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6"
+        },
+        {
+          "path": "smoke-run.json",
+          "expected": "2515256becb6a2596370f8602d7c1016ca0ccf449be76a7c03f6b68999ecb15e",
+          "actual": "2515256becb6a2596370f8602d7c1016ca0ccf449be76a7c03f6b68999ecb15e"
+        },
+        {
+          "path": "smoke-snapshot.json",
+          "expected": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe",
+          "actual": "d6214ad21425f34f42d1bfd44783bd24fd3e6a42a41ad92557691a1e22dc47fe"
+        }
+      ]
+    },
+    {
+      "artifact_id": 12288989083,
+      "sha256": "73385602dad830f3157dba8f5629616127777511830b02675fd06df517f93e7c",
+      "bytes": 35678,
+      "head_sha": "74bdb9216c585d27de91123605aff0266ca028cc",
+      "environment": {
+        "run_id": "aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261018.339.1",
+        "code_commit": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-e52726be-dc3f-463d-9d02-f0bfb4267e09",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39476825340",
+        "github_run_attempt": "1",
+        "github_sha": "f093faca9a9dd4977caa1142267ff494766d3c7e",
+        "wheel_sha256": "c76a24d3f632339d8791ccdc479585833150f3aff7034631362d54bbe457a6fe"
+      },
+      "topology": {
+        "exit_code": 0,
+        "stdout": "f093faca9a9dd4977caa1142267ff494766d3c7e\n502c6931dcfce50bee2f71a80524475fae6396bf 74bdb9216c585d27de91123605aff0266ca028cc\n66dc03a5cf38e8db9968873f2a0f1349b45eda09\n",
+        "stderr": "",
+        "tree_matches_target": true
+      },
+      "root_hashes_matched": 11,
+      "root_hashes_total": 14,
+      "missing": [
+        ".coverage",
+        "gitleaks",
+        "pip-26.2.1-py3-none-any.whl"
+      ],
+      "project_wheel_present": false,
+      "junit": {
+        "tests": 102,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "sdk_snapshot_verification": "PASS",
+      "sdk_query_replay": "PASS",
+      "independent_manifest_hash": "PASS",
+      "table_count": 8,
+      "coverage_gate": "Module line/branch coverage gates PASS",
+      "file_checks": [
+        {
+          "path": ".coverage",
+          "expected": "1c92e2e61232b1166ccd1e98b69b71442bb837562a95cdaca26f8895a07fff77",
+          "actual": null
+        },
+        {
+          "path": "commands.log",
+          "expected": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033",
+          "actual": "1138c81701aa3c90b2614435c066b1dfb5d54d03009c30e2b2fe736c313b9033"
+        },
+        {
+          "path": "coverage.json",
+          "expected": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09",
+          "actual": "1fd1828d91c954866a6eab9f6aae8d38a8a4695c8e12a4614ce8c6d2fd4d7c09"
+        },
+        {
+          "path": "coverage.xml",
+          "expected": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd",
+          "actual": "5903ec8751207a78238224edccbae1c28a891d991d4139cfdeb39363a87fd3bd"
+        },
+        {
+          "path": "environment.json",
+          "expected": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10",
+          "actual": "8d32d3083ad59008c83d2c9fe8eba240c7860f51934d96924935d3b7b49e3b10"
+        },
+        {
+          "path": "gitleaks",
+          "expected": "88f91962aa2f93ac6ab281d553b9e125f5197bbbce38f9f2437f7299c32e5509",
+          "actual": null
+        },
+        {
+          "path": "junit.xml",
+          "expected": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1",
+          "actual": "8f7eeaeacb9759761a6cc0a0f2a7bc52c72cc12da5986e329bb961138d8fa5c1"
+        },
+        {
+          "path": "pip-26.2.1-py3-none-any.whl",
+          "expected": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+          "actual": null
+        },
+        {
+          "path": "scan-findings.json",
+          "expected": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "actual": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+        },
+        {
+          "path": "secret-scan.log",
+          "expected": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411",
+          "actual": "aa808d102a280f2e0a7614c520a449921c325938870ff1807aa3350062b05411"
+        },
+        {
+          "path": "smoke-config.json",
+          "expected": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a",
+          "actual": "589601405ec2bba3163a40ae124b3a7c44be75da9f8075b02dc696df7ed02d3a"
+        },
+        {
+          "path": "smoke-result.json",
+          "expected": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6",
+          "actual": "70202a124f458f829caa5ac72e136d9c40c76801a63f113aec9863d3bed864d6"
+        },
+        {
+          "path": "smoke-run.json",
+          "expected": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184",
+          "actual": "650308040e0bb4dc53418a7d94ebbc8b4ae29804afc59b0b2b09409272d85184"
+        },
+        {
+          "path": "smoke-snapshot.json",
+          "expected": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc",
+          "actual": "bcaa84a583de8b7070b84652c5535a723a1b0c2d4a64d3ac4856b13a1bb611bc"
+        }
+      ]
+    }
+  ],
+  "cross_os": "Both runs: 8 table logical records, smoke result bytes and config match; only snapshot_id in tables and snapshot_id/manifest_hash in config omitted"
+}

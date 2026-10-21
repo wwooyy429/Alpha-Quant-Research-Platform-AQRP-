@@ -1,0 +1,275 @@
+{
+  "audit": "GPT Work 补充审核",
+  "phase1_sha": "f579b2c99e762085772de6e70ba1fa98792a7add",
+  "sdk_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\runs\\aqrp-b3151194-e140-41c1-ab75-baaf42589142\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "results": [
+    {
+      "case": "unknown-flag-bars_daily",
+      "input": {
+        "amount": "1000",
+        "available_at": "2024-01-02T16:05:00.000000+00:00",
+        "calendar_id": "SYN_A_CAL",
+        "close": "100",
+        "currency": "SYNCCY",
+        "event_time": "2024-01-02T16:00:00.000000+00:00",
+        "high": "100",
+        "ingested_at": "2024-02-01T00:00:00.000000+00:00",
+        "lot_size": null,
+        "low": "100",
+        "market_id": "SYN_A",
+        "open": "100",
+        "price_basis": "RAW",
+        "quality_status": "UNKNOWN_AVAILABILITY",
+        "reason_code": "SOURCE_HISTORY_UNVERIFIED",
+        "revision_id": 1,
+        "schema_version": "data/1.0.0",
+        "security_id": "SYN_A:001",
+        "session_date": "2024-01-02",
+        "snapshot_id": "unpublished",
+        "source_amount": "1000",
+        "source_amount_unit": "currency",
+        "source_id": "SYNTHETIC",
+        "source_record_id": "synthetic-row",
+        "source_scale": 2,
+        "source_timezone": "UTC",
+        "source_volume": "10",
+        "source_volume_unit": "share",
+        "volume": "10"
+      },
+      "actual": "FORMAL_QUERY_SUCCEEDED",
+      "manifest_pit_status": "PIT_VERIFIED",
+      "rows": [
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-02",
+          "event_time": "2024-01-02 16:00:00+00:00",
+          "available_at": "2024-01-02 16:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "UNKNOWN_AVAILABILITY",
+          "reason_code": "SOURCE_HISTORY_UNVERIFIED",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        },
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-03",
+          "event_time": "2024-01-03 12:00:00+00:00",
+          "available_at": "2024-01-03 12:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "VALID",
+          "reason_code": "NONE",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        }
+      ]
+    },
+    {
+      "case": "unknown-flag-security_master",
+      "input": {
+        "asset_type": "SYN_EQUITY",
+        "available_at": "2024-01-01T00:00:00.000000+00:00",
+        "currency": "SYNCCY",
+        "delisting_at": null,
+        "event_time": "2024-01-01T00:00:00.000000+00:00",
+        "ingested_at": "2024-02-01T00:00:00.000000+00:00",
+        "known_at": "2024-01-01T00:00:00.000000+00:00",
+        "listing_at": "2024-01-01T00:00:00.000000+00:00",
+        "market_id": "SYN_A",
+        "quality_status": "UNKNOWN_AVAILABILITY",
+        "reason_code": "SOURCE_HISTORY_UNVERIFIED",
+        "revision_id": 1,
+        "schema_version": "data/1.0.0",
+        "security_id": "SYN_A:001",
+        "snapshot_id": "unpublished",
+        "source_id": "SYNTHETIC",
+        "source_record_id": "synthetic-row",
+        "source_timezone": "UTC",
+        "venue_mic": "SYN_VENUE"
+      },
+      "actual": "FORMAL_QUERY_SUCCEEDED",
+      "manifest_pit_status": "PIT_VERIFIED",
+      "rows": [
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-02",
+          "event_time": "2024-01-02 16:00:00+00:00",
+          "available_at": "2024-01-02 16:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "VALID",
+          "reason_code": "NONE",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        },
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-03",
+          "event_time": "2024-01-03 12:00:00+00:00",
+          "available_at": "2024-01-03 12:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "VALID",
+          "reason_code": "NONE",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        }
+      ]
+    },
+    {
+      "case": "unknown-flag-calendar",
+      "input": {
+        "available_at": "2024-01-01T00:00:00.000000+00:00",
+        "calendar_id": "SYN_A_CAL",
+        "calendar_version": "synthetic-calendar/1",
+        "close_at": "2024-01-02T16:00:00.000000+00:00",
+        "event_time": "2024-01-02T09:00:00.000000+00:00",
+        "ingested_at": "2024-02-01T00:00:00.000000+00:00",
+        "market_id": "SYN_A",
+        "open_at": "2024-01-02T09:00:00.000000+00:00",
+        "quality_status": "UNKNOWN_AVAILABILITY",
+        "reason_code": "SOURCE_HISTORY_UNVERIFIED",
+        "schema_version": "data/1.0.0",
+        "session_date": "2024-01-02",
+        "snapshot_id": "unpublished",
+        "source_id": "SYNTHETIC",
+        "source_record_id": "synthetic-row",
+        "source_timezone": "UTC"
+      },
+      "actual": "FORMAL_QUERY_SUCCEEDED",
+      "manifest_pit_status": "PIT_VERIFIED",
+      "rows": [
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-02",
+          "event_time": "2024-01-02 16:00:00+00:00",
+          "available_at": "2024-01-02 16:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "VALID",
+          "reason_code": "NONE",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        },
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-03",
+          "event_time": "2024-01-03 12:00:00+00:00",
+          "available_at": "2024-01-03 12:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "VALID",
+          "reason_code": "NONE",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        }
+      ]
+    },
+    {
+      "case": "unknown-flag-universe_membership",
+      "input": {
+        "available_at": "2024-01-01T00:00:00.000000+00:00",
+        "effective_from": "2024-01-01T00:00:00.000000+00:00",
+        "effective_to": null,
+        "event_time": "2024-01-01T00:00:00.000000+00:00",
+        "ingested_at": "2024-02-01T00:00:00.000000+00:00",
+        "quality_status": "UNKNOWN_AVAILABILITY",
+        "reason_code": "SOURCE_HISTORY_UNVERIFIED",
+        "revision_id": 1,
+        "schema_version": "data/1.0.0",
+        "security_id": "SYN_A:001",
+        "snapshot_id": "unpublished",
+        "source_id": "SYNTHETIC",
+        "source_record_id": "synthetic-row",
+        "source_timezone": "UTC",
+        "universe_id": "SYN_U"
+      },
+      "actual": "FORMAL_QUERY_SUCCEEDED",
+      "manifest_pit_status": "PIT_VERIFIED",
+      "rows": [
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-02",
+          "event_time": "2024-01-02 16:00:00+00:00",
+          "available_at": "2024-01-02 16:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "VALID",
+          "reason_code": "NONE",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        },
+        {
+          "security_id": "SYN_A:001",
+          "market_id": "SYN_A",
+          "calendar_id": "SYN_A_CAL",
+          "session_date": "2024-01-03",
+          "event_time": "2024-01-03 12:00:00+00:00",
+          "available_at": "2024-01-03 12:05:00+00:00",
+          "revision_id": 1,
+          "quality_status": "VALID",
+          "reason_code": "NONE",
+          "close": "100.00000000",
+          "volume": "10.00000000"
+        }
+      ]
+    },
+    {
+      "case": "revision-int64-9223372036854775808",
+      "actual": "UNSTRUCTURED_ERROR",
+      "type": "OverflowError",
+      "error": "int too big to convert",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p01-round2-20261021\\round2_probe.py\", line 27, in <module>\n    v=validate_table('bars_daily',[r]);results.append(dict(case='revision-int64-'+str(value),actual='QUALITY_REPORT',report=dataclasses.asdict(v.report)))\n  File \"C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\runs\\aqrp-b3151194-e140-41c1-ab75-baaf42589142\\venv\\Lib\\site-packages\\aqrp\\data\\quality.py\", line 210, in validate_table\n    pa.Table.from_pylist(accepted, schema=SCHEMAS[name]),\n    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"pyarrow/table.pxi\", line 2051, in pyarrow.lib._Tabular.from_pylist\n  File \"pyarrow/table.pxi\", line 6495, in pyarrow.lib._from_pylist\n    return cls.from_arrays(arrays, schema=schema, metadata=metadata)\n  File \"pyarrow/table.pxi\", line 4877, in pyarrow.lib.Table.from_arrays\n    converted_arrays = _sanitize_arrays(arrays, names, schema, metadata,\n  File \"pyarrow/table.pxi\", line 1633, in pyarrow.lib._sanitize_arrays\n    item = asarray(item, type=schema[i].type)\n  File \"pyarrow/array.pxi\", line 454, in pyarrow.lib.asarray\n  File \"pyarrow/array.pxi\", line 424, in pyarrow.lib.array\n    result = _sequence_to_array(obj, mask, size, type, pool, c_from_pandas)\n  File \"pyarrow/array.pxi\", line 52, in pyarrow.lib._sequence_to_array\n    chunked = GetResultValue(\n  File \"pyarrow/error.pxi\", line 155, in pyarrow.lib.pyarrow_internal_check_status\n  File \"pyarrow/error.pxi\", line 89, in pyarrow.lib.check_status\n    RestorePyError(status)\nOverflowError: int too big to convert\n"
+    },
+    {
+      "case": "revision-int64--1",
+      "actual": "QUALITY_REPORT",
+      "report": {
+        "input": 1,
+        "valid": 0,
+        "duplicate": 0,
+        "missing": 0,
+        "rejected": 1,
+        "reasons": [
+          [
+            0,
+            "NONNEGATIVE_INTEGER_REQUIRED"
+          ]
+        ]
+      }
+    },
+    {
+      "case": "iana-absolute-path",
+      "input": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\runs\\aqrp-b3151194-e140-41c1-ab75-baaf42589142\\venv\\Lib\\site-packages\\tzdata\\zoneinfo\\UTC",
+      "actual": "ACCEPTED",
+      "tzkey": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p1-18d51fb-20261021\\runs\\aqrp-b3151194-e140-41c1-ab75-baaf42589142\\venv\\Lib\\site-packages\\tzdata\\zoneinfo\\UTC"
+    },
+    {
+      "case": "iana-absolute-path",
+      "input": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p1-18d51fb-20261021/runs/aqrp-b3151194-e140-41c1-ab75-baaf42589142/venv/Lib/site-packages/tzdata/zoneinfo/UTC",
+      "actual": "REJECTED",
+      "error": "INVALID_TIMEZONE: source_timezone"
+    },
+    {
+      "case": "offset-nanoseconds",
+      "input": "2024-01-02T16:00:00.000000+00:00:00.000000001",
+      "actual": "ACCEPTED",
+      "utc": "2024-01-02 16:00:00+00:00"
+    },
+    {
+      "case": "offset-nanoseconds",
+      "input": "2024-01-02T16:00:00+00:00:00.000000001",
+      "actual": "REJECTED",
+      "error": "SUB_MICROSECOND: timestamp"
+    }
+  ]
+}

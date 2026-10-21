@@ -1,0 +1,128 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.16, pytest-9.1.1, pluggy-1.7.0
+cachedir: runs\p1-round2-fix-20261021\cache-before
+rootdir: C:\Users\11638\AppData\Local\AQRP
+plugins: hypothesis-6.170.5, cov-7.1.0
+collected 16 items
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py FFFFFF [ 37%]
+F...                                                                     [ 62%]
+..\..\reviews\work-p1-18d51fb-20261021\test_work_p1_regressions.py ..... [ 93%]
+.                                                                        [100%]
+
+================================== FAILURES ===================================
+_______ test_work_p1_006_unknown_flag_cannot_be_formal_pit[bars_daily] ________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_0')
+table = 'bars_daily'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed
+_____ test_work_p1_006_unknown_flag_cannot_be_formal_pit[security_master] _____
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_1')
+table = 'security_master'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed
+________ test_work_p1_006_unknown_flag_cannot_be_formal_pit[calendar] _________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_2')
+table = 'calendar'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed
+___ test_work_p1_006_unknown_flag_cannot_be_formal_pit[universe_membership] ___
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_006_unknown_flag_3')
+table = 'universe_membership'
+
+    @pytest.mark.parametrize('table',['bars_daily','security_master','calendar','universe_membership'])
+    def test_work_p1_006_unknown_flag_cannot_be_formal_pit(tmp_path,table):
+        t=deepcopy(BASE);t[table][0].update(quality_status='UNKNOWN_AVAILABILITY',reason_code='SOURCE_HISTORY_UNVERIFIED')
+>       with pytest.raises((ContractError,DataQualityError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ContractError, DataQualityError)
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:17: Failed
+_____________ test_work_p1_007_timezone_must_not_be_external_file _____________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p1-round2-fix-20261021/tmp-before/test_work_p1_007_timezone_must0')
+
+    def test_work_p1_007_timezone_must_not_be_external_file(tmp_path):
+        zone=tmp_path/'outside.tzif';zone.write_bytes(importlib.resources.files('tzdata.zoneinfo').joinpath('UTC').read_bytes())
+>       with pytest.raises(ContractError):iana(str(zone))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ContractError
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:21: Failed
+___________ test_work_p1_008_revision_overflow_is_counted_rejected ____________
+
+    def test_work_p1_008_revision_overflow_is_counted_rejected():
+        r=deepcopy(BASE['bars_daily'][0]);r['revision_id']=2**63
+>       v=validate_table('bars_daily',[r])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\runs\p1-fix-20261021\formal\aqrp-44857d53-7400-4119-87db-13b4f51b6ffc\venv\Lib\site-packages\aqrp\data\quality.py:250: in validate_table
+    pa.Table.from_pylist(accepted, schema=SCHEMAS[name]),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyarrow/table.pxi:2051: in pyarrow.lib._Tabular.from_pylist
+    ???
+pyarrow/table.pxi:6495: in pyarrow.lib._from_pylist
+    ???
+pyarrow/table.pxi:4877: in pyarrow.lib.Table.from_arrays
+    ???
+pyarrow/table.pxi:1633: in pyarrow.lib._sanitize_arrays
+    ???
+pyarrow/array.pxi:454: in pyarrow.lib.asarray
+    ???
+pyarrow/array.pxi:424: in pyarrow.lib.array
+    ???
+pyarrow/array.pxi:52: in pyarrow.lib._sequence_to_array
+    ???
+pyarrow/error.pxi:155: in pyarrow.lib.pyarrow_internal_check_status
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   OverflowError: int too big to convert
+
+pyarrow/error.pxi:89: OverflowError
+__________ test_work_p1_009_offset_submicrosecond_precision_rejected __________
+
+    def test_work_p1_009_offset_submicrosecond_precision_rejected():
+>       with pytest.raises(TimestampResolutionError):utc('2024-01-02T16:00:00.000000+00:00:00.000000001')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TimestampResolutionError
+
+..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py:27: Failed
+- generated xml file: C:\Users\11638\AppData\Local\AQRP\runs\p1-round2-fix-20261021\before-junit.xml -
+=========================== short test summary info ===========================
+FAILED ..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py::test_work_p1_006_unknown_flag_cannot_be_formal_pit[bars_daily]
+FAILED ..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py::test_work_p1_006_unknown_flag_cannot_be_formal_pit[security_master]
+FAILED ..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py::test_work_p1_006_unknown_flag_cannot_be_formal_pit[calendar]
+FAILED ..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py::test_work_p1_006_unknown_flag_cannot_be_formal_pit[universe_membership]
+FAILED ..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py::test_work_p1_007_timezone_must_not_be_external_file
+FAILED ..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py::test_work_p1_008_revision_overflow_is_counted_rejected
+FAILED ..\..\reviews\work-p01-round2-20261021\test_round2_regressions.py::test_work_p1_009_offset_submicrosecond_precision_rejected
+========================= 7 failed, 9 passed in 4.18s =========================
