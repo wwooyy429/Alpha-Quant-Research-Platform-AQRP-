@@ -32,6 +32,7 @@ def build_candidate(request):
                     "schema_version": "unvalidated-target/1.0.0",
                     "ideal": ideal,
                     "rounded": rounded,
+                    "rounding_residual": {sid: ideal[sid] - rounded[sid] for sid in ideal},
                     "selection": diagnostic,
                     "unchanged_holdings": holding,
                     "validated": False,

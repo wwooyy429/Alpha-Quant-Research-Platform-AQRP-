@@ -7,6 +7,7 @@ import pytest
 from hypothesis import given
 from hypothesis import strategies as st
 
+from aqrp.core.canonical import digest
 from aqrp.core.errors import ContractError
 from aqrp.portfolio.construct import build_candidate, compute
 from aqrp.portfolio.contracts import F, PortfolioRequest, TargetCandidate, load
@@ -27,6 +28,15 @@ def test_frozen_independent_full_inputs(name, tmp_path):
     assert result["status"] == expected["status"]
     assert x == before
     assert result["executable"] is False and result["financial_approval"] == "NONE"
+    assert result["input_lineage"]["environment_hash"] == digest(
+        result["input_lineage"]["environment"]
+    )
+    assert result["context"]["currency"] == "CCY"
+    assert "rounding_residual" in result["rounding"] and "ranked" in result["selection"]
+    assert (
+        result["risk"]["candidate_hash"]
+        == hashlib.sha256((tmp_path / result["run_id"] / "candidate.json").read_bytes()).hexdigest()
+    )
     if result["status"] == "SUCCEEDED":
         assert result["target"]["quantities"] == expected["quantities"]
         assert result["target"]["cash"] == expected["cash"]

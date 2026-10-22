@@ -2,10 +2,10 @@
 
 import hashlib
 import json
-import platform
 import sys
 
 from aqrp.core.canonical import canonical, digest
+from aqrp.core.environment import runtime_manifest, verify_runtime
 from aqrp.core.errors import ContractError
 from aqrp.experiments.ledger import ExperimentLedger
 from aqrp.factors.admission import reviewed_policy
@@ -25,15 +25,16 @@ def construct_engineering(request, ledger_root, code_commit):
         "raw_request_hex": request.raw.hex(),
         "request_sha256": request.content_hash,
     }
+    environment = runtime_manifest()
+    verify_runtime(environment)
     lineage = {
         "code_commit": code_commit,
         "code_bundle": policy["bundle_sha256"],
         "data_hash": request.content_hash,
-        "environment": {
-            "python": sys.version,
-            "platform": platform.platform(),
-            "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
-        },
+        "environment": environment,
+        "environment_hash": digest(environment),
+        "config_hash": digest(config),
+        "code_commit_binding": "Caller-declared; clean SDK separately binds source tree and wheel bytes",
         "protocol_hash": digest(
             {"profile": "SYNTHETIC_PORTFOLIO_1", "G1": "265af16353d85ce8c2d229a7517809d707498da8"}
         ),
@@ -54,6 +55,14 @@ def construct_engineering(request, ledger_root, code_commit):
     }
     try:
         candidate = build_candidate(request)
+        candidate_data = load(candidate.raw)
+        validated_input = load(request.raw)
+        result["context"] = validated_input["context"]
+        result["selection"] = candidate_data["selection"]
+        result["rounding"] = {
+            k: candidate_data[k]
+            for k in ("ideal", "rounded", "rounding_residual", "unchanged_holdings")
+        }
         decision = check_target(candidate, request)
         ledger.artifact(run_id, "candidate.json", load(candidate.raw))
         ledger.artifact(run_id, "risk.json", decision)
@@ -65,6 +74,7 @@ def construct_engineering(request, ledger_root, code_commit):
                 "executable": False,
                 "request_hash": request.content_hash,
                 "risk_hash": decision["content_sha256"],
+                "context": validated_input["context"],
             }
             target["content_sha256"] = digest(target)
             result["target"] = target
@@ -75,6 +85,7 @@ def construct_engineering(request, ledger_root, code_commit):
                     "executable": False,
                     "scope": "ENGINEERING_TEST_ONLY",
                     "source_price_ref": load(request.raw)["inputs"]["prices"]["ref"],
+                    "source_account_ref": validated_input["inputs"]["account"]["ref"],
                     "decision_time": load(request.raw)["context"]["decision_time"],
                     "request_hash": request.content_hash,
                 }

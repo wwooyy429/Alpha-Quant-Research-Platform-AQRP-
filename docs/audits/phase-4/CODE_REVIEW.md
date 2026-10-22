@@ -1,6 +1,6 @@
 # P4开发方代码准入审查（TEST_ONLY，非GPT Work G2）
 
-授权IMPLEMENTATION_AUTHORIZATION.json；G1固定265af16353d85ce8c2d229a7517809d707498da8。新增源码仅portfolio和risk，既有业务44模块保持原字节，__init__仅更新包版本0.4.0；原P0–P3文档/失败/Golden/审计及依赖锁保持。每次源码修改或格式化后均重新核全量Python bundle，更新工程receipt；不沿用旧P3 bundle批准新代码，也不授金融批准。
+授权IMPLEMENTATION_AUTHORIZATION.json；G1固定265af16353d85ce8c2d229a7517809d707498da8。新增源码仅portfolio和risk，既有43模块保持原字节，__init__仅更新包版本0.4.0，admission仅将默认因子版本1.1.0递增为1.2.0以区分新完整bundle；旧精确Ref由旧wheel和原工件保留，不覆盖旧注册内容或改变因子公式。原P0–P3文档/失败/Golden/审计及依赖锁保持。每次源码修改或格式化后均重新核全量Python bundle，更新工程receipt；不沿用旧P3 bundle批准新代码，也不授金融批准。
 
 - contracts：严格字段/类型及每层哈希、输入集合、共同PIT时点、signal session age、父快照/币种/市场、完整账户对账和显式风险配置。金额/数量必须有限十进制字符串；独立分数可有限float投影。拒绝系数超过34位或绝对十进制指数超过100的输入，避免精度/资源歧义；结果统一34位ROUND_HALF_EVEN，核心计算用精确Fraction，不受调用方Decimal context影响。冻结输入仅声明合成工程fixture，不是外部数据真实性证明。
 - weights：共同有效交集、固定预注册因子系数、稳定排序、真实多空双腿及gross/net预算；不做P3再次拟合或最终Test选择；无效交集/非零预算空腿和重叠都明确处理，不默改K/风险阈值。
