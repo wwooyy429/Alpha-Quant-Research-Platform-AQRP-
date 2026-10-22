@@ -1,5 +1,5 @@
 {
-  "scope": "Current audit-directory file snapshot including explicit accepted status reconciliation; original report bytes preserved",
+  "scope": "Current P5 G1 design and actual validation evidence; no product tests",
   "self_excluded": true,
   "files": [
     {
@@ -98,9 +98,24 @@
       "sha256": "4b37301425d3bcc5d5986493bf83ec1619322fe19f6418a327f227bd161089ca"
     },
     {
+      "path": "validation/.gitattributes",
+      "bytes": 23,
+      "sha256": "c608ad7e5e20257172ddac219ffd74b8ae3ab236d2254c2423d9939c1e126646"
+    },
+    {
       "path": "validation/diff-check.log",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "validation/final-diff-check.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "validation/initial-committed-diff-check.log",
+      "bytes": 534,
+      "sha256": "66caa2b542f73b0df23aaea1042fb67976bef901d68ec7738b53fdd92e17a0a7"
     },
     {
       "path": "validation/p5-design-reference.command.json",
@@ -154,8 +169,8 @@
     },
     {
       "path": "validation/PLAN_CHECKS.json",
-      "bytes": 791,
-      "sha256": "53414bc2c4298b8379d0ddbaefc8fbdafd58fcdc285af699b24c356619b96b14"
+      "bytes": 1281,
+      "sha256": "ea6efa9fc4908741b8576f646adb2d007ad0979bb9e26d2c7f5d9d4b2764a2b6"
     },
     {
       "path": "validation/REFERENCE_CHECK.json",
