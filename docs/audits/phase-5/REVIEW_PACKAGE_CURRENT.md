@@ -1,5 +1,10 @@
 # Phase5 G1 修订候选交审入口
 
+2026-10-23 最新Phase5 G1：GPT Work对固定 `5262032bee4f631f68763e57510e1878945f6b8c` 判 **PLAN PASS WITH CONDITIONS（受限工程设计）**，四项均 **CLOSED_DESIGN**，无新增阻断技术设计。原25/70、新25/209及6组2349设计模型独立通过，均不是P5产品测试。本轮仅接收归档/状态更新；用户仍须明确接受C-P5-001及P5-D01–D10（含C-P5-002–004）经济/统计口径，再单独授权P5实施，当前 **NOT AUTHORIZED / NOT STARTED**。原报告、失败及旧轮OPEN/BLOCKED保留历史；现状见 `docs/audits/phase-5/g1-5262032/DEVELOPER_RESPONSE.md`。12份已审设计身份文件不改，归档提交与已审526版本分别标识；main/标签保持P4基线，真实隔离WI-R2-001/002继续 **DEFERRED / NOT VERIFIED**，正式Test/金融批准/完整旧宿主边界不变，无部署/实盘/合并/标签/P6。
+
+以下既有状态按原轮次保留，由上述新独立处置更新当前状态；不改写原审计结论。
+
+
 当前G1：原固定5c9721f为PLAN BLOCKED，四项OPEN；本轮仅设计修订，待新完整40位SHA独立复核。PR #8描述AQRP_FIXED_REVIEW_SHA为唯一审查锁，不审漂移HEAD。不能把本文件的完成度或开发参考PASS当作独立PLAN PASS。
 
 先读g1-5c9721f/received/REPORT.md、DEVELOPER_HANDOFF、FINDINGS、接收RECEIVED及DEVELOPER_RESPONSE，再读本轮EVENT_TRANSACTION_ADDENDUM / CASH_BUCKETS_AND_PROJECTION / EXECUTION_PRICE_AND_FEES / FIFO_ATTRIBUTION / CONTRACT_CHANGE_IMPACT，随后核对已同步的INTERFACE_DRAFT/MATH_CONTRACT/PROFILE_AND_DECISIONS及原需求追踪。

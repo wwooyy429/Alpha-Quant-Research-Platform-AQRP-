@@ -1,0 +1,18 @@
+{
+  "initial_staged_check": "FAILED: two received JSON metadata files contain original terminal blank lines",
+  "initial_failure_stdout": "first-staged-check.stdout.log",
+  "initial_failure_stderr": "first-staged-check.stderr.log",
+  "raw_files": [
+    "received/CI_RUNS_FINAL.json",
+    "received/PR8_FINAL.json"
+  ],
+  "disposition": "Keep original independently sealed bytes; exempt blank-at-eof only for these exact two raw metadata files, retaining other whitespace checks. No product/security guard or expected hash changed.",
+  "initial_failed_command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "author": "Codex developer",
+  "at_utc": "2026-10-22T17:20:24.090017+00:00"
+}
