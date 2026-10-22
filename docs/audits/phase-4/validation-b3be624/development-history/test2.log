@@ -1,0 +1,49 @@
+........................................................................ [ 36%]
+........................................................................ [ 73%]
+.....................F.............................                      [100%]
+================================== FAILURES ===================================
+____ test_public_service_enforces_each_limit[constraints.net_min-1.1-NET] _____
+
+path = 'constraints.net_min', value = '1.1', reason = 'NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test2tmp/test_public_service_enforces_e2')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        r = construct_engineering(reseal(change(fixture(), path, value)), tmp_path, COMMIT).read()
+>       assert reason in r["reasons"] and "target" not in r
+E       AssertionError: assert ('NET' in ['CONFLICTING_LIMITS'])
+
+tests\portfolio\test_risk_service.py:36: AssertionError
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Name                              Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------------
+src\aqrp\portfolio\__init__.py        0      0      0      0   100%
+src\aqrp\portfolio\construct.py      20      0      4      0   100%
+src\aqrp\portfolio\contracts.py     258      2    124      2    99%   187, 223
+src\aqrp\portfolio\service.py        71      1     10      1    98%   161
+src\aqrp\portfolio\weights.py        46      0     22      0   100%
+src\aqrp\risk\__init__.py             0      0      0      0   100%
+src\aqrp\risk\checks.py              73      0     22      0   100%
+-----------------------------------------------------------------------------
+TOTAL                               468      3    182      3    99%
+Coverage JSON written to file C:\Users\11638\AppData\Local\AQRP\runs\p4-implementation-20261022\dev-coverage.json
+=========================== short test summary info ===========================
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.net_min-1.1-NET]
+1 failed, 194 passed in 6.96s

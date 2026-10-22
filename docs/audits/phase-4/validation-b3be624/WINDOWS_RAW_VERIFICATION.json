@@ -1,0 +1,112 @@
+{
+  "scope": "Developer byte/contract verification; not independent audit or OS deployment",
+  "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-implementation-20261022\\ci-b3\\P4-b3be624-Windows-original.zip",
+  "head_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+  "executed_sha": "a1c093ed7eb4932d7a12e5dbb84f46bbc47522dd",
+  "source_tree": "4f418b5288345ab561d3c8e8a9e02521d8ad287b",
+  "executed_parents": [
+    "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "b3be62439d8d0877478b7105d68863fcb2a108a0"
+  ],
+  "source_binding": "GITHUB_PR_MERGE_TREE_EQUALS_FIXED_HEAD",
+  "environment": {
+    "run_id": "aqrp-a7d112d1-c5f5-4284-b05d-26223e4605a4",
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+    "os": "Windows-2025Server-10.0.26100-SP0",
+    "ImageOS": "win25-vs2026",
+    "ImageVersion": "20261007.264.1",
+    "code_commit": "a1c093ed7eb4932d7a12e5dbb84f46bbc47522dd",
+    "dirty": false,
+    "complete": true,
+    "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-a7d112d1-c5f5-4284-b05d-26223e4605a4",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39764920790",
+    "github_run_attempt": "1",
+    "github_sha": "a1c093ed7eb4932d7a12e5dbb84f46bbc47522dd",
+    "wheel_sha256": "67b82c30d6dc5f2f56066f7eba31793d984d22162170dfc0a03b65758f79201a"
+  },
+  "zip_sha256": "4f4c9428ff477194ca689ce04de614f7974b843b1cd7aa71a3d01f393e330ca9",
+  "zip_bytes": 95677477,
+  "crc": "PASS",
+  "selected_files": 247,
+  "upload_selection_sha256": "67e99b5fa3e7eaf5d60b58ca54b67bbf03f275057e66aed50451bbc807e116ea",
+  "junit": {
+    "tests": 799,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_gates": "PASS",
+  "wheel_sha256": "67b82c30d6dc5f2f56066f7eba31793d984d22162170dfc0a03b65758f79201a",
+  "python_modules": 53,
+  "dependency_wheels": 22,
+  "snapshots": [
+    {
+      "path": "dataset/1fed7837-71f4-4c2d-a2c8-e655a162e5f1",
+      "hash": "f32cf853e670b1b003fa58cf46c346c47c2b768131a9eca0081a3c24530e4f01"
+    },
+    {
+      "path": "factor-dataset/68a7c8db-7022-48d3-9626-96a46928dda8",
+      "hash": "8bc7f3b3d5a4f5ea7ca7acb444788f15a2028b4c6a525e0e281b27827a7fc8f1"
+    },
+    {
+      "path": "reproduction/dataset/c71fcd05-ce22-46fd-9ce5-14270e38e155",
+      "hash": "f6798b906b9365ebe7c6b4a47a87e35280a63838d29404d3b9f140df1b15c282"
+    },
+    {
+      "path": "research/inputs/dataset/49aa64f0-7a6c-4de5-9118-3734b4a2f5be",
+      "hash": "45ec241647aefee10e0522c0fc6bb94a8f4d5858e53f3493d603798eee8bafff"
+    },
+    {
+      "path": "research/replacement-inputs/dataset/053fa4d0-472b-4701-8802-b53c7d54e9f1",
+      "hash": "41f0855f371392945b9f654a4dc754f05592c1de7e513b556205370b6659a475"
+    }
+  ],
+  "verified_runs": [
+    "1cf0dff3-1559-49b3-88b8-abdc87497b6d",
+    "192980fb-8084-47b3-9ecb-cf5de8c62c0e",
+    "a440e0ae-60e6-4a34-a7e8-22916593acee"
+  ],
+  "engine_batches": 95,
+  "factor_runs": 3,
+  "engineering_reports": 3,
+  "original_published_files": 66,
+  "original_runs_replayed": 3,
+  "result": "PASS",
+  "portfolio_engineering_cases": [
+    {
+      "name": "base",
+      "run_id": "155713c4-6c9f-4fde-8ab3-a8d5a1b6eaf7",
+      "status": "SUCCEEDED"
+    },
+    {
+      "name": "x01",
+      "run_id": "ff6e7c00-0c57-45e0-8792-89d3ba8e7c3f",
+      "status": "REJECTED"
+    },
+    {
+      "name": "x03",
+      "run_id": "62b7c5db-7c7f-4e4e-857f-2323c78f4bfb",
+      "status": "REJECTED"
+    },
+    {
+      "name": "x04",
+      "run_id": "408f924c-dc4b-41b7-b3a9-ed5977729817",
+      "status": "REJECTED"
+    },
+    {
+      "name": "odd_hold",
+      "run_id": "17a79cf2-2e51-46cc-abf1-0ad8d0648efd",
+      "status": "SUCCEEDED"
+    },
+    {
+      "name": "short_close",
+      "run_id": "86c7a584-2f79-4a35-9d43-8752bc869311",
+      "status": "SUCCEEDED"
+    }
+  ],
+  "formal_gate": "APPROVAL_REQUIRED",
+  "orders_submitted": 0
+}

@@ -1,0 +1,1592 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="43" skipped="0" tests="221" time="6.810" timestamp="2026-10-22T18:37:42.762232+08:00" hostname="天音"><properties><property name="hypothesis-statistics-tests/portfolio/test_construct.py::test_score_scale_order_and_rounding_properties" value="dGVzdHMvcG9ydGZvbGlvL3Rlc3RfY29uc3RydWN0LnB5Ojp0ZXN0X3Njb3JlX3NjYWxlX29yZGVyX2FuZF9yb3VuZGluZ19wcm9wZXJ0aWVzOgoKICAtIGR1cmluZyBnZW5lcmF0ZSBwaGFzZSAoMC40MCBzZWNvbmRzKToKICAgIC0gVHlwaWNhbCBydW50aW1lczogfiAyLTUgbXMsIG9mIHdoaWNoIDwgMW1zIGluIGRhdGEgZ2VuZXJhdGlvbgogICAgLSAxMDAgcGFzc2luZywgMCBmYWlsaW5nLCBhbmQgMCBpbnZhbGlkIHRlc3QgY2FzZXMKCiAgLSBTdG9wcGVkIGJlY2F1c2Ugc2V0dGluZ3MubWF4X2V4YW1wbGVzPTEwMA==" /></properties><testcase classname="tests.portfolio.test_construct" name="test_frozen_independent_full_inputs[base]" time="0.026"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">name = 'base'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i0')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+&gt;       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_frozen_independent_full_inputs[x01]" time="0.016"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">name = 'x01'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i1')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+&gt;       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_frozen_independent_full_inputs[x03]" time="0.017"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">name = 'x03'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i2')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+&gt;       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_frozen_independent_full_inputs[x04]" time="0.016"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">name = 'x04'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i3')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+&gt;       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_frozen_independent_full_inputs[odd_hold]" time="0.017"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">name = 'odd_hold'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i4')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+&gt;       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_frozen_independent_full_inputs[short_close]" time="0.016"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">name = 'short_close'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i5')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+&gt;       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[15-20-True-DELTA_LOT_MISMATCH]" time="0.003" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[15-15-False-None]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[15-0-True-None]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[15-0-False-DELTA_LOT_MISMATCH]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[-15-0-True-None]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[-15-0-False-DELTA_LOT_MISMATCH]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[15--10-True-DELTA_LOT_MISMATCH]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[-15-10-True-DELTA_LOT_MISMATCH]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[10-20-False-None]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[-15--10-True-DELTA_LOT_MISMATCH]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[-15--20-True-DELTA_LOT_MISMATCH]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[-15--15-False-None]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_exact_quantity_gate_reference[10-15-True-TARGET_LOT_MISMATCH]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_full_close_is_not_a_tradability_or_sellable_waiver[True]" time="0.002" /><testcase classname="tests.portfolio.test_construct" name="test_full_close_is_not_a_tradability_or_sellable_waiver[False]" time="0.003" /><testcase classname="tests.portfolio.test_construct" name="test_candidate_tamper_and_wrong_request" time="0.005" /><testcase classname="tests.portfolio.test_construct" name="test_formal_cannot_use_engineering_flags" time="0.017"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_formal_cannot_use_enginee0')
+
+    def test_formal_cannot_use_engineering_flags(tmp_path):
+        x = fixture()
+        x["source"]["financial_approval"] = "ResearchValidated"
+&gt;       result = construct_approved(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:128: in construct_approved
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_score_scale_order_and_rounding_properties" time="0.407" /><testcase classname="tests.portfolio.test_construct" name="test_long_short_real_two_legs[equal]" time="0.005" /><testcase classname="tests.portfolio.test_construct" name="test_long_short_real_two_legs[score]" time="0.005" /><testcase classname="tests.portfolio.test_construct" name="test_multifactor_intersection_signed_coefficients" time="0.004" /><testcase classname="tests.portfolio.test_construct" name="test_zero_negative_and_empty_leg[LONG_ONLY-score-values0-NO_POSITIVE_SCORE]" time="0.021"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">mode = 'LONG_ONLY', weighting = 'score', values = ('-1', '-2')
+expected = 'NO_POSITIVE_SCORE'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_zero_negative_and_empty_l0')
+
+    @pytest.mark.parametrize(
+        "mode,weighting,values,expected",
+        [
+            ("LONG_ONLY", "score", ("-1", "-2"), "NO_POSITIVE_SCORE"),
+            ("LONG_ONLY", "equal", ("-1", "-2"), "NONE"),
+            ("LONG_SHORT", "score", ("1", "1"), "INFEASIBLE_EMPTY_LEG"),
+        ],
+    )
+    def test_zero_negative_and_empty_leg(mode, weighting, values, expected, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting=weighting, net="0" if mode == "LONG_SHORT" else "1")
+        for r, s in zip(x["inputs"]["scores"][0]["data"]["rows"], values):
+            r["score"] = s
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_zero_negative_and_empty_leg[LONG_ONLY-equal-values1-NONE]" time="0.057"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">mode = 'LONG_ONLY', weighting = 'equal', values = ('-1', '-2')
+expected = 'NONE'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_zero_negative_and_empty_l1')
+
+    @pytest.mark.parametrize(
+        "mode,weighting,values,expected",
+        [
+            ("LONG_ONLY", "score", ("-1", "-2"), "NO_POSITIVE_SCORE"),
+            ("LONG_ONLY", "equal", ("-1", "-2"), "NONE"),
+            ("LONG_SHORT", "score", ("1", "1"), "INFEASIBLE_EMPTY_LEG"),
+        ],
+    )
+    def test_zero_negative_and_empty_leg(mode, weighting, values, expected, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting=weighting, net="0" if mode == "LONG_SHORT" else "1")
+        for r, s in zip(x["inputs"]["scores"][0]["data"]["rows"], values):
+            r["score"] = s
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_zero_negative_and_empty_leg[LONG_SHORT-score-values2-INFEASIBLE_EMPTY_LEG]" time="0.043"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">mode = 'LONG_SHORT', weighting = 'score', values = ('1', '1')
+expected = 'INFEASIBLE_EMPTY_LEG'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_zero_negative_and_empty_l2')
+
+    @pytest.mark.parametrize(
+        "mode,weighting,values,expected",
+        [
+            ("LONG_ONLY", "score", ("-1", "-2"), "NO_POSITIVE_SCORE"),
+            ("LONG_ONLY", "equal", ("-1", "-2"), "NONE"),
+            ("LONG_SHORT", "score", ("1", "1"), "INFEASIBLE_EMPTY_LEG"),
+        ],
+    )
+    def test_zero_negative_and_empty_leg(mode, weighting, values, expected, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting=weighting, net="0" if mode == "LONG_SHORT" else "1")
+        for r, s in zip(x["inputs"]["scores"][0]["data"]["rows"], values):
+            r["score"] = s
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_risk_reasons_no_silent_repair" time="0.122"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_risk_reasons_no_silent_re0')
+
+    def test_risk_reasons_no_silent_repair(tmp_path):
+        x = fixture()
+        x["constraints"]["per_asset"]["SYNTH:A"] = "0.7"
+&gt;       result = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_failure_and_immutable_terminal_evidence" time="0.069"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_failure_and_immutable_ter0')
+
+    def test_failure_and_immutable_terminal_evidence(tmp_path):
+        req = PortfolioRequest(b"{broken")
+&gt;       r = construct_engineering(req, tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:209: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_golden_g10_g11_complete_public_service[LONG_ONLY-1-quantities0-300-0.7-300]" time="0.163"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">mode = 'LONG_ONLY', net = '1', quantities = {'SYNTH:A': '10', 'SYNTH:B': '10'}
+cash = '300', gross = '0.7', free = '300'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_golden_g10_g11_complete_p0')
+
+    @pytest.mark.parametrize(
+        "mode,net,quantities,cash,gross,free",
+        [
+            ("LONG_ONLY", "1", {"SYNTH:A": "10", "SYNTH:B": "10"}, "300", "0.7", "300"),
+            ("LONG_SHORT", "0", {"SYNTH:A": "10", "SYNTH:B": "-10"}, "1100", "0.7", "300"),
+        ],
+    )
+    def test_golden_g10_g11_complete_public_service(mode, net, quantities, cash, gross, free, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting="equal", gross="1", net=net)
+        for row, price in zip(x["inputs"]["prices"]["data"], ["30", "40"]):
+            row.update(price=price, lot="10")
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_construct" name="test_golden_g10_g11_complete_public_service[LONG_SHORT-0-quantities1-1100-0.7-300]" time="0.047"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">mode = 'LONG_SHORT', net = '0', quantities = {'SYNTH:A': '10', 'SYNTH:B': '-10'}
+cash = '1100', gross = '0.7', free = '300'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_golden_g10_g11_complete_p1')
+
+    @pytest.mark.parametrize(
+        "mode,net,quantities,cash,gross,free",
+        [
+            ("LONG_ONLY", "1", {"SYNTH:A": "10", "SYNTH:B": "10"}, "300", "0.7", "300"),
+            ("LONG_SHORT", "0", {"SYNTH:A": "10", "SYNTH:B": "-10"}, "1100", "0.7", "300"),
+        ],
+    )
+    def test_golden_g10_g11_complete_public_service(mode, net, quantities, cash, gross, free, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting="equal", gross="1", net=net)
+        for row, price in zip(x["inputs"]["prices"]["data"], ["30", "40"]):
+            row.update(price=price, lot="10")
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[schema_version-wrong]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[context.session_index-True]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[context.currency-]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[context.snapshot_sha256-x]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[source.kind-REAL_ACCOUNT]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[source.scope-APPROVED]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[source.dataset_kind-REAL]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[source.financial_approval-ResearchValidated]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[profile.profile_id-A_SHARE]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[profile.max_age_sessions-1]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[profile.allow_full_close_odd_lot-1]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[profile.fee_reserve--1]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.mode-SKIP_RISK]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.weighting-optimizer]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.top_k-0]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.long_k-False]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.short_k--1]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.gross--1]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.net-2]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.factor_weights-value19]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[policy.factor_weights-value20]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.prices.data.0.price-0]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.prices.data.0.lot-0]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.prices.data.0.price--1]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.status.data.0.tradable-None]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.status.data.0.in_universe-0]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.securities.data.0.symbol-]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.securities.data.0.market_id-OTHER]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.securities.data.0.currency-USD]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.exposures.data.0.industry-None]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.exposures.data.0.beta-None]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.permissions.data.0.short_permission-None]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.permissions.data.0.borrow_limit_total--1]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.permissions.data.0.sellable_qty--1]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.equity-0]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.total_cash-999]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.restricted_cash-1001]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.short_restriction-1]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.nonshort_restriction--1]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.price_ref-OTHER]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.valuation_time-2024-02-01T16:00:00.000001Z]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.positions-value41]" time="0.006" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.account.data.positions.0.security_id-UNKNOWN]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.per_asset-value43]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.per_asset.SYNTH:A--1]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.gross_max--1]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.leverage_max--1]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.turnover_max--1]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.net_min-2]" time="0.008" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.beta_min-3]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.allow_cash_only-yes]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.industries-value51]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.industries.I.net_min-3]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[constraints.industries.I.gross_max--1]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores-value54]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.stage-lookahead]" time="0.015" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.factor_ref.implementation_hash-bad]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.factor_ref.factor_id-]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.params_hash-bad]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.rows.0.security_id-UNKNOWN]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.rows.0.valid-1]" time="0.006" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.rows.0.score-None]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.rows.0.session_index-1]" time="0.006" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.rows.0.session_index--1]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_strict_inputs_reject_even_with_new_valid_content_hash[inputs.scores.0.data.rows.0.signal_time-2024-02-01T16:00:00.000001Z]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[event_time-securities]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[event_time-prices]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[event_time-status]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[event_time-exposures]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[event_time-permissions]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[event_time-account]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[event_time-scores]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[available_at-securities]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[available_at-prices]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[available_at-status]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[available_at-exposures]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[available_at-permissions]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[available_at-account]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[available_at-scores]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[as_of-securities]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[as_of-prices]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[as_of-status]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[as_of-exposures]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[as_of-permissions]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[as_of-account]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_clock_boundary[as_of-scores]" time="0.026" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_context_must_align[securities]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_context_must_align[prices]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_context_must_align[status]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_context_must_align[exposures]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_context_must_align[permissions]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_context_must_align[account]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_every_input_context_must_align[scores]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_row_future_not_hidden_by_header[securities]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_row_future_not_hidden_by_header[prices]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_row_future_not_hidden_by_header[status]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_row_future_not_hidden_by_header[exposures]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_row_future_not_hidden_by_header[permissions]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_row_future_not_hidden_by_header[scores]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_unknown_or_missing_fields[schema_version]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_unknown_or_missing_fields[context.currency]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_unknown_or_missing_fields[profile.fee_reserve]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_unknown_or_missing_fields[policy.gross]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_unknown_or_missing_fields[constraints.beta_max]" time="0.006" /><testcase classname="tests.portfolio.test_contracts" name="test_unknown_or_missing_fields[inputs]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_unknown_or_missing_fields[inputs.prices.data.0.price]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_hash_duplicate_and_invalid_json" time="0.012" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[True]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[False]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[1]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[1.5]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[None]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[value5]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[value6]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[nan]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[Infinity]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[1e101]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[1e-101]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[x]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_money_is_finite_decimal_string[11111111111111111111111111111111111]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_exact_float_score_projection_and_timezone_equivalence" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[identifier-]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[identifier-5]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[identifier-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[checksum-a]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[checksum-None]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[boolean-1]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[integer-True]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_primitive_type_guards[integer--1]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_not_a_frozen_request_and_unknown_manifest" time="0.013" /><testcase classname="tests.portfolio.test_contracts" name="test_raw_input_bytes_are_immutable_copy" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_raw_request_must_be_immutable_bytes[True]" time="0.002" /><testcase classname="tests.portfolio.test_contracts" name="test_raw_request_must_be_immutable_bytes[text]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_raw_request_must_be_immutable_bytes[bad2]" time="0.001" /><testcase classname="tests.portfolio.test_contracts" name="test_exact_factor_version_not_alias[latest]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_exact_factor_version_not_alias[*]" time="0.005" /><testcase classname="tests.portfolio.test_contracts" name="test_exact_factor_version_not_alias[1]" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_exact_factor_version_not_alias[&gt;=1.0.0]" time="0.003" /><testcase classname="tests.portfolio.test_contracts" name="test_calendar_mapping_cannot_claim_yesterday_is_current_session" time="0.004" /><testcase classname="tests.portfolio.test_contracts" name="test_oversized_integer_score_rejected_not_overflow" time="0.001" /><testcase classname="tests.portfolio.test_research_input" name="test_actual_published_p3_stage_to_p4_engineering_not_reexecuted_factor" time="0.229"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_actual_published_p3_stage0')
+
+    def test_actual_published_p3_stage_to_p4_engineering_not_reexecuted_factor(tmp_path):
+        r = bound()
+        prepare(r)
+&gt;       result = construct_engineering(r, tmp_path, "a" * 40).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_research_input.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_research_input" name="test_binding_tamper_even_resealed_input[manifest_sha256-0000000000000000000000000000000000000000000000000000000000000000]" time="0.131" /><testcase classname="tests.portfolio.test_research_input" name="test_binding_tamper_even_resealed_input[artifact_sha256-0000000000000000000000000000000000000000000000000000000000000000]" time="0.143" /><testcase classname="tests.portfolio.test_research_input" name="test_binding_tamper_even_resealed_input[source_calendar_id-wrong]" time="0.127" /><testcase classname="tests.portfolio.test_research_input" name="test_binding_tamper_even_resealed_input[factor_key-absent]" time="0.126" /><testcase classname="tests.portfolio.test_research_input" name="test_binding_tamper_even_resealed_input[stage-labels]" time="0.093" /><testcase classname="tests.portfolio.test_research_input" name="test_mutated_score_not_cured_by_new_envelope_hash" time="0.132" /><testcase classname="tests.portfolio.test_research_input" name="test_missing_source_bindings[value0]" time="0.096" /><testcase classname="tests.portfolio.test_research_input" name="test_missing_source_bindings[None]" time="0.091" /><testcase classname="tests.portfolio.test_research_input" name="test_missing_source_bindings[value2]" time="0.097" /><testcase classname="tests.portfolio.test_research_input" name="test_invalid_stage_and_missing_root" time="0.012" /><testcase classname="tests.portfolio.test_research_input" name="test_binding_parent_snapshot_rejected" time="0.130" /><testcase classname="tests.portfolio.test_research_input" name="test_unmanifested_and_changed_bytes_are_rejected" time="0.043" /><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.gross_max-0.9-GROSS]" time="0.029"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.gross_max', value = '0.9', reason = 'GROSS'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e0')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.net_max-0.9-NET]" time="0.030"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.net_max', value = '0.9', reason = 'NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e1')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.net_min-1.1-NET]" time="0.034"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.net_min', value = '1.1', reason = 'NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e2')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.leverage_max-0.9-LEVERAGE]" time="0.055"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.leverage_max', value = '0.9', reason = 'LEVERAGE'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e3')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.turnover_max-0.9-TURNOVER]" time="0.085"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.turnover_max', value = '0.9', reason = 'TURNOVER'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e4')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.beta_max-0.9-BETA]" time="0.335"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.beta_max', value = '0.9', reason = 'BETA'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e5')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.beta_min-1.1-BETA]" time="0.056"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.beta_min', value = '1.1', reason = 'BETA'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e6')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.industries.I.net_max-0.9-INDUSTRY_NET]" time="0.042"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.industries.I.net_max', value = '0.9'
+reason = 'INDUSTRY_NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e7')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.industries.I.net_min-1.1-INDUSTRY_NET]" time="0.085"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.industries.I.net_min', value = '1.1'
+reason = 'INDUSTRY_NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e8')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[constraints.industries.I.gross_max-0.9-INDUSTRY_GROSS]" time="0.034"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'constraints.industries.I.gross_max', value = '0.9'
+reason = 'INDUSTRY_GROSS'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e9')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_public_service_enforces_each_limit[profile.fee_reserve-1-FREE_CASH]" time="0.029"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">path = 'profile.fee_reserve', value = '1', reason = 'FREE_CASH'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e10')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_short_permissions_not_implicit_zero_or_extra_borrow[SHORT_PERMISSION-equal]" time="0.025"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">weighting = 'equal', kind = 'SHORT_PERMISSION'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp0')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_short_permissions_not_implicit_zero_or_extra_borrow[SHORT_PERMISSION-score]" time="0.057"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">weighting = 'score', kind = 'SHORT_PERMISSION'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp1')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_short_permissions_not_implicit_zero_or_extra_borrow[BORROW_TOTAL-equal]" time="0.027"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">weighting = 'equal', kind = 'BORROW_TOTAL'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp2')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_short_permissions_not_implicit_zero_or_extra_borrow[BORROW_TOTAL-score]" time="0.029"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">weighting = 'score', kind = 'BORROW_TOTAL'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp3')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_nonselected_holding_is_sold_only_if_sellable" time="0.024"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_nonselected_holding_is_so0')
+
+    def test_nonselected_holding_is_sold_only_if_sellable(tmp_path):
+        x = fixture()
+        x["inputs"]["account"]["data"]["total_cash"] = "900"
+        x["inputs"]["account"]["data"]["positions"][0]["quantity"] = "10"
+        x["inputs"]["scores"][0]["data"]["rows"][0]["score"] = "0"
+        x["inputs"]["permissions"]["data"][0]["sellable_qty"] = "9"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_short_full_close_never_bypasses_halt[True]" time="0.026"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">flag = True
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_full_close_never_by0')
+
+    @pytest.mark.parametrize("flag", [True, False])
+    def test_short_full_close_never_bypasses_halt(flag, tmp_path):
+        x = fixture("short_close")
+        x["profile"]["allow_full_close_odd_lot"] = flag
+        x["inputs"]["status"]["data"][0]["tradable"] = False
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_short_full_close_never_bypasses_halt[False]" time="0.030"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">flag = False
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_full_close_never_by1')
+
+    @pytest.mark.parametrize("flag", [True, False])
+    def test_short_full_close_never_bypasses_halt(flag, tmp_path):
+        x = fixture("short_close")
+        x["profile"]["allow_full_close_odd_lot"] = flag
+        x["inputs"]["status"]["data"][0]["tradable"] = False
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_signed_industry_does_not_replace_industry_gross" time="0.029"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_signed_industry_does_not_0')
+
+    def test_signed_industry_does_not_replace_industry_gross(tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting="equal", gross="1", net="0")
+        x["constraints"]["industries"]["I"]["gross_max"] = "0.9"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_approved_net_budget_can_fail_funding" time="0.046"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_approved_net_budget_can_f0')
+
+    def test_approved_net_budget_can_fail_funding(tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting="equal", gross="1.2", net="0.2")
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_explicit_ratio_tolerance_boundary[offset0-True]" time="0.004" /><testcase classname="tests.portfolio.test_risk_service" name="test_explicit_ratio_tolerance_boundary[offset1-True]" time="0.004" /><testcase classname="tests.portfolio.test_risk_service" name="test_explicit_ratio_tolerance_boundary[offset2-False]" time="0.004" /><testcase classname="tests.portfolio.test_risk_service" name="test_empty_universe_and_cash_forbidden[LONG_ONLY]" time="0.048"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">mode = 'LONG_ONLY'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_empty_universe_and_cash_f0')
+
+    @pytest.mark.parametrize("mode", ["LONG_ONLY", "LONG_SHORT"])
+    def test_empty_universe_and_cash_forbidden(mode, tmp_path):
+        x = fixture()
+        x["policy"]["mode"] = mode
+        if mode == "LONG_SHORT":
+            x["policy"]["net"] = "0"
+        x["inputs"]["scores"][0]["data"]["rows"] = []
+        x["constraints"]["allow_cash_only"] = False
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_empty_universe_and_cash_forbidden[LONG_SHORT]" time="0.031"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">mode = 'LONG_SHORT'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_empty_universe_and_cash_f1')
+
+    @pytest.mark.parametrize("mode", ["LONG_ONLY", "LONG_SHORT"])
+    def test_empty_universe_and_cash_forbidden(mode, tmp_path):
+        x = fixture()
+        x["policy"]["mode"] = mode
+        if mode == "LONG_SHORT":
+            x["policy"]["net"] = "0"
+        x["inputs"]["scores"][0]["data"]["rows"] = []
+        x["constraints"]["allow_cash_only"] = False
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_overlapping_long_short_legs_and_zero_budget" time="0.039"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_overlapping_long_short_le0')
+
+    def test_overlapping_long_short_legs_and_zero_budget(tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting="equal", net="0", long_k=2, short_k=1)
+&gt;       r = construct_engineering(reseal(x), tmp_path / "bad", COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_deterministic_result_projection_uuid_unique_and_terminal_immutable" time="0.054"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_deterministic_result_proj0')
+
+    def test_deterministic_result_projection_uuid_unique_and_terminal_immutable(tmp_path):
+        req = reseal(fixture())
+&gt;       a = construct_engineering(req, tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_candidate_and_output_copies_cannot_mutate_service" time="0.052"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_candidate_and_output_copi0')
+
+    def test_candidate_and_output_copies_cannot_mutate_service(tmp_path):
+        req = reseal(fixture())
+&gt;       obj = construct_engineering(req, tmp_path, COMMIT)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_projection_does_not_depend_on_decimal_precision" time="0.001" /><testcase classname="tests.portfolio.test_risk_service" name="test_unexpected_failure_recorded_not_masked" time="0.053"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000142FF712FD0&gt;
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_unexpected_failure_record0')
+
+    def test_unexpected_failure_recorded_not_masked(monkeypatch, tmp_path):
+        import aqrp.portfolio.service as service
+    
+        def broken(_):
+            raise RuntimeError("deliberate storage/compute failure")
+    
+        monkeypatch.setattr(service, "build_candidate", broken)
+        with pytest.raises(RuntimeError):
+&gt;           service.construct_engineering(reseal(fixture()), tmp_path, COMMIT)
+
+tests\portfolio\test_risk_service.py:169: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_formal_corrupted_policy_fail_closed" time="0.008" /><testcase classname="tests.portfolio.test_risk_service" name="test_replay_missing_result_and_post_manifest_modification" time="0.062" /><testcase classname="tests.portfolio.test_risk_service" name="test_real_beta_dot_product_and_distinct_sectors" time="0.084"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_real_beta_dot_product_and0')
+
+    def test_real_beta_dot_product_and_distinct_sectors(tmp_path):
+        x = fixture()
+        x["inputs"]["exposures"]["data"][0]["beta"] = "1.2"
+        x["inputs"]["exposures"]["data"][1].update(beta="0.8", industry="J")
+        x["constraints"]["industries"]["J"] = dict(x["constraints"]["industries"]["I"])
+        x["constraints"]["beta_max"] = "1"
+&gt;       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:209: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase><testcase classname="tests.portfolio.test_risk_service" name="test_three_asset_centered_long_short_and_input_permutation" time="0.030"><failure message="aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_three_asset_centered_long0')
+
+    def test_three_asset_centered_long_short_and_input_permutation(tmp_path):
+        x = fixture()
+        for name, e in x["inputs"].items():
+            if name == "scores":
+                continue
+            if name == "account":
+                e["data"]["positions"].append({"security_id": "SYNTH:C", "quantity": "0"})
+            else:
+                row = deepcopy(e["data"][0])
+                row["security_id"] = "SYNTH:C"
+                e["data"].append(row)
+        score = x["inputs"]["scores"][0]["data"]["rows"]
+        row = deepcopy(score[0])
+        row.update(security_id="SYNTH:C", score="-2")
+        score.append(row)
+        x["policy"].update(mode="LONG_SHORT", weighting="score", gross="1", net="0", top_k=3, long_k=2)
+        x["constraints"]["per_asset"]["SYNTH:C"] = "1"
+&gt;       a = construct_engineering(reseal(x), tmp_path / "a", COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+&gt;           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError</failure></testcase></testsuite></testsuites>

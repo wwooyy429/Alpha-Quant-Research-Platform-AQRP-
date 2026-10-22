@@ -1,0 +1,341 @@
+{
+  "schema_version": "portfolio-request/1.0.0",
+  "context": {
+    "decision_time": "2024-02-01T16:00:00.000000+00:00",
+    "currency": "CCY",
+    "market_id": "SYNTH",
+    "calendar_id": "SYNTHETIC_V1",
+    "snapshot_id": "p4-synthetic-fixture-1",
+    "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+    "session_index": 0
+  },
+  "profile": {
+    "profile_id": "SYNTHETIC_PORTFOLIO_1",
+    "max_age_sessions": 0,
+    "allow_full_close_odd_lot": true,
+    "fee_reserve": "0"
+  },
+  "policy": {
+    "mode": "LONG_ONLY",
+    "weighting": "score",
+    "top_k": 2,
+    "long_k": 1,
+    "short_k": 1,
+    "gross": "1",
+    "net": "1",
+    "factor_weights": {
+      "F1": "1"
+    }
+  },
+  "constraints": {
+    "per_asset": {
+      "SYNTH:A": "1",
+      "SYNTH:B": "1"
+    },
+    "gross_max": "1.5",
+    "net_min": "-1",
+    "net_max": "1",
+    "leverage_max": "1.5",
+    "turnover_max": "2",
+    "beta_min": "-2",
+    "beta_max": "2",
+    "industries": {
+      "I": {
+        "net_min": "-2",
+        "net_max": "2",
+        "gross_max": "1.5"
+      }
+    },
+    "allow_cash_only": true
+  },
+  "source": {
+    "kind": "DECLARED_FIXTURE",
+    "scope": "ENGINEERING_TEST_ONLY",
+    "dataset_kind": "SYNTHETIC",
+    "financial_approval": "NONE",
+    "fixture_manifest": {
+      "x01-securities": "09ef7200f53903ea2b9e9c05d2e4e39ecdad880104f3a7a4e9d3916135d77512",
+      "x01-prices": "ae72db5a2369806f72c2b19127f28d8ec9e3798c49ff995e1b9e74666d4b9473",
+      "x01-status": "4e68aaf8d52adc3c12bd857eb8a9995a49c79a4c43351fc5b9f57211a82df1d4",
+      "x01-exposures": "49d78d18dfc4e7c73a1247ed0625dfa178cc66f2139da24c2fa3956d3e6e30af",
+      "x01-permissions": "2e67e31f38b0f65f60119efd1c8b97f3c910674103f61a0689b554e7fa535899",
+      "x01-account": "95b57fc8a79971dff9adcb6083b546d65408e672aac5419b66d033136efd5071",
+      "x01-scores": "d4d091e591a9131c52495bef7409ef4a73b61fc513c1af54fdaefd52aaa734f2"
+    }
+  },
+  "inputs": {
+    "securities": {
+      "schema_version": "portfolio-input/1.0.0",
+      "kind": "securities",
+      "ref": "x01-securities",
+      "context": {
+        "decision_time": "2024-02-01T16:00:00.000000+00:00",
+        "currency": "CCY",
+        "market_id": "SYNTH",
+        "calendar_id": "SYNTHETIC_V1",
+        "snapshot_id": "p4-synthetic-fixture-1",
+        "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+        "session_index": 0
+      },
+      "event_time": "2024-02-01T16:00:00.000000+00:00",
+      "available_at": "2024-02-01T16:00:00.000000+00:00",
+      "as_of": "2024-02-01T16:00:00.000000+00:00",
+      "data": [
+        {
+          "security_id": "SYNTH:A",
+          "symbol": "A",
+          "market_id": "SYNTH",
+          "currency": "CCY",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        },
+        {
+          "security_id": "SYNTH:B",
+          "symbol": "B",
+          "market_id": "SYNTH",
+          "currency": "CCY",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        }
+      ],
+      "content_sha256": "09ef7200f53903ea2b9e9c05d2e4e39ecdad880104f3a7a4e9d3916135d77512"
+    },
+    "prices": {
+      "schema_version": "portfolio-input/1.0.0",
+      "kind": "prices",
+      "ref": "x01-prices",
+      "context": {
+        "decision_time": "2024-02-01T16:00:00.000000+00:00",
+        "currency": "CCY",
+        "market_id": "SYNTH",
+        "calendar_id": "SYNTHETIC_V1",
+        "snapshot_id": "p4-synthetic-fixture-1",
+        "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+        "session_index": 0
+      },
+      "event_time": "2024-02-01T16:00:00.000000+00:00",
+      "available_at": "2024-02-01T16:00:00.000000+00:00",
+      "as_of": "2024-02-01T16:00:00.000000+00:00",
+      "data": [
+        {
+          "security_id": "SYNTH:A",
+          "price": "10",
+          "lot": "10",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        },
+        {
+          "security_id": "SYNTH:B",
+          "price": "10",
+          "lot": "10",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        }
+      ],
+      "content_sha256": "ae72db5a2369806f72c2b19127f28d8ec9e3798c49ff995e1b9e74666d4b9473"
+    },
+    "status": {
+      "schema_version": "portfolio-input/1.0.0",
+      "kind": "status",
+      "ref": "x01-status",
+      "context": {
+        "decision_time": "2024-02-01T16:00:00.000000+00:00",
+        "currency": "CCY",
+        "market_id": "SYNTH",
+        "calendar_id": "SYNTHETIC_V1",
+        "snapshot_id": "p4-synthetic-fixture-1",
+        "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+        "session_index": 0
+      },
+      "event_time": "2024-02-01T16:00:00.000000+00:00",
+      "available_at": "2024-02-01T16:00:00.000000+00:00",
+      "as_of": "2024-02-01T16:00:00.000000+00:00",
+      "data": [
+        {
+          "security_id": "SYNTH:A",
+          "tradable": true,
+          "in_universe": true,
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        },
+        {
+          "security_id": "SYNTH:B",
+          "tradable": true,
+          "in_universe": true,
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        }
+      ],
+      "content_sha256": "4e68aaf8d52adc3c12bd857eb8a9995a49c79a4c43351fc5b9f57211a82df1d4"
+    },
+    "exposures": {
+      "schema_version": "portfolio-input/1.0.0",
+      "kind": "exposures",
+      "ref": "x01-exposures",
+      "context": {
+        "decision_time": "2024-02-01T16:00:00.000000+00:00",
+        "currency": "CCY",
+        "market_id": "SYNTH",
+        "calendar_id": "SYNTHETIC_V1",
+        "snapshot_id": "p4-synthetic-fixture-1",
+        "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+        "session_index": 0
+      },
+      "event_time": "2024-02-01T16:00:00.000000+00:00",
+      "available_at": "2024-02-01T16:00:00.000000+00:00",
+      "as_of": "2024-02-01T16:00:00.000000+00:00",
+      "data": [
+        {
+          "security_id": "SYNTH:A",
+          "industry": "I",
+          "beta": "1",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        },
+        {
+          "security_id": "SYNTH:B",
+          "industry": "I",
+          "beta": "1",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        }
+      ],
+      "content_sha256": "49d78d18dfc4e7c73a1247ed0625dfa178cc66f2139da24c2fa3956d3e6e30af"
+    },
+    "permissions": {
+      "schema_version": "portfolio-input/1.0.0",
+      "kind": "permissions",
+      "ref": "x01-permissions",
+      "context": {
+        "decision_time": "2024-02-01T16:00:00.000000+00:00",
+        "currency": "CCY",
+        "market_id": "SYNTH",
+        "calendar_id": "SYNTHETIC_V1",
+        "snapshot_id": "p4-synthetic-fixture-1",
+        "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+        "session_index": 0
+      },
+      "event_time": "2024-02-01T16:00:00.000000+00:00",
+      "available_at": "2024-02-01T16:00:00.000000+00:00",
+      "as_of": "2024-02-01T16:00:00.000000+00:00",
+      "data": [
+        {
+          "security_id": "SYNTH:A",
+          "short_permission": true,
+          "borrow_limit_total": "1000",
+          "sellable_qty": "15",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        },
+        {
+          "security_id": "SYNTH:B",
+          "short_permission": true,
+          "borrow_limit_total": "1000",
+          "sellable_qty": "0",
+          "event_time": "2024-02-01T16:00:00.000000+00:00",
+          "available_at": "2024-02-01T16:00:00.000000+00:00",
+          "as_of": "2024-02-01T16:00:00.000000+00:00"
+        }
+      ],
+      "content_sha256": "2e67e31f38b0f65f60119efd1c8b97f3c910674103f61a0689b554e7fa535899"
+    },
+    "account": {
+      "schema_version": "portfolio-input/1.0.0",
+      "kind": "account",
+      "ref": "x01-account",
+      "context": {
+        "decision_time": "2024-02-01T16:00:00.000000+00:00",
+        "currency": "CCY",
+        "market_id": "SYNTH",
+        "calendar_id": "SYNTHETIC_V1",
+        "snapshot_id": "p4-synthetic-fixture-1",
+        "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+        "session_index": 0
+      },
+      "event_time": "2024-02-01T16:00:00.000000+00:00",
+      "available_at": "2024-02-01T16:00:00.000000+00:00",
+      "as_of": "2024-02-01T16:00:00.000000+00:00",
+      "data": {
+        "equity": "1000",
+        "total_cash": "850",
+        "restricted_cash": "0",
+        "short_restriction": "0",
+        "nonshort_restriction": "0",
+        "positions": [
+          {
+            "security_id": "SYNTH:A",
+            "quantity": "15"
+          },
+          {
+            "security_id": "SYNTH:B",
+            "quantity": "0"
+          }
+        ],
+        "valuation_time": "2024-02-01T16:00:00.000000+00:00",
+        "price_ref": "x01-prices"
+      },
+      "content_sha256": "95b57fc8a79971dff9adcb6083b546d65408e672aac5419b66d033136efd5071"
+    },
+    "scores": [
+      {
+        "schema_version": "portfolio-input/1.0.0",
+        "kind": "scores",
+        "ref": "x01-scores",
+        "context": {
+          "decision_time": "2024-02-01T16:00:00.000000+00:00",
+          "currency": "CCY",
+          "market_id": "SYNTH",
+          "calendar_id": "SYNTHETIC_V1",
+          "snapshot_id": "p4-synthetic-fixture-1",
+          "snapshot_sha256": "15549271f9d21761806d66f56c32a982d5b7cc662b1ca8307c4aa3addd4821ef",
+          "session_index": 0
+        },
+        "event_time": "2024-02-01T16:00:00.000000+00:00",
+        "available_at": "2024-02-01T16:00:00.000000+00:00",
+        "as_of": "2024-02-01T16:00:00.000000+00:00",
+        "data": {
+          "factor_key": "F1",
+          "factor_ref": {
+            "factor_id": "declared-fixture",
+            "factor_version": "1.0.0",
+            "implementation_hash": "78e93430e89df1d3c8935d8cb947e63803c028f947dfebe40357dde9aebef361"
+          },
+          "params_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "stage": "final",
+          "rows": [
+            {
+              "security_id": "SYNTH:A",
+              "score": "1",
+              "valid": true,
+              "signal_time": "2024-02-01T16:00:00.000000+00:00",
+              "session_index": 0,
+              "event_time": "2024-02-01T16:00:00.000000+00:00",
+              "available_at": "2024-02-01T16:00:00.000000+00:00",
+              "as_of": "2024-02-01T16:00:00.000000+00:00"
+            },
+            {
+              "security_id": "SYNTH:B",
+              "score": "9",
+              "valid": true,
+              "signal_time": "2024-02-01T16:00:00.000000+00:00",
+              "session_index": 0,
+              "event_time": "2024-02-01T16:00:00.000000+00:00",
+              "available_at": "2024-02-01T16:00:00.000000+00:00",
+              "as_of": "2024-02-01T16:00:00.000000+00:00"
+            }
+          ]
+        },
+        "content_sha256": "d4d091e591a9131c52495bef7409ef4a73b61fc513c1af54fdaefd52aaa734f2"
+      }
+    ]
+  }
+}

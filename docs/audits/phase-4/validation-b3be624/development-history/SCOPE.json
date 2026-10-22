@@ -1,0 +1,24 @@
+{
+  "actual_executor": "Codex developer",
+  "superseded_full_SDKs": [
+    {
+      "code": "c74ba4cf32e52412f5ec698274b704981705bf45",
+      "run": "aqrp-19327593-f5ac-4e61-9300-59c837ac44fc",
+      "tests": 797,
+      "status": "PASSED_SUPERSEDED_BY_METADATA_AND_KNOWN_ANSWER_CHANGES"
+    },
+    {
+      "code": "435cd94e9ec2e0891285732cd3b37ecdb0d538e3",
+      "run": "aqrp-5d372371-1982-4573-9e20-d597a3dc0612",
+      "tests": 799,
+      "status": "PASSED_SUPERSEDED_BY_OUTPUT_ENVIRONMENT_VERSION_METADATA"
+    }
+  ],
+  "failed_tests": {
+    "test2": "194 pass / 1 fail; contradictory net-min/max test fixture, corrected upper bound, unchanged numerical expected",
+    "test8": "178 pass /43 fail; identity helper quoting failed before receipt refresh; admission correctly denied changed bundle; fixed helper, no mathematical expected change"
+  },
+  "verifier_first_attempt": "Local/Windows metadata parser asserted LF against legitimate RFC822 CRLF; original bytes unchanged, parser normalizes only logical metadata text; final three verifications pass",
+  "earliest_static_diagnostics": "E701/E702/unused/undefined names retained in conversation tool outputs only, no separate complete raw log; do not invent one",
+  "full_current_SDK_and_CI_raw_evidence": "Complete selected-file sets with all command/failure records retained under exact code/run identity"
+}

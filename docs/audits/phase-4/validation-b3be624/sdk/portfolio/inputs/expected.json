@@ -1,0 +1,49 @@
+{
+  "origin": "Independent G1 approved exact arithmetic, manually frozen before implementation",
+  "cases": {
+    "base": {
+      "status": "SUCCEEDED",
+      "quantities": {
+        "SYNTH:A": "75",
+        "SYNTH:B": "25"
+      },
+      "cash": "0",
+      "gross": "1",
+      "net": "1"
+    },
+    "x01": {
+      "status": "REJECTED",
+      "reason": "DELTA_LOT_MISMATCH",
+      "turnover": "0.95"
+    },
+    "x03": {
+      "status": "REJECTED",
+      "reason": "BETA",
+      "pre_beta": "0",
+      "post_beta": "-0.5",
+      "post_free_cash": "500"
+    },
+    "x04": {
+      "status": "REJECTED",
+      "reason": "TURNOVER",
+      "pre_turnover": "0.6",
+      "post_turnover": "1.1"
+    },
+    "odd_hold": {
+      "status": "SUCCEEDED",
+      "quantities": {
+        "SYNTH:A": "15",
+        "SYNTH:B": "85"
+      },
+      "cash": "0"
+    },
+    "short_close": {
+      "status": "SUCCEEDED",
+      "quantities": {
+        "SYNTH:A": "0",
+        "SYNTH:B": "100"
+      },
+      "cash": "0"
+    }
+  }
+}

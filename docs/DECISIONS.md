@@ -1,5 +1,7 @@
 # 架构决策、冲突及待用户决定事项
 
+2026-10-22 当前Phase4：用户已授权7项受限工程实现，53模块0.4.0已完成开发自测，业务b3be62439d8d0877478b7105d68863fcb2a108a0干净SDK799、双OS各799及原始ZIP/hash核验、外置20/四/数学91通过。当前IMPLEMENTATION READY FOR GPT WORK G2，不是独立G2通过或阶段验收；详docs/audits/phase-4/IMPLEMENTATION_REVIEW_PACKAGE.md。真实隔离/正式Test/金融批准及旧完整宿主限制保留，main/标签不动，无合并/发布/部署/实盘/P5。以下旧状态按轮次保留。
+
 2026-10-22 当前Phase4 G1：GPT Work对固定265af16353d85ce8c2d229a7517809d707498da8判PLAN PASS（受限工程设计），001 High/002 Medium均CLOSED_DESIGN，无新增阻断。原17候选独立复算、64项证据检查通过；仅设计数学，不是P4实现。原件与接收/关闭在docs/audits/phase-4/g1-265af16/。实际P4实施仍待用户单独授权，未阶段验收/合并/标签/部署/实盘/P5；Phase3受限发布与延期不变。以下旧BLOCKED/OPEN按原轮历史保留。
 
 2026-10-22 当前Phase4 G1：GPT Work对固定e40ddd0009cc30664c3a0fe0b74c4a497a541d77判PLAN BLOCKED（001 High、002 Medium仍OPEN）。本轮仅修订目标/delta双lot门禁、不动/全平例外及收窄取整性质，新增独立反例，待新固定SHA主审复核；详docs/audits/phase-4/DEVELOPER_RESPONSE.md。Phase3受限发布不变，不写P4业务、无合并/标签/部署/实盘/P5；以下旧状态为历史。

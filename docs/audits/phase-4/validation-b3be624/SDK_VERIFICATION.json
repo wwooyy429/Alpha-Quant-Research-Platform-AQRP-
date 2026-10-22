@@ -1,0 +1,111 @@
+{
+  "scope": "Developer byte/contract verification; not independent audit or OS deployment",
+  "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-implementation-20261022\\g2-sdk\\aqrp-01845d11-b0f7-4778-b5c8-e9a1723d6e1d",
+  "head_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+  "executed_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+  "source_tree": "4f418b5288345ab561d3c8e8a9e02521d8ad287b",
+  "executed_parents": [
+    "435cd94e9ec2e0891285732cd3b37ecdb0d538e3"
+  ],
+  "source_binding": "EXACT_COMMIT",
+  "environment": {
+    "run_id": "aqrp-01845d11-b0f7-4778-b5c8-e9a1723d6e1d",
+    "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "os": "Windows-11-10.0.26300-SP0",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "code_commit": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+    "dirty": false,
+    "complete": true,
+    "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+    "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-implementation-20261022\\g2-sdk\\aqrp-01845d11-b0f7-4778-b5c8-e9a1723d6e1d",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "github_sha": null,
+    "wheel_sha256": "96223026515e0d44ae009f629bacf900e32bab0433490be2e013539fa814d473"
+  },
+  "zip_sha256": null,
+  "zip_bytes": null,
+  "crc": "NOT_APPLICABLE_DIRECTORY",
+  "selected_files": 247,
+  "upload_selection_sha256": "427d32b77a81c528779e7ff01cd56debc5fa3dae3bf82a10c69460b31ea3bc0f",
+  "junit": {
+    "tests": 799,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_gates": "PASS",
+  "wheel_sha256": "96223026515e0d44ae009f629bacf900e32bab0433490be2e013539fa814d473",
+  "python_modules": 53,
+  "dependency_wheels": 22,
+  "snapshots": [
+    {
+      "path": "dataset/096ed9c2-226c-4cea-84ec-1a41d910c393",
+      "hash": "5e0a1070046fb408550be550d1dc34392f2c2b5c090e4f8e10bc187bc81158f0"
+    },
+    {
+      "path": "factor-dataset/5fabd392-2330-4722-90f9-51c6aa03dc99",
+      "hash": "e36123c3fd08737fc49c5fed7dc5d2080d128e91759b1020b3c99cdd4d73a0c2"
+    },
+    {
+      "path": "reproduction/dataset/c06821c2-dd09-4d71-89d8-48602712e7a4",
+      "hash": "9d9a86ee0c8f0fc96b5590ed1bddace5981810db32a1de019ac90b71cb215740"
+    },
+    {
+      "path": "research/inputs/dataset/b61d2952-6e87-4636-b701-6cbb3278a7ab",
+      "hash": "b6deac6ec870bd6fdf08cdcbed4b9e2663b89be3eab032151e7e57e29f1cbbae"
+    },
+    {
+      "path": "research/replacement-inputs/dataset/d4670634-6f68-42ab-8293-060b68e39076",
+      "hash": "2b58b61719bee92d4e64357c55255351eac98aac8f7b77d2859eef26b3708488"
+    }
+  ],
+  "verified_runs": [
+    "df7dd31b-a8aa-4617-ab0c-f5d9df6699b1",
+    "b834c4ea-7b94-443e-805f-91fff5a6b00f",
+    "e38ceff4-9d1e-4fbd-831a-b9387413e1c9"
+  ],
+  "engine_batches": 95,
+  "factor_runs": 3,
+  "engineering_reports": 3,
+  "original_published_files": 66,
+  "original_runs_replayed": 3,
+  "result": "PASS",
+  "portfolio_engineering_cases": [
+    {
+      "name": "base",
+      "run_id": "11de234a-78b0-4a28-ae00-a905cffed0dc",
+      "status": "SUCCEEDED"
+    },
+    {
+      "name": "x01",
+      "run_id": "40540777-e652-4f8a-ba6d-a0d836acf8ce",
+      "status": "REJECTED"
+    },
+    {
+      "name": "x03",
+      "run_id": "454fd09f-3f58-4658-94f2-f8583a731b22",
+      "status": "REJECTED"
+    },
+    {
+      "name": "x04",
+      "run_id": "06a9920d-6c9b-4838-a31c-759b403e53fe",
+      "status": "REJECTED"
+    },
+    {
+      "name": "odd_hold",
+      "run_id": "2b136abe-c741-41f7-acf5-41fcedfb5df8",
+      "status": "SUCCEEDED"
+    },
+    {
+      "name": "short_close",
+      "run_id": "63a40af2-b717-4930-ae1a-603cc78725f1",
+      "status": "SUCCEEDED"
+    }
+  ],
+  "formal_gate": "APPROVAL_REQUIRED",
+  "orders_submitted": 0
+}
