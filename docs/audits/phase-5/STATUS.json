@@ -1,6 +1,6 @@
 {
   "phase": 5,
-  "current": "G1_PLAN_PASS_WITH_CONDITIONS_HUMAN_ACCEPTANCE_AND_IMPLEMENTATION_AUTHORIZATION_PENDING",
+  "current": "IMPLEMENTED_RESTRICTED_ENGINEERING_PENDING_G2",
   "requirements": 12,
   "tiers": {
     "MVP": 10,
@@ -8,8 +8,8 @@
   },
   "baseline": "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
   "G1": "PLAN_PASS_WITH_CONDITIONS_AT_5262032",
-  "implementation": "NOT_AUTHORIZED_NOT_STARTED",
-  "product_tests": "NOT_RUN_NO_P5_BUSINESS_CODE",
+  "implementation": "ENGINEERING_IMPLEMENTATION_CANDIDATE_NOT_ACCEPTED",
+  "product_tests": "ACTUAL_FIXED_SHA_SDK_CI_AND_ORIGINAL_ZIP_RECEIPTS_REQUIRED_IN_PR_8",
   "design_candidate_math": "GPT Work independently verified original25/70 and supplemental25/209; extra6/2349 MODEL scenarios; no P5 product tests",
   "main_merge_tag_authorization": false,
   "formal_Test": "DEFERRED_NOT_RUN",
@@ -39,40 +39,49 @@
     "WORK-P5-G1-003": "CLOSED_DESIGN",
     "WORK-P5-G1-004": "CLOSED_DESIGN"
   },
-  "review_package": "REVIEW_PACKAGE_CURRENT.md",
+  "review_package": "IMPLEMENTATION_REVIEW_PACKAGE.md",
   "contract_addendum": {
     "id": "C-P5-001",
-    "status": "PENDING_EXPLICIT_USER_ACCEPTANCE_BEFORE_IMPLEMENTATION",
+    "status": "EXPLICITLY_ACCEPTED_DESIGN_ADDENDUM_ORIGINAL_P0_UNCHANGED",
     "frozen_original_unchanged": true
   },
   "previous_independent_reviewed_sha": "5c9721f96679f4d495b7b3b93af3e2e31e66ae62",
   "previous_review_final_head_not_covered": "bd18d1b98b5647f4f4b6345ffe73dca40acaf038",
   "review_record": "g1-5262032/DEVELOPER_RESPONSE.md",
-  "human_design_acceptance": "PENDING",
+  "human_design_acceptance": "EXPLICITLY_ACCEPTED",
   "pending_human_decisions": [
     {
       "id": "HUMAN-P5-CONTRACT",
       "owner": "User",
-      "status": "PENDING",
+      "status": "ACCEPTED",
       "decision": "Explicitly accept C-P5-001 frozen-contract semantic addendum or request revision",
       "blocks": "P5 business implementation"
     },
     {
       "id": "HUMAN-P5-PROFILE",
       "owner": "User",
-      "status": "PENDING",
+      "status": "ACCEPTED",
       "decision": "Accept P5-D01-D10 including C-P5-002-004 updated synthetic economic/statistical choices or request revision",
       "blocks": "P5 business implementation"
     },
     {
       "id": "HUMAN-P5-IMPLEMENTATION",
       "owner": "User",
-      "status": "NOT AUTHORIZED",
+      "status": "AUTHORIZED",
       "decision": "Separately authorize canonical12 restricted engineering requirements implementation",
       "blocks": "P5 business implementation"
     }
   ],
-  "updated_profile": "P5-D01-D10 / C-P5-002-004 PENDING_EXPLICIT_USER_ACCEPTANCE",
+  "updated_profile": "P5-D01-D10 / C-P5-002-004 EXPLICITLY_ACCEPTED",
   "receipt_scope": "Archive/status only; reviewed design files unchanged; report verdict limited to5262032",
-  "independent_recheck_current_CI_raw_ZIP": "NOT_VERIFIED_THIS_ROUND_P4_QUALITY_METADATA_ONLY"
+  "independent_recheck_current_CI_raw_ZIP": "NOT_VERIFIED_THIS_ROUND_P4_QUALITY_METADATA_ONLY",
+  "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json",
+  "G2": "NOT_YET_INDEPENDENTLY_REVIEWED",
+  "phase_acceptance": "NOT_GRANTED",
+  "implementation_contract": "IMPLEMENTATION_CONTRACT.md",
+  "implementation_traceability": "IMPLEMENTATION_TRACEABILITY.md",
+  "implementation_identity": "IMPLEMENTATION_IDENTITY.json",
+  "developer_validation_source": "PR #8 fixed40 SHA + sealed external original command/log/SDK/CI receipts; this file is not a test verdict",
+  "G1_human_conditions": "EXPLICITLY_ACCEPTED_AND_IMPLEMENTATION_AUTHORIZED",
+  "candidate_version": "0.5.0.dev1"
 }

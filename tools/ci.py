@@ -112,7 +112,7 @@ def main():
     command([str(py), "-m", "pip", "install", "--no-index", "--no-deps", str(project_wheel)])
     command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
     command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
-    command([str(py), str(source / "tools/check_phase4_package.py")], cwd=source)
+    command([str(py), str(source / "tools/check_phase5_package.py")], cwd=source)
     command([str(py), str(source / "tools/original_replay_smoke.py"), str(RUN)], cwd=source)
     os.environ["AQRP_ORIGINAL_ENV_ARCHIVE"] = str(RUN / "reproduction/environment-archive.json")
     command(
@@ -120,6 +120,7 @@ def main():
             str(py),
             "-m",
             "pytest",
+            "--hypothesis-seed=20261023",
             "-o",
             f"cache_dir={RUN / 'pytest-cache'}",
             f"--basetemp={RUN / 'tmp'}",
@@ -139,6 +140,10 @@ def main():
     command([str(py), str(source / "tools/factor_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/research_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/portfolio_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/backtest_smoke.py"), str(RUN)], cwd=source)
+    command(
+        [str(py), str(source / "tools/backtest_reference.py"), str(RUN / "backtest")], cwd=source
+    )
     for script in (
         "reference_arithmetic.py",
         "supplemental_reference.py",
@@ -179,7 +184,16 @@ def main():
                 and (path.suffix in (".log", ".json", ".xml") or path.name == ".coverage")
             )
             or relative.parts[0]
-            in ("dataset", "factor-dataset", "factor-runs", "wheel", "research", "portfolio")
+            in (
+                "dataset",
+                "factor-dataset",
+                "factor-runs",
+                "wheel",
+                "research",
+                "portfolio",
+                "backtest",
+                "tmp",
+            )
             or (relative.parts[0] == "reproduction" and relative.parts[1] != "venv")
         ):
             selected.append(

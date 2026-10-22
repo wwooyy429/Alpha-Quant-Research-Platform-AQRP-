@@ -130,3 +130,10 @@ Phase 0 已发布。Phase 1 计划经 Gemini 对固定380d9f8预审PASS，现已
 
 
 本轮报告原件、审查方发现关闭记录及开发方核对见[实现审计接收索引](docs/audits/phase-1/gemini/IMPLEMENTATION_AUDIT_EVIDENCE_INDEX.json)与[实现报告勘误/处理意见](docs/audits/phase-1/IMPLEMENTATION_AUDIT_RESPONSE.md)。上述核心勘误已获Gemini确认；最新[补充确认与状态核对](docs/audits/phase-1/ERRATA_CONFIRMATION_RECONCILIATION.md)保留本地SDK未验证及远端产物未重算等非阻断限制。当前审查通过、等待人工验收；不能将用户转交报告当作验收、合并或发布授权。
+
+
+## Phase5 engineering event simulation
+
+Synthetic engineering SDK candidate: immutable requests, deterministic event queue, atomic Fill/account journal, settlement/short/actions, exact financial output, performance and numerical replay. The same service is exposed through `aqrp-backtest simulate|status|result|replay`. No broker transport or financial approval.
+
+See [implementation contract](docs/audits/phase-5/IMPLEMENTATION_CONTRACT.md), [twelve-requirement mapping](docs/audits/phase-5/IMPLEMENTATION_TRACEABILITY.md) and [fixed-SHA G2 review entry](docs/audits/phase-5/IMPLEMENTATION_REVIEW_PACKAGE.md). The user authorized implementation, not phase acceptance, merge, tag, deployment, formal Test or Phase6. Actual clean SDK/dual-OS raw artifact receipts are identified in PR #8 for its exact AQRP_FIXED_REVIEW_SHA.
