@@ -27,3 +27,14 @@
 每个命令记录真实executor/cwd/argv/UTC起止/exit、完整stdout/stderr和首次失败；唯一run_id与不可变config、clean commit、environment/OS/Python/installer/lock哈希。封存manifest排除自身，外层receipt绑定ZIP与manifest并说明非数字签名。Git不能容纳的依赖或日志逐文件列省略理由/size/hash并留外置完整原字节，不能称仓库子集为完整证据。
 
 G2须独立审核固定完整SHA及实际输出/落盘/返回字节，复现旧P4两缺陷与扩展金额/血缘控制；外置自查不能改名独立测试。正式Test/真实权限/金融批准保持延期，engineering SDK成功不改变该状态。所有High/Critical及金融安全Medium未闭环阻断。G1与G2、用户验收、合并标签分别记录。
+
+## G1四项专项补充验收（未执行产品测试）
+
+| 发现 | 新预定设计案例 | 未来实现必须执行的核验 |
+|---|---|---|
+| 001 | N01–N03，EVENT_TRANSACTION_ADDENDUM | 同刻A/B最新状态与完整trace、65/95/100、容量只在提交消费、提交前后真实故障恢复/重放；取消phase已过规则 |
+| 002 | N04–N11，CASH_BUCKETS_AND_PROJECTION | short minfee交收前后A守恒、partial cover先后交收、跨零、红利支付、F/O互斥；P4原API真实接线及A/H完整对账 |
+| 003 | N12–N17，EXECUTION_PRICE_AND_FEES | 四种side/type完整价格域、raw/actual各边界±tick、有利SELL gap拒绝、paid+所有余单H、minimum fee/撤单/预算故障注入 |
+| 004 | N18–N25，FIFO_ATTRIBUTION | closed-fragment分母、partial/cross-zero、历史borrow/long红利/short应付与pay不重计、精确分摊、零利润/undefined、split后费用池 |
+
+新增25组209断言只证明开发方所选公式/trace与字面期望一致，不是P5产品/OS权限/实际恢复通过。原25/70仍单独重执行并保留原字节。未来独立审查须另写参考并检查生产输出/落盘/返回及完整SDK/双OS原ZIP；模型参考不能替代实际cash/queue/replay实现。

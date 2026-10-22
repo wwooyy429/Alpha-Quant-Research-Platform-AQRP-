@@ -1,8 +1,5 @@
 # AQRP 当前审核、验证与测试分工
 
-2026-10-22 用户已明确确认：WI-R2-001、WI-R2-002持续 DEFERRED / NOT VERIFIED，统一延期至所有开发完成、最终集成版本完整40位SHA锁定后真实环境验证，届时执行方案/权限操作另行授权。R3代码、模型或CI通过不能关闭两项；原失败证据保留，各阶段既定回归和固定版本独立审核继续。详 docs/audits/windows-isolation-deferral/DEFERRAL_POLICY.md。本次只确认延期，不启用账户/修改真实ACL/部署/正式Test/金融批准，不扩大既有开发或合并发布权限。
-
-
 2026-10-22，用户明确：“以后的审核验证测试都主要交给gpt work”。本指令是对既有V3.2角色安排的后续修订，适用于后续阶段及当前Phase3 G1待复核，不更改历史报告事实。原话和范围见audits/phase-3/REVIEW_AUTHORITY_CHANGE.json。
 
 - **Codex开发方**：实现、缺陷修复、必要自测/CI、保存完整失败/成功证据、固定SHA与PR、整理复核资料。

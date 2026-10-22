@@ -1,0 +1,11 @@
+{
+  "issue": "Protected REVIEW_PROTOCOL.md was prefixed by earlier user-deferral record at1ab819a, already present at pre-repairbd18d1b; strict package freeze correctly rejects it",
+  "original_failure": "existing-P4-frozen-package.stderr.log",
+  "disposition": "Restore exact accepted main32ea bytes in this protected protocol document. User deferral authority/message remains fully retained in AGENTS and windows-isolation-deferral/AUTHORIZATION/DEFERRAL_POLICY. No regression check or expected hash changed.",
+  "before_sha256": "97c0b0ea403a2d8554efdfa10cac201fed97a24920585e637902e34b42ab001c",
+  "restored_sha256": "8c010d3b99af4c4d7706ecc3fd2e4e5c35284d957ae8f7b1e3267115f22d1489",
+  "expected_preserved_sha256": "8c010d3b99af4c4d7706ecc3fd2e4e5c35284d957ae8f7b1e3267115f22d1489",
+  "source_tests_tools_CI_and_freeze_lists_unchanged": true,
+  "old_bad_commit_and_failure_logs_preserved": true,
+  "requires_fixed_SHA_review": true
+}

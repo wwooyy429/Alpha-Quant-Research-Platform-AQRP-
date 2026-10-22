@@ -1,5 +1,8 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
+2026-10-23 Phase5 G1：GPT Work仅对固定5c9721f96679f4d495b7b3b93af3e2e31e66ae62判PLAN BLOCKED / REQUEST CHANGES（2High/2Medium OPEN），收尾bd18d1b未被该报告审查。本轮在bd之上修订四项设计，原25/70与131冻结文件不改，补充25组209项仅开发方设计算术；四项OPEN_PENDING_RECHECK。C-P5-001事件总序补充提案待主审及用户明确接受，不改冻结P0契约。详docs/audits/phase-5/REVIEW_PACKAGE_CURRENT.md。P5仅计划，未获实现/合并/标签授权；真实隔离R2延期及正式Test/金融批准边界保持，无部署或P6。
+
+
 2026-10-22 用户已明确确认：WI-R2-001、WI-R2-002持续 DEFERRED / NOT VERIFIED，统一延期至所有开发完成、最终集成版本完整40位SHA锁定后真实环境验证，届时执行方案/权限操作另行授权。R3代码、模型或CI通过不能关闭两项；原失败证据保留，各阶段既定回归和固定版本独立审核继续。详 docs/audits/windows-isolation-deferral/DEFERRAL_POLICY.md。本次只确认延期，不启用账户/修改真实ACL/部署/正式Test/金融批准，不扩大既有开发或合并发布权限。
 
 

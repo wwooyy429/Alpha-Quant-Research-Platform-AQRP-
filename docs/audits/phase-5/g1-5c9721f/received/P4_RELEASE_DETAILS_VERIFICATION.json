@@ -1,0 +1,74 @@
+{
+  "scope": "Independent byte/manifest verification of developer postmerge P4 baseline; no new SDK execution",
+  "critical_coverage": [
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\portfolio\\__init__.py",
+      "line": 0.0,
+      "branch": 1
+    },
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\portfolio\\construct.py",
+      "line": 1.0,
+      "branch": 1.0
+    },
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\portfolio\\contracts.py",
+      "line": 0.9899665551839465,
+      "branch": 0.9794520547945206
+    },
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\portfolio\\research_input.py",
+      "line": 0.963963963963964,
+      "branch": 0.9090909090909091
+    },
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\portfolio\\service.py",
+      "line": 0.9894736842105263,
+      "branch": 0.9444444444444444
+    },
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\portfolio\\weights.py",
+      "line": 1.0,
+      "branch": 1.0
+    },
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\risk\\__init__.py",
+      "line": 0.0,
+      "branch": 1
+    },
+    {
+      "module": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Lib\\site-packages\\aqrp\\risk\\checks.py",
+      "line": 0.9904761904761905,
+      "branch": 0.9722222222222222
+    }
+  ],
+  "snapshot_manifests": 5,
+  "terminal_chains": 10,
+  "factor_manifests": 3,
+  "original_ref_replay": "PASS",
+  "formal_gate": "APPROVAL_REQUIRED",
+  "status_old_values_exactly_preserved": true,
+  "original_regression_logs": [
+    {
+      "path": "docs/audits/phase-4/publication/extras/original20-command.json",
+      "bytes": 1069,
+      "sha256": "85b4474169d280928ef941a47304a94ae6d2a18e35e9acace8f7613ef2912a2e"
+    },
+    {
+      "path": "docs/audits/phase-4/publication/extras/original20.log",
+      "bytes": 101,
+      "sha256": "8a86e17b95f5177e78ba88b70ff530cbc821e2e06ab174c847b2973f7e9e0c92"
+    },
+    {
+      "path": "docs/audits/phase-4/publication/extras/original20.xml",
+      "bytes": 3808,
+      "sha256": "554e190ad55c3e82b5bc9de5688e26a365cb35c6c326b2b97eef9cb8b8e89378"
+    },
+    {
+      "path": "docs/audits/phase-4/publication/extras/original-math/independent-implementation-math.json",
+      "bytes": 13453,
+      "sha256": "692d56b356f2773fcc54404ef5370ee25d7ded26706613119badbb5eb57ad608"
+    }
+  ],
+  "result": "PASS"
+}

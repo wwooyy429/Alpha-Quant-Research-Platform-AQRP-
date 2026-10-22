@@ -1,5 +1,10 @@
 # 变更记录
 
+## 2026-10-23 · Phase5 G1阻断接收与设计修订
+
+2026-10-23 Phase5 G1：GPT Work仅对固定5c9721f96679f4d495b7b3b93af3e2e31e66ae62判PLAN BLOCKED / REQUEST CHANGES（2High/2Medium OPEN），收尾bd18d1b未被该报告审查。本轮在bd之上修订四项设计，原25/70与131冻结文件不改，补充25组209项仅开发方设计算术；四项OPEN_PENDING_RECHECK。C-P5-001事件总序补充提案待主审及用户明确接受，不改冻结P0契约。详docs/audits/phase-5/REVIEW_PACKAGE_CURRENT.md。P5仅计划，未获实现/合并/标签授权；真实隔离R2延期及正式Test/金融批准边界保持，无部署或P6。
+
+
 ## 2026-10-23 · R3代码修复独立复核归档
 
 2026-10-23 接收GPT Work固定 62074502aa4c32556b5e690bac10bd8054bd9178 的R3独立复核：WORK-WI-R3-001/002均CLOSED — FIX VERIFIED，代码/模型/工程范围PASS，独立SDK681与双OS各681原证据已核；报告及429成员封存接收核验见 docs/audits/windows-isolation-deferral/r3-recheck-6207450/。整体Windows真实隔离及原WI-R2-001/002继续DEFERRED / NOT VERIFIED，最终集成40位SHA真实验证另行授权。该P3候选未集成P4；本轮仅归档/状态，不合并标签、不真实权限操作，不扩大P5授权。
@@ -329,3 +334,7 @@
 
 
 2026-10-21：按原字节归档Gemini Phase1勘误确认（hash9eccef880347de87ea7256ebf2ae4c4cc0121912f6492ddb32d3ab2117918c18），原实现报告保留。审查方确认PASS/可人工验收，PRE-002 MITIGATED非阻断、PRE-003 CLOSED；本地SDK/远端rehash/跨OS比对仍NOT VERIFIED。新增逐项核对及少量非阻断引用备注，更新状态AUDIT PASSED / AWAITING HUMAN ACCEPTANCE；代码/答案/阈值/CI/环境锁不改，不合并、不打标、不进入P2。
+
+## 一并保留的既有静态回归修复
+
+本轮首次P4静态冻结检查因docs/REVIEW_PROTOCOL.md失败；该文件在此前1ab819a延期记录提交中被加了提示，已存在于bd18d1b。现恢复为已发布32ea基线原字节，不改检查/期望hash；延期原话与义务仍完整保留于AGENTS及windows-isolation-deferral专项记录。首次失败原命令/stdout/stderr和处置在developer-validation/PREEXISTING_REGRESSION_DISPOSITION.json；仅重新执行受影响检查，通过3440冻结文件核对，没有重复已通过的算术或改写失败。此恢复是文档一致性修复，需随新固定SHA复核，不改变main/旧标签。

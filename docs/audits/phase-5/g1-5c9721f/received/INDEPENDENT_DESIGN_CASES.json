@@ -1,0 +1,269 @@
+{
+  "fixed_sha": "5c9721f96679f4d495b7b3b93af3e2e31e66ae62",
+  "reviewer": "GPT Work supplemental reviewer",
+  "scope": "Independent plan countermodels, not P5 implementation outcomes",
+  "records": [
+    {
+      "case": "C01_ATOMIC_TOTAL_ORDER",
+      "inputs": {
+        "same_logical_time": true,
+        "events": [
+          {
+            "id": "A.Match",
+            "priority": 70,
+            "seq": 1
+          },
+          {
+            "id": "B.Match",
+            "priority": 70,
+            "seq": 2
+          },
+          {
+            "id": "A.Fill",
+            "priority": 80,
+            "seq": 3
+          },
+          {
+            "id": "A.Account",
+            "priority": 90,
+            "seq": 4
+          },
+          {
+            "id": "B.Fill",
+            "priority": 80,
+            "seq": 5
+          },
+          {
+            "id": "B.Account",
+            "priority": 90,
+            "seq": 6
+          }
+        ]
+      },
+      "independent_answers": {
+        "strict_tuple": [
+          "A.Match",
+          "B.Match",
+          "A.Fill",
+          "B.Fill",
+          "A.Account",
+          "B.Account"
+        ],
+        "atomic_transaction_order": [
+          "A.Match",
+          "A.Fill",
+          "A.Account",
+          "B.Match",
+          "B.Fill",
+          "B.Account"
+        ]
+      },
+      "interpretation": "Specify parent transaction vs child events and one deterministic log/replay key. This does not claim actual P5 code exists.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "C01_RISK_STATE_REFERENCE",
+      "inputs": {
+        "equity": "1000",
+        "two_accepted_buy_fragments": "1 share each",
+        "price": "100",
+        "fee": "1 each",
+        "current_asset_limit": "0.15"
+      },
+      "independent_answers": {
+        "individual_candidate_weight": "100/999",
+        "after_both_weight": "100/499",
+        "cash_pre_reservation_sufficient": true
+      },
+      "interpretation": "Abstract accepted-order state: second Fill must re-evaluate on the first committed state; does not assert complete current P4 request feasibility.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "C02_SHORT_SETTLEMENT_OVERLAP",
+      "inputs": {
+        "initial_cash": "1000",
+        "short_open": "1 @100",
+        "fees": "0, isolated bucket proof",
+        "cash_after": "1100",
+        "U_short": "100",
+        "S_all_unclosed_proceeds": "100",
+        "V_margin": "100"
+      },
+      "independent_answers": {
+        "literal_before_settlement": "800",
+        "literal_after_settlement": "900",
+        "cash_minus_union_of_declared_restrictions": "900",
+        "economic_equity_both": "1000"
+      },
+      "interpretation": "Either partition settled/unsettled restricted short proceeds or explicitly propose/approve an additional temporary funding reserve. Existing disjoint-reserve statement does not define that reserve.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "C02_WITH_PROFILE_MIN_FEE",
+      "inputs": {
+        "actual_cash_after_short_fill": "1099",
+        "unsettled_notional": "100",
+        "short_proceeds": "100",
+        "margin": "100",
+        "commission": "1"
+      },
+      "independent_answers": {
+        "literal_available": "799",
+        "disjoint_available": "899",
+        "equity": "999"
+      },
+      "interpretation": "A minimum commission changes both answers by1, not the100 overlap.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "C03_SELL_FEE_UPPER",
+      "inputs": {
+        "decision_raw_price": "100",
+        "quantity": "1",
+        "sell_min_price": "95",
+        "next_raw_open": "200400.41",
+        "slippage_bps": "10",
+        "actual_sell_tick_price": "200200.00",
+        "fee_rate": "0.001",
+        "F": "10"
+      },
+      "independent_answers": {
+        "actual_commission": "200.20",
+        "fee_upper_if_assumed_105_price": "1.00",
+        "passes_sell_lower_bound": true
+      },
+      "interpretation": "Sell-only lower bound and symmetric +/-5% wording differ. Define which executions qualify and cap cumulative actual fees before commit. Positive gap rejection is a valid explicit synthetic choice.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "C04_FIFO_COMPLETION_UNIT",
+      "inputs": {
+        "entry": "BUY2 @100, fee1",
+        "exit1": "SELL1 @104, fee1",
+        "exit2": "SELL1 @97, fee1",
+        "FIFO": "same original entry lot"
+      },
+      "independent_answers": {
+        "fragment_net": [
+          "5/2",
+          "-9/2"
+        ],
+        "fragment_win_rate": "1/2",
+        "fragment_profit_loss_ratio": "5/9",
+        "whole_entry_net": "-2",
+        "whole_entry_win_rate": "0/1",
+        "whole_entry_ratio": "UNDEFINED_NO_WINNER"
+      },
+      "interpretation": "Freeze whether completed trade means each closed FIFO fragment or an entire entry lot/flat-to-flat episode. FIFO and fee allocation alone do not state grouping.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "C04_BORROW_LOT_ATTRIBUTION",
+      "inputs": {
+        "short_lot_A": "1@1000 session1, entry fee1",
+        "short_lot_B": "1@1000 session2, entry fee1",
+        "day1_total_borrow": "0.04",
+        "day2_total_borrow": "0.08",
+        "cover_A": "1@997.93 next open, exit fee1"
+      },
+      "independent_answers": {
+        "per-lot-time_accrual_A": "0.08",
+        "pooled-position_cost_A": "0.06",
+        "net_if_time": "-0.01",
+        "net_if_pooled": "+0.01"
+      },
+      "interpretation": "Both derive from the same0.12 position cost; choose/accrue a specific allocation before FIFO profitability is deterministic. Total ledger P&L remains identical.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "T01_before",
+      "inputs": {
+        "submitted": "2024-01-05T08:59:59.999999+00:00",
+        "slice_available": "2024-01-05T09:00:00+00:00",
+        "logical_open": "2024-01-05T09:00:00+00:00"
+      },
+      "independent_answers": {
+        "may_fill_this_open": true
+      },
+      "interpretation": "Strict future-open and zero-width availability design reference, not a product test.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "T01_same",
+      "inputs": {
+        "submitted": "2024-01-05T09:00:00+00:00",
+        "slice_available": "2024-01-05T09:00:00+00:00",
+        "logical_open": "2024-01-05T09:00:00+00:00"
+      },
+      "independent_answers": {
+        "may_fill_this_open": false
+      },
+      "interpretation": "Strict future-open and zero-width availability design reference, not a product test.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "T01_after",
+      "inputs": {
+        "submitted": "2024-01-05T09:00:00.000001+00:00",
+        "slice_available": "2024-01-05T09:00:00+00:00",
+        "logical_open": "2024-01-05T09:00:00+00:00"
+      },
+      "independent_answers": {
+        "may_fill_this_open": false
+      },
+      "interpretation": "Strict future-open and zero-width availability design reference, not a product test.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "T01_late_slice",
+      "inputs": {
+        "submitted": "2024-01-05T08:59:59.999999+00:00",
+        "slice_available": "2024-01-05T09:00:00.000001+00:00",
+        "logical_open": "2024-01-05T09:00:00+00:00"
+      },
+      "independent_answers": {
+        "may_fill_this_open": false
+      },
+      "interpretation": "Strict future-open and zero-width availability design reference, not a product test.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "T03_CAPACITY",
+      "inputs": {
+        "capacity": 10,
+        "orders": [
+          6,
+          6
+        ],
+        "lot": 3
+      },
+      "independent_answers": {
+        "fills": [
+          6,
+          3
+        ],
+        "remaining_capacity": 1
+      },
+      "interpretation": "Shared capacity cannot reset per order; complete odd-lot-close exception needs separate final-fill test.",
+      "level": "Design reference / not an implementation failure"
+    },
+    {
+      "case": "T03_ODD_CLOSE",
+      "inputs": {
+        "old_position": 5,
+        "target": 0,
+        "lot": 3,
+        "first_fill": -3
+      },
+      "independent_answers": {
+        "remaining_position": 2,
+        "last_full_close": -2,
+        "partial_of_1": "NOT_A_LOT_AND_NOT_FULL_CLOSE"
+      },
+      "interpretation": "Final complete close may use explicit full-close exception; arbitrary nonlot fragments do not gain an exception.",
+      "level": "Design reference / not an implementation failure"
+    }
+  ],
+  "cases": 13,
+  "formal_Test": false
+}

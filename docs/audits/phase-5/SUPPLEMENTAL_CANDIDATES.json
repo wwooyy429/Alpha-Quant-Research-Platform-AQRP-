@@ -1,0 +1,752 @@
+{
+  "status": "DEVELOPER_DESIGN_REVISION_CANDIDATES_PENDING_INDEPENDENT_RECHECK",
+  "scope": "FourG1 findings only; original25/70 byte-identical and not replaced",
+  "expected_source": "Explicit hand-derived literal values/traces fixed before reference checks; no AQRP production function is called",
+  "cases": [
+    {
+      "id": "N01",
+      "kind": "atomic_risk",
+      "inputs": {
+        "cash": "1000",
+        "price": "100",
+        "fee": "1",
+        "capacity": "10",
+        "limit": "0.15"
+      },
+      "expected": {
+        "after_A_cash": "899",
+        "after_A_equity": "999",
+        "A_weight": "100/999",
+        "B_candidate_cash": "798",
+        "B_candidate_equity": "998",
+        "B_weight": "100/499",
+        "A_pass": true,
+        "B_pass": false,
+        "actual_fills": "1",
+        "final_cash": "899",
+        "final_qty": "1",
+        "capacity_left": "9"
+      },
+      "calculation_basis": "After A commit B uses q2/E998, so .2004>.15; rejected B does not spend or consume capacity.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N02",
+      "kind": "trace",
+      "inputs": {
+        "envelopes": [
+          [
+            0,
+            100,
+            5,
+            "open-valuation:v3"
+          ],
+          [
+            1,
+            100,
+            8,
+            "close-valuation:v3"
+          ],
+          [
+            0,
+            70,
+            4,
+            "B:v2>v3:noFill"
+          ],
+          [
+            0,
+            20,
+            1,
+            "open-market"
+          ],
+          [
+            1,
+            20,
+            6,
+            "close-market"
+          ],
+          [
+            0,
+            65,
+            2,
+            "cancelC:v0>v1"
+          ],
+          [
+            1,
+            95,
+            7,
+            "borrow0:readv3"
+          ],
+          [
+            0,
+            70,
+            3,
+            "A:v1>v2:FillAccount"
+          ]
+        ]
+      },
+      "expected": {
+        "outer_trace": [
+          "open-market",
+          "cancelC:v0>v1",
+          "A:v1>v2:FillAccount",
+          "B:v2>v3:noFill",
+          "open-valuation:v3",
+          "close-market",
+          "borrow0:readv3",
+          "close-valuation:v3"
+        ],
+        "A_child_local_stages": [
+          80,
+          90
+        ],
+        "A_replay_keys": [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "B_reads_version": "2"
+      },
+      "calculation_basis": "Sort only outer(time,phase,seq); A local80/90 complete inside parent70 commit2 before B70 computes.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N03",
+      "kind": "recovery_arithmetic",
+      "inputs": {
+        "cash_before": "1000",
+        "reserved_before_A": "202",
+        "price": "100",
+        "qty": "1",
+        "fee": "1",
+        "capacity": "10"
+      },
+      "expected": {
+        "before_commit_cash": "1000",
+        "before_commit_reserved": "202",
+        "before_commit_capacity": "10",
+        "after_commit_cash": "899",
+        "after_commit_reserved": "101",
+        "after_commit_capacity": "9",
+        "retry_additional_cash_debit": "0",
+        "retry_total_fills": "1"
+      },
+      "calculation_basis": "Precommit no consumption; replay same committed ID applies once. This is a specified arithmetic snapshot, not a crash test.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N04",
+      "kind": "short_settlement",
+      "inputs": {
+        "cash": "1000",
+        "qty": "1",
+        "price": "100",
+        "fee": "1",
+        "mark": "100",
+        "fee_unused": "10"
+      },
+      "expected": {
+        "C_total": "1099",
+        "equity": "999",
+        "before_C_set": "999",
+        "before_U_short": "100",
+        "before_S_set": "0",
+        "before_available": "899",
+        "after_C_set": "1099",
+        "after_U_short": "0",
+        "after_S_set": "100",
+        "after_available": "899",
+        "P4_before_free": "789",
+        "P4_after_free": "889",
+        "H_before": "100",
+        "H_after": "0"
+      },
+      "calculation_basis": "Unsettled short proceeds are never subtracted again as S_set; only explicit P4 conservatism H changes.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N05",
+      "kind": "partial_cover",
+      "inputs": {
+        "initial_cash": "1000",
+        "short_qty": "2",
+        "entry_price": "100",
+        "entry_fee": "1",
+        "mark": "90",
+        "cover_qty": "1",
+        "cover_price": "90",
+        "cover_fee": "1"
+      },
+      "expected": {
+        "before_available": "819",
+        "after_cover_C_set": "908",
+        "after_cover_U_short": "100",
+        "after_cover_U_free": "100",
+        "after_cover_total_cash": "1108",
+        "after_cover_equity": "1018",
+        "after_cover_available": "818",
+        "after_settlement_C_set": "1108",
+        "after_settlement_S_set": "100",
+        "after_settlement_available": "918",
+        "settle_then_cover_available": "918"
+      },
+      "calculation_basis": "Covered unsettled100 becomes U_free, not cash until due; surviving100 moves to C_set/S_set with no liquidity change.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N06",
+      "kind": "full_cover_before_settlement",
+      "inputs": {
+        "cash": "1000",
+        "qty": "1",
+        "entry_price": "100",
+        "entry_fee": "1",
+        "cover_price": "90",
+        "cover_fee": "1"
+      },
+      "expected": {
+        "before_settlement_C_set": "908",
+        "U_free": "100",
+        "U_short": "0",
+        "S_set": "0",
+        "equity": "1008",
+        "before_available": "908",
+        "after_settlement_available": "1008"
+      },
+      "calculation_basis": "1000−entryfee1−cover90−fee1=908 plus original100 still unsettled; equity1008.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N07",
+      "kind": "cross_long_short",
+      "inputs": {
+        "cash": "800",
+        "old_long_qty": "2",
+        "sell_qty": "3",
+        "price": "100",
+        "fee": "1"
+      },
+      "expected": {
+        "qty": "-1",
+        "C_set": "799",
+        "U_free": "200",
+        "U_short": "100",
+        "total_cash": "1099",
+        "equity": "999",
+        "available_before": "699",
+        "available_after_settlement": "899"
+      },
+      "calculation_basis": "Gross long-sale200 and new-short100 are separate unsettled buckets; only long200 becomes available on settlement.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N08",
+      "kind": "cross_short_long",
+      "inputs": {
+        "initial_cash": "1000",
+        "old_short_qty": "1",
+        "entry_price": "100",
+        "entry_fee": "1",
+        "buy_qty": "2",
+        "price": "100",
+        "fee": "1"
+      },
+      "expected": {
+        "qty": "1",
+        "C_set": "798",
+        "U_free": "100",
+        "U_short": "0",
+        "total_cash": "898",
+        "equity": "998",
+        "available_before": "798",
+        "available_after_settlement": "898",
+        "long_sellable_before": "0",
+        "long_sellable_after": "1"
+      },
+      "calculation_basis": "One real buy2 closes short1/opens long1, fee once; freed original100 remains unsettled.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N09",
+      "kind": "payable_projection",
+      "inputs": {
+        "C_set": "1200",
+        "S_set": "200",
+        "V": "180",
+        "payable": "2",
+        "receivable": "4",
+        "fee_unused": "10"
+      },
+      "expected": {
+        "available_before": "818",
+        "available_after_payable_payment": "818",
+        "equity_before": "1022",
+        "equity_after_payable_payment": "1022",
+        "P4_free_before": "808",
+        "P4_free_after_payable_payment": "808",
+        "available_after_receivable_payment": "822"
+      },
+      "calculation_basis": "Payable was already reserved; cash/P/P_res release together. R payment adds4 real liquidity, not profit.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N10",
+      "kind": "initial_legal_short_target",
+      "inputs": {
+        "initial_cash": "1000",
+        "fee_unused": "10",
+        "target_short_qty": "1",
+        "price": "100"
+      },
+      "expected": {
+        "P4_equity_alloc": "990",
+        "P4_target_cash": "1090",
+        "V": "100",
+        "P4_target_free": "890",
+        "pass": true
+      },
+      "calculation_basis": "Existing P4 model still allows legal new short; not a blanket rejection workaround.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N11",
+      "kind": "budget_partition",
+      "inputs": {
+        "C_set": "1000",
+        "O_N": "200",
+        "O_F": "2",
+        "F_total": "10",
+        "F_paid": "1"
+      },
+      "expected": {
+        "F_unused": "7",
+        "O_total": "202",
+        "available": "798",
+        "C_alloc": "791",
+        "P4_free": "791",
+        "cash_excluded_for_budget": "209"
+      },
+      "calculation_basis": "O_F+F_unused=F_total−paid=9, count only once; B includes O_N200 and remaining fee9.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N12",
+      "kind": "price_domain",
+      "inputs": {
+        "p0": "100",
+        "raw": "200400.41",
+        "side": "SELL",
+        "type": "MARKET",
+        "qty": "1",
+        "F_total": "10"
+      },
+      "expected": {
+        "L": "95",
+        "U": "105",
+        "actual_price": "200200",
+        "U_eff": "105",
+        "H": "1",
+        "counterfactual_fee": "200.20",
+        "eligible": false,
+        "charged_fee": "0"
+      },
+      "calculation_basis": "Even favorable SELL gap is outside the upper band; no fill and no commission.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N13",
+      "kind": "price_domain",
+      "inputs": {
+        "p0": "100",
+        "raw": "102",
+        "side": "BUY",
+        "type": "LIMIT",
+        "limit": "102",
+        "qty": "3",
+        "F_total": "10"
+      },
+      "expected": {
+        "L": "95",
+        "U": "105",
+        "actual_price": "102.11",
+        "U_eff": "102",
+        "H": "3",
+        "counterfactual_fee": "1",
+        "eligible": false,
+        "charged_fee": "0"
+      },
+      "calculation_basis": "Raw meets buy limit but slipped actual does not; limitBuy upper102 defines fee bound.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N14",
+      "kind": "price_domain",
+      "inputs": {
+        "p0": "100",
+        "raw": "100.1",
+        "side": "SELL",
+        "type": "LIMIT",
+        "limit": "100",
+        "qty": "1",
+        "F_total": "10"
+      },
+      "expected": {
+        "L": "95",
+        "U": "105",
+        "actual_price": "99.99",
+        "U_eff": "105",
+        "H": "1",
+        "counterfactual_fee": "1",
+        "eligible": false,
+        "charged_fee": "0"
+      },
+      "calculation_basis": "Sell raw above limit but actual below limit; sell limit is lower protection, U remains fee upper.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N15",
+      "kind": "partial_fee_budget",
+      "inputs": {
+        "quantity": "3",
+        "U_eff": "105",
+        "F_total": "3",
+        "actual_prices": [
+          "100",
+          "100",
+          "100"
+        ]
+      },
+      "expected": {
+        "paid": [
+          "1",
+          "2",
+          "3"
+        ],
+        "H_remaining": [
+          "2",
+          "1",
+          "0"
+        ],
+        "paid_plus_H": [
+          "3",
+          "3",
+          "3"
+        ],
+        "total_charged": "3",
+        "fee_unused": "0"
+      },
+      "calculation_basis": "Every1share Fill charges min1; bound covers all three fills.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N16",
+      "kind": "fee_submission_cancel",
+      "inputs": {
+        "quantity": "3",
+        "U_eff": "105",
+        "insufficient_F": "2",
+        "F_total": "3",
+        "first_fill_fee": "1"
+      },
+      "expected": {
+        "initial_H": "3",
+        "insufficient_submission_accepted": false,
+        "insufficient_fills": "0",
+        "after_first_paid": "1",
+        "H_before_cancel": "2",
+        "H_after_cancel": "0",
+        "unused_after_cancel": "2",
+        "fee_paid_after_cancel": "1"
+      },
+      "calculation_basis": "F2 rejects before any Fill; with F3 cancel only releases future2, no fee refund.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N17",
+      "kind": "fee_overrun_injection",
+      "inputs": {
+        "paid": "2",
+        "old_H": "1",
+        "F_total": "3",
+        "candidate_fee": "2",
+        "new_H": "0"
+      },
+      "expected": {
+        "accepted": false,
+        "paid_after": "2",
+        "H_after": "1",
+        "charged_now": "0"
+      },
+      "calculation_basis": "2+2+0>3: reject candidate before commit; old state unchanged until explicit cancellation.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N18",
+      "kind": "fifo_fragments",
+      "inputs": {
+        "entry_qty": "2",
+        "entry_price": "100",
+        "entry_fee": "1",
+        "exit_quantities": [
+          "1",
+          "1"
+        ],
+        "exit_prices": [
+          "104",
+          "97"
+        ],
+        "exit_fees": [
+          "1",
+          "1"
+        ]
+      },
+      "expected": {
+        "nets": [
+          "2.5",
+          "-4.5"
+        ],
+        "closed_fragments": "2",
+        "wins": "1",
+        "losses": "1",
+        "win_rate": "1/2",
+        "profit_loss_ratio": "5/9",
+        "sum_net": "-2"
+      },
+      "calculation_basis": "Each close×entry fragment completes immediately; no whole-lot count.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N19",
+      "kind": "borrow_lot_timing",
+      "inputs": {
+        "A_qty": "1",
+        "B_qty": "1",
+        "day1_fee": "0.04",
+        "day2_fee": "0.08",
+        "A_entry": "1000",
+        "A_exit": "997.93",
+        "A_entry_fee": "1",
+        "A_exit_fee": "1"
+      },
+      "expected": {
+        "A_borrow": "0.08",
+        "B_unclosed_borrow": "0.04",
+        "A_closed_net": "-0.01",
+        "wins": "0",
+        "closed_fragments": "1",
+        "ratio_reason": "NO_WINNERS"
+      },
+      "calculation_basis": "Day1 only A, day2 both; do not pool all0.12 by current two lots.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N20",
+      "kind": "partial_borrow_pool",
+      "inputs": {
+        "initial_qty": "2",
+        "day1_fee": "0.08",
+        "first_close_qty": "1",
+        "day2_fee": "0.04"
+      },
+      "expected": {
+        "first_fragment_borrow": "0.04",
+        "second_fragment_borrow": "0.08",
+        "sum_borrow": "0.12"
+      },
+      "calculation_basis": "Partial close consumes half old pool; later fee belongs only to remaining lot quantity.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N21",
+      "kind": "cross_zero_fee_stats",
+      "inputs": {
+        "entry_prices": [
+          "100",
+          "110"
+        ],
+        "entry_fees": [
+          "1",
+          "1"
+        ],
+        "close_qty": "2",
+        "open_qty": "1",
+        "fill_price": "100",
+        "total_fill_fee": "1"
+      },
+      "expected": {
+        "exit_fee_closed": "2/3",
+        "new_open_entry_fee": "1/3",
+        "fragment_nets": [
+          "-4/3",
+          "26/3"
+        ],
+        "closed_net_sum": "22/3",
+        "all_including_open_fee": "7",
+        "allocated_fill_fee_sum": "1"
+      },
+      "calculation_basis": "Close2/open1 commission once, then FIFO close portions; new long carries own1/3.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N22",
+      "kind": "long_dividend_stats",
+      "inputs": {
+        "entry_qty": "2",
+        "entry_price": "100",
+        "entry_fee": "1",
+        "dividend_total": "2",
+        "exit_prices": [
+          "101",
+          "100"
+        ],
+        "exit_fees": [
+          "1",
+          "1"
+        ]
+      },
+      "expected": {
+        "fragment_nets": [
+          "0.5",
+          "-0.5"
+        ],
+        "dividend_allocated": [
+          "1",
+          "1"
+        ],
+        "win_rate": "1/2",
+        "profit_loss_ratio": "1",
+        "sum_net": "0",
+        "pay_date_incremental_income": "0"
+      },
+      "calculation_basis": "Long credit enters total-accrual fragment net at ex; payment does not add credit again.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N23",
+      "kind": "short_dividend_stats",
+      "inputs": {
+        "entry_price": "100",
+        "entry_fee": "1",
+        "exit_price": "99",
+        "exit_fee": "1",
+        "dividend_payable": "1",
+        "cash_after_entry": "1099"
+      },
+      "expected": {
+        "closed_net": "-2",
+        "cash_before_pay": "999",
+        "equity_before_pay": "998",
+        "cash_after_pay": "998",
+        "equity_after_pay": "998",
+        "net_change_at_pay": "0"
+      },
+      "calculation_basis": "Gross1−entry1−exit1−shortDividend1=−2, ex obligation included before cash payment.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N24",
+      "kind": "undefined_stats",
+      "inputs": {
+        "net_sets": [
+          [],
+          [
+            "0"
+          ],
+          [
+            "1"
+          ],
+          [
+            "-1"
+          ],
+          [
+            "1",
+            "-1",
+            "0"
+          ]
+        ]
+      },
+      "expected": {
+        "closed_counts": [
+          "0",
+          "1",
+          "1",
+          "1",
+          "3"
+        ],
+        "win_rates": [
+          "UNDEFINED",
+          "0",
+          "1",
+          "0",
+          "1/3"
+        ],
+        "ratio_results": [
+          "NO_CLOSED_FRAGMENTS",
+          "NO_NONZERO_OUTCOMES",
+          "NO_LOSERS",
+          "NO_WINNERS",
+          "1"
+        ]
+      },
+      "calculation_basis": "Completed zeros count as nonwins but not mean-win/mean-loss; no-completion and one-sided means undefined.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    },
+    {
+      "id": "N25",
+      "kind": "borrow_rational_allocation",
+      "inputs": {
+        "qty": "3",
+        "mark": "84",
+        "annual_rate": "0.01",
+        "A": "252",
+        "lot_quantities": [
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "expected": {
+        "actual_cash_fee": "0.01",
+        "lot_allocations": [
+          "1/300",
+          "1/300",
+          "1/300"
+        ],
+        "allocation_sum": "0.01",
+        "round_each_lot_first_allowed": false
+      },
+      "calculation_basis": "One security fee .01 rounded once; attribution exact thirds, no lossy per-lot cent rounding.",
+      "absolute_tolerance": "0",
+      "scope": "Developer G1 design arithmetic/trace only; not P5 product tests or independent review"
+    }
+  ]
+}
