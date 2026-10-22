@@ -1,0 +1,20 @@
+{
+  "executor": "Codex developer receiving independent review",
+  "scope": "Audit documentation scan only",
+  "argv": [
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\gitleaks.exe",
+    "dir",
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+    "--config",
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\.gitleaks.toml",
+    "--redact=100",
+    "--no-banner",
+    "--report-format",
+    "json",
+    "--report-path",
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\wi-r3-pass-receipt-20261023\\scan-findings.json"
+  ],
+  "start_utc": "2026-10-22T16:05:19.981827+00:00",
+  "end_utc": "2026-10-22T16:05:25.870318+00:00",
+  "exit_code": 0
+}

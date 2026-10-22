@@ -34,8 +34,20 @@
     "original_failures_may_be_rewritten_as_passed": false,
     "automatic_closure_or_real_validation_on_phase_completion": false
   },
-  "R3_related_findings_status": "Original report states preserved; no independent R3 code-review closure asserted by this scheduling decision",
+  "R3_related_findings_status": "Two R3 code/tool findings independently CLOSED — FIX VERIFIED at 62074502aa4c32556b5e690bac10bd8054bd9178; original WI-R2 items remain DEFERRED / NOT VERIFIED",
   "formal_Test": "NOT_RUN_NOT_AUTHORIZED",
   "financial_approval": "NONE",
-  "real_permission_operations": "NOT_AUTHORIZED"
+  "real_permission_operations": "NOT_AUTHORIZED",
+  "R3_code_recheck": {
+    "review_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+    "scope": "CODE_MODEL_ENGINEERING_ONLY",
+    "verdict": "PASS",
+    "findings": {
+      "WORK-WI-R3-001": "CLOSED — FIX VERIFIED",
+      "WORK-WI-R3-002": "CLOSED — FIX VERIFIED"
+    },
+    "received": "r3-recheck-6207450/RECEIVED.json",
+    "native_Windows_isolation": "NOT_VERIFIED",
+    "P4_integration": "NOT_INCLUDED_NOT_VERIFIED"
+  }
 }

@@ -1,0 +1,127 @@
+{
+  "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+  "actual_executor": "GPT Work supplemental reviewer",
+  "utc": "2026-10-22T15:24:52.526267+00:00",
+  "HEAD": "62074502aa4c32556b5e690bac10bd8054bd9178",
+  "tree": "15555f2d4d9ea2c12e3c9519564a8da4843c20c4",
+  "porcelain": [],
+  "checkout": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\wi-recheck-6207450",
+  "independent_sdk": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gww620\\aqrp-007ca2bc-d967-4e7a-9e28-877c156df66d",
+  "review_interpreter": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "GIL": true,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "commands": {
+    "clean-sdk": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-I",
+        "tools/ci.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/wi-recheck-6207450",
+      "started_utc": "2026-10-22T15:13:48.552982+00:00",
+      "ended_utc": "2026-10-22T15:22:22.796990+00:00",
+      "exit_code": 0,
+      "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "preparation": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent/prepare_and_verify.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent",
+      "started_utc": "2026-10-22T15:17:36.058639+00:00",
+      "ended_utc": "2026-10-22T15:17:51.906169+00:00",
+      "exit_code": 0,
+      "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "independent-controls": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runs/gww620/aqrp-007ca2bc-d967-4e7a-9e28-877c156df66d/venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent/independent_recheck.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent",
+      "started_utc": "2026-10-22T15:19:57.011651+00:00",
+      "ended_utc": "2026-10-22T15:20:07.907959+00:00",
+      "exit_code": 0,
+      "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "archives-official": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent/verify_all_archives.py",
+        "--official-only"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent",
+      "started_utc": "2026-10-22T15:21:57.784709+00:00",
+      "ended_utc": "2026-10-22T15:22:00.280821+00:00",
+      "exit_code": 0,
+      "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "archives-local": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent/verify_all_archives.py",
+        "--local-only"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent",
+      "started_utc": "2026-10-22T15:23:19.457154+00:00",
+      "ended_utc": "2026-10-22T15:23:21.926120+00:00",
+      "exit_code": 0,
+      "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "nine-inputs": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runs/gww620/aqrp-007ca2bc-d967-4e7a-9e28-877c156df66d/venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent/verify_nine_inputs.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent",
+      "started_utc": "2026-10-22T15:22:01.352225+00:00",
+      "ended_utc": "2026-10-22T15:22:04.166607+00:00",
+      "exit_code": 0,
+      "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "accounts-identity": {
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "Get-LocalUser -Name aqrp_research,aqrp_evaluator,aqrp_auditor | Select-Object Name,Enabled,SID | ConvertTo-Json -Depth 4"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent",
+      "started_utc": "2026-10-22T15:23:48.182810+00:00",
+      "ended_utc": "2026-10-22T15:23:49.036885+00:00",
+      "exit_code": 0,
+      "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+      "actual_executor": "GPT Work supplemental reviewer"
+    }
+  },
+  "preparation": [
+    "git clone --no-checkout --shared C:/Users/11638/AppData/Local/AQRP/reviews/wi-r3-b3d9aef-review C:/Users/11638/AppData/Local/AQRP/reviews/wi-recheck-6207450",
+    "git config core.longpaths true",
+    "git remote set-url origin https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "git fetch --no-tags origin 62074502aa4c32556b5e690bac10bd8054bd9178 08a1dd1733c7a00676b59e377ccd15a33330d527",
+    "git -c core.autocrlf=false checkout --detach 62074502aa4c32556b5e690bac10bd8054bd9178"
+  ],
+  "native_execution_level": "No native subject access calls or administrator lifecycle executed; read-only account query only. ACLs, tokens and process identities in counterexamples are explicit models.",
+  "connector_limitation": "After initial successful PR/run reads, artifact/jobs connector requests failed transport. Fallback GitHub public API identities/digests checked against sealed ZIP bytes. No fresh independent artifact download claimed.",
+  "account_query_erratum": "Initial read-only accounts query expanded a formatting expression incorrectly, leaving SID null. Enabled=false was read correctly. Corrected accounts-identity query retained actual SID.Value; both original stdout/receipts retained. No account changes."
+}

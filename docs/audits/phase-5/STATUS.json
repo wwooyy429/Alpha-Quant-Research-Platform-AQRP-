@@ -22,5 +22,13 @@
     "WI-R2-002": "DEFERRED / NOT VERIFIED"
   },
   "windows_isolation_validation_target": "After all development, final integrated full40 SHA, separately authorized actual execution/permissions",
-  "windows_isolation_policy": "../windows-isolation-deferral/DEFERRAL_POLICY.md"
+  "windows_isolation_policy": "../windows-isolation-deferral/DEFERRAL_POLICY.md",
+  "Windows_R3_code_recheck": {
+    "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+    "verdict": "PASS_CODE_MODEL_ENGINEERING_ONLY",
+    "WORK-WI-R3-001": "CLOSED_FIX_VERIFIED",
+    "WORK-WI-R3-002": "CLOSED_FIX_VERIFIED",
+    "P4_integration": "NOT_INCLUDED_NOT_VERIFIED",
+    "record": "../windows-isolation-deferral/r3-recheck-6207450/"
+  }
 }

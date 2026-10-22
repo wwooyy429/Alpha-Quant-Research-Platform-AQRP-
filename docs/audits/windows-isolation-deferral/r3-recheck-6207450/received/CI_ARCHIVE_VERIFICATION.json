@@ -1,0 +1,235 @@
+{
+  "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+  "results": [
+    {
+      "label": "Windows",
+      "executed_commit": "08a1dd1733c7a00676b59e377ccd15a33330d527",
+      "tests_passed": 681,
+      "selection_members_rehashed": 211,
+      "zip_members": 212,
+      "wheel_modules_byte_identical": 47,
+      "wheel_hash": "1845dbc9f579ea3f95190d823243486f62ec48a8b9362772e5e8d7fe080503db",
+      "critical_coverage": [
+        {
+          "file": "D:\\a\\_temp\\aqrp-evidence\\aqrp-68ac93f2-e163-488c-9dff-f8dc3bf3bfcc\\venv\\Lib\\site-packages\\aqrp\\validation\\engineering_input.py",
+          "line": 0.9701492537313433,
+          "branch": 0.9166666666666666
+        },
+        {
+          "file": "D:\\a\\_temp\\aqrp-evidence\\aqrp-68ac93f2-e163-488c-9dff-f8dc3bf3bfcc\\venv\\Lib\\site-packages\\aqrp\\validation\\windows_acl.py",
+          "line": 0.9617834394904459,
+          "branch": 0.918918918918919
+        }
+      ],
+      "snapshots": [
+        {
+          "path": "dataset/bfbca7e5-46a6-4c5a-805d-1be43f3dead8/manifest.json",
+          "hash": "287d1ba4533f4e8639c22573c4bfee4cb9d19c80b1c983ce64d687e14510fe7b"
+        },
+        {
+          "path": "factor-dataset/92b79a51-129e-4224-9884-22f2885f02ce/manifest.json",
+          "hash": "afc35409ecb05e077b8dce5eca2085e18ace5ee129e190025819db07be2fc4b1"
+        },
+        {
+          "path": "reproduction/dataset/d3244d8b-4938-41db-9fa3-cce8d36566de/manifest.json",
+          "hash": "817becfe2d8327da22a85b12c6f6bc928732330a4e3ee2bc03bddcfe58d8c27a"
+        },
+        {
+          "path": "research/inputs/dataset/46fbdc09-bfd7-43a8-9332-dd35005b263e/manifest.json",
+          "hash": "a0f71db13a997a749a886b5a0280f54bba0c959a1243558ca00577c1d374fd3c"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/1ff89922-c7a2-4ce3-be5c-04b03d071787/manifest.json",
+          "hash": "c38a5373b5300dcf9cb23d54fa9d21364d56149b3547ca07cda178c42aa1d633"
+        },
+        {
+          "path": "windows-engineering-input/private-source/wi-r3-public-engineering-20261022/manifest.json",
+          "hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031"
+        }
+      ],
+      "terminal_chains": [
+        {
+          "path": "research/replacement-runs/800908f8-cc82-49ec-9136-c2f3d102f4ab/manifest.json",
+          "records": 4,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/0a7309e5-3ab0-417b-8ed6-03ac54769774/manifest.json",
+          "records": 8,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/3f759e00-8cc8-44c7-af33-a6f7eaa41494/manifest.json",
+          "records": 9,
+          "status": "SUCCEEDED"
+        }
+      ],
+      "new_nine_inputs_hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031",
+      "three_original_refs_verified": true,
+      "environment": {
+        "run_id": "aqrp-68ac93f2-e163-488c-9dff-f8dc3bf3bfcc",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261007.264.1",
+        "code_commit": "08a1dd1733c7a00676b59e377ccd15a33330d527",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-68ac93f2-e163-488c-9dff-f8dc3bf3bfcc",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39796378880",
+        "github_run_attempt": "1",
+        "github_sha": "08a1dd1733c7a00676b59e377ccd15a33330d527",
+        "wheel_sha256": "1845dbc9f579ea3f95190d823243486f62ec48a8b9362772e5e8d7fe080503db"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "Ubuntu",
+      "executed_commit": "08a1dd1733c7a00676b59e377ccd15a33330d527",
+      "tests_passed": 681,
+      "selection_members_rehashed": 210,
+      "zip_members": 211,
+      "wheel_modules_byte_identical": 47,
+      "wheel_hash": "e29f333a1a36e47a90469d69d899db5ecf5a93a5d5e8d005153fdf45ba147d53",
+      "critical_coverage": [
+        {
+          "file": "/home/runner/work/_temp/aqrp-evidence/aqrp-b0be6e3c-93cb-463b-9b04-50cec6675f65/venv/lib/python3.13/site-packages/aqrp/validation/engineering_input.py",
+          "line": 0.9701492537313433,
+          "branch": 0.9166666666666666
+        },
+        {
+          "file": "/home/runner/work/_temp/aqrp-evidence/aqrp-b0be6e3c-93cb-463b-9b04-50cec6675f65/venv/lib/python3.13/site-packages/aqrp/validation/windows_acl.py",
+          "line": 0.9617834394904459,
+          "branch": 0.918918918918919
+        }
+      ],
+      "snapshots": [
+        {
+          "path": "dataset/ea93f989-b2d1-4f82-b7d4-f0bd5631fffa/manifest.json",
+          "hash": "21cd321cbcc461508a17a00b37d7b44a22e3fa3716d0121f48160e5cfccd4089"
+        },
+        {
+          "path": "factor-dataset/29c34d4c-0929-46bc-95a3-8b0fd2438fb3/manifest.json",
+          "hash": "ecd6cd74be4d66ca3af3a5aa25a15c93d27f33272d02a3d9fae9b2298e04464a"
+        },
+        {
+          "path": "reproduction/dataset/76b5ad31-f137-44e0-92d4-74e2a117e6ee/manifest.json",
+          "hash": "522c5699d3271bd2f6de1358110472cfdb47cdf5d98abd42dc216deb71575dd1"
+        },
+        {
+          "path": "research/inputs/dataset/5f38ab55-c4f2-4955-8ecc-67e11be40baa/manifest.json",
+          "hash": "08252740ceb64a28aa10c7975871bbfe39e81db093ec1249a77154613cdaafbd"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/7587a1e9-3b35-492d-a2e8-d9d111cd0d44/manifest.json",
+          "hash": "15690533d12d2a99a520ab9f3f8659e58b7190543e8344d119c9ed87c6c0e51d"
+        },
+        {
+          "path": "windows-engineering-input/private-source/wi-r3-public-engineering-20261022/manifest.json",
+          "hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031"
+        }
+      ],
+      "terminal_chains": [
+        {
+          "path": "research/replacement-runs/9a27e427-6bda-4af9-ac78-a1a03515b764/manifest.json",
+          "records": 4,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/649d6806-5c12-45cf-97c2-310a4f739ca0/manifest.json",
+          "records": 9,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/6fa47d0f-96c4-47f4-a2f2-3f86afabf5d4/manifest.json",
+          "records": 8,
+          "status": "SUCCEEDED"
+        }
+      ],
+      "new_nine_inputs_hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031",
+      "three_original_refs_verified": true,
+      "environment": {
+        "run_id": "aqrp-b0be6e3c-93cb-463b-9b04-50cec6675f65",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261018.339.1",
+        "code_commit": "08a1dd1733c7a00676b59e377ccd15a33330d527",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-b0be6e3c-93cb-463b-9b04-50cec6675f65",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39796378880",
+        "github_run_attempt": "1",
+        "github_sha": "08a1dd1733c7a00676b59e377ccd15a33330d527",
+        "wheel_sha256": "e29f333a1a36e47a90469d69d899db5ecf5a93a5d5e8d005153fdf45ba147d53"
+      },
+      "result": "PASS"
+    }
+  ],
+  "models": [
+    {
+      "label": "Windows",
+      "phases": [
+        {
+          "phase": "before",
+          "objects": 16,
+          "role_check_counts": {
+            "research": 100,
+            "evaluator": 116,
+            "auditor": 115
+          },
+          "actual_masks_content_members_bindings_recomputed": true
+        },
+        {
+          "phase": "after",
+          "objects": 18,
+          "role_check_counts": {
+            "research": 113,
+            "evaluator": 131,
+            "auditor": 130
+          },
+          "actual_masks_content_members_bindings_recomputed": true
+        }
+      ],
+      "evidence_level": "MODEL_ADAPTER_ONLY",
+      "overall_windows_isolation": "NOT_VERIFIED",
+      "result": "PASS"
+    },
+    {
+      "label": "Ubuntu",
+      "phases": [
+        {
+          "phase": "before",
+          "objects": 16,
+          "role_check_counts": {
+            "research": 100,
+            "evaluator": 116,
+            "auditor": 115
+          },
+          "actual_masks_content_members_bindings_recomputed": true
+        },
+        {
+          "phase": "after",
+          "objects": 18,
+          "role_check_counts": {
+            "research": 113,
+            "evaluator": 131,
+            "auditor": 130
+          },
+          "actual_masks_content_members_bindings_recomputed": true
+        }
+      ],
+      "evidence_level": "MODEL_ADAPTER_ONLY",
+      "overall_windows_isolation": "NOT_VERIFIED",
+      "result": "PASS"
+    }
+  ],
+  "official_provenance": "OFFICIAL_ARTIFACT_PROVENANCE.json",
+  "result": "PASS"
+}
