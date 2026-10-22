@@ -1,5 +1,8 @@
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
+2026-10-22 当前：Phase4七项受限工程已ACCEPTED/RELEASED，main/phase4-baseline/v0.4.0固定 32ea5d6b75c84c07017d87377eeabd2f78207c5c。Phase5仅G1计划预审获授权，12项（10MVP/2CR）设计、接口、数学候选、测试证据/依赖在 docs/audits/phase-5/；主审GPT Work，完整SHA按计划PR的AQRP_FIXED_REVIEW_SHA锁定。G1未审、P5实现未授权/未开始；P4 SDK844与旧20/四/91仅基线回归，不是P5测试。真实隔离/正式Test/金融批准/完整旧宿主边界保留，正式失败关闭，无部署/实盘。以下旧轮状态保留历史。
+
+
 2026-10-22 最新决定：Phase4 七项受限工程范围已由用户 ACCEPTED，GPT Work 固定 3c8757949b0fd5c97953b06a74ebc2d0e56676e4 G2 PASS、两项发现 CLOSED。PR #6 普通合并 d3993d07e5df1b5c2f7acd30cb628226f7b1fc09，整树与已审头一致；合并后干净 SDK844、原20/四及数学91通过。发布登记与 phase4-baseline/v0.4.0/main 原子同点并核验后 RELEASED，详 docs/audits/phase-4/BASELINE.md。既有延期及正式失败关闭不变，PR #7 不集成；只授权 Phase5 G1 计划，不授权 P5 业务、部署、实盘、正式 Test 或金融批准。以下旧状态保留历史。
 
 

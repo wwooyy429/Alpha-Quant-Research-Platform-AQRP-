@@ -1,0 +1,5 @@
+# Phase4 状态冗余字段勘误
+
+已发布32ea5d6的STATUS.current/independent_verdict/findings已正确记录验收发布、G2 PASS及两项CLOSED；但G2、validation、developer_disposition等旧冗余字段仍带早期REQUEST_CHANGES/PENDING、原业务b3等历史值。实际合并、测试、报告与标签身份没有变化。
+
+此计划PR仅在审查记录中把旧字段原值及来源提交存入historical_status_fields，当前字段对齐acceptance原件与publication实际证据，并更新该审计目录FILE_MANIFEST。不是代码修复、新G2结论、main发布或标签重写。已发布旧标签保持32ea5d6不动；用户可在计划预审中核对勘误。本轮main、旧报告原件不修改。

@@ -1,0 +1,493 @@
+{
+  "status": "G1_DESIGN_CANDIDATES_NOT_IMPLEMENTATION_TESTS",
+  "expected_source": "Explicit hand-derived literal answers reviewed by developer; independent GPT Work verification pending",
+  "cases": [
+    {
+      "id": "G01",
+      "kind": "fill",
+      "inputs": {
+        "cash": "1000",
+        "qty": "0",
+        "fill_qty": "2",
+        "price": "100",
+        "fee": "1",
+        "mark": "105"
+      },
+      "expected": {
+        "cash": "799",
+        "qty": "2",
+        "equity": "1009"
+      },
+      "calculation_basis": "1000−2×100−1=799; 799+2×105=1009",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G02",
+      "kind": "fill",
+      "inputs": {
+        "cash": "799",
+        "qty": "2",
+        "fill_qty": "-2",
+        "price": "105",
+        "fee": "1",
+        "mark": "105"
+      },
+      "expected": {
+        "cash": "1008",
+        "qty": "0",
+        "equity": "1008"
+      },
+      "calculation_basis": "799+210−1=1008; gross profit10−two fees2=8",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G03",
+      "kind": "partial",
+      "inputs": {
+        "cash": "100",
+        "price": "10",
+        "fills": [
+          "2",
+          "1"
+        ],
+        "fee_per_fill": "1"
+      },
+      "expected": {
+        "cash": "68",
+        "qty": "3",
+        "fees": "2"
+      },
+      "calculation_basis": "100−20−1−10−1=68; per-Fill minimum repeated explicitly",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G04",
+      "kind": "average",
+      "inputs": {
+        "old_qty": "2",
+        "old_cost": "100",
+        "added_qty": "3",
+        "price": "110",
+        "closed_qty": "2",
+        "exit_price": "120"
+      },
+      "expected": {
+        "average_cost": "106",
+        "remaining_qty": "3",
+        "realized_gross": "28"
+      },
+      "calculation_basis": "(2×100+3×110)/5=106; 2×(120−106)=28; fee attribution separate",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G05",
+      "kind": "fill",
+      "inputs": {
+        "cash": "1000",
+        "qty": "0",
+        "fill_qty": "-2",
+        "price": "100",
+        "fee": "1",
+        "mark": "90"
+      },
+      "expected": {
+        "cash": "1199",
+        "qty": "-2",
+        "equity": "1019"
+      },
+      "calculation_basis": "1000+200−1=1199; minus short liability180=1019",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G06",
+      "kind": "fill",
+      "inputs": {
+        "cash": "1199",
+        "qty": "-2",
+        "fill_qty": "2",
+        "price": "90",
+        "fee": "1",
+        "mark": "90"
+      },
+      "expected": {
+        "cash": "1018",
+        "qty": "0",
+        "equity": "1018"
+      },
+      "calculation_basis": "1199−180−1=1018; gross short20−fees2=18",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G07",
+      "kind": "restriction",
+      "inputs": {
+        "settled_cash": "1200",
+        "order_reserved": "0",
+        "short_proceeds": "200",
+        "short_mark_value": "180",
+        "other": "0"
+      },
+      "expected": {
+        "available_cash": "820"
+      },
+      "calculation_basis": "1200−200−180=820; freezes remain equity, no double cash debit",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G08",
+      "kind": "restriction",
+      "inputs": {
+        "settled_cash": "799",
+        "order_reserved": "200",
+        "short_proceeds": "0",
+        "short_mark_value": "0",
+        "other": "10"
+      },
+      "expected": {
+        "available_cash": "589"
+      },
+      "calculation_basis": "799−200−10=589; unsettled sale cash excluded before this input",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G09",
+      "kind": "fee",
+      "inputs": {
+        "quantity": "1",
+        "price": "100",
+        "rate": "0.001",
+        "minimum": "1"
+      },
+      "expected": {
+        "fee": "1.00"
+      },
+      "calculation_basis": "max(1,.1)=1 per Fill, HALF_UP cent",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G10",
+      "kind": "fee",
+      "inputs": {
+        "quantity": "15",
+        "price": "123.45",
+        "rate": "0.001",
+        "minimum": "1"
+      },
+      "expected": {
+        "fee": "1.85"
+      },
+      "calculation_basis": "15×123.45×.001=1.85175 →1.85",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G11",
+      "kind": "slippage",
+      "inputs": {
+        "raw_open": "100.03",
+        "bps": "10",
+        "tick": "0.01",
+        "side": "BUY",
+        "qty": "3"
+      },
+      "expected": {
+        "price": "100.14",
+        "slippage_cost": "0.33"
+      },
+      "calculation_basis": "100.03×1.001=100.13003; ceil tick100.14;3×.11=.33",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G12",
+      "kind": "slippage",
+      "inputs": {
+        "raw_open": "100.03",
+        "bps": "10",
+        "tick": "0.01",
+        "side": "SELL",
+        "qty": "3"
+      },
+      "expected": {
+        "price": "99.92",
+        "slippage_cost": "0.33"
+      },
+      "calculation_basis": "100.03×.999=99.92997; floor tick99.92;3×.11=.33",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G13",
+      "kind": "split",
+      "inputs": {
+        "cash": "800",
+        "qty": "2",
+        "cost": "100",
+        "ratio": "2",
+        "post_mark": "50"
+      },
+      "expected": {
+        "qty": "4",
+        "cost": "50",
+        "equity": "1000"
+      },
+      "calculation_basis": "2→4;100→50;800+4×50=1000; total cost200 unchanged",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G14",
+      "kind": "dividend",
+      "inputs": {
+        "cash": "800",
+        "qty": "4",
+        "mark": "49",
+        "cash_per_share": "1",
+        "receivable": "0",
+        "payable": "0",
+        "pay_now": false
+      },
+      "expected": {
+        "cash": "800",
+        "receivable": "4",
+        "payable": "0",
+        "equity": "1000"
+      },
+      "calculation_basis": "split then ex-dividend:800+196+R4=1000; old-share basis explicitly converted before this input",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G15",
+      "kind": "pay",
+      "inputs": {
+        "cash": "800",
+        "qty": "4",
+        "mark": "49",
+        "receivable": "4",
+        "payable": "0"
+      },
+      "expected": {
+        "cash": "804",
+        "receivable": "0",
+        "payable": "0",
+        "equity": "1000"
+      },
+      "calculation_basis": "R4→cash;804+196=1000, no second income",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G16",
+      "kind": "dividend",
+      "inputs": {
+        "cash": "1200",
+        "qty": "-2",
+        "mark": "99",
+        "cash_per_share": "1",
+        "receivable": "0",
+        "payable": "0",
+        "pay_now": false
+      },
+      "expected": {
+        "cash": "1200",
+        "receivable": "0",
+        "payable": "2",
+        "equity": "1000"
+      },
+      "calculation_basis": "1200−198−P2=1000, short owes dividend",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G17",
+      "kind": "pay",
+      "inputs": {
+        "cash": "1200",
+        "qty": "-2",
+        "mark": "99",
+        "receivable": "0",
+        "payable": "2"
+      },
+      "expected": {
+        "cash": "1198",
+        "receivable": "0",
+        "payable": "0",
+        "equity": "1000"
+      },
+      "calculation_basis": "1200−P2→1198;1198−198=1000",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G18",
+      "kind": "borrow",
+      "inputs": {
+        "short_qty": "10",
+        "raw_mark": "100",
+        "annual_rate": "0.01",
+        "A": "252"
+      },
+      "expected": {
+        "fee": "0.04"
+      },
+      "calculation_basis": "10×100×.01/252=.0396825… →.04 HALF_UP",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G19",
+      "kind": "capacity",
+      "inputs": {
+        "capacity": "10",
+        "lot": "3",
+        "orders": [
+          "6",
+          "6"
+        ]
+      },
+      "expected": {
+        "fills": [
+          "6",
+          "3"
+        ],
+        "remaining_capacity": "1"
+      },
+      "calculation_basis": "shared capacity10; first6; remaining4 floors to3; second remains3; 1 cannot fill a lot",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G20",
+      "kind": "projection",
+      "inputs": {
+        "cash": "800",
+        "positions_value": "200",
+        "receivable": "10",
+        "payable": "3"
+      },
+      "expected": {
+        "equity_trade": "1000",
+        "equity_total": "1007",
+        "payable_reserve": "3"
+      },
+      "calculation_basis": "Etrade800+200=1000;Etotal1000+10−3=1007;R excluded from new budget, payable reserved",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G21",
+      "kind": "external_flow",
+      "inputs": {
+        "initial": "1000",
+        "before_flow": "1100",
+        "flow": "500",
+        "after_flow": "1600",
+        "final": "1760"
+      },
+      "expected": {
+        "return_first": "0.1",
+        "return_second": "0.1",
+        "twr": "0.21"
+      },
+      "calculation_basis": "1100/1000−1=.1;1760/1600−1=.1;1.1²−1=.21, external500 no profit",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G22",
+      "kind": "performance",
+      "inputs": {
+        "equity": [
+          "1000",
+          "1100",
+          "990",
+          "1089"
+        ],
+        "A": "252"
+      },
+      "expected": {
+        "cumulative_return": "0.089",
+        "maximum_drawdown": "0.1",
+        "sample_variance": "0.0133333333333333333333333333333333",
+        "sharpe": "4.582575694955840006588047193728"
+      },
+      "calculation_basis": "r=[.1,−.1,.1], mean1/30;samplevar1/75;Sharpe=sqrt(21);cum1089/1000−1;MDD(1100−990)/1100",
+      "absolute_tolerance": "0.000000000001",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G23",
+      "kind": "turnover",
+      "inputs": {
+        "notionals": [
+          "200",
+          "150"
+        ],
+        "decision_equity": "1000"
+      },
+      "expected": {
+        "full": "0.35",
+        "half": "0.175"
+      },
+      "calculation_basis": "(abs200+abs150)/1000=.35, half .175",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G24",
+      "kind": "large_exact",
+      "inputs": {
+        "E": "100000000000000000000000000000000000",
+        "price": "1",
+        "lot": "3"
+      },
+      "expected": {
+        "qty": "99999999999999999999999999999999999",
+        "cash": "1"
+      },
+      "calculation_basis": "10^35 mod3=1, floor(E/3)×3=E−1; no Decimal34 projection",
+      "absolute_tolerance": "0",
+      "scope": "Design arithmetic candidate; not P5 product execution"
+    },
+    {
+      "id": "G25",
+      "kind": "budget_projection",
+      "inputs": {
+        "cash": "1200",
+        "positions_value": "-180",
+        "unsettled": "50",
+        "order_reserved": "0",
+        "payable": "2",
+        "fee_budget": "10",
+        "receivable": "4",
+        "short_proceeds": "200",
+        "short_mark": "180",
+        "other": "0"
+      },
+      "expected": {
+        "B": "62",
+        "cash_alloc": "1138",
+        "equity_alloc": "958",
+        "equity_total": "1022",
+        "P4_nonshort_restriction": "20",
+        "P4_budget_free": "758",
+        "P5_actual_free": "768",
+        "after_fee_budget": "758"
+      },
+      "calculation_basis": "B=50+0+2+10=62;Calloc1138,Ealloc958,Etotal1200−180+4−2=1022;nonshort=max(200−180,0)=20;P4free1138−180−180−20=758;P5free1200−50−200−180−2=768;minusF10=758",
+      "absolute_tolerance": "0",
+      "scope": "Complete design budget projection arithmetic; not implemented P4/P5 service verification"
+    }
+  ],
+  "profile_context": "Isolated arithmetic inputs are not necessarily complete requests/profile fee schedules; full integration fixtures will bind all inputs after G1."
+}

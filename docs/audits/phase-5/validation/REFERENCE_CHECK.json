@@ -1,0 +1,258 @@
+{
+  "scope": "Developer G1 design arithmetic; NOT P5 implementation tests or independent GPT Work review",
+  "executor": "Codex developer",
+  "UTC": "2026-10-22T15:44:04.699200+00:00",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "candidates_sha256": "f8d68ef7087a81203f7695909a535c76d94ea127b243ebe171bf5fe7a3bf241d",
+  "cases": 25,
+  "assertions": 70,
+  "failed": 0,
+  "results": [
+    {
+      "id": "G01",
+      "status": "PASS",
+      "actual": {
+        "cash": "799",
+        "qty": "2",
+        "equity": "1009"
+      },
+      "basis": "1000−2×100−1=799; 799+2×105=1009"
+    },
+    {
+      "id": "G02",
+      "status": "PASS",
+      "actual": {
+        "cash": "1008",
+        "qty": "0",
+        "equity": "1008"
+      },
+      "basis": "799+210−1=1008; gross profit10−two fees2=8"
+    },
+    {
+      "id": "G03",
+      "status": "PASS",
+      "actual": {
+        "cash": "68",
+        "qty": "3",
+        "fees": "2"
+      },
+      "basis": "100−20−1−10−1=68; per-Fill minimum repeated explicitly"
+    },
+    {
+      "id": "G04",
+      "status": "PASS",
+      "actual": {
+        "average_cost": "106",
+        "remaining_qty": "3",
+        "realized_gross": "28"
+      },
+      "basis": "(2×100+3×110)/5=106; 2×(120−106)=28; fee attribution separate"
+    },
+    {
+      "id": "G05",
+      "status": "PASS",
+      "actual": {
+        "cash": "1199",
+        "qty": "-2",
+        "equity": "1019"
+      },
+      "basis": "1000+200−1=1199; minus short liability180=1019"
+    },
+    {
+      "id": "G06",
+      "status": "PASS",
+      "actual": {
+        "cash": "1018",
+        "qty": "0",
+        "equity": "1018"
+      },
+      "basis": "1199−180−1=1018; gross short20−fees2=18"
+    },
+    {
+      "id": "G07",
+      "status": "PASS",
+      "actual": {
+        "available_cash": "820"
+      },
+      "basis": "1200−200−180=820; freezes remain equity, no double cash debit"
+    },
+    {
+      "id": "G08",
+      "status": "PASS",
+      "actual": {
+        "available_cash": "589"
+      },
+      "basis": "799−200−10=589; unsettled sale cash excluded before this input"
+    },
+    {
+      "id": "G09",
+      "status": "PASS",
+      "actual": {
+        "fee": "1.00"
+      },
+      "basis": "max(1,.1)=1 per Fill, HALF_UP cent"
+    },
+    {
+      "id": "G10",
+      "status": "PASS",
+      "actual": {
+        "fee": "1.85"
+      },
+      "basis": "15×123.45×.001=1.85175 →1.85"
+    },
+    {
+      "id": "G11",
+      "status": "PASS",
+      "actual": {
+        "price": "5007/50",
+        "slippage_cost": "33/100"
+      },
+      "basis": "100.03×1.001=100.13003; ceil tick100.14;3×.11=.33"
+    },
+    {
+      "id": "G12",
+      "status": "PASS",
+      "actual": {
+        "price": "2498/25",
+        "slippage_cost": "33/100"
+      },
+      "basis": "100.03×.999=99.92997; floor tick99.92;3×.11=.33"
+    },
+    {
+      "id": "G13",
+      "status": "PASS",
+      "actual": {
+        "qty": "4",
+        "cost": "50",
+        "equity": "1000"
+      },
+      "basis": "2→4;100→50;800+4×50=1000; total cost200 unchanged"
+    },
+    {
+      "id": "G14",
+      "status": "PASS",
+      "actual": {
+        "cash": "800",
+        "receivable": "4",
+        "payable": "0",
+        "equity": "1000"
+      },
+      "basis": "split then ex-dividend:800+196+R4=1000; old-share basis explicitly converted before this input"
+    },
+    {
+      "id": "G15",
+      "status": "PASS",
+      "actual": {
+        "cash": "804",
+        "receivable": "0",
+        "payable": "0",
+        "equity": "1000"
+      },
+      "basis": "R4→cash;804+196=1000, no second income"
+    },
+    {
+      "id": "G16",
+      "status": "PASS",
+      "actual": {
+        "cash": "1200",
+        "receivable": "0",
+        "payable": "2",
+        "equity": "1000"
+      },
+      "basis": "1200−198−P2=1000, short owes dividend"
+    },
+    {
+      "id": "G17",
+      "status": "PASS",
+      "actual": {
+        "cash": "1198",
+        "receivable": "0",
+        "payable": "0",
+        "equity": "1000"
+      },
+      "basis": "1200−P2→1198;1198−198=1000"
+    },
+    {
+      "id": "G18",
+      "status": "PASS",
+      "actual": {
+        "fee": "0.04"
+      },
+      "basis": "10×100×.01/252=.0396825… →.04 HALF_UP"
+    },
+    {
+      "id": "G19",
+      "status": "PASS",
+      "actual": {
+        "fills": "['6', '3']",
+        "remaining_capacity": "1"
+      },
+      "basis": "shared capacity10; first6; remaining4 floors to3; second remains3; 1 cannot fill a lot"
+    },
+    {
+      "id": "G20",
+      "status": "PASS",
+      "actual": {
+        "equity_trade": "1000",
+        "equity_total": "1007",
+        "payable_reserve": "3"
+      },
+      "basis": "Etrade800+200=1000;Etotal1000+10−3=1007;R excluded from new budget, payable reserved"
+    },
+    {
+      "id": "G21",
+      "status": "PASS",
+      "actual": {
+        "return_first": "1/10",
+        "return_second": "1/10",
+        "twr": "21/100"
+      },
+      "basis": "1100/1000−1=.1;1760/1600−1=.1;1.1²−1=.21, external500 no profit"
+    },
+    {
+      "id": "G22",
+      "status": "PASS",
+      "actual": {
+        "cumulative_return": "89/1000",
+        "maximum_drawdown": "1/10",
+        "sample_variance": "1/75",
+        "sharpe": "4.582575694955840006588047193728008488984456576767971902607242123906868425547770886604361559493445033"
+      },
+      "basis": "r=[.1,−.1,.1], mean1/30;samplevar1/75;Sharpe=sqrt(21);cum1089/1000−1;MDD(1100−990)/1100"
+    },
+    {
+      "id": "G23",
+      "status": "PASS",
+      "actual": {
+        "full": "7/20",
+        "half": "7/40"
+      },
+      "basis": "(abs200+abs150)/1000=.35, half .175"
+    },
+    {
+      "id": "G24",
+      "status": "PASS",
+      "actual": {
+        "qty": "99999999999999999999999999999999999",
+        "cash": "1"
+      },
+      "basis": "10^35 mod3=1, floor(E/3)×3=E−1; no Decimal34 projection"
+    },
+    {
+      "id": "G25",
+      "status": "PASS",
+      "actual": {
+        "B": "62",
+        "cash_alloc": "1138",
+        "equity_alloc": "958",
+        "equity_total": "1022",
+        "P4_nonshort_restriction": "20",
+        "P4_budget_free": "758",
+        "P5_actual_free": "768",
+        "after_fee_budget": "758"
+      },
+      "basis": "B=50+0+2+10=62;Calloc1138,Ealloc958,Etotal1200−180+4−2=1022;nonshort=max(200−180,0)=20;P4free1138−180−180−20=758;P5free1200−50−200−180−2=768;minusF10=758"
+    }
+  ]
+}
