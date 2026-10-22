@@ -3,6 +3,7 @@
 import base64
 import json
 import os
+import os as native_os
 import stat
 import subprocess
 from pathlib import Path
@@ -20,10 +21,10 @@ FULL = 0x1F01FF
 CHANGE_SECURITY = 0xC0000
 
 
-def collection_error(exc, phase, code="ACL_ENUMERATION_FAILED"):
+def collection_error(exc, phase, code="ACL_ENUMERATION_FAILED", path=None):
     detail = {
         "phase": phase,
-        "path": str(exc.filename),
+        "path": str(exc.filename if exc.filename is not None else path),
         "errno": exc.errno,
         "winerror": getattr(exc, "winerror", None),
         "error_type": type(exc).__name__,
@@ -33,15 +34,30 @@ def collection_error(exc, phase, code="ACL_ENUMERATION_FAILED"):
 
 
 def enumerate_tree(root, phase):
-    def reject(exc):
-        collection_error(exc, phase)
-
+    # os.walk suppresses DirEntry.is_dir errors even with onerror. Never use that
+    # lossy classification for an exhaustive security proof.
     paths = [root]
-    try:
-        for base, dirs, files in os.walk(root, followlinks=False, onerror=reject):
-            paths.extend(Path(base) / n for n in sorted(dirs + files))
-    except OSError as exc:
-        reject(exc)
+    pending = [root]
+    while pending:
+        directory = pending.pop()
+        try:
+            with native_os.scandir(directory) as scan:
+                entries = sorted(scan, key=lambda e: e.name)
+        except OSError as exc:
+            collection_error(exc, phase, path=directory)
+        for entry in entries:
+            path = directory / entry.name
+            try:
+                info = entry.stat(follow_symlinks=False)
+            except OSError as exc:
+                collection_error(exc, phase, path=path)
+            if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+                raise ContractError("SEALED_PATH_LINK", str(path))
+            if stat.S_ISDIR(info.st_mode):
+                pending.append(path)
+            elif not stat.S_ISREG(info.st_mode):
+                raise ContractError("SEALED_NON_FILE_OBJECT", str(path))
+            paths.append(path)
     return sorted(paths, key=lambda p: (len(p.parts), str(p)))
 
 
@@ -175,7 +191,11 @@ class WindowsTreePolicy:
         before = {}
         for p in paths:
             s = tree_stat(p, "before")
-            if p.is_symlink() or p.is_junction() or (p.is_file() and s.st_nlink != 1):
+            if (
+                stat.S_ISLNK(s.st_mode)
+                or getattr(s, "st_file_attributes", 0) & 0x400
+                or (stat.S_ISREG(s.st_mode) and s.st_nlink != 1)
+            ):
                 raise ContractError("SEALED_PATH_LINK", str(p))
             if not (stat.S_ISDIR(s.st_mode) or stat.S_ISREG(s.st_mode)):
                 raise ContractError("SEALED_NON_FILE_OBJECT", str(p))
@@ -195,9 +215,9 @@ class WindowsTreePolicy:
             s = tree_stat(p, "after")
             if (
                 (s.st_dev, s.st_ino, stat.S_IFMT(s.st_mode)) != old
-                or p.is_junction()
+                or getattr(s, "st_file_attributes", 0) & 0x400
                 or s.st_nlink > 1
-                and p.is_file()
+                and stat.S_ISREG(s.st_mode)
             ):
                 raise ContractError("ACL_TREE_CHANGED", str(p))
         if read_descriptors(paths) != rows:

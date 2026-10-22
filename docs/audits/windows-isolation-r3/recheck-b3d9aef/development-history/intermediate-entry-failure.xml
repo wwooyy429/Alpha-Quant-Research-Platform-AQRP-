@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="0.254" timestamp="2026-10-22T22:26:56.708906+08:00" hostname="天音"><testcase classname="tests.research.test_windows_r3_recheck" name="test_directory_entry_errors_cannot_hide_a_real_subtree[is_dir]" time="0.012"><failure message="TypeError: 'Scan' object is not an iterator">tests\research\test_windows_r3_recheck.py:104: in test_directory_entry_errors_cannot_hide_a_real_subtree
+    assert policy(root).verify()['objects']==3
+           ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\11638\AQRPDev\wi-r3-20261022\aqrp-dc8ae0db-37ea-450e-ab82-bef150dc5b00\venv\Lib\site-packages\aqrp\validation\windows_acl.py:174: in verify
+    paths = enumerate_tree(self.root, "before")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\11638\AQRPDev\wi-r3-20261022\aqrp-dc8ae0db-37ea-450e-ab82-bef150dc5b00\venv\Lib\site-packages\aqrp\validation\windows_acl.py:41: in enumerate_tree
+    for base, dirs, files in os.walk(root, followlinks=False, onerror=reject):
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen os&gt;:380: in walk
+    ???
+E   TypeError: 'Scan' object is not an iterator</failure></testcase><testcase classname="tests.research.test_windows_r3_recheck" name="test_directory_entry_errors_cannot_hide_a_real_subtree[stat]" time="0.006"><failure message="TypeError: 'Scan' object is not an iterator">tests\research\test_windows_r3_recheck.py:106: in test_directory_entry_errors_cannot_hide_a_real_subtree
+    with pytest.raises(ContractError,match='ACL_ENUMERATION_FAILED'):policy(root).verify()
+                                                                     ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\11638\AQRPDev\wi-r3-20261022\aqrp-dc8ae0db-37ea-450e-ab82-bef150dc5b00\venv\Lib\site-packages\aqrp\validation\windows_acl.py:174: in verify
+    paths = enumerate_tree(self.root, "before")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\11638\AQRPDev\wi-r3-20261022\aqrp-dc8ae0db-37ea-450e-ab82-bef150dc5b00\venv\Lib\site-packages\aqrp\validation\windows_acl.py:41: in enumerate_tree
+    for base, dirs, files in os.walk(root, followlinks=False, onerror=reject):
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen os&gt;:380: in walk
+    ???
+E   TypeError: 'Scan' object is not an iterator</failure></testcase></testsuite></testsuites>

@@ -4,7 +4,7 @@
 
 ## 001 · Medium：不完整枚举被误当完整
 
-两次os.walk都加入onerror失败处理；任何持续/暂时权限错误、消失或I/O错误立即ACL_ENUMERATION_FAILED，field保留JSON phase/path/errno/winerror/错误类型/原始message，异常cause保留。lstat采集错误另外以ACL_TREE_METADATA_FAILED结构化拒绝。原双次membership、identity/type/link、ACL再捕获与祖先/封闭ACE检查保留；目录类型使用已采集stat，不再靠可能吞异常的is_dir来生成验证映射。完整proof增加两次枚举完成标记、精确对象ID/类型、完整描述符和祖先。不是删除安全检查、接受同样不完整的子集。
+放弃会吞掉DirEntry.is_dir错误的os.walk，前后两次均改为严格scandir及entry.stat(follow_symlinks=False)，不调用有损is_dir分类；打开/迭代/条目stat错误均直接拒绝，链接/reparse和非普通对象不下降遍历；任何持续/暂时权限错误、消失或I/O错误立即ACL_ENUMERATION_FAILED，field保留JSON phase/path/errno/winerror/错误类型/原始message，异常cause保留。lstat采集错误另外以ACL_TREE_METADATA_FAILED结构化拒绝。原双次membership、identity/type/link、ACL再捕获与祖先/封闭ACE检查保留；目录类型使用已采集stat，不再靠可能吞异常的is_dir来生成验证映射。完整proof增加两次枚举完成标记、精确对象ID/类型、完整描述符和祖先。不是删除安全检查、接受同样不完整的子集。
 
 ## 002 · Medium：局部探针不能证明全覆盖
 
@@ -18,4 +18,4 @@ before/after采用同一attempt/root/policy/snapshot，after必须带before原�
 
 tests/research/test_windows_r3_recheck.py含真实os.walk注错前后两阶段、消失/I/O/元数据错误、漏动态/目录、清单hash/root/phase/role、目录类型/成员/删除子项、key特定期望、真实P1九文件与sidecar、before/after链、重采集漂移和不可变CLI输出。windows_model.py的ACL/token/open adapter明确MODEL_ONLY，期望权限表独立硬编码，不使用待测operations生成期望。SDK额外导出windows-probe-model原始清单/三结果/对账/截断拒绝，仅模型不是NTFS三主体证据。原并发单次、崩溃恢复、重复拒绝在完整SDK保留。
 
-0.3.1.dev2，47模块；默认内置因子1.1.2只区分全bundle。P1 snapshot.py/私有mkdtemp/rename、P3经济与统计、106需求、旧发布和独立答案不改；旧失败/不可读九文件/旧hash缺口均保留，不用新导出替代。唯一新增业务模块变化为windows_acl.py（另外仅版本和admission默认身份）；工具/测试/证据按最小范围改变。
+0.3.1.dev3，47模块；默认内置因子1.1.3只区分全bundle。P1 snapshot.py/私有mkdtemp/rename、P3经济与统计、106需求、旧发布和独立答案不改；旧失败/不可读九文件/旧hash缺口均保留，不用新导出替代。唯一新增业务模块变化为windows_acl.py（另外仅版本和admission默认身份）；工具/测试/证据按最小范围改变。

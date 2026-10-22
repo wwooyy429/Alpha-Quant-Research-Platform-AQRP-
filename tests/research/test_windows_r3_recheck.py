@@ -79,6 +79,70 @@ def test_r3_002_hash_string_without_authoritative_inventory_must_reject(tmp_path
         )
 
 
+@pytest.mark.parametrize("failure", ["is_dir", "stat"])
+def test_directory_entry_errors_cannot_hide_a_real_subtree(tmp_path, monkeypatch, failure):
+    root = tmp_path / "sealed"
+    (root / "work").mkdir(parents=True)
+    (root / "work/unseen").write_bytes(b"must be covered")
+    monkeypatch.setattr(m, "os", SimpleNamespace(name="nt", walk=os.walk))
+    monkeypatch.setattr(
+        m,
+        "read_descriptors",
+        lambda paths: [
+            row(
+                p,
+                directory=p.is_dir(),
+                inherited=p != root and p.is_relative_to(root),
+                readonly=not p.is_relative_to(root),
+            )
+            for p in paths
+        ],
+    )
+    original = os.scandir
+
+    class Entry:
+        def __init__(self, e):
+            self.e = e
+
+        def __getattr__(self, k):
+            return getattr(self.e, k)
+
+        def is_dir(self, *a, **kw):
+            if self.e.name == "work":
+                raise PermissionError(13, "injected entry classification failure", self.e.path)
+            return self.e.is_dir(*a, **kw)
+
+        def stat(self, *a, **kw):
+            if self.e.name == "work" and failure == "stat":
+                raise PermissionError(13, "injected entry stat failure", self.e.path)
+            return self.e.stat(*a, **kw)
+
+    class Scan:
+        def __init__(self, path):
+            self.native = original(path)
+
+        def __iter__(self):
+            return self
+
+        def __next__(self):
+            return Entry(next(self.native))
+
+        def __enter__(self):
+            self.native.__enter__()
+            return self
+
+        def __exit__(self, *a):
+            return self.native.__exit__(*a)
+
+    monkeypatch.setattr(os, "scandir", Scan)
+    if failure == "is_dir":
+        # A strict collector may avoid the error-prone is_dir API entirely.
+        assert policy(root).verify()["objects"] == 3
+    else:
+        with pytest.raises(ContractError, match="ACL_ENUMERATION_FAILED"):
+            policy(root).verify()
+
+
 @pytest.mark.parametrize("phase", ["before", "after"])
 @pytest.mark.parametrize("error", [PermissionError, FileNotFoundError, OSError])
 def test_each_traversal_stage_preserves_native_error(tmp_path, monkeypatch, phase, error):
@@ -101,15 +165,19 @@ def test_each_traversal_stage_preserves_native_error(tmp_path, monkeypatch, phas
     monkeypatch.setattr(m, "read_descriptors", descriptors)
     calls = 0
 
-    def walk(*args, **kw):
-        nonlocal calls
-        calls += 1
-        if calls == (1 if phase == "before" else 2):
-            errno = {PermissionError: 13, FileNotFoundError: 2, OSError: 5}[error]
-            kw["onerror"](error(errno, "injected native collection failure", str(root / "work")))
-        return os.walk(*args, **kw)
+    original_scan = os.scandir
 
-    monkeypatch.setattr(m, "os", SimpleNamespace(name="nt", walk=walk))
+    def scan(path):
+        nonlocal calls
+        if Path(path) == root / "work":
+            calls += 1
+        if Path(path) == root / "work" and calls == (1 if phase == "before" else 2):
+            errno = {PermissionError: 13, FileNotFoundError: 2, OSError: 5}[error]
+            raise error(errno, "injected native collection failure", str(root / "work"))
+        return original_scan(path)
+
+    monkeypatch.setattr(m, "os", SimpleNamespace(name="nt"))
+    monkeypatch.setattr(os, "scandir", scan)
     with pytest.raises(ContractError, match="ACL_ENUMERATION_FAILED") as caught:
         p.verify()
     detail = json.loads(caught.value.field)
@@ -130,7 +198,7 @@ def test_walk_itself_raising_io_error_fails_closed(tmp_path, monkeypatch):
     def walk(*a, **kw):
         raise OSError(5, "injected IO", str(tmp_path))
 
-    monkeypatch.setattr(m, "os", SimpleNamespace(walk=walk))
+    monkeypatch.setattr(os, "scandir", walk)
     with pytest.raises(ContractError, match="ACL_ENUMERATION_FAILED"):
         m.enumerate_tree(tmp_path, "after")
 
