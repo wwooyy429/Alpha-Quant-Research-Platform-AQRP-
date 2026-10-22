@@ -1,3 +1,4 @@
+import hashlib
 import json
 from copy import deepcopy
 from decimal import Decimal
@@ -103,6 +104,9 @@ def test_full_close_is_not_a_tradability_or_sellable_waiver(flag):
 def test_candidate_tamper_and_wrong_request():
     req = reseal(fixture())
     candidate = build_candidate(req)
+    assert (
+        check_target(candidate, req)["candidate_hash"] == hashlib.sha256(candidate.raw).hexdigest()
+    )
     with pytest.raises(ContractError, match="CANDIDATE_TAMPERED"):
         check_target(TargetCandidate(candidate.raw + b" ", candidate.request_hash), req)
     with pytest.raises(ContractError, match="CANDIDATE_REQUEST_MISMATCH"):
@@ -198,3 +202,25 @@ def test_failure_and_immutable_terminal_evidence(tmp_path):
     path.write_bytes(b"{}")
     with pytest.raises(ContractError):
         replay_engineering(tmp_path, r["run_id"])
+
+
+@pytest.mark.parametrize(
+    "mode,net,quantities,cash,gross,free",
+    [
+        ("LONG_ONLY", "1", {"SYNTH:A": "10", "SYNTH:B": "10"}, "300", "0.7", "300"),
+        ("LONG_SHORT", "0", {"SYNTH:A": "10", "SYNTH:B": "-10"}, "1100", "0.7", "300"),
+    ],
+)
+def test_golden_g10_g11_complete_public_service(mode, net, quantities, cash, gross, free, tmp_path):
+    x = fixture()
+    x["policy"].update(mode=mode, weighting="equal", gross="1", net=net)
+    for row, price in zip(x["inputs"]["prices"]["data"], ["30", "40"]):
+        row.update(price=price, lot="10")
+    r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+    assert r["status"] == "SUCCEEDED"
+    assert r["target"]["quantities"] == quantities
+    assert (r["target"]["cash"], r["target"]["gross"], r["target"]["free_cash"]) == (
+        cash,
+        gross,
+        free,
+    )

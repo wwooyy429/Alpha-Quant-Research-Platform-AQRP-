@@ -1,5 +1,7 @@
 """Reconstruct and check every constraint before and after target quantization."""
 
+import hashlib
+
 from aqrp.core.canonical import digest
 from aqrp.portfolio.construct import build_candidate, compute
 from aqrp.portfolio.contracts import CASH_TOL, RATIO_TOL, F, TargetCandidate, fail, number, project
@@ -168,7 +170,7 @@ def check_target(candidate, request):
             "schema_version": "risk-decision/1.0.0",
             "passed": pre["passed"] and post["passed"],
             "request_hash": request.content_hash,
-            "candidate_hash": digest({"raw": candidate.raw.decode()}),
+            "candidate_hash": hashlib.sha256(candidate.raw).hexdigest(),
             "pre": pre,
             "post": post,
         }
