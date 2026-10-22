@@ -13,6 +13,7 @@ from aqrp.core.errors import ContractError
 OWNER_RIGHTS = "S-1-3-4"
 SYSTEM = "S-1-5-18"
 ADMINS = "S-1-5-32-544"
+TRUSTED_INSTALLER = "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464"
 READ = 0x1200A9
 MODIFY = 0x1301BF
 FULL = 0x1F01FF
@@ -233,7 +234,9 @@ class WindowsTreePolicy:
             self.root.parents
         ):
             raise ContractError("INCOMPLETE_ACL_ANCESTORS")
-        trusted = {self.owner, SYSTEM, ADMINS}
+        # Windows owns the system-volume root through this exact servicing SID.
+        # It is trusted ONLY as an external ancestor, never as a sealed owner/ACE.
+        trusted = {self.owner, SYSTEM, ADMINS, TRUSTED_INSTALLER}
         for r in rows:
             if r["owner"] not in trusted or any(
                 e["type"] == "Allow"

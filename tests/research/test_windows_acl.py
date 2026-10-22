@@ -217,6 +217,16 @@ def test_policy_and_ancestor_bindings(tmp_path):
         )
     ancestors = [row(a, readonly=True) for a in p.root.parents]
     p.verify_ancestors(ancestors)
+    servicing = copy.deepcopy(ancestors)
+    servicing[-1]["owner"] = m.TRUSTED_INSTALLER
+    p.verify_ancestors(servicing)
+    servicing[-1]["owner"] = "S-1-5-80-unknown-service"
+    with pytest.raises(ContractError, match="UNTRUSTED_ACL_ANCESTOR"):
+        p.verify_ancestors(servicing)
+    wrong_root = copy.deepcopy(rows)
+    wrong_root[0]["owner"] = m.TRUSTED_INSTALLER
+    with pytest.raises(ContractError, match="UNTRUSTED_ACL_OWNER"):
+        p.verify_rows(wrong_root, dirs)
     with pytest.raises(ContractError):
         p.verify_ancestors(ancestors[:-1])
     bad = copy.deepcopy(ancestors)

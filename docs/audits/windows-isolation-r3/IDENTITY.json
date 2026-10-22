@@ -193,11 +193,11 @@
       },
       {
         "path": "validation/windows_acl.py",
-        "sha256": "bb031bf2769019102615e32b3bb6a91c943771cff7b34b7f8a7a801d7ffba473"
+        "sha256": "27b7d63cfb1f7242aa6df6460f38bde12ad1cc3cb7479b9ace8044699f451103"
       }
     ]
   },
-  "bundle_sha256": "812f23d6419304838f97b920b0d3d5a7c7b7bccf38c7fc9a315fd0a86f13fb86",
+  "bundle_sha256": "4e657dea368b50b083030dbad32821683735be420f727b1db26ac2ba60e82dd5",
   "preserved_files": [
     {
       "path": ".gitattributes",
@@ -12089,13 +12089,37 @@
     "docs/PROGRESS.md",
     "docs/ROADMAP.md",
     "docs/TRACEABILITY.md",
+    "docs/audits/windows-isolation-r3/CODE_REVIEW.md",
+    "docs/audits/windows-isolation-r3/DEVELOPER_RESPONSE.md",
+    "docs/audits/windows-isolation-r3/IDENTITY.json",
+    "docs/audits/windows-isolation-r3/REVIEW_PACKAGE.md",
+    "docs/audits/windows-isolation-r3/STATUS.json",
+    "docs/audits/windows-isolation-r3/received/.gitattributes",
+    "docs/audits/windows-isolation-r3/received/ACL_INCOMPATIBILITIES.json",
+    "docs/audits/windows-isolation-r3/received/COPIED_FILES.json",
+    "docs/audits/windows-isolation-r3/received/DEVELOPER_HANDOFF.md",
+    "docs/audits/windows-isolation-r3/received/EVIDENCE.zip",
+    "docs/audits/windows-isolation-r3/received/FIXED_GIT_SOURCE_VERIFICATION.json",
+    "docs/audits/windows-isolation-r3/received/INDEPENDENT_VERIFICATION.json",
+    "docs/audits/windows-isolation-r3/received/OMISSIONS.json",
+    "docs/audits/windows-isolation-r3/received/REPORT.md",
+    "docs/audits/windows-isolation-r3/received/current-accounts.json",
     "pyproject.toml",
     "src/aqrp/__init__.py",
     "src/aqrp/factors/admission.py",
     "src/aqrp/factors/reviewed_code.json",
+    "src/aqrp/validation/engineering_input.py",
     "src/aqrp/validation/evaluator.py",
+    "src/aqrp/validation/windows_acl.py",
     "tests/environment/test_installation.py",
-    "tools/ci.py"
+    "tests/research/test_engineering_input.py",
+    "tests/research/test_windows_acl.py",
+    "tests/research/test_windows_probe_contract.py",
+    "tools/build_windows_engineering_inputs.py",
+    "tools/check_windows_repair_package.py",
+    "tools/ci.py",
+    "tools/windows_access_probe.py",
+    "tools/windows_engineering_worker.py"
   ],
   "receipt_scope": "TEST_ONLY, financial NONE, developer reviewed, independent review PENDING"
 }

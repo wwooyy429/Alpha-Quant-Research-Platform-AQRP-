@@ -26,7 +26,9 @@ tools/windows_access_probe.py提供经审查后分别在真实三主体下执行
 
 ## 自测、旧证据与剩余验收
 
-48个新增针对性测试涵盖ACL闭集/链、旧ACL继续拒绝、越权/owner rights、全成员/源变化/部分失败、真实P1文件复制、侧车后补/篡改、探针缺文件不冒充拒绝及当前身份原生只读捕获；其中模型adapter明确仅逻辑验证。完整SDK另见VALIDATION索引。原并发单次访问、崩溃恢复/重复拒绝仍在既有测试中回归；新真实三主体下的这些运行及完整before/after门禁未执行。
+50个新增针对性测试涵盖ACL闭集/链、旧ACL继续拒绝、越权/owner rights、全成员/源变化/部分失败、真实P1文件复制、侧车后补/篡改、探针缺文件不冒充拒绝及当前身份原生只读捕获；其中模型adapter明确仅逻辑验证。完整SDK另见外置VALIDATION索引及PR。原并发单次访问、崩溃恢复/重复拒绝仍在既有测试中回归；新真实三主体下的这些运行及完整before/after门禁未执行。
+
+实际只读捕获C:\\及C:\\AQRP-Sealed祖先发现系统盘根owner为TrustedInstaller；sc.exe showsid原生核对SID一致。该明确系统维护主体仅加入外部祖先trust集合，不适用于sealed根/输入owner及域内ACE，任意其他service SID仍拒绝；补独立反例测试。前一候选99cab98不包含此修正，其SDK/CI只能覆盖自己的固定SHA，最终以更新后的固定版本为准。新key_file也被显式绑定到tree policy，确保operator发布全域检查与evaluator Host门禁对同一私钥角色ACL一致，不会默认把它当auditor可读的普通文件。
 
 初期test1的2失败来自测试把eval Modify ACL放到了可信外部祖先，门禁正确拒绝；已把祖先夹具改为只读，规则不放宽。test4的1失败为conda子进程PSModulePath选择到未能加载的外部Security模块；改为显式导入Windows自带$PSHOME模块，不绕过执行策略、不改变系统模块或权限。test5通过；原日志保留。早期lint多语句/后续E731诊断与修正保留可用原记录，不编造未保存的完整首轮lint。
 
