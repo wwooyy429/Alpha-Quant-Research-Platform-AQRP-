@@ -1,0 +1,101 @@
+{
+  "actual_executor": "GPT Work primary reviewer",
+  "utc": "2026-10-22T08:10:53.355579+00:00",
+  "fixed_sha": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "marker": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "base": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+  "pr_open": true,
+  "checkout_clean": true,
+  "developer_checkout_head": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "developer_checkout_porcelain": "",
+  "remote_refs": {
+    "refs/heads/main": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "refs/tags/phase0-baseline": "0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0",
+    "refs/tags/phase0-baseline^{}": "7de1d0e81385ae97f98ea673fe05dd726f0b577b",
+    "refs/tags/phase1-baseline": "1a8e47ee4be910aa7eeeefa430015e683a8aa6f5",
+    "refs/tags/phase1-baseline^{}": "f579b2c99e762085772de6e70ba1fa98792a7add",
+    "refs/tags/phase2-baseline": "24000b53ebfeda56aad5a54b93d432196f6ba293",
+    "refs/tags/phase2-baseline^{}": "f26255fc40a3080bfa883ad64938f60036a14759",
+    "refs/tags/phase3-baseline": "3ff892aee490cc922e162d813b245944430db6af",
+    "refs/tags/phase3-baseline^{}": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "refs/tags/v0.1.1": "6611ca42e213c78be5155cba702ae789d48aab24",
+    "refs/tags/v0.1.1^{}": "fb1ba4fd51202a303115e4449ee49db09ccc071c",
+    "refs/tags/v0.2.0": "d8ee6c165eebb165393307b78acb7218a9994321",
+    "refs/tags/v0.2.0^{}": "f26255fc40a3080bfa883ad64938f60036a14759",
+    "refs/tags/v0.3.0": "6060b45a2adde469021a7da7c65d329254736b44",
+    "refs/tags/v0.3.0^{}": "0a57dccb5618ba08cd3572d6d6b78fec963a3041"
+  },
+  "all_release_receipt_refs_match": true,
+  "mutations": "External review files and independent detached checkout only. No tracked source/docs changes, remote writes, merge/tag/deploy/accounts/ACL/services or P5.",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git",
+        "refs/heads/main",
+        "refs/tags/phase*-baseline*",
+        "refs/tags/v0.*"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "exit_code": 0,
+      "stdout": "0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/heads/main\n0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0\trefs/tags/phase0-baseline\n7de1d0e81385ae97f98ea673fe05dd726f0b577b\trefs/tags/phase0-baseline^{}\n1a8e47ee4be910aa7eeeefa430015e683a8aa6f5\trefs/tags/phase1-baseline\nf579b2c99e762085772de6e70ba1fa98792a7add\trefs/tags/phase1-baseline^{}\n24000b53ebfeda56aad5a54b93d432196f6ba293\trefs/tags/phase2-baseline\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/phase2-baseline^{}\n3ff892aee490cc922e162d813b245944430db6af\trefs/tags/phase3-baseline\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/phase3-baseline^{}\n6611ca42e213c78be5155cba702ae789d48aab24\trefs/tags/v0.1.1\nfb1ba4fd51202a303115e4449ee49db09ccc071c\trefs/tags/v0.1.1^{}\nd8ee6c165eebb165393307b78acb7218a9994321\trefs/tags/v0.2.0\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/v0.2.0^{}\n6060b45a2adde469021a7da7c65d329254736b44\trefs/tags/v0.3.0\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/v0.3.0^{}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "exit_code": 0,
+      "stdout": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "exit_code": 0,
+      "stdout": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "e40ddd0009cc30664c3a0fe0b74c4a497a541d77^{tree}"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "exit_code": 0,
+      "stdout": "66ae3cce5f9d73271963e72aaaf3ec171c08c4c1\n",
+      "stderr": ""
+    }
+  ]
+}

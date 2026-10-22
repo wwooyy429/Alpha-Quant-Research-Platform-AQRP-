@@ -1,5 +1,15 @@
 # 双向需求追踪矩阵（待审）
 
+2026-10-22 Phase4 G2：GPT Work 对固定 18439f31536295aea42e57e566d07cce345a35cf 判 BLOCKED / REQUEST CHANGES（001 High、002 Medium OPEN）。本轮修复候选 0.4.1.dev1、53 模块，精确输出及实际字节复核、真实 P3 父快照绑定；待干净 SDK、双 OS 原始证据及新固定 SHA 独立复核。G1 PLAN PASS 不变，七项范围不扩展；不自行关闭发现或验收。详 docs/audits/phase-4/g2-18439f3/REVIEW_PACKAGE.md。真实隔离、正式 Test、金融批准、完整旧宿主限制保留；无合并、标签、部署、实盘或 P5。以下旧状态为历史。
+
+2026-10-22 当前Phase4：用户已授权7项受限工程实现，53模块0.4.0已完成开发自测，业务b3be62439d8d0877478b7105d68863fcb2a108a0干净SDK799、双OS各799及原始ZIP/hash核验、外置20/四/数学91通过。当前IMPLEMENTATION READY FOR GPT WORK G2，不是独立G2通过或阶段验收；详docs/audits/phase-4/IMPLEMENTATION_REVIEW_PACKAGE.md。真实隔离/正式Test/金融批准及旧完整宿主限制保留，main/标签不动，无合并/发布/部署/实盘/P5。以下旧状态按轮次保留。
+
+2026-10-22 当前Phase4 G1：GPT Work对固定265af16353d85ce8c2d229a7517809d707498da8判PLAN PASS（受限工程设计），001 High/002 Medium均CLOSED_DESIGN，无新增阻断。原17候选独立复算、64项证据检查通过；仅设计数学，不是P4实现。原件与接收/关闭在docs/audits/phase-4/g1-265af16/。实际P4实施仍待用户单独授权，未阶段验收/合并/标签/部署/实盘/P5；Phase3受限发布与延期不变。以下旧BLOCKED/OPEN按原轮历史保留。
+
+2026-10-22 当前Phase4 G1：GPT Work对固定e40ddd0009cc30664c3a0fe0b74c4a497a541d77判PLAN BLOCKED（001 High、002 Medium仍OPEN）。本轮仅修订目标/delta双lot门禁、不动/全平例外及收窄取整性质，新增独立反例，待新固定SHA主审复核；详docs/audits/phase-4/DEVELOPER_RESPONSE.md。Phase3受限发布不变，不写P4业务、无合并/标签/部署/实盘/P5；以下旧状态为历史。
+
+2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。
+
 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。
 
 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。

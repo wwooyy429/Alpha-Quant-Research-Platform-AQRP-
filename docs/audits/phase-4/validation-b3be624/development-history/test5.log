@@ -1,0 +1,21 @@
+........................................................................ [ 32%]
+........................................................................ [ 65%]
+........................................................................ [ 98%]
+...                                                                      [100%]
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Name                                   Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------------------------
+src\aqrp\portfolio\__init__.py             0      0      0      0   100%
+src\aqrp\portfolio\construct.py           20      0      4      0   100%
+src\aqrp\portfolio\contracts.py          276      3    136      3    99%   140, 196, 240
+src\aqrp\portfolio\research_input.py      75      2     28      2    96%   75, 91
+src\aqrp\portfolio\service.py             71      1     10      1    98%   161
+src\aqrp\portfolio\weights.py             48      0     24      0   100%
+src\aqrp\risk\__init__.py                  0      0      0      0   100%
+src\aqrp\risk\checks.py                   73      0     22      0   100%
+----------------------------------------------------------------------------------
+TOTAL                                    563      6    224      6    98%
+Coverage JSON written to file C:\Users\11638\AppData\Local\AQRP\runs\p4-implementation-20261022\dev2-coverage.json
+219 passed in 7.17s

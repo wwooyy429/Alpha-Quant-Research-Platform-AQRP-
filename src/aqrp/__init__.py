@@ -1,3 +1,3 @@
-"""AQRP Phase 1: synthetic data only; no trading or factor execution."""
+"""AQRP restricted engineering research, portfolio construction and risk controls."""
 
-__version__ = "0.3.0"
+__version__ = "0.4.1.dev1"

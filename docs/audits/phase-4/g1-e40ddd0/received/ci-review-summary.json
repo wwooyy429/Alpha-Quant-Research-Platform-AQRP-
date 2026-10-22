@@ -1,0 +1,48 @@
+{
+  "actual_executor": "GPT Work primary reviewer",
+  "run_id": 39740405800,
+  "attempt": 1,
+  "event": "pull_request",
+  "workflow": "Phase 3 quality",
+  "head": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "base": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+  "actual_integration_sha": "2c14c96124ec7b1fefbc5f6fc88e27bcf962213a",
+  "tree": "66ae3cce5f9d73271963e72aaaf3ec171c08c4c1",
+  "fixed_tree_equal": true,
+  "jobs": [
+    {
+      "id": 119695980314,
+      "name": "data-contracts (ubuntu-24.04)",
+      "conclusion": "success",
+      "decoded_log_sha256": "ee8f7b52c3ee4f6f3bb849256c0544a2eaa6cc8c7934936d8605284c3b278f5d",
+      "evidence": "Connector-decoded job log, preserved UTF-8 incl BOM/newlines; not downloaded raw artifact ZIP"
+    },
+    {
+      "id": 119695980827,
+      "name": "data-contracts (windows-latest)",
+      "conclusion": "success",
+      "decoded_log_sha256": "48324987276f75d41028f757de1d8dfd3d9f8fa154f5dced46cf68ea61bef53b",
+      "evidence": "Connector-decoded job log, preserved UTF-8 incl BOM/newlines; not downloaded raw artifact ZIP"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12409500604,
+      "name": "phase3-windows-latest-1",
+      "bytes": 95545609,
+      "official_digest": "sha256:2fb7ba18624a8dc8a546496bb550c249244205b30a831346fe0b9fff5a3044ca"
+    },
+    {
+      "id": 12408773360,
+      "name": "phase3-ubuntu-24.04-1",
+      "bytes": 136818283,
+      "official_digest": "sha256:94a68c56538a2ec06d20bb9608ecb0c8636f49c35150fbf4fe7276aa73e549b1"
+    }
+  ],
+  "verification_scope": "API metadata, checkout logs, digest text agreement, actual merge parent/tree binding only",
+  "raw_zip_downloaded": false,
+  "raw_zip_independently_hashed": false,
+  "internal_manifest_JUnit_coverage_wheel_verified_this_round": false,
+  "test_count_independently_recounted_this_round": false,
+  "P4_implementation_tests": false
+}

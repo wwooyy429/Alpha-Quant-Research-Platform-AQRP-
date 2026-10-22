@@ -1,0 +1,1770 @@
+FFFFFF................F....FFFFFFF...................................... [ 32%]
+........................................................................ [ 65%]
+..............................F............FFFFFFFFFFFFFFFFFFFF...FFFFF. [ 97%]
+F..FF                                                                    [100%]
+================================== FAILURES ===================================
+__________________ test_frozen_independent_full_inputs[base] __________________
+
+name = 'base'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i0')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+>       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+__________________ test_frozen_independent_full_inputs[x01] ___________________
+
+name = 'x01'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i1')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+>       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+__________________ test_frozen_independent_full_inputs[x03] ___________________
+
+name = 'x03'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i2')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+>       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+__________________ test_frozen_independent_full_inputs[x04] ___________________
+
+name = 'x04'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i3')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+>       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+________________ test_frozen_independent_full_inputs[odd_hold] ________________
+
+name = 'odd_hold'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i4')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+>       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+______________ test_frozen_independent_full_inputs[short_close] _______________
+
+name = 'short_close'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_frozen_independent_full_i5')
+
+    @pytest.mark.parametrize("name", ["base", "x01", "x03", "x04", "odd_hold", "short_close"])
+    def test_frozen_independent_full_inputs(name, tmp_path):
+        x = fixture(name)
+        before = deepcopy(x)
+>       result = construct_engineering(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+__________________ test_formal_cannot_use_engineering_flags ___________________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_formal_cannot_use_enginee0')
+
+    def test_formal_cannot_use_engineering_flags(tmp_path):
+        x = fixture()
+        x["source"]["financial_approval"] = "ResearchValidated"
+>       result = construct_approved(PortfolioRequest.create(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:128: in construct_approved
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_zero_negative_and_empty_leg[LONG_ONLY-score-values0-NO_POSITIVE_SCORE] _
+
+mode = 'LONG_ONLY', weighting = 'score', values = ('-1', '-2')
+expected = 'NO_POSITIVE_SCORE'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_zero_negative_and_empty_l0')
+
+    @pytest.mark.parametrize(
+        "mode,weighting,values,expected",
+        [
+            ("LONG_ONLY", "score", ("-1", "-2"), "NO_POSITIVE_SCORE"),
+            ("LONG_ONLY", "equal", ("-1", "-2"), "NONE"),
+            ("LONG_SHORT", "score", ("1", "1"), "INFEASIBLE_EMPTY_LEG"),
+        ],
+    )
+    def test_zero_negative_and_empty_leg(mode, weighting, values, expected, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting=weighting, net="0" if mode == "LONG_SHORT" else "1")
+        for r, s in zip(x["inputs"]["scores"][0]["data"]["rows"], values):
+            r["score"] = s
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_______ test_zero_negative_and_empty_leg[LONG_ONLY-equal-values1-NONE] ________
+
+mode = 'LONG_ONLY', weighting = 'equal', values = ('-1', '-2')
+expected = 'NONE'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_zero_negative_and_empty_l1')
+
+    @pytest.mark.parametrize(
+        "mode,weighting,values,expected",
+        [
+            ("LONG_ONLY", "score", ("-1", "-2"), "NO_POSITIVE_SCORE"),
+            ("LONG_ONLY", "equal", ("-1", "-2"), "NONE"),
+            ("LONG_SHORT", "score", ("1", "1"), "INFEASIBLE_EMPTY_LEG"),
+        ],
+    )
+    def test_zero_negative_and_empty_leg(mode, weighting, values, expected, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting=weighting, net="0" if mode == "LONG_SHORT" else "1")
+        for r, s in zip(x["inputs"]["scores"][0]["data"]["rows"], values):
+            r["score"] = s
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_zero_negative_and_empty_leg[LONG_SHORT-score-values2-INFEASIBLE_EMPTY_LEG] _
+
+mode = 'LONG_SHORT', weighting = 'score', values = ('1', '1')
+expected = 'INFEASIBLE_EMPTY_LEG'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_zero_negative_and_empty_l2')
+
+    @pytest.mark.parametrize(
+        "mode,weighting,values,expected",
+        [
+            ("LONG_ONLY", "score", ("-1", "-2"), "NO_POSITIVE_SCORE"),
+            ("LONG_ONLY", "equal", ("-1", "-2"), "NONE"),
+            ("LONG_SHORT", "score", ("1", "1"), "INFEASIBLE_EMPTY_LEG"),
+        ],
+    )
+    def test_zero_negative_and_empty_leg(mode, weighting, values, expected, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting=weighting, net="0" if mode == "LONG_SHORT" else "1")
+        for r, s in zip(x["inputs"]["scores"][0]["data"]["rows"], values):
+            r["score"] = s
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_____________________ test_risk_reasons_no_silent_repair ______________________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_risk_reasons_no_silent_re0')
+
+    def test_risk_reasons_no_silent_repair(tmp_path):
+        x = fixture()
+        x["constraints"]["per_asset"]["SYNTH:A"] = "0.7"
+>       result = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+________________ test_failure_and_immutable_terminal_evidence _________________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_failure_and_immutable_ter0')
+
+    def test_failure_and_immutable_terminal_evidence(tmp_path):
+        req = PortfolioRequest(b"{broken")
+>       r = construct_engineering(req, tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:209: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_golden_g10_g11_complete_public_service[LONG_ONLY-1-quantities0-300-0.7-300] _
+
+mode = 'LONG_ONLY', net = '1', quantities = {'SYNTH:A': '10', 'SYNTH:B': '10'}
+cash = '300', gross = '0.7', free = '300'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_golden_g10_g11_complete_p0')
+
+    @pytest.mark.parametrize(
+        "mode,net,quantities,cash,gross,free",
+        [
+            ("LONG_ONLY", "1", {"SYNTH:A": "10", "SYNTH:B": "10"}, "300", "0.7", "300"),
+            ("LONG_SHORT", "0", {"SYNTH:A": "10", "SYNTH:B": "-10"}, "1100", "0.7", "300"),
+        ],
+    )
+    def test_golden_g10_g11_complete_public_service(mode, net, quantities, cash, gross, free, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting="equal", gross="1", net=net)
+        for row, price in zip(x["inputs"]["prices"]["data"], ["30", "40"]):
+            row.update(price=price, lot="10")
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_golden_g10_g11_complete_public_service[LONG_SHORT-0-quantities1-1100-0.7-300] _
+
+mode = 'LONG_SHORT', net = '0', quantities = {'SYNTH:A': '10', 'SYNTH:B': '-10'}
+cash = '1100', gross = '0.7', free = '300'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_golden_g10_g11_complete_p1')
+
+    @pytest.mark.parametrize(
+        "mode,net,quantities,cash,gross,free",
+        [
+            ("LONG_ONLY", "1", {"SYNTH:A": "10", "SYNTH:B": "10"}, "300", "0.7", "300"),
+            ("LONG_SHORT", "0", {"SYNTH:A": "10", "SYNTH:B": "-10"}, "1100", "0.7", "300"),
+        ],
+    )
+    def test_golden_g10_g11_complete_public_service(mode, net, quantities, cash, gross, free, tmp_path):
+        x = fixture()
+        x["policy"].update(mode=mode, weighting="equal", gross="1", net=net)
+        for row, price in zip(x["inputs"]["prices"]["data"], ["30", "40"]):
+            row.update(price=price, lot="10")
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_construct.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+___ test_actual_published_p3_stage_to_p4_engineering_not_reexecuted_factor ____
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_actual_published_p3_stage0')
+
+    def test_actual_published_p3_stage_to_p4_engineering_not_reexecuted_factor(tmp_path):
+        r = bound()
+        prepare(r)
+>       result = construct_engineering(r, tmp_path, "a" * 40).read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_research_input.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+__ test_public_service_enforces_each_limit[constraints.gross_max-0.9-GROSS] ___
+
+path = 'constraints.gross_max', value = '0.9', reason = 'GROSS'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e0')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+____ test_public_service_enforces_each_limit[constraints.net_max-0.9-NET] _____
+
+path = 'constraints.net_max', value = '0.9', reason = 'NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e1')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+____ test_public_service_enforces_each_limit[constraints.net_min-1.1-NET] _____
+
+path = 'constraints.net_min', value = '1.1', reason = 'NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e2')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_public_service_enforces_each_limit[constraints.leverage_max-0.9-LEVERAGE] _
+
+path = 'constraints.leverage_max', value = '0.9', reason = 'LEVERAGE'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e3')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_public_service_enforces_each_limit[constraints.turnover_max-0.9-TURNOVER] _
+
+path = 'constraints.turnover_max', value = '0.9', reason = 'TURNOVER'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e4')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+___ test_public_service_enforces_each_limit[constraints.beta_max-0.9-BETA] ____
+
+path = 'constraints.beta_max', value = '0.9', reason = 'BETA'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e5')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+___ test_public_service_enforces_each_limit[constraints.beta_min-1.1-BETA] ____
+
+path = 'constraints.beta_min', value = '1.1', reason = 'BETA'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e6')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_public_service_enforces_each_limit[constraints.industries.I.net_max-0.9-INDUSTRY_NET] _
+
+path = 'constraints.industries.I.net_max', value = '0.9'
+reason = 'INDUSTRY_NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e7')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_public_service_enforces_each_limit[constraints.industries.I.net_min-1.1-INDUSTRY_NET] _
+
+path = 'constraints.industries.I.net_min', value = '1.1'
+reason = 'INDUSTRY_NET'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e8')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_public_service_enforces_each_limit[constraints.industries.I.gross_max-0.9-INDUSTRY_GROSS] _
+
+path = 'constraints.industries.I.gross_max', value = '0.9'
+reason = 'INDUSTRY_GROSS'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e9')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+__ test_public_service_enforces_each_limit[profile.fee_reserve-1-FREE_CASH] ___
+
+path = 'profile.fee_reserve', value = '1', reason = 'FREE_CASH'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_public_service_enforces_e10')
+
+    @pytest.mark.parametrize(
+        "path,value,reason",
+        [
+            ("constraints.gross_max", "0.9", "GROSS"),
+            ("constraints.net_max", "0.9", "NET"),
+            ("constraints.net_min", "1.1", "NET"),
+            ("constraints.leverage_max", "0.9", "LEVERAGE"),
+            ("constraints.turnover_max", "0.9", "TURNOVER"),
+            ("constraints.beta_max", "0.9", "BETA"),
+            ("constraints.beta_min", "1.1", "BETA"),
+            ("constraints.industries.I.net_max", "0.9", "INDUSTRY_NET"),
+            ("constraints.industries.I.net_min", "1.1", "INDUSTRY_NET"),
+            ("constraints.industries.I.gross_max", "0.9", "INDUSTRY_GROSS"),
+            ("profile.fee_reserve", "1", "FREE_CASH"),
+        ],
+    )
+    def test_public_service_enforces_each_limit(path, value, reason, tmp_path):
+        x = change(fixture(), path, value)
+        if path == "constraints.net_min":
+            x["constraints"]["net_max"] = "2"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_short_permissions_not_implicit_zero_or_extra_borrow[SHORT_PERMISSION-equal] _
+
+weighting = 'equal', kind = 'SHORT_PERMISSION'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp0')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_short_permissions_not_implicit_zero_or_extra_borrow[SHORT_PERMISSION-score] _
+
+weighting = 'score', kind = 'SHORT_PERMISSION'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp1')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_short_permissions_not_implicit_zero_or_extra_borrow[BORROW_TOTAL-equal] _
+
+weighting = 'equal', kind = 'BORROW_TOTAL'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp2')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_ test_short_permissions_not_implicit_zero_or_extra_borrow[BORROW_TOTAL-score] _
+
+weighting = 'score', kind = 'BORROW_TOTAL'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_permissions_not_imp3')
+
+    @pytest.mark.parametrize("weighting", ["equal", "score"])
+    @pytest.mark.parametrize("kind", ["SHORT_PERMISSION", "BORROW_TOTAL"])
+    def test_short_permissions_not_implicit_zero_or_extra_borrow(weighting, kind, tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting=weighting, net="0")
+        row = x["inputs"]["permissions"]["data"][1]
+        if kind == "SHORT_PERMISSION":
+            row["short_permission"] = False
+        else:
+            row["borrow_limit_total"] = "49.999999999999"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+______________ test_nonselected_holding_is_sold_only_if_sellable ______________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_nonselected_holding_is_so0')
+
+    def test_nonselected_holding_is_sold_only_if_sellable(tmp_path):
+        x = fixture()
+        x["inputs"]["account"]["data"]["total_cash"] = "900"
+        x["inputs"]["account"]["data"]["positions"][0]["quantity"] = "10"
+        x["inputs"]["scores"][0]["data"]["rows"][0]["score"] = "0"
+        x["inputs"]["permissions"]["data"][0]["sellable_qty"] = "9"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_______________ test_short_full_close_never_bypasses_halt[True] _______________
+
+flag = True
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_full_close_never_by0')
+
+    @pytest.mark.parametrize("flag", [True, False])
+    def test_short_full_close_never_bypasses_halt(flag, tmp_path):
+        x = fixture("short_close")
+        x["profile"]["allow_full_close_odd_lot"] = flag
+        x["inputs"]["status"]["data"][0]["tradable"] = False
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+______________ test_short_full_close_never_bypasses_halt[False] _______________
+
+flag = False
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_short_full_close_never_by1')
+
+    @pytest.mark.parametrize("flag", [True, False])
+    def test_short_full_close_never_bypasses_halt(flag, tmp_path):
+        x = fixture("short_close")
+        x["profile"]["allow_full_close_odd_lot"] = flag
+        x["inputs"]["status"]["data"][0]["tradable"] = False
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+____________ test_signed_industry_does_not_replace_industry_gross _____________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_signed_industry_does_not_0')
+
+    def test_signed_industry_does_not_replace_industry_gross(tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting="equal", gross="1", net="0")
+        x["constraints"]["industries"]["I"]["gross_max"] = "0.9"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+__________________ test_approved_net_budget_can_fail_funding __________________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_approved_net_budget_can_f0')
+
+    def test_approved_net_budget_can_fail_funding(tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting="equal", gross="1.2", net="0.2")
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+______________ test_empty_universe_and_cash_forbidden[LONG_ONLY] ______________
+
+mode = 'LONG_ONLY'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_empty_universe_and_cash_f0')
+
+    @pytest.mark.parametrize("mode", ["LONG_ONLY", "LONG_SHORT"])
+    def test_empty_universe_and_cash_forbidden(mode, tmp_path):
+        x = fixture()
+        x["policy"]["mode"] = mode
+        if mode == "LONG_SHORT":
+            x["policy"]["net"] = "0"
+        x["inputs"]["scores"][0]["data"]["rows"] = []
+        x["constraints"]["allow_cash_only"] = False
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_____________ test_empty_universe_and_cash_forbidden[LONG_SHORT] ______________
+
+mode = 'LONG_SHORT'
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_empty_universe_and_cash_f1')
+
+    @pytest.mark.parametrize("mode", ["LONG_ONLY", "LONG_SHORT"])
+    def test_empty_universe_and_cash_forbidden(mode, tmp_path):
+        x = fixture()
+        x["policy"]["mode"] = mode
+        if mode == "LONG_SHORT":
+            x["policy"]["net"] = "0"
+        x["inputs"]["scores"][0]["data"]["rows"] = []
+        x["constraints"]["allow_cash_only"] = False
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+______________ test_overlapping_long_short_legs_and_zero_budget _______________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_overlapping_long_short_le0')
+
+    def test_overlapping_long_short_legs_and_zero_budget(tmp_path):
+        x = fixture()
+        x["policy"].update(mode="LONG_SHORT", weighting="equal", net="0", long_k=2, short_k=1)
+>       r = construct_engineering(reseal(x), tmp_path / "bad", COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+___ test_deterministic_result_projection_uuid_unique_and_terminal_immutable ___
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_deterministic_result_proj0')
+
+    def test_deterministic_result_projection_uuid_unique_and_terminal_immutable(tmp_path):
+        req = reseal(fixture())
+>       a = construct_engineering(req, tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+___________ test_candidate_and_output_copies_cannot_mutate_service ____________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_candidate_and_output_copi0')
+
+    def test_candidate_and_output_copies_cannot_mutate_service(tmp_path):
+        req = reseal(fixture())
+>       obj = construct_engineering(req, tmp_path, COMMIT)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_________________ test_unexpected_failure_recorded_not_masked _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000142FF712FD0>
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_unexpected_failure_record0')
+
+    def test_unexpected_failure_recorded_not_masked(monkeypatch, tmp_path):
+        import aqrp.portfolio.service as service
+    
+        def broken(_):
+            raise RuntimeError("deliberate storage/compute failure")
+    
+        monkeypatch.setattr(service, "build_candidate", broken)
+        with pytest.raises(RuntimeError):
+>           service.construct_engineering(reseal(fixture()), tmp_path, COMMIT)
+
+tests\portfolio\test_risk_service.py:169: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_______________ test_real_beta_dot_product_and_distinct_sectors _______________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_real_beta_dot_product_and0')
+
+    def test_real_beta_dot_product_and_distinct_sectors(tmp_path):
+        x = fixture()
+        x["inputs"]["exposures"]["data"][0]["beta"] = "1.2"
+        x["inputs"]["exposures"]["data"][1].update(beta="0.8", industry="J")
+        x["constraints"]["industries"]["J"] = dict(x["constraints"]["industries"]["I"])
+        x["constraints"]["beta_max"] = "1"
+>       r = construct_engineering(reseal(x), tmp_path, COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:209: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+_________ test_three_asset_centered_long_short_and_input_permutation __________
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-implementation-20261022/test8tmp/test_three_asset_centered_long0')
+
+    def test_three_asset_centered_long_short_and_input_permutation(tmp_path):
+        x = fixture()
+        for name, e in x["inputs"].items():
+            if name == "scores":
+                continue
+            if name == "account":
+                e["data"]["positions"].append({"security_id": "SYNTH:C", "quantity": "0"})
+            else:
+                row = deepcopy(e["data"][0])
+                row["security_id"] = "SYNTH:C"
+                e["data"].append(row)
+        score = x["inputs"]["scores"][0]["data"]["rows"]
+        row = deepcopy(score[0])
+        row.update(security_id="SYNTH:C", score="-2")
+        score.append(row)
+        x["policy"].update(mode="LONG_SHORT", weighting="score", gross="1", net="0", top_k=3, long_k=2)
+        x["constraints"]["per_asset"]["SYNTH:C"] = "1"
+>       a = construct_engineering(reseal(x), tmp_path / "a", COMMIT).read()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\portfolio\test_risk_service.py:235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\aqrp\portfolio\service.py:19: in construct_engineering
+    policy = reviewed_policy()
+             ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def reviewed_policy():
+        policy = json.loads((PACKAGE / "factors/reviewed_code.json").read_bytes())
+        if (
+            policy.get("state") != "ENGINEERING_APPROVED"
+            or policy.get("environment") != "TEST_ONLY"
+            or policy.get("financial_approval") != "NONE"
+            or not policy.get("reviewer")
+            or not policy.get("review_ref")
+        ):
+            raise ContractError("UNAPPROVED_CODE_RECEIPT", "reviewed_code.json")
+        if policy.get("bundle_sha256") != bundle_hash():
+>           raise ContractError("IMPLEMENTATION_HASH_CHANGED", "bundle")
+E           aqrp.core.errors.ContractError: IMPLEMENTATION_HASH_CHANGED: bundle
+
+src\aqrp\factors\admission.py:50: ContractError
+=========================== short test summary info ===========================
+FAILED tests/portfolio/test_construct.py::test_frozen_independent_full_inputs[base]
+FAILED tests/portfolio/test_construct.py::test_frozen_independent_full_inputs[x01]
+FAILED tests/portfolio/test_construct.py::test_frozen_independent_full_inputs[x03]
+FAILED tests/portfolio/test_construct.py::test_frozen_independent_full_inputs[x04]
+FAILED tests/portfolio/test_construct.py::test_frozen_independent_full_inputs[odd_hold]
+FAILED tests/portfolio/test_construct.py::test_frozen_independent_full_inputs[short_close]
+FAILED tests/portfolio/test_construct.py::test_formal_cannot_use_engineering_flags
+FAILED tests/portfolio/test_construct.py::test_zero_negative_and_empty_leg[LONG_ONLY-score-values0-NO_POSITIVE_SCORE]
+FAILED tests/portfolio/test_construct.py::test_zero_negative_and_empty_leg[LONG_ONLY-equal-values1-NONE]
+FAILED tests/portfolio/test_construct.py::test_zero_negative_and_empty_leg[LONG_SHORT-score-values2-INFEASIBLE_EMPTY_LEG]
+FAILED tests/portfolio/test_construct.py::test_risk_reasons_no_silent_repair
+FAILED tests/portfolio/test_construct.py::test_failure_and_immutable_terminal_evidence
+FAILED tests/portfolio/test_construct.py::test_golden_g10_g11_complete_public_service[LONG_ONLY-1-quantities0-300-0.7-300]
+FAILED tests/portfolio/test_construct.py::test_golden_g10_g11_complete_public_service[LONG_SHORT-0-quantities1-1100-0.7-300]
+FAILED tests/portfolio/test_research_input.py::test_actual_published_p3_stage_to_p4_engineering_not_reexecuted_factor
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.gross_max-0.9-GROSS]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.net_max-0.9-NET]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.net_min-1.1-NET]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.leverage_max-0.9-LEVERAGE]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.turnover_max-0.9-TURNOVER]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.beta_max-0.9-BETA]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.beta_min-1.1-BETA]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.industries.I.net_max-0.9-INDUSTRY_NET]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.industries.I.net_min-1.1-INDUSTRY_NET]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[constraints.industries.I.gross_max-0.9-INDUSTRY_GROSS]
+FAILED tests/portfolio/test_risk_service.py::test_public_service_enforces_each_limit[profile.fee_reserve-1-FREE_CASH]
+FAILED tests/portfolio/test_risk_service.py::test_short_permissions_not_implicit_zero_or_extra_borrow[SHORT_PERMISSION-equal]
+FAILED tests/portfolio/test_risk_service.py::test_short_permissions_not_implicit_zero_or_extra_borrow[SHORT_PERMISSION-score]
+FAILED tests/portfolio/test_risk_service.py::test_short_permissions_not_implicit_zero_or_extra_borrow[BORROW_TOTAL-equal]
+FAILED tests/portfolio/test_risk_service.py::test_short_permissions_not_implicit_zero_or_extra_borrow[BORROW_TOTAL-score]
+FAILED tests/portfolio/test_risk_service.py::test_nonselected_holding_is_sold_only_if_sellable
+FAILED tests/portfolio/test_risk_service.py::test_short_full_close_never_bypasses_halt[True]
+FAILED tests/portfolio/test_risk_service.py::test_short_full_close_never_bypasses_halt[False]
+FAILED tests/portfolio/test_risk_service.py::test_signed_industry_does_not_replace_industry_gross
+FAILED tests/portfolio/test_risk_service.py::test_approved_net_budget_can_fail_funding
+FAILED tests/portfolio/test_risk_service.py::test_empty_universe_and_cash_forbidden[LONG_ONLY]
+FAILED tests/portfolio/test_risk_service.py::test_empty_universe_and_cash_forbidden[LONG_SHORT]
+FAILED tests/portfolio/test_risk_service.py::test_overlapping_long_short_legs_and_zero_budget
+FAILED tests/portfolio/test_risk_service.py::test_deterministic_result_projection_uuid_unique_and_terminal_immutable
+FAILED tests/portfolio/test_risk_service.py::test_candidate_and_output_copies_cannot_mutate_service
+FAILED tests/portfolio/test_risk_service.py::test_unexpected_failure_recorded_not_masked
+FAILED tests/portfolio/test_risk_service.py::test_real_beta_dot_product_and_distinct_sectors
+FAILED tests/portfolio/test_risk_service.py::test_three_asset_centered_long_short_and_input_permutation
+43 failed, 178 passed in 6.84s

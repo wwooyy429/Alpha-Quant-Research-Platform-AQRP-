@@ -1,0 +1,112 @@
+{
+  "scope": "Developer byte/contract verification; not independent audit or OS deployment",
+  "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-implementation-20261022\\ci-b3\\P4-b3be624-Ubuntu-original.zip",
+  "head_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+  "executed_sha": "a1c093ed7eb4932d7a12e5dbb84f46bbc47522dd",
+  "source_tree": "4f418b5288345ab561d3c8e8a9e02521d8ad287b",
+  "executed_parents": [
+    "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "b3be62439d8d0877478b7105d68863fcb2a108a0"
+  ],
+  "source_binding": "GITHUB_PR_MERGE_TREE_EQUALS_FIXED_HEAD",
+  "environment": {
+    "run_id": "aqrp-5eada83e-65ca-4e35-a69b-d17b9f5a5305",
+    "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+    "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "ImageOS": "ubuntu24",
+    "ImageVersion": "20261018.339.1",
+    "code_commit": "a1c093ed7eb4932d7a12e5dbb84f46bbc47522dd",
+    "dirty": false,
+    "complete": true,
+    "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-5eada83e-65ca-4e35-a69b-d17b9f5a5305",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39764920790",
+    "github_run_attempt": "1",
+    "github_sha": "a1c093ed7eb4932d7a12e5dbb84f46bbc47522dd",
+    "wheel_sha256": "4b5d8cadccfad1833a8da9e9179a5274dd45a800cdad3bf6761cba49330509be"
+  },
+  "zip_sha256": "d9e3b20bc8a76d4e0a7b61a79f37e58b38712cb070774ae9a16de34807487b4a",
+  "zip_bytes": 136949476,
+  "crc": "PASS",
+  "selected_files": 246,
+  "upload_selection_sha256": "485685b28e5de1944c83b379203c6489054f28c9306157e78e1ea71c6093c97f",
+  "junit": {
+    "tests": 799,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_gates": "PASS",
+  "wheel_sha256": "4b5d8cadccfad1833a8da9e9179a5274dd45a800cdad3bf6761cba49330509be",
+  "python_modules": 53,
+  "dependency_wheels": 21,
+  "snapshots": [
+    {
+      "path": "dataset/211266f9-f6de-49cc-bbae-ae63578c3e91",
+      "hash": "3e7e0fd3d79f34fcb8014dd30d12db26130b9ecddf919c87a63bca0c71be0aa8"
+    },
+    {
+      "path": "factor-dataset/98a1c053-3dbf-462d-ada5-d3c56cf8dce3",
+      "hash": "d3b57a9c93e92b1174eff77ed3f59cf5c03a4cbf59da15efd72cc2b5eead98aa"
+    },
+    {
+      "path": "reproduction/dataset/1796b71c-0680-42a1-ab0e-0f9992afd74c",
+      "hash": "8c959df8ae49015526884a2bda61510ddaee34a296b3f6a8bc6779015790b52f"
+    },
+    {
+      "path": "research/inputs/dataset/73be6186-40ec-4ded-b0fb-fa217e9adb8d",
+      "hash": "fcc3ecada3d74be9fd42217a303d268574c1d8f214b2b8ef3a16f8900a7d3e41"
+    },
+    {
+      "path": "research/replacement-inputs/dataset/0ed4e188-3439-4e7d-9d55-cd59f1737fae",
+      "hash": "93e92ebc52b35e228de332867d5d5f9e3f573a5b98bf180b28b13c4a805c105f"
+    }
+  ],
+  "verified_runs": [
+    "89ffc6da-a307-4581-8e19-1a1413145cc2",
+    "45e45ac7-44d7-4272-a810-d9493872625d",
+    "88abbd1e-f868-4d5f-928b-cc5b0b05922d"
+  ],
+  "engine_batches": 95,
+  "factor_runs": 3,
+  "engineering_reports": 3,
+  "original_published_files": 66,
+  "original_runs_replayed": 3,
+  "result": "PASS",
+  "portfolio_engineering_cases": [
+    {
+      "name": "base",
+      "run_id": "150369a4-c459-42a8-bde6-853cfedcf8f0",
+      "status": "SUCCEEDED"
+    },
+    {
+      "name": "x01",
+      "run_id": "84849e31-e1e1-43b7-8b0b-f8e216892cfd",
+      "status": "REJECTED"
+    },
+    {
+      "name": "x03",
+      "run_id": "9c61aa9c-d81e-4557-b6ed-e9ff07d611f3",
+      "status": "REJECTED"
+    },
+    {
+      "name": "x04",
+      "run_id": "61053e55-c036-4825-97e5-50ac1dec9036",
+      "status": "REJECTED"
+    },
+    {
+      "name": "odd_hold",
+      "run_id": "fe6da8c5-d763-45e2-b71a-881b63275478",
+      "status": "SUCCEEDED"
+    },
+    {
+      "name": "short_close",
+      "run_id": "56667a5e-5ef3-41cf-83cc-6f29477d0c3e",
+      "status": "SUCCEEDED"
+    }
+  ],
+  "formal_gate": "APPROVAL_REQUIRED",
+  "orders_submitted": 0
+}

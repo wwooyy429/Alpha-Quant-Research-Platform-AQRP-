@@ -1,0 +1,167 @@
+{
+  "head_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+  "run_id": 39764920790,
+  "artifacts": {
+    "artifacts": [
+      {
+        "id": 12419547718,
+        "name": "phase4-windows-latest-1",
+        "size_in_bytes": 95677477,
+        "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12419547718",
+        "archive_download_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12419547718/zip",
+        "expired": false,
+        "created_at": "2026-10-22T10:46:52Z",
+        "expires_at": "2026-11-21T10:46:48Z",
+        "updated_at": "2026-10-22T10:46:52Z",
+        "digest": "sha256:4f4c9428ff477194ca689ce04de614f7974b843b1cd7aa71a3d01f393e330ca9",
+        "workflow_run": {
+          "id": 39764920790,
+          "repository_id": 1426974778,
+          "head_repository_id": 1426974778,
+          "head_branch": "codex/phase-4-portfolio-risk-plan",
+          "head_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0"
+        }
+      },
+      {
+        "id": 12419467835,
+        "name": "phase4-ubuntu-24.04-1",
+        "size_in_bytes": 136949476,
+        "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12419467835",
+        "archive_download_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12419467835/zip",
+        "expired": false,
+        "created_at": "2026-10-22T10:45:39Z",
+        "expires_at": "2026-11-21T10:45:34Z",
+        "updated_at": "2026-10-22T10:45:39Z",
+        "digest": "sha256:d9e3b20bc8a76d4e0a7b61a79f37e58b38712cb070774ae9a16de34807487b4a",
+        "workflow_run": {
+          "id": 39764920790,
+          "repository_id": 1426974778,
+          "head_repository_id": 1426974778,
+          "head_branch": "codex/phase-4-portfolio-risk-plan",
+          "head_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0"
+        }
+      }
+    ]
+  },
+  "jobs": {
+    "jobs": [
+      {
+        "id": 119777874102,
+        "name": "data-contracts (ubuntu-24.04)",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39764920790,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Clean hashed install, wheel, tests and evidence",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Upload raw evidence including failures",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          }
+        ]
+      },
+      {
+        "id": 119777874344,
+        "name": "data-contracts (windows-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39764920790,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Clean hashed install, wheel, tests and evidence",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Upload raw evidence including failures",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          }
+        ]
+      }
+    ]
+  },
+  "scope": "Official GitHub API metadata; original ZIP bytes separately downloaded and verified by developer"
+}

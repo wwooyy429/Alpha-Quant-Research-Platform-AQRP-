@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\work-p4-g1-e40ddd0\verify_scope.py", line 23, in <module>
+    for k,v in refs.items(): check('ref_'+k,v,BASE if 'phase2' not in k and k!='v0.2.0' else 'f26255fc40a3080bfa883ad64938f60036a14759')
+                             ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\work-p4-g1-e40ddd0\verify_scope.py", line 16, in check
+    if a!=e: raise AssertionError(checks[-1])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'check': 'ref_origin/main', 'actual': 'f26255fc40a3080bfa883ad64938f60036a14759', 'expected': '0a57dccb5618ba08cd3572d6d6b78fec963a3041', 'pass_': False}

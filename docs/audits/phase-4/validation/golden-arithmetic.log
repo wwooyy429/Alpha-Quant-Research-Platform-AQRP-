@@ -1,0 +1,127 @@
+{
+  "actual_executor": "Codex developer",
+  "scope": "20 arithmetic design candidates only; NOT independent review and NOT implementation tests",
+  "cases_passed": 20,
+  "checks": [
+    {
+      "case": "G01",
+      "actual": "[Fraction(3, 4), Fraction(1, 4)]",
+      "expected": "[Fraction(3, 4), Fraction(1, 4)]",
+      "status": "PASS"
+    },
+    {
+      "case": "G02",
+      "actual": "[Fraction(5, 12), Fraction(7, 12)]",
+      "expected": "[Fraction(5, 12), Fraction(7, 12)]",
+      "status": "PASS"
+    },
+    {
+      "case": "G03",
+      "actual": "['A', 'B']",
+      "expected": "['A', 'B']",
+      "status": "PASS"
+    },
+    {
+      "case": "G04",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "case": "G05",
+      "actual": "1/2",
+      "expected": "1/2",
+      "status": "PASS"
+    },
+    {
+      "case": "G06",
+      "actual": "['B']",
+      "expected": "['B']",
+      "status": "PASS"
+    },
+    {
+      "case": "G07",
+      "actual": "[Fraction(1, 2), Fraction(-1, 2)]",
+      "expected": "[Fraction(1, 2), Fraction(-1, 2)]",
+      "status": "PASS"
+    },
+    {
+      "case": "G08",
+      "actual": "[Fraction(7, 10), Fraction(-1, 2)]",
+      "expected": "[Fraction(7, 10), Fraction(-1, 2)]",
+      "status": "PASS"
+    },
+    {
+      "case": "G09",
+      "actual": "[Fraction(3, 8), Fraction(1, 8), Fraction(-1, 8), Fraction(-3, 8)]",
+      "expected": "[Fraction(3, 8), Fraction(1, 8), Fraction(-1, 8), Fraction(-3, 8)]",
+      "status": "PASS"
+    },
+    {
+      "case": "G10",
+      "actual": "([10, 10], 300)",
+      "expected": "([10, 10], 300)",
+      "status": "PASS"
+    },
+    {
+      "case": "G11",
+      "actual": "(Fraction(-1, 10), Fraction(7, 10), 300)",
+      "expected": "(Fraction(-1, 10), Fraction(7, 10), 300)",
+      "status": "PASS"
+    },
+    {
+      "case": "G12",
+      "actual": "1/20",
+      "expected": "1/20",
+      "status": "PASS"
+    },
+    {
+      "case": "G13",
+      "actual": "1/2",
+      "expected": "1/2",
+      "status": "PASS"
+    },
+    {
+      "case": "G14",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "case": "G15",
+      "actual": "(Fraction(1, 2), Fraction(1, 1))",
+      "expected": "(Fraction(1, 2), 1)",
+      "status": "PASS"
+    },
+    {
+      "case": "G16",
+      "actual": "11/10",
+      "expected": "11/10",
+      "status": "PASS"
+    },
+    {
+      "case": "G17",
+      "actual": "(10, 5)",
+      "expected": "(10, 5)",
+      "status": "PASS"
+    },
+    {
+      "case": "G18",
+      "actual": "(2, True)",
+      "expected": "(2, True)",
+      "status": "PASS"
+    },
+    {
+      "case": "G19",
+      "actual": "(0, -200)",
+      "expected": "(0, -200)",
+      "status": "PASS"
+    },
+    {
+      "case": "G20",
+      "actual": "[True, True, False]",
+      "expected": "[True, True, False]",
+      "status": "PASS"
+    }
+  ]
+}

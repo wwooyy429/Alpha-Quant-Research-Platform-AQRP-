@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="1.013" timestamp="2026-10-22T20:15:09.936320+08:00" hostname="天音"><testcase classname="tests.portfolio.test_g2_published_integrity" name="test_g2_001_lossless_large_target_and_actual_returned_bytes" time="0.268"><failure message="AssertionError: assert Fraction(100000000000000000000000000000000000, 1) == ((10 ** 35) - 1)&#10; +  where Fraction(100000000000000000000000000000000000, 1) = Q('100000000000000000000000000000000000')">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-g2-repair-20261022/before-tmp/test_g2_001_lossless_large_tar0')
+
+    def test_g2_001_lossless_large_target_and_actual_returned_bytes(tmp_path):
+        request = large_request()
+        result = construct_engineering(request, tmp_path, OLD_SHA)
+        data = load(result.raw)
+        assert data["status"] == "SUCCEEDED"
+        target = data["target"]
+        # Hand integer answer: 10**35 % 3 == 1; rounding toward zero leaves cash 1.
+&gt;       assert Q(target["quantities"]["SYNTH:A"]) == 10**35 - 1
+E       AssertionError: assert Fraction(100000000000000000000000000000000000, 1) == ((10 ** 35) - 1)
+E        +  where Fraction(100000000000000000000000000000000000, 1) = Q('100000000000000000000000000000000000')
+
+tests\portfolio\test_g2_published_integrity.py:35: AssertionError</failure></testcase><testcase classname="tests.portfolio.test_g2_published_integrity" name="test_g2_002_consistently_wrong_legal_uuid_not_parent" time="0.279"><failure message="AssertionError: assert 'SUCCEEDED' == 'REJECTED'&#10;  &#10;  - REJECTED&#10;  + SUCCEEDED">tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p4-g2-repair-20261022/before-tmp/test_g2_002_consistently_wrong0')
+
+    def test_g2_002_consistently_wrong_legal_uuid_not_parent(tmp_path):
+        x = load(bound().raw)
+        x["context"]["snapshot_id"] = "00000000-0000-4000-8000-000000000001"
+        for name, e in x["inputs"].items():
+            for item in e if name == "scores" else [e]:
+                item["context"]["snapshot_id"] = x["context"]["snapshot_id"]
+        result = construct_engineering(reseal(x), tmp_path, OLD_SHA).read()
+&gt;       assert result["status"] == "REJECTED"
+E       AssertionError: assert 'SUCCEEDED' == 'REJECTED'
+E         
+E         - REJECTED
+E         + SUCCEEDED
+
+tests\portfolio\test_g2_published_integrity.py:51: AssertionError</failure></testcase></testsuite></testsuites>

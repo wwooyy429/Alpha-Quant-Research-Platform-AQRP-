@@ -1,0 +1,150 @@
+{
+  "captured_at": "2026-10-22",
+  "pr": {
+    "url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/6",
+    "number": 6,
+    "state": "open",
+    "merged": false,
+    "mergeable": true,
+    "draft": true,
+    "body": "Phase4组合构建与风险控制 **G1计划预审资料**，从已验收并发布的Phase3稳定main创建独立分支。本PR只有计划/接口/独立算术候选与证据要求，未写P4业务代码。\n\nAQRP_FIXED_REVIEW_SHA: e40ddd0009cc30664c3a0fe0b74c4a497a541d77\nAQRP_PHASE3_RELEASED_BASE_SHA: 0a57dccb5618ba08cd3572d6d6b78fec963a3041\nAQRP_REVIEW_GATE: G1_PLAN_PRE_REVIEW_REQUIRED\nAQRP_PRIMARY_REVIEWER: GPT Work\nAQRP_PHASE4_IMPLEMENTATION_AUTHORIZATION: NOT_GRANTED\n\n### 范围与授权\n用户原话：“我同意按上述受限工程范围验收 Phase3：金融批准、真实隔离和正式 Test 延期，历史复现以已验证的软件包、依赖锁、旧因子版本和结果重放为准。请记录范围及影响，合并 PR #5 并发布基线，然后启动 Phase4 计划预审；不授权真实部署或实盘。”\n[本轮授权范围](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/AUTHORIZATION.json) · [Phase3远端发布回执](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/PHASE3_RELEASE_RECEIPT.json)。PR #5已合并；main/phase3-baseline/v0.3.0同为上述完整基线SHA，旧标签不移动。金融批准NONE，真实隔离与正式Test延期且NOT VERIFIED；历史宿主全字节复现未验证，当前验收限包/锁/旧Ref/结果重放。\n\n### 预审材料\n- [计划入口](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/REVIEW_PACKAGE.md) · [实施计划提案](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/PLAN.md)\n- [完整接口/输入时序/数量资金及风险规则](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/INTERFACE_DRAFT.md) · [合成profile候选](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/SYNTHETIC_PROFILE.json)\n- [正式与工程路径的依赖影响](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md)。保留PORT-001对FACTOR-009/VALID-008的正式批准依赖，不以ENGINEERING_TEST_ONLY冒充ResearchValidated；正式缺证据拒绝。\n- [原7项需求快照](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json) · [逐项追踪](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md)：4 MVP、3 Competition Ready；原106目录、业务分类和分阶段依赖不改。\n- [Golden G01–G20输入/独立推导/容差候选](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/GOLDEN_REFERENCE.md) · [仅stdlib算术参考](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/golden_reference.py) · [后续测试及原始证据要求](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md)。\n- [基线和冻结验证](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/BASELINE_VERIFICATION.json) · [开发方计划检查日志](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/validation/plan-check.log) · [算术校对日志](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/validation/golden-arithmetic.log) · [资料hash清单](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs/audits/phase-4/FILE_MANIFEST.json)。\n\n### 当前实际检查与限制\n开发方只读一致性PASS：7项/4MVP/3CR、1957冻结文件、P3整个原审计及src/tests/tools/CI/构建/锁/扫描配置未改；20组算术候选校对PASS，非P4实现测试或独立主审。没有portfolio/risk业务包、P5回测、P6网页或真实交易配置。\n本PR自动CI如运行，只验证现有P3业务基线578，**不能作为P4实现通过**。未来P4实现必须重新代码准入、完整SDK、独立答案/边界/性质、双OS官方原ZIP与哈希证据，固定新SHA交G2审查；不预写新增通过数量。\n\n### 请GPT Work固定SHA预审\n请先核对PR字段完整SHA与实际审查检出版本一致，审查7项覆盖、受限P3依赖/两种输入身份是否安全可行、时点/来源/不可变账户、权重/双腿/gross/net、整手后风险、cash/短卖冻结/额外保证金、行业净总/Beta、borrow总额度/可售/跨零、风险不可绕过，独立复算Golden并指出设计冲突。\n输出PLAN PASS或PLAN BLOCKED、每项需求/位置/严重性/独立反例、尚需用户决定和真实未验证能力。本PR不宣称已有GPT Work G1结论；不审漂移HEAD。G1通过不等于实现通过、金融批准、人工验收或实现授权。\n\n不合并本PR、不打P4标签、不部署/变更账户ACL服务调度、不实盘、不进入P5。",
+    "title": "docs: Phase 4 portfolio and risk G1 plan pre-review",
+    "base": "main",
+    "base_sha": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "head": "codex/phase-4-portfolio-risk-plan",
+    "head_sha": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+    "head_repo_id": 1426974778,
+    "head_repo_full_name": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "merge_commit_sha": "2c14c96124ec7b1fefbc5f6fc88e27bcf962213a",
+    "user": {
+      "login": "wwooyy429",
+      "name": "wwooyy429",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/80371541?v=4",
+      "id": 80371541
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-22T07:25:36Z",
+    "updated_at": "2026-10-22T07:25:36Z",
+    "closed_at": null,
+    "merged_at": null,
+    "commits": 1,
+    "changed_files": 28,
+    "additions": 779,
+    "deletions": 0,
+    "display_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/6",
+    "display_title": "docs: Phase 4 portfolio and risk G1 plan pre-review"
+  },
+  "jobs": {
+    "jobs": [
+      {
+        "id": 119695980314,
+        "name": "data-contracts (ubuntu-24.04)",
+        "status": "in_progress",
+        "conclusion": null,
+        "run_id": 39740405800,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Clean hashed install, wheel, tests and evidence",
+            "status": "in_progress",
+            "conclusion": null,
+            "number": 4
+          },
+          {
+            "name": "Upload raw evidence including failures",
+            "status": "pending",
+            "conclusion": null,
+            "number": 5
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "pending",
+            "conclusion": null,
+            "number": 9
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "pending",
+            "conclusion": null,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "id": 119695980827,
+        "name": "data-contracts (windows-latest)",
+        "status": "in_progress",
+        "conclusion": null,
+        "run_id": 39740405800,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Clean hashed install, wheel, tests and evidence",
+            "status": "in_progress",
+            "conclusion": null,
+            "number": 4
+          },
+          {
+            "name": "Upload raw evidence including failures",
+            "status": "pending",
+            "conclusion": null,
+            "number": 5
+          },
+          {
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "status": "pending",
+            "conclusion": null,
+            "number": 9
+          },
+          {
+            "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "status": "pending",
+            "conclusion": null,
+            "number": 10
+          }
+        ]
+      }
+    ]
+  },
+  "context": "Developer handoff snapshot, not independent audit; CI in-progress snapshot only"
+}

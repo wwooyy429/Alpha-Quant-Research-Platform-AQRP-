@@ -1,0 +1,40 @@
+{
+  "reviewed_sha": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "independent_verdict": "PLAN BLOCKED",
+  "developer_action": "DESIGN_REVISED_PENDING_INDEPENDENT_RECHECK",
+  "findings": [
+    {
+      "id": "P4-G1-001",
+      "severity": "High",
+      "reviewer_status": "OPEN",
+      "blocks_G1": true,
+      "developer_disposition": "Minimal existing-lot/full-close policy; exact delta lot gate, unchanged odd-lot hold explicitly defined, partial/cross-zero odd-lot rejects; no trade-lattice quantizer or expanded trading permission",
+      "design": "../INTERFACE_DRAFT.md §3 and ROUNDING_REFERENCE.md",
+      "requirements": [
+        "PORT-001",
+        "PORT-002",
+        "PORT-003",
+        "RISK-003",
+        "RISK-004"
+      ]
+    },
+    {
+      "id": "P4-G1-002",
+      "severity": "Medium",
+      "reviewer_status": "OPEN",
+      "blocks_G1": true,
+      "developer_disposition": "Narrow monotonicity to fixed-price/positive-equity absolute target quantity/notional/gross/sector gross; preserve every signed exposure/turnover/cash/permission pre/post gate; X03/X04 independently frozen",
+      "design": "../TEST_AND_EVIDENCE_PLAN.md and ROUNDING_REFERENCE.md",
+      "requirements": [
+        "RISK-001",
+        "RISK-002",
+        "QA-001",
+        "QA-002",
+        "QA-004"
+      ]
+    }
+  ],
+  "closure_authority": "GPT Work recheck; developer cannot self-close",
+  "formal_Test_real_isolation_financial_approval": "DEFERRED_NOT_VERIFIED",
+  "phase3_release": "UNCHANGED"
+}

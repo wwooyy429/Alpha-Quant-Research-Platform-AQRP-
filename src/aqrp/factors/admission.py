@@ -72,7 +72,7 @@ def validate_admission(spec):
     return policy
 
 
-def builtin_spec(factor_id, factor_version="1.1.0", *, api_compatibility=">=1.0.0,<2.0.0"):
+def builtin_spec(factor_id, factor_version="1.2.1", *, api_compatibility=">=1.0.0,<2.0.0"):
     if factor_id not in BUILTINS:
         raise ContractError("UNKNOWN_OR_EXTERNAL_FACTOR", "factor_id")
     policy = reviewed_policy()

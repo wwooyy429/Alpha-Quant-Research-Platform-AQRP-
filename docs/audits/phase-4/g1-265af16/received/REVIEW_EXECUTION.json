@@ -1,0 +1,97 @@
+{
+  "actual_executor": "GPT Work primary reviewer",
+  "review_run_id": "af4f56c0-81a3-4d9e-9826-9b1a17b0fae5",
+  "fixed_sha": "265af16353d85ce8c2d229a7517809d707498da8",
+  "core_commands": [
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "af4f56c0-81a3-4d9e-9826-9b1a17b0fae5",
+      "name": "scope",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-265af16\\verify_revision_scope.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+      "start_UTC": "2026-10-22T09:12:38.751169+00:00",
+      "end_UTC": "2026-10-22T09:12:48.628651+00:00",
+      "exit_code": 0,
+      "stdout": "scope.stdout.log",
+      "stderr": "scope.stderr.log",
+      "authorship": "Reviewer-authored independent verification"
+    },
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "af4f56c0-81a3-4d9e-9826-9b1a17b0fae5",
+      "name": "math",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-265af16\\independent_revision_math.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+      "start_UTC": "2026-10-22T09:12:48.629721+00:00",
+      "end_UTC": "2026-10-22T09:12:48.903300+00:00",
+      "exit_code": 0,
+      "stdout": "math.stdout.log",
+      "stderr": "math.stderr.log",
+      "authorship": "Reviewer-authored independent verification"
+    },
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "af4f56c0-81a3-4d9e-9826-9b1a17b0fae5",
+      "name": "developer-plan-check-replay",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16\\docs\\audits\\phase-4\\check_plan.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+      "start_UTC": "2026-10-22T09:12:48.904228+00:00",
+      "end_UTC": "2026-10-22T09:12:50.189295+00:00",
+      "exit_code": 0,
+      "stdout": "developer-plan-check-replay.stdout.log",
+      "stderr": "developer-plan-check-replay.stderr.log",
+      "authorship": "Developer script hardcoded executor kept; this replay is not reviewer independent math"
+    },
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "af4f56c0-81a3-4d9e-9826-9b1a17b0fae5",
+      "name": "developer-rounding-replay",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16\\docs\\audits\\phase-4\\rounding_reference.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+      "start_UTC": "2026-10-22T09:12:50.190162+00:00",
+      "end_UTC": "2026-10-22T09:12:50.386717+00:00",
+      "exit_code": 0,
+      "stdout": "developer-rounding-replay.stdout.log",
+      "stderr": "developer-rounding-replay.stderr.log",
+      "authorship": "Developer script hardcoded executor kept; this replay is not reviewer independent math"
+    }
+  ],
+  "postcheck_argv": [
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-265af16\\finalize_review.py",
+    "C:/Users/11638/AppData/Local/AQRP/reviews/p4-plan-265af16"
+  ],
+  "postcheck_exit_code": 0,
+  "postcheck_UTC": "2026-10-22T09:15:40.800792+00:00",
+  "seal_argv": [
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-265af16\\seal_review.py"
+  ],
+  "tool_scope": "Public GitHub API/job logs via connected GitHub; raw JSON and connector-decoded contents retained. No CI original ZIP download.",
+  "initialization_note": "New-Item found pre-existing developer delivery directory; no files changed by that attempt. Existing 3 delivery originals preserved before clone/checks."
+}

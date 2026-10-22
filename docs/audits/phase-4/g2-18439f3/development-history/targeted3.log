@@ -1,0 +1,17 @@
+........................................................................ [ 27%]
+........................................................................ [ 54%]
+........................................................................ [ 81%]
+................................................F                        [100%]
+================================== FAILURES ===================================
+_________ test_three_asset_centered_long_short_and_input_permutation __________
+tests\portfolio\test_risk_service.py:244: in test_three_asset_centered_long_short_and_input_permutation
+    assert a["target"]["quantities"] == b["target"]["quantities"]
+                                        ^^^^^^^^^^^
+E   KeyError: 'target'
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Coverage JSON written to file C:/Users/11638/AppData/Local/AQRP/runs/p4-g2-repair-20261022/targeted-coverage.json
+=========================== short test summary info ===========================
+FAILED tests/portfolio/test_risk_service.py::test_three_asset_centered_long_short_and_input_permutation
+1 failed, 264 passed in 21.32s

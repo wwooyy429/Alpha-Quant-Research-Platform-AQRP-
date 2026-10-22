@@ -38,6 +38,8 @@ def main():
             or factor_critical
             or "/core/security/" in normalized
             or "/validation/" in normalized
+            or "/portfolio/" in normalized
+            or "/risk/" in normalized
             or normalized.endswith("/services/research.py")
             else (90, 85)
         )
