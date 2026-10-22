@@ -92,7 +92,16 @@ class OperatorPolicy:
     """Constructed by the trusted operator, never deserialized from a research request."""
 
     def __init__(
-        self, root, key_file, *, evaluator, research, auditor, trusted_owner, allowed_group_ids=()
+        self,
+        root,
+        key_file,
+        *,
+        evaluator,
+        research,
+        auditor,
+        trusted_owner,
+        allowed_group_ids=(),
+        windows_tree_policy=None,
     ):
         for raw in (Path(root).absolute(), Path(key_file).absolute()):
             if any(p.is_symlink() or p.is_junction() for p in (raw, *raw.parents)):
@@ -104,6 +113,19 @@ class OperatorPolicy:
         self.auditor = str(auditor)
         self.owner = str(trusted_owner)
         self.groups = set(allowed_group_ids)
+        self.windows_tree_policy = windows_tree_policy
+        if windows_tree_policy is not None:
+            from .windows_acl import WindowsTreePolicy
+
+            if not isinstance(windows_tree_policy, WindowsTreePolicy) or (
+                windows_tree_policy.root != self.root
+                or windows_tree_policy.owner != self.owner
+                or windows_tree_policy.evaluator != self.evaluator
+                or windows_tree_policy.research != self.research
+                or windows_tree_policy.auditor != self.auditor
+                or windows_tree_policy.key_file != self.key_file
+            ):
+                raise ContractError("WINDOWS_TREE_POLICY_BINDING_MISMATCH")
 
     @property
     def principals(self):
@@ -151,6 +173,9 @@ class OperatorPolicy:
                 or research_groups & self.groups
             ):
                 raise ContractError("SHARED_OR_ELEVATED_PRINCIPAL")
+        if IS_WINDOWS and self.windows_tree_policy is not None:
+            self.windows_tree_policy.verify(key_file=self.key_file)
+            return self.key_file.read_bytes()
         allowed = {self.owner, self.evaluator, self.auditor, "S-1-5-18", "S-1-5-32-544"}
         for path in [self.root, self.key_file, *self.root.rglob("*")]:
             if (
@@ -197,6 +222,11 @@ class OperatorPolicy:
     def authorize(self, bindings):
         key = self.verify_host()
         claims = verify_seal(json.loads((self.root / "authorization.json").read_bytes()), key)
+        if (
+            self.windows_tree_policy is not None
+            and claims.get("windows_acl_policy_binding") != self.windows_tree_policy.binding
+        ):
+            raise ContractError("WINDOWS_ACL_PROFILE_NOT_AUTHORIZED")
         if (
             claims["bindings"] != bindings
             or claims.get("principals") != self.principals

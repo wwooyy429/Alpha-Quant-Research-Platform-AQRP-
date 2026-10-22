@@ -1,0 +1,263 @@
+{
+  "review_utc": "2026-10-22T10:29:35.993742+00:00",
+  "review_python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "review_platform": "win32",
+  "fixed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+  "attempt_id": "e6968f1c-3552-4a98-af61-98a5194dafea",
+  "admin_run_status": "ENGINEERING_CHECKS_HAVE_FAILURES",
+  "processes": [
+    {
+      "label": "research-inspect",
+      "role": "research",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 53,
+      "passed": 53,
+      "failed": 0
+    },
+    {
+      "label": "auditor-inspect",
+      "role": "auditor",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 48,
+      "passed": 48,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-inspect",
+      "role": "evaluator",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 56,
+      "passed": 56,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-abort-before",
+      "role": "evaluator",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-race-a",
+      "role": "evaluator",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-race-b",
+      "role": "evaluator",
+      "exit_code": 42,
+      "identity_valid": true,
+      "checks": 0,
+      "passed": 0,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-crash",
+      "role": "evaluator",
+      "exit_code": 23,
+      "identity_valid": true,
+      "checks": 0,
+      "passed": 0,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-recover",
+      "role": "evaluator",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-alias",
+      "role": "evaluator",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    {
+      "label": "research-post-inspect",
+      "role": "research",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "label": "auditor-post-inspect",
+      "role": "auditor",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-post-inspect",
+      "role": "evaluator",
+      "exit_code": 0,
+      "identity_valid": true,
+      "checks": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "label": "evaluator-after",
+      "role": "evaluator",
+      "exit_code": 2,
+      "identity_valid": true,
+      "checks": 2,
+      "passed": 1,
+      "failed": 1
+    }
+  ],
+  "check_count": 184,
+  "passed": 183,
+  "failed": 1,
+  "failures": [
+    {
+      "process": "evaluator-after",
+      "error_code": "UNVERIFIED_ISOLATION",
+      "error_message": "UNVERIFIED_ISOLATION: ",
+      "name": "operator_policy_verify_host_after_dynamic_engineering_files",
+      "pass_": false
+    }
+  ],
+  "clixml": [
+    {
+      "path": "evaluator-after.stderr.log",
+      "xml_documents": 22,
+      "categories": [
+        "progress"
+      ],
+      "raw_preserved": true
+    },
+    {
+      "path": "evaluator-inspect.stderr.log",
+      "xml_documents": 23,
+      "categories": [
+        "progress"
+      ],
+      "raw_preserved": true
+    }
+  ],
+  "chains": [
+    {
+      "path": "C:\\AQRP-Sealed\\verify-9ac5db0\\sealed\\control\\engineering-r2-e6968f1c-3552-4a98-af61-98a5194dafea\\demo-race\\access.jsonl",
+      "records": 7,
+      "kinds": [
+        "RESERVED",
+        "SUCCEEDED",
+        "REJECTED_REPEAT",
+        "REJECTED_REPEAT",
+        "REJECTED_REPEAT",
+        "REJECTED_REPEAT",
+        "REJECTED_REPEAT"
+      ],
+      "last_hash": "6e7571356fb0a50059db52947383a6f2ab0c96a51109275dc637cfc00b4b925d",
+      "verified": true
+    },
+    {
+      "path": "C:\\AQRP-Sealed\\verify-9ac5db0\\sealed\\control\\engineering-r2-e6968f1c-3552-4a98-af61-98a5194dafea\\demo-crash\\access.jsonl",
+      "records": 3,
+      "kinds": [
+        "RESERVED",
+        "FAILED_CONSUMED",
+        "REJECTED_REPEAT"
+      ],
+      "last_hash": "765d74d07f037d53dbaa50d1d1fbef3108e87f1d9e45c69274eb09d492156d56",
+      "verified": true
+    }
+  ],
+  "independent_exact_rational_factors": [
+    {
+      "factor": "momentum",
+      "expected_rational": "21/100",
+      "actual": 0.21,
+      "absolute_tolerance": "1e-12",
+      "member_hashes": true,
+      "logical_hash": "0106f7d5361708c8893e70d2612f3906955f9cf6f64fc8f693b864ec936f2569",
+      "content_hash": "fac38213e32b4d9432b9673cb63fb6a4b9c4b9ce5472f0733855107c036aa54b",
+      "manifest": "C:\\AQRP-Sealed\\verify-9ac5db0\\sealed\\work\\engineering-r2-e6968f1c-3552-4a98-af61-98a5194dafea\\engineering-factor-run\\factor-runs\\08cbea96-1d8e-4f8a-b8b3-04ec67e83843\\manifest.json"
+    },
+    {
+      "factor": "reversal",
+      "expected_rational": "-21/100",
+      "actual": -0.21,
+      "absolute_tolerance": "1e-12",
+      "member_hashes": true,
+      "logical_hash": "1f6ef62a27b102ad1ba8c11543eb32647952751e5c11aac4ee44c0afad58d7ce",
+      "content_hash": "4f783e11f12b533e0b3a3006a6df7b892fcbbc59720ad5d0d931315fceaadbc1",
+      "manifest": "C:\\AQRP-Sealed\\verify-9ac5db0\\sealed\\work\\engineering-r2-e6968f1c-3552-4a98-af61-98a5194dafea\\engineering-factor-run\\factor-runs\\12f849a6-6f22-4df0-aaef-d5c5522a43a3\\manifest.json"
+    },
+    {
+      "factor": "volume",
+      "expected_rational": "3/5",
+      "actual": 0.6,
+      "absolute_tolerance": "1e-12",
+      "member_hashes": true,
+      "logical_hash": "48228efb7086f6f55d1db0ffdce261cf5f7f678538a9bb1f0f67f9175b511695",
+      "content_hash": "19263124dbd6bfd816dffd0b4427fa6e1df4059e93bafb1de7eac0c86c52e0c1",
+      "manifest": "C:\\AQRP-Sealed\\verify-9ac5db0\\sealed\\work\\engineering-r2-e6968f1c-3552-4a98-af61-98a5194dafea\\engineering-factor-run\\factor-runs\\2741fe57-7fa4-4287-b829-28b7aecff5f9\\manifest.json"
+    },
+    {
+      "factor": "price_volume",
+      "expected_rational": "3/50",
+      "actual": 0.06,
+      "absolute_tolerance": "1e-12",
+      "member_hashes": true,
+      "logical_hash": "202114fbf827f8a15dfd9c0e1bab00da78bf9b2e21c1f13d6635dd177c83e8f2",
+      "content_hash": "e464ae45d712bb27f34369098957998e75ee9aafdc2f34ae2e39a8c5de7f35a8",
+      "manifest": "C:\\AQRP-Sealed\\verify-9ac5db0\\sealed\\work\\engineering-r2-e6968f1c-3552-4a98-af61-98a5194dafea\\engineering-factor-run\\factor-runs\\f594890c-0c04-48ae-aa62-b84077499f11\\manifest.json"
+    }
+  ],
+  "runtime_integrity": [
+    {
+      "runtime": "runtime_eval",
+      "files_verified": 6250,
+      "business_modules": 45,
+      "bundle_hash": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e"
+    },
+    {
+      "runtime": "runtime_public",
+      "files_verified": 6250,
+      "business_modules": 45,
+      "bundle_hash": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e"
+    }
+  ],
+  "harness_bindings": [
+    {
+      "file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-9ac5db0-continuation2\\worker-r2.py",
+      "sha256": "da6cced2a92dc3a63832f068dab39ca23525ba2922c5c67d00f2205b2efaacb6"
+    },
+    {
+      "file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-9ac5db0-continuation2\\Continuation-Helpers.ps1",
+      "sha256": "b2ad10bcc05027fa8f10930780e2d04a1350b045d059e0b5ff504915cff8d61b"
+    },
+    {
+      "file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-9ac5db0-continuation2\\Continue-WindowsIsolation.ps1",
+      "sha256": "93ac3f54923289f23d90477fc9dc32dcba5918f76d71606648dd5dbf09c5f0ea"
+    }
+  ],
+  "accounts_currently_disabled": true,
+  "original_state_and_worker_unchanged": true,
+  "raw_admin_files": 37,
+  "no_account_acl_or_business_changes_by_review": true,
+  "whole_windows_profile": "NOT VERIFIED / BLOCKED",
+  "formal_test": "NOT EXECUTED / NOT AUTHORIZED",
+  "financial_approval": "NONE",
+  "full_historical_host_reproduction": "NOT VERIFIED"
+}

@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/7",
+    "number": 7,
+    "state": "open",
+    "merged": false,
+    "mergeable": true,
+    "draft": true,
+    "body": "Windows隔离R2两项OPEN的代码/设计修复候选已完成开发自测，**READY FOR GPT WORK FIXED-SHA RECHECK**。整体Windows隔离仍 **NOT VERIFIED**，不自行关闭发现。\n\nAQRP_FIXED_REVIEW_SHA: b3d9aef79396db948d326f5ce247131f96739d9d\nAQRP_REVIEW_STATUS: DEVELOPER_VALIDATED_INDEPENDENT_RECHECK_PENDING\nAQRP_WI_R2_001: OPEN_PENDING_INDEPENDENT_RECHECK\nAQRP_WI_R2_002: OPEN_PENDING_INDEPENDENT_RECHECK\nAQRP_ACTUAL_NEW_THREE_SUBJECT_LIFECYCLE: NOT_EXECUTED\nAQRP_OVERALL_WINDOWS_ISOLATION: NOT_VERIFIED\n\n## 修复及边界\n\n- WI-R2-001：保留默认严格protected检查；新opt-in WindowsTreePolicy要求封闭有效ACL、OWNER RIGHTS拒改权、operator拥有protected anchor、逐级精确父ACE投影、可信外部祖先和对象/ACL前后完整性。四主体/root/key_file精确绑定，新profile需新正式授权binding。旧42对象缺少OW保护仍拒绝，未补ACL改判旧失败。TrustedInstaller仅在本四主体profile的外部祖先信任中明确认可，不扩为任意service SID。\n- WI-R2-002：P1私有mkdtemp/rename不改；可信operator在运行前向预建审定readonly anchor复制并验证实际九文件，sidecar最后发布，缺标记/成员变化/字节或门禁失败拒绝。新工程worker只消费发布输入；三真实SID逐文件probe候选覆盖输入、sidecar和动态产物的读取/拒写/拒改权，不用canary代替。\n- 新47模块bundle `4e657dea368b50b083030dbad32821683735be420f727b1db26ac2ba60e82dd5`；工程包0.3.1.dev1、默认因子1.1.1区分新代码，公式/旧精确Ref/旧审计不改。固定2970项main文件，锁 `86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb`。工程准入由开发方审阅，不是GPT Work独立审查。\n\n## 实际开发验证\n\n- CPython3.13.16 standard GIL x64；本地Windows11 build26300 / Conda aqrp-p1启动全新隔离SDK，hash锁安装/真实wheel/旧66文件与三Ref重放/原数学/逐模块覆盖/secret正负控制完成。最终固定SHA干净SDK **628 PASS，0失败/错误/跳过**，其中50项新针对性检查；旧并发单次/崩溃恢复/重复拒绝完整回归。模型adapter及当前身份原生只读捕获不算三主体证明。\n- 官方[CI run39772759502](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/39772759502)：Windows、Ubuntu各628通过。原ZIP已下载并重算官方大小/digest/CRC、精确成员/逐文件hash、JUnit/覆盖率、47源码wheel/receipt、快照/研究账本、旧Ref及新九文件原字节与独立Fraction答案。PR临时集成SHA `b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e` 的tree等于固定头，**不是main合并**。\n- Windows artifact12423636536：95598546 bytes，sha256 `1a0caa05773cc9bb893792efcb0c53dbb918b5628572518e5ae3c56190775302`；Ubuntu artifact12422952856：136870907 bytes，sha256 `9aeba331abcac4a66ca75bf135631ad7afe7e9d047b0d6277f0a933cd841e799`。\n- 新公开工程snapshot `wi-r3-public-engineering-20261022`，九文件manifest hash `edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031`（本地/双OS一致）；公开价格100/110/121、量100/150/200，精确四答案21/100、-21/100、3/5、3/50。九文件可直接独立读取；它们不是旧cb10857f不可读九文件，也不是新profile的真实auditor读取证明。\n- 原184=183PASS/1FAIL、九文件OMISSIONS、原管理员/GPT Work身份及raw证据保留。开发test1/test4失败、未准备archive的中止源码尝试、旧99cab98成功但被替代SDK、辅助ZIP验证器prefix变量修正等原日志和勘误均封存，不倒写成功。最终以b3d9aef的SDK/双OS原ZIP核验为准。\n\n## 固定审查资料与封存\n\n[审查入口](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/b3d9aef79396db948d326f5ce247131f96739d9d/docs/audits/windows-isolation-r3/REVIEW_PACKAGE.md) · [开发处理与设计证明](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/b3d9aef79396db948d326f5ce247131f96739d9d/docs/audits/windows-isolation-r3/DEVELOPER_RESPONSE.md) · [源码身份](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/b3d9aef79396db948d326f5ce247131f96739d9d/docs/audits/windows-isolation-r3/IDENTITY.json) · [原报告/证据复制清单](https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/b3d9aef79396db948d326f5ce247131f96739d9d/docs/audits/windows-isolation-r3/received/COPIED_FILES.json)。\n\n本地完整交接位置：`C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-r3-b3d9aef/`。含Developer-GPT-Work-Recheck-Request.md、CHANGE_LIST.json、VALIDATION.json（原始命令/环境/三份核验收据）、Nine-engineering-inputs-original.zip、Engineering-inputs-manifest.json、Local-SDK-selected-original.zip、Developer-Evidence-Seal.json及完整开发封存包。完整包329420052 bytes，SHA256 `a27ef6ca5e899cda4baee3a1c212eaafc9555d1566adb41ec613f88597c049fd`。其内含两份官方原ZIP和全部本地SDK选择文件，所有成员重新读取散列通过；不包括venv/cache/temp，不冒称整台宿主或新实际三主体执行。最终执行证据在固定提交后外置封存并登记PR，避免反复证据提交造成SHA漂移。\n\n## 仍未闭环及权限\n\n新profile设计/实现需GPT Work固定版本独立复核。真实三主体、actual input/sidecar/动态产物全覆盖读取/拒写/拒改权、原地不改ACL的before/after全域门禁与并发/崩溃/重复生命周期仍未执行；若主审接受候选，实际新attempt/anchor配置及启用账户须用户另行具体授权。本轮无管理员脚本重跑、无ACL/账户/服务/调度变更，三个原账户仍禁用；旧九文件未接管或恢复，旧manifest hash未独立重算。\n\n正式Test NOT EXECUTED，金融批准NONE，完整历史宿主限制继续保留；不得标VALID-004全项或完整Windows隔离通过。main/Phase3标签仍0a57dccb5618ba08cd3572d6d6b78fec963a3041，P4 PR6固定18439f3未改。本PR未用户验收、未合并/标签/部署/实盘/P5。\n\r\n",
+    "title": "fix: prove Windows ACL inheritance and operator-published engineering inputs",
+    "base": "main",
+    "base_sha": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "head": "codex/fix-windows-isolation-r3",
+    "head_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+    "head_repo_id": 1426974778,
+    "head_repo_full_name": "wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "merge_commit_sha": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+    "user": {
+      "login": "wwooyy429",
+      "name": "wwooyy429",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/80371541?v=4",
+      "id": 80371541
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-22T11:37:08Z",
+    "updated_at": "2026-10-22T11:57:44Z",
+    "closed_at": null,
+    "merged_at": null,
+    "commits": 2,
+    "changed_files": 39,
+    "additions": 15325,
+    "deletions": 10,
+    "display_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/7",
+    "display_title": "fix: prove Windows ACL inheritance and operator-published engineering inputs"
+  },
+  "isError": false
+}

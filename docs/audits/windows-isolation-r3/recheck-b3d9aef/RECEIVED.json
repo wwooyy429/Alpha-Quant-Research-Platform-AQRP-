@@ -1,0 +1,453 @@
+{
+  "scope": "Developer receipt; independent report unchanged",
+  "reviewed_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+  "verdict": "REQUEST CHANGES / BLOCKED",
+  "overall": "NOT VERIFIED",
+  "original_zip": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\EVIDENCE.zip",
+    "bytes": 330373550,
+    "sha256": "2c8ec67ac22dbcc722e73d49461b926ea51bda93e7bc23ae7fe42209fc9dc6e2",
+    "CRC_and_all_manifest_members_verified": true,
+    "manifest_files": 407
+  },
+  "copied_files": [
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\archives.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/archives.command.json",
+      "bytes": 590,
+      "sha256": "1cfa9040ee7a5f7db499d0eda36c74ea1619c977d524b03e52bcfabaf093dec0"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\archives.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/archives.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\archives.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/archives.stdout.log",
+      "bytes": 404,
+      "sha256": "79be543a6d4aa0442275bd313873c387e61b5666c0292c91e305fb7c4299339b"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ARCHIVE_VERIFICATION.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ARCHIVE_VERIFICATION.json",
+      "bytes": 12823,
+      "sha256": "5e333d03cb3d2f5622a8beb7f82021d1ab54023687f6b85f43b2a6f915ed0f88"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\checkout.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/checkout.command.json",
+      "bytes": 590,
+      "sha256": "f992f092f6008735ee529d253cb5ebfd25434a0c60139fb0f32cfd58e5918ea9"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\checkout.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/checkout.stderr.log",
+      "bytes": 754,
+      "sha256": "11fdf97912073c2018e9f94766e990542cfcab9769b82203b8432950377d17dd"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\checkout.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/checkout.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-artifacts.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-artifacts.json",
+      "bytes": 2000,
+      "sha256": "680634d1a31db39456d5eddd655a2ec0150188227e6476884f3de789029bc346"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-job-ubuntu.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-job-ubuntu.log",
+      "bytes": 19562,
+      "sha256": "018b319a1941f831c9a9f9705c17d1c1cca9ecb65addd8379179dc432d298352"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-job-windows.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-job-windows.log",
+      "bytes": 18989,
+      "sha256": "3a1d1ecbf08d8619638da9ae1892d7200a51bda7c7bb59c6e1a122615edfdf4f"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-jobs.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-jobs.json",
+      "bytes": 3710,
+      "sha256": "1c0a061940e34a6522c7ff42c0f8a82eba9d51481b506ed11981b969a100de63"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-merge-fetch.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-merge-fetch.command.json",
+      "bytes": 564,
+      "sha256": "506cea3bba655506f85d4f949ec25849d8d5c45e3d159d3b20501b95f668a105"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-merge-fetch.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-merge-fetch.stderr.log",
+      "bytes": 146,
+      "sha256": "8da45accb88c3603b322d6baa37ba73b1175951e08547bad2e080c50ad9abbe8"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-merge-fetch.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-merge-fetch.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\ci-run.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/ci-run.json",
+      "bytes": 627,
+      "sha256": "489d78936e6eea0881c87732588aeb7e16aadd2bc804245a8222135355001b3f"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clean-sdk-short.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clean-sdk-short.command.json",
+      "bytes": 531,
+      "sha256": "4fe184cbc8a09754abb016968eb69b5a6caf8d2a4639a90226e3788fd5ab23e0"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clean-sdk-short.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clean-sdk-short.stderr.log",
+      "bytes": 405,
+      "sha256": "6df76a97b339381df2307bdd87c7e78e920556eccf47ce74a8636f8eacf39e0f"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clean-sdk-short.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clean-sdk-short.stdout.log",
+      "bytes": 191,
+      "sha256": "4854370f7ea4583806c49806f27bce44249578c238889305ecbd2e42df2a3cf5"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clean-sdk.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clean-sdk.command.json",
+      "bytes": 531,
+      "sha256": "bc425b031699f3980142bfd4cf99a29c0d4bde0d0d200196dd4503c25260c073"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clean-sdk.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clean-sdk.stderr.log",
+      "bytes": 491,
+      "sha256": "a2f6810250d7b61d45c19708032d18a508b6356b07ead0fec9176e863a0e74e2"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clean-sdk.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clean-sdk.stdout.log",
+      "bytes": 12237,
+      "sha256": "1917b42ddc66e0d1a75a9fa02deb202cd4fb82a5a8f644d00cee0dcc91ff1b1e"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clone.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clone.command.json",
+      "bytes": 588,
+      "sha256": "85adb29c126cd3f672bb8e68aad22496f8f1c354acdd2f995f80f93408371e28"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clone.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clone.stderr.log",
+      "bytes": 87,
+      "sha256": "cf2cd7dee7f4987605459a64b444969c69e26f6bc638643265f1be4892ca21ef"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\clone.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/clone.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\counterexamples.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/counterexamples.command.json",
+      "bytes": 694,
+      "sha256": "84e882751da283f996c086af3a7d2dc5b9a4c48c8c23d37b00f917f92d82527e"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\counterexamples.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/counterexamples.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\counterexamples.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/counterexamples.stdout.log",
+      "bytes": 898,
+      "sha256": "ba603e285f9c9886eb5984425ff6b184eb955118a0668f4bcda1942b09051b2b"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\current-accounts.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/current-accounts.json",
+      "bytes": 380,
+      "sha256": "26afc5e440b6313f2a397da3b8c72a0787652745c962d0f9490b1c487c9c62c2"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\Developer-Evidence-Seal-received.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/Developer-Evidence-Seal-received.json",
+      "bytes": 20590,
+      "sha256": "54e44101a77e60fbd2da9037ef4acd9be06f9674fd5ed45d9d5c29ad9f737427"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\DEVELOPER_HANDOFF.md",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/DEVELOPER_HANDOFF.md",
+      "bytes": 2235,
+      "sha256": "141f1ae4d30b4e75a75ddf2ff9c018c18b0c55fe8e42def9627c412ec0996beb"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\diagnose_replay.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/diagnose_replay.py",
+      "bytes": 1230,
+      "sha256": "8f1c2b6a1b4a955c648d60bca965a2f4dc1a3ec8c5cf5c53360e6e14eeeaf64e"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\Engineering-inputs-manifest-received.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/Engineering-inputs-manifest-received.json",
+      "bytes": 1716,
+      "sha256": "fbbf8d4d52ef05ad01874fbf88600594c728ee346654d662f6b109da2b98e753"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\EVIDENCE_MANIFEST.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/EVIDENCE_MANIFEST.json",
+      "bytes": 80646,
+      "sha256": "ea595065cf98919b6102011a5a1e1608fe0e8ee7ab3cd87a99001fb9d130d4bc"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\fetch.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/fetch.command.json",
+      "bytes": 564,
+      "sha256": "1123734c2726a54255b8acd2aa003a355bce96c82f2b546aa8d3daa27484f280"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\fetch.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/fetch.stderr.log",
+      "bytes": 146,
+      "sha256": "993f19d97ff6439058920f036b8655cce1c60480fe0b3f7f7782411ff2d05b28"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\fetch.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/fetch.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\FINDINGS.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/FINDINGS.json",
+      "bytes": 2894,
+      "sha256": "fd8586bc37bfd2e485014d8a533743e4e3159c40a2cbe85f8e817642aaf297f1"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\INDEPENDENT_COUNTEREXAMPLES.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/INDEPENDENT_COUNTEREXAMPLES.json",
+      "bytes": 4922,
+      "sha256": "0dd154c10d45180169ee59c2aa41fd22363027e1bf64a7a328a4e2ed2cad7523"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\independent_counterexamples.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/independent_counterexamples.py",
+      "bytes": 5155,
+      "sha256": "b69f8503fe3724b7bb2beefbdb1aef304a45512625988b22faf60fd795c0270d"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\nine-inputs.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/nine-inputs.command.json",
+      "bytes": 641,
+      "sha256": "0bc4c8d8b0e89606eb1b207fe4564b956d08da60f420e1fc6aea8495ba5a209a"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\nine-inputs.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/nine-inputs.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\nine-inputs.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/nine-inputs.stdout.log",
+      "bytes": 1667,
+      "sha256": "fc5d6b7754c2e35a4e25fbb948b444976b42b3810af859f6f1a3319ade865e2d"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\NINE_INPUTS_VERIFICATION.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/NINE_INPUTS_VERIFICATION.json",
+      "bytes": 7187,
+      "sha256": "50215b1a657475d046364fc74d75008bc9093d818569c54840c4ee538c3ce8ff"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\OLD_EVIDENCE_VERIFICATION.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/OLD_EVIDENCE_VERIFICATION.json",
+      "bytes": 346,
+      "sha256": "e7696b9fb12e4ae7c1a3736b3aa77c05a154330fc637eff7829e233524b845e1"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\OLD_REF_FILE_VERIFICATION.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/OLD_REF_FILE_VERIFICATION.json",
+      "bytes": 135,
+      "sha256": "10b6130b2b65f15a4734d0c1ba4fac9509e96aa09a10e3f93c724804c7b58534"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\pr7-end.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/pr7-end.json",
+      "bytes": 7576,
+      "sha256": "e8bcfe46169b78d37847533bc5b1c151adc04eba8d0a826825c08ef69fde2464"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\pr7-start.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/pr7-start.json",
+      "bytes": 7576,
+      "sha256": "e8bcfe46169b78d37847533bc5b1c151adc04eba8d0a826825c08ef69fde2464"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\prepare-seal.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/prepare-seal.command.json",
+      "bytes": 594,
+      "sha256": "4f839e780bcf9ef2f42a75b59783f0d2f7a04a356ef445d709bcbeba1f9fb7f0"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\prepare-seal.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/prepare-seal.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\prepare-seal.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/prepare-seal.stdout.log",
+      "bytes": 78,
+      "sha256": "036dddb030e62afaa30b15c2585b70939917dd9117193d835282a1c7d055b1ea"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\prepare_seal_inputs.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/prepare_seal_inputs.py",
+      "bytes": 3994,
+      "sha256": "85e5cbd012d9cfc8c4e563af1b88f5e89a376526bfb41dfd514a604de2dcbbf7"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\RAW_DOWNLOAD_RECEIPT.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/RAW_DOWNLOAD_RECEIPT.json",
+      "bytes": 629,
+      "sha256": "4d2c3331d638ba1f259c4b72eb74c4a79b9ac0c09292f53f628955f33c293530"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\RECEIPT.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/RECEIPT.json",
+      "bytes": 57120,
+      "sha256": "def7acce5061ddf447795d4381ba99d24195a231ad8a9bc823a43e8b5e20decd"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\replay-diagnostic.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/replay-diagnostic.json",
+      "bytes": 1247,
+      "sha256": "70a3f606c7ea39a8c941abd14d2679cedd580845b719cb467d3b5ddaa8faa385"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\replay-diagnostic.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/replay-diagnostic.stderr.log",
+      "bytes": 3010,
+      "sha256": "bbed17fbf84b60e96d5e69564bd6399f39ac9223f3fffce7ac62977e33cfbae6"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\replay-diagnostic.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/replay-diagnostic.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\REPORT.md",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/REPORT.md",
+      "bytes": 13677,
+      "sha256": "435bd4ebd1c83886ddcfe07f3d6651731d3b38e93d95eeb1df32d0f6fb3565d4"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\REVIEW_EXECUTION.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/REVIEW_EXECUTION.json",
+      "bytes": 1101,
+      "sha256": "1908fcd6dad91c3bd91b463431e4cbeac6d44ff04ae7bc100a8d5c820b3f72b1"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\run_capture.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/run_capture.py",
+      "bytes": 800,
+      "sha256": "cdc8dce0bfa7b7e53bb5086d11a43e5d169f5deca6eed60394a52d3939092090"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\scope.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/scope.command.json",
+      "bytes": 587,
+      "sha256": "58b5aef6100725268dd9884b9034acf43f0e9ca198e3278ae7d3b2d9b278cb77"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\scope.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/scope.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\scope.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/scope.stdout.log",
+      "bytes": 686,
+      "sha256": "98cb533beeec4ccc1d39c509ce03aab18d7578d05b4d2d213209980dd6e6e9b4"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\SCOPE_VERIFICATION.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/SCOPE_VERIFICATION.json",
+      "bytes": 19541,
+      "sha256": "a9d65822ea86be1f102e59d0c6dccf8d53a5cbef19204bff7e50079dc413b1b8"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\SDK_LOCATION.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/SDK_LOCATION.json",
+      "bytes": 290,
+      "sha256": "8ef4690794ed4d6da8e4ea4470b2de694a3a61056db84623c508911b64096cf3"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\seal.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/seal.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\seal.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/seal.stdout.log",
+      "bytes": 526,
+      "sha256": "8351f77e3da821b6f79ef93d331cc4c165349adad7be80fa0433b6cde5a3bb65"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\seal_evidence.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/seal_evidence.py",
+      "bytes": 3852,
+      "sha256": "84d95f0105a267f718bccd26aad2ac38a53acb061e04bda1896ceb0ab702cd5c"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\trusted-installer-sid.command.json",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/trusted-installer-sid.command.json",
+      "bytes": 423,
+      "sha256": "978caa353d5dd3401a31aaaaa488df5b790d85d9b372d9a6e2f0f3f0a56cfa00"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\trusted-installer-sid.stderr.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/trusted-installer-sid.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\trusted-installer-sid.stdout.log",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/trusted-installer-sid.stdout.log",
+      "bytes": 119,
+      "sha256": "a9a48f38c887e299b149441b6cee59f470016000332616ac534e8a6071d50cf4"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\verify_archives.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/verify_archives.py",
+      "bytes": 7708,
+      "sha256": "0ccec4e4067b7d910cfd6165f3317fe1c1f50a344637a881eb8f601996752976"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\verify_nine_inputs.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/verify_nine_inputs.py",
+      "bytes": 4414,
+      "sha256": "4bd2c5c2af44738002632d5334dd3ddafc597ee022eb904552ef9d05ed712b3a"
+    },
+    {
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\verify_scope.py",
+      "path": "docs/audits/windows-isolation-r3/recheck-b3d9aef/received/verify_scope.py",
+      "bytes": 2997,
+      "sha256": "13b902dc1e189b72102e491f994227dab041b9702489e331160253a9d223c099"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+......FF................................................................ [ 80%]
+.................                                                        [100%]
+================================== FAILURES ===================================
+______ test_each_traversal_stage_preserves_native_error[OSError-before] _______
+tests\research\test_windows_r3_recheck.py:116: in test_each_traversal_stage_preserves_native_error
+    assert detail["errno"] == 13 and detail["error_type"] == error.__name__
+E   AssertionError: assert (13 == 13 and 'PermissionError' == 'OSError'
+E     
+E     - OSError
+E     + PermissionError)
+_______ test_each_traversal_stage_preserves_native_error[OSError-after] _______
+tests\research\test_windows_r3_recheck.py:116: in test_each_traversal_stage_preserves_native_error
+    assert detail["errno"] == 13 and detail["error_type"] == error.__name__
+E   AssertionError: assert (13 == 13 and 'PermissionError' == 'OSError'
+E     
+E     - OSError
+E     + PermissionError)
+=========================== short test summary info ===========================
+FAILED tests/research/test_windows_r3_recheck.py::test_each_traversal_stage_preserves_native_error[OSError-before]
+FAILED tests/research/test_windows_r3_recheck.py::test_each_traversal_stage_preserves_native_error[OSError-after]
+2 failed, 87 passed in 16.41s

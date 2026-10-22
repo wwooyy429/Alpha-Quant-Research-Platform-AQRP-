@@ -1,5 +1,9 @@
 # 双向需求追踪矩阵（待审）
 
+2026-10-22 Windows R3复核：GPT Work对固定b3d9aef判REQUEST CHANGES，WORK-WI-R3-001/002 Medium均OPEN；原WI-R2-001/002与整体隔离仍NOT VERIFIED。本轮仅修复枚举失败拒绝及强制完整清单/目录探针/三结果对账，待新固定SHA独立复核。详docs/audits/windows-isolation-r3/recheck-b3d9aef/REVIEW_PACKAGE.md。不启用账户、不改真实ACL、不重跑管理员脚本、不正式Test/金融批准/合并标签/部署/实盘/P5；P4 PR6独立版本不改。以下旧状态为历史。
+
+2026-10-22 Windows隔离R2两项OPEN已授权独立修复候选，整体仍NOT VERIFIED；不部署/改真实账户ACL/正式Test/金融批准/合并标签/P5。新代码、旧失败原件及证据边界见docs/audits/windows-isolation-r3/REVIEW_PACKAGE.md。本分支不包含P4实现，不改变P4 PR6固定版本。以下既有状态按原轮次保留。
+
 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。
 
 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。

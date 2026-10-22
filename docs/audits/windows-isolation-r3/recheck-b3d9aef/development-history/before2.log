@@ -1,0 +1,16 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+___________ test_r3_001_real_walk_cannot_certify_incomplete_subset ____________
+tests\research\test_windows_r3_recheck.py:28: in test_r3_001_real_walk_cannot_certify_incomplete_subset
+    with pytest.raises(ContractError,match='ACL_ENUMERATION_FAILED'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ContractError
+_____ test_r3_002_hash_string_without_authoritative_inventory_must_reject _____
+tests\research\test_windows_r3_recheck.py:38: in test_r3_002_hash_string_without_authoritative_inventory_must_reject
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/research/test_windows_r3_recheck.py::test_r3_001_real_walk_cannot_certify_incomplete_subset
+FAILED tests/research/test_windows_r3_recheck.py::test_r3_002_hash_string_without_authoritative_inventory_must_reject
+2 failed in 1.05s

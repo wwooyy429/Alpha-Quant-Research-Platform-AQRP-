@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\venv\Lib\site-packages\aqrp\experiments\replay_worker.py", line 98, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\venv\Lib\site-packages\aqrp\experiments\replay_worker.py", line 35, in main
+    from aqrp.factors.admission import reviewed_policy
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\reproduction\venv\Lib\site-packages\aqrp\factors\__init__.py", line 5, in <module>
+    from .engine import FactorEngine, write_run
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\reproduction\venv\Lib\site-packages\aqrp\factors\engine.py", line 15, in <module>
+    from aqrp.data.query import query
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\reproduction\venv\Lib\site-packages\aqrp\data\query.py", line 16, in <module>
+    from .store import read_snapshot
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\reproduction\venv\Lib\site-packages\aqrp\data\store.py", line 5, in <module>
+    from .snapshot import verify_snapshot
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\reproduction\venv\Lib\site-packages\aqrp\data\snapshot.py", line 11, in <module>
+    import pyarrow.parquet as pq
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\reproduction\venv\Lib\site-packages\pyarrow\parquet\__init__.py", line 20, in <module>
+    from .core import *
+  File "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\reviews\windows-isolation-r3-b3d9aef-independent\sdk\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\reproduction\venv\Lib\site-packages\pyarrow\parquet\core.py", line 34, in <module>
+    raise ImportError(
+    ...<2 lines>...
+    ) from None
+ImportError: The pyarrow installation is not built with support for the Parquet file format (DLL load failed while importing _parquet: 文件名或扩展名太长。)

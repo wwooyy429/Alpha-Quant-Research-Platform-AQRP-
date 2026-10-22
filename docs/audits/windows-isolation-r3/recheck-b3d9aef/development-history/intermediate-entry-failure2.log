@@ -1,0 +1,15 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_______ test_directory_entry_errors_cannot_hide_a_real_subtree[is_dir] ________
+tests\research\test_windows_r3_recheck.py:106: in test_directory_entry_errors_cannot_hide_a_real_subtree
+    assert policy(root).verify()['objects']==3
+E   assert 2 == 3
+________ test_directory_entry_errors_cannot_hide_a_real_subtree[stat] _________
+tests\research\test_windows_r3_recheck.py:108: in test_directory_entry_errors_cannot_hide_a_real_subtree
+    with pytest.raises(ContractError,match='ACL_ENUMERATION_FAILED'):policy(root).verify()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ContractError
+=========================== short test summary info ===========================
+FAILED tests/research/test_windows_r3_recheck.py::test_directory_entry_errors_cannot_hide_a_real_subtree[is_dir]
+FAILED tests/research/test_windows_r3_recheck.py::test_directory_entry_errors_cannot_hide_a_real_subtree[stat]
+2 failed, 51 deselected in 1.28s

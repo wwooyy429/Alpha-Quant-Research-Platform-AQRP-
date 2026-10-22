@@ -1,0 +1,48 @@
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests\research\test_windows_r3_recheck.py:449:5
+    |
+447 |       tmp_path, monkeypatch, tables, make_snapshot, capsys
+448 |   ):
+449 | /     import sys
+450 | |     from aqrp.core.canonical import canonical
+451 | |     from windows_model import model_tree
+    | |________________________________________^
+452 |
+453 |       probe, p, ref, raw, cfg, owner = model_tree(tmp_path, monkeypatch, tables, make_snapshot)
+    |
+help: Organize imports
+    |
+449 |     import sys
+450 +
+451 +     from windows_model import model_tree
+452 +
+453 |     from aqrp.core.canonical import canonical
+    -     from windows_model import model_tree
+454 |
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests\research\test_windows_r3_recheck.py:500:5
+    |
+498 |   @pytest.mark.parametrize("failure", ["hash", "inside_root", "missing_inventory"])
+499 |   def test_cli_cannot_bypass_hash_or_boundary(tmp_path, monkeypatch, tables, make_snapshot, failure):
+500 | /     import sys
+501 | |     from aqrp.core.canonical import canonical
+502 | |     from windows_model import model_tree
+    | |________________________________________^
+503 |
+504 |       probe, p, ref, raw, cfg, owner = model_tree(tmp_path, monkeypatch, tables, make_snapshot)
+    |
+help: Organize imports
+    |
+500 |     import sys
+501 +
+502 +     from windows_model import model_tree
+503 +
+504 |     from aqrp.core.canonical import canonical
+    -     from windows_model import model_tree
+505 |
+    |
+
+Found 2 errors.
+[*] 2 fixable with `--fix`.
