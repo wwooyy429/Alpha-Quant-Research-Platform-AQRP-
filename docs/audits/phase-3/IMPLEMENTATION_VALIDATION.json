@@ -1,6 +1,6 @@
 {
   "schema": "phase3-validation/2",
-  "current": "G2_REPAIR_SELF_VALIDATION_IN_PROGRESS",
+  "current": "DEVELOPER_REPAIR_VALIDATED_GPT_WORK_RECHECK_REQUIRED",
   "fixed_previous_review_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
   "previous_verdict": "GPT_WORK_REQUEST_CHANGES",
   "current_bundle": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e",
@@ -11,12 +11,24 @@
     "before": "4 FAILED on old installed A1e bundle",
     "initial_after": "4 PASSED developer source verification; original script retained"
   },
-  "full_new_execution": "PENDING actual SDK/CI records",
+  "full_new_execution": "g2-5a5e093/validation-1b4be23/VALIDATION.json",
   "independent_recheck": "PENDING_NEW_FIXED_SHA",
   "deployment": "NOT_AUTHORIZED_NOT_DEPLOYED_NOT_VERIFIED",
   "financial_approval": "NONE",
   "accepted": false,
   "merged": false,
   "tagged": false,
-  "P4": false
+  "P4": false,
+  "business_execution_commit": "1b4be236e888805f5c4e45357b158fcdb6058df0",
+  "developer_summary": {
+    "old16_plus_4": 20,
+    "original_reviewer4": 4,
+    "reviewer_authored_math_reexecuted_by_developer": 91,
+    "new_integrated_boundary_cases": 10,
+    "scanner_adversarial_controls": 3,
+    "failures": 0
+  },
+  "sdk_tests": 578,
+  "ci_run_id": 39725429442,
+  "ci_each_os_tests": 578
 }

@@ -1,0 +1,78 @@
+{
+  "scope": "Developer byte/contract verification; not independent audit or OS deployment",
+  "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\actions-original\\1b4be23-windows-original.zip",
+  "head_sha": "1b4be236e888805f5c4e45357b158fcdb6058df0",
+  "executed_sha": "050d9dfa08a1b9c0bfc372555e0c328b2aeec6bf",
+  "source_tree": "0fe465816674dc5b77f93c446aaa9608055bea76",
+  "executed_parents": [
+    "f26255fc40a3080bfa883ad64938f60036a14759",
+    "1b4be236e888805f5c4e45357b158fcdb6058df0"
+  ],
+  "source_binding": "GITHUB_PR_MERGE_TREE_EQUALS_FIXED_HEAD",
+  "environment": {
+    "run_id": "aqrp-d614a51e-550f-433b-8723-5466b2e896a2",
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+    "os": "Windows-2025Server-10.0.26100-SP0",
+    "ImageOS": "win25-vs2026",
+    "ImageVersion": "20261018.275.1",
+    "code_commit": "050d9dfa08a1b9c0bfc372555e0c328b2aeec6bf",
+    "dirty": false,
+    "complete": true,
+    "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-d614a51e-550f-433b-8723-5466b2e896a2",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39725429442",
+    "github_run_attempt": "1",
+    "github_sha": "050d9dfa08a1b9c0bfc372555e0c328b2aeec6bf",
+    "wheel_sha256": "75e09306a028763fc0613d6d854292b7fc9e20a9cd483f5ee769f956c3162dc2"
+  },
+  "zip_sha256": "6d34e2f1f8092d77de228530fb2b3c485ae63cc43ca9dac9ff7eaaaac8b78182",
+  "zip_bytes": 95545637,
+  "crc": "PASS",
+  "selected_files": 185,
+  "upload_selection_sha256": "1baf103868e29a616b1c1e3f59e08b218239939802812c0617459dca2039d145",
+  "junit": {
+    "tests": 578,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_gates": "PASS",
+  "wheel_sha256": "75e09306a028763fc0613d6d854292b7fc9e20a9cd483f5ee769f956c3162dc2",
+  "python_modules": 45,
+  "dependency_wheels": 22,
+  "snapshots": [
+    {
+      "path": "dataset/f7a8d4cf-8533-4fbd-9670-16f5ab22b953",
+      "hash": "483f2993decf7c9701f7b614098c7669d2a4b9e4bf68d036822e934e55d987bf"
+    },
+    {
+      "path": "factor-dataset/47d7583f-75e6-46b5-93f8-2c84ae1e5f6c",
+      "hash": "58a30ee0dfaf699778f27395f887dd0e4094f7f36eef3e6063366f8640699376"
+    },
+    {
+      "path": "reproduction/dataset/b5a8c4a8-9fa7-4131-9c57-ea54e87cb047",
+      "hash": "c76fd69141e7e5fba24fa02ecf46e2c829d6ec3828daa31598bb514a5a51daa6"
+    },
+    {
+      "path": "research/inputs/dataset/df046cd1-8674-4dc2-9c82-6c888f2fa04c",
+      "hash": "9d47c22f8ad97ab83a1a7d7878d85f3583385d63dab1e90fc2337a43e226c9bf"
+    },
+    {
+      "path": "research/replacement-inputs/dataset/a23cc14c-25d4-44a2-baff-58162eb877e2",
+      "hash": "999c500093b66c054f45acb7f571725a3366f9631ecfddcf7babf2dc0fbbd189"
+    }
+  ],
+  "verified_runs": [
+    "73b0dca1-5f9a-4845-ab07-d90e311cf5ca",
+    "0d22c227-3474-4bc9-803e-055d24da7ea6",
+    "ca43ebe5-c21e-4491-a991-76abfea2614d"
+  ],
+  "engine_batches": 95,
+  "factor_runs": 3,
+  "engineering_reports": 3,
+  "original_published_files": 66,
+  "original_runs_replayed": 3,
+  "result": "PASS"
+}

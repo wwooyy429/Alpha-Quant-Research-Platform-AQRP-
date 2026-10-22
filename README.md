@@ -1,5 +1,8 @@
 # Alpha Quant Research Platform（AQRP）
 
+2026-10-22 G2修复自测完成：**DEVELOPER REPAIR VALIDATED / GPT WORK RECHECK REQUIRED**。修复业务1b4be236e888805f5c4e45357b158fcdb6058df0的干净SDK和双OS各578项、原16/4、原四产品回归、原91数学及3扫描控制通过；实际时钟/fit探针和原ZIP/hash见docs/audits/phase-3/g2-5a5e093/validation-1b4be23/。原1High/2Medium仍待主审确认CLOSED，未部署/金融批准/验收/合并/标签/P4。以下各旧状态按原轮次保留。
+
+
 2026-10-22 最新G2状态：**GPT Work对固定5a5e093判REQUEST CHANGES（1 High/2 Medium）；修复候选待新固定SHA复核**。G1 PLAN PASS不变。原四失败、封存319项/hash核验、3项开发方处理见docs/audits/phase-3/g2-5a5e093/；不自判CLOSED/验收。实际部署/正式Test/金融批准仍未验证，无合并、标签或P4；以下旧交审状态按其时间保留。
 
 
