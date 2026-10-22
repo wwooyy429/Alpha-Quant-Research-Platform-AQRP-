@@ -36,3 +36,6 @@
 CR表示Competition Ready三项，其余23项为MVP。本表没有把P4/P5成本/风险/回测、P6网页或P7完整替换当成本阶段依赖。
 
 U-001要求的真实OS权限证据须有单独部署授权后取得；本轮模拟Host policy控制和公开合成链路不冒充它。正式Test、金融批准、独立实现审核及人工阶段验收都是未被G1或开发方自测替代的门禁。尚未取得的这些证据需在主审结论中明确保留。
+
+
+G2修复增量：VALID-001/002/003、QA-004、INT-001主档时钟及fit边界；FACTOR-009、VALID-008、EXP-001/004终态proposal成员/原字节；RESEARCH-007、QA-004、INT-001公共合成共同cutoff/未来可用拒绝及血缘。实际新增测试research/test_g2_regressions.py（4原期望）和test_g2_boundaries.py（10边界），原发现仍待GPT Work确认关闭，开发自测不代验收。完整原26项表不删除。

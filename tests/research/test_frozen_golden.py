@@ -68,6 +68,10 @@ def test_supplemental_composite_and_hac_nonzero_answers():
                     "session": "2024-01-01",
                     "stage": "final",
                     "score": value,
+                    # Public fixture clocks satisfy the stricter stage ingress;
+                    # the frozen numeric inputs and expected answers are unchanged.
+                    "decision_time": "2024-01-01T12:05:00Z",
+                    "available_at": "2024-01-01T12:00:00Z",
                 }
                 for key in ("A", "B")
                 for i, value in enumerate(floats(inp[key]))

@@ -183,7 +183,9 @@ def make_labels(snapshot, decisions, security_ids, horizons, evaluation_cutoff, 
                 if start["open"] <= 0 or end["open"] <= 0:
                     raise ContractError("INVALID_FORWARD_PRICE")
                 n, credit = Decimal(1), Decimal(0)
-                deps = [start, end, a, b, cov, *statuses]
+                # Listing/delisting eligibility and market/calendar selection
+                # depend on this exact PIT master revision, including its clock.
+                deps = [security, start, end, a, b, cov, *statuses]
                 period = sorted(
                     [v for v in economic if entry < v["effective_at"] <= exit],
                     key=lambda v: (
@@ -232,6 +234,12 @@ def make_labels(snapshot, decisions, security_ids, horizons, evaluation_cutoff, 
                     credit=str(credit),
                     reason="NONE",
                     dependency_hash=digest(deps),
+                    security_master_ref={
+                        "revision_id": security["revision_id"],
+                        "row_hash": digest(security),
+                        "event_time": security["event_time"],
+                        "available_at": security["available_at"],
+                    },
                     information_interval=[row["decision_time"], available],
                     entitlement_interval=[entry, exit],
                     coverage_revision=cov["revision_id"],

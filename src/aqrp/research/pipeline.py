@@ -13,6 +13,20 @@ from aqrp.data.exposures import exposures_as_of
 from aqrp.research.numerics import clean, conditional, correlation, ols, rolling, standardize
 
 
+def _stage_times(frame):
+    if not {"decision_time", "available_at"} <= set(frame.columns):
+        raise ContractError("STAGE_CLOCK_REQUIRED")
+    result = frame.copy(deep=True)
+    for field in ("decision_time", "available_at"):
+        result[field] = [utc(value) for value in result[field]]
+    for _, section in result.groupby("session"):
+        if section["decision_time"].nunique() != 1:
+            raise ContractError("MIXED_DECISION_TIMES")
+    if any(utc(r.available_at) > utc(r.decision_time) for r in result.itertuples()):
+        raise ContractError("STAGE_INPUT_NOT_AVAILABLE_AT_DECISION")
+    return result
+
+
 def operators(frame, specs, calendar_grid=None):
     """Closed structured operators, aligned to the complete supplied decision grid."""
     result = frame.copy(deep=True)
@@ -62,13 +76,7 @@ def pipeline(frame, spec, exposure_ref=None, *, market=None, currency=None, cale
     current["score"] = pd.to_numeric(current["score"], errors="raise").astype(float)
     if current.duplicated(["factor_key", "session", "security_id"]).any():
         raise ContractError("DUPLICATE_STAGE_SCORE")
-    for _, section in current.groupby(["factor_key", "session"]):
-        if section["decision_time"].nunique() != 1:
-            raise ContractError("MIXED_DECISION_TIMES")
-    if "available_at" in current and any(
-        utc(r.available_at) > utc(r.decision_time) for r in current.itertuples()
-    ):
-        raise ContractError("STAGE_INPUT_NOT_AVAILABLE_AT_DECISION")
+    current = _stage_times(current)
     current["stage"] = "raw"
     current["validity"] = ["VALID" if math.isfinite(x) else "INVALID" for x in current["score"]]
     if "reason" not in current:
@@ -205,13 +213,31 @@ def compose(frame, spec):
         raise ContractError("INSUFFICIENT_COMPONENTS_OR_NORMALIZATION")
     if frame["stage"].nunique() != 1 or frame["stage"].iloc[0] != spec["input_stage"]:
         raise ContractError("COMPOSITE_STAGE_MISMATCH")
+    frame = _stage_times(frame)
+    if frame.duplicated(["factor_key", "session", "security_id"]).any():
+        raise ContractError("DUPLICATE_STAGE_SCORE")
     scores = []
     pairs = []
+    lineage = []
     for session, group in frame.groupby("session", sort=True):
         table = group.pivot(index="security_id", columns="factor_key", values="score").reindex(
             columns=[k for k, _, _ in selected]
         )
         table = table.replace([np.inf, -np.inf], np.nan).dropna()
+        common = group[
+            group["factor_key"].isin([k for k, _, _ in selected])
+            & group["security_id"].isin(table.index)
+        ].sort_values(["factor_key", "security_id"])
+        clock = {
+            "decision_time": group["decision_time"].iloc[0],
+            "available_at": group["available_at"].max(),
+            "input_hash": digest(
+                common[
+                    ["factor_key", "security_id", "score", "decision_time", "available_at", "stage"]
+                ].to_dict("records")
+            ),
+        }
+        lineage.append({"session": session, **clock})
         if len(table) < spec["min_n"]:
             pairs.append(
                 {"session": session, "reason": "INSUFFICIENT_INTERSECTION", "n": len(table)}
@@ -232,6 +258,7 @@ def compose(frame, spec):
                     "stage": group["stage"].iloc[0],
                     "mask_hash": digest(list(table.index)),
                     "composite_hash": digest(spec),
+                    **clock,
                 }
             )
         for a, b in combinations(range(len(selected)), 2):
@@ -278,4 +305,10 @@ def compose(frame, spec):
                 "auto_weight_change": False,
             }
         )
-    return {"scores": scores, "pairs": pairs, "redundancy": aggregates, "spec_hash": digest(spec)}
+    return {
+        "scores": scores,
+        "pairs": pairs,
+        "redundancy": aggregates,
+        "spec_hash": digest(spec),
+        "lineage": lineage,
+    }

@@ -1,0 +1,38 @@
+{
+  "schema": "gpt-work-primary-implementation-review/1",
+  "reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "baseline": "f26255fc40a3080bfa883ad64938f60036a14759",
+  "g1": "PLAN PASS at3861 + direct U001/U002 confirmations; unchanged",
+  "verdict": "G2 REQUEST CHANGES / IMPLEMENTATION BLOCKED",
+  "actual_executor": "GPT Work primary independent review, not Gemini or developer self-test",
+  "review_started_observed_utc": "2026-10-22T04:03:55Z",
+  "recorded_utc": "2026-10-22T04:33:21.747Z",
+  "reviewer_writes": "Independent review outputs/test fixtures only; formal checkout unmodified",
+  "execution": {
+    "clean_installed_sdk": 564,
+    "clean_sdk_failures": 0,
+    "original_p1": 16,
+    "original_p2": 4,
+    "independent_math_checks": 91,
+    "new_regression_tests": 4,
+    "new_regression_failures": 4,
+    "new_regression_errors": 0,
+    "scanner_controls": 3
+  },
+  "ci": "Original official Windows+Ubuntu ZIPs downloaded, exact bytes and inner identities verified; remote runner execution separately attributed",
+  "source_modules": 45,
+  "new_findings": {
+    "High": 1,
+    "Medium": 2
+  },
+  "actual_os_deployment": "NOT AUTHORIZED / NOT RUN",
+  "formal_test": "NOT EXECUTED",
+  "formal_financial_approval": "NONE",
+  "phase3_user_acceptance": false,
+  "merged": false,
+  "tagged": false,
+  "p4": false,
+  "pdf_or_image_skill_applied_this_turn": false,
+  "reviewer_helpers": "One scope assertion failure and read/display probes preserved separately; not counted as product regressions",
+  "full_sdk_preserved_locally": true
+}

@@ -21,3 +21,6 @@
 新增测试及清洁SDK检查结果以 IMPLEMENTATION_VALIDATION.json、原始JUnit/coverage/log及Actions ZIP为准。开发迭代失败全部单列留存，不删除失败用例或修改金融正确答案迎合实现。固定SHA实现审核仍交GPT Work，不能引用本文件作为独立PASS。
 
 追加源码复查发现并修复四主体约束遗漏：强制research/evaluator/auditor/owner互异、授权签封绑定主体；auditor对数据及制品只读且不能读operator key。POSIX对未经解析的扩展/default ACL拒绝，防止只检查mode而漏掉额外授权；本轮不创建或修改ACL。详implementation/ROLE_REVIEW_RESPONSE.md。该修复重新生成整个包receipt，不把前一实现的成功SDK/CI外推为新bundle验证。
+
+
+2026-10-22 G2修复全bundle重审：3项代码变化和直接调用者已核，详情g2-5a5e093/DEVELOPER_RESPONSE.md。原45模块其余字节连续性保持，工程receipt重签仅TEST_ONLY/NONE；不是GPT Work独立复核或金融批准。

@@ -1,0 +1,90 @@
+{
+  "reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "baseline": "f26255fc40a3080bfa883ad64938f60036a14759",
+  "end_utc": "2026-10-22T04:29:11.906392+00:00",
+  "fixed_clone_and_developer_clean": true,
+  "pr_head": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "pr_state": "open",
+  "pr_merged": false,
+  "stable_remote_refs": {
+    "refs/heads/main": "f26255fc40a3080bfa883ad64938f60036a14759",
+    "refs/tags/phase2-baseline": "24000b53ebfeda56aad5a54b93d432196f6ba293",
+    "refs/tags/phase2-baseline^{}": "f26255fc40a3080bfa883ad64938f60036a14759",
+    "refs/tags/v0.2.0": "d8ee6c165eebb165393307b78acb7218a9994321",
+    "refs/tags/v0.2.0^{}": "f26255fc40a3080bfa883ad64938f60036a14759"
+  },
+  "drift_detected": false,
+  "deployed": false,
+  "merged": false,
+  "tagged": false,
+  "p4": false,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-implementation-5a5e093",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdout": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-implementation-5a5e093",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdout": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-implementation-5a5e093",
+        "ls-remote",
+        "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git",
+        "refs/heads/main",
+        "refs/tags/phase2-baseline",
+        "refs/tags/phase2-baseline^{}",
+        "refs/tags/v0.2.0",
+        "refs/tags/v0.2.0^{}"
+      ],
+      "stdout": "f26255fc40a3080bfa883ad64938f60036a14759\trefs/heads/main\n24000b53ebfeda56aad5a54b93d432196f6ba293\trefs/tags/phase2-baseline\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/phase2-baseline^{}\nd8ee6c165eebb165393307b78acb7218a9994321\trefs/tags/v0.2.0\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/v0.2.0^{}\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  ]
+}

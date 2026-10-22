@@ -22,6 +22,7 @@ def frame():
                 "security_id": f"SYN_A:{i + 1:03d}",
                 "score": v,
                 "decision_time": utc("2024-01-04T12:05:00Z"),
+                "available_at": utc("2024-01-04T12:00:00Z"),
                 "stage": "final",
             }
             for k, values in (("a", [1, 2, 3, 4, 6, 8]), ("b", [8, 6, 4, 3, 2, 1]))

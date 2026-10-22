@@ -1,0 +1,110 @@
+.........FF......                                                        [100%]
+================================== FAILURES ===================================
+______ test_late_master_eligibility_and_fit_cutoff_boundary[listing_at] _______
+
+make_snapshot = <function make_snapshot.<locals>.make at 0x0000020257A80CC0>
+field = 'listing_at'
+
+    @pytest.mark.parametrize("field", ["listing_at", "delisting_at"])
+    def test_late_master_eligibility_and_fit_cutoff_boundary(make_snapshot, field):
+        tables = load_synthetic(sessions=[(date(2024, 1, d), "12:00:00") for d in (2, 3, 4, 5)])
+        for bar in tables["bars_daily"]:
+            price = Decimal(100 if bar["session_date"].day == 3 else 110)
+            bar.update({k: price for k in ("open", "high", "low", "close")})
+            bar.update(amount=price * bar["volume"], source_amount=str(price * bar["volume"]))
+        old = tables["security_master"][0]
+        old[field] = utc("2024-01-04T08:00:00Z")
+        revision = deepcopy(old)
+        late = utc("2024-01-05T00:00:00Z")
+        revision.update(revision_id=2, event_time=late, available_at=late, known_at=late)
+        revision[field] = utc("2024-01-01T00:00:00Z") if field == "listing_at" else None
+        tables["security_master"].append(revision)
+        snapshot = make_snapshot(tables)
+        coverage = CoverageRef.create(
+            snapshot.manifest_hash,
+            [
+                dict(
+                    coverage_id="jan4",
+                    event_time="2024-01-04T12:00:00Z",
+                    available_at="2024-01-04T12:05:00Z",
+                    complete_through="2024-01-04T12:00:00Z",
+                    revision_id=1,
+                )
+            ],
+            authority="public-unit-fixture",
+            scope="PUBLIC_ENGINEERING",
+        )
+        decisions = [dict(session=date(2024, 1, 2), decision_time="2024-01-02T12:05:00Z")]
+        early = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-04T12:10:00Z", coverage)[
+            0
+        ]
+        after = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-05T12:10:00Z", coverage)[
+            0
+        ]
+        assert early["label"] is None
+        assert after["label"] == 0.1 and after["available_at"] == late
+        assert after["information_interval"][1] == late
+        assert after["security_master_ref"]["revision_id"] == 2
+>       assert after["security_master_ref"]["row_hash"] == digest(revision)
+E       AssertionError: assert '299b57697388...2ae2518999664' == '6e360836167d...1331c7ffb6ae3'
+E         
+E         - 6e360836167d28ad3dd614254522fc0cfcffcb3fbba021aa9851331c7ffb6ae3
+E         + 299b576973886a0baf5443b3107293a0ed5de4e7c4c169ee2cc2ae2518999664
+
+tests\research\test_g2_boundaries.py:133: AssertionError
+_____ test_late_master_eligibility_and_fit_cutoff_boundary[delisting_at] ______
+
+make_snapshot = <function make_snapshot.<locals>.make at 0x0000020257A80400>
+field = 'delisting_at'
+
+    @pytest.mark.parametrize("field", ["listing_at", "delisting_at"])
+    def test_late_master_eligibility_and_fit_cutoff_boundary(make_snapshot, field):
+        tables = load_synthetic(sessions=[(date(2024, 1, d), "12:00:00") for d in (2, 3, 4, 5)])
+        for bar in tables["bars_daily"]:
+            price = Decimal(100 if bar["session_date"].day == 3 else 110)
+            bar.update({k: price for k in ("open", "high", "low", "close")})
+            bar.update(amount=price * bar["volume"], source_amount=str(price * bar["volume"]))
+        old = tables["security_master"][0]
+        old[field] = utc("2024-01-04T08:00:00Z")
+        revision = deepcopy(old)
+        late = utc("2024-01-05T00:00:00Z")
+        revision.update(revision_id=2, event_time=late, available_at=late, known_at=late)
+        revision[field] = utc("2024-01-01T00:00:00Z") if field == "listing_at" else None
+        tables["security_master"].append(revision)
+        snapshot = make_snapshot(tables)
+        coverage = CoverageRef.create(
+            snapshot.manifest_hash,
+            [
+                dict(
+                    coverage_id="jan4",
+                    event_time="2024-01-04T12:00:00Z",
+                    available_at="2024-01-04T12:05:00Z",
+                    complete_through="2024-01-04T12:00:00Z",
+                    revision_id=1,
+                )
+            ],
+            authority="public-unit-fixture",
+            scope="PUBLIC_ENGINEERING",
+        )
+        decisions = [dict(session=date(2024, 1, 2), decision_time="2024-01-02T12:05:00Z")]
+        early = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-04T12:10:00Z", coverage)[
+            0
+        ]
+        after = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-05T12:10:00Z", coverage)[
+            0
+        ]
+        assert early["label"] is None
+        assert after["label"] == 0.1 and after["available_at"] == late
+        assert after["information_interval"][1] == late
+        assert after["security_master_ref"]["revision_id"] == 2
+>       assert after["security_master_ref"]["row_hash"] == digest(revision)
+E       AssertionError: assert 'a394c171a060...d01508d7052b4' == '6e360836167d...1331c7ffb6ae3'
+E         
+E         - 6e360836167d28ad3dd614254522fc0cfcffcb3fbba021aa9851331c7ffb6ae3
+E         + a394c171a060e3a0a4704a472a60797a5b3b1ee8d5a9cb336d8d01508d7052b4
+
+tests\research\test_g2_boundaries.py:133: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/research/test_g2_boundaries.py::test_late_master_eligibility_and_fit_cutoff_boundary[listing_at]
+FAILED tests/research/test_g2_boundaries.py::test_late_master_eligibility_and_fit_cutoff_boundary[delisting_at]
+2 failed, 15 passed in 1.83s

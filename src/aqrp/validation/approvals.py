@@ -1,5 +1,6 @@
 """Research qualification proposals and human evidence; strategy remains a P5 gate."""
 
+import hashlib
 import json
 import math
 import re
@@ -122,10 +123,19 @@ def record_decision(ledger, run_id, proposal, envelope, operator_key):
         or not proposal["eligible"]
     ):
         raise ContractError("INVALID_HUMAN_RESEARCH_DECISION")
-    ledger.verify(run_id)
+    manifest = ledger.verify(run_id)
+    entries = [entry for entry in manifest["files"] if entry["path"] == "approvals.json"]
+    if len(entries) != 1:
+        raise ContractError("PROPOSAL_NOT_IN_IMMUTABLE_RUN")
     path = ledger.path(run_id) / "approvals.json"
-    if not path.exists() or not any(
-        digest(p) == digest(proposal) for p in json.loads(path.read_bytes()).values()
+    # Hash and parse the same bytes, rather than rereading a mutable path after
+    # verification. Unmanifested post-run files cannot become approval evidence.
+    raw = path.read_bytes()
+    if path.is_symlink() or hashlib.sha256(raw).hexdigest() != entries[0]["sha256"]:
+        raise ContractError("PROPOSAL_NOT_IN_IMMUTABLE_RUN")
+    proposals = json.loads(raw)
+    if not isinstance(proposals, dict) or not any(
+        digest(p) == digest(proposal) for p in proposals.values()
     ):
         raise ContractError("PROPOSAL_NOT_IN_IMMUTABLE_RUN")
     ledger.decision(

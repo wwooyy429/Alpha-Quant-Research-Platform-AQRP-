@@ -1,0 +1,77 @@
+........................................................................ [ 12%]
+........................................................................ [ 24%]
+........................................................................ [ 37%]
+........................................................................ [ 49%]
+........................................................................ [ 62%]
+........................................................................ [ 74%]
+........................................................................ [ 87%]
+........................................EEEE.E.......................... [ 99%]
+..                                                                       [100%]
+=================================== ERRORS ====================================
+______ ERROR at setup of test_three_real_original_factor_refs[momentum] _______
+
+    @pytest.fixture(scope="module")
+    def original_archive():
+        path = os.environ.get("AQRP_ORIGINAL_ENV_ARCHIVE")
+        if not path:
+>           pytest.fail(
+                "Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)"
+            )
+E           Failed: Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)
+
+tests\research\test_reproduction.py:30: Failed
+______ ERROR at setup of test_three_real_original_factor_refs[reversal] _______
+
+    @pytest.fixture(scope="module")
+    def original_archive():
+        path = os.environ.get("AQRP_ORIGINAL_ENV_ARCHIVE")
+        if not path:
+>           pytest.fail(
+                "Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)"
+            )
+E           Failed: Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)
+
+tests\research\test_reproduction.py:30: Failed
+_______ ERROR at setup of test_three_real_original_factor_refs[volume] ________
+
+    @pytest.fixture(scope="module")
+    def original_archive():
+        path = os.environ.get("AQRP_ORIGINAL_ENV_ARCHIVE")
+        if not path:
+>           pytest.fail(
+                "Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)"
+            )
+E           Failed: Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)
+
+tests\research\test_reproduction.py:30: Failed
+_________ ERROR at setup of test_archive_integrity_and_invalid_replay _________
+
+    @pytest.fixture(scope="module")
+    def original_archive():
+        path = os.environ.get("AQRP_ORIGINAL_ENV_ARCHIVE")
+        if not path:
+>           pytest.fail(
+                "Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)"
+            )
+E           Failed: Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)
+
+tests\research\test_reproduction.py:30: Failed
+________ ERROR at setup of test_real_published_original_bytes_and_runs ________
+
+    @pytest.fixture(scope="module")
+    def original_archive():
+        path = os.environ.get("AQRP_ORIGINAL_ENV_ARCHIVE")
+        if not path:
+>           pytest.fail(
+                "Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)"
+            )
+E           Failed: Complete SDK tests require tools/original_replay_smoke.py output via AQRP_ORIGINAL_ENV_ARCHIVE (tools/ci.py configures it)
+
+tests\research\test_reproduction.py:30: Failed
+=========================== short test summary info ===========================
+ERROR tests/research/test_reproduction.py::test_three_real_original_factor_refs[momentum]
+ERROR tests/research/test_reproduction.py::test_three_real_original_factor_refs[reversal]
+ERROR tests/research/test_reproduction.py::test_three_real_original_factor_refs[volume]
+ERROR tests/research/test_reproduction.py::test_archive_integrity_and_invalid_replay
+ERROR tests/research/test_reproduction.py::test_real_published_original_bytes_and_runs
+573 passed, 5 errors in 143.08s (0:02:23)

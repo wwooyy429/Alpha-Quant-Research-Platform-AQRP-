@@ -25,3 +25,6 @@ PR： https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/5
 **本轮没有实际账户/ACL/服务/调度部署授权，也没有执行真实独立Test或金融批准。** Host控制模拟、普通Hosted CI和公开合成Test不是实际多主体隔离证据。请把“实现代码与工程控制是否正确”和“真实部署/正式统计协议/独立Test是否已验证”分别裁定，列明未闭环条件。不得代用户接受这些限制、验收阶段、合并、打标签或启动P4。
 
 请输出：固定40位SHA与环境/权限；26项覆盖；逐项发现（严重性、实际行号、可复现实例、影响与修复建议）；独立执行与仅审阅证据的区别；剩余部署/正式推断/金融/人工验收条件；最终G2技术建议。主审建议不等于用户验收或发布。
+
+
+最新增量：必须先读g2-5a5e093/received/GPT-Work-Phase3-G2-5a5e093-Review.md、RECEIPT.json、DEVELOPER_RESPONSE.md及修复验证回执。原5a5e093的G2未通过；三项发现需对PR描述中新的AQRP_FIXED_REVIEW_SHA复核。重点运行原四用例，并核晚到主档→标签→fit因果链、终态manifest成员/单次原字节绑定、公共compose时点拒绝和血缘。不能用旧564或G1 PASS代替新修复验证。

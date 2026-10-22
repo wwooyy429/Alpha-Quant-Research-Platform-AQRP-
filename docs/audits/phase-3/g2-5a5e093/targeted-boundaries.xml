@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="17" time="1.659" timestamp="2026-10-22T12:53:31.772461+08:00" hostname="天音"><testcase classname="tests.research.test_g2_regressions" name="test_composite_rejects_future_or_mixed_clock[available_at]" time="0.019" /><testcase classname="tests.research.test_g2_regressions" name="test_composite_rejects_future_or_mixed_clock[decision_time]" time="0.009" /><testcase classname="tests.research.test_g2_regressions" name="test_decision_rejects_post_terminal_unmanifested_proposal" time="0.040" /><testcase classname="tests.research.test_g2_regressions" name="test_label_clock_includes_causally_required_late_master" time="0.275" /><testcase classname="tests.research.test_g2_boundaries" name="test_stage_clocks_are_required_and_null_is_not_visibility[compose-decision_time]" time="0.003" /><testcase classname="tests.research.test_g2_boundaries" name="test_stage_clocks_are_required_and_null_is_not_visibility[compose-available_at]" time="0.002" /><testcase classname="tests.research.test_g2_boundaries" name="test_stage_clocks_are_required_and_null_is_not_visibility[pipeline-decision_time]" time="0.002" /><testcase classname="tests.research.test_g2_boundaries" name="test_stage_clocks_are_required_and_null_is_not_visibility[pipeline-available_at]" time="0.002" /><testcase classname="tests.research.test_g2_boundaries" name="test_composite_normalizes_clocks_preserves_lineage_and_input" time="0.027" /><testcase classname="tests.research.test_g2_boundaries" name="test_late_master_eligibility_and_fit_cutoff_boundary[listing_at]" time="0.234"><failure message="AssertionError: assert '299b57697388...2ae2518999664' == '6e360836167d...1331c7ffb6ae3'&#10;  &#10;  - 6e360836167d28ad3dd614254522fc0cfcffcb3fbba021aa9851331c7ffb6ae3&#10;  + 299b576973886a0baf5443b3107293a0ed5de4e7c4c169ee2cc2ae2518999664">make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x0000020257A80CC0&gt;
+field = 'listing_at'
+
+    @pytest.mark.parametrize("field", ["listing_at", "delisting_at"])
+    def test_late_master_eligibility_and_fit_cutoff_boundary(make_snapshot, field):
+        tables = load_synthetic(sessions=[(date(2024, 1, d), "12:00:00") for d in (2, 3, 4, 5)])
+        for bar in tables["bars_daily"]:
+            price = Decimal(100 if bar["session_date"].day == 3 else 110)
+            bar.update({k: price for k in ("open", "high", "low", "close")})
+            bar.update(amount=price * bar["volume"], source_amount=str(price * bar["volume"]))
+        old = tables["security_master"][0]
+        old[field] = utc("2024-01-04T08:00:00Z")
+        revision = deepcopy(old)
+        late = utc("2024-01-05T00:00:00Z")
+        revision.update(revision_id=2, event_time=late, available_at=late, known_at=late)
+        revision[field] = utc("2024-01-01T00:00:00Z") if field == "listing_at" else None
+        tables["security_master"].append(revision)
+        snapshot = make_snapshot(tables)
+        coverage = CoverageRef.create(
+            snapshot.manifest_hash,
+            [
+                dict(
+                    coverage_id="jan4",
+                    event_time="2024-01-04T12:00:00Z",
+                    available_at="2024-01-04T12:05:00Z",
+                    complete_through="2024-01-04T12:00:00Z",
+                    revision_id=1,
+                )
+            ],
+            authority="public-unit-fixture",
+            scope="PUBLIC_ENGINEERING",
+        )
+        decisions = [dict(session=date(2024, 1, 2), decision_time="2024-01-02T12:05:00Z")]
+        early = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-04T12:10:00Z", coverage)[
+            0
+        ]
+        after = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-05T12:10:00Z", coverage)[
+            0
+        ]
+        assert early["label"] is None
+        assert after["label"] == 0.1 and after["available_at"] == late
+        assert after["information_interval"][1] == late
+        assert after["security_master_ref"]["revision_id"] == 2
+&gt;       assert after["security_master_ref"]["row_hash"] == digest(revision)
+E       AssertionError: assert '299b57697388...2ae2518999664' == '6e360836167d...1331c7ffb6ae3'
+E         
+E         - 6e360836167d28ad3dd614254522fc0cfcffcb3fbba021aa9851331c7ffb6ae3
+E         + 299b576973886a0baf5443b3107293a0ed5de4e7c4c169ee2cc2ae2518999664
+
+tests\research\test_g2_boundaries.py:133: AssertionError</failure></testcase><testcase classname="tests.research.test_g2_boundaries" name="test_late_master_eligibility_and_fit_cutoff_boundary[delisting_at]" time="0.217"><failure message="AssertionError: assert 'a394c171a060...d01508d7052b4' == '6e360836167d...1331c7ffb6ae3'&#10;  &#10;  - 6e360836167d28ad3dd614254522fc0cfcffcb3fbba021aa9851331c7ffb6ae3&#10;  + a394c171a060e3a0a4704a472a60797a5b3b1ee8d5a9cb336d8d01508d7052b4">make_snapshot = &lt;function make_snapshot.&lt;locals&gt;.make at 0x0000020257A80400&gt;
+field = 'delisting_at'
+
+    @pytest.mark.parametrize("field", ["listing_at", "delisting_at"])
+    def test_late_master_eligibility_and_fit_cutoff_boundary(make_snapshot, field):
+        tables = load_synthetic(sessions=[(date(2024, 1, d), "12:00:00") for d in (2, 3, 4, 5)])
+        for bar in tables["bars_daily"]:
+            price = Decimal(100 if bar["session_date"].day == 3 else 110)
+            bar.update({k: price for k in ("open", "high", "low", "close")})
+            bar.update(amount=price * bar["volume"], source_amount=str(price * bar["volume"]))
+        old = tables["security_master"][0]
+        old[field] = utc("2024-01-04T08:00:00Z")
+        revision = deepcopy(old)
+        late = utc("2024-01-05T00:00:00Z")
+        revision.update(revision_id=2, event_time=late, available_at=late, known_at=late)
+        revision[field] = utc("2024-01-01T00:00:00Z") if field == "listing_at" else None
+        tables["security_master"].append(revision)
+        snapshot = make_snapshot(tables)
+        coverage = CoverageRef.create(
+            snapshot.manifest_hash,
+            [
+                dict(
+                    coverage_id="jan4",
+                    event_time="2024-01-04T12:00:00Z",
+                    available_at="2024-01-04T12:05:00Z",
+                    complete_through="2024-01-04T12:00:00Z",
+                    revision_id=1,
+                )
+            ],
+            authority="public-unit-fixture",
+            scope="PUBLIC_ENGINEERING",
+        )
+        decisions = [dict(session=date(2024, 1, 2), decision_time="2024-01-02T12:05:00Z")]
+        early = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-04T12:10:00Z", coverage)[
+            0
+        ]
+        after = make_labels(snapshot, decisions, ["SYN_A:001"], [1], "2024-01-05T12:10:00Z", coverage)[
+            0
+        ]
+        assert early["label"] is None
+        assert after["label"] == 0.1 and after["available_at"] == late
+        assert after["information_interval"][1] == late
+        assert after["security_master_ref"]["revision_id"] == 2
+&gt;       assert after["security_master_ref"]["row_hash"] == digest(revision)
+E       AssertionError: assert 'a394c171a060...d01508d7052b4' == '6e360836167d...1331c7ffb6ae3'
+E         
+E         - 6e360836167d28ad3dd614254522fc0cfcffcb3fbba021aa9851331c7ffb6ae3
+E         + a394c171a060e3a0a4704a472a60797a5b3b1ee8d5a9cb336d8d01508d7052b4
+
+tests\research\test_g2_boundaries.py:133: AssertionError</failure></testcase><testcase classname="tests.research.test_g2_boundaries" name="test_approval_reads_only_manifest_bound_bytes[list]" time="0.035" /><testcase classname="tests.research.test_g2_boundaries" name="test_approval_reads_only_manifest_bound_bytes[mismatch]" time="0.034" /><testcase classname="tests.research.test_g2_boundaries" name="test_approval_reads_only_manifest_bound_bytes[changed_after_verify]" time="0.037" /><testcase classname="tests.research.test_frozen_golden" name="test_frozen_original_operator_clean_ols_group_and_hac_answers" time="0.006" /><testcase classname="tests.research.test_frozen_golden" name="test_supplemental_composite_and_hac_nonzero_answers" time="0.025" /><testcase classname="tests.research.test_frozen_golden" name="test_growth_profile_integer_boundaries" time="0.004" /></testsuite></testsuites>

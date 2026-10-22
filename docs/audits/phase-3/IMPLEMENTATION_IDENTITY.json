@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "g1_fixed_sha": "3861ef1637bc2b4c28725d7afc5f2e1f02242e80",
   "baseline_main": "f26255fc40a3080bfa883ad64938f60036a14759",
-  "code_bundle_sha256": "a1e52e1744d604976f1ebfdd4275bf02b4ff8a1927c73972f72cc4b284623ce4",
+  "code_bundle_sha256": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e",
   "code_bundle_manifest": {
     "factor_api": "1.0.0",
     "data_contract": "contracts/1.0.0",
@@ -147,7 +147,7 @@
       },
       {
         "path": "research/pipeline.py",
-        "sha256": "970e0a4aaf564012321888073afdb23cf022683fac02bd33aca7e75e205d3b99"
+        "sha256": "d4f7b6eda91b99e3422d6c86b4ee037b4e2efeafe1d0c1d7c0b3cb4b14398b4f"
       },
       {
         "path": "research/synthetic.py",
@@ -171,7 +171,7 @@
       },
       {
         "path": "validation/approvals.py",
-        "sha256": "f45d589b9efc02904257ec33e888bfb18049ec650888e5b300c719b36126154e"
+        "sha256": "15197dfec508adad7ad6138d9348cc98e11e299879594dc89c2eb2e3c7e6d731"
       },
       {
         "path": "validation/evaluator.py",
@@ -183,7 +183,7 @@
       },
       {
         "path": "validation/labels.py",
-        "sha256": "2d7974a314674b3ca4c16d70468b3a2b621d931e90d5f94af80354347ca27c2f"
+        "sha256": "836aed705e01502cb11d980b63a3693af32dd9bb6df80d83e125731f72dacc26"
       },
       {
         "path": "validation/splits.py",
@@ -191,7 +191,7 @@
       }
     ]
   },
-  "receipt_sha256": "347cb275bdbee72f575476e2a7c9624f022c49bd7944c6cc301b8b9e641acfc4",
+  "receipt_sha256": "07079190f1fc6b375bcc103eb7ed3c649012738882c4d2607f1c5fe4761abb8d",
   "requirements_sha256": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1",
   "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
   "frozen_files": [
@@ -8031,11 +8031,11 @@
       "volume",
       "price_volume"
     ],
-    "bundle_sha256": "a1e52e1744d604976f1ebfdd4275bf02b4ff8a1927c73972f72cc4b284623ce4",
+    "bundle_sha256": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e",
     "environment": "TEST_ONLY",
     "financial_approval": "NONE",
     "review_date": "2026-10-22",
-    "review_ref": "docs/audits/phase-3/CODE_REVIEW.md",
+    "review_ref": "docs/audits/phase-3/g2-5a5e093/DEVELOPER_RESPONSE.md",
     "reviewer": "Codex developer; not GPT Work independent review",
     "state": "ENGINEERING_APPROVED",
     "trust_boundary": "Fixed receipt packaged with reviewed source, not plugin/config input; not cryptographic attestation or OS sandbox"
@@ -8043,5 +8043,5 @@
   "git_binding": "Actual clean source commit/wheel/CI runs are bound in IMPLEMENTATION_VALIDATION.json and PR AQRP_FIXED_REVIEW_SHA; no self-referential commit identifier is invented here",
   "deployment": "NOT_AUTHORIZED_NOT_DEPLOYED_NOT_VERIFIED",
   "financial_approval": "NONE",
-  "independent_implementation_review": "GPT_WORK_PENDING"
+  "independent_implementation_review": "GPT_WORK_G2_REQUEST_CHANGES_ON_5a5e093_REPAIR_RECHECK_PENDING"
 }
