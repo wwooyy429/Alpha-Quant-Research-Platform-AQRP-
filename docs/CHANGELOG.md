@@ -1,5 +1,7 @@
 # 变更记录
 
+2026-10-22 Windows R3复核：GPT Work对固定b3d9aef判REQUEST CHANGES，WORK-WI-R3-001/002 Medium均OPEN；原WI-R2-001/002与整体隔离仍NOT VERIFIED。本轮仅修复枚举失败拒绝及强制完整清单/目录探针/三结果对账，待新固定SHA独立复核。详docs/audits/windows-isolation-r3/recheck-b3d9aef/REVIEW_PACKAGE.md。不启用账户、不改真实ACL、不重跑管理员脚本、不正式Test/金融批准/合并标签/部署/实盘/P5；P4 PR6独立版本不改。以下旧状态为历史。
+
 2026-10-22 Windows隔离R2两项OPEN已授权独立修复候选，整体仍NOT VERIFIED；不部署/改真实账户ACL/正式Test/金融批准/合并标签/P5。新代码、旧失败原件及证据边界见docs/audits/windows-isolation-r3/REVIEW_PACKAGE.md。本分支不包含P4实现，不改变P4 PR6固定版本。以下既有状态按原轮次保留。
 
 ## 2026-10-22 · Phase3 0.3.0受限工程验收与发布

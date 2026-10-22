@@ -20,6 +20,38 @@ FULL = 0x1F01FF
 CHANGE_SECURITY = 0xC0000
 
 
+def collection_error(exc, phase, code="ACL_ENUMERATION_FAILED"):
+    detail = {
+        "phase": phase,
+        "path": str(exc.filename),
+        "errno": exc.errno,
+        "winerror": getattr(exc, "winerror", None),
+        "error_type": type(exc).__name__,
+        "message": str(exc),
+    }
+    raise ContractError(code, json.dumps(detail, ensure_ascii=True, sort_keys=True)) from exc
+
+
+def enumerate_tree(root, phase):
+    def reject(exc):
+        collection_error(exc, phase)
+
+    paths = [root]
+    try:
+        for base, dirs, files in os.walk(root, followlinks=False, onerror=reject):
+            paths.extend(Path(base) / n for n in sorted(dirs + files))
+    except OSError as exc:
+        reject(exc)
+    return sorted(paths, key=lambda p: (len(p.parts), str(p)))
+
+
+def tree_stat(path, phase):
+    try:
+        return path.lstat()
+    except OSError as exc:
+        collection_error(exc, phase, "ACL_TREE_METADATA_FAILED")
+
+
 def read_descriptors(paths):
     """Get numeric ACEs for exact paths, without following a PowerShell recursive walk."""
     script = r"""$ErrorActionPreference='Stop'; $ProgressPreference='SilentlyContinue'
@@ -137,29 +169,30 @@ class WindowsTreePolicy:
         for p in (self.root, *self.root.parents):
             if p.is_symlink() or p.is_junction():
                 raise ContractError("SEALED_PATH_LINK", str(p))
-        self.verify_ancestors(read_descriptors(list(self.root.parents)))
-        paths = [self.root]
-        for base, dirs, files in os.walk(self.root, followlinks=False):
-            paths.extend(Path(base) / n for n in sorted(dirs + files))
-        paths.sort(key=lambda p: (len(p.parts), str(p)))
+        ancestors = read_descriptors(list(self.root.parents))
+        self.verify_ancestors(ancestors)
+        paths = enumerate_tree(self.root, "before")
         before = {}
         for p in paths:
-            s = p.lstat()
+            s = tree_stat(p, "before")
             if p.is_symlink() or p.is_junction() or (p.is_file() and s.st_nlink != 1):
                 raise ContractError("SEALED_PATH_LINK", str(p))
             if not (stat.S_ISDIR(s.st_mode) or stat.S_ISREG(s.st_mode)):
                 raise ContractError("SEALED_NON_FILE_OBJECT", str(p))
             before[p] = (s.st_dev, s.st_ino, stat.S_IFMT(s.st_mode))
         rows = read_descriptors(paths)
-        self.verify_rows(rows, {p: p.is_dir() for p in paths}, key_file=key_file, readonly=readonly)
+        self.verify_rows(
+            rows,
+            {p: stat.S_ISDIR(before[p][2]) for p in paths},
+            key_file=key_file,
+            readonly=readonly,
+        )
         # Fail closed if objects/path membership changed during metadata capture.
-        after_paths = {self.root}
-        for base, dirs, files in os.walk(self.root, followlinks=False):
-            after_paths.update(Path(base) / n for n in dirs + files)
+        after_paths = set(enumerate_tree(self.root, "after"))
         if after_paths != set(before):
             raise ContractError("ACL_TREE_CHANGED")
         for p, old in before.items():
-            s = p.lstat()
+            s = tree_stat(p, "after")
             if (
                 (s.st_dev, s.st_ino, stat.S_IFMT(s.st_mode)) != old
                 or p.is_junction()
@@ -174,6 +207,18 @@ class WindowsTreePolicy:
             "objects": len(rows),
             "scope": "ACL proof only; actual three-token probes required",
             "descriptors": rows,
+            "ancestor_descriptors": ancestors,
+            "enumeration_complete": True,
+            "enumeration_passes": 2,
+            "policy_binding": self.binding,
+            "tree_objects": [
+                {
+                    "path": str(p),
+                    "object_type": "directory" if stat.S_ISDIR(before[p][2]) else "file",
+                    "identity": list(before[p]),
+                }
+                for p in paths
+            ],
         }
 
     def verify_rows(self, rows, directory, *, key_file=None, readonly=False):

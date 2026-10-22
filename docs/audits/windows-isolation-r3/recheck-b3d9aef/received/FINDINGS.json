@@ -1,0 +1,63 @@
+{
+  "reviewer": "GPT Work 补充审核",
+  "fixed_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+  "candidate_verdict": "REQUEST CHANGES / BLOCKED",
+  "overall_windows_isolation": "NOT VERIFIED",
+  "old_findings": {
+    "WI-R2-001": "OPEN; direction addresses old shape but new enumeration defect and actual evidence remain",
+    "WI-R2-002": "OPEN; new nine bytes independently verified, full coverage and actual subject evidence remain"
+  },
+  "findings": [
+    {
+      "id": "WORK-WI-R3-001",
+      "severity": "Medium",
+      "state": "OPEN",
+      "type": "Code defect: incomplete tree enumeration is not fail closed",
+      "blocks_candidate": true,
+      "fixed_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+      "locations": [
+        {
+          "file": "src/aqrp/validation/windows_acl.py",
+          "line": 142
+        },
+        {
+          "file": "src/aqrp/validation/windows_acl.py",
+          "line": 157
+        }
+      ],
+      "related_original": "WI-R2-001",
+      "evidence": "INDEPENDENT_COUNTEREXAMPLES.json:tree_enumeration_error",
+      "actual": "Injected scandir failure hides one existing descendant; verify returns success for2 rather than3 objects.",
+      "expected": "Reject directory enumeration error in either walk.",
+      "proof_scope": "Fault injection with actual os.walk, model ACL adapter; not an actual Windows multi-principal bypass",
+      "closure_owner": "Developer repair then GPT Work fixed-SHA recheck"
+    },
+    {
+      "id": "WORK-WI-R3-002",
+      "severity": "Medium",
+      "state": "OPEN",
+      "type": "Verification tool coverage gap: inventory and directories",
+      "blocks_full_acceptance_tool_readiness": true,
+      "fixed_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+      "locations": [
+        {
+          "file": "tools/windows_access_probe.py",
+          "line": 101
+        },
+        {
+          "file": "tools/windows_access_probe.py",
+          "line": 148
+        }
+      ],
+      "related_original": "WI-R2-002",
+      "evidence": "INDEPENDENT_COUNTEREXAMPLES.json:truncated_inventory,directory_probe",
+      "actual": "Deleting an actual dynamic file from after inventory still gives listed all_pass for three modeled roles; directory becomes read_bytes failure and no DELETE_CHILD probe.",
+      "expected": "Mandatory authoritative coverage/hash reconciliation and typed directory checks, whether implemented here or in a separate enforceable stage.",
+      "proof_scope": "Model token/access adapters and ordinary public test files; no real role logons. Outer config SHA integrity bypass is not claimed.",
+      "closure_owner": "Developer repair/complete verification control then GPT Work fixed-SHA recheck"
+    }
+  ],
+  "formal_Test": "NOT EXECUTED",
+  "financial_approval": "NONE",
+  "user_acceptance": "NOT GRANTED BY THIS REVIEW"
+}

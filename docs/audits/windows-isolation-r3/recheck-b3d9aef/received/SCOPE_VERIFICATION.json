@@ -1,0 +1,711 @@
+{
+  "fixed_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+  "base": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+  "clean": true,
+  "preserved_files": 2970,
+  "old_python_unchanged": 42,
+  "old_python_changed": [
+    "src/aqrp/__init__.py",
+    "src/aqrp/factors/admission.py",
+    "src/aqrp/validation/evaluator.py"
+  ],
+  "bundle": "4e657dea368b50b083030dbad32821683735be420f727b1db26ac2ba60e82dd5",
+  "modules": 47,
+  "p1_snapshot_and_lock_unchanged": true,
+  "canonical_rows": 106,
+  "declared_changes_all_match": true,
+  "remote_refs": "0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/heads/main\n3ff892aee490cc922e162d813b245944430db6af\trefs/tags/phase3-baseline\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/phase3-baseline^{}\n6060b45a2adde469021a7da7c65d329254736b44\trefs/tags/v0.3.0\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/v0.3.0^{}\n",
+  "git_commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "ls-tree",
+        "-r",
+        "--name-only",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+        "src/aqrp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/canonical.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/contracts.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/environment.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/errors.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/math.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/security/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/time.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/core/units.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/actions.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/exposures.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/pit.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/quality.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/query.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/schemas.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/snapshot.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/store.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/synthetic.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/experiments/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/experiments/ledger.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/experiments/replay_worker.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/experiments/reproduction.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/admission.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/builtins.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/contracts.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/engine.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/input.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/registry.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/versions.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/research/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/research/numerics.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/research/pipeline.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/research/synthetic.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/services/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/services/cli.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/services/research.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/validation/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/validation/approvals.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/validation/evaluator.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/validation/inference.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/validation/labels.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/validation/splits.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:requirements.lock"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/data/snapshot.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:docs/requirements.csv"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:.github/workflows/ci.yml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:AGENTS.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:README.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:docs/CHANGELOG.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:docs/DECISIONS.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:docs/PROGRESS.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:docs/ROADMAP.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:docs/TRACEABILITY.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:pyproject.toml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/admission.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/factors/reviewed_code.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:src/aqrp/validation/evaluator.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:tests/environment/test_installation.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "show",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041:tools/ci.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "diff",
+        "--name-only",
+        "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+        "b3d9aef79396db948d326f5ce247131f96739d9d"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+        "refs/tags/phase3-baseline",
+        "refs/tags/phase3-baseline^{}",
+        "refs/tags/v0.3.0",
+        "refs/tags/v0.3.0^{}"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "result": "PASS"
+}

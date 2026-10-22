@@ -194,6 +194,7 @@ def main():
                 "wheel",
                 "research",
                 "windows-engineering-input",
+                "windows-probe-model",
             )
             or (relative.parts[0] == "reproduction" and relative.parts[1] != "venv")
         ):

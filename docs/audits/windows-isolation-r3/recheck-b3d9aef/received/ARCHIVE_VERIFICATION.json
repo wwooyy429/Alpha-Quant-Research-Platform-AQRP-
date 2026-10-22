@@ -1,0 +1,272 @@
+{
+  "actual_executor": "GPT Work supplemental reviewer",
+  "fixed_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+  "merge_tree_equal": true,
+  "merge_sha": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+  "results": [
+    {
+      "label": "Windows",
+      "executed_commit": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+      "tests_passed": 628,
+      "selection_members_rehashed": 197,
+      "zip_members": 198,
+      "wheel_modules_byte_identical": 47,
+      "wheel_hash": "ea526473833215ff41c23a385181bb329003e93989ebc88ed39ec9212478a687",
+      "critical_coverage": [
+        {
+          "file": "D:\\a\\_temp\\aqrp-evidence\\aqrp-7881a627-44d5-4245-9392-e48ec3115bd0\\venv\\Lib\\site-packages\\aqrp\\validation\\engineering_input.py",
+          "line": 0.9701492537313433,
+          "branch": 0.9166666666666666
+        },
+        {
+          "file": "D:\\a\\_temp\\aqrp-evidence\\aqrp-7881a627-44d5-4245-9392-e48ec3115bd0\\venv\\Lib\\site-packages\\aqrp\\validation\\windows_acl.py",
+          "line": 0.96875,
+          "branch": 0.9411764705882353
+        }
+      ],
+      "snapshots": [
+        {
+          "path": "dataset/76a79c9c-f5c6-49cb-9345-c9ac7153fa56/manifest.json",
+          "hash": "27d03db8d799450971ea4974359c9f706ff5b62b7a622ac14cc4a2d3a9b637e6"
+        },
+        {
+          "path": "factor-dataset/3f8abdf5-1000-4ecd-a1aa-22b2e8beb023/manifest.json",
+          "hash": "924c2a2df085d9bc0299daffa8bb836950f09e63757aa253be0af2d88e61c937"
+        },
+        {
+          "path": "reproduction/dataset/8c6f6885-3a49-4ea0-9cf8-0fe74726c356/manifest.json",
+          "hash": "1d7aa40894bcca922dbeece7be45a95406acdbbb0e44b24f2c0dc8216fef1158"
+        },
+        {
+          "path": "research/inputs/dataset/356eb927-5751-4a23-80c7-bd8ea6e56c23/manifest.json",
+          "hash": "c00d01750505b55c0c3e81b4f6c64a25716ccd378d8524bb5b7c0db236f779fb"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/544276d2-7066-4cc5-9650-f4372dc8d9dd/manifest.json",
+          "hash": "9e43e36e69516c1d99419454591f93239c200d21c7231613028bc3f7f5197e5c"
+        },
+        {
+          "path": "windows-engineering-input/private-source/wi-r3-public-engineering-20261022/manifest.json",
+          "hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031"
+        }
+      ],
+      "terminal_chains": [
+        {
+          "path": "research/replacement-runs/03296a15-d6a3-44fc-9ee6-a50b9b65c013/manifest.json",
+          "records": 4,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/0abcf8e9-eeb7-4df5-9900-9b1644cfaf19/manifest.json",
+          "records": 8,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/19068bb4-c473-4180-b63d-f0317e711f06/manifest.json",
+          "records": 9,
+          "status": "SUCCEEDED"
+        }
+      ],
+      "new_nine_inputs_hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031",
+      "three_original_refs_verified": true,
+      "environment": {
+        "run_id": "aqrp-7881a627-44d5-4245-9392-e48ec3115bd0",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261007.264.1",
+        "code_commit": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-7881a627-44d5-4245-9392-e48ec3115bd0",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39772759502",
+        "github_run_attempt": "1",
+        "github_sha": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+        "wheel_sha256": "ea526473833215ff41c23a385181bb329003e93989ebc88ed39ec9212478a687"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "Ubuntu",
+      "executed_commit": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+      "tests_passed": 628,
+      "selection_members_rehashed": 196,
+      "zip_members": 197,
+      "wheel_modules_byte_identical": 47,
+      "wheel_hash": "605ad4a0e797bc790a5936728d5dec4087f6daf178965865e60cc5676e04d138",
+      "critical_coverage": [
+        {
+          "file": "/home/runner/work/_temp/aqrp-evidence/aqrp-5e8bbb09-23ad-46b7-b30b-23b2bca1124c/venv/lib/python3.13/site-packages/aqrp/validation/engineering_input.py",
+          "line": 0.9701492537313433,
+          "branch": 0.9166666666666666
+        },
+        {
+          "file": "/home/runner/work/_temp/aqrp-evidence/aqrp-5e8bbb09-23ad-46b7-b30b-23b2bca1124c/venv/lib/python3.13/site-packages/aqrp/validation/windows_acl.py",
+          "line": 0.96875,
+          "branch": 0.9411764705882353
+        }
+      ],
+      "snapshots": [
+        {
+          "path": "dataset/36cb43e0-88c1-4a37-8cac-c9f45bd8b63b/manifest.json",
+          "hash": "1a6fb7f318a8bcaf8bec4e7273495469ab0247db9c4e2911caeaaca8bf1ee1a6"
+        },
+        {
+          "path": "factor-dataset/233b5f6e-e915-4338-95d3-221fe77e1d4c/manifest.json",
+          "hash": "3e5627184f7cb3a3e7ba38bdc39e574fd244b031df67d6ea6d6dc0090cca965b"
+        },
+        {
+          "path": "reproduction/dataset/f535b587-3851-4122-93db-6d5383c0ff35/manifest.json",
+          "hash": "81628c309ae7df67f5dcad233a5c09cb1744615a4060a548eb3aaea8861050af"
+        },
+        {
+          "path": "research/inputs/dataset/dae17b4c-e2de-4ebe-b3a3-a9c3bb7eb7da/manifest.json",
+          "hash": "632cc772100e1f10842e37d1fa22ab7ed0bd9142ddd6d70631215160b308d170"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/74881b5f-62ad-4ada-986c-1a5f0ff9b9db/manifest.json",
+          "hash": "a2569f31cc19b51f103474ab0455cb70643a4c10732149428ea7c981dd9158de"
+        },
+        {
+          "path": "windows-engineering-input/private-source/wi-r3-public-engineering-20261022/manifest.json",
+          "hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031"
+        }
+      ],
+      "terminal_chains": [
+        {
+          "path": "research/replacement-runs/db47af80-6ca4-47c2-bce8-64aa5b1c430f/manifest.json",
+          "records": 4,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/5898e47d-7aa9-4ebd-8125-237eb0a8b0bd/manifest.json",
+          "records": 8,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/fd76275c-857f-45b4-a49a-3cb9b0f19d7c/manifest.json",
+          "records": 9,
+          "status": "SUCCEEDED"
+        }
+      ],
+      "new_nine_inputs_hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031",
+      "three_original_refs_verified": true,
+      "environment": {
+        "run_id": "aqrp-5e8bbb09-23ad-46b7-b30b-23b2bca1124c",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261021.345.10",
+        "code_commit": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-5e8bbb09-23ad-46b7-b30b-23b2bca1124c",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39772759502",
+        "github_run_attempt": "1",
+        "github_sha": "b7ed8fbd6538f3edc3d99d7251cb2d6d3c83628e",
+        "wheel_sha256": "605ad4a0e797bc790a5936728d5dec4087f6daf178965865e60cc5676e04d138"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "GPT-Work-local",
+      "executed_commit": "b3d9aef79396db948d326f5ce247131f96739d9d",
+      "tests_passed": 628,
+      "selection_members_rehashed": 197,
+      "zip_members": null,
+      "wheel_modules_byte_identical": 47,
+      "wheel_hash": "9fa11af1f55b5cd048a6ae68eef317ff0b3728dd30fc2cf78845aa19768caf23",
+      "critical_coverage": [
+        {
+          "file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\gwr3\\aqrp-4655ef3b-e37a-40d6-87d7-139086a298b6\\venv\\Lib\\site-packages\\aqrp\\validation\\engineering_input.py",
+          "line": 0.9701492537313433,
+          "branch": 0.9166666666666666
+        },
+        {
+          "file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\gwr3\\aqrp-4655ef3b-e37a-40d6-87d7-139086a298b6\\venv\\Lib\\site-packages\\aqrp\\validation\\windows_acl.py",
+          "line": 0.96875,
+          "branch": 0.9411764705882353
+        }
+      ],
+      "snapshots": [
+        {
+          "path": "dataset/b91a5ddc-01b7-42d7-b342-6b8ef1a601b4/manifest.json",
+          "hash": "adc509846200b661f50bf3f62feb30f11f6ff7ebd36588be8a698dee3334c85e"
+        },
+        {
+          "path": "factor-dataset/9ebfc9c8-3055-4fe3-8253-2706ae5e959b/manifest.json",
+          "hash": "61fe7ce81d3e41e36899d6499df1fbf17744eb3911c20c9cb19ed4a89a715875"
+        },
+        {
+          "path": "reproduction/dataset/43fe7f06-5a96-40f7-be2a-a0eb0c353ad6/manifest.json",
+          "hash": "1ff52626ed2172cdc0505c9a98d238f0f75dc4dbf86f65d0899974ff6c5281a7"
+        },
+        {
+          "path": "research/inputs/dataset/90b1c62d-80c4-4851-99ed-d2feed8474c7/manifest.json",
+          "hash": "a70f8fc578aaf69983994f81f693aabc5f465f7a5601fb0b52afc19ac4f16046"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/9918a933-5d6f-46ae-915b-d485e28969e7/manifest.json",
+          "hash": "11325e511d7a756468725f55e4abc7cef2e911f29c5791f7bc7baf89743ba972"
+        },
+        {
+          "path": "windows-engineering-input/private-source/wi-r3-public-engineering-20261022/manifest.json",
+          "hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031"
+        }
+      ],
+      "terminal_chains": [
+        {
+          "path": "research/replacement-runs/3c6335b0-9fbd-4a23-896e-c780d0a52b0c/manifest.json",
+          "records": 4,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/b1e9f48e-5dea-47a0-9f44-107576575cba/manifest.json",
+          "records": 8,
+          "status": "SUCCEEDED"
+        },
+        {
+          "path": "research/runs/d5a0c8bb-6086-4897-909e-3db529fa32de/manifest.json",
+          "records": 9,
+          "status": "SUCCEEDED"
+        }
+      ],
+      "new_nine_inputs_hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031",
+      "three_original_refs_verified": true,
+      "environment": {
+        "run_id": "aqrp-4655ef3b-e37a-40d6-87d7-139086a298b6",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "os": "Windows-11-10.0.26300-SP0",
+        "ImageOS": null,
+        "ImageVersion": null,
+        "code_commit": "b3d9aef79396db948d326f5ce247131f96739d9d",
+        "dirty": false,
+        "complete": true,
+        "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\wi-r3-b3d9aef-review",
+        "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\gwr3\\aqrp-4655ef3b-e37a-40d6-87d7-139086a298b6",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": null,
+        "github_run_attempt": null,
+        "github_sha": null,
+        "wheel_sha256": "9fa11af1f55b5cd048a6ae68eef317ff0b3728dd30fc2cf78845aa19768caf23"
+      },
+      "result": "PASS"
+    }
+  ],
+  "developer_archive": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef\\Developer-Windows-Isolation-R3-Evidence.zip",
+    "bytes": 329420052,
+    "sha256": "a27ef6ca5e899cda4baee3a1c212eaafc9555d1566adb41ec613f88597c049fd",
+    "manifest_members": 102,
+    "zip_members": 103,
+    "all_hashes_and_crc_verified": true
+  },
+  "note": "Linux was executed by GitHub runner; its raw artifacts were independently verified on Windows, not a new GPT Work Linux OS isolation run."
+}

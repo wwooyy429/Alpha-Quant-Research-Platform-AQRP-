@@ -10,7 +10,10 @@ from aqrp.factors.admission import bundle_manifest, reviewed_policy
 def main():
     root = Path(__file__).resolve().parents[1]
     evidence = root / "docs/audits/windows-isolation-r3"
-    identity = json.loads((evidence / "IDENTITY.json").read_bytes())
+    candidate = evidence / "recheck-b3d9aef/IDENTITY.json"
+    identity = json.loads(
+        (candidate if candidate.exists() else evidence / "IDENTITY.json").read_bytes()
+    )
     assert bundle_manifest() == identity["bundle_manifest"]
     assert reviewed_policy()["bundle_sha256"] == identity["bundle_sha256"]
     for row in identity["preserved_files"]:

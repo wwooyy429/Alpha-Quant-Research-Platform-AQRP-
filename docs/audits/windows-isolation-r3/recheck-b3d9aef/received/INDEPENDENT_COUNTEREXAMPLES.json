@@ -1,0 +1,126 @@
+{
+  "fixed_sha": "b3d9aef79396db948d326f5ce247131f96739d9d",
+  "actual_executor": "GPT Work supplemental reviewer",
+  "scope": "MODEL ADAPTER counterexamples only; all real accounts remain disabled, no ACL changes or token logons",
+  "tree_positive": {
+    "objects": 3
+  },
+  "tree_enumeration_error": {
+    "observed_returned_success": true,
+    "objects_checked": 2,
+    "existing_omitted_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-tree\\work\\unseen.json",
+    "expected": "Fail closed on any directory enumeration error; never certify subset"
+  },
+  "truncated_inventory": [
+    {
+      "role": "research",
+      "full_object_count": 11,
+      "supplied_object_count": 10,
+      "omitted_existing_dynamic_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\actual-10.json",
+      "authoritative_full_inventory_hash": "3479be849ff92c0cfbb93ad50ec839b956357c0421657acb4c4a4dc1c72f2c82",
+      "hash_field_unchanged": true,
+      "observed_all_pass": true,
+      "checks_run": 60
+    },
+    {
+      "role": "auditor",
+      "full_object_count": 11,
+      "supplied_object_count": 10,
+      "omitted_existing_dynamic_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\actual-10.json",
+      "authoritative_full_inventory_hash": "3479be849ff92c0cfbb93ad50ec839b956357c0421657acb4c4a4dc1c72f2c82",
+      "hash_field_unchanged": true,
+      "observed_all_pass": true,
+      "checks_run": 70
+    },
+    {
+      "role": "evaluator",
+      "full_object_count": 11,
+      "supplied_object_count": 10,
+      "omitted_existing_dynamic_file": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\actual-10.json",
+      "authoritative_full_inventory_hash": "3479be849ff92c0cfbb93ad50ec839b956357c0421657acb4c4a4dc1c72f2c82",
+      "hash_field_unchanged": true,
+      "observed_all_pass": true,
+      "checks_run": 70
+    }
+  ],
+  "directory_probe": {
+    "observed_all_pass": false,
+    "checks": [
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\directory-boundary",
+        "operation": "read",
+        "expected_open": true,
+        "observed": {
+          "opened": true,
+          "winerror": 0,
+          "mask": 1
+        },
+        "pass": true
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\directory-boundary",
+        "operation": "write_data",
+        "expected_open": false,
+        "observed": {
+          "opened": false,
+          "winerror": 5,
+          "mask": 2
+        },
+        "pass": true
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\directory-boundary",
+        "operation": "append",
+        "expected_open": false,
+        "observed": {
+          "opened": false,
+          "winerror": 5,
+          "mask": 4
+        },
+        "pass": true
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\directory-boundary",
+        "operation": "change_dacl",
+        "expected_open": false,
+        "observed": {
+          "opened": false,
+          "winerror": 5,
+          "mask": 262144
+        },
+        "pass": true
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\directory-boundary",
+        "operation": "take_ownership",
+        "expected_open": false,
+        "observed": {
+          "opened": false,
+          "winerror": 5,
+          "mask": 524288
+        },
+        "pass": true
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\directory-boundary",
+        "operation": "delete",
+        "expected_open": false,
+        "observed": {
+          "opened": false,
+          "winerror": 5,
+          "mask": 65536
+        },
+        "pass": true
+      },
+      {
+        "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\model-probe\\directory-boundary",
+        "operation": "actual_bytes",
+        "pass": false,
+        "type": "PermissionError",
+        "winerror": null
+      }
+    ],
+    "delete_child_mask_0x40_tested": false
+  },
+  "installed_module": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-r3-b3d9aef-independent\\sdk\\aqrp-cc9ec680-1c5a-41f8-a262-935891881aff\\venv\\Lib\\site-packages\\aqrp\\validation\\windows_acl.py"
+}
