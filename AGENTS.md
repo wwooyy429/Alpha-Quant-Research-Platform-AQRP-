@@ -1,5 +1,7 @@
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
+2026-10-22 Phase4 G2：GPT Work 对固定 18439f31536295aea42e57e566d07cce345a35cf 判 BLOCKED / REQUEST CHANGES（001 High、002 Medium OPEN）。本轮修复候选 0.4.1.dev1、53 模块，精确输出及实际字节复核、真实 P3 父快照绑定；待干净 SDK、双 OS 原始证据及新固定 SHA 独立复核。G1 PLAN PASS 不变，七项范围不扩展；不自行关闭发现或验收。详 docs/audits/phase-4/g2-18439f3/REVIEW_PACKAGE.md。真实隔离、正式 Test、金融批准、完整旧宿主限制保留；无合并、标签、部署、实盘或 P5。以下旧状态为历史。
+
 2026-10-22 当前Phase4：用户已授权7项受限工程实现，53模块0.4.0已完成开发自测，业务b3be62439d8d0877478b7105d68863fcb2a108a0干净SDK799、双OS各799及原始ZIP/hash核验、外置20/四/数学91通过。当前IMPLEMENTATION READY FOR GPT WORK G2，不是独立G2通过或阶段验收；详docs/audits/phase-4/IMPLEMENTATION_REVIEW_PACKAGE.md。真实隔离/正式Test/金融批准及旧完整宿主限制保留，main/标签不动，无合并/发布/部署/实盘/P5。以下旧状态按轮次保留。
 
 2026-10-22 用户已明确授权按G1固定265af16353d85ce8c2d229a7517809d707498da8正式实施P4七项（4MVP/3CR），当前IMPLEMENTING；授权原话见docs/audits/phase-4/IMPLEMENTATION_AUTHORIZATION.json。保留独立答案、完整SDK/双OS原始证据，完成新SHA交GPT Work G2。禁止合并/标签/部署/实盘/P5；真实隔离/正式Test/金融批准延期不变。以下待实施授权状态是历史。

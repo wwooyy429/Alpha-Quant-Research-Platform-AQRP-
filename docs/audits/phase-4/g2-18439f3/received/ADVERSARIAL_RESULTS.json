@@ -1,0 +1,342 @@
+{
+  "fixed_sha": "18439f31536295aea42e57e566d07cce345a35cf",
+  "scope": "Engineering fixtures only; original P3 source untouched; no formal Test",
+  "records": [
+    {
+      "case": "quantity-projection-1e3",
+      "run_id": "b3a2f108-d9f8-4781-ac56-37a40dc14f89",
+      "status": "SUCCEEDED",
+      "target_quantity": "999",
+      "target_lot_remainder": "0",
+      "published_equity_error": "0",
+      "cash": "1",
+      "published_quantity_exact_lot": true,
+      "risk_passed": true,
+      "pre": {
+        "beta": "1",
+        "cash": "0",
+        "cash_weight": "0",
+        "deltas": {
+          "SYNTH:A": "1000",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "0",
+        "gross": "1",
+        "half_turnover": "0.5",
+        "industries": {
+          "I": {
+            "gross": "1",
+            "net": "1"
+          }
+        },
+        "leverage": "1",
+        "margin_requirement": "0",
+        "net": "1",
+        "quantities": {
+          "SYNTH:A": "1000",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "1",
+        "weights": {
+          "SYNTH:A": "1",
+          "SYNTH:B": "0"
+        }
+      },
+      "post": {
+        "beta": "0.999",
+        "cash": "1",
+        "cash_weight": "0.001",
+        "deltas": {
+          "SYNTH:A": "999",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "1",
+        "gross": "0.999",
+        "half_turnover": "0.4995",
+        "industries": {
+          "I": {
+            "gross": "0.999",
+            "net": "0.999"
+          }
+        },
+        "leverage": "0.999",
+        "margin_requirement": "0",
+        "net": "0.999",
+        "quantities": {
+          "SYNTH:A": "999",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "0.999",
+        "weights": {
+          "SYNTH:A": "0.999",
+          "SYNTH:B": "0"
+        }
+      }
+    },
+    {
+      "case": "quantity-projection-1e34",
+      "run_id": "fc7cc3bf-de2f-43a4-8ca1-a06e28cf16dc",
+      "status": "SUCCEEDED",
+      "target_quantity": "9999999999999999999999999999999999",
+      "target_lot_remainder": "0",
+      "published_equity_error": "0",
+      "cash": "1",
+      "published_quantity_exact_lot": true,
+      "risk_passed": true,
+      "pre": {
+        "beta": "1",
+        "cash": "0",
+        "cash_weight": "0",
+        "deltas": {
+          "SYNTH:A": "10000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "0",
+        "gross": "1",
+        "half_turnover": "0.5",
+        "industries": {
+          "I": {
+            "gross": "1",
+            "net": "1"
+          }
+        },
+        "leverage": "1",
+        "margin_requirement": "0",
+        "net": "1",
+        "quantities": {
+          "SYNTH:A": "10000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "1",
+        "weights": {
+          "SYNTH:A": "1",
+          "SYNTH:B": "0"
+        }
+      },
+      "post": {
+        "beta": "0.9999999999999999999999999999999999",
+        "cash": "1",
+        "cash_weight": "0.0000000000000000000000000000000001",
+        "deltas": {
+          "SYNTH:A": "9999999999999999999999999999999999",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "1",
+        "gross": "0.9999999999999999999999999999999999",
+        "half_turnover": "0.5000000000000000000000000000000000",
+        "industries": {
+          "I": {
+            "gross": "0.9999999999999999999999999999999999",
+            "net": "0.9999999999999999999999999999999999"
+          }
+        },
+        "leverage": "0.9999999999999999999999999999999999",
+        "margin_requirement": "0",
+        "net": "0.9999999999999999999999999999999999",
+        "quantities": {
+          "SYNTH:A": "9999999999999999999999999999999999",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "0.9999999999999999999999999999999999",
+        "weights": {
+          "SYNTH:A": "0.9999999999999999999999999999999999",
+          "SYNTH:B": "0"
+        }
+      }
+    },
+    {
+      "case": "quantity-projection-1e35",
+      "run_id": "302558c7-a597-4f45-9d52-bbc33e0bb9c4",
+      "status": "SUCCEEDED",
+      "target_quantity": "100000000000000000000000000000000000",
+      "target_lot_remainder": "1",
+      "published_equity_error": "1",
+      "cash": "1",
+      "published_quantity_exact_lot": false,
+      "risk_passed": true,
+      "pre": {
+        "beta": "1",
+        "cash": "0",
+        "cash_weight": "0",
+        "deltas": {
+          "SYNTH:A": "100000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "0",
+        "gross": "1",
+        "half_turnover": "0.5",
+        "industries": {
+          "I": {
+            "gross": "1",
+            "net": "1"
+          }
+        },
+        "leverage": "1",
+        "margin_requirement": "0",
+        "net": "1",
+        "quantities": {
+          "SYNTH:A": "100000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "1",
+        "weights": {
+          "SYNTH:A": "1",
+          "SYNTH:B": "0"
+        }
+      },
+      "post": {
+        "beta": "1.000000000000000000000000000000000",
+        "cash": "1",
+        "cash_weight": "0.00000000000000000000000000000000001",
+        "deltas": {
+          "SYNTH:A": "100000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "1",
+        "gross": "1.000000000000000000000000000000000",
+        "half_turnover": "0.5000000000000000000000000000000000",
+        "industries": {
+          "I": {
+            "gross": "1.000000000000000000000000000000000",
+            "net": "1.000000000000000000000000000000000"
+          }
+        },
+        "leverage": "1.000000000000000000000000000000000",
+        "margin_requirement": "0",
+        "net": "1.000000000000000000000000000000000",
+        "quantities": {
+          "SYNTH:A": "100000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "1.000000000000000000000000000000000",
+        "weights": {
+          "SYNTH:A": "1.000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        }
+      }
+    },
+    {
+      "case": "quantity-projection-1e40",
+      "run_id": "3a2ecc89-22f1-43fb-a838-598348e8ad3c",
+      "status": "SUCCEEDED",
+      "target_quantity": "10000000000000000000000000000000000000000",
+      "target_lot_remainder": "1",
+      "published_equity_error": "1",
+      "cash": "1",
+      "published_quantity_exact_lot": false,
+      "risk_passed": true,
+      "pre": {
+        "beta": "1",
+        "cash": "0",
+        "cash_weight": "0",
+        "deltas": {
+          "SYNTH:A": "10000000000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "0",
+        "gross": "1",
+        "half_turnover": "0.5",
+        "industries": {
+          "I": {
+            "gross": "1",
+            "net": "1"
+          }
+        },
+        "leverage": "1",
+        "margin_requirement": "0",
+        "net": "1",
+        "quantities": {
+          "SYNTH:A": "10000000000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "1",
+        "weights": {
+          "SYNTH:A": "1",
+          "SYNTH:B": "0"
+        }
+      },
+      "post": {
+        "beta": "1.000000000000000000000000000000000",
+        "cash": "1",
+        "cash_weight": "0.0000000000000000000000000000000000000001",
+        "deltas": {
+          "SYNTH:A": "10000000000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "fee_reserve": "0",
+        "free_cash": "1",
+        "gross": "1.000000000000000000000000000000000",
+        "half_turnover": "0.5000000000000000000000000000000000",
+        "industries": {
+          "I": {
+            "gross": "1.000000000000000000000000000000000",
+            "net": "1.000000000000000000000000000000000"
+          }
+        },
+        "leverage": "1.000000000000000000000000000000000",
+        "margin_requirement": "0",
+        "net": "1.000000000000000000000000000000000",
+        "quantities": {
+          "SYNTH:A": "10000000000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        },
+        "restricted_cash": "0",
+        "turnover": "1.000000000000000000000000000000000",
+        "weights": {
+          "SYNTH:A": "1.000000000000000000000000000000000",
+          "SYNTH:B": "0"
+        }
+      }
+    },
+    {
+      "case": "original-snapshot-id",
+      "run_id": "8fd5e083-e2eb-4e18-9f17-25dbb5f1ae05",
+      "status": "SUCCEEDED",
+      "declared_snapshot_id": "9e3a5971-d66e-4aee-bdb4-1082c6907e02",
+      "original_snapshot_id": "9e3a5971-d66e-4aee-bdb4-1082c6907e02",
+      "snapshot_hash_retained": "0367ceacfd8df9feea752858dd93c2fca0a10bd9fa7bc442f2c43e57a2707004",
+      "result_context": {
+        "calendar_id": "SYNTHETIC_V1",
+        "currency": "SYNCCY",
+        "decision_time": "2024-01-04T12:05:00.000000+00:00",
+        "market_id": "SYN_A",
+        "session_index": 0,
+        "snapshot_id": "9e3a5971-d66e-4aee-bdb4-1082c6907e02",
+        "snapshot_sha256": "0367ceacfd8df9feea752858dd93c2fca0a10bd9fa7bc442f2c43e57a2707004"
+      },
+      "risk_passed": true
+    },
+    {
+      "case": "different-snapshot-id",
+      "run_id": "8eaa070b-420e-4f2e-b852-0e81fedd98d3",
+      "status": "SUCCEEDED",
+      "declared_snapshot_id": "NOT_THE_P3_PARENT_SNAPSHOT",
+      "original_snapshot_id": "9e3a5971-d66e-4aee-bdb4-1082c6907e02",
+      "snapshot_hash_retained": "0367ceacfd8df9feea752858dd93c2fca0a10bd9fa7bc442f2c43e57a2707004",
+      "result_context": {
+        "calendar_id": "SYNTHETIC_V1",
+        "currency": "SYNCCY",
+        "decision_time": "2024-01-04T12:05:00.000000+00:00",
+        "market_id": "SYN_A",
+        "session_index": 0,
+        "snapshot_id": "NOT_THE_P3_PARENT_SNAPSHOT",
+        "snapshot_sha256": "0367ceacfd8df9feea752858dd93c2fca0a10bd9fa7bc442f2c43e57a2707004"
+      },
+      "risk_passed": true
+    }
+  ]
+}

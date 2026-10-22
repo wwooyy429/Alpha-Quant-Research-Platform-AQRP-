@@ -4,7 +4,17 @@ import hashlib
 
 from aqrp.core.canonical import digest
 from aqrp.portfolio.construct import build_candidate, compute
-from aqrp.portfolio.contracts import CASH_TOL, RATIO_TOL, F, TargetCandidate, fail, number, project
+from aqrp.portfolio.contracts import (
+    CASH_TOL,
+    RATIO_TOL,
+    F,
+    TargetCandidate,
+    fail,
+    load,
+    number,
+    project,
+    serialized_number,
+)
 
 
 def assess(x, maps, positions, quantities, *, post):
@@ -177,3 +187,79 @@ def check_target(candidate, request):
     )
     result["content_sha256"] = digest(result)
     return result
+
+
+def audit_published(raw, request, candidate):
+    """Recheck actual serialized quantities, money, constraints and proposals, not flags."""
+    result = load(raw)
+    x, maps, positions, ideal, rounded, _, _ = compute(request)
+    target = result["target"]
+    quantities = {s: serialized_number(q) for s, q in target["quantities"].items()}
+    deltas = {s: serialized_number(q) for s, q in target["deltas"].items()}
+    if quantities != rounded or deltas != {s: q - positions[s] for s, q in rounded.items()}:
+        fail("PUBLISHED_QUANTITY_CHANGED")
+    # JSON object ordering is immaterial; preserve the original assessment check order.
+    quantities = {s: quantities[s] for s in rounded}
+    equity = number(x["inputs"]["account"]["data"]["equity"])
+    value = sum(q * number(maps["prices"][s]["price"]) for s, q in quantities.items())
+    if serialized_number(target["cash"]) + value != equity:
+        fail("PUBLISHED_EQUITY_MISMATCH")
+    pre = assess(x, maps, positions, ideal, post=False)
+    post = assess(x, maps, positions, quantities, post=True)
+    if not pre["passed"] or not post["passed"]:
+        fail("PUBLISHED_RISK_REJECTED")
+    metrics = project(post["metrics"])
+    if any(target.get(k) != v for k, v in metrics.items()):
+        fail("PUBLISHED_METRICS_CHANGED")
+    risk = result["risk"]
+    expected = project(
+        {
+            "schema_version": "risk-decision/1.0.0",
+            "passed": True,
+            "request_hash": request.content_hash,
+            "candidate_hash": hashlib.sha256(candidate.raw).hexdigest(),
+            "pre": pre,
+            "post": post,
+        }
+    )
+    expected["content_sha256"] = digest(expected)
+    if risk != expected or target["risk_hash"] != expected["content_sha256"]:
+        fail("PUBLISHED_RISK_CHANGED")
+    if (
+        result["status"] != "SUCCEEDED"
+        or result["request_hash"] != request.content_hash
+        or target["request_hash"] != request.content_hash
+        or target["context"] != x["context"]
+        or result["context"] != x["context"]
+        or target["content_sha256"]
+        != digest({k: v for k, v in target.items() if k != "content_sha256"})
+        or target["executable"] is not False
+        or result["executable"] is not False
+        or target["scope"] != "ENGINEERING_TEST_ONLY"
+        or result["scope"] != "ENGINEERING_TEST_ONLY"
+        or result["financial_approval"] != "NONE"
+    ):
+        fail("PUBLISHED_TARGET_CHANGED")
+    expected_proposals = [
+        {
+            "security_id": s,
+            "delta_qty": metrics["deltas"][s],
+            "executable": False,
+            "scope": "ENGINEERING_TEST_ONLY",
+            "source_price_ref": x["inputs"]["prices"]["ref"],
+            "source_account_ref": x["inputs"]["account"]["ref"],
+            "decision_time": x["context"]["decision_time"],
+            "request_hash": request.content_hash,
+        }
+        for s in sorted(deltas)
+        if deltas[s]
+    ]
+    if result["rebalance_proposals"] != expected_proposals:
+        fail("PUBLISHED_DELTA_PROPOSAL_CHANGED")
+    return {
+        "schema_version": "published-byte-audit/1.0.0",
+        "result_sha256": hashlib.sha256(raw).hexdigest(),
+        "request_sha256": request.content_hash,
+        "risk_sha256": risk["content_sha256"],
+        "quantities_money_lots_risk_proposals": "VERIFIED_FROM_ACTUAL_BYTES",
+    }

@@ -22,7 +22,10 @@ def main():
     assert (
         len(rows) == 106 and len(selected) == 7 and sum(r["tier"] == "MVP" for r in selected) == 4
     )
-    identity = json.loads((d / "IMPLEMENTATION_IDENTITY.json").read_bytes())
+    repair = d / "g2-18439f3/IDENTITY.json"
+    identity = json.loads(
+        (repair if repair.exists() else d / "IMPLEMENTATION_IDENTITY.json").read_bytes()
+    )
     assert identity["bundle_manifest"] == bundle_manifest()
     assert identity["bundle_sha256"] == reviewed_policy()["bundle_sha256"]
     for entry in (

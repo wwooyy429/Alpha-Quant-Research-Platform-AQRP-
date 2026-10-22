@@ -9,7 +9,7 @@ from aqrp.core.environment import runtime_manifest, verify_runtime
 from aqrp.core.errors import ContractError
 from aqrp.experiments.ledger import ExperimentLedger
 from aqrp.factors.admission import reviewed_policy
-from aqrp.risk.checks import check_target
+from aqrp.risk.checks import audit_published, check_target
 
 from .construct import build_candidate
 from .contracts import PortfolioRequest, PortfolioResult, load
@@ -89,10 +89,11 @@ def construct_engineering(request, ledger_root, code_commit):
                     "decision_time": load(request.raw)["context"]["decision_time"],
                     "request_hash": request.content_hash,
                 }
-                for sid, qty in target["deltas"].items()
+                for sid, qty in sorted(target["deltas"].items())
                 if qty != "0"
             ]
             result["status"] = "SUCCEEDED"
+            audit_published(canonical(result), request, candidate)
         else:
             result["reasons"] = sorted(
                 {
@@ -103,9 +104,22 @@ def construct_engineering(request, ledger_root, code_commit):
                 }
             )
         ledger.artifact(run_id, "result.json", result)
+        if result["status"] == "SUCCEEDED":
+            persisted = (ledger.path(run_id) / "result.json").read_bytes()
+            ledger.artifact(
+                run_id, "published-byte-audit.json", audit_published(persisted, request, candidate)
+            )
         ledger.finish(run_id, "SUCCEEDED" if result["status"] == "SUCCEEDED" else "FAILED")
     except ContractError as exc:
+        if (ledger.path(run_id) / "result.json").exists():
+            ledger.artifact(
+                run_id, "publication-failure.json", {"code": exc.code, "not_published": True}
+            )
+            ledger.finish(run_id, "FAILED")
+            raise
         result["status"] = "INFEASIBLE" if exc.code.startswith("INFEASIBLE") else "REJECTED"
+        result.pop("target", None)
+        result.pop("rebalance_proposals", None)
         result["reasons"] = [exc.code]
         result["error"] = {
             "code": exc.code,
@@ -120,7 +134,12 @@ def construct_engineering(request, ledger_root, code_commit):
         ledger.finish(run_id, "FAILED")
         raise
     result["manifest"] = ledger.verify(run_id)
-    return PortfolioResult(canonical(result))
+    wire = canonical(result)
+    decoded = load(wire)
+    decoded.pop("manifest")
+    if canonical(decoded) != (ledger.path(run_id) / "result.json").read_bytes():
+        raise ContractError("PUBLISHED_RETURN_BYTES_CHANGED")
+    return PortfolioResult(wire)
 
 
 def construct_approved(request, ledger_root, code_commit):
@@ -163,6 +182,8 @@ def replay_engineering(ledger_root, run_id):
     """Verify immutable original result and hashes; no financial reapproval or new order."""
     ledger = ExperimentLedger(ledger_root)
     manifest = ledger.verify(run_id)
+    if any(e["path"] == "publication-failure.json" for e in manifest["files"]):
+        raise ContractError("PUBLICATION_FAILED_NOT_REPLAYABLE")
     rows = [e for e in manifest["files"] if e["path"] == "result.json"]
     if len(rows) != 1:
         raise ContractError("RESULT_NOT_IN_TERMINAL_MANIFEST")

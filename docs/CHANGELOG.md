@@ -1,5 +1,7 @@
 # 变更记录
 
+2026-10-22 Phase4 G2：GPT Work 对固定 18439f31536295aea42e57e566d07cce345a35cf 判 BLOCKED / REQUEST CHANGES（001 High、002 Medium OPEN）。本轮修复候选 0.4.1.dev1、53 模块，精确输出及实际字节复核、真实 P3 父快照绑定；待干净 SDK、双 OS 原始证据及新固定 SHA 独立复核。G1 PLAN PASS 不变，七项范围不扩展；不自行关闭发现或验收。详 docs/audits/phase-4/g2-18439f3/REVIEW_PACKAGE.md。真实隔离、正式 Test、金融批准、完整旧宿主限制保留；无合并、标签、部署、实盘或 P5。以下旧状态为历史。
+
 ## 2026-10-22 · Phase4受限工程实现完成，待GPT Work G2
 
 - 按G1固定265af16及单独用户授权实现原7项组合/风险能力，完整工程服务、真实双腿、双lot及所有pre/post风险、不可变实验与P3终态输入。

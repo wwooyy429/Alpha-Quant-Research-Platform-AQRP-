@@ -1,5 +1,7 @@
 # Alpha Quant Research Platform（AQRP）
 
+2026-10-22 Phase4 G2：GPT Work 对固定 18439f31536295aea42e57e566d07cce345a35cf 判 BLOCKED / REQUEST CHANGES（001 High、002 Medium OPEN）。本轮修复候选 0.4.1.dev1、53 模块，精确输出及实际字节复核、真实 P3 父快照绑定；待干净 SDK、双 OS 原始证据及新固定 SHA 独立复核。G1 PLAN PASS 不变，七项范围不扩展；不自行关闭发现或验收。详 docs/audits/phase-4/g2-18439f3/REVIEW_PACKAGE.md。真实隔离、正式 Test、金融批准、完整旧宿主限制保留；无合并、标签、部署、实盘或 P5。以下旧状态为历史。
+
 2026-10-22 当前Phase4：用户已授权7项受限工程实现，53模块0.4.0已完成开发自测，业务b3be62439d8d0877478b7105d68863fcb2a108a0干净SDK799、双OS各799及原始ZIP/hash核验、外置20/四/数学91通过。当前IMPLEMENTATION READY FOR GPT WORK G2，不是独立G2通过或阶段验收；详docs/audits/phase-4/IMPLEMENTATION_REVIEW_PACKAGE.md。真实隔离/正式Test/金融批准及旧完整宿主限制保留，main/标签不动，无合并/发布/部署/实盘/P5。以下旧状态按轮次保留。
 
 2026-10-22 当前Phase4 G1：GPT Work对固定265af16353d85ce8c2d229a7517809d707498da8判PLAN PASS（受限工程设计），001 High/002 Medium均CLOSED_DESIGN，无新增阻断。原17候选独立复算、64项证据检查通过；仅设计数学，不是P4实现。原件与接收/关闭在docs/audits/phase-4/g1-265af16/。实际P4实施仍待用户单独授权，未阶段验收/合并/标签/部署/实盘/P5；Phase3受限发布与延期不变。以下旧BLOCKED/OPEN按原轮历史保留。

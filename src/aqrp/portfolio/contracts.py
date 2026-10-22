@@ -79,9 +79,44 @@ def number(value, *, score=False):
     return F(n)
 
 
+def finite_decimal(value):
+    """Exact terminating decimal, using integer arithmetic only; None for repeating ratios."""
+    denominator = value.denominator
+    twos = fives = 0
+    while denominator % 2 == 0:
+        denominator //= 2
+        twos += 1
+    while denominator % 5 == 0:
+        denominator //= 5
+        fives += 1
+    if denominator != 1:
+        return None
+    scale = max(twos, fives)
+    numerator = abs(value.numerator) * 2 ** (scale - twos) * 5 ** (scale - fives)
+    digits = str(numerator).zfill(scale + 1)
+    text = (
+        digits if scale == 0 else (digits[:-scale] + "." + digits[-scale:]).rstrip("0").rstrip(".")
+    )
+    return ("-" if value < 0 else "") + text
+
+
+def serialized_number(value):
+    """Output domain is distinct from the 34-significant-digit INPUT domain."""
+    if (
+        not isinstance(value, str)
+        or len(value) > 2048
+        or not re.fullmatch(r"-?\d+(?:\.\d+)?", value)
+    ):
+        fail("INVALID_SERIALIZED_FINANCIAL_NUMBER")
+    return F(Decimal(value))
+
+
 def project(value):
-    """Canonical finite 34-digit decimal projection, independent of caller context."""
+    """Finite decimals stay exact; only repeating display ratios use 34-digit HALF_EVEN."""
     if isinstance(value, F):
+        exact = finite_decimal(value)
+        if exact is not None:
+            return exact
         with localcontext(Context(prec=34, rounding=ROUND_HALF_EVEN)):
             out = Decimal(value.numerator) / Decimal(value.denominator)
             return format(out, "f") if out else "0"

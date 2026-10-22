@@ -5,13 +5,47 @@ from copy import deepcopy
 from pathlib import Path
 
 from aqrp.core.canonical import digest
+from aqrp.core.contracts import SnapshotRef
 from aqrp.core.errors import ContractError
 from aqrp.core.time import utc
+from aqrp.data.snapshot import verify_snapshot
 from aqrp.experiments.ledger import ExperimentLedger
 
 from .contracts import PortfolioRequest, fields, load
 
 STAGES = ("raw", "clean", "standardized", "neutralized", "final")
+
+
+def _engine_parent(engine):
+    """Original immutable P3 engine bytes pin the actual parent ID as well as hash."""
+    if not isinstance(engine, list) or not engine:
+        raise ContractError("RESEARCH_ENGINE_BINDING_MISMATCH")
+    parents = set()
+    for row in engine:
+        raw = row["config_snapshot_utf8"].encode("utf-8")
+        config = load(raw)
+        if (
+            hashlib.sha256(raw).hexdigest() != row["config_snapshot_sha256"]
+            or config != row["config"]
+            or digest({"rows": row["signals"], "config": raw.decode("utf-8")})
+            != row["content_hash"]
+            or any(s["snapshot_id"] != config["snapshot_id"] for s in row["signals"])
+        ):
+            raise ContractError("RESEARCH_ENGINE_BINDING_MISMATCH")
+        parents.add((config["snapshot_id"], config["manifest_hash"]))
+    if len(parents) != 1:
+        raise ContractError("RESEARCH_ENGINE_BINDING_MISMATCH")
+    return next(iter(parents))
+
+
+def _verify_snapshot(ref):
+    try:
+        verify_snapshot(ref)
+        return hashlib.sha256(
+            (Path(ref.root) / ref.snapshot_id / "manifest.json").read_bytes()
+        ).hexdigest()
+    except (ContractError, OSError) as exc:
+        raise ContractError("RESEARCH_SNAPSHOT_VERIFICATION_FAILED") from exc
 
 
 def _ledger(root):
@@ -42,6 +76,8 @@ def _projection(binding, context, assets):
             "manifest_sha256",
             "artifact_sha256",
             "source_calendar_id",
+            "snapshot",
+            "snapshot_manifest_sha256",
         },
         "research_binding",
     )
@@ -59,6 +95,7 @@ def _projection(binding, context, assets):
     config, _ = _read(ledger, binding["run_id"], "config.json", manifest)
     lineage, _ = _read(ledger, binding["run_id"], "lineage.json", manifest)
     report, _ = _read(ledger, binding["run_id"], "report.json", manifest)
+    engine, _ = _read(ledger, binding["run_id"], "engine.json", manifest)
     if hash_value != binding["artifact_sha256"] or (
         config["market_id"],
         config["currency"],
@@ -71,6 +108,18 @@ def _projection(binding, context, assets):
         context["snapshot_sha256"],
     ):
         raise ContractError("RESEARCH_SOURCE_BINDING_MISMATCH")
+    sid, data_hash = _engine_parent(engine)
+    source = fields(
+        binding["snapshot"], {"root", "snapshot_id", "manifest_hash"}, "research_snapshot"
+    )
+    if (sid, data_hash) != (context["snapshot_id"], context["snapshot_sha256"]) or (
+        source["snapshot_id"],
+        source["manifest_hash"],
+    ) != (sid, data_hash):
+        raise ContractError("RESEARCH_SOURCE_BINDING_MISMATCH")
+    actual = _verify_snapshot(SnapshotRef(Path(source["root"]), sid, data_hash))
+    if actual != binding["snapshot_manifest_sha256"]:
+        raise ContractError("RESEARCH_SNAPSHOT_BYTES_CHANGED")
     if report["financial_approval"] != "NONE" or report["independence_verified"]:
         raise ContractError("ENGINEERING_RESEARCH_SCOPE_REQUIRED")
     selected = [
@@ -122,7 +171,7 @@ def verify_bindings(x):
             raise ContractError("RESEARCH_SCORE_PROJECTION_CHANGED")
 
 
-def bind_research(value, ledger_root, run_id, *, stage="final"):
+def bind_research(value, ledger_root, run_id, *, stage="final", source_snapshot=None):
     """Explicit new engineering input; never changes a running request or account."""
     x = deepcopy(value)
     if stage not in STAGES:
@@ -131,6 +180,18 @@ def bind_research(value, ledger_root, run_id, *, stage="final"):
     m = ledger.verify(run_id)
     _, ah = _read(ledger, run_id, stage + ".json", m)
     config, _ = _read(ledger, run_id, "config.json", m)
+    engine, _ = _read(ledger, run_id, "engine.json", m)
+    sid, data_hash = _engine_parent(engine)
+    if source_snapshot is None:
+        source_snapshot = SnapshotRef(
+            Path(ledger_root).parent / "inputs" / "dataset", sid, data_hash
+        )
+    if not isinstance(source_snapshot, SnapshotRef) or (
+        source_snapshot.snapshot_id,
+        source_snapshot.manifest_hash,
+    ) != (sid, data_hash):
+        raise ContractError("RESEARCH_SOURCE_BINDING_MISMATCH")
+    snapshot_manifest_sha256 = _verify_snapshot(source_snapshot)
     bindings = []
     envelopes = []
     for key in sorted(x["policy"]["factor_weights"]):
@@ -144,6 +205,12 @@ def bind_research(value, ledger_root, run_id, *, stage="final"):
             ).hexdigest(),
             "artifact_sha256": ah,
             "source_calendar_id": config["calendar_id"],
+            "snapshot": {
+                "root": str(Path(source_snapshot.root).resolve()),
+                "snapshot_id": sid,
+                "manifest_hash": data_hash,
+            },
+            "snapshot_manifest_sha256": snapshot_manifest_sha256,
         }
         data = _projection(
             b, x["context"], {r["security_id"] for r in x["inputs"]["securities"]["data"]}
