@@ -1,0 +1,240 @@
+{
+  "reviewed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+  "executor": "GPT Work independently executed full clean installed SDK",
+  "sdk_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4",
+  "environment": {
+    "run_id": "aqrp-b95750e5-e167-4173-94b6-20568b25fab4",
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "os": "Windows-11-10.0.26300-SP0",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "code_commit": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+    "dirty": false,
+    "complete": true,
+    "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-recheck-9ac5db0",
+    "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "github_sha": null,
+    "wheel_sha256": "41237f475ff2ff7983b40272cfaaafb57acc5426eb1de587d9dbb89a08efae3c"
+  },
+  "selected_files_verified": 185,
+  "junit": {
+    "tests": 578,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "original_supplementary": {
+    "p1": 16,
+    "p2": 4,
+    "passed": 20,
+    "sources_byte_unchanged": true
+  },
+  "new_reviewer_regressions": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "scope": "Unmodified original four reviewer regressions now pass"
+  },
+  "new_independent_math": 91,
+  "wheel": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\wheel\\aqrp-0.3.0-py3-none-any.whl",
+    "sha256": "41237f475ff2ff7983b40272cfaaafb57acc5426eb1de587d9dbb89a08efae3c",
+    "source_modules_exact": 45
+  },
+  "coverage_totals": {
+    "covered_lines": 2784,
+    "num_statements": 2801,
+    "percent_covered": 99.09205548549811,
+    "percent_covered_display": "99",
+    "missing_lines": 17,
+    "excluded_lines": 3,
+    "percent_statements_covered": 99.39307390217779,
+    "percent_statements_covered_display": "99",
+    "num_branches": 1164,
+    "num_partial_branches": 19,
+    "covered_branches": 1145,
+    "missing_branches": 19,
+    "percent_branches_covered": 98.36769759450172,
+    "percent_branches_covered_display": "98"
+  },
+  "p3_coverage": [
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/core/environment.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/data/exposures.py",
+      "line": 98.98989898989899,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/experiments/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "required": [
+        90,
+        85
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/experiments/ledger.py",
+      "line": 98.12206572769954,
+      "branch": 97.05882352941177,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/experiments/replay_worker.py",
+      "line": 100.0,
+      "branch": 95.0,
+      "required": [
+        90,
+        85
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/experiments/reproduction.py",
+      "line": 97.02970297029702,
+      "branch": 92.5,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/research/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "required": [
+        90,
+        85
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/research/numerics.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/research/pipeline.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/research/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        90,
+        85
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/services/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "required": [
+        90,
+        85
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/services/cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        90,
+        85
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/services/research.py",
+      "line": 97.53086419753086,
+      "branch": 93.13725490196079,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/validation/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/validation/approvals.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/validation/evaluator.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/validation/inference.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/validation/labels.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    },
+    {
+      "file": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p3-g2-recheck-9ac5db0/sdk/aqrp-b95750e5-e167-4173-94b6-20568b25fab4/venv/Lib/site-packages/aqrp/validation/splits.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "required": [
+        95,
+        90
+      ]
+    }
+  ],
+  "old_files": 66,
+  "old_runs": 3,
+  "locked_dependency_wheels": 22
+}

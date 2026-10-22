@@ -1,16 +1,29 @@
 {
-  "current": "G2_REQUEST_CHANGES_REPAIR_RECHECK_REQUIRED",
-  "reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "current": "G2_TECHNICAL_PASS_WITH_CONDITIONS_HUMAN_ACCEPTANCE_PENDING",
+  "reviewed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
   "g1": "PASS_UNCHANGED",
   "requirements": 26,
   "MVP": 23,
   "Competition Ready": 3,
   "developer_repair": "VALIDATED_578_SDK_EACH_OS_PLUS_20_4_91_3",
-  "independent_implementation_review": "REQUEST_CHANGES_ON_5a5e093_NEW_FIXED_SHA_RECHECK_PENDING",
+  "independent_implementation_review": "G2 TECHNICAL PASS WITH CONDITIONS",
   "phase3_acceptance": "PENDING",
   "release": "NOT_AUTHORIZED",
   "OS_isolation": "NOT_AUTHORIZED_NOT_DEPLOYED_NOT_VERIFIED",
   "financial_approval": "NONE",
   "phase4": "NOT_AUTHORIZED",
-  "business_sha": "1b4be236e888805f5c4e45357b158fcdb6058df0"
+  "business_sha": "1b4be236e888805f5c4e45357b158fcdb6058df0",
+  "findings_closed": [
+    "WORK-P3-IMPL-001",
+    "WORK-P3-IMPL-002",
+    "WORK-P3-IMPL-003"
+  ],
+  "new_blocking_code_findings": 0,
+  "independent_evidence": "g2-9ac5db0/RECEIPT.json",
+  "retained_conditions": [
+    "VALID-004: actual four-principal isolation/deployment and private sealed Test controls NOT VERIFIED; U-001 design-only, deployment not authorized",
+    "VALID-005: real process proof, formal statistical protocol, human financial standards and genuine independent Test NOT VERIFIED; no ResearchValidated/StrategyApproved",
+    "EXP-003: original wheel+lock+three Ref/66 files/three runs and declared projection verified; complete historical installer/host bytes NOT VERIFIED",
+    "Phase3 human acceptance PENDING; merge/tag/release/Phase4 not authorized"
+  ]
 }
