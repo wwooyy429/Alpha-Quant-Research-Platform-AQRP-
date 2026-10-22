@@ -1,5 +1,7 @@
 # 变更记录
 
+2026-10-22 Windows隔离R2两项OPEN已授权独立修复候选，整体仍NOT VERIFIED；不部署/改真实账户ACL/正式Test/金融批准/合并标签/P5。新代码、旧失败原件及证据边界见docs/audits/windows-isolation-r3/REVIEW_PACKAGE.md。本分支不包含P4实现，不改变P4 PR6固定版本。以下既有状态按原轮次保留。
+
 ## 2026-10-22 · Phase3 0.3.0受限工程验收与发布
 
 - 记录用户受限验收原话及三项延期/复现边界，PR #5普通merge保留已审固定SHA和完整历史。

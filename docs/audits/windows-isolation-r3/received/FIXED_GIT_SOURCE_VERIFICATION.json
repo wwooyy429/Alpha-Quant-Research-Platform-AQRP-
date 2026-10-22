@@ -1,0 +1,681 @@
+{
+  "utc": "2026-10-22T10:30:35.008922+00:00",
+  "fixed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+  "compared_modules": 45,
+  "all_bytes_identical": true,
+  "files": [
+    {
+      "path": "src/aqrp/__init__.py",
+      "sha256": "009073bba4f2213825141ca47549949d4289eb255b3b901a49639e19dae54656"
+    },
+    {
+      "path": "src/aqrp/core/__init__.py",
+      "sha256": "cfe70a553490b59514d6d98929fe0b0ac04368394b9bdfc33d7e7049a6c26448"
+    },
+    {
+      "path": "src/aqrp/core/canonical.py",
+      "sha256": "1bd6ada40737205058f9641fe2649761aa878a8744d6233af60d651c41f1da30"
+    },
+    {
+      "path": "src/aqrp/core/contracts.py",
+      "sha256": "51a89980e72ae18db2a8621650b791075cf46bb1e8fc60b13b444ad852edff7d"
+    },
+    {
+      "path": "src/aqrp/core/environment.py",
+      "sha256": "5b1edfd577fc9829a6705db0455fabe47ff2ed466ea59040c65505a15dca6cf2"
+    },
+    {
+      "path": "src/aqrp/core/errors.py",
+      "sha256": "c5c72b128a89cbe3c58b4b85cc35d4d50e43989667ffe97f6dfba1d2dc37f6a9"
+    },
+    {
+      "path": "src/aqrp/core/math.py",
+      "sha256": "027fd74593444277a1fed83928d5a3002240ea29a2ecf8445b350de64c5668c2"
+    },
+    {
+      "path": "src/aqrp/core/security/__init__.py",
+      "sha256": "f37ac672ad0f11ad48d4890bbf0b723271a4510a01c317cdd317810499279336"
+    },
+    {
+      "path": "src/aqrp/core/time.py",
+      "sha256": "c4d62e3fbf51fdb80aa33d70b29c77e31b408c898233aa39e9d5f62b7783741e"
+    },
+    {
+      "path": "src/aqrp/core/units.py",
+      "sha256": "5226e0a590353c9d27d42199a44b2b59f79a069c8a324e20feb27fd63f38e98a"
+    },
+    {
+      "path": "src/aqrp/data/__init__.py",
+      "sha256": "ae6a6a312cabe10abbd61c98a099b73ab7737768aa5b8216d2676b8c3fc10955"
+    },
+    {
+      "path": "src/aqrp/data/actions.py",
+      "sha256": "0dd59968eeb3ecc150656b745ad699176af347c5a564c7d2465f2fbbffdabe9d"
+    },
+    {
+      "path": "src/aqrp/data/exposures.py",
+      "sha256": "943ef64e821f927f3da951185678bb6647ef5043b463950abda4e1e05aea1622"
+    },
+    {
+      "path": "src/aqrp/data/pit.py",
+      "sha256": "d1584ec7b97173aa13798bc90c89ebd684193ca04608808aa26ab7ac334c0d2b"
+    },
+    {
+      "path": "src/aqrp/data/quality.py",
+      "sha256": "443b58566e0a31b6362150ce03acae4135383392793a7558e627c7d04fb73191"
+    },
+    {
+      "path": "src/aqrp/data/query.py",
+      "sha256": "b4c385568f47c3bd138764cca7bc43f0fb7ea271edf40070b1a756cf3928179f"
+    },
+    {
+      "path": "src/aqrp/data/schemas.py",
+      "sha256": "6565845912a46b5f0ee390b1f213ed86150e2a144ae9ba38e3a61dd2469183fc"
+    },
+    {
+      "path": "src/aqrp/data/snapshot.py",
+      "sha256": "d8fe10741718146046f1bfb0ea81fe7deb334666353252b769a8b10f3a2a71aa"
+    },
+    {
+      "path": "src/aqrp/data/store.py",
+      "sha256": "b26b244289ba3d82d8b96a3bcb79eb6b603e3e11c9d36f3476a9c397e5be67ac"
+    },
+    {
+      "path": "src/aqrp/data/synthetic.py",
+      "sha256": "4557605a9535b4e9a132fd8164302e056219ef5236d67054f6217cbd30630fd3"
+    },
+    {
+      "path": "src/aqrp/experiments/__init__.py",
+      "sha256": "eccee2a2730063465d0c6ea447fa72d999b810d509c3c54c09f75b65ab3f5f15"
+    },
+    {
+      "path": "src/aqrp/experiments/ledger.py",
+      "sha256": "b71ea44491c5435252d18a66744faee62c29dce530018a4dd5edf3ee71e3786d"
+    },
+    {
+      "path": "src/aqrp/experiments/replay_worker.py",
+      "sha256": "50110ff438d5f2720d907f172ca3845fbf8c81b058f07df1fa40d54079a26dbd"
+    },
+    {
+      "path": "src/aqrp/experiments/reproduction.py",
+      "sha256": "f2e92ca0ccbc4af83b5e6c3f7d3eff099a3f1f5cd69df121497d180bb0e68b4f"
+    },
+    {
+      "path": "src/aqrp/factors/__init__.py",
+      "sha256": "34e4ae27d5e588b0cd90d3cfb7e7c4a16ce38139b84a66ffc1d86433aaa65a7d"
+    },
+    {
+      "path": "src/aqrp/factors/admission.py",
+      "sha256": "418b9b53e3c6163b929f83fcc30b215dc0b9d83a319322a658e6e233c3ab3b8d"
+    },
+    {
+      "path": "src/aqrp/factors/builtins.py",
+      "sha256": "44631f4450ed0113d062245dff4f7e7c7357554b8c06f5ee807cf4c04b73d4a1"
+    },
+    {
+      "path": "src/aqrp/factors/contracts.py",
+      "sha256": "f38bb9fa018ecaf5c9076fd3b54f33bc6554be49f2464b1f8ba7be2fbc07323f"
+    },
+    {
+      "path": "src/aqrp/factors/engine.py",
+      "sha256": "08d50d4f738405d9a0fdbe499d67f1c41a9873567e3a9d16331d523ccd238c66"
+    },
+    {
+      "path": "src/aqrp/factors/input.py",
+      "sha256": "97fa7709ebbcef066565c2ac69c9f6e59b75674bf512f9ab4f570d205bd38403"
+    },
+    {
+      "path": "src/aqrp/factors/registry.py",
+      "sha256": "fe96756e4b69c334d51a501374bbf8f212a3d1cda766daf97575ee43d4e312f0"
+    },
+    {
+      "path": "src/aqrp/factors/versions.py",
+      "sha256": "dff1438c5f7fc6f63f05a48778913af8eed32f1c2521a97b7d8e0d752bc27f0d"
+    },
+    {
+      "path": "src/aqrp/research/__init__.py",
+      "sha256": "fc9cfb479f6fbbd7e7aa329300766f792633bf7c242336beee9e5edbe4974f50"
+    },
+    {
+      "path": "src/aqrp/research/numerics.py",
+      "sha256": "7e1cd130a4117495ddc541738fe5c957957db76ceca9b16baa8cfd139d4a46e7"
+    },
+    {
+      "path": "src/aqrp/research/pipeline.py",
+      "sha256": "d4f7b6eda91b99e3422d6c86b4ee037b4e2efeafe1d0c1d7c0b3cb4b14398b4f"
+    },
+    {
+      "path": "src/aqrp/research/synthetic.py",
+      "sha256": "56512be42191f837ed38c2cb5ee805f543811035f9e2ecb76760dbee40c8ab6b"
+    },
+    {
+      "path": "src/aqrp/services/__init__.py",
+      "sha256": "2a34f719bbf40afa1188f75c46b50f4f758e564d32dee8bd4313c1575d99ef7c"
+    },
+    {
+      "path": "src/aqrp/services/cli.py",
+      "sha256": "4604cb6971b2574f37788af26e86f0346880bed0e8f241d28e6c9baa0b3bcb93"
+    },
+    {
+      "path": "src/aqrp/services/research.py",
+      "sha256": "67a1980b856a0eddae717c63853988d4ab1a8ee2866007a7ff88e02efb90b8d4"
+    },
+    {
+      "path": "src/aqrp/validation/__init__.py",
+      "sha256": "8faf42f0957f98ac1d64b53f8036eadd8a3f3a83df5e28fde324b3c5a6aa6ae9"
+    },
+    {
+      "path": "src/aqrp/validation/approvals.py",
+      "sha256": "15197dfec508adad7ad6138d9348cc98e11e299879594dc89c2eb2e3c7e6d731"
+    },
+    {
+      "path": "src/aqrp/validation/evaluator.py",
+      "sha256": "3604206b7d39da5d74608948f631caf4181983e00bed380ebb9a4497a4b3eff3"
+    },
+    {
+      "path": "src/aqrp/validation/inference.py",
+      "sha256": "4fd0bd03b6905a67eff977b4a2531e6f26f00d1e6119842e3b140f26d2a07e8c"
+    },
+    {
+      "path": "src/aqrp/validation/labels.py",
+      "sha256": "836aed705e01502cb11d980b63a3693af32dd9bb6df80d83e125731f72dacc26"
+    },
+    {
+      "path": "src/aqrp/validation/splits.py",
+      "sha256": "f9344fe3042d5a80791361c09fceb636e0869efba8996ad84c8a9a26ed047b36"
+    }
+  ],
+  "read_only_git_commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "rev-parse",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded^{commit}"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/canonical.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/contracts.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/environment.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/errors.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/math.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/security/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/time.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/core/units.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/actions.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/exposures.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/pit.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/quality.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/query.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/schemas.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/snapshot.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/store.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/data/synthetic.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/experiments/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/experiments/ledger.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/experiments/replay_worker.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/experiments/reproduction.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/admission.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/builtins.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/contracts.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/engine.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/input.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/registry.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/factors/versions.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/research/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/research/numerics.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/research/pipeline.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/research/synthetic.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/services/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/services/cli.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/services/research.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/validation/__init__.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/validation/approvals.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/validation/evaluator.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/validation/inference.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/validation/labels.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:src/aqrp/validation/splits.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+        "show",
+        "9ac5db069287a6e4a095e25ae8c3cc8fa229cded:docs/audits/phase-3/TEST_ISOLATION_PROFILE.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "whoami",
+        "/user",
+        "/fo",
+        "csv",
+        "/nh"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "git_version": "git version 2.56.0.windows.2",
+  "current_reviewer_user": "\"澶╅煶\\11638\",\"S-1-5-21-2664406737-4182919061-3647612378-1001\"\r\n",
+  "review_platform": "Windows-11-10.0.26300-SP0",
+  "no_checkout_or_repo_writes": true
+}
