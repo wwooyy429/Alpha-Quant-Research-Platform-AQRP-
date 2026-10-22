@@ -9,5 +9,6 @@
   "first_scan_failure_retained": true,
   "human_acceptance": "RESTRICTED_ENGINEERING_ONLY",
   "financial_approval": "NONE",
-  "phase4": "PLAN_PRE_REVIEW_ONLY"
+  "phase4": "PLAN_PRE_REVIEW_ONLY",
+  "whitespace_note": "Initial staged diff check flagged pre-existing extra EOF blank in byte-preserved reviewer script. Exact file attribute preserves original bytes and disables blank-at-eof only for that immutable source; code and test expectations unchanged."
 }
