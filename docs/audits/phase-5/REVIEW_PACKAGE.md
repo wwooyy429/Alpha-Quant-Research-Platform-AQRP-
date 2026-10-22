@@ -1,5 +1,8 @@
 # 交 GPT Work · Phase5 G1 固定版本预审
 
+2026-10-22 用户已明确确认：WI-R2-001、WI-R2-002持续 DEFERRED / NOT VERIFIED，统一延期至所有开发完成、最终集成版本完整40位SHA锁定后真实环境验证，届时执行方案/权限操作另行授权。R3代码、模型或CI通过不能关闭两项；原失败证据保留，各阶段既定回归和固定版本独立审核继续。详 docs/audits/windows-isolation-deferral/DEFERRAL_POLICY.md。本次只确认延期，不启用账户/修改真实ACL/部署/正式Test/金融批准，不扩大既有开发或合并发布权限。
+
+
 仓库：https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP- 。计划 PR 描述 AQRP_FIXED_REVIEW_SHA 必须为完整40位SHA；审查者先比 head/描述/本地固定checkout，再只审该SHA，不能用漂移HEAD。
 
 起点：BASELINE_VERIFICATION.json / PHASE4_RELEASE_RECEIPT.json，main、phase4-baseline、v0.4.0同点32ea5d6b75c84c07017d87377eeabd2f78207c5c。P4用户验收及G2原报告已存 ../phase-4/acceptance/，双OS原ZIP及新合并后SDK844/旧20/四/91在 ../phase-4/publication/。这些只证明P4，不能作为P5实现证据。

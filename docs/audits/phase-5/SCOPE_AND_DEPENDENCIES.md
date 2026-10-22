@@ -1,5 +1,8 @@
 # 阶段依赖与边界
 
+2026-10-22 用户已明确确认：WI-R2-001、WI-R2-002持续 DEFERRED / NOT VERIFIED，统一延期至所有开发完成、最终集成版本完整40位SHA锁定后真实环境验证，届时执行方案/权限操作另行授权。R3代码、模型或CI通过不能关闭两项；原失败证据保留，各阶段既定回归和固定版本独立审核继续。详 docs/audits/windows-isolation-deferral/DEFERRAL_POLICY.md。本次只确认延期，不启用账户/修改真实ACL/部署/正式Test/金融批准，不扩大既有开发或合并发布权限。
+
+
 | 前置 | 可用事实 | P5 设计如何消费 / 未满足影响 |
 |---|---|---|
 | P1 DATA-002/004/005/011 | 已验收合成八表 + 原始manifest，带时区微秒 PIT | 原 security/calendar/status/actions/exposure 都按 event/available 双约束；每日 bar 收盘才可用，不能用其 open 字段当作盘前可见数据 |

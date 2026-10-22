@@ -1,5 +1,8 @@
 # Phase5 G1 计划预审草案 · 独立事件回测
 
+2026-10-22 用户已明确确认：WI-R2-001、WI-R2-002持续 DEFERRED / NOT VERIFIED，统一延期至所有开发完成、最终集成版本完整40位SHA锁定后真实环境验证，届时执行方案/权限操作另行授权。R3代码、模型或CI通过不能关闭两项；原失败证据保留，各阶段既定回归和固定版本独立审核继续。详 docs/audits/windows-isolation-deferral/DEFERRAL_POLICY.md。本次只确认延期，不启用账户/修改真实ACL/部署/正式Test/金融批准，不扩大既有开发或合并发布权限。
+
+
 状态：PLAN PRE-REVIEW REQUIRED；用户仅授权 G1 计划。主审 GPT Work，固定 40 位 SHA 以计划 PR 描述 AQRP_FIXED_REVIEW_SHA 为准。G1 通过之后仍需用户另行授权实现；本轮没有 P5 业务代码、实现测试、阶段验收或金融批准。
 
 以核实的 Phase4 已发布 main、phase4-baseline/v0.4.0 同点版本为唯一起点，具体值在 BASELINE_VERIFICATION.json。P4 已验收七项，P5 严格取 canonical 106 条目录中 phase=5 的 12 项：BT-001–010、QA-003、INT-002；10 MVP、2 Competition Ready。逐条原始输入/输出/依赖/等级见 REQUIREMENTS_SNAPSHOT.json，交付与独立证据见 REQUIREMENTS_TRACEABILITY.md。不得把借券/行动或账本作为占位，也不能用 Unsupported 取代此范围内已明确的合成规则。

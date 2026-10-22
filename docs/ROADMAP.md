@@ -1,5 +1,8 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
+2026-10-22 用户已明确确认：WI-R2-001、WI-R2-002持续 DEFERRED / NOT VERIFIED，统一延期至所有开发完成、最终集成版本完整40位SHA锁定后真实环境验证，届时执行方案/权限操作另行授权。R3代码、模型或CI通过不能关闭两项；原失败证据保留，各阶段既定回归和固定版本独立审核继续。详 docs/audits/windows-isolation-deferral/DEFERRAL_POLICY.md。本次只确认延期，不启用账户/修改真实ACL/部署/正式Test/金融批准，不扩大既有开发或合并发布权限。
+
+
 2026-10-22 当前：Phase4七项受限工程已ACCEPTED/RELEASED，main/phase4-baseline/v0.4.0固定 32ea5d6b75c84c07017d87377eeabd2f78207c5c。Phase5仅G1计划预审获授权，12项（10MVP/2CR）设计、接口、数学候选、测试证据/依赖在 docs/audits/phase-5/；主审GPT Work，完整SHA按计划PR的AQRP_FIXED_REVIEW_SHA锁定。G1未审、P5实现未授权/未开始；P4 SDK844与旧20/四/91仅基线回归，不是P5测试。真实隔离/正式Test/金融批准/完整旧宿主边界保留，正式失败关闭，无部署/实盘。以下旧轮状态保留历史。
 
 

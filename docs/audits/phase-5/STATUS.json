@@ -14,7 +14,13 @@
   "main_merge_tag_authorization": false,
   "formal_Test": "DEFERRED_NOT_RUN",
   "financial_approval": "NONE",
-  "real_Windows_isolation": "NOT_VERIFIED_SEPARATE_PR7",
+  "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
   "full_historical_host": "NOT_VERIFIED_LIMITED_PACKAGE_LOCK_OLD_REF_REPLAY_ONLY",
-  "deployment_live": false
+  "deployment_live": false,
+  "windows_isolation_legacy_findings": {
+    "WI-R2-001": "DEFERRED / NOT VERIFIED",
+    "WI-R2-002": "DEFERRED / NOT VERIFIED"
+  },
+  "windows_isolation_validation_target": "After all development, final integrated full40 SHA, separately authorized actual execution/permissions",
+  "windows_isolation_policy": "../windows-isolation-deferral/DEFERRAL_POLICY.md"
 }
