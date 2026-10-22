@@ -1,0 +1,50 @@
+{
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "actual_executor": "Codex developer",
+  "commands": [
+    {
+      "actual_executor": "Codex developer",
+      "actual_scope": "Design reference/consistency checks, NOT independent audit or P4 implementation",
+      "head_before_commit": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "dirty": true,
+      "script_sha256": "1f22e2edb429a15110cd4a18dc5b2972392846a9168cd0f1cf650bc976a41729",
+      "argv": [
+        "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\docs\\audits\\phase-4\\check_plan.py"
+      ],
+      "started_at_UTC": "2026-10-22T08:35:41.263271+00:00",
+      "finished_at_UTC": "2026-10-22T08:35:42.893002+00:00",
+      "exit_code": 0
+    },
+    {
+      "actual_executor": "Codex developer",
+      "actual_scope": "Design reference/consistency checks, NOT independent audit or P4 implementation",
+      "head_before_commit": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "dirty": true,
+      "script_sha256": "d3ed8e45cd9bb6efab9ac8bbdd126fad0ff7ab59ee2cbf0f950a04b835ff01b6",
+      "argv": [
+        "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\docs\\audits\\phase-4\\rounding_reference.py"
+      ],
+      "started_at_UTC": "2026-10-22T08:35:42.893053+00:00",
+      "finished_at_UTC": "2026-10-22T08:35:43.457916+00:00",
+      "exit_code": 0
+    }
+  ],
+  "unchanged_old_G01_G20": [
+    {
+      "path": "docs/audits/phase-4/GOLDEN_REFERENCE.md",
+      "sha256": "216430df135be104f59cb0ab6ea375b1af4c7f2a309879c166c410409e822268",
+      "byte_equal_reviewed_e40": true
+    },
+    {
+      "path": "docs/audits/phase-4/golden_reference.py",
+      "sha256": "6a272bd1b1744b7bc4d45780776a80b2e32b1bdcd019e2ea7f4fec6bb5a852fa",
+      "byte_equal_reviewed_e40": true
+    }
+  ],
+  "G01_G20_new_execution": "NOT_RUN_UNCHANGED; actual prior independent 20 group verification remains in original report",
+  "P4_business_tests": "NOT_APPLICABLE_NO_IMPLEMENTATION"
+}

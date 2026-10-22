@@ -1,0 +1,433 @@
+[
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77^{tree}"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "66ae3cce5f9d73271963e72aaaf3ec171c08c4c1\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "phase3-baseline^{}"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "0a57dccb5618ba08cd3572d6d6b78fec963a3041\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "v0.3.0^{}"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "0a57dccb5618ba08cd3572d6d6b78fec963a3041\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "phase2-baseline^{}"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "f26255fc40a3080bfa883ad64938f60036a14759\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "v0.2.0^{}"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "f26255fc40a3080bfa883ad64938f60036a14759\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git",
+      "refs/heads/main",
+      "refs/tags/phase3-baseline^{}",
+      "refs/tags/v0.3.0^{}",
+      "refs/tags/phase2-baseline^{}",
+      "refs/tags/v0.2.0^{}"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/heads/main\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/phase2-baseline^{}\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/phase3-baseline^{}\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/v0.2.0^{}\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/v0.3.0^{}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "AGENTS.md\nREADME.md\ndocs/CHANGELOG.md\ndocs/DECISIONS.md\ndocs/PROGRESS.md\ndocs/ROADMAP.md\ndocs/TRACEABILITY.md\ndocs/audits/phase-4/.gitattributes\ndocs/audits/phase-4/AUTHORIZATION.json\ndocs/audits/phase-4/BASELINE_VERIFICATION.json\ndocs/audits/phase-4/FILE_MANIFEST.json\ndocs/audits/phase-4/GOLDEN_REFERENCE.md\ndocs/audits/phase-4/INTERFACE_DRAFT.md\ndocs/audits/phase-4/PHASE3_RELEASE_RECEIPT.json\ndocs/audits/phase-4/PLAN.md\ndocs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json\ndocs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md\ndocs/audits/phase-4/REVIEW_PACKAGE.md\ndocs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md\ndocs/audits/phase-4/SYNTHETIC_PROFILE.json\ndocs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md\ndocs/audits/phase-4/check_plan.py\ndocs/audits/phase-4/golden_reference.py\ndocs/audits/phase-4/validation/COMMANDS.json\ndocs/audits/phase-4/validation/golden-arithmetic.log\ndocs/audits/phase-4/validation/plan-check.log\ndocs/audits/phase-4/validation/plan-scan-findings.json\ndocs/audits/phase-4/validation/plan-secret-scan.log\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "src"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "tests"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "tools"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      ".github"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "requirements.lock"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "pyproject.toml"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/requirements.csv"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/audits/phase-0"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/audits/phase-1"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/audits/phase-2"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/audits/phase-3"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/golden"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/sources"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/INTERFACES.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/DATA_CONTRACT.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "docs/BACKTEST_CONTRACT.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "--",
+      "src",
+      "tests",
+      "tools",
+      ".github",
+      "requirements.lock",
+      "pyproject.toml"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "archive",
+      "--format=zip",
+      "--output=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-e40ddd0\\fixed-plan-source.zip",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "AGENTS.md",
+      "README.md",
+      "docs/CHANGELOG.md",
+      "docs/DECISIONS.md",
+      "docs/PROGRESS.md",
+      "docs/ROADMAP.md",
+      "docs/TRACEABILITY.md",
+      "docs/audits/phase-4/.gitattributes",
+      "docs/audits/phase-4/AUTHORIZATION.json",
+      "docs/audits/phase-4/BASELINE_VERIFICATION.json",
+      "docs/audits/phase-4/FILE_MANIFEST.json",
+      "docs/audits/phase-4/GOLDEN_REFERENCE.md",
+      "docs/audits/phase-4/INTERFACE_DRAFT.md",
+      "docs/audits/phase-4/PHASE3_RELEASE_RECEIPT.json",
+      "docs/audits/phase-4/PLAN.md",
+      "docs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json",
+      "docs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md",
+      "docs/audits/phase-4/REVIEW_PACKAGE.md",
+      "docs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md",
+      "docs/audits/phase-4/SYNTHETIC_PROFILE.json",
+      "docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md",
+      "docs/audits/phase-4/check_plan.py",
+      "docs/audits/phase-4/golden_reference.py",
+      "docs/audits/phase-4/validation/COMMANDS.json",
+      "docs/audits/phase-4/validation/golden-arithmetic.log",
+      "docs/audits/phase-4/validation/plan-check.log",
+      "docs/audits/phase-4/validation/plan-scan-findings.json",
+      "docs/audits/phase-4/validation/plan-secret-scan.log"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--stat",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": " AGENTS.md                                          |   2 +\n README.md                                          |   2 +\n docs/CHANGELOG.md                                  |   5 +\n docs/DECISIONS.md                                  |   2 +\n docs/PROGRESS.md                                   |   2 +\n docs/ROADMAP.md                                    |   2 +\n docs/TRACEABILITY.md                               |   2 +\n docs/audits/phase-4/.gitattributes                 |   1 +\n docs/audits/phase-4/AUTHORIZATION.json             |  17 +++\n docs/audits/phase-4/BASELINE_VERIFICATION.json     |  23 ++++\n docs/audits/phase-4/FILE_MANIFEST.json             | 106 ++++++++++++++++\n docs/audits/phase-4/GOLDEN_REFERENCE.md            |  28 +++++\n docs/audits/phase-4/INTERFACE_DRAFT.md             |  41 +++++++\n docs/audits/phase-4/PHASE3_RELEASE_RECEIPT.json    |  43 +++++++\n docs/audits/phase-4/PLAN.md                        |  27 ++++\n docs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json     | 136 +++++++++++++++++++++\n docs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md   |  15 +++\n docs/audits/phase-4/REVIEW_PACKAGE.md              |   7 ++\n docs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md      |  15 +++\n docs/audits/phase-4/SYNTHETIC_PROFILE.json         |  42 +++++++\n docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md      |  15 +++\n docs/audits/phase-4/check_plan.py                  |  41 +++++++\n docs/audits/phase-4/golden_reference.py            |  32 +++++\n docs/audits/phase-4/validation/COMMANDS.json       |  32 +++++\n .../phase-4/validation/golden-arithmetic.log       | 127 +++++++++++++++++++\n docs/audits/phase-4/validation/plan-check.log      |  11 ++\n .../phase-4/validation/plan-scan-findings.json     |   1 +\n .../audits/phase-4/validation/plan-secret-scan.log |   2 +\n 28 files changed, 779 insertions(+)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

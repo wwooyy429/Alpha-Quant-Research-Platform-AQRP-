@@ -32,8 +32,13 @@ def main():
     for e in frozen['frozen_files']:
         assert hashlib.sha256((ROOT/e['path']).read_bytes()).hexdigest()==e['sha256'],e['path']
     required=['PLAN.md','INTERFACE_DRAFT.md','REQUIREMENTS_TRACEABILITY.md','SCOPE_AND_DEPENDENCIES.md',
-              'GOLDEN_REFERENCE.md','golden_reference.py','SYNTHETIC_PROFILE.json','TEST_AND_EVIDENCE_PLAN.md','REVIEW_PACKAGE.md']
+              'GOLDEN_REFERENCE.md','golden_reference.py','SYNTHETIC_PROFILE.json','TEST_AND_EVIDENCE_PLAN.md','REVIEW_PACKAGE.md',
+              'ROUNDING_REFERENCE.md','rounding_reference.py','DEVELOPER_RESPONSE.md','STATUS.json','g1-e40ddd0/RECEIPT.json']
     assert all((D/p).is_file() for p in required)
+    status=json.loads((D/'STATUS.json').read_bytes())
+    assert status['independent_verdict']=='PLAN BLOCKED'
+    assert set(status['findings'].values())=={'OPEN'}
+    assert not status['P4_implementation_authorized']
     print(json.dumps({'actual_executor':'Codex developer','scope':'Read-only design consistency; not independent G1 review or P4 implementation test',
           'phase3_released_base':base,'requirements':7,'MVP':4,'Competition Ready':3,
           'frozen_files_verified':len(frozen['frozen_files']),'source_tests_tools_CI_lock_unchanged':True,'result':'PASS'},indent=2))

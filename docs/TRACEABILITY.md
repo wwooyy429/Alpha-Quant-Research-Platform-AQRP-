@@ -1,5 +1,7 @@
 # 双向需求追踪矩阵（待审）
 
+2026-10-22 当前Phase4 G1：GPT Work对固定e40ddd0009cc30664c3a0fe0b74c4a497a541d77判PLAN BLOCKED（001 High、002 Medium仍OPEN）。本轮仅修订目标/delta双lot门禁、不动/全平例外及收窄取整性质，新增独立反例，待新固定SHA主审复核；详docs/audits/phase-4/DEVELOPER_RESPONSE.md。Phase3受限发布不变，不写P4业务、无合并/标签/部署/实盘/P5；以下旧状态为历史。
+
 2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。
 
 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。

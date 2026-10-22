@@ -1,0 +1,848 @@
+{
+  "actual_executor": "GPT Work primary reviewer",
+  "utc": "2026-10-22T08:06:22.174111+00:00",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "fixed_sha": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "base_sha": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+  "refs": {
+    "phase3-baseline": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "v0.3.0": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "phase2-baseline": "f26255fc40a3080bfa883ad64938f60036a14759",
+    "v0.2.0": "f26255fc40a3080bfa883ad64938f60036a14759"
+  },
+  "changed_files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/CHANGELOG.md",
+    "docs/DECISIONS.md",
+    "docs/PROGRESS.md",
+    "docs/ROADMAP.md",
+    "docs/TRACEABILITY.md",
+    "docs/audits/phase-4/.gitattributes",
+    "docs/audits/phase-4/AUTHORIZATION.json",
+    "docs/audits/phase-4/BASELINE_VERIFICATION.json",
+    "docs/audits/phase-4/FILE_MANIFEST.json",
+    "docs/audits/phase-4/GOLDEN_REFERENCE.md",
+    "docs/audits/phase-4/INTERFACE_DRAFT.md",
+    "docs/audits/phase-4/PHASE3_RELEASE_RECEIPT.json",
+    "docs/audits/phase-4/PLAN.md",
+    "docs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json",
+    "docs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md",
+    "docs/audits/phase-4/REVIEW_PACKAGE.md",
+    "docs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md",
+    "docs/audits/phase-4/SYNTHETIC_PROFILE.json",
+    "docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md",
+    "docs/audits/phase-4/check_plan.py",
+    "docs/audits/phase-4/golden_reference.py",
+    "docs/audits/phase-4/validation/COMMANDS.json",
+    "docs/audits/phase-4/validation/golden-arithmetic.log",
+    "docs/audits/phase-4/validation/plan-check.log",
+    "docs/audits/phase-4/validation/plan-scan-findings.json",
+    "docs/audits/phase-4/validation/plan-secret-scan.log"
+  ],
+  "checks": [
+    {
+      "check": "fixed_checkout",
+      "actual": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "expected": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "pass_": true
+    },
+    {
+      "check": "clean_checkout_start",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "fixed_tree",
+      "actual": "66ae3cce5f9d73271963e72aaaf3ec171c08c4c1",
+      "expected": "66ae3cce5f9d73271963e72aaaf3ec171c08c4c1",
+      "pass_": true
+    },
+    {
+      "check": "ref_phase3-baseline",
+      "actual": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "expected": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "pass_": true
+    },
+    {
+      "check": "ref_v0.3.0",
+      "actual": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "expected": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "pass_": true
+    },
+    {
+      "check": "ref_phase2-baseline",
+      "actual": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "expected": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "pass_": true
+    },
+    {
+      "check": "ref_v0.2.0",
+      "actual": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "expected": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "pass_": true
+    },
+    {
+      "check": "official_remote_ref_count",
+      "actual": 5,
+      "expected": 5,
+      "pass_": true
+    },
+    {
+      "check": "official_remote_refs/heads/main",
+      "actual": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "expected": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "pass_": true
+    },
+    {
+      "check": "official_remote_refs/tags/phase2-baseline^{}",
+      "actual": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "expected": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "pass_": true
+    },
+    {
+      "check": "official_remote_refs/tags/phase3-baseline^{}",
+      "actual": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "expected": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "pass_": true
+    },
+    {
+      "check": "official_remote_refs/tags/v0.2.0^{}",
+      "actual": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "expected": "f26255fc40a3080bfa883ad64938f60036a14759",
+      "pass_": true
+    },
+    {
+      "check": "official_remote_refs/tags/v0.3.0^{}",
+      "actual": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "expected": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "pass_": true
+    },
+    {
+      "check": "only_plan_docs",
+      "actual": true,
+      "expected": true,
+      "pass_": true
+    },
+    {
+      "check": "changed_count",
+      "actual": 28,
+      "expected": 28,
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:src",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:tests",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:tools",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:.github",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:requirements.lock",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:pyproject.toml",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/requirements.csv",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/audits/phase-0",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/audits/phase-1",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/audits/phase-2",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/audits/phase-3",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/golden",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/sources",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/INTERFACES.md",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/DATA_CONTRACT.md",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "baseline_identical:docs/BACKTEST_CONTRACT.md",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "reviewed_9ac_business_identity",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    },
+    {
+      "check": "canonical_sha256",
+      "actual": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1",
+      "expected": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1",
+      "pass_": true
+    },
+    {
+      "check": "canonical_count",
+      "actual": 106,
+      "expected": 106,
+      "pass_": true
+    },
+    {
+      "check": "unique_ids",
+      "actual": 106,
+      "expected": 106,
+      "pass_": true
+    },
+    {
+      "check": "id_prefix_count",
+      "actual": 16,
+      "expected": 16,
+      "pass_": true
+    },
+    {
+      "check": "p4_rows",
+      "actual": [
+        {
+          "id": "PORT-001",
+          "source": "V3.0§7.1",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "portfolio",
+          "definition": "因子无关组合输入和目标权重/仓位/调仓建议及诊断",
+          "input": "已批准分数/股票池/账户/权益/暴露",
+          "output": "TargetPortfolio",
+          "dependencies": "FACTOR-009;VALID-008",
+          "acceptance": "不依赖具体因子名称，不修改账本",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/portfolio/",
+          "planned_test": "tests/portfolio/test_port_001.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "PORT-002",
+          "source": "V3.0§7.2;V3.0§3.4",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "portfolio",
+          "definition": "单/多因子组合、等权/分数权、LongOnly",
+          "input": "分数和权重规则",
+          "output": "合法目标及残余现金",
+          "dependencies": "PORT-001",
+          "acceptance": "零分/负分/整手余数有定义，权重守恒",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/portfolio/",
+          "planned_test": "tests/portfolio/test_port_002.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "PORT-003",
+          "source": "V3.0§7.2;V3.0§18",
+          "tier": "Competition Ready",
+          "phase": "4",
+          "module": "portfolio",
+          "definition": "LongShort组合及gross/net分别控制",
+          "input": "多空权限及分数",
+          "output": "多空目标",
+          "dependencies": "PORT-001;RISK-003",
+          "acceptance": "不得用long-only冒充多空，P5另测真实模拟约束",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/portfolio/",
+          "planned_test": "tests/portfolio/test_port_003.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-001",
+          "source": "V3.0§7.3",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "risk",
+          "definition": "单票/总敞口/净敞口/杠杆/换手限制",
+          "input": "目标账户/配置",
+          "output": "逐项风险诊断",
+          "dependencies": "PORT-001",
+          "acceptance": "等号/越界/冲突约束测试，不静默放宽",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_001.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-002",
+          "source": "V3.0§7.3",
+          "tier": "Competition Ready",
+          "phase": "4",
+          "module": "risk",
+          "definition": "行业与Beta暴露限制",
+          "input": "PIT暴露及目标",
+          "output": "合规或拒绝",
+          "dependencies": "PORT-001;DATA-012",
+          "acceptance": "缺暴露不视为0，容差明确",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_002.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-003",
+          "source": "V3.0§7.3",
+          "tier": "Competition Ready",
+          "phase": "4",
+          "module": "risk",
+          "definition": "可交易性/空头许可/借券/可售数量检查",
+          "input": "市场profile/状态/账户",
+          "output": "交易资格诊断",
+          "dependencies": "PORT-001;DATA-005",
+          "acceptance": "停牌/借券不足显式拒绝，P5提交撮合再检查",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_003.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-004",
+          "source": "V3.0§7.3;V3.0§11.2",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "risk",
+          "definition": "风险拒单及不可行组合显式错误，不可绕过",
+          "input": "候选目标/订单",
+          "output": "RiskDecision/reason",
+          "dependencies": "RISK-001",
+          "acceptance": "调用方不能强制忽略拒绝；实际订单接线P5测",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_004.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        }
+      ],
+      "expected": [
+        {
+          "id": "PORT-001",
+          "source": "V3.0§7.1",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "portfolio",
+          "definition": "因子无关组合输入和目标权重/仓位/调仓建议及诊断",
+          "input": "已批准分数/股票池/账户/权益/暴露",
+          "output": "TargetPortfolio",
+          "dependencies": "FACTOR-009;VALID-008",
+          "acceptance": "不依赖具体因子名称，不修改账本",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/portfolio/",
+          "planned_test": "tests/portfolio/test_port_001.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "PORT-002",
+          "source": "V3.0§7.2;V3.0§3.4",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "portfolio",
+          "definition": "单/多因子组合、等权/分数权、LongOnly",
+          "input": "分数和权重规则",
+          "output": "合法目标及残余现金",
+          "dependencies": "PORT-001",
+          "acceptance": "零分/负分/整手余数有定义，权重守恒",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/portfolio/",
+          "planned_test": "tests/portfolio/test_port_002.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "PORT-003",
+          "source": "V3.0§7.2;V3.0§18",
+          "tier": "Competition Ready",
+          "phase": "4",
+          "module": "portfolio",
+          "definition": "LongShort组合及gross/net分别控制",
+          "input": "多空权限及分数",
+          "output": "多空目标",
+          "dependencies": "PORT-001;RISK-003",
+          "acceptance": "不得用long-only冒充多空，P5另测真实模拟约束",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/portfolio/",
+          "planned_test": "tests/portfolio/test_port_003.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-001",
+          "source": "V3.0§7.3",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "risk",
+          "definition": "单票/总敞口/净敞口/杠杆/换手限制",
+          "input": "目标账户/配置",
+          "output": "逐项风险诊断",
+          "dependencies": "PORT-001",
+          "acceptance": "等号/越界/冲突约束测试，不静默放宽",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_001.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-002",
+          "source": "V3.0§7.3",
+          "tier": "Competition Ready",
+          "phase": "4",
+          "module": "risk",
+          "definition": "行业与Beta暴露限制",
+          "input": "PIT暴露及目标",
+          "output": "合规或拒绝",
+          "dependencies": "PORT-001;DATA-012",
+          "acceptance": "缺暴露不视为0，容差明确",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_002.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-003",
+          "source": "V3.0§7.3",
+          "tier": "Competition Ready",
+          "phase": "4",
+          "module": "risk",
+          "definition": "可交易性/空头许可/借券/可售数量检查",
+          "input": "市场profile/状态/账户",
+          "output": "交易资格诊断",
+          "dependencies": "PORT-001;DATA-005",
+          "acceptance": "停牌/借券不足显式拒绝，P5提交撮合再检查",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_003.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        },
+        {
+          "id": "RISK-004",
+          "source": "V3.0§7.3;V3.0§11.2",
+          "tier": "MVP",
+          "phase": "4",
+          "module": "risk",
+          "definition": "风险拒单及不可行组合显式错误，不可绕过",
+          "input": "候选目标/订单",
+          "output": "RiskDecision/reason",
+          "dependencies": "RISK-001",
+          "acceptance": "调用方不能强制忽略拒绝；实际订单接线P5测",
+          "design": "INTERFACES.md",
+          "priority": "P1",
+          "planned_code": "src/aqrp/risk/",
+          "planned_test": "tests/risk/test_risk_004.py",
+          "capability_status": "Planned",
+          "design_status": "DRAFT_PRESENT"
+        }
+      ],
+      "pass_": true
+    },
+    {
+      "check": "p4_count",
+      "actual": 7,
+      "expected": 7,
+      "pass_": true
+    },
+    {
+      "check": "p4_mvp",
+      "actual": 4,
+      "expected": 4,
+      "pass_": true
+    },
+    {
+      "check": "p4_cr",
+      "actual": 3,
+      "expected": 3,
+      "pass_": true
+    },
+    {
+      "check": "dependency_ids_exist",
+      "actual": true,
+      "expected": true,
+      "pass_": true
+    },
+    {
+      "check": "frozen_file_count",
+      "actual": 1957,
+      "expected": 1957,
+      "pass_": true
+    },
+    {
+      "check": "frozen_mismatches",
+      "actual": [],
+      "expected": [],
+      "pass_": true
+    },
+    {
+      "check": "source_module_count",
+      "actual": 45,
+      "expected": 45,
+      "pass_": true
+    },
+    {
+      "check": "source_module_hashes",
+      "actual": true,
+      "expected": true,
+      "pass_": true
+    },
+    {
+      "check": "no_unlisted_python_source",
+      "actual": [
+        "__init__.py",
+        "core/__init__.py",
+        "core/canonical.py",
+        "core/contracts.py",
+        "core/environment.py",
+        "core/errors.py",
+        "core/math.py",
+        "core/security/__init__.py",
+        "core/time.py",
+        "core/units.py",
+        "data/__init__.py",
+        "data/actions.py",
+        "data/exposures.py",
+        "data/pit.py",
+        "data/quality.py",
+        "data/query.py",
+        "data/schemas.py",
+        "data/snapshot.py",
+        "data/store.py",
+        "data/synthetic.py",
+        "experiments/__init__.py",
+        "experiments/ledger.py",
+        "experiments/replay_worker.py",
+        "experiments/reproduction.py",
+        "factors/__init__.py",
+        "factors/admission.py",
+        "factors/builtins.py",
+        "factors/contracts.py",
+        "factors/engine.py",
+        "factors/input.py",
+        "factors/registry.py",
+        "factors/versions.py",
+        "research/__init__.py",
+        "research/numerics.py",
+        "research/pipeline.py",
+        "research/synthetic.py",
+        "services/__init__.py",
+        "services/cli.py",
+        "services/research.py",
+        "validation/__init__.py",
+        "validation/approvals.py",
+        "validation/evaluator.py",
+        "validation/inference.py",
+        "validation/labels.py",
+        "validation/splits.py"
+      ],
+      "expected": [
+        "__init__.py",
+        "core/__init__.py",
+        "core/canonical.py",
+        "core/contracts.py",
+        "core/environment.py",
+        "core/errors.py",
+        "core/math.py",
+        "core/security/__init__.py",
+        "core/time.py",
+        "core/units.py",
+        "data/__init__.py",
+        "data/actions.py",
+        "data/exposures.py",
+        "data/pit.py",
+        "data/quality.py",
+        "data/query.py",
+        "data/schemas.py",
+        "data/snapshot.py",
+        "data/store.py",
+        "data/synthetic.py",
+        "experiments/__init__.py",
+        "experiments/ledger.py",
+        "experiments/replay_worker.py",
+        "experiments/reproduction.py",
+        "factors/__init__.py",
+        "factors/admission.py",
+        "factors/builtins.py",
+        "factors/contracts.py",
+        "factors/engine.py",
+        "factors/input.py",
+        "factors/registry.py",
+        "factors/versions.py",
+        "research/__init__.py",
+        "research/numerics.py",
+        "research/pipeline.py",
+        "research/synthetic.py",
+        "services/__init__.py",
+        "services/cli.py",
+        "services/research.py",
+        "validation/__init__.py",
+        "validation/approvals.py",
+        "validation/evaluator.py",
+        "validation/inference.py",
+        "validation/labels.py",
+        "validation/splits.py"
+      ],
+      "pass_": true
+    },
+    {
+      "check": "bundle_identity",
+      "actual": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e",
+      "expected": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e",
+      "pass_": true
+    },
+    {
+      "check": "lock_hash",
+      "actual": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+      "expected": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+      "pass_": true
+    },
+    {
+      "check": "locked_distributions",
+      "actual": 22,
+      "expected": 22,
+      "pass_": true
+    },
+    {
+      "check": "plan_manifest_count",
+      "actual": 20,
+      "expected": 20,
+      "pass_": true
+    },
+    {
+      "check": "plan_manifest_entries",
+      "actual": true,
+      "expected": true,
+      "pass_": true
+    },
+    {
+      "check": "no_p4_later_business_dirs",
+      "actual": false,
+      "expected": false,
+      "pass_": true
+    },
+    {
+      "check": "clean_checkout_end",
+      "actual": "",
+      "expected": "",
+      "pass_": true
+    }
+  ],
+  "requirements": [
+    {
+      "id": "PORT-001",
+      "source": "V3.0§7.1",
+      "tier": "MVP",
+      "phase": "4",
+      "module": "portfolio",
+      "definition": "因子无关组合输入和目标权重/仓位/调仓建议及诊断",
+      "input": "已批准分数/股票池/账户/权益/暴露",
+      "output": "TargetPortfolio",
+      "dependencies": "FACTOR-009;VALID-008",
+      "acceptance": "不依赖具体因子名称，不修改账本",
+      "design": "INTERFACES.md",
+      "priority": "P1",
+      "planned_code": "src/aqrp/portfolio/",
+      "planned_test": "tests/portfolio/test_port_001.py",
+      "capability_status": "Planned",
+      "design_status": "DRAFT_PRESENT"
+    },
+    {
+      "id": "PORT-002",
+      "source": "V3.0§7.2;V3.0§3.4",
+      "tier": "MVP",
+      "phase": "4",
+      "module": "portfolio",
+      "definition": "单/多因子组合、等权/分数权、LongOnly",
+      "input": "分数和权重规则",
+      "output": "合法目标及残余现金",
+      "dependencies": "PORT-001",
+      "acceptance": "零分/负分/整手余数有定义，权重守恒",
+      "design": "INTERFACES.md",
+      "priority": "P1",
+      "planned_code": "src/aqrp/portfolio/",
+      "planned_test": "tests/portfolio/test_port_002.py",
+      "capability_status": "Planned",
+      "design_status": "DRAFT_PRESENT"
+    },
+    {
+      "id": "PORT-003",
+      "source": "V3.0§7.2;V3.0§18",
+      "tier": "Competition Ready",
+      "phase": "4",
+      "module": "portfolio",
+      "definition": "LongShort组合及gross/net分别控制",
+      "input": "多空权限及分数",
+      "output": "多空目标",
+      "dependencies": "PORT-001;RISK-003",
+      "acceptance": "不得用long-only冒充多空，P5另测真实模拟约束",
+      "design": "INTERFACES.md",
+      "priority": "P1",
+      "planned_code": "src/aqrp/portfolio/",
+      "planned_test": "tests/portfolio/test_port_003.py",
+      "capability_status": "Planned",
+      "design_status": "DRAFT_PRESENT"
+    },
+    {
+      "id": "RISK-001",
+      "source": "V3.0§7.3",
+      "tier": "MVP",
+      "phase": "4",
+      "module": "risk",
+      "definition": "单票/总敞口/净敞口/杠杆/换手限制",
+      "input": "目标账户/配置",
+      "output": "逐项风险诊断",
+      "dependencies": "PORT-001",
+      "acceptance": "等号/越界/冲突约束测试，不静默放宽",
+      "design": "INTERFACES.md",
+      "priority": "P1",
+      "planned_code": "src/aqrp/risk/",
+      "planned_test": "tests/risk/test_risk_001.py",
+      "capability_status": "Planned",
+      "design_status": "DRAFT_PRESENT"
+    },
+    {
+      "id": "RISK-002",
+      "source": "V3.0§7.3",
+      "tier": "Competition Ready",
+      "phase": "4",
+      "module": "risk",
+      "definition": "行业与Beta暴露限制",
+      "input": "PIT暴露及目标",
+      "output": "合规或拒绝",
+      "dependencies": "PORT-001;DATA-012",
+      "acceptance": "缺暴露不视为0，容差明确",
+      "design": "INTERFACES.md",
+      "priority": "P1",
+      "planned_code": "src/aqrp/risk/",
+      "planned_test": "tests/risk/test_risk_002.py",
+      "capability_status": "Planned",
+      "design_status": "DRAFT_PRESENT"
+    },
+    {
+      "id": "RISK-003",
+      "source": "V3.0§7.3",
+      "tier": "Competition Ready",
+      "phase": "4",
+      "module": "risk",
+      "definition": "可交易性/空头许可/借券/可售数量检查",
+      "input": "市场profile/状态/账户",
+      "output": "交易资格诊断",
+      "dependencies": "PORT-001;DATA-005",
+      "acceptance": "停牌/借券不足显式拒绝，P5提交撮合再检查",
+      "design": "INTERFACES.md",
+      "priority": "P1",
+      "planned_code": "src/aqrp/risk/",
+      "planned_test": "tests/risk/test_risk_003.py",
+      "capability_status": "Planned",
+      "design_status": "DRAFT_PRESENT"
+    },
+    {
+      "id": "RISK-004",
+      "source": "V3.0§7.3;V3.0§11.2",
+      "tier": "MVP",
+      "phase": "4",
+      "module": "risk",
+      "definition": "风险拒单及不可行组合显式错误，不可绕过",
+      "input": "候选目标/订单",
+      "output": "RiskDecision/reason",
+      "dependencies": "RISK-001",
+      "acceptance": "调用方不能强制忽略拒绝；实际订单接线P5测",
+      "design": "INTERFACES.md",
+      "priority": "P1",
+      "planned_code": "src/aqrp/risk/",
+      "planned_test": "tests/risk/test_risk_004.py",
+      "capability_status": "Planned",
+      "design_status": "DRAFT_PRESENT"
+    }
+  ],
+  "source_bundle_sha256": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e",
+  "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+  "partial_archive": {
+    "path": "fixed-plan-source.zip",
+    "scope": "Only the 28 changed plan/document files; NOT full source archive or SDK evidence",
+    "bytes": 96443,
+    "sha256": "0b9fb92f1b9b2fe23998beca57a243230442f623330651ff1f42784bbbb84a24"
+  },
+  "result": "PASS"
+}

@@ -38,5 +38,17 @@
   },
   "fixture_constraints_are_not_market_rules": true,
   "golden_case_overrides": "Each Golden explicitly states changed prices/lots/weights/limits; each full fixture must freeze all values and hashes before execution. No implicit risk disabling or solver.",
-  "rules_not_modelled_as_real_execution": "No real commissions, borrow fees, settlement, exchange matching, broker, orders or fills. Fee reserve is explicit engineering buffer; P5 separately implements its approved synthetic event/ledger contract."
+  "rules_not_modelled_as_real_execution": "No real commissions, borrow fees, settlement, exchange matching, broker, orders or fills. Fee reserve is explicit engineering buffer; P5 separately implements its approved synthetic event/ledger contract.",
+  "quantity_policy": {
+    "id": "ABSOLUTE_TARGET_TOWARD_ZERO_WITH_EXACT_HOLD_AND_DOUBLE_LOT_GATE",
+    "unchanged_ideal_equals_current": "Exact same quantity retained; existing odd-lot holding allowed, no rebalance proposal",
+    "changed_nonzero_target_lot_required": true,
+    "nonzero_rebalance_delta_lot_required": true,
+    "full_close_odd_lot_exception": "Existing allow_full_close_odd_lot flag only; target=0 and delta=-entire original long/short holding. Does not waive any other check.",
+    "partial_odd_lot_or_cross_zero_exception": false,
+    "auto_split_close_then_open": false,
+    "trade_increment_lattice_quantizer": false,
+    "quantity_tolerance": "0"
+  },
+  "funding_identity": "free_cash=equity*(1-gross)-existing_nonshort_restriction-fee_reserve; default no-financing double short restriction makes cash-feasible gross at most approximately 1 even if risk cap is 1.5"
 }

@@ -1,0 +1,385 @@
+{
+  "sha": "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "node_id": "C_kwDOVQ3oOtoAKGU0MGRkZDAwMDljYzMwNjY0YzNhMGZlMGI3NGM0YTQ5N2E1NDFkNzc",
+  "commit": {
+    "author": {
+      "name": "Codex",
+      "email": "codex@localhost",
+      "date": "2026-10-22T07:24:35Z"
+    },
+    "committer": {
+      "name": "Codex",
+      "email": "codex@localhost",
+      "date": "2026-10-22T07:24:35Z"
+    },
+    "message": "docs: propose Phase 4 portfolio and risk G1 plan from released Phase 3",
+    "tree": {
+      "sha": "66ae3cce5f9d73271963e72aaaf3ec171c08c4c1",
+      "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/git/trees/66ae3cce5f9d73271963e72aaaf3ec171c08c4c1"
+    },
+    "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/git/commits/e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/commits/e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "html_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/commit/e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+  "comments_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/commits/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/comments",
+  "author": null,
+  "committer": null,
+  "parents": [
+    {
+      "sha": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/commits/0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "html_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/commit/0a57dccb5618ba08cd3572d6d6b78fec963a3041"
+    }
+  ],
+  "stats": {
+    "total": 779,
+    "additions": 779,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "b2c95dd1be5b0fc4279afd911c1c15f854166f7e",
+      "filename": "AGENTS.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/AGENTS.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/AGENTS.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/AGENTS.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -1,5 +1,7 @@\n # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）\n \n+2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。\n+\n 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。\n \n 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。"
+    },
+    {
+      "sha": "a75124058156132dc4a2fbc76ba7a5cc4051902b",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/README.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/README.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/README.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -1,5 +1,7 @@\n # Alpha Quant Research Platform（AQRP）\n \n+2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。\n+\n 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。\n \n 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。"
+    },
+    {
+      "sha": "8666520901c1bd41e116b6f902c39d0df3e2410f",
+      "filename": "docs/CHANGELOG.md",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 0,
+      "changes": 5,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FCHANGELOG.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FCHANGELOG.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2FCHANGELOG.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -1,5 +1,10 @@\n # 变更记录\n \n+## 2026-10-22 · Phase4 G1计划待预审\n+\n+- 从核实Phase3已发布基线新建独立计划分支，原7项需求、两种身份入口、风险/数量/资金候选、20组独立算术候选及完整证据要求。\n+- 未写P4业务实现，未修改P3源码/测试/工具/CI/锁及历史原件。正式金融批准/真实隔离/最终Test继续延期。\n+\n ## 2026-10-22 · Phase3 0.3.0受限工程验收与发布\n \n - 记录用户受限验收原话及三项延期/复现边界，PR #5普通merge保留已审固定SHA和完整历史。"
+    },
+    {
+      "sha": "f3f4545ee20e271ab0195e8c9c55acccf79c723d",
+      "filename": "docs/DECISIONS.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FDECISIONS.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FDECISIONS.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2FDECISIONS.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -1,5 +1,7 @@\n # 架构决策、冲突及待用户决定事项\n \n+2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。\n+\n 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。\n \n 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。"
+    },
+    {
+      "sha": "3dcf077c7a38d0222e29bbabb5e3c26ae0a7cd00",
+      "filename": "docs/PROGRESS.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FPROGRESS.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FPROGRESS.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2FPROGRESS.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -1,5 +1,7 @@\n # 当前真实项目状态\n \n+2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。\n+\n 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。\n \n 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。"
+    },
+    {
+      "sha": "0b16e9084431763652b1a17e9b6d315a4399e60e",
+      "filename": "docs/ROADMAP.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FROADMAP.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FROADMAP.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2FROADMAP.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -1,5 +1,7 @@\n # Phase 0–7 开发及 Gemini 交接计划\n \n+2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。\n+\n 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。\n \n 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。"
+    },
+    {
+      "sha": "ff0f2e6a246e22ffa6ed5257208f09ad26c9acd7",
+      "filename": "docs/TRACEABILITY.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FTRACEABILITY.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2FTRACEABILITY.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2FTRACEABILITY.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -1,5 +1,7 @@\n # 双向需求追踪矩阵（待审）\n \n+2026-10-22 当前：Phase3已按用户明确受限工程范围ACCEPTED/RELEASED，phase3-baseline/v0.3.0/main基线0a57dccb5618ba08cd3572d6d6b78fec963a3041。金融批准、真实隔离和正式Test延期且未验证；历史复现限软件包/锁/旧Ref/结果重放。本轮仅Phase4的7项（4 MVP、3 Competition Ready）计划/接口/独立答案候选及GPT Work G1预审资料，状态PLAN PRE-REVIEW REQUIRED；P4业务实现、合并发布及P5未授权，无部署/实盘。详docs/audits/phase-4/REVIEW_PACKAGE.md；以下旧状态为历史。\n+\n 2026-10-22 最新人工决定：Phase3按明确受限工程范围ACCEPTED，PR #5已普通merge 70086a74a632c73a2769ec24901ec47babfa8976（整tree等于批准头2a3400c）。合并后干净SDK578、原20/四及数学91通过；金融批准、真实隔离和正式Test延期，历史复现限软件包/锁/旧Ref/结果重放。发布登记与phase3-baseline/v0.3.0远端main原子同点并核验后为RELEASED，详docs/audits/phase-3/BASELINE.md及publication/。Phase4仅计划预审已授权，主审GPT Work，P4业务实现及P5未授权；无部署/账户/ACL/服务/调度或实盘。旧待验收/未授权文字保留历史，由本决定替代当前状态。\n \n 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。"
+    },
+    {
+      "sha": "9a289d7dff6ef5e7b9b746fd385c9ecf67a33b83",
+      "filename": "docs/audits/phase-4/.gitattributes",
+      "status": "added",
+      "additions": 1,
+      "deletions": 0,
+      "changes": 1,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2F.gitattributes",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2F.gitattributes",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2F.gitattributes?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1 @@\n+validation/** whitespace=cr-at-eol"
+    },
+    {
+      "sha": "e46fa5275ca844332848db921fa5c6190ecfd6a6",
+      "filename": "docs/audits/phase-4/AUTHORIZATION.json",
+      "status": "added",
+      "additions": 17,
+      "deletions": 0,
+      "changes": 17,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FAUTHORIZATION.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FAUTHORIZATION.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FAUTHORIZATION.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,17 @@\n+{\n+  \"date\": \"2026-10-22\",\n+  \"source\": \"Direct human instruction\",\n+  \"exact_user_message\": \"我同意按上述受限工程范围验收 Phase3：金融批准、真实隔离和正式 Test 延期，历史复现以已验证的软件包、依赖锁、旧因子版本和结果重放为准。请记录范围及影响，合并 PR #5 并发布基线，然后启动 Phase4 计划预审；不授权真实部署或实盘。\",\n+  \"phase3_released_main\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\n+  \"phase3_tags\": [\n+    \"phase3-baseline\",\n+    \"v0.3.0\"\n+  ],\n+  \"scope\": \"Phase4 plan and interface draft, independent-answer candidates and GPT Work G1 pre-review ONLY\",\n+  \"phase4_implementation_authorized\": false,\n+  \"g1_verdict\": \"NOT_REVIEWED\",\n+  \"merge_tag_P4_authorized\": false,\n+  \"real_deployment_or_live_trading_authorized\": false,\n+  \"reviewer\": \"GPT Work primary independent review per latest human preference\",\n+  \"restrictions\": \"No accounts, ACL, services or scheduler configuration changes; no portfolio/risk business implementation before fixed-SHA G1 PASS and implementation authorization.\"\n+}"
+    },
+    {
+      "sha": "76280b65ccc822d8ebfdec1c09675376ab7c5a42",
+      "filename": "docs/audits/phase-4/BASELINE_VERIFICATION.json",
+      "status": "added",
+      "additions": 23,
+      "deletions": 0,
+      "changes": 23,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FBASELINE_VERIFICATION.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FBASELINE_VERIFICATION.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FBASELINE_VERIFICATION.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,23 @@\n+{\n+  \"phase3_base_main\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\n+  \"tags_remote_verified\": true,\n+  \"old_tags_unchanged\": true,\n+  \"requirements_csv_sha256\": \"20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1\",\n+  \"canonical_requirements\": 106,\n+  \"phase4_requirements\": 7,\n+  \"MVP\": 4,\n+  \"Competition Ready\": 3,\n+  \"phase3_source_bundle\": \"3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e\",\n+  \"phase3_source_modules\": 45,\n+  \"lock_sha256\": \"86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb\",\n+  \"source_tests_tools_workflow_pyproject_lock_scan_config_unchanged\": true,\n+  \"original_phase0_phase1_phase2_G1_frozen\": 1957,\n+  \"phase3_original_evidence_unchanged\": true,\n+  \"plan_consistency\": \"PASS developer only\",\n+  \"arithmetic_candidates\": 20,\n+  \"independent_G1\": \"NOT_REVIEWED\",\n+  \"phase4_business_implementation_tests\": \"NOT_APPLICABLE_NO_IMPLEMENTATION\",\n+  \"no_deployment_or_actual_accounts_changed\": true,\n+  \"dependency_limits\": \"SCOPE_AND_DEPENDENCIES.md\",\n+  \"raw_log_byte_preservation\": \"Initial staged whitespace check recognized CRLF in original Windows subprocess stdout logs. Per-directory validation attribute treats CR as EOL; original log bytes/hash preserved, no test or source change.\"\n+}"
+    },
+    {
+      "sha": "497cafd1ee1d85e7162fe5fe4ba4405481643405",
+      "filename": "docs/audits/phase-4/FILE_MANIFEST.json",
+      "status": "added",
+      "additions": 106,
+      "deletions": 0,
+      "changes": 106,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FFILE_MANIFEST.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FFILE_MANIFEST.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FFILE_MANIFEST.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,106 @@\n+{\n+  \"scope\": \"Phase4 G1 plan, not implementation or independent verdict\",\n+  \"self_excluded\": true,\n+  \"files\": [\n+    {\n+      \"path\": \".gitattributes\",\n+      \"bytes\": 35,\n+      \"sha256\": \"5ec46cfb054a7ea5967bfced152d8b6e30c564a8ea44ab3ca083939020b1a1ec\"\n+    },\n+    {\n+      \"path\": \"AUTHORIZATION.json\",\n+      \"bytes\": 1087,\n+      \"sha256\": \"7de4c01df24f225dc4f3a229999fbbc831db8b6c9fd7a732faecb65b63818024\"\n+    },\n+    {\n+      \"path\": \"BASELINE_VERIFICATION.json\",\n+      \"bytes\": 1244,\n+      \"sha256\": \"7df04acaf0e6c93685426e95ef5cb58d13acf05f54cfe496d5a08a3fcf4c7e2e\"\n+    },\n+    {\n+      \"path\": \"check_plan.py\",\n+      \"bytes\": 2380,\n+      \"sha256\": \"beb621a02098f1c8d64ae5871fe6132ce03524cb064a804bf6d41a596ba14c06\"\n+    },\n+    {\n+      \"path\": \"GOLDEN_REFERENCE.md\",\n+      \"bytes\": 2747,\n+      \"sha256\": \"216430df135be104f59cb0ab6ea375b1af4c7f2a309879c166c410409e822268\"\n+    },\n+    {\n+      \"path\": \"golden_reference.py\",\n+      \"bytes\": 1791,\n+      \"sha256\": \"6a272bd1b1744b7bc4d45780776a80b2e32b1bdcd019e2ea7f4fec6bb5a852fa\"\n+    },\n+    {\n+      \"path\": \"INTERFACE_DRAFT.md\",\n+      \"bytes\": 8088,\n+      \"sha256\": \"316293481c8a6d1cb3cdc247e9b8daa0ecaaca1efd967bc44557f45e4b255a72\"\n+    },\n+    {\n+      \"path\": \"PHASE3_RELEASE_RECEIPT.json\",\n+      \"bytes\": 2343,\n+      \"sha256\": \"f0260dbd041854b73f7c51ab4dfb68a2ce67c4c8728a62afacee7be7898da7b1\"\n+    },\n+    {\n+      \"path\": \"PLAN.md\",\n+      \"bytes\": 4384,\n+      \"sha256\": \"fc7d4d4b38273f16bdeca222d3da8b52e35964f528c9150eaaec7ded252b9183\"\n+    },\n+    {\n+      \"path\": \"REQUIREMENTS_SNAPSHOT.json\",\n+      \"bytes\": 4734,\n+      \"sha256\": \"ed322f99f40150a04347774f7ebab30244b9fc90ca3ba2a9567eaf1438c332c5\"\n+    },\n+    {\n+      \"path\": \"REQUIREMENTS_TRACEABILITY.md\",\n+      \"bytes\": 2042,\n+      \"sha256\": \"6ed1570d10ecc37bdc116f646436b589f2f8d1109cad8f215d51dce5194517ab\"\n+    },\n+    {\n+      \"path\": \"REVIEW_PACKAGE.md\",\n+      \"bytes\": 1297,\n+      \"sha256\": \"8bdcd7729962a4e0a5e7647b7f8adf7c7955077959330c28d91e8d96c97650d8\"\n+    },\n+    {\n+      \"path\": \"SCOPE_AND_DEPENDENCIES.md\",\n+      \"bytes\": 2452,\n+      \"sha256\": \"ef772306ea373dedc7e94ab14062552f9ef1a247666f70f166be3f5d1a003bee\"\n+    },\n+    {\n+      \"path\": \"SYNTHETIC_PROFILE.json\",\n+      \"bytes\": 1719,\n+      \"sha256\": \"589d821b0b5d6ab8e0a85a5aff4fcd3cbdff9e70276015f8d2eb6d99665fc4ad\"\n+    },\n+    {\n+      \"path\": \"TEST_AND_EVIDENCE_PLAN.md\",\n+      \"bytes\": 3034,\n+      \"sha256\": \"0fa886df65724e163cfd7ce8bdf33d19fadd35c085440ab61277b5b359884387\"\n+    },\n+    {\n+      \"path\": \"validation/COMMANDS.json\",\n+      \"bytes\": 1443,\n+      \"sha256\": \"92c6e7f497bde35176032926fd2a67efd0c24bc5eb3a89d2bcaab88361437b6f\"\n+    },\n+    {\n+      \"path\": \"validation/golden-arithmetic.log\",\n+      \"bytes\": 3011,\n+      \"sha256\": \"93aa2e8bb168d6a76c8ab6b144d824c6e496bbeef9d37d7a907aea263cf446d6\"\n+    },\n+    {\n+      \"path\": \"validation/plan-check.log\",\n+      \"bytes\": 380,\n+      \"sha256\": \"4b987332cdbee2716a64a68abda716cc2fee0f237812333379ef7a0092308a8b\"\n+    },\n+    {\n+      \"path\": \"validation/plan-scan-findings.json\",\n+      \"bytes\": 3,\n+      \"sha256\": \"37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570\"\n+    },\n+    {\n+      \"path\": \"validation/plan-secret-scan.log\",\n+      \"bytes\": 81,\n+      \"sha256\": \"1c31e2570cf6cefcb28b164b8cc3544a8c26c8bcb0d7aed11b5c0a6c5628a4f9\"\n+    }\n+  ]\n+}"
+    },
+    {
+      "sha": "77bb3f7b9c47fb38e29ecc26580977e0f22e569c",
+      "filename": "docs/audits/phase-4/GOLDEN_REFERENCE.md",
+      "status": "added",
+      "additions": 28,
+      "deletions": 0,
+      "changes": 28,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FGOLDEN_REFERENCE.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FGOLDEN_REFERENCE.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FGOLDEN_REFERENCE.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,28 @@\n+# Phase4 Golden独立算术候选（G01–G20）\n+\n+只用手算/有理数及stdlib参考校对；未调用AQRP组合函数（尚未实现），不是P4实现通过，也不是主审结论。可运行golden_reference.py获得开发方20组算术核对日志。所有权重/比率按1e-12绝对容差，数量/权限精确，金额1e-8；候选输入均明确为合成，同一决策、CCY、PIT且默认其余限额不触发。\n+\n+| 编号 | 独立输入/推导 | 预期 |\n+|---|---|---|\n+| G01 | 单因子[3,1]，score权3/(3+1) | A=3/4,B=1/4 |\n+| G02 | 先定向分数A=[2,4],B=[4,2]；a=[3,1]，除4 | S_A=5/2,S_B=7/2；score权5/12,7/12 |\n+| G03 | A/B/C同分；K2；完整ID A<B<C | 选A/B，等权1/2,1/2；ties=true |\n+| G04 | TopK分数[-1,-2]；score权 | NO_POSITIVE_SCORE，现金1；禁止cash则INFEASIBLE |\n+| G05 | 同[-1,-2]；equal权 | A/B各1/2；规则不同结果显式 |\n+| G06 | F1有A/B，F2有B/C，a=[1,1]，B分数[2,4] | 交集B，S_B=3，权重1；A/C剔除不补0 |\n+| G07 | G=1,N=0，两腿各一资产 | long1/2,short-1/2；gross1,net0 |\n+| G08 | G=6/5,N=1/5，两腿各一 | long7/10,short-1/2；gross6/5,net1/5 |\n+| G09 | S=[3,1,-1,-3]；mean0；G=1,N=0 | 权重[3/8,1/8,-1/8,-3/8] |\n+| G10 | E1000；A/B各1/2；p=[30,40],lot10 | q*=[50/3,25/2]→q=[10,10]；w=[3/10,2/5]；cash300 |\n+| G11 | E1000，w=[1/2,-1/2]，p=[30,40],lot10 | q=[10,-10]；net=-1/10,gross7/10,cash1100；short冻结400+margin400→free300 |\n+| G12 | targetA=3/4；abs cap=7/10 | 超1/20，REJECT，不截断为cap |\n+| G13 | current=[1/2,1/2]→target=[3/4,1/4] | gross-turnover1/2，half1/4；cap2/5则拒绝 |\n+| G14 | net低界0，连续net0；G11整手后net=-1/10 | pre通过，post拒绝，不宣称取整天然安全 |\n+| G15 | 同行业w=[3/4,-1/4] | sector_net1/2，sector_gross1；gross_cap9/10拒绝 |\n+| G16 | w=[3/4,1/4],beta=[6/5,4/5] | Beta=11/10；upper1触发；缺任一Beta不得填0 |\n+| G17 | current10,target-5,sellable10,borrow_total5,short_permission=true | long_sale10、target_short5，均可；sellable9或borrow4分别拒绝 |\n+| G18 | current-4,target-6,borrow_total5 | 新增2但总short6>5，拒绝 |\n+| G19 | E1000，qnotional=[500,-500] | cash1000，short500+margin500=1000，free0；G08短500/long700则cash800/free-200拒绝 |\n+| G20 | 上界cap=3/4、tol=1e-12 | value=cap和cap+5e-13可；cap+2e-12拒绝；容差不作用于整数借券 |\n+\n+非算术负例不能靠此脚本宣称实现通过：未来时点、假审批、停牌调仓、混合币种、旧结果篡改、独有旧持仓、缺暴露/borrow、奇零股全平、空腿/重叠、NaN和重复。它们在TEST_AND_EVIDENCE_PLAN逐项要求真实实现测试。G09均值是工程预注册变换而非开发/最终Test数据拟合；不得对正式Test选择参数。"
+    },
+    {
+      "sha": "54f8c7a12fdbac7cc22d875594ba8829da99be79",
+      "filename": "docs/audits/phase-4/INTERFACE_DRAFT.md",
+      "status": "added",
+      "additions": 41,
+      "deletions": 0,
+      "changes": 41,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FINTERFACE_DRAFT.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FINTERFACE_DRAFT.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FINTERFACE_DRAFT.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,41 @@\n+# P4接口与算术冻结候选 · portfolio/1.0.0-proposed\n+\n+这是待G1审查设计，不是已实现SDK。继承docs/INTERFACES.md、DATA_CONTRACT与BACKTEST_CONTRACT。所有对象schema_version、request_id/run_id、canonical config、来源manifest/hash、精确Ref及决策时点齐备；拒绝NaN/Inf、布尔数值、重复键/证券、未知字段和schema，不使用隐式DataFrame索引。\n+\n+## 1. 身份、时间与不可变输入\n+\n+construct_approved(ApprovedScores, UniverseView, AccountSnapshot, Constraints, SyntheticMarketProfile) -> PortfolioResult；construct_engineering(EngineeringScores, ...) -> PortfolioResult。后者专门标ENGINEERING_TEST_ONLY，详SCOPE_AND_DEPENDENCIES。没有skip_approval或默认降级。入口依据工件原字节hash、schema与来源身份校验，不执行因子代码、不看因子名称、不读取未来数据/标签。\n+\n+统一单币种CCY、market/calendar、decision_time UTC微秒、parent snapshot/version。每份输入具有event_time、available_at、as_of；as_of等于本次decision_time，event_time/available_at <= decision_time。各分数组不得混合决策时点；不同原信号可早于决策，但必须在预注册max_age_sessions内，按同交易日历验证，缺session映射拒绝。score有效行、池/状态/主档/行业/Beta/价格/账户及借券侧车一律PIT；未来/错误父快照/过期/含糊日期立即拒绝，不能靠调用者where保证。账户valuation_time等于decision_time，来源price_ref一致；不接受用未来价格换算当期目标。synthetic快照hash显式区分数据投影和账户fixture身份，不能要求不同类型hash字面相等。\n+\n+AccountSnapshot：equity>0，total_cash、restricted_cash、positions的signed_qty与同一估值价、sellable_qty>=0、borrow_limit_total>=0、short_permission及冻结/交收投影。单位CCY/share；E = total_cash + sum(q_i*p_i)，restricted_cash<=total_cash，p_i>0且有限。成本/应收等如非零须已纳入明确equity组成，首版合成profile要求无这些项，否则契约拒绝，不遗漏估值。持仓含非当期选择资产，目标补0用于平仓与风险；证券消失不能直接丢弃其持仓。输入不可变，不修改账户或源DataFrame。\n+\n+## 2. 分数、选择与双腿\n+\n+分数为P3指定stage已定向/已处理结果，P4不重新拟合方向、标准化或择优。单/多因子预注册a_j，S_i=sum(a_j*s_ij)/sum(abs(a_j))；a均有限，分母>0；仅所有选定因子的有效资产交集，剔除原因及数量逐一报告，不补0、不按证券重配a。池必须PIT可选择；非可交易资产的选择资格由冻结规则显式排除且报告；已持有不可交易资产仍不能被忽略，任何实际调仓不合法即拒绝。\n+\n+TopK为严格正整数；分数降序、相等按完整security_id稳定排序，保留tie标识。LongOnly等权：取前min(K,n)后每个1/n（允许负分，因为是排名等权，配置明示）。分数权：先取相同topK，对max(S,0)归一；分母0全现金并记NO_POSITIVE_SCORE。空交集也是显式CASH/EMPTY_INTERSECTION，若cash不允许则INFEASIBLE，绝不假造有效Alpha。权重守恒含cash。\n+\n+LongShort：预算L=(G+N)/2、H=(G-N)/2，要求G>=abs(N)，G>=0，0预算腿可为空，非0预算腿必须有资产。等权腿从同一排序选top K_long和bottom K_short，必须不重叠；K总数>n且两腿预算非0即拒绝，不偷改K。分数腿先对全共同交集S计算横截面算术均值m；只从S-m>0取前K_long，S-m<0取后K_short；每腿按中心化分数绝对值归一再乘L或-H。无有效腿但预算非0即INFEASIBLE；不把零中心化值分配至任一腿。选择及权重规则随config冻结，不能通过试验最终Test调参。\n+\n+## 3. 数量、现金及风险顺序\n+\n+有限Decimal输入字符串（不接受隐式binary float金额），候选context precision=34、ROUND_HALF_EVEN；权重/比率数值边界容差固定1e-12，金额核对1e-8 CCY，数量/许可/lot精确比较、时间精确微秒。阈值比较value <= limit+tolerance；低界value >= limit-tolerance。容差随profile/hash冻结，不能按失败动态扩大。独立分数输入可float64，但必须canonical十进制投影并记录，禁止非有限值。\n+\n+先用目标连续权重完整预检约束，再q*_i=w_i*E/p_i，以交易lot toward-zero取整：sign(q*)*floor(abs(q*)/lot)*lot。原持仓奇零股仅当目标为0且profile.allow_full_close_odd_lot=true允许全量平仓；非零目标仍严格lot。每次取整重算w'_i=q'_i*p_i/E、delta_qty=q'_i-q_current_i、预计现金C'=E-sum(q'_i*p_i)。输出continuous与rounded两套诊断，任一必需约束失败即reject；不静默夹紧/改预算/重复归一/放宽限额。\n+\n+合成profile短卖所得全部限制：required_restricted=max(existing_nonshort_restriction,0)+sum(max(-q'_i*p_i,0))，initial_margin_ratio=1.0要求额外sum(short_abs_notional)*1.0资金缓冲。free_cash=C'-required_restricted-margin_requirement-fee_reserve，须>=0（金额容差1e-8）；fee_reserve为显式非负输入，不计算真实佣金。现有restricted_cash须分解short/nonshort且一致，避免重复扣短卖冻结。负自由现金拒绝，无融资。现金权重=1-net，可因卖空>1；这不是杠杆可用资金。所有值是纯目标估算，没有成交或复式账本更新。\n+\n+风险check_target(TargetCandidate, account, market_profile, constraints, decision_time)->RiskDecision，服务总是重算与核验候选hash，不信任调用者risk_passed标志。约束：每票abs(w_i)<=cap_i；gross=sum(abs(w))<=G_cap；net=sum(w)在[N_min,N_max]；合成无衍生品leverage=gross（分别报告）；turnover=sum(abs((q'_i-q_i)*p_i))/E，另报half_turnover=turnover/2，限额明确作用于前者。合成账户按同价当前权重，不把净额抵消当低换手。\n+\n+行业逐行业净暴露=sum(w_i)，总暴露=sum(abs(w_i))分别给上下界/上界，Beta=sum(w_i*beta_i)检查有符号区间；所有非零当前/目标或需调仓证券的必需暴露缺失、过期、未来、重复均拒绝，不赋0；不以行业净额代替总暴露。profile启用风险项必须提供对应限额，不因缺配置默认禁用。\n+\n+对每项delta!=0的证券检查PIT tradable；sell_qty=max(-delta,0)，long_sale=min(sell_qty,max(current_qty,0))<=sellable_qty；额外新空头及目标总short_qty必须short_permission=true且<=borrow_limit_total（包含现有借券，不把总额度误作新增）。平旧空不要求新增借券，但仍须可交易、资金足够；long-to-short跨0先验可售部分和总借券两项均查。净delta为0的停牌持仓允许持有，但仍计全部敞口，不能生成调仓建议。缺许可与缺借券不是false/0默认，明确MISSING_INPUT拒绝。\n+\n+## 4. 输出与不可绕过门禁\n+\n+PortfolioResult.status为SUCCEEDED/INFEASIBLE/REJECTED；成功含不可变TargetPortfolio、各证券score/rank/target_weight/qty、cash/free/restricted/margin/reserve、gross/net/leverage/turnover、行业/Beta与所有constraint结果、取整余数、inputs/config/code/env hashes。拒绝也保留所有可安全计算的诊断，缺输入项标NOT_EVALUATED与原因，不伪造0或pass；无可执行target/token。\n+\n+RebalanceProposal仅delta_qty、source_position/price_ref与决策引用，executable=false、engineering scope贯穿，无order_id/submitted_at/fill或账户写入。共用service必须消费刚生成RiskDecision及同输入hash，任一拒绝不能返回成功目标；公开权重函数只能返回UnvalidatedCandidate，不能绕过service风险获得可用目标。用户构造/篡改对象和陈旧decision均重算拒绝。P5将独立生成OrderEvent并在提交/撮合前重查，不由P4假装已实现。\n+\n+所有成功/失败/取消写独立run_id及不可变配置/输入清单、代码/环境/数据/hash，复用已验证ledger；末态后不允许后补文件成为证据。时点/审批失败不运行后续算术，避免从未来输入泄漏排名。来源标签与真实/工程身份必须在报告中直接可见。"
+    },
+    {
+      "sha": "fa84c86ef4cdee0732dd0483f2f6875a0a7608ff",
+      "filename": "docs/audits/phase-4/PHASE3_RELEASE_RECEIPT.json",
+      "status": "added",
+      "additions": 43,
+      "deletions": 0,
+      "changes": 43,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FPHASE3_RELEASE_RECEIPT.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FPHASE3_RELEASE_RECEIPT.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FPHASE3_RELEASE_RECEIPT.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,43 @@\n+{\n+  \"verified_at_UTC\": \"2026-10-22T07:23:43.731984+00:00\",\n+  \"actual_executor\": \"Codex developer\",\n+  \"phase3_status\": \"ACCEPTED_RESTRICTED_ENGINEERING_SCOPE_AND_RELEASED\",\n+  \"pr\": 5,\n+  \"merged\": true,\n+  \"merge_sha\": \"70086a74a632c73a2769ec24901ec47babfa8976\",\n+  \"released_main_sha\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\n+  \"independent_G2_sha\": \"9ac5db069287a6e4a095e25ae8c3cc8fa229cded\",\n+  \"remote_refs\": {\n+    \"refs/tags/phase0-baseline\": \"0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0\",\n+    \"refs/tags/phase0-baseline^{}\": \"7de1d0e81385ae97f98ea673fe05dd726f0b577b\",\n+    \"refs/tags/phase1-baseline\": \"1a8e47ee4be910aa7eeeefa430015e683a8aa6f5\",\n+    \"refs/tags/phase1-baseline^{}\": \"f579b2c99e762085772de6e70ba1fa98792a7add\",\n+    \"refs/tags/phase2-baseline\": \"24000b53ebfeda56aad5a54b93d432196f6ba293\",\n+    \"refs/tags/phase2-baseline^{}\": \"f26255fc40a3080bfa883ad64938f60036a14759\",\n+    \"refs/tags/phase3-baseline\": \"3ff892aee490cc922e162d813b245944430db6af\",\n+    \"refs/tags/phase3-baseline^{}\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\n+    \"refs/tags/v0.1.1\": \"6611ca42e213c78be5155cba702ae789d48aab24\",\n+    \"refs/tags/v0.1.1^{}\": \"fb1ba4fd51202a303115e4449ee49db09ccc071c\",\n+    \"refs/tags/v0.2.0\": \"d8ee6c165eebb165393307b78acb7218a9994321\",\n+    \"refs/tags/v0.2.0^{}\": \"f26255fc40a3080bfa883ad64938f60036a14759\",\n+    \"refs/tags/v0.3.0\": \"6060b45a2adde469021a7da7c65d329254736b44\",\n+    \"refs/tags/v0.3.0^{}\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\n+    \"refs/heads/main\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\"\n+  },\n+  \"old_stable_tag_targets_unchanged\": {\n+    \"phase0-baseline\": \"7de1d0e81385ae97f98ea673fe05dd726f0b577b\",\n+    \"phase1-baseline\": \"f579b2c99e762085772de6e70ba1fa98792a7add\",\n+    \"v0.1.1\": \"fb1ba4fd51202a303115e4449ee49db09ccc071c\",\n+    \"phase2-baseline\": \"f26255fc40a3080bfa883ad64938f60036a14759\",\n+    \"v0.2.0\": \"f26255fc40a3080bfa883ad64938f60036a14759\"\n+  },\n+  \"verification\": \"Real git ls-remote read after successful atomic main/tag push; PR5 merge API and postmerge git tree/parents verified\",\n+  \"docs_only_publication_commits\": [\n+    \"f80968d\",\n+    \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\"\n+  ],\n+  \"baseline_register\": \"docs/audits/phase-3/BASELINE.md\",\n+  \"complete_release_evidence\": \"docs/audits/phase-3/publication/\",\n+  \"financial_approval\": \"NONE\",\n+  \"real_deployment_live_trading_authorized\": false\n+}"
+    },
+    {
+      "sha": "45ab5bb1df3762639c7e52419e5091f9ee7465f9",
+      "filename": "docs/audits/phase-4/PLAN.md",
+      "status": "added",
+      "additions": 27,
+      "deletions": 0,
+      "changes": 27,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FPLAN.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FPLAN.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FPLAN.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,27 @@\n+# Phase4 组合构建与风险控制计划 · G1待预审\n+\n+状态 **PLAN PRE-REVIEW REQUIRED / NOT REVIEWED**。从已发布Phase3 main `0a57dccb5618ba08cd3572d6d6b78fec963a3041`、phase3-baseline/v0.3.0创建独立分支。用户只授权启动本计划预审；不推定授权P4业务实现、合并或发布。正式G1审查主要交GPT Work，固定40位SHA见PR描述AQRP_FIXED_REVIEW_SHA；不审漂移HEAD。\n+\n+范围严格取原106项目录的phase=4：7项（4 MVP、3 Competition Ready），见REQUIREMENTS_SNAPSHOT.json及REQUIREMENTS_TRACEABILITY.md。PORT-004优化器属后续扩展，不在本阶段；不提前写P5订单/撮合/账本、P6网页、P7完整替换E2E。P4必须完整实现7项既定工程行为，不能把多空、借券或暴露缺失处理标Unsupported代替实现。本轮仅可评审设计和独立算术候选，没有P4业务代码或实现通过结论。\n+\n+继承Python3.13.16、当前requirements.lock及45模块P3包；不增加依赖、优化器、外部服务或真实市场。单币种、合成SYNTHETIC_PORTFOLIO_1为可执行工程profile候选，不解释为任何真实市场规则。审查需核对与DATA_CONTRACT、INTERFACES、BACKTEST_CONTRACT一致性；本目录是P4接口细化提案，不静默改写已发布契约。\n+\n+## 工程范围与尚未满足的正式依赖\n+\n+用户明确接受P3受限工程范围：金融批准、物理隔离和真正独立最终Test延期，历史复现按软件包/锁/旧Ref/结果重放验收。PORT-001依赖FACTOR-009及VALID-008仍保留，正式ApprovedScores入口缺真正金融批准必须fail closed。为可测试P4工程行为，另设显式EngineeringScores入口，限synthetic、TEST_ONLY、非真实账户，不能伪造ResearchValidated，不能调用审批绕过代码。双入口汇入相同纯组合与风险内核；返回标识继续保留ENGINEERING_TEST_ONLY。详见SCOPE_AND_DEPENDENCIES.md。工程延期没有消除正式路径的门禁。\n+\n+## G1后拟实施顺序（须另有用户实施授权）\n+\n+1. 冻结接口、合成profile、独立答案及风险顺序；补充AccountSnapshot适配器和输入身份/时间/币种校验，先实现审批失败门禁与明确工程入口。\n+2. 因子无关分数交集/固定权重合成、确定性选择与LongOnly等权/分数权；不重复P3标准化/方向拟合。\n+3. LongShort真实双腿和gross/net预算、权限与借券；所有配置先验校验，不将单多输出改标签。\n+4. 权重/数量/整手/现金与约束完整计算，单票/gross/net/杠杆/换手/行业净及总暴露/Beta/可交易性/可售数量；所有约束逐项诊断，任何失败拒绝，不优化或静默松绑。\n+5. TargetPortfolio与不可执行RebalanceProposal、RiskDecision及不可变运行证据；同内核显式服务适配。纯提案不提交订单，不写资金账本。OrderEvent集成及成交时再查由P5负责。\n+6. 已知答案、边界/性质/独立参考；回归P3已验收578及外置原20/4、冻结资产与旧Ref重放。完整干净wheel SDK、双OS原始ZIP及hash、失败日志保留。新增P4测试数量以实际收集为准，不能预写通过数。\n+7. 提交P4实现PR完整固定SHA及代码审查/环境/数据/配置/工件hash给GPT Work G2。G1通过不等于实现通过、金融批准或阶段验收。用户验收/合并/发布及P5启动仍各自授权。\n+\n+## 预计改动与风险\n+\n+后续拟src/aqrp/portfolio/{contracts,construct,weights,service}与src/aqrp/risk/{contracts,checks}，按最终设计精简；对应tests/portfolio、tests/risk、集成测试和新Golden。P3研究/标签/审批协议及旧因子公式不改；与实际数据/暴露对象适配尽量新增。任何必要兼容更改须逐项差异、冻结资产保护、重放及完整bundle重新审查；不得用旧P3工程receipt批准新增源码。运行记录复用已验证实验存储，应用追加新schema，不改旧运行。\n+\n+G1重点：受限P3依赖能否支持两种明确身份、时点一致性、单/多因子与选股、双腿/净总敞口、现金/卖空保证金及整手后约束、不可绕过的风险结果、证据独立性。细节冻结候选在INTERFACE_DRAFT.md、GOLDEN_REFERENCE.md、TEST_AND_EVIDENCE_PLAN.md。正式Test/金融推断/真实隔离仍NOT VERIFIED，不列为已满足。若这些候选存在冲突，列OPEN并等待用户设计决定，不悄悄扩大范围。"
+    },
+    {
+      "sha": "10398efd71cabf29c813fa52212980acf5a942d9",
+      "filename": "docs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json",
+      "status": "added",
+      "additions": 136,
+      "deletions": 0,
+      "changes": 136,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FREQUIREMENTS_SNAPSHOT.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FREQUIREMENTS_SNAPSHOT.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FREQUIREMENTS_SNAPSHOT.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,136 @@\n+{\n+  \"canonical_path\": \"docs/requirements.csv\",\n+  \"canonical_sha256\": \"20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1\",\n+  \"canonical_count\": 106,\n+  \"selected_count\": 7,\n+  \"MVP\": 4,\n+  \"Competition Ready\": 3,\n+  \"rows\": [\n+    {\n+      \"id\": \"PORT-001\",\n+      \"source\": \"V3.0§7.1\",\n+      \"tier\": \"MVP\",\n+      \"phase\": \"4\",\n+      \"module\": \"portfolio\",\n+      \"definition\": \"因子无关组合输入和目标权重/仓位/调仓建议及诊断\",\n+      \"input\": \"已批准分数/股票池/账户/权益/暴露\",\n+      \"output\": \"TargetPortfolio\",\n+      \"dependencies\": \"FACTOR-009;VALID-008\",\n+      \"acceptance\": \"不依赖具体因子名称，不修改账本\",\n+      \"design\": \"INTERFACES.md\",\n+      \"priority\": \"P1\",\n+      \"planned_code\": \"src/aqrp/portfolio/\",\n+      \"planned_test\": \"tests/portfolio/test_port_001.py\",\n+      \"capability_status\": \"Planned\",\n+      \"design_status\": \"DRAFT_PRESENT\"\n+    },\n+    {\n+      \"id\": \"PORT-002\",\n+      \"source\": \"V3.0§7.2;V3.0§3.4\",\n+      \"tier\": \"MVP\",\n+      \"phase\": \"4\",\n+      \"module\": \"portfolio\",\n+      \"definition\": \"单/多因子组合、等权/分数权、LongOnly\",\n+      \"input\": \"分数和权重规则\",\n+      \"output\": \"合法目标及残余现金\",\n+      \"dependencies\": \"PORT-001\",\n+      \"acceptance\": \"零分/负分/整手余数有定义，权重守恒\",\n+      \"design\": \"INTERFACES.md\",\n+      \"priority\": \"P1\",\n+      \"planned_code\": \"src/aqrp/portfolio/\",\n+      \"planned_test\": \"tests/portfolio/test_port_002.py\",\n+      \"capability_status\": \"Planned\",\n+      \"design_status\": \"DRAFT_PRESENT\"\n+    },\n+    {\n+      \"id\": \"PORT-003\",\n+      \"source\": \"V3.0§7.2;V3.0§18\",\n+      \"tier\": \"Competition Ready\",\n+      \"phase\": \"4\",\n+      \"module\": \"portfolio\",\n+      \"definition\": \"LongShort组合及gross/net分别控制\",\n+      \"input\": \"多空权限及分数\",\n+      \"output\": \"多空目标\",\n+      \"dependencies\": \"PORT-001;RISK-003\",\n+      \"acceptance\": \"不得用long-only冒充多空，P5另测真实模拟约束\",\n+      \"design\": \"INTERFACES.md\",\n+      \"priority\": \"P1\",\n+      \"planned_code\": \"src/aqrp/portfolio/\",\n+      \"planned_test\": \"tests/portfolio/test_port_003.py\",\n+      \"capability_status\": \"Planned\",\n+      \"design_status\": \"DRAFT_PRESENT\"\n+    },\n+    {\n+      \"id\": \"RISK-001\",\n+      \"source\": \"V3.0§7.3\",\n+      \"tier\": \"MVP\",\n+      \"phase\": \"4\",\n+      \"module\": \"risk\",\n+      \"definition\": \"单票/总敞口/净敞口/杠杆/换手限制\",\n+      \"input\": \"目标账户/配置\",\n+      \"output\": \"逐项风险诊断\",\n+      \"dependencies\": \"PORT-001\",\n+      \"acceptance\": \"等号/越界/冲突约束测试，不静默放宽\",\n+      \"design\": \"INTERFACES.md\",\n+      \"priority\": \"P1\",\n+      \"planned_code\": \"src/aqrp/risk/\",\n+      \"planned_test\": \"tests/risk/test_risk_001.py\",\n+      \"capability_status\": \"Planned\",\n+      \"design_status\": \"DRAFT_PRESENT\"\n+    },\n+    {\n+      \"id\": \"RISK-002\",\n+      \"source\": \"V3.0§7.3\",\n+      \"tier\": \"Competition Ready\",\n+      \"phase\": \"4\",\n+      \"module\": \"risk\",\n+      \"definition\": \"行业与Beta暴露限制\",\n+      \"input\": \"PIT暴露及目标\",\n+      \"output\": \"合规或拒绝\",\n+      \"dependencies\": \"PORT-001;DATA-012\",\n+      \"acceptance\": \"缺暴露不视为0，容差明确\",\n+      \"design\": \"INTERFACES.md\",\n+      \"priority\": \"P1\",\n+      \"planned_code\": \"src/aqrp/risk/\",\n+      \"planned_test\": \"tests/risk/test_risk_002.py\",\n+      \"capability_status\": \"Planned\",\n+      \"design_status\": \"DRAFT_PRESENT\"\n+    },\n+    {\n+      \"id\": \"RISK-003\",\n+      \"source\": \"V3.0§7.3\",\n+      \"tier\": \"Competition Ready\",\n+      \"phase\": \"4\",\n+      \"module\": \"risk\",\n+      \"definition\": \"可交易性/空头许可/借券/可售数量检查\",\n+      \"input\": \"市场profile/状态/账户\",\n+      \"output\": \"交易资格诊断\",\n+      \"dependencies\": \"PORT-001;DATA-005\",\n+      \"acceptance\": \"停牌/借券不足显式拒绝，P5提交撮合再检查\",\n+      \"design\": \"INTERFACES.md\",\n+      \"priority\": \"P1\",\n+      \"planned_code\": \"src/aqrp/risk/\",\n+      \"planned_test\": \"tests/risk/test_risk_003.py\",\n+      \"capability_status\": \"Planned\",\n+      \"design_status\": \"DRAFT_PRESENT\"\n+    },\n+    {\n+      \"id\": \"RISK-004\",\n+      \"source\": \"V3.0§7.3;V3.0§11.2\",\n+      \"tier\": \"MVP\",\n+      \"phase\": \"4\",\n+      \"module\": \"risk\",\n+      \"definition\": \"风险拒单及不可行组合显式错误，不可绕过\",\n+      \"input\": \"候选目标/订单\",\n+      \"output\": \"RiskDecision/reason\",\n+      \"dependencies\": \"RISK-001\",\n+      \"acceptance\": \"调用方不能强制忽略拒绝；实际订单接线P5测\",\n+      \"design\": \"INTERFACES.md\",\n+      \"priority\": \"P1\",\n+      \"planned_code\": \"src/aqrp/risk/\",\n+      \"planned_test\": \"tests/risk/test_risk_004.py\",\n+      \"capability_status\": \"Planned\",\n+      \"design_status\": \"DRAFT_PRESENT\"\n+    }\n+  ]\n+}"
+    },
+    {
+      "sha": "b3ccfabaf3e8258a72b461340117cf5a570d119c",
+      "filename": "docs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md",
+      "status": "added",
+      "additions": 15,
+      "deletions": 0,
+      "changes": 15,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FREQUIREMENTS_TRACEABILITY.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FREQUIREMENTS_TRACEABILITY.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FREQUIREMENTS_TRACEABILITY.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,15 @@\n+# Phase4原需求逐项映射（7项）\n+\n+原106项和12业务分类/16 ID前缀不改；级别来自canonical目录，不把Competition Ready推迟成空接口。本轮全部业务状态Planned，设计候选待G1。\n+\n+| ID / 级别 | 依赖 | 具体设计/后续实现 | 验收与独立答案/负例 |\n+|---|---|---|---|\n+| PORT-001 / MVP | FACTOR-009;VALID-008 | INTERFACE_DRAFT§1/4；portfolio/contracts,service；正式与显式工程身份，同纯内核 | 因子名称无关、原账户字节不变、审批/来源/时点拒绝、目标/数量/建议完整；正式金融依赖延期明确 |\n+| PORT-002 / MVP | PORT-001 | §2/3；portfolio/weights,construct；单/多、等权/分数权、LongOnly | G01–06/10–11，零负分、共同交集、并列、lot/现金、性质守恒 |\n+| PORT-003 / Competition Ready | PORT-001;RISK-003 | §2/3；真实LongShort两腿、G/N、等权/中心化 | G07–09/18–19，空腿/重叠/缺许可/借券、非0净敞口、资金缓冲 |\n+| RISK-001 / MVP | PORT-001 | §3；risk/checks，单票/gross/net/leverage/turnover | G12–14/20，边界/超限/矛盾、取整后低净界、全持仓平仓检查 |\n+| RISK-002 / Competition Ready | PORT-001;DATA-012 | §1/3，PIT侧车、行业净/总及Beta | G15–16，行业抵消、缺失/修订/过期/未来/重复、精确边界 |\n+| RISK-003 / Competition Ready | PORT-001;DATA-005 | §3，可交易/许可/借券/可售、跨0 | G17–19，停牌、borrow总额度、平旧空、sellable不足、缺输入拒绝 |\n+| RISK-004 / MVP | RISK-001 | §4；无可执行目标/订单的拒绝与不可绕过服务 | 公开入口篡改/陈旧结果/skip标记/错误封存绑定均拒绝；失败记账完整 |\n+\n+G编号为GOLDEN_REFERENCE候选，只是独立算术校对，不是P4实现测试通过。未来需tests/portfolio/test_weights.py,test_construct.py,test_contracts.py及tests/risk/test_limits.py,test_tradability.py和tests/integration/test_portfolio_service.py；以实际最终代码路径补映射，不生成空测试文件来满足表格。"
+    },
+    {
+      "sha": "ef955fef75b2d973716bb3cf508564c02bacc2db",
+      "filename": "docs/audits/phase-4/REVIEW_PACKAGE.md",
+      "status": "added",
+      "additions": 7,
+      "deletions": 0,
+      "changes": 7,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FREVIEW_PACKAGE.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FREVIEW_PACKAGE.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FREVIEW_PACKAGE.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,7 @@\n+# Phase4 G1预审入口\n+\n+状态PLAN PRE-REVIEW REQUIRED；GPT Work未出具本轮结论。Phase3基线 `0a57dccb5618ba08cd3572d6d6b78fec963a3041`；用户授权原话AUTHORIZATION.json。先读SCOPE_AND_DEPENDENCIES，然后PLAN、INTERFACE_DRAFT、原需求快照/追踪、GOLDEN_REFERENCE和TEST_AND_EVIDENCE_PLAN。FILE_MANIFEST列本轮资料hash，BASELINE_VERIFICATION列基线/源码及冻结检查。固定审查SHA写PR描述AQRP_FIXED_REVIEW_SHA，所有内容须在该完整SHA读取；HEAD变化必须另行增量复核。\n+\n+重点判定：7项4MVP/3CR无遗漏；工程输入是否清楚/可行/不会绕过正式审批；PIT/单位/账户与价格一致；长短腿、gross/net/杠杆/换手、行业净总/Beta、borrow总额度与跨0、整手后风险及cash/restricted/margin算术；失败不可绕过；独立Golden候选是否正确；没有写P4业务或P5依赖。提出可部署性设计意见不等于授权部署。\n+\n+请输出固定SHA、PLAN PASS/PLAN BLOCKED、每项发现级别与需求/位置/独立反例、拟修复建议、尚缺用户决定；分别列工程设计通过和真实隔离/正式Test/金融批准未验证。旧P3 SDK578及此PR CI只是P3回归，不证明P4实现。不得合并/标签/部署/进入P5，G1通过仍待用户授权实际P4实现。"
+    },
+    {
+      "sha": "c322e9571035cdb42ad21490c4da31d7c8ee407e",
+      "filename": "docs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md",
+      "status": "added",
+      "additions": 15,
+      "deletions": 0,
+      "changes": 15,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FSCOPE_AND_DEPENDENCIES.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FSCOPE_AND_DEPENDENCIES.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FSCOPE_AND_DEPENDENCIES.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,15 @@\n+# Phase4依赖与受限工程输入\n+\n+本文件落实用户2026-10-22的范围决定，不修改独立审查原结论。\n+\n+| 依赖 | 已有工程证据 | 未满足/延期 | P4处理及影响 |\n+|---|---|---|---|\n+| FACTOR-009、VALID-008 → PORT-001 | 精确Ref、准入hash及终态manifest绑定的审批实现、工程正负例 | 真正金融标准、最终独立Test与正式ResearchValidated证据 | 正式ApprovedScores仍拒绝；显式EngineeringScores只用于合成工程测试，无收益/投资有效性结论 |\n+| VALID-004/005 | 封存接口/协议/逻辑拒绝工程测试 | 四主体真实权限隔离、正式Test、金融批准 | 不部署，不调账户/ACL/服务/调度；不能把本地逻辑校验叫真实隔离 |\n+| DATA-005、DATA-012 → RISK-003/002 | P1状态/主档及P3 PIT暴露侧车 | 真实市场、借券/交收/费用规则接入 | 使用显式合成profile与夹具，真实市场另审；缺数据拒绝，不填0 |\n+| EXP-003 | 已验证wheel、锁、旧Ref及结果投影重放 | 历史完整宿主/安装器全字节复刻 | P4仍记录软件包/锁/数据/结果hash；不宣称宿主等同 |\n+| 账户状态及OrderEvent | 接口设计、合成AccountSnapshot | P5真实模拟账本与成交再检查 | P4纯输入快照/目标/建议，不写账本；调仓建议不可执行且不创建订单 |\n+\n+EngineeringScores必须携带scope=ENGINEERING_TEST_ONLY、dataset_kind=SYNTHETIC、明确fixture_manifest/hash、来源run和精确FactorRefs（若来自真实P3合成运行，校验终态工件hash及时间）；接受手写合成夹具时明确source_kind=DECLARED_FIXTURE，不冒充实际研究运行。金融approval必须NONE。纯工程输出不得转换正式批准对象，不导出可执行订单。业务签名显式分开construct_engineering与construct_approved；共享同一计算内核和风险顺序，禁止默认engineer回退或布尔skip_approval。审批文件/终态清单不可后补绕过。正式入口将来依既有审批验签和证据域校验，无正式批准返回APPROVAL_REQUIRED，不能自动接受测试公钥签名为真实金融审批。\n+\n+当前授权不允许为打通正式入口而建立真实保管主体/权限或重新使用最终Test。P4工程验收若完成只能证明契约、算术和约束行为；正式策略可用性及金融批准仍待上述延期门禁。独立审查须分别报告工程闭环与正式依赖阻断，不把延期能力伪装已实现。"
+    },
+    {
+      "sha": "b1f7c8e2f2ab029323862a15db349270eb6df9d8",
+      "filename": "docs/audits/phase-4/SYNTHETIC_PROFILE.json",
+      "status": "added",
+      "additions": 42,
+      "deletions": 0,
+      "changes": 42,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FSYNTHETIC_PROFILE.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FSYNTHETIC_PROFILE.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FSYNTHETIC_PROFILE.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,42 @@\n+{\n+  \"schema_version\": \"synthetic-portfolio-profile/1.0.0-proposed\",\n+  \"profile_id\": \"SYNTHETIC_PORTFOLIO_1\",\n+  \"status\": \"G1_DESIGN_CANDIDATE_NOT_IMPLEMENTED\",\n+  \"scope\": \"ENGINEERING_TEST_ONLY\",\n+  \"financial_approval\": \"NONE\",\n+  \"currency\": \"CCY\",\n+  \"market_id\": \"SYNTH\",\n+  \"calendar_id\": \"SYNTHETIC_V1\",\n+  \"max_age_sessions\": 0,\n+  \"allow_financing\": false,\n+  \"short_proceeds_restriction_ratio\": \"1\",\n+  \"additional_short_margin_ratio\": \"1\",\n+  \"allow_full_close_odd_lot\": true,\n+  \"decimal_precision\": 34,\n+  \"decimal_rounding\": \"ROUND_HALF_EVEN\",\n+  \"ratio_absolute_tolerance\": \"0.000000000001\",\n+  \"cash_absolute_tolerance_CCY\": \"0.00000001\",\n+  \"quantity_tolerance\": \"0\",\n+  \"default_fixture_equity_CCY\": \"1000\",\n+  \"default_fixture_total_cash_CCY\": \"1000\",\n+  \"default_fixture_restricted_cash_CCY\": \"0\",\n+  \"default_fixture_positions\": [],\n+  \"fee_reserve_CCY\": \"0\",\n+  \"fixture_risk_limits\": {\n+    \"per_asset_abs_weight\": \"1\",\n+    \"gross_max\": \"1.5\",\n+    \"net_min\": \"-1\",\n+    \"net_max\": \"1\",\n+    \"leverage_max\": \"1.5\",\n+    \"turnover_gross_max\": \"2\",\n+    \"industry_net_min\": \"-1\",\n+    \"industry_net_max\": \"1\",\n+    \"industry_gross_max\": \"1.5\",\n+    \"beta_min\": \"-1\",\n+    \"beta_max\": \"1\",\n+    \"allow_cash_only\": true\n+  },\n+  \"fixture_constraints_are_not_market_rules\": true,\n+  \"golden_case_overrides\": \"Each Golden explicitly states changed prices/lots/weights/limits; each full fixture must freeze all values and hashes before execution. No implicit risk disabling or solver.\",\n+  \"rules_not_modelled_as_real_execution\": \"No real commissions, borrow fees, settlement, exchange matching, broker, orders or fills. Fee reserve is explicit engineering buffer; P5 separately implements its approved synthetic event/ledger contract.\"\n+}"
+    },
+    {
+      "sha": "9a1987916b8598f6a351555e6c6513984b3164ab",
+      "filename": "docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md",
+      "status": "added",
+      "additions": 15,
+      "deletions": 0,
+      "changes": 15,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FTEST_AND_EVIDENCE_PLAN.md",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2FTEST_AND_EVIDENCE_PLAN.md",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2FTEST_AND_EVIDENCE_PLAN.md?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,15 @@\n+# Phase4测试与证据计划 · 未执行实现测试\n+\n+G1先复算GOLDEN_REFERENCE的输入、分数合成/两腿/净总/换手/现金及整手后风险；独立参考仅stdlib Fraction/Decimal，不导入AQRP。开发方候选不算GPT Work独立认可；主审须自己复算并指出错误，不能用未来待测函数生成期望值。\n+\n+实施后每项金融算术同时具备：预存独立答案；阈值等于/±容差内外、空/零/负/巨大/非法、lot与跨0边界；性质（资产/因子输入顺序置换不改结果、共同正比例缩放分数权不变、固定等权不随分数尺度变、long-short预算恒等、现金+signed市值=equity、取整后数量不增绝对风险但可能破坏净下界故重查、相同hash确定性、拒绝后无成功target/账本写入）；独立Fraction/Decimal矩阵和手算例核对。精度容差固定，不得迎合失败改正确答案。\n+\n+时序/PIT：所有8类输入event/available/decision边界(前1us、相等、后1us)、不同时区同瞬间、混合决策、未来/过期/错误快照/币种/同证券不同市场/duplicate/null。账户必须包括非选中持仓及短仓。风险覆盖每条限额pre/post-round、缺暴露/借券/许可、停牌、受限现金/保证金、卖出跨0、旧空平仓、奇零股全平、所有失败诊断。正式审批与显式工程两条路径分别负测；真实ResearchValidated通过仍NOT VERIFIED，合成测试凭据不能提升为金融审批。\n+\n+服务验证同内核/不依赖因子名、不可变输入、不同因子/配置选择真实改变结果、幂等与失败ledger。P4不强行完成P5组合回测替换，也不把研究替换测试重新命名为已实现组合E2E。CLI/网页一致属P6，不写网页或伪造结果。\n+\n+回归先保留P0/P1/P2冻结资产及P3已审源/旧研究结果；计划轮源码/测试/工具/CI/锁/已封存审计不改，CI若运行仅P3的578回归。实施轮完整干净源码git archive→依赖hash安装→真实wheel安装→全部SDK；逐模块覆盖、边界性质、原始外置20/4、独立数学91和三扫描控制按适用变更运行，原日志含硬编码身份必须另记真实执行者，不冒充独立主审。\n+\n+每次保存唯一run_id、UTC起止、原命令/exit、失败/JUnit/cov、Python3.13.16与OS/依赖清单、锁/code/tree/wheel/数据/配置及产物SHA256。双OS官方CI核对workflow/run/job/attempt/event/base/head/实际集成SHA与tree，下载官方原ZIP，对官方size/digest及内部逐文件manifest/JUnit/coverage/轮子源码/环境/复现文件独立核验；不重新压缩冒充原ZIP、不省略失败、复制子集必须逐项声明遗漏和原完整包位置。\n+\n+未来新增portfolio/risk源码改变准入bundle时重新代码审查receipt，不复用P3 receipt伪称已审。完整旧Ref复现范围延续用户决定，仅软件包/依赖锁/精确Ref/结果重放；完整旧宿主NOT VERIFIED。所有审批/隔离/正式Test延期必须在G2报告单列，不以测试数量替代金融有效性。"
+    },
+    {
+      "sha": "b38f3e07f6840e72004336cfac8ae8e11508fb48",
+      "filename": "docs/audits/phase-4/check_plan.py",
+      "status": "added",
+      "additions": 41,
+      "deletions": 0,
+      "changes": 41,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fcheck_plan.py",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fcheck_plan.py",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2Fcheck_plan.py?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,41 @@\n+\"\"\"Read-only Phase4 plan checks; no portfolio implementation or audit verdict.\"\"\"\n+import csv\n+import hashlib\n+import json\n+from pathlib import Path\n+import subprocess\n+\n+ROOT = Path(__file__).resolve().parents[3]\n+D = Path(__file__).parent\n+ALLOWED = {'AGENTS.md','README.md','docs/CHANGELOG.md','docs/DECISIONS.md',\n+           'docs/PROGRESS.md','docs/ROADMAP.md','docs/TRACEABILITY.md'}\n+\n+def git(*args):\n+    return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()\n+\n+def main():\n+    a=json.loads((D/'AUTHORIZATION.json').read_bytes())\n+    base=a['phase3_released_main']\n+    assert git('rev-parse','phase3-baseline^{}')==base\n+    assert git('rev-parse','v0.3.0^{}')==base\n+    rows=list(csv.DictReader((ROOT/'docs/requirements.csv').read_text(encoding='utf-8').splitlines()))\n+    snap=json.loads((D/'REQUIREMENTS_SNAPSHOT.json').read_bytes())\n+    selected=[r for r in rows if r['phase']=='4']\n+    assert len(rows)==106 and selected==snap['rows'] and len(selected)==7\n+    assert sum(r['tier']=='MVP' for r in selected)==4\n+    assert sum(r['tier']=='Competition Ready' for r in selected)==3\n+    assert hashlib.sha256((ROOT/'docs/requirements.csv').read_bytes()).hexdigest()==snap['canonical_sha256']\n+    changes=git('diff','--name-only',base).splitlines()\n+    assert all(p in ALLOWED or p.startswith('docs/audits/phase-4/') for p in changes),changes\n+    assert not any((ROOT/'src/aqrp'/p).exists() for p in ('portfolio','risk','backtest','execution','ui'))\n+    frozen=json.loads((ROOT/'docs/audits/phase-3/IMPLEMENTATION_IDENTITY.json').read_bytes())\n+    for e in frozen['frozen_files']:\n+        assert hashlib.sha256((ROOT/e['path']).read_bytes()).hexdigest()==e['sha256'],e['path']\n+    required=['PLAN.md','INTERFACE_DRAFT.md','REQUIREMENTS_TRACEABILITY.md','SCOPE_AND_DEPENDENCIES.md',\n+              'GOLDEN_REFERENCE.md','golden_reference.py','SYNTHETIC_PROFILE.json','TEST_AND_EVIDENCE_PLAN.md','REVIEW_PACKAGE.md']\n+    assert all((D/p).is_file() for p in required)\n+    print(json.dumps({'actual_executor':'Codex developer','scope':'Read-only design consistency; not independent G1 review or P4 implementation test',\n+          'phase3_released_base':base,'requirements':7,'MVP':4,'Competition Ready':3,\n+          'frozen_files_verified':len(frozen['frozen_files']),'source_tests_tools_CI_lock_unchanged':True,'result':'PASS'},indent=2))\n+\n+if __name__=='__main__': main()"
+    },
+    {
+      "sha": "0e637c3988706b87056ca8b2bdc2066a8c757a8a",
+      "filename": "docs/audits/phase-4/golden_reference.py",
+      "status": "added",
+      "additions": 32,
+      "deletions": 0,
+      "changes": 32,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fgolden_reference.py",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fgolden_reference.py",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2Fgolden_reference.py?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,32 @@\n+\"\"\"Developer-authored independent arithmetic candidates; no AQRP imports or implementation claim.\"\"\"\n+from fractions import Fraction as F\n+import json\n+checks=[]\n+def check(name,actual,expected):\n+    assert actual == expected,(name,actual,expected)\n+    checks.append({'case':name,'actual':str(actual),'expected':str(expected),'status':'PASS'})\n+single=[F(3),F(1)]\n+check('G01',[v/sum(single) for v in single],[F(3,4),F(1,4)])\n+s=[(3*2+4)/F(4),(3*4+2)/F(4)]\n+check('G02',[v/sum(s) for v in s],[F(5,12),F(7,12)])\n+check('G03',sorted(['C','B','A'])[:2],['A','B'])\n+check('G04',sum(max(F(v),0) for v in [-1,-2]),0)\n+check('G05',F(1,len([-1,-2])),F(1,2))\n+check('G06',sorted(set('AB') & set('BC')),['B'])\n+check('G07',[(F(1)+0)/2,-(F(1)-0)/2],[F(1,2),-F(1,2)])\n+check('G08',[(F(6,5)+F(1,5))/2,-(F(6,5)-F(1,5))/2],[F(7,10),-F(1,2)])\n+check('G09',[F(1,2)*F(3,4),F(1,2)*F(1,4),-F(1,2)*F(1,4),-F(1,2)*F(3,4)],[F(3,8),F(1,8),-F(1,8),-F(3,8)])\n+q=[(F(500,p)//10)*10 for p in [30,40]]\n+check('G10',(q,1000-q[0]*30-q[1]*40),([10,10],300))\n+check('G11',(F(300-400,1000),F(300+400,1000),1000-300+400-400-400),(-F(1,10),F(7,10),300))\n+check('G12',F(3,4)-F(7,10),F(1,20))\n+check('G13',abs(F(3,4)-F(1,2))+abs(F(1,4)-F(1,2)),F(1,2))\n+check('G14',F(300-400,1000)<0,True)\n+check('G15',(F(3,4)-F(1,4),F(3,4)+F(1,4)),(F(1,2),1))\n+check('G16',F(3,4)*F(6,5)+F(1,4)*F(4,5),F(11,10))\n+check('G17',(min(15,10),max(5,0)),(10,5))\n+check('G18',(6-4,6>5),(2,True))\n+check('G19',(1000-500+500-500-500,1000-700+500-500-500),(0,-200))\n+tol=F(1,10**12);cap=F(3,4)\n+check('G20',[(v<=cap+tol) for v in (cap,cap+tol/2,cap+tol*2)],[True,True,False])\n+print(json.dumps({'actual_executor':'Codex developer','scope':'20 arithmetic design candidates only; NOT independent review and NOT implementation tests','cases_passed':len(checks),'checks':checks},indent=2))"
+    },
+    {
+      "sha": "835f52f837047299e6dbd277fa9c389d38ed1a8d",
+      "filename": "docs/audits/phase-4/validation/COMMANDS.json",
+      "status": "added",
+      "additions": 32,
+      "deletions": 0,
+      "changes": 32,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2FCOMMANDS.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2FCOMMANDS.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2Fvalidation%2FCOMMANDS.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,32 @@\n+{\n+  \"commands\": [\n+    {\n+      \"actual_executor\": \"Codex developer\",\n+      \"scope\": \"Plan candidates only, not independent review or P4 implementation tests\",\n+      \"argv\": [\n+        \"E:\\\\WORK\\\\Anaconda\\\\envs\\\\aqrp-p1\\\\python.exe\",\n+        \"-I\",\n+        \"C:\\\\Users\\\\11638\\\\AppData\\\\Local\\\\AQRP\\\\checkouts\\\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\\\docs\\\\audits\\\\phase-4\\\\check_plan.py\"\n+      ],\n+      \"started_at_UTC\": \"2026-10-22T07:23:43.733673+00:00\",\n+      \"finished_at_UTC\": \"2026-10-22T07:23:44.747379+00:00\",\n+      \"exit_code\": 0\n+    },\n+    {\n+      \"actual_executor\": \"Codex developer\",\n+      \"scope\": \"Plan candidates only, not independent review or P4 implementation tests\",\n+      \"argv\": [\n+        \"E:\\\\WORK\\\\Anaconda\\\\envs\\\\aqrp-p1\\\\python.exe\",\n+        \"-I\",\n+        \"C:\\\\Users\\\\11638\\\\AppData\\\\Local\\\\AQRP\\\\checkouts\\\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\\\docs\\\\audits\\\\phase-4\\\\golden_reference.py\"\n+      ],\n+      \"started_at_UTC\": \"2026-10-22T07:23:44.747435+00:00\",\n+      \"finished_at_UTC\": \"2026-10-22T07:23:44.902569+00:00\",\n+      \"exit_code\": 0\n+    }\n+  ],\n+  \"secret_scan_exit\": 0,\n+  \"python\": \"3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]\",\n+  \"head_at_plan_preparation\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\n+  \"future_review_commit\": \"Use PR AQRP_FIXED_REVIEW_SHA; these checks verify file contents with hashes below, not a fabricated pre-existing SHA.\"\n+}"
+    },
+    {
+      "sha": "461bce02bda8519f2bb73014b9cbf7f7ad83c086",
+      "filename": "docs/audits/phase-4/validation/golden-arithmetic.log",
+      "status": "added",
+      "additions": 127,
+      "deletions": 0,
+      "changes": 127,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fgolden-arithmetic.log",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fgolden-arithmetic.log",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2Fvalidation%2Fgolden-arithmetic.log?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,127 @@\n+{\r\n+  \"actual_executor\": \"Codex developer\",\r\n+  \"scope\": \"20 arithmetic design candidates only; NOT independent review and NOT implementation tests\",\r\n+  \"cases_passed\": 20,\r\n+  \"checks\": [\r\n+    {\r\n+      \"case\": \"G01\",\r\n+      \"actual\": \"[Fraction(3, 4), Fraction(1, 4)]\",\r\n+      \"expected\": \"[Fraction(3, 4), Fraction(1, 4)]\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G02\",\r\n+      \"actual\": \"[Fraction(5, 12), Fraction(7, 12)]\",\r\n+      \"expected\": \"[Fraction(5, 12), Fraction(7, 12)]\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G03\",\r\n+      \"actual\": \"['A', 'B']\",\r\n+      \"expected\": \"['A', 'B']\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G04\",\r\n+      \"actual\": \"0\",\r\n+      \"expected\": \"0\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G05\",\r\n+      \"actual\": \"1/2\",\r\n+      \"expected\": \"1/2\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G06\",\r\n+      \"actual\": \"['B']\",\r\n+      \"expected\": \"['B']\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G07\",\r\n+      \"actual\": \"[Fraction(1, 2), Fraction(-1, 2)]\",\r\n+      \"expected\": \"[Fraction(1, 2), Fraction(-1, 2)]\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G08\",\r\n+      \"actual\": \"[Fraction(7, 10), Fraction(-1, 2)]\",\r\n+      \"expected\": \"[Fraction(7, 10), Fraction(-1, 2)]\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G09\",\r\n+      \"actual\": \"[Fraction(3, 8), Fraction(1, 8), Fraction(-1, 8), Fraction(-3, 8)]\",\r\n+      \"expected\": \"[Fraction(3, 8), Fraction(1, 8), Fraction(-1, 8), Fraction(-3, 8)]\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G10\",\r\n+      \"actual\": \"([10, 10], 300)\",\r\n+      \"expected\": \"([10, 10], 300)\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G11\",\r\n+      \"actual\": \"(Fraction(-1, 10), Fraction(7, 10), 300)\",\r\n+      \"expected\": \"(Fraction(-1, 10), Fraction(7, 10), 300)\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G12\",\r\n+      \"actual\": \"1/20\",\r\n+      \"expected\": \"1/20\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G13\",\r\n+      \"actual\": \"1/2\",\r\n+      \"expected\": \"1/2\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G14\",\r\n+      \"actual\": \"True\",\r\n+      \"expected\": \"True\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G15\",\r\n+      \"actual\": \"(Fraction(1, 2), Fraction(1, 1))\",\r\n+      \"expected\": \"(Fraction(1, 2), 1)\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G16\",\r\n+      \"actual\": \"11/10\",\r\n+      \"expected\": \"11/10\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G17\",\r\n+      \"actual\": \"(10, 5)\",\r\n+      \"expected\": \"(10, 5)\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G18\",\r\n+      \"actual\": \"(2, True)\",\r\n+      \"expected\": \"(2, True)\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G19\",\r\n+      \"actual\": \"(0, -200)\",\r\n+      \"expected\": \"(0, -200)\",\r\n+      \"status\": \"PASS\"\r\n+    },\r\n+    {\r\n+      \"case\": \"G20\",\r\n+      \"actual\": \"[True, True, False]\",\r\n+      \"expected\": \"[True, True, False]\",\r\n+      \"status\": \"PASS\"\r\n+    }\r\n+  ]\r\n+}\r"
+    },
+    {
+      "sha": "e2808f80d8791ed4ca7cba0a8d1be133745931c8",
+      "filename": "docs/audits/phase-4/validation/plan-check.log",
+      "status": "added",
+      "additions": 11,
+      "deletions": 0,
+      "changes": 11,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-check.log",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-check.log",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-check.log?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,11 @@\n+{\r\n+  \"actual_executor\": \"Codex developer\",\r\n+  \"scope\": \"Read-only design consistency; not independent G1 review or P4 implementation test\",\r\n+  \"phase3_released_base\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\r\n+  \"requirements\": 7,\r\n+  \"MVP\": 4,\r\n+  \"Competition Ready\": 3,\r\n+  \"frozen_files_verified\": 1957,\r\n+  \"source_tests_tools_CI_lock_unchanged\": true,\r\n+  \"result\": \"PASS\"\r\n+}\r"
+    },
+    {
+      "sha": "fe51488c7066f6687ef680d6bfaa4f7768ef205c",
+      "filename": "docs/audits/phase-4/validation/plan-scan-findings.json",
+      "status": "added",
+      "additions": 1,
+      "deletions": 0,
+      "changes": 1,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-scan-findings.json",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-scan-findings.json",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-scan-findings.json?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1 @@\n+[]"
+    },
+    {
+      "sha": "b66dd597bdd3836b3263eae9eaf91fbd0b040934",
+      "filename": "docs/audits/phase-4/validation/plan-secret-scan.log",
+      "status": "added",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/blob/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-secret-scan.log",
+      "raw_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/raw/e40ddd0009cc30664c3a0fe0b74c4a497a541d77/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-secret-scan.log",
+      "contents_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/contents/docs%2Faudits%2Fphase-4%2Fvalidation%2Fplan-secret-scan.log?ref=e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "patch": "@@ -0,0 +1,2 @@\n+3:24PM INF scanned ~47985125 bytes (47.99 MB) in 20.6s\n+3:24PM INF no leaks found"
+    }
+  ]
+}

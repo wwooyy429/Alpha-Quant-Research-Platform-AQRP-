@@ -13,3 +13,10 @@
 | RISK-004 / MVP | RISK-001 | §4；无可执行目标/订单的拒绝与不可绕过服务 | 公开入口篡改/陈旧结果/skip标记/错误封存绑定均拒绝；失败记账完整 |
 
 G编号为GOLDEN_REFERENCE候选，只是独立算术校对，不是P4实现测试通过。未来需tests/portfolio/test_weights.py,test_construct.py,test_contracts.py及tests/risk/test_limits.py,test_tradability.py和tests/integration/test_portfolio_service.py；以实际最终代码路径补映射，不生成空测试文件来满足表格。
+
+
+## e40ddd0 G1修订的增量映射（不新增需求）
+
+- PORT-001/002/003、RISK-003/004 → INTERFACE_DRAFT §3.1、profile.quantity_policy、ROUNDING_REFERENCE R01–R13/R17：目标及delta分别检查；原奇零股保持/全平开关/部分增减/跨0；所有拒绝在P4共同service闭环，不等P5。001仍OPEN待复核。
+- RISK-001/002及QA-001/002/004 → TEST_AND_EVIDENCE_PLAN新增性质边界、ROUNDING_REFERENCE R14–R16：X03绝对Beta/行业net增加，X04turnover增加，收窄单调断言并保留所有pre/post门禁。002仍OPEN待复核。
+- 原7项4MVP/3CR、原依赖和拟实现路径不变。本次参考脚本校对不是P4产品测试、金融批准或独立G1通过。

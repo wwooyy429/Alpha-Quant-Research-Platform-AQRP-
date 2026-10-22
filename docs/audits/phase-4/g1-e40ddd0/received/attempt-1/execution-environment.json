@@ -1,0 +1,85 @@
+{
+  "actual_executor": "GPT Work primary reviewer",
+  "run_id": "fb3bd6fb-1af2-428e-895a-c60f350ec5bd",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+  "os": "Windows-11-10.0.26300-SP0",
+  "environment_changes": "NONE; no installs, accounts, ACL, services, deployment or business source changes",
+  "commands": [
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "fb3bd6fb-1af2-428e-895a-c60f350ec5bd",
+      "name": "scope",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-e40ddd0\\verify_scope.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-e40ddd0"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "start_utc": "2026-10-22T08:05:38.360610+00:00",
+      "end_utc": "2026-10-22T08:05:40.313897+00:00",
+      "exit_code": 1,
+      "stdout": "scope.stdout.log",
+      "stderr": "scope.stderr.log",
+      "note": "Independent reviewer-authored stdlib check"
+    },
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "fb3bd6fb-1af2-428e-895a-c60f350ec5bd",
+      "name": "math",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-e40ddd0\\independent_plan_math.py",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p4-g1-e40ddd0"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "start_utc": "2026-10-22T08:05:40.314751+00:00",
+      "end_utc": "2026-10-22T08:05:40.534051+00:00",
+      "exit_code": 0,
+      "stdout": "math.stdout.log",
+      "stderr": "math.stderr.log",
+      "note": "Independent reviewer-authored stdlib check"
+    },
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "fb3bd6fb-1af2-428e-895a-c60f350ec5bd",
+      "name": "developer-plan-check-replay",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0\\docs\\audits\\phase-4\\check_plan.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "start_utc": "2026-10-22T08:05:40.534917+00:00",
+      "end_utc": "2026-10-22T08:05:42.064448+00:00",
+      "exit_code": 0,
+      "stdout": "developer-plan-check-replay.stdout.log",
+      "stderr": "developer-plan-check-replay.stderr.log",
+      "note": "Developer scripts retain hardcoded original authorship; rerun does NOT become independent mathematical derivation"
+    },
+    {
+      "actual_executor": "GPT Work primary reviewer",
+      "run_id": "fb3bd6fb-1af2-428e-895a-c60f350ec5bd",
+      "name": "developer-golden-replay",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0\\docs\\audits\\phase-4\\golden_reference.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-e40ddd0",
+      "start_utc": "2026-10-22T08:05:42.065395+00:00",
+      "end_utc": "2026-10-22T08:05:42.228329+00:00",
+      "exit_code": 0,
+      "stdout": "developer-golden-replay.stdout.log",
+      "stderr": "developer-golden-replay.stderr.log",
+      "note": "Developer scripts retain hardcoded original authorship; rerun does NOT become independent mathematical derivation"
+    }
+  ]
+}

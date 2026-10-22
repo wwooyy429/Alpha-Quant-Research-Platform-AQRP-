@@ -1,6 +1,8 @@
 # Phase4 组合构建与风险控制计划 · G1待预审
 
-状态 **PLAN PRE-REVIEW REQUIRED / NOT REVIEWED**。从已发布Phase3 main `0a57dccb5618ba08cd3572d6d6b78fec963a3041`、phase3-baseline/v0.3.0创建独立分支。用户只授权启动本计划预审；不推定授权P4业务实现、合并或发布。正式G1审查主要交GPT Work，固定40位SHA见PR描述AQRP_FIXED_REVIEW_SHA；不审漂移HEAD。
+当前：GPT Work固定e40ddd0009cc30664c3a0fe0b74c4a497a541d77判**PLAN BLOCKED**。001 High/002 Medium仍OPEN；本轮最小数量门禁及风险性质修订已提出，待新固定SHA增量复核。详DEVELOPER_RESPONSE.md、ROUNDING_REFERENCE.md及g1-e40ddd0/原字节证据；不得自行CLOSED/PLAN PASS。P4实现尚未授权。
+
+当前独立结论 **PLAN BLOCKED**；本轮设计修订候选 **RECHECK REQUIRED / NOT REVIEWED**。从已发布Phase3 main `0a57dccb5618ba08cd3572d6d6b78fec963a3041`、phase3-baseline/v0.3.0创建独立分支。用户只授权启动本计划预审；不推定授权P4业务实现、合并或发布。正式G1审查主要交GPT Work，固定40位SHA见PR描述AQRP_FIXED_REVIEW_SHA；不审漂移HEAD。
 
 范围严格取原106项目录的phase=4：7项（4 MVP、3 Competition Ready），见REQUIREMENTS_SNAPSHOT.json及REQUIREMENTS_TRACEABILITY.md。PORT-004优化器属后续扩展，不在本阶段；不提前写P5订单/撮合/账本、P6网页、P7完整替换E2E。P4必须完整实现7项既定工程行为，不能把多空、借券或暴露缺失处理标Unsupported代替实现。本轮仅可评审设计和独立算术候选，没有P4业务代码或实现通过结论。
 

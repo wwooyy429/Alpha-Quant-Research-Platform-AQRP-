@@ -15,9 +15,12 @@
   "phase3_original_evidence_unchanged": true,
   "plan_consistency": "PASS developer only",
   "arithmetic_candidates": 20,
-  "independent_G1": "NOT_REVIEWED",
+  "independent_G1": "PLAN BLOCKED on e40ddd0009cc30664c3a0fe0b74c4a497a541d77; new revised candidate NOT REVIEWED",
   "phase4_business_implementation_tests": "NOT_APPLICABLE_NO_IMPLEMENTATION",
   "no_deployment_or_actual_accounts_changed": true,
   "dependency_limits": "SCOPE_AND_DEPENDENCIES.md",
-  "raw_log_byte_preservation": "Initial staged whitespace check recognized CRLF in original Windows subprocess stdout logs. Per-directory validation attribute treats CR as EOL; original log bytes/hash preserved, no test or source change."
+  "raw_log_byte_preservation": "Initial staged whitespace check recognized CRLF in original Windows subprocess stdout logs. Per-directory validation attribute treats CR as EOL; original log bytes/hash preserved, no test or source change.",
+  "current_developer_revision": "17 new arithmetic/divisibility candidate groups checked; 2 findings remain OPEN pending GPT Work",
+  "original_G01_G20_reference_and_expected_bytes_unchanged": true,
+  "new_validation": "validation-revision-e40ddd0/CHECKS.json"
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "P4-G1-001",
+    "severity": "High",
+    "status": "OPEN",
+    "blocks_G1": true,
+    "kind": "Design contract gap; no P4 runtime implementation exists",
+    "requirements": [
+      "PORT-001",
+      "PORT-002",
+      "PORT-003",
+      "RISK-003",
+      "RISK-004"
+    ],
+    "location": "docs/audits/phase-4/INTERFACE_DRAFT.md:25,33,39; SYNTHETIC_PROFILE.json:14; docs/BACKTEST_CONTRACT.md:49",
+    "title": "Target lot alignment does not validate rebalance delta for existing odd-lot positions",
+    "evidence": [
+      "independent-math-results.json:X01-target-lot-does-not-protect-delta",
+      "independent-math-results.json:X02-no-trade-odd-holding-conflict"
+    ],
+    "disposition": "Freeze whether lot applies to target and/or delta. With the declared trading-lot/full-close-only policy, reject non-full-close nonaligned delta explicitly before success; define delta=0 odd-lot hold separately. Keep q_target=q_current+delta. An alternative trade-lattice quantizer needs explicit design approval and all post-round checks; no silent partial-odd-lot permission or P5-only deferral."
+  },
+  {
+    "id": "P4-G1-002",
+    "severity": "Medium",
+    "status": "OPEN",
+    "blocks_G1": true,
+    "kind": "Incorrect proposed test property; full pre/post risk recheck already required in interface",
+    "requirements": [
+      "RISK-001",
+      "RISK-002",
+      "QA-001",
+      "QA-002",
+      "QA-004"
+    ],
+    "location": "docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md:5; INTERFACE_DRAFT.md:25,29,31",
+    "title": "Toward-zero target rounding may increase absolute Beta, industry net exposure and turnover",
+    "evidence": [
+      "independent-math-results.json:X03-rounding-increases-absolute-Beta-sector-net",
+      "independent-math-results.json:X04-rounding-increases-turnover"
+    ],
+    "disposition": "Narrow monotonicity to each absolute target quantity, absolute target notional at fixed positive prices/equity, gross and sector gross. Preserve pre/post checks for signed net and interval limits, Beta, turnover, cash and permissions. Freeze new independent expected counterexamples and applicable regression properties; do not weaken existing risk checks."
+  }
+]
