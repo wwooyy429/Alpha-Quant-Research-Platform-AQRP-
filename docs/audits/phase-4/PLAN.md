@@ -1,4 +1,8 @@
-# Phase4 组合构建与风险控制计划 · G1待预审
+# Phase4 组合构建与风险控制计划 · G1 PLAN PASS（受限工程设计）
+
+2026-10-22 当前Phase4 G1：GPT Work对固定265af16353d85ce8c2d229a7517809d707498da8判PLAN PASS（受限工程设计），001 High/002 Medium均CLOSED_DESIGN，无新增阻断。原17候选独立复算、64项证据检查通过；仅设计数学，不是P4实现。原件与接收/关闭在docs/audits/phase-4/g1-265af16/。实际P4实施仍待用户单独授权，未阶段验收/合并/标签/部署/实盘/P5；Phase3受限发布与延期不变。以下旧BLOCKED/OPEN按原轮历史保留。
+
+## 原轮设计修订与预审历史（以下旧状态非当前结论）
 
 当前：GPT Work固定e40ddd0009cc30664c3a0fe0b74c4a497a541d77判**PLAN BLOCKED**。001 High/002 Medium仍OPEN；本轮最小数量门禁及风险性质修订已提出，待新固定SHA增量复核。详DEVELOPER_RESPONSE.md、ROUNDING_REFERENCE.md及g1-e40ddd0/原字节证据；不得自行CLOSED/PLAN PASS。P4实现尚未授权。
 

@@ -1,5 +1,7 @@
 # Phase4原需求逐项映射（7项）
 
+2026-10-22 当前Phase4 G1：GPT Work对固定265af16353d85ce8c2d229a7517809d707498da8判PLAN PASS（受限工程设计），001 High/002 Medium均CLOSED_DESIGN，无新增阻断。原17候选独立复算、64项证据检查通过；仅设计数学，不是P4实现。原件与接收/关闭在docs/audits/phase-4/g1-265af16/。实际P4实施仍待用户单独授权，未阶段验收/合并/标签/部署/实盘/P5；Phase3受限发布与延期不变。以下旧BLOCKED/OPEN按原轮历史保留。
+
 原106项和12业务分类/16 ID前缀不改；级别来自canonical目录，不把Competition Ready推迟成空接口。本轮全部业务状态Planned，设计候选待G1。
 
 | ID / 级别 | 依赖 | 具体设计/后续实现 | 验收与独立答案/负例 |

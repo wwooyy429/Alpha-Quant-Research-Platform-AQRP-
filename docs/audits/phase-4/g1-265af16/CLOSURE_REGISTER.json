@@ -1,0 +1,33 @@
+{
+  "reviewed_sha": "265af16353d85ce8c2d229a7517809d707498da8",
+  "reviewer": "GPT Work primary independent reviewer",
+  "verdict": "PLAN PASS",
+  "scope": "Restricted engineering G1 only",
+  "original_source": "received/finding-disposition.json",
+  "source_sha256": "157d0382175c7974fa0323cac105b3c062d349ad57e63559b75b495e7396091a",
+  "findings": [
+    {
+      "id": "P4-G1-001",
+      "original_severity": "High",
+      "previous_status": "OPEN",
+      "status": "CLOSED_DESIGN",
+      "location": "docs/audits/phase-4/INTERFACE_DRAFT.md:25,29,33-39,47,53; ROUNDING_REFERENCE.md:11-28; SYNTHETIC_PROFILE.json quantity_policy",
+      "basis": "Exact ideal=current hold; separate changed target and nonzero delta lot gates; full-close-only flag with no other risk waiver; original X01 now rejected at delta gate. 14 quantity groups and reviewer edge cases independently verified.",
+      "runtime_implementation_verified": false
+    },
+    {
+      "id": "P4-G1-002",
+      "original_severity": "Medium",
+      "previous_status": "OPEN",
+      "status": "CLOSED_DESIGN",
+      "location": "docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md:5,20-24; ROUNDING_REFERENCE.md:30-51; INTERFACE_DRAFT.md:39,43,45",
+      "basis": "Monotonicity limited to absolute target quantities/notionals and gross/sector gross at fixed positive prices/equity/mapping. X03/X04 independently frozen as pre-pass/post-reject, with all risk checks retained.",
+      "runtime_implementation_verified": false
+    }
+  ],
+  "new_blocking_findings": 0,
+  "runtime_implementation_verified": false,
+  "P4_implementation_authorized": false,
+  "previous_OPEN_history_preserved": "../g1-e40ddd0/",
+  "P4_G2_and_human_acceptance": "NOT_PERFORMED_NOT_APPROVED"
+}

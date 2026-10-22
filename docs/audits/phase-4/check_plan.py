@@ -33,11 +33,15 @@ def main():
         assert hashlib.sha256((ROOT/e['path']).read_bytes()).hexdigest()==e['sha256'],e['path']
     required=['PLAN.md','INTERFACE_DRAFT.md','REQUIREMENTS_TRACEABILITY.md','SCOPE_AND_DEPENDENCIES.md',
               'GOLDEN_REFERENCE.md','golden_reference.py','SYNTHETIC_PROFILE.json','TEST_AND_EVIDENCE_PLAN.md','REVIEW_PACKAGE.md',
-              'ROUNDING_REFERENCE.md','rounding_reference.py','DEVELOPER_RESPONSE.md','STATUS.json','g1-e40ddd0/RECEIPT.json']
+              'ROUNDING_REFERENCE.md','rounding_reference.py','DEVELOPER_RESPONSE.md','STATUS.json','g1-e40ddd0/RECEIPT.json','g1-265af16/RECEIPT.json','g1-265af16/CLOSURE_REGISTER.json']
     assert all((D/p).is_file() for p in required)
     status=json.loads((D/'STATUS.json').read_bytes())
-    assert status['independent_verdict']=='PLAN BLOCKED'
-    assert set(status['findings'].values())=={'OPEN'}
+    assert status['independent_verdict']=='PLAN PASS'
+    assert status['reviewed_sha']=='265af16353d85ce8c2d229a7517809d707498da8'
+    assert status['findings']=={'P4-G1-001':'CLOSED_DESIGN','P4-G1-002':'CLOSED_DESIGN'}
+    closure=json.loads((D/'g1-265af16/CLOSURE_REGISTER.json').read_bytes())
+    assert closure['verdict']=='PLAN PASS' and not closure['runtime_implementation_verified']
+    assert {f['id']:f['status'] for f in closure['findings']}==status['findings']
     assert not status['P4_implementation_authorized']
     print(json.dumps({'actual_executor':'Codex developer','scope':'Read-only design consistency; not independent G1 review or P4 implementation test',
           'phase3_released_base':base,'requirements':7,'MVP':4,'Competition Ready':3,

@@ -1,0 +1,387 @@
+[
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "265af16353d85ce8c2d229a7517809d707498da8\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "265af16353d85ce8c2d229a7517809d707498da8^{tree}"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "f6faa305c3084dd027d607615cc146f7908e5034\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "265af16353d85ce8c2d229a7517809d707498da8"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "AGENTS.md\nREADME.md\ndocs/CHANGELOG.md\ndocs/DECISIONS.md\ndocs/PROGRESS.md\ndocs/ROADMAP.md\ndocs/TRACEABILITY.md\ndocs/audits/phase-4/.gitattributes\ndocs/audits/phase-4/BASELINE_VERIFICATION.json\ndocs/audits/phase-4/DEVELOPER_RESPONSE.md\ndocs/audits/phase-4/FILE_MANIFEST.json\ndocs/audits/phase-4/INTERFACE_DRAFT.md\ndocs/audits/phase-4/PLAN.md\ndocs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md\ndocs/audits/phase-4/REVIEW_PACKAGE.md\ndocs/audits/phase-4/ROUNDING_REFERENCE.md\ndocs/audits/phase-4/STATUS.json\ndocs/audits/phase-4/SYNTHETIC_PROFILE.json\ndocs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md\ndocs/audits/phase-4/check_plan.py\ndocs/audits/phase-4/g1-e40ddd0/.gitattributes\ndocs/audits/phase-4/g1-e40ddd0/FILE_MANIFEST.json\ndocs/audits/phase-4/g1-e40ddd0/FINDING_DISPOSITION.json\ndocs/audits/phase-4/g1-e40ddd0/GPT-Work-P4-G1-e40ddd0-Evidence.zip\ndocs/audits/phase-4/g1-e40ddd0/ORIGINAL_RECEIPT.json\ndocs/audits/phase-4/g1-e40ddd0/PACKAGING_NOTES.md\ndocs/audits/phase-4/g1-e40ddd0/RECEIPT.json\ndocs/audits/phase-4/g1-e40ddd0/received/AQRP-P4-G1-e40ddd0-Developer-Plan.zip\ndocs/audits/phase-4/g1-e40ddd0/received/Codex-Phase4-G1-e40ddd0-Handoff.md\ndocs/audits/phase-4/g1-e40ddd0/received/DEVELOPER-SEAL.json\ndocs/audits/phase-4/g1-e40ddd0/received/Developer-GPT-Work-Phase4-G1-Request.md\ndocs/audits/phase-4/g1-e40ddd0/received/GPT-Work-Phase4-G1-e40ddd0-Review.md\ndocs/audits/phase-4/g1-e40ddd0/received/PR6-HANDOFF-SNAPSHOT.json\ndocs/audits/phase-4/g1-e40ddd0/received/REVIEW_EVIDENCE_MANIFEST.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-0.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-1.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-2.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-3.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/DEVELOPER-SEAL.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-golden-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-golden-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-golden-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-plan-check-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-plan-check-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-plan-check-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/execution-environment.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/math.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/math.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/math.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/scope.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/scope.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/scope.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/checkout.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/checkout.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/checkout.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/ci-artifact-metadata.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980314.log\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980314.tool-response.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980827.log\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980827.tool-response.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-jobs.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-merge-commit.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-review-summary.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-run.json\ndocs/audits/phase-4/g1-e40ddd0/received/clone.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/clone.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-golden-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/developer-golden-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-golden-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-plan-check-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/developer-plan-check-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-plan-check-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/end-state.json\ndocs/audits/phase-4/g1-e40ddd0/received/execution-environment.json\ndocs/audits/phase-4/g1-e40ddd0/received/finalize_review.py\ndocs/audits/phase-4/g1-e40ddd0/received/findings.json\ndocs/audits/phase-4/g1-e40ddd0/received/fixed-plan-source.zip\ndocs/audits/phase-4/g1-e40ddd0/received/independent-math-results.json\ndocs/audits/phase-4/g1-e40ddd0/received/independent_plan_math.py\ndocs/audits/phase-4/g1-e40ddd0/received/math.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/math.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/math.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/pr6-end.json\ndocs/audits/phase-4/g1-e40ddd0/received/pr6-start.json\ndocs/audits/phase-4/g1-e40ddd0/received/received-developer-package-verification.json\ndocs/audits/phase-4/g1-e40ddd0/received/run_review.py\ndocs/audits/phase-4/g1-e40ddd0/received/scope-raw-git-commands.json\ndocs/audits/phase-4/g1-e40ddd0/received/scope-results.json\ndocs/audits/phase-4/g1-e40ddd0/received/scope.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/scope.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/scope.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/seal_evidence.py\ndocs/audits/phase-4/g1-e40ddd0/received/verify_scope.py\ndocs/audits/phase-4/rounding_reference.py\ndocs/audits/phase-4/validation-revision-e40ddd0/CHECKS.json\ndocs/audits/phase-4/validation-revision-e40ddd0/COMMANDS.json\ndocs/audits/phase-4/validation-revision-e40ddd0/plan-check.log\ndocs/audits/phase-4/validation-revision-e40ddd0/rounding-reference.log\ndocs/audits/phase-4/validation-revision-e40ddd0/scan-findings.json\ndocs/audits/phase-4/validation-revision-e40ddd0/secret-scan.log\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "AGENTS.md\nREADME.md\ndocs/CHANGELOG.md\ndocs/DECISIONS.md\ndocs/PROGRESS.md\ndocs/ROADMAP.md\ndocs/TRACEABILITY.md\ndocs/audits/phase-4/.gitattributes\ndocs/audits/phase-4/AUTHORIZATION.json\ndocs/audits/phase-4/BASELINE_VERIFICATION.json\ndocs/audits/phase-4/DEVELOPER_RESPONSE.md\ndocs/audits/phase-4/FILE_MANIFEST.json\ndocs/audits/phase-4/GOLDEN_REFERENCE.md\ndocs/audits/phase-4/INTERFACE_DRAFT.md\ndocs/audits/phase-4/PHASE3_RELEASE_RECEIPT.json\ndocs/audits/phase-4/PLAN.md\ndocs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json\ndocs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md\ndocs/audits/phase-4/REVIEW_PACKAGE.md\ndocs/audits/phase-4/ROUNDING_REFERENCE.md\ndocs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md\ndocs/audits/phase-4/STATUS.json\ndocs/audits/phase-4/SYNTHETIC_PROFILE.json\ndocs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md\ndocs/audits/phase-4/check_plan.py\ndocs/audits/phase-4/g1-e40ddd0/.gitattributes\ndocs/audits/phase-4/g1-e40ddd0/FILE_MANIFEST.json\ndocs/audits/phase-4/g1-e40ddd0/FINDING_DISPOSITION.json\ndocs/audits/phase-4/g1-e40ddd0/GPT-Work-P4-G1-e40ddd0-Evidence.zip\ndocs/audits/phase-4/g1-e40ddd0/ORIGINAL_RECEIPT.json\ndocs/audits/phase-4/g1-e40ddd0/PACKAGING_NOTES.md\ndocs/audits/phase-4/g1-e40ddd0/RECEIPT.json\ndocs/audits/phase-4/g1-e40ddd0/received/AQRP-P4-G1-e40ddd0-Developer-Plan.zip\ndocs/audits/phase-4/g1-e40ddd0/received/Codex-Phase4-G1-e40ddd0-Handoff.md\ndocs/audits/phase-4/g1-e40ddd0/received/DEVELOPER-SEAL.json\ndocs/audits/phase-4/g1-e40ddd0/received/Developer-GPT-Work-Phase4-G1-Request.md\ndocs/audits/phase-4/g1-e40ddd0/received/GPT-Work-Phase4-G1-e40ddd0-Review.md\ndocs/audits/phase-4/g1-e40ddd0/received/PR6-HANDOFF-SNAPSHOT.json\ndocs/audits/phase-4/g1-e40ddd0/received/REVIEW_EVIDENCE_MANIFEST.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-0.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-1.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-2.json\ndocs/audits/phase-4/g1-e40ddd0/received/api-3.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/DEVELOPER-SEAL.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-golden-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-golden-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-golden-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-plan-check-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-plan-check-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/developer-plan-check-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/execution-environment.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/math.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/math.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/math.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/scope.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/scope.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/attempt-1/scope.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/checkout.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/checkout.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/checkout.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/ci-artifact-metadata.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980314.log\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980314.tool-response.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980827.log\ndocs/audits/phase-4/g1-e40ddd0/received/ci-job-119695980827.tool-response.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-jobs.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-merge-commit.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-review-summary.json\ndocs/audits/phase-4/g1-e40ddd0/received/ci-run.json\ndocs/audits/phase-4/g1-e40ddd0/received/clone.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/clone.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-golden-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/developer-golden-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-golden-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-plan-check-replay.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/developer-plan-check-replay.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/developer-plan-check-replay.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/end-state.json\ndocs/audits/phase-4/g1-e40ddd0/received/execution-environment.json\ndocs/audits/phase-4/g1-e40ddd0/received/finalize_review.py\ndocs/audits/phase-4/g1-e40ddd0/received/findings.json\ndocs/audits/phase-4/g1-e40ddd0/received/fixed-plan-source.zip\ndocs/audits/phase-4/g1-e40ddd0/received/independent-math-results.json\ndocs/audits/phase-4/g1-e40ddd0/received/independent_plan_math.py\ndocs/audits/phase-4/g1-e40ddd0/received/math.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/math.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/math.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/pr6-end.json\ndocs/audits/phase-4/g1-e40ddd0/received/pr6-start.json\ndocs/audits/phase-4/g1-e40ddd0/received/received-developer-package-verification.json\ndocs/audits/phase-4/g1-e40ddd0/received/run_review.py\ndocs/audits/phase-4/g1-e40ddd0/received/scope-raw-git-commands.json\ndocs/audits/phase-4/g1-e40ddd0/received/scope-results.json\ndocs/audits/phase-4/g1-e40ddd0/received/scope.command.json\ndocs/audits/phase-4/g1-e40ddd0/received/scope.stderr.log\ndocs/audits/phase-4/g1-e40ddd0/received/scope.stdout.log\ndocs/audits/phase-4/g1-e40ddd0/received/seal_evidence.py\ndocs/audits/phase-4/g1-e40ddd0/received/verify_scope.py\ndocs/audits/phase-4/golden_reference.py\ndocs/audits/phase-4/rounding_reference.py\ndocs/audits/phase-4/validation-revision-e40ddd0/CHECKS.json\ndocs/audits/phase-4/validation-revision-e40ddd0/COMMANDS.json\ndocs/audits/phase-4/validation-revision-e40ddd0/plan-check.log\ndocs/audits/phase-4/validation-revision-e40ddd0/rounding-reference.log\ndocs/audits/phase-4/validation-revision-e40ddd0/scan-findings.json\ndocs/audits/phase-4/validation-revision-e40ddd0/secret-scan.log\ndocs/audits/phase-4/validation/COMMANDS.json\ndocs/audits/phase-4/validation/golden-arithmetic.log\ndocs/audits/phase-4/validation/plan-check.log\ndocs/audits/phase-4/validation/plan-scan-findings.json\ndocs/audits/phase-4/validation/plan-secret-scan.log\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "src",
+      "tests",
+      "tools",
+      ".github",
+      "requirements.lock",
+      "pyproject.toml",
+      ".gitleaks.toml",
+      ".python-version",
+      ".pre-commit-config.yaml",
+      "Makefile"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "src",
+      "tests",
+      "tools",
+      ".github",
+      "requirements.lock",
+      "pyproject.toml",
+      ".gitleaks.toml",
+      ".python-version",
+      ".pre-commit-config.yaml",
+      "Makefile"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "src",
+      "tests",
+      "tools",
+      ".github",
+      "requirements.lock",
+      "pyproject.toml",
+      ".gitleaks.toml",
+      ".python-version",
+      ".pre-commit-config.yaml",
+      "Makefile"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/audits/phase-0"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/audits/phase-1"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/audits/phase-2"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/audits/phase-3"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/sources"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/requirements.csv"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/INTERFACES.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/DATA_CONTRACT.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      "docs/BACKTEST_CONTRACT.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+      "265af16353d85ce8c2d229a7517809d707498da8",
+      "--",
+      ".gitattributes"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77:docs/audits/phase-4/GOLDEN_REFERENCE.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "# Phase4 Golden独立算术候选（G01–G20）\n\n只用手算/有理数及stdlib参考校对；未调用AQRP组合函数（尚未实现），不是P4实现通过，也不是主审结论。可运行golden_reference.py获得开发方20组算术核对日志。所有权重/比率按1e-12绝对容差，数量/权限精确，金额1e-8；候选输入均明确为合成，同一决策、CCY、PIT且默认其余限额不触发。\n\n| 编号 | 独立输入/推导 | 预期 |\n|---|---|---|\n| G01 | 单因子[3,1]，score权3/(3+1) | A=3/4,B=1/4 |\n| G02 | 先定向分数A=[2,4],B=[4,2]；a=[3,1]，除4 | S_A=5/2,S_B=7/2；score权5/12,7/12 |\n| G03 | A/B/C同分；K2；完整ID A<B<C | 选A/B，等权1/2,1/2；ties=true |\n| G04 | TopK分数[-1,-2]；score权 | NO_POSITIVE_SCORE，现金1；禁止cash则INFEASIBLE |\n| G05 | 同[-1,-2]；equal权 | A/B各1/2；规则不同结果显式 |\n| G06 | F1有A/B，F2有B/C，a=[1,1]，B分数[2,4] | 交集B，S_B=3，权重1；A/C剔除不补0 |\n| G07 | G=1,N=0，两腿各一资产 | long1/2,short-1/2；gross1,net0 |\n| G08 | G=6/5,N=1/5，两腿各一 | long7/10,short-1/2；gross6/5,net1/5 |\n| G09 | S=[3,1,-1,-3]；mean0；G=1,N=0 | 权重[3/8,1/8,-1/8,-3/8] |\n| G10 | E1000；A/B各1/2；p=[30,40],lot10 | q*=[50/3,25/2]→q=[10,10]；w=[3/10,2/5]；cash300 |\n| G11 | E1000，w=[1/2,-1/2]，p=[30,40],lot10 | q=[10,-10]；net=-1/10,gross7/10,cash1100；short冻结400+margin400→free300 |\n| G12 | targetA=3/4；abs cap=7/10 | 超1/20，REJECT，不截断为cap |\n| G13 | current=[1/2,1/2]→target=[3/4,1/4] | gross-turnover1/2，half1/4；cap2/5则拒绝 |\n| G14 | net低界0，连续net0；G11整手后net=-1/10 | pre通过，post拒绝，不宣称取整天然安全 |\n| G15 | 同行业w=[3/4,-1/4] | sector_net1/2，sector_gross1；gross_cap9/10拒绝 |\n| G16 | w=[3/4,1/4],beta=[6/5,4/5] | Beta=11/10；upper1触发；缺任一Beta不得填0 |\n| G17 | current10,target-5,sellable10,borrow_total5,short_permission=true | long_sale10、target_short5，均可；sellable9或borrow4分别拒绝 |\n| G18 | current-4,target-6,borrow_total5 | 新增2但总short6>5，拒绝 |\n| G19 | E1000，qnotional=[500,-500] | cash1000，short500+margin500=1000，free0；G08短500/long700则cash800/free-200拒绝 |\n| G20 | 上界cap=3/4、tol=1e-12 | value=cap和cap+5e-13可；cap+2e-12拒绝；容差不作用于整数借券 |\n\n非算术负例不能靠此脚本宣称实现通过：未来时点、假审批、停牌调仓、混合币种、旧结果篡改、独有旧持仓、缺暴露/borrow、奇零股全平、空腿/重叠、NaN和重复。它们在TEST_AND_EVIDENCE_PLAN逐项要求真实实现测试。G09均值是工程预注册变换而非开发/最终Test数据拟合；不得对正式Test选择参数。\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77:docs/audits/phase-4/golden_reference.py"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "\"\"\"Developer-authored independent arithmetic candidates; no AQRP imports or implementation claim.\"\"\"\nfrom fractions import Fraction as F\nimport json\nchecks=[]\ndef check(name,actual,expected):\n    assert actual == expected,(name,actual,expected)\n    checks.append({'case':name,'actual':str(actual),'expected':str(expected),'status':'PASS'})\nsingle=[F(3),F(1)]\ncheck('G01',[v/sum(single) for v in single],[F(3,4),F(1,4)])\ns=[(3*2+4)/F(4),(3*4+2)/F(4)]\ncheck('G02',[v/sum(s) for v in s],[F(5,12),F(7,12)])\ncheck('G03',sorted(['C','B','A'])[:2],['A','B'])\ncheck('G04',sum(max(F(v),0) for v in [-1,-2]),0)\ncheck('G05',F(1,len([-1,-2])),F(1,2))\ncheck('G06',sorted(set('AB') & set('BC')),['B'])\ncheck('G07',[(F(1)+0)/2,-(F(1)-0)/2],[F(1,2),-F(1,2)])\ncheck('G08',[(F(6,5)+F(1,5))/2,-(F(6,5)-F(1,5))/2],[F(7,10),-F(1,2)])\ncheck('G09',[F(1,2)*F(3,4),F(1,2)*F(1,4),-F(1,2)*F(1,4),-F(1,2)*F(3,4)],[F(3,8),F(1,8),-F(1,8),-F(3,8)])\nq=[(F(500,p)//10)*10 for p in [30,40]]\ncheck('G10',(q,1000-q[0]*30-q[1]*40),([10,10],300))\ncheck('G11',(F(300-400,1000),F(300+400,1000),1000-300+400-400-400),(-F(1,10),F(7,10),300))\ncheck('G12',F(3,4)-F(7,10),F(1,20))\ncheck('G13',abs(F(3,4)-F(1,2))+abs(F(1,4)-F(1,2)),F(1,2))\ncheck('G14',F(300-400,1000)<0,True)\ncheck('G15',(F(3,4)-F(1,4),F(3,4)+F(1,4)),(F(1,2),1))\ncheck('G16',F(3,4)*F(6,5)+F(1,4)*F(4,5),F(11,10))\ncheck('G17',(min(15,10),max(5,0)),(10,5))\ncheck('G18',(6-4,6>5),(2,True))\ncheck('G19',(1000-500+500-500-500,1000-700+500-500-500),(0,-200))\ntol=F(1,10**12);cap=F(3,4)\ncheck('G20',[(v<=cap+tol) for v in (cap,cap+tol/2,cap+tol*2)],[True,True,False])\nprint(json.dumps({'actual_executor':'Codex developer','scope':'20 arithmetic design candidates only; NOT independent review and NOT implementation tests','cases_passed':len(checks),'checks':checks},indent=2))\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77:docs/audits/phase-4/SCOPE_AND_DEPENDENCIES.md"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "# Phase4依赖与受限工程输入\n\n本文件落实用户2026-10-22的范围决定，不修改独立审查原结论。\n\n| 依赖 | 已有工程证据 | 未满足/延期 | P4处理及影响 |\n|---|---|---|---|\n| FACTOR-009、VALID-008 → PORT-001 | 精确Ref、准入hash及终态manifest绑定的审批实现、工程正负例 | 真正金融标准、最终独立Test与正式ResearchValidated证据 | 正式ApprovedScores仍拒绝；显式EngineeringScores只用于合成工程测试，无收益/投资有效性结论 |\n| VALID-004/005 | 封存接口/协议/逻辑拒绝工程测试 | 四主体真实权限隔离、正式Test、金融批准 | 不部署，不调账户/ACL/服务/调度；不能把本地逻辑校验叫真实隔离 |\n| DATA-005、DATA-012 → RISK-003/002 | P1状态/主档及P3 PIT暴露侧车 | 真实市场、借券/交收/费用规则接入 | 使用显式合成profile与夹具，真实市场另审；缺数据拒绝，不填0 |\n| EXP-003 | 已验证wheel、锁、旧Ref及结果投影重放 | 历史完整宿主/安装器全字节复刻 | P4仍记录软件包/锁/数据/结果hash；不宣称宿主等同 |\n| 账户状态及OrderEvent | 接口设计、合成AccountSnapshot | P5真实模拟账本与成交再检查 | P4纯输入快照/目标/建议，不写账本；调仓建议不可执行且不创建订单 |\n\nEngineeringScores必须携带scope=ENGINEERING_TEST_ONLY、dataset_kind=SYNTHETIC、明确fixture_manifest/hash、来源run和精确FactorRefs（若来自真实P3合成运行，校验终态工件hash及时间）；接受手写合成夹具时明确source_kind=DECLARED_FIXTURE，不冒充实际研究运行。金融approval必须NONE。纯工程输出不得转换正式批准对象，不导出可执行订单。业务签名显式分开construct_engineering与construct_approved；共享同一计算内核和风险顺序，禁止默认engineer回退或布尔skip_approval。审批文件/终态清单不可后补绕过。正式入口将来依既有审批验签和证据域校验，无正式批准返回APPROVAL_REQUIRED，不能自动接受测试公钥签名为真实金融审批。\n\n当前授权不允许为打通正式入口而建立真实保管主体/权限或重新使用最终Test。P4工程验收若完成只能证明契约、算术和约束行为；正式策略可用性及金融批准仍待上述延期门禁。独立审查须分别报告工程闭环与正式依赖阻断，不把延期能力伪装已实现。\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77:docs/audits/phase-4/AUTHORIZATION.json"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "{\n  \"date\": \"2026-10-22\",\n  \"source\": \"Direct human instruction\",\n  \"exact_user_message\": \"我同意按上述受限工程范围验收 Phase3：金融批准、真实隔离和正式 Test 延期，历史复现以已验证的软件包、依赖锁、旧因子版本和结果重放为准。请记录范围及影响，合并 PR #5 并发布基线，然后启动 Phase4 计划预审；不授权真实部署或实盘。\",\n  \"phase3_released_main\": \"0a57dccb5618ba08cd3572d6d6b78fec963a3041\",\n  \"phase3_tags\": [\n    \"phase3-baseline\",\n    \"v0.3.0\"\n  ],\n  \"scope\": \"Phase4 plan and interface draft, independent-answer candidates and GPT Work G1 pre-review ONLY\",\n  \"phase4_implementation_authorized\": false,\n  \"g1_verdict\": \"NOT_REVIEWED\",\n  \"merge_tag_P4_authorized\": false,\n  \"real_deployment_or_live_trading_authorized\": false,\n  \"reviewer\": \"GPT Work primary independent review per latest human preference\",\n  \"restrictions\": \"No accounts, ACL, services or scheduler configuration changes; no portfolio/risk business implementation before fixed-SHA G1 PASS and implementation authorization.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77:docs/audits/phase-4/REQUIREMENTS_SNAPSHOT.json"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "{\n  \"canonical_path\": \"docs/requirements.csv\",\n  \"canonical_sha256\": \"20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1\",\n  \"canonical_count\": 106,\n  \"selected_count\": 7,\n  \"MVP\": 4,\n  \"Competition Ready\": 3,\n  \"rows\": [\n    {\n      \"id\": \"PORT-001\",\n      \"source\": \"V3.0§7.1\",\n      \"tier\": \"MVP\",\n      \"phase\": \"4\",\n      \"module\": \"portfolio\",\n      \"definition\": \"因子无关组合输入和目标权重/仓位/调仓建议及诊断\",\n      \"input\": \"已批准分数/股票池/账户/权益/暴露\",\n      \"output\": \"TargetPortfolio\",\n      \"dependencies\": \"FACTOR-009;VALID-008\",\n      \"acceptance\": \"不依赖具体因子名称，不修改账本\",\n      \"design\": \"INTERFACES.md\",\n      \"priority\": \"P1\",\n      \"planned_code\": \"src/aqrp/portfolio/\",\n      \"planned_test\": \"tests/portfolio/test_port_001.py\",\n      \"capability_status\": \"Planned\",\n      \"design_status\": \"DRAFT_PRESENT\"\n    },\n    {\n      \"id\": \"PORT-002\",\n      \"source\": \"V3.0§7.2;V3.0§3.4\",\n      \"tier\": \"MVP\",\n      \"phase\": \"4\",\n      \"module\": \"portfolio\",\n      \"definition\": \"单/多因子组合、等权/分数权、LongOnly\",\n      \"input\": \"分数和权重规则\",\n      \"output\": \"合法目标及残余现金\",\n      \"dependencies\": \"PORT-001\",\n      \"acceptance\": \"零分/负分/整手余数有定义，权重守恒\",\n      \"design\": \"INTERFACES.md\",\n      \"priority\": \"P1\",\n      \"planned_code\": \"src/aqrp/portfolio/\",\n      \"planned_test\": \"tests/portfolio/test_port_002.py\",\n      \"capability_status\": \"Planned\",\n      \"design_status\": \"DRAFT_PRESENT\"\n    },\n    {\n      \"id\": \"PORT-003\",\n      \"source\": \"V3.0§7.2;V3.0§18\",\n      \"tier\": \"Competition Ready\",\n      \"phase\": \"4\",\n      \"module\": \"portfolio\",\n      \"definition\": \"LongShort组合及gross/net分别控制\",\n      \"input\": \"多空权限及分数\",\n      \"output\": \"多空目标\",\n      \"dependencies\": \"PORT-001;RISK-003\",\n      \"acceptance\": \"不得用long-only冒充多空，P5另测真实模拟约束\",\n      \"design\": \"INTERFACES.md\",\n      \"priority\": \"P1\",\n      \"planned_code\": \"src/aqrp/portfolio/\",\n      \"planned_test\": \"tests/portfolio/test_port_003.py\",\n      \"capability_status\": \"Planned\",\n      \"design_status\": \"DRAFT_PRESENT\"\n    },\n    {\n      \"id\": \"RISK-001\",\n      \"source\": \"V3.0§7.3\",\n      \"tier\": \"MVP\",\n      \"phase\": \"4\",\n      \"module\": \"risk\",\n      \"definition\": \"单票/总敞口/净敞口/杠杆/换手限制\",\n      \"input\": \"目标账户/配置\",\n      \"output\": \"逐项风险诊断\",\n      \"dependencies\": \"PORT-001\",\n      \"acceptance\": \"等号/越界/冲突约束测试，不静默放宽\",\n      \"design\": \"INTERFACES.md\",\n      \"priority\": \"P1\",\n      \"planned_code\": \"src/aqrp/risk/\",\n      \"planned_test\": \"tests/risk/test_risk_001.py\",\n      \"capability_status\": \"Planned\",\n      \"design_status\": \"DRAFT_PRESENT\"\n    },\n    {\n      \"id\": \"RISK-002\",\n      \"source\": \"V3.0§7.3\",\n      \"tier\": \"Competition Ready\",\n      \"phase\": \"4\",\n      \"module\": \"risk\",\n      \"definition\": \"行业与Beta暴露限制\",\n      \"input\": \"PIT暴露及目标\",\n      \"output\": \"合规或拒绝\",\n      \"dependencies\": \"PORT-001;DATA-012\",\n      \"acceptance\": \"缺暴露不视为0，容差明确\",\n      \"design\": \"INTERFACES.md\",\n      \"priority\": \"P1\",\n      \"planned_code\": \"src/aqrp/risk/\",\n      \"planned_test\": \"tests/risk/test_risk_002.py\",\n      \"capability_status\": \"Planned\",\n      \"design_status\": \"DRAFT_PRESENT\"\n    },\n    {\n      \"id\": \"RISK-003\",\n      \"source\": \"V3.0§7.3\",\n      \"tier\": \"Competition Ready\",\n      \"phase\": \"4\",\n      \"module\": \"risk\",\n      \"definition\": \"可交易性/空头许可/借券/可售数量检查\",\n      \"input\": \"市场profile/状态/账户\",\n      \"output\": \"交易资格诊断\",\n      \"dependencies\": \"PORT-001;DATA-005\",\n      \"acceptance\": \"停牌/借券不足显式拒绝，P5提交撮合再检查\",\n      \"design\": \"INTERFACES.md\",\n      \"priority\": \"P1\",\n      \"planned_code\": \"src/aqrp/risk/\",\n      \"planned_test\": \"tests/risk/test_risk_003.py\",\n      \"capability_status\": \"Planned\",\n      \"design_status\": \"DRAFT_PRESENT\"\n    },\n    {\n      \"id\": \"RISK-004\",\n      \"source\": \"V3.0§7.3;V3.0§11.2\",\n      \"tier\": \"MVP\",\n      \"phase\": \"4\",\n      \"module\": \"risk\",\n      \"definition\": \"风险拒单及不可行组合显式错误，不可绕过\",\n      \"input\": \"候选目标/订单\",\n      \"output\": \"RiskDecision/reason\",\n      \"dependencies\": \"RISK-001\",\n      \"acceptance\": \"调用方不能强制忽略拒绝；实际订单接线P5测\",\n      \"design\": \"INTERFACES.md\",\n      \"priority\": \"P1\",\n      \"planned_code\": \"src/aqrp/risk/\",\n      \"planned_test\": \"tests/risk/test_risk_004.py\",\n      \"capability_status\": \"Planned\",\n      \"design_status\": \"DRAFT_PRESENT\"\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-.git",
+      "refs/heads/main",
+      "refs/tags/phase*-baseline*",
+      "refs/tags/v0.*"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/heads/main\n0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0\trefs/tags/phase0-baseline\n7de1d0e81385ae97f98ea673fe05dd726f0b577b\trefs/tags/phase0-baseline^{}\n1a8e47ee4be910aa7eeeefa430015e683a8aa6f5\trefs/tags/phase1-baseline\nf579b2c99e762085772de6e70ba1fa98792a7add\trefs/tags/phase1-baseline^{}\n24000b53ebfeda56aad5a54b93d432196f6ba293\trefs/tags/phase2-baseline\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/phase2-baseline^{}\n3ff892aee490cc922e162d813b245944430db6af\trefs/tags/phase3-baseline\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/phase3-baseline^{}\n6611ca42e213c78be5155cba702ae789d48aab24\trefs/tags/v0.1.1\nfb1ba4fd51202a303115e4449ee49db09ccc071c\trefs/tags/v0.1.1^{}\nd8ee6c165eebb165393307b78acb7218a9994321\trefs/tags/v0.2.0\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/v0.2.0^{}\n6060b45a2adde469021a7da7c65d329254736b44\trefs/tags/v0.3.0\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/v0.3.0^{}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77:docs/audits/phase-4/SYNTHETIC_PROFILE.json"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "{\n  \"schema_version\": \"synthetic-portfolio-profile/1.0.0-proposed\",\n  \"profile_id\": \"SYNTHETIC_PORTFOLIO_1\",\n  \"status\": \"G1_DESIGN_CANDIDATE_NOT_IMPLEMENTED\",\n  \"scope\": \"ENGINEERING_TEST_ONLY\",\n  \"financial_approval\": \"NONE\",\n  \"currency\": \"CCY\",\n  \"market_id\": \"SYNTH\",\n  \"calendar_id\": \"SYNTHETIC_V1\",\n  \"max_age_sessions\": 0,\n  \"allow_financing\": false,\n  \"short_proceeds_restriction_ratio\": \"1\",\n  \"additional_short_margin_ratio\": \"1\",\n  \"allow_full_close_odd_lot\": true,\n  \"decimal_precision\": 34,\n  \"decimal_rounding\": \"ROUND_HALF_EVEN\",\n  \"ratio_absolute_tolerance\": \"0.000000000001\",\n  \"cash_absolute_tolerance_CCY\": \"0.00000001\",\n  \"quantity_tolerance\": \"0\",\n  \"default_fixture_equity_CCY\": \"1000\",\n  \"default_fixture_total_cash_CCY\": \"1000\",\n  \"default_fixture_restricted_cash_CCY\": \"0\",\n  \"default_fixture_positions\": [],\n  \"fee_reserve_CCY\": \"0\",\n  \"fixture_risk_limits\": {\n    \"per_asset_abs_weight\": \"1\",\n    \"gross_max\": \"1.5\",\n    \"net_min\": \"-1\",\n    \"net_max\": \"1\",\n    \"leverage_max\": \"1.5\",\n    \"turnover_gross_max\": \"2\",\n    \"industry_net_min\": \"-1\",\n    \"industry_net_max\": \"1\",\n    \"industry_gross_max\": \"1.5\",\n    \"beta_min\": \"-1\",\n    \"beta_max\": \"1\",\n    \"allow_cash_only\": true\n  },\n  \"fixture_constraints_are_not_market_rules\": true,\n  \"golden_case_overrides\": \"Each Golden explicitly states changed prices/lots/weights/limits; each full fixture must freeze all values and hashes before execution. No implicit risk disabling or solver.\",\n  \"rules_not_modelled_as_real_execution\": \"No real commissions, borrow fees, settlement, exchange matching, broker, orders or fills. Fee reserve is explicit engineering buffer; P5 separately implements its approved synthetic event/ledger contract.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--stat",
+      "e40ddd0009cc30664c3a0fe0b74c4a497a541d77",
+      "265af16353d85ce8c2d229a7517809d707498da8"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": " AGENTS.md                                          |   2 +\n README.md                                          |   2 +\n docs/CHANGELOG.md                                  |   7 +\n docs/DECISIONS.md                                  |   2 +\n docs/PROGRESS.md                                   |   2 +\n docs/ROADMAP.md                                    |   2 +\n docs/TRACEABILITY.md                               |   2 +\n docs/audits/phase-4/.gitattributes                 |   1 +\n docs/audits/phase-4/BASELINE_VERIFICATION.json     |   7 +-\n docs/audits/phase-4/DEVELOPER_RESPONSE.md          |  21 +\n docs/audits/phase-4/FILE_MANIFEST.json             | 453 ++++++++++-\n docs/audits/phase-4/INTERFACE_DRAFT.md             |  22 +-\n docs/audits/phase-4/PLAN.md                        |   4 +-\n docs/audits/phase-4/REQUIREMENTS_TRACEABILITY.md   |   7 +\n docs/audits/phase-4/REVIEW_PACKAGE.md              |   6 +-\n docs/audits/phase-4/ROUNDING_REFERENCE.md          |  51 ++\n docs/audits/phase-4/STATUS.json                    |  16 +\n docs/audits/phase-4/SYNTHETIC_PROFILE.json         |  14 +-\n docs/audits/phase-4/TEST_AND_EVIDENCE_PLAN.md      |  13 +-\n docs/audits/phase-4/check_plan.py                  |   7 +-\n docs/audits/phase-4/g1-e40ddd0/.gitattributes      |   3 +\n docs/audits/phase-4/g1-e40ddd0/FILE_MANIFEST.json  | 366 +++++++++\n .../phase-4/g1-e40ddd0/FINDING_DISPOSITION.json    |  40 +\n .../g1-e40ddd0/GPT-Work-P4-G1-e40ddd0-Evidence.zip | Bin 0 -> 269458 bytes\n .../phase-4/g1-e40ddd0/ORIGINAL_RECEIPT.json       |  27 +\n docs/audits/phase-4/g1-e40ddd0/PACKAGING_NOTES.md  |   5 +\n docs/audits/phase-4/g1-e40ddd0/RECEIPT.json        |  23 +\n .../received/AQRP-P4-G1-e40ddd0-Developer-Plan.zip | Bin 0 -> 29104 bytes\n .../received/Codex-Phase4-G1-e40ddd0-Handoff.md    |  13 +\n .../g1-e40ddd0/received/DEVELOPER-SEAL.json        |  27 +\n .../Developer-GPT-Work-Phase4-G1-Request.md        |  29 +\n .../received/GPT-Work-Phase4-G1-e40ddd0-Review.md  | 119 +++\n .../g1-e40ddd0/received/PR6-HANDOFF-SNAPSHOT.json  | 150 ++++\n .../received/REVIEW_EVIDENCE_MANIFEST.json         | 334 ++++++++\n docs/audits/phase-4/g1-e40ddd0/received/api-0.json | 189 +++++\n docs/audits/phase-4/g1-e40ddd0/received/api-1.json |  45 ++\n docs/audits/phase-4/g1-e40ddd0/received/api-2.json | 385 ++++++++++\n docs/audits/phase-4/g1-e40ddd0/received/api-3.json | 371 +++++++++\n .../received/attempt-1/DEVELOPER-SEAL.json         |  27 +\n .../attempt-1/developer-golden-replay.command.json |  18 +\n .../attempt-1/developer-golden-replay.stderr.log   |   0\n .../attempt-1/developer-golden-replay.stdout.log   | 127 +++\n .../developer-plan-check-replay.command.json       |  18 +\n .../developer-plan-check-replay.stderr.log         |   0\n .../developer-plan-check-replay.stdout.log         |  11 +\n .../received/attempt-1/execution-environment.json  |  85 +++\n .../received/attempt-1/math.command.json           |  19 +\n .../g1-e40ddd0/received/attempt-1/math.stderr.log  |   0\n .../g1-e40ddd0/received/attempt-1/math.stdout.log  |   8 +\n .../received/attempt-1/scope.command.json          |  20 +\n .../g1-e40ddd0/received/attempt-1/scope.stderr.log |   8 +\n .../g1-e40ddd0/received/attempt-1/scope.stdout.log |   0\n .../g1-e40ddd0/received/checkout.command.json      |  13 +\n .../g1-e40ddd0/received/checkout.stderr.log        |   1 +\n .../g1-e40ddd0/received/checkout.stdout.log        |   0\n .../g1-e40ddd0/received/ci-artifact-metadata.json  |  45 ++\n .../g1-e40ddd0/received/ci-job-119695980314.log    | 239 ++++++\n .../ci-job-119695980314.tool-response.json         |   1 +\n .../g1-e40ddd0/received/ci-job-119695980827.log    | 219 ++++++\n .../ci-job-119695980827.tool-response.json         |   1 +\n .../phase-4/g1-e40ddd0/received/ci-jobs.json       | 189 +++++\n .../g1-e40ddd0/received/ci-merge-commit.json       | 430 +++++++++++\n .../g1-e40ddd0/received/ci-review-summary.json     |  48 ++\n .../audits/phase-4/g1-e40ddd0/received/ci-run.json | 248 ++++++\n .../phase-4/g1-e40ddd0/received/clone.stderr.log   |   2 +\n .../phase-4/g1-e40ddd0/received/clone.stdout.log   |   0\n .../received/developer-golden-replay.command.json  |  18 +\n .../received/developer-golden-replay.stderr.log    |   0\n .../received/developer-golden-replay.stdout.log    | 127 +++\n .../developer-plan-check-replay.command.json       |  18 +\n .../developer-plan-check-replay.stderr.log         |   0\n .../developer-plan-check-replay.stdout.log         |  11 +\n .../phase-4/g1-e40ddd0/received/end-state.json     | 101 +++\n .../g1-e40ddd0/received/execution-environment.json |  85 +++\n .../phase-4/g1-e40ddd0/received/finalize_review.py |  42 +\n .../phase-4/g1-e40ddd0/received/findings.json      |  44 ++\n .../g1-e40ddd0/received/fixed-plan-source.zip      | Bin 0 -> 96443 bytes\n .../received/independent-math-results.json         | 839 ++++++++++++++++++++\n .../g1-e40ddd0/received/independent_plan_math.py   | 107 +++\n .../phase-4/g1-e40ddd0/received/math.command.json  |  19 +\n .../phase-4/g1-e40ddd0/received/math.stderr.log    |   0\n .../phase-4/g1-e40ddd0/received/math.stdout.log    |   8 +\n .../phase-4/g1-e40ddd0/received/pr6-end.json       | 351 +++++++++\n .../phase-4/g1-e40ddd0/received/pr6-start.json     | 351 +++++++++\n .../received-developer-package-verification.json   |  28 +\n .../phase-4/g1-e40ddd0/received/run_review.py      |  19 +\n .../received/scope-raw-git-commands.json           | 433 +++++++++++\n .../phase-4/g1-e40ddd0/received/scope-results.json | 848 +++++++++++++++++++++\n .../phase-4/g1-e40ddd0/received/scope.command.json |  20 +\n .../phase-4/g1-e40ddd0/received/scope.stderr.log   |   0\n .../phase-4/g1-e40ddd0/received/scope.stdout.log   |   8 +\n .../phase-4/g1-e40ddd0/received/seal_evidence.py   |  40 +\n .../phase-4/g1-e40ddd0/received/verify_scope.py    |  64 ++\n docs/audits/phase-4/rounding_reference.py          |  88 +++\n .../validation-revision-e40ddd0/CHECKS.json        |  34 +\n .../validation-revision-e40ddd0/COMMANDS.json      |  50 ++\n .../validation-revision-e40ddd0/plan-check.log     |  11 +\n .../rounding-reference.log                         | 109 +++\n .../validation-revision-e40ddd0/scan-findings.json |   1 +\n .../validation-revision-e40ddd0/secret-scan.log    |   2 +\n 100 files changed, 8389 insertions(+), 31 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-plan-265af16",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

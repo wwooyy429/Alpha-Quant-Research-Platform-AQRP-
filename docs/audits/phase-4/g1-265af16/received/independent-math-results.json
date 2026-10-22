@@ -1,0 +1,771 @@
+{
+  "actual_executor": "GPT Work primary reviewer",
+  "fixed_sha": "265af16353d85ce8c2d229a7517809d707498da8",
+  "scope": "Independent stdlib Decimal/Fraction mathematical design verification only; no AQRP, developer reference imports or future product expected generation",
+  "groups": [
+    {
+      "case": "R01",
+      "inputs": {
+        "current": "15",
+        "target": "10",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "-5"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        -5
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R02",
+      "inputs": {
+        "current": "15",
+        "target": "20",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "5"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        5
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R03",
+      "inputs": {
+        "current": "15",
+        "target": "15",
+        "lot": 10,
+        "full_close": false
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "UNCHANGED_HOLDING",
+        "0"
+      ],
+      "expected": [
+        "UNCHANGED_HOLDING",
+        0
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R04",
+      "inputs": {
+        "current": "15",
+        "target": "0",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "FULL_CLOSE_LOT_EXCEPTION",
+        "-15"
+      ],
+      "expected": [
+        "FULL_CLOSE_LOT_EXCEPTION",
+        -15
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R05",
+      "inputs": {
+        "current": "15",
+        "target": "0",
+        "lot": 10,
+        "full_close": false
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "-15"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        -15
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R06",
+      "inputs": {
+        "current": "-15",
+        "target": "0",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "FULL_CLOSE_LOT_EXCEPTION",
+        "15"
+      ],
+      "expected": [
+        "FULL_CLOSE_LOT_EXCEPTION",
+        15
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R07",
+      "inputs": {
+        "current": "-15",
+        "target": "0",
+        "lot": 10,
+        "full_close": false
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "15"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        15
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R08",
+      "inputs": {
+        "current": "15",
+        "target": "-10",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "-25"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        -25
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R09",
+      "inputs": {
+        "current": "-15",
+        "target": "10",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "25"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        25
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R10",
+      "inputs": {
+        "current": "10",
+        "target": "20",
+        "lot": 10,
+        "full_close": false
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "ALIGNED_QUANTITIES_ONLY",
+        "10"
+      ],
+      "expected": [
+        "ALIGNED_QUANTITIES_ONLY",
+        10
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R11",
+      "inputs": {
+        "current": "-15",
+        "target": "-10",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "5"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        5
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R12",
+      "inputs": {
+        "current": "-15",
+        "target": "-20",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "DELTA_LOT_MISMATCH",
+        "-5"
+      ],
+      "expected": [
+        "DELTA_LOT_MISMATCH",
+        -5
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R13",
+      "inputs": {
+        "current": "-15",
+        "target": "-15",
+        "lot": 10,
+        "full_close": false
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "UNCHANGED_HOLDING",
+        "0"
+      ],
+      "expected": [
+        "UNCHANGED_HOLDING",
+        0
+      ],
+      "pass_": true
+    },
+    {
+      "case": "R14",
+      "inputs": {
+        "E": "1000",
+        "continuous_weights": [
+          "1/2",
+          "-1/2"
+        ],
+        "prices": [
+          "60",
+          "50"
+        ],
+        "lot": 10,
+        "beta": [
+          1,
+          1
+        ],
+        "sector": [
+          "X",
+          "X"
+        ],
+        "interval": [
+          "-1/10",
+          "1/10"
+        ]
+      },
+      "formula": "ideal=w*E/p; toward-zero target; same-industry net=sum(w); beta=sum(w*1); pre/post signed interval",
+      "actual": {
+        "ideal": [
+          "25/3",
+          "-10"
+        ],
+        "target": [
+          "0",
+          "-10"
+        ],
+        "delta": [
+          "0",
+          "-10"
+        ],
+        "weights": [
+          "0",
+          "-1/2"
+        ],
+        "pre_gross": "1",
+        "post_gross": "1/2",
+        "pre_beta": "0",
+        "post_beta": "-1/2",
+        "pre_sector_net": "0",
+        "post_sector_net": "-1/2",
+        "pre_abs_beta": "0",
+        "post_abs_beta": "1/2",
+        "pre_interval": true,
+        "post_interval": false,
+        "pre_funding": {
+          "cash": "1000",
+          "restricted": "500",
+          "margin": "500",
+          "free_cash": "0"
+        },
+        "post_funding": {
+          "cash": "1500",
+          "restricted": "500",
+          "margin": "500",
+          "free_cash": "500"
+        }
+      },
+      "expected": {
+        "ideal": [
+          "25/3",
+          "-10"
+        ],
+        "target": [
+          "0",
+          "-10"
+        ],
+        "delta": [
+          "0",
+          "-10"
+        ],
+        "weights": [
+          "0",
+          "-1/2"
+        ],
+        "pre_gross": "1",
+        "post_gross": "1/2",
+        "pre_beta": "0",
+        "post_beta": "-1/2",
+        "pre_sector_net": "0",
+        "post_sector_net": "-1/2",
+        "pre_abs_beta": "0",
+        "post_abs_beta": "1/2",
+        "pre_interval": true,
+        "post_interval": false,
+        "pre_funding": {
+          "cash": "1000",
+          "restricted": "500",
+          "margin": "500",
+          "free_cash": "0"
+        },
+        "post_funding": {
+          "cash": "1500",
+          "restricted": "500",
+          "margin": "500",
+          "free_cash": "500"
+        }
+      },
+      "pass_": true
+    },
+    {
+      "case": "R15",
+      "inputs": {
+        "E": "1000",
+        "current": [
+          "10",
+          "0"
+        ],
+        "prices": [
+          "60",
+          "50"
+        ],
+        "weights": [
+          "1/2",
+          "1/2"
+        ],
+        "lot": 10,
+        "cap": "4/5"
+      },
+      "formula": "turnover=sum(abs((q-q0)*p))/E; half=turnover/2; independent pre/post comparisons",
+      "actual": {
+        "current_cash": "400",
+        "ideal": [
+          "25/3",
+          "10"
+        ],
+        "target": [
+          "0",
+          "10"
+        ],
+        "ideal_delta": [
+          "-5/3",
+          "10"
+        ],
+        "delta": [
+          "-10",
+          "10"
+        ],
+        "pre_turnover": "3/5",
+        "post_turnover": "11/10",
+        "pre_half": "3/10",
+        "post_half": "11/20",
+        "pre_pass": true,
+        "post_pass": false,
+        "post_funding": {
+          "cash": "500",
+          "restricted": "0",
+          "margin": "0",
+          "free_cash": "500"
+        }
+      },
+      "expected": {
+        "current_cash": "400",
+        "ideal": [
+          "25/3",
+          "10"
+        ],
+        "target": [
+          "0",
+          "10"
+        ],
+        "ideal_delta": [
+          "-5/3",
+          "10"
+        ],
+        "delta": [
+          "-10",
+          "10"
+        ],
+        "pre_turnover": "3/5",
+        "post_turnover": "11/10",
+        "pre_half": "3/10",
+        "post_half": "11/20",
+        "pre_pass": true,
+        "post_pass": false,
+        "post_funding": {
+          "cash": "500",
+          "restricted": "0",
+          "margin": "0",
+          "free_cash": "500"
+        }
+      },
+      "pass_": true
+    },
+    {
+      "case": "R16",
+      "inputs": {
+        "E": "1000",
+        "ideal": [
+          "25/3",
+          "-10"
+        ],
+        "rounded": [
+          "0",
+          "-10"
+        ],
+        "prices": [
+          "60",
+          "50"
+        ],
+        "same_sector": true
+      },
+      "formula": "component absolute contraction implies fixed positive-weight sum contraction; free=E-long-short-R-fee",
+      "actual": {
+        "abs_qty": [
+          true,
+          true
+        ],
+        "abs_notional": [
+          true,
+          true
+        ],
+        "gross": true,
+        "sector_gross": true,
+        "funding": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "-200",
+            "-200"
+          ]
+        ]
+      },
+      "expected": {
+        "abs_qty": [
+          true,
+          true
+        ],
+        "abs_notional": [
+          true,
+          true
+        ],
+        "gross": true,
+        "sector_gross": true,
+        "funding": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "-200",
+            "-200"
+          ]
+        ]
+      },
+      "pass_": true
+    },
+    {
+      "case": "R17",
+      "inputs": {
+        "current": "10",
+        "target": "15",
+        "lot": 10,
+        "full_close": true
+      },
+      "formula": "delta=t-current; exact Decimal remainders for both target/delta; only hold or full close exceptions",
+      "actual": [
+        "TARGET_LOT_MISMATCH",
+        "5"
+      ],
+      "expected": [
+        "TARGET_LOT_MISMATCH",
+        5
+      ],
+      "pass_": true
+    }
+  ],
+  "groups_passed": 17,
+  "additional_edge_groups": [
+    {
+      "case": "X01-complete-account",
+      "inputs": {
+        "E": "1000",
+        "original_cash": 850,
+        "current": [
+          "15",
+          "0"
+        ],
+        "target": [
+          "10",
+          "90"
+        ],
+        "prices": [
+          "10",
+          "10"
+        ],
+        "scores": [
+          1,
+          9
+        ]
+      },
+      "formula": "equity identity; w=q*p/E; gross/net/Beta/same-industry; delta; turnover; funding",
+      "actual": {
+        "equity": "1000",
+        "weights": [
+          "1/10",
+          "9/10"
+        ],
+        "delta": [
+          "-5",
+          "90"
+        ],
+        "gross": "1",
+        "net": "1",
+        "beta": "1",
+        "sector_net": "1",
+        "sector_gross": "1",
+        "turnover": "19/20",
+        "funding": {
+          "cash": "0",
+          "restricted": "0",
+          "margin": 0,
+          "free_cash": "0"
+        }
+      },
+      "expected": {
+        "equity": "1000",
+        "weights": [
+          "1/10",
+          "9/10"
+        ],
+        "delta": [
+          "-5",
+          "90"
+        ],
+        "gross": "1",
+        "net": "1",
+        "beta": "1",
+        "sector_net": "1",
+        "sector_gross": "1",
+        "turnover": "19/20",
+        "funding": {
+          "cash": "0",
+          "restricted": "0",
+          "margin": "0",
+          "free_cash": "0"
+        }
+      },
+      "pass_": true
+    },
+    {
+      "case": "ordinary_long_close_flag_false",
+      "inputs": {
+        "current": "10",
+        "target": "0",
+        "lot": 10,
+        "flag": false
+      },
+      "formula": "exact quantity gate only, no success claim for other risk items",
+      "actual": [
+        "ALIGNED_QUANTITIES_ONLY",
+        "-10"
+      ],
+      "expected": [
+        "ALIGNED_QUANTITIES_ONLY",
+        -10
+      ],
+      "pass_": true
+    },
+    {
+      "case": "ordinary_short_close_flag_false",
+      "inputs": {
+        "current": "-10",
+        "target": "0",
+        "lot": 10,
+        "flag": false
+      },
+      "formula": "exact quantity gate only, no success claim for other risk items",
+      "actual": [
+        "ALIGNED_QUANTITIES_ONLY",
+        "10"
+      ],
+      "expected": [
+        "ALIGNED_QUANTITIES_ONLY",
+        10
+      ],
+      "pass_": true
+    },
+    {
+      "case": "aligned_long_to_short_flag_false",
+      "inputs": {
+        "current": "10",
+        "target": "-10",
+        "lot": 10,
+        "flag": false
+      },
+      "formula": "exact quantity gate only, no success claim for other risk items",
+      "actual": [
+        "ALIGNED_QUANTITIES_ONLY",
+        "-20"
+      ],
+      "expected": [
+        "ALIGNED_QUANTITIES_ONLY",
+        -20
+      ],
+      "pass_": true
+    },
+    {
+      "case": "aligned_short_to_long_flag_false",
+      "inputs": {
+        "current": "-10",
+        "target": "10",
+        "lot": 10,
+        "flag": false
+      },
+      "formula": "exact quantity gate only, no success claim for other risk items",
+      "actual": [
+        "ALIGNED_QUANTITIES_ONLY",
+        "20"
+      ],
+      "expected": [
+        "ALIGNED_QUANTITIES_ONLY",
+        20
+      ],
+      "pass_": true
+    },
+    {
+      "case": "no_ratio_tolerance_for_target",
+      "inputs": {
+        "current": "10",
+        "target": "10.0000000000001",
+        "lot": 10,
+        "flag": true
+      },
+      "formula": "exact quantity gate only, no success claim for other risk items",
+      "actual": [
+        "TARGET_LOT_MISMATCH",
+        "1E-13"
+      ],
+      "expected": [
+        "TARGET_LOT_MISMATCH",
+        "1E-13"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "no_tolerant_unchanged_fallback",
+      "inputs": {
+        "ideal": "15.0000000000001",
+        "current": 15,
+        "lot": 10
+      },
+      "formula": "ideal!=current exactly; quantize to10, then reject delta -5",
+      "actual": [
+        "10",
+        [
+          "DELTA_LOT_MISMATCH",
+          "-5"
+        ]
+      ],
+      "expected": [
+        "10",
+        [
+          "DELTA_LOT_MISMATCH",
+          "-5"
+        ]
+      ],
+      "pass_": true
+    },
+    {
+      "case": "invalid_lot_candidates_rejected",
+      "inputs": {
+        "values": [
+          "0",
+          "-10",
+          "NaN",
+          "Infinity",
+          "-Infinity"
+        ]
+      },
+      "formula": "lot finite and strictly positive",
+      "actual": [
+        "0",
+        "-10",
+        "NaN",
+        "Infinity",
+        "-Infinity"
+      ],
+      "expected": [
+        "0",
+        "-10",
+        "NaN",
+        "Infinity",
+        "-Infinity"
+      ],
+      "pass_": true
+    },
+    {
+      "case": "funding_with_restricted_and_fee",
+      "inputs": {
+        "E": 1000,
+        "long": 500,
+        "short": 500,
+        "nonshort": 17,
+        "reserve": 3
+      },
+      "formula": "free=E*(1-gross)-nonshort-reserve",
+      "actual": "-20",
+      "expected": "-20",
+      "pass_": true
+    }
+  ],
+  "additional_edge_groups_passed": 9,
+  "monotonicity_vector_samples": 343,
+  "quantity_gate_success_is_not_portfolio_success": true,
+  "old_20_groups": "Not re-executed; both original candidate doc and script byte-pinned to previous independently audited SHA",
+  "implementation_tests": false
+}

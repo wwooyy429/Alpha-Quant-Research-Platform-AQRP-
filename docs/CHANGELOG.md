@@ -1,5 +1,11 @@
 # 变更记录
 
+## 2026-10-22 · Phase4 G1受限工程设计PLAN PASS
+
+- 接收GPT Work固定265af16复核原件、46成员/manifest/receipt及原ZIP并完整核hash，001/002仅CLOSED_DESIGN，无新增阻断。
+- 64项范围/证据及17+9组/343向量均为独立设计数学核验，不是P4产品测试；CI原ZIP本轮未复核事实保留。
+- 更新当前状态和只读计划检查；旧BLOCKED/OPEN及失败不改写，设计候选/旧20与业务资产字节不变。P4实施仍待单独授权。
+
 ## 2026-10-22 · Phase4 G1两项设计修订待复核
 
 - 原字节归档GPT Work固定e40ddd0的PLAN BLOCKED报告、65项成员、manifest/receipt及原ZIP；保留主审辅助失败和官方CI证据限制。

@@ -1,0 +1,31 @@
+{
+  "received_at_UTC": "2026-10-22T09:42:33.917366+00:00",
+  "actual_receiver": "Codex developer",
+  "actual_reviewer": "GPT Work primary reviewer",
+  "reviewed_sha": "265af16353d85ce8c2d229a7517809d707498da8",
+  "verdict": "PLAN PASS",
+  "scope": "Restricted engineering DESIGN ONLY",
+  "closed_design_findings": [
+    "P4-G1-001",
+    "P4-G1-002"
+  ],
+  "zip_bytes": 840724,
+  "zip_sha256": "4e31447c95266c299a8640c340f483fd6327500b78241f4699b7f75a752d03aa",
+  "zip_CRC": "PASS",
+  "manifest_sha256": "b5ad073a7a5363a52e8e9e1edbd705e3a7e4f920096b8534991b1d1652d5dbae",
+  "all46_original_members_size_hash_and_exact_set": "PASS",
+  "files_copied_byte_identical": 46,
+  "omitted_files": [],
+  "original_report_handoff_receipt": "Byte-preserved in received/ and ORIGINAL_RECEIPT.json",
+  "independent_checks": {
+    "scope_and_evidence": 64,
+    "new_design_groups": 17,
+    "additional_edge_groups": 9,
+    "property_vector_samples": 343,
+    "product_tests_run": 0
+  },
+  "counts_are_different_scopes_not_additive": true,
+  "CI_scope": "SUCCESS via official API/decoded job logs/merge parents/tree/upload digest text. Raw original ZIP bytes/internal manifests/JUnit/test recount NOT VERIFIED this round.",
+  "P4_implementation_authorized": false,
+  "financial_approval": "NONE"
+}

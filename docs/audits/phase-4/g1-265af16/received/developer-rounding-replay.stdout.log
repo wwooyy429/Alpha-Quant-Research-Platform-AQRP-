@@ -1,0 +1,109 @@
+{
+  "actual_executor": "Codex developer",
+  "scope": "Independent design arithmetic and divisibility candidates, no AQRP imports or P4 runtime verdict",
+  "groups_passed": 17,
+  "cases": [
+    {
+      "case": "R01",
+      "actual": "{'quantity_gate': ('DELTA_LOT_MISMATCH', Fraction(-5, 1)), 'target_B_delta': Fraction(90, 1), 'weights': [Fraction(1, 10), Fraction(9, 10)], 'net': Fraction(1, 1), 'gross': Fraction(1, 1), 'beta_and_sector_net': Fraction(1, 1), 'turnover': Fraction(19, 20), 'cash': Fraction(0, 1)}",
+      "expected": "{'quantity_gate': ('DELTA_LOT_MISMATCH', Fraction(-5, 1)), 'target_B_delta': Fraction(90, 1), 'weights': [Fraction(1, 10), Fraction(9, 10)], 'net': Fraction(1, 1), 'gross': Fraction(1, 1), 'beta_and_sector_net': Fraction(1, 1), 'turnover': Fraction(19, 20), 'cash': Fraction(0, 1)}",
+      "status": "PASS"
+    },
+    {
+      "case": "R02",
+      "actual": "('DELTA_LOT_MISMATCH', Fraction(5, 1))",
+      "expected": "('DELTA_LOT_MISMATCH', Fraction(5, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R03",
+      "actual": "('UNCHANGED_HOLDING', Fraction(0, 1))",
+      "expected": "('UNCHANGED_HOLDING', Fraction(0, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R04",
+      "actual": "('FULL_CLOSE_LOT_EXCEPTION', Fraction(-15, 1))",
+      "expected": "('FULL_CLOSE_LOT_EXCEPTION', Fraction(-15, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R05",
+      "actual": "('DELTA_LOT_MISMATCH', Fraction(-15, 1))",
+      "expected": "('DELTA_LOT_MISMATCH', Fraction(-15, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R06",
+      "actual": "('FULL_CLOSE_LOT_EXCEPTION', Fraction(15, 1))",
+      "expected": "('FULL_CLOSE_LOT_EXCEPTION', Fraction(15, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R07",
+      "actual": "('DELTA_LOT_MISMATCH', Fraction(15, 1))",
+      "expected": "('DELTA_LOT_MISMATCH', Fraction(15, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R08",
+      "actual": "('DELTA_LOT_MISMATCH', Fraction(-25, 1))",
+      "expected": "('DELTA_LOT_MISMATCH', Fraction(-25, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R09",
+      "actual": "('DELTA_LOT_MISMATCH', Fraction(25, 1))",
+      "expected": "('DELTA_LOT_MISMATCH', Fraction(25, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R10",
+      "actual": "('ALIGNED_QUANTITIES_ONLY', Fraction(10, 1))",
+      "expected": "('ALIGNED_QUANTITIES_ONLY', Fraction(10, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R11",
+      "actual": "('DELTA_LOT_MISMATCH', Fraction(5, 1))",
+      "expected": "('DELTA_LOT_MISMATCH', Fraction(5, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R12",
+      "actual": "('DELTA_LOT_MISMATCH', Fraction(-5, 1))",
+      "expected": "('DELTA_LOT_MISMATCH', Fraction(-5, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R13",
+      "actual": "('UNCHANGED_HOLDING', Fraction(0, 1))",
+      "expected": "('UNCHANGED_HOLDING', Fraction(0, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R17",
+      "actual": "('TARGET_LOT_MISMATCH', Fraction(5, 1))",
+      "expected": "('TARGET_LOT_MISMATCH', Fraction(5, 1))",
+      "status": "PASS"
+    },
+    {
+      "case": "R14",
+      "actual": "{'ideal': [Fraction(25, 3), Fraction(-10, 1)], 'target': [Fraction(0, 1), Fraction(-10, 1)], 'weights': [Fraction(0, 1), Fraction(-1, 2)], 'gross': Fraction(1, 2), 'beta': Fraction(-1, 2), 'sector_net': Fraction(-1, 2), 'beta_abs': Fraction(1, 2), 'sector_net_abs': Fraction(1, 2), 'pre_interval_pass': True, 'post_interval_pass': False, 'cash': Fraction(1500, 1), 'free_cash': Fraction(500, 1)}",
+      "expected": "{'ideal': [Fraction(25, 3), Fraction(-10, 1)], 'target': [Fraction(0, 1), Fraction(-10, 1)], 'weights': [Fraction(0, 1), Fraction(-1, 2)], 'gross': Fraction(1, 2), 'beta': Fraction(-1, 2), 'sector_net': Fraction(-1, 2), 'beta_abs': Fraction(1, 2), 'sector_net_abs': Fraction(1, 2), 'pre_interval_pass': True, 'post_interval_pass': False, 'cash': Fraction(1500, 1), 'free_cash': Fraction(500, 1)}",
+      "status": "PASS"
+    },
+    {
+      "case": "R15",
+      "actual": "{'current_cash': Fraction(400, 1), 'ideal': [Fraction(25, 3), Fraction(10, 1)], 'target': [Fraction(0, 1), Fraction(10, 1)], 'pre_turnover': Fraction(3, 5), 'post_turnover': Fraction(11, 10), 'pre_half': Fraction(3, 10), 'post_half': Fraction(11, 20), 'pre_cap_pass': True, 'post_cap_pass': False}",
+      "expected": "{'current_cash': Fraction(400, 1), 'ideal': [Fraction(25, 3), Fraction(10, 1)], 'target': [Fraction(0, 1), Fraction(10, 1)], 'pre_turnover': Fraction(3, 5), 'post_turnover': Fraction(11, 10), 'pre_half': Fraction(3, 10), 'post_half': Fraction(11, 20), 'pre_cap_pass': True, 'post_cap_pass': False}",
+      "status": "PASS"
+    },
+    {
+      "case": "R16",
+      "actual": "{'absolute_qty_nonincrease': [True, True], 'absolute_notional_nonincrease': [True, True], 'gross_nonincrease': True, 'same_sector_gross_nonincrease': True, 'funding_identities': [(Fraction(0, 1), Fraction(0, 1)), (Fraction(-200, 1), Fraction(-200, 1))]}",
+      "expected": "{'absolute_qty_nonincrease': [True, True], 'absolute_notional_nonincrease': [True, True], 'gross_nonincrease': True, 'same_sector_gross_nonincrease': True, 'funding_identities': [(Fraction(0, 1), Fraction(0, 1)), (Fraction(-200, 1), Fraction(-200, 1))]}",
+      "status": "PASS"
+    }
+  ]
+}
