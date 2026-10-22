@@ -1,0 +1,60 @@
+{
+  "actual_executor": "Codex developer",
+  "business_sha": "1b4be236e888805f5c4e45357b158fcdb6058df0",
+  "version": "8.30.1",
+  "scanner_exe_sha256": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c",
+  "config_sha256": "73dbfe9e8ddd221da5ffd18a3cfa467ea8435dfa57b1ce4f28159eb6c5bab928",
+  "config_unchanged_from_reviewed_5a5e093": true,
+  "controls": [
+    {
+      "case": "exact_event",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\scanner-controls\\inputs\\exact_event",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "input_sha256": "d2df752ab4c08dc5580e9c730c520baf38c096771fa7e513bc4a3b893d0efa4a"
+    },
+    {
+      "case": "same_digest_other_path",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\scanner-controls\\inputs\\same_digest_other_path",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "input_sha256": "d2df752ab4c08dc5580e9c730c520baf38c096771fa7e513bc4a3b893d0efa4a"
+    },
+    {
+      "case": "changed_line_synthetic_credential",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\scanner-controls\\inputs\\changed_line_synthetic_credential",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "input_sha256": "be39c7ee7d88d58a3f386291b777e8293a3a130a519bfe784fbc8758bab7f3e4"
+    }
+  ],
+  "raw_synthetic_positive_inputs": "Retained locally, omitted from repository; redacted controls and exact input hashes archived",
+  "deployed": false
+}

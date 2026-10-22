@@ -1,0 +1,92 @@
+{
+  "executor": "Codex developer reconciliation; not Gemini or reviewer rerun",
+  "reviewer": "GPT Work supplementary reviewer; not Gemini",
+  "reviewed_sha": "d10a55a7dd4bc9ca7793ed474bdc1b056916e96e",
+  "received_at_utc": "2026-10-21T18:22:52.448388+00:00",
+  "review_verdict": "PLAN BLOCKED",
+  "findings": {
+    "High": 2,
+    "Medium": 3
+  },
+  "outer_zip_sha256": "09198db18696e972067955a59d92b5058872b9e9f660fc8cd29c471d7a44f607",
+  "zip_crc": "PASS",
+  "manifest_members_verified": 66,
+  "math_record": {
+    "cases": 15,
+    "assertions": 75,
+    "passed": 75,
+    "source": "original independent reviewer record; not newly executed here"
+  },
+  "ci_original_zip_checks": [
+    {
+      "artifact_id": 12366772314,
+      "sha256": "95cfdc3cf411d52525ed22a0f850139cb99a22cf7f36c33c0c1152dd8509d5df",
+      "bytes": 149716,
+      "tests": 417,
+      "failure": 0,
+      "error": 0,
+      "skip": 0,
+      "wheel_source_modules": 26,
+      "classification": "P2 baseline regression, not P3 business"
+    },
+    {
+      "artifact_id": 12367341501,
+      "sha256": "6470f0006025306d36d95468896e6ed4f77261c46eab94796a215fa7ca70aa32",
+      "bytes": 149872,
+      "tests": 417,
+      "failure": 0,
+      "error": 0,
+      "skip": 0,
+      "wheel_source_modules": 26,
+      "classification": "P2 baseline regression, not P3 business"
+    }
+  ],
+  "official_digest_source": "GitHub fetch_workflow_run_artifacts, run39645351705; re-fetched this session",
+  "original_files": [
+    {
+      "path": "ci-evidence-verification.json",
+      "bytes": 4878,
+      "sha256": "410a12d45e0f95f70c31940f470e2cd7e4451b0b3592a2536e7e158bc31154a7"
+    },
+    {
+      "path": "Codex-Phase3-G1-d10a55a-Tasks.md",
+      "bytes": 5961,
+      "sha256": "12bd16cc8aa17f3da1b72fd49f62e9b730a01ae1cf8f0237570bc1a06f29dd29"
+    },
+    {
+      "path": "findings.json",
+      "bytes": 11814,
+      "sha256": "f705ebf0a99026265deb25001383b0e4a586f7b29425cab1279de93362867c00"
+    },
+    {
+      "path": "GPT-Work-P3-G1-d10a55a-Evidence.zip",
+      "bytes": 15350544,
+      "sha256": "09198db18696e972067955a59d92b5058872b9e9f660fc8cd29c471d7a44f607"
+    },
+    {
+      "path": "GPT-Work-Phase3-G1-d10a55a-Review.md",
+      "bytes": 38195,
+      "sha256": "81c7ee950a86f6154c3bc54998ca8c17493b2a6448e9a23fa52d3c242e48fa98"
+    },
+    {
+      "path": "independent-math-results.json",
+      "bytes": 19635,
+      "sha256": "9553973c9d5cffa44da6f5263bf2bac4c99f361ae644b7c49e2e4155552a8d8f"
+    },
+    {
+      "path": "ORIGINAL_PLAN_FILE_MANIFEST.json",
+      "bytes": 3051,
+      "sha256": "05018edf3034e738ef66dc1044890fe97dc7f1ce95f5ff26977c5d6c6aa25fe7"
+    },
+    {
+      "path": "review-provenance.json",
+      "bytes": 2429,
+      "sha256": "5101e323bd75ef5bae4fc4a8647a918e26350732afd0598db95fc2e474d54968"
+    },
+    {
+      "path": "REVIEW_EVIDENCE_MANIFEST.json",
+      "bytes": 11311,
+      "sha256": "30f814dd4a6bea536bdd3c995577e18d91ec5d3e5f75c3e3181915e49cb66945"
+    }
+  ]
+}

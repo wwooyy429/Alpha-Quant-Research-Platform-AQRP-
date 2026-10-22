@@ -1,0 +1,1693 @@
+{
+  "executor": "GPT Work supplementary independent review, not Gemini",
+  "fixed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+  "input_sha256": "21ef09832d29d3f7da72f51c0f90efa55280b2b17291e87f5e8b036ba919f896",
+  "script_sha256": "f57f223ee2d3e20853c502c92e276bca4dfaec199f679e1a40cedade4a6b32ec",
+  "method": "event-priority replay + exact Fraction + 90-digit Decimal + Machin pi + 32/64 Gauss-Legendre normal-tail quadrature + Toeplitz HAC + direct ordered multiplicity formulas",
+  "imports_aqrp": false,
+  "imports_developer_reference": false,
+  "cases": 28,
+  "assertions": 146,
+  "passed": 146,
+  "failed": 0,
+  "pi": "3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803480",
+  "tail_quadrature": [
+    {
+      "argument": "2.82842712474619009760337744841939615713934375075389614635335947598146495692421407770077508",
+      "gauss32": "0.000063342483666239842507541513444302596887666122057006301982723944433310289192974793489598",
+      "gauss64": "0.000063342483666239842507541513444302596887666750960553017098663444157170338251796604771820",
+      "difference": "6.28903546715115939499723860049058821811282222E-46"
+    },
+    {
+      "argument": "2.82842712474619009760337744841939615713934375075389614635335947598146495692421407770077506",
+      "gauss32": "0.000063342483666239842507541513444302596887666122057006301982723944433310289192974793489604",
+      "gauss64": "0.000063342483666239842507541513444302596887666750960553017098663444157170338251796604771820",
+      "difference": "6.28903546715115939499723860049058821811282216E-46"
+    },
+    {
+      "argument": "2.44948974278317809819728407470589139196594748065667012843269256725096037745731502653985945",
+      "gauss32": "0.000532005505139249699289882133238293785579372947592765011982350311325005088047829954575727",
+      "gauss64": "0.000532005505139249699289882133238293785579372947557494047461462125127345630161439784328143",
+      "difference": "3.5270964520888186197659457886390170247584E-50"
+    },
+    {
+      "argument": "2.44948974278317809819728407470589139196594748065667012843269256725096037745731502653985943",
+      "gauss32": "0.000532005505139249699289882133238293785579372947592765011982350311325005088047829954575727",
+      "gauss64": "0.000532005505139249699289882133238293785579372947557494047461462125127345630161439784328143",
+      "difference": "3.5270964520888186197659457886390170247584E-50"
+    }
+  ],
+  "checks": [
+    {
+      "case": "LABEL-NONE",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "return",
+      "actual": "1/10",
+      "expected": "1/10",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "label_available_at",
+      "actual": "2026-01-09 12:00:00.000001+00:00",
+      "expected": "2026-01-09 12:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "shares",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "credit",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "return",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "label_available_at",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "status",
+      "actual": "NOT_YET_AVAILABLE",
+      "expected": "NOT_YET_AVAILABLE",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "eventual_label_available_at_oracle_only",
+      "actual": "2026-01-09 12:00:00.000001+00:00",
+      "expected": "2026-01-09 12:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "credit",
+      "actual": "4",
+      "expected": "4",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "return",
+      "actual": "3/50",
+      "expected": "3/50",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-10 12:00:00+00:00",
+      "expected": "2026-01-10 12:00:00+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "ratio_anchor_to_dividend",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "visible_at_exit_open",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_before",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_equal",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_after",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "LABEL-LATE-TRAIN-FIT",
+      "field": "fit_allowed",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "PURGE-INFORMATION-CONTACT",
+      "field": "purge",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "composite/0",
+      "actual": "-1",
+      "expected": "-1",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "composite/1",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "composite/2",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "raw_correlation",
+      "actual": "-1",
+      "expected": "-1",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "signed_correlation",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "raw_spearman",
+      "actual": "-1",
+      "expected": "-1",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance/0",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance/1",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance/2",
+      "actual": "-1",
+      "expected": "-1",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "composite/0",
+      "actual": "-0.5",
+      "expected": "-1/2",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "composite/1",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "composite/2",
+      "actual": "0.5",
+      "expected": "1/2",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "composite/0",
+      "actual": "-0.70710678118654752440084436210484903928483593768847403658833986899536623923105351942519377",
+      "expected": "-0.707106781186547524400844362104849039284835937688474036588339868995366239231053519425193769",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "composite/1",
+      "actual": "0.70710678118654752440084436210484903928483593768847403658833986899536623923105351942519377",
+      "expected": "0.707106781186547524400844362104849039284835937688474036588339868995366239231053519425193769",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "kept_indices/0",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "kept_indices/1",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "excluded_indices/0",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "all_zero",
+      "actual": "INVALID_WEIGHTS",
+      "expected": "INVALID_WEIGHTS",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "one_positive",
+      "actual": "INSUFFICIENT_COMPONENTS",
+      "expected": "INSUFFICIENT_COMPONENTS",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "empty",
+      "actual": "INSUFFICIENT_INTERSECTION",
+      "expected": "INSUFFICIENT_INTERSECTION",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "missing_thresholds",
+      "actual": "UNCLASSIFIED",
+      "expected": "UNCLASSIFIED",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "REDUNDANCY-PREDECLARED",
+      "field": "flag",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "REDUNDANCY-PREDECLARED",
+      "field": "automatic_weight_change",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "REDUNDANCY-PREDECLARED",
+      "field": "account_write",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "mean",
+      "actual": "1/4",
+      "expected": "1/4",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "gamma/0",
+      "actual": "1/16",
+      "expected": "1/16",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "gamma/1",
+      "actual": "-3/64",
+      "expected": "-3/64",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "S",
+      "actual": "1/64",
+      "expected": "1/64",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "variance",
+      "actual": "1/256",
+      "expected": "1/256",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "se",
+      "actual": "0.0625",
+      "expected": "1/16",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "z",
+      "actual": "4",
+      "expected": "4",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "p_formula",
+      "actual": "0.000063342483666239842507541513444302596887666750960553017098663444157170338251796604771820",
+      "expected": "0.000063342483666239842507541513444302596887666750960553017098663444157170338251796604771820",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "p_approx",
+      "actual": "0.000063342483666239842507541513444302596887666750960553017098663444157170338251796604771820",
+      "expected": "0.00006334248366623984",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "formal_eligible",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "specified-mode",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "mean",
+      "actual": "1/4",
+      "expected": "1/4",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma/0",
+      "actual": "1/16",
+      "expected": "1/16",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma/1",
+      "actual": "-3/64",
+      "expected": "-3/64",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma/2",
+      "actual": "1/32",
+      "expected": "1/32",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "S",
+      "actual": "1/48",
+      "expected": "1/48",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "variance",
+      "actual": "1/192",
+      "expected": "1/192",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "se_formula",
+      "actual": "0.0721687836487032205636435975627446819559502189087658595023252908104972090378666682117144244",
+      "expected": "0.0721687836487032205636435975627446819559502189087658595023252908104972090378666682117144244",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "z_formula",
+      "actual": "3.46410161513775458705489268301174473388561050762076125611161395890386603381760007416229238",
+      "expected": "3.46410161513775458705489268301174473388561050762076125611161395890386603381760007416229238",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "p_formula",
+      "actual": "0.000532005505139249699289882133238293785579372947557494047461462125127345630161439784328143",
+      "expected": "0.000532005505139249699289882133238293785579372947557494047461462125127345630161439784328143",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "p_approx",
+      "actual": "0.000532005505139249699289882133238293785579372947557494047461462125127345630161439784328143",
+      "expected": "0.0005320055051392504",
+      "comparison": "float",
+      "pass_": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "formal_eligible",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "specified-mode",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "lags/0",
+      "actual": "5",
+      "expected": "5",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "lags/1",
+      "actual": "5",
+      "expected": "5",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "lags/2",
+      "actual": "9",
+      "expected": "9",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "lags/3",
+      "actual": "19",
+      "expected": "19",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "minimum_ns/0",
+      "actual": "252",
+      "expected": "252",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "minimum_ns/1",
+      "actual": "252",
+      "expected": "252",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "minimum_ns/2",
+      "actual": "252",
+      "expected": "252",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "minimum_ns/3",
+      "actual": "400",
+      "expected": "400",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h1_n251",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h1_n252",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h20_n399",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h20_n400",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "short_lag",
+      "actual": "LAG_BELOW_OVERLAP",
+      "expected": "LAG_BELOW_OVERLAP",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "lag_equal_n",
+      "actual": "INVALID_HORIZON_OR_LAG",
+      "expected": "INVALID_HORIZON_OR_LAG",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "missing_session",
+      "actual": "IRREGULAR_OR_MISSING_IC",
+      "expected": "IRREGULAR_OR_MISSING_IC",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "no_assumptions",
+      "actual": "ASSUMPTIONS_UNVERIFIED",
+      "expected": "ASSUMPTIONS_UNVERIFIED",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "no_approval",
+      "actual": "FORMAL_PROTOCOL_UNAPPROVED",
+      "expected": "FORMAL_PROTOCOL_UNAPPROVED",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "failed_mapping",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "Holm/0",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "Holm/1",
+      "actual": "9/100",
+      "expected": "9/100",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "Holm/2",
+      "actual": "9/100",
+      "expected": "9/100",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "Holm/3",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BY/0",
+      "actual": "1/12",
+      "expected": "1/12",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BY/1",
+      "actual": "1/9",
+      "expected": "1/9",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BY/2",
+      "actual": "1/9",
+      "expected": "1/9",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BY/3",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BH/0",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BH/1",
+      "actual": "4/75",
+      "expected": "4/75",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BH/2",
+      "actual": "4/75",
+      "expected": "4/75",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BH/3",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "formal_family_approvable",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass_": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "bh_dependency_evidence_required",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "specified-state-predicate",
+      "pass_": true
+    }
+  ],
+  "case_notes": [
+    {
+      "id": "LABEL-NONE",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "0"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/10"
+    },
+    {
+      "id": "LABEL-INTERIOR-OLD-UNIT",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/25"
+    },
+    {
+      "id": "LABEL-ENTRY-SAME",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "split",
+          "qty": "0",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "0",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "0"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/50"
+    },
+    {
+      "id": "LABEL-ENTRY-MINUS-US",
+      "history": [
+        {
+          "time": "2026-01-06T08:59:59.999999+00:00",
+          "event": "split",
+          "qty": "0",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T08:59:59.999999+00:00",
+          "event": "dividend",
+          "qty": "0",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "0"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/50"
+    },
+    {
+      "id": "LABEL-ENTRY-PLUS-US",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T09:00:00.000001+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T09:00:00.000001+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/25"
+    },
+    {
+      "id": "LABEL-EXIT-SAME",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/25"
+    },
+    {
+      "id": "LABEL-EXIT-MINUS-US",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T08:59:59.999999+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T08:59:59.999999+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/25"
+    },
+    {
+      "id": "LABEL-EXIT-PLUS-US",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "0"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/50"
+    },
+    {
+      "id": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "split",
+          "qty": "0",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "0",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "0"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/50"
+    },
+    {
+      "id": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "split",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "1",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/25"
+    },
+    {
+      "id": "LABEL-LATE-VISIBLE",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/25"
+    },
+    {
+      "id": "LABEL-LATE-NOT-VISIBLE",
+      "information_at_cutoff": "null; future timestamp only oracle"
+    },
+    {
+      "id": "LABEL-REVISION-OLD-ASOF",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "1/25"
+    },
+    {
+      "id": "LABEL-REVISION-NEW-ASOF",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "4"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "4"
+        }
+      ],
+      "action_visibility": "ordinary cases omit action event/availability; arithmetic presumes those dependencies no later than dominating supplied bar/coverage watermark",
+      "return_": "3/50"
+    },
+    {
+      "id": "LABEL-ANCHOR-RESET",
+      "history": [
+        {
+          "time": "2026-01-06T09:00:00+00:00",
+          "event": "entry",
+          "qty": "1",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-06T12:00:00+00:00",
+          "event": "split",
+          "qty": "2",
+          "credit": "0"
+        },
+        {
+          "time": "2026-01-07T09:00:00+00:00",
+          "event": "dividend",
+          "qty": "2",
+          "credit": "2"
+        },
+        {
+          "time": "2026-01-08T09:00:00+00:00",
+          "event": "exit",
+          "qty": "0",
+          "credit": "2"
+        }
+      ]
+    },
+    {
+      "id": "LABEL-BAR-CLOSE-AND-FIT"
+    },
+    {
+      "id": "LABEL-LATE-TRAIN-FIT"
+    },
+    {
+      "id": "PURGE-INFORMATION-CONTACT"
+    },
+    {
+      "id": "COMPOSITE-SIGNED-SCALE",
+      "common_indices": [
+        0,
+        1,
+        2
+      ],
+      "normalization": "recomputed on common intersection"
+    },
+    {
+      "id": "COMPOSITE-POSITIVE-DIRECTION",
+      "common_indices": [
+        0,
+        1,
+        2
+      ],
+      "normalization": "recomputed on common intersection"
+    },
+    {
+      "id": "COMPOSITE-MISSING-INTERSECTION",
+      "common_indices": [
+        0,
+        2
+      ],
+      "normalization": "recomputed on common intersection"
+    },
+    {
+      "id": "COMPOSITE-REJECTIONS"
+    },
+    {
+      "id": "REDUNDANCY-PREDECLARED"
+    },
+    {
+      "id": "HAC-NONZERO-Q1",
+      "se": "0.0625",
+      "z": "4",
+      "p": "0.000063342483666239842507541513444302596887666750960553017098663444157170338251796604771820",
+      "formal": "ARITHMETIC_REFERENCE only; no inferential validity asserted"
+    },
+    {
+      "id": "HAC-NONZERO-Q2",
+      "se": "0.0721687836487032205636435975627446819559502189087658595023252908104972090378666682117144244",
+      "z": "3.46410161513775458705489268301174473388561050762076125611161395890386603381760007416229238",
+      "p": "0.000532005505139249699289882133238293785579372947557494047461462125127345630161439784328143",
+      "formal": "ARITHMETIC_REFERENCE only; no inferential validity asserted"
+    },
+    {
+      "id": "HAC-PROFILE-BOUNDARIES",
+      "limitation": "true means numeric sample gate only, not all formal gates or financial approval"
+    },
+    {
+      "id": "HAC-REJECTION-CONTRACT",
+      "limitation": "each fixture predicate checked separately, not a multi-error precedence test of future API"
+    },
+    {
+      "id": "MULTI-FAILED-FAMILY"
+    }
+  ],
+  "future_api_execution": "NOT VERIFIED; predicates are specified-design arithmetic, not P3 production tests",
+  "deployment": "NOT VERIFIED",
+  "financial_approval": "UNAPPROVED"
+}

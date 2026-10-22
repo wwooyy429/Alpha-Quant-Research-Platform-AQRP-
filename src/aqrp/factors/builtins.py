@@ -13,7 +13,7 @@ class BuiltinFactor:
         for sid, signal_time, rows, reason in windows(view, context):
             value = None
             if reason == "NONE":
-                if factor_id == "volume":
+                if factor_id in ("volume", "price_volume"):
                     mean = sum((Fraction(r["volume"]) for r in rows[:-1]), Fraction(0)) / (
                         len(rows) - 1
                     )
@@ -21,6 +21,11 @@ class BuiltinFactor:
                         reason = "ZERO_BASE_VOLUME"
                     else:
                         value = float(Fraction(rows[-1]["volume"]) / mean - 1)
+                        if factor_id == "price_volume":
+                            value = float(
+                                (Fraction(rows[-1]["close"]) / Fraction(rows[-2]["close"]) - 1)
+                                * (Fraction(rows[-1]["volume"]) / mean - 1)
+                            )
                 else:
                     ratio = Fraction(rows[-1]["close"]) / Fraction(rows[0]["close"]) - 1
                     value = float(-ratio if factor_id == "reversal" else ratio)

@@ -1,0 +1,31 @@
+{
+  "scope": "Reviewer auxiliary/read-only discovery errors, distinct from 4 actual product regression failures",
+  "errors": [
+    {
+      "name": "scope",
+      "error": "Initial assertion incorrectly counted module values (20) instead of canonical ID-prefix groups (16).",
+      "preserved": [
+        "verify_scope-attempt1.py",
+        "scope.command.json",
+        "scope.stderr.log"
+      ],
+      "resolution": "Counted canonical ID prefixes; scope-final exit0."
+    },
+    {
+      "name": "CI merge display",
+      "error": "Summary print referenced tree.sha on GitHub commit response; actual location is commit.tree.sha.",
+      "resolution": "Raw JSON preserved; whole-tree verification uses commit.tree.sha."
+    },
+    {
+      "name": "read-only file discovery",
+      "error": "rg probes referred to non-existent data/validation.py and data/validate.py; actual validator is data/quality.py.",
+      "resolution": "Located with rg --files and read actual quality.py; no code/test failure."
+    },
+    {
+      "name": "coverage display",
+      "error": "PowerShell ConvertFrom-Json rejected coverage metadata containing an empty-string key.",
+      "resolution": "Read unchanged coverage JSON with Python; independently enforced all gates."
+    }
+  ],
+  "original_regression_discovery": "Initial subset6+4=10 passed preserved; final complete original16+4=20 passed separately, not30 unique tests."
+}

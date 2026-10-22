@@ -1,0 +1,72 @@
+{
+  "executor": "GPT Work independently recomputed public cache key and executed pinned scanner controls",
+  "reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "scanner_version": "8.30.1",
+  "scanner_executable_sha256": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c",
+  "configuration_sha256": "73dbfe9e8ddd221da5ffd18a3cfa467ea8435dfa57b1ce4f28159eb6c5bab928",
+  "verified_public_cache_digest": "69266f2ffa606b5e7b3f052cb193dcf9de2e8c0b70a71467217e8b848332c554",
+  "script_sha256": "97d1e9ee47e31bc8e3a647e76135c9a8d8f1aaa0e45e51520f6e81e00043ef83",
+  "results": [
+    {
+      "case": "exact_event",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\sdk\\aqrp-0397504c-4079-4bd5-ad18-09c175371cff\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\scanner-controls\\exact_event",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-implementation-5a5e093\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner",
+        "--report-format",
+        "json",
+        "--report-path",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\scanner-controls\\exact_event-findings.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass_": true,
+      "input_sha256": "5dcfd54a78cae9b8ed89e4086cba228430e6b4a3f1e6e3e719287f8946b6e85e"
+    },
+    {
+      "case": "same_digest_elsewhere",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\sdk\\aqrp-0397504c-4079-4bd5-ad18-09c175371cff\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\scanner-controls\\same_digest_elsewhere",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-implementation-5a5e093\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner",
+        "--report-format",
+        "json",
+        "--report-path",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\scanner-controls\\same_digest_elsewhere-findings.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass_": true,
+      "input_sha256": "5dcfd54a78cae9b8ed89e4086cba228430e6b4a3f1e6e3e719287f8946b6e85e"
+    },
+    {
+      "case": "changed_line_at_exact_path",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\sdk\\aqrp-0397504c-4079-4bd5-ad18-09c175371cff\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\scanner-controls\\changed_line_at_exact_path",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-implementation-5a5e093\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner",
+        "--report-format",
+        "json",
+        "--report-path",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\scanner-controls\\changed_line_at_exact_path-findings.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass_": true,
+      "input_sha256": "93b903b51da29317e27f13b8f4064a90761a7d227c0221388912ea79260c2b5e"
+    }
+  ],
+  "real_credentials_used": false
+}

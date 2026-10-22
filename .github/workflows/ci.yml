@@ -1,8 +1,8 @@
-name: Phase 2 quality
+name: Phase 3 quality
 on:
   pull_request:
   push:
-    branches: [feature/phase-2-factor-registry]
+    branches: [feature/phase-3-alpha-research]
 permissions:
   contents: read
 jobs:
@@ -28,7 +28,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: phase2-${{ matrix.os }}-${{ github.run_attempt }}
+          name: phase3-${{ matrix.os }}-${{ github.run_attempt }}
           path: |
             ${{ runner.temp }}/aqrp-evidence/*/*.log
             ${{ runner.temp }}/aqrp-evidence/*/*.json
@@ -38,6 +38,11 @@ jobs:
             ${{ runner.temp }}/aqrp-evidence/*/wheel/*.whl
             ${{ runner.temp }}/aqrp-evidence/*/factor-dataset/**/*
             ${{ runner.temp }}/aqrp-evidence/*/factor-runs/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/research/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/*.json
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/*.log
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/dataset/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/wheelhouse/*.whl
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 30

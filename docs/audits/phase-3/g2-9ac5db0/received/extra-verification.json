@@ -1,0 +1,127 @@
+{
+  "reviewed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+  "actual_executor": "GPT Work independent current rerun, not developer",
+  "interpreter": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Scripts\\python.exe",
+  "started_utc": "2026-10-22T05:36:57.643388+00:00",
+  "original_scripts_byte_unchanged": [
+    {
+      "path": "test_review_regressions.py",
+      "sha256": "798005e905817b322d723bb261efac9d6f4d83b284bde82d99f0724dff53c788"
+    },
+    {
+      "path": "independent_implementation_math.py",
+      "sha256": "8838c9153ca914ad257849a2c7b26c468f15a8ad2e5c1dab7bf683ada60056c3"
+    },
+    {
+      "path": "verify_scanner_controls.py",
+      "sha256": "97d1e9ee47e31bc8e3a647e76135c9a8d8f1aaa0e45e51520f6e81e00043ef83"
+    }
+  ],
+  "legacy_label_note": "Original 91-math/scanner script printed old5a SHA/GPT Work label is an immutable inherited source label. Actual new target/executor/source identity recorded here and in installed identity check.",
+  "completed": true,
+  "commands": [
+    {
+      "name": "installed-identity",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Scripts\\python.exe",
+      "argv": [
+        "-I",
+        "-c",
+        "import json,aqrp; from aqrp.factors.admission import bundle_hash; print(json.dumps(dict(module_file=aqrp.__file__,bundle_sha256=bundle_hash())))"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0",
+      "started_utc": "2026-10-22T05:36:57.643407+00:00",
+      "ended_utc": "2026-10-22T05:36:58.800512+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "original-four",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Scripts\\python.exe",
+      "argv": [
+        "-I",
+        "-m",
+        "pytest",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\test_review_regressions.py",
+        "-q",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original-four-cache",
+        "--basetemp",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original-four-temp",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original-four.xml"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0",
+      "started_utc": "2026-10-22T05:36:58.802590+00:00",
+      "ended_utc": "2026-10-22T05:37:03.301308+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "original20",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Scripts\\python.exe",
+      "argv": [
+        "-I",
+        "-m",
+        "pytest",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original-probes\\test_work_p1_regressions.py",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original-probes\\test_round2_regressions.py",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original-probes\\test_work_p2_regressions.py",
+        "-q",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original20-cache",
+        "--basetemp",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original20-temp",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\original20.xml"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0",
+      "started_utc": "2026-10-22T05:37:03.303207+00:00",
+      "ended_utc": "2026-10-22T05:37:06.745261+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "independent-math",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Scripts\\python.exe",
+      "argv": [
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\independent_implementation_math.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0",
+      "started_utc": "2026-10-22T05:37:06.747163+00:00",
+      "ended_utc": "2026-10-22T05:37:07.226792+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "scanner-controls",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Scripts\\python.exe",
+      "argv": [
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\verify_scanner_controls.py",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-recheck-9ac5db0"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0",
+      "started_utc": "2026-10-22T05:37:07.232908+00:00",
+      "ended_utc": "2026-10-22T05:37:07.550927+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "scanner-controls-retry",
+      "executable": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Scripts\\python.exe",
+      "argv": [
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\verify_scanner_controls.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p3-recheck-9ac5db0"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0",
+      "started_utc": "2026-10-22T05:40:18.456938+00:00",
+      "ended_utc": "2026-10-22T05:40:20.684973+00:00",
+      "exit_code": 0
+    }
+  ],
+  "installed_identity": {
+    "module_file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\work-p3-g2-recheck-9ac5db0\\sdk\\aqrp-b95750e5-e167-4173-94b6-20568b25fab4\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+    "bundle_sha256": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e"
+  },
+  "helper_attempt1_note": "Premature scanner call before SDK downloaded gitleaks.exe failed with FileNotFoundError. No scanner ran. Original helper failure and first four successful commands preserved. Only scanner control retried after SDK completed.",
+  "completed_utc": "2026-10-22T05:40:20.689489+00:00",
+  "original_four": "4 passed",
+  "original20": "20 passed",
+  "independent_math": 91,
+  "scanner_controls": 3
+}

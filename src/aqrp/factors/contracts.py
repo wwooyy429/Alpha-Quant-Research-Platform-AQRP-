@@ -70,7 +70,12 @@ class FactorSpec:
             identifier(getattr(self, field), field)
         if self.parameters != (("lookback", "int", 20, 1, 252),):
             raise ContractError("UNSUPPORTED_PARAMETER_SCHEMA", "parameters")
-        if self.required_fields != (("volume",) if self.factor_id == "volume" else ("close",)):
+        expected_fields = (
+            ("close", "volume")
+            if self.factor_id == "price_volume"
+            else (("volume",) if self.factor_id == "volume" else ("close",))
+        )
+        if self.required_fields != expected_fields:
             raise ContractError("INVALID_REQUIRED_FIELDS", "required_fields")
         if self.supported_frequency != "daily" or self.price_basis != "split_adjusted":
             raise ContractError("UNSUPPORTED_FACTOR_PROFILE", "FactorSpec")

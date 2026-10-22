@@ -1,5 +1,20 @@
 # 双向需求追踪矩阵（待审）
 
+2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。
+
+
+2026-10-22 G2修复自测完成：**DEVELOPER REPAIR VALIDATED / GPT WORK RECHECK REQUIRED**。修复业务1b4be236e888805f5c4e45357b158fcdb6058df0的干净SDK和双OS各578项、原16/4、原四产品回归、原91数学及3扫描控制通过；实际时钟/fit探针和原ZIP/hash见docs/audits/phase-3/g2-5a5e093/validation-1b4be23/。原1High/2Medium仍待主审确认CLOSED，未部署/金融批准/验收/合并/标签/P4。以下各旧状态按原轮次保留。
+
+
+2026-10-22 最新G2状态：**GPT Work对固定5a5e093判REQUEST CHANGES（1 High/2 Medium）；修复候选待新固定SHA复核**。G1 PLAN PASS不变。原四失败、封存319项/hash核验、3项开发方处理见docs/audits/phase-3/g2-5a5e093/；不自判CLOSED/验收。实际部署/正式Test/金融批准仍未验证，无合并、标签或P4；以下旧交审状态按其时间保留。
+
+
+2026-10-22 最新交审状态：**Phase3 IMPLEMENTATION READY FOR GPT WORK G2 / DEVELOPER VERIFIED；未验收、未发布**。G1固定3861及U-001/U-002设计已获用户确认；26项（23MVP/3CR）实现与四主体修复见docs/audits/phase-3/。业务07e7c88745c031feeaee5d1e374a02caada77777的干净SDK、双OS各564项及原16/4通过，原ZIP/45源码/95批信号记录（含缓存引用）/1957冻结文件核验见IMPLEMENTATION_VALIDATION.json。无真实权限部署、正式Test或金融批准，不合并、不打标签、不进入P4；以下旧轮状态按时间保留。
+
+
+2026-10-22 Phase3：G1固定3861已由用户确认PLAN PASS，U-001/U-002设计已确认，26项实现候选及必要自测进行中。实际代码/测试映射见docs/audits/phase-3/IMPLEMENTATION_TRACEABILITY.md；真实权限部署未授权，正式Test/金融批准/独立实现审核/阶段验收未完成，不合并、不打标签、不进入P4。以下旧轮状态按其时间保留。
+
+
 最新审查指针：Gemini对8bf189d七项勘误全部AGREE，技术建议PASS；完整独立执行仍NOT VERIFIED，用户未验收。实际需求目录不变，当前证据等级与门禁见[audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md](audits/phase-1/SDK_HASH_INCREMENTAL_RECONCILIATION.md)；下表和旧轮状态保留各自来源。
 
 源要求→需求ID→设计/未来实现→分阶段测试；实际实现后须把规划路径替换/补充为真实文件、测试ID、Commit及证据。空缺不能当已实现。需求的完整输入输出/验收定义见 REQUIREMENTS 和 requirements.csv。

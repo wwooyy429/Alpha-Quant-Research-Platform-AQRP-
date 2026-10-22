@@ -1,0 +1,27 @@
+{
+  "reviewed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+  "helper_errors": [
+    {
+      "id": "CURRENT-HELPER-001",
+      "classification": "Reviewer orchestration failure; no product/scanner verdict",
+      "cause": "Original scanner helper invoked while full SDK had not yet downloaded gitleaks.exe",
+      "actual_exit": 1,
+      "actual_error": "FileNotFoundError WinError 2",
+      "preserved": [
+        "run_extras-attempt1.py",
+        "extra-verification-attempt1.json",
+        "extras.command.json",
+        "extras.stderr.log",
+        "scanner-controls-attempt1.command.json",
+        "scanner-controls-attempt1.stderr.log"
+      ],
+      "correction": "After clean SDK completed, retried scanner only, exit0 / all3 controls passed. Earlier 4/20/91 not unnecessarily rerun.",
+      "successful_retry": [
+        "extras-finish.command.json",
+        "scanner-controls-retry.command.json",
+        "scanner-controls.json"
+      ]
+    }
+  ],
+  "prior_errors": "Original prior package/report and reviewer helper failure preserved; archive-verification.json verifies all319 original files."
+}

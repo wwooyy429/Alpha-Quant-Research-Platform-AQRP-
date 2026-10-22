@@ -1,0 +1,110 @@
+{
+  "received_utc": "2026-10-21T19:06:14.300181+00:00",
+  "actual_executor": "Codex developer reconciliation; not reviewer re-execution",
+  "reviewer": "GPT Work supplementary review",
+  "reviewed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+  "existing_development_head": "ff4c546b9a8f6652ff70804055d9435ac08f63b3",
+  "review_explicitly_excludes_head": true,
+  "verdict": "PLAN BLOCKED",
+  "closure_scope": "003/004 design only at e26; not new implementation acceptance",
+  "open": [
+    "WORK-P3-001",
+    "WORK-P3-002",
+    "WORK-P3-005"
+  ],
+  "original_zip_sha256": "26ff2e78ee45a76d2889b91abb5aa846217173d6761ed442ec99b473efa1ac19",
+  "original_zip_bytes": 30844140,
+  "manifest_members_verified": 77,
+  "zip_crc": "PASS",
+  "independent_assertion_records": {
+    "original": 75,
+    "supplemental": 146,
+    "total": 221,
+    "execution": "reviewer original records; no developer claim of independent re-execution"
+  },
+  "ci_original_zip_verification": [
+    {
+      "artifact_id": 12370449123,
+      "bytes": 149762,
+      "sha256": "6bacc95fbeac4632174854761f54ce344b1e86e816f91043b51a8b7c61bed408",
+      "junit": {
+        "tests": 417,
+        "failure": 0,
+        "error": 0,
+        "skip": 0
+      },
+      "wheel_modules_exact": 26,
+      "scope": "P2 baseline only"
+    },
+    {
+      "artifact_id": 12370309429,
+      "bytes": 149816,
+      "sha256": "8cfa74555a373cc04b6319a56a978f441eff6a52c7939b601928d202287c4cac",
+      "junit": {
+        "tests": 417,
+        "failure": 0,
+        "error": 0,
+        "skip": 0
+      },
+      "wheel_modules_exact": 26,
+      "scope": "P2 baseline only"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "ci-verification.json",
+      "bytes": 35092,
+      "sha256": "6cccebe49c717c466ac0d2526968a01b51fb64121e409e0aefe6845e69d8025b"
+    },
+    {
+      "path": "Codex-Phase3-G1-e26d4bb-Tasks.md",
+      "bytes": 2373,
+      "sha256": "db7641f17369facb520c34e0bcc6a3255c905697f2f7a313d6e3d56884e06cfe"
+    },
+    {
+      "path": "finding-disposition.json",
+      "bytes": 8145,
+      "sha256": "f1271e25f0d30de1db2c27a54e10acdf5af0bd8a7c6280ed6ea7d092e13c5804"
+    },
+    {
+      "path": "fixed-bandwidth-counterexample.json",
+      "bytes": 1780,
+      "sha256": "1d6a29fd08055aeff439d841a1c8bd3b2e734af7cb8e6cb9b3f621c3f3272202"
+    },
+    {
+      "path": "GPT-Work-P3-G1-e26d4bb-Evidence.zip",
+      "bytes": 30844140,
+      "sha256": "26ff2e78ee45a76d2889b91abb5aa846217173d6761ed442ec99b473efa1ac19"
+    },
+    {
+      "path": "GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+      "bytes": 33056,
+      "sha256": "b71e4bc9e4e1247a5b95b1a170b7be35db51ba8218dcc00bfba0dd2494390952"
+    },
+    {
+      "path": "independent-math-results.json",
+      "bytes": 19635,
+      "sha256": "9553973c9d5cffa44da6f5263bf2bac4c99f361ae644b7c49e2e4155552a8d8f"
+    },
+    {
+      "path": "independent-supplemental-results.json",
+      "bytes": 45906,
+      "sha256": "61ed0b631ddfb952b1ae711c2a75a44f4f85303de8ecf366827801edad727222"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 1807,
+      "sha256": "97db9ba28fe3bf4a008ad2188c823e0cd534f1097ad440f84cab71113f0c1c7a"
+    },
+    {
+      "path": "REVIEW_EVIDENCE_MANIFEST.json",
+      "bytes": 13271,
+      "sha256": "24864f681410ab8737c1e6252887f94f5d1810b12dbfbbff82d6e7bb4c25da80"
+    },
+    {
+      "path": "sha-drift.json",
+      "bytes": 553,
+      "sha256": "bb1149a0324227c2aadd6582de469a3bf4727d8e40754dcd987ddbc6570322cf"
+    }
+  ]
+}

@@ -1,0 +1,898 @@
+tests/research/test_evaluator.py:1: trailing whitespace.
++"""Control logic tests; mocks are never described as real deployed OS isolation."""
+tests/research/test_evaluator.py:2: trailing whitespace.
++
+tests/research/test_evaluator.py:3: trailing whitespace.
++import hashlib
+tests/research/test_evaluator.py:4: trailing whitespace.
++import json
+tests/research/test_evaluator.py:5: trailing whitespace.
++from concurrent.futures import ThreadPoolExecutor
+tests/research/test_evaluator.py:6: trailing whitespace.
++
+tests/research/test_evaluator.py:7: trailing whitespace.
++import pytest
+tests/research/test_evaluator.py:8: trailing whitespace.
++
+tests/research/test_evaluator.py:9: trailing whitespace.
++from aqrp.core.canonical import canonical, digest
+tests/research/test_evaluator.py:10: trailing whitespace.
++from aqrp.core.errors import ContractError
+tests/research/test_evaluator.py:11: trailing whitespace.
++from aqrp.experiments.ledger import ExperimentLedger, append_chain, read_chain
+tests/research/test_evaluator.py:12: trailing whitespace.
++from aqrp.validation.approvals import propose, record_decision
+tests/research/test_evaluator.py:13: trailing whitespace.
++from aqrp.validation.evaluator import OperatorPolicy, TestEvaluator, identity, seal, verify_seal
+tests/research/test_evaluator.py:14: trailing whitespace.
++
+tests/research/test_evaluator.py:15: trailing whitespace.
++
+tests/research/test_evaluator.py:16: trailing whitespace.
++def test_no_deployment_denies_before_callback(tmp_path):
+tests/research/test_evaluator.py:17: trailing whitespace.
++    e = TestEvaluator(tmp_path / "control")
+tests/research/test_evaluator.py:18: trailing whitespace.
++    with pytest.raises(ContractError, match="UNVERIFIED_ISOLATION"):
+tests/research/test_evaluator.py:19: trailing whitespace.
++        e.process({}, lambda: pytest.fail("private data must not load"), purpose="FINAL_TEST")
+tests/research/test_evaluator.py:20: trailing whitespace.
++    assert not e.root.exists()
+tests/research/test_evaluator.py:21: trailing whitespace.
++    with pytest.raises(ContractError, match="INVALID_TEST_PURPOSE"):
+tests/research/test_evaluator.py:22: trailing whitespace.
++        e.process({}, lambda: {}, purpose="development")
+tests/research/test_evaluator.py:23: trailing whitespace.
++    root = tmp_path / "host"
+tests/research/test_evaluator.py:24: trailing whitespace.
++    root.mkdir()
+tests/research/test_evaluator.py:25: trailing whitespace.
++    key = root / "key"
+tests/research/test_evaluator.py:26: trailing whitespace.
++    key.write_bytes(b"test-only-no-real-secret" * 2)
+tests/research/test_evaluator.py:27: trailing whitespace.
++    policy = OperatorPolicy(
+tests/research/test_evaluator.py:28: trailing whitespace.
++        root,
+tests/research/test_evaluator.py:29: trailing whitespace.
++        key,
+tests/research/test_evaluator.py:30: trailing whitespace.
++        evaluator="deliberately-not-current-identity",
+tests/research/test_evaluator.py:31: trailing whitespace.
++        research="research",
+tests/research/test_evaluator.py:32: trailing whitespace.
++        trusted_owner="owner",
+tests/research/test_evaluator.py:33: trailing whitespace.
++    )
+tests/research/test_evaluator.py:34: trailing whitespace.
++    with pytest.raises(ContractError, match="WRONG_EVALUATOR_PRINCIPAL"):
+tests/research/test_evaluator.py:35: trailing whitespace.
++        policy.verify_host()
+tests/research/test_evaluator.py:36: trailing whitespace.
++    assert identity()
+tests/research/test_evaluator.py:37: trailing whitespace.
++
+tests/research/test_evaluator.py:38: trailing whitespace.
++
+tests/research/test_evaluator.py:39: trailing whitespace.
++def test_seal_and_single_consumption_across_renames(tmp_path):
+tests/research/test_evaluator.py:40: trailing whitespace.
++    key = b"engineering-test-only-key-material-123456"
+tests/research/test_evaluator.py:41: trailing whitespace.
++    envelope = seal({"a": 1}, key)
+tests/research/test_evaluator.py:42: trailing whitespace.
++    assert verify_seal(envelope, key) == {"a": 1}
+tests/research/test_evaluator.py:43: trailing whitespace.
++    envelope["payload"]["a"] = 2
+tests/research/test_evaluator.py:44: trailing whitespace.
++    with pytest.raises(ContractError, match="OPERATOR_SEAL_MISMATCH"):
+tests/research/test_evaluator.py:45: trailing whitespace.
++        verify_seal(envelope, key)
+tests/research/test_evaluator.py:46: trailing whitespace.
++    with pytest.raises(ContractError, match="INVALID_OPERATOR_KEY"):
+tests/research/test_evaluator.py:47: trailing whitespace.
++        seal({}, b"short")
+tests/research/test_evaluator.py:48: trailing whitespace.
++    e = TestEvaluator(tmp_path)
+tests/research/test_evaluator.py:49: trailing whitespace.
++    bindings = {"holdout_lineage_id": "public-synthetic-holdout"}
+tests/research/test_evaluator.py:50: trailing whitespace.
++    r = e.process(bindings, lambda: {"secret_metric": 0.9}, purpose="ENGINEERING_DEMO")
+tests/research/test_evaluator.py:51: trailing whitespace.
++    assert not r["independence_verified"] and "secret_metric" not in r and "path" not in r
+tests/research/test_evaluator.py:52: trailing whitespace.
++    assert r["request_id"]
+tests/research/test_evaluator.py:53: trailing whitespace.
++    with pytest.raises(ContractError, match="TEST_ALREADY_CONSUMED"):
+tests/research/test_evaluator.py:54: trailing whitespace.
++        e.process({**bindings, "family": "renamed"}, lambda: {}, purpose="ENGINEERING_DEMO")
+tests/research/test_evaluator.py:55: trailing whitespace.
++    assert e.recover() == 0
+tests/research/test_evaluator.py:56: trailing whitespace.
++    assert read_chain(tmp_path / "access.jsonl")[-1]["kind"] == "REJECTED_REPEAT"
+tests/research/test_evaluator.py:57: trailing whitespace.
++
+tests/research/test_evaluator.py:58: trailing whitespace.
++
+tests/research/test_evaluator.py:59: trailing whitespace.
++def test_failure_crash_and_concurrent_reservation(tmp_path):
+tests/research/test_evaluator.py:60: trailing whitespace.
++    e = TestEvaluator(tmp_path)
+tests/research/test_evaluator.py:61: trailing whitespace.
++
+tests/research/test_evaluator.py:62: trailing whitespace.
++    def fail():
+tests/research/test_evaluator.py:63: trailing whitespace.
++        raise KeyboardInterrupt()
+tests/research/test_evaluator.py:64: trailing whitespace.
++
+tests/research/test_evaluator.py:65: trailing whitespace.
++    with pytest.raises(KeyboardInterrupt):
+tests/research/test_evaluator.py:66: trailing whitespace.
++        e.process({"holdout_lineage_id": "failed"}, fail, purpose="ENGINEERING_DEMO")
+tests/research/test_evaluator.py:67: trailing whitespace.
++    with pytest.raises(ContractError):
+tests/research/test_evaluator.py:68: trailing whitespace.
++        e.process({"holdout_lineage_id": "failed"}, lambda: {}, purpose="ENGINEERING_DEMO")
+tests/research/test_evaluator.py:69: trailing whitespace.
++    append_chain(
+tests/research/test_evaluator.py:70: trailing whitespace.
++        tmp_path / "access.jsonl", "RESERVED", {"test_id": "crash", "request_id": "orphan"}
+tests/research/test_evaluator.py:71: trailing whitespace.
++    )
+tests/research/test_evaluator.py:72: trailing whitespace.
++    assert e.recover() == 1
+tests/research/test_evaluator.py:73: trailing whitespace.
++    assert e.recover() == 0
+tests/research/test_evaluator.py:74: trailing whitespace.
++
+tests/research/test_evaluator.py:75: trailing whitespace.
++    def run(_):
+tests/research/test_evaluator.py:76: trailing whitespace.
++        try:
+tests/research/test_evaluator.py:77: trailing whitespace.
++            e.process(
+tests/research/test_evaluator.py:78: trailing whitespace.
++                {"holdout_lineage_id": "racing"}, lambda: {"ok": 1}, purpose="ENGINEERING_DEMO"
+tests/research/test_evaluator.py:79: trailing whitespace.
++            )
+tests/research/test_evaluator.py:80: trailing whitespace.
++            return "COMPLETED"
+tests/research/test_evaluator.py:81: trailing whitespace.
++        except ContractError as exc:
+tests/research/test_evaluator.py:82: trailing whitespace.
++            return exc.code
+tests/research/test_evaluator.py:83: trailing whitespace.
++
+tests/research/test_evaluator.py:84: trailing whitespace.
++    with ThreadPoolExecutor(max_workers=2) as pool:
+tests/research/test_evaluator.py:85: trailing whitespace.
++        assert sorted(pool.map(run, range(2))) == [
+tests/research/test_evaluator.py:86: trailing whitespace.
++            "COMPLETED",
+tests/research/test_evaluator.py:87: trailing whitespace.
++            "TEST_ALREADY_CONSUMED_OR_CONTAMINATED",
+tests/research/test_evaluator.py:88: trailing whitespace.
++        ]
+tests/research/test_evaluator.py:89: trailing whitespace.
++
+tests/research/test_evaluator.py:90: trailing whitespace.
++
+tests/research/test_evaluator.py:91: trailing whitespace.
++def test_authorization_evidence_and_hashes(tmp_path, monkeypatch):
+tests/research/test_evaluator.py:92: trailing whitespace.
++    key = b"test-only-generated-fixture-key-00000000"
+tests/research/test_evaluator.py:93: trailing whitespace.
++    (tmp_path / "key").write_bytes(key)
+tests/research/test_evaluator.py:94: trailing whitespace.
++    p = OperatorPolicy(
+tests/research/test_evaluator.py:95: trailing whitespace.
++        tmp_path, tmp_path / "key", evaluator="eval", research="research", trusted_owner="owner"
+tests/research/test_evaluator.py:96: trailing whitespace.
++    )
+tests/research/test_evaluator.py:97: trailing whitespace.
++    monkeypatch.setattr(p, "verify_host", lambda: key)
+tests/research/test_evaluator.py:98: trailing whitespace.
++    from aqrp.validation import evaluator as module
+tests/research/test_evaluator.py:99: trailing whitespace.
++
+tests/research/test_evaluator.py:100: trailing whitespace.
++    monkeypatch.setattr(module, "readonly_runtime", lambda *a: None)
+tests/research/test_evaluator.py:101: trailing whitespace.
++    bindings = {"fixed": "protocol"}
+tests/research/test_evaluator.py:102: trailing whitespace.
++    claims = {
+tests/research/test_evaluator.py:103: trailing whitespace.
++        "bindings": bindings,
+tests/research/test_evaluator.py:104: trailing whitespace.
++        "scope": "FINAL_TEST",
+tests/research/test_evaluator.py:105: trailing whitespace.
++        "profile": "P3-ISO-OS-1",
+tests/research/test_evaluator.py:106: trailing whitespace.
++        "human_approval_record": "test-simulation",
+tests/research/test_evaluator.py:107: trailing whitespace.
++    }
+tests/research/test_evaluator.py:108: trailing whitespace.
++
+tests/research/test_evaluator.py:109: trailing whitespace.
++    def write():
+tests/research/test_evaluator.py:110: trailing whitespace.
++        (tmp_path / "authorization.json").write_bytes(canonical(seal(claims, key)))
+tests/research/test_evaluator.py:111: trailing whitespace.
++
+tests/research/test_evaluator.py:112: trailing whitespace.
++    write()
+tests/research/test_evaluator.py:113: trailing whitespace.
++    with pytest.raises(ContractError, match="DEPLOYMENT_EVIDENCE_INCOMPLETE"):
+tests/research/test_evaluator.py:114: trailing whitespace.
++        p.authorize(bindings)
+tests/research/test_evaluator.py:115: trailing whitespace.
++    artifact = {"path": "evidence", "sha256": hashlib.sha256(b"fixture").hexdigest()}
+tests/research/test_evaluator.py:116: trailing whitespace.
++    (tmp_path / "evidence").write_bytes(b"fixture")
+tests/research/test_evaluator.py:117: trailing whitespace.
++    claims.update(
+tests/research/test_evaluator.py:118: trailing whitespace.
++        holdout_lineage_id="mock-only",
+tests/research/test_evaluator.py:119: trailing whitespace.
++        deployment_evidence={
+tests/research/test_evaluator.py:120: trailing whitespace.
++            k: artifact
+tests/research/test_evaluator.py:121: trailing whitespace.
++            for k in (
+tests/research/test_evaluator.py:122: trailing whitespace.
++                "dual_principal_negative_controls",
+tests/research/test_evaluator.py:123: trailing whitespace.
++                "private_seed_and_backups",
+tests/research/test_evaluator.py:124: trailing whitespace.
++                "runtime_readonly",
+tests/research/test_evaluator.py:125: trailing whitespace.
++                "network_and_credentials",
+tests/research/test_evaluator.py:126: trailing whitespace.
++                "auditor_access",
+tests/research/test_evaluator.py:127: trailing whitespace.
++            )
+tests/research/test_evaluator.py:128: trailing whitespace.
++        },
+tests/research/test_evaluator.py:129: trailing whitespace.
++        runtime_artifacts=[artifact],
+tests/research/test_evaluator.py:130: trailing whitespace.
++    )
+tests/research/test_evaluator.py:131: trailing whitespace.
++    write()
+tests/research/test_evaluator.py:132: trailing whitespace.
++    assert p.authorize(bindings)["holdout_lineage_id"] == "mock-only"
+tests/research/test_evaluator.py:133: trailing whitespace.
++    e = TestEvaluator(tmp_path / "control", policy=p)
+tests/research/test_evaluator.py:134: trailing whitespace.
++    assert e.process(bindings, lambda: {"mock_only": True}, purpose="FINAL_TEST")[
+tests/research/test_evaluator.py:135: trailing whitespace.
++        "independence_verified"
+tests/research/test_evaluator.py:136: trailing whitespace.
++    ]
+tests/research/test_evaluator.py:137: trailing whitespace.
++    with pytest.raises(ContractError, match="CONTROL_OUTSIDE_SEALED_ROOT"):
+tests/research/test_evaluator.py:138: trailing whitespace.
++        TestEvaluator(tmp_path.parent / "outside", policy=p).process(
+tests/research/test_evaluator.py:139: trailing whitespace.
++            bindings, lambda: {}, purpose="FINAL_TEST"
+tests/research/test_evaluator.py:140: trailing whitespace.
++        )
+tests/research/test_evaluator.py:141: trailing whitespace.
++    with pytest.raises(ContractError, match="FINAL_TEST_NOT_AUTHORIZED"):
+tests/research/test_evaluator.py:142: trailing whitespace.
++        p.authorize({"changed": "protocol"})
+tests/research/test_evaluator.py:143: trailing whitespace.
++    (tmp_path / "evidence").write_bytes(b"changed")
+tests/research/test_evaluator.py:144: trailing whitespace.
++    with pytest.raises(ContractError, match="DEPLOYMENT_ARTIFACT_MISMATCH"):
+tests/research/test_evaluator.py:145: trailing whitespace.
++        p.authorize(bindings)
+tests/research/test_evaluator.py:146: trailing whitespace.
++
+tests/research/test_evaluator.py:147: trailing whitespace.
++
+tests/research/test_evaluator.py:148: trailing whitespace.
++def proposal():
+tests/research/test_evaluator.py:149: trailing whitespace.
++    return propose(
+tests/research/test_evaluator.py:150: trailing whitespace.
++        "candidate",
+tests/research/test_evaluator.py:151: trailing whitespace.
++        {
+tests/research/test_evaluator.py:152: trailing whitespace.
++            "human_approval_record": "test-frozen-protocol",
+tests/research/test_evaluator.py:153: trailing whitespace.
++            "frozen_at": "2024-01-01T00:00:00Z",
+tests/research/test_evaluator.py:154: trailing whitespace.
++            "candidate_hash": digest("candidate"),
+tests/research/test_evaluator.py:155: trailing whitespace.
++            "standards": {
+tests/research/test_evaluator.py:156: trailing whitespace.
++                "min_mean_ic": 0.1,
+tests/research/test_evaluator.py:157: trailing whitespace.
++                "min_days": 252,
+tests/research/test_evaluator.py:158: trailing whitespace.
++                "max_adjusted_p": 0.05,
+tests/research/test_evaluator.py:159: trailing whitespace.
++                "min_positive_fraction": 0.5,
+tests/research/test_evaluator.py:160: trailing whitespace.
++            },
+tests/research/test_evaluator.py:161: trailing whitespace.
++        },
+tests/research/test_evaluator.py:162: trailing whitespace.
++        {"mean": 0.2, "n": 300, "positive_fraction": 0.6},
+tests/research/test_evaluator.py:163: trailing whitespace.
++        {"complete": True, "adjusted": [0.01]},
+tests/research/test_evaluator.py:164: trailing whitespace.
++        {"purpose": "FINAL_TEST", "independence_verified": True},
+tests/research/test_evaluator.py:165: trailing whitespace.
++        {
+tests/research/test_evaluator.py:166: trailing whitespace.
++            "all_candidates_recorded": True,
+tests/research/test_evaluator.py:167: trailing whitespace.
++            "validation_first_access_at": "2024-01-02T00:00:00Z",
+tests/research/test_evaluator.py:168: trailing whitespace.
++            "contaminated": False,
+tests/research/test_evaluator.py:169: trailing whitespace.
++            **{
+tests/research/test_evaluator.py:170: trailing whitespace.
++                k: "f" * 64
+tests/research/test_evaluator.py:171: trailing whitespace.
++                for k in (
+tests/research/test_evaluator.py:172: trailing whitespace.
++                    "independent_golden_ref",
+tests/research/test_evaluator.py:173: trailing whitespace.
++                    "implementation_review_ref",
+tests/research/test_evaluator.py:174: trailing whitespace.
++                    "code_hash",
+tests/research/test_evaluator.py:175: trailing whitespace.
++                    "data_hash",
+tests/research/test_evaluator.py:176: trailing whitespace.
++                    "environment_hash",
+tests/research/test_evaluator.py:177: trailing whitespace.
++                    "frozen_protocol_hash",
+tests/research/test_evaluator.py:178: trailing whitespace.
++                )
+tests/research/test_evaluator.py:179: trailing whitespace.
++            },
+tests/research/test_evaluator.py:180: trailing whitespace.
++        },
+tests/research/test_evaluator.py:181: trailing whitespace.
++    )
+tests/research/test_evaluator.py:182: trailing whitespace.
++
+tests/research/test_evaluator.py:183: trailing whitespace.
++
+tests/research/test_evaluator.py:184: trailing whitespace.
++def test_approval_domains_and_terminal_append(tmp_path):
+tests/research/test_evaluator.py:185: trailing whitespace.
++    p = proposal()
+tests/research/test_evaluator.py:186: trailing whitespace.
++    assert p["eligible"] and not p["strategy_approval"]
+tests/research/test_evaluator.py:187: trailing whitespace.
++    rejected = propose(
+tests/research/test_evaluator.py:188: trailing whitespace.
++        "candidate", {}, {"mean": None, "n": 0, "positive_fraction": None}, {}, {}, {}
+tests/research/test_evaluator.py:189: trailing whitespace.
++    )
+tests/research/test_evaluator.py:190: trailing whitespace.
++    assert set(rejected["failures"]) == {
+tests/research/test_evaluator.py:191: trailing whitespace.
++        "UNAPPROVED_STANDARDS",
+tests/research/test_evaluator.py:192: trailing whitespace.
++        "INDEPENDENT_TEST_NOT_VERIFIED",
+tests/research/test_evaluator.py:193: trailing whitespace.
++        "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+tests/research/test_evaluator.py:194: trailing whitespace.
++        "INCOMPLETE_APPROVAL_EVIDENCE",
+tests/research/test_evaluator.py:195: trailing whitespace.
++    }
+tests/research/test_evaluator.py:196: trailing whitespace.
++    protocol = {
+tests/research/test_evaluator.py:197: trailing whitespace.
++        "human_approval_record": "test",
+tests/research/test_evaluator.py:198: trailing whitespace.
++        "standards": {
+tests/research/test_evaluator.py:199: trailing whitespace.
++            "min_mean_ic": 0.1,
+tests/research/test_evaluator.py:200: trailing whitespace.
++            "min_days": 252,
+tests/research/test_evaluator.py:201: trailing whitespace.
++            "min_positive_fraction": 0.5,
+tests/research/test_evaluator.py:202: trailing whitespace.
++            "max_adjusted_p": 0.05,
+tests/research/test_evaluator.py:203: trailing whitespace.
++        },
+tests/research/test_evaluator.py:204: trailing whitespace.
++    }
+tests/research/test_evaluator.py:205: trailing whitespace.
++    r = propose(
+tests/research/test_evaluator.py:206: trailing whitespace.
++        "x",
+tests/research/test_evaluator.py:207: trailing whitespace.
++        protocol,
+tests/research/test_evaluator.py:208: trailing whitespace.
++        {"mean": None, "n": 0, "positive_fraction": None},
+tests/research/test_evaluator.py:209: trailing whitespace.
++        {"complete": True, "adjusted": [0.8]},
+tests/research/test_evaluator.py:210: trailing whitespace.
++        p["evaluation"],
+tests/research/test_evaluator.py:211: trailing whitespace.
++        p["evidence"],
+tests/research/test_evaluator.py:212: trailing whitespace.
++    )
+tests/research/test_evaluator.py:213: trailing whitespace.
++    assert (
+tests/research/test_evaluator.py:214: trailing whitespace.
++        "IC_OR_SAMPLE_CRITERIA_FAILED" in r["failures"]
+tests/research/test_evaluator.py:215: trailing whitespace.
++        and "STABILITY_CRITERIA_FAILED" in r["failures"]
+tests/research/test_evaluator.py:216: trailing whitespace.
++        and "MULTIPLICITY_CRITERIA_FAILED" in r["failures"]
+tests/research/test_evaluator.py:217: trailing whitespace.
++    )
+tests/research/test_evaluator.py:218: trailing whitespace.
++    ledger = ExperimentLedger(tmp_path)
+tests/research/test_evaluator.py:219: trailing whitespace.
++    run = ledger.start(
+tests/research/test_evaluator.py:220: trailing whitespace.
++        {},
+tests/research/test_evaluator.py:221: trailing whitespace.
++        {
+tests/research/test_evaluator.py:222: trailing whitespace.
++            "code_commit": "a" * 40,
+tests/research/test_evaluator.py:223: trailing whitespace.
++            "code_bundle": "b" * 64,
+tests/research/test_evaluator.py:224: trailing whitespace.
++            "data_hash": "c" * 64,
+tests/research/test_evaluator.py:225: trailing whitespace.
++            "environment": {},
+tests/research/test_evaluator.py:226: trailing whitespace.
++            "protocol_hash": "d" * 64,
+tests/research/test_evaluator.py:227: trailing whitespace.
++            "permission_domain": "TEST",
+tests/research/test_evaluator.py:228: trailing whitespace.
++            "seed": 17,
+tests/research/test_evaluator.py:229: trailing whitespace.
++        },
+tests/research/test_evaluator.py:230: trailing whitespace.
++    )
+tests/research/test_evaluator.py:231: trailing whitespace.
++    ledger.artifact(run, "approvals.json", {"candidate": p})
+tests/research/test_evaluator.py:232: trailing whitespace.
++    m = ledger.finish(run, "SUCCEEDED")
+tests/research/test_evaluator.py:233: trailing whitespace.
++    key = b"only-fixture-human-decision-key-000000000"
+tests/research/test_evaluator.py:234: trailing whitespace.
++    envelope = seal(
+tests/research/test_evaluator.py:235: trailing whitespace.
++        {"proposal_hash": digest(p), "human_actor": "fixture-user", "state": "ResearchValidated"},
+tests/research/test_evaluator.py:236: trailing whitespace.
++        key,
+tests/research/test_evaluator.py:237: trailing whitespace.
++    )
+tests/research/test_evaluator.py:238: trailing whitespace.
++    assert record_decision(ledger, run, p, envelope, key)["state"] == "ResearchValidated"
+tests/research/test_evaluator.py:239: trailing whitespace.
++    assert ledger.verify(run) == m
+tests/research/test_evaluator.py:240: trailing whitespace.
++    envelope = seal(
+tests/research/test_evaluator.py:241: trailing whitespace.
++        {"proposal_hash": "changed", "human_actor": "fixture-user", "state": "ResearchValidated"},
+tests/research/test_evaluator.py:242: trailing whitespace.
++        key,
+tests/research/test_evaluator.py:243: trailing whitespace.
++    )
+tests/research/test_evaluator.py:244: trailing whitespace.
++    with pytest.raises(ContractError, match="INVALID_HUMAN_RESEARCH_DECISION"):
+tests/research/test_evaluator.py:245: trailing whitespace.
++        record_decision(ledger, run, p, envelope, key)
+tests/research/test_evaluator.py:246: trailing whitespace.
++    other = ledger.start({}, json.loads((ledger.path(run) / "lineage.json").read_bytes()))
+tests/research/test_evaluator.py:247: trailing whitespace.
++    ledger.finish(other, "SUCCEEDED")
+tests/research/test_evaluator.py:248: trailing whitespace.
++    valid_envelope = seal(
+tests/research/test_evaluator.py:249: trailing whitespace.
++        {"proposal_hash": digest(p), "human_actor": "fixture-user", "state": "ResearchValidated"},
+tests/research/test_evaluator.py:250: trailing whitespace.
++        key,
+tests/research/test_evaluator.py:251: trailing whitespace.
++    )
+tests/research/test_evaluator.py:252: trailing whitespace.
++    with pytest.raises(ContractError, match="PROPOSAL_NOT_IN_IMMUTABLE_RUN"):
+tests/research/test_evaluator.py:253: trailing whitespace.
++        record_decision(ledger, other, p, valid_envelope, key)
+tests/research/test_evaluator.py:254: trailing whitespace.
++
+tests/research/test_evaluator.py:255: trailing whitespace.
++
+tests/research/test_evaluator.py:256: trailing whitespace.
++def test_posthoc_nonfinite_threshold_and_hash_evidence_are_rejected():
+tests/research/test_evaluator.py:257: trailing whitespace.
++    p = proposal()
+tests/research/test_evaluator.py:258: trailing whitespace.
++    protocol = {
+tests/research/test_evaluator.py:259: trailing whitespace.
++        "human_approval_record": "test-only",
+tests/research/test_evaluator.py:260: trailing whitespace.
++        "frozen_at": "2024-01-03T00:00:00Z",
+tests/research/test_evaluator.py:261: trailing whitespace.
++        "candidate_hash": digest("candidate"),
+tests/research/test_evaluator.py:262: trailing whitespace.
++        "standards": {
+tests/research/test_evaluator.py:263: trailing whitespace.
++            "min_mean_ic": 0.1,
+tests/research/test_evaluator.py:264: trailing whitespace.
++            "min_days": 252,
+tests/research/test_evaluator.py:265: trailing whitespace.
++            "max_adjusted_p": 0.05,
+tests/research/test_evaluator.py:266: trailing whitespace.
++            "min_positive_fraction": 0.5,
+tests/research/test_evaluator.py:267: trailing whitespace.
++        },
+tests/research/test_evaluator.py:268: trailing whitespace.
++    }
+tests/research/test_evaluator.py:269: trailing whitespace.
++
+tests/research/test_evaluator.py:270: trailing whitespace.
++    def call(metrics=None, multiplicity=None, evidence=None):
+tests/research/test_evaluator.py:271: trailing whitespace.
++        return propose(
+tests/research/test_evaluator.py:272: trailing whitespace.
++            "candidate",
+tests/research/test_evaluator.py:273: trailing whitespace.
++            protocol,
+tests/research/test_evaluator.py:274: trailing whitespace.
++            p["metrics"] if metrics is None else metrics,
+tests/research/test_evaluator.py:275: trailing whitespace.
++            p["multiplicity"] if multiplicity is None else multiplicity,
+tests/research/test_evaluator.py:276: trailing whitespace.
++            p["evaluation"],
+tests/research/test_evaluator.py:277: trailing whitespace.
++            p["evidence"] if evidence is None else evidence,
+tests/research/test_evaluator.py:278: trailing whitespace.
++        )
+tests/research/test_evaluator.py:279: trailing whitespace.
++
+tests/research/test_evaluator.py:280: trailing whitespace.
++    assert "POSTHOC_APPROVAL_PROTOCOL" in call()["failures"]
+tests/research/test_evaluator.py:281: trailing whitespace.
++    assert (
+tests/research/test_evaluator.py:282: trailing whitespace.
++        "INVALID_APPROVAL_NUMBERS"
+tests/research/test_evaluator.py:283: trailing whitespace.
++        in call(metrics={**p["metrics"], "mean": float("nan")})["failures"]
+tests/research/test_evaluator.py:284: trailing whitespace.
++    )
+tests/research/test_evaluator.py:285: trailing whitespace.
++    assert (
+tests/research/test_evaluator.py:286: trailing whitespace.
++        "INVALID_APPROVAL_NUMBERS"
+tests/research/test_evaluator.py:287: trailing whitespace.
++        in call(multiplicity={"complete": True, "adjusted": [None]})["failures"]
+tests/research/test_evaluator.py:288: trailing whitespace.
++    )
+tests/research/test_evaluator.py:289: trailing whitespace.
++    assert (
+tests/research/test_evaluator.py:290: trailing whitespace.
++        "INCOMPLETE_APPROVAL_EVIDENCE"
+tests/research/test_evaluator.py:291: trailing whitespace.
++        in call(evidence={**p["evidence"], "code_hash": "not-a-sha"})["failures"]
+tests/research/test_evaluator.py:292: trailing whitespace.
++    )
+tests/research/test_evaluator.py:293: trailing whitespace.
++    protocol["standards"]["max_adjusted_p"] = float("nan")
+tests/research/test_evaluator.py:294: trailing whitespace.
++    # Nonfinite protocol cannot even have a canonical immutable hash.
+tests/research/test_evaluator.py:295: trailing whitespace.
++    with pytest.raises(ValueError):
+tests/research/test_evaluator.py:296: trailing whitespace.
++        call()
+tests/research/test_evaluator.py:297: trailing whitespace.
++
+tests/research/test_evaluator.py:298: trailing whitespace.
++
+tests/research/test_evaluator.py:299: trailing whitespace.
++def test_formal_outcomes_are_opaque_and_control_root_cannot_reset_budget(tmp_path, monkeypatch):
+tests/research/test_evaluator.py:300: trailing whitespace.
++    from types import SimpleNamespace
+tests/research/test_evaluator.py:301: trailing whitespace.
++
+tests/research/test_evaluator.py:302: trailing whitespace.
++    policy = SimpleNamespace(
+tests/research/test_evaluator.py:303: trailing whitespace.
++        root=tmp_path,
+tests/research/test_evaluator.py:304: trailing whitespace.
++        authorize=lambda b: {"holdout_lineage_id": "true-id"},
+tests/research/test_evaluator.py:305: trailing whitespace.
++        verify_host=lambda: None,
+tests/research/test_evaluator.py:306: trailing whitespace.
++    )
+tests/research/test_evaluator.py:307: trailing whitespace.
++    first = TestEvaluator(tmp_path / "results-one", policy)
+tests/research/test_evaluator.py:308: trailing whitespace.
++
+tests/research/test_evaluator.py:309: trailing whitespace.
++    def failure():
+tests/research/test_evaluator.py:310: trailing whitespace.
++        raise RuntimeError("test-private-diagnostics")
+tests/research/test_evaluator.py:311: trailing whitespace.
++
+tests/research/test_evaluator.py:312: trailing whitespace.
++    response = first.process({}, failure, purpose="FINAL_TEST")
+tests/research/test_evaluator.py:313: trailing whitespace.
++    assert response["status"] == "CONSUMED" and "error" not in str(response)
+tests/research/test_evaluator.py:314: trailing whitespace.
++    with pytest.raises(ContractError, match="TEST_ALREADY_CONSUMED"):
+tests/research/test_evaluator.py:315: trailing whitespace.
++        TestEvaluator(tmp_path / "renamed-results", policy).process(
+tests/research/test_evaluator.py:316: trailing whitespace.
++            {}, lambda: {}, purpose="FINAL_TEST"
+tests/research/test_evaluator.py:317: trailing whitespace.
++        )
+tests/research/test_evaluator.py:318: trailing whitespace.
++    assert first.recover() == 0
+tests/research/test_evaluator.py:319: trailing whitespace.
++    with pytest.raises(ContractError, match="ENGINEERING_DEMO_CANNOT_USE_SEALED_POLICY"):
+tests/research/test_evaluator.py:320: trailing whitespace.
++        first.process({}, lambda: {}, purpose="ENGINEERING_DEMO")
+tests/research/test_ledger.py:1: trailing whitespace.
++import json
+tests/research/test_ledger.py:2: trailing whitespace.
++from concurrent.futures import ThreadPoolExecutor
+tests/research/test_ledger.py:3: trailing whitespace.
++
+tests/research/test_ledger.py:4: trailing whitespace.
++import pytest
+tests/research/test_ledger.py:5: trailing whitespace.
++
+tests/research/test_ledger.py:6: trailing whitespace.
++from aqrp.core.canonical import canonical
+tests/research/test_ledger.py:7: trailing whitespace.
++from aqrp.core.errors import ContractError
+tests/research/test_ledger.py:8: trailing whitespace.
++from aqrp.experiments.ledger import ExperimentLedger, append_chain, mutex, read_chain
+tests/research/test_ledger.py:9: trailing whitespace.
++
+tests/research/test_ledger.py:10: trailing whitespace.
++
+tests/research/test_ledger.py:11: trailing whitespace.
++def lineage():
+tests/research/test_ledger.py:12: trailing whitespace.
++    return {
+tests/research/test_ledger.py:13: trailing whitespace.
++        "code_commit": "a" * 40,
+tests/research/test_ledger.py:14: trailing whitespace.
++        "code_bundle": "b" * 64,
+tests/research/test_ledger.py:15: trailing whitespace.
++        "data_hash": "c" * 64,
+tests/research/test_ledger.py:16: trailing whitespace.
++        "environment": {"lock": "d" * 64},
+tests/research/test_ledger.py:17: trailing whitespace.
++        "protocol_hash": "e" * 64,
+tests/research/test_ledger.py:18: trailing whitespace.
++        "permission_domain": "PUBLIC",
+tests/research/test_ledger.py:19: trailing whitespace.
++        "seed": 17,
+tests/research/test_ledger.py:20: trailing whitespace.
++    }
+tests/research/test_ledger.py:21: trailing whitespace.
++
+tests/research/test_ledger.py:22: trailing whitespace.
++
+tests/research/test_ledger.py:23: trailing whitespace.
++def test_terminal_integrity_decisions_compare_cache_and_catalogue(tmp_path):
+tests/research/test_ledger.py:24: trailing whitespace.
++    ledger = ExperimentLedger(tmp_path)
+tests/research/test_ledger.py:25: trailing whitespace.
++    assert ledger.catalogue() == []
+tests/research/test_ledger.py:26: trailing whitespace.
++    a = ledger.start({"x": 1}, lineage())
+tests/research/test_ledger.py:27: trailing whitespace.
++    assert ledger.register_trial(a, "f", "a", budget=3)["repeat_of"] == []
+tests/research/test_ledger.py:28: trailing whitespace.
++    ledger.artifact(a, "output.json", {"a": 1})
+tests/research/test_ledger.py:29: trailing whitespace.
++    ledger.artifact(a, "report.html", "<html>hello</html>")
+tests/research/test_ledger.py:30: trailing whitespace.
++    ledger.event(a, "COMPUTED", {"n": 1})
+tests/research/test_ledger.py:31: trailing whitespace.
++    m = ledger.finish(a, "SUCCEEDED")
+tests/research/test_ledger.py:32: trailing whitespace.
++    assert m["status"] == "SUCCEEDED"
+tests/research/test_ledger.py:33: trailing whitespace.
++    ledger.decision(a, {"human_record": "approved-research-only"})
+tests/research/test_ledger.py:34: trailing whitespace.
++    assert ledger.verify(a) == m
+tests/research/test_ledger.py:35: trailing whitespace.
++    b = ledger.start({"x": 1}, lineage())
+tests/research/test_ledger.py:36: trailing whitespace.
++    assert ledger.register_trial(b, "f", "a", budget=3)["repeat_of"] == [a]
+tests/research/test_ledger.py:37: trailing whitespace.
++    ledger.finish(b, "CANCELLED")
+tests/research/test_ledger.py:38: trailing whitespace.
++    assert not ledger.compare(a, b)["status_equal"]
+tests/research/test_ledger.py:39: trailing whitespace.
++    assert len(ledger.catalogue()) == 2
+tests/research/test_ledger.py:40: trailing whitespace.
++    for action in (
+tests/research/test_ledger.py:41: trailing whitespace.
++        lambda: ledger.event(a, "X", {}),
+tests/research/test_ledger.py:42: trailing whitespace.
++        lambda: ledger.artifact(a, "new.json", {}),
+tests/research/test_ledger.py:43: trailing whitespace.
++        lambda: ledger.finish(a, "FAILED"),
+tests/research/test_ledger.py:44: trailing whitespace.
++    ):
+tests/research/test_ledger.py:45: trailing whitespace.
++        with pytest.raises(ContractError, match="IMMUTABLE_TERMINAL_RUN"):
+tests/research/test_ledger.py:46: trailing whitespace.
++            action()
+tests/research/test_ledger.py:47: trailing whitespace.
++    assert ledger.cache_get({"profile": 1}) is None
+tests/research/test_ledger.py:48: trailing whitespace.
++    ledger.cache_put({"profile": 1}, {"value": [1, None]})
+tests/research/test_ledger.py:49: trailing whitespace.
++    ledger.cache_put({"profile": 1}, {"value": [1, None]})
+tests/research/test_ledger.py:50: trailing whitespace.
++    assert ledger.cache_get({"profile": 1}) == {"value": [1, None]}
+tests/research/test_ledger.py:51: trailing whitespace.
++    assert ledger.cache_get({"profile": 2}) is None
+tests/research/test_ledger.py:52: trailing whitespace.
++    with pytest.raises(ContractError, match="NONDETERMINISTIC_CACHE_RESULT"):
+tests/research/test_ledger.py:53: trailing whitespace.
++        ledger.cache_put({"profile": 1}, {})
+tests/research/test_ledger.py:54: trailing whitespace.
++    cache = next(tmp_path.glob("cache-*.json"))
+tests/research/test_ledger.py:55: trailing whitespace.
++    content = json.loads(cache.read_bytes())
+tests/research/test_ledger.py:56: trailing whitespace.
++    content["payload"] = {"value": "tampered"}
+tests/research/test_ledger.py:57: trailing whitespace.
++    cache.write_bytes(canonical(content))
+tests/research/test_ledger.py:58: trailing whitespace.
++    with pytest.raises(ContractError, match="CACHE_CORRUPTION"):
+tests/research/test_ledger.py:59: trailing whitespace.
++        ledger.cache_get({"profile": 1})
+tests/research/test_ledger.py:60: trailing whitespace.
++
+tests/research/test_ledger.py:61: trailing whitespace.
++
+tests/research/test_ledger.py:62: trailing whitespace.
++def test_family_preregistration_complete_failures_and_repeat_contamination(tmp_path):
+tests/research/test_ledger.py:63: trailing whitespace.
++    ledger = ExperimentLedger(tmp_path)
+tests/research/test_ledger.py:64: trailing whitespace.
++    assert not ledger.family("f", ["a", "b"], definitions={"a": "1", "b": "2"})["results"]
+tests/research/test_ledger.py:65: trailing whitespace.
++    f = ledger.family(
+tests/research/test_ledger.py:66: trailing whitespace.
++        "f", ["a", "b"], {"a": {"p": None, "reason": "FAILED"}}, definitions={"a": "1", "b": "2"}
+tests/research/test_ledger.py:67: trailing whitespace.
++    )
+tests/research/test_ledger.py:68: trailing whitespace.
++    assert f["results"]["a"]["p"] is None
+tests/research/test_ledger.py:69: trailing whitespace.
++    f = ledger.family("f", ["a", "b"], {"a": {"p": 0.01}}, definitions={"a": "1", "b": "2"})
+tests/research/test_ledger.py:70: trailing whitespace.
++    assert f["duplicate_hypotheses"] == ["a"]
+tests/research/test_ledger.py:71: trailing whitespace.
++    for declarations in ([], ["a", "a"]):
+tests/research/test_ledger.py:72: trailing whitespace.
++        with pytest.raises(ContractError, match="INVALID_FAMILY_DECLARATIONS"):
+tests/research/test_ledger.py:73: trailing whitespace.
++            ledger.family("f", declarations)
+tests/research/test_ledger.py:74: trailing whitespace.
++    with pytest.raises(ContractError, match="FAMILY_REDEFINED"):
+tests/research/test_ledger.py:75: trailing whitespace.
++        ledger.family("f", ["a", "b"], definitions={"a": "3", "b": "2"})
+tests/research/test_ledger.py:76: trailing whitespace.
++    with pytest.raises(ContractError, match="UNREGISTERED_HYPOTHESIS"):
+tests/research/test_ledger.py:77: trailing whitespace.
++        ledger.family("other", ["a"], {"x": {"p": 1}})
+tests/research/test_ledger.py:78: trailing whitespace.
++
+tests/research/test_ledger.py:79: trailing whitespace.
++
+tests/research/test_ledger.py:80: trailing whitespace.
++def test_failures_budget_and_tamper(tmp_path):
+tests/research/test_ledger.py:81: trailing whitespace.
++    ledger = ExperimentLedger(tmp_path)
+tests/research/test_ledger.py:82: trailing whitespace.
++    with pytest.raises(ContractError):
+tests/research/test_ledger.py:83: trailing whitespace.
++        ledger.start({}, {})
+tests/research/test_ledger.py:84: trailing whitespace.
++    for key in ("bad", None):
+tests/research/test_ledger.py:85: trailing whitespace.
++        with pytest.raises(ContractError):
+tests/research/test_ledger.py:86: trailing whitespace.
++            ledger.path(key)
+tests/research/test_ledger.py:87: trailing whitespace.
++    a = ledger.start({}, lineage())
+tests/research/test_ledger.py:88: trailing whitespace.
++    with pytest.raises(ContractError, match="NONTERMINAL_RUN"):
+tests/research/test_ledger.py:89: trailing whitespace.
++        ledger.verify(a)
+tests/research/test_ledger.py:90: trailing whitespace.
++    for name in ("../x.json", "manifest.json", "config.json", "lineage.json"):
+tests/research/test_ledger.py:91: trailing whitespace.
++        with pytest.raises(ContractError):
+tests/research/test_ledger.py:92: trailing whitespace.
++            ledger.artifact(a, name, {})
+tests/research/test_ledger.py:93: trailing whitespace.
++    with pytest.raises(ContractError):
+tests/research/test_ledger.py:94: trailing whitespace.
++        ledger.finish(a, "RELEASED")
+tests/research/test_ledger.py:95: trailing whitespace.
++    with pytest.raises(ContractError):
+tests/research/test_ledger.py:96: trailing whitespace.
++        ledger.register_trial(a, "", "x", budget=1)
+tests/research/test_ledger.py:97: trailing whitespace.
++    ledger.register_trial(a, "f", "x", budget=1)
+tests/research/test_ledger.py:98: trailing whitespace.
++    with pytest.raises(ContractError, match="EXPERIMENT_BUDGET_EXCEEDED"):
+tests/research/test_ledger.py:99: trailing whitespace.
++        ledger.register_trial(a, "f", "x", budget=1)
+tests/research/test_ledger.py:100: trailing whitespace.
++    assert len(read_chain(tmp_path / "trials.jsonl")) == 2
+tests/research/test_ledger.py:101: trailing whitespace.
++    ledger.finish(a, "FAILED")
+tests/research/test_ledger.py:102: trailing whitespace.
++    root = ledger.path(a)
+tests/research/test_ledger.py:103: trailing whitespace.
++    (root / "lineage.json").write_bytes(b"{}")
+tests/research/test_ledger.py:104: trailing whitespace.
++    with pytest.raises(ContractError, match="RUN_ARTIFACT_HASH_MISMATCH"):
+tests/research/test_ledger.py:105: trailing whitespace.
++        ledger.verify(a)
+tests/research/test_ledger.py:106: trailing whitespace.
++    (root / "manifest.json").write_bytes(b"{}")
+tests/research/test_ledger.py:107: trailing whitespace.
++    with pytest.raises(ContractError, match="RUN_MANIFEST_MISMATCH"):
+tests/research/test_ledger.py:108: trailing whitespace.
++        ledger.verify(a)
+tests/research/test_ledger.py:109: trailing whitespace.
++
+tests/research/test_ledger.py:110: trailing whitespace.
++
+tests/research/test_ledger.py:111: trailing whitespace.
++def test_hash_chain_and_concurrent_serialization(tmp_path):
+tests/research/test_ledger.py:112: trailing whitespace.
++    path = tmp_path / "chain.jsonl"
+tests/research/test_ledger.py:113: trailing whitespace.
++    assert read_chain(path) == []
+tests/research/test_ledger.py:114: trailing whitespace.
++
+tests/research/test_ledger.py:115: trailing whitespace.
++    def append(i):
+tests/research/test_ledger.py:116: trailing whitespace.
++        with mutex(tmp_path / ".lock"):
+tests/research/test_ledger.py:117: trailing whitespace.
++            append_chain(path, "ITEM", {"i": i})
+tests/research/test_ledger.py:118: trailing whitespace.
++
+tests/research/test_ledger.py:119: trailing whitespace.
++    with ThreadPoolExecutor(max_workers=4) as pool:
+tests/research/test_ledger.py:120: trailing whitespace.
++        list(pool.map(append, range(20)))
+tests/research/test_ledger.py:121: trailing whitespace.
++    assert len(read_chain(path)) == 20
+tests/research/test_ledger.py:122: trailing whitespace.
++    with mutex(tmp_path / ".lock"):
+tests/research/test_ledger.py:123: trailing whitespace.
++        with pytest.raises(ContractError, match="LEDGER_LOCK_TIMEOUT"):
+tests/research/test_ledger.py:124: trailing whitespace.
++            with mutex(tmp_path / ".lock", timeout=0.01):
+tests/research/test_ledger.py:125: trailing whitespace.
++                pytest.fail("must not obtain competing lock")
+tests/research/test_ledger.py:126: trailing whitespace.
++    data = path.read_bytes().replace(b'"i":0', b'"i":999')
+tests/research/test_ledger.py:127: trailing whitespace.
++    path.write_bytes(data)
+tests/research/test_ledger.py:128: trailing whitespace.
++    with pytest.raises(ContractError, match="LEDGER_CHAIN_CORRUPTED"):
+tests/research/test_ledger.py:129: trailing whitespace.
++        read_chain(path)

@@ -1,0 +1,78 @@
+{
+  "scope": "Developer byte/contract verification; not independent audit or OS deployment",
+  "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-implementation-20261022\\actions-original\\0926745-ubuntu-original.zip",
+  "head_sha": "0926745c6be4b9b8e8b3f69203e357dfc6008de9",
+  "executed_sha": "46a1ebc0651e82e03b76f0cd6c8bf15abcc23426",
+  "source_tree": "31123c7adfe51da7f98067dfed50eeacf48fe5ae",
+  "executed_parents": [
+    "f26255fc40a3080bfa883ad64938f60036a14759",
+    "0926745c6be4b9b8e8b3f69203e357dfc6008de9"
+  ],
+  "source_binding": "GITHUB_PR_MERGE_TREE_EQUALS_FIXED_HEAD",
+  "environment": {
+    "run_id": "aqrp-34640da0-c3a4-4acb-b8f8-79c9c8612f63",
+    "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+    "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "ImageOS": "ubuntu24",
+    "ImageVersion": "20261012.334.1",
+    "code_commit": "46a1ebc0651e82e03b76f0cd6c8bf15abcc23426",
+    "dirty": false,
+    "complete": true,
+    "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-34640da0-c3a4-4acb-b8f8-79c9c8612f63",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39677806772",
+    "github_run_attempt": "1",
+    "github_sha": "46a1ebc0651e82e03b76f0cd6c8bf15abcc23426",
+    "wheel_sha256": "b8bc4321a049af40573d0db3b7e97a16a9495d677666c2f1be9a39ad924b7030"
+  },
+  "zip_sha256": "96c556597112d7700791a0ad06b41cc22a8ca14ef0a299d0ca7655a4ac1004fd",
+  "zip_bytes": 136795321,
+  "crc": "PASS",
+  "selected_files": 184,
+  "upload_selection_sha256": "944857e9a0028c055439af1235fe3d33059c06f20e6aa8eaa677cdc7a206c400",
+  "junit": {
+    "tests": 560,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_gates": "PASS",
+  "wheel_sha256": "b8bc4321a049af40573d0db3b7e97a16a9495d677666c2f1be9a39ad924b7030",
+  "python_modules": 45,
+  "dependency_wheels": 21,
+  "snapshots": [
+    {
+      "path": "dataset/137ca539-1ded-4c66-83b0-a492b8817be2",
+      "hash": "4393c745c331be0539affe41c71e9afd707144f11764ce92f5dc5fbac9dfd669"
+    },
+    {
+      "path": "factor-dataset/63c9dc1e-fab7-4038-8d02-ecb138be38a5",
+      "hash": "a961d06251e024660b809dba4b4ed15dfcadf5d2544576d3bc77b1cfdb5b903c"
+    },
+    {
+      "path": "reproduction/dataset/655c6e4c-ad9e-4b70-bfc7-efd7382b24c7",
+      "hash": "08c1eecf216e14791ea720a786cdd8607e17af447655279801a04f9b72b99e73"
+    },
+    {
+      "path": "research/inputs/dataset/2fe70190-a2d6-48b2-891e-27cf00c0c1cc",
+      "hash": "397cfa2a6b761786acc841ed84e2857decbe62eb2d19b4f62d9d578006f05031"
+    },
+    {
+      "path": "research/replacement-inputs/dataset/ee796144-8199-438b-a88b-2c8046fbc78d",
+      "hash": "32d56fbd8b4dd0723838c4a3657585a877994ca45d3daef00e864a9e7dfbb3d8"
+    }
+  ],
+  "verified_runs": [
+    "6dbf766a-a54a-4d21-aa17-cd317fc1073c",
+    "a410f54a-ef54-4258-acff-418ac3cf5998",
+    "dffe90d6-6604-4406-a491-fe73293ec53b"
+  ],
+  "engine_batches": 95,
+  "factor_runs": 3,
+  "engineering_reports": 3,
+  "original_published_files": 66,
+  "original_runs_replayed": 3,
+  "result": "PASS"
+}

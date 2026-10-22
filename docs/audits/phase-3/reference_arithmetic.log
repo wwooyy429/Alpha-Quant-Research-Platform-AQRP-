@@ -1,0 +1,28 @@
+{
+  "run_id": "12c54d56-5677-43d9-882a-52b74b8d9ae1",
+  "scope": "Developer stdlib reference arithmetic only; not AQRP implementation or Gemini QA-004 approval",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "os": "Windows-11-10.0.26300-SP0",
+  "source_sha256": "75e25b25bb024428a0323c7e5f3941ca6a33fc488adabaad0b24d8440c296bd5",
+  "reference_script_sha256": "a6bbde61f5ea8262acb1f023e4b4ad5916ad7b6314bc27ff2e6572f92a114530",
+  "cases_passed": [
+    "P3-PV",
+    "P3-PV-ZERO-CURRENT",
+    "P3-IC",
+    "P3-TIE",
+    "P3-Z-ICIR",
+    "P3-ROLL",
+    "P3-WINSOR",
+    "P3-MAD",
+    "P3-OLS",
+    "P3-GROUP",
+    "P3-HAC",
+    "P3-MULTI",
+    "P3-LABEL",
+    "P3-LABEL-ACTION",
+    "P3-PURGE"
+  ],
+  "count": 15,
+  "business_tests": "NOT RUN / P3 Planned",
+  "gemini_golden_review": "REVIEW REQUIRED"
+}

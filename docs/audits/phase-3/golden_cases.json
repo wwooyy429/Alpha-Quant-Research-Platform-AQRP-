@@ -1,0 +1,412 @@
+{
+  "schema": "p3-golden-proposal/1",
+  "status": "REVIEW REQUIRED; developer hand-defined, not Gemini approved",
+  "float_abs_tol": "1e-12",
+  "float_rel_tol": "1e-10",
+  "cases": [
+    {
+      "id": "P3-PV",
+      "requirements": [
+        "FACTOR-007"
+      ],
+      "input": {
+        "close": [
+          100,
+          110,
+          121
+        ],
+        "volume": [
+          100,
+          150,
+          200
+        ],
+        "L": 2
+      },
+      "expected": "3/50",
+      "formula": "(121/110-1)*(200/((100+150)/2)-1)"
+    },
+    {
+      "id": "P3-PV-ZERO-CURRENT",
+      "requirements": [
+        "FACTOR-007"
+      ],
+      "input": {
+        "close": [
+          100,
+          110,
+          121
+        ],
+        "volume": [
+          100,
+          150,
+          0
+        ],
+        "L": 2
+      },
+      "expected": "-1/10",
+      "formula": "(121/110-1)*(0/125-1)"
+    },
+    {
+      "id": "P3-IC",
+      "requirements": [
+        "VALID-001"
+      ],
+      "input": {
+        "x": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "y": [
+          "-0.04",
+          "0.01",
+          "-0.01",
+          "0.02",
+          "0.05"
+        ]
+      },
+      "expected_formula": "0.19/sqrt(0.0452)",
+      "expected_spearman": "9/10"
+    },
+    {
+      "id": "P3-TIE",
+      "requirements": [
+        "VALID-001",
+        "RESEARCH-005"
+      ],
+      "input": {
+        "x": [
+          1,
+          1,
+          3
+        ],
+        "y": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected_ranks": [
+        "3/2",
+        "3/2",
+        "3"
+      ],
+      "expected_spearman_formula": "sqrt(3)/2"
+    },
+    {
+      "id": "P3-Z-ICIR",
+      "requirements": [
+        "RESEARCH-002",
+        "VALID-001"
+      ],
+      "input": {
+        "x": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "IC": [
+          "0.1",
+          "0.2",
+          "0.3"
+        ]
+      },
+      "expected_z_formula": "x/sqrt(5/2)",
+      "expected_ic_mean": "1/5",
+      "expected_ic_sample_std": "1/10",
+      "expected_icir": "2"
+    },
+    {
+      "id": "P3-ROLL",
+      "requirements": [
+        "RESEARCH-004",
+        "RESEARCH-005"
+      ],
+      "input": {
+        "x": [
+          1,
+          2,
+          3
+        ],
+        "y": [
+          3,
+          2,
+          1
+        ],
+        "L": 3,
+        "ts_rank_input": [
+          1,
+          2,
+          2
+        ]
+      },
+      "expected": {
+        "mean": "2",
+        "std_ddof1": "1",
+        "sum": "6",
+        "min": "1",
+        "max": "3",
+        "correlation": "-1",
+        "delay1": "2",
+        "delta1": "1",
+        "ts_rank": "5/6"
+      }
+    },
+    {
+      "id": "P3-WINSOR",
+      "requirements": [
+        "RESEARCH-002"
+      ],
+      "input": {
+        "x": [
+          0,
+          1,
+          2,
+          100
+        ],
+        "quantiles": [
+          "1/4",
+          "3/4"
+        ],
+        "method": "linear"
+      },
+      "expected": [
+        "3/4",
+        "1",
+        "2",
+        "53/2"
+      ]
+    },
+    {
+      "id": "P3-MAD",
+      "requirements": [
+        "RESEARCH-002"
+      ],
+      "input": {
+        "x": [
+          0,
+          1,
+          2,
+          3,
+          100
+        ],
+        "k": 3
+      },
+      "expected": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "median": "2",
+      "MAD": "1"
+    },
+    {
+      "id": "P3-OLS",
+      "requirements": [
+        "RESEARCH-003",
+        "DATA-012"
+      ],
+      "input": {
+        "X": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "y": [
+          2,
+          2,
+          2,
+          6
+        ],
+        "columns": [
+          "intercept",
+          "industry_B",
+          "log_cap"
+        ]
+      },
+      "expected_beta": [
+        "2",
+        "2",
+        "1"
+      ],
+      "expected_residual": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "note": "synthetic linear matrix primitive, no actual market exposure claim"
+    },
+    {
+      "id": "P3-GROUP",
+      "requirements": [
+        "VALID-002"
+      ],
+      "input": {
+        "score": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "labels": [
+          "-0.03",
+          "-0.01",
+          "0",
+          "0.02",
+          "0.04",
+          "0.06"
+        ],
+        "q": 3
+      },
+      "expected_group_mean": [
+        "-1/50",
+        "1/100",
+        "1/20"
+      ],
+      "expected_tmb": "7/100",
+      "expected_monotonicity": "1"
+    },
+    {
+      "id": "P3-HAC",
+      "requirements": [
+        "VALID-005"
+      ],
+      "input": {
+        "IC": [
+          1,
+          -1,
+          1,
+          -1
+        ],
+        "q": 1,
+        "small_sample_correction": "none"
+      },
+      "expected": {
+        "mean": "0",
+        "gamma0": "1",
+        "gamma1": "-3/4",
+        "S": "1/4",
+        "var_mean": "1/16",
+        "se": "1/4"
+      },
+      "note": "arithmetic only; not adequate sample size for formal inference"
+    },
+    {
+      "id": "P3-MULTI",
+      "requirements": [
+        "VALID-007"
+      ],
+      "input": {
+        "p": [
+          "0.01",
+          "0.04",
+          "0.03"
+        ],
+        "m": 3
+      },
+      "expected_holm": [
+        "3/100",
+        "3/50",
+        "3/50"
+      ],
+      "expected_by": [
+        "11/200",
+        "11/150",
+        "11/150"
+      ],
+      "expected_bh": [
+        "3/100",
+        "1/25",
+        "1/25"
+      ],
+      "bh_requires_dependency_evidence": true
+    },
+    {
+      "id": "P3-LABEL",
+      "requirements": [
+        "VALID-001",
+        "VALID-003"
+      ],
+      "input": {
+        "signal_session": 0,
+        "h": 2,
+        "opens": [
+          99,
+          100,
+          105,
+          110
+        ]
+      },
+      "expected_entry_session": 1,
+      "expected_exit_session": 3,
+      "expected_return": "1/10"
+    },
+    {
+      "id": "P3-LABEL-ACTION",
+      "requirements": [
+        "VALID-001"
+      ],
+      "input": {
+        "entry_price": 100,
+        "split": 2,
+        "cash_per_postsplit_share": 1,
+        "exit_price": 51
+      },
+      "expected_return": "1/25",
+      "formula": "(2*51+2*1)/100-1; synthetic entitlement convention, not P5 ledger"
+    },
+    {
+      "id": "P3-PURGE",
+      "requirements": [
+        "VALID-003"
+      ],
+      "input": {
+        "train_label_closed": [
+          1,
+          4
+        ],
+        "heldout_protected_closed": [
+          4,
+          6
+        ],
+        "safe_train_label_closed": [
+          1,
+          3
+        ],
+        "embargo_sessions": 2
+      },
+      "expected_purge": true,
+      "expected_safe_overlap": false,
+      "expected_post_holdout_blocked_sessions": [
+        7,
+        8
+      ]
+    }
+  ]
+}

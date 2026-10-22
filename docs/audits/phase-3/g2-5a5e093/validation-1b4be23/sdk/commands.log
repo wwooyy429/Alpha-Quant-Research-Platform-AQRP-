@@ -1,0 +1,2331 @@
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-m", "pip", "install", "--index-url", "https://pypi.org/simple", "--require-hashes", "--only-binary=:all:", "-r", "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\requirements.lock"]
+Collecting colorama==0.4.6 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 3))
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting coverage==7.16.2 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 7))
+  Downloading coverage-7.16.2-cp313-cp313-win_amd64.whl (226 kB)
+Collecting duckdb==1.5.6 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 130))
+  Downloading duckdb-1.5.6-cp313-cp313-win_amd64.whl (13.2 MB)
+     ---------------------------------------- 13.2/13.2 MB 34.8 MB/s  0:00:00
+Collecting hypothesis==6.170.5 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 167))
+  Downloading hypothesis-6.170.5-cp313-cp313-win_amd64.whl (687 kB)
+     ---------------------------------------- 687.7/687.7 kB 16.4 MB/s  0:00:00
+Collecting iniconfig==2.3.1 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 247))
+  Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Collecting numpy==2.5.4 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 251))
+  Downloading numpy-2.5.4-cp313-cp313-win_amd64.whl (12.6 MB)
+     ---------------------------------------- 12.6/12.6 MB 58.6 MB/s  0:00:00
+Collecting packaging==26.3 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 321))
+  Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Collecting pandas==3.0.6 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 327))
+  Downloading pandas-3.0.6-cp313-cp313-win_amd64.whl (9.6 MB)
+     ---------------------------------------- 9.6/9.6 MB 55.9 MB/s  0:00:00
+Collecting pip==26.2.1 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 387))
+  Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+     ---------------------------------------- 1.8/1.8 MB 48.3 MB/s  0:00:00
+Collecting pluggy==1.7.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 391))
+  Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+Collecting pyarrow==26.0.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 397))
+  Downloading pyarrow-26.0.0-cp313-cp313-win_amd64.whl (28.5 MB)
+     ---------------------------------------- 28.5/28.5 MB 87.7 MB/s  0:00:00
+Collecting pygments==2.21.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 449))
+  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+     ---------------------------------------- 1.3/1.3 MB 42.3 MB/s  0:00:00
+Collecting pytest==9.1.1 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 453))
+  Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+Collecting pytest-cov==7.1.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 459))
+  Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 463))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Collecting ruff==0.17.1 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 467))
+  Downloading ruff-0.17.1-py3-none-win_amd64.whl (10.1 MB)
+     ---------------------------------------- 10.1/10.1 MB 51.5 MB/s  0:00:00
+Collecting setuptools==84.2.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 487))
+  Downloading setuptools-84.2.0-py3-none-any.whl (875 kB)
+     ---------------------------------------- 875.8/875.8 kB 29.9 MB/s  0:00:00
+Collecting six==1.17.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 491))
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting sortedcontainers==2.4.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 495))
+  Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Collecting tzdata==2026.5 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 499))
+  Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+Collecting uv==0.13.4 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 505))
+  Downloading uv-0.13.4-py3-none-win_amd64.whl (15.3 MB)
+     ---------------------------------------- 15.3/15.3 MB 68.1 MB/s  0:00:00
+Collecting wheel==0.48.0 (from -r C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\requirements.lock (line 526))
+  Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+Installing collected packages: sortedcontainers, uv, tzdata, six, setuptools, ruff, pygments, pyarrow, pluggy, pip, packaging, numpy, iniconfig, hypothesis, duckdb, coverage, colorama, wheel, python-dateutil, pytest, pytest-cov, pandas
+
+Successfully installed colorama-0.4.6 coverage-7.16.2 duckdb-1.5.6 hypothesis-6.170.5 iniconfig-2.3.1 numpy-2.5.4 packaging-26.3 pandas-3.0.6 pip-26.2.1 pluggy-1.7.0 pyarrow-26.0.0 pygments-2.21.0 pytest-9.1.1 pytest-cov-7.1.0 python-dateutil-2.9.0.post0 ruff-0.17.1 setuptools-84.2.0 six-1.17.0 sortedcontainers-2.4.0 tzdata-2026.5 uv-0.13.4 wheel-0.48.0
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-m", "pip", "check"]
+No broken requirements found.
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-m", "pip", "wheel", "--no-deps", "--no-build-isolation", "--no-index", "--wheel-dir", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\wheel", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source"]
+Processing C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\source
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: aqrp
+  Building wheel for aqrp (pyproject.toml): started
+  Building wheel for aqrp (pyproject.toml): finished with status 'done'
+  Created wheel for aqrp: filename=aqrp-0.3.0-py3-none-any.whl size=76803 sha256=7b06ee0c9fa70599951997773b6b4c4820a7ecf8bbdfc8c2c7f52543d89bf538
+  Stored in directory: C:\Users\11638\AppData\Local\Temp\pip-ephem-wheel-cache-cyhyscek\wheels\1a\d1\8a\6038d9dbe6cdcee06fcddd6a86e983c373f8de1cde42d75c87
+Successfully built aqrp
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-m", "pip", "install", "--no-index", "--no-deps", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\wheel\\aqrp-0.3.0-py3-none-any.whl"]
+Processing C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\wheel\aqrp-0.3.0-py3-none-any.whl
+Installing collected packages: aqrp
+Successfully installed aqrp-0.3.0
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-m", "ruff", "check", "src", "tests", "tools"]
+All checks passed!
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-m", "ruff", "format", "--check", "src", "tests", "tools"]
+89 files already formatted
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\check_phase3_package.py"]
+{"scope": "Phase3 read-only checks, not independent acceptance", "requirements": 26, "frozen_files_verified": 1957, "bundle": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e", "result": "PASS"}
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\original_replay_smoke.py", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa"]
+Actual environment location may have moved due to redirects, links or junctions.
+  Requested location: "C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\reproduction\venv\Scripts\python.exe"
+  Actual location:    "C:\Users\11638\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\reproduction\venv\Scripts\python.exe"
+Original 0.2.0 wheel / isolated locked venv / three exact old Refs and original published runs PASS
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-m", "pytest", "-o", "cache_dir=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\pytest-cache", "--basetemp=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\tmp", "--cov=aqrp", "--cov-branch", "--cov-report=json:C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\coverage.json", "--cov-report=xml:C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\coverage.xml", "--junitxml=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\junit.xml"]
+============================= test session starts =============================
+platform win32 -- Python 3.13.16, pytest-9.1.1, pluggy-1.7.0
+cachedir: C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\pytest-cache
+rootdir: C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\source
+configfile: pyproject.toml
+testpaths: tests
+plugins: hypothesis-6.170.5, cov-7.1.0
+collected 578 items
+
+tests\data\test_pit_query.py .......                                     [  1%]
+tests\data\test_quality.py ..............................                [  6%]
+tests\data\test_revision_integrity.py ...                                [  6%]
+tests\data\test_snapshot_actions.py ...........................          [ 11%]
+tests\data\test_time_units.py .......................                    [ 15%]
+tests\data\test_work_p1_round2.py ...................................... [ 22%]
+................................................                         [ 30%]
+tests\data\test_work_p1_validation.py .................................. [ 36%]
+............                                                             [ 38%]
+tests\environment\test_installation.py ..                                [ 38%]
+tests\factors\test_config_integrity.py .........................         [ 43%]
+tests\factors\test_contracts_registry.py ............................... [ 48%]
+.........................                                                [ 52%]
+tests\factors\test_input_security.py ................................... [ 58%]
+........................                                                 [ 62%]
+tests\factors\test_lineage_controls.py ..........                        [ 64%]
+tests\factors\test_numerical.py ................                         [ 67%]
+tests\factors\test_p1_patch_integration.py ......                        [ 68%]
+tests\factors\test_pipeline_controls.py ...........                      [ 70%]
+tests\factors\test_price_volume.py ..                                    [ 70%]
+tests\integration\test_phase1_pipeline.py ..........                     [ 72%]
+tests\research\test_boundary_controls.py ....                            [ 73%]
+tests\research\test_environment.py .                                     [ 73%]
+tests\research\test_evaluator.py .......                                 [ 74%]
+tests\research\test_frozen_golden.py ...                                 [ 75%]
+tests\research\test_g2_boundaries.py ..........                          [ 76%]
+tests\research\test_g2_regressions.py ....                               [ 77%]
+tests\research\test_host_controls.py .......                             [ 78%]
+tests\research\test_inference.py ...................                     [ 82%]
+tests\research\test_labels.py ...................                        [ 85%]
+tests\research\test_ledger.py ....                                       [ 85%]
+tests\research\test_numerics.py ...........................              [ 90%]
+tests\research\test_pipeline.py ....................                     [ 94%]
+tests\research\test_reproduction.py ..............                       [ 96%]
+tests\research\test_service.py .......                                   [ 97%]
+tests\research\test_service_guards.py ..........                         [ 99%]
+tests\research\test_splits.py ...                                        [100%]
+
+- generated xml file: C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\junit.xml -
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.16-final-0 _______________
+
+Coverage XML written to file C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\coverage.xml
+Coverage JSON written to file C:\Users\11638\AppData\Local\AQRP\runs\p3-g2-repair-20261022\clean-sdk\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\coverage.json
+======================= 578 passed in 341.96s (0:05:41) =======================
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\check_coverage.py", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\coverage.json"]
+Module line/branch coverage gates PASS
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\independent_reference.py"]
+{"decimal_sum": "0.30", "dividend_return": "0", "return_100_105": "1/20", "return_100_110": "1/10", "split_notional": "1000", "split_price": "50", "split_volume": "20"}
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\data_smoke.py", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa"]
+Synthetic snapshot/query smoke PASS
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\factor_smoke.py", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa"]
+Reviewed builtin factor smoke PASS; no research/strategy approval
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\research_smoke.py", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa"]
+P3 full research / synthesis / exact-run projection / replacement PASS (developer engineering only)
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-I", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\docs\\audits\\phase-3\\reference_arithmetic.py"]
+{
+  "run_id": "720d9e17-7fa2-4703-a017-899d95e6de80",
+  "scope": "Developer stdlib reference arithmetic only; not AQRP implementation or Gemini QA-004 approval",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "os": "Windows-11-10.0.26300-SP0",
+  "source_sha256": "75e25b25bb024428a0323c7e5f3941ca6a33fc488adabaad0b24d8440c296bd5",
+  "reference_script_sha256": "a6bbde61f5ea8262acb1f023e4b4ad5916ad7b6314bc27ff2e6572f92a114530",
+  "cases_passed": [
+    "P3-PV",
+    "P3-PV-ZERO-CURRENT",
+    "P3-IC",
+    "P3-TIE",
+    "P3-Z-ICIR",
+    "P3-ROLL",
+    "P3-WINSOR",
+    "P3-MAD",
+    "P3-OLS",
+    "P3-GROUP",
+    "P3-HAC",
+    "P3-MULTI",
+    "P3-LABEL",
+    "P3-LABEL-ACTION",
+    "P3-PURGE"
+  ],
+  "count": 15,
+  "business_tests": "NOT RUN / P3 Planned",
+  "gemini_golden_review": "REVIEW REQUIRED"
+}
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-I", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\docs\\audits\\phase-3\\supplemental_reference.py"]
+{
+  "run_id": "p3-design-reference-04145563-1dd0-4f24-a7ee-036ad323d730",
+  "actual_executor": "Codex developer, not independent reviewer/Gemini",
+  "started_at_utc": "2026-10-22T05:09:19.735820+00:00",
+  "finished_at_utc": "2026-10-22T05:09:19.737827+00:00",
+  "argv": [
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\docs\\audits\\phase-3\\supplemental_reference.py"
+  ],
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "source_sha256": "21ef09832d29d3f7da72f51c0f90efa55280b2b17291e87f5e8b036ba919f896",
+  "reference_script_sha256": "86b99eb4b83ff0c98e0001378303b9331531afc6e2bc94a9587130e7d9d5fdd9",
+  "fixture_groups": 28,
+  "assertions": 122,
+  "passed": 122,
+  "failed": 0,
+  "scope": "Developer arithmetic and candidate-state predicates only. No P3 business, OS isolation or formal finance execution.",
+  "checks": [
+    {
+      "case": "LABEL-NONE",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "return",
+      "actual": "1/10",
+      "expected": "1/10",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "label_available_at",
+      "actual": "2026-01-09 12:00:00.000001+00:00",
+      "expected": "2026-01-09 12:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "label_available_at",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "status",
+      "actual": "NOT_YET_AVAILABLE",
+      "expected": "NOT_YET_AVAILABLE",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "shares",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "credit",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "return",
+      "actual": "None",
+      "expected": "None",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-10 12:00:00+00:00",
+      "expected": "2026-01-10 12:00:00+00:00",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "credit",
+      "actual": "4",
+      "expected": "4",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "return",
+      "actual": "3/50",
+      "expected": "3/50",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "ratio_anchor_to_dividend",
+      "actual": "1",
+      "expected": "1",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "visible_at_exit_open",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_before",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_equal",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-BAR-CLOSE-AND-FIT",
+      "field": "fit_after",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "LABEL-LATE-TRAIN-FIT",
+      "field": "fit_allowed",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "PURGE-INFORMATION-CONTACT",
+      "field": "purge",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "score_0",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "score_1",
+      "actual": "0.0",
+      "expected": "0.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "score_2",
+      "actual": "1.0",
+      "expected": "1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "raw_correlation",
+      "actual": "-1.0",
+      "expected": "-1",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "signed_correlation",
+      "actual": "1.0",
+      "expected": "1",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance_0",
+      "actual": "1.0",
+      "expected": "1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance_1",
+      "actual": "0.0",
+      "expected": "0.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-SIGNED-SCALE",
+      "field": "scale_invariance_2",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "score_0",
+      "actual": "-0.5",
+      "expected": "-0.5",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "score_1",
+      "actual": "0.0",
+      "expected": "0.0",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-POSITIVE-DIRECTION",
+      "field": "score_2",
+      "actual": "0.5",
+      "expected": "0.5",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "score_0",
+      "actual": "-0.7071067811865475",
+      "expected": "-0.7071067811865475",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "score_1",
+      "actual": "0.7071067811865475",
+      "expected": "0.7071067811865475",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-MISSING-INTERSECTION",
+      "field": "kept_indices",
+      "actual": "[0, 2]",
+      "expected": "[0, 2]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "all_zero",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "one_positive",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "empty",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "COMPOSITE-REJECTIONS",
+      "field": "missing_thresholds",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "REDUNDANCY-PREDECLARED",
+      "field": "flag",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "mean",
+      "actual": "1/4",
+      "expected": "1/4",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "gamma_0",
+      "actual": "1/16",
+      "expected": "1/16",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "gamma_1",
+      "actual": "-3/64",
+      "expected": "-3/64",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "S",
+      "actual": "1/64",
+      "expected": "1/64",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "variance",
+      "actual": "1/256",
+      "expected": "1/256",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "SE",
+      "actual": "0.0625",
+      "expected": "0.0625",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "z",
+      "actual": "4",
+      "expected": "4",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "high_precision_p_vs_hand_constant",
+      "actual": "0.00006334248366623984250754151344430259688766675096055301709866344415717033831490",
+      "expected": "0.00006334248366623984",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "libm_p_vs_decimal_series",
+      "actual": "6.334248366623993e-05",
+      "expected": "0.00006334248366623984250754151344430259688766675096055301709866344415717033831490",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q1",
+      "field": "sample_not_formal",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "mean",
+      "actual": "1/4",
+      "expected": "1/4",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma_0",
+      "actual": "1/16",
+      "expected": "1/16",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma_1",
+      "actual": "-3/64",
+      "expected": "-3/64",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "gamma_2",
+      "actual": "1/32",
+      "expected": "1/32",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "S",
+      "actual": "1/48",
+      "expected": "1/48",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "variance",
+      "actual": "1/192",
+      "expected": "1/192",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "SE",
+      "actual": "0.072168783648703220563643597562744681955950218908765859502325290810497209037866668",
+      "expected": "0.07216878364870323",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "z",
+      "actual": "3.4641016151377545870548926830117447338856105076207612561116139589038660338176001",
+      "expected": "3.4641016151377544",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "high_precision_p_vs_hand_constant",
+      "actual": "0.00053200550513924969928988213323829378557937294755749404746146212512734563016741",
+      "expected": "0.0005320055051392504",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "libm_p_vs_decimal_series",
+      "actual": "0.0005320055051392503",
+      "expected": "0.00053200550513924969928988213323829378557937294755749404746146212512734563016741",
+      "comparison": "abs1e-12/rel1e-10",
+      "pass": true
+    },
+    {
+      "case": "HAC-NONZERO-Q2",
+      "field": "sample_not_formal",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "lags",
+      "actual": "[5, 5, 9, 19]",
+      "expected": "[5, 5, 9, 19]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "minimum_ns",
+      "actual": "[252, 252, 252, 400]",
+      "expected": "[252, 252, 252, 400]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h1_n251",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h1_n252",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h20_n399",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-PROFILE-BOUNDARIES",
+      "field": "h20_n400",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "short_lag",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "LAG_BELOW_OVERLAP"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "lag_equal_n",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "INVALID_HORIZON_OR_LAG"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "missing_session",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "IRREGULAR_OR_MISSING_IC"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "no_assumptions",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "ASSUMPTIONS_UNVERIFIED"
+    },
+    {
+      "case": "HAC-REJECTION-CONTRACT",
+      "field": "no_approval",
+      "actual": "True",
+      "expected": "True",
+      "comparison": "exact",
+      "pass": true,
+      "specified_future_reason": "FORMAL_PROTOCOL_UNAPPROVED"
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "Holm",
+      "actual": "[Fraction(1, 25), Fraction(9, 100), Fraction(9, 100), Fraction(1, 1)]",
+      "expected": "[Fraction(1, 25), Fraction(9, 100), Fraction(9, 100), Fraction(1, 1)]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BY",
+      "actual": "[Fraction(1, 12), Fraction(1, 9), Fraction(1, 9), Fraction(1, 1)]",
+      "expected": "[Fraction(1, 12), Fraction(1, 9), Fraction(1, 9), Fraction(1, 1)]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "BH",
+      "actual": "[Fraction(1, 25), Fraction(4, 75), Fraction(4, 75), Fraction(1, 1)]",
+      "expected": "[Fraction(1, 25), Fraction(4, 75), Fraction(4, 75), Fraction(1, 1)]",
+      "comparison": "exact",
+      "pass": true
+    },
+    {
+      "case": "MULTI-FAILED-FAMILY",
+      "field": "formal_family_approvable",
+      "actual": "False",
+      "expected": "False",
+      "comparison": "exact",
+      "pass": true
+    }
+  ]
+}
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "-I", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\docs\\audits\\phase-3\\recheck_reference_v2.py"]
+{
+  "run_id": "p3-v2-reference-331530e2-3c95-454d-bd22-581c9601c711",
+  "actual_executor": "Codex developer reference; not GPT Work independent execution",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "timestamp_utc": "2026-10-22T05:09:20.793430+00:00",
+  "inputs": {
+    "label_visibility_v2.json": "f5e3a48dd3fb7005a6053f3ad6db00fe58a5b3e6dd5020339786ef044fd24341",
+    "hac_growth_cases.json": "b80cc5e78d35b4e95238335ae9b0424e90703c1ff32a13efa847d0259cab0dc4"
+  },
+  "script_sha256": "b7931c3dc086f516afa36e0d484a7f1af7f8f8e8e8f82028ec74b19f0da3135b",
+  "label_cases": 17,
+  "assertions": 141,
+  "passed": 141,
+  "failed": 0,
+  "scope": "P3 design arithmetic, complete time fixtures and predicates only; not business or finite-sample coverage/OS/formal tests",
+  "checks": [
+    {
+      "case": "LABEL-NONE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "return",
+      "actual": "1/10",
+      "expected": "1/10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "label_available_at",
+      "actual": "2026-01-09 12:00:00.000001+00:00",
+      "expected": "2026-01-09 12:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "shares",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "credit",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "return",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "label_available_at",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "status",
+      "actual": "NOT_YET_AVAILABLE",
+      "expected": "NOT_YET_AVAILABLE",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "credit",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "return",
+      "actual": "3/50",
+      "expected": "3/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-10 12:00:00+00:00",
+      "expected": "2026-01-10 12:00:00+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "shares",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "credit",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "return",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "label_available_at",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "status",
+      "actual": "NOT_YET_AVAILABLE",
+      "expected": "NOT_YET_AVAILABLE",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000002+00:00",
+      "expected": "2026-01-08 16:00:00.000002+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "MA1",
+      "field": "gamma",
+      "actual": "[Fraction(1, 2), Fraction(1, 4), Fraction(0, 1)]",
+      "expected": "[Fraction(1, 2), Fraction(1, 4), Fraction(0, 1)]",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "MA1",
+      "field": "true_S",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-5",
+      "field": "S",
+      "actual": "11/12",
+      "expected": "11/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-5",
+      "field": "bias",
+      "actual": "1/12",
+      "expected": "1/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-9",
+      "field": "S",
+      "actual": "19/20",
+      "expected": "19/20",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-9",
+      "field": "bias",
+      "actual": "1/20",
+      "expected": "1/20",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-19",
+      "field": "S",
+      "actual": "39/40",
+      "expected": "39/40",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-19",
+      "field": "bias",
+      "actual": "1/40",
+      "expected": "1/40",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-31",
+      "field": "r",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-32",
+      "field": "r",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-242",
+      "field": "r",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-243",
+      "field": "r",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-1023",
+      "field": "r",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-1024",
+      "field": "r",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-3124",
+      "field": "r",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-3125",
+      "field": "r",
+      "actual": "5",
+      "expected": "5",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-252",
+      "field": "q",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-252",
+      "field": "S_population",
+      "actual": "7/8",
+      "expected": "7/8",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-252",
+      "field": "bias_population",
+      "actual": "1/8",
+      "expected": "1/8",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-1024",
+      "field": "q",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-1024",
+      "field": "S_population",
+      "actual": "9/10",
+      "expected": "9/10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-1024",
+      "field": "bias_population",
+      "actual": "1/10",
+      "expected": "1/10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-3125",
+      "field": "q",
+      "actual": "5",
+      "expected": "5",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-3125",
+      "field": "S_population",
+      "actual": "11/12",
+      "expected": "11/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-3125",
+      "field": "bias_population",
+      "actual": "1/12",
+      "expected": "1/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-7776",
+      "field": "q",
+      "actual": "6",
+      "expected": "6",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-7776",
+      "field": "S_population",
+      "actual": "13/14",
+      "expected": "13/14",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-7776",
+      "field": "bias_population",
+      "actual": "1/14",
+      "expected": "1/14",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-32768",
+      "field": "q",
+      "actual": "8",
+      "expected": "8",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-32768",
+      "field": "S_population",
+      "actual": "17/18",
+      "expected": "17/18",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-32768",
+      "field": "bias_population",
+      "actual": "1/18",
+      "expected": "1/18",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-100000",
+      "field": "q",
+      "actual": "10",
+      "expected": "10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-100000",
+      "field": "S_population",
+      "actual": "21/22",
+      "expected": "21/22",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-100000",
+      "field": "bias_population",
+      "actual": "1/22",
+      "expected": "1/22",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-1",
+      "field": "q",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-5-1",
+      "field": "q",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-5-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-10-1",
+      "field": "q",
+      "actual": "9",
+      "expected": "9",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-10-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-399-20-1",
+      "field": "q",
+      "actual": "19",
+      "expected": "19",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-399-20-1",
+      "field": "numeric_screen",
+      "actual": "False",
+      "expected": "False",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-20-1",
+      "field": "q",
+      "actual": "19",
+      "expected": "19",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-20-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-12",
+      "field": "q",
+      "actual": "12",
+      "expected": "12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-12",
+      "field": "numeric_screen",
+      "actual": "False",
+      "expected": "False",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-1-12",
+      "field": "q",
+      "actual": "12",
+      "expected": "12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-1-12",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FINITE-MA1",
+      "field": "known_mean_weighted_covariance_expectation",
+      "actual": "587/672",
+      "expected": "587/672",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FINITE-MA1",
+      "field": "exact_sample_mean_variance",
+      "actual": "503/127008",
+      "expected": "503/127008",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-PLANNED_SAMPLE_MISMATCH",
+      "field": "reason",
+      "actual": "['PLANNED_SAMPLE_MISMATCH']",
+      "expected": "['PLANNED_SAMPLE_MISMATCH']",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-DEPENDENCE_MODEL_UNVERIFIED",
+      "field": "reason",
+      "actual": "['DEPENDENCE_MODEL_UNVERIFIED']",
+      "expected": "['DEPENDENCE_MODEL_UNVERIFIED']",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-METHOD_REVIEW_REQUIRED",
+      "field": "reason",
+      "actual": "['METHOD_REVIEW_REQUIRED']",
+      "expected": "['METHOD_REVIEW_REQUIRED']",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-FORMAL_PROTOCOL_UNAPPROVED",
+      "field": "reason",
+      "actual": "['FORMAL_PROTOCOL_UNAPPROVED']",
+      "expected": "['FORMAL_PROTOCOL_UNAPPROVED']",
+      "pass": true,
+      "comparison": "exact"
+    }
+  ]
+}
+["C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\venv\\Scripts\\python.exe", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa\\source\\tools\\secret_scan.py", "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p3-g2-repair-20261022\\clean-sdk\\aqrp-991faaf3-2e20-471d-a576-d1b64dbe3eaa"]
+Secret scan and positive/negative controls PASS

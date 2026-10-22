@@ -1,0 +1,101 @@
+[
+  {
+    "id": "WORK-P3-001",
+    "severity": "High",
+    "status": "OPEN",
+    "design_assessment": "Concrete single-host multi-principal design is acceptable for the stated trusted-host threat model; previous unspecified mechanism gap substantially addressed.",
+    "location": "docs/audits/phase-3/TEST_ISOLATION_PROFILE.md",
+    "line": 5,
+    "requirements": [
+      "VALID-004",
+      "VALID-006",
+      "VALID-008",
+      "FACTOR-009",
+      "EXP-004"
+    ],
+    "remaining": "User has not confirmed actual SID/UID principals, custodian/auditor/approver, local paths, or deployment authority. No real ACL/negative-access evidence. This link is a review request, not that approval.",
+    "disposition": "G1 blocked on the explicit user design decision; deployment remains NOT VERIFIED and separate. Formal Test must fail closed and VALID-004 cannot be fully accepted.",
+    "next": "Submit one concrete deployment worksheet naming principals/owners, storage/inbox/results/control ledger and authority; user confirms the plan. Deploy and test only with separate explicit deployment authorization. Do not make the existing administrator session the research principal.",
+    "retest": "Under approved principals, actual read/modify denial across raw Test/seed/labels/cache/feedback/logs, trusted evaluator success, concurrency/crash budget/renaming/cache-bypass tests on both OS; these are future implementation gates.",
+    "reviewed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+    "executor": "GPT Work supplementary review; not Gemini"
+  },
+  {
+    "id": "WORK-P3-002",
+    "severity": "High",
+    "status": "OPEN",
+    "design_assessment": "Explicit (entry,exit] entitlement, action-before-entry/exit order, old-share anchor/reset, coverage/visibility, fit and purge semantics are coherent; supplemental arithmetic agrees under these synthetic assumptions.",
+    "location": "docs/audits/phase-3/LABEL_ACTION_PROFILE.md",
+    "line": 7,
+    "requirements": [
+      "VALID-001",
+      "VALID-002",
+      "VALID-003",
+      "QA-004",
+      "INT-001"
+    ],
+    "remaining": "User confirmation of the synthetic economic assumptions is absent. Ordinary action fixtures omit action event/available timestamps; their label_available_at checks are conditional on such dependencies not exceeding the supplied dominant bar/coverage watermark, and are not full raw P1 PIT fixtures.",
+    "disposition": "Technical temporal definitions are substantially resolved; full finding stays OPEN pending economic-profile confirmation and self-contained visibility inputs. No P3 implementation leakage asserted.",
+    "next": "User confirms SYNTHETIC_V1_LABEL_1 as synthetic research convention only. Developer adds explicit ordinary-action publication/availability defaults and exact coverage revision/available inputs (or declares valid bounds) so no input is borrowed from the reference script. Preserve prior correct Golden bytes; add versioned candidates.",
+    "retest": "Independent time/units/credit recomputation with complete inputs; future P1 row/sidecar integration for entry/exit ±1us, late/revised actions and coverage, payment after exit, delayed-label fitting and closed-information-interval purge.",
+    "reviewed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+    "executor": "GPT Work supplementary review; not Gemini"
+  },
+  {
+    "id": "WORK-P3-003",
+    "severity": "Medium",
+    "status": "CLOSED",
+    "closure_scope": "Design-only closure; requirement implementation/acceptance remains Planned.",
+    "location": "docs/audits/phase-3/COMPOSITE_RESEARCH.md",
+    "line": 3,
+    "requirements": [
+      "RESEARCH-007",
+      "INT-001"
+    ],
+    "evidence": "compose service + CompositeSpec/CompositeScores/RedundancyReport, fixed nonnegative weights with at least two active components, one-time direction, common-intersection re-z, full lineage, original/signed correlation and predeclared redundancy threshold behavior. Independent composite/rejection/redundancy fixture checks agree.",
+    "remaining": "Actual compose/INT-001/report/ledger integration tests not executed; UNCLASSIFIED with no thresholds must not become automatic deletion/approval.",
+    "next": "Implement only after G1 clears; record direction_applied and actual stage masks; run future tests without P4 account/order scope.",
+    "reviewed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+    "executor": "GPT Work supplementary review; not Gemini"
+  },
+  {
+    "id": "WORK-P3-004",
+    "severity": "Medium",
+    "status": "CLOSED",
+    "closure_scope": "Design-only closure; router/old environment reproducibility not verified.",
+    "location": "docs/audits/phase-3/REPRODUCTION_PROFILE.md",
+    "line": 3,
+    "requirements": [
+      "FACTOR-007",
+      "RESEARCH-008",
+      "EXP-003",
+      "INT-001"
+    ],
+    "evidence": "Selected original 0.2.0 wheel + original lock/receipt in isolated interpreter process, new/old API/Ref route matrix and strict original-byte versus declared projection comparison. Actual release wheel 70b43271ee142b18d5d9d306d452936f8409322fda5e676431f24eb150871c9d exists under publication/sdk/wheel; 26 modules and receipt match source.",
+    "remaining": "Complete EnvironmentArchiveRef (interpreter installer/OS/22 wheelhouse) not present in plan, no new router or actual old-runtime replay. G2 must demonstrate successful applicable replay, not silently call every old Ref unsupported.",
+    "next": "Before implementation acceptance pin full archive, exact new Ref/factor-version/API matrix and safe JSON subprocess contract; replay the three old exact Refs in their approved old environment. Missing/corrupt artifacts must fail with explicit reason.",
+    "reviewed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+    "executor": "GPT Work supplementary review; not Gemini"
+  },
+  {
+    "id": "WORK-P3-005",
+    "severity": "Medium",
+    "status": "OPEN",
+    "design_assessment": "Three modes, explicit n/lag gates, no correction/default library drift, null/reason, failed-family and pollution rules are materially improved. Golden SE/z/p and profile boundary arithmetic all agree.",
+    "location": "docs/audits/phase-3/HAC_INFERENCE_PROFILE.md",
+    "line": 7,
+    "requirements": [
+      "VALID-005",
+      "VALID-007",
+      "VALID-008",
+      "QA-004"
+    ],
+    "evidence": "Reviewer exact bounded MA(1) example x_t=(eps_t+eps_(t-1))/2 yields gamma0=1/2, gamma1=1/4 and true LRV=1. For fixed q5 Bartlett weights the probability limit is 11/12 even as n increases; q9 gives19/20, q19 gives39/40. Covered autocorrelation lag and n>=max(252,20(q+1)) do not remove taper bias.",
+    "remaining": "The fixed q=max(h-1,5) profile plus generic stationarity/short-memory/CLT or an unquantified 'acceptable truncation' reference is not yet a sufficient general FORMAL_INFERENCE basis. The document honestly calls it a candidate and requires independent dependence review, so this is a remaining design/justification issue, not a claim that unapproved code has already emitted invalid p.",
+    "disposition": "Keep OPEN for formal-inference G1 subgate. Current finite arithmetic and ENGINEERING_DEMO definitions may be retained. User approval of a threshold alone cannot validate the mathematical inference method.",
+    "next": "Pre-register and substantiate an n/h-dependent bandwidth/inference rule with stated consistency/calibration conditions, or a restricted justified dependence model / pre-registered alternative inference method. If fixed-q remains an engineering candidate, define and validate acceptable taper-bias/error control, otherwise keep it non-formal. Freeze choices before Validation/Test outcomes; no Test-driven lag tuning.",
+    "retest": "Add bounded autocorrelated-process analytical/reference checks beyond four-point mean vectors, nonzero p and coverage/calibration evidence appropriate to the chosen model, all-family marginal-p validity plus failure/contamination guards. Actual formal financial protocol/thresholds remain separately user-approved.",
+    "reviewed_sha": "e26d4bbfe28262c35396f66daa183771573a988e",
+    "executor": "GPT Work supplementary review; not Gemini"
+  }
+]

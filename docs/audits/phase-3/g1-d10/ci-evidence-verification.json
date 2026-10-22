@@ -1,0 +1,128 @@
+{
+  "scope": "P2 baseline regression CI only, not P3 implementation",
+  "run_id": 39645351705,
+  "head_sha": "d10a55a7dd4bc9ca7793ed474bdc1b056916e96e",
+  "actual_checkout": "a4f55ea258b3e0153f6724eee0a9d7f4a7f01923",
+  "merge_parents": [
+    "f26255fc40a3080bfa883ad64938f60036a14759",
+    "d10a55a7dd4bc9ca7793ed474bdc1b056916e96e"
+  ],
+  "merge_tree": "69557390cd4907237102375d6bcceedbd1c5ed1e",
+  "tree_equal_fixed_review": true,
+  "artifacts": [
+    {
+      "id": 12367341501,
+      "name": "phase2-windows-latest-1",
+      "bytes": 149872,
+      "sha256": "6470f0006025306d36d95468896e6ed4f77261c46eab94796a215fa7ca70aa32",
+      "junit": [
+        {
+          "path": "aqrp-a46774b1-2536-442f-9543-10d5515093c9/coverage.xml",
+          "testcases": 0,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "path": "aqrp-a46774b1-2536-442f-9543-10d5515093c9/junit.xml",
+          "testcases": 417,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      ],
+      "pytest_summary": [],
+      "wheels": [
+        {
+          "path": "aqrp-a46774b1-2536-442f-9543-10d5515093c9/wheel/aqrp-0.2.0-py3-none-any.whl",
+          "sha256": "8e808a6a87f5838e6f229be702f82b31c8ea502afc28508974b25ee51dfd61a2"
+        }
+      ],
+      "environments": [
+        {
+          "run_id": "aqrp-a46774b1-2536-442f-9543-10d5515093c9",
+          "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+          "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+          "os": "Windows-2025Server-10.0.26100-SP0",
+          "ImageOS": "win25-vs2026",
+          "ImageVersion": "20261007.264.1",
+          "code_commit": "a4f55ea258b3e0153f6724eee0a9d7f4a7f01923",
+          "dirty": false,
+          "complete": true,
+          "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-a46774b1-2536-442f-9543-10d5515093c9",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39645351705",
+          "github_run_attempt": "1",
+          "github_sha": "a4f55ea258b3e0153f6724eee0a9d7f4a7f01923",
+          "wheel_sha256": "8e808a6a87f5838e6f229be702f82b31c8ea502afc28508974b25ee51dfd61a2"
+        }
+      ],
+      "files": 47
+    },
+    {
+      "id": 12366772314,
+      "name": "phase2-ubuntu-24.04-1",
+      "bytes": 149716,
+      "sha256": "95cfdc3cf411d52525ed22a0f850139cb99a22cf7f36c33c0c1152dd8509d5df",
+      "junit": [
+        {
+          "path": "aqrp-e66f997d-81e4-49c9-b597-89eb6d56c96b/coverage.xml",
+          "testcases": 0,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "path": "aqrp-e66f997d-81e4-49c9-b597-89eb6d56c96b/junit.xml",
+          "testcases": 417,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      ],
+      "pytest_summary": [],
+      "wheels": [
+        {
+          "path": "aqrp-e66f997d-81e4-49c9-b597-89eb6d56c96b/wheel/aqrp-0.2.0-py3-none-any.whl",
+          "sha256": "8fa2af8cf6f3e7e7066b8068e973512f2d99fa0d80b4a853cef535f02d598e47"
+        }
+      ],
+      "environments": [
+        {
+          "run_id": "aqrp-e66f997d-81e4-49c9-b597-89eb6d56c96b",
+          "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+          "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+          "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "ImageOS": "ubuntu24",
+          "ImageVersion": "20261012.334.1",
+          "code_commit": "a4f55ea258b3e0153f6724eee0a9d7f4a7f01923",
+          "dirty": false,
+          "complete": true,
+          "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+          "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-e66f997d-81e4-49c9-b597-89eb6d56c96b",
+          "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "github_run_id": "39645351705",
+          "github_run_attempt": "1",
+          "github_sha": "a4f55ea258b3e0153f6724eee0a9d7f4a7f01923",
+          "wheel_sha256": "8fa2af8cf6f3e7e7066b8068e973512f2d99fa0d80b4a853cef535f02d598e47"
+        }
+      ],
+      "files": 47
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p3-d10a55a",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "exit_code": 0,
+      "stdout": "69557390cd4907237102375d6bcceedbd1c5ed1e\n",
+      "stderr": ""
+    }
+  ]
+}

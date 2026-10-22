@@ -112,6 +112,9 @@ def main():
     command([str(py), "-m", "pip", "install", "--no-index", "--no-deps", str(project_wheel)])
     command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
     command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
+    command([str(py), str(source / "tools/check_phase3_package.py")], cwd=source)
+    command([str(py), str(source / "tools/original_replay_smoke.py"), str(RUN)], cwd=source)
+    os.environ["AQRP_ORIGINAL_ENV_ARCHIVE"] = str(RUN / "reproduction/environment-archive.json")
     command(
         [
             str(py),
@@ -134,6 +137,16 @@ def main():
     command([str(py), str(source / "tools/independent_reference.py")], cwd=source)
     command([str(py), str(source / "tools/data_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/factor_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/research_smoke.py"), str(RUN)], cwd=source)
+    for script in (
+        "reference_arithmetic.py",
+        "supplemental_reference.py",
+        "recheck_reference_v2.py",
+    ):
+        command(
+            [str(py), "-I", str(source / "docs/audits/phase-3" / script)],
+            cwd=source / "docs/audits/phase-3",
+        )
     command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
     env["complete"] = True
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
@@ -164,7 +177,9 @@ def main():
                 len(relative.parts) == 1
                 and (path.suffix in (".log", ".json", ".xml") or path.name == ".coverage")
             )
-            or relative.parts[0] in ("dataset", "factor-dataset", "factor-runs", "wheel")
+            or relative.parts[0]
+            in ("dataset", "factor-dataset", "factor-runs", "wheel", "research")
+            or (relative.parts[0] == "reproduction" and relative.parts[1] != "venv")
         ):
             selected.append(
                 {

@@ -1,0 +1,1147 @@
+{
+  "run_id": "p3-v2-reference-26a05f84-850f-4f1d-b826-027da68962cc",
+  "actual_executor": "Codex developer reference; not GPT Work independent execution",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "timestamp_utc": "2026-10-21T19:12:05.888559+00:00",
+  "inputs": {
+    "label_visibility_v2.json": "f5e3a48dd3fb7005a6053f3ad6db00fe58a5b3e6dd5020339786ef044fd24341",
+    "hac_growth_cases.json": "b80cc5e78d35b4e95238335ae9b0424e90703c1ff32a13efa847d0259cab0dc4"
+  },
+  "script_sha256": "b7931c3dc086f516afa36e0d484a7f1af7f8f8e8e8f82028ec74b19f0da3135b",
+  "label_cases": 17,
+  "assertions": 141,
+  "passed": 141,
+  "failed": 0,
+  "scope": "P3 design arithmetic, complete time fixtures and predicates only; not business or finite-sample coverage/OS/formal tests",
+  "checks": [
+    {
+      "case": "LABEL-NONE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "return",
+      "actual": "1/10",
+      "expected": "1/10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-NONE",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-INTERIOR-OLD-UNIT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ENTRY-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-SAME",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-MINUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-EXIT-PLUS-US",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "credit",
+      "actual": "0",
+      "expected": "0",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/50",
+      "expected": "1/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-ENTRY-NO-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "shares",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-DIV-EXIT-ENTITLEMENT",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-VISIBLE",
+      "field": "label_available_at",
+      "actual": "2026-01-09 12:00:00.000001+00:00",
+      "expected": "2026-01-09 12:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "shares",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "credit",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "return",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "label_available_at",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-LATE-NOT-VISIBLE",
+      "field": "status",
+      "actual": "NOT_YET_AVAILABLE",
+      "expected": "NOT_YET_AVAILABLE",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-OLD-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "credit",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "return",
+      "actual": "3/50",
+      "expected": "3/50",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-REVISION-NEW-ASOF",
+      "field": "label_available_at",
+      "actual": "2026-01-10 12:00:00+00:00",
+      "expected": "2026-01-10 12:00:00+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "LABEL-ANCHOR-RESET",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000001+00:00",
+      "expected": "2026-01-08 16:00:00.000001+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "shares",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "credit",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "return",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "label_available_at",
+      "actual": "None",
+      "expected": "None",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-HIDDEN",
+      "field": "status",
+      "actual": "NOT_YET_AVAILABLE",
+      "expected": "NOT_YET_AVAILABLE",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "explicit_fixture_no_formal_signature",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "shares",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "credit",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "return",
+      "actual": "1/25",
+      "expected": "1/25",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "VISIBILITY-LAST-WATERMARK-PLUS-US-VISIBLE",
+      "field": "label_available_at",
+      "actual": "2026-01-08 16:00:00.000002+00:00",
+      "expected": "2026-01-08 16:00:00.000002+00:00",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "MA1",
+      "field": "gamma",
+      "actual": "[Fraction(1, 2), Fraction(1, 4), Fraction(0, 1)]",
+      "expected": "[Fraction(1, 2), Fraction(1, 4), Fraction(0, 1)]",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "MA1",
+      "field": "true_S",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-5",
+      "field": "S",
+      "actual": "11/12",
+      "expected": "11/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-5",
+      "field": "bias",
+      "actual": "1/12",
+      "expected": "1/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-9",
+      "field": "S",
+      "actual": "19/20",
+      "expected": "19/20",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-9",
+      "field": "bias",
+      "actual": "1/20",
+      "expected": "1/20",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-19",
+      "field": "S",
+      "actual": "39/40",
+      "expected": "39/40",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FIXED-19",
+      "field": "bias",
+      "actual": "1/40",
+      "expected": "1/40",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-31",
+      "field": "r",
+      "actual": "1",
+      "expected": "1",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-32",
+      "field": "r",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-242",
+      "field": "r",
+      "actual": "2",
+      "expected": "2",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-243",
+      "field": "r",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-1023",
+      "field": "r",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-1024",
+      "field": "r",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-3124",
+      "field": "r",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "ROOT-3125",
+      "field": "r",
+      "actual": "5",
+      "expected": "5",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-252",
+      "field": "q",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-252",
+      "field": "S_population",
+      "actual": "7/8",
+      "expected": "7/8",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-252",
+      "field": "bias_population",
+      "actual": "1/8",
+      "expected": "1/8",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-1024",
+      "field": "q",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-1024",
+      "field": "S_population",
+      "actual": "9/10",
+      "expected": "9/10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-1024",
+      "field": "bias_population",
+      "actual": "1/10",
+      "expected": "1/10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-3125",
+      "field": "q",
+      "actual": "5",
+      "expected": "5",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-3125",
+      "field": "S_population",
+      "actual": "11/12",
+      "expected": "11/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-3125",
+      "field": "bias_population",
+      "actual": "1/12",
+      "expected": "1/12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-7776",
+      "field": "q",
+      "actual": "6",
+      "expected": "6",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-7776",
+      "field": "S_population",
+      "actual": "13/14",
+      "expected": "13/14",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-7776",
+      "field": "bias_population",
+      "actual": "1/14",
+      "expected": "1/14",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-32768",
+      "field": "q",
+      "actual": "8",
+      "expected": "8",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-32768",
+      "field": "S_population",
+      "actual": "17/18",
+      "expected": "17/18",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-32768",
+      "field": "bias_population",
+      "actual": "1/18",
+      "expected": "1/18",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-100000",
+      "field": "q",
+      "actual": "10",
+      "expected": "10",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-100000",
+      "field": "S_population",
+      "actual": "21/22",
+      "expected": "21/22",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "GROW-100000",
+      "field": "bias_population",
+      "actual": "1/22",
+      "expected": "1/22",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-1",
+      "field": "q",
+      "actual": "3",
+      "expected": "3",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-5-1",
+      "field": "q",
+      "actual": "4",
+      "expected": "4",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-5-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-10-1",
+      "field": "q",
+      "actual": "9",
+      "expected": "9",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-10-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-399-20-1",
+      "field": "q",
+      "actual": "19",
+      "expected": "19",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-399-20-1",
+      "field": "numeric_screen",
+      "actual": "False",
+      "expected": "False",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-20-1",
+      "field": "q",
+      "actual": "19",
+      "expected": "19",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-20-1",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-12",
+      "field": "q",
+      "actual": "12",
+      "expected": "12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-252-1-12",
+      "field": "numeric_screen",
+      "actual": "False",
+      "expected": "False",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-1-12",
+      "field": "q",
+      "actual": "12",
+      "expected": "12",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "SCREEN-400-1-12",
+      "field": "numeric_screen",
+      "actual": "True",
+      "expected": "True",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FINITE-MA1",
+      "field": "known_mean_weighted_covariance_expectation",
+      "actual": "587/672",
+      "expected": "587/672",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FINITE-MA1",
+      "field": "exact_sample_mean_variance",
+      "actual": "503/127008",
+      "expected": "503/127008",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-PLANNED_SAMPLE_MISMATCH",
+      "field": "reason",
+      "actual": "['PLANNED_SAMPLE_MISMATCH']",
+      "expected": "['PLANNED_SAMPLE_MISMATCH']",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-DEPENDENCE_MODEL_UNVERIFIED",
+      "field": "reason",
+      "actual": "['DEPENDENCE_MODEL_UNVERIFIED']",
+      "expected": "['DEPENDENCE_MODEL_UNVERIFIED']",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-METHOD_REVIEW_REQUIRED",
+      "field": "reason",
+      "actual": "['METHOD_REVIEW_REQUIRED']",
+      "expected": "['METHOD_REVIEW_REQUIRED']",
+      "pass": true,
+      "comparison": "exact"
+    },
+    {
+      "case": "FORMAL-REJECTION-FORMAL_PROTOCOL_UNAPPROVED",
+      "field": "reason",
+      "actual": "['FORMAL_PROTOCOL_UNAPPROVED']",
+      "expected": "['FORMAL_PROTOCOL_UNAPPROVED']",
+      "pass": true,
+      "comparison": "exact"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "reviewed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+  "reviewer": "GPT Work primary actual independent recheck",
+  "prior_reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "verdict": "G2 TECHNICAL PASS WITH CONDITIONS",
+  "findings": [
+    {
+      "id": "WORK-P3-IMPL-001",
+      "severity": "High",
+      "status": "CLOSED",
+      "locations": [
+        {
+          "path": "src/aqrp/validation/labels.py",
+          "line": 188
+        },
+        {
+          "path": "src/aqrp/validation/labels.py",
+          "line": 237
+        }
+      ],
+      "requirements": [
+        "VALID-001",
+        "VALID-002",
+        "VALID-003",
+        "QA-004",
+        "INT-001"
+      ],
+      "basis": "原反例：晚到证券主档修订让标签由无效变有效，却未进入标签最早可用时间及依赖hash；实际purged_train错误接受。",
+      "repair": "选中security_master加入deps，available/information_interval/dependency_hash包含该行；security_master_ref绑定发布后行hash/修订与时钟。",
+      "actual_evidence": [
+        "original-four.xml",
+        "after-causal-independent.json",
+        "sdk-verification.json"
+      ],
+      "result": "原用例通过。独立有效P1快照：修订Jan5 00可见，标签0.1的available恰为Jan5 00，Jan4 12:10和Jan5前1us均拒绝，Jan5相等及后1us接受。578套件亦覆盖晚到上市/退市。"
+    },
+    {
+      "id": "WORK-P3-IMPL-002",
+      "severity": "Medium",
+      "status": "CLOSED",
+      "locations": [
+        {
+          "path": "src/aqrp/validation/approvals.py",
+          "line": 126
+        }
+      ],
+      "requirements": [
+        "FACTOR-009",
+        "VALID-008",
+        "EXP-001",
+        "EXP-004"
+      ],
+      "basis": "原反例：终态manifest外后补approvals.json可被record_decision接受。",
+      "repair": "verify返回清单中唯一approvals条目为前提；同一次read_bytes进行SHA256验证和JSON解析，拒绝symlink/非dict/不匹配proposal。",
+      "actual_evidence": [
+        "original-four.xml",
+        "sdk-verification.json"
+      ],
+      "result": "原缺文件及后补文件负例通过；新增list/mismatch/verify后更改原字节负例均拒绝，既有合法manifest绑定人工决策工程正例仍通过。仅公开测试key；不宣称突破或验证真实OS/人工签名。"
+    },
+    {
+      "id": "WORK-P3-IMPL-003",
+      "severity": "Medium",
+      "status": "CLOSED",
+      "locations": [
+        {
+          "path": "src/aqrp/research/pipeline.py",
+          "line": 16
+        },
+        {
+          "path": "src/aqrp/research/pipeline.py",
+          "line": 215
+        }
+      ],
+      "requirements": [
+        "RESEARCH-007",
+        "QA-004",
+        "INT-001"
+      ],
+      "basis": "原反例：公开compose入口接受未来available或混合decision_time；未夸大为正常统一服务已泄漏。",
+      "repair": "pipeline/compose共用必需、UTC感知、按session共同decision时点和available<=decision检查；输出时钟/输入hash/lineage，拒绝重复键。",
+      "actual_evidence": [
+        "original-four.xml",
+        "sdk-verification.json"
+      ],
+      "result": "原两负例和正常组合控制通过；新增缺/null时钟、UTC同瞬间、lineage/hash/input不变、多session/重复键工程边界通过。"
+    }
+  ],
+  "new_blocking_code_findings": 0,
+  "phase3_user_accepted": false
+}

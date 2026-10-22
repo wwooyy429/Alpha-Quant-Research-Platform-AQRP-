@@ -1,0 +1,107 @@
+{
+  "reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "verdict": "G2 REQUEST CHANGES / IMPLEMENTATION BLOCKED",
+  "g1_design_status": "PLAN PASS unchanged",
+  "executor": "GPT Work independent implementation reviewer; not Gemini",
+  "findings": [
+    {
+      "id": "WORK-P3-IMPL-001",
+      "severity": "High",
+      "priority": 1,
+      "status": "OPEN / BLOCKING G2",
+      "file": "src/aqrp/validation/labels.py",
+      "line": 186,
+      "end": 186,
+      "related_files": [
+        {
+          "path": "src/aqrp/validation/labels.py",
+          "line": 155
+        },
+        {
+          "path": "src/aqrp/validation/labels.py",
+          "line": 227
+        },
+        {
+          "path": "src/aqrp/validation/splits.py",
+          "line": 51
+        }
+      ],
+      "requirements": [
+        "VALID-001",
+        "VALID-002",
+        "VALID-003",
+        "QA-004",
+        "INT-001"
+      ],
+      "title": "label_available_at遗漏决定标签资格的证券主档修订",
+      "basis": "make_labels按evaluation_cutoff选择security_master并以listing/delisting判断资格，但deps未包含该已选security记录，available_at与dependency_hash遗漏这项因果依赖。",
+      "reproduction": "有效P1快照：旧主档称2024-01-04 08:00退市；1月5日00:00才可见的revision2撤销该记录。1月4日cutoff标签无效，1月5日cutoff标签变为0.1，程序却标available_at=1月4日12:05。实际调用purged_train(fit_cutoff=1月4日12:10)会把该后来才有效标签纳入train。",
+      "expected": "标签最早可用时间不得早于1月5日00:00；同一fit cutoff须拒绝/使用当时版本，选中主档版本进入依赖hash/血缘。",
+      "fix": "把所有实际决定资格/单位的已选主档依赖纳入deps/label_available_at和版本血缘；审计其他元数据依赖，增加晚到上市/退市更正、fit截止及purge回归，不改变旧正确Golden。",
+      "evidence": [
+        "late-master-causal-results.json",
+        "fit-leak-results.json",
+        "reviewer-regressions.xml",
+        "test_review_regressions.py"
+      ]
+    },
+    {
+      "id": "WORK-P3-IMPL-002",
+      "severity": "Medium",
+      "priority": 2,
+      "status": "OPEN / BLOCKING G2",
+      "file": "src/aqrp/validation/approvals.py",
+      "line": 125,
+      "end": 129,
+      "related_files": [
+        {
+          "path": "src/aqrp/experiments/ledger.py",
+          "line": 210
+        }
+      ],
+      "requirements": [
+        "FACTOR-009",
+        "VALID-008",
+        "EXP-001",
+        "EXP-004"
+      ],
+      "title": "终态manifest未包含的审批文件仍可用于ResearchValidated签封",
+      "basis": "ledger.verify只校验manifest列出的文件；record_decision随后读取固定路径approvals.json却不要求它在该manifest中。",
+      "reproduction": "结束一个原manifest仅含config/lineage的公开测试run；缺approvals时正确拒绝。随后直接在测试目录添加未列入manifest的approvals.json，verify仍通过，record_decision接受测试签封并返回ResearchValidated。",
+      "expected": "审批proposal必须来自终态manifest已列出且原字节hash相符的approvals.json；新增文件不能倒填原运行证据。",
+      "fix": "从verify返回的manifest定位并校验approvals条目后再读取/匹配proposal；考虑对不允许的额外工件检测或明确扩展策略，检查签封与读取的一致性；保留原终态无文件和后补文件两个负例。",
+      "scope_limit": "使用审查方公开临时ledger和合成测试key；未绕过真实OS权限、未伪造真实人工签名、没有实际金融批准。当前服务正常成功路径会先写approvals；本反例针对导入/受损/后改运行的证据完整性保证。",
+      "evidence": [
+        "adversarial-results.json",
+        "reviewer-regressions.xml",
+        "test_review_regressions.py"
+      ]
+    },
+    {
+      "id": "WORK-P3-IMPL-003",
+      "severity": "Medium",
+      "priority": 2,
+      "status": "OPEN / BLOCKING G2",
+      "file": "src/aqrp/research/pipeline.py",
+      "line": 206,
+      "end": 211,
+      "related_files": [],
+      "requirements": [
+        "RESEARCH-007",
+        "QA-004",
+        "INT-001"
+      ],
+      "title": "compose只对齐session/stage，未拒绝未来或混合decision cutoff输入",
+      "basis": "G1 COMPOSITE_RESEARCH要求统一可见cutoff和拒绝未来available。公开compose函数只验证stage并按session pivot，忽略提供的decision_time/available_at。",
+      "reproduction": "同一2024-01-04 session的a/b三证券输入；b.available_at改为1月5日，或b.decision_time改为1月5日，均照常生成三条1月4日合成分数。正常同刻输入控制也通过。",
+      "expected": "合成前统一时点并验证available_at<=共同decision_time；不同时点/未来输入明确拒绝，输出保留对应血缘。",
+      "fix": "在compose入口及公共stage契约中校验共同cutoff和可见性，明确缺必需时点的策略；保留两个负例及正常交集/重新z/方向控制，不删时点字段来绕过校验。",
+      "scope_limit": "已复现于公开SDK compose入口。统一research服务当前产生的同一decision网格受上游pipeline校验；未声称普通成功服务请求已经触发该未来输入。",
+      "evidence": [
+        "adversarial-results.json",
+        "reviewer-regressions.xml",
+        "test_review_regressions.py"
+      ]
+    }
+  ]
+}
