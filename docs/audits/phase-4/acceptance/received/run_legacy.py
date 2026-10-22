@@ -1,0 +1,13 @@
+import pathlib,json,hashlib,shutil,subprocess,sys,datetime
+O=pathlib.Path(__file__).parent;C=O.parent/'p4-g2-recheck-3c87579';sdk=pathlib.Path((O/'SDK_LOCATION.txt').read_text(encoding='utf-8'));py=sdk/'venv/Scripts/python.exe';received=C/'docs/audits/phase-3/g2-5a5e093/received';files=[]
+for name,h in [('test_review_regressions.py','798005e905817b322d723bb261efac9d6f4d83b284bde82d99f0724dff53c788'),('independent_implementation_math.py','8838c9153ca914ad257849a2c7b26c468f15a8ad2e5c1dab7bf683ada60056c3'),('verify_scanner_controls.py','97d1e9ee47e31bc8e3a647e76135c9a8d8f1aaa0e45e51520f6e81e00043ef83')]:
+ b=(received/name).read_bytes();assert hashlib.sha256(b).hexdigest()==h;(O/name).write_bytes(b);files.append({'path':name,'sha256':h})
+P=O/'original-probes';P.mkdir(exist_ok=True)
+paths=['docs/audits/phase-1/repairs/data-validation/review-input/test_work_p1_regressions.py','docs/audits/phase-1/repairs/data-validation/round2/review-input/test_round2_regressions.py','docs/audits/phase-2/recheck-c836/raw/test_work_p2_regressions.py']
+for p in paths:shutil.copyfile(C/p,P/pathlib.Path(p).name)
+for rel in ['source/tests/golden/phase1_input.json','phase1/tests/golden/phase1_input.json']:
+ p=P/rel;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(C/'tests/golden/phase1_input.json',p)
+commands=[('original-four',['-I','-m','pytest',str(O/'test_review_regressions.py'),'-q','-o','cache_dir='+str(O/'original-four-cache'),'--basetemp',str(O/'original-four-temp'),'--junitxml='+str(O/'original-four.xml')]),('original20',['-I','-m','pytest',*[str(P/pathlib.Path(p).name) for p in paths],'-q','-o','cache_dir='+str(O/'original20-cache'),'--basetemp',str(O/'original20-temp'),'--junitxml='+str(O/'original20.xml')]),('original91',['-I',str(O/'independent_implementation_math.py')]),('scanner-controls',['-I',str(O/'verify_scanner_controls.py'),str(C)])]
+for label,args in commands:
+ result=subprocess.run([sys.executable,str(O/'run_capture.py'),label,str(O),str(py),*args]);result.check_returncode()
+record={'actual_executor':'GPT Work current installed 0.4.1.dev1 rerun','fixed_sha':'3c8757949b0fd5c97953b06a74ebc2d0e56676e4','original_scripts':files,'note':'Immutable historical SHA/identity labels inside original scripts remain historical; actual current interpreter/commands/target are bound by this wrapper and command JSON. Unit synthetic approval objects are negative controls, not formal Test or financial approval.','results':{'original_four':4,'original16_plus4':20,'mathematics':91,'scanner_controls':3},'utc':datetime.datetime.now(datetime.timezone.utc).isoformat()};(O/'LEGACY_REEXECUTION.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

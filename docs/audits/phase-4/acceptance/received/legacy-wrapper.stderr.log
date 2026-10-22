@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\work-p4-g2-recheck-3c87579-independent\run_legacy.py", line 12, in <module>
+    result=subprocess.run([sys.executable,str(O/'run_capture.py'),label,str(O),str(py),*args]);result.check_returncode()
+                                                                                               ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11638\AppData\Local\AQRP\runtime\Python31316\Lib\subprocess.py", line 509, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+                             self.stderr)
+subprocess.CalledProcessError: Command '['C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa\\venv\\Scripts\\python.exe', 'C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\run_capture.py', 'scanner-controls', 'C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent', 'C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa\\venv\\Scripts\\python.exe', '-I', 'C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\verify_scanner_controls.py', 'C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p4-g2-recheck-3c87579']' returned non-zero exit status 1.

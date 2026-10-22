@@ -1,0 +1,73 @@
+{
+  "actual_executor": "Codex developer re-executing reviewer-authored exact script; not new independent GPT Work review",
+  "actual_code_commit": "d3993d07e5df1b5c2f7acd30cb628226f7b1fc09",
+  "script_origin": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\independent_implementation_math.py",
+  "script_sha256": "8838c9153ca914ad257849a2c7b26c468f15a8ad2e5c1dab7bf683ada60056c3",
+  "copied_script_byte_identical": true,
+  "embedded_metadata_scope": "Original script hardcodes GPT Work executor/old SHA; those strings in raw stdout/result are retained as source labels and do not describe this re-execution. This receipt records actual executor and commit. No algorithm/expected answer was changed.",
+  "math_checks_passed": 91,
+  "math_checks_failed": 0,
+  "original_probe_script_hashes": {
+    "test_round2_regressions.py": "43a8d0b6c6878ba1608a6bd83cbf8668fa2e3a4f3767aa51e1cc2e94bc5e0b0a",
+    "test_work_p1_regressions.py": "e077602b2d41c2320fd3bd10703279122a86ee288513a2bcc8197d535beb56b8",
+    "test_work_p2_regressions.py": "78bef6937965483269fa3256a21003547859a393a4f86e03c6c1ca8aa3d08c4e"
+  },
+  "reviewer_regression_script_sha256": "798005e905817b322d723bb261efac9d6f4d83b284bde82d99f0724dff53c788",
+  "commands": [
+    {
+      "actual_executor": "Codex developer",
+      "code_commit": "d3993d07e5df1b5c2f7acd30cb628226f7b1fc09",
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\extras",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pytest",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\original-probes\\test_round2_regressions.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\original-probes\\test_work_p1_regressions.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\original-probes\\test_work_p2_regressions.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\extras\\original20.xml"
+      ],
+      "started_at_utc": "2026-10-22T15:32:16.503280+00:00",
+      "finished_at_utc": "2026-10-22T15:32:23.826254+00:00",
+      "exit_code": 0
+    },
+    {
+      "actual_executor": "Codex developer",
+      "code_commit": "d3993d07e5df1b5c2f7acd30cb628226f7b1fc09",
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\extras",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pytest",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p3-implementation-5a5e093\\test_review_regressions.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\extras\\original-reviewer4.xml"
+      ],
+      "started_at_utc": "2026-10-22T15:32:23.827603+00:00",
+      "finished_at_utc": "2026-10-22T15:32:26.360796+00:00",
+      "exit_code": 0
+    },
+    {
+      "actual_executor": "Codex developer",
+      "code_commit": "d3993d07e5df1b5c2f7acd30cb628226f7b1fc09",
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\extras",
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\sdk\\aqrp-ab6cf214-4ca7-4ac0-810d-6fa745e5bc76\\venv\\Scripts\\python.exe",
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p4-release-20261022\\extras\\original-math\\independent_implementation_math.py"
+      ],
+      "started_at_utc": "2026-10-22T15:32:26.366335+00:00",
+      "finished_at_utc": "2026-10-22T15:32:26.839635+00:00",
+      "exit_code": 0
+    }
+  ],
+  "independent_recheck": "Postmerge developer regression; independent G2 PASS on 3c875 recorded separately, no new independent audit",
+  "formal_test_or_financial_approval": false
+}

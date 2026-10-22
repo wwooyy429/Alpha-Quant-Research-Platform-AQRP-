@@ -1,0 +1,28 @@
+{
+  "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+  "actual_executor": "GPT Work supplemental reviewer",
+  "actual_python": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa\\venv\\Scripts\\python.exe",
+  "package_version": "0.4.1.dev1",
+  "scripts_byte_unchanged": [
+    {
+      "path": "test_review_regressions.py",
+      "sha256": "798005e905817b322d723bb261efac9d6f4d83b284bde82d99f0724dff53c788"
+    },
+    {
+      "path": "independent_implementation_math.py",
+      "sha256": "8838c9153ca914ad257849a2c7b26c468f15a8ad2e5c1dab7bf683ada60056c3"
+    },
+    {
+      "path": "verify_scanner_controls.py",
+      "sha256": "97d1e9ee47e31bc8e3a647e76135c9a8d8f1aaa0e45e51520f6e81e00043ef83"
+    }
+  ],
+  "passed": {
+    "original_four": 4,
+    "old16_plus4": 20,
+    "math": 91,
+    "scanner": 3
+  },
+  "harness_first_failure": "legacy-wrapper/scanner-controls started before clean SDK secret-scan stage had produced gitleaks.exe. FileNotFoundError, not product test failure. Original logs retained. Only scanner was repeated with scanner-controls-ready after hashed executable existed.",
+  "old_labels": "Immutable scripts retain historical reviewed_sha/executor text; current command receipts bind this actual target/interpreter. No claim of Gemini execution or formal approval."
+}

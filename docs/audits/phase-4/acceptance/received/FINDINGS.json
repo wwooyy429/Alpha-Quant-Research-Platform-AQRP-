@@ -1,0 +1,13 @@
+{
+  "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+  "reviewer": "GPT Work supplemental reviewer",
+  "verdict": "G2 PASS — RESTRICTED ENGINEERING SCOPE",
+  "user_acceptance": "PENDING",
+  "findings": [
+    {"id":"WORK-P4-G2-001","original_severity":"High","status":"CLOSED — FIX VERIFIED","evidence":"REPAIR_RECHECK_RESULTS.json: 25 exact-reference service cases and 3 publication controls; raw ledgers retained"},
+    {"id":"WORK-P4-G2-002","original_severity":"Medium","status":"CLOSED — FIX VERIFIED","evidence":"REPAIR_RECHECK_RESULTS.json: original engine/nine-file independent hash checks and 13 parent controls; OLD_REPLAY_VERIFICATION.json"}
+  ],
+  "new_blocking_findings": [],
+  "deferred_NOT_VERIFIED": ["True OS isolation / PR7 separate", "Real formal Test", "Financial approval", "Full historical host reproduction"],
+  "merge_tag_deployment_live_P5_authorized": false
+}

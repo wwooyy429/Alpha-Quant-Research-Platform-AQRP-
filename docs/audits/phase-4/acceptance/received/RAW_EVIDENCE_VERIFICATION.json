@@ -1,0 +1,497 @@
+{
+  "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+  "merge_tree_equal": true,
+  "merge_parents": [
+    "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+    "3c8757949b0fd5c97953b06a74ebc2d0e56676e4"
+  ],
+  "results": [
+    {
+      "label": "Windows",
+      "executed_sha": "354c931ef05d8d16237efac5826ae47302175f4f",
+      "official_head_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "source_tree": "1a087395191c251992446d7fe7a87f6cac24009b",
+      "junit_passed": 844,
+      "selection_hashes_verified": 250,
+      "zip_members": 251,
+      "wheel_sha256": "3e46669bf5def1e32532b496d3fa42df93086d8b9e76c02e8c8ff348df803b0b",
+      "wheel_modules_byte_identical": 53,
+      "p4_coverage": [
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/portfolio/__init__.py",
+          "line": 0.0,
+          "branch": 1
+        },
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/portfolio/construct.py",
+          "line": 1.0,
+          "branch": 1.0
+        },
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/portfolio/contracts.py",
+          "line": 0.9899665551839465,
+          "branch": 0.9794520547945206
+        },
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/portfolio/research_input.py",
+          "line": 0.963963963963964,
+          "branch": 0.9090909090909091
+        },
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/portfolio/service.py",
+          "line": 0.9894736842105263,
+          "branch": 0.9444444444444444
+        },
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/portfolio/weights.py",
+          "line": 1.0,
+          "branch": 1.0
+        },
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/risk/__init__.py",
+          "line": 0.0,
+          "branch": 1
+        },
+        {
+          "path": "D:/a/_temp/aqrp-evidence/aqrp-ad91ab48-8c83-4ba9-a068-977036864143/venv/Lib/site-packages/aqrp/risk/checks.py",
+          "line": 0.9904761904761905,
+          "branch": 0.9722222222222222
+        }
+      ],
+      "snapshot_manifests": [
+        {
+          "path": "dataset/1b82c3dd-9f2b-4610-ad21-0074cf51e108/manifest.json",
+          "hash": "e1765104580b8b790221dc5f96258812029aad2ea7c077b9d3d6e6d97fad64d4"
+        },
+        {
+          "path": "factor-dataset/a6d6ffcc-0674-478c-ac92-57988c746a1b/manifest.json",
+          "hash": "44b22596c82f68b55dd58a95dd2b349cc10c5941004d3862fa1051967331a663"
+        },
+        {
+          "path": "reproduction/dataset/996a0d42-e35d-46a3-8281-4ab1b3944387/manifest.json",
+          "hash": "9371ba4ed8b249c2a22ef67c0404d94edd19726668f382afc2f88048f83d32c5"
+        },
+        {
+          "path": "research/inputs/dataset/f4228ecd-4984-4e1f-9009-e30d295af58c/manifest.json",
+          "hash": "42b4f38c6f04d01dd0eb034251ed75c7372585e3ca48b3450c1179b4cf6a4f8d"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/fd50359e-976f-4b1f-99bf-84afeb4a71ed/manifest.json",
+          "hash": "1fd30cf92523b7c9547b84ca6ef04a44757de91d29ce416a369ab8af170f17cb"
+        }
+      ],
+      "terminal_experiment_manifests": [
+        {
+          "path": "portfolio/formal-gate/2e3e2926-5114-4ad9-963e-82f638545478/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/05a5cb6a-129e-4f8b-a766-2efbc472f92d/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/287fb4d4-691d-4893-a0f3-720bd1d042c9/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/37df66c4-a91c-4572-aa0f-ed73c6672a08/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/7f51591c-8352-4c77-9a04-76f3ec7d7d69/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/b5da3d85-e8b1-413d-9e08-7ef6d01d4dca/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/f823f11a-0aab-4a8b-8eab-77f28d9b975c/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "research/replacement-runs/9e7f4897-9c37-411e-9602-7651269df0dc/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 4
+        },
+        {
+          "path": "research/runs/21537c0c-6c87-46db-8ca8-eef9f9f1ea75/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 9
+        },
+        {
+          "path": "research/runs/56e4677f-b9e8-46fa-8b3f-220e0b5b2986/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 8
+        }
+      ],
+      "factor_manifests": [
+        {
+          "path": "factor-runs/260b172f-243b-4a92-a299-007ee765c7c1/manifest.json",
+          "logical_hash": "0fb109f4e9c05cc21599a95489ccdba396241f0975cbdc7f5ed5a35a77cf43e6"
+        },
+        {
+          "path": "factor-runs/93652c6f-6fef-4878-b90e-ae719bea66b5/manifest.json",
+          "logical_hash": "5d72857ab1ab8b87b43b237d40147ce458000cc1376614b748a836392c6e6a57"
+        },
+        {
+          "path": "factor-runs/b13e5147-981f-40cc-8501-c9270acb86b7/manifest.json",
+          "logical_hash": "1766f44cea01cbc5f268c15f26db45c6aa1ee93886daa5a7ec07c332a8b4c431"
+        }
+      ],
+      "six_portfolio_cases_independently_recomputed": true,
+      "original_three_refs_values_verified": true,
+      "environment": {
+        "run_id": "aqrp-ad91ab48-8c83-4ba9-a068-977036864143",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "ImageOS": "win25-vs2026",
+        "ImageVersion": "20261021.278.1",
+        "code_commit": "354c931ef05d8d16237efac5826ae47302175f4f",
+        "dirty": false,
+        "complete": true,
+        "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-ad91ab48-8c83-4ba9-a068-977036864143",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39778988451",
+        "github_run_attempt": "1",
+        "github_sha": "354c931ef05d8d16237efac5826ae47302175f4f",
+        "wheel_sha256": "3e46669bf5def1e32532b496d3fa42df93086d8b9e76c02e8c8ff348df803b0b"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "Ubuntu",
+      "executed_sha": "354c931ef05d8d16237efac5826ae47302175f4f",
+      "official_head_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "source_tree": "1a087395191c251992446d7fe7a87f6cac24009b",
+      "junit_passed": 844,
+      "selection_hashes_verified": 249,
+      "zip_members": 250,
+      "wheel_sha256": "1b9866bf7312e7feffb130f657963c83d202d3df740d3a6b98dd7f3e7cbdafb0",
+      "wheel_modules_byte_identical": 53,
+      "p4_coverage": [
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/portfolio/__init__.py",
+          "line": 0.0,
+          "branch": 1
+        },
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/portfolio/construct.py",
+          "line": 1.0,
+          "branch": 1.0
+        },
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/portfolio/contracts.py",
+          "line": 0.9899665551839465,
+          "branch": 0.9794520547945206
+        },
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/portfolio/research_input.py",
+          "line": 0.963963963963964,
+          "branch": 0.9090909090909091
+        },
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/portfolio/service.py",
+          "line": 0.9894736842105263,
+          "branch": 0.9444444444444444
+        },
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/portfolio/weights.py",
+          "line": 1.0,
+          "branch": 1.0
+        },
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/risk/__init__.py",
+          "line": 0.0,
+          "branch": 1
+        },
+        {
+          "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda/venv/lib/python3.13/site-packages/aqrp/risk/checks.py",
+          "line": 0.9904761904761905,
+          "branch": 0.9722222222222222
+        }
+      ],
+      "snapshot_manifests": [
+        {
+          "path": "dataset/19b87d19-e3f4-431e-b802-f59d7121191e/manifest.json",
+          "hash": "9deaefee4af9afad4817909adafae62e7b67b019f4e9ad054cdad29f13ceac58"
+        },
+        {
+          "path": "factor-dataset/5cbdfd89-4c6e-4257-956e-2559b52982dd/manifest.json",
+          "hash": "7e7d5d5beed961c2c29c150152a72c1ca7afbbb26112af1894efbf7451ff0e9d"
+        },
+        {
+          "path": "reproduction/dataset/a26fbcc5-49fe-40b2-937e-1a7598a4baee/manifest.json",
+          "hash": "31323e41665c15f2bf48b22baa7ade526aed208aa9349dee4183c351dfb5917b"
+        },
+        {
+          "path": "research/inputs/dataset/a91b7028-f481-4c94-bc99-ac58fe576c12/manifest.json",
+          "hash": "0dfe32deba1b3a75bce7625731649035b5d8fd071aa381b339d5efd9edafe7ba"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/b2c5c4c5-850c-4d75-b6e8-0dedb9949099/manifest.json",
+          "hash": "f8ce5b17bcdddb92234c384aca80006193d7d77f38c403245f62c99c05097c24"
+        }
+      ],
+      "terminal_experiment_manifests": [
+        {
+          "path": "portfolio/formal-gate/70fa06e0-e76d-4ed8-8578-7486bca9822e/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/216a06c3-1457-4155-8c57-1c1613efd9e5/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/38e4446d-c24b-4e55-bcdc-05d907c4c0df/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/8fd37be4-19db-44dc-97d9-4735b98350d4/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/9861ad1a-453c-4977-bfcb-b7769df232c6/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/b90fab24-ce50-47ca-9d57-af91a71bfe4b/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/dba1bc6b-ab4d-44f7-8059-f8ca9d27aa51/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "research/replacement-runs/e6814fb5-ba1e-42cb-a698-22e58104f7ef/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 4
+        },
+        {
+          "path": "research/runs/2913d0bb-4e14-4692-b1ce-30d0e03235fb/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 9
+        },
+        {
+          "path": "research/runs/a0b25932-1a65-4b1e-b141-ef98abb364e3/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 8
+        }
+      ],
+      "factor_manifests": [
+        {
+          "path": "factor-runs/081e6db3-e8e2-4ae1-93d3-29506f0eaf5a/manifest.json",
+          "logical_hash": "5d72857ab1ab8b87b43b237d40147ce458000cc1376614b748a836392c6e6a57"
+        },
+        {
+          "path": "factor-runs/8fcaf5d5-e77a-4876-b1a6-0620e8565ab7/manifest.json",
+          "logical_hash": "0fb109f4e9c05cc21599a95489ccdba396241f0975cbdc7f5ed5a35a77cf43e6"
+        },
+        {
+          "path": "factor-runs/faf9cd12-ee6c-4b8f-a7a7-d1b755e13b3b/manifest.json",
+          "logical_hash": "1766f44cea01cbc5f268c15f26db45c6aa1ee93886daa5a7ec07c332a8b4c431"
+        }
+      ],
+      "six_portfolio_cases_independently_recomputed": true,
+      "original_three_refs_values_verified": true,
+      "environment": {
+        "run_id": "aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda",
+        "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+        "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "ImageOS": "ubuntu24",
+        "ImageVersion": "20261018.339.1",
+        "code_commit": "354c931ef05d8d16237efac5826ae47302175f4f",
+        "dirty": false,
+        "complete": true,
+        "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+        "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-3587e1b1-2c35-4165-96e8-22cd16047bda",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": "39778988451",
+        "github_run_attempt": "1",
+        "github_sha": "354c931ef05d8d16237efac5826ae47302175f4f",
+        "wheel_sha256": "1b9866bf7312e7feffb130f657963c83d202d3df740d3a6b98dd7f3e7cbdafb0"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "GPT-Work-local",
+      "executed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "official_head_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "source_tree": "1a087395191c251992446d7fe7a87f6cac24009b",
+      "junit_passed": 844,
+      "selection_hashes_verified": 250,
+      "zip_members": null,
+      "wheel_sha256": "f5013e99ddb0482ecd3ab4a443a03c5b8595421a4c77ada7768122c120ddadb5",
+      "wheel_modules_byte_identical": 53,
+      "p4_coverage": [
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/portfolio/__init__.py",
+          "line": 0.0,
+          "branch": 1
+        },
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/portfolio/construct.py",
+          "line": 1.0,
+          "branch": 1.0
+        },
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/portfolio/contracts.py",
+          "line": 0.9899665551839465,
+          "branch": 0.9794520547945206
+        },
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/portfolio/research_input.py",
+          "line": 0.963963963963964,
+          "branch": 0.9090909090909091
+        },
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/portfolio/service.py",
+          "line": 0.9894736842105263,
+          "branch": 0.9444444444444444
+        },
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/portfolio/weights.py",
+          "line": 1.0,
+          "branch": 1.0
+        },
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/risk/__init__.py",
+          "line": 0.0,
+          "branch": 1
+        },
+        {
+          "path": "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Lib/site-packages/aqrp/risk/checks.py",
+          "line": 0.9904761904761905,
+          "branch": 0.9722222222222222
+        }
+      ],
+      "snapshot_manifests": [
+        {
+          "path": "dataset/97dc5fa0-015b-463b-9c4e-61e3948275ea/manifest.json",
+          "hash": "029767968e2adb6b3fc1f5efad16c2360e5db030af587f080f261b0cb8266c07"
+        },
+        {
+          "path": "factor-dataset/332fd8c7-ef9a-414a-b074-b66460a7d744/manifest.json",
+          "hash": "df129ffd1bc3b8621f61bf71e358af33ddff4135841f5592a1c773e41ea7e5d3"
+        },
+        {
+          "path": "reproduction/dataset/cccf5c26-41fd-4029-a8fe-c8c64caea791/manifest.json",
+          "hash": "f8d62297ff9dba3dc7cecb8d2319b3ee4033073ea63cc67fb4f395ce9044744f"
+        },
+        {
+          "path": "research/inputs/dataset/7a7a8284-1a8c-42fa-b9d4-5fb60aa30686/manifest.json",
+          "hash": "971656e6313dc39596ca9dfb3ef1aad924cc3bf1911a7da26200b14af81b46d2"
+        },
+        {
+          "path": "research/replacement-inputs/dataset/d284d868-8da9-4acb-997f-e3f2e50c3320/manifest.json",
+          "hash": "5bf37826af702cfe066734d8c125793434c0e050ff666b454df8de4b424c6ea3"
+        }
+      ],
+      "terminal_experiment_manifests": [
+        {
+          "path": "portfolio/formal-gate/0b6be25f-1a30-4bef-aa3e-21b33c9e6161/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/3dd8f694-8200-4f4e-b9e1-ad9a60961b59/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/c1021565-7ba1-4a32-a12b-c52b3ce7228f/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/cac002d4-e60d-4b14-b2c4-bd8d81d024f6/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/eb448562-b78d-43a1-b341-02a23c4c1ef9/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/f25f3d45-641d-4ba5-b5f4-84d9886a563a/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 2
+        },
+        {
+          "path": "portfolio/runs/f32daf0f-eaa1-46ba-a006-f60786a0806d/manifest.json",
+          "status": "FAILED",
+          "event_records": 2
+        },
+        {
+          "path": "research/replacement-runs/421d0f07-188d-45d2-be34-98da78badec9/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 4
+        },
+        {
+          "path": "research/runs/32136edb-e9b1-4d4d-aabb-eeafb6bac285/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 9
+        },
+        {
+          "path": "research/runs/a3ed389c-bca4-4b13-88d7-e042565f3352/manifest.json",
+          "status": "SUCCEEDED",
+          "event_records": 8
+        }
+      ],
+      "factor_manifests": [
+        {
+          "path": "factor-runs/0a7e0ca2-da6e-47f6-8780-3a8ecea93752/manifest.json",
+          "logical_hash": "1766f44cea01cbc5f268c15f26db45c6aa1ee93886daa5a7ec07c332a8b4c431"
+        },
+        {
+          "path": "factor-runs/901c5bfd-0f06-4dd9-be56-6b841d933e2d/manifest.json",
+          "logical_hash": "0fb109f4e9c05cc21599a95489ccdba396241f0975cbdc7f5ed5a35a77cf43e6"
+        },
+        {
+          "path": "factor-runs/a566a111-dd9f-4902-8ada-292929c6e8c4/manifest.json",
+          "logical_hash": "5d72857ab1ab8b87b43b237d40147ce458000cc1376614b748a836392c6e6a57"
+        }
+      ],
+      "six_portfolio_cases_independently_recomputed": true,
+      "original_three_refs_values_verified": true,
+      "environment": {
+        "run_id": "aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa",
+        "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+        "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+        "os": "Windows-11-10.0.26300-SP0",
+        "ImageOS": null,
+        "ImageVersion": null,
+        "code_commit": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+        "dirty": false,
+        "complete": true,
+        "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p4-g2-recheck-3c87579",
+        "run_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa",
+        "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "github_run_id": null,
+        "github_run_attempt": null,
+        "github_sha": null,
+        "wheel_sha256": "f5013e99ddb0482ecd3ab4a443a03c5b8595421a4c77ada7768122c120ddadb5"
+      },
+      "result": "PASS"
+    }
+  ],
+  "note": "Ubuntu actions was executed by GitHub runner, raw bytes independently verified here on Windows; not a GPT Work Linux execution."
+}

@@ -1,0 +1,556 @@
+{
+  "executor": "GPT Work independent installed-wheel mathematics",
+  "reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "script_sha256": "8838c9153ca914ad257849a2c7b26c468f15a8ad2e5c1dab7bf683ada60056c3",
+  "checks": [
+    {
+      "name": "HAC-0-0-mean",
+      "actual": 0.0,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-0-S",
+      "actual": 1.0,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-0-variance",
+      "actual": 0.25,
+      "expected": "1/4",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-1-mean",
+      "actual": 0.0,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-1-S",
+      "actual": 0.25,
+      "expected": "1/4",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-1-variance",
+      "actual": 0.0625,
+      "expected": "1/16",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-2-mean",
+      "actual": 0.0,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-2-S",
+      "actual": 0.33333333333333337,
+      "expected": "1/3",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-2-variance",
+      "actual": 0.08333333333333334,
+      "expected": "1/12",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-3-mean",
+      "actual": 0.0,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-3-S",
+      "actual": 0.25,
+      "expected": "1/4",
+      "pass_": true
+    },
+    {
+      "name": "HAC-0-3-variance",
+      "actual": 0.0625,
+      "expected": "1/16",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-0-mean",
+      "actual": 1.6,
+      "expected": "8/5",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-0-S",
+      "actual": 4.24,
+      "expected": "106/25",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-0-variance",
+      "actual": 0.8480000000000001,
+      "expected": "106/125",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-1-mean",
+      "actual": 1.6,
+      "expected": "8/5",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-1-S",
+      "actual": 1.6480000000000006,
+      "expected": "206/125",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-1-variance",
+      "actual": 0.3296000000000001,
+      "expected": "206/625",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-2-mean",
+      "actual": 1.6,
+      "expected": "8/5",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-2-S",
+      "actual": 0.8480000000000003,
+      "expected": "106/125",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-2-variance",
+      "actual": 0.16960000000000006,
+      "expected": "106/625",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-3-mean",
+      "actual": 1.6,
+      "expected": "8/5",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-3-S",
+      "actual": 0.7200000000000006,
+      "expected": "18/25",
+      "pass_": true
+    },
+    {
+      "name": "HAC-1-3-variance",
+      "actual": 0.14400000000000013,
+      "expected": "18/125",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-0-mean",
+      "actual": 0.06000000000000001,
+      "expected": "3/50",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-0-S",
+      "actual": 0.05840000000000001,
+      "expected": "73/1250",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-0-variance",
+      "actual": 0.011680000000000001,
+      "expected": "73/6250",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-1-mean",
+      "actual": 0.06000000000000001,
+      "expected": "3/50",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-1-S",
+      "actual": 0.014080000000000002,
+      "expected": "44/3125",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-1-variance",
+      "actual": 0.0028160000000000004,
+      "expected": "44/15625",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-2-mean",
+      "actual": 0.06000000000000001,
+      "expected": "3/50",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-2-S",
+      "actual": 0.011413333333333331,
+      "expected": "107/9375",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-2-variance",
+      "actual": 0.0022826666666666664,
+      "expected": "107/46875",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-3-mean",
+      "actual": 0.06000000000000001,
+      "expected": "3/50",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-3-S",
+      "actual": 0.0092,
+      "expected": "23/2500",
+      "pass_": true
+    },
+    {
+      "name": "HAC-2-3-variance",
+      "actual": 0.00184,
+      "expected": "23/12500",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-0",
+      "actual": 0.06,
+      "expected": "3/50",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-1",
+      "actual": 0.03,
+      "expected": "3/100",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-2",
+      "actual": 0.06,
+      "expected": "3/50",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-0",
+      "actual": 0.07333333333333332,
+      "expected": "11/150",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-1",
+      "actual": 0.05499999999999999,
+      "expected": "11/200",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-2",
+      "actual": 0.07333333333333332,
+      "expected": "11/150",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-0",
+      "actual": 0.04,
+      "expected": "1/25",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-1",
+      "actual": 0.03,
+      "expected": "3/100",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 25), Fraction(1, 100), Fraction(3, 100)]-2",
+      "actual": 0.04,
+      "expected": "1/25",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-0",
+      "actual": 0.04,
+      "expected": "1/25",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-1",
+      "actual": 1,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-2",
+      "actual": 0.08,
+      "expected": "2/25",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-3",
+      "actual": 0.04,
+      "expected": "1/25",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-0",
+      "actual": 0.04166666666666667,
+      "expected": "1/24",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-1",
+      "actual": 1.0,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-2",
+      "actual": 0.11111111111111112,
+      "expected": "1/9",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-3",
+      "actual": 0.04166666666666667,
+      "expected": "1/24",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-0",
+      "actual": 0.02,
+      "expected": "1/50",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-1",
+      "actual": 1.0,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-2",
+      "actual": 0.05333333333333334,
+      "expected": "4/75",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 100), None, Fraction(1, 25), Fraction(1, 100)]-3",
+      "actual": 0.02,
+      "expected": "1/50",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-0",
+      "actual": 1,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-1",
+      "actual": 0.0,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-2",
+      "actual": 1,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "holm-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-3",
+      "actual": 1,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-0",
+      "actual": 1.0,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-1",
+      "actual": 0.0,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-2",
+      "actual": 1.0,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "by-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-3",
+      "actual": 1.0,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-0",
+      "actual": 1.0,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-1",
+      "actual": 0.0,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-2",
+      "actual": 0.6666666666666666,
+      "expected": "2/3",
+      "pass_": true
+    },
+    {
+      "name": "bh-[Fraction(1, 1), Fraction(0, 1), Fraction(1, 2), Fraction(1, 3)]-3",
+      "actual": 0.6666666666666666,
+      "expected": "2/3",
+      "pass_": true
+    },
+    {
+      "name": "OLS-beta-0",
+      "actual": 1.4166666666666674,
+      "expected": "17/12",
+      "pass_": true
+    },
+    {
+      "name": "OLS-beta-1",
+      "actual": 1.125,
+      "expected": "9/8",
+      "pass_": true
+    },
+    {
+      "name": "OLS-beta-2",
+      "actual": -2.125,
+      "expected": "-17/8",
+      "pass_": true
+    },
+    {
+      "name": "OLS-residual-0",
+      "actual": -0.4166666666666674,
+      "expected": "-5/12",
+      "pass_": true
+    },
+    {
+      "name": "OLS-residual-1",
+      "actual": 0.5833333333333326,
+      "expected": "7/12",
+      "pass_": true
+    },
+    {
+      "name": "OLS-residual-2",
+      "actual": -1.6666666666666674,
+      "expected": "-5/3",
+      "pass_": true
+    },
+    {
+      "name": "OLS-residual-3",
+      "actual": 1.3333333333333321,
+      "expected": "4/3",
+      "pass_": true
+    },
+    {
+      "name": "OLS-residual-4",
+      "actual": 2.083333333333332,
+      "expected": "25/12",
+      "pass_": true
+    },
+    {
+      "name": "OLS-residual-5",
+      "actual": -1.9166666666666679,
+      "expected": "-23/12",
+      "pass_": true
+    },
+    {
+      "name": "OLS-orthogonal-0",
+      "actual": -5.773159728050814e-15,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "OLS-orthogonal-1",
+      "actual": -1.6431300764452317e-14,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "OLS-orthogonal-2",
+      "actual": -3.1086244689504383e-15,
+      "expected": "0",
+      "pass_": true
+    },
+    {
+      "name": "CORRELATION-rank=False",
+      "actual": 0.5652173913043478,
+      "expected": "0.56521739130434782608695652173913043478260869565217391304347826086956521739130435",
+      "pass_": true
+    },
+    {
+      "name": "CORRELATION-rank=True",
+      "actual": 0.05263157894736843,
+      "expected": "0.052631578947368421052631578947368421052631578947368421052631578947368421052631579",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-31",
+      "actual": 1,
+      "expected": "1",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-32",
+      "actual": 2,
+      "expected": "2",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-242",
+      "actual": 2,
+      "expected": "2",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-243",
+      "actual": 3,
+      "expected": "3",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-1023",
+      "actual": 3,
+      "expected": "3",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-1024",
+      "actual": 4,
+      "expected": "4",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-3124",
+      "actual": 4,
+      "expected": "4",
+      "pass_": true
+    },
+    {
+      "name": "FIFTHROOT-3125",
+      "actual": 5,
+      "expected": "5",
+      "pass_": true
+    }
+  ],
+  "passed": 91,
+  "failed": 0,
+  "finite_sample_inference_approved": false
+}

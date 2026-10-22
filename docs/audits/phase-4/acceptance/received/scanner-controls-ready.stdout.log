@@ -1,0 +1,27 @@
+{
+  "executor": "GPT Work independently recomputed public cache key and executed pinned scanner controls",
+  "reviewed_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
+  "scanner_version": "8.30.1",
+  "scanner_executable_sha256": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c",
+  "configuration_sha256": "73dbfe9e8ddd221da5ffd18a3cfa467ea8435dfa57b1ce4f28159eb6c5bab928",
+  "verified_public_cache_digest": "69266f2ffa606b5e7b3f052cb193dcf9de2e8c0b70a71467217e8b848332c554",
+  "script_sha256": "97d1e9ee47e31bc8e3a647e76135c9a8d8f1aaa0e45e51520f6e81e00043ef83",
+  "real_credentials_used": false
+}
+[
+  {
+    "case": "exact_event",
+    "exit_code": 0,
+    "pass_": true
+  },
+  {
+    "case": "same_digest_elsewhere",
+    "exit_code": 1,
+    "pass_": true
+  },
+  {
+    "case": "changed_line_at_exact_path",
+    "exit_code": 1,
+    "pass_": true
+  }
+]

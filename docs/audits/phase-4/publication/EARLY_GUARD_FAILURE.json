@@ -1,0 +1,7 @@
+{
+  "attempt": "Initial SDK launcher invoked while local fast-forward checkout had not completed",
+  "result": "SHA guard failed before tools/ci.py started; no SDK tests executed in this attempt",
+  "original_output": "AssertionError at run_sdk.py line7 (head mismatch)",
+  "corrective_action": "Waited for checkout completion, then ran unchanged guarded launcher; successful actual command/raw outputs archived separately",
+  "not_product_failure_reclassified": true
+}

@@ -1,0 +1,1736 @@
+{
+  "actual_executor": "GPT Work supplemental reviewer",
+  "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+  "utc": "2026-10-22T13:46:40.547063+00:00",
+  "independent_reference": "independent_reference.py has no AQRP imports",
+  "full_public_service_cases": 174,
+  "matching": 174,
+  "mismatches": [],
+  "negative_controls": [
+    {
+      "case": "securities.event_time",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "9dff7b98-1893-4294-b1b8-4711ddf91d33"
+    },
+    {
+      "case": "securities.available_at",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "66569189-5a0f-4c90-9a65-ec149ddec0af"
+    },
+    {
+      "case": "securities.as_of",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "cc07bcbb-6e77-4ea5-81c8-6bc9f0205bbf"
+    },
+    {
+      "case": "prices.event_time",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "134534e3-cf32-485c-99b0-aeeef772702a"
+    },
+    {
+      "case": "prices.available_at",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "ca041dca-0338-4057-b90c-527adc2e47f2"
+    },
+    {
+      "case": "prices.as_of",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "e4afdc2c-5ad7-4d93-8c00-ce8f185859ac"
+    },
+    {
+      "case": "status.event_time",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "2d3cad26-11b0-44f0-aab0-75f007e2cb4c"
+    },
+    {
+      "case": "status.available_at",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "26b13e36-71e1-4d87-b18d-d7354151ae60"
+    },
+    {
+      "case": "status.as_of",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "9939c10c-a9f5-4209-a41b-705653b74ca1"
+    },
+    {
+      "case": "exposures.event_time",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "0cd32791-10c8-4208-9a61-0e86eda70822"
+    },
+    {
+      "case": "exposures.available_at",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "d224d9fd-a9ce-4744-9b1f-148b4954e24b"
+    },
+    {
+      "case": "exposures.as_of",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "18c8c272-1740-4ee8-bcc9-587a771e41b4"
+    },
+    {
+      "case": "permissions.event_time",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "bf72c6db-c92a-4537-b340-6d0e56c7609c"
+    },
+    {
+      "case": "permissions.available_at",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "78087f13-9842-4475-8bda-3371fce68503"
+    },
+    {
+      "case": "permissions.as_of",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "32c890d1-1a83-4e71-ae77-ca48921fc8a3"
+    },
+    {
+      "case": "account.event_time",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "20c7e8a5-ff50-4cab-9898-385e36e35420"
+    },
+    {
+      "case": "account.available_at",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "a14a6214-34d2-4493-8540-e70ff8d6ecc8"
+    },
+    {
+      "case": "account.as_of",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "cb21f1ce-c2a7-4924-9441-05c77c4e932e"
+    },
+    {
+      "case": "scores.event_time",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "8cf56e3e-4b9d-4cd7-8e74-45b614497b76"
+    },
+    {
+      "case": "scores.available_at",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "ae3797f6-177e-42fa-94db-1cd177e3b3b1"
+    },
+    {
+      "case": "scores.as_of",
+      "reason": [
+        "PIT_CLOCK_VIOLATION"
+      ],
+      "run_id": "d7c3c50e-ae77-4ff3-99f3-a72fa8446711"
+    },
+    {
+      "case": "candidate-bytes",
+      "reason": "CANDIDATE_TAMPERED"
+    },
+    {
+      "case": "request-hash",
+      "reason": "CANDIDATE_REQUEST_MISMATCH"
+    }
+  ],
+  "records": [
+    {
+      "case": "frozen-base",
+      "run_id": "c86b863f-c995-447c-a3e8-668842ab81db",
+      "request_hash": "7e09c0267d38b061e3581255742160900827b4786f64b910b085e34051c92a74",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "frozen-x01",
+      "run_id": "979757cd-173e-4441-94d3-e9c0d6402d5c",
+      "request_hash": "5707ab3198672c176f5ad49327b2930441b6995439219ed8698053432a9bff26",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "frozen-x03",
+      "run_id": "5a5bcaa0-7505-4e16-a210-144b25376c4a",
+      "request_hash": "c3fe98992d59bdc36580708033c56fb32beab12aa8dcad0658a9ffcdba69a28e",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "frozen-x04",
+      "run_id": "f8fa7ddf-34d5-422c-9b3b-216f231d78f2",
+      "request_hash": "7996bdbeda99a85a062100998de7fed51524c16f4181cf6abff3e2957db2f93a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "frozen-odd_hold",
+      "run_id": "4cb37077-b7ff-4cdf-b5dc-d98daf5abb01",
+      "request_hash": "c837ee8c5f6b4764d9b9c0e77bd5ed68de35c6210481df3d4126317249f22287",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "frozen-short_close",
+      "run_id": "ea67ea91-4632-47b1-b4a8-d679eb249ddc",
+      "request_hash": "3998fb882a67d74ae8c901b50bc8dce23476295372a7148e6908d03281e7f8e9",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-000",
+      "run_id": "5b7a905e-3587-4f73-b714-73521b287467",
+      "request_hash": "2f10f61078ec41a3da44cb1fc961aae13d2252f252f56ba523da64b6c3878576",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-001",
+      "run_id": "13d083fe-2c59-464e-bcb4-2a55d0de5597",
+      "request_hash": "c3585a8371cdba142443962ab0f6da06e843e72dfd57f0304ba825ef8c05531a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-002",
+      "run_id": "d6642c9f-921b-4c35-9b9b-06beabba8bbf",
+      "request_hash": "547600618ad7aacdb4e619afca440a90da0018bc1fbd93d74bbcf49bbb86707d",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-003",
+      "run_id": "e3bc67f8-2949-4afe-becf-77cf8f826c2e",
+      "request_hash": "94a31e9434c3d4cbbc06dc01809ff583bc0fb6497558101584a2f07deaba2637",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-004",
+      "run_id": "333d6161-e6f7-4380-9850-a008d023d1fb",
+      "request_hash": "06c37685029694fdebb108ceb554b9b44a3a83458e2cac42a3fca4ed7ad80f7a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-005",
+      "run_id": "24297170-04b2-4df6-9fc8-82b185e3eb13",
+      "request_hash": "e1bafdd3959418d8c2dce12e434ec6dbf0c7e0254696bdfdac6e9d2b9ed0c0b0",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-006",
+      "run_id": "ad3741d3-1743-4a61-bf3f-ed9ca223ac9c",
+      "request_hash": "82a7df8c51bc69b7fbfc41f5c199e1dd97ae6766a00b62e18ea3f78379e0136d",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-007",
+      "run_id": "036ebfcb-7373-473c-bfde-66a604674fb7",
+      "request_hash": "f5fd47ffffca5fa094321c0c81920867c0bb37e11fb399cf2d87250adc3db0f7",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-008",
+      "run_id": "8cc58110-f356-4a94-9949-6dc35e5430bf",
+      "request_hash": "0906cf6e2d3a8e9e41b11a3a8d320c5d047519a0d12351a4b59a1b6dec7725d2",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-009",
+      "run_id": "2afcf741-e62f-480a-b27c-900b777d2acf",
+      "request_hash": "92d0d88b1de75962a3a7e9768c34c436ce255283a0de05f98247a79b1ca73cfe",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-010",
+      "run_id": "a0eed06a-af9a-44f8-adb8-83f63967c0a8",
+      "request_hash": "c44b801bb7d9e9f46076f170924ef34ae557e14b4403059156777c108e335565",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-011",
+      "run_id": "482cba23-6356-428c-b6a0-a5fca7b7e465",
+      "request_hash": "13310d1e8edf05bf3a17b6df84b2368f087db48ef68c36855e5a16e9fb2d6206",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-012",
+      "run_id": "1742971f-f7b6-4ff5-bc8b-fae73f7407af",
+      "request_hash": "d39d7f930265fb3947426c126c1b6faef39b1f846e57747adae119d75bf910fd",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-013",
+      "run_id": "bd8d8bb0-fca1-453c-9345-750fcbb7f4e0",
+      "request_hash": "e02de58b5cd33fb78a7f84e5e70d077d3c770d9fdf31042200240379c5970385",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-014",
+      "run_id": "7bbeb09d-2041-4079-92aa-7afc2aae6f4a",
+      "request_hash": "a609ddba2cff28feab6d299e253d713c2b05850e2d4d2ef6b35e01f60be310c8",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-015",
+      "run_id": "eacc940f-ce7b-4cec-81cf-3ce7909a6371",
+      "request_hash": "f8d77fdf4fefc6668c017e949f8e72aae890ea3b2e9f9f6d1a60bcc8c577ce0c",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-016",
+      "run_id": "c8e10705-c315-493d-80de-7cb3ec529936",
+      "request_hash": "846718e6af21702c74c5022480cbf05e0396d31a1fb5e49a394ae0bae343936b",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-017",
+      "run_id": "41ed90af-fe2d-4178-830d-46c833144b8b",
+      "request_hash": "4398c4c1fe3391aa4ef73fff58b5cb7f92fa1d3fac4eb0fcb29dd2d10b19201a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-018",
+      "run_id": "1c2b7c12-5597-41ec-9fa5-7cceee531dda",
+      "request_hash": "f171d1bab1fe445bc2a8621174a1d82ed1ab982058ca4f2509584ff050514f2a",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-019",
+      "run_id": "93daa1ec-7c50-4e21-8ea1-167121182caf",
+      "request_hash": "bc7b0ae02b30ff370dab61b69c2a2859c65921fa6d511f862d539bf040fd9473",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-020",
+      "run_id": "ae1d4e78-ffad-4a0a-843a-d9b5abd9d53d",
+      "request_hash": "f56634ce4b0eef7be451f0906781abaaad4d685b74ed9cba8a9847db0108f39b",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-021",
+      "run_id": "a8578121-c017-4fd4-8ef3-f1c03df44ba5",
+      "request_hash": "bff480558c083b5b767babaf4514b0fc778af8b8f2be5613c65ac3cd751f5bf6",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-022",
+      "run_id": "8fec3409-d74a-4aec-84eb-e5e7c600cc06",
+      "request_hash": "0d5e2f2fd80121ee48b39ff87ecaad57c40c221af82d9227b36471f5966a9fa4",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-023",
+      "run_id": "8fa32e94-f400-4806-ae9d-1d3e6dec18aa",
+      "request_hash": "c6d2725d5812326fc122baf170b34785b53739a654c3ab22c84a4ac8cd40251b",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-024",
+      "run_id": "854b16c5-9155-414f-b3ca-c4b2ec95da57",
+      "request_hash": "611ec4128bff875fa13a32e0665ea52df539dc31cc6db6aa11e99c0478c8c249",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-025",
+      "run_id": "2ea8f3af-efcc-414d-aba2-bd94400857f3",
+      "request_hash": "706162dcd767141da6dbf44318335b54e3c959149cc6e1f7ed906be0b0bb2978",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-026",
+      "run_id": "35cb92ed-5ba7-4418-963f-a4b951a52215",
+      "request_hash": "03c5df3a090de041e1c6283a53fe6b6a6eda1d192e76749370d3cdf160841b8c",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-027",
+      "run_id": "579c136a-2bcd-4b3b-9be8-ce2bc891ffc9",
+      "request_hash": "3ec6da14d9364e7432aee97375c31e7c3ac5ef5d35546ebad0698295159e438f",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-028",
+      "run_id": "adc341af-6938-4f82-8540-90c59a7b89ec",
+      "request_hash": "69c66eda99aab296eccc3d169fc2094b1bf56ca2097e27792821ce2fcd87c274",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-029",
+      "run_id": "ffdf1689-bfe7-4ae1-88a1-1ab43bca288d",
+      "request_hash": "85d9f673fa21550fe01e8a9f5d39e5d0241f20fceab404cea08a3c558c5b5c6e",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-030",
+      "run_id": "1429f51c-0e78-4c7a-ad78-bc52e1da3dde",
+      "request_hash": "a97489f17620403151731f6cf2d8ec58bef5d2161efa69218c20803c76216d2e",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-031",
+      "run_id": "3fdcea84-186e-4f4b-a419-e61dfc74bcf3",
+      "request_hash": "56a0ab2ebd060656993df128e131bf2fe9556d06678ecd7e92146f9407d7e1ae",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-032",
+      "run_id": "87339ca2-3ea5-4688-95f9-2d1b73ff06c7",
+      "request_hash": "62af1d503144a4a2363969de4b2929ab967d3fdea239ff6531692120ddc5bdd3",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-033",
+      "run_id": "5c0b051f-988a-412b-b64c-ba502404e1ee",
+      "request_hash": "2f73d0c61725ac92707e6c0506ec07e7873aa157af2d73ccfc14310a8dd73b45",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-034",
+      "run_id": "66c3aa8c-91db-4a6f-ad04-e47923b536be",
+      "request_hash": "3dcef9d3838b26e71198f0794bb9ff3ed2059aa126aefac45f67c10323b5b5c8",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-035",
+      "run_id": "3ae8d217-f0f8-4876-bdad-53a6bbbfd8af",
+      "request_hash": "9df0bb185c501b4d0b15b58f43d468f9d390dcd522ccadac8ec16b1f90f22fc8",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-036",
+      "run_id": "9eed57fa-643b-4a1f-bfb9-f8974afb240a",
+      "request_hash": "1e9acd5f5aed546fb12759873117579ee2f62d645a1f2bcd66dc46f83674ed9f",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-037",
+      "run_id": "6f6afdad-9cbf-4022-84f8-597c105536e7",
+      "request_hash": "be088d86e5fd1b7ecd5fc0c5162ef11b4d2026fbe077e14cb66fdfacc6cb848f",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-038",
+      "run_id": "376d89ce-5fb7-4eac-a2c2-8ab29e30d553",
+      "request_hash": "63017d3c873f20bdf28771a3f44c014109d4bf4f6405e5f8f35e530ccc4b54fd",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-039",
+      "run_id": "07e4062b-e7ef-4432-aaf4-a8d285b5048d",
+      "request_hash": "d5214cb01d8e3274dbca51a59d2afa04920022c01022f738269b0652ca4ea9af",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-040",
+      "run_id": "a914e36b-8dad-452e-932b-a3bcc7233e59",
+      "request_hash": "0e5e6438f79c8157f1fade5310bd1341ab308c0f9d8fd0f228c00aa3621a01ae",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-041",
+      "run_id": "1d566255-1b3e-4657-a62f-55de71b9b04f",
+      "request_hash": "dbf00b334da9c17f0fc6b42550bdc4e0f9eaef71dfedbcb927bc87c5520c89f6",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-042",
+      "run_id": "1aabeb9d-d204-4719-ab0c-0c637573e990",
+      "request_hash": "762573d6f6e1aa2b4222092d461677bebf26286ef247711acdc9880ae0beace3",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-043",
+      "run_id": "ac5dbded-be64-46cb-8dae-78e9daa3d201",
+      "request_hash": "cc39e042a66b43ab7213fa86d2c198d662691d2ed8850a4a638a8b2d873eda7c",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-044",
+      "run_id": "3a6e84ef-9a44-41e5-bf1e-f9cbba79b66f",
+      "request_hash": "00b52875c212e67cc757fb72aa9fe10aeccdbcc2b3c9932c633a122526d50949",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-045",
+      "run_id": "c4f4641d-40d4-4ce4-9244-ae08d6733aca",
+      "request_hash": "a7cd7fbfa2a8b23956873d42b0a6ef39c34f272199eff8c54b3c2db432dc3076",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-046",
+      "run_id": "a28d9cd9-a3db-44d1-9df0-4c79277fdfdd",
+      "request_hash": "a54e5db6c96ea5c023586922d82f093380c20b81510f13652211832890f073b0",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-047",
+      "run_id": "7618aaf1-7a53-43ea-ae1a-d9f4cb0fab3d",
+      "request_hash": "47aaa66fbaf720e79f6111cfa396f42aa85d679f7391a2c0123b877a7701da6c",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-048",
+      "run_id": "d4edcf3a-7840-4aa9-879d-4eaa2ae61faa",
+      "request_hash": "c96934e1a1f7a71a76852a0f5911c257c6cb3c622d6fe6d219cb6862bb597d16",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-049",
+      "run_id": "e298e4e6-77cb-4afe-9403-141da488af9b",
+      "request_hash": "1bbf337c30a40f00ecb4a26ebee65fa07fbc579da1c3ad044b1082b799acc30b",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-050",
+      "run_id": "f0cc41e4-b7a0-4aa4-b919-780e18493efd",
+      "request_hash": "dee5f463dccae5f3119a5897c9f06d3c93e84362e445164e18045f415df884bc",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-051",
+      "run_id": "1f64ca8c-4dd8-4899-aca9-e3a30b1ff82a",
+      "request_hash": "5f85369bb16691896e5cec6eec59e1178f6fd5c14dd5b186cdd7947fc44c843e",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-052",
+      "run_id": "5caaf2d7-0fce-4c75-8b6e-f82adc10b589",
+      "request_hash": "86ba2e20a4039ba48b0439c3dedf4c66737b288220541e8b589a30668577e11c",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-053",
+      "run_id": "20c123b6-57d9-4866-9e74-702d64be377c",
+      "request_hash": "86683dc7e16bf4ed4c615a062c6f37a24e5ae5b70156cb51c45e202edbdc349d",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-054",
+      "run_id": "afe673e6-ad40-41cd-8f5e-006ef2ec1a56",
+      "request_hash": "f2e04fe198fc0f3d224b6a3079bf3d64bcd5e92ed50779b62eb38f7051ad32f3",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-055",
+      "run_id": "a9a24b2a-dc48-483d-918c-0916d94e5e39",
+      "request_hash": "c32de2d4f62b54e7777165a2a3596e2e788b19e35af8ec6ad4607b25b0b278be",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-056",
+      "run_id": "6e9528f1-a7cb-4b84-b20c-28456e41e988",
+      "request_hash": "7fe22ec9bbdbf0bb407e7b65241f551953d23272c079f631599a9d475461a4fa",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-057",
+      "run_id": "a1e76e1e-3e6e-4982-8352-1b38b9aa6d8f",
+      "request_hash": "95dce4b23a641f467cd7efc99980960141b8ff23add088169ee22e9c0ba8a27d",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-058",
+      "run_id": "1d1a664f-f674-485c-bc14-4a212fbed67a",
+      "request_hash": "7c369b9d675480db640bb8b8b2c0a18065154a27bf08b9efe4809b723cd9da3b",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-059",
+      "run_id": "c90b4087-7d0f-4f13-99d5-a43b567bc0dc",
+      "request_hash": "0953531ff5c5924a867a920df9cf82e972fb80163505b3160ff4c6df549a12b9",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-060",
+      "run_id": "4ddb2aa7-b918-48ae-8a03-cd9b80ae9765",
+      "request_hash": "a238b6263ce60880e7fe9e371eea4302659ad06ad2ada538d6140161e92029bd",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-061",
+      "run_id": "295ec533-a2e6-4d69-83b5-0acba4ecafa8",
+      "request_hash": "95e7c0efe34851f58b6c35740060cd9e2101e1038539d13b883e43930936205e",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-062",
+      "run_id": "ab79d643-ee93-4da2-a702-fa6666dcaff8",
+      "request_hash": "89a3a968027cd9a1a81a034dca49f4fdaacffae58ab7b1a961c91b0d38bfad8a",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-063",
+      "run_id": "88391f50-db99-4302-beb1-46a3328bcca2",
+      "request_hash": "d7d130338234efb30340ce9aa67c2df39666bb7e8bce566a693e01b476c3516f",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-064",
+      "run_id": "bda5ba49-9dd9-40d8-9a06-d3ce82cfb62c",
+      "request_hash": "f7bf51edc715e0d6fd509bd689c967a3d0d3edafce1e22a2594517330dd7b084",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-065",
+      "run_id": "a88a075a-baac-481e-bd1f-4d27af6cdf64",
+      "request_hash": "ef009645733893b594c9ac04050434305d488ca22497be4d65622330c6f7e237",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-066",
+      "run_id": "390874cc-6679-4d10-851b-8fe7b1715293",
+      "request_hash": "760e7fba7f8738164502da1869d40e7611ca27ceefbeb42d1803b099390ed8da",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-067",
+      "run_id": "e93d3c87-4b06-402d-8bff-03ee30df07f9",
+      "request_hash": "40386938f7d8579a74e5437017de4a9149d4284912aa4f7f9ff384a05c97af76",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-068",
+      "run_id": "ef297aee-18af-412e-9513-1f2946d56f48",
+      "request_hash": "58e0805a0b4af3ee70153e26ca38a81eaa7cdf76e14b6d44f98f01c020991e28",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-069",
+      "run_id": "b6e18e84-2c3f-4968-8673-a4a0591257ee",
+      "request_hash": "6a526c4b2d5a50e3df4a3f96375c17687d9a09503dfc0333dabf73164b4e7f4f",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-070",
+      "run_id": "8178de57-3648-4e26-a12a-3de92f29b545",
+      "request_hash": "26bec04463f685cb267720091c84d24eea8730f8cf668e0fd6f2e9d5d077ce9b",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-071",
+      "run_id": "e48620ae-4851-4a6c-bf43-b98c09474625",
+      "request_hash": "56dac17c24216107b1f854ace2f89b5d9c0665d779dc525b7f9d3dd444760b90",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-072",
+      "run_id": "3992c62a-3f75-4b4c-ad54-eddc28ded23d",
+      "request_hash": "87b19008b6a9bb082f4cce618f783144c39c7022e56849d4ae349fbd3d47fa11",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-073",
+      "run_id": "ada719bb-4f36-4d34-bb3b-6dfee2549c00",
+      "request_hash": "49f872aa70c1758baeff2d5c34e20ca30b4139cbce23f7aeeb57db9eb30e0629",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-074",
+      "run_id": "af2ad975-f4ff-48d1-afd2-1df290ed04f7",
+      "request_hash": "507c818aa8f366cb872bda747228998de2e4593069badebf17d03ba447b48cce",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-075",
+      "run_id": "ab94e326-f3b9-458b-802b-277e97bcd9c4",
+      "request_hash": "d2b236ca6a4edb28751edcf6d4967da041ca1e7856e7437e6b9907d72f90832e",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-076",
+      "run_id": "06d1faf4-ec92-4953-8490-97229fc29f93",
+      "request_hash": "a7ead2f9bf9d84bdae5045d5ad0140e1068d4584d0b81691880a03cc437d2ab4",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-077",
+      "run_id": "b363d43e-a4ac-4a2a-b473-8b7157bd17a4",
+      "request_hash": "dfcb985088dcf7db8bcbae0d0783e0180958af02a449a793297c15b73c8b8043",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-078",
+      "run_id": "3f5e4da6-b77b-424c-9b89-7a367d963a4a",
+      "request_hash": "e10630effd43967199d492b21ea6f9c7bb1a7c9b034adf289e24e4be2d0a8e66",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-079",
+      "run_id": "f73815bc-1a5d-45b3-9ec5-ad4a4e685b1d",
+      "request_hash": "237b80a9aa06b94a36b2bce31407a48cd944aa1634fb51eab47bd5159c9243a7",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-080",
+      "run_id": "bcc516f0-19bd-417e-8511-07910c21869c",
+      "request_hash": "f0791ddaf810e4b5d2b8ffbcdaeddd8b5dfe69c913fda227819ba4ba73d95855",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-081",
+      "run_id": "ad3d755d-b837-4284-bfc2-a91528bed216",
+      "request_hash": "512ae942dbb3f1221876496e4cef549f33fc9aff340f9b85e7083bc84f36b842",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-082",
+      "run_id": "3713e4ff-e7b1-4973-89fb-315b2c5f77ba",
+      "request_hash": "2f36085de9809f87ed2f436007a2d96bc8d53c62e31995e5e84d4e0d0e4ba9c3",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-083",
+      "run_id": "0df27d75-2301-47af-a45d-ca4271faf082",
+      "request_hash": "5230ebe3ab1ba92fb502fa1170e539e9faa2ddabde5aa28401e1b0410e3cdfbe",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-084",
+      "run_id": "b12d0220-dcd9-49e8-9b79-505761172192",
+      "request_hash": "8f8aeeae625826b649e81482e946f13f3101b95432553a24461b1c2850397c0b",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-085",
+      "run_id": "cfe6b266-05e9-4cb6-bf43-87e3bad8554c",
+      "request_hash": "24fcd4bece3d4bf5d4b73956638eed74fedf36c53d1f244f3210626bd68d252f",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-086",
+      "run_id": "d135adaf-12a8-44eb-979b-ea75271752b2",
+      "request_hash": "032bc505c3483baa75635643379fe0473f62112dde91f93f5e7868ddb8b57fde",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-087",
+      "run_id": "3d19e979-158c-4ab4-b5bd-338abf3a8443",
+      "request_hash": "af1983b60de98307156391af9b5b5d5fb6ab6c646005aeac701cb7ca9d2bb6a1",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-088",
+      "run_id": "89f1830c-d04a-4fae-816b-ce065121772c",
+      "request_hash": "bb886161f0fd12e01fc0d6203d746e90cac39b97f7a07a648f1206324790e471",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-089",
+      "run_id": "b2c96f54-d57f-4c6a-9509-b7139fcddd4f",
+      "request_hash": "b040842b2523ce9b5cd1fa9ed80994b3b6335597b709187fc149c4720097d661",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-090",
+      "run_id": "af0c2f88-f107-4665-9109-fa0be17839c7",
+      "request_hash": "b844299d79c05e9fc20291eff558cfddb33c1ddd5404526ee8c7de95a550b398",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-091",
+      "run_id": "98a6b75a-aa7e-4387-8977-ce2553535b8c",
+      "request_hash": "ee69a62503330da40682b4384db6405c8cbd4f33ce1326a9b9c0e3585ca294de",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-092",
+      "run_id": "57bd0aaf-879b-476b-9aac-9c6d6c210c2d",
+      "request_hash": "205711bfcea85d263d12296447c1f4ec5f416459cb7666c3091ee1bfbe549945",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-093",
+      "run_id": "c468a9dd-f814-4c80-991d-1d5a8322785b",
+      "request_hash": "35573a3e10bca74e2c4fd27fc89f49e6efad366922c816051ad40f5e4574559a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-094",
+      "run_id": "4197771c-6ef3-4847-8d70-fe8d4d9a64a4",
+      "request_hash": "0088fe743cf74b222fafde0bc391e207a4b6003329846d32d3c8e4e7f8706231",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-095",
+      "run_id": "ae0c2822-1a62-438b-8f04-56e0924d6444",
+      "request_hash": "7efb19b300a57c7f94d05f3a05905a43ad5906976d691ff5b50ddb59817ab456",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-096",
+      "run_id": "f3be3551-fb8d-4167-a9f6-dee618aa8598",
+      "request_hash": "5c0f234302695e784834c85540314b7e6d35b165277e2ea424ccb0bd2e3cd128",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-097",
+      "run_id": "7b93d337-7527-488b-85a7-150c9a8e1e28",
+      "request_hash": "52710433569262b906bf20fa268fbb116c9020326a376a266b38a3918bb94917",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-098",
+      "run_id": "b72a70c6-8f3e-44d8-93a9-34ee27a774a4",
+      "request_hash": "71b0bb8268e2f596042852373215659e53c321f43eaf3aa1aa07e110b2644de1",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-099",
+      "run_id": "6c2b59b2-8f5f-4313-b5f9-8b760e661f76",
+      "request_hash": "f13f2d121b0212132c66134487d757c41c97fb609f661590705216bd5fc3979f",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-100",
+      "run_id": "633b6090-0edd-406e-a15b-35abbee57e3f",
+      "request_hash": "e637a88dbb140480d998d3f88d531d8ded8658a4df67c1c923d3188a81f40880",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-101",
+      "run_id": "0e9ad8bc-1df9-4808-8802-4ad04f9bf9ee",
+      "request_hash": "5889ca387b2405d5f1f303c91dbc11236f4d4ec779139b0bbdeb7f6104d9dafb",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-102",
+      "run_id": "74766a14-bfb7-4a9c-945e-7cd837115dd6",
+      "request_hash": "7401a8e8089cd8c8004f6d3db6f5df9c1b0d6561b194e2362b69feed95faf129",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-103",
+      "run_id": "549dd0a7-6f68-48be-807a-633967f3e6a9",
+      "request_hash": "2c28dd9bec313ed2349ae4d6b799d271fd662c7642ed740a3d3f96563dc70bcc",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-104",
+      "run_id": "84625825-286c-476f-85bc-71f0eb9a28f8",
+      "request_hash": "1cab25d174c367ac701d6b5f9d0e20ba2fb9df6184d70e8bb3648653fecec591",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-105",
+      "run_id": "2050ed45-23de-405f-bdb2-a4e527d68f4d",
+      "request_hash": "011b2c4f14d7a2518d15ff1c033359ca2ea492d21921338c28bc7f5c235e2d19",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-106",
+      "run_id": "f492e73c-5a4b-4acd-a9ce-9b0b66d092f5",
+      "request_hash": "132d6428bb086efb4accaa2495f1206e077ed69cf4a60d5965931107683bcf0a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-107",
+      "run_id": "556ed5f3-7d32-4f11-b6e3-d850b26e63b7",
+      "request_hash": "0bf5f857e3564688084b723f1141044e313acee3de90aa8365924240ce788292",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-108",
+      "run_id": "413b7770-6125-47fa-9df1-a53dcade8991",
+      "request_hash": "2738a10f2acd9f0ddb30535b5731d33935bf7cc7cd6ca13cf9bb3f676e8078e3",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-109",
+      "run_id": "bc091a0a-8c3f-4e18-bd26-aef5cedc9bdc",
+      "request_hash": "beb0cca420904e070ecfebcecc524fd3b270be128a874babd02001cf4d6571cd",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-110",
+      "run_id": "e0e83206-8b37-4417-813e-98988015f410",
+      "request_hash": "558d0504c7226321d0d42f0c4b424c1e95373514f9767633fddabc882defe9d5",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-111",
+      "run_id": "979a59e8-a1b8-4779-b02a-f93281f7b5b7",
+      "request_hash": "db091f43418803ff88372c19e57d426399b5d1601af7e9d7abe6076fdc18dbbd",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-112",
+      "run_id": "3f3bc92d-75cb-4796-bd46-75f0b12832b0",
+      "request_hash": "d5a70bb4477bc0be303e3ede53e6b2ce638a115136e2a17c39bc65b594da0e51",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-113",
+      "run_id": "b4162f8b-8595-4198-b6aa-398acb1c5728",
+      "request_hash": "afec408cdbac547d48ffa0cd164b7accab8612e7c683124d22035a8950f89b46",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-114",
+      "run_id": "78c24e45-a50f-443e-b575-031bd21e4b1f",
+      "request_hash": "85cfbabac6cd56491bf46279f0b74fea9ce58c8c8ec0cb26ed3bfa645e122b94",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-115",
+      "run_id": "96893a7c-9df2-4d1c-9edb-e4ef468cbb66",
+      "request_hash": "5f8cce3645aa1c89a9a46c3c7af9c5019fada133cabb6f78f5cf41fe1c5813af",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-116",
+      "run_id": "90c63964-68eb-4532-a3ce-8a0e9ba2d2c0",
+      "request_hash": "10c45859609c4b79957d4be3ba1e8e1eb742135516f76c9dae3cffa535242a7a",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-117",
+      "run_id": "eb4659a5-5a67-4fe7-8b0b-38c66835a020",
+      "request_hash": "6f4007e2e09c4d38f9df4c796b9b8c0823eae84764de908e16ef1b0a9da6c5a2",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-118",
+      "run_id": "0433ae61-995f-4bc0-9db7-af87e6771afe",
+      "request_hash": "554082f41a4aabb87422cb9255a976b566400d53058033d75fec6c029349afeb",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-119",
+      "run_id": "7e54f954-eb08-40e2-833a-ddb79b763d24",
+      "request_hash": "ec17080bbc56b5fa0963ac63865e01b27909fb004c2a04e7abddfde665afcf5d",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-120",
+      "run_id": "771b7701-900e-4361-8997-9ff56d26ae24",
+      "request_hash": "b79e32cf6105dad17f55139bbe749629d36d6a0f6d27801d0d3320e1932a0c96",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-121",
+      "run_id": "f52770ff-282a-41a5-bd2c-62c623e5e00c",
+      "request_hash": "1759ce73785ac0f8024d44ff61cb5dcdc9af10b82ead4f161467ff41b62efceb",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-122",
+      "run_id": "f8d191c1-16fd-47b6-91ac-4abe1cb54f95",
+      "request_hash": "e2fbd76d36f0cfb532122e4a1601d577caaa539124bd46109c8410cb8cb80bee",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-123",
+      "run_id": "a91c9923-5ae1-4cf3-a509-794df645f246",
+      "request_hash": "5e5b85b3a60dad8b281b3b8ba954b8fb86877512d5d91f035b7f2e53bce86a6e",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-124",
+      "run_id": "549df71e-bab0-4860-8afe-3fcb5021a4f6",
+      "request_hash": "e3fbb6b7dd3a234cd0f04c58f84ffcee32b1d27c999db3460c0e5dff26fa164a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-125",
+      "run_id": "8899e29a-3cf6-4121-8db2-38f7510c83a4",
+      "request_hash": "f9f292b820d68887fd233d8ad242cc5cb6cf0301d5f9c36d2446270fcd19356a",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-126",
+      "run_id": "de7017f1-3fee-4850-aab6-3298ebc06858",
+      "request_hash": "798090d4f589aae18a9f84a015a7ff6ed10d8a69dba30d180fb31e55b59f46fa",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-127",
+      "run_id": "b17efe3f-26ce-4c3d-b7ec-33a6038d909d",
+      "request_hash": "d9d251506e4a16817683dfee4658389687a4506699c7ce1810f99af7732b8264",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-128",
+      "run_id": "99dbef66-c09c-4939-a022-26f8fdb83684",
+      "request_hash": "ee146f4ae1895d4d1d01b46c2e9a969536bff7f90f6ff1b5838c2df6cc3d29cd",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-129",
+      "run_id": "b072fca1-d73b-42c2-b9be-e512e851b531",
+      "request_hash": "67d84476b89a801e7a7698e0d4ace17562c52bbfd407d6518565cc6d01a8d492",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-130",
+      "run_id": "87dba76e-3f39-41c6-97d1-1b851ae561e8",
+      "request_hash": "26c9f12ad8897eb7bbaf9ad641f86204b1acfb950e132a19d0c966c121776da5",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-131",
+      "run_id": "19f716a1-b5f0-454c-b95a-3cf20b4bbede",
+      "request_hash": "80bef7ce35ca97ab4e93cd6701488d1631d158e7e214604b6d9cf082aed09bfa",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-132",
+      "run_id": "83e8dd7b-d87e-4d40-ad50-1039a9e44cd8",
+      "request_hash": "2c58aa90febcd4d35819c6107edf35cf93321ecc0af05c9d298dc096db0abd83",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-133",
+      "run_id": "34adc278-51e7-41cc-ba9c-4b013e425e55",
+      "request_hash": "29fdd604026e315b47bc9c2c9c964cc418a1a0e7ba7dca04d282972aa5f4fa3b",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-134",
+      "run_id": "b818f6e1-3468-4520-b79f-971892c1735b",
+      "request_hash": "b82900a2c25f9abd9b6b013911e1d50766c5c478bbd7225020e1061a8b362062",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-135",
+      "run_id": "94baf574-8e14-461e-a5ee-7fa71bb7298f",
+      "request_hash": "3e2c66e1e88748beed51d82ab78777c88d93619dcfbde8e04b3fdd550a51f286",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-136",
+      "run_id": "29b277c3-546f-4b04-bb40-b4a52deb5a82",
+      "request_hash": "d55b488b901b38e9308293f6a7dd6d6f199cc9ea40e7f0368598266acefd8028",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-137",
+      "run_id": "5c87ce7a-8991-4fba-a3f2-1b2806fe38b9",
+      "request_hash": "bb26524dc311391c25cced2d5f0127ebc5ab5bf819bc29ecbb50aabaf223742e",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-138",
+      "run_id": "1ca79fa8-d3eb-4884-bcd0-cd78c3f44f95",
+      "request_hash": "2009c625cc40857637528ac0c5e9a06cc076be5659d6be05a3a480cdee6970d0",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-139",
+      "run_id": "9c8d407e-2bff-4d79-bbff-3b1f92a73bb0",
+      "request_hash": "89eee5488379ccc12e22c94e8f565114ef3c1097fc21e7a98e724b147b3d6b08",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-140",
+      "run_id": "2f64fc74-bc31-4c16-9bf8-f1f7bbde0f7d",
+      "request_hash": "6f198f61604801a70ca293b668806a9472985334e1724eed0f2f160d2396dc88",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-141",
+      "run_id": "1eedb68b-8f56-4a5a-a301-7fbb34360397",
+      "request_hash": "efe6e16f29747a79edb6bad7a9a46faa3b094baa98ab5f8a6642746f721795c0",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-142",
+      "run_id": "88faa4ed-3ac0-441a-aa5b-abc7177a5e53",
+      "request_hash": "3011508d3efccb41bee803e3f39d88e949ff571234ead357657a45b268308bd0",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-143",
+      "run_id": "b08d71c5-7bec-4078-8829-535bd2c301ec",
+      "request_hash": "dca280b917563c490a85cf14d5e9e84c43763af11a8b8a5c17dca0390306abee",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-144",
+      "run_id": "5d2d8df6-3c05-43e0-9beb-d7115a0c9c15",
+      "request_hash": "c37fa35233f40ed5a3ccbfacc6709858fd1f264d9a8d015fd62db6b20faba91d",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-145",
+      "run_id": "bc973d2b-06ff-46c7-aa0a-a96237051587",
+      "request_hash": "8e618e0bf116c3f7442637ade844ee73d77a25e00d07e385ee0c8b26525c5d51",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-146",
+      "run_id": "eb71f7cd-26d2-4d6c-803e-74cb9f0d7208",
+      "request_hash": "3319b4c5545a240a64c6384be2a55846f0834fda3952cd2eeaf3fdbfbbfb1ab4",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-147",
+      "run_id": "a4980bc9-6f4d-4471-b62e-2348244eb993",
+      "request_hash": "393e225a8cc6f0f1d9be06c46f364874e93adc3505e780e932eaff3d26654a5f",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-148",
+      "run_id": "521d511b-7c86-4682-b347-a095a1bfb005",
+      "request_hash": "39ce506df2a2bb6116117b937a9cd4a61894fae7dc02e35a2d8d6d84075c3a23",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-149",
+      "run_id": "72c286fb-22dc-479d-8420-76fa5ba1a051",
+      "request_hash": "0b53abe1b0fd7c873c17e5a61edcaee05c48efea77e136f3e010b056d92fce9b",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-150",
+      "run_id": "9a670f0c-27a6-4a80-9cdb-615d9b227282",
+      "request_hash": "7dea89b6f363caedf4ad2612902094d80ef010be1cc765e8f0b369f77284cc44",
+      "expected_status": "INFEASIBLE",
+      "actual_status": "INFEASIBLE",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-151",
+      "run_id": "f14e5da4-5fb7-4ce6-8d47-bc545c2a7741",
+      "request_hash": "813670b10e06db4e12eb679d42fc8efcbc7a7acd8c2347f96ddba649ac8bd2e0",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-152",
+      "run_id": "e370c1f2-859c-4b13-adbf-a05c3d9e7b27",
+      "request_hash": "15117e31e51ad5979b1fb802478a0bb59e2c494d62774020a71ab5b6217a0744",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-153",
+      "run_id": "aefa0216-a559-4da2-ac7e-027efe7941c1",
+      "request_hash": "8c8bcab656a726ffbafac5c43dd2d64baa251c7045643623a9253888ee0349b3",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-154",
+      "run_id": "46627d47-b909-4b12-961f-f7025396fbde",
+      "request_hash": "a85b00c9b7a6b3cb32a16a2e33dde1797c168bf7e737c4e62d80e1393b949dea",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-155",
+      "run_id": "fdf7fa2d-9c18-4470-88f2-b2a21a8fde34",
+      "request_hash": "a427b715317cc4c5461b760a148d93e9762cf7be34c2fed31d346a2b9ce6fcff",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-156",
+      "run_id": "6dd703ce-019a-43cf-ba59-571ca998848c",
+      "request_hash": "2bcbbe401f7fb04930bb20a099a44d243b4624727945ee04770711463432eef3",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-157",
+      "run_id": "da19c74e-08b3-4aea-bc41-e38b315ad246",
+      "request_hash": "25a8028c2392b43866b35cf1b01b26fbbd11a11d69247b4c5863891fe6d5a4dc",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-158",
+      "run_id": "31c556e7-53ac-4298-ba7f-dc49eeccbd7e",
+      "request_hash": "4b7a3b79a6e8d535f1662875f568e49b658eef6dc6a14f7b99b44eb0ce7e8f29",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "grid-159",
+      "run_id": "257024dc-8d83-4152-9426-2aa2488cb3c9",
+      "request_hash": "abaeb9ab9073ccbfa3e0df4b244a464d1d4604ad6d62bddd8361400338c10f7d",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G03-ties",
+      "run_id": "123619c3-a9a2-4d89-b928-870f430a3586",
+      "request_hash": "a1c7ec4282934e7a3982ee605b7d20ccc332984ef17a4a9fd811d3904e118a22",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G04-negative",
+      "run_id": "be7faf70-72fa-4359-b86e-1cac979b64b6",
+      "request_hash": "5b54cfdc1af92a755f4c5665f8c186ee94b91f89798ad6ea1b3b7364f179e787",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G05-negative-equal",
+      "run_id": "9c75dd41-31dd-4d27-984d-ec14c132d094",
+      "request_hash": "2c0f2101dc9d31db8578b18556692e34da737f64f94697cf41d27159279f60c0",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G07-two-legs",
+      "run_id": "5d4ce545-c1b9-4d33-8b50-af3c557708fd",
+      "request_hash": "b07c99524e3f365a3d85de4d73d6f99f497ec2e016c7dc6db2c0d8a68b25ac8a",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G08-budget-funding",
+      "run_id": "0b1b8c5a-3850-49f8-bed3-3fce2e60d2d5",
+      "request_hash": "58f4e5f4c425e4d82fa96b12353274b97cf3091e1d04b5a299e0520c9d5818db",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G10-round-long",
+      "run_id": "4dde2fc6-db3c-40df-bfd0-cfa7ed6445c4",
+      "request_hash": "d9ea5995f761ba52958bd97b9d3a41e7d6959b411c6b26ac799ee44f122f9265",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G11-round-short",
+      "run_id": "4065600c-389d-4b4d-9dd3-74795aa505c2",
+      "request_hash": "7428e4b919f3aa47c7a72ddf20164406cf0f9129c4c822d1e607fc475024a470",
+      "expected_status": "SUCCEEDED",
+      "actual_status": "SUCCEEDED",
+      "match": true,
+      "errors": []
+    },
+    {
+      "case": "G14-net-post",
+      "run_id": "1795cedb-a5b3-4c7e-86fb-c71988193b3e",
+      "request_hash": "d2ed715ddaaabbcc08e73480c493b7d4207acd26872090ed485b9f3fe453804d",
+      "expected_status": "REJECTED",
+      "actual_status": "REJECTED",
+      "match": true,
+      "errors": []
+    }
+  ],
+  "installed_aqrp": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+  "formal_Test_executed": false
+}

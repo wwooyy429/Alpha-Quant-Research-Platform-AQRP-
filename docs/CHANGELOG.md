@@ -1,5 +1,10 @@
 # 变更记录
 
+## 2026-10-22 · Phase4 基线发布
+
+2026-10-22 最新决定：Phase4 七项受限工程范围已由用户 ACCEPTED，GPT Work 固定 3c8757949b0fd5c97953b06a74ebc2d0e56676e4 G2 PASS、两项发现 CLOSED。PR #6 普通合并 d3993d07e5df1b5c2f7acd30cb628226f7b1fc09，整树与已审头一致；合并后干净 SDK844、原20/四及数学91通过。发布登记与 phase4-baseline/v0.4.0/main 原子同点并核验后 RELEASED，详 docs/audits/phase-4/BASELINE.md。既有延期及正式失败关闭不变，PR #7 不集成；只授权 Phase5 G1 计划，不授权 P5 业务、部署、实盘、正式 Test 或金融批准。以下旧状态保留历史。
+
+
 2026-10-22 Phase4 G2：GPT Work 对固定 18439f31536295aea42e57e566d07cce345a35cf 判 BLOCKED / REQUEST CHANGES（001 High、002 Medium OPEN）。本轮修复候选 0.4.1.dev1、53 模块，精确输出及实际字节复核、真实 P3 父快照绑定；待干净 SDK、双 OS 原始证据及新固定 SHA 独立复核。G1 PLAN PASS 不变，七项范围不扩展；不自行关闭发现或验收。详 docs/audits/phase-4/g2-18439f3/REVIEW_PACKAGE.md。真实隔离、正式 Test、金融批准、完整旧宿主限制保留；无合并、标签、部署、实盘或 P5。以下旧状态为历史。
 
 ## 2026-10-22 · Phase4受限工程实现完成，待GPT Work G2

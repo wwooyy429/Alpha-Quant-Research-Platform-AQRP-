@@ -1,0 +1,231 @@
+{
+  "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+  "utc": "2026-10-22T13:51:51.982598+00:00",
+  "actual_executor": "GPT Work supplemental reviewer",
+  "checkout": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p4-g2-recheck-3c87579",
+  "HEAD": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+  "porcelain": [],
+  "tree": "1a087395191c251992446d7fe7a87f6cac24009b",
+  "base": "0a57dccb5618ba08cd3572d6d6b78fec963a3041",
+  "review_runtime": {
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "GIL": true
+  },
+  "commands": {
+    "scope": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "verify_scope_repair.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:43:10.568386+00:00",
+      "ended_utc": "2026-10-22T13:43:53.195998+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "clean-sdk": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-I",
+        "tools/ci.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/p4-g2-recheck-3c87579",
+      "started_utc": "2026-10-22T13:40:15.384892+00:00",
+      "ended_utc": "2026-10-22T13:48:08.196424+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "independent-repairs": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent/independent_repairs.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:46:00.374384+00:00",
+      "ended_utc": "2026-10-22T13:46:17.658263+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "independent-behavior": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent/verify_behavior.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:46:10.637798+00:00",
+      "ended_utc": "2026-10-22T13:46:40.665092+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "original-four": {
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pytest",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\test_review_regressions.py",
+        "-q",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original-four-cache",
+        "--basetemp",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original-four-temp",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original-four.xml"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:46:35.521432+00:00",
+      "ended_utc": "2026-10-22T13:46:42.398028+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "original20": {
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pytest",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original-probes\\test_work_p1_regressions.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original-probes\\test_round2_regressions.py",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original-probes\\test_work_p2_regressions.py",
+        "-q",
+        "-o",
+        "cache_dir=C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original20-cache",
+        "--basetemp",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original20-temp",
+        "--junitxml=C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\original20.xml"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:46:42.677626+00:00",
+      "ended_utc": "2026-10-22T13:46:47.313445+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "original91": {
+      "argv": [
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\gwp4r\\aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa\\venv\\Scripts\\python.exe",
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent\\independent_implementation_math.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:46:47.609988+00:00",
+      "ended_utc": "2026-10-22T13:46:48.094898+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "scanner-controls-ready": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Scripts/python.exe",
+        "-I",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent/verify_scanner_controls.py",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/p4-g2-recheck-3c87579"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:49:08.187486+00:00",
+      "ended_utc": "2026-10-22T13:49:11.047736+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "evidence-official": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent/verify_evidence.py",
+        "--official-only"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:48:15.903795+00:00",
+      "ended_utc": "2026-10-22T13:48:18.796360+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "evidence-local": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent/verify_evidence.py",
+        "--local-only"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:49:11.820908+00:00",
+      "ended_utc": "2026-10-22T13:49:23.683198+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "developer-archive": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "verify_developer_archive.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:43:20.980861+00:00",
+      "ended_utc": "2026-10-22T13:43:25.819499+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "old-replay": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runs/gwp4r/aqrp-e869c1ed-f4d3-49b5-997a-d234c2e232aa/venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent/verify_old_replay.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:50:13.825078+00:00",
+      "ended_utc": "2026-10-22T13:50:15.101307+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    },
+    "official-download": {
+      "argv": [
+        "C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe",
+        "-X",
+        "utf8",
+        "download_official.py"
+      ],
+      "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/work-p4-g2-recheck-3c87579-independent",
+      "started_utc": "2026-10-22T13:41:42.152155+00:00",
+      "ended_utc": "2026-10-22T13:41:57.876757+00:00",
+      "exit_code": 0,
+      "fixed_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+      "actual_executor": "GPT Work supplemental reviewer"
+    }
+  },
+  "preparation_commands": [
+    "git clone --no-checkout --shared C:/Users/11638/AppData/Local/AQRP/reviews/p4-g2-18439f3-review C:/Users/11638/AppData/Local/AQRP/reviews/p4-g2-recheck-3c87579",
+    "git config core.longpaths true",
+    "git remote set-url origin https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-",
+    "git fetch --no-tags origin 3c8757949b0fd5c97953b06a74ebc2d0e56676e4 354c931ef05d8d16237efac5826ae47302175f4f",
+    "git -c core.autocrlf=false checkout --detach 3c8757949b0fd5c97953b06a74ebc2d0e56676e4"
+  ],
+  "limits": [
+    "No account/ACL/service/deployment changes",
+    "No real formal Test or financial approval",
+    "No merge/tag/P5",
+    "Ubuntu ran on GitHub, independently verified raw evidence on Windows"
+  ],
+  "original_source_unchanged": true
+}

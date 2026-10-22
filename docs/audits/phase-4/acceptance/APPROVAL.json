@@ -1,0 +1,21 @@
+{
+  "schema": "phase4-human-acceptance/1",
+  "recorded_at_utc": "2026-10-22T15:35:21.806167+00:00",
+  "source": "Explicit human message in current task; original independent report received separately",
+  "approved_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
+  "PR": 6,
+  "scope_requirements": [
+    "PORT-001",
+    "PORT-002",
+    "PORT-003",
+    "RISK-001",
+    "RISK-002",
+    "RISK-003",
+    "RISK-004"
+  ],
+  "exact_user_message": "我已验收 Phase4 七项受限工程范围。GPT Work 对固定 SHA `3c8757949b0fd5c97953b06a74ebc2d0e56676e4` 的结论为 G2 PASS，两项原发现均已确认关闭。现授权开发 Codex：核对 PR #6 的锁定版本与已审版本一致后合并，按仓库既定命名建立 Phase4 基线并发布标签，保留旧标签不移动；不得夹带未审查修改，若版本漂移须先提交新固定 SHA 复核。合并后执行干净 SDK 及既定回归，归档实际提交、环境、原始日志、工件和哈希，确认 main、基线与新标签指向同一验收提交。完成后仅启动 Phase5 的 G1 计划工作，提交需求映射、接口草案、数学口径、测试与证据计划及阶段依赖；通过计划 PR 描述的 `AQRP_FIXED_REVIEW_SHA` 锁定完整 40 位 SHA，交 GPT Work 独立预审，不开始 Phase5 业务实现。真实 Windows 隔离、正式 Test、金融批准及完整历史宿主复现的既有延期和验收边界继续保留，正式入口保持失败关闭；本次不授权部署、实盘、运行真实正式 Test 或授予金融批准，也不得将 Phase4 回归通过写成 Phase5 测试通过。",
+  "acceptance": "ACCEPTED_RESTRICTED_ENGINEERING",
+  "merge_and_new_tags_authorized": true,
+  "P5": "G1_PLANNING_ONLY",
+  "deployment_live_formal_Test_financial_approval_authorized": false
+}
