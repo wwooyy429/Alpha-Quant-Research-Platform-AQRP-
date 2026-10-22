@@ -1,5 +1,5 @@
 {
-  "current": "G2_TECHNICAL_PASS_WITH_CONDITIONS_HUMAN_ACCEPTANCE_PENDING",
+  "current": "ACCEPTED_RESTRICTED_ENGINEERING_SCOPE_RELEASE_ON_VERIFIED_TAGS",
   "reviewed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
   "g1": "PASS_UNCHANGED",
   "requirements": 26,
@@ -7,11 +7,11 @@
   "Competition Ready": 3,
   "developer_repair": "VALIDATED_578_SDK_EACH_OS_PLUS_20_4_91_3",
   "independent_implementation_review": "G2 TECHNICAL PASS WITH CONDITIONS",
-  "phase3_acceptance": "PENDING",
-  "release": "NOT_AUTHORIZED",
+  "phase3_acceptance": "ACCEPTED_RESTRICTED_ENGINEERING_SCOPE",
+  "release": "AUTHORIZED_RELEASED_WHEN_REMOTE_MAIN_TAGS_VERIFIED",
   "OS_isolation": "NOT_AUTHORIZED_NOT_DEPLOYED_NOT_VERIFIED",
   "financial_approval": "NONE",
-  "phase4": "NOT_AUTHORIZED",
+  "phase4": "PLAN_PRE_REVIEW_AUTHORIZED_ONLY",
   "business_sha": "1b4be236e888805f5c4e45357b158fcdb6058df0",
   "findings_closed": [
     "WORK-P3-IMPL-001",
@@ -21,9 +21,12 @@
   "new_blocking_code_findings": 0,
   "independent_evidence": "g2-9ac5db0/RECEIPT.json",
   "retained_conditions": [
-    "VALID-004: actual four-principal isolation/deployment and private sealed Test controls NOT VERIFIED; U-001 design-only, deployment not authorized",
-    "VALID-005: real process proof, formal statistical protocol, human financial standards and genuine independent Test NOT VERIFIED; no ResearchValidated/StrategyApproved",
-    "EXP-003: original wheel+lock+three Ref/66 files/three runs and declared projection verified; complete historical installer/host bytes NOT VERIFIED",
-    "Phase3 human acceptance PENDING; merge/tag/release/Phase4 not authorized"
-  ]
+    "VALID-004 real four-principal isolation and sealed Test deployment remain NOT VERIFIED and NOT AUTHORIZED",
+    "VALID-005 financial approval and genuine independent final Test remain NOT VERIFIED; approval stays NONE",
+    "EXP-003 acceptance limited to verified software packages, dependency locks, old factor versions and declared result replay; complete historical host byte identity remains NOT VERIFIED"
+  ],
+  "merge_commit": "70086a74a632c73a2769ec24901ec47babfa8976",
+  "approved_pr_head": "2a3400c66ebf46b49cb1e9a99e8df5239dc0bfba",
+  "human_approval": "publication/APPROVAL.json",
+  "baseline_register": "BASELINE.md"
 }

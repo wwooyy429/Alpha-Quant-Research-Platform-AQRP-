@@ -1,5 +1,12 @@
 # 变更记录
 
+## 2026-10-22 · Phase3 0.3.0受限工程验收与发布
+
+- 记录用户受限验收原话及三项延期/复现边界，PR #5普通merge保留已审固定SHA和完整历史。
+- 核验合并整tree及src/tests/tools/CI/锁一致；新干净SDK578、原20/四、独立参考脚本91重执行通过，环境/源码/数据/完整选择ZIP hash保留。
+- phase3-baseline/v0.3.0与main同点发布后生效；TEST_ONLY/NONE不提升金融批准，不移动旧标签。
+- 仅授权Phase4 G1计划预审；不部署、不实盘、不直接写P4业务或进入P5。
+
 2026-10-22 最新独立复核：**G2 TECHNICAL PASS WITH CONDITIONS / HUMAN ACCEPTANCE PENDING**。GPT Work已对固定9ac5db069287a6e4a095e25ae8c3cc8fa229cded确认001 High、002/003 Medium均CLOSED，无新增阻断代码问题；独立SDK578、原四/旧16+4/91数学/扫描3及双OS各578与原ZIP核验通过。原报告/关闭/26项覆盖/390件hash核验见docs/audits/phase-3/g2-9ac5db0/。真实隔离/正式Test/金融批准/完整历史宿主仍未验证；Phase3未人工验收/发布，无部署、合并、标签或P4。以下旧状态按其原轮次保留。
 
 

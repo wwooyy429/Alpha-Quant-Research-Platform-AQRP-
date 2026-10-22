@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "source": "Direct human instruction in current conversation",
+  "exact_user_message": "我同意按上述受限工程范围验收 Phase3：金融批准、真实隔离和正式 Test 延期，历史复现以已验证的软件包、依赖锁、旧因子版本和结果重放为准。请记录范围及影响，合并 PR #5 并发布基线，然后启动 Phase4 计划预审；不授权真实部署或实盘。",
+  "phase3_acceptance": "ACCEPTED_RESTRICTED_ENGINEERING_SCOPE",
+  "authorized_pr": 5,
+  "authorized_pr_head": "2a3400c66ebf46b49cb1e9a99e8df5239dc0bfba",
+  "independently_reviewed_sha": "9ac5db069287a6e4a095e25ae8c3cc8fa229cded",
+  "main_before_merge": "f26255fc40a3080bfa883ad64938f60036a14759",
+  "merge_authorized": true,
+  "baseline_release_authorized": true,
+  "phase4_authorized_scope": "PLAN_PRE_REVIEW_ONLY",
+  "real_deployment_authorized": false,
+  "live_trading_authorized": false,
+  "deferrals": [
+    "VALID-004 real four-principal isolation and sealed Test deployment remain NOT VERIFIED and NOT AUTHORIZED",
+    "VALID-005 financial approval and genuine independent final Test remain NOT VERIFIED; approval stays NONE",
+    "EXP-003 acceptance limited to verified software packages, dependency locks, old factor versions and declared result replay; complete historical host byte identity remains NOT VERIFIED"
+  ],
+  "release_tags": [
+    "phase3-baseline",
+    "v0.3.0"
+  ]
+}

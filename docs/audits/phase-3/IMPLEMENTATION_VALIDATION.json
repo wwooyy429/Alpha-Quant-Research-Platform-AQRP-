@@ -1,6 +1,6 @@
 {
   "schema": "phase3-validation/2",
-  "current": "G2_TECHNICAL_PASS_WITH_CONDITIONS_HUMAN_ACCEPTANCE_PENDING",
+  "current": "ACCEPTED_RESTRICTED_ENGINEERING_SCOPE_RELEASE_ON_VERIFIED_TAGS",
   "fixed_previous_review_sha": "5a5e093c2e9b39abe1332e49d1df40d20f9fd33f",
   "previous_verdict": "GPT_WORK_REQUEST_CHANGES",
   "current_bundle": "3cec8a9da49a49a93010d7fa6a2012dded25185e2cdca49144cf4d719d56876e",
@@ -34,10 +34,10 @@
   },
   "deployment": "NOT_AUTHORIZED_NOT_DEPLOYED_NOT_VERIFIED",
   "financial_approval": "NONE",
-  "accepted": false,
-  "merged": false,
-  "tagged": false,
-  "P4": false,
+  "accepted": true,
+  "merged": true,
+  "tagged": "Resolve phase3-baseline and v0.3.0 after atomic publication; receipt in PR5",
+  "P4": "PLAN_PRE_REVIEW_ONLY_AUTHORIZED",
   "business_execution_commit": "1b4be236e888805f5c4e45357b158fcdb6058df0",
   "developer_summary": {
     "old16_plus_4": 20,
@@ -49,5 +49,10 @@
   },
   "sdk_tests": 578,
   "ci_run_id": 39725429442,
-  "ci_each_os_tests": 578
+  "ci_each_os_tests": 578,
+  "acceptance_scope": "RESTRICTED_ENGINEERING_ONLY",
+  "merge_sha": "70086a74a632c73a2769ec24901ec47babfa8976",
+  "publication_validation": "publication/VALIDATION.json",
+  "human_approval": "publication/APPROVAL.json",
+  "independent_recheck_historical_conditions_preserved": true
 }

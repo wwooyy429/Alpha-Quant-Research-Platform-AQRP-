@@ -1,0 +1,35 @@
+{
+  "human_scope_acceptance": "我同意按上述受限工程范围验收 Phase3：金融批准、真实隔离和正式 Test 延期，历史复现以已验证的软件包、依赖锁、旧因子版本和结果重放为准。请记录范围及影响，合并 PR #5 并发布基线，然后启动 Phase4 计划预审；不授权真实部署或实盘。",
+  "scope": "Acceptance and release are RESTRICTED ENGINEERING ONLY",
+  "items": [
+    {
+      "requirements": [
+        "VALID-004"
+      ],
+      "status": "DEFERRED_NOT_VERIFIED_NOT_AUTHORIZED",
+      "capability": "Physical isolation and real deployment/sealed Test controls",
+      "impact": "No deployment or claim of independent OS isolation. Engineering logic remains fail closed."
+    },
+    {
+      "requirements": [
+        "VALID-005",
+        "VALID-008",
+        "FACTOR-009",
+        "EXP-004"
+      ],
+      "status": "DEFERRED_NOT_VERIFIED_FINANCIAL_APPROVAL_NONE",
+      "capability": "Formal independent Test, financial approval and formal statistical evidence",
+      "impact": "No ResearchValidated/StrategyApproved financial claims; P4 formal approved-score path remains gated. Explicit synthetic engineering path must be separately identified in P4 G1 design."
+    },
+    {
+      "requirements": [
+        "EXP-003"
+      ],
+      "status": "ACCEPTED_LIMITED_REPRODUCTION_SCOPE",
+      "capability": "Original software packages, dependency locks, old exact factor versions and declared result replay",
+      "impact": "Complete historical host/installer byte identity excluded from current acceptance requirement and remains NOT VERIFIED; preserve scope in future evidence."
+    }
+  ],
+  "does_not_authorize_P4_implementation_or_P5": true,
+  "real_accounts_orders_ACL_services_scheduler_changes_authorized": false
+}
