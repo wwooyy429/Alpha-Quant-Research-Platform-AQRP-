@@ -1,12 +1,12 @@
 {
   "scope": "Phase0文档结构与候选算式开发方自查；不是业务测试、CI或Gemini审计",
-  "started_at_utc": "2026-10-20T15:24:13.541006+00:00",
-  "finished_at_utc": "2026-10-20T15:24:14.716409+00:00",
-  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
-  "platform": "Windows-10-10.0.26300-SP0",
+  "started_at_utc": "2026-10-23T05:55:01.955809+00:00",
+  "finished_at_utc": "2026-10-23T05:55:02.808805+00:00",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
   "requirements": 106,
-  "checks_passed": 17,
-  "checks_failed": 0,
+  "checks_passed": 13,
+  "checks_failed": 2,
   "checks": [
     {
       "name": "unique_requirement_ids",
@@ -98,15 +98,353 @@
     },
     {
       "name": "local_markdown_links_resolve",
-      "result": "PASS",
-      "detail": []
+      "result": "FAIL",
+      "detail": [
+        [
+          "docs\\audits\\phase-3\\g1-d10\\GPT-Work-Phase3-G1-d10a55a-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-d10a55a/docs/audits/phase-3/DESIGN_DECISIONS.md:6"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-d10\\GPT-Work-Phase3-G1-d10a55a-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-d10a55a/docs/audits/phase-3/INTERFACE_DRAFT.md:12"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-d10\\GPT-Work-Phase3-G1-d10a55a-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-d10a55a/docs/audits/phase-3/REQUIREMENTS_TRACEABILITY.md:16"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-d10\\GPT-Work-Phase3-G1-d10a55a-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-d10a55a/docs/audits/phase-3/DESIGN_DECISIONS.md:10"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-d10\\GPT-Work-Phase3-G1-d10a55a-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-d10a55a/docs/audits/phase-3/STATISTICAL_CONVENTIONS.md:10"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/TEST_ISOLATION_PROFILE.md:5"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/DESIGN_DECISIONS.md:8"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/LABEL_ACTION_PROFILE.md:5"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/supplemental_cases.json:44"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/COMPOSITE_RESEARCH.md:3"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/TEST_PLAN.md:25"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/REPRODUCTION_PROFILE.md:3"
+        ],
+        [
+          "docs\\audits\\phase-3\\g1-e26\\GPT-Work-Phase3-G1-e26d4bb-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p3-e26d4bb/docs/audits/phase-3/HAC_INFERENCE_PROFILE.md:7"
+        ],
+        [
+          "docs\\audits\\phase-2\\recheck-c836\\raw\\GPT-Work-Phase2-c836295-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p2-c836295/src/aqrp/factors/contracts.py:251"
+        ],
+        [
+          "docs\\audits\\phase-2\\recheck-c836\\raw\\GPT-Work-Phase2-c836295-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p2-c836295/src/aqrp/factors/contracts.py:290"
+        ],
+        [
+          "docs\\audits\\phase-2\\recheck-c836\\raw\\GPT-Work-Phase2-c836295-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p2-c836295/src/aqrp/factors/engine.py:137"
+        ],
+        [
+          "docs\\audits\\phase-2\\recheck-c836\\raw\\GPT-Work-Phase2-c836295-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p2-c836295/src/aqrp/factors/contracts.py:270"
+        ],
+        [
+          "docs\\audits\\phase-2\\lineage-fix\\received\\raw\\GPT-Work-Phase2-c70727c-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p2-c70727c/src/aqrp/factors/engine.py:136"
+        ],
+        [
+          "docs\\audits\\phase-2\\lineage-fix\\received\\raw\\GPT-Work-Phase2-c70727c-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p2-c70727c/src/aqrp/factors/contracts.py:251"
+        ],
+        [
+          "docs\\audits\\phase-2\\lineage-fix\\received\\raw\\GPT-Work-Phase2-c70727c-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p2-c70727c/src/aqrp/factors/contracts.py:251"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\review-input\\GPT-Work-Phase1-Supplemental-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-18d51fb-20261021/source/src/aqrp/data/quality.py:142"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\review-input\\GPT-Work-Phase1-Supplemental-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-18d51fb-20261021/source/src/aqrp/data/actions.py:46"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\review-input\\GPT-Work-Phase1-Supplemental-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-18d51fb-20261021/source/src/aqrp/data/quality.py:138"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\review-input\\GPT-Work-Phase1-Supplemental-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-18d51fb-20261021/source/docs/audits/phase-1/gemini/verification-package-8bf189d/contents/aqrp_phase1_recheck_execution.py:60"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\review-input\\GPT-Work-Phase1-Supplemental-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-18d51fb-20261021/source/.github/workflows/ci.yml:32"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\round2\\review-input\\GPT-Work-Phase0-Phase1-Round2-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p01-round2-20261021/phase1/src/aqrp/data/quality.py:227"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\round2\\review-input\\GPT-Work-Phase0-Phase1-Round2-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p01-round2-20261021/phase1/src/aqrp/core/time.py:11"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\round2\\review-input\\GPT-Work-Phase0-Phase1-Round2-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p01-round2-20261021/phase1/src/aqrp/data/quality.py:210"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\round2\\review-input\\GPT-Work-Phase0-Phase1-Round2-Review.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p01-round2-20261021/phase1/src/aqrp/core/time.py:24"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\recheck-3ab93b3\\review-input\\GPT-Work-Phase1-3ab93b3-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-recheck-3ab93b3/source/src/aqrp/data/quality.py:267"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\recheck-3ab93b3\\review-input\\GPT-Work-Phase1-3ab93b3-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-recheck-3ab93b3/source/src/aqrp/core/time.py:11"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\recheck-3ab93b3\\review-input\\GPT-Work-Phase1-3ab93b3-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-recheck-3ab93b3/source/src/aqrp/data/quality.py:250"
+        ],
+        [
+          "docs\\audits\\phase-1\\repairs\\data-validation\\recheck-3ab93b3\\review-input\\GPT-Work-Phase1-3ab93b3-Recheck.md",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/work-p1-recheck-3ab93b3/source/src/aqrp/core/time.py:24"
+        ]
+      ]
     },
     {
       "name": "no_future_business_implementation",
-      "result": "PASS",
+      "result": "FAIL",
       "detail": {
-        "src_files": [],
-        "business_tests": []
+        "src_files": [
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/execution",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/performance",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/risk",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/contracts.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/engine.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/exact.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/ledger.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/provider.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/risk.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/synthetic.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/transactions.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/backtest/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/canonical.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/contracts.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/environment.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/errors.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/math.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/security",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/time.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/units.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/actions.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/exposures.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/pit.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/quality.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/query.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/schemas.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/snapshot.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/store.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/synthetic.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/execution/liquidity.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/execution/model.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/execution/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/ledger.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/replay_worker.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/reproduction.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/admission.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/builtins.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/contracts.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/engine.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/input.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/registry.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/reviewed_code.json",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/versions.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/performance/metrics.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/performance/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/construct.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/contracts.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/research_input.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/service.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/weights.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/numerics.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/pipeline.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/synthetic.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/risk/checks.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/risk/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/risk/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/backtest.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/backtest_cli.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/cli.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/research.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/approvals.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/evaluator.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/inference.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/labels.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/splits.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__pycache__/approvals.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__pycache__/evaluator.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__pycache__/inference.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__pycache__/labels.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__pycache__/splits.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/validation/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/__pycache__/cli.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/__pycache__/research.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/services/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/risk/__pycache__/checks.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/risk/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/__pycache__/numerics.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/__pycache__/pipeline.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/__pycache__/synthetic.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/research/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__pycache__/construct.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__pycache__/contracts.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__pycache__/research_input.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__pycache__/service.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__pycache__/weights.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/portfolio/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/admission.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/builtins.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/contracts.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/engine.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/input.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/registry.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/versions.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/factors/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/__pycache__/ledger.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/__pycache__/replay_worker.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/__pycache__/reproduction.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/experiments/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/actions.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/exposures.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/pit.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/quality.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/query.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/schemas.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/snapshot.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/store.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/synthetic.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/data/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/security/__init__.py",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/security/__pycache__",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/canonical.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/contracts.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/environment.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/errors.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/math.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/time.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/units.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/__pycache__/__init__.cpython-313.pyc",
+          "C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/checkouts/phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29/src/aqrp/core/security/__pycache__/__init__.cpython-313.pyc"
+        ],
+        "business_tests": [
+          "tests\\conftest.py",
+          "tests\\backtest\\test_atomic_risk.py",
+          "tests\\backtest\\test_boundaries.py",
+          "tests\\backtest\\test_engine_service.py",
+          "tests\\backtest\\test_exact_ledger.py",
+          "tests\\backtest\\test_failure_controls.py",
+          "tests\\backtest\\test_g2_bucket_reconciliation.py",
+          "tests\\backtest\\test_g2_committed_failure.py",
+          "tests\\backtest\\test_g2_fill_direction.py",
+          "tests\\backtest\\test_liquidity.py",
+          "tests\\backtest\\test_public_lifecycle.py",
+          "tests\\backtest\\test_recovery_publication.py",
+          "tests\\backtest\\__init__.py",
+          "tests\\data\\test_pit_query.py",
+          "tests\\data\\test_quality.py",
+          "tests\\data\\test_revision_integrity.py",
+          "tests\\data\\test_snapshot_actions.py",
+          "tests\\data\\test_time_units.py",
+          "tests\\data\\test_work_p1_round2.py",
+          "tests\\data\\test_work_p1_validation.py",
+          "tests\\environment\\test_installation.py",
+          "tests\\factors\\conftest.py",
+          "tests\\factors\\test_config_integrity.py",
+          "tests\\factors\\test_contracts_registry.py",
+          "tests\\factors\\test_input_security.py",
+          "tests\\factors\\test_lineage_controls.py",
+          "tests\\factors\\test_numerical.py",
+          "tests\\factors\\test_p1_patch_integration.py",
+          "tests\\factors\\test_pipeline_controls.py",
+          "tests\\factors\\test_price_volume.py",
+          "tests\\integration\\test_phase1_pipeline.py",
+          "tests\\integration\\test_phase5_pipeline.py",
+          "tests\\portfolio\\helpers.py",
+          "tests\\portfolio\\test_construct.py",
+          "tests\\portfolio\\test_contracts.py",
+          "tests\\portfolio\\test_g2_published_integrity.py",
+          "tests\\portfolio\\test_research_input.py",
+          "tests\\portfolio\\test_risk_service.py",
+          "tests\\portfolio\\__init__.py",
+          "tests\\research\\test_boundary_controls.py",
+          "tests\\research\\test_environment.py",
+          "tests\\research\\test_evaluator.py",
+          "tests\\research\\test_frozen_golden.py",
+          "tests\\research\\test_g2_boundaries.py",
+          "tests\\research\\test_g2_regressions.py",
+          "tests\\research\\test_host_controls.py",
+          "tests\\research\\test_inference.py",
+          "tests\\research\\test_labels.py",
+          "tests\\research\\test_ledger.py",
+          "tests\\research\\test_numerics.py",
+          "tests\\research\\test_pipeline.py",
+          "tests\\research\\test_reproduction.py",
+          "tests\\research\\test_service.py",
+          "tests\\research\\test_service_guards.py",
+          "tests\\research\\test_splits.py"
+        ]
       }
     },
     {
@@ -118,22 +456,6 @@
         "BT-010": "5",
         "UI-007": "6",
         "INT-005": "7"
-      }
-    },
-    {
-      "name": "source_attachment_byte_copy_3.0",
-      "result": "PASS",
-      "detail": {
-        "equal": true,
-        "archived_sha256": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc"
-      }
-    },
-    {
-      "name": "source_attachment_byte_copy_3.2",
-      "result": "PASS",
-      "detail": {
-        "equal": true,
-        "archived_sha256": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5"
       }
     },
     {
@@ -177,12 +499,12 @@
   "ci": "NOT ESTABLISHED; Phase1 planned",
   "attachment_copy": {
     "3.0": {
-      "equal": true,
-      "archived_sha256": "1bf2db725fdb7ca19d9386751e071ab3d6486a16976adc5524c543d1db06d9fc"
+      "result": "NOT VERIFIED",
+      "reason": "未提供原附件参数"
     },
     "3.2": {
-      "equal": true,
-      "archived_sha256": "c8ff94ebcec7365759d76b3b694fa7d425baa7d87b8a0550515baf9fcadb77e5"
+      "result": "NOT VERIFIED",
+      "reason": "未提供原附件参数"
     }
   },
   "git_commands": [
@@ -194,7 +516,7 @@
         "--branch"
       ],
       "exit_code": 0,
-      "stdout": "## main...origin/main\n M AGENTS.md\n M docs/BASELINE.md\n M docs/CHANGELOG.md\n M docs/DECISIONS.md\n M docs/PROGRESS.md\n M docs/PROJECT_CHARTER.md\n M docs/ROADMAP.md\n M docs/audits/phase-0/DELIVERY_REPORT.md\n M docs/audits/phase-0/REVIEW_ANCHOR.json\n M docs/audits/phase-0/REVIEW_PACKAGE.md\n M docs/audits/phase-0/tools/check_documents.py\n?? docs/audits/phase-0/gemini/GATE_EVIDENCE_INDEX.json\n?? docs/audits/phase-0/gemini/aqrp_phase0_baseline_verification_gate_report.md\n",
+      "stdout": "## codex/phase-5-backtest-plan...origin/codex/phase-5-backtest-plan\n M AGENTS.md\n M README.md\n M docs/CHANGELOG.md\n M docs/DECISIONS.md\n M docs/PROGRESS.md\n M docs/ROADMAP.md\n M docs/TRACEABILITY.md\n M docs/audits/phase-5/COMPATIBILITY_IMPACT.md\n M docs/audits/phase-5/FILE_MANIFEST.json\n M docs/audits/phase-5/IMPLEMENTATION_CONTRACT.md\n M docs/audits/phase-5/IMPLEMENTATION_IDENTITY.json\n M docs/audits/phase-5/IMPLEMENTATION_REVIEW_PACKAGE.md\n M docs/audits/phase-5/IMPLEMENTATION_TRACEABILITY.md\n M docs/audits/phase-5/REVIEW_PACKAGE_CURRENT.md\n M docs/audits/phase-5/STATUS.json\n M pyproject.toml\n M src/aqrp/__init__.py\n M src/aqrp/backtest/ledger.py\n M src/aqrp/factors/reviewed_code.json\n M src/aqrp/services/backtest.py\n M tests/environment/test_installation.py\n M tools/backtest_reference.py\n?? docs/audits/phase-5/g2-35f93d6/\n?? tests/backtest/test_g2_bucket_reconciliation.py\n",
       "stderr": ""
     },
     {

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-recheck-35f93d6-independent\verify_local_sdk.py", line 5, in <module>
+    env=json.loads((R/'environment.json').read_bytes());assert env['complete'] and not env['dirty'] and env['code_commit']=='35f93d640a2304121131d947a465f57a951cf63f'
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

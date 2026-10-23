@@ -327,6 +327,11 @@ def verify_run(request, result, transactions):
         us = sum(
             (c["amount"] for c in sale_cash if not c["settled"] and c["kind"] == "SHORT"), Q(0)
         )
+        restricted = sum(
+            (c["amount"] for c in sale_cash if c["settled"] and c["kind"] == "SHORT"), Q(0)
+        )
+        receivable = sum((max(r, 0) for r in rights.values()), Q(0))
+        payable = -sum((min(r, 0) for r in rights.values()), Q(0))
         total_cash = cash + uf + us
         total_equity = (
             total_cash + sum((qty[k] * mark[k] for k in names), Q(0)) + sum(rights.values(), Q(0))
@@ -353,7 +358,23 @@ def verify_run(request, result, transactions):
             sum(rights.values(), Q(0)),
             "receivable/payable net",
         )
+        same(
+            sum((max(r["amount"], 0) for r in state["rights"].values()), Q(0)),
+            receivable,
+            "separate receivable",
+        )
+        same(
+            -sum((min(r["amount"], 0) for r in state["rights"].values()), Q(0)),
+            payable,
+            "separate payable",
+        )
         for row in state["journal"][journal_seen:]:
+            if row["kind"] == "SETTLEMENT":
+                same(
+                    row["settlement_session"],
+                    session,
+                    "durable settlement session from raw dispatch",
+                )
             balances = {}
             for e in row["entries"]:
                 balances[e["unit"]] = balances.get(e["unit"], Q(0)) + e["amount"]
@@ -368,11 +389,22 @@ def verify_run(request, result, transactions):
         same(journal_balances["cash_set"], cash, "raw journal cash independently reconciled")
         same(journal_balances["U_free"], uf, "raw journal U_free")
         same(journal_balances["U_short"], us, "raw journal U_short")
+        same(journal_balances.get("receivable", Q(0)), receivable, "raw journal receivable")
+        same(journal_balances.get("payable", Q(0)), -payable, "raw journal payable sign")
         same(journal_quantities, qty, "raw journal shares")
         for c in tx["children"]:
             if "account" in c:
                 same(c["account"]["cash_total"], total_cash, "actual committed account cash")
                 same(c["account"]["equity"], total_equity, "actual committed account equity")
+                for key, value in {
+                    "cash_set": cash,
+                    "U_free": uf,
+                    "U_short": us,
+                    "S_set": restricted,
+                    "receivable": receivable,
+                    "payable": payable,
+                }.items():
+                    same(c["account"][key], value, "actual committed individual bucket " + key)
     same(Q(result["account"]["cash_total"]), total_cash, "serialized final cash")
     same(Q(result["account"]["equity"]), total_equity, "serialized final equity")
     same(

@@ -1,5 +1,8 @@
 # 十二项实现与验收证据索引
 
+当前0.5.0.dev3增补：[003处理](g2-35f93d6/DEVELOPER_RESPONSE.md)、[输出/恢复元数据](g2-35f93d6/OUTPUT_CONTRACT_ERRATA.md)、[独立复核入口](g2-35f93d6/REVIEW_PACKAGE.md)。固定35f93d6原001/002已独立关闭，新003 High仍OPEN，整体BLOCKED；以下旧状态/旧候选说明保留历史，不代替本轮固定版本验证。
+
+
 当前0.5.0.dev2修复勘误以[g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md](g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md)及[修复复核入口](g2-bfdcf30/REVIEW_PACKAGE.md)为准：原bfdcf30独立G2为BLOCKED，两项仍待新固定版本独立确认；以下原实施说明及正确经济口径保留，不把旧PENDING或正常SDK通过改称G2通过。
 
 

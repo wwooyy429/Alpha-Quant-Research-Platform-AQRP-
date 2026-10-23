@@ -1,6 +1,6 @@
 {
   "schema": "phase5-implementation-identity/1",
-  "parent_commit": "bfdcf30e525ff802ea483974f58163eedc029ce8",
+  "parent_commit": "35f93d640a2304121131d947a465f57a951cf63f",
   "released_P4_main": "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
   "G1_sha": "5262032bee4f631f68763e57510e1878945f6b8c",
   "human_authorization_sha256": "5fda6202ef0a6998805cd9ed4d04f8f5ac7511eff70a95cee65d8cdbdd516800",
@@ -11,7 +11,7 @@
     "files": [
       {
         "path": "__init__.py",
-        "sha256": "49592b07a6ca3f08967943ae63989ddc785e0ff2f6269ec776d6df44f9ce4a16"
+        "sha256": "b3ac431d00917a10dc82e4f1c3bfa3aa31085d2e2ab5cc0c7d43742da9d936f6"
       },
       {
         "path": "backtest/__init__.py",
@@ -31,7 +31,7 @@
       },
       {
         "path": "backtest/ledger.py",
-        "sha256": "b5fdf350a7e12f37d15696b0440d8c704630e51bbf9e96d58c1879b5d9ae09ec"
+        "sha256": "63546018065f97a50469d9d96930466ff475e8b65448f372af636ea7bb2aee93"
       },
       {
         "path": "backtest/provider.py",
@@ -247,7 +247,7 @@
       },
       {
         "path": "services/backtest.py",
-        "sha256": "cefa7f472502168327a6a586f6c61c46113c6ba0b4cb17c33b4536c94c709510"
+        "sha256": "97430c88a0c7871696af1a7e96901fbe4c0100ac0b5d61bdf186d6856f47952d"
       },
       {
         "path": "services/backtest_cli.py",
@@ -287,8 +287,8 @@
       }
     ]
   },
-  "bundle_sha256": "e383e3f1828ca5d28b3f9daaf2714670af5023aa64c1e908c2ed10466edd0058",
-  "version": "0.5.0.dev2",
+  "bundle_sha256": "a741748c115cd98ecbc2fdfed784cdc5636aea44362ef6ecc81a15933a3b3d94",
+  "version": "0.5.0.dev3",
   "original_frozen_count": 131,
   "original_frozen_unchanged": 124,
   "original_P4_preserved_count": 3440,
@@ -301,22 +301,22 @@
     },
     "pyproject.toml": {
       "original_sha256": "b158076ea7b008cb8524c6eca7769e127b27fdb2677398e8c4dbb58d5244815f",
-      "current_sha256": "7f521799ea8be2b78c6e396ed12279b66d868a3329e6801058a35f31b9c546b4",
+      "current_sha256": "beebe61b7cfac79222697603556e95f87abce0c87876ff8b4f063446e5f6ea2d",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "src/aqrp/__init__.py": {
       "original_sha256": "c3cbb7be6731d3f31a869522be3bc93007a316eda2a6d451f56d6686a51e1fc6",
-      "current_sha256": "49592b07a6ca3f08967943ae63989ddc785e0ff2f6269ec776d6df44f9ce4a16",
+      "current_sha256": "b3ac431d00917a10dc82e4f1c3bfa3aa31085d2e2ab5cc0c7d43742da9d936f6",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "src/aqrp/factors/reviewed_code.json": {
       "original_sha256": "51e499eaca9f5fe54f1a7d7a4e8a5b3da39e4921858a1ecf9931e522bb572c93",
-      "current_sha256": "77f9c553057e690cbc71f3e97b4fc5a1dcc3df247301b2fe791de2e5b89400ae",
+      "current_sha256": "623d52fe50a38a724b1855ac62541681407c29b80ee7a8b9bea3b1f95a6210a4",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "tests/environment/test_installation.py": {
       "original_sha256": "5bb5cc2a49ed7ab6f524bb74554f68e10e94aa59f4e902ec973fbe2495f2627e",
-      "current_sha256": "b26c0d3fcd91d4704c72e9eafbf55d698b4cfb3fc06bbb45a52a5600659588f3",
+      "current_sha256": "340f0e5467fa5b13afcd737b44421982d97c7695f83828b89a7b27f00c875c10",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "tools/check_coverage.py": {
@@ -14115,11 +14115,11 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "7f521799ea8be2b78c6e396ed12279b66d868a3329e6801058a35f31b9c546b4"
+      "sha256": "beebe61b7cfac79222697603556e95f87abce0c87876ff8b4f063446e5f6ea2d"
     },
     {
       "path": "src/aqrp/__init__.py",
-      "sha256": "49592b07a6ca3f08967943ae63989ddc785e0ff2f6269ec776d6df44f9ce4a16"
+      "sha256": "b3ac431d00917a10dc82e4f1c3bfa3aa31085d2e2ab5cc0c7d43742da9d936f6"
     },
     {
       "path": "src/aqrp/backtest/__init__.py",
@@ -14139,7 +14139,7 @@
     },
     {
       "path": "src/aqrp/backtest/ledger.py",
-      "sha256": "b5fdf350a7e12f37d15696b0440d8c704630e51bbf9e96d58c1879b5d9ae09ec"
+      "sha256": "63546018065f97a50469d9d96930466ff475e8b65448f372af636ea7bb2aee93"
     },
     {
       "path": "src/aqrp/backtest/provider.py",
@@ -14291,7 +14291,7 @@
     },
     {
       "path": "src/aqrp/factors/reviewed_code.json",
-      "sha256": "77f9c553057e690cbc71f3e97b4fc5a1dcc3df247301b2fe791de2e5b89400ae"
+      "sha256": "623d52fe50a38a724b1855ac62541681407c29b80ee7a8b9bea3b1f95a6210a4"
     },
     {
       "path": "src/aqrp/factors/versions.py",
@@ -14359,7 +14359,7 @@
     },
     {
       "path": "src/aqrp/services/backtest.py",
-      "sha256": "cefa7f472502168327a6a586f6c61c46113c6ba0b4cb17c33b4536c94c709510"
+      "sha256": "97430c88a0c7871696af1a7e96901fbe4c0100ac0b5d61bdf186d6856f47952d"
     },
     {
       "path": "src/aqrp/services/backtest_cli.py",
@@ -14422,6 +14422,10 @@
       "sha256": "2a0bc38280e149257fb75dc9aab181cd20dbe337c5c7071abf1a26a105cfb269"
     },
     {
+      "path": "tests/backtest/test_g2_bucket_reconciliation.py",
+      "sha256": "f3d600cbe860aad7ae963a549d13d69b594f87bef6547cc7ddacd5b2d670440c"
+    },
+    {
       "path": "tests/backtest/test_g2_committed_failure.py",
       "sha256": "14ea142b566223aca0dfbd321396bd28246c9bd0c65c5b832b279e539d7ec7e9"
     },
@@ -14443,7 +14447,7 @@
     },
     {
       "path": "tests/environment/test_installation.py",
-      "sha256": "b26c0d3fcd91d4704c72e9eafbf55d698b4cfb3fc06bbb45a52a5600659588f3"
+      "sha256": "340f0e5467fa5b13afcd737b44421982d97c7695f83828b89a7b27f00c875c10"
     },
     {
       "path": "tests/integration/test_phase5_pipeline.py",
@@ -14451,7 +14455,7 @@
     },
     {
       "path": "tools/backtest_reference.py",
-      "sha256": "a3fb1b0f95ed8167acd1684188cfb993ecb954fffbc6cc9642bc0ae40e092450"
+      "sha256": "cd814aa58226a872dac5184a968856c62db5750f7ce6248fd67bbee5109966d7"
     },
     {
       "path": "tools/backtest_smoke.py",
@@ -14470,9 +14474,14 @@
       "sha256": "816892e5e691d995ff3c8ae118f2f9b8a287edf4def2d6c0073ab3a3f3987d7d"
     }
   ],
-  "G2": "ORIGINAL_BLOCKED_FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK",
+  "G2": "BLOCKED_AT_35F93D6_NEW003_PENDING_INDEPENDENT_RECHECK",
   "financial_approval": "NONE",
   "Windows_R2": "DEFERRED / NOT VERIFIED",
-  "original_G2_sha": "bfdcf30e525ff802ea483974f58163eedc029ce8",
-  "original_G2_record": "g2-bfdcf30/"
+  "original_G2_sha": "35f93d640a2304121131d947a465f57a951cf63f",
+  "original_G2_record": "g2-35f93d6/",
+  "G2_findings": {
+    "001": "CLOSED_FIX_VERIFIED_AT_35F93D6",
+    "002": "CLOSED_FIX_VERIFIED_AT_35F93D6",
+    "003": "OPEN_PENDING_INDEPENDENT_RECHECK"
+  }
 }

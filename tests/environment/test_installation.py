@@ -13,7 +13,7 @@ def test_env_001_exact_runtime_and_imports():
     assert sys.version_info[:3] == (3, 13, 16)
     assert sys.maxsize > 2**32
     assert sys._is_gil_enabled()
-    assert aqrp.__version__ == "0.5.0.dev2"
+    assert aqrp.__version__ == "0.5.0.dev3"
     for package, expected in {
         "numpy": "2.5.4",
         "pandas": "3.0.6",

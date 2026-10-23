@@ -7,7 +7,7 @@ from pathlib import Path
 from aqrp.backtest.contracts import BacktestResult, EngineeringBacktestRequest, validate
 from aqrp.backtest.engine import Simulator
 from aqrp.backtest.exact import freeze, present, thaw
-from aqrp.backtest.ledger import account, assert_economic_identity, reconcile
+from aqrp.backtest.ledger import account, assert_economic_identity, reconcile, verify_cash_structure
 from aqrp.backtest.transactions import TransactionStore, guard_path
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.environment import runtime_manifest, verify_runtime
@@ -40,13 +40,28 @@ def _bound_read(ledger, run_id, name, manifest):
 def _reconciled_account(state):
     c = account(state)
     rebuilt = reconcile(state["initial_cash"], state["journal"], state["assets"])
+    expected = {
+        **{k: c[k] for k in ("cash_set", "U_free", "U_short", "receivable")},
+        "payable": -c["payable"],
+        "commission_expense": state["fees"],
+        "borrow_expense": state["borrow"],
+        "dividend_income": -state["dividends"],
+        "realized_long": -state["realized_long"],
+        "realized_short": -state["realized_short"],
+        "external_capital": -state["external_flows"],
+        "positions_cost": sum(a["quantity"] * a["cost"] for a in state["assets"].values()),
+        "positions_valuation": sum(a["valuation_adjustment"] for a in state["assets"].values()),
+        "unrealized_pnl": -sum(a["valuation_adjustment"] for a in state["assets"].values()),
+    }
     if (
         rebuilt["cash_total"] != c["cash_total"]
         or any(rebuilt["quantities"][k] != a["quantity"] for k, a in state["assets"].items())
-        or rebuilt["balances"]["receivable"] + rebuilt["balances"]["payable"]
-        != c["receivable"] - c["payable"]
+        or any(rebuilt["balances"].get(k, 0) != v for k, v in expected.items())
+        or c["receivable"] < 0
+        or c["payable"] < 0
     ):
         raise ContractError("RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED")
+    rebuilt["cash_structure"] = verify_cash_structure(state, c)
     return c, rebuilt
 
 

@@ -1,5 +1,8 @@
 # Phase 0–7 开发及 Gemini 交接计划
 
+2026-10-23 最新独立复核固定35f93d640a2304121131d947a465f57a951cf63f：001/002 CLOSED — FIX VERIFIED，新增003 High OPEN，G2仍BLOCKED。当前0.5.0.dev3仅为003修复候选：逐现金桶/逐金融科目精确对账、原始SHORT所得与交收/子集核验，不自行关闭003。原报告/150文件封存接收、开发处理/输出元数据说明见docs/audits/phase-5/g2-35f93d6/。新提交已安装wheel完整SDK/双OS官方原ZIP和实际收据以PR #8锁定40位SHA外置证据为准，不能把旧1073通过当本轮通过。十二项范围、原12设计/3444冻结文件、main/旧标签保留；WI-R2两项DEFERRED / NOT VERIFIED、正式Test/金融批准/完整历史宿主边界不变；无合并/标签/部署/实盘/P6。以下旧OPEN状态是历史，以上述当前状态为准。
+
+
 2026-10-23 GPT Work对固定bfdcf30判Phase5 G2 BLOCKED（001 High、002 Medium OPEN），原报告/反例/124成员封存接收核验见docs/audits/phase-5/g2-bfdcf30/。当前0.5.0.dev2修复候选：失败/取消重读验证磁盘提交前缀、未知状态失败关闭；成交暴露腿LONG/SHORT/MIXED与BUY/SELL明确分开，费用不重复。两项仍OPEN_PENDING_INDEPENDENT_RECHECK，不自行宣告关闭。必要自测229项通过，属未提交工作版本；最终只以PR #8新固定40位SHA的完整SDK/双OS官方原ZIP及收据交GPT Work复核。十二项范围、原G1答案/冻结资料、main/旧标签不变；WI-R2两项继续DEFERRED / NOT VERIFIED，正式Test/金融批准/完整旧宿主边界保持，无合并/标签/部署/实盘/P6。以下旧状态保留历史。
 
 

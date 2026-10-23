@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-recheck-35f93d6-independent\raw_financial_reconstruction.py", line 72, in <module>
+    for factor in ['momentum','reversal']:one(label,lambda n,root=root:(root/n).read_bytes(),factor)
+                                          ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-recheck-35f93d6-independent\raw_financial_reconstruction.py", line 25, in one
+    start_count=count;request=json.loads(read('backtest/'+factor+'-request.json'));result=json.loads(read('backtest/'+factor+'-result.json'));rid=result['run_id'];prefix='backtest/'+factor+'-runs/'+rid+'/'
+                                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-recheck-35f93d6-independent\raw_financial_reconstruction.py", line 72, in <lambda>
+    for factor in ['momentum','reversal']:one(label,lambda n,root=root:(root/n).read_bytes(),factor)
+                                                                       ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11638\AppData\Local\AQRP\runtime\Python31316\Lib\pathlib\_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\runtime\Python31316\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\WORK\\AQRP-runs\\gpt-p5-35f93d6-20261023\\aqrp-e6171f64-5e4a-47c3-b7df-d73eb4d05b2d\\backtest\\momentum-request.json'

@@ -75,6 +75,70 @@ def cash_values(s):
     }
 
 
+def verify_cash_structure(s, cash):
+    """Prove lot classification, original short proceeds and settlement restrictions.
+
+    Settlement uses the durable Journal's completed session, not a mutable lot flag
+    or the scheduler's current session. Negative available cash alone is not an
+    inconsistency: a correctly recorded margin breach must keep its actual loss.
+    """
+    sessions = []
+    for event in s["journal"]:
+        if event["kind"] == "SETTLEMENT":
+            value = event.get("settlement_session")
+            if type(value) is not int or value < 0 or (sessions and value < sessions[-1]):
+                raise ContractError("UNVERIFIED_SETTLEMENT_SESSION")
+            sessions.append(value)
+    settled_through = sessions[-1] if sessions else -1
+    backing = {}
+    for asset in s["assets"].values():
+        for lot in asset["lots"]:
+            if lot["direction"] == -1:
+                if lot["id"] in backing or lot["remaining"] < 0 or lot["price"] < 0:
+                    raise ContractError("INVALID_SHORT_PROCEEDS_BACKING")
+                backing[lot["id"]] = lot
+    ids, bound = set(), set()
+    for lot in s["cashlots"]:
+        if (
+            set(lot) != {"id", "entry_id", "kind", "amount", "settled", "due"}
+            or not isinstance(lot["id"], str)
+            or not lot["id"]
+            or lot["id"] in ids
+            or lot["kind"] not in {"FREE", "SHORT"}
+            or lot["amount"] < 0
+            or type(lot["settled"]) is not bool
+            or type(lot["due"]) is not int
+            or lot["due"] < 0
+            or lot["settled"] != (lot["due"] <= settled_through)
+        ):
+            raise ContractError("INVALID_CASH_LOT_CLASSIFICATION")
+        ids.add(lot["id"])
+        if lot["kind"] == "FREE":
+            if lot["entry_id"] is not None:
+                raise ContractError("INVALID_FREE_CASH_BACKING")
+        else:
+            entry = lot["entry_id"]
+            if entry not in backing or entry in bound:
+                raise ContractError("INVALID_SHORT_PROCEEDS_BACKING")
+            original = backing[entry]
+            if (
+                lot["amount"] != original["remaining"] * original["price"]
+                or lot["due"] != original["settles"]
+            ):
+                raise ContractError("SHORT_PROCEEDS_OR_SETTLEMENT_MISMATCH")
+            bound.add(entry)
+    if bound != set(backing):
+        raise ContractError("MISSING_SHORT_PROCEEDS_BACKING")
+    if any(cash[k] < 0 for k in ("U_free", "U_short", "S_set")) or cash["S_set"] > cash["cash_set"]:
+        raise ContractError("RESTRICTED_CASH_SUBSET_FAILED")
+    return {
+        "status": "EXACT_CASH_LOTS_AND_SHORT_BACKING_VERIFIED",
+        "cash_lots": len(ids),
+        "short_entries": len(bound),
+        "settled_through_session": settled_through,
+    }
+
+
 def reserves(s):
     notional = sum(
         (o["reserve_notional"] for o in s["orders"].values() if o["status"] in LIVE), F(0)
@@ -355,6 +419,7 @@ def settle(s, session, event_id):
             c["settled"] = True
             s["cash_set"] += c["amount"]
     _post(s, event_id, "SETTLEMENT", _cash_delta(before, cash_values(s)))
+    s["journal"][-1]["settlement_session"] = session
 
 
 def accrue(s, event_id, sid, amount, *, kind, pay_at=None):

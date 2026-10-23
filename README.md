@@ -140,3 +140,6 @@ See [implementation contract](docs/audits/phase-5/IMPLEMENTATION_CONTRACT.md), [
 
 
 Phase5 repair candidate 0.5.0.dev2: [G2 repair review](docs/audits/phase-5/g2-bfdcf30/REVIEW_PACKAGE.md) and [failure-state / fill-leg output errata](docs/audits/phase-5/g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md). Original bfdcf30 G2 is BLOCKED; findings remain open pending independent recheck.
+
+
+Phase5 0.5.0.dev3: [G2-003 repair candidate](docs/audits/phase-5/g2-35f93d6/REVIEW_PACKAGE.md). At35f93d6 original001/002 CLOSED, new003 High OPEN; independent recheck pending.

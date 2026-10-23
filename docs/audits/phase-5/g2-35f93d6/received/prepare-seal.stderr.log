@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-recheck-35f93d6-independent\prepare_seal.py", line 43, in <module>
+    shutil.copyfile(D/n,received/n)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\runtime\Python31316\Lib\shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ~~~~^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p5-g2-recheck-35f93d6\\GPT-Work-G2-Review-Instructions.txt'

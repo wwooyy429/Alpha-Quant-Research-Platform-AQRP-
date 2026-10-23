@@ -1,0 +1,12 @@
+Cloning into 'E:\WORK\AQRP-audits\p5-35f93d6\src'...
+error: C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/reviews/p4-plan-265af16/.git/objects: ignoring alternate object stores, nesting too deep
+done.
+fatal: trying to write ref 'refs/tags/phase0-baseline' with nonexistent object 0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-recheck-35f93d6-independent\bootstrap.py", line 8, in <module>
+    for argv in commands:print(json.dumps({'argv':argv}),flush=True);subprocess.run(argv,check=True)
+                                                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\runtime\Python31316\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['git', 'clone', '--shared', '--no-checkout', 'E:/WORK/AQRP-audits/p5-bfdcf30/src', 'E:\\WORK\\AQRP-audits\\p5-35f93d6\\src']' returned non-zero exit status 128.
