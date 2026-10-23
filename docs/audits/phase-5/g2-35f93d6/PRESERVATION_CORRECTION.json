@@ -1,0 +1,25 @@
+{
+  "failed_sha": "daf055157bde1ba95ef2d1d8706bedde0301901f",
+  "cause": "Developer incorrectly ran mutating Phase0 historical document checker against P5 after preparation, overwriting three frozen Phase0 audit files; clean SDK and both CI fail at frozen-file guard",
+  "action": "Restore exact bytes from independently reviewed35f93d6, do not change frozen expected hashes or guard; preserve failed SDK, official CI run39908508825 and erroneous generated outputs externally",
+  "restored": [
+    {
+      "path": "docs/audits/phase-0/COMMAND_LOG.txt",
+      "restored_sha256": "e61fee4a4cc237ebbf57c31fcc57d6c4ca1b0b1f1e060edbcdbf2b6715dfcc38",
+      "erroneous_output_sha256": "1b7be7d122a8027d895393a4c2c5fa1b941ca75f63707cd1e8cc604c061c0d39"
+    },
+    {
+      "path": "docs/audits/phase-0/SELF_CHECK.json",
+      "restored_sha256": "a9eaedac8f3e7ecaf890a4a0a6686a823d31315d5404e28986c37a2cefd7f701",
+      "erroneous_output_sha256": "f9654c7cbc3cc60e3335a6a8abf7e6f8108611bdc59029cfebcb23bccb1b4549"
+    },
+    {
+      "path": "docs/audits/phase-0/MANIFEST.json",
+      "restored_sha256": "47bbe15990fa6ce62d6b3409989c862a2706e45687496bcec837f3ea56225511",
+      "erroneous_output_sha256": "4cb9dd8e84e6b9d3728783b286faa08eb20a23f9bc475d2223205bff60782bec"
+    }
+  ],
+  "production_source_unchanged_from_failed_candidate": true,
+  "independent_recheck_pending": true,
+  "time_utc": "2026-10-23T05:58:12.325191+00:00"
+}

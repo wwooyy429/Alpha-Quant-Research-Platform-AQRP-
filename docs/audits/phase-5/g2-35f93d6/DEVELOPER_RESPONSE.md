@@ -15,3 +15,5 @@ GPT Work对`35f93d640a2304121131d947a465f57a951cf63f`判G2 BLOCKED / REQUEST CHA
 新增43项覆盖实际公共服务七组重哈希故障（六方向现金桶错分及R/P相互抵消）、正常projection中六方向全桶非负的恒总额负控、逐金融科目负控、合法T+1前后部分cover/拆股、限制所得归属/交收/子集、缺失或矛盾交收证据，以及真实margin loss正控制。修复前第一轮12失败/7通过日志原样保留；没有删除失败用例或改变正确经济答案。标准库raw-event/Journal参考另外逐R/P及实际AccountUpdated的cash_set/U_free/U_short/S_set/R/P核对。探索自测与最终提交已安装wheel SDK分开；实际数量和执行收据以PR描述外置封存为准。
 
 边界不变：十二项10MVP/2CR、原12设计与3444冻结文件、旧正确答案/四因子实现/锁/main/旧标签保留。WI-R2-001/002仍DEFERRED / NOT VERIFIED，最终集成固定版本真实权限另行授权；无真实ACL/账户/部署/正式Test/金融批准/实盘/合并/标签/P6。
+
+开发方执行纠正：首个新候选daf0551的干净SDK/双OS CI被原冻结校验阻断，原因是开发方误在P5运行会写回COMMAND_LOG/SELF_CHECK/MANIFEST的旧Phase0检查脚本。这三份历史文件已按已审35f93d6逐字节恢复，原期望哈希和门禁不改。原错误输出、失败提交/SDK/官方run39908508825原包外部保留；详见PRESERVATION_CORRECTION.json。新固定版本必须重跑完整SDK/双OS，不把失败改判通过。
