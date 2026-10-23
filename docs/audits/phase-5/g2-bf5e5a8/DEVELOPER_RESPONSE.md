@@ -4,7 +4,7 @@ GPT Work对`bf5e5a89209f2dd24042cd806626f832b531de52`判G2 BLOCKED / REQUEST CHA
 
 新反例只将已交收SHORT cashlot.amount及asset FIFO lot.price同时99.9→98.9，原Fill/Journal/children不变；旧版FAILED和CANCELLED都将S_set98.9/A798.9误标known=true，正确为S_set99.9/A797.9。上一版只是同一可变post_state自证，未绑定真实原始Fill。这是003未闭环，不新编编号、不自行关闭。
 
-本候选0.5.0.dev4：verify_execution_backing只从TransactionStore在writer锁下读取、完整验证过的durable prefix的原始children/payload重建，禁止post_state/缓存fills/缓存lot价格成为重建输入。按实际成交逐证券重建FIFO开平/跨零、均价、剩余股数/原价/settles/at；按原始SPLIT调整股数/价格，按MarketConfirmed重建mark，按真实DELIST恢复及SETTLEMENT重建原始所得cashlot/释放/到期/限制。未交收cover仅释放到原due的FREE，已交收cover只减少限制。逐项核对现金lot、持仓lot、复制的Fill/恢复记录、数量/成本/mark/估值调整及交收元数据；来源缺失或冲突一律拒绝。不再由两个关联状态字段互为original。
+本候选0.5.0.dev5：verify_execution_backing只从TransactionStore在writer锁下读取、完整验证过的durable prefix的原始children/payload重建，禁止post_state/缓存fills/缓存lot价格成为重建输入。按实际成交逐证券重建FIFO开平/跨零、均价、剩余股数/原价/settles/at；按原始SPLIT调整股数/价格，按MarketConfirmed重建mark，按真实DELIST恢复及SETTLEMENT重建原始所得cashlot/释放/到期/限制。未交收cover仅释放到原due的FREE，已交收cover只减少限制。逐项核对现金lot、持仓lot、复制的Fill/恢复记录、数量/成本/mark/估值调整及交收元数据；来源缺失或冲突一律拒绝。不再由两个关联状态字段互为original。
 
 正常输出、异常/取消已知账户及数值重放都经过同一projection：逐桶/RP/Journal、durable来源重建、经济恒等式和绩效归因完整必要门禁。失败快照只公开通过此证明的account，不公开失败研究指标；任一失败均FAILED+COMMITTED_STATE_UNVERIFIED/known=false、无last_committed_account和已知快照，原commit/首个异常保留。成功发布也重新读取磁盘verified_snapshot，记录与返回使用同一durable prefix；缓存与磁盘不一致拒绝发布。财务证明hash附于已知失败前缀的证据。哈希链完整不等于财务一致性或OS隔离/金融批准。
 
@@ -16,4 +16,6 @@ GPT Work对`bf5e5a89209f2dd24042cd806626f832b531de52`判G2 BLOCKED / REQUEST CHA
 
 WI-R2两项与真实Windows隔离DEFERRED / NOT VERIFIED，正式Test未运行，金融批准NONE，完整历史宿主只限已接受包/锁/旧Ref/结果重放。main/旧标签不改，无账户/真实ACL/服务/调度/部署/实盘/合并/标签/P6。
 
-扩展自测development-006为300通过/1失败：新重放流程读磁盘后忽略了内存重放差异，原recompute负控捕获此退步。已恢复差异拒绝，相关54项在development-010通过；完整SDK仍须在最终新固定提交运行，不能把300/1改写为全通过。最后仅重命名内部结构变量/说明，避免将未验证position_lot称为original；金融逻辑不变。
+额外实际负控：d7b7eaa的完整SDK/双OS1152通过后，使用已安装旧候选wheel复现初始资金+现金同时加1及固定Z限制改为-1，两种捕获类型共4项仍失败（错误known/798.9）。日志/命令/原始工件保留；不能把1152旧通过说成新候选通过。新verified_snapshot在writer锁内从不可变initial.json验证initial_cash/other_restriction锚点，防止post_state自行设定重建基数。当前profile两字段原本无合法交易变更，不改变经济口径；缺失/变化一律拒绝。新增42项而非36项，含旧锚点临时改写后再恢复仍须拒绝的两项prefix负控；最终版本0.5.0.dev5必须重新完整SDK/双OS，G2同一003仍OPEN待独立复核。
+
+最终必要自测development-018为73项通过，包括4个额外实际锚点反例、原成对字段及新2个临时改写后恢复prefix负控。最终完整SDK/双OS在新提交单独运行；d7b7eaa旧1152原始成功和额外失败都保留。

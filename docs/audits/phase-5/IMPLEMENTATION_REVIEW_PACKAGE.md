@@ -1,5 +1,8 @@
 # Phase5 G2 固定版本审查入口
 
+当前0.5.0.dev5增补：[003处理](g2-bf5e5a8/DEVELOPER_RESPONSE.md)、[输出/恢复元数据](g2-bf5e5a8/OUTPUT_CONTRACT_ERRATA.md)、[独立复核入口](g2-bf5e5a8/REVIEW_PACKAGE.md)。固定bf5e5a8原001/002保持关闭，同一003 High为PARTIAL FIX / OPEN，整体BLOCKED；以下旧状态/旧候选说明保留历史，不代替本轮固定版本验证。
+
+
 当前0.5.0.dev4增补：[003处理](g2-bf5e5a8/DEVELOPER_RESPONSE.md)、[输出/恢复元数据](g2-bf5e5a8/OUTPUT_CONTRACT_ERRATA.md)、[独立复核入口](g2-bf5e5a8/REVIEW_PACKAGE.md)。固定bf5e5a8原001/002保持关闭，同一003 High为PARTIAL FIX / OPEN，整体BLOCKED；以下旧状态/旧候选说明保留历史，不代替本轮固定版本验证。
 
 

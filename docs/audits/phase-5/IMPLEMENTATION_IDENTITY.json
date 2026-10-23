@@ -1,6 +1,6 @@
 {
   "schema": "phase5-implementation-identity/1",
-  "parent_commit": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "parent_commit": "d7b7eaa0c6c096e8af6a1ef6041d7286d834ea07",
   "released_P4_main": "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
   "G1_sha": "5262032bee4f631f68763e57510e1878945f6b8c",
   "human_authorization_sha256": "5fda6202ef0a6998805cd9ed4d04f8f5ac7511eff70a95cee65d8cdbdd516800",
@@ -11,7 +11,7 @@
     "files": [
       {
         "path": "__init__.py",
-        "sha256": "b3ed486cf69937bc37985ad1a5448f2dc44b007c35ca705c45775417a601d265"
+        "sha256": "1231b9b05b2cac76f9782db87263bcb63bbccb009c32f4b6f90fd20539bd546c"
       },
       {
         "path": "backtest/__init__.py",
@@ -47,7 +47,7 @@
       },
       {
         "path": "backtest/transactions.py",
-        "sha256": "7b9d458817120051d5d62d28a2e6d63acdf1ba671479aa99fcee8c51ca9b96db"
+        "sha256": "9afd9cd82c3b08bf9f037998cb9eb1aee80c411dcc652da6d003360ce2e2a33e"
       },
       {
         "path": "core/__init__.py",
@@ -287,8 +287,8 @@
       }
     ]
   },
-  "bundle_sha256": "40f6633a65cd08a7aaf21f4269797fd5f219a00c8cfd7ba544b844ff9d7e8c9f",
-  "version": "0.5.0.dev4",
+  "bundle_sha256": "68d723fd865a59ad843d0be096e841d1e56005907bb8783037a784c8159eda3e",
+  "version": "0.5.0.dev5",
   "original_frozen_count": 131,
   "original_frozen_unchanged": 124,
   "original_P4_preserved_count": 3440,
@@ -301,22 +301,22 @@
     },
     "pyproject.toml": {
       "original_sha256": "b158076ea7b008cb8524c6eca7769e127b27fdb2677398e8c4dbb58d5244815f",
-      "current_sha256": "2ba8cc75563d73d6f0e721d4b5155db8196b93001d70fb32f58b8222d0ef93e5",
+      "current_sha256": "2024b04228d9b6bcac28b5246608a5c7c0373709c557836ba6d936dbd238d19c",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "src/aqrp/__init__.py": {
       "original_sha256": "c3cbb7be6731d3f31a869522be3bc93007a316eda2a6d451f56d6686a51e1fc6",
-      "current_sha256": "b3ed486cf69937bc37985ad1a5448f2dc44b007c35ca705c45775417a601d265",
+      "current_sha256": "1231b9b05b2cac76f9782db87263bcb63bbccb009c32f4b6f90fd20539bd546c",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "src/aqrp/factors/reviewed_code.json": {
       "original_sha256": "51e499eaca9f5fe54f1a7d7a4e8a5b3da39e4921858a1ecf9931e522bb572c93",
-      "current_sha256": "e332ce214f886aeef4fec54daf63aeb361c0ddafe322061d04ffdf35644dc58c",
+      "current_sha256": "aa5f070086a5ff93918558889ace52ea60ba054ab9112ab7d5e14c3ebccbbba4",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "tests/environment/test_installation.py": {
       "original_sha256": "5bb5cc2a49ed7ab6f524bb74554f68e10e94aa59f4e902ec973fbe2495f2627e",
-      "current_sha256": "24d618d1559d670bdbf5768a421c068ca277dfd6d6ee2518bae1408b534f5ca2",
+      "current_sha256": "0ac0c206087a96173eccddd9c4b2d70a9a95918692a37b5c939ecb4c68048ee9",
       "purpose": "Version/admission/SDK-CI/critical coverage only; see COMPATIBILITY_IMPACT.md"
     },
     "tools/check_coverage.py": {
@@ -14115,11 +14115,11 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "2ba8cc75563d73d6f0e721d4b5155db8196b93001d70fb32f58b8222d0ef93e5"
+      "sha256": "2024b04228d9b6bcac28b5246608a5c7c0373709c557836ba6d936dbd238d19c"
     },
     {
       "path": "src/aqrp/__init__.py",
-      "sha256": "b3ed486cf69937bc37985ad1a5448f2dc44b007c35ca705c45775417a601d265"
+      "sha256": "1231b9b05b2cac76f9782db87263bcb63bbccb009c32f4b6f90fd20539bd546c"
     },
     {
       "path": "src/aqrp/backtest/__init__.py",
@@ -14155,7 +14155,7 @@
     },
     {
       "path": "src/aqrp/backtest/transactions.py",
-      "sha256": "7b9d458817120051d5d62d28a2e6d63acdf1ba671479aa99fcee8c51ca9b96db"
+      "sha256": "9afd9cd82c3b08bf9f037998cb9eb1aee80c411dcc652da6d003360ce2e2a33e"
     },
     {
       "path": "src/aqrp/core/__init__.py",
@@ -14291,7 +14291,7 @@
     },
     {
       "path": "src/aqrp/factors/reviewed_code.json",
-      "sha256": "e332ce214f886aeef4fec54daf63aeb361c0ddafe322061d04ffdf35644dc58c"
+      "sha256": "aa5f070086a5ff93918558889ace52ea60ba054ab9112ab7d5e14c3ebccbbba4"
     },
     {
       "path": "src/aqrp/factors/versions.py",
@@ -14431,7 +14431,7 @@
     },
     {
       "path": "tests/backtest/test_g2_execution_backing.py",
-      "sha256": "bc36841a1372e63fa61e3ceba651e1da82fb7343927f88a4b30a44f0864332f0"
+      "sha256": "f9cbb47e78ff0c375dbc726e5beb873efbfe933e10480e27877bb1c97282ebe9"
     },
     {
       "path": "tests/backtest/test_g2_fill_direction.py",
@@ -14451,7 +14451,7 @@
     },
     {
       "path": "tests/environment/test_installation.py",
-      "sha256": "24d618d1559d670bdbf5768a421c068ca277dfd6d6ee2518bae1408b534f5ca2"
+      "sha256": "0ac0c206087a96173eccddd9c4b2d70a9a95918692a37b5c939ecb4c68048ee9"
     },
     {
       "path": "tests/integration/test_phase5_pipeline.py",

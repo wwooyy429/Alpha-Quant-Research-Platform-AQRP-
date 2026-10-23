@@ -6,19 +6,24 @@
     "002": "CLOSED_FIX_VERIFIED_AT_35F93D6",
     "003": "OPEN_PENDING_INDEPENDENT_RECHECK"
   },
-  "version": "0.5.0.dev4",
+  "version": "0.5.0.dev5",
   "previous_bundle": "a741748c115cd98ecbc2fdfed784cdc5636aea44362ef6ecc81a15933a3b3d94",
-  "current_bundle": "40f6633a65cd08a7aaf21f4269797fd5f219a00c8cfd7ba544b844ff9d7e8c9f",
+  "current_bundle": "68d723fd865a59ad843d0be096e841d1e56005907bb8783037a784c8159eda3e",
   "financial_code_changes": [
     {
       "path": "src/aqrp/__init__.py",
       "old_sha256": "b3ac431d00917a10dc82e4f1c3bfa3aa31085d2e2ab5cc0c7d43742da9d936f6",
-      "new_sha256": "b3ed486cf69937bc37985ad1a5448f2dc44b007c35ca705c45775417a601d265"
+      "new_sha256": "1231b9b05b2cac76f9782db87263bcb63bbccb009c32f4b6f90fd20539bd546c"
     },
     {
       "path": "src/aqrp/backtest/ledger.py",
       "old_sha256": "63546018065f97a50469d9d96930466ff475e8b65448f372af636ea7bb2aee93",
       "new_sha256": "428935a8a6764d5ac53687f825694e962220444391e7e15039d3bca83b5aac5d"
+    },
+    {
+      "path": "src/aqrp/backtest/transactions.py",
+      "old_sha256": "7b9d458817120051d5d62d28a2e6d63acdf1ba671479aa99fcee8c51ca9b96db",
+      "new_sha256": "9afd9cd82c3b08bf9f037998cb9eb1aee80c411dcc652da6d003360ce2e2a33e"
     },
     {
       "path": "src/aqrp/services/backtest.py",

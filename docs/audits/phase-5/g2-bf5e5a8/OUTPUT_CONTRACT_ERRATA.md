@@ -1,4 +1,4 @@
-# 0.5.0.dev4来源证明及接口增补
+# 0.5.0.dev5来源证明及接口增补
 
 原0.5.0.dev3逐桶/RP修复保持，但cash_structure的标志改为INTERNAL_LOT_STRUCTURE_CHECKED_EXECUTION_PROOF_REQUIRED，不能再把内部字段自洽称作原始成交已验证。新增reconciliation.execution_backing，成功仅为RAW_COMMITTED_EXECUTIONS_FIFO_AND_SETTLEMENT_VERIFIED，含源Fill/恢复/前缀计数和由原始事件重建的S_set。需durable records来源才能完成_reconciled_account/projection；缺上下文抛DURABLE_EXECUTION_PROVENANCE_REQUIRED，低层纯state调用不再具有已知财务认证效力。
 

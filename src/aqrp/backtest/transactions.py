@@ -126,6 +126,17 @@ class TransactionStore:
         """Read the durable prefix under its writer lock, independent of replay/cache state."""
         with mutex(self.root / ".lock"):
             self.recover()
+            # These profile inputs never change in a transaction. The root file,
+            # not two correlated fields in post_state, supplies their authority.
+            for field in ("initial_cash", "other_restriction"):
+                if field in self.initial and (
+                    self.state.get(field) != self.initial[field]
+                    or any(
+                        thaw(r["post_state"].get(field)) != self.initial[field]
+                        for r in self.records
+                    )
+                ):
+                    raise ContractError("IMMUTABLE_ACCOUNT_ANCHOR_CHANGED", field)
             files = [
                 {
                     "path": "transactions/" + p.name,

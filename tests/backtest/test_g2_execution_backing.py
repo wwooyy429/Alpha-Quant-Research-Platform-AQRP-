@@ -1,6 +1,7 @@
 """BT-005/007/008, G2-003: durable executions, never paired mutable witnesses."""
 
 import json
+import uuid
 from copy import deepcopy
 
 import pytest
@@ -8,6 +9,7 @@ import pytest
 from aqrp.backtest.engine import Simulator
 from aqrp.backtest.exact import F, freeze, thaw
 from aqrp.backtest.ledger import liquidate, settle, split, verify_execution_backing
+from aqrp.backtest.transactions import TransactionStore
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.errors import ContractError
 from aqrp.experiments.ledger import ExperimentLedger
@@ -18,7 +20,17 @@ from .test_g2_bucket_reconciliation import begin_history, fill_source, short_req
 
 @pytest.mark.parametrize("exc_type", [ContractError, KeyboardInterrupt])
 @pytest.mark.parametrize(
-    "damage", ["none", "price", "cashlot", "pair", "pair-and-fill-copy", "attribution-pool"]
+    "damage",
+    [
+        "none",
+        "price",
+        "cashlot",
+        "pair",
+        "pair-and-fill-copy",
+        "attribution-pool",
+        "initial-anchor",
+        "restriction-anchor",
+    ],
 )
 def test_settled_short_account_requires_original_durable_execution(
     tmp_path, monkeypatch, exc_type, damage
@@ -56,6 +68,11 @@ def test_settled_short_account_requires_original_durable_execution(
                     next(f for f in state["fills"] if f["fill_id"] == entry["id"])["price"] -= 1
                 if damage == "attribution-pool":
                     entry["borrow"] += 1
+                if damage == "initial-anchor":
+                    state["cash_set"] += 1
+                    state["initial_cash"] += 1
+                if damage == "restriction-anchor":
+                    state["other_restriction"] -= 1
                 assert state["journal"] == thaw(original["post_state"])["journal"]
                 item["post_state"] = freeze(state)
                 item["post_hash"] = digest(item["post_state"])
@@ -204,3 +221,26 @@ def test_no_context_cannot_certify_an_account():
 
     with pytest.raises(ContractError, match="DURABLE_EXECUTION_PROVENANCE_REQUIRED"):
         projection(book())
+
+
+@pytest.mark.parametrize("field", ["initial_cash", "other_restriction"])
+def test_restoring_last_state_does_not_erase_an_invalid_prefix_anchor(tmp_path, field):
+    s = book()
+    store = TransactionStore(tmp_path, s)
+    original = s[field]
+
+    def change(state):
+        state[field] += 1
+        return []
+
+    def restore(state):
+        state[field] = original
+        return []
+
+    store.commit(str(uuid.uuid4()), {}, ["2024-02-01T09:00:00Z", 10, 1], change)
+    store.commit(str(uuid.uuid4()), {}, ["2024-02-01T09:00:01Z", 10, 2], restore)
+    assert store.state[field] == original
+    before = {p.name: p.read_bytes() for p in tmp_path.iterdir() if p.name != ".lock"}
+    with pytest.raises(ContractError, match="IMMUTABLE_ACCOUNT_ANCHOR_CHANGED"):
+        store.verified_snapshot()
+    assert before == {p.name: p.read_bytes() for p in tmp_path.iterdir() if p.name != ".lock"}
