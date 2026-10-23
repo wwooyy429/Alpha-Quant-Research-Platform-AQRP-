@@ -1,5 +1,8 @@
 # 双向需求追踪矩阵（待审）
 
+2026-10-23 Phase6 G1：GPT Work固定f7a1a68c5f747090f8c8a0e934f2fea859aec998判PLAN BLOCKED，001High、002/003Medium均OPEN。本轮仅修订三kind全Task完成屏障、P5内部P4可信上下文/原目录/恢复与重放，以及整数精确数值参考/明确量程；原32答案字节不改，新增95设计参考通过，均非P6产品/并发/GUI通过。原报告/584855382-byte包核验、失败重现及实际日志见docs/audits/phase-6/g1-f7a1a68/；三项仍OPEN_PENDING_RECHECK，待PR #9新完整40SHA独立G1复核。P5基线/旧标签、4738冻结文件、8项需求/依赖/core锁不改；P6实施未授权，WI-R2延期/正式Test未运行/金融NONE/历史宿主边界保留，无UI安装启动、真实权限、部署、实盘、合并、标签或P7。以下旧状态保留历史。
+
+
 2026-10-23 当前：Phase5 十二项已 ACCEPTED / RELEASED，main/phase5-baseline/v0.5.0 同点 59246f9fd391c1713b6bed65dd22280f4d248493，旧标签未移动；发布证据见 docs/audits/phase-5/BASELINE.md。现只启动Phase6 G1计划，原目录8项（5MVP/3CR）六页面+统一任务/CLI/SDK一致，资料见 docs/audits/phase-6/REVIEW_PACKAGE.md。G1 PENDING GPT Work固定SHA独立预审，P6业务实现NOT AUTHORIZED / NOT STARTED；依赖仅候选解析，不改core锁、不启动网页。WI-R2两项及真实Windows隔离DEFERRED / NOT VERIFIED，正式Test未运行、金融批准NONE、完整历史宿主边界不变；无部署/实盘/真实权限操作/P6合并标签/P7。以下旧状态保留历史。
 
 

@@ -1,0 +1,97 @@
+{
+  "fixed_sha": "f7a1a68c5f747090f8c8a0e934f2fea859aec998",
+  "scope": "Phase6 G1 plan only",
+  "verdict": "PLAN BLOCKED / REQUEST CHANGES",
+  "findings": [
+    {
+      "id": "WORK-P6-G1-001",
+      "severity": "High",
+      "status": "OPEN",
+      "blocking": true,
+      "title": "多阶段Task缺少全阶段完成屏障，单个核心终态恢复与Task终态提升未区分",
+      "path": "docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md",
+      "line": 9,
+      "related": [
+        "docs/audits/phase-6/INTERFACE_DRAFT.md:9",
+        "docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md:9"
+      ],
+      "basis": "engineering_pipeline包含P3/P4/P5多个子run，但恢复规则直接由一个合法核心终态恢复Task终态，未冻结每kind的required stages/子slot终态归并及恢复继续/停止条件",
+      "minimal_counterexample": "P3 SUCCEEDED且manifest有效；P4/P5未执行；映射写回前宕机。按现文核心终态→Task终态的无条件解释会标Task SUCCEEDED，完整回测尚不存在。P3/P4成功但P5缺失同样未定义。",
+      "scope": "Design contract ambiguity/counterexample, not observed P6 production defect",
+      "required_fix": "为research/engineering_pipeline/replay分别冻结固定阶段/动态slot完成条件；明确子run终态只恢复该slot；Task成功必须全部必需子阶段及最终工件/血缘验证成功。定义剩余未执行阶段的安全继续或RECOVERY_REQUIRED，禁止重跑完成的P3或退还家族预算。补充每阶段映射前后崩溃、P3成功P5失败/未启动、取消、全链成功设计答案及实际G2矩阵。"
+    },
+    {
+      "id": "WORK-P6-G1-002",
+      "severity": "Medium",
+      "status": "OPEN",
+      "blocking": true,
+      "title": "可信TaskContext和ledger根布局未覆盖P5内部逐决策P4调用",
+      "path": "docs/audits/phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md",
+      "line": 11,
+      "related": [
+        "docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md:3",
+        "docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md:9",
+        "src/aqrp/backtest/engine.py:324",
+        "src/aqrp/backtest/provider.py:191"
+      ],
+      "basis": "已列兼容适配只列ledger和三应用服务；实际P5在Simulator._risk_portfolio内部不带context调用construct_engineering，并固定到P5 run内portfolio-runs，随后在同一根核验。外层适配不自动说明动态P4 slot如何预分配/持久化所有权和根绑定。",
+      "minimal_counterexample": "Task已预分配P5；第一个内部P4已提交合法终态、Task slot/映射尚未写回即宕机。现方案未指定P4的预分配slot/父run/physical root与上下文传递，恢复者无法只凭一个合法UUID证明它属于该Task/decision。",
+      "scope": "Missing implementable adapter/ownership design, not claim no possible implementation",
+      "required_fix": "补全TaskService→P5 service→Simulator内部P4的可信传播机制、并发隔离及明确非金融适配文件；可选显式参数或受控上下文，但须说明原无context行为兼容。冻结(task,slot,service kind,decision,parent,run_id,root,config hash)绑定和动态slot登记时点；说明P3共享家族根与P5内部P4实际根如何同时遵守原来源校验/重放；增加内部P4提交/映射断点及错UUID/根负控。不得靠全局monkeypatch、事后凭UUID补所有权或扩张金融算法。"
+    },
+    {
+      "id": "WORK-P6-G1-003",
+      "severity": "Medium",
+      "status": "OPEN",
+      "blocking": true,
+      "title": "设计参考使用默认Decimal精度，长百分比静默舍入，大金额格式化抛异常",
+      "path": "docs/audits/phase-6/reference_check.py",
+      "line": 8,
+      "related": [
+        "docs/audits/phase-6/reference_check.py:9",
+        "docs/audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md:5",
+        "docs/audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md:7"
+      ],
+      "basis": "原32项全部正确，但规范未限定输入到28有效位，参考的Decimal除法/normalize/quantize使用默认精度28；与精确请求及大金额呈现承诺不符。",
+      "minimal_counterexample": [
+        {
+          "kind": "weight",
+          "input": {
+            "percent": "0.123456789012345678901234567890123456789"
+          },
+          "independent_expected": "0.00123456789012345678901234567890123456789",
+          "developer_reference_actual": "0.001234567890123456789012345679",
+          "error": null,
+          "match": false
+        },
+        {
+          "kind": "money",
+          "input": {
+            "value": "999999999999999999999999999999.995"
+          },
+          "independent_expected": "1,000,000,000,000,000,000,000,000,000,000.00",
+          "developer_reference_actual": null,
+          "error": "InvalidOperation",
+          "match": false
+        }
+      ],
+      "scope": "Actually executed design-reference defect, not UI implementation defect",
+      "required_fix": "精确百分比转换用整数/Fraction或按输入长度设置足够localcontext，不能受默认28位影响。大金额显示也需明确精度/溢出/原值保留策略；若选择schema范围上限，超限须显式拒绝而非舍入。保留32原正确答案字节，增加超过28位的小权重、长大整数金额及正负HALF_EVEN边界，另给独立字面答案并复核参考。"
+    }
+  ],
+  "counts": {
+    "High": 1,
+    "Medium": 2,
+    "Critical": 0,
+    "Low": 0
+  },
+  "P5_published_baseline_verified": true,
+  "P6_business_implementation": false,
+  "P6_runtime_browser_tests": 0,
+  "UI_installation": "NOT VERIFIED / NOT EXECUTED",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "full_historical_host": "NOT VERIFIED beyond accepted package/lock/oldRef/result replay",
+  "merge_tag_deploy_live_P7": false
+}

@@ -11,3 +11,5 @@
 允许差异必须预先枚举：各次生成run_id/task_id、recorded_at/墙钟、工作目录绝对定位以及由这些字段必然引出的非金融事件/manifest hash链；这些字段在各自链内仍必须独立验证，不可通配忽略所有hash、lineage或error。快照ID、数据/sidecar内容hash、真实父run映射的语义绑定、FactorRef、config_hash、状态、原因、预测可用时间、源code/bundle/lock必须一致或在不同run映射表中逐项证明；不得把合法但错误UUID当可忽略元数据。比较器在生产函数之外独立读取原工件做声明投影，不比较生产函数自身生成的预期值。
 
 Golden候选只验证呈现/请求/任务契约，不是P6产品测试。独立主审应扩展未知财务状态、边界大整数、同key竞争、伪造来源、缺清单项及相同错误输入三入口一致拒绝等反例。
+
+本轮精确转换/展示的权威补充是NUMERIC_REFERENCE_CONTRACT：普通ASCII十进制最多4096数字位（原文最多4098字符），超限/指数/非有限明确拒绝并保留raw；不限制或改写旧P1–P5数值API。有效输入的转换和HALF_EVEN显示使用整数coefficient/scale/商余，不依赖ambient Decimal默认精度；视图负零归零、原始值不回写。原32答案保持原字节，补充边界另表。新量程只属G1候选，待主审及后续用户实施授权确认。

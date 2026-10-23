@@ -1,0 +1,220 @@
+diff --git a/docs/audits/phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md b/docs/audits/phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md
+index 0cfca1b..2c06d7c 100644
+--- a/docs/audits/phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md
++++ b/docs/audits/phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md
+@@ -8,6 +8,6 @@
+ 
+ 实施期预期允许的包装兼容变更需独立审查：pyproject的可选UI依赖/入口、src/aqrp/__init__.py版本、当前bundle准入收据、tools/ci.py的新增UI验证/工件选择、覆盖门槛适配、安装元数据测试、新UI扩展锁和新增ui/services/任务CLI模块。原FactorRef不可重写；旧wheel/锁/原答案保留。root core lock/admission LOCK_HASH保持原值；若实际设计需改变，则作为契约/兼容变更重新提交预审，不能悄悄放宽verify_runtime或reviewed_policy。
+ 
+-明确的既有服务兼容适配为：experiments/ledger.py 的可选可信预分配run_id/TaskContext，以及services/research.py、portfolio/service.py、services/backtest.py的可选context转交和协作取消检查点。它们必须校验持久化task/slot所有权，不能信任网页伪造context；属于应用编排，禁止改变数值计算。上述适配（见TASK_AND_RECOVERY_CONTRACT），旧调用不传参数应完全保持行为和结果；必须列出每处差异与原SDK及G2故障回归。P1/P2算法、P3统计/标签/OOS、P4构造/风险、P5订单/时序/逐笔账本/绩效不在UI重写范围。不得删除旧完整性、安全门禁或降低覆盖率来迁就界面。
++明确的全部既有非金融适配位置见NESTED_CONTEXT_CONTRACT文件表：除experiments/ledger、P3/P4/P5外层服务外，必须包含backtest/engine.py的Simulator构造/_risk_portfolio/_submit及backtest/provider.py的来源验证，覆盖P5内部真实P4、resume与replay。采用实例显式可选context，调用前事务登记完整绑定，P3共享家族根与P5内部物理根分别保持。旧无context调用、原请求wire schema与金融算法不变；不能用全局monkeypatch或后补UUID代替所有权。原数据/统计/构造/撮合/账本/绩效和全部既有安全门禁不改，具体完成屏障见TASK_COMPLETION_CONTRACT。
+ 
+ 主要资料：[Streamlit发行](https://pypi.org/project/streamlit/1.66.1/)、[Plotly发行](https://pypi.org/project/plotly/7.1.0/)、[AppTest官方说明](https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest)、[AppTest覆盖范围](https://docs.streamlit.io/develop/concepts/app-testing/cheat-sheet)。AppTest是模拟执行检查页面元素；不把它写成实际浏览器/网络或部署验证。
+diff --git a/docs/audits/phase-6/INTERFACE_DRAFT.md b/docs/audits/phase-6/INTERFACE_DRAFT.md
+index a409c29..04b8ef9 100644
+--- a/docs/audits/phase-6/INTERFACE_DRAFT.md
++++ b/docs/audits/phase-6/INTERFACE_DRAFT.md
+@@ -8,7 +8,7 @@ EffectiveRequest只允许已知schema/kind（research/engineering_pipeline/repla
+ 
+ `engineering_pipeline`由共享应用编排器顺序调用既有P3/P4/P5与PIT输入构造，必须生成真实源run/终态文件/manifest hash链；不能创建假P3/P4回执或把同UUID当证明。每次决策继续按P5数据可用性投影，不把研究期末整段结果提前回填历史。表单仅提供原契约允许的字段（股票池、区间、因子/权重、允许仓位/费用/风险设置）；组装代码属于services，页面只传draft与展示结果。
+ 
+-TaskReceipt包含task_id、预分配child slot/run_id及已核TaskContext绑定、canonical config_hash、defaults/catalogue版本、完整源/环境hash、当前状态和已绑定run IDs。任务元数据路径由服务生成的UUID+可信根确定，核心共享ledger根不会按task重置家族/试验登记。输出run_id与随机时间可以不同，输入配置/语义数值不可因入口变化。
++TaskReceipt包含task_id、预分配child slot/run_id及已核TaskContext绑定、canonical config_hash、defaults/catalogue版本、完整源/环境hash、当前状态和已绑定run IDs。任务元数据路径由服务生成的UUID+可信根确定，P3共享家族根不按task重置；P5内部P4根保留其父执行run下portfolio-runs（详NESTED_CONTEXT_CONTRACT）。输出run_id与随机时间可以不同，输入配置/语义数值不可因入口变化。
+ 
+ Artifact API先验证服务所属workspace、task/run绑定、原始账本终态和manifest，再按唯一条目读取原字节并复核hash。清单外追加proposal/同名替代/侧车篡改/别的run的合法UUID都拒绝。运行中可读追加日志须带明确prefix和非终态标识，不允许把部分result.json当SUCCEEDED。渲染器转义文本，结构化图表只消费白名单字段；不执行存储HTML/任意Markdown脚本。下载原始工件时保留媒体类型、文件名白名单和校验值。
+ 
+@@ -19,3 +19,5 @@ Settings只能保存经共享schema校验的新默认配置revision，CAS冲突
+ 时间表单保留证券市场/交易日历/时区与UTC微秒语义；共享builder按既定DATA_CONTRACT转为带时区时间，页面不以本机时区、weekday或当前墙钟推测交易日/decision_time/available_at。日期区间、拟合截止、期限、purge/embargo仍交P3原校验，不暴露私有FINAL_TEST。
+ 
+ 页面缓存只用于明确不可变键（数据/侧车/Ref/bundle/锁/config/defaults revision）对应的已核只读投影；提交与claim不能放进缓存。每次状态/终态/原工件读取仍重新验证服务来源与manifest，不因session_state或缓存命中跳过完整性门禁。会话仅存draft/幂等键，不能作为真实任务/金融状态来源。
++
++TaskReceipt还绑定固定kind、初始TaskPlan/ResolvedPlan hashes、完整required slot集合与各slot状态；研究/流水线/replay的全局完成条件见TASK_COMPLETION_CONTRACT。任何子run成功只改变该slot，Task成功须completion回执和终态事务全闭环。工程流水线真实P4为P5内部逐决策调用，不新增假外层P4；显式上下文传播、调用前登记、目录布局与原resume/replay兼容见NESTED_CONTEXT_CONTRACT。
+diff --git a/docs/audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md b/docs/audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md
+index 9ca7e6d..9d7910f 100644
+--- a/docs/audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md
++++ b/docs/audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md
+@@ -11,3 +11,5 @@
+ 允许差异必须预先枚举：各次生成run_id/task_id、recorded_at/墙钟、工作目录绝对定位以及由这些字段必然引出的非金融事件/manifest hash链；这些字段在各自链内仍必须独立验证，不可通配忽略所有hash、lineage或error。快照ID、数据/sidecar内容hash、真实父run映射的语义绑定、FactorRef、config_hash、状态、原因、预测可用时间、源code/bundle/lock必须一致或在不同run映射表中逐项证明；不得把合法但错误UUID当可忽略元数据。比较器在生产函数之外独立读取原工件做声明投影，不比较生产函数自身生成的预期值。
+ 
+ Golden候选只验证呈现/请求/任务契约，不是P6产品测试。独立主审应扩展未知财务状态、边界大整数、同key竞争、伪造来源、缺清单项及相同错误输入三入口一致拒绝等反例。
++
++本轮精确转换/展示的权威补充是NUMERIC_REFERENCE_CONTRACT：普通ASCII十进制最多4096数字位（原文最多4098字符），超限/指数/非有限明确拒绝并保留raw；不限制或改写旧P1–P5数值API。有效输入的转换和HALF_EVEN显示使用整数coefficient/scale/商余，不依赖ambient Decimal默认精度；视图负零归零、原始值不回写。原32答案保持原字节，补充边界另表。新量程只属G1候选，待主审及后续用户实施授权确认。
+diff --git a/docs/audits/phase-6/OPEN_QUESTIONS.md b/docs/audits/phase-6/OPEN_QUESTIONS.md
+index fd37f4e..99dcaa2 100644
+--- a/docs/audits/phase-6/OPEN_QUESTIONS.md
++++ b/docs/audits/phase-6/OPEN_QUESTIONS.md
+@@ -1,11 +1,9 @@
+-# 待G1主审确认的设计决定
++# 当前G1技术阻断与候选方案
+ 
+-本计划不假定已获G1 PASS，也不申请实施或金融批准。以下为具体可审查方案，若发现阻断应提交新固定SHA；无需用模糊“稍后实现”替代：
++GPT Work只对f7a1a68作PLAN BLOCKED，001High、002/003Medium均OPEN。本轮提供具体修订供新固定SHA复核，开发方不能自行CLOSED/PLAN PASS。完成屏障、嵌套上下文与精确参考属于技术设计责任，不请求用户替未定义方案作批准。
+ 
+-1. 是否接受8项原需求覆盖与六页面/统一task接口；Factor Library的增删是配置与选择，回滚新建revision，不执行网页代码或批准旧制品。
+-2. 是否认可协作取消仅在完整事务/阶段检查点、真实核心终态恢复与不明状态失败关闭；宕机后幂等不以自动重算弥补未知副作用。
+-3. 是否认可保持core锁原字节的UI扩展组合环境，以及完整UI额外环境身份绑定；候选Windows51/Linux50解析不等于实际安装或执行兼容。
+-4. 是否认可三入口精确请求/独立投影及列举的非语义差异；实际UUID父链仍逐条校验，不能宽泛忽略所有hash。float容差不得放宽原Golden。
+-5. 是否认可AppTest与真实浏览器证据分开，以及既有formal/隔离/历史复现限制和阶段边界。
++1. TASK_COMPLETION_CONTRACT冻结三kind必需阶段/动态slots、全局回执与恢复。严格全链成功口径下，真实P4风险拒绝仍保留原P5可能成功的事实，但Task不宣称所有阶段成功，显示FAILED/REQUIRED_STAGE_REJECTED。请主审核其语义/覆盖，不改金融行为。
++2. NESTED_CONTEXT_CONTRACT固定显式传播、原P5内部P4根和完整绑定，补engine/provider/resume/replay适配表；不通过新的Task数据库弱化原门禁。
++3. NUMERIC_REFERENCE_CONTRACT拟定新P6精确适配的普通十进制字符串量程（最多4096数字位，超限明确拒绝并保留raw），使用整数计算及HALF_EVEN展示。只约束拟新增适配/参考，不修改既有P1–P5数值API。新增范围需G1审查且在未来用户单独实施授权时明确确认，不视为既有批准。
+ 
+-本轮没有新金融经济选择或真实权限操作请求。G1通过后仍须用户单独授权P6实现；阶段验收、P6合并标签/发布、P7启动均未授权。公开正式策略/最终Test保持失败关闭，不把延期事项写成已关闭。
++原32正确答案、8需求、Python3.13.16与候选依赖/core锁全部保留。原问题解决与G1通过后，仍须用户单独批准具体实施方案；阶段验收、P6合并/标签/发布、P7均未授权。没有新金融经济或真实权限申请。WI-R2延期、正式Test未运行/金融NONE/完整历史宿主限制不变。
+diff --git a/docs/audits/phase-6/PLAN.md b/docs/audits/phase-6/PLAN.md
+index 1ed0767..b7eb11d 100644
+--- a/docs/audits/phase-6/PLAN.md
++++ b/docs/audits/phase-6/PLAN.md
+@@ -23,3 +23,5 @@ flowchart LR
+ 拟实施顺序（仅在 G1 通过且用户另行授权实现后）：(1) 固定UI扩展依赖与准入/环境证据；(2) catalog、有效请求、TaskService、持久化幂等与生命周期；(3) 六页面及原始工件视图；(4) CLI/SDK/UI全研究与回测一致、因子替换；(5) 完整SDK/双OS原ZIP/真实本地浏览器证据和固定SHA G2。任何一步失败保存原始结果，不跳过阶段依赖。
+ 
+ 工程用途必须显式为 ENGINEERING_TEST_ONLY。正式策略入口继续后端 APPROVAL_REQUIRED，FINAL_TEST 无网页入口且后端拒绝；既有真实隔离/金融批准/正式Test/完整历史宿主边界继续保留。G1不产生实施、阶段验收或发布许可。
++
++G1固定f7a1a68独立审查为PLAN BLOCKED（001High、002/003Medium）。本轮只修订：三kind全Task完成屏障、P5内部逐决策P4的可信上下文/原物理根/恢复与重放、整数精确数值参考及边界。详g1-f7a1a68/DEVELOPER_RESPONSE、TASK_COMPLETION_CONTRACT、NESTED_CONTEXT_CONTRACT、NUMERIC_REFERENCE_CONTRACT。原8需求/32答案/依赖候选/core锁/P5发布不改；三项待新固定SHA独立复核，不宣告关闭。
+diff --git a/docs/audits/phase-6/REQUIREMENTS_TRACEABILITY.md b/docs/audits/phase-6/REQUIREMENTS_TRACEABILITY.md
+index 430feea..458f2bd 100644
+--- a/docs/audits/phase-6/REQUIREMENTS_TRACEABILITY.md
++++ b/docs/audits/phase-6/REQUIREMENTS_TRACEABILITY.md
+@@ -14,3 +14,5 @@
+ | UI-008 | MVP | Task orchestration | durable TaskService + safe cooperative checkpoints | 任务提交/查询/取消/恢复/日志/图表；幂等键与请求绑定；失败和取消不报成功；原子账本之后恢复真实状态 | T6-TASK / T6-CRASH / T6-IDEMP |
+ 
+ 统一最早阶段为P6；每项开发前提为P5 RELEASED、P6 G1闭环和单独实施授权。全部Planned；MVP与CR均是本阶段必需能力，不以延期/Unsupported占位。
++
++本轮发现映射：WORK-P6-G1-001→UI-001/003/004/005/007/008（Task完成屏障/恢复）；002→UI-004/005/007/008（P5内部P4所有权/根与来源）；003→UI-002/004/006/007（精确转换/展示参考）。对应新增规范/答案/实际开发参考日志见g1-f7a1a68/，全部原发现仍OPEN_PENDING_RECHECK。
+diff --git a/docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md b/docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md
+index 0a76eea..5fb4bac 100644
+--- a/docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md
++++ b/docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md
+@@ -1,15 +1,13 @@
+-# 持久化任务、取消与恢复设计
++# 持久化任务、完成屏障与安全恢复
+ 
+-TaskService固定采用stdlib SQLite任务库（BEGIN IMMEDIATE事务、workspace+idempotency_key唯一约束、WAL、同步提交）管理分配/claim/任务事件与幂等绑定；底层P3/P4/P5实验账本仍是核心执行及财务事实来源。任务元数据目录彼此独立，但P3/P4/P5使用可信workspace预配置的共享ledger根，**不能为每个任务另开P3研究家族/试验预算库**。SQLite原始请求blob/事件/claim和导出不可变任务回执都保留，丢失或冲突时失败关闭，不推定索引可无损重建。
++当前为G1修订候选，三项原发现OPEN_PENDING_RECHECK，P6业务未授权/未实现。TaskService使用stdlib SQLite（BEGIN IMMEDIATE、workspace/idempotency_key唯一约束、WAL、同步提交）持久化分配/claim/追加事件，P3/P4/P5原实验账本及事务仍是核心事实来源。任务元数据目录分开，P3共享研究家族根；P5内部P4保留原P5 run下portfolio-runs。详细且唯一的完成/恢复与目录规范分别见[TASK_COMPLETION_CONTRACT](TASK_COMPLETION_CONTRACT.md)、[NESTED_CONTEXT_CONTRACT](NESTED_CONTEXT_CONTRACT.md)。
+ 
+-状态总序：QUEUED → RUNNING → SUCCEEDED / FAILED / CANCELLED；RUNNING可先进入CANCEL_REQUESTED，该状态不等于已经取消。排队时取消在未启动副作用前成为CANCELLED；worker已在运行时先持久化取消意图，只在安全检查点响应。已有SUCCEEDED或其他终态后取消返回TOO_LATE，不回写终态。未知财务状态仍是FAILED+COMMITTED_STATE_UNVERIFIED，绝不能认证CANCELLED且known=true。
++状态QUEUED→RUNNING→SUCCEEDED/FAILED/CANCELLED；CANCEL_REQUESTED是待执行意图而非已取消。单个slot终态只更新slot，不能直接提升Task。仅冻结kind全部required slots、实际工件/父链/完整金融验证、全局completion回执和SQLite终态闭环才SUCCEEDED。原G16–G19单状态模型只说明孤立slot的终态单调性，不是多阶段Task归并规则；本轮另增多阶段答案。
+ 
+-`(workspace,idempotency_key)`通过OS互斥和原子持久化绑定canonical config_hash，事务内分配唯一task_id与任务元数据目录；同key同hash所有重试返回原task，不再次运行。同key不同hash明确IDEMPOTENCY_CONFLICT。相同配置但新key属于新实验，必须记录试验次数/家族，不能吞掉重复研究记录。并发10次同key也只能一个worker claim；Streamlit rerun/刷新在未显式submit时不得提交新任务，表单提交与幂等键分配分开。
++同key同有效config_hash返回原task，不再调用；同key异hash拒绝。相同配置新key是新实验，继续写同一P3家族/次数/预算；取消/失败不退款、不丢试验。并发只有一份有效claim，恢复epoch只追加、旧handle失效。网页和JSON不能提供context/root/归属布尔。
+ 
+-worker在调用核心前提交claim/启动意图和输入证据，事务内先登记每个子阶段唯一slot及预分配UUID run_id（动态调仓slot也先登记再调用）。拟为ExperimentLedger.start和P3/P4/P5应用服务增加可选trusted TaskContext：只可由TaskService从任务库重建并验证，原无context调用保持随机UUID及原行为；网页不可传入或替换。核心初始记录绑定task_id/slot/config_hash，目录独占创建，禁止覆盖既有run。宕机恢复首先核验任务库事件、claim/预分配run_id与共享ledger根中的真实核心账本，而不依据pid存活或mtime。若核心已形成合法终态且请求/配置/来源完全匹配，只恢复原run映射和Task终态，不再调用服务。若尚无核心目录/初始事件且事务claim可确认未执行，才可重领；出现STARTED/磁盘prefix不明、缺绑定或多run歧义时进入FAILED/RECOVERY_REQUIRED，不自动重跑、伪造成功或丢失已提交Fill。用户显式新实验需新key并关联失败原task。
++取消先持久化，在P3阶段间或P5完整原子事务边界检查，禁止中途kill并伪称安全取消；提交后继续原重读对账。取消先于全局成功提交则不提升成功；成功提交先完成则取消TOO_LATE。未知金融状态FAILED+COMMITTED_STATE_UNVERIFIED，不显示旧余额、不认证CANCELLED known=true。一次完整事务或既定阶段是取消响应边界，不虚构延迟SLA。
+ 
+-取消扩展只允许向现有服务加入可选的协作检查点参数（旧调用默认无回调），在P3候选/期限或处理阶段之间、P5完整原子事务边界响应。提交内不得注入异步异常或强制kill并伪称取消；已提交Fill后先执行现有完整重读对账/终态流程。窗口最坏取消延迟是一笔原子事务或已登记阶段的完成时间，不虚构毫秒SLA。若进程真实崩溃则按恢复协议核对持久化前缀，不能把内存旧余额展示为已知。
++崩溃恢复只恢复已核slot；后续未执行阶段仅在原计划、有效claim和“确定未启动”证据齐全时继续。P5只能使用既有严格resume条件，同slot原P4终态可复用但不重算；不明/半初始化/部分发布进入RECOVERY_REQUIRED。最终Task屏障重新验证，不从PID/mtime、一个成功P3或文件存在推定成功。失败、首次异常、磁盘提交、原始日志及旧hash完整保留。
+ 
+-失败保留首次异常、磁盘提交、任务/核心身份和所有失败工件；新的恢复事件追加，不改原日志、状态或旧hash。UI显示request_cancelled与actual_terminal分离，失败/取消不复用旧成功图表。G2必须在实际核心服务和磁盘中注入提交前/后、映射前/后、取消/成功竞争、数据库恢复等故障，模型测试只作补充，不是实现证明。
+-
+-所有新key产生的真实重复试验、取消/失败后的新实验都继续写入同一P3家族/次数/预算登记，已有试验不因取消退款或换task目录而消失。TaskContext只解决所有权/来源/UUID预分配，不授金融权限，也不修改金融计算。G2必须额外验证跨任务相同家族计数、取消后的保留与预算耗尽拒绝。
++G2须实际覆盖SQLite/真实核心服务及磁盘的每阶段提交/映射、内部P4绑定、取消/成功竞争、completion与索引断点、同key并发和跨Task家族预算。模型通过只是G1参考，不是实际实现/并发/隔离验证。真实Windows R2两项及正式Test/金融批准/历史宿主限制不变。
+diff --git a/docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md b/docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md
+index 75fdb11..d0e7c89 100644
+--- a/docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md
++++ b/docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md
+@@ -20,3 +20,5 @@ G1当前无UI业务实现/安装/浏览器通过记录。已有1158只验证P5
+ AppTest用于页面状态和组件断言，真实浏览器另留本地工程启动的argv/地址绑定/进程身份/交互与截图、六页面/两因子/取消/失败/下载链日志。不得把AppTest或mock结果宣称真实浏览器验证；没有真实浏览器证据则该项NOT VERIFIED，阻断所需UI验收。任何未来本地工程启动都需先有实施授权，不涉及外网发布/管理员操作，本轮不启动。
+ 
+ 每次run唯一UUID、不可变有效配置、代码40SHA/dirty、core bundle/两套锁/实际distribution+RECORD/interpreter/OS、数据manifest/sidecar、输入/输出工件、开始结束UTC、原始命令/stdout/stderr/报告/hash。固定G2版本用PR AQRP_FIXED_REVIEW_SHA，HEAD漂移单列，不继承旧PASS。保留扫描正/负控及所有原失败记录；真实Windows R2延期不因这些测试关闭。
++
++本轮专项G2必需矩阵：research/pipeline/replay各固定阶段及最终Task屏障；R已成功但P5未启动、部分P4成功但B缺失/失败/取消/unknown、全部子run成功但全局回执缺失、completion发布与SQLite提交双断点；P5内部P4调用前登记/半初始化/提交后映射前/原slot恢复、跨Task/parent/decision/root/config/合法错UUID拒绝；resume同子run不重复调用及replay新归属不写原源；32原答案+额外长百分比/大金额/正负HALF_EVEN/明确量程拒绝与不同Decimal context性质核对。新增模型答案不能替代上述真实服务/磁盘/并发G2执行。
+diff --git a/docs/audits/phase-6/reference_check.py b/docs/audits/phase-6/reference_check.py
+index 0de3404..dfa721a 100644
+--- a/docs/audits/phase-6/reference_check.py
++++ b/docs/audits/phase-6/reference_check.py
+@@ -1,17 +1,88 @@
+ """Independent stdlib design model; no application imports, no P6 implementation claim."""
+ from pathlib import Path
+-from decimal import Decimal, ROUND_HALF_EVEN
+ import argparse, html, json
+ 
++MAX_DIGITS = 4096
++
++
++class ReferenceNumberError(ValueError):
++    """Explicit design-reference input refusal, never silent numeric rounding."""
++
++    def __init__(self, code):
++        super().__init__(code)
++        self.code = code
++
++
++def decimal_parts(text):
++    if not isinstance(text, str):
++        raise ReferenceNumberError("REFERENCE_NUMERIC_TYPE")
++    if len(text) > MAX_DIGITS + 2:
++        raise ReferenceNumberError("REFERENCE_NUMERIC_RANGE")
++    sign = -1 if text.startswith("-") else 1
++    body = text[1:] if text.startswith(("-", "+")) else text
++    parts = body.split(".")
++    if len(parts) > 2:
++        raise ReferenceNumberError("REFERENCE_NUMERIC_SYNTAX")
++    whole = parts[0]
++    fraction = parts[1] if len(parts) == 2 else ""
++    digits = whole + fraction
++    if not digits or (len(parts) == 2 and not fraction) or any(c not in "0123456789" for c in digits):
++        raise ReferenceNumberError("REFERENCE_NUMERIC_SYNTAX")
++    if len(digits) > MAX_DIGITS:
++        raise ReferenceNumberError("REFERENCE_NUMERIC_RANGE")
++    return sign * int(digits), len(fraction)
++
++
++def exact_text(coefficient, scale, *, trim=True):
++    negative = coefficient < 0
++    digits = str(abs(coefficient))
++    if scale:
++        digits = digits.zfill(scale + 1)
++        whole, fraction = digits[:-scale], digits[-scale:]
++        if trim:
++            fraction = fraction.rstrip("0")
++        result = whole + ("." + fraction if fraction else "")
++    else:
++        result = digits
++    return ("-" if negative else "") + result
++
++
++def rounded_units(coefficient, scale, places):
++    if scale <= places:
++        return coefficient * 10 ** (places - scale)
++    denominator = 10 ** (scale - places)
++    q, r = divmod(abs(coefficient), denominator)
++    if 2 * r > denominator or (2 * r == denominator and q % 2):
++        q += 1
++    return -q if coefficient < 0 else q
++
++
++def fixed_view(text, places, *, multiply=1, grouping=False):
++    coefficient, scale = decimal_parts(text)
++    value = exact_text(rounded_units(coefficient * multiply, scale, places), places, trim=False)
++    if grouping:
++        negative = value.startswith("-")
++        whole, fraction = value.lstrip("-").split(".")
++        chunks = [whole[max(0, i - 3):i] for i in range(len(whole), 0, -3)]
++        value = ("-" if negative else "") + ",".join(reversed(chunks)) + "." + fraction
++    return value
++
++
+ def reference(case):
+     kind=case["kind"];x=case["inputs"]
+-    if kind=="weight":return format((Decimal(x["percent"])/100).normalize(),"f")
+-    if kind=="money":return format(Decimal(x["value"]).quantize(Decimal("0.01"),rounding=ROUND_HALF_EVEN),",.2f")
+-    if kind=="quantity":return str(int(x["value"]))
+-    if kind=="small":return format(Decimal(x["value"]),"f")
+-    if kind=="ic_display":return format(Decimal(x["value"]).quantize(Decimal("0.0001"),rounding=ROUND_HALF_EVEN),"f")
++    if kind=="weight":
++        coefficient, scale = decimal_parts(x["percent"])
++        return exact_text(coefficient, scale + 2)
++    if kind=="money":return fixed_view(x["value"], 2, grouping=True)
++    if kind=="quantity":
++        coefficient, scale = decimal_parts(x["value"])
++        if scale:
++            raise ReferenceNumberError("REFERENCE_INTEGER_REQUIRED")
++        return str(coefficient)
++    if kind=="small":return exact_text(*decimal_parts(x["value"]))
++    if kind=="ic_display":return fixed_view(x["value"], 4)
+     if kind=="nullable":return {"text":"N/A" if x["value"] is None else str(x["value"]),"reason":x["reason"]}
+-    if kind=="percent_display":return format((Decimal(x["value"])*100).quantize(Decimal("0.0001"),rounding=ROUND_HALF_EVEN),"f")+"%"
++    if kind=="percent_display":return fixed_view(x["value"], 4, multiply=100)+"%"
+     if kind=="canonical":return json.dumps(json.loads(x["raw"]),ensure_ascii=False,sort_keys=True,separators=(",",":"),allow_nan=False)
+     if kind=="array_order":return x["left"]==x["right"]
+     if kind=="status_counts":return {"total":len(x["rows"]),"succeeded":sum(r["status"]=="SUCCEEDED" and r["verified"] for r in x["rows"]),"integrity_errors":sum(not r["verified"] for r in x["rows"])}

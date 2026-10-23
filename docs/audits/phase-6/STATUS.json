@@ -1,7 +1,7 @@
 {
   "phase": 6,
-  "current": "G1_PLAN_PRE_REVIEW_REQUIRED",
-  "G1": "PENDING_GPT_WORK_FIXED_SHA_REVIEW",
+  "current": "G1_BLOCKED_DESIGN_REVISED_PENDING_FIXED_SHA_RECHECK",
+  "G1": "PLAN_BLOCKED_AT_F7A1A68; REVISED_CANDIDATE_NOT_INDEPENDENTLY_PASSED",
   "G2": "NOT_APPLICABLE_IMPLEMENTATION_NOT_STARTED",
   "requirements": 8,
   "tiers": {
@@ -22,5 +22,22 @@
   "full_historical_host": "NOT VERIFIED beyond accepted package/lock/oldRef/result replay",
   "actual_P6_business_or_browser_tests": "NONE; inherited P5 regression is not P6 implementation evidence",
   "dependency_resolution": "Windows51/Linux50 candidate packages resolved; no UI installation or active lock changes",
-  "review_lock": "Only complete40 SHA in plan PR AQRP_FIXED_REVIEW_SHA; never drifting HEAD"
+  "review_lock": "Only complete40 SHA in plan PR AQRP_FIXED_REVIEW_SHA; never drifting HEAD",
+  "last_independent_reviewed_sha": "f7a1a68c5f747090f8c8a0e934f2fea859aec998",
+  "reviewer": "GPT Work",
+  "findings": {
+    "WORK-P6-G1-001": "OPEN_PENDING_INDEPENDENT_RECHECK",
+    "WORK-P6-G1-002": "OPEN_PENDING_INDEPENDENT_RECHECK",
+    "WORK-P6-G1-003": "OPEN_PENDING_INDEPENDENT_RECHECK"
+  },
+  "review_record": "g1-f7a1a68/received/REPORT.md",
+  "developer_response": "g1-f7a1a68/DEVELOPER_RESPONSE.md",
+  "candidate_design_validation": {
+    "original32": 32,
+    "supplemental95": 95,
+    "ambient_context_observations": 270,
+    "Fraction_oracle_cases": 35,
+    "scope": "Developer design reference only; P6 product/concurrency/browser tests0"
+  },
+  "numeric_adapter_range": "PROPOSED_NOT_ACCEPTED: ASCII ordinary decimal4096 digits/4098text; legacy core APIs unchanged"
 }

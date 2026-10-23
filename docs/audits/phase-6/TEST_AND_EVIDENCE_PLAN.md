@@ -20,3 +20,5 @@ G1当前无UI业务实现/安装/浏览器通过记录。已有1158只验证P5�
 AppTest用于页面状态和组件断言，真实浏览器另留本地工程启动的argv/地址绑定/进程身份/交互与截图、六页面/两因子/取消/失败/下载链日志。不得把AppTest或mock结果宣称真实浏览器验证；没有真实浏览器证据则该项NOT VERIFIED，阻断所需UI验收。任何未来本地工程启动都需先有实施授权，不涉及外网发布/管理员操作，本轮不启动。
 
 每次run唯一UUID、不可变有效配置、代码40SHA/dirty、core bundle/两套锁/实际distribution+RECORD/interpreter/OS、数据manifest/sidecar、输入/输出工件、开始结束UTC、原始命令/stdout/stderr/报告/hash。固定G2版本用PR AQRP_FIXED_REVIEW_SHA，HEAD漂移单列，不继承旧PASS。保留扫描正/负控及所有原失败记录；真实Windows R2延期不因这些测试关闭。
+
+本轮专项G2必需矩阵：research/pipeline/replay各固定阶段及最终Task屏障；R已成功但P5未启动、部分P4成功但B缺失/失败/取消/unknown、全部子run成功但全局回执缺失、completion发布与SQLite提交双断点；P5内部P4调用前登记/半初始化/提交后映射前/原slot恢复、跨Task/parent/decision/root/config/合法错UUID拒绝；resume同子run不重复调用及replay新归属不写原源；32原答案+额外长百分比/大金额/正负HALF_EVEN/明确量程拒绝与不同Decimal context性质核对。新增模型答案不能替代上述真实服务/磁盘/并发G2执行。

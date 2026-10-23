@@ -14,3 +14,5 @@
 | UI-008 | MVP | Task orchestration | durable TaskService + safe cooperative checkpoints | 任务提交/查询/取消/恢复/日志/图表；幂等键与请求绑定；失败和取消不报成功；原子账本之后恢复真实状态 | T6-TASK / T6-CRASH / T6-IDEMP |
 
 统一最早阶段为P6；每项开发前提为P5 RELEASED、P6 G1闭环和单独实施授权。全部Planned；MVP与CR均是本阶段必需能力，不以延期/Unsupported占位。
+
+本轮发现映射：WORK-P6-G1-001→UI-001/003/004/005/007/008（Task完成屏障/恢复）；002→UI-004/005/007/008（P5内部P4所有权/根与来源）；003→UI-002/004/006/007（精确转换/展示参考）。对应新增规范/答案/实际开发参考日志见g1-f7a1a68/，全部原发现仍OPEN_PENDING_RECHECK。

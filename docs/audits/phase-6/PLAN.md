@@ -23,3 +23,5 @@ flowchart LR
 拟实施顺序（仅在 G1 通过且用户另行授权实现后）：(1) 固定UI扩展依赖与准入/环境证据；(2) catalog、有效请求、TaskService、持久化幂等与生命周期；(3) 六页面及原始工件视图；(4) CLI/SDK/UI全研究与回测一致、因子替换；(5) 完整SDK/双OS原ZIP/真实本地浏览器证据和固定SHA G2。任何一步失败保存原始结果，不跳过阶段依赖。
 
 工程用途必须显式为 ENGINEERING_TEST_ONLY。正式策略入口继续后端 APPROVAL_REQUIRED，FINAL_TEST 无网页入口且后端拒绝；既有真实隔离/金融批准/正式Test/完整历史宿主边界继续保留。G1不产生实施、阶段验收或发布许可。
+
+G1固定f7a1a68独立审查为PLAN BLOCKED（001High、002/003Medium）。本轮只修订：三kind全Task完成屏障、P5内部逐决策P4的可信上下文/原物理根/恢复与重放、整数精确数值参考及边界。详g1-f7a1a68/DEVELOPER_RESPONSE、TASK_COMPLETION_CONTRACT、NESTED_CONTEXT_CONTRACT、NUMERIC_REFERENCE_CONTRACT。原8需求/32答案/依赖候选/core锁/P5发布不改；三项待新固定SHA独立复核，不宣告关闭。

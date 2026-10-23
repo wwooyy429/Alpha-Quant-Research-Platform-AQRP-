@@ -1,0 +1,24 @@
+{
+  "reviewer_execution": [
+    {
+      "label": "scope-release",
+      "exit_code": 4294967295,
+      "scope": "Read-only auditor helper, not AQRP product",
+      "reason": "Per-file git show repeatedly spawning processes was too slow; verified exact child command identity and stopped only that helper",
+      "original_script": "verify_scope_release.first-attempt.py",
+      "replacement": "scope-release-batch completed PASS with one ls-tree and all4738 file SHA256/Git blob identity checks",
+      "expected_answers_or_guards_weakened": false
+    }
+  ],
+  "read_only_lookup_errors": [
+    "initial rg no matching workspace files returned1",
+    "one read-only attempt used nonexistent docs/audits/phase-6/resolve_candidates.py; actual developer helper is external"
+  ],
+  "design_findings": "1High/2Medium OPEN; design-model traces are not product execution",
+  "CI_plan_run_raw_zip": "NOT VERIFIED; metadata only",
+  "UI_install_AppTest_browser": "NOT EXECUTED",
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "merge_tag_deploy_live_P7": false
+}

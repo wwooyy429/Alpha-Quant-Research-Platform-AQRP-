@@ -1,15 +1,13 @@
-# 持久化任务、取消与恢复设计
+# 持久化任务、完成屏障与安全恢复
 
-TaskService固定采用stdlib SQLite任务库（BEGIN IMMEDIATE事务、workspace+idempotency_key唯一约束、WAL、同步提交）管理分配/claim/任务事件与幂等绑定；底层P3/P4/P5实验账本仍是核心执行及财务事实来源。任务元数据目录彼此独立，但P3/P4/P5使用可信workspace预配置的共享ledger根，**不能为每个任务另开P3研究家族/试验预算库**。SQLite原始请求blob/事件/claim和导出不可变任务回执都保留，丢失或冲突时失败关闭，不推定索引可无损重建。
+当前为G1修订候选，三项原发现OPEN_PENDING_RECHECK，P6业务未授权/未实现。TaskService使用stdlib SQLite（BEGIN IMMEDIATE、workspace/idempotency_key唯一约束、WAL、同步提交）持久化分配/claim/追加事件，P3/P4/P5原实验账本及事务仍是核心事实来源。任务元数据目录分开，P3共享研究家族根；P5内部P4保留原P5 run下portfolio-runs。详细且唯一的完成/恢复与目录规范分别见[TASK_COMPLETION_CONTRACT](TASK_COMPLETION_CONTRACT.md)、[NESTED_CONTEXT_CONTRACT](NESTED_CONTEXT_CONTRACT.md)。
 
-状态总序：QUEUED → RUNNING → SUCCEEDED / FAILED / CANCELLED；RUNNING可先进入CANCEL_REQUESTED，该状态不等于已经取消。排队时取消在未启动副作用前成为CANCELLED；worker已在运行时先持久化取消意图，只在安全检查点响应。已有SUCCEEDED或其他终态后取消返回TOO_LATE，不回写终态。未知财务状态仍是FAILED+COMMITTED_STATE_UNVERIFIED，绝不能认证CANCELLED且known=true。
+状态QUEUED→RUNNING→SUCCEEDED/FAILED/CANCELLED；CANCEL_REQUESTED是待执行意图而非已取消。单个slot终态只更新slot，不能直接提升Task。仅冻结kind全部required slots、实际工件/父链/完整金融验证、全局completion回执和SQLite终态闭环才SUCCEEDED。原G16–G19单状态模型只说明孤立slot的终态单调性，不是多阶段Task归并规则；本轮另增多阶段答案。
 
-`(workspace,idempotency_key)`通过OS互斥和原子持久化绑定canonical config_hash，事务内分配唯一task_id与任务元数据目录；同key同hash所有重试返回原task，不再次运行。同key不同hash明确IDEMPOTENCY_CONFLICT。相同配置但新key属于新实验，必须记录试验次数/家族，不能吞掉重复研究记录。并发10次同key也只能一个worker claim；Streamlit rerun/刷新在未显式submit时不得提交新任务，表单提交与幂等键分配分开。
+同key同有效config_hash返回原task，不再调用；同key异hash拒绝。相同配置新key是新实验，继续写同一P3家族/次数/预算；取消/失败不退款、不丢试验。并发只有一份有效claim，恢复epoch只追加、旧handle失效。网页和JSON不能提供context/root/归属布尔。
 
-worker在调用核心前提交claim/启动意图和输入证据，事务内先登记每个子阶段唯一slot及预分配UUID run_id（动态调仓slot也先登记再调用）。拟为ExperimentLedger.start和P3/P4/P5应用服务增加可选trusted TaskContext：只可由TaskService从任务库重建并验证，原无context调用保持随机UUID及原行为；网页不可传入或替换。核心初始记录绑定task_id/slot/config_hash，目录独占创建，禁止覆盖既有run。宕机恢复首先核验任务库事件、claim/预分配run_id与共享ledger根中的真实核心账本，而不依据pid存活或mtime。若核心已形成合法终态且请求/配置/来源完全匹配，只恢复原run映射和Task终态，不再调用服务。若尚无核心目录/初始事件且事务claim可确认未执行，才可重领；出现STARTED/磁盘prefix不明、缺绑定或多run歧义时进入FAILED/RECOVERY_REQUIRED，不自动重跑、伪造成功或丢失已提交Fill。用户显式新实验需新key并关联失败原task。
+取消先持久化，在P3阶段间或P5完整原子事务边界检查，禁止中途kill并伪称安全取消；提交后继续原重读对账。取消先于全局成功提交则不提升成功；成功提交先完成则取消TOO_LATE。未知金融状态FAILED+COMMITTED_STATE_UNVERIFIED，不显示旧余额、不认证CANCELLED known=true。一次完整事务或既定阶段是取消响应边界，不虚构延迟SLA。
 
-取消扩展只允许向现有服务加入可选的协作检查点参数（旧调用默认无回调），在P3候选/期限或处理阶段之间、P5完整原子事务边界响应。提交内不得注入异步异常或强制kill并伪称取消；已提交Fill后先执行现有完整重读对账/终态流程。窗口最坏取消延迟是一笔原子事务或已登记阶段的完成时间，不虚构毫秒SLA。若进程真实崩溃则按恢复协议核对持久化前缀，不能把内存旧余额展示为已知。
+崩溃恢复只恢复已核slot；后续未执行阶段仅在原计划、有效claim和“确定未启动”证据齐全时继续。P5只能使用既有严格resume条件，同slot原P4终态可复用但不重算；不明/半初始化/部分发布进入RECOVERY_REQUIRED。最终Task屏障重新验证，不从PID/mtime、一个成功P3或文件存在推定成功。失败、首次异常、磁盘提交、原始日志及旧hash完整保留。
 
-失败保留首次异常、磁盘提交、任务/核心身份和所有失败工件；新的恢复事件追加，不改原日志、状态或旧hash。UI显示request_cancelled与actual_terminal分离，失败/取消不复用旧成功图表。G2必须在实际核心服务和磁盘中注入提交前/后、映射前/后、取消/成功竞争、数据库恢复等故障，模型测试只作补充，不是实现证明。
-
-所有新key产生的真实重复试验、取消/失败后的新实验都继续写入同一P3家族/次数/预算登记，已有试验不因取消退款或换task目录而消失。TaskContext只解决所有权/来源/UUID预分配，不授金融权限，也不修改金融计算。G2必须额外验证跨任务相同家族计数、取消后的保留与预算耗尽拒绝。
+G2须实际覆盖SQLite/真实核心服务及磁盘的每阶段提交/映射、内部P4绑定、取消/成功竞争、completion与索引断点、同key并发和跨Task家族预算。模型通过只是G1参考，不是实际实现/并发/隔离验证。真实Windows R2两项及正式Test/金融批准/历史宿主限制不变。

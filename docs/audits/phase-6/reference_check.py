@@ -1,17 +1,88 @@
 """Independent stdlib design model; no application imports, no P6 implementation claim."""
 from pathlib import Path
-from decimal import Decimal, ROUND_HALF_EVEN
 import argparse, html, json
+
+MAX_DIGITS = 4096
+
+
+class ReferenceNumberError(ValueError):
+    """Explicit design-reference input refusal, never silent numeric rounding."""
+
+    def __init__(self, code):
+        super().__init__(code)
+        self.code = code
+
+
+def decimal_parts(text):
+    if not isinstance(text, str):
+        raise ReferenceNumberError("REFERENCE_NUMERIC_TYPE")
+    if len(text) > MAX_DIGITS + 2:
+        raise ReferenceNumberError("REFERENCE_NUMERIC_RANGE")
+    sign = -1 if text.startswith("-") else 1
+    body = text[1:] if text.startswith(("-", "+")) else text
+    parts = body.split(".")
+    if len(parts) > 2:
+        raise ReferenceNumberError("REFERENCE_NUMERIC_SYNTAX")
+    whole = parts[0]
+    fraction = parts[1] if len(parts) == 2 else ""
+    digits = whole + fraction
+    if not digits or (len(parts) == 2 and not fraction) or any(c not in "0123456789" for c in digits):
+        raise ReferenceNumberError("REFERENCE_NUMERIC_SYNTAX")
+    if len(digits) > MAX_DIGITS:
+        raise ReferenceNumberError("REFERENCE_NUMERIC_RANGE")
+    return sign * int(digits), len(fraction)
+
+
+def exact_text(coefficient, scale, *, trim=True):
+    negative = coefficient < 0
+    digits = str(abs(coefficient))
+    if scale:
+        digits = digits.zfill(scale + 1)
+        whole, fraction = digits[:-scale], digits[-scale:]
+        if trim:
+            fraction = fraction.rstrip("0")
+        result = whole + ("." + fraction if fraction else "")
+    else:
+        result = digits
+    return ("-" if negative else "") + result
+
+
+def rounded_units(coefficient, scale, places):
+    if scale <= places:
+        return coefficient * 10 ** (places - scale)
+    denominator = 10 ** (scale - places)
+    q, r = divmod(abs(coefficient), denominator)
+    if 2 * r > denominator or (2 * r == denominator and q % 2):
+        q += 1
+    return -q if coefficient < 0 else q
+
+
+def fixed_view(text, places, *, multiply=1, grouping=False):
+    coefficient, scale = decimal_parts(text)
+    value = exact_text(rounded_units(coefficient * multiply, scale, places), places, trim=False)
+    if grouping:
+        negative = value.startswith("-")
+        whole, fraction = value.lstrip("-").split(".")
+        chunks = [whole[max(0, i - 3):i] for i in range(len(whole), 0, -3)]
+        value = ("-" if negative else "") + ",".join(reversed(chunks)) + "." + fraction
+    return value
+
 
 def reference(case):
     kind=case["kind"];x=case["inputs"]
-    if kind=="weight":return format((Decimal(x["percent"])/100).normalize(),"f")
-    if kind=="money":return format(Decimal(x["value"]).quantize(Decimal("0.01"),rounding=ROUND_HALF_EVEN),",.2f")
-    if kind=="quantity":return str(int(x["value"]))
-    if kind=="small":return format(Decimal(x["value"]),"f")
-    if kind=="ic_display":return format(Decimal(x["value"]).quantize(Decimal("0.0001"),rounding=ROUND_HALF_EVEN),"f")
+    if kind=="weight":
+        coefficient, scale = decimal_parts(x["percent"])
+        return exact_text(coefficient, scale + 2)
+    if kind=="money":return fixed_view(x["value"], 2, grouping=True)
+    if kind=="quantity":
+        coefficient, scale = decimal_parts(x["value"])
+        if scale:
+            raise ReferenceNumberError("REFERENCE_INTEGER_REQUIRED")
+        return str(coefficient)
+    if kind=="small":return exact_text(*decimal_parts(x["value"]))
+    if kind=="ic_display":return fixed_view(x["value"], 4)
     if kind=="nullable":return {"text":"N/A" if x["value"] is None else str(x["value"]),"reason":x["reason"]}
-    if kind=="percent_display":return format((Decimal(x["value"])*100).quantize(Decimal("0.0001"),rounding=ROUND_HALF_EVEN),"f")+"%"
+    if kind=="percent_display":return fixed_view(x["value"], 4, multiply=100)+"%"
     if kind=="canonical":return json.dumps(json.loads(x["raw"]),ensure_ascii=False,sort_keys=True,separators=(",",":"),allow_nan=False)
     if kind=="array_order":return x["left"]==x["right"]
     if kind=="status_counts":return {"total":len(x["rows"]),"succeeded":sum(r["status"]=="SUCCEEDED" and r["verified"] for r in x["rows"]),"integrity_errors":sum(not r["verified"] for r in x["rows"])}
