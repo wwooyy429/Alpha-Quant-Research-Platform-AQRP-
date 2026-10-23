@@ -293,6 +293,22 @@ def trade(s, *, fill_id, sid, signed_qty, p, fee, session, at, raw_price=None, r
     )
     _post(s, fill_id, "FILL", lines, {sid: signed_qty})
     record_valuation(s, sid, fill_id + ":valuation")
+    legs = []
+    for effect, quantity, exposure in (
+        ("CLOSE", closed, "LONG" if oldq > 0 else "SHORT"),
+        ("OPEN", opened, "LONG" if signed_qty > 0 else "SHORT"),
+    ):
+        if quantity:
+            legs.append(
+                {
+                    "effect": effect,
+                    "direction": exposure,
+                    "quantity": quantity,
+                    "signed_qty": direction * quantity,
+                    "fee": fee * quantity / qty,
+                    "realized_gross": realized if effect == "CLOSE" else F(0),
+                }
+            )
     fill = {
         "fill_id": fill_id,
         "security_id": sid,
@@ -303,7 +319,11 @@ def trade(s, *, fill_id, sid, signed_qty, p, fee, session, at, raw_price=None, r
         "raw_price": p if raw_price is None else raw_price,
         "slippage_cost": signed_qty * (p - (p if raw_price is None else raw_price)),
         "realized_gross": realized,
-        "direction": "LONG" if oldq > 0 else "SHORT",
+        "direction": legs[0]["direction"] if len(legs) == 1 else "MIXED",
+        "execution_side": "BUY" if signed_qty > 0 else "SELL",
+        "position_before": oldq,
+        "position_after": newq,
+        "position_legs": legs,
     }
     s["fills"].append(fill)
     return fill

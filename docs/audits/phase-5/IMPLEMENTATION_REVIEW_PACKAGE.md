@@ -1,5 +1,8 @@
 # Phase5 G2 固定版本审查入口
 
+当前0.5.0.dev2修复勘误以[g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md](g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md)及[修复复核入口](g2-bfdcf30/REVIEW_PACKAGE.md)为准：原bfdcf30独立G2为BLOCKED，两项仍待新固定版本独立确认；以下原实施说明及正确经济口径保留，不把旧PENDING或正常SDK通过改称G2通过。
+
+
 对象为PR #8描述的AQRP_FIXED_REVIEW_SHA完整40位值，必须与实际PR head核实一致后detached检出，禁止审漂移HEAD。G1固定5262032的四项CLOSED_DESIGN及用户C-P5-001/P5-D01–D10接受/单独实施授权已归档；这些不等于本次实现通过、金融批准或阶段验收。
 
 先读IMPLEMENTATION_AUTHORIZATION、IMPLEMENTATION_CONTRACT、COMPATIBILITY_IMPACT、IMPLEMENTATION_TRACEABILITY、ENGINEERING_CODE_REVIEW和IMPLEMENTATION_IDENTITY；再独立读取代码、原始实际运行工件。此候选不含独立GPT Work G2结论，所有实现关闭/阶段验收由后续独立报告和用户明确决定。

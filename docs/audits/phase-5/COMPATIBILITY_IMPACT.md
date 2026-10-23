@@ -1,5 +1,8 @@
 # Phase5 包版本及基线兼容影响
 
+当前0.5.0.dev2修复勘误以[g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md](g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md)及[修复复核入口](g2-bfdcf30/REVIEW_PACKAGE.md)为准：原bfdcf30独立G2为BLOCKED，两项仍待新固定版本独立确认；以下原实施说明及正确经济口径保留，不把旧PENDING或正常SDK通过改称G2通过。
+
+
 用户已单独授权十二项工程实现。候选包版本0.5.0.dev1，新增backtest/execution/performance及薄服务/CLI，不是已发布版本。依赖锁、Python3.13.16、既有因子实现、P1/P3/P4金融源码/API/测试答案及冻结P0文件保持。历史main/phase4-baseline/v0.4.0保留32ea5d6b75c84c07017d87377eeabd2f78207c5c；旧标签不移动。
 
 G1的FROZEN_INPUTS.json记录的是实施前131项字节身份，原件不重写。本阶段必须改变下列七个包装/验证文件，实际旧/新SHA由IMPLEMENTATION_IDENTITY.json逐项记录，其余124项仍严格核对。P4原3440项保留清单中仅三个对应CI/覆盖工具文件有明确升级；其余3437项原字节严格核对。若出现额外改动，checker失败；不能用重生成预期表掩盖金融源码差异。

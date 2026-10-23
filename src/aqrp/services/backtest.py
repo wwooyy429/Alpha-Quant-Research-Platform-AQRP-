@@ -7,8 +7,8 @@ from pathlib import Path
 from aqrp.backtest.contracts import BacktestResult, EngineeringBacktestRequest, validate
 from aqrp.backtest.engine import Simulator
 from aqrp.backtest.exact import freeze, present, thaw
-from aqrp.backtest.ledger import account, reconcile
-from aqrp.backtest.transactions import guard_path
+from aqrp.backtest.ledger import account, assert_economic_identity, reconcile
+from aqrp.backtest.transactions import TransactionStore, guard_path
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.environment import runtime_manifest, verify_runtime
 from aqrp.core.errors import ContractError
@@ -37,7 +37,7 @@ def _bound_read(ledger, run_id, name, manifest):
     return raw
 
 
-def projection(state):
+def _reconciled_account(state):
     c = account(state)
     rebuilt = reconcile(state["initial_cash"], state["journal"], state["assets"])
     if (
@@ -47,6 +47,11 @@ def projection(state):
         != c["receivable"] - c["payable"]
     ):
         raise ContractError("RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED")
+    return c, rebuilt
+
+
+def projection(state):
+    c, rebuilt = _reconciled_account(state)
     return {
         "state_sha256": digest(freeze(state)),
         "account": present(c),
@@ -70,6 +75,64 @@ def audit_bytes(raw, expected):
         "sha256": hashlib.sha256(raw).hexdigest(),
         "result_and_expected_projection_exact": True,
     }
+
+
+def _failure_snapshot(ledger, run, simulator, result):
+    """Never publish a cached account as a durable one after a captured interruption."""
+    root = guard_path(ledger.path(run))
+    if not (root / "transactions").exists():
+        result["committed_state_verification"] = {"status": "NOT_STARTED"}
+        return
+    try:
+        state, records, files = TransactionStore(root / "transactions").verified_snapshot()
+        current, _ = _reconciled_account(state)
+        assert_economic_identity(state)
+    except (Exception, KeyboardInterrupt) as recovery_error:
+        evidence = {
+            "status": "UNVERIFIED_COMMITTED_STATE",
+            "financial_state_known": False,
+            "error": getattr(recovery_error, "code", type(recovery_error).__name__),
+            "message": str(recovery_error),
+            "original_status": result["status"],
+            "original_transaction_files_preserved": True,
+        }
+        result["status"] = "FAILED"
+        result["reasons"].append("COMMITTED_STATE_UNVERIFIED")
+    else:
+        evidence = {
+            "status": "VERIFIED_COMMITTED_PREFIX",
+            "financial_state_known": True,
+            "commit_count": len(records),
+            "state_sha256": digest(freeze(state)),
+            "prefix_sha256": records[-1]["sha256"] if records else digest(freeze(state)),
+            "trace_scope": "Observed scheduler trace may stop before a published commit; committed-trace and transactions are the durable authority",
+        }
+        payloads = {
+            "failed-state.json": freeze(state),
+            "transactions.json": records,
+            "transaction-files.json": files,
+            "committed-trace.json": [
+                {
+                    "commit_seq": r["commit_seq"],
+                    "sha256": r["sha256"],
+                    "dispatch_key": r["dispatch_key"],
+                    "children": r["children"],
+                }
+                for r in records
+            ],
+        }
+        if simulator is not None:
+            payloads["trace.json"] = simulator.trace
+        for name, payload in payloads.items():
+            path = root / name
+            if path.exists():
+                if guard_path(path).read_bytes() != canonical(payload):
+                    raise ContractError("FAILURE_PUBLICATION_CONFLICT", name)
+            else:
+                ledger.artifact(run, name, payload)
+        result["last_committed_account"] = present(current)
+    result["committed_state_verification"] = evidence
+    ledger.artifact(run, "failure-recovery.json", evidence)
 
 
 def simulate_engineering(request, ledger_root, code_commit):
@@ -111,6 +174,7 @@ def _execute_engineering(request, ledger, run, code_commit, policy):
         "request_sha256": request.content_hash,
         "code_bundle": policy["bundle_sha256"],
     }
+    base_result = result.copy()
     simulator = None
     try:
         x = validate(request)
@@ -147,6 +211,7 @@ def _execute_engineering(request, ledger, run, code_commit, policy):
             ledger.finish(run, "FAILED")
             raise
         cancelled = isinstance(exc, KeyboardInterrupt)
+        result = base_result.copy()
         result["status"] = "CANCELLED" if cancelled else "FAILED"
         result["reasons"] = [getattr(exc, "code", type(exc).__name__)]
         result["error"] = {
@@ -154,13 +219,9 @@ def _execute_engineering(request, ledger, run, code_commit, policy):
             "field": getattr(exc, "field", ""),
             "message": str(exc),
         }
-        if simulator is not None:
-            ledger.artifact(run, "failed-state.json", freeze(simulator.store.state))
-            ledger.artifact(run, "trace.json", simulator.trace)
-            ledger.artifact(run, "transactions.json", simulator.store.records)
-            result["last_committed_account"] = present(account(simulator.store.state))
+        _failure_snapshot(ledger, run, simulator, result)
         ledger.artifact(run, "result.json", result)
-        ledger.finish(run, "CANCELLED" if cancelled else "FAILED")
+        ledger.finish(run, result["status"])
         if not isinstance(exc, (ContractError, KeyboardInterrupt)):
             raise
     manifest = ledger.verify(run)

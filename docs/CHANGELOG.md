@@ -1,5 +1,8 @@
 # 变更记录
 
+2026-10-23 GPT Work对固定bfdcf30判Phase5 G2 BLOCKED（001 High、002 Medium OPEN），原报告/反例/124成员封存接收核验见docs/audits/phase-5/g2-bfdcf30/。当前0.5.0.dev2修复候选：失败/取消重读验证磁盘提交前缀、未知状态失败关闭；成交暴露腿LONG/SHORT/MIXED与BUY/SELL明确分开，费用不重复。两项仍OPEN_PENDING_INDEPENDENT_RECHECK，不自行宣告关闭。必要自测229项通过，属未提交工作版本；最终只以PR #8新固定40位SHA的完整SDK/双OS官方原ZIP及收据交GPT Work复核。十二项范围、原G1答案/冻结资料、main/旧标签不变；WI-R2两项继续DEFERRED / NOT VERIFIED，正式Test/金融批准/完整旧宿主边界保持，无合并/标签/部署/实盘/P6。以下旧状态保留历史。
+
+
 2026-10-23 Phase5十二项（10MVP/2CR）已形成0.5.0.dev1受限工程实现候选，**G2 PENDING，未阶段验收/发布**。G1固定5262032及用户C-P5-001/P5-D01–D10接受/单独实施授权见phase-5/IMPLEMENTATION_AUTHORIZATION.json；实际代码/接口/逐项测试映射与七项包装兼容变化见IMPLEMENTATION_REVIEW_PACKAGE、IMPLEMENTATION_CONTRACT、IMPLEMENTATION_TRACEABILITY及COMPATIBILITY_IMPACT。开发方验证只认PR #8锁定40位SHA对应的真实SDK/CI原包和外置封存收据，不把本状态说明当PASS。旧金融源码/答案、十二份G1设计身份、主干/旧标签不动。WI-R2两项继续DEFERRED / NOT VERIFIED；正式Test/金融批准/旧完整宿主边界保留，无合并/标签/部署/实盘/P6。以下各轮旧状态保留历史。
 
 

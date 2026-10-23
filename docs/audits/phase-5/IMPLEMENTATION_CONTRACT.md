@@ -1,5 +1,8 @@
 # Phase5 工程实现契约 simulation/1.0.0
 
+当前0.5.0.dev2修复勘误以[g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md](g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md)及[修复复核入口](g2-bfdcf30/REVIEW_PACKAGE.md)为准：原bfdcf30独立G2为BLOCKED，两项仍待新固定版本独立确认；以下原实施说明及正确经济口径保留，不把旧PENDING或正常SDK通过改称G2通过。
+
+
 本文件是已审固定5262032、用户明确接受C-P5-001及P5-D01–D10、单独授权12项实施后的实现说明。原G1十二份设计文件及P0/P1/P3/P4金融契约保持原字节。本文件不授金融批准、真实Test、部署或阶段验收；实际开发方执行结果以指定完整SHA的SDK/CI原包及外置封存收据为准，G2仍待GPT Work。
 
 ## API与身份

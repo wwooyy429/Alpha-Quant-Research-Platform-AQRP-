@@ -1,0 +1,39 @@
+{
+  "original_reviewed_sha": "bfdcf30e525ff802ea483974f58163eedc029ce8",
+  "original_verdict": "G2 BLOCKED / REQUEST CHANGES",
+  "findings": {
+    "WORK-P5-G2-001": "FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK",
+    "WORK-P5-G2-002": "FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK"
+  },
+  "version": "0.5.0.dev2",
+  "previous_bundle": "ba6b33df82b5142958a2cb6f7aa5a92109241e0f533dd56d436f32fe83358f07",
+  "current_bundle": "e383e3f1828ca5d28b3f9daaf2714670af5023aa64c1e908c2ed10466edd0058",
+  "financial_code_changes": [
+    {
+      "path": "src/aqrp/__init__.py",
+      "old_sha256": "daaf664b020538ed8ca3ce6663ba934258648f7d2f4be012cb341004f34dce24",
+      "new_sha256": "49592b07a6ca3f08967943ae63989ddc785e0ff2f6269ec776d6df44f9ce4a16"
+    },
+    {
+      "path": "src/aqrp/backtest/ledger.py",
+      "old_sha256": "cdcebcd00a3276ad81d2369acdbbf8f2f8efe08948fd68942efc892d3ab7ab00",
+      "new_sha256": "b5fdf350a7e12f37d15696b0440d8c704630e51bbf9e96d58c1879b5d9ae09ec"
+    },
+    {
+      "path": "src/aqrp/backtest/transactions.py",
+      "old_sha256": "bbceaf7de42e0ca11b7109b447fdd5cf7dabd828d2cdcd31b232bc304ae99f69",
+      "new_sha256": "7b9d458817120051d5d62d28a2e6d63acdf1ba671479aa99fcee8c51ca9b96db"
+    },
+    {
+      "path": "src/aqrp/services/backtest.py",
+      "old_sha256": "fe90222fe565116453bb0cfef6d3f35cafa4b5188c784c165ec3b0d24db88523",
+      "new_sha256": "cefa7f472502168327a6a586f6c61c46113c6ba0b4cb17c33b4536c94c709510"
+    }
+  ],
+  "dependencies_unchanged": true,
+  "original_12_design_files_unchanged": true,
+  "preserved_files": 3444,
+  "formal_Test_executed": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED"
+}

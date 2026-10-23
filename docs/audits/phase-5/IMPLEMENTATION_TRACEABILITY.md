@@ -1,5 +1,8 @@
 # 十二项实现与验收证据索引
 
+当前0.5.0.dev2修复勘误以[g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md](g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md)及[修复复核入口](g2-bfdcf30/REVIEW_PACKAGE.md)为准：原bfdcf30独立G2为BLOCKED，两项仍待新固定版本独立确认；以下原实施说明及正确经济口径保留，不把旧PENDING或正常SDK通过改称G2通过。
+
+
 原106条目录及本阶段12条（10MVP、2Competition Ready）快照不改。下表为工程实现候选，独立G2及用户阶段验收尚未完成；任何开发方PASS不得自动更新为ACCEPTED/RELEASED。
 
 | ID / 等级 | 实际代码 | 主要验证入口与独立答案 |

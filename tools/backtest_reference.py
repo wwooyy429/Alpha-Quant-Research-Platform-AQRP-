@@ -126,6 +126,38 @@ def verify_run(request, result, transactions):
         old = qty[sid]
         closing = min(abs(old), n) if old * signed < 0 else Q(0)
         opening = n - closing
+        expected_legs = []
+        if closing:
+            expected_legs.append(
+                {
+                    "effect": "CLOSE",
+                    "direction": "LONG" if old > 0 else "SHORT",
+                    "quantity": closing,
+                    "signed_qty": closing if signed > 0 else -closing,
+                    "fee": fee * closing / n,
+                    "realized_gross": closing * (1 if old > 0 else -1) * (p - cost[sid]),
+                }
+            )
+        if opening:
+            expected_legs.append(
+                {
+                    "effect": "OPEN",
+                    "direction": "LONG" if signed > 0 else "SHORT",
+                    "quantity": opening,
+                    "signed_qty": opening if signed > 0 else -opening,
+                    "fee": fee * opening / n,
+                    "realized_gross": Q(0),
+                }
+            )
+        same(fill["execution_side"], "BUY" if signed > 0 else "SELL", "execution side")
+        same(fill["position_before"], old, "pre-fill position")
+        same(fill["position_after"], old + signed, "post-fill position")
+        same(fill["position_legs"], expected_legs, "independent exposure-leg quantity/fee/gross")
+        same(
+            fill["direction"],
+            expected_legs[0]["direction"] if len(expected_legs) == 1 else "MIXED",
+            "unambiguous fill exposure direction",
+        )
         cash -= fee
         fees += fee
         if signed > 0:

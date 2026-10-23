@@ -137,3 +137,6 @@ Phase 0 已发布。Phase 1 计划经 Gemini 对固定380d9f8预审PASS，现已
 Synthetic engineering SDK candidate: immutable requests, deterministic event queue, atomic Fill/account journal, settlement/short/actions, exact financial output, performance and numerical replay. The same service is exposed through `aqrp-backtest simulate|status|result|replay`. No broker transport or financial approval.
 
 See [implementation contract](docs/audits/phase-5/IMPLEMENTATION_CONTRACT.md), [twelve-requirement mapping](docs/audits/phase-5/IMPLEMENTATION_TRACEABILITY.md) and [fixed-SHA G2 review entry](docs/audits/phase-5/IMPLEMENTATION_REVIEW_PACKAGE.md). The user authorized implementation, not phase acceptance, merge, tag, deployment, formal Test or Phase6. Actual clean SDK/dual-OS raw artifact receipts are identified in PR #8 for its exact AQRP_FIXED_REVIEW_SHA.
+
+
+Phase5 repair candidate 0.5.0.dev2: [G2 repair review](docs/audits/phase-5/g2-bfdcf30/REVIEW_PACKAGE.md) and [failure-state / fill-leg output errata](docs/audits/phase-5/g2-bfdcf30/OUTPUT_CONTRACT_ERRATA.md). Original bfdcf30 G2 is BLOCKED; findings remain open pending independent recheck.

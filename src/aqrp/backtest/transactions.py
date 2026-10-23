@@ -121,3 +121,17 @@ class TransactionStore:
                 fault("AFTER_COMMIT")
             self.recover()
             return item
+
+    def verified_snapshot(self):
+        """Read the durable prefix under its writer lock, independent of replay/cache state."""
+        with mutex(self.root / ".lock"):
+            self.recover()
+            files = [
+                {
+                    "path": "transactions/" + p.name,
+                    "sha256": hashlib.sha256(guard_path(p).read_bytes()).hexdigest(),
+                }
+                for p in sorted(self.root.iterdir())
+                if p.name != ".lock"
+            ]
+            return deepcopy(self.state), deepcopy(self.records), files
