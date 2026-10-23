@@ -1,0 +1,36 @@
+{
+  "reviewed_implementation_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "purpose": "Archive independent G2 PASS and update current review/status records only",
+  "allowed_existing_changes": [
+    "AGENTS.md",
+    "README.md",
+    "docs/PROGRESS.md",
+    "docs/ROADMAP.md",
+    "docs/DECISIONS.md",
+    "docs/TRACEABILITY.md",
+    "docs/CHANGELOG.md",
+    "docs/audits/phase-5/REVIEW_PACKAGE_CURRENT.md",
+    "docs/audits/phase-5/IMPLEMENTATION_REVIEW_PACKAGE.md",
+    "docs/audits/phase-5/IMPLEMENTATION_CONTRACT.md",
+    "docs/audits/phase-5/COMPATIBILITY_IMPACT.md",
+    "docs/audits/phase-5/IMPLEMENTATION_TRACEABILITY.md",
+    "docs/audits/phase-5/STATUS.json",
+    "docs/audits/phase-5/FILE_MANIFEST.json"
+  ],
+  "allowed_new_directory": "docs/audits/phase-5/g2-1c5a7e6/",
+  "forbidden_changes": [
+    "src/",
+    "tests/",
+    "tools/",
+    ".github/",
+    "pyproject.toml",
+    "dependency locks",
+    "approved G1 designs",
+    "frozen files",
+    "IMPLEMENTATION_IDENTITY.json",
+    "BASELINE.md",
+    "old original audit evidence"
+  ],
+  "independent_review_does_not_cover_new_documentation_commit": true,
+  "archival_validation": "Read-only package identity, frozen file/design hashes, copied original identities and manifest, scoped staged diff; no new financial test claims"
+}

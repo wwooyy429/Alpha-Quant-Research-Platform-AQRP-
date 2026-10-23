@@ -1,0 +1,74 @@
+{
+  "fixed_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "reviewer": "GPT Work supplemental reviewer",
+  "G2": "PASS — RESTRICTED ENGINEERING SCOPE",
+  "canonical_P5_requirements": 12,
+  "findings": [
+    {
+      "id": "WORK-P5-G2-001",
+      "severity": "High",
+      "status": "CLOSED — FIX VERIFIED",
+      "first_closed_at": "35f93d640a2304121131d947a465f57a951cf63f",
+      "current_boundary_recovery_regression": "PASS"
+    },
+    {
+      "id": "WORK-P5-G2-002",
+      "severity": "Medium",
+      "status": "CLOSED — FIX VERIFIED",
+      "first_closed_at": "35f93d640a2304121131d947a465f57a951cf63f",
+      "current_direction_legs_fee_regression": "PASS"
+    },
+    {
+      "id": "WORK-P5-G2-003",
+      "severity": "High",
+      "status": "CLOSED — FIX VERIFIED",
+      "fixed_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+      "previous_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+      "previous_status": "OPEN / PARTIAL FIX",
+      "locations": [
+        {
+          "path": "src/aqrp/backtest/ledger.py",
+          "line": 142
+        },
+        {
+          "path": "src/aqrp/backtest/transactions.py",
+          "line": 125
+        },
+        {
+          "path": "src/aqrp/services/backtest.py",
+          "line": 75
+        },
+        {
+          "path": "src/aqrp/services/backtest.py",
+          "line": 110
+        }
+      ],
+      "verified_change": "Raw durable children/payloads independently rebuild original Fill/FIFO/SPLIT/cover/settlement restriction; immutable root anchors across prefix; success/failure/cancel/replay use full shared proof",
+      "original_counterexample": {
+        "control_available": "797.9",
+        "paired_corruption_expected": "FAILED+COMMITTED_STATE_UNVERIFIED / known=false / no account",
+        "ContractError": "PASS",
+        "KeyboardInterrupt": "PASS",
+        "wrong7989_not_published": true,
+        "original_commit_cause_manifest_getter_preserved": true
+      },
+      "evidence": [
+        "SETTLED_SHORT_BACKING_PROBE.json",
+        "PUBLIC_BACKING_FAULT_CONTROLS.json",
+        "INDEPENDENT_BACKING_CONTROLS.json",
+        "REPAIR_PROBE_BINDINGS.json",
+        "reviewer-production-artifacts.zip"
+      ],
+      "scope_limit": "Engineering financial consistency; not native isolation, cryptographic authorization, formal Test or finance approval"
+    }
+  ],
+  "new_findings": [],
+  "open_blocking_findings": [],
+  "user_phase_acceptance": false,
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "real_native_isolation": "DEFERRED / NOT VERIFIED",
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "full_historical_host": "NOT VERIFIED; accepted package/lock/oldRef/result replay scope only",
+  "merge_tag_deploy_live_P6": false
+}

@@ -1,5 +1,8 @@
 # Alpha Quant Research Platform（AQRP）
 
+2026-10-23 当前状态：GPT Work 对固定 `1c5a7e62cace7c3e66b7cc7f12fd564cb0013654` 的 **Phase5 十二项受限工程范围 G2 PASS**；WORK-P5-G2-003 已由独立复核确认 CLOSED — FIX VERIFIED，001/002 保持 CLOSED，无新增阻断。独立干净 SDK 1158 项通过，双系统各 1158 项官方原始证据已由主审核验。**用户阶段验收尚未授予，Phase5 未 ACCEPTED / RELEASED。** 本轮仅归档原始报告、接收核验及更新状态；后续文档归档提交不自动获得该固定版本的独立审查结论，`AQRP_FIXED_REVIEW_SHA` 继续锁定已审实现。原失败报告、日志、工件及各轮 OPEN/BLOCKED 记录保留历史。WI-R2-001/002 与真实 Windows 隔离继续 **DEFERRED / NOT VERIFIED**；正式 Test 未运行，金融批准 NONE，完整历史宿主复现仍限于已接受的软件包、依赖锁、旧因子版本及结果重放范围。未授权合并、标签、部署、实盘、正式 Test、金融批准或 P6。 当前处置与证据见[审查归档](docs/audits/phase-5/g2-1c5a7e6/DEVELOPER_RESPONSE.md)。以下旧状态均为历史。
+
+
 2026-10-22 当前：Phase4七项受限工程已ACCEPTED/RELEASED，main/phase4-baseline/v0.4.0固定 32ea5d6b75c84c07017d87377eeabd2f78207c5c。Phase5仅G1计划预审获授权，12项（10MVP/2CR）设计、接口、数学候选、测试证据/依赖在 docs/audits/phase-5/；主审GPT Work，完整SHA按计划PR的AQRP_FIXED_REVIEW_SHA锁定。G1未审、P5实现未授权/未开始；P4 SDK844与旧20/四/91仅基线回归，不是P5测试。真实隔离/正式Test/金融批准/完整旧宿主边界保留，正式失败关闭，无部署/实盘。以下旧轮状态保留历史。
 
 

@@ -1,0 +1,467 @@
+src/aqrp/backtest/ledger.py
+78: def verify_cash_structure(s, cash):
+79:     """Check internal lot relations; original executions require a separate proof.
+80: 
+81:     Settlement uses the durable Journal's completed session, not a mutable lot flag
+82:     or the scheduler's current session. Negative available cash alone is not an
+83:     inconsistency: a correctly recorded margin breach must keep its actual loss.
+84:     """
+85:     sessions = []
+86:     for event in s["journal"]:
+87:         if event["kind"] == "SETTLEMENT":
+88:             value = event.get("settlement_session")
+89:             if type(value) is not int or value < 0 or (sessions and value < sessions[-1]):
+90:                 raise ContractError("UNVERIFIED_SETTLEMENT_SESSION")
+91:             sessions.append(value)
+92:     settled_through = sessions[-1] if sessions else -1
+93:     backing = {}
+94:     for asset in s["assets"].values():
+95:         for lot in asset["lots"]:
+96:             if lot["direction"] == -1:
+97:                 if lot["id"] in backing or lot["remaining"] < 0 or lot["price"] < 0:
+98:                     raise ContractError("INVALID_SHORT_PROCEEDS_BACKING")
+99:                 backing[lot["id"]] = lot
+100:     ids, bound = set(), set()
+101:     for lot in s["cashlots"]:
+102:         if (
+103:             set(lot) != {"id", "entry_id", "kind", "amount", "settled", "due"}
+104:             or not isinstance(lot["id"], str)
+105:             or not lot["id"]
+106:             or lot["id"] in ids
+107:             or lot["kind"] not in {"FREE", "SHORT"}
+108:             or lot["amount"] < 0
+109:             or type(lot["settled"]) is not bool
+110:             or type(lot["due"]) is not int
+111:             or lot["due"] < 0
+112:             or lot["settled"] != (lot["due"] <= settled_through)
+113:         ):
+114:             raise ContractError("INVALID_CASH_LOT_CLASSIFICATION")
+115:         ids.add(lot["id"])
+116:         if lot["kind"] == "FREE":
+117:             if lot["entry_id"] is not None:
+118:                 raise ContractError("INVALID_FREE_CASH_BACKING")
+119:         else:
+120:             entry = lot["entry_id"]
+121:             if entry not in backing or entry in bound:
+122:                 raise ContractError("INVALID_SHORT_PROCEEDS_BACKING")
+123:             position_lot = backing[entry]
+124:             if (
+125:                 lot["amount"] != position_lot["remaining"] * position_lot["price"]
+126:                 or lot["due"] != position_lot["settles"]
+127:             ):
+128:                 raise ContractError("SHORT_PROCEEDS_OR_SETTLEMENT_MISMATCH")
+129:             bound.add(entry)
+130:     if bound != set(backing):
+131:         raise ContractError("MISSING_SHORT_PROCEEDS_BACKING")
+132:     if any(cash[k] < 0 for k in ("U_free", "U_short", "S_set")) or cash["S_set"] > cash["cash_set"]:
+133:         raise ContractError("RESTRICTED_CASH_SUBSET_FAILED")
+134:     return {
+135:         "status": "INTERNAL_LOT_STRUCTURE_CHECKED_EXECUTION_PROOF_REQUIRED",
+136:         "cash_lots": len(ids),
+137:         "short_entries": len(bound),
+138:         "settled_through_session": settled_through,
+139:     }
+140: 
+141: 
+142: def verify_execution_backing(s, records):
+143:     """BT-005/007/008: rebuild lots from verified durable children/payloads.
+144: 
+145:     Never use post_state, cached fills or cached lot prices as reconstruction
+146:     inputs. The caller supplies the prefix read under TransactionStore's lock.
+147:     Hash-chain validity is necessary but is not financial or OS authorization.
+148:     """
+149:     if records is None:
+150:         raise ContractError("DURABLE_EXECUTION_PROVENANCE_REQUIRED")
+151:     positions = {sid: [] for sid in s["assets"]}
+152:     costs = {sid: F(0) for sid in positions}
+153:     marks = costs.copy()
+154:     cashlots, fills, recoveries, sessions = [], [], [], []
+155:     session = -1
+156:     seen = set()
+157: 
+158:     def execute(f):
+159:         sid, entry = f["security_id"], f["fill_id"]
+160:         q, p = f["signed_qty"], f["price"]
+161:         if (
+162:             sid not in positions
+163:             or entry in seen
+164:             or not q
+165:             or q.denominator != 1
+166:             or p < 0
+167:             or session < 0
+168:         ):
+169:             raise ContractError("INVALID_DURABLE_EXECUTION")
+170:         seen.add(entry)
+171:         lots = positions[sid]
+172:         old = sum((item["direction"] * item["remaining"] for item in lots), F(0))
+173:         closed = min(abs(old), abs(q)) if old * q < 0 else F(0)
+174:         opened = abs(q) - closed
+175:         new = old + q
+176:         if not new:
+177:             costs[sid] = F(0)
+178:         elif not old or old * new < 0:
+179:             costs[sid] = p
+180:         elif old * q > 0:
+181:             costs[sid] = (abs(old) * costs[sid] + abs(q) * p) / abs(new)
+182:         if q < 0:
+183:             for kind, n, suffix in (("FREE", closed, ":long-sale"), ("SHORT", opened, ":short")):
+184:                 if n:
+185:                     cashlots.append(
+186:                         {
+187:                             "id": entry + suffix,
+188:                             "entry_id": entry if kind == "SHORT" else None,
+189:                             "kind": kind,
+190:                             "amount": n * p,
+191:                             "settled": False,
+192:                             "due": session + 1,
+193:                         }
+194:                     )
+195:         needed = closed
+196:         for lot in lots:
+197:             if not needed or not lot["remaining"] or lot["direction"] * q > 0:
+198:                 continue
+199:             taken = min(needed, lot["remaining"])
+200:             if lot["direction"] == -1:
+201:                 cash = next(
+202:                     c for c in cashlots if c["kind"] == "SHORT" and c["entry_id"] == lot["id"]
+203:                 )
+204:                 # Original gross per remaining share, derived from the raw Fill.
+205:                 released = taken * lot["price"]
+206:                 cash["amount"] -= released
+207:                 if not cash["settled"]:
+208:                     cashlots.append(
+209:                         {
+210:                             **cash,
+211:                             "id": cash["id"] + ":released:" + str(len(cashlots)),
+212:                             "entry_id": None,
+213:                             "kind": "FREE",
+214:                             "amount": released,
+215:                         }
+216:                     )
+217:             lot["remaining"] -= taken
+218:             needed -= taken
+219:         if needed:
+220:             raise ContractError("DURABLE_FIFO_CLOSE_NOT_COVERED")
+221:         if opened:
+222:             lots.append(
+223:                 {
+224:                     "id": entry,
+225:                     "direction": 1 if q > 0 else -1,
+226:                     "remaining": opened,
+227:                     "price": p,
+228:                     "settles": session + 1,
+229:                     "at": f["at"],
+230:                 }
+231:             )
+232: 
+233:     for encoded in records:
+234:         record = thaw(encoded)
+235:         payload, children = record["payload"], record["children"]
+236:         kinds = [c["kind"] for c in children]
+237:         if (
+238:             record["dispatch_key"][1] == 10
+239:             and kinds == ["AccountUpdated"]
+240:             and set(payload) == {"session"}
+241:         ):
+242:             value = payload["session"]
+243:             if type(value) is not int or value < 0 or value < session:
+244:                 raise ContractError("INVALID_DURABLE_SETTLEMENT_ORDER")
+245:             session = value
+246:             sessions.append(value)
+247:             for c in cashlots:
+248:                 if c["due"] <= value:
+249:                     c["settled"] = True
+250:         elif "MarketConfirmed" in kinds:
+251:             for row in payload["rows"]:
+252:                 if row["price"] is not None:
+253:                     marks[row["security_id"]] = money(row["price"])
+254:         elif "SPLIT" in kinds:
+255:             ratio = money(payload["value"])
+256:             if ratio <= 0:
+257:                 raise ContractError("INVALID_DURABLE_SPLIT")
+258:             for lot in positions[payload["security_id"]]:
+259:                 lot["remaining"] *= ratio
+260:                 lot["price"] /= ratio
+261:             costs[payload["security_id"]] /= ratio
+262:             marks[payload["security_id"]] /= ratio
+263:         elif "DELIST" in kinds:
+264:             sid = payload["security_id"]
+265:             q = -sum((item["direction"] * item["remaining"] for item in positions[sid]), F(0))
+266:             if q:
+267:                 f = {
+268:                     "fill_id": payload["action_id"],
+269:                     "security_id": sid,
+270:                     "signed_qty": q,
+271:                     "price": money(payload["value"]),
+272:                     "fee": F(0),
+273:                     "at": record["dispatch_key"][0],
+274:                 }
+275:                 execute(f)
+276:                 recoveries.append(f)
+277:         for child in children:
+278:             if child["kind"] == "Fill":
+279:                 execute(child["fill"])
+280:                 fills.append(child["fill"])
+281:     if s["fills"] != fills or len(s["liquidations"]) != len(recoveries):
+282:         raise ContractError("DURABLE_EXECUTION_COPY_MISMATCH")
+283:     for actual, expected in zip(s["liquidations"], recoveries):
+284:         if any(actual[k] != v for k, v in expected.items()):
+285:             raise ContractError("DURABLE_RECOVERY_EXECUTION_MISMATCH")
+286:     for sid, expected in positions.items():
+287:         actual = s["assets"][sid]
+288:         if (
+289:             len(actual["lots"]) != len(expected)
+290:             or any(any(a[k] != v for k, v in e.items()) for a, e in zip(actual["lots"], expected))
+291:             or actual["quantity"]
+292:             != sum((item["direction"] * item["remaining"] for item in expected), F(0))
+293:             or actual["cost"] != costs[sid]
+294:             or actual["mark"] != marks[sid]
+295:             or actual["valuation_adjustment"] != actual["quantity"] * (marks[sid] - costs[sid])
+296:         ):
+297:             raise ContractError("DURABLE_POSITION_LOT_BACKING_MISMATCH", sid)
+298:     if (
+299:         s["cashlots"] != cashlots
+300:         or s["session"] != session
+301:         or [e["settlement_session"] for e in s["journal"] if e["kind"] == "SETTLEMENT"] != sessions
+302:     ):
+303:         raise ContractError("DURABLE_CASH_PROCEEDS_OR_SETTLEMENT_MISMATCH")
+304:     return {
+305:         "status": "RAW_COMMITTED_EXECUTIONS_FIFO_AND_SETTLEMENT_VERIFIED",
+306:         "fills": len(fills),
+307:         "recoveries": len(recoveries),
+308:         "prefix_commits": len(records),
+309:         "S_set": sum(
+310:             (c["amount"] for c in cashlots if c["kind"] == "SHORT" and c["settled"]), F(0)
+311:         ),
+312:     }
+313: 
+314: 
+315: def reserves(s):
+316:     notional = sum(
+src/aqrp/backtest/transactions.py
+125:     def verified_snapshot(self):
+126:         """Read the durable prefix under its writer lock, independent of replay/cache state."""
+127:         with mutex(self.root / ".lock"):
+128:             self.recover()
+129:             # These profile inputs never change in a transaction. The root file,
+130:             # not two correlated fields in post_state, supplies their authority.
+131:             for field in ("initial_cash", "other_restriction"):
+132:                 if field in self.initial and (
+133:                     self.state.get(field) != self.initial[field]
+134:                     or any(
+135:                         thaw(r["post_state"].get(field)) != self.initial[field]
+136:                         for r in self.records
+137:                     )
+138:                 ):
+139:                     raise ContractError("IMMUTABLE_ACCOUNT_ANCHOR_CHANGED", field)
+140:             files = [
+141:                 {
+142:                     "path": "transactions/" + p.name,
+143:                     "sha256": hashlib.sha256(guard_path(p).read_bytes()).hexdigest(),
+144:                 }
+145:                 for p in sorted(self.root.iterdir())
+146:                 if p.name != ".lock"
+147:             ]
+148:             return deepcopy(self.state), deepcopy(self.records), files
+src/aqrp/services/backtest.py
+43:     return raw
+44: 
+45: 
+46: def _reconciled_account(state, records=None):
+47:     c = account(state)
+48:     rebuilt = reconcile(state["initial_cash"], state["journal"], state["assets"])
+49:     expected = {
+50:         **{k: c[k] for k in ("cash_set", "U_free", "U_short", "receivable")},
+51:         "payable": -c["payable"],
+52:         "commission_expense": state["fees"],
+53:         "borrow_expense": state["borrow"],
+54:         "dividend_income": -state["dividends"],
+55:         "realized_long": -state["realized_long"],
+56:         "realized_short": -state["realized_short"],
+57:         "external_capital": -state["external_flows"],
+58:         "positions_cost": sum(a["quantity"] * a["cost"] for a in state["assets"].values()),
+59:         "positions_valuation": sum(a["valuation_adjustment"] for a in state["assets"].values()),
+60:         "unrealized_pnl": -sum(a["valuation_adjustment"] for a in state["assets"].values()),
+61:     }
+62:     if (
+63:         rebuilt["cash_total"] != c["cash_total"]
+64:         or any(rebuilt["quantities"][k] != a["quantity"] for k, a in state["assets"].items())
+65:         or any(rebuilt["balances"].get(k, 0) != v for k, v in expected.items())
+66:         or c["receivable"] < 0
+67:         or c["payable"] < 0
+68:     ):
+69:         raise ContractError("RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED")
+70:     rebuilt["cash_structure"] = verify_cash_structure(state, c)
+71:     rebuilt["execution_backing"] = verify_execution_backing(state, records)
+72:     return c, rebuilt
+73: 
+74: 
+75: def projection(state, records=None):
+76:     c, rebuilt = _reconciled_account(state, records)
+77:     assert_economic_identity(state)
+78:     return {
+79:         "state_sha256": digest(freeze(state)),
+80:         "account": present(c),
+81:         "positions": present(state["assets"]),
+82:         "orders": present(state["orders"]),
+83:         "fills": present(state["fills"]),
+84:         "journal": present(state["journal"]),
+85:         "liquidations": present(state["liquidations"]),
+86:         "valuations": present(state["valuations"]),
+87:         "fragments": present(state["fragments"]),
+88:         "reconciliation": present(rebuilt),
+89:         "performance": present(performance(state)),
+90:     }
+91: 
+92: 
+93: def audit_bytes(raw, expected):
+94:     if raw != canonical(expected) or load(raw) != expected:
+95:         raise ContractError("SIMULATION_PUBLISHED_BYTES_CHANGED")
+96:     return {
+97:         "scope": "ACTUAL_SERIALIZED_FINANCIAL_OUTPUT",
+98:         "sha256": hashlib.sha256(raw).hexdigest(),
+99:         "result_and_expected_projection_exact": True,
+100:     }
+101: 
+102: 
+103: def _failure_snapshot(ledger, run, simulator, result):
+104:     """Never publish a cached account as a durable one after a captured interruption."""
+105:     root = guard_path(ledger.path(run))
+106:     if not (root / "transactions").exists():
+107:         result["committed_state_verification"] = {"status": "NOT_STARTED"}
+108:         return
+109:     try:
+110:         state, records, files = TransactionStore(root / "transactions").verified_snapshot()
+111:         computed = projection(state, records)
+112:         current = computed["account"]
+113:     except (Exception, KeyboardInterrupt) as recovery_error:
+114:         evidence = {
+115:             "status": "UNVERIFIED_COMMITTED_STATE",
+116:             "financial_state_known": False,
+117:             "error": getattr(recovery_error, "code", type(recovery_error).__name__),
+118:             "message": str(recovery_error),
+119:             "original_status": result["status"],
+120:             "original_transaction_files_preserved": True,
+121:         }
+122:         result["status"] = "FAILED"
+123:         result["reasons"].append("COMMITTED_STATE_UNVERIFIED")
+124:     else:
+125:         evidence = {
+126:             "status": "VERIFIED_COMMITTED_PREFIX",
+127:             "financial_state_known": True,
+128:             "commit_count": len(records),
+129:             "state_sha256": digest(freeze(state)),
+130:             "financial_proof_sha256": digest(computed["reconciliation"]),
+131:             "financial_proof_scope": "Shared full projection: raw durable execution/FIFO/settlement, Journal, equity and attribution",
+132:             "prefix_sha256": records[-1]["sha256"] if records else digest(freeze(state)),
+133:             "trace_scope": "Observed scheduler trace may stop before a published commit; committed-trace and transactions are the durable authority",
+134:         }
+135:         payloads = {
+136:             "failed-state.json": freeze(state),
+137:             "transactions.json": records,
+138:             "transaction-files.json": files,
+139:             "committed-trace.json": [
+140:                 {
+141:                     "commit_seq": r["commit_seq"],
+142:                     "sha256": r["sha256"],
+143:                     "dispatch_key": r["dispatch_key"],
+144:                     "children": r["children"],
+145:                 }
+146:                 for r in records
+147:             ],
+148:         }
+149:         if simulator is not None:
+150:             payloads["trace.json"] = simulator.trace
+151:         for name, payload in payloads.items():
+152:             path = root / name
+153:             if path.exists():
+154:                 if guard_path(path).read_bytes() != canonical(payload):
+155:                     raise ContractError("FAILURE_PUBLICATION_CONFLICT", name)
+156:             else:
+157:                 ledger.artifact(run, name, payload)
+158:         result["last_committed_account"] = present(current)
+159:     result["committed_state_verification"] = evidence
+160:     ledger.artifact(run, "failure-recovery.json", evidence)
+161: 
+162: 
+163: def simulate_engineering(request, ledger_root, code_commit):
+164:     if not isinstance(request, EngineeringBacktestRequest):
+165:         raise ContractError("FROZEN_SIMULATION_REQUEST_REQUIRED")
+166:     policy = reviewed_policy()
+167:     environment = runtime_manifest()
+168:     verify_runtime(environment)
+src/aqrp/services/backtest.py
+198:         "executable": False,
+199:         "request_sha256": request.content_hash,
+200:         "code_bundle": policy["bundle_sha256"],
+201:     }
+202:     base_result = result.copy()
+203:     simulator = None
+204:     try:
+205:         x = validate(request)
+206:         simulator = Simulator(x, ledger.path(run), code_commit)
+207:         state = simulator.run()
+208:         durable, records, transaction_files = simulator.store.verified_snapshot()
+209:         if durable != state:
+210:             raise ContractError("FINAL_COMMITTED_STATE_DIVERGED")
+211:         computed = projection(durable, records)
+212:         ledger.artifact(run, "state.json", freeze(state))
+213:         ledger.artifact(run, "trace.json", simulator.trace)
+214:         ledger.artifact(run, "portfolio-lineage.json", simulator.portfolios)
+215:         ledger.artifact(run, "transactions.json", records)
+216:         ledger.artifact(run, "transaction-files.json", transaction_files)
+217:         result.update(status="SUCCEEDED", **computed)
+218:         wire = canonical(result)
+219:         audit_bytes(wire, result)
+220:         ledger.artifact(run, "result.json", result)
+221:         audit = audit_bytes((ledger.path(run) / "result.json").read_bytes(), result)
+222:         ledger.artifact(run, "published-byte-audit.json", audit)
+223:         ledger.finish(run, "SUCCEEDED")
+224:     except (Exception, KeyboardInterrupt) as exc:
+225:         if (ledger.path(run) / "result.json").exists():
+226:             ledger.artifact(
+227:                 run,
+228:                 "publication-failure.json",
+229:                 {"code": getattr(exc, "code", type(exc).__name__), "not_published": True},
+230:             )
+231:             ledger.finish(run, "FAILED")
+232:             raise
+src/aqrp/services/backtest.py
+344:         raise ContractError("FAILED_SIMULATION_NOT_REPLAYABLE")
+345:     lineage = load(_bound_read(ledger, run_id, "lineage.json", manifest))
+346:     if lineage["code_bundle"] != reviewed_policy()["bundle_sha256"]:
+347:         raise ContractError("EXACT_ORIGINAL_SIMULATION_PACKAGE_REQUIRED")
+348:     config = load(_bound_read(ledger, run_id, "config.json", manifest))
+349:     request = EngineeringBacktestRequest(bytes.fromhex(config["raw_request_hex"]))
+350:     if request.content_hash != config["request_sha256"] or config["protocol"] != PROTOCOL:
+351:         raise ContractError("REPLAY_CONFIG_PROTOCOL_MISMATCH")
+352:     files = load(_bound_read(ledger, run_id, "transaction-files.json", manifest))
+353:     for e in files:
+354:         p = guard_path(ledger.path(run_id) / e["path"])
+355:         if (
+356:             not p.is_relative_to(ledger.path(run_id).absolute())
+357:             or hashlib.sha256(p.read_bytes()).hexdigest() != e["sha256"]
+358:         ):
+359:             raise ContractError("REPLAY_TRANSACTION_FILE_CHANGED")
+360:     state = thaw(load(_bound_read(ledger, run_id, "state.json", manifest)))
+361:     if digest(freeze(state)) != original["state_sha256"]:
+362:         raise ContractError("REPLAY_STATE_CHANGED")
+363:     out = guard_path(Path(destination) / str(uuid.uuid4()))
+364:     rerun = Simulator(validate(request), out, lineage["code_commit"])
+365:     replayed = rerun.run()
+366:     durable, records, _ = rerun.store.verified_snapshot()
+367:     if replayed != durable:
+368:         raise ContractError("REPLAY_COMMITTED_STATE_DIVERGED")
+369:     recomputed = projection(durable, records)
+370:     expected = {k: original[k] for k in recomputed}
+371:     if recomputed != expected:
+372:         raise ContractError("NUMERICAL_SIMULATION_REPLAY_MISMATCH")
+373:     return {
+374:         "status": "NUMERICAL_REPLAY_VERIFIED",
+375:         "original_run_id": run_id,
+376:         "state_sha256": recomputed["state_sha256"],
+377:         "destination": str(out),
+378:         "scope": "ENGINEERING_TEST_ONLY",
+379:         "financial_approval": "NONE",
+380:         "full_historical_host_reproduced": False,
+381:     }

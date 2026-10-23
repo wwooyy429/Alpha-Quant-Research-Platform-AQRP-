@@ -1,0 +1,724 @@
+{
+  "executor": "GPT Work supplemental reviewer",
+  "fixed_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "run_root": "E:\\WORK\\AQRP-runs\\gpt-p5-1c5a7e6-20261023\\aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00",
+  "environment": {
+    "run_id": "aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00",
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "os": "Windows-11-10.0.26300-SP0",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "code_commit": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+    "dirty": false,
+    "complete": true,
+    "workspace": "E:\\WORK\\AQRP-audits\\p5-1c5a7e6\\src",
+    "run_root": "E:\\WORK\\AQRP-runs\\gpt-p5-1c5a7e6-20261023\\aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "github_sha": null,
+    "wheel_sha256": "51a154ef9bc98513bdadbd40effa9e052ffc643bfc74d05e1a776004f65956c2"
+  },
+  "tests": 1158,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "selected_files_hashed": 8008,
+  "installed_wheel_modules_equal_fixed_source": 69,
+  "coverage_all_modules": [
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/__init__.py",
+      "statements": 1,
+      "line": 100.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/contracts.py",
+      "statements": 184,
+      "line": 99.45652173913044,
+      "branch": 99.03846153846153,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/engine.py",
+      "statements": 375,
+      "line": 97.86666666666666,
+      "branch": 94.07894736842105,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/exact.py",
+      "statements": 67,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/ledger.py",
+      "statements": 342,
+      "line": 98.83040935672514,
+      "branch": 96.80851063829788,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/provider.py",
+      "statements": 131,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/risk.py",
+      "statements": 52,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/synthetic.py",
+      "statements": 73,
+      "line": 98.63013698630137,
+      "branch": 95.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/backtest/transactions.py",
+      "statements": 94,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/canonical.py",
+      "statements": 17,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/contracts.py",
+      "statements": 55,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/environment.py",
+      "statements": 22,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/errors.py",
+      "statements": 17,
+      "line": 100.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/math.py",
+      "statements": 17,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/security/__init__.py",
+      "statements": 19,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/time.py",
+      "statements": 61,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/core/units.py",
+      "statements": 44,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/actions.py",
+      "statements": 53,
+      "line": 100.0,
+      "branch": 97.22222222222223,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/exposures.py",
+      "statements": 99,
+      "line": 98.98989898989899,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/pit.py",
+      "statements": 25,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/quality.py",
+      "statements": 197,
+      "line": 100.0,
+      "branch": 98.59154929577464,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/query.py",
+      "statements": 78,
+      "line": 98.71794871794872,
+      "branch": 95.83333333333333,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/schemas.py",
+      "statements": 8,
+      "line": 100.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/snapshot.py",
+      "statements": 102,
+      "line": 99.01960784313725,
+      "branch": 97.5,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/store.py",
+      "statements": 13,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/data/synthetic.py",
+      "statements": 31,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/execution/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/execution/liquidity.py",
+      "statements": 18,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/execution/model.py",
+      "statements": 43,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/experiments/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/experiments/ledger.py",
+      "statements": 213,
+      "line": 98.12206572769954,
+      "branch": 97.05882352941177,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/experiments/replay_worker.py",
+      "statements": 54,
+      "line": 100.0,
+      "branch": 95.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/experiments/reproduction.py",
+      "statements": 101,
+      "line": 97.02970297029702,
+      "branch": 92.5,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/__init__.py",
+      "statements": 5,
+      "line": 100.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/admission.py",
+      "statements": 38,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/builtins.py",
+      "statements": 21,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/contracts.py",
+      "statements": 218,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/engine.py",
+      "statements": 56,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/input.py",
+      "statements": 44,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/registry.py",
+      "statements": 94,
+      "line": 98.93617021276596,
+      "branch": 96.42857142857143,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/factors/versions.py",
+      "statements": 16,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/performance/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/performance/metrics.py",
+      "statements": 83,
+      "line": 100.0,
+      "branch": 92.85714285714286,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/portfolio/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/portfolio/construct.py",
+      "statements": 20,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/portfolio/contracts.py",
+      "statements": 299,
+      "line": 98.99665551839465,
+      "branch": 97.94520547945206,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/portfolio/research_input.py",
+      "statements": 111,
+      "line": 96.3963963963964,
+      "branch": 90.9090909090909,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/portfolio/service.py",
+      "statements": 95,
+      "line": 98.94736842105263,
+      "branch": 94.44444444444444,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/portfolio/weights.py",
+      "statements": 48,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/research/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/research/numerics.py",
+      "statements": 126,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/research/pipeline.py",
+      "statements": 150,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/research/synthetic.py",
+      "statements": 42,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/risk/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/risk/checks.py",
+      "statements": 105,
+      "line": 99.04761904761905,
+      "branch": 97.22222222222223,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/services/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/services/backtest.py",
+      "statements": 195,
+      "line": 98.46153846153847,
+      "branch": 92.85714285714286,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/services/backtest_cli.py",
+      "statements": 29,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/services/cli.py",
+      "statements": 24,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/services/research.py",
+      "statements": 243,
+      "line": 97.53086419753086,
+      "branch": 93.13725490196079,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/validation/__init__.py",
+      "statements": 0,
+      "line": 0.0,
+      "branch": 100,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/validation/approvals.py",
+      "statements": 55,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/validation/evaluator.py",
+      "statements": 165,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/validation/inference.py",
+      "statements": 67,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/validation/labels.py",
+      "statements": 143,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/gpt-p5-1c5a7e6-20261023/aqrp-87d64547-3922-4678-b3a4-a5cf51d4da00/venv/Lib/site-packages/aqrp/validation/splits.py",
+      "statements": 67,
+      "line": 100.0,
+      "branch": 100.0,
+      "minimum": [
+        95,
+        90
+      ]
+    }
+  ],
+  "original_Refs_20_4_91_and_smokes": "Actually executed in complete captured SDK; command-by-command output retained, not inferred from a developer prior run",
+  "formal_gate": "Only approval-refusal unit/smoke gate executed; no real formal Test",
+  "result": "PASS"
+}

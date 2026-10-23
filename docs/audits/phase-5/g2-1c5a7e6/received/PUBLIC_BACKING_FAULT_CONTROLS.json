@@ -1,0 +1,281 @@
+{
+  "fixed_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "executor": "GPT Work supplemental reviewer",
+  "scope": "Actual installed-wheel public service and durable on-disk anchor/cache/source checks; synthetic engineering only",
+  "records": [
+    {
+      "id": "none-ContractError",
+      "actual": {
+        "status": "FAILED",
+        "known": true,
+        "account": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "known_snapshot": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": true,
+        "account": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "known_snapshot": true
+      },
+      "status": "PASS",
+      "detail": {
+        "error": null,
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "none-KeyboardInterrupt",
+      "actual": {
+        "status": "CANCELLED",
+        "known": true,
+        "account": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "known_snapshot": true
+      },
+      "expected": {
+        "status": "CANCELLED",
+        "known": true,
+        "account": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "known_snapshot": true
+      },
+      "status": "PASS",
+      "detail": {
+        "error": null,
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "pair-and-copy-ContractError",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "DURABLE_EXECUTION_COPY_MISMATCH",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "pair-and-copy-KeyboardInterrupt",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "DURABLE_EXECUTION_COPY_MISMATCH",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "attribution-pool-ContractError",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "LONG_SHORT_ATTRIBUTION_MISMATCH",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "attribution-pool-KeyboardInterrupt",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "LONG_SHORT_ATTRIBUTION_MISMATCH",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "initial-anchor-ContractError",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "initial-anchor-KeyboardInterrupt",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "restriction-anchor-ContractError",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "restriction-anchor-KeyboardInterrupt",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "account": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "known_snapshot": false
+      },
+      "status": "PASS",
+      "detail": {
+        "error": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+        "original_fault_preserved": true
+      }
+    },
+    {
+      "id": "return-cache-only",
+      "actual": {
+        "status": "FAILED",
+        "reason": "FINAL_COMMITTED_STATE_DIVERGED",
+        "known": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "FINAL_COMMITTED_STATE_DIVERGED",
+        "known": true
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "disk-paired-price",
+      "actual": {
+        "status": "FAILED",
+        "reason": "FINAL_COMMITTED_STATE_DIVERGED",
+        "known": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "FINAL_COMMITTED_STATE_DIVERGED",
+        "known": false
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "replay-cache-disk-divergence",
+      "actual": "REPLAY_COMMITTED_STATE_DIVERGED",
+      "expected": "REPLAY_COMMITTED_STATE_DIVERGED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "transient-anchor-restored-initial_cash",
+      "actual": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+      "expected": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "transient-anchor-restored-other_restriction",
+      "actual": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+      "expected": "IMMUTABLE_ACCOUNT_ANCHOR_CHANGED",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "PASS": 15,
+  "MISMATCH": 0,
+  "artifact_root": "E:\\WORK\\AQRP-audits\\p5-1c5a7e6\\public-backing-controls"
+}

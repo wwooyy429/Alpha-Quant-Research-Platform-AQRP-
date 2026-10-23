@@ -1,5 +1,8 @@
 # 变更记录
 
+2026-10-23 当前状态：GPT Work 对固定 `1c5a7e62cace7c3e66b7cc7f12fd564cb0013654` 的 **Phase5 十二项受限工程范围 G2 PASS**；WORK-P5-G2-003 已由独立复核确认 CLOSED — FIX VERIFIED，001/002 保持 CLOSED，无新增阻断。独立干净 SDK 1158 项通过，双系统各 1158 项官方原始证据已由主审核验。**用户阶段验收尚未授予，Phase5 未 ACCEPTED / RELEASED。** 本轮仅归档原始报告、接收核验及更新状态；后续文档归档提交不自动获得该固定版本的独立审查结论，`AQRP_FIXED_REVIEW_SHA` 继续锁定已审实现。原失败报告、日志、工件及各轮 OPEN/BLOCKED 记录保留历史。WI-R2-001/002 与真实 Windows 隔离继续 **DEFERRED / NOT VERIFIED**；正式 Test 未运行，金融批准 NONE，完整历史宿主复现仍限于已接受的软件包、依赖锁、旧因子版本及结果重放范围。未授权合并、标签、部署、实盘、正式 Test、金融批准或 P6。 当前处置与证据见[审查归档](audits/phase-5/g2-1c5a7e6/DEVELOPER_RESPONSE.md)。以下旧状态均为历史。
+
+
 2026-10-23 GPT Work对固定bf5e5a89209f2dd24042cd806626f832b531de52复核：001/002保持CLOSED，003 High仍PARTIAL FIX / OPEN，G2 BLOCKED。0.5.0.dev5继续修复候选：从已验证磁盘prefix的真实成交/拆股/FIFO cover/交收重建原始所得，并统一正常、异常和取消的完整财务输出门禁；不能再用同一状态两个可变字段自证。原报告/176文件封存核验和开发处理见docs/audits/phase-5/g2-bf5e5a8/。新固定完整SHA及完整SDK/双OS原始证据以PR #8为准，旧1116通过不覆盖新候选，003不得自行关闭。十二项范围、12已审设计/答案、3444冻结文件、main/旧标签保留；WI-R2延期、正式Test/金融批准/历史宿主边界不变，无部署/实盘/合并/标签/P6。以下旧状态保留历史。
 
 
