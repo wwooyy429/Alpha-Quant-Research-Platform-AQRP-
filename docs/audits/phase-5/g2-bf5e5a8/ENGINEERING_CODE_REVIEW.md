@@ -1,0 +1,5 @@
+# 开发方工程自查，不代替GPT Work独立G2
+
+来源为bf5e5a8的同一003 High PARTIAL/OPEN，001/002已关闭。修复只在已授权P5范围重建持久化children/payload的成交/拆股/FIFO cover/交收与mark，不从待核对post_state取expected。只读证明不写commit、不创建订单、不重复收费或交易，不将prepared当已提交。普通成功与失败/取消/重放统一必要的完整projection，包含归因检查；数值域保持Fraction、原经济/事件序不变。缺来源或有冲突失败关闭。实际durable prefix由TransactionStore读锁一致快照提供；本证明不是防止拥有全部仓库文件写权限者重新伪造整个历史的密码学授权或真实OS隔离证明。
+
+新增测试既有独立字面答案又有真实服务磁盘反例、边界和合法正控；原对错样例均保存，不削弱原检查。源码69模块/逐文件/hash/旧3444文件与12设计检查见REPAIR_IDENTITY、../IMPLEMENTATION_IDENTITY。新执行只限TEST_ONLY工程环境，不能发金融批准、关闭003或验收发布。

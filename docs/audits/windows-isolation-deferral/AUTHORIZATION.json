@@ -1,0 +1,12 @@
+{
+  "schema_version": "windows-isolation-deferral/1",
+  "recorded_at_utc": "2026-10-22T15:56:41.887731+00:00",
+  "authority": "Explicit human instruction in current task",
+  "exact_user_message": "确认将 Windows 隔离遗留事项 **WI-R2-001（动态产物权限继承与严格门禁的实际兼容性）**、**WI-R2-002（operator 发布实际输入及 auditor 读取核验的完整证据）**，延期至所有开发完成后，在最终集成版本锁定的完整 40 位 SHA 上统一执行真实环境验证，覆盖届时各阶段相关输入、目录、动态产物及完整生命周期。期间两项持续标记 **DEFERRED / NOT VERIFIED**，不得因 R3 代码修复通过、模型测试或 CI 成功而改判关闭；保留原始失败报告、日志、工件和哈希，继续每阶段既定回归及固定版本独立审核。最终验证的具体执行方案和权限操作届时另行明确授权。本次仅确认延期安排，**不启用账户、不改真实 ACL、不部署、不运行正式 Test、不授金融批准**，不扩大既有阶段开发或合并发布授权。",
+  "authorization_type": "DEFERRAL_SCHEDULE_ONLY",
+  "implementation_or_merge_release_authorization_expanded": false,
+  "execution_plan_or_permission_operations_authorized": false,
+  "enable_accounts_modify_real_ACL_deploy_run_formal_Test_financial_approval_authorized": false,
+  "prior_plan_review_sha": "5c9721f96679f4d495b7b3b93af3e2e31e66ae62",
+  "main_baseline_unchanged": "32ea5d6b75c84c07017d87377eeabd2f78207c5c"
+}

@@ -1,0 +1,286 @@
+[
+  {
+    "artifact": {
+      "id": 12453360470,
+      "name": "phase5-ubuntu-24.04-1",
+      "size_in_bytes": 163229282,
+      "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12453360470",
+      "archive_download_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12453360470/zip",
+      "expired": false,
+      "created_at": "2026-10-22T19:30:13Z",
+      "expires_at": "2026-11-21T19:30:02Z",
+      "updated_at": "2026-10-22T19:30:13Z",
+      "digest": "sha256:3187bd976370d5b06bb7895c38c23d52c37dc91f36771e4723bc686f50d7f644",
+      "workflow_run": {
+        "id": 39839529359,
+        "repository_id": 1426974778,
+        "head_repository_id": 1426974778,
+        "head_branch": "codex/phase-5-backtest-plan",
+        "head_sha": "bfdcf30e525ff802ea483974f58163eedc029ce8"
+      }
+    },
+    "sha256": "3187bd976370d5b06bb7895c38c23d52c37dc91f36771e4723bc686f50d7f644",
+    "CRC_all_selected_hashes": "PASS",
+    "selected": 6615,
+    "official_members": 10045,
+    "extra_files": 3429,
+    "extra_alias_groups": 189,
+    "tests": 1049,
+    "installed_wheel_modules_match_fixed_source": 69,
+    "environment": {
+      "run_id": "aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26",
+      "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+      "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+      "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "ImageOS": "ubuntu24",
+      "ImageVersion": "20261012.334.1",
+      "code_commit": "b379a8f34b9d43859daaf4dd98cc46021304e7c0",
+      "dirty": false,
+      "complete": true,
+      "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+      "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26",
+      "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+      "github_run_id": "39839529359",
+      "github_run_attempt": "1",
+      "github_sha": "b379a8f34b9d43859daaf4dd98cc46021304e7c0",
+      "wheel_sha256": "6c66ac78dc3260eb747d16bd8944e891245f5d1517eec02a20d29eaf6b834c57"
+    },
+    "critical_coverage": [
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/__init__.py",
+        "statements": 0,
+        "line": 0.0,
+        "branch": 100
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/contracts.py",
+        "statements": 184,
+        "line": 99.45652173913044,
+        "branch": 99.03846153846153
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/engine.py",
+        "statements": 375,
+        "line": 97.86666666666666,
+        "branch": 94.07894736842105
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/exact.py",
+        "statements": 67,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/ledger.py",
+        "statements": 205,
+        "line": 98.53658536585365,
+        "branch": 92.85714285714286
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/provider.py",
+        "statements": 131,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/risk.py",
+        "statements": 52,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/synthetic.py",
+        "statements": 73,
+        "line": 98.63013698630137,
+        "branch": 95.0
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/backtest/transactions.py",
+        "statements": 86,
+        "line": 100.0,
+        "branch": 96.66666666666667
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/execution/__init__.py",
+        "statements": 0,
+        "line": 0.0,
+        "branch": 100
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/execution/liquidity.py",
+        "statements": 18,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/execution/model.py",
+        "statements": 43,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/performance/__init__.py",
+        "statements": 0,
+        "line": 0.0,
+        "branch": 100
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/performance/metrics.py",
+        "statements": 83,
+        "line": 100.0,
+        "branch": 92.85714285714286
+      },
+      {
+        "module": "/home/runner/work/_temp/aqrp-evidence/aqrp-c6305d0c-0239-4d53-8f47-10faf2731f26/venv/lib/python3.13/site-packages/aqrp/services/backtest.py",
+        "statements": 159,
+        "line": 99.37106918238993,
+        "branch": 97.72727272727273
+      }
+    ],
+    "actual_backtest_terminal_chains_files_return_binding": "PASS",
+    "scope": "Official CI bytes independently checked; not a new GPT execution on those remote OS hosts",
+    "result": "PASS"
+  },
+  {
+    "artifact": {
+      "id": 12451929998,
+      "name": "phase5-windows-latest-1",
+      "size_in_bytes": 121985327,
+      "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12451929998",
+      "archive_download_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/artifacts/12451929998/zip",
+      "expired": false,
+      "created_at": "2026-10-22T19:33:07Z",
+      "expires_at": "2026-11-21T19:32:55Z",
+      "updated_at": "2026-10-22T19:33:07Z",
+      "digest": "sha256:96d87b6be97bcf44ac2f64203a44a6fb31ceed797058cb44e53f48aa32257e35",
+      "workflow_run": {
+        "id": 39839529359,
+        "repository_id": 1426974778,
+        "head_repository_id": 1426974778,
+        "head_branch": "codex/phase-5-backtest-plan",
+        "head_sha": "bfdcf30e525ff802ea483974f58163eedc029ce8"
+      }
+    },
+    "sha256": "96d87b6be97bcf44ac2f64203a44a6fb31ceed797058cb44e53f48aa32257e35",
+    "CRC_all_selected_hashes": "PASS",
+    "selected": 6616,
+    "official_members": 10046,
+    "extra_files": 3429,
+    "extra_alias_groups": 189,
+    "tests": 1049,
+    "installed_wheel_modules_match_fixed_source": 69,
+    "environment": {
+      "run_id": "aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d",
+      "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+      "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+      "os": "Windows-2025Server-10.0.26100-SP0",
+      "ImageOS": "win25-vs2026",
+      "ImageVersion": "20261021.278.1",
+      "code_commit": "b379a8f34b9d43859daaf4dd98cc46021304e7c0",
+      "dirty": false,
+      "complete": true,
+      "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+      "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d",
+      "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+      "github_run_id": "39839529359",
+      "github_run_attempt": "1",
+      "github_sha": "b379a8f34b9d43859daaf4dd98cc46021304e7c0",
+      "wheel_sha256": "6a7d8d99f3026104ef54bf35ef5f531268b64c275bbcbfcdd5ceadb50a09876a"
+    },
+    "critical_coverage": [
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/__init__.py",
+        "statements": 0,
+        "line": 0.0,
+        "branch": 100
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/contracts.py",
+        "statements": 184,
+        "line": 99.45652173913044,
+        "branch": 99.03846153846153
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/engine.py",
+        "statements": 375,
+        "line": 97.86666666666666,
+        "branch": 94.07894736842105
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/exact.py",
+        "statements": 67,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/ledger.py",
+        "statements": 205,
+        "line": 98.53658536585365,
+        "branch": 92.85714285714286
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/provider.py",
+        "statements": 131,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/risk.py",
+        "statements": 52,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/synthetic.py",
+        "statements": 73,
+        "line": 98.63013698630137,
+        "branch": 95.0
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/backtest/transactions.py",
+        "statements": 86,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/execution/__init__.py",
+        "statements": 0,
+        "line": 0.0,
+        "branch": 100
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/execution/liquidity.py",
+        "statements": 18,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/execution/model.py",
+        "statements": 43,
+        "line": 100.0,
+        "branch": 100.0
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/performance/__init__.py",
+        "statements": 0,
+        "line": 0.0,
+        "branch": 100
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/performance/metrics.py",
+        "statements": 83,
+        "line": 100.0,
+        "branch": 92.85714285714286
+      },
+      {
+        "module": "D:/a/_temp/aqrp-evidence/aqrp-b0082b84-9bbd-49b7-b291-f0fb81bd413d/venv/Lib/site-packages/aqrp/services/backtest.py",
+        "statements": 159,
+        "line": 99.37106918238993,
+        "branch": 97.72727272727273
+      }
+    ],
+    "actual_backtest_terminal_chains_files_return_binding": "PASS",
+    "scope": "Official CI bytes independently checked; not a new GPT execution on those remote OS hosts",
+    "result": "PASS"
+  }
+]

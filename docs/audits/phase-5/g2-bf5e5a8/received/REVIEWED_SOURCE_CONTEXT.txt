@@ -1,0 +1,203 @@
+src/aqrp/backtest/ledger.py
+76: 
+77: 
+78: def verify_cash_structure(s, cash):
+79:     """Prove lot classification, original short proceeds and settlement restrictions.
+80: 
+81:     Settlement uses the durable Journal's completed session, not a mutable lot flag
+82:     or the scheduler's current session. Negative available cash alone is not an
+83:     inconsistency: a correctly recorded margin breach must keep its actual loss.
+84:     """
+85:     sessions = []
+86:     for event in s["journal"]:
+87:         if event["kind"] == "SETTLEMENT":
+88:             value = event.get("settlement_session")
+89:             if type(value) is not int or value < 0 or (sessions and value < sessions[-1]):
+90:                 raise ContractError("UNVERIFIED_SETTLEMENT_SESSION")
+91:             sessions.append(value)
+92:     settled_through = sessions[-1] if sessions else -1
+93:     backing = {}
+94:     for asset in s["assets"].values():
+95:         for lot in asset["lots"]:
+96:             if lot["direction"] == -1:
+97:                 if lot["id"] in backing or lot["remaining"] < 0 or lot["price"] < 0:
+98:                     raise ContractError("INVALID_SHORT_PROCEEDS_BACKING")
+99:                 backing[lot["id"]] = lot
+100:     ids, bound = set(), set()
+101:     for lot in s["cashlots"]:
+102:         if (
+103:             set(lot) != {"id", "entry_id", "kind", "amount", "settled", "due"}
+104:             or not isinstance(lot["id"], str)
+105:             or not lot["id"]
+106:             or lot["id"] in ids
+107:             or lot["kind"] not in {"FREE", "SHORT"}
+108:             or lot["amount"] < 0
+109:             or type(lot["settled"]) is not bool
+110:             or type(lot["due"]) is not int
+111:             or lot["due"] < 0
+112:             or lot["settled"] != (lot["due"] <= settled_through)
+113:         ):
+114:             raise ContractError("INVALID_CASH_LOT_CLASSIFICATION")
+115:         ids.add(lot["id"])
+116:         if lot["kind"] == "FREE":
+117:             if lot["entry_id"] is not None:
+118:                 raise ContractError("INVALID_FREE_CASH_BACKING")
+119:         else:
+120:             entry = lot["entry_id"]
+121:             if entry not in backing or entry in bound:
+122:                 raise ContractError("INVALID_SHORT_PROCEEDS_BACKING")
+123:             original = backing[entry]
+124:             if (
+125:                 lot["amount"] != original["remaining"] * original["price"]
+126:                 or lot["due"] != original["settles"]
+127:             ):
+128:                 raise ContractError("SHORT_PROCEEDS_OR_SETTLEMENT_MISMATCH")
+129:             bound.add(entry)
+130:     if bound != set(backing):
+131:         raise ContractError("MISSING_SHORT_PROCEEDS_BACKING")
+132:     if any(cash[k] < 0 for k in ("U_free", "U_short", "S_set")) or cash["S_set"] > cash["cash_set"]:
+133:         raise ContractError("RESTRICTED_CASH_SUBSET_FAILED")
+134:     return {
+135:         "status": "EXACT_CASH_LOTS_AND_SHORT_BACKING_VERIFIED",
+136:         "cash_lots": len(ids),
+137:         "short_entries": len(bound),
+138:         "settled_through_session": settled_through,
+139:     }
+140: 
+141: 
+142: def reserves(s):
+src/aqrp/services/backtest.py
+40: def _reconciled_account(state):
+41:     c = account(state)
+42:     rebuilt = reconcile(state["initial_cash"], state["journal"], state["assets"])
+43:     expected = {
+44:         **{k: c[k] for k in ("cash_set", "U_free", "U_short", "receivable")},
+45:         "payable": -c["payable"],
+46:         "commission_expense": state["fees"],
+47:         "borrow_expense": state["borrow"],
+48:         "dividend_income": -state["dividends"],
+49:         "realized_long": -state["realized_long"],
+50:         "realized_short": -state["realized_short"],
+51:         "external_capital": -state["external_flows"],
+52:         "positions_cost": sum(a["quantity"] * a["cost"] for a in state["assets"].values()),
+53:         "positions_valuation": sum(a["valuation_adjustment"] for a in state["assets"].values()),
+54:         "unrealized_pnl": -sum(a["valuation_adjustment"] for a in state["assets"].values()),
+55:     }
+56:     if (
+57:         rebuilt["cash_total"] != c["cash_total"]
+58:         or any(rebuilt["quantities"][k] != a["quantity"] for k, a in state["assets"].items())
+59:         or any(rebuilt["balances"].get(k, 0) != v for k, v in expected.items())
+60:         or c["receivable"] < 0
+61:         or c["payable"] < 0
+62:     ):
+63:         raise ContractError("RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED")
+64:     rebuilt["cash_structure"] = verify_cash_structure(state, c)
+65:     return c, rebuilt
+66: 
+67: 
+68: def projection(state):
+69:     c, rebuilt = _reconciled_account(state)
+70:     return {
+71:         "state_sha256": digest(freeze(state)),
+src/aqrp/services/backtest.py
+97:     root = guard_path(ledger.path(run))
+98:     if not (root / "transactions").exists():
+99:         result["committed_state_verification"] = {"status": "NOT_STARTED"}
+100:         return
+101:     try:
+102:         state, records, files = TransactionStore(root / "transactions").verified_snapshot()
+103:         current, _ = _reconciled_account(state)
+104:         assert_economic_identity(state)
+105:     except (Exception, KeyboardInterrupt) as recovery_error:
+106:         evidence = {
+107:             "status": "UNVERIFIED_COMMITTED_STATE",
+108:             "financial_state_known": False,
+109:             "error": getattr(recovery_error, "code", type(recovery_error).__name__),
+110:             "message": str(recovery_error),
+111:             "original_status": result["status"],
+112:             "original_transaction_files_preserved": True,
+113:         }
+114:         result["status"] = "FAILED"
+115:         result["reasons"].append("COMMITTED_STATE_UNVERIFIED")
+116:     else:
+117:         evidence = {
+118:             "status": "VERIFIED_COMMITTED_PREFIX",
+119:             "financial_state_known": True,
+120:             "commit_count": len(records),
+121:             "state_sha256": digest(freeze(state)),
+122:             "prefix_sha256": records[-1]["sha256"] if records else digest(freeze(state)),
+123:             "trace_scope": "Observed scheduler trace may stop before a published commit; committed-trace and transactions are the durable authority",
+124:         }
+125:         payloads = {
+126:             "failed-state.json": freeze(state),
+127:             "transactions.json": records,
+128:             "transaction-files.json": files,
+129:             "committed-trace.json": [
+130:                 {
+131:                     "commit_seq": r["commit_seq"],
+132:                     "sha256": r["sha256"],
+133:                     "dispatch_key": r["dispatch_key"],
+134:                     "children": r["children"],
+135:                 }
+136:                 for r in records
+137:             ],
+138:         }
+139:         if simulator is not None:
+140:             payloads["trace.json"] = simulator.trace
+141:         for name, payload in payloads.items():
+142:             path = root / name
+143:             if path.exists():
+144:                 if guard_path(path).read_bytes() != canonical(payload):
+145:                     raise ContractError("FAILURE_PUBLICATION_CONFLICT", name)
+146:             else:
+147:                 ledger.artifact(run, name, payload)
+148:         result["last_committed_account"] = present(current)
+149:     result["committed_state_verification"] = evidence
+150:     ledger.artifact(run, "failure-recovery.json", evidence)
+151: 
+152: 
+153: def simulate_engineering(request, ledger_root, code_commit):
+154:     if not isinstance(request, EngineeringBacktestRequest):
+155:         raise ContractError("FROZEN_SIMULATION_REQUEST_REQUIRED")
+156:     policy = reviewed_policy()
+157:     environment = runtime_manifest()
+158:     verify_runtime(environment)
+159:     ledger = ExperimentLedger(guard_path(ledger_root))
+160:     lineage = {
+src/aqrp/performance/metrics.py
+135:     stats = summary(returns, [F(0)] if invalid else nav)
+136:     contribution = {"LONG": F(0), "SHORT": F(0)}
+137:     for f in s["fragments"]:
+138:         contribution["LONG" if f["direction"] == 1 else "SHORT"] += f["net"]
+139:     open_pools = []
+140:     for sid, a in s["assets"].items():
+141:         for lot in a["lots"]:
+142:             if lot["remaining"]:
+143:                 net = (
+144:                     lot["direction"] * lot["remaining"] * (a["mark"] - lot["price"])
+145:                     - lot["entry_fee"]
+146:                     - lot["borrow"]
+147:                     + lot["long_dividend"]
+148:                     - lot["short_dividend"]
+149:                 )
+150:                 contribution["LONG" if lot["direction"] == 1 else "SHORT"] += net
+151:                 open_pools.append(
+152:                     {
+153:                         "security_id": sid,
+154:                         "entry_fill_id": lot["id"],
+155:                         "remaining": lot["remaining"],
+156:                         "net_contribution": net,
+157:                         "entry_fee": lot["entry_fee"],
+158:                         "borrow": lot["borrow"],
+159:                         "long_dividend": lot["long_dividend"],
+160:                         "short_dividend": lot["short_dividend"],
+161:                     }
+162:                 )
+163:     net_pnl = account(s)["equity"] - s["initial_cash"] - s["external_flows"]
+164:     if sum(contribution.values(), F(0)) != net_pnl:
+165:         raise ContractError("LONG_SHORT_ATTRIBUTION_MISMATCH")
+166:     turnover = sum(
+167:         (b["turnover_notional"] / b["decision_equity"] for b in s["budgets"].values()), F(0)
+168:     )
+169:     return {
+170:         "schema_version": "performance/1.0.0",

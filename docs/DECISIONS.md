@@ -1,5 +1,43 @@
 # 架构决策、冲突及待用户决定事项
 
+2026-10-23 当前状态：GPT Work 对固定 `1c5a7e62cace7c3e66b7cc7f12fd564cb0013654` 的 **Phase5 十二项受限工程范围 G2 PASS**；WORK-P5-G2-003 已由独立复核确认 CLOSED — FIX VERIFIED，001/002 保持 CLOSED，无新增阻断。独立干净 SDK 1158 项通过，双系统各 1158 项官方原始证据已由主审核验。**用户阶段验收尚未授予，Phase5 未 ACCEPTED / RELEASED。** 本轮仅归档原始报告、接收核验及更新状态；后续文档归档提交不自动获得该固定版本的独立审查结论，`AQRP_FIXED_REVIEW_SHA` 继续锁定已审实现。原失败报告、日志、工件及各轮 OPEN/BLOCKED 记录保留历史。WI-R2-001/002 与真实 Windows 隔离继续 **DEFERRED / NOT VERIFIED**；正式 Test 未运行，金融批准 NONE，完整历史宿主复现仍限于已接受的软件包、依赖锁、旧因子版本及结果重放范围。未授权合并、标签、部署、实盘、正式 Test、金融批准或 P6。 当前处置与证据见[审查归档](audits/phase-5/g2-1c5a7e6/DEVELOPER_RESPONSE.md)。以下旧状态均为历史。
+
+
+2026-10-23 GPT Work对固定bf5e5a89209f2dd24042cd806626f832b531de52复核：001/002保持CLOSED，003 High仍PARTIAL FIX / OPEN，G2 BLOCKED。0.5.0.dev5继续修复候选：从已验证磁盘prefix的真实成交/拆股/FIFO cover/交收重建原始所得，并统一正常、异常和取消的完整财务输出门禁；不能再用同一状态两个可变字段自证。原报告/176文件封存核验和开发处理见docs/audits/phase-5/g2-bf5e5a8/。新固定完整SHA及完整SDK/双OS原始证据以PR #8为准，旧1116通过不覆盖新候选，003不得自行关闭。十二项范围、12已审设计/答案、3444冻结文件、main/旧标签保留；WI-R2延期、正式Test/金融批准/历史宿主边界不变，无部署/实盘/合并/标签/P6。以下旧状态保留历史。
+
+
+2026-10-23 GPT Work对固定bf5e5a89209f2dd24042cd806626f832b531de52复核：001/002保持CLOSED，003 High仍PARTIAL FIX / OPEN，G2 BLOCKED。0.5.0.dev4继续修复候选：从已验证磁盘prefix的真实成交/拆股/FIFO cover/交收重建原始所得，并统一正常、异常和取消的完整财务输出门禁；不能再用同一状态两个可变字段自证。原报告/176文件封存核验和开发处理见docs/audits/phase-5/g2-bf5e5a8/。新固定完整SHA及完整SDK/双OS原始证据以PR #8为准，旧1116通过不覆盖新候选，003不得自行关闭。十二项范围、12已审设计/答案、3444冻结文件、main/旧标签保留；WI-R2延期、正式Test/金融批准/历史宿主边界不变，无部署/实盘/合并/标签/P6。以下旧状态保留历史。
+
+
+2026-10-23 最新独立复核固定35f93d640a2304121131d947a465f57a951cf63f：001/002 CLOSED — FIX VERIFIED，新增003 High OPEN，G2仍BLOCKED。当前0.5.0.dev3仅为003修复候选：逐现金桶/逐金融科目精确对账、原始SHORT所得与交收/子集核验，不自行关闭003。原报告/150文件封存接收、开发处理/输出元数据说明见docs/audits/phase-5/g2-35f93d6/。新提交已安装wheel完整SDK/双OS官方原ZIP和实际收据以PR #8锁定40位SHA外置证据为准，不能把旧1073通过当本轮通过。十二项范围、原12设计/3444冻结文件、main/旧标签保留；WI-R2两项DEFERRED / NOT VERIFIED、正式Test/金融批准/完整历史宿主边界不变；无合并/标签/部署/实盘/P6。以下旧OPEN状态是历史，以上述当前状态为准。
+
+
+2026-10-23 GPT Work对固定bfdcf30判Phase5 G2 BLOCKED（001 High、002 Medium OPEN），原报告/反例/124成员封存接收核验见docs/audits/phase-5/g2-bfdcf30/。当前0.5.0.dev2修复候选：失败/取消重读验证磁盘提交前缀、未知状态失败关闭；成交暴露腿LONG/SHORT/MIXED与BUY/SELL明确分开，费用不重复。两项仍OPEN_PENDING_INDEPENDENT_RECHECK，不自行宣告关闭。必要自测229项通过，属未提交工作版本；最终只以PR #8新固定40位SHA的完整SDK/双OS官方原ZIP及收据交GPT Work复核。十二项范围、原G1答案/冻结资料、main/旧标签不变；WI-R2两项继续DEFERRED / NOT VERIFIED，正式Test/金融批准/完整旧宿主边界保持，无合并/标签/部署/实盘/P6。以下旧状态保留历史。
+
+
+2026-10-23 Phase5十二项（10MVP/2CR）已形成0.5.0.dev1受限工程实现候选，**G2 PENDING，未阶段验收/发布**。G1固定5262032及用户C-P5-001/P5-D01–D10接受/单独实施授权见phase-5/IMPLEMENTATION_AUTHORIZATION.json；实际代码/接口/逐项测试映射与七项包装兼容变化见IMPLEMENTATION_REVIEW_PACKAGE、IMPLEMENTATION_CONTRACT、IMPLEMENTATION_TRACEABILITY及COMPATIBILITY_IMPACT。开发方验证只认PR #8锁定40位SHA对应的真实SDK/CI原包和外置封存收据，不把本状态说明当PASS。旧金融源码/答案、十二份G1设计身份、主干/旧标签不动。WI-R2两项继续DEFERRED / NOT VERIFIED；正式Test/金融批准/旧完整宿主边界保留，无合并/标签/部署/实盘/P6。以下各轮旧状态保留历史。
+
+
+2026-10-23 用户已明确接受G1固定5262032的C-P5-001及P5-D01–D10（含C-P5-002–004），并单独授权既定12项（10MVP/2CR）P5受限工程实施，当前IMPLEMENTING。原话/范围见docs/audits/phase-5/IMPLEMENTATION_AUTHORIZATION.json。G2、阶段验收、合并/标签另待；真实Windows R2两项继续DEFERRED / NOT VERIFIED，正式Test/金融批准/历史宿主边界不变，无部署/实盘/P6。以下待接受/待实施许可均为原轮历史。
+
+
+2026-10-23 最新Phase5 G1：GPT Work对固定 `5262032bee4f631f68763e57510e1878945f6b8c` 判 **PLAN PASS WITH CONDITIONS（受限工程设计）**，四项均 **CLOSED_DESIGN**，无新增阻断技术设计。原25/70、新25/209及6组2349设计模型独立通过，均不是P5产品测试。本轮仅接收归档/状态更新；用户仍须明确接受C-P5-001及P5-D01–D10（含C-P5-002–004）经济/统计口径，再单独授权P5实施，当前 **NOT AUTHORIZED / NOT STARTED**。原报告、失败及旧轮OPEN/BLOCKED保留历史；现状见 `docs/audits/phase-5/g1-5262032/DEVELOPER_RESPONSE.md`。12份已审设计身份文件不改，归档提交与已审526版本分别标识；main/标签保持P4基线，真实隔离WI-R2-001/002继续 **DEFERRED / NOT VERIFIED**，正式Test/金融批准/完整旧宿主边界不变，无部署/实盘/合并/标签/P6。
+
+以下既有状态按原轮次保留，由上述新独立处置更新当前状态；不改写原审计结论。
+
+
+2026-10-23 Phase5 G1：GPT Work仅对固定5c9721f96679f4d495b7b3b93af3e2e31e66ae62判PLAN BLOCKED / REQUEST CHANGES（2High/2Medium OPEN），收尾bd18d1b未被该报告审查。本轮在bd之上修订四项设计，原25/70与131冻结文件不改，补充25组209项仅开发方设计算术；四项OPEN_PENDING_RECHECK。C-P5-001事件总序补充提案待主审及用户明确接受，不改冻结P0契约。详docs/audits/phase-5/REVIEW_PACKAGE_CURRENT.md。P5仅计划，未获实现/合并/标签授权；真实隔离R2延期及正式Test/金融批准边界保持，无部署或P6。
+
+
+2026-10-23 接收GPT Work固定 62074502aa4c32556b5e690bac10bd8054bd9178 的R3独立复核：WORK-WI-R3-001/002均CLOSED — FIX VERIFIED，代码/模型/工程范围PASS，独立SDK681与双OS各681原证据已核；报告及429成员封存接收核验见 docs/audits/windows-isolation-deferral/r3-recheck-6207450/。整体Windows真实隔离及原WI-R2-001/002继续DEFERRED / NOT VERIFIED，最终集成40位SHA真实验证另行授权。该P3候选未集成P4；本轮仅归档/状态，不合并标签、不真实权限操作，不扩大P5授权。
+
+
+2026-10-22 用户已明确确认：WI-R2-001、WI-R2-002持续 DEFERRED / NOT VERIFIED，统一延期至所有开发完成、最终集成版本完整40位SHA锁定后真实环境验证，届时执行方案/权限操作另行授权。R3代码、模型或CI通过不能关闭两项；原失败证据保留，各阶段既定回归和固定版本独立审核继续。详 docs/audits/windows-isolation-deferral/DEFERRAL_POLICY.md。本次只确认延期，不启用账户/修改真实ACL/部署/正式Test/金融批准，不扩大既有开发或合并发布权限。
+
+
+2026-10-22 当前：Phase4七项受限工程已ACCEPTED/RELEASED，main/phase4-baseline/v0.4.0固定 32ea5d6b75c84c07017d87377eeabd2f78207c5c。Phase5仅G1计划预审获授权，12项（10MVP/2CR）设计、接口、数学候选、测试证据/依赖在 docs/audits/phase-5/；主审GPT Work，完整SHA按计划PR的AQRP_FIXED_REVIEW_SHA锁定。G1未审、P5实现未授权/未开始；P4 SDK844与旧20/四/91仅基线回归，不是P5测试。真实隔离/正式Test/金融批准/完整旧宿主边界保留，正式失败关闭，无部署/实盘。以下旧轮状态保留历史。
+
+
 2026-10-22 最新决定：Phase4 七项受限工程范围已由用户 ACCEPTED，GPT Work 固定 3c8757949b0fd5c97953b06a74ebc2d0e56676e4 G2 PASS、两项发现 CLOSED。PR #6 普通合并 d3993d07e5df1b5c2f7acd30cb628226f7b1fc09，整树与已审头一致；合并后干净 SDK844、原20/四及数学91通过。发布登记与 phase4-baseline/v0.4.0/main 原子同点并核验后 RELEASED，详 docs/audits/phase-4/BASELINE.md。既有延期及正式失败关闭不变，PR #7 不集成；只授权 Phase5 G1 计划，不授权 P5 业务、部署、实盘、正式 Test 或金融批准。以下旧状态保留历史。
 
 

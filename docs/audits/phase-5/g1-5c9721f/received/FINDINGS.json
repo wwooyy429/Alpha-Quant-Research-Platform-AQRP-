@@ -1,0 +1,18 @@
+{
+  "fixed_sha":"5c9721f96679f4d495b7b3b93af3e2e31e66ae62",
+  "reviewer":"GPT Work supplemental reviewer",
+  "verdict":"PLAN BLOCKED / REQUEST CHANGES",
+  "scope":"G1 design only; no P5 implementation executed",
+  "PR_head_at_end":"bd18d1b98b5647f4f4b6345ffe73dca40acaf038",
+  "PR_drift":"Description/head changed after initial lock; new candidate NOT REVIEWED, findings/verdict apply to specified5c9721f only",
+  "candidate_math":{"cases":25,"literal_answers_checked":70,"result":"ALL_PASS"},
+  "findings":[
+    {"id":"WORK-P5-G1-001","severity":"High","status":"OPEN","blocks_G1":true,"file":"docs/audits/phase-5/INTERFACE_DRAFT.md","lines":[11,17],"title":"Global priority tuple and contiguous per-Fill transaction ordering need one executable definition","evidence":"INDEPENDENT_DESIGN_CASES.json C01_ATOMIC_TOTAL_ORDER/C01_RISK_STATE_REFERENCE","required":"Specify outer queue vs transaction-child events, deterministic log/replay key and risk-state capture/commit timing; freeze a two-order expected event trace including cancel65/borrow95 and crash boundaries."},
+    {"id":"WORK-P5-G1-002","severity":"High","status":"OPEN","blocks_G1":true,"file":"docs/audits/phase-5/MATH_CONTRACT.md","lines":[5,21],"related":["INTERFACE_DRAFT.md:21","PROFILE_AND_DECISIONS.md:11","PROFILE_AND_DECISIONS.md:13"],"title":"Unsettled short-sale proceeds overlap U and S in available cash/P4 budget","evidence":"INDEPENDENT_DESIGN_CASES.json C02_SHORT_SETTLEMENT_OVERLAP/C02_WITH_PROFILE_MIN_FEE","required":"Define mutually exclusive settled/unsettled restricted cash buckets and actual P5 availability through settlement/cover; derive P4 conservative projection separately. An extra temporary prefunding reserve must be explicitly proposed/approved, not disguised as two copies of the same proceeds."},
+    {"id":"WORK-P5-G1-003","severity":"Medium","status":"OPEN","blocks_G1":true,"file":"docs/audits/phase-5/INTERFACE_DRAFT.md","lines":[25],"related":["PROFILE_AND_DECISIONS.md:9"],"title":"Sell lower protection does not define the price_upper used for fee reserve","evidence":"INDEPENDENT_DESIGN_CASES.json C03_SELL_FEE_UPPER","required":"Resolve symmetric execution-band vs side-specific price protection; give finite fee upper bound for every side/type and enforce cumulative actual fee budget before each atomic Fill. Freeze favorable sell-gap and partial-fill budget tests."},
+    {"id":"WORK-P5-G1-004","severity":"Medium","status":"OPEN","blocks_G1":true,"file":"docs/audits/phase-5/MATH_CONTRACT.md","lines":[17],"title":"FIFO completion unit and holding-cost allocation do not yet determine win-rate outputs","evidence":"INDEPENDENT_DESIGN_CASES.json C04_FIFO_COMPLETION_UNIT/C04_BORROW_LOT_ATTRIBUTION","required":"Define matched-fragment/entry-lot/flat-to-flat counting, partial-close completion, event-time borrow/dividend cost allocation and rounding remainder; label long-dividend inclusion/exclusion. Freeze fully specified paired examples and independent statistics checks."}
+  ],
+  "implementation_authorized":false,
+  "real_isolation_formal_Test_financial_approval_full_historic_host":"DEFERRED / NOT VERIFIED",
+  "merge_tag_deployment_live_P6_authorized":false
+}

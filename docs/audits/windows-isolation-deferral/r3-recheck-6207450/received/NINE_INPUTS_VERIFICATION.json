@@ -1,0 +1,93 @@
+{
+  "actual_executor": "GPT Work independent bytes, Parquet and exact-rational verification",
+  "snapshot_id": "wi-r3-public-engineering-20261022",
+  "snapshot_manifest_hash": "edd5bc05cc2ddd29740db95c95270e0c3004217712feb2421234107c2f7c9031",
+  "source_archive_bytes": 16011,
+  "source_archive_sha256": "f6c91a84821aac94d840295230eecb088e936c80f5e8a37ce36979b02e1e1783",
+  "members": 9,
+  "tables": [
+    {
+      "table": "adjustment_factors",
+      "rows": 0,
+      "sha256": "fd339e981e7ebf60e9b666c55d7d916adb4110ab25b744de5c1a2f88d8a3996c",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\neffective_at: timestamp[us, tz=UTC]\nrevision_id: int64\nratio: decimal128(28, 8)\naction_id: string\nmethod: string\nview_cutoff: timestamp[us, tz=UTC]"
+    },
+    {
+      "table": "bars_daily",
+      "rows": 6,
+      "sha256": "e7aa21eb3d6e84779f6573c5bdc57fff9d9d6ac30298cbb16ebb5c2a3db84400",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\nmarket_id: string\ncalendar_id: string\nsession_date: date32[day]\nrevision_id: int64\ncurrency: string\nopen: decimal128(28, 8)\nhigh: decimal128(28, 8)\nlow: decimal128(28, 8)\nclose: decimal128(28, 8)\nvolume: decimal128(28, 8)\namount: decimal128(28, 8)\nprice_basis: string\nsource_scale: int64\nsource_volume_unit: string\nsource_amount_unit: string\nsource_volume: string\nsource_amount: string\nlot_size: decimal128(28, 8)"
+    },
+    {
+      "table": "calendar",
+      "rows": 6,
+      "sha256": "3ce97818cb2b964fe3973679f1c6f9a37d2e35698ae1ea06fe1f5a43db3a261a",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\ncalendar_id: string\nmarket_id: string\nsession_date: date32[day]\nopen_at: timestamp[us, tz=UTC]\nclose_at: timestamp[us, tz=UTC]\ncalendar_version: string"
+    },
+    {
+      "table": "corporate_actions",
+      "rows": 0,
+      "sha256": "efa3c9d408a50903b4c96bac2dd0643a2d808a8946cfcea9a464102f757bd5f1",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\naction_id: string\nrevision_id: int64\nsecurity_id: string\ntype: string\nannouncement_at: timestamp[us, tz=UTC]\neffective_at: timestamp[us, tz=UTC]\nex_date: date32[day]\nrecord_date: date32[day]\npay_date: date32[day]\nsplit_ratio: decimal128(28, 8)\ncash_per_share: decimal128(28, 8)\ncurrency: string\ndividend_basis: string"
+    },
+    {
+      "table": "security_master",
+      "rows": 2,
+      "sha256": "9295060f5d0539c8bbbc42f1f3254d7e1e11184bbd3f353ac04b391587b233c3",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\nrevision_id: int64\nmarket_id: string\nvenue_mic: string\nasset_type: string\ncurrency: string\nlisting_at: timestamp[us, tz=UTC]\ndelisting_at: timestamp[us, tz=UTC]\nknown_at: timestamp[us, tz=UTC]"
+    },
+    {
+      "table": "security_status",
+      "rows": 2,
+      "sha256": "88bc911e597dc588a25fe288958472e01163c62d75f12776d56ed98beedbcee4",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64\nstatus: string"
+    },
+    {
+      "table": "symbol_alias",
+      "rows": 2,
+      "sha256": "d4a738618646af81c93afda5c93dfc6781a5b1a65b70b5db1ecbcb9b7acedc01",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nmarket_id: string\nsymbol: string\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64"
+    },
+    {
+      "table": "universe_membership",
+      "rows": 2,
+      "sha256": "1d117a44d147aa1e1a14075159579e684019351f19b92445ad5e5de996c921a4",
+      "schema": "schema_version: string\nsnapshot_id: string\nsource_id: string\nsource_record_id: string\ningested_at: timestamp[us, tz=UTC]\nquality_status: string\nreason_code: string\nsource_timezone: string\nevent_time: timestamp[us, tz=UTC]\navailable_at: timestamp[us, tz=UTC]\nuniverse_id: string\nsecurity_id: string\neffective_from: timestamp[us, tz=UTC]\neffective_to: timestamp[us, tz=UTC]\nrevision_id: int64"
+    }
+  ],
+  "factor_executions": [
+    {
+      "factor": "momentum",
+      "expected_exact": "21/100",
+      "actual": 0.21,
+      "tolerance": "1e-12",
+      "run": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-recheck-6207450-independent\\independent-factor-runs\\1da8c69a-be95-4ab7-ad3d-29770ebd8d4c"
+    },
+    {
+      "factor": "reversal",
+      "expected_exact": "-21/100",
+      "actual": -0.21,
+      "tolerance": "1e-12",
+      "run": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-recheck-6207450-independent\\independent-factor-runs\\5184d927-18ef-4c60-964f-442d26e56fff"
+    },
+    {
+      "factor": "volume",
+      "expected_exact": "3/5",
+      "actual": 0.6,
+      "tolerance": "1e-12",
+      "run": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-recheck-6207450-independent\\independent-factor-runs\\afff2121-ddb8-421c-a3e8-ed02686a9272"
+    },
+    {
+      "factor": "price_volume",
+      "expected_exact": "3/50",
+      "actual": 0.06,
+      "tolerance": "1e-12",
+      "run": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\windows-isolation-recheck-6207450-independent\\independent-factor-runs\\4d078b2d-c209-441a-a42b-80801fa8655c"
+    }
+  ],
+  "deployment": "NOT_DEPLOYED",
+  "actual_auditor_token_access": "NOT_EXECUTED",
+  "old_nine_input_recovery": "NOT_ATTEMPTED_NOT_VERIFIED",
+  "scope": "Readable new public export, not a substitute for old inaccessible files or OS isolation proof",
+  "result": "PASS"
+}

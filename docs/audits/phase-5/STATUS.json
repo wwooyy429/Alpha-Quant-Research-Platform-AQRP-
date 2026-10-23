@@ -1,0 +1,115 @@
+{
+  "phase": 5,
+  "current": "G2_PASS_AWAITING_USER_PHASE_ACCEPTANCE",
+  "requirements": 12,
+  "tiers": {
+    "MVP": 10,
+    "Competition Ready": 2
+  },
+  "baseline": "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
+  "G1": "PLAN_PASS_WITH_CONDITIONS_AT_5262032",
+  "implementation": "RESTRICTED_ENGINEERING_G2_PASS_NOT_ACCEPTED_NOT_RELEASED",
+  "product_tests": "GPT Work independent clean installed SDK 1158 PASS; official Ubuntu and Windows each1158 original evidence verified at fixed1c5a7e6",
+  "design_candidate_math": "GPT Work independently verified original25/70 and supplemental25/209; extra6/2349 MODEL scenarios; no P5 product tests",
+  "main_merge_tag_authorization": false,
+  "formal_Test": "DEFERRED_NOT_RUN",
+  "financial_approval": "NONE",
+  "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+  "full_historical_host": "NOT_VERIFIED_LIMITED_PACKAGE_LOCK_OLD_REF_REPLAY_ONLY",
+  "deployment_live": false,
+  "windows_isolation_legacy_findings": {
+    "WI-R2-001": "DEFERRED / NOT VERIFIED",
+    "WI-R2-002": "DEFERRED / NOT VERIFIED"
+  },
+  "windows_isolation_validation_target": "After all development, final integrated full40 SHA, separately authorized actual execution/permissions",
+  "windows_isolation_policy": "../windows-isolation-deferral/DEFERRAL_POLICY.md",
+  "Windows_R3_code_recheck": {
+    "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+    "verdict": "PASS_CODE_MODEL_ENGINEERING_ONLY",
+    "WORK-WI-R3-001": "CLOSED_FIX_VERIFIED",
+    "WORK-WI-R3-002": "CLOSED_FIX_VERIFIED",
+    "P4_integration": "NOT_INCLUDED_NOT_VERIFIED",
+    "record": "../windows-isolation-deferral/r3-recheck-6207450/"
+  },
+  "last_independent_reviewed_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "reviewer": "GPT Work",
+  "G1_findings": {
+    "WORK-P5-G1-001": "CLOSED_DESIGN",
+    "WORK-P5-G1-002": "CLOSED_DESIGN",
+    "WORK-P5-G1-003": "CLOSED_DESIGN",
+    "WORK-P5-G1-004": "CLOSED_DESIGN"
+  },
+  "review_package": "g2-1c5a7e6/DEVELOPER_RESPONSE.md",
+  "contract_addendum": {
+    "id": "C-P5-001",
+    "status": "EXPLICITLY_ACCEPTED_DESIGN_ADDENDUM_ORIGINAL_P0_UNCHANGED",
+    "frozen_original_unchanged": true
+  },
+  "previous_independent_reviewed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "previous_review_final_head_not_covered": "bd18d1b98b5647f4f4b6345ffe73dca40acaf038",
+  "review_record": "g2-1c5a7e6/received/REPORT.md",
+  "human_design_acceptance": "EXPLICITLY_ACCEPTED",
+  "updated_profile": "P5-D01-D10 / C-P5-002-004 EXPLICITLY_ACCEPTED",
+  "receipt_scope": "Archive and status only; no implementation, tests, tools, dependencies, workflow, approved design or financial answers changed. Independent verdict covers fixed1c5 only.",
+  "independent_recheck_current_CI_raw_ZIP": "VERIFIED_BY_GPT_WORK_AT_FIXED_1C5A7E6",
+  "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json",
+  "G2": "PASS_RESTRICTED_ENGINEERING_SCOPE_AT_1C5A7E6",
+  "phase_acceptance": "NOT_GRANTED",
+  "implementation_contract": "IMPLEMENTATION_CONTRACT.md",
+  "implementation_traceability": "IMPLEMENTATION_TRACEABILITY.md",
+  "implementation_identity": "IMPLEMENTATION_IDENTITY.json",
+  "developer_validation_source": "Original fixed1c5 developer receipts remain immutable; new archival verification is not a new SDK or financial audit",
+  "G1_human_conditions": "EXPLICITLY_ACCEPTED_AND_IMPLEMENTATION_AUTHORIZED",
+  "candidate_version": "0.5.0.dev5",
+  "G2_findings": {
+    "WORK-P5-G2-001": "CLOSED_FIX_VERIFIED",
+    "WORK-P5-G2-002": "CLOSED_FIX_VERIFIED",
+    "WORK-P5-G2-003": "CLOSED_FIX_VERIFIED"
+  },
+  "previous_product_tests": "GPT Work independent SDK1116 and dualOS1116 atbf5e5a8 PASS;003 partial OPEN, new candidate independent review pending",
+  "reviewed_implementation_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "AQRP_FIXED_REVIEW_SHA": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "completed_human_design_decisions": [
+    {
+      "id": "HUMAN-P5-CONTRACT",
+      "owner": "User",
+      "status": "ACCEPTED",
+      "decision": "Explicitly accept C-P5-001 frozen-contract semantic addendum or request revision",
+      "blocks": "P5 business implementation"
+    },
+    {
+      "id": "HUMAN-P5-PROFILE",
+      "owner": "User",
+      "status": "ACCEPTED",
+      "decision": "Accept P5-D01-D10 including C-P5-002-004 updated synthetic economic/statistical choices or request revision",
+      "blocks": "P5 business implementation"
+    },
+    {
+      "id": "HUMAN-P5-IMPLEMENTATION",
+      "owner": "User",
+      "status": "AUTHORIZED",
+      "decision": "Separately authorize canonical12 restricted engineering requirements implementation",
+      "blocks": "P5 business implementation"
+    }
+  ],
+  "pending_human_decisions": [
+    {
+      "id": "HUMAN-P5-PHASE-ACCEPTANCE",
+      "owner": "User",
+      "status": "NOT_GRANTED",
+      "decision": "Accept or request changes for the twelve restricted engineering requirements and retained limits"
+    },
+    {
+      "id": "HUMAN-P5-RELEASE",
+      "owner": "User",
+      "status": "NOT_AUTHORIZED",
+      "decision": "Separately authorize main merge and baseline/tag release"
+    },
+    {
+      "id": "HUMAN-P6-START",
+      "owner": "User",
+      "status": "NOT_AUTHORIZED",
+      "decision": "Separately authorize next phase after verified release gate"
+    }
+  ]
+}

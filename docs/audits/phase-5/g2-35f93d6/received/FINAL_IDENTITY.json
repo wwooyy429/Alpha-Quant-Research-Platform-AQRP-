@@ -1,0 +1,76 @@
+{
+  "fixed_sha": "35f93d640a2304121131d947a465f57a951cf63f",
+  "reviewer": "GPT Work supplemental reviewer",
+  "utc": "2026-10-23T05:27:00.664491+00:00",
+  "PR_head_description_lock_stable": true,
+  "main_old_tags_unchanged": true,
+  "clean_detached": true,
+  "git_records": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "E:\\WORK\\AQRP-audits\\p5-35f93d6\\src",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "35f93d640a2304121131d947a465f57a951cf63f\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "E:\\WORK\\AQRP-audits\\p5-35f93d6\\src",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "E:\\WORK\\AQRP-audits\\p5-35f93d6\\src",
+        "symbolic-ref",
+        "-q",
+        "HEAD"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "E:\\WORK\\AQRP-audits\\p5-35f93d6\\src",
+        "diff",
+        "--check",
+        "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
+        "35f93d640a2304121131d947a465f57a951cf63f"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "E:\\WORK\\AQRP-audits\\p5-35f93d6\\src",
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+        "refs/tags/*"
+      ],
+      "exit_code": 0,
+      "stdout": "32ea5d6b75c84c07017d87377eeabd2f78207c5c\trefs/heads/main\n0b2230cd4861ca3b47fa30fc30dae9f4dc4109d0\trefs/tags/phase0-baseline\n7de1d0e81385ae97f98ea673fe05dd726f0b577b\trefs/tags/phase0-baseline^{}\n1a8e47ee4be910aa7eeeefa430015e683a8aa6f5\trefs/tags/phase1-baseline\nf579b2c99e762085772de6e70ba1fa98792a7add\trefs/tags/phase1-baseline^{}\n24000b53ebfeda56aad5a54b93d432196f6ba293\trefs/tags/phase2-baseline\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/phase2-baseline^{}\n3ff892aee490cc922e162d813b245944430db6af\trefs/tags/phase3-baseline\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/phase3-baseline^{}\n1e198a053aba7cc93644fa53346dffe785c7217b\trefs/tags/phase4-baseline\n32ea5d6b75c84c07017d87377eeabd2f78207c5c\trefs/tags/phase4-baseline^{}\n6611ca42e213c78be5155cba702ae789d48aab24\trefs/tags/v0.1.1\nfb1ba4fd51202a303115e4449ee49db09ccc071c\trefs/tags/v0.1.1^{}\nd8ee6c165eebb165393307b78acb7218a9994321\trefs/tags/v0.2.0\nf26255fc40a3080bfa883ad64938f60036a14759\trefs/tags/v0.2.0^{}\n6060b45a2adde469021a7da7c65d329254736b44\trefs/tags/v0.3.0\n0a57dccb5618ba08cd3572d6d6b78fec963a3041\trefs/tags/v0.3.0^{}\n020d077ef10c5676c939bcc9aadbd4e2cfdbb598\trefs/tags/v0.4.0\n32ea5d6b75c84c07017d87377eeabd2f78207c5c\trefs/tags/v0.4.0^{}\n",
+      "stderr": ""
+    }
+  ],
+  "no_external_messages_merge_tags_deploy": true
+}

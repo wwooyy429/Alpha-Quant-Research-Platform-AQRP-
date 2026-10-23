@@ -1,0 +1,6 @@
+Receiver archive-copy attempt 1 failed before any status/report mutation:
+KeyError: "There is no item named 'seal.command.json' in the archive"
+Location: archive.py line 28, assertion comparing a top-level external file to a ZIP member.
+The complete ZIP CRC and all 429 declared member hashes had already passed.
+Cause: seal.command.json is generated after sealing, so it is not a sealed ZIP member.
+Disposition: retain original external post-seal command logs; do not copy them as sealed members. Reports, original archive and declared member bytes remain unchanged. Retry uses this explicit distinction. No SDK, native permission or product test was executed or reclassified.

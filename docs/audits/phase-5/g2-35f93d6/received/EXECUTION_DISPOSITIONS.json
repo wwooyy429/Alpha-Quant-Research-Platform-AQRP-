@@ -1,0 +1,30 @@
+{
+  "fixed_sha": "35f93d640a2304121131d947a465f57a951cf63f",
+  "first_bootstrap_failure": {
+    "command": "bootstrap.command.json",
+    "cause": "Shared clone added an alternates nesting level beyond Git's depth limit; failed before checkout. This is a local review clone transport issue, not a source or product finding.",
+    "correction": "Preserved failure logs. Failed clone cleaned itself; verified target absent. Repeated with --no-local pack transport, then official fetch of fixed head and CI merge; no shared alternates in new checkout.",
+    "rerun": "bootstrap-rerun-1.command.json",
+    "result": "PASS"
+  },
+  "premature_artifact_verification": {
+    "commands": ["verify-independent-sdk.command.json", "raw-financial-reconstruction.command.json"],
+    "cause": "Reviewer started artifact readers before the long-running SDK finished backtest smoke: complete=false and backtest request not yet written. Both correctly failed; not a production defect or failed SDK.",
+    "correction": "Waited for actual SDK PASS/exit0, then ran the same checks without loosening assertions.",
+    "reruns": ["verify-independent-sdk-rerun-1.command.json", "raw-financial-reconstruction-rerun-1.command.json"],
+    "result": "PASS"
+  },
+  "prepare_seal_first_failure": {
+    "command": "prepare-seal.command.json",
+    "cause": "Adapted helper still used the old Review-Instructions filename; actual current file is Recheck-Instructions. It stopped at copying that optional handoff document after verifying generated evidence archives.",
+    "correction": "Use actual supplied filename; permit existing unsealed received directory from this helper attempt. No source, original run or supplied evidence bytes changed; original failure log retained.",
+    "rerun": "prepare-seal-rerun-1.command.json"
+  },
+  "original_probe_adaptation": "Reviewer-owned prior scripts rebound only fixed SHA, new source/artifact roots and context counts; original expected98.1/9 and opening LONG unchanged. New independent extension expectations are derived from original Journal, not candidate account/reconcile outputs.",
+  "original_probe_results": "Original3 boundary records PASS; original20 production probes PASS/0MISMATCH; old001/002 closed with explicit evidence.",
+  "new_production_failures": "EXTENDED_REPAIR_CHECKS has19PASS/1 bucket MISMATCH and focused SHORT_BUCKET_RECONCILIATION_PROBE hasREPRODUCED_MISMATCH. Those scripts exit0 to finish evidence acquisition, not to claim tests passed. Tracked as new003 High OPEN, not a reviewer harness correction.",
+  "failure_injection_scope": "Synthetic request and cloned run bytes only; explicitly rehashed inconsistent financial state follows the existing economic-state control model. No real account/ACL operations, no claim to defeat OS isolation, no actual financial loss claimed.",
+  "developer_failure_history": "Original BLOCKED archive/reports/counterexamples reverified. New developer first capacity test error and uncommitted/helper/CRLF failures preserved as received; not counted as new distinct financial findings. Unbundled historical host/temp roots remain outside verified archive scope.",
+  "source_modified_by_reviewer": false,
+  "no_merge_tag_deploy_live_formal_Test_financial_approval_P6": true
+}

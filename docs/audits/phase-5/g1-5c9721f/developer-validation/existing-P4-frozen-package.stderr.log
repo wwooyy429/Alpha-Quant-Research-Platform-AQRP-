@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\tools\check_phase4_package.py", line 56, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\11638\AppData\Local\AQRP\checkouts\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\tools\check_phase4_package.py", line 35, in main
+    assert p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == entry["sha256"], entry[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: docs/REVIEW_PROTOCOL.md

@@ -1,0 +1,221 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "executor": "GPT Work supplemental reviewer",
+  "installed_aqrp": "E:\\WORK\\AQRP-runs\\gpt-p5-bf5e5a8-20261023\\aqrp-be90b0d1-9aad-4527-bba8-11a8e5de700e\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+  "scope": "Actual engineering production functions/services with independent literal expected values; no formal Test or native account operations",
+  "probes": [
+    {
+      "id": "P01_short_settlement_no_phantom_cash",
+      "actual": [
+        "899",
+        "899",
+        "999"
+      ],
+      "expected": [
+        "899",
+        "899",
+        "999"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "P02_partial_cover_original_unsettled_proceeds",
+      "actual": [
+        "908",
+        "100",
+        "100",
+        "818",
+        "918",
+        "100"
+      ],
+      "expected": [
+        "908",
+        "100",
+        "100",
+        "818",
+        "918",
+        "100"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "P03_FIFO_observations_and_fees",
+      "actual": [
+        "5/2",
+        "-9/2",
+        "1/2",
+        "5/9"
+      ],
+      "expected": [
+        "5/2",
+        "-9/2",
+        "1/2",
+        "5/9"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "P04_history_specific_borrow",
+      "actual": [
+        "-1/100",
+        "1/25"
+      ],
+      "expected": [
+        "-1/100",
+        "1/25"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "P05_long_dividend_lot_attribution_pay_once",
+      "actual": [
+        "1/2",
+        "-1/2",
+        "0"
+      ],
+      "expected": [
+        "1/2",
+        "-1/2",
+        "0"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "P06_cross_zero_fee_allocated_once",
+      "actual": [
+        "-4/3",
+        "26/3",
+        "1/3",
+        "2/3"
+      ],
+      "expected": [
+        "-4/3",
+        "26/3",
+        "1/3",
+        "2/3"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "P07_wide_exact_financial_output",
+      "actual": "999999999999999998999999999999999999999999999999999999999999999999999999999999999999999998.995",
+      "expected": "999999999999999998999999999999999999999999999999999999999999999999999999999999999999999998.995",
+      "status": "PASS"
+    },
+    {
+      "id": "P08_partial_commission_ceiling",
+      "actual": 240,
+      "expected": 240,
+      "status": "PASS"
+    },
+    {
+      "id": "P09_BUY_MARKET_favorable_or_adverse_extreme_refused",
+      "actual": null,
+      "expected": null,
+      "status": "PASS"
+    },
+    {
+      "id": "P09_BUY_LIMIT_favorable_or_adverse_extreme_refused",
+      "actual": null,
+      "expected": null,
+      "status": "PASS"
+    },
+    {
+      "id": "P09_SELL_MARKET_favorable_or_adverse_extreme_refused",
+      "actual": null,
+      "expected": null,
+      "status": "PASS"
+    },
+    {
+      "id": "P09_SELL_LIMIT_favorable_or_adverse_extreme_refused",
+      "actual": null,
+      "expected": null,
+      "status": "PASS"
+    },
+    {
+      "id": "P10_public_basic_account",
+      "actual": [
+        "SUCCEEDED",
+        "98.1",
+        "998.1",
+        1
+      ],
+      "expected": [
+        "SUCCEEDED",
+        "98.1",
+        "998.1",
+        1
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "OBS_OPENING_LONG_FILL_DIRECTION",
+      "actual": "LONG",
+      "expected": "LONG",
+      "status": "PASS"
+    },
+    {
+      "id": "P11_original_public_numerical_replay",
+      "actual": "NUMERICAL_REPLAY_VERIFIED",
+      "expected": "NUMERICAL_REPLAY_VERIFIED",
+      "status": "PASS"
+    },
+    {
+      "id": "P12_result_read_wire_binding",
+      "actual": "3f723b50dea714b636c566f9a1665948e6c9cc0e33db50607b9047a335e87047",
+      "expected": "3f723b50dea714b636c566f9a1665948e6c9cc0e33db50607b9047a335e87047",
+      "status": "PASS"
+    },
+    {
+      "id": "P13_BEFORE_COMMIT_real_exit",
+      "actual": 71,
+      "expected": 71,
+      "status": "PASS"
+    },
+    {
+      "id": "P13_BEFORE_COMMIT_same_original_service_resume",
+      "actual": [
+        "3979c4f6-7978-4d25-984d-020c4fc4221f",
+        "SUCCEEDED",
+        1,
+        "98.1",
+        "1"
+      ],
+      "expected": [
+        "3979c4f6-7978-4d25-984d-020c4fc4221f",
+        "SUCCEEDED",
+        1,
+        "98.1",
+        "1"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "P13_AFTER_COMMIT_real_exit",
+      "actual": 71,
+      "expected": 71,
+      "status": "PASS"
+    },
+    {
+      "id": "P13_AFTER_COMMIT_same_original_service_resume",
+      "actual": [
+        "1b2ea588-a38f-4618-83d7-1389ba711877",
+        "SUCCEEDED",
+        1,
+        "98.1",
+        "1"
+      ],
+      "expected": [
+        "1b2ea588-a38f-4618-83d7-1389ba711877",
+        "SUCCEEDED",
+        1,
+        "98.1",
+        "1"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "PASS": 20,
+  "MISMATCH": 0,
+  "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\probes"
+}

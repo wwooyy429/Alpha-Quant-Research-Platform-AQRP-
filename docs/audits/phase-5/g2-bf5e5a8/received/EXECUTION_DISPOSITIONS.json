@@ -1,0 +1,39 @@
+{
+  "product_findings": {
+    "003": "OPEN / PARTIAL FIX; paired settled-lot public-service mismatch",
+    "001": "CLOSED regression PASS",
+    "002": "CLOSED regression PASS"
+  },
+  "independent_product_suites": {
+    "SDK": 1116,
+    "original_boundary": 3,
+    "extended_checks": "20 PASS",
+    "production_probes": "20 PASS",
+    "original_short_bucket": "PASS",
+    "new_cash_structure": "40 PASS / 1 MISMATCH",
+    "minimal_settled_backing": "1 control PASS / 2 repeated same003 mismatches"
+  },
+  "reviewer_acquisition_failures": [
+    {
+      "command": "independent-cash-structure-controls",
+      "exit": 1,
+      "cause": "Reviewer first RP fixture accrued dividends on flat position, causing legitimate performance attribution rejection",
+      "resolution": "Saved first script/raw failure; created fresh rerun1 root with genuine long/short positions and derived equity1002; expectations for original counterexample unchanged"
+    },
+    {
+      "command": "original-audit-preservation",
+      "exit": 1,
+      "cause": "Reviewer assumed original self-excluded RECEIPT was inside prior ZIP",
+      "resolution": "Self-excluded original receipt/logs compared bytewise against retained old external originals; archive members remain all checked"
+    }
+  ],
+  "failed_developer_history": "retained/independently verified; no reclassification to PASS",
+  "unknown_not_executed": [
+    "real native Windows isolation",
+    "real formal Test",
+    "financial approval",
+    "full historical host",
+    "deployment/live/P6"
+  ],
+  "misc_read_errors": "One read-only rg attempted historical nonexistent plan filenames STATISTICAL_CONVENTIONS.md and TEST_PLAN.md; exit2 retained in tool transcript, no product execution or files changed; correct existing frozen design paths verified via identity"
+}

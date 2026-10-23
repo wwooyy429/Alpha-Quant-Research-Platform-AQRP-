@@ -1,0 +1,405 @@
+{
+  "scope": "Developer G1 DESIGN arithmetic/trace only; NOT P5 implementation, actual crash test, native isolation or independent GPT Work approval",
+  "executor": "Codex developer",
+  "UTC": "2026-10-22T17:04:00.546522+00:00",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "candidate_sha256": "105d0e32f0f471e2338d2a4f7430ed1bc77b52bb775846d95fbd27675dd39d41",
+  "script_sha256": "c3b21aae1a239d573ce56c03c87016ae780535d12240a3d3118fa043f07d225d",
+  "cases": 25,
+  "assertions": 209,
+  "failed": 0,
+  "results": [
+    {
+      "id": "N01",
+      "status": "PASS",
+      "actual": {
+        "after_A_cash": "899",
+        "after_A_equity": "999",
+        "A_weight": "100/999",
+        "B_candidate_cash": "798",
+        "B_candidate_equity": "998",
+        "B_weight": "100/499",
+        "A_pass": true,
+        "B_pass": false,
+        "actual_fills": "1",
+        "final_cash": "899",
+        "final_qty": "1",
+        "capacity_left": "9"
+      }
+    },
+    {
+      "id": "N02",
+      "status": "PASS",
+      "actual": {
+        "outer_trace": [
+          "open-market",
+          "cancelC:v0>v1",
+          "A:v1>v2:FillAccount",
+          "B:v2>v3:noFill",
+          "open-valuation:v3",
+          "close-market",
+          "borrow0:readv3",
+          "close-valuation:v3"
+        ],
+        "A_child_local_stages": [
+          80,
+          90
+        ],
+        "A_replay_keys": [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "B_reads_version": "2"
+      }
+    },
+    {
+      "id": "N03",
+      "status": "PASS",
+      "actual": {
+        "before_commit_cash": "1000",
+        "before_commit_reserved": "202",
+        "before_commit_capacity": "10",
+        "after_commit_cash": "899",
+        "after_commit_reserved": "101",
+        "after_commit_capacity": "9",
+        "retry_additional_cash_debit": "0",
+        "retry_total_fills": "1"
+      }
+    },
+    {
+      "id": "N04",
+      "status": "PASS",
+      "actual": {
+        "C_total": "1099",
+        "equity": "999",
+        "before_C_set": "999",
+        "before_U_short": "100",
+        "before_S_set": "0",
+        "before_available": "899",
+        "after_C_set": "1099",
+        "after_U_short": "0",
+        "after_S_set": "100",
+        "after_available": "899",
+        "P4_before_free": "789",
+        "P4_after_free": "889",
+        "H_before": "100",
+        "H_after": "0"
+      }
+    },
+    {
+      "id": "N05",
+      "status": "PASS",
+      "actual": {
+        "before_available": "819",
+        "after_cover_C_set": "908",
+        "after_cover_U_short": "100",
+        "after_cover_U_free": "100",
+        "after_cover_total_cash": "1108",
+        "after_cover_equity": "1018",
+        "after_cover_available": "818",
+        "after_settlement_C_set": "1108",
+        "after_settlement_S_set": "100",
+        "after_settlement_available": "918",
+        "settle_then_cover_available": "918"
+      }
+    },
+    {
+      "id": "N06",
+      "status": "PASS",
+      "actual": {
+        "before_settlement_C_set": "908",
+        "U_free": "100",
+        "U_short": "0",
+        "S_set": "0",
+        "equity": "1008",
+        "before_available": "908",
+        "after_settlement_available": "1008"
+      }
+    },
+    {
+      "id": "N07",
+      "status": "PASS",
+      "actual": {
+        "qty": "-1",
+        "C_set": "799",
+        "U_free": "200",
+        "U_short": "100",
+        "total_cash": "1099",
+        "equity": "999",
+        "available_before": "699",
+        "available_after_settlement": "899"
+      }
+    },
+    {
+      "id": "N08",
+      "status": "PASS",
+      "actual": {
+        "qty": "1",
+        "C_set": "798",
+        "U_free": "100",
+        "U_short": "0",
+        "total_cash": "898",
+        "equity": "998",
+        "available_before": "798",
+        "available_after_settlement": "898",
+        "long_sellable_before": "0",
+        "long_sellable_after": "1"
+      }
+    },
+    {
+      "id": "N09",
+      "status": "PASS",
+      "actual": {
+        "available_before": "818",
+        "available_after_payable_payment": "818",
+        "equity_before": "1022",
+        "equity_after_payable_payment": "1022",
+        "P4_free_before": "808",
+        "P4_free_after_payable_payment": "808",
+        "available_after_receivable_payment": "822"
+      }
+    },
+    {
+      "id": "N10",
+      "status": "PASS",
+      "actual": {
+        "P4_equity_alloc": "990",
+        "P4_target_cash": "1090",
+        "V": "100",
+        "P4_target_free": "890",
+        "pass": true
+      }
+    },
+    {
+      "id": "N11",
+      "status": "PASS",
+      "actual": {
+        "F_unused": "7",
+        "O_total": "202",
+        "available": "798",
+        "C_alloc": "791",
+        "P4_free": "791",
+        "cash_excluded_for_budget": "209"
+      }
+    },
+    {
+      "id": "N12",
+      "status": "PASS",
+      "actual": {
+        "L": "95",
+        "U": "105",
+        "actual_price": "200200",
+        "U_eff": "105",
+        "H": "1",
+        "counterfactual_fee": "1001/5",
+        "eligible": false,
+        "charged_fee": "0"
+      }
+    },
+    {
+      "id": "N13",
+      "status": "PASS",
+      "actual": {
+        "L": "95",
+        "U": "105",
+        "actual_price": "10211/100",
+        "U_eff": "102",
+        "H": "3",
+        "counterfactual_fee": "1",
+        "eligible": false,
+        "charged_fee": "0"
+      }
+    },
+    {
+      "id": "N14",
+      "status": "PASS",
+      "actual": {
+        "L": "95",
+        "U": "105",
+        "actual_price": "9999/100",
+        "U_eff": "105",
+        "H": "1",
+        "counterfactual_fee": "1",
+        "eligible": false,
+        "charged_fee": "0"
+      }
+    },
+    {
+      "id": "N15",
+      "status": "PASS",
+      "actual": {
+        "paid": [
+          "1",
+          "2",
+          "3"
+        ],
+        "H_remaining": [
+          "2",
+          "1",
+          "0"
+        ],
+        "paid_plus_H": [
+          "3",
+          "3",
+          "3"
+        ],
+        "total_charged": "3",
+        "fee_unused": "0"
+      }
+    },
+    {
+      "id": "N16",
+      "status": "PASS",
+      "actual": {
+        "initial_H": "3",
+        "insufficient_submission_accepted": false,
+        "insufficient_fills": "0",
+        "after_first_paid": "1",
+        "H_before_cancel": "2",
+        "H_after_cancel": "0",
+        "unused_after_cancel": "2",
+        "fee_paid_after_cancel": "1"
+      }
+    },
+    {
+      "id": "N17",
+      "status": "PASS",
+      "actual": {
+        "accepted": false,
+        "paid_after": "2",
+        "H_after": "1",
+        "charged_now": "0"
+      }
+    },
+    {
+      "id": "N18",
+      "status": "PASS",
+      "actual": {
+        "nets": [
+          "5/2",
+          "-9/2"
+        ],
+        "wins": "1",
+        "losses": "1",
+        "closed_fragments": "2",
+        "win_rate": "1/2",
+        "profit_loss_ratio": "5/9",
+        "sum_net": "-2"
+      }
+    },
+    {
+      "id": "N19",
+      "status": "PASS",
+      "actual": {
+        "A_borrow": "2/25",
+        "B_unclosed_borrow": "1/25",
+        "A_closed_net": "-1/100",
+        "wins": "0",
+        "closed_fragments": "1",
+        "ratio_reason": "NO_WINNERS"
+      }
+    },
+    {
+      "id": "N20",
+      "status": "PASS",
+      "actual": {
+        "first_fragment_borrow": "1/25",
+        "second_fragment_borrow": "2/25",
+        "sum_borrow": "3/25"
+      }
+    },
+    {
+      "id": "N21",
+      "status": "PASS",
+      "actual": {
+        "exit_fee_closed": "2/3",
+        "new_open_entry_fee": "1/3",
+        "fragment_nets": [
+          "-4/3",
+          "26/3"
+        ],
+        "closed_net_sum": "22/3",
+        "all_including_open_fee": "7",
+        "allocated_fill_fee_sum": "1"
+      }
+    },
+    {
+      "id": "N22",
+      "status": "PASS",
+      "actual": {
+        "fragment_nets": [
+          "1/2",
+          "-1/2"
+        ],
+        "dividend_allocated": [
+          "1",
+          "1"
+        ],
+        "win_rate": "1/2",
+        "profit_loss_ratio": "1",
+        "sum_net": "0",
+        "pay_date_incremental_income": "0"
+      }
+    },
+    {
+      "id": "N23",
+      "status": "PASS",
+      "actual": {
+        "closed_net": "-2",
+        "cash_before_pay": "999",
+        "equity_before_pay": "998",
+        "cash_after_pay": "998",
+        "equity_after_pay": "998",
+        "net_change_at_pay": "0"
+      }
+    },
+    {
+      "id": "N24",
+      "status": "PASS",
+      "actual": {
+        "closed_counts": [
+          "0",
+          "1",
+          "1",
+          "1",
+          "3"
+        ],
+        "win_rates": [
+          "UNDEFINED",
+          "0",
+          "1",
+          "0",
+          "1/3"
+        ],
+        "ratio_results": [
+          "NO_CLOSED_FRAGMENTS",
+          "NO_NONZERO_OUTCOMES",
+          "NO_LOSERS",
+          "NO_WINNERS",
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "N25",
+      "status": "PASS",
+      "actual": {
+        "actual_cash_fee": "1/100",
+        "lot_allocations": [
+          "1/300",
+          "1/300",
+          "1/300"
+        ],
+        "allocation_sum": "1/100",
+        "round_each_lot_first_allowed": false
+      }
+    }
+  ]
+}

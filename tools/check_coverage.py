@@ -40,6 +40,10 @@ def main():
             or "/validation/" in normalized
             or "/portfolio/" in normalized
             or "/risk/" in normalized
+            or "/backtest/" in normalized
+            or "/execution/" in normalized
+            or "/performance/" in normalized
+            or normalized.endswith("/services/backtest.py")
             or normalized.endswith("/services/research.py")
             else (90, 85)
         )

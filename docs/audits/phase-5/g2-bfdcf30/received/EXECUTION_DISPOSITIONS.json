@@ -1,0 +1,38 @@
+{
+  "fixed_sha": "bfdcf30e525ff802ea483974f58163eedc029ce8",
+  "scope": "Reviewer auxiliary execution corrections, distinct from two reproduced production findings; every retained controlled failure log remains unchanged",
+  "scope_count_assumption": {
+    "first_command": "scope-evidence.command.json",
+    "error": "Reviewer initially counted3444 as the entire union. Actual original131 + originalP4 3440 path union is3451; subtract7 documented packaging exceptions gives3444 protected unchanged files.",
+    "correction": "Check3451 union and3444 unchanged subset separately, without changing repository identities or exceptions",
+    "rerun": "scope-evidence-rerun-1.command.json",
+    "result": "PASS; reviewer harness error, not an AQRP finding"
+  },
+  "coverage_empty_modules": {
+    "first_command": "official-ci-verification.command.json",
+    "error": "Reviewer initially required95% of empty __init__.py modules with zero executable statements; computed0/1.",
+    "correction": "Require gate for nonempty modules; still enumerate/verify empty modules and their source hashes",
+    "result": "Corrected; no product gate weakened"
+  },
+  "critical_module_count": {
+    "first_command": "official-ci-verification-rerun-1.command.json",
+    "error": "Reviewer assumed16 new modules were all critical, but the CLI is a separate general service entry; backtest/execution/performance plus services/backtest yields15.",
+    "correction": "Derive exact critical module set from fixed source and compare coverage names; no guessed count",
+    "rerun": "official-ci-verification-rerun-2.command.json",
+    "result": "PASS"
+  },
+  "interactive_reference_adapter_quote_failure": {
+    "scope": "Session exec tool trace before reference adaptation; no production code ran",
+    "error": "PowerShell/Python inline quote parsing caused SyntaxError before writing adapter outputs",
+    "correction": "Use explicit adapt_design_references.py file, then execute both independent references under captured runner",
+    "result": "Original25/70 and supplemental25/209 PASS"
+  },
+  "production_mismatch_is_not_a_harness_error": {
+    "WORK-P5-G2-001": "CANCELLATION_BOUNDARY_PROBE.json REPRODUCED_MISMATCH; script exit0 means evidence acquisition completed, not a passing test",
+    "WORK-P5-G2-002": "PRODUCTION_PROBES.json one MISMATCH; other19 probes PASS; original wire retained",
+    "code_fix_applied_by_reviewer": false
+  },
+  "initial_read_only_file_lookups": "A stale guessed PS1/verification path did not exist; corrected by reading actual tools/ci.py and supplied directories. No validation result inferred from absent paths.",
+  "developer_failure_history": "Received original failure logs and FAILURE_AND_OMISSION_INDEX inside sealed developer Evidence.zip remain unchanged; exploratory omitted roots were not independently traversed in full. First SDK path failure is not mislabelled native isolation failure.",
+  "no_real_accounts_ACL_formal_Test_financial_approval": true
+}

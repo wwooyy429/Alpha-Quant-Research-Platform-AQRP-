@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "Get-LocalUser -Name aqrp_research,aqrp_evaluator,aqrp_auditor | Select-Object Name,Enabled,SID | ConvertTo-Json -Depth 4"
+  ],
+  "cwd": "C:/Users/11638/AppData/Local/AQRP/reviews/windows-isolation-recheck-6207450-independent",
+  "started_utc": "2026-10-22T15:23:48.182810+00:00",
+  "ended_utc": "2026-10-22T15:23:49.036885+00:00",
+  "exit_code": 0,
+  "fixed_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+  "actual_executor": "GPT Work supplemental reviewer"
+}

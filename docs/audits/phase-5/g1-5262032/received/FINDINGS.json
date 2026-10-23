@@ -1,0 +1,27 @@
+{
+  "fixed_sha": "5262032bee4f631f68763e57510e1878945f6b8c",
+  "reviewer": "GPT Work supplemental reviewer",
+  "verdict": "PLAN PASS WITH CONDITIONS",
+  "scope": "G1 restricted engineering design only; not product verification or human acceptance",
+  "previous_independently_reviewed_sha": "5c9721f96679f4d495b7b3b93af3e2e31e66ae62",
+  "previous_report_unchanged": true,
+  "findings": [
+    {"id":"WORK-P5-G1-001","severity":"High","status":"CLOSED_DESIGN","disposition":"FIX VERIFIED AT G1","location":"docs/audits/phase-5/EVENT_TRANSACTION_ADDENDUM.md:5","related":["EVENT_TRANSACTION_ADDENDUM.md:7","EVENT_TRANSACTION_ADDENDUM.md:9","EVENT_TRANSACTION_ADDENDUM.md:11","EVENT_TRANSACTION_ADDENDUM.md:13","CONTRACT_CHANGE_IMPACT.md:7"],"evidence":"REVISION_MATH_RESULTS.json N01-N03; latest-state risk and outer-vs-child/replay/pre-post snapshots","remaining":"Explicit user acceptance of C-P5-001 before implementation; real persistence/crash/atomicity/idempotence tests at G2"},
+    {"id":"WORK-P5-G1-002","severity":"High","status":"CLOSED_DESIGN","disposition":"FIX VERIFIED AT G1","location":"docs/audits/phase-5/CASH_BUCKETS_AND_PROJECTION.md:3","related":["CASH_BUCKETS_AND_PROJECTION.md:5","CASH_BUCKETS_AND_PROJECTION.md:25","CASH_BUCKETS_AND_PROJECTION.md:27","CASH_BUCKETS_AND_PROJECTION.md:31","CASH_BUCKETS_AND_PROJECTION.md:33","CASH_BUCKETS_AND_PROJECTION.md:35"],"evidence":"REVISION_MATH_RESULTS.json N04-N11 and independent cash/projection extensions; true available remains899 across unclosed short settlement; H budget only","remaining":"User accepts economic projection; actual native P4 adapter and cashlot/settlement/funds/risk ledger tests at G2"},
+    {"id":"WORK-P5-G1-003","severity":"Medium","status":"CLOSED_DESIGN","disposition":"FIX VERIFIED AT G1","location":"docs/audits/phase-5/EXECUTION_PRICE_AND_FEES.md:5","related":["EXECUTION_PRICE_AND_FEES.md:7","EXECUTION_PRICE_AND_FEES.md:9","EXECUTION_PRICE_AND_FEES.md:11"],"evidence":"REVISION_MATH_RESULTS.json N12-N17 plus fee partition invariant; two-sided frozen domain and cumulative paid plus residual upper bounds","remaining":"User accepts favorable gap rejection/fee budget convention; real side/type/tick/GTC/budget-injection product tests at G2"},
+    {"id":"WORK-P5-G1-004","severity":"Medium","status":"CLOSED_DESIGN","disposition":"FIX VERIFIED AT G1","location":"docs/audits/phase-5/FIFO_ATTRIBUTION.md:3","related":["FIFO_ATTRIBUTION.md:5","FIFO_ATTRIBUTION.md:7","FIFO_ATTRIBUTION.md:9","FIFO_ATTRIBUTION.md:11","FIFO_ATTRIBUTION.md:13"],"evidence":"REVISION_MATH_RESULTS.json N18-N25 plus pool/split/multi-entry conservation; exact historical accrual and closed-fragment denominator","remaining":"User accepts new statistical convention; actual output and raw-event reconciliation at G2"}
+  ],
+  "new_blocking_technical_findings": [],
+  "conditions": [
+    {"id":"HUMAN-P5-CONTRACT","owner":"User","status":"PENDING","decision":"Explicitly accept C-P5-001 frozen-contract semantic addendum or request revision","blocks":"P5 business implementation"},
+    {"id":"HUMAN-P5-PROFILE","owner":"User","status":"PENDING","decision":"Accept P5-D01-D10 including C-P5-002-004 updated synthetic economic/statistical choices or request revision","blocks":"P5 business implementation"},
+    {"id":"HUMAN-P5-IMPLEMENTATION","owner":"User","status":"NOT AUTHORIZED","decision":"Separately authorize canonical12 restricted engineering requirements implementation","blocks":"P5 business implementation"}
+  ],
+  "independent_math": {"original_cases":25,"original_assertions":70,"supplemental_cases":25,"supplemental_leaf_assertions":209,"extension_groups":6,"extension_model_scenarios":2349,"result":"PASS","product_tests":false},
+  "scope_checks": {"canonical":106,"phase5":12,"MVP":10,"CR":2,"frozen_inputs":131,"P4_preserved_files":3440,"P4_frozen_files":7,"source_tests_tools_CI_lock_unchanged":true},
+  "product_implementation_real_crash_E2E_outputs": "NOT IMPLEMENTED / NOT VERIFIED",
+  "windows_WI_R2_001_002_overall_native_isolation": "DEFERRED / NOT VERIFIED",
+  "formal_Test_financial_approval_complete_historical_host": "DEFERRED / NOT VERIFIED",
+  "implementation_authorized": false,
+  "merge_tag_deploy_live_next_phase_authorized": false
+}

@@ -1,0 +1,53 @@
+{
+  "authority": "AUTHORIZATION.json",
+  "overall_Windows_isolation": "DEFERRED / NOT VERIFIED",
+  "items": [
+    {
+      "id": "WI-R2-001",
+      "definition": "Dynamic product ACL inheritance and strict post-run gate actual compatibility",
+      "status": "DEFERRED",
+      "verification": "NOT VERIFIED",
+      "related_R3_findings": [
+        "WORK-WI-R3-001"
+      ]
+    },
+    {
+      "id": "WI-R2-002",
+      "definition": "Operator publication of actual engineering inputs and complete auditor read-verification evidence",
+      "status": "DEFERRED",
+      "verification": "NOT VERIFIED",
+      "related_R3_findings": [
+        "WORK-WI-R3-002"
+      ]
+    }
+  ],
+  "target": {
+    "trigger": "All development complete; final integrated version locked at full 40-character commit SHA; separate explicit user authorization of actual execution/permissions",
+    "fixed_commit_sha": null,
+    "status": "NOT_YET_SCHEDULED_OR_AUTHORIZED",
+    "coverage": "All relevant phase inputs, sidecars/manifests, directories, dynamic artifacts and full lifecycle at the final integrated version"
+  },
+  "closure_rules": {
+    "R3_code_repair_PASS_can_close_parent_WI_items": false,
+    "model_tests_or_CI_success_can_close_parent_WI_items": false,
+    "independent_fixed_version_reviews_and_existing_phase_regressions_continue": true,
+    "original_failures_may_be_rewritten_as_passed": false,
+    "automatic_closure_or_real_validation_on_phase_completion": false
+  },
+  "R3_related_findings_status": "Two R3 code/tool findings independently CLOSED — FIX VERIFIED at 62074502aa4c32556b5e690bac10bd8054bd9178; original WI-R2 items remain DEFERRED / NOT VERIFIED",
+  "formal_Test": "NOT_RUN_NOT_AUTHORIZED",
+  "financial_approval": "NONE",
+  "real_permission_operations": "NOT_AUTHORIZED",
+  "R3_code_recheck": {
+    "review_sha": "62074502aa4c32556b5e690bac10bd8054bd9178",
+    "scope": "CODE_MODEL_ENGINEERING_ONLY",
+    "verdict": "PASS",
+    "findings": {
+      "WORK-WI-R3-001": "CLOSED — FIX VERIFIED",
+      "WORK-WI-R3-002": "CLOSED — FIX VERIFIED"
+    },
+    "received": "r3-recheck-6207450/RECEIVED.json",
+    "native_Windows_isolation": "NOT_VERIFIED",
+    "P4_integration": "NOT_INCLUDED_NOT_VERIFIED"
+  }
+}

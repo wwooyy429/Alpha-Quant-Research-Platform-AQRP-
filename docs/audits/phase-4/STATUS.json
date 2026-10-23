@@ -6,25 +6,38 @@
     "WORK-P4-G2-001": "CLOSED_GPT_WORK_FIX_VERIFIED",
     "WORK-P4-G2-002": "CLOSED_GPT_WORK_FIX_VERIFIED"
   },
-  "developer_disposition": "REPAIRS_IMPLEMENTED_VALIDATION_AND_FIXED_SHA_RECHECK_PENDING",
+  "developer_disposition": "FIX_VERIFIED_GPT_WORK_AND_ACCEPTED_BY_USER",
   "scope": "Phase4 authorized seven-requirement engineering implementation",
   "P4_implementation_authorized": true,
   "phase3_release": "UNCHANGED_ACCEPTED_RESTRICTED_ENGINEERING_RELEASED",
   "real_deployment_or_live_trading_authorized": false,
   "P5": "G1_PLAN_ONLY_AUTHORIZED",
-  "source_receipt": "g1-265af16/RECEIPT.json",
-  "closure_register": "g1-265af16/CLOSURE_REGISTER.json",
+  "source_receipt": "acceptance/RECEIVED.json",
+  "closure_register": "acceptance/received/FINDINGS.json",
   "stage_acceptance": "ACCEPTED_RESTRICTED_ENGINEERING",
   "merge_tag_authorized": true,
-  "authorization": "IMPLEMENTATION_AUTHORIZATION.json",
-  "validated_business_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+  "authorization": "acceptance/APPROVAL.json",
+  "validated_business_sha": "3c8757949b0fd5c97953b06a74ebc2d0e56676e4",
   "developer_validation": "POSTMERGE_CLEAN_SDK844_PLUS_ORIGINAL20_4_MATH91",
-  "G2": "REQUEST_CHANGES",
-  "validation": "PENDING_NEW_FIXED_SHA_VALIDATION",
+  "G2": "PASS_RESTRICTED_ENGINEERING",
+  "validation": "POSTMERGE_SDK844_ORIGINAL20_4_MATH91_PASS",
   "review_package": "acceptance/received/REPORT.md",
   "merge_commit": "d3993d07e5df1b5c2f7acd30cb628226f7b1fc09",
   "acceptance": "acceptance/APPROVAL.json",
   "baseline": "BASELINE.md",
   "release": "RELEASED_EFFECTIVE_ON_VERIFIED_ATOMIC_MAIN_PHASE4_BASELINE_V0_4_0_PUBLICATION",
-  "postmerge_validation": "publication/VALIDATION.json"
+  "postmerge_validation": "publication/VALIDATION.json",
+  "historical_status_fields": {
+    "source_commit": "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
+    "scope": "Preserved old-round redundant fields; superseded by current G2 acceptance/publication records",
+    "values": {
+      "developer_disposition": "REPAIRS_IMPLEMENTED_VALIDATION_AND_FIXED_SHA_RECHECK_PENDING",
+      "validated_business_sha": "b3be62439d8d0877478b7105d68863fcb2a108a0",
+      "G2": "REQUEST_CHANGES",
+      "validation": "PENDING_NEW_FIXED_SHA_VALIDATION",
+      "source_receipt": "g1-265af16/RECEIPT.json",
+      "closure_register": "g1-265af16/CLOSURE_REGISTER.json",
+      "authorization": "IMPLEMENTATION_AUTHORIZATION.json"
+    }
+  }
 }

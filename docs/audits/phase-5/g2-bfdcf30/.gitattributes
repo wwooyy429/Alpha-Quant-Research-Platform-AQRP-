@@ -1,0 +1,3 @@
+# Original reviewer bytes retain native CRLF and original blank lines at EOF.
+# This affects whitespace diagnostics only for received evidence, never authored code.
+received/** -text whitespace=cr-at-eol,-blank-at-eof

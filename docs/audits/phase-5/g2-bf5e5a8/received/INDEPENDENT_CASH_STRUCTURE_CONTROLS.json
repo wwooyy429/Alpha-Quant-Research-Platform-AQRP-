@@ -1,0 +1,1028 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "executor": "GPT Work supplemental reviewer",
+  "scope": "Installed wheel, synthetic cash/settlement fault controls; independently derived literal/Fraction expectations",
+  "records": [
+    {
+      "id": "nonnegative-cash_set-to-U_free",
+      "actual": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "expected": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "nonnegative-cash_set-to-U_short",
+      "actual": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "expected": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "nonnegative-U_free-to-cash_set",
+      "actual": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "expected": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "nonnegative-U_free-to-U_short",
+      "actual": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "expected": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "nonnegative-U_short-to-cash_set",
+      "actual": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "expected": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "nonnegative-U_short-to-U_free",
+      "actual": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "expected": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "legal-RP-separately",
+      "actual": [
+        {
+          "$fraction": [
+            "7",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "3",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "1002",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "7",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "3",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "1002",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "RP-netting-fault",
+      "actual": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "expected": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "legal-partial-cover-False-split-1",
+      "actual": [
+        {
+          "$fraction": [
+            "908",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "908",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "after-settle-False-1",
+      "actual": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "complete-cover-False-1",
+      "actual": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "expected": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "legal-partial-cover-False-split-2",
+      "actual": [
+        {
+          "$fraction": [
+            "908",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "908",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "after-settle-False-2",
+      "actual": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "complete-cover-False-2",
+      "actual": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "expected": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "legal-partial-cover-True-split-1",
+      "actual": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "after-settle-True-1",
+      "actual": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "complete-cover-True-1",
+      "actual": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "expected": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "legal-partial-cover-True-split-2",
+      "actual": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "after-settle-True-2",
+      "actual": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "$fraction": [
+            "1108",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "$fraction": [
+            "100",
+            "1"
+          ]
+        }
+      ],
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "complete-cover-True-2",
+      "actual": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "expected": {
+        "$fraction": [
+          "0",
+          "1"
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "legitimate-marked-margin-loss",
+      "actual": {
+        "$fraction": [
+          "-1001",
+          "1"
+        ]
+      },
+      "expected": {
+        "$fraction": [
+          "-1001",
+          "1"
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "settled-SHORT-price-only",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "SHORT_PROCEEDS_OR_SETTLEMENT_MISMATCH",
+        "original_fill_price": "100",
+        "original_short_proceeds": "200",
+        "expected_available": "799",
+        "altered_S_set": "200",
+        "raw_Journal_unchanged": true
+      }
+    },
+    {
+      "id": "settled-SHORT-amount-only",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "SHORT_PROCEEDS_OR_SETTLEMENT_MISMATCH",
+        "original_fill_price": "100",
+        "original_short_proceeds": "200",
+        "expected_available": "799",
+        "altered_S_set": "199",
+        "raw_Journal_unchanged": true
+      }
+    },
+    {
+      "id": "settled-SHORT-paired-price-and-amount",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "LONG_SHORT_ATTRIBUTION_MISMATCH",
+        "original_fill_price": "100",
+        "original_short_proceeds": "200",
+        "expected_available": "799",
+        "altered_S_set": "199",
+        "raw_Journal_unchanged": true
+      }
+    },
+    {
+      "id": "missing-session",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "UNVERIFIED_SETTLEMENT_SESSION"
+      }
+    },
+    {
+      "id": "backward",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "UNVERIFIED_SETTLEMENT_SESSION"
+      }
+    },
+    {
+      "id": "bool-session",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "UNVERIFIED_SETTLEMENT_SESSION"
+      }
+    },
+    {
+      "id": "early-lot",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "INVALID_CASH_LOT_CLASSIFICATION"
+      }
+    },
+    {
+      "id": "late-lot",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED"
+      }
+    },
+    {
+      "id": "negative-lot",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "INVALID_CASH_LOT_CLASSIFICATION"
+      }
+    },
+    {
+      "id": "orphan",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "INVALID_SHORT_PROCEEDS_BACKING"
+      }
+    },
+    {
+      "id": "duplicate",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "INVALID_SHORT_PROCEEDS_BACKING"
+      }
+    },
+    {
+      "id": "missing-backing",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "MISSING_SHORT_PROCEEDS_BACKING"
+      }
+    },
+    {
+      "id": "due",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "INVALID_CASH_LOT_CLASSIFICATION"
+      }
+    },
+    {
+      "id": "negative-remainder",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "INVALID_SHORT_PROCEEDS_BACKING"
+      }
+    },
+    {
+      "id": "negative-price",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "INVALID_SHORT_PROCEEDS_BACKING"
+      }
+    },
+    {
+      "id": "S_set-subset",
+      "actual": true,
+      "expected": true,
+      "status": "PASS",
+      "detail": {
+        "code": "RESTRICTED_CASH_SUBSET_FAILED"
+      }
+    },
+    {
+      "id": "settled-valid-fault",
+      "actual": {
+        "status": "FAILED",
+        "known": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "account_present": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "account_present": true
+      },
+      "status": "PASS",
+      "detail": {
+        "original_Journal_buckets": {
+          "cash_set": {
+            "$fraction": [
+              "4989",
+              "5"
+            ]
+          },
+          "U_free": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          },
+          "U_short": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "original_S_set": "999/10",
+        "original_fill_price": "99.9",
+        "correct_available": "7979/10",
+        "claimed_account": {
+          "F_unused": "8",
+          "H": "0.1",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "789.8",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "99.9",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "797.9",
+          "cash_alloc": "989.8",
+          "cash_set": "997.8",
+          "cash_total": "997.8",
+          "equity": "997.8",
+          "equity_alloc": "989.8",
+          "marked_value": "0",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "100"
+        },
+        "preserved_original_Journal_and_fills": true,
+        "preserved_commit_bytes": true,
+        "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\cash-structure-controls-rerun1\\settled-valid-fault"
+      }
+    },
+    {
+      "id": "settled-price-only",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "account_present": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "account_present": false
+      },
+      "status": "PASS",
+      "detail": {
+        "original_Journal_buckets": {
+          "cash_set": {
+            "$fraction": [
+              "4989",
+              "5"
+            ]
+          },
+          "U_free": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          },
+          "U_short": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "original_S_set": "999/10",
+        "original_fill_price": "99.9",
+        "correct_available": "7979/10",
+        "claimed_account": null,
+        "preserved_original_Journal_and_fills": true,
+        "preserved_commit_bytes": true,
+        "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\cash-structure-controls-rerun1\\settled-price-only"
+      }
+    },
+    {
+      "id": "settled-amount-only",
+      "actual": {
+        "status": "FAILED",
+        "known": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "account_present": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "account_present": false
+      },
+      "status": "PASS",
+      "detail": {
+        "original_Journal_buckets": {
+          "cash_set": {
+            "$fraction": [
+              "4989",
+              "5"
+            ]
+          },
+          "U_free": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          },
+          "U_short": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "original_S_set": "999/10",
+        "original_fill_price": "99.9",
+        "correct_available": "7979/10",
+        "claimed_account": null,
+        "preserved_original_Journal_and_fills": true,
+        "preserved_commit_bytes": true,
+        "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\cash-structure-controls-rerun1\\settled-amount-only"
+      }
+    },
+    {
+      "id": "settled-paired-price-and-amount",
+      "actual": {
+        "status": "FAILED",
+        "known": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "account_present": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "known": false,
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "account_present": false
+      },
+      "status": "MISMATCH",
+      "detail": {
+        "original_Journal_buckets": {
+          "cash_set": {
+            "$fraction": [
+              "4989",
+              "5"
+            ]
+          },
+          "U_free": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          },
+          "U_short": {
+            "$fraction": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "original_S_set": "999/10",
+        "original_fill_price": "99.9",
+        "correct_available": "7979/10",
+        "claimed_account": {
+          "F_unused": "8",
+          "H": "1.1",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "789.8",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "98.9",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "798.9",
+          "cash_alloc": "989.8",
+          "cash_set": "997.8",
+          "cash_total": "997.8",
+          "equity": "997.8",
+          "equity_alloc": "989.8",
+          "marked_value": "0",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "100"
+        },
+        "preserved_original_Journal_and_fills": true,
+        "preserved_commit_bytes": true,
+        "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\cash-structure-controls-rerun1\\settled-paired-price-and-amount"
+      }
+    }
+  ],
+  "PASS": 40,
+  "MISMATCH": 1,
+  "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\cash-structure-controls-rerun1"
+}

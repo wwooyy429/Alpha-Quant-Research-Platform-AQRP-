@@ -1,0 +1,21 @@
+{
+  "connector_failure": "GitHub connector metadata calls failed with transport HTTP request error after initial PR/run read; fallback public API used. Original ZIP bytes obtained from developer sealed package, matched to independent official digests.",
+  "artifacts": [
+    {
+      "label": "Windows",
+      "artifact_id": 12433782542,
+      "bytes": 95627613,
+      "sha256": "1f8f3b3eaea8bf66abb4cfbc40849262435079790c54b5d92f3834114dcb94d9",
+      "member_source": "developer/ci-final/phase3-windows-latest-1.zip",
+      "provenance": "Developer sealed original ZIP, independently matched to GitHub public API digest/ID/size; no fresh connector download claimed"
+    },
+    {
+      "label": "Ubuntu",
+      "artifact_id": 12433174153,
+      "bytes": 136899984,
+      "sha256": "1fff6d92b311b92e35fef3a579a4cd3b49040e628d12d4f6d7ba8bd0e5b7d880",
+      "member_source": "developer/ci-final/phase3-ubuntu-24.04-1.zip",
+      "provenance": "Developer sealed original ZIP, independently matched to GitHub public API digest/ID/size; no fresh connector download claimed"
+    }
+  ]
+}

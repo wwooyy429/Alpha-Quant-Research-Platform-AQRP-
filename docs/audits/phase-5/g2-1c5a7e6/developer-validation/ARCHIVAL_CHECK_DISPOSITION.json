@@ -1,0 +1,10 @@
+{
+  "first_check": {
+    "command": "git diff --cached --check",
+    "exit_code": 2,
+    "reason": "Native Windows CRLF in unmodified captured package.stdout.log was reported as trailing whitespace",
+    "original_output_external": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p5-g2-pass-archive-20261023\\STAGED_DIFF_CHECK.stdout.log"
+  },
+  "resolution": "Scope cr-at-eol to raw developer-validation logs in this archival folder; do not rewrite log bytes or global attributes",
+  "business_or_financial_test_failure": false
+}

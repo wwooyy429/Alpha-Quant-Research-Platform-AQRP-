@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-bfdcf30-independent\verify_scope_evidence.py", line 18, in <module>
+    union={e['path']:e['sha256'] for e in frozen+oldp4};assert len(frozen)==131 and len(oldp4)==3440 and len(union)==3444
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

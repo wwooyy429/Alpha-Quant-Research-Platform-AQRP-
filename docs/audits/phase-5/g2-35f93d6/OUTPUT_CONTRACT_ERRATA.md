@@ -1,0 +1,5 @@
+# 0.5.0.dev3 输出与恢复核验增补
+
+原经济/统计口径及0.5.0.dev2的001/002输出修正保留。本轮新增：SETTLEMENT Journal事件包含整数settlement_session；发布reconciliation新增cash_structure，声明核验的现金lot数、SHORT原始条目数和已完成交收session。该证明只在逐桶/逐科目与原始Journal相等且结构合法后生成。缺失元数据不可声称完成交收验证。旧已封存实验不改写、不在新包中伪装可兼容执行；沿原已验证包/锁/旧Ref重放。
+
+恢复状态仍使用原有VERIFIED_COMMITTED_PREFIX或UNVERIFIED_COMMITTED_STATE；前者现在必需逐桶证明，后者不公开已知账户或缓存余额。正常已记录的margin breach仍保留真实结果；未授权正式Test入口及金融批准持续失败关闭。这是实现修复及输出元数据说明，不修订冻结G1经济答案或真实市场/权限授权。
