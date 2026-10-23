@@ -1,0 +1,15 @@
+# 持久化任务、取消与恢复设计
+
+TaskService固定采用stdlib SQLite任务库（BEGIN IMMEDIATE事务、workspace+idempotency_key唯一约束、WAL、同步提交）管理分配/claim/任务事件与幂等绑定；底层P3/P4/P5实验账本仍是核心执行及财务事实来源。任务元数据目录彼此独立，但P3/P4/P5使用可信workspace预配置的共享ledger根，**不能为每个任务另开P3研究家族/试验预算库**。SQLite原始请求blob/事件/claim和导出不可变任务回执都保留，丢失或冲突时失败关闭，不推定索引可无损重建。
+
+状态总序：QUEUED → RUNNING → SUCCEEDED / FAILED / CANCELLED；RUNNING可先进入CANCEL_REQUESTED，该状态不等于已经取消。排队时取消在未启动副作用前成为CANCELLED；worker已在运行时先持久化取消意图，只在安全检查点响应。已有SUCCEEDED或其他终态后取消返回TOO_LATE，不回写终态。未知财务状态仍是FAILED+COMMITTED_STATE_UNVERIFIED，绝不能认证CANCELLED且known=true。
+
+`(workspace,idempotency_key)`通过OS互斥和原子持久化绑定canonical config_hash，事务内分配唯一task_id与任务元数据目录；同key同hash所有重试返回原task，不再次运行。同key不同hash明确IDEMPOTENCY_CONFLICT。相同配置但新key属于新实验，必须记录试验次数/家族，不能吞掉重复研究记录。并发10次同key也只能一个worker claim；Streamlit rerun/刷新在未显式submit时不得提交新任务，表单提交与幂等键分配分开。
+
+worker在调用核心前提交claim/启动意图和输入证据，事务内先登记每个子阶段唯一slot及预分配UUID run_id（动态调仓slot也先登记再调用）。拟为ExperimentLedger.start和P3/P4/P5应用服务增加可选trusted TaskContext：只可由TaskService从任务库重建并验证，原无context调用保持随机UUID及原行为；网页不可传入或替换。核心初始记录绑定task_id/slot/config_hash，目录独占创建，禁止覆盖既有run。宕机恢复首先核验任务库事件、claim/预分配run_id与共享ledger根中的真实核心账本，而不依据pid存活或mtime。若核心已形成合法终态且请求/配置/来源完全匹配，只恢复原run映射和Task终态，不再调用服务。若尚无核心目录/初始事件且事务claim可确认未执行，才可重领；出现STARTED/磁盘prefix不明、缺绑定或多run歧义时进入FAILED/RECOVERY_REQUIRED，不自动重跑、伪造成功或丢失已提交Fill。用户显式新实验需新key并关联失败原task。
+
+取消扩展只允许向现有服务加入可选的协作检查点参数（旧调用默认无回调），在P3候选/期限或处理阶段之间、P5完整原子事务边界响应。提交内不得注入异步异常或强制kill并伪称取消；已提交Fill后先执行现有完整重读对账/终态流程。窗口最坏取消延迟是一笔原子事务或已登记阶段的完成时间，不虚构毫秒SLA。若进程真实崩溃则按恢复协议核对持久化前缀，不能把内存旧余额展示为已知。
+
+失败保留首次异常、磁盘提交、任务/核心身份和所有失败工件；新的恢复事件追加，不改原日志、状态或旧hash。UI显示request_cancelled与actual_terminal分离，失败/取消不复用旧成功图表。G2必须在实际核心服务和磁盘中注入提交前/后、映射前/后、取消/成功竞争、数据库恢复等故障，模型测试只作补充，不是实现证明。
+
+所有新key产生的真实重复试验、取消/失败后的新实验都继续写入同一P3家族/次数/预算登记，已有试验不因取消退款或换task目录而消失。TaskContext只解决所有权/来源/UUID预分配，不授金融权限，也不修改金融计算。G2必须额外验证跨任务相同家族计数、取消后的保留与预算耗尽拒绝。

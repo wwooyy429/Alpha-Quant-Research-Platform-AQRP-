@@ -1,0 +1,181 @@
+{
+  "state": "RELEASED_RESTRICTED_TWELVE_REQUIREMENTS",
+  "verified_utc": "2026-10-23T09:46:26.634635+00:00",
+  "reviewed_accepted_implementation_sha": "1c5a7e62cace7c3e66b7cc7f12fd564cb0013654",
+  "approved_archival_head": "c43b594f2f427e8a7b3614518b84aa00502365f2",
+  "actual_merge_sha": "36c26911afb47ff68544e4bf64f060504dfdd94d",
+  "main_commit": "59246f9fd391c1713b6bed65dd22280f4d248493",
+  "phase5_baseline": "59246f9fd391c1713b6bed65dd22280f4d248493",
+  "v0_5_0": "59246f9fd391c1713b6bed65dd22280f4d248493",
+  "tag_objects": {
+    "phase5-baseline": "aeefac2f5358717fc38aefd6185616f66e364282",
+    "v0.5.0": "9df7f36985356210c280c65a385cd3da82197738"
+  },
+  "all_old_tag_objects_and_peeled_targets_unchanged": true,
+  "reviewed_src_tests_tools_CI_build_lock_scanner_catalog_unchanged": true,
+  "release_commit_changed_files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/CHANGELOG.md",
+    "docs/DECISIONS.md",
+    "docs/PROGRESS.md",
+    "docs/ROADMAP.md",
+    "docs/TRACEABILITY.md",
+    "docs/audits/phase-5/BASELINE.md",
+    "docs/audits/phase-5/FILE_MANIFEST.json",
+    "docs/audits/phase-5/STATUS.json",
+    "docs/audits/phase-5/publication/.gitattributes",
+    "docs/audits/phase-5/publication/APPROVAL.json",
+    "docs/audits/phase-5/publication/BASELINE_FILES.json",
+    "docs/audits/phase-5/publication/CHECKS_AT_MERGE_GATE.json",
+    "docs/audits/phase-5/publication/CI_AT_MERGE_GATE.json",
+    "docs/audits/phase-5/publication/DEFERRED_CONDITIONS.json",
+    "docs/audits/phase-5/publication/FILE_MANIFEST.json",
+    "docs/audits/phase-5/publication/FINAL_CHECKS.json",
+    "docs/audits/phase-5/publication/MERGE_IDENTITY.json",
+    "docs/audits/phase-5/publication/MERGE_RESULT.json",
+    "docs/audits/phase-5/publication/PR8_AT_MERGE_GATE.json",
+    "docs/audits/phase-5/publication/PREMERGE_OFFICIAL_CI.json",
+    "docs/audits/phase-5/publication/PREMERGE_SCOPE_VERIFICATION.json",
+    "docs/audits/phase-5/publication/REMOTE_REFS_BEFORE.txt",
+    "docs/audits/phase-5/publication/SDK_ARCHIVE.json",
+    "docs/audits/phase-5/publication/VALIDATION.json",
+    "docs/audits/phase-5/publication/extras/EXTRA_VERIFICATION.json",
+    "docs/audits/phase-5/publication/extras/original-math/independent-implementation-math.json",
+    "docs/audits/phase-5/publication/extras/original-math/independent_implementation_math.py",
+    "docs/audits/phase-5/publication/extras/original-math91.command.json",
+    "docs/audits/phase-5/publication/extras/original-math91.stderr.log",
+    "docs/audits/phase-5/publication/extras/original-math91.stdout.log",
+    "docs/audits/phase-5/publication/extras/original-reviewer4.command.json",
+    "docs/audits/phase-5/publication/extras/original-reviewer4.stderr.log",
+    "docs/audits/phase-5/publication/extras/original-reviewer4.stdout.log",
+    "docs/audits/phase-5/publication/extras/original-reviewer4.xml",
+    "docs/audits/phase-5/publication/extras/original20.command.json",
+    "docs/audits/phase-5/publication/extras/original20.stderr.log",
+    "docs/audits/phase-5/publication/extras/original20.stdout.log",
+    "docs/audits/phase-5/publication/extras/original20.xml",
+    "docs/audits/phase-5/publication/publication-package-check.command.json",
+    "docs/audits/phase-5/publication/publication-package-check.stderr.log",
+    "docs/audits/phase-5/publication/publication-package-check.stdout.log",
+    "docs/audits/phase-5/publication/publication-scan-findings.json",
+    "docs/audits/phase-5/publication/publication-secret-scan.command.json",
+    "docs/audits/phase-5/publication/publication-secret-scan.stderr.log",
+    "docs/audits/phase-5/publication/publication-secret-scan.stdout.log",
+    "docs/audits/phase-5/publication/sdk.completion.json",
+    "docs/audits/phase-5/publication/sdk.config.json",
+    "docs/audits/phase-5/publication/sdk.stderr.log",
+    "docs/audits/phase-5/publication/sdk.stdout.log",
+    "docs/audits/phase-5/publication/sdk/artifacts.json",
+    "docs/audits/phase-5/publication/sdk/backtest/independent-reference.json",
+    "docs/audits/phase-5/publication/sdk/backtest/summary.json",
+    "docs/audits/phase-5/publication/sdk/commands.log",
+    "docs/audits/phase-5/publication/sdk/coverage.json",
+    "docs/audits/phase-5/publication/sdk/environment.json",
+    "docs/audits/phase-5/publication/sdk/junit.xml",
+    "docs/audits/phase-5/publication/sdk/reproduction/published-original-replay.json",
+    "docs/audits/phase-5/publication/sdk/reproduction/result.json",
+    "docs/audits/phase-5/publication/sdk/upload-selection.json",
+    "docs/audits/phase-5/publication/sdk/wheel/aqrp-0.5.0.dev5-py3-none-any.whl",
+    "docs/audits/phase-5/publication/verification-postmerge/REFERENCE_OUTPUT_BYTE_COMPARISON.json",
+    "docs/audits/phase-5/publication/verification-postmerge/VERIFICATION.json",
+    "docs/audits/phase-5/publication/verification-postmerge/backtest_reference.py",
+    "docs/audits/phase-5/publication/verification-postmerge/oracle.stderr.log",
+    "docs/audits/phase-5/publication/verification-postmerge/oracle.stdout.log",
+    "docs/audits/phase-5/publication/verification-premerge-ubuntu/REFERENCE_OUTPUT_BYTE_COMPARISON.json",
+    "docs/audits/phase-5/publication/verification-premerge-ubuntu/SUPPLEMENTAL_UPLOAD_ALIAS_MANIFEST.json",
+    "docs/audits/phase-5/publication/verification-premerge-ubuntu/VERIFICATION.json",
+    "docs/audits/phase-5/publication/verification-premerge-ubuntu/backtest_reference.py",
+    "docs/audits/phase-5/publication/verification-premerge-ubuntu/oracle.stderr.log",
+    "docs/audits/phase-5/publication/verification-premerge-ubuntu/oracle.stdout.log",
+    "docs/audits/phase-5/publication/verification-premerge-windows/REFERENCE_OUTPUT_BYTE_COMPARISON.json",
+    "docs/audits/phase-5/publication/verification-premerge-windows/SUPPLEMENTAL_UPLOAD_ALIAS_MANIFEST.json",
+    "docs/audits/phase-5/publication/verification-premerge-windows/VERIFICATION.json",
+    "docs/audits/phase-5/publication/verification-premerge-windows/backtest_reference.py",
+    "docs/audits/phase-5/publication/verification-premerge-windows/oracle.stderr.log",
+    "docs/audits/phase-5/publication/verification-premerge-windows/oracle.stdout.log"
+  ],
+  "postmerge_SDK": 1158,
+  "postmerge_original20_4_math91": "PASS",
+  "SDK_archive": {
+    "scope": "Actual new local postmerge clean SDK selection; not a GitHub Actions original ZIP",
+    "executor": "Codex developer",
+    "code_commit": "36c26911afb47ff68544e4bf64f060504dfdd94d",
+    "archive": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\Phase5-postmerge-SDK-36c2691.zip",
+    "bytes": 115510697,
+    "sha256": "b177bbbe4d04c0b5c0412d447218596489293e90d2876346f52baf7844e5f5ab",
+    "selected_files": 8008,
+    "ZIP_members": 8009,
+    "exact_members_CRC_and_all_hashes_verified": true,
+    "Git_subset": [
+      {
+        "path": "artifacts.json",
+        "bytes": 2386,
+        "sha256": "926a36ab51c50ce7eb8f805d03ecd4be67574e11836dfd409896fc900c357d0c"
+      },
+      {
+        "path": "backtest/independent-reference.json",
+        "bytes": 431,
+        "sha256": "76ab5e20ebcbeeea9b3cf751075799d9904be24bcd8c13c41b4cf4c5f9c39893"
+      },
+      {
+        "path": "backtest/summary.json",
+        "bytes": 193859,
+        "sha256": "ac4fab03063043dcdd8b3bcf4e68b6dd1eade76d8767c9a40492c94a8e461c48"
+      },
+      {
+        "path": "commands.log",
+        "bytes": 77503,
+        "sha256": "3fcd2e715c6f5f702f62baed019cbadb45daf0d123295aa91ace19f339ea5973"
+      },
+      {
+        "path": "coverage.json",
+        "bytes": 466789,
+        "sha256": "8791aede8a99eb259de5992d83b56ae96a9b8a6d4e89814a38187f64ce358d7f"
+      },
+      {
+        "path": "coverage.xml",
+        "bytes": 262542,
+        "sha256": "c483399720d7e703fed8db5df7dd427539550b21d2115bf3c825cd0b904fcf39"
+      },
+      {
+        "path": "environment.json",
+        "bytes": 959,
+        "sha256": "402c63491ff91f29f210f9f939432ca398c270cfe5e84be0ace77b8f4fe80632"
+      },
+      {
+        "path": "junit.xml",
+        "bytes": 166485,
+        "sha256": "dafdf88b37cfe7d14bba7c235b2fdb3d1510c63376d874b2357bdf50785589c5"
+      },
+      {
+        "path": "reproduction/published-original-replay.json",
+        "bytes": 23329,
+        "sha256": "d6b9c008b1e458c8dc49a83df1208f620c77cd3ef9afcfce0912ae9c05ee2182"
+      },
+      {
+        "path": "reproduction/result.json",
+        "bytes": 10823,
+        "sha256": "bfb9939e1af7fb95935a06ec14c8f33557432f27dd80ee80a0b36f3ab8ff463b"
+      },
+      {
+        "path": "upload-selection.json",
+        "bytes": 1766592,
+        "sha256": "a2319347bf4acee0bbd70c40633468e178f0b229f69ed34e3792af87abe56b24"
+      },
+      {
+        "path": "wheel/aqrp-0.5.0.dev5-py3-none-any.whl",
+        "bytes": 132846,
+        "sha256": "3a670a2e3c9282637a98dcbe8504373ddf87ce12df3a40190fa2291bca2a9454"
+      }
+    ],
+    "all_other_selected_originals": "Retained without alteration in complete external ZIP with original upload-selection.json; venv/source/caches intentionally not claimed as selected evidence",
+    "no_test_counts_added_across_overlapping_evidence": true
+  },
+  "baseline_path": "docs/audits/phase-5/BASELINE.md",
+  "WI-R2-001": "DEFERRED / NOT VERIFIED",
+  "WI-R2-002": "DEFERRED / NOT VERIFIED",
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "deployment_live": false,
+  "Phase6": "G1_PLANNING_ONLY_AUTHORIZED"
+}
