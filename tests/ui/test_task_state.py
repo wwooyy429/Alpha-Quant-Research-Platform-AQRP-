@@ -95,3 +95,24 @@ def test_ten_real_processes_allocate_one_task_and_one_workspace(tmp_path):
     with TaskState(tmp_path).transaction() as c:
         assert c.execute("SELECT count(*) FROM tasks").fetchone()[0] == 1
         assert c.execute("SELECT count(*) FROM workspace").fetchone()[0] == 1
+
+
+@pytest.mark.parametrize("revision", [True, -1, "1", 99])
+def test_unknown_or_non_integer_revision_is_not_silently_coerced(tmp_path, revision):
+    s = TaskState(tmp_path)
+    assert s.defaults(0)["payload"] == "{}"
+    with pytest.raises(ContractError, match="UNKNOWN_DEFAULTS_REVISION"):
+        s.defaults(revision)
+
+
+def test_changed_historical_defaults_hash_cannot_be_read_or_rolled_back(tmp_path):
+    s = TaskState(tmp_path)
+    s.save_defaults(0, {"lookback": 2})
+    with s.transaction() as c:
+        c.execute("UPDATE defaults SET payload=? WHERE revision=1", ('{"lookback":3}',))
+    with pytest.raises(ContractError, match="DEFAULTS_REVISION_IDENTITY_CHANGED"):
+        s.defaults(1)
+    with pytest.raises(ContractError, match="DEFAULTS_REVISION_IDENTITY_CHANGED"):
+        s.rollback_defaults(1, 1)
+    with pytest.raises(ContractError, match="UNKNOWN_DEFAULTS_REVISION"):
+        s.rollback_defaults(1, 0)

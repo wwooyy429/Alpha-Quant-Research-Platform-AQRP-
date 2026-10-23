@@ -255,8 +255,8 @@ class TaskService:
     def request(self, task):
         return load(self._snapshot(task)["raw"])
 
-    def defaults(self):
-        return self.state.defaults()
+    def defaults(self, revision=None):
+        return self.state.defaults(revision)
 
     def rollback_defaults(self, expected, target):
         return self.state.rollback_defaults(expected, target)

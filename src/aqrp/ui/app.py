@@ -406,22 +406,32 @@ def main():
                 "Exact Ref and parameter identities remain pinned. Historical runs retain their original versions; configuration rollback does not approve code."
             )
             defaults = service.defaults()
+            notice = st.session_state.pop("factor-defaults-notice", None)
+            if notice:
+                st.success(notice)
             if st.button("Save factor selection as a defaults revision"):
-                service.save_defaults(
-                    defaults["revision"],
-                    {"factor_ids": chosen, "weights_percent": {n: "100" for n in chosen}},
+                patch = {
+                    **load(defaults["payload"]),
+                    "factor_ids": chosen,
+                    "weights_percent": {n: "100" for n in chosen},
+                }
+                revision = service.save_defaults(defaults["revision"], patch)
+                st.session_state["selected_factors"] = chosen
+                st.session_state["factor-defaults-notice"] = (
+                    "New defaults revision " + str(revision) + " saved"
                 )
-                st.success("New defaults revision saved")
+                st.rerun()
             if defaults["revision"]:
                 revision = st.selectbox(
                     "Factor configuration rollback revision",
                     list(range(1, defaults["revision"] + 1)),
                 )
                 if st.button("Rollback factor configuration"):
-                    st.success(
-                        "New revision "
-                        + str(service.rollback_defaults(defaults["revision"], revision))
-                    )
+                    new_revision = service.rollback_defaults(defaults["revision"], revision)
+                    restored = load(service.defaults(new_revision)["payload"])
+                    st.session_state["selected_factors"] = restored.get("factor_ids", ["momentum"])
+                    st.session_state["factor-defaults-notice"] = "New revision " + str(new_revision)
+                    st.rerun()
             rows = service.list()
             if len(rows) > 1:
                 first = st.selectbox("Compare version / parameters A", [r["task_id"] for r in rows])
@@ -520,20 +530,41 @@ def main():
         else:
             st.subheader("Default configuration revisions")
             defaults = service.defaults()
+            editor_key = "settings-defaults-editor"
+            base_key = "settings-defaults-editor-base"
+            pending = st.session_state.pop("settings-defaults-pending", None)
+            if pending is not None or base_key not in st.session_state:
+                snapshot = pending if pending is not None else defaults
+                st.session_state[base_key] = snapshot["revision"]
+                st.session_state[editor_key] = snapshot["payload"]
+            if st.button("Reload latest defaults"):
+                st.session_state[base_key] = defaults["revision"]
+                st.session_state[editor_key] = defaults["payload"]
+            base = st.session_state[base_key]
             st.write("Current revision", defaults["revision"])
-            payload = st.text_area("Defaults JSON (new requests only)", value=defaults["payload"])
+            st.write("Editor base revision", base)
+            notice = st.session_state.pop("settings-defaults-notice", None)
+            if notice:
+                st.success(notice)
+            if base != defaults["revision"]:
+                st.warning(
+                    "Defaults changed after this editor was loaded. Reload latest defaults before saving; unsaved text is retained."
+                )
+            payload = st.text_area("Defaults JSON (new requests only)", key=editor_key)
             if st.button("Save defaults revision"):
-                revision = service.save_defaults(defaults["revision"], load(payload.encode()))
-                st.success("Saved revision " + str(revision))
+                revision = service.save_defaults(base, load(payload.encode()))
+                st.session_state["settings-defaults-pending"] = service.defaults(revision)
+                st.session_state["settings-defaults-notice"] = "Saved revision " + str(revision)
+                st.rerun()
             if defaults["revision"]:
                 target = st.selectbox(
                     "Rollback target revision", list(range(1, defaults["revision"] + 1))
                 )
                 if st.button("Rollback by adding a revision"):
-                    st.success(
-                        "New revision "
-                        + str(service.rollback_defaults(defaults["revision"], target))
-                    )
+                    revision = service.rollback_defaults(base, target)
+                    st.session_state["settings-defaults-pending"] = service.defaults(revision)
+                    st.session_state["settings-defaults-notice"] = "New revision " + str(revision)
+                    st.rerun()
             with st.expander("Synthetic input catalogue / core and UI environment"):
                 st.json(
                     {

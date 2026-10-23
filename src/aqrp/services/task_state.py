@@ -143,10 +143,25 @@ class TaskState:
                 for r in c.execute("SELECT * FROM slots WHERE task=? ORDER BY slot", (task,))
             }
 
-    def defaults(self):
+    def defaults(self, revision=None):
+        if revision is not None and (type(revision) is not int or revision < 0):
+            raise ContractError("UNKNOWN_DEFAULTS_REVISION")
+        empty = {"revision": 0, "payload": "{}", "hash": digest({})}
+        if revision == 0:
+            return empty
         with self.transaction() as c:
-            row = c.execute("SELECT * FROM defaults ORDER BY revision DESC LIMIT 1").fetchone()
-            return dict(row) if row else {"revision": 0, "payload": "{}", "hash": digest({})}
+            row = (
+                c.execute("SELECT * FROM defaults ORDER BY revision DESC LIMIT 1").fetchone()
+                if revision is None
+                else c.execute("SELECT * FROM defaults WHERE revision=?", (revision,)).fetchone()
+            )
+            if row is None:
+                if revision is None:
+                    return empty
+                raise ContractError("UNKNOWN_DEFAULTS_REVISION")
+            if digest(json.loads(row["payload"])) != row["hash"]:
+                raise ContractError("DEFAULTS_REVISION_IDENTITY_CHANGED")
+            return dict(row)
 
     def save_defaults(self, expected, payload):
         with self.transaction() as c:
@@ -160,9 +175,7 @@ class TaskState:
         return row + 1
 
     def rollback_defaults(self, expected, target):
-        with self.transaction() as c:
-            row = c.execute("SELECT payload FROM defaults WHERE revision=?", (target,)).fetchone()
-            if row is None:
-                raise ContractError("UNKNOWN_DEFAULTS_REVISION")
-            payload = json.loads(row[0])
+        if type(target) is not int or target < 1:
+            raise ContractError("UNKNOWN_DEFAULTS_REVISION")
+        payload = json.loads(self.defaults(target)["payload"])
         return self.save_defaults(expected, payload)

@@ -2,7 +2,7 @@
   "scope": "P6 implementation file identity; no independent G2 verdict or financial approval",
   "archival_start": "0242db37b4c822e7c73ef6c17faf104bcea54892",
   "phase5_baseline": "59246f9fd391c1713b6bed65dd22280f4d248493",
-  "bundle_sha256": "05fc8dbf43e358f0b92eb2b43465ef592b3d7b85912cbbf0074238f5018c0d29",
+  "bundle_sha256": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
   "bundle_manifest": {
     "factor_api": "1.0.0",
     "data_contract": "contracts/1.0.0",
@@ -10,7 +10,7 @@
     "files": [
       {
         "path": "__init__.py",
-        "sha256": "73eb5e4133e0335db5595b048156ee21858ca9c5dadbb32cdd30e750bd9971b6"
+        "sha256": "71c68389f8b091bb2de2e1122718f0d0fccd1a6ccebb513c6a0fff038c1a0f47"
       },
       {
         "path": "backtest/__init__.py",
@@ -282,7 +282,7 @@
       },
       {
         "path": "services/task_state.py",
-        "sha256": "2593188d3b308b84860161a0fbe20ad8303b66ae06d97eaa18693faf0fd22e9f"
+        "sha256": "88c495aef2f25a24e044a5a32de86a8662b75857627cafc80c8936874f75c484"
       },
       {
         "path": "services/task_worker.py",
@@ -290,7 +290,7 @@
       },
       {
         "path": "services/tasks.py",
-        "sha256": "f63fc5badf0232f5d7803a31f5e7b8c7d4b28711719b81ed1954c7db5ceb32a2"
+        "sha256": "658d47ec4bef42f87e36eb78c952f1417942c5c60db1aeb8bee7c922142042f8"
       },
       {
         "path": "ui/__init__.py",
@@ -298,7 +298,7 @@
       },
       {
         "path": "ui/app.py",
-        "sha256": "27d1a3977f923107ef002a6ee1c9477b48bac5c01294263caebde997131f7be0"
+        "sha256": "0b8058d43dc88bebfc33166f977a4dcb04ac2b90a23af60f806e03420073c08b"
       },
       {
         "path": "ui/environment.py",
@@ -25462,6 +25462,11 @@
       "sha256": "766dbd0fa117bb8b65cdbd468bc88c7664371a1a45a478f9600ded7782359010"
     },
     {
+      "path": "docs/audits/phase-6/C1_BROWSER_FINDING_EVIDENCE.json",
+      "bytes": 1462,
+      "sha256": "1fe4d7a0eef0691149f3dff2bb1e89687140f330c1960bcda81aec09cf9a6ba2"
+    },
+    {
       "path": "docs/audits/phase-6/COMPATIBILITY_IMPACT.json",
       "bytes": 1138,
       "sha256": "553f064dca86dc971f8ef5c1ecbe58d44cc538f78c3cc7aaa1c8f8b8a176a496"
@@ -25469,7 +25474,12 @@
     {
       "path": "docs/audits/phase-6/COMPATIBILITY_IMPACT.md",
       "bytes": 1942,
-      "sha256": "9303a74663c7cc8bf8836ba655aa0b609349f3e23637ed730fcb9e57282591d6"
+      "sha256": "e7889578573b497f754d62ae2888b51d021d0c117329a5ef099132cf0cca574f"
+    },
+    {
+      "path": "docs/audits/phase-6/DEVELOPER_FINDINGS.md",
+      "bytes": 1974,
+      "sha256": "64a5ef4710550f3b38de46580d1f3cf02058bf30ebb24dae6cf4e1a601ad392b"
     },
     {
       "path": "docs/audits/phase-6/ENGINEERING_CODE_REVIEW.md",
@@ -25478,8 +25488,8 @@
     },
     {
       "path": "docs/audits/phase-6/IMPLEMENTATION.md",
-      "bytes": 5211,
-      "sha256": "27a1839b0e62fe3504ce9357415edfad5343f8c691a7aa7024ca3d18be36ae84"
+      "bytes": 5437,
+      "sha256": "f4a74294eea582dc21cac370f2c0581acd7dfae093414daa6155cb3eb79f326b"
     },
     {
       "path": "docs/audits/phase-6/IMPLEMENTATION_AUTHORIZATION.json",
@@ -25503,13 +25513,13 @@
     },
     {
       "path": "docs/audits/phase-6/STATUS.json",
-      "bytes": 2963,
-      "sha256": "06cdc6eb00ccca6999bc1cce9d9db9b2baa24d2c7ae5d78ba00a3455ff8ab2d6"
+      "bytes": 3204,
+      "sha256": "1b267ed8fd574e7d6e76d8124737e2dd980ec8de846d4a3a6b3ac2e7674212fd"
     },
     {
       "path": "pyproject.toml",
       "bytes": 1401,
-      "sha256": "0756fdcac91cc8adf58b9497299f9558748b9e5ae3278255baa978c65cf6edb0"
+      "sha256": "aca234e3725cddf0ac72ca116b5cc2f82299965d1b7565f8e3b6cc1c566ae014"
     },
     {
       "path": "requirements-ui-linux.lock",
@@ -25524,7 +25534,7 @@
     {
       "path": "src/aqrp/__init__.py",
       "bytes": 114,
-      "sha256": "73eb5e4133e0335db5595b048156ee21858ca9c5dadbb32cdd30e750bd9971b6"
+      "sha256": "71c68389f8b091bb2de2e1122718f0d0fccd1a6ccebb513c6a0fff038c1a0f47"
     },
     {
       "path": "src/aqrp/backtest/engine.py",
@@ -25544,7 +25554,7 @@
     {
       "path": "src/aqrp/factors/reviewed_code.json",
       "bytes": 655,
-      "sha256": "554fedf450abb5bd27bb4f623f90789d8bea875e551d05e2fe189ac214b735ad"
+      "sha256": "4aa691a5f91023a1901c05b00502120fcb445bfc44b0f05f7aa1080cf75034e3"
     },
     {
       "path": "src/aqrp/portfolio/service.py",
@@ -25588,8 +25598,8 @@
     },
     {
       "path": "src/aqrp/services/task_state.py",
-      "bytes": 7308,
-      "sha256": "2593188d3b308b84860161a0fbe20ad8303b66ae06d97eaa18693faf0fd22e9f"
+      "bytes": 7892,
+      "sha256": "88c495aef2f25a24e044a5a32de86a8662b75857627cafc80c8936874f75c484"
     },
     {
       "path": "src/aqrp/services/task_worker.py",
@@ -25598,8 +25608,8 @@
     },
     {
       "path": "src/aqrp/services/tasks.py",
-      "bytes": 33026,
-      "sha256": "f63fc5badf0232f5d7803a31f5e7b8c7d4b28711719b81ed1954c7db5ceb32a2"
+      "bytes": 33049,
+      "sha256": "658d47ec4bef42f87e36eb78c952f1417942c5c60db1aeb8bee7c922142042f8"
     },
     {
       "path": "src/aqrp/ui/__init__.py",
@@ -25608,8 +25618,8 @@
     },
     {
       "path": "src/aqrp/ui/app.py",
-      "bytes": 23102,
-      "sha256": "27d1a3977f923107ef002a6ee1c9477b48bac5c01294263caebde997131f7be0"
+      "bytes": 25072,
+      "sha256": "0b8058d43dc88bebfc33166f977a4dcb04ac2b90a23af60f806e03420073c08b"
     },
     {
       "path": "src/aqrp/ui/environment.py",
@@ -25639,7 +25649,12 @@
     {
       "path": "tests/environment/test_installation.py",
       "bytes": 1146,
-      "sha256": "0be167b641983bbde86d16053eddb7f7c9f113ae8b7e0cc75f8cac38491caf5d"
+      "sha256": "6c298922ccfeb9e186f8cadb56db9f7c5729b29ab14492ebe21e362144b2aa2f"
+    },
+    {
+      "path": "tests/ui/test_defaults_editor.py",
+      "bytes": 5269,
+      "sha256": "519e62ddc73b0a329de420de9ccdd2ec1647e5c30756f5dd645d4ce8780e4287"
     },
     {
       "path": "tests/ui/test_numbers.py",
@@ -25688,8 +25703,8 @@
     },
     {
       "path": "tests/ui/test_task_state.py",
-      "bytes": 4125,
-      "sha256": "59a8551ec34af43bc8d7d9ecb71b2c9ec60652cedc69009cb3181d2e3b76c3cb"
+      "bytes": 5049,
+      "sha256": "e112cb652eabe66a69165c9093f676fecc90bd7f69c500b1c2c81d579230bf69"
     },
     {
       "path": "tests/ui/test_view_interactions.py",

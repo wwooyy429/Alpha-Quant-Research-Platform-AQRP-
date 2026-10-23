@@ -33,3 +33,5 @@ Dashboard 展示真实任务和运行入口；Factor Library 读取实际目录/
 AppTest 是真实服务驱动的组件测试，不能代替真实浏览器。独立投影核对 tools/ui_reference.py 不导入 AQRP；逐一验证原清单/来源/hash，再仅规范预先声明的实际运行/根/来源哈希元数据，保留全部金融字段。tools/ui_smoke.py 实际执行 Momentum 与 Reversal 的 SDK、旧 CLI、新 CLI 及组件链和旧 Ref 执行。最终干净 SDK、双 OS 官方 ZIP 与固定版真实浏览器证据须全部完成后才交 G2；开发自测不称独立复核。
 
 WI-R2-001/002 持续 DEFERRED / NOT VERIFIED。正式 Test 未运行，金融批准 NONE，完整历史宿主限制保留。未合并、打标签、部署、实盘或进入 P7。
+
+实现补充：连续默认编辑及过期会话保护的实际反例、稳定编辑器/历史快照校验和新回归见 DEVELOPER_FINDINGS.md。当前候选版本0.6.0.dev2，原C1证据保留，不继承旧通过结论。
