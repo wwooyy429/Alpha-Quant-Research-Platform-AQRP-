@@ -1,4 +1,4 @@
-name: Phase 5 quality
+name: Phase 6 quality
 on:
   pull_request:
   push:
@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.13.16'
@@ -28,10 +29,11 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: phase5-${{ matrix.os }}-${{ github.run_attempt }}
+          name: phase6-${{ matrix.os }}-${{ github.run_attempt }}
           path: |
             ${{ runner.temp }}/aqrp-evidence/*/*.log
             ${{ runner.temp }}/aqrp-evidence/*/*.json
+            ${{ runner.temp }}/aqrp-evidence/*/*.jsonl
             ${{ runner.temp }}/aqrp-evidence/*/*.xml
             ${{ runner.temp }}/aqrp-evidence/*/dataset/**/*
             ${{ runner.temp }}/aqrp-evidence/*/.coverage
@@ -41,6 +43,8 @@ jobs:
             ${{ runner.temp }}/aqrp-evidence/*/research/**/*
             ${{ runner.temp }}/aqrp-evidence/*/portfolio/**/*
             ${{ runner.temp }}/aqrp-evidence/*/backtest/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/ui/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/ui-wheelhouse/*.whl
             ${{ runner.temp }}/aqrp-evidence/*/tmp/**/*
             ${{ runner.temp }}/aqrp-evidence/*/reproduction/*.json
             ${{ runner.temp }}/aqrp-evidence/*/reproduction/*.log

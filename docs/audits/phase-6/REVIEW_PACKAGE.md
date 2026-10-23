@@ -1,3 +1,11 @@
+# 当前实现审查入口
+
+用户已明确接受 C-P6-001/002/003 并授权八项实现。实现说明见 IMPLEMENTATION.md，八项逐项追踪见 IMPLEMENTATION_TRACEABILITY.md，兼容影响与原字节/当前文件身份见 COMPATIBILITY_IMPACT.md / IMPLEMENTATION_IDENTITY.json，完整实施授权见 IMPLEMENTATION_AUTHORIZATION.json。
+
+本轮提交为实现候选，G2 PENDING。最终完整40位固定 SHA 及同版本的 SDK、官方双OS原始ZIP、真实浏览器、命令/环境/工件哈希证据以 PR #9 描述 AQRP_FIXED_REVIEW_SHA 和开发交接证据索引为准。不得用漂移HEAD、G1或P5回归替代。原有 G1 档案如下，状态文字属于当时历史；其原文版本及哈希可在对应归档起点/G1固定提交追溯。
+
+---
+
 # Phase6 G1 修订候选 · 交GPT Work固定版本复核
 
 当前独立结论：GPT Work固定`e71f6f090b102e4abfd70a5999e495f49546a1b5` **PLAN PASS WITH CONDITIONS**，001/002/003均CLOSED_DESIGN，无新增技术阻断。当前依据[原报告](g1-e71f6f0/received/REPORT.md)、[接收与处理](g1-e71f6f0/DEVELOPER_RESPONSE.md)、[实施前人工条件](g1-e71f6f0/IMPLEMENTATION_GATE.md)。三项设计选择及单独实施授权仍待用户明确；P6 NOT AUTHORIZED / NOT STARTED。AQRP_FIXED_REVIEW_SHA保持已审版本，归档头另列。以下交审文字/旧OPEN保留原轮历史，不覆盖本轮主审结论；核心设计字节不改。

@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aqrp"
-version = "0.5.0.dev5"
-description = "Restricted engineering research, portfolios and deterministic event backtesting (Phase 5)"
+version = "0.6.0.dev1"
+description = "Restricted engineering research, portfolios and deterministic event backtesting (Phase 6)"
 requires-python = "==3.13.16"
 dependencies = [
   "numpy==2.5.4", "pandas==3.0.6", "pyarrow==26.0.0",
@@ -13,6 +13,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+ui = ["streamlit==1.66.1", "plotly==7.1.0"]
 dev = [
   "pytest==9.1.1", "pytest-cov==7.1.0", "hypothesis==6.170.5",
   "ruff==0.17.1", "pip==26.2.1", "uv==0.13.4",
@@ -22,12 +23,15 @@ dev = [
 [project.scripts]
 aqrp-research = "aqrp.services.cli:main"
 aqrp-backtest = "aqrp.services.backtest_cli:main"
+aqrp-tasks = "aqrp.services.task_cli:main"
+aqrp-ui = "aqrp.ui.launch:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
 "aqrp.factors" = ["reviewed_code.json"]
+"aqrp.ui" = ["requirements-windows.lock", "requirements-linux.lock"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

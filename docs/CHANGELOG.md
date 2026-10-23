@@ -1,5 +1,8 @@
 # 变更记录
 
+2026-10-23 用户明确接受C-P6-001/002/003并单独授权Phase6八项（5MVP/3CR）实现，当前IMPLEMENTING；原话及G1固定e71/归档起点0242见docs/audits/phase-6/IMPLEMENTATION_AUTHORIZATION.json。保留独立答案、完整SDK、双OS原始ZIP与实际浏览器证据；完成锁定新40SHA交GPT Work G2。不是G2/阶段验收/发布许可，WI-R2/正式Test/金融NONE/历史宿主边界保留；无合并标签、真实权限、部署实盘或P7。以下旧待授权状态保留历史。
+
+
 2026-10-23 当前Phase6 G1：GPT Work固定e71f6f090b102e4abfd70a5999e495f49546a1b5判PLAN PASS WITH CONDITIONS，001 High、002/003 Medium均CLOSED_DESIGN，无新增技术阻断。原报告/675865677-byte包142成员核验及当前处置见docs/audits/phase-6/g1-e71f6f0/。仍待用户明确接受C-P6-001必需P4全成功、C-P6-002新流水线N>=1、C-P6-003新十进制4096数字位/4098字符，并单独授权8项实施；P6 NOT AUTHORIZED / NOT STARTED，非G2/阶段验收。原32+95独立答案及扩展仅设计模型/参考核验；新CI只有P5回归API成功，原ZIP未核。已审设计/答案/依赖/4738冻结文件、main及旧标签不改；锁保持已审e71、归档SHA另列。WI-R2延期/正式Test未运行/金融NONE/历史宿主边界保留，无UI安装启动、真实权限、部署、实盘、合并、标签或P7。以下旧状态保留历史。
 
 

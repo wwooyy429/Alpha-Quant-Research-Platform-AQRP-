@@ -12,6 +12,7 @@ import urllib.request
 import uuid
 import venv
 import zipfile
+from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,10 +29,25 @@ os.environ["COVERAGE_FILE"] = str(RUN / ".coverage")
 
 
 def command(args, cwd=ROOT):
+    started = datetime.now(UTC).isoformat()
     with (RUN / "commands.log").open("a", encoding="utf-8") as log:
         log.write(json.dumps([str(a) for a in args]) + "\n")
         log.flush()
         result = subprocess.run(args, cwd=cwd, stdout=log, stderr=subprocess.STDOUT)
+        with (RUN / "commands.jsonl").open("a", encoding="utf-8") as records:
+            records.write(
+                json.dumps(
+                    {
+                        "argv": [str(a) for a in args],
+                        "cwd": str(cwd),
+                        "started_utc": started,
+                        "ended_utc": datetime.now(UTC).isoformat(),
+                        "exit": result.returncode,
+                        "combined_raw_log": "commands.log",
+                    }
+                )
+                + "\n"
+            )
         if result.returncode:
             print((RUN / "commands.log").read_text(encoding="utf-8", errors="replace")[-12000:])
             raise SystemExit(result.returncode)
@@ -44,6 +60,7 @@ def main():
     dirty = subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True)
     env = {
         "run_id": RUN.name,
+        "started_utc": datetime.now(UTC).isoformat(),
         "python": sys.version,
         "executable": sys.executable,
         "os": platform.platform(),
@@ -87,8 +104,73 @@ def main():
         ]
     )
     del os.environ["PYTHONPATH"]
+    ui_lock = ROOT / (
+        "requirements-ui-windows.lock" if os.name == "nt" else "requirements-ui-linux.lock"
+    )
+    ui_wheels = RUN / "ui-wheelhouse"
+    command(
+        [
+            str(py),
+            "-m",
+            "pip",
+            "download",
+            "--index-url",
+            "https://pypi.org/simple",
+            "--require-hashes",
+            "--only-binary=:all:",
+            "--no-deps",
+            "--dest",
+            str(ui_wheels),
+            "-r",
+            str(ui_lock),
+        ]
+    )
+    command(
+        [
+            str(py),
+            "-m",
+            "pip",
+            "install",
+            "--no-index",
+            "--no-deps",
+            "--require-hashes",
+            "--find-links",
+            str(ui_wheels),
+            "-r",
+            str(ui_lock),
+        ]
+    )
+    allowed_ui = set(
+        __import__("re").findall(rb"--hash=sha256:([0-9a-f]{64})", ui_lock.read_bytes())
+    )
+    wheel_rows = []
+    for item in sorted(ui_wheels.glob("*.whl")):
+        checksum = hashlib.sha256(item.read_bytes()).hexdigest()
+        assert checksum.encode() in allowed_ui
+        with zipfile.ZipFile(item) as archive:
+            metadata = archive.read(
+                next(n for n in archive.namelist() if n.endswith(".dist-info/METADATA"))
+            ).decode()
+        wheel_rows.append(
+            {
+                "path": item.relative_to(RUN).as_posix(),
+                "bytes": item.stat().st_size,
+                "sha256": checksum,
+                "METADATA": metadata,
+            }
+        )
+    assert len(wheel_rows) == 29
+    (RUN / "ui-dependency-wheels.json").write_text(
+        json.dumps(
+            {"lock_sha256": hashlib.sha256(ui_lock.read_bytes()).hexdigest(), "wheels": wheel_rows},
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    env["ui_lock_sha256"] = hashlib.sha256(ui_lock.read_bytes()).hexdigest()
     command([str(py), "-m", "pip", "check"])
     archive = subprocess.check_output(["git", "archive", "--format=zip", commit], cwd=ROOT)
+    env["source_git_archive_sha256"] = hashlib.sha256(archive).hexdigest()
     source = RUN / "source"
     with zipfile.ZipFile(io.BytesIO(archive)) as z:
         z.extractall(source)
@@ -112,7 +194,7 @@ def main():
     command([str(py), "-m", "pip", "install", "--no-index", "--no-deps", str(project_wheel)])
     command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
     command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
-    command([str(py), str(source / "tools/check_phase5_package.py")], cwd=source)
+    command([str(py), str(source / "tools/check_phase6_package.py")], cwd=source)
     command([str(py), str(source / "tools/original_replay_smoke.py"), str(RUN)], cwd=source)
     os.environ["AQRP_ORIGINAL_ENV_ARCHIVE"] = str(RUN / "reproduction/environment-archive.json")
     command(
@@ -124,7 +206,11 @@ def main():
             "-o",
             f"cache_dir={RUN / 'pytest-cache'}",
             f"--basetemp={RUN / 'tmp'}",
-            "--cov=aqrp",
+            "--cov="
+            + subprocess.check_output(
+                [str(py), "-c", "import aqrp,pathlib; print(pathlib.Path(aqrp.__file__).parent)"],
+                text=True,
+            ).strip(),
             "--cov-branch",
             f"--cov-report=json:{RUN / 'coverage.json'}",
             f"--cov-report=xml:{RUN / 'coverage.xml'}",
@@ -153,8 +239,20 @@ def main():
             [str(py), "-I", str(source / "docs/audits/phase-3" / script)],
             cwd=source / "docs/audits/phase-3",
         )
+    for name in ("reference_check.py", "revision_reference.py"):
+        command(
+            [
+                str(py),
+                "-I",
+                str(source / "docs/audits/phase-6" / name),
+                str(RUN / ("p6-" + name.replace(".py", ".json"))),
+            ],
+            cwd=source,
+        )
+    command([str(py), str(source / "tools/ui_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
     env["complete"] = True
+    env["ended_utc"] = datetime.now(UTC).isoformat()
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
     hashes = {
         p.name: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -181,7 +279,7 @@ def main():
         if path.is_file() and (
             (
                 len(relative.parts) == 1
-                and (path.suffix in (".log", ".json", ".xml") or path.name == ".coverage")
+                and (path.suffix in (".log", ".json", ".jsonl", ".xml") or path.name == ".coverage")
             )
             or relative.parts[0]
             in (
@@ -192,6 +290,8 @@ def main():
                 "research",
                 "portfolio",
                 "backtest",
+                "ui",
+                "ui-wheelhouse",
                 "tmp",
             )
             or (relative.parts[0] == "reproduction" and relative.parts[1] != "venv")

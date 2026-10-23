@@ -1,16 +1,16 @@
 {
   "phase": 6,
-  "current": "G1_PLAN_PASS_WITH_CONDITIONS_AWAITING_HUMAN_CHOICES_AND_IMPLEMENTATION_AUTHORIZATION",
+  "current": "IMPLEMENTING_EIGHT_RESTRICTED_ENGINEERING_REQUIREMENTS",
   "G1": "PLAN PASS WITH CONDITIONS AT E71F6F0",
-  "G2": "NOT_APPLICABLE_IMPLEMENTATION_NOT_STARTED",
+  "G2": "PENDING_NOT_PASSED",
   "requirements": 8,
   "tiers": {
     "MVP": 5,
     "Competition Ready": 3
   },
   "baseline": "59246f9fd391c1713b6bed65dd22280f4d248493",
-  "capabilities": "PLANNED_NOT_IMPLEMENTED",
-  "implementation_authorized": false,
+  "capabilities": "IMPLEMENTATION_CANDIDATE_UNDER_DEVELOPER_VERIFICATION",
+  "implementation_authorized": true,
   "human_phase_acceptance": false,
   "main_merge_tag_authorized": false,
   "P7_authorized": false,
@@ -20,9 +20,9 @@
   "WI-R2-001": "DEFERRED / NOT VERIFIED",
   "WI-R2-002": "DEFERRED / NOT VERIFIED",
   "full_historical_host": "NOT VERIFIED beyond accepted package/lock/oldRef/result replay",
-  "actual_P6_business_or_browser_tests": "NONE; inherited P5 regression is not P6 implementation evidence",
-  "dependency_resolution": "Windows51/Linux50 candidate packages resolved; no UI installation or active lock changes",
-  "review_lock": "AQRP_FIXED_REVIEW_SHA stays full40 reviewed e71f6f0; archival descendant separately identified, not automatically reviewed",
+  "actual_P6_business_or_browser_tests": "Real P1/P3/internal-P4/P5 preliminary SDK/CLI/AppTest two-factor parity and preliminary browser performed on dirty developer source; final fixed-SHA clean SDK/dual-OS ZIP/browser evidence still pending.",
+  "dependency_resolution": "Original core lock unchanged; exact G1 UI extension locks hash-installed in an isolated developer venv.",
+  "review_lock": "PR9 remains G1 archival head until completed implementation is committed and verified; no drifting-HEAD G2 claim.",
   "last_independent_reviewed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
   "reviewer": "GPT Work",
   "findings": {
@@ -39,7 +39,7 @@
     "Fraction_oracle_cases": 35,
     "scope": "Developer design reference only; P6 product/concurrency/browser tests0"
   },
-  "numeric_adapter_range": "INDEPENDENT_G1_DESIGN_ACCEPTABLE; USER_ACCEPTANCE_PENDING C-P6-003",
+  "numeric_adapter_range": "USER_EXPLICITLY_ACCEPTED C-P6-003; implementation developer verification in progress",
   "human_design_conditions": "g1-e71f6f0/CONDITIONS_AND_AUTHORIZATION.json",
   "new_blocking_technical_findings": 0,
   "independent_design_reference_checks": {
@@ -61,5 +61,7 @@
     "binding_extension_cases": 25,
     "old_precision_counterexamples": 2,
     "all_passed": true
-  }
+  },
+  "conditions_user_acceptance": "EXPLICITLY_ACCEPTED_C_P6_001_002_003",
+  "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json"
 }

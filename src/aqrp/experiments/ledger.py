@@ -109,7 +109,7 @@ class ExperimentLedger:
             raise ContractError("INVALID_RUN_ID") from exc
         return self.root / key
 
-    def start(self, config, lineage):
+    def start(self, config, lineage, *, task_context=None):
         required = {
             "code_commit",
             "code_bundle",
@@ -122,8 +122,13 @@ class ExperimentLedger:
         if not required <= set(lineage) or not re.fullmatch("[0-9a-f]{40}", lineage["code_commit"]):
             raise ContractError("INCOMPLETE_RUN_LINEAGE")
         content = canonical(config)
+        if task_context is not None:
+            from aqrp.services.task_context import require_context
+
+            run_id, lineage = require_context(task_context).start(self.root, config, lineage)
+        else:
+            run_id = str(uuid.uuid4())
         metadata = canonical(lineage)
-        run_id = str(uuid.uuid4())
         root = self.path(run_id)
         root.mkdir(exist_ok=False)
         immutable_write(root / "config.json", content)
@@ -240,7 +245,10 @@ class ExperimentLedger:
             {
                 "config": fingerprint_config,
                 "lineage": {
-                    k: v for k, v in lineage.items() if k not in ("protocol_hash", "code_commit")
+                    k: v
+                    for k, v in lineage.items()
+                    if k
+                    not in ("protocol_hash", "code_commit", "task_binding", "task_binding_hash")
                 },
                 "hypothesis_spec": {
                     k: v

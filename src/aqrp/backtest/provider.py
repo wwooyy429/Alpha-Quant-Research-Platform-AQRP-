@@ -188,13 +188,20 @@ def signal_identity(request):
     ]
 
 
-def verify_portfolio_result(request, returned, root):
+def verify_portfolio_result(request, returned, root, *, task_context=None):
     import hashlib
 
     guard_sources(request)
     ledger = ExperimentLedger(guard_path(root))
     run = returned["run_id"]
     manifest = ledger.verify(run)
+    if task_context is not None:
+        from aqrp.services.task_context import require_context
+
+        context = require_context(task_context)
+        context.verify(root, run)
+        if context.binding()["adapted_request_hash"] != request.content_hash:
+            raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
 
     def read(name):
         rows = [e for e in manifest["files"] if e["path"] == name]
@@ -219,3 +226,5 @@ def verify_portfolio_result(request, returned, root):
         audit = audit_published(original, request, candidate)
         if load(read("published-byte-audit.json")) != audit:
             raise ContractError("P4_PUBLISHED_AUDIT_CHANGED")
+    if task_context is not None:
+        context.mark_verified(manifest)
