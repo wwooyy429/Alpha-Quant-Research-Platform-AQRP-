@@ -1,0 +1,65 @@
+{
+  "run_id": 39931047567,
+  "status": "completed",
+  "conclusion": "success",
+  "head_sha": "c43b594f2f427e8a7b3614518b84aa00502365f2",
+  "jobs": [
+    {
+      "id": 120339124192,
+      "name": "data-contracts (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120339124435,
+      "name": "data-contracts (windows-latest)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12492591382,
+      "name": "phase5-windows-latest-1",
+      "size_in_bytes": 126386587,
+      "digest": "sha256:5c80671d584ba357215ea980078cc7b59d83db7562e411896facb18649e17581",
+      "expired": false
+    },
+    {
+      "id": 12491618638,
+      "name": "phase5-ubuntu-24.04-1",
+      "size_in_bytes": 167622306,
+      "digest": "sha256:9daabb2ddcf1e0aa62dd0f8cc8beb82e158e07db317f9e3fd5eb55642a0e8617",
+      "expired": false
+    }
+  ],
+  "snapshot": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\snapshot-20261023T093234-0b8d5f",
+  "original_artifact_receipts": [
+    {
+      "id": 12492591382,
+      "name": "phase5-windows-latest-1",
+      "original_zip": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\phase5-windows-latest-1-official-original.zip",
+      "bytes": 126386587,
+      "sha256": "5c80671d584ba357215ea980078cc7b59d83db7562e411896facb18649e17581",
+      "official_digest": "sha256:5c80671d584ba357215ea980078cc7b59d83db7562e411896facb18649e17581",
+      "official_size_and_digest_match": true,
+      "CRC_pass": true
+    },
+    {
+      "id": 12491618638,
+      "name": "phase5-ubuntu-24.04-1",
+      "original_zip": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\phase5-ubuntu-24.04-1-official-original.zip",
+      "bytes": 167622306,
+      "sha256": "9daabb2ddcf1e0aa62dd0f8cc8beb82e158e07db317f9e3fd5eb55642a0e8617",
+      "official_digest": "sha256:9daabb2ddcf1e0aa62dd0f8cc8beb82e158e07db317f9e3fd5eb55642a0e8617",
+      "official_size_and_digest_match": true,
+      "CRC_pass": true
+    }
+  ],
+  "original_run_logs": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\official-run-logs-original.zip",
+    "bytes": 29868,
+    "sha256": "17947a3fb636724942303077bc6dfebf2a26ec97aae07cc6581f178d3a820697",
+    "CRC_pass": true
+  }
+}

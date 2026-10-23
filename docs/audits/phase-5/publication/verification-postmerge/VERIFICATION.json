@@ -1,0 +1,914 @@
+{
+  "executor": "Codex developer evidence verifier, not independent GPT Work G2",
+  "fixed_sha": "36c26911afb47ff68544e4bf64f060504dfdd94d",
+  "source": "E:\\WORK\\AQRP-runs\\p5-release-36c2691-20261023\\aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51",
+  "official": null,
+  "environment": {
+    "run_id": "aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51",
+    "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "os": "Windows-11-10.0.26300-SP0",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "code_commit": "36c26911afb47ff68544e4bf64f060504dfdd94d",
+    "dirty": false,
+    "complete": true,
+    "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+    "run_root": "E:\\WORK\\AQRP-runs\\p5-release-36c2691-20261023\\aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "github_sha": null,
+    "wheel_sha256": "3a670a2e3c9282637a98dcbe8504373ddf87ce12df3a40190fa2291bca2a9454"
+  },
+  "execution_tree": "faa56d3896dad352852dd403ac7314ac13493a95",
+  "execution_parents": [
+    "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
+    "c43b594f2f427e8a7b3614518b84aa00502365f2"
+  ],
+  "selected_file_count": 8008,
+  "all_member_hashes_verified": true,
+  "exact_original_ZIP_member_set_verified": false,
+  "member_set_policy": "Declared original selected files + independently byte-matched uploader-expanded pytest current aliases + self-excluded upload-selection.json; original selection alone does not equal official ZIP",
+  "supplemental_upload_aliases": null,
+  "junit": {
+    "tests": 1158,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_modules": [
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/contracts.py",
+      "line": 99.45652173913044,
+      "branch": 99.03846153846153,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/engine.py",
+      "line": 97.86666666666666,
+      "branch": 94.07894736842105,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/exact.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/ledger.py",
+      "line": 98.83040935672514,
+      "branch": 96.80851063829788,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/provider.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/risk.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/synthetic.py",
+      "line": 98.63013698630137,
+      "branch": 95.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/backtest/transactions.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/canonical.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/environment.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/errors.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/math.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/security/__init__.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/time.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/core/units.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/actions.py",
+      "line": 100.0,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/exposures.py",
+      "line": 98.98989898989899,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/pit.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/quality.py",
+      "line": 100.0,
+      "branch": 98.59154929577464,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/query.py",
+      "line": 98.71794871794872,
+      "branch": 95.83333333333333,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/schemas.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/snapshot.py",
+      "line": 99.01960784313725,
+      "branch": 97.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/store.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/data/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/execution/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/execution/liquidity.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/execution/model.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/experiments/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/experiments/ledger.py",
+      "line": 98.12206572769954,
+      "branch": 97.05882352941177,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/experiments/replay_worker.py",
+      "line": 100.0,
+      "branch": 95.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/experiments/reproduction.py",
+      "line": 97.02970297029702,
+      "branch": 92.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/admission.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/builtins.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/engine.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/input.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/registry.py",
+      "line": 98.93617021276596,
+      "branch": 96.42857142857143,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/factors/versions.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/performance/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/performance/metrics.py",
+      "line": 100.0,
+      "branch": 92.85714285714286,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/portfolio/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/portfolio/construct.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/portfolio/contracts.py",
+      "line": 98.99665551839465,
+      "branch": 97.94520547945206,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/portfolio/research_input.py",
+      "line": 96.3963963963964,
+      "branch": 90.9090909090909,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/portfolio/service.py",
+      "line": 98.94736842105263,
+      "branch": 94.44444444444444,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/portfolio/weights.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/research/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/research/numerics.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/research/pipeline.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/research/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/risk/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/risk/checks.py",
+      "line": 99.04761904761905,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/services/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/services/backtest.py",
+      "line": 98.46153846153847,
+      "branch": 92.85714285714286,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/services/backtest_cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/services/cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/services/research.py",
+      "line": 97.53086419753086,
+      "branch": 93.13725490196079,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/validation/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/validation/approvals.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/validation/evaluator.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/validation/inference.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/validation/labels.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p5-release-36c2691-20261023/aqrp-3e03b1bf-328f-40d0-be58-99efb33d4d51/venv/Lib/site-packages/aqrp/validation/splits.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    }
+  ],
+  "wheel": {
+    "path": "wheel/aqrp-0.5.0.dev5-py3-none-any.whl",
+    "sha256": "3a670a2e3c9282637a98dcbe8504373ddf87ce12df3a40190fa2291bca2a9454",
+    "source_modules": 69,
+    "bundle_sha256": "68d723fd865a59ad843d0be096e841d1e56005907bb8783037a784c8159eda3e"
+  },
+  "dependency_wheels": 22,
+  "original_refs": 3,
+  "original_publication_files": 66,
+  "P1_snapshots": [
+    {
+      "path": "backtest/input/inputs/dataset/cfae985e-a593-49a5-9663-21556b280bbb",
+      "snapshot_id": "cfae985e-a593-49a5-9663-21556b280bbb",
+      "manifest_hash": "cf9a3acce14172c2a10a2427f6a1d9f05b434bd058ae399ad1093b9e2f683afd",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "dataset/79fc2cfb-e3b5-4d90-ba3b-6429366d8a3f",
+      "snapshot_id": "79fc2cfb-e3b5-4d90-ba3b-6429366d8a3f",
+      "manifest_hash": "18476a1e53c40fd17e10feb15c1f93b19158893fd530dbf05c0c134d24168d73",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "factor-dataset/bd7776c2-b5ef-48dd-96d4-dfa8280fa85f",
+      "snapshot_id": "bd7776c2-b5ef-48dd-96d4-dfa8280fa85f",
+      "manifest_hash": "f3c6b7b40be463e74e495a2c8b77984ce08a416615ce2212b0109b20731b6716",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "reproduction/dataset/cc3d9d96-463c-49f5-a8ea-34ec69c475a6",
+      "snapshot_id": "cc3d9d96-463c-49f5-a8ea-34ec69c475a6",
+      "manifest_hash": "9aa4a1523a9be7b29a218dd071245725a80541e277f8815075e9d78403911df1",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/inputs/dataset/29adc90a-8312-4b1f-8fda-0a9d0075c3a0",
+      "snapshot_id": "29adc90a-8312-4b1f-8fda-0a9d0075c3a0",
+      "manifest_hash": "b9e6b0f55f5e729f51cada3e980c263e3c89b71bb0db92a1b2d47d400c706ae0",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/replacement-inputs/dataset/f7f7c7d4-1b3b-4399-a0e5-b5b6b2921855",
+      "snapshot_id": "f7f7c7d4-1b3b-4399-a0e5-b5b6b2921855",
+      "manifest_hash": "30a7d7727f47c007759f6e1038aeb03084ded115332e41ad90e4a3cf6f914706",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    }
+  ],
+  "terminal_smoke_runs": [
+    {
+      "path": "backtest/formal-refusal-only/ee737a87-e2a0-43a9-9f58-1c39b4db373f",
+      "run_id": "ee737a87-e2a0-43a9-9f58-1c39b4db373f",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/input/research-runs/ca75d54d-981a-4360-be00-3c60b46c0580",
+      "run_id": "ca75d54d-981a-4360-be00-3c60b46c0580",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "backtest/momentum-replay/e5962376-0a80-44cc-8555-90bbd658dae3/portfolio-runs/01fa32f6-8882-43b5-b4d1-1b6a2db89d40",
+      "run_id": "01fa32f6-8882-43b5-b4d1-1b6a2db89d40",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-replay/e5962376-0a80-44cc-8555-90bbd658dae3/portfolio-runs/1e9bec7a-5a95-44ca-8ea2-570e31b38358",
+      "run_id": "1e9bec7a-5a95-44ca-8ea2-570e31b38358",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/momentum-replay/e5962376-0a80-44cc-8555-90bbd658dae3/portfolio-runs/fb45cd4b-ba86-496f-a608-e4063a656c05",
+      "run_id": "fb45cd4b-ba86-496f-a608-e4063a656c05",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/2d5b3db6-f36f-4c25-b0d1-e30192c74187",
+      "run_id": "2d5b3db6-f36f-4c25-b0d1-e30192c74187",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/momentum-runs/2d5b3db6-f36f-4c25-b0d1-e30192c74187/portfolio-runs/3a43f838-8ea3-4ddf-ae97-92a2dba6cc7d",
+      "run_id": "3a43f838-8ea3-4ddf-ae97-92a2dba6cc7d",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/momentum-runs/2d5b3db6-f36f-4c25-b0d1-e30192c74187/portfolio-runs/5cd7a8d7-c9c8-48ad-ae6c-fd469c53c5d5",
+      "run_id": "5cd7a8d7-c9c8-48ad-ae6c-fd469c53c5d5",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/2d5b3db6-f36f-4c25-b0d1-e30192c74187/portfolio-runs/88219110-7207-4bcb-beb3-a9b264535e37",
+      "run_id": "88219110-7207-4bcb-beb3-a9b264535e37",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/retained-failure/07fc52f2-971e-425f-9a1f-c39005c5aacd",
+      "run_id": "07fc52f2-971e-425f-9a1f-c39005c5aacd",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/reversal-replay/7762fe00-8ad8-4158-bf43-73047b07e7ae/portfolio-runs/1dcfcb46-47a6-4599-abd1-998047c629d0",
+      "run_id": "1dcfcb46-47a6-4599-abd1-998047c629d0",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-replay/7762fe00-8ad8-4158-bf43-73047b07e7ae/portfolio-runs/70c0f52e-0ae5-4300-a12d-422c75a3ab64",
+      "run_id": "70c0f52e-0ae5-4300-a12d-422c75a3ab64",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/reversal-replay/7762fe00-8ad8-4158-bf43-73047b07e7ae/portfolio-runs/b34c17bc-1550-437f-95d6-a70cd4d7a8c1",
+      "run_id": "b34c17bc-1550-437f-95d6-a70cd4d7a8c1",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/e43252aa-4b3b-49f2-bf2e-76d146b7c7e9",
+      "run_id": "e43252aa-4b3b-49f2-bf2e-76d146b7c7e9",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/reversal-runs/e43252aa-4b3b-49f2-bf2e-76d146b7c7e9/portfolio-runs/28aedb29-aacf-43bf-be19-81558b025cff",
+      "run_id": "28aedb29-aacf-43bf-be19-81558b025cff",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/reversal-runs/e43252aa-4b3b-49f2-bf2e-76d146b7c7e9/portfolio-runs/38d507b3-342a-4a39-9e2a-cad5c7f55caa",
+      "run_id": "38d507b3-342a-4a39-9e2a-cad5c7f55caa",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/e43252aa-4b3b-49f2-bf2e-76d146b7c7e9/portfolio-runs/560af58f-6bf7-438d-9405-f380c8c74ca2",
+      "run_id": "560af58f-6bf7-438d-9405-f380c8c74ca2",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/formal-gate/f6da344c-c8e8-45df-94a4-242484ea02c0",
+      "run_id": "f6da344c-c8e8-45df-94a4-242484ea02c0",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "portfolio/runs/4923cc78-494f-4ed5-93ac-1ed712021e63",
+      "run_id": "4923cc78-494f-4ed5-93ac-1ed712021e63",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/51eee96d-e11e-4d94-8bfc-248c6ea815df",
+      "run_id": "51eee96d-e11e-4d94-8bfc-248c6ea815df",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/5d6d28f1-e3bc-40e7-ba5f-550a75647af9",
+      "run_id": "5d6d28f1-e3bc-40e7-ba5f-550a75647af9",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/95d0ae5d-bc4c-435a-a92c-eda76673e432",
+      "run_id": "95d0ae5d-bc4c-435a-a92c-eda76673e432",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/b48dc68f-e7be-4d4b-ad1f-0c90508b6804",
+      "run_id": "b48dc68f-e7be-4d4b-ad1f-0c90508b6804",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/c20fea0c-eb4a-4ab8-afca-41aff3037f49",
+      "run_id": "c20fea0c-eb4a-4ab8-afca-41aff3037f49",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "research/replacement-runs/32d208ce-096a-45ac-acc6-dea2fbc58e5b",
+      "run_id": "32d208ce-096a-45ac-acc6-dea2fbc58e5b",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "research/runs/c1816232-2595-4890-a68b-d977e90cedc1",
+      "run_id": "c1816232-2595-4890-a68b-d977e90cedc1",
+      "status": "SUCCEEDED",
+      "files": 18
+    },
+    {
+      "path": "research/runs/d5c1a7a6-f34b-44e9-a963-a60e820ff4e6",
+      "run_id": "d5c1a7a6-f34b-44e9-a963-a60e820ff4e6",
+      "status": "SUCCEEDED",
+      "files": 18
+    }
+  ],
+  "P5_outcomes": {
+    "momentum": {
+      "run_id": "2d5b3db6-f36f-4c25-b0d1-e30192c74187",
+      "fills": 1,
+      "state_sha256": "1a30987ea9d5fc7b3ed0d8742f46bf72c53436d22cd279194d3110cb79bf5482",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "d2eeeb6485c7a92cca98d374048e2f630389db769ab605730f21967b988d5d8e"
+    },
+    "reversal": {
+      "run_id": "e43252aa-4b3b-49f2-bf2e-76d146b7c7e9",
+      "fills": 1,
+      "state_sha256": "829b29513140df43c8d3a3d322767c8c9b857efb19a558cccddacfafc048a2d5",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "60338274f569e4d0069b847aa601dd2fed608208a868bb51c054907a51366836"
+    }
+  },
+  "independent_developer_raw_reference": {
+    "momentum": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    },
+    "reversal": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    }
+  },
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+  "result": "PASS"
+}

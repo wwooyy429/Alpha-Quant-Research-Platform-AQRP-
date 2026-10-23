@@ -1,6 +1,6 @@
 {
   "phase": 5,
-  "current": "G2_PASS_AWAITING_USER_PHASE_ACCEPTANCE",
+  "current": "ACCEPTED_RELEASED_RESTRICTED_ENGINEERING",
   "requirements": 12,
   "tiers": {
     "MVP": 10,
@@ -8,10 +8,10 @@
   },
   "baseline": "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
   "G1": "PLAN_PASS_WITH_CONDITIONS_AT_5262032",
-  "implementation": "RESTRICTED_ENGINEERING_G2_PASS_NOT_ACCEPTED_NOT_RELEASED",
+  "implementation": "ACCEPTED_TWELVE_REQUIREMENTS",
   "product_tests": "GPT Work independent clean installed SDK 1158 PASS; official Ubuntu and Windows each1158 original evidence verified at fixed1c5a7e6",
   "design_candidate_math": "GPT Work independently verified original25/70 and supplemental25/209; extra6/2349 MODEL scenarios; no P5 product tests",
-  "main_merge_tag_authorization": false,
+  "main_merge_tag_authorization": true,
   "formal_Test": "DEFERRED_NOT_RUN",
   "financial_approval": "NONE",
   "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
@@ -54,7 +54,7 @@
   "independent_recheck_current_CI_raw_ZIP": "VERIFIED_BY_GPT_WORK_AT_FIXED_1C5A7E6",
   "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json",
   "G2": "PASS_RESTRICTED_ENGINEERING_SCOPE_AT_1C5A7E6",
-  "phase_acceptance": "NOT_GRANTED",
+  "phase_acceptance": "ACCEPTED_RESTRICTED_ENGINEERING",
   "implementation_contract": "IMPLEMENTATION_CONTRACT.md",
   "implementation_traceability": "IMPLEMENTATION_TRACEABILITY.md",
   "implementation_identity": "IMPLEMENTATION_IDENTITY.json",
@@ -94,22 +94,17 @@
   ],
   "pending_human_decisions": [
     {
-      "id": "HUMAN-P5-PHASE-ACCEPTANCE",
-      "owner": "User",
-      "status": "NOT_GRANTED",
-      "decision": "Accept or request changes for the twelve restricted engineering requirements and retained limits"
-    },
-    {
-      "id": "HUMAN-P5-RELEASE",
+      "id": "HUMAN-P6-IMPLEMENTATION",
       "owner": "User",
       "status": "NOT_AUTHORIZED",
-      "decision": "Separately authorize main merge and baseline/tag release"
-    },
-    {
-      "id": "HUMAN-P6-START",
-      "owner": "User",
-      "status": "NOT_AUTHORIZED",
-      "decision": "Separately authorize next phase after verified release gate"
+      "decision": "Only after fixed-SHA G1 review and explicit implementation authorization"
     }
-  ]
+  ],
+  "merge_commit": "36c26911afb47ff68544e4bf64f060504dfdd94d",
+  "approved_archival_head": "c43b594f2f427e8a7b3614518b84aa00502365f2",
+  "acceptance_record": "publication/APPROVAL.json",
+  "postmerge_validation": "publication/VALIDATION.json",
+  "baseline_record": "BASELINE.md",
+  "release": "RELEASED_EFFECTIVE_ON_VERIFIED_ATOMIC_MAIN_PHASE5_BASELINE_V0_5_0_PUBLICATION",
+  "Phase6": "G1_PLANNING_ONLY_AFTER_VERIFIED_RELEASE; IMPLEMENTATION_NOT_AUTHORIZED"
 }

@@ -1,0 +1,929 @@
+{
+  "executor": "Codex developer evidence verifier, not independent GPT Work G2",
+  "fixed_sha": "c43b594f2f427e8a7b3614518b84aa00502365f2",
+  "source": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\phase5-ubuntu-24.04-1-official-original.zip",
+  "official": {
+    "id": 12491618638,
+    "name": "phase5-ubuntu-24.04-1",
+    "original_zip": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\phase5-ubuntu-24.04-1-official-original.zip",
+    "bytes": 167622306,
+    "sha256": "9daabb2ddcf1e0aa62dd0f8cc8beb82e158e07db317f9e3fd5eb55642a0e8617",
+    "official_digest": "sha256:9daabb2ddcf1e0aa62dd0f8cc8beb82e158e07db317f9e3fd5eb55642a0e8617",
+    "official_size_and_digest_match": true,
+    "CRC_pass": true
+  },
+  "environment": {
+    "run_id": "aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e",
+    "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+    "executable": "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "ImageOS": "ubuntu24",
+    "ImageVersion": "20261012.334.1",
+    "code_commit": "d7516a8c8af6f74070c264e6fb149b0869c80471",
+    "dirty": false,
+    "complete": true,
+    "workspace": "/home/runner/work/Alpha-Quant-Research-Platform-AQRP-/Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39931047567",
+    "github_run_attempt": "1",
+    "github_sha": "d7516a8c8af6f74070c264e6fb149b0869c80471",
+    "wheel_sha256": "2094bbc69f66ff119f02610444d0c97306a35db7826ef411d7f76116c6c68dc6"
+  },
+  "execution_tree": "faa56d3896dad352852dd403ac7314ac13493a95",
+  "execution_parents": [
+    "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
+    "c43b594f2f427e8a7b3614518b84aa00502365f2"
+  ],
+  "selected_file_count": 8007,
+  "all_member_hashes_verified": true,
+  "exact_original_ZIP_member_set_verified": true,
+  "member_set_policy": "Declared original selected files + independently byte-matched uploader-expanded pytest current aliases + self-excluded upload-selection.json; original selection alone does not equal official ZIP",
+  "supplemental_upload_aliases": {
+    "files": 3795,
+    "groups": 198,
+    "manifest_sha256": "0209ac57c1bfdd2441963c038270e6c602af0e35664c2e79282b3e16f2103f37",
+    "all_bytes_equal_to_declared_numeric_pytest_subtrees": true,
+    "original_symlink_identity_claimed": false
+  },
+  "junit": {
+    "tests": 1158,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_modules": [
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/contracts.py",
+      "line": 99.45652173913044,
+      "branch": 99.03846153846153,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/engine.py",
+      "line": 97.86666666666666,
+      "branch": 94.07894736842105,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/exact.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/ledger.py",
+      "line": 98.83040935672514,
+      "branch": 96.80851063829788,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/provider.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/risk.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/synthetic.py",
+      "line": 98.63013698630137,
+      "branch": 95.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/backtest/transactions.py",
+      "line": 100.0,
+      "branch": 97.05882352941177,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/canonical.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/environment.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/errors.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/math.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/security/__init__.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/time.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/core/units.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/actions.py",
+      "line": 100.0,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/exposures.py",
+      "line": 98.98989898989899,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/pit.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/quality.py",
+      "line": 100.0,
+      "branch": 98.59154929577464,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/query.py",
+      "line": 98.71794871794872,
+      "branch": 95.83333333333333,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/schemas.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/snapshot.py",
+      "line": 99.01960784313725,
+      "branch": 97.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/store.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/data/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/execution/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/execution/liquidity.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/execution/model.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/experiments/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/experiments/ledger.py",
+      "line": 98.12206572769954,
+      "branch": 97.05882352941177,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/experiments/replay_worker.py",
+      "line": 100.0,
+      "branch": 95.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/experiments/reproduction.py",
+      "line": 97.02970297029702,
+      "branch": 92.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/admission.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/builtins.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/engine.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/input.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/registry.py",
+      "line": 98.93617021276596,
+      "branch": 96.42857142857143,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/factors/versions.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/performance/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/performance/metrics.py",
+      "line": 100.0,
+      "branch": 92.85714285714286,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/portfolio/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/portfolio/construct.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/portfolio/contracts.py",
+      "line": 98.99665551839465,
+      "branch": 97.94520547945206,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/portfolio/research_input.py",
+      "line": 96.3963963963964,
+      "branch": 90.9090909090909,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/portfolio/service.py",
+      "line": 98.94736842105263,
+      "branch": 94.44444444444444,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/portfolio/weights.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/research/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/research/numerics.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/research/pipeline.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/research/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/risk/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/risk/checks.py",
+      "line": 99.04761904761905,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/services/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/services/backtest.py",
+      "line": 98.46153846153847,
+      "branch": 92.85714285714286,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/services/backtest_cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/services/cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/services/research.py",
+      "line": 97.53086419753086,
+      "branch": 93.13725490196079,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/validation/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/validation/approvals.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/validation/evaluator.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/validation/inference.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/validation/labels.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "/home/runner/work/_temp/aqrp-evidence/aqrp-a6c5d9cd-2c16-439a-bf02-3a8916463e3e/venv/lib/python3.13/site-packages/aqrp/validation/splits.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    }
+  ],
+  "wheel": {
+    "path": "wheel/aqrp-0.5.0.dev5-py3-none-any.whl",
+    "sha256": "2094bbc69f66ff119f02610444d0c97306a35db7826ef411d7f76116c6c68dc6",
+    "source_modules": 69,
+    "bundle_sha256": "68d723fd865a59ad843d0be096e841d1e56005907bb8783037a784c8159eda3e"
+  },
+  "dependency_wheels": 21,
+  "original_refs": 3,
+  "original_publication_files": 66,
+  "P1_snapshots": [
+    {
+      "path": "backtest/input/inputs/dataset/d18371bf-5859-4033-be29-afb72b571a14",
+      "snapshot_id": "d18371bf-5859-4033-be29-afb72b571a14",
+      "manifest_hash": "5320f5ae8baba59ba00c8f39216bbd366e3f7588b1362170632e81cd71460c32",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "dataset/e3756c0c-ba3f-41f3-b8dd-4c1fa5f051fa",
+      "snapshot_id": "e3756c0c-ba3f-41f3-b8dd-4c1fa5f051fa",
+      "manifest_hash": "3a5b3a922e772885c08357326f7f41d618eadc64950a641b52cd0343c4da022b",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "factor-dataset/70b22a59-1880-47d9-a64e-e89c1fed9dfc",
+      "snapshot_id": "70b22a59-1880-47d9-a64e-e89c1fed9dfc",
+      "manifest_hash": "3e4f917809b8601a8710369b2a9ad5de0c15c3ed3e9084a2d84ac308df31ef2b",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "reproduction/dataset/de52c540-99e4-4b64-b8b8-05240f9ded21",
+      "snapshot_id": "de52c540-99e4-4b64-b8b8-05240f9ded21",
+      "manifest_hash": "903bb860a499516aa4336839809a566c24a2ebb415a7681e117acaae83884ce6",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/inputs/dataset/1c76c6bf-3d95-4881-9823-8403356e82bf",
+      "snapshot_id": "1c76c6bf-3d95-4881-9823-8403356e82bf",
+      "manifest_hash": "c40d760c1a20987d4c9133dfb0c044589a3891bfb58731ed6ab69abc7bc55f4a",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/replacement-inputs/dataset/a2d44d31-ba1b-4f78-8b6c-d7282f73cba7",
+      "snapshot_id": "a2d44d31-ba1b-4f78-8b6c-d7282f73cba7",
+      "manifest_hash": "1277f368e143f8fdaf04c51e1a508ebdbc9205564ef736612ac78f0a7ceaefa6",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    }
+  ],
+  "terminal_smoke_runs": [
+    {
+      "path": "backtest/formal-refusal-only/ad6f2395-07df-4363-a3ff-457ac57c7563",
+      "run_id": "ad6f2395-07df-4363-a3ff-457ac57c7563",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/input/research-runs/4c9f999e-c2af-4168-8648-f507167ea060",
+      "run_id": "4c9f999e-c2af-4168-8648-f507167ea060",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "backtest/momentum-replay/c4bbe26e-c918-4d50-b813-0e3d32fbf71d/portfolio-runs/09dd827f-8577-49ef-9e0f-2bf09e2743bb",
+      "run_id": "09dd827f-8577-49ef-9e0f-2bf09e2743bb",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/momentum-replay/c4bbe26e-c918-4d50-b813-0e3d32fbf71d/portfolio-runs/78d18f28-fe01-478e-aa65-da3b8817e202",
+      "run_id": "78d18f28-fe01-478e-aa65-da3b8817e202",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-replay/c4bbe26e-c918-4d50-b813-0e3d32fbf71d/portfolio-runs/d4df7ddd-75d7-4da0-992b-e7ca95e7c802",
+      "run_id": "d4df7ddd-75d7-4da0-992b-e7ca95e7c802",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/8f91fd3f-61ea-4364-ae17-3d1f700927d9",
+      "run_id": "8f91fd3f-61ea-4364-ae17-3d1f700927d9",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/momentum-runs/8f91fd3f-61ea-4364-ae17-3d1f700927d9/portfolio-runs/176bea59-1f9e-41a0-b0a0-16bdf2b2c7c8",
+      "run_id": "176bea59-1f9e-41a0-b0a0-16bdf2b2c7c8",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/8f91fd3f-61ea-4364-ae17-3d1f700927d9/portfolio-runs/5fe23124-bedb-4ed5-972f-822d8157158d",
+      "run_id": "5fe23124-bedb-4ed5-972f-822d8157158d",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/8f91fd3f-61ea-4364-ae17-3d1f700927d9/portfolio-runs/75d8b3d9-adc7-4f66-bf0e-df2b5edce7b1",
+      "run_id": "75d8b3d9-adc7-4f66-bf0e-df2b5edce7b1",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/retained-failure/4f0d12b4-25b8-4aea-a15d-f390086277e8",
+      "run_id": "4f0d12b4-25b8-4aea-a15d-f390086277e8",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/reversal-replay/2091da49-393f-4449-b72a-f30bc20c0f77/portfolio-runs/1c948741-62eb-48e8-9a6a-4d1d1aaf72bb",
+      "run_id": "1c948741-62eb-48e8-9a6a-4d1d1aaf72bb",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/reversal-replay/2091da49-393f-4449-b72a-f30bc20c0f77/portfolio-runs/66a9c99c-c9ad-43f6-90b4-7dbd684b0a7d",
+      "run_id": "66a9c99c-c9ad-43f6-90b4-7dbd684b0a7d",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-replay/2091da49-393f-4449-b72a-f30bc20c0f77/portfolio-runs/67875101-a8a5-43b7-96b7-b9ca3077bca3",
+      "run_id": "67875101-a8a5-43b7-96b7-b9ca3077bca3",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/194c8f7f-3ad0-4f18-b668-4a6e17783d83",
+      "run_id": "194c8f7f-3ad0-4f18-b668-4a6e17783d83",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/reversal-runs/194c8f7f-3ad0-4f18-b668-4a6e17783d83/portfolio-runs/11fd7c47-cc19-4223-8a52-4bf2a2f701f4",
+      "run_id": "11fd7c47-cc19-4223-8a52-4bf2a2f701f4",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/reversal-runs/194c8f7f-3ad0-4f18-b668-4a6e17783d83/portfolio-runs/73cfae9f-d353-4b12-ada7-6b6252a61961",
+      "run_id": "73cfae9f-d353-4b12-ada7-6b6252a61961",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/194c8f7f-3ad0-4f18-b668-4a6e17783d83/portfolio-runs/8761d6e8-fead-4cad-a67f-f6613ec42097",
+      "run_id": "8761d6e8-fead-4cad-a67f-f6613ec42097",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/formal-gate/7a5b083b-c567-425d-a1ce-a442def03a30",
+      "run_id": "7a5b083b-c567-425d-a1ce-a442def03a30",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "portfolio/runs/0911154d-74f6-47a2-9f3b-19257ce1a39b",
+      "run_id": "0911154d-74f6-47a2-9f3b-19257ce1a39b",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/2e90653b-f8b6-464f-aee5-fed65f94ac27",
+      "run_id": "2e90653b-f8b6-464f-aee5-fed65f94ac27",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/88eb4c73-9bca-4c39-a6c4-e0b61d5ebafc",
+      "run_id": "88eb4c73-9bca-4c39-a6c4-e0b61d5ebafc",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/b5366785-47e8-4364-ac58-1e668975c9d9",
+      "run_id": "b5366785-47e8-4364-ac58-1e668975c9d9",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/dded3309-2ec1-47ae-95d4-78936ff5147f",
+      "run_id": "dded3309-2ec1-47ae-95d4-78936ff5147f",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/de479b7c-3fc8-43e1-9f78-81bf70a5401d",
+      "run_id": "de479b7c-3fc8-43e1-9f78-81bf70a5401d",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "research/replacement-runs/2def60f3-9042-4d7e-98a1-a558af1d78df",
+      "run_id": "2def60f3-9042-4d7e-98a1-a558af1d78df",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "research/runs/247d8b05-d843-455a-ba93-2b16b314053d",
+      "run_id": "247d8b05-d843-455a-ba93-2b16b314053d",
+      "status": "SUCCEEDED",
+      "files": 18
+    },
+    {
+      "path": "research/runs/ba00771c-c7fd-4bea-9e8e-f0ef146abdd0",
+      "run_id": "ba00771c-c7fd-4bea-9e8e-f0ef146abdd0",
+      "status": "SUCCEEDED",
+      "files": 18
+    }
+  ],
+  "P5_outcomes": {
+    "momentum": {
+      "run_id": "8f91fd3f-61ea-4364-ae17-3d1f700927d9",
+      "fills": 1,
+      "state_sha256": "9721efb65b7c84bd455824c85f164242fd5fb2265fc5814a362c939d31366cd7",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "4ee3d9678070397abe89bb6ecae4289596c449e39195ca3a33e6cd1683d6a3a6"
+    },
+    "reversal": {
+      "run_id": "194c8f7f-3ad0-4f18-b668-4a6e17783d83",
+      "fills": 1,
+      "state_sha256": "3e5fe12965f651a00cc1d958e3762bbef9e6d8197098462d787aaf62c87b3726",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "0dabc1808e76bad0bb9b8d93b4de4173ce6d74152079ffcc1aa3402dcedc3e53"
+    }
+  },
+  "independent_developer_raw_reference": {
+    "momentum": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    },
+    "reversal": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    }
+  },
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+  "result": "PASS"
+}

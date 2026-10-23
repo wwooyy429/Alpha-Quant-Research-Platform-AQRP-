@@ -1,5 +1,8 @@
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
+2026-10-23 最新决定：Phase5 十二项受限工程范围已由用户 ACCEPTED，GPT Work 固定 1c5a7e62cace7c3e66b7cc7f12fd564cb0013654 G2 PASS、001/002/003 CLOSED；PR #8 归档头 c43b594f2f427e8a7b3614518b84aa00502365f2 仅文档差异，双系统 CI 各1158通过。普通合并 36c26911afb47ff68544e4bf64f060504dfdd94d 整树等于批准归档头，合并后新干净SDK1158、原20/4/数学91通过。发布登记与 main/phase5-baseline/v0.5.0 原子同点核验后 RELEASED，旧标签不移动，详 docs/audits/phase-5/BASELINE.md。仅授权随后 Phase6 G1 计划，不授权 P6 业务实现。WI-R2延期、正式Test未运行、金融批准NONE、历史宿主边界保留，无部署/实盘/真实权限操作。以下旧状态保留历史。
+
+
 2026-10-23 当前状态：GPT Work 对固定 `1c5a7e62cace7c3e66b7cc7f12fd564cb0013654` 的 **Phase5 十二项受限工程范围 G2 PASS**；WORK-P5-G2-003 已由独立复核确认 CLOSED — FIX VERIFIED，001/002 保持 CLOSED，无新增阻断。独立干净 SDK 1158 项通过，双系统各 1158 项官方原始证据已由主审核验。**用户阶段验收尚未授予，Phase5 未 ACCEPTED / RELEASED。** 本轮仅归档原始报告、接收核验及更新状态；后续文档归档提交不自动获得该固定版本的独立审查结论，`AQRP_FIXED_REVIEW_SHA` 继续锁定已审实现。原失败报告、日志、工件及各轮 OPEN/BLOCKED 记录保留历史。WI-R2-001/002 与真实 Windows 隔离继续 **DEFERRED / NOT VERIFIED**；正式 Test 未运行，金融批准 NONE，完整历史宿主复现仍限于已接受的软件包、依赖锁、旧因子版本及结果重放范围。未授权合并、标签、部署、实盘、正式 Test、金融批准或 P6。 当前处置与证据见[审查归档](docs/audits/phase-5/g2-1c5a7e6/DEVELOPER_RESPONSE.md)。以下旧状态均为历史。
 
 

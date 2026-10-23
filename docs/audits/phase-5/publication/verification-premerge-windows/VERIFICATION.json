@@ -1,0 +1,929 @@
+{
+  "executor": "Codex developer evidence verifier, not independent GPT Work G2",
+  "fixed_sha": "c43b594f2f427e8a7b3614518b84aa00502365f2",
+  "source": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\phase5-windows-latest-1-official-original.zip",
+  "official": {
+    "id": 12492591382,
+    "name": "phase5-windows-latest-1",
+    "original_zip": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p5-release-20261023\\ci-39931047567\\phase5-windows-latest-1-official-original.zip",
+    "bytes": 126386587,
+    "sha256": "5c80671d584ba357215ea980078cc7b59d83db7562e411896facb18649e17581",
+    "official_digest": "sha256:5c80671d584ba357215ea980078cc7b59d83db7562e411896facb18649e17581",
+    "official_size_and_digest_match": true,
+    "CRC_pass": true
+  },
+  "environment": {
+    "run_id": "aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738",
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\hostedtoolcache\\windows\\Python\\3.13.16\\x64\\python.exe",
+    "os": "Windows-2025Server-10.0.26100-SP0",
+    "ImageOS": "win25-vs2026",
+    "ImageVersion": "20261021.278.1",
+    "code_commit": "d7516a8c8af6f74070c264e6fb149b0869c80471",
+    "dirty": false,
+    "complete": true,
+    "workspace": "D:\\a\\Alpha-Quant-Research-Platform-AQRP-\\Alpha-Quant-Research-Platform-AQRP-",
+    "run_root": "D:\\a\\_temp\\aqrp-evidence\\aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": "39931047567",
+    "github_run_attempt": "1",
+    "github_sha": "d7516a8c8af6f74070c264e6fb149b0869c80471",
+    "wheel_sha256": "b759f8defb6da25d8372e82eb0871733d4d16700f44474d2cedc43ab37d6a9f5"
+  },
+  "execution_tree": "faa56d3896dad352852dd403ac7314ac13493a95",
+  "execution_parents": [
+    "32ea5d6b75c84c07017d87377eeabd2f78207c5c",
+    "c43b594f2f427e8a7b3614518b84aa00502365f2"
+  ],
+  "selected_file_count": 8008,
+  "all_member_hashes_verified": true,
+  "exact_original_ZIP_member_set_verified": true,
+  "member_set_policy": "Declared original selected files + independently byte-matched uploader-expanded pytest current aliases + self-excluded upload-selection.json; original selection alone does not equal official ZIP",
+  "supplemental_upload_aliases": {
+    "files": 3795,
+    "groups": 198,
+    "manifest_sha256": "23b42a34113f2fc203f095d53ebb288a3d886af5f9bc578d38097b8af30878a2",
+    "all_bytes_equal_to_declared_numeric_pytest_subtrees": true,
+    "original_symlink_identity_claimed": false
+  },
+  "junit": {
+    "tests": 1158,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_modules": [
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/contracts.py",
+      "line": 99.45652173913044,
+      "branch": 99.03846153846153,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/engine.py",
+      "line": 97.86666666666666,
+      "branch": 94.07894736842105,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/exact.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/ledger.py",
+      "line": 98.83040935672514,
+      "branch": 96.80851063829788,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/provider.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/risk.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/synthetic.py",
+      "line": 98.63013698630137,
+      "branch": 95.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/backtest/transactions.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/canonical.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/environment.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/errors.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/math.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/security/__init__.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/time.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/core/units.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/actions.py",
+      "line": 100.0,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/exposures.py",
+      "line": 98.98989898989899,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/pit.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/quality.py",
+      "line": 100.0,
+      "branch": 98.59154929577464,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/query.py",
+      "line": 98.71794871794872,
+      "branch": 95.83333333333333,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/schemas.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/snapshot.py",
+      "line": 99.01960784313725,
+      "branch": 97.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/store.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/data/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/execution/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/execution/liquidity.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/execution/model.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/experiments/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/experiments/ledger.py",
+      "line": 98.12206572769954,
+      "branch": 97.05882352941177,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/experiments/replay_worker.py",
+      "line": 100.0,
+      "branch": 95.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/experiments/reproduction.py",
+      "line": 97.02970297029702,
+      "branch": 92.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/admission.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/builtins.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/engine.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/input.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/registry.py",
+      "line": 98.93617021276596,
+      "branch": 96.42857142857143,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/factors/versions.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/performance/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/performance/metrics.py",
+      "line": 100.0,
+      "branch": 92.85714285714286,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/portfolio/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/portfolio/construct.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/portfolio/contracts.py",
+      "line": 98.99665551839465,
+      "branch": 97.94520547945206,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/portfolio/research_input.py",
+      "line": 96.3963963963964,
+      "branch": 90.9090909090909,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/portfolio/service.py",
+      "line": 98.94736842105263,
+      "branch": 94.44444444444444,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/portfolio/weights.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/research/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/research/numerics.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/research/pipeline.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/research/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/risk/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/risk/checks.py",
+      "line": 99.04761904761905,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/services/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/services/backtest.py",
+      "line": 98.46153846153847,
+      "branch": 92.85714285714286,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/services/backtest_cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/services/cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/services/research.py",
+      "line": 97.53086419753086,
+      "branch": 93.13725490196079,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/validation/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/validation/approvals.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/validation/evaluator.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/validation/inference.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/validation/labels.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "D:/a/_temp/aqrp-evidence/aqrp-17d20ba3-7ebe-4c78-840c-118a2d94c738/venv/Lib/site-packages/aqrp/validation/splits.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    }
+  ],
+  "wheel": {
+    "path": "wheel/aqrp-0.5.0.dev5-py3-none-any.whl",
+    "sha256": "b759f8defb6da25d8372e82eb0871733d4d16700f44474d2cedc43ab37d6a9f5",
+    "source_modules": 69,
+    "bundle_sha256": "68d723fd865a59ad843d0be096e841d1e56005907bb8783037a784c8159eda3e"
+  },
+  "dependency_wheels": 22,
+  "original_refs": 3,
+  "original_publication_files": 66,
+  "P1_snapshots": [
+    {
+      "path": "backtest/input/inputs/dataset/12378f15-8760-4c93-ae90-68228ff4aba5",
+      "snapshot_id": "12378f15-8760-4c93-ae90-68228ff4aba5",
+      "manifest_hash": "76e320a448d6f2ba0a74b28fe9a704ca14e33f4a27917e93f73b1eb601dab5c2",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "dataset/483bfc88-2922-4a9e-89ae-69fc4b2aa0ed",
+      "snapshot_id": "483bfc88-2922-4a9e-89ae-69fc4b2aa0ed",
+      "manifest_hash": "9129a44bd9deb9f71f2e010c03e7100cb8f8d9b8376dfea3c46e2e1732bb6789",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "factor-dataset/d2b0a1d3-508a-4c13-9138-5dbbc50f5def",
+      "snapshot_id": "d2b0a1d3-508a-4c13-9138-5dbbc50f5def",
+      "manifest_hash": "88365d0225795428e042b4a3c6a6599589d54a78c30b79f6e68c264c563c4b02",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "reproduction/dataset/8804a320-8a9e-474a-8236-22579f9b738b",
+      "snapshot_id": "8804a320-8a9e-474a-8236-22579f9b738b",
+      "manifest_hash": "802df9354fc4127c4e32840e25c43544a910033dd0741086906da125b85bd200",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/inputs/dataset/1ea1c0e3-369a-4585-9006-f7d5faf626fe",
+      "snapshot_id": "1ea1c0e3-369a-4585-9006-f7d5faf626fe",
+      "manifest_hash": "4ac346078d92f1e179de071087abc44ac5f6c42fedaf2df4f3009ab1d924d8d8",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/replacement-inputs/dataset/35ca638f-f0d3-404e-b52c-0d4e83ba1b29",
+      "snapshot_id": "35ca638f-f0d3-404e-b52c-0d4e83ba1b29",
+      "manifest_hash": "5061808e589e7ac9ce73953879c4d8f7f170af91f1b2aefff4a11b30d474e13d",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    }
+  ],
+  "terminal_smoke_runs": [
+    {
+      "path": "backtest/formal-refusal-only/d9d27f56-7a83-4aa0-8ae8-d1c910786da1",
+      "run_id": "d9d27f56-7a83-4aa0-8ae8-d1c910786da1",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/input/research-runs/e801e4cd-6f39-4060-9186-f900232efe78",
+      "run_id": "e801e4cd-6f39-4060-9186-f900232efe78",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "backtest/momentum-replay/c0cac211-3444-4402-834d-7e275b2d289c/portfolio-runs/09132545-9345-4303-9d46-9872721610ab",
+      "run_id": "09132545-9345-4303-9d46-9872721610ab",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/momentum-replay/c0cac211-3444-4402-834d-7e275b2d289c/portfolio-runs/96a71c69-5f0e-4263-8b0e-c95bfcd378fe",
+      "run_id": "96a71c69-5f0e-4263-8b0e-c95bfcd378fe",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-replay/c0cac211-3444-4402-834d-7e275b2d289c/portfolio-runs/eef192dd-e9b9-4ecb-b61a-0b7de1a7b69e",
+      "run_id": "eef192dd-e9b9-4ecb-b61a-0b7de1a7b69e",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/e06b7e85-109a-484f-a7aa-c7d32d9fa18b",
+      "run_id": "e06b7e85-109a-484f-a7aa-c7d32d9fa18b",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/momentum-runs/e06b7e85-109a-484f-a7aa-c7d32d9fa18b/portfolio-runs/962439e1-3e97-4bcc-9193-1572eb10f7bd",
+      "run_id": "962439e1-3e97-4bcc-9193-1572eb10f7bd",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/e06b7e85-109a-484f-a7aa-c7d32d9fa18b/portfolio-runs/b2f62888-25ff-426f-ac5b-88c61635dd8d",
+      "run_id": "b2f62888-25ff-426f-ac5b-88c61635dd8d",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/e06b7e85-109a-484f-a7aa-c7d32d9fa18b/portfolio-runs/fc00f3ad-c453-4ca2-b338-d312050773cc",
+      "run_id": "fc00f3ad-c453-4ca2-b338-d312050773cc",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/retained-failure/0ff284c3-8b29-44f1-827a-c39f01021c2f",
+      "run_id": "0ff284c3-8b29-44f1-827a-c39f01021c2f",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/reversal-replay/ba935d48-abeb-4875-8446-afb93bc3668b/portfolio-runs/1b3535fc-414f-4ab6-8751-ce1220c022a7",
+      "run_id": "1b3535fc-414f-4ab6-8751-ce1220c022a7",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-replay/ba935d48-abeb-4875-8446-afb93bc3668b/portfolio-runs/b98657de-897f-4ab5-b16c-db88747bb481",
+      "run_id": "b98657de-897f-4ab5-b16c-db88747bb481",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/reversal-replay/ba935d48-abeb-4875-8446-afb93bc3668b/portfolio-runs/ca99bbed-dc38-4908-a0c8-b155bba7baff",
+      "run_id": "ca99bbed-dc38-4908-a0c8-b155bba7baff",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/780d2c74-c633-472f-ba12-9275ebebf3f6",
+      "run_id": "780d2c74-c633-472f-ba12-9275ebebf3f6",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/reversal-runs/780d2c74-c633-472f-ba12-9275ebebf3f6/portfolio-runs/2abc8815-5451-4bab-a2d9-a5cf47326722",
+      "run_id": "2abc8815-5451-4bab-a2d9-a5cf47326722",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/780d2c74-c633-472f-ba12-9275ebebf3f6/portfolio-runs/375f1ee6-8dcd-4707-9c1d-4a373783203c",
+      "run_id": "375f1ee6-8dcd-4707-9c1d-4a373783203c",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/780d2c74-c633-472f-ba12-9275ebebf3f6/portfolio-runs/6b034da6-90c2-48ef-95a0-2228dda39ad1",
+      "run_id": "6b034da6-90c2-48ef-95a0-2228dda39ad1",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/formal-gate/7fe1e8f4-c632-41eb-bc50-2c8a9d46c85f",
+      "run_id": "7fe1e8f4-c632-41eb-bc50-2c8a9d46c85f",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "portfolio/runs/03563d1b-05a1-46af-8ebb-65578047dece",
+      "run_id": "03563d1b-05a1-46af-8ebb-65578047dece",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/44e2f049-1dd0-47c0-a074-2f4f339500e3",
+      "run_id": "44e2f049-1dd0-47c0-a074-2f4f339500e3",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/845946df-a5ed-401b-aee7-537bb6e62274",
+      "run_id": "845946df-a5ed-401b-aee7-537bb6e62274",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/bb940d89-b259-41bf-8577-5e5d9a0cd2d5",
+      "run_id": "bb940d89-b259-41bf-8577-5e5d9a0cd2d5",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/bcdfe355-ea87-4a56-a25b-2f11e09a9299",
+      "run_id": "bcdfe355-ea87-4a56-a25b-2f11e09a9299",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/f5c071a9-f92b-4407-9c2a-654e411cff32",
+      "run_id": "f5c071a9-f92b-4407-9c2a-654e411cff32",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "research/replacement-runs/aa5d526b-ae07-417d-9b5b-870a32ec0d72",
+      "run_id": "aa5d526b-ae07-417d-9b5b-870a32ec0d72",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "research/runs/035a62c2-9b10-4aa6-bc3d-97fed25e5313",
+      "run_id": "035a62c2-9b10-4aa6-bc3d-97fed25e5313",
+      "status": "SUCCEEDED",
+      "files": 18
+    },
+    {
+      "path": "research/runs/cb774e1a-6d87-4663-b79d-b23da86455cc",
+      "run_id": "cb774e1a-6d87-4663-b79d-b23da86455cc",
+      "status": "SUCCEEDED",
+      "files": 18
+    }
+  ],
+  "P5_outcomes": {
+    "momentum": {
+      "run_id": "e06b7e85-109a-484f-a7aa-c7d32d9fa18b",
+      "fills": 1,
+      "state_sha256": "4627d9001a79a718587a1af7423ce3bf41a107cc863c54cb8754621ea8175536",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "e3da6431e63e68320e8c81654d6091cdfa900a7359a9af9f0bab8af3729a048d"
+    },
+    "reversal": {
+      "run_id": "780d2c74-c633-472f-ba12-9275ebebf3f6",
+      "fills": 1,
+      "state_sha256": "9e4c52d1fc54de76f367a7763f8cf04d8d6faefa5e58d4be93cb8729c5fe7cf3",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "29ae38a269e77424d746f99ef0baf7ac4f890e11135742a2f88193c562a08670"
+    }
+  },
+  "independent_developer_raw_reference": {
+    "momentum": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    },
+    "reversal": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    }
+  },
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+  "result": "PASS"
+}
