@@ -5,7 +5,7 @@ from copy import deepcopy
 from aqrp.core.errors import ContractError
 from aqrp.execution.model import LIVE, fee_upper, transition
 
-from .exact import F, money, round_cent
+from .exact import F, money, round_cent, thaw
 
 
 def initial_state(cash, assets):
@@ -76,7 +76,7 @@ def cash_values(s):
 
 
 def verify_cash_structure(s, cash):
-    """Prove lot classification, original short proceeds and settlement restrictions.
+    """Check internal lot relations; original executions require a separate proof.
 
     Settlement uses the durable Journal's completed session, not a mutable lot flag
     or the scheduler's current session. Negative available cash alone is not an
@@ -120,10 +120,10 @@ def verify_cash_structure(s, cash):
             entry = lot["entry_id"]
             if entry not in backing or entry in bound:
                 raise ContractError("INVALID_SHORT_PROCEEDS_BACKING")
-            original = backing[entry]
+            position_lot = backing[entry]
             if (
-                lot["amount"] != original["remaining"] * original["price"]
-                or lot["due"] != original["settles"]
+                lot["amount"] != position_lot["remaining"] * position_lot["price"]
+                or lot["due"] != position_lot["settles"]
             ):
                 raise ContractError("SHORT_PROCEEDS_OR_SETTLEMENT_MISMATCH")
             bound.add(entry)
@@ -132,10 +132,183 @@ def verify_cash_structure(s, cash):
     if any(cash[k] < 0 for k in ("U_free", "U_short", "S_set")) or cash["S_set"] > cash["cash_set"]:
         raise ContractError("RESTRICTED_CASH_SUBSET_FAILED")
     return {
-        "status": "EXACT_CASH_LOTS_AND_SHORT_BACKING_VERIFIED",
+        "status": "INTERNAL_LOT_STRUCTURE_CHECKED_EXECUTION_PROOF_REQUIRED",
         "cash_lots": len(ids),
         "short_entries": len(bound),
         "settled_through_session": settled_through,
+    }
+
+
+def verify_execution_backing(s, records):
+    """BT-005/007/008: rebuild lots from verified durable children/payloads.
+
+    Never use post_state, cached fills or cached lot prices as reconstruction
+    inputs. The caller supplies the prefix read under TransactionStore's lock.
+    Hash-chain validity is necessary but is not financial or OS authorization.
+    """
+    if records is None:
+        raise ContractError("DURABLE_EXECUTION_PROVENANCE_REQUIRED")
+    positions = {sid: [] for sid in s["assets"]}
+    costs = {sid: F(0) for sid in positions}
+    marks = costs.copy()
+    cashlots, fills, recoveries, sessions = [], [], [], []
+    session = -1
+    seen = set()
+
+    def execute(f):
+        sid, entry = f["security_id"], f["fill_id"]
+        q, p = f["signed_qty"], f["price"]
+        if (
+            sid not in positions
+            or entry in seen
+            or not q
+            or q.denominator != 1
+            or p < 0
+            or session < 0
+        ):
+            raise ContractError("INVALID_DURABLE_EXECUTION")
+        seen.add(entry)
+        lots = positions[sid]
+        old = sum((item["direction"] * item["remaining"] for item in lots), F(0))
+        closed = min(abs(old), abs(q)) if old * q < 0 else F(0)
+        opened = abs(q) - closed
+        new = old + q
+        if not new:
+            costs[sid] = F(0)
+        elif not old or old * new < 0:
+            costs[sid] = p
+        elif old * q > 0:
+            costs[sid] = (abs(old) * costs[sid] + abs(q) * p) / abs(new)
+        if q < 0:
+            for kind, n, suffix in (("FREE", closed, ":long-sale"), ("SHORT", opened, ":short")):
+                if n:
+                    cashlots.append(
+                        {
+                            "id": entry + suffix,
+                            "entry_id": entry if kind == "SHORT" else None,
+                            "kind": kind,
+                            "amount": n * p,
+                            "settled": False,
+                            "due": session + 1,
+                        }
+                    )
+        needed = closed
+        for lot in lots:
+            if not needed or not lot["remaining"] or lot["direction"] * q > 0:
+                continue
+            taken = min(needed, lot["remaining"])
+            if lot["direction"] == -1:
+                cash = next(
+                    c for c in cashlots if c["kind"] == "SHORT" and c["entry_id"] == lot["id"]
+                )
+                # Original gross per remaining share, derived from the raw Fill.
+                released = taken * lot["price"]
+                cash["amount"] -= released
+                if not cash["settled"]:
+                    cashlots.append(
+                        {
+                            **cash,
+                            "id": cash["id"] + ":released:" + str(len(cashlots)),
+                            "entry_id": None,
+                            "kind": "FREE",
+                            "amount": released,
+                        }
+                    )
+            lot["remaining"] -= taken
+            needed -= taken
+        if needed:
+            raise ContractError("DURABLE_FIFO_CLOSE_NOT_COVERED")
+        if opened:
+            lots.append(
+                {
+                    "id": entry,
+                    "direction": 1 if q > 0 else -1,
+                    "remaining": opened,
+                    "price": p,
+                    "settles": session + 1,
+                    "at": f["at"],
+                }
+            )
+
+    for encoded in records:
+        record = thaw(encoded)
+        payload, children = record["payload"], record["children"]
+        kinds = [c["kind"] for c in children]
+        if (
+            record["dispatch_key"][1] == 10
+            and kinds == ["AccountUpdated"]
+            and set(payload) == {"session"}
+        ):
+            value = payload["session"]
+            if type(value) is not int or value < 0 or value < session:
+                raise ContractError("INVALID_DURABLE_SETTLEMENT_ORDER")
+            session = value
+            sessions.append(value)
+            for c in cashlots:
+                if c["due"] <= value:
+                    c["settled"] = True
+        elif "MarketConfirmed" in kinds:
+            for row in payload["rows"]:
+                if row["price"] is not None:
+                    marks[row["security_id"]] = money(row["price"])
+        elif "SPLIT" in kinds:
+            ratio = money(payload["value"])
+            if ratio <= 0:
+                raise ContractError("INVALID_DURABLE_SPLIT")
+            for lot in positions[payload["security_id"]]:
+                lot["remaining"] *= ratio
+                lot["price"] /= ratio
+            costs[payload["security_id"]] /= ratio
+            marks[payload["security_id"]] /= ratio
+        elif "DELIST" in kinds:
+            sid = payload["security_id"]
+            q = -sum((item["direction"] * item["remaining"] for item in positions[sid]), F(0))
+            if q:
+                f = {
+                    "fill_id": payload["action_id"],
+                    "security_id": sid,
+                    "signed_qty": q,
+                    "price": money(payload["value"]),
+                    "fee": F(0),
+                    "at": record["dispatch_key"][0],
+                }
+                execute(f)
+                recoveries.append(f)
+        for child in children:
+            if child["kind"] == "Fill":
+                execute(child["fill"])
+                fills.append(child["fill"])
+    if s["fills"] != fills or len(s["liquidations"]) != len(recoveries):
+        raise ContractError("DURABLE_EXECUTION_COPY_MISMATCH")
+    for actual, expected in zip(s["liquidations"], recoveries):
+        if any(actual[k] != v for k, v in expected.items()):
+            raise ContractError("DURABLE_RECOVERY_EXECUTION_MISMATCH")
+    for sid, expected in positions.items():
+        actual = s["assets"][sid]
+        if (
+            len(actual["lots"]) != len(expected)
+            or any(any(a[k] != v for k, v in e.items()) for a, e in zip(actual["lots"], expected))
+            or actual["quantity"]
+            != sum((item["direction"] * item["remaining"] for item in expected), F(0))
+            or actual["cost"] != costs[sid]
+            or actual["mark"] != marks[sid]
+            or actual["valuation_adjustment"] != actual["quantity"] * (marks[sid] - costs[sid])
+        ):
+            raise ContractError("DURABLE_POSITION_LOT_BACKING_MISMATCH", sid)
+    if (
+        s["cashlots"] != cashlots
+        or s["session"] != session
+        or [e["settlement_session"] for e in s["journal"] if e["kind"] == "SETTLEMENT"] != sessions
+    ):
+        raise ContractError("DURABLE_CASH_PROCEEDS_OR_SETTLEMENT_MISMATCH")
+    return {
+        "status": "RAW_COMMITTED_EXECUTIONS_FIFO_AND_SETTLEMENT_VERIFIED",
+        "fills": len(fills),
+        "recoveries": len(recoveries),
+        "prefix_commits": len(records),
+        "S_set": sum(
+            (c["amount"] for c in cashlots if c["kind"] == "SHORT" and c["settled"]), F(0)
+        ),
     }
 
 

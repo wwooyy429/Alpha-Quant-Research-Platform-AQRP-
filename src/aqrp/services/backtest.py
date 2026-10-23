@@ -7,7 +7,13 @@ from pathlib import Path
 from aqrp.backtest.contracts import BacktestResult, EngineeringBacktestRequest, validate
 from aqrp.backtest.engine import Simulator
 from aqrp.backtest.exact import freeze, present, thaw
-from aqrp.backtest.ledger import account, assert_economic_identity, reconcile, verify_cash_structure
+from aqrp.backtest.ledger import (
+    account,
+    assert_economic_identity,
+    reconcile,
+    verify_cash_structure,
+    verify_execution_backing,
+)
 from aqrp.backtest.transactions import TransactionStore, guard_path
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.environment import runtime_manifest, verify_runtime
@@ -37,7 +43,7 @@ def _bound_read(ledger, run_id, name, manifest):
     return raw
 
 
-def _reconciled_account(state):
+def _reconciled_account(state, records=None):
     c = account(state)
     rebuilt = reconcile(state["initial_cash"], state["journal"], state["assets"])
     expected = {
@@ -62,11 +68,13 @@ def _reconciled_account(state):
     ):
         raise ContractError("RAW_JOURNAL_ACCOUNT_RECONCILIATION_FAILED")
     rebuilt["cash_structure"] = verify_cash_structure(state, c)
+    rebuilt["execution_backing"] = verify_execution_backing(state, records)
     return c, rebuilt
 
 
-def projection(state):
-    c, rebuilt = _reconciled_account(state)
+def projection(state, records=None):
+    c, rebuilt = _reconciled_account(state, records)
+    assert_economic_identity(state)
     return {
         "state_sha256": digest(freeze(state)),
         "account": present(c),
@@ -100,8 +108,8 @@ def _failure_snapshot(ledger, run, simulator, result):
         return
     try:
         state, records, files = TransactionStore(root / "transactions").verified_snapshot()
-        current, _ = _reconciled_account(state)
-        assert_economic_identity(state)
+        computed = projection(state, records)
+        current = computed["account"]
     except (Exception, KeyboardInterrupt) as recovery_error:
         evidence = {
             "status": "UNVERIFIED_COMMITTED_STATE",
@@ -119,6 +127,8 @@ def _failure_snapshot(ledger, run, simulator, result):
             "financial_state_known": True,
             "commit_count": len(records),
             "state_sha256": digest(freeze(state)),
+            "financial_proof_sha256": digest(computed["reconciliation"]),
+            "financial_proof_scope": "Shared full projection: raw durable execution/FIFO/settlement, Journal, equity and attribution",
             "prefix_sha256": records[-1]["sha256"] if records else digest(freeze(state)),
             "trace_scope": "Observed scheduler trace may stop before a published commit; committed-trace and transactions are the durable authority",
         }
@@ -195,19 +205,14 @@ def _execute_engineering(request, ledger, run, code_commit, policy):
         x = validate(request)
         simulator = Simulator(x, ledger.path(run), code_commit)
         state = simulator.run()
-        computed = projection(state)
+        durable, records, transaction_files = simulator.store.verified_snapshot()
+        if durable != state:
+            raise ContractError("FINAL_COMMITTED_STATE_DIVERGED")
+        computed = projection(durable, records)
         ledger.artifact(run, "state.json", freeze(state))
         ledger.artifact(run, "trace.json", simulator.trace)
         ledger.artifact(run, "portfolio-lineage.json", simulator.portfolios)
-        ledger.artifact(run, "transactions.json", simulator.store.records)
-        transaction_files = [
-            {
-                "path": p.relative_to(ledger.path(run)).as_posix(),
-                "sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
-            }
-            for p in sorted((ledger.path(run) / "transactions").iterdir())
-            if p.name != ".lock"
-        ]
+        ledger.artifact(run, "transactions.json", records)
         ledger.artifact(run, "transaction-files.json", transaction_files)
         result.update(status="SUCCEEDED", **computed)
         wire = canonical(result)
@@ -357,8 +362,11 @@ def replay_engineering(ledger_root, run_id, destination):
         raise ContractError("REPLAY_STATE_CHANGED")
     out = guard_path(Path(destination) / str(uuid.uuid4()))
     rerun = Simulator(validate(request), out, lineage["code_commit"])
-    rerun.run()
-    recomputed = projection(rerun.store.state)
+    replayed = rerun.run()
+    durable, records, _ = rerun.store.verified_snapshot()
+    if replayed != durable:
+        raise ContractError("REPLAY_COMMITTED_STATE_DIVERGED")
+    recomputed = projection(durable, records)
     expected = {k: original[k] for k in recomputed}
     if recomputed != expected:
         raise ContractError("NUMERICAL_SIMULATION_REPLAY_MISMATCH")

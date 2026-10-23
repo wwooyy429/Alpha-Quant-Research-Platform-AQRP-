@@ -9,7 +9,7 @@ import pytest
 from aqrp.backtest.contracts import EngineeringBacktestRequest
 from aqrp.backtest.engine import Simulator
 from aqrp.backtest.exact import F, freeze, thaw
-from aqrp.backtest.ledger import account, accrue, settle, split
+from aqrp.backtest.ledger import account, accrue, record_valuation, settle, split
 from aqrp.backtest.synthetic import fixture_request
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.errors import ContractError
@@ -17,6 +17,32 @@ from aqrp.experiments.ledger import ExperimentLedger
 from aqrp.services.backtest import _reconciled_account, projection
 
 from .test_exact_ledger import book, fill
+
+
+def source_event(kind, payload, phase=10):
+    """Explicit read-side unit inputs; public-service tests use actual durable files."""
+    return {
+        "payload": payload,
+        "children": [{"kind": kind}],
+        "dispatch_key": ["2024-02-01T09:00:00Z", phase, 1],
+    }
+
+
+def begin_history(s):
+    settle(s, 0, "unit-start")
+    s["session"] = 0
+    return [
+        source_event("AccountUpdated", {"session": 0}),
+        source_event("MarketConfirmed", {"rows": [{"security_id": "A", "price": "100"}]}, 20),
+    ]
+
+
+def fill_source(f):
+    return {
+        "payload": {},
+        "children": [{"kind": "Fill", "fill": deepcopy(f)}],
+        "dispatch_key": [f["at"], 70, 1],
+    }
 
 
 def short_request():
@@ -120,10 +146,11 @@ def test_real_service_rejects_constant_total_bucket_reclassification(
 
 def test_receivable_and_payable_cannot_cancel_each_other():
     s = book()
+    records = begin_history(s)
     accrue(s, "right", "A", F(7), kind="DIVIDEND_EX")
     accrue(s, "obligation", "A", F(-3), kind="DIVIDEND_EX")
     assert [account(s)[k] for k in ("receivable", "payable", "equity")] == [7, 3, 1004]
-    _reconciled_account(s)
+    _reconciled_account(s, records)
     s["rights"]["right"]["amount"] += 1
     s["rights"]["obligation"]["amount"] -= 1
     assert account(s)["equity"] == 1004
@@ -136,10 +163,12 @@ def test_receivable_and_payable_cannot_cancel_each_other():
 )
 def test_all_six_nonnegative_bucket_transfers_fail_normal_projection(source, destination):
     s = book()
+    records = begin_history(s)
     fill(s, 2, name="long")
     fill(s, -3, name="cross")
     assert [account(s)[k] for k in ("cash_set", "U_free", "U_short")] == [798, 200, 100]
-    _reconciled_account(s)
+    records += [fill_source(f) for f in s["fills"]]
+    _reconciled_account(s, records)
     transfer(s, source, destination)
     c = account(s)
     assert min(c[k] for k in ("cash_set", "U_free", "U_short")) >= 0
@@ -160,28 +189,43 @@ def test_individual_financial_accounts_cannot_be_relabelled(field):
 
 def test_valid_margin_loss_does_not_require_nonnegative_available():
     s = book()
+    records = begin_history(s)
     fill(s, -2, name="short")
+    records.append(fill_source(s["fills"][0]))
     s["assets"]["A"]["mark"] = F(1000)
+    record_valuation(s, "A", "margin-mark")
+    records.append(
+        source_event("MarketConfirmed", {"rows": [{"security_id": "A", "price": "1000"}]}, 20)
+    )
     # Actual available = 999 - 2000 = -1001, not an unknown ledger.
-    assert _reconciled_account(s)[0]["available"] == -1001
+    assert _reconciled_account(s, records)[0]["available"] == -1001
 
 
 @pytest.mark.parametrize("settled", [False, True])
 @pytest.mark.parametrize("ratio", [1, 2])
 def test_legal_partial_short_cover_and_settlement_are_exact(settled, ratio):
     s = book()
+    records = begin_history(s)
     fill(s, -2, name="short")
+    records.append(fill_source(s["fills"][0]))
     if ratio == 2:
         split(s, "split", "A", F(2))
+        records.append(source_event("SPLIT", {"security_id": "A", "value": "2"}))
     if settled:
         settle(s, 1, "settle-first")
+        s["session"] = 1
+        records.append(source_event("AccountUpdated", {"session": 1}))
     fill(s, ratio, 90 / ratio, name="cover")
-    _reconciled_account(s)
+    records.append(fill_source(s["fills"][-1]))
+    _reconciled_account(s, records)
     settle(s, 1, "settle-final")
-    c, _ = _reconciled_account(s)
+    s["session"] = 1
+    records.append(source_event("AccountUpdated", {"session": 1}))
+    c, _ = _reconciled_account(s, records)
     assert [c[k] for k in ("cash_set", "U_free", "U_short", "S_set")] == [1108, 0, 0, 100]
     fill(s, ratio, 90 / ratio, session=1, name="cover-rest")
-    assert _reconciled_account(s)[0]["S_set"] == 0
+    records.append(fill_source(s["fills"][-1]))
+    assert _reconciled_account(s, records)[0]["S_set"] == 0
 
 
 @pytest.mark.parametrize(

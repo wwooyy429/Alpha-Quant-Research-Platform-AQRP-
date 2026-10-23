@@ -1,0 +1,35 @@
+{
+  "original_reviewed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "original_verdict": "G2 BLOCKED / REQUEST CHANGES",
+  "findings": {
+    "001": "CLOSED_FIX_VERIFIED_AT_35F93D6",
+    "002": "CLOSED_FIX_VERIFIED_AT_35F93D6",
+    "003": "OPEN_PENDING_INDEPENDENT_RECHECK"
+  },
+  "version": "0.5.0.dev4",
+  "previous_bundle": "a741748c115cd98ecbc2fdfed784cdc5636aea44362ef6ecc81a15933a3b3d94",
+  "current_bundle": "40f6633a65cd08a7aaf21f4269797fd5f219a00c8cfd7ba544b844ff9d7e8c9f",
+  "financial_code_changes": [
+    {
+      "path": "src/aqrp/__init__.py",
+      "old_sha256": "b3ac431d00917a10dc82e4f1c3bfa3aa31085d2e2ab5cc0c7d43742da9d936f6",
+      "new_sha256": "b3ed486cf69937bc37985ad1a5448f2dc44b007c35ca705c45775417a601d265"
+    },
+    {
+      "path": "src/aqrp/backtest/ledger.py",
+      "old_sha256": "63546018065f97a50469d9d96930466ff475e8b65448f372af636ea7bb2aee93",
+      "new_sha256": "428935a8a6764d5ac53687f825694e962220444391e7e15039d3bca83b5aac5d"
+    },
+    {
+      "path": "src/aqrp/services/backtest.py",
+      "old_sha256": "97430c88a0c7871696af1a7e96901fbe4c0100ac0b5d61bdf186d6856f47952d",
+      "new_sha256": "59d0e492f86a68417dfd718646a3dee729d5e3f0714dcce409dde6d683f3b04a"
+    }
+  ],
+  "dependencies_unchanged": true,
+  "original_12_design_files_unchanged": true,
+  "preserved_files": 3444,
+  "formal_Test_executed": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED"
+}

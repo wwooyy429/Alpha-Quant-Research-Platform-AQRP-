@@ -1,0 +1,24 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "archives": [
+    {
+      "path": "independent-sdk-artifacts.zip",
+      "bytes": 114163145,
+      "sha256": "6d810ecbb6687b84d2f34457f0b0c8ee1f5315cf8cdec26a99f52e6f403a44b1"
+    },
+    {
+      "path": "reviewer-production-artifacts.zip",
+      "bytes": 2150759,
+      "sha256": "7c8ccc4471e2d1097efcf249fa457bc88eccffe685c01b36c0ac791e68026a5b"
+    },
+    {
+      "path": "developer-received/Evidence.zip",
+      "bytes": 471751695,
+      "sha256": "63ba0c413417fbeac30d092815350584dcb14e3c8b661afa98a7e042140e296a"
+    }
+  ],
+  "SDK_selected_files": 7446,
+  "probe_files": 936,
+  "SDK_omissions": "Runtime venv/cache/bootstrap tools not part of selected raw evidence; original pins/install logs and fixed source/wheel retained",
+  "developer_original_contains": "Original dual-OS ZIPs, fixed source, developer SDK and retained failures; independently verified, not reviewer execution"
+}

@@ -1,0 +1,22 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "executor": "GPT Work supplemental reviewer",
+  "scope": "Recomputed-hash financial inconsistency fault; no native permission/ACL operation or trading",
+  "status": "FAILED",
+  "verification": "UNVERIFIED_COMMITTED_STATE",
+  "expected_verification": "UNVERIFIED_COMMITTED_STATE",
+  "last_committed_account_expected_absent": true,
+  "detail": {
+    "journal_cash_buckets": {
+      "cash_set": "8979/10",
+      "U_free": "0",
+      "U_short": "999/10"
+    },
+    "post_state_cash_set": "8989/10",
+    "post_state_U_short": "989/10",
+    "aggregate_cash_unchanged": true,
+    "last_committed_account": null
+  },
+  "result": "PASS",
+  "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\short-bucket-reconciliation"
+}

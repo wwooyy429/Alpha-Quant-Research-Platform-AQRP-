@@ -143,3 +143,6 @@ Phase5 repair candidate 0.5.0.dev2: [G2 repair review](docs/audits/phase-5/g2-bf
 
 
 Phase5 0.5.0.dev3: [G2-003 repair candidate](docs/audits/phase-5/g2-35f93d6/REVIEW_PACKAGE.md). At35f93d6 original001/002 CLOSED, new003 High OPEN; independent recheck pending.
+
+
+Phase5 0.5.0.dev4: [G2-003 repair candidate](docs/audits/phase-5/g2-bf5e5a8/REVIEW_PACKAGE.md). Atbf5e5a8 original001/002 CLOSED, same003 High PARTIAL FIX/OPEN; independent recheck pending.

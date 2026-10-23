@@ -1,0 +1,55 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "executor": "GPT Work supplemental reviewer",
+  "cases": [
+    {
+      "case": "BEFORE_COMMIT-KeyboardInterrupt",
+      "transactions": 8,
+      "full_committed_trace_equals_raw_records": true,
+      "failed_state_equals_durable_post_state": true,
+      "metadata_state_prefix_hashes_exact": true,
+      "manifest_all_actual_bytes_verified": true
+    },
+    {
+      "case": "BEFORE_COMMIT-ContractError",
+      "transactions": 8,
+      "full_committed_trace_equals_raw_records": true,
+      "failed_state_equals_durable_post_state": true,
+      "metadata_state_prefix_hashes_exact": true,
+      "manifest_all_actual_bytes_verified": true
+    },
+    {
+      "case": "BEFORE_COMMIT-RuntimeError",
+      "transactions": 8,
+      "full_committed_trace_equals_raw_records": true,
+      "failed_state_equals_durable_post_state": true,
+      "metadata_state_prefix_hashes_exact": true,
+      "manifest_all_actual_bytes_verified": true
+    },
+    {
+      "case": "AFTER_COMMIT-KeyboardInterrupt",
+      "transactions": 9,
+      "full_committed_trace_equals_raw_records": true,
+      "failed_state_equals_durable_post_state": true,
+      "metadata_state_prefix_hashes_exact": true,
+      "manifest_all_actual_bytes_verified": true
+    },
+    {
+      "case": "AFTER_COMMIT-ContractError",
+      "transactions": 9,
+      "full_committed_trace_equals_raw_records": true,
+      "failed_state_equals_durable_post_state": true,
+      "metadata_state_prefix_hashes_exact": true,
+      "manifest_all_actual_bytes_verified": true
+    },
+    {
+      "case": "AFTER_COMMIT-RuntimeError",
+      "transactions": 9,
+      "full_committed_trace_equals_raw_records": true,
+      "failed_state_equals_durable_post_state": true,
+      "metadata_state_prefix_hashes_exact": true,
+      "manifest_all_actual_bytes_verified": true
+    }
+  ],
+  "result": "PASS"
+}

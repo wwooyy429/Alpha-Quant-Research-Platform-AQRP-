@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p5-g2-003-recheck-bf5e5a8-independent\independent_cash_structure_controls.py", line 52, in <module>
+    valid=service.projection(s);rec('legal-RP-separately',[Q(valid['account'][k]) for k in ['receivable','payable','equity']],[Q(7),Q(3),Q(1004)])
+  File "E:\WORK\AQRP-runs\gpt-p5-bf5e5a8-20261023\aqrp-be90b0d1-9aad-4527-bba8-11a8e5de700e\venv\Lib\site-packages\aqrp\services\backtest.py", line 81, in projection
+    "performance": present(performance(state)),
+                           ~~~~~~~~~~~^^^^^^^
+  File "E:\WORK\AQRP-runs\gpt-p5-bf5e5a8-20261023\aqrp-be90b0d1-9aad-4527-bba8-11a8e5de700e\venv\Lib\site-packages\aqrp\performance\metrics.py", line 165, in performance
+    raise ContractError("LONG_SHORT_ATTRIBUTION_MISMATCH")
+aqrp.core.errors.ContractError: LONG_SHORT_ATTRIBUTION_MISMATCH: 

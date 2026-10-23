@@ -1,0 +1,75 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "reviewer": "GPT Work supplemental reviewer",
+  "G2": "BLOCKED / REQUEST CHANGES",
+  "finding001": "CLOSED — FIX VERIFIED at35f93d6; current independent boundary regression PASS",
+  "finding002": "CLOSED — FIX VERIFIED at35f93d6; current independent direction/legs regression PASS",
+  "findings": [
+    {
+      "id": "WORK-P5-G2-003",
+      "severity": "High",
+      "status": "OPEN / PARTIAL FIX",
+      "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+      "prior_sha": "35f93d640a2304121131d947a465f57a951cf63f",
+      "title": "已交收SHORT所得仍可由两个相互自证的可变lot字段错误认证，异常/取消公开多1现金",
+      "locations": [
+        {
+          "path": "src/aqrp/backtest/ledger.py",
+          "start": 123,
+          "end": 128
+        },
+        {
+          "path": "src/aqrp/services/backtest.py",
+          "start": 100,
+          "end": 103
+        }
+      ],
+      "basis": [
+        "CASH_BUCKETS_AND_PROJECTION.md: S_set is original FIFO gross short proceeds backed by original opening Fill, adjusted by actual splits/covers; A=C_set-S_set-M-O-P-Z",
+        "BACKTEST_CONTRACT.md: independently reconstruct from original Fill/cashflow; AccountState cannot prove itself",
+        "003 repair requires failure recovery to certify only proven financial state; otherwise FAILED+COMMITTED_STATE_UNVERIFIED and no known account"
+      ],
+      "reproduction": {
+        "request": "Same original synthetic LONG_SHORT gross0.4/net0 request",
+        "boundary": "Public service AFTER_COMMIT of actual settlement session2",
+        "mutations": [
+          "post_state.assets.SYNTH:1.lots[0].price:99.9 ->98.9",
+          "post_state.cashlots[0].amount:99.9 ->98.9"
+        ],
+        "post_hash_and_commit_hash_recomputed": true,
+        "original_journal_fills_payload_children_unchanged": true,
+        "correct_cash_set": "997.8",
+        "correct_S_set": "99.9",
+        "correct_available": "797.9",
+        "claimed_S_set": "98.9",
+        "claimed_available": "798.9",
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "financial_state_known": true,
+        "ContractError": "FAILED but false VERIFIED and known account",
+        "KeyboardInterrupt": "CANCELLED but false VERIFIED and known account",
+        "chain_manifest_getter_independently_verified": true
+      },
+      "root_cause": "verify_cash_structure calls mutable post_state asset lot original; paired changes keep amount=remaining*price. S_set is a cash_set subset absent from aggregate Journal balance comparison. Failure path calls shared gate+average-cost economic identity but omits normal performance attribution check, which rejects this same state. Original Fill witness remains99.9.",
+      "required_fix": [
+        "Reconstruct original SHORT gross-proceeds and remaining FIFO restriction from durable original Fill/SPLIT/actual cover and settlement records; do not use two mutable post_state lot fields as independent evidence",
+        "Run the same necessary financial proof before success and before failed/cancelled known-account publication; if unproven force FAILED+COMMITTED_STATE_UNVERIFIED, financial_state_known=false, no last_committed_account/known financial snapshot",
+        "Preserve original commit/failure evidence; add current paired-field counterexample for ContractError and KeyboardInterrupt, original six directions/RP and legal settled/unsettled partial cover/split/margin controls; submit new fixed SHA and complete SDK/dual-OS raw evidence"
+      ],
+      "evidence": [
+        "SETTLED_SHORT_BACKING_PROBE.json",
+        "settled_short_backing_probe.py",
+        "INDEPENDENT_CASH_STRUCTURE_CONTROLS.json",
+        "reviewer-production-artifacts.zip",
+        "REVIEWED_SOURCE_CONTEXT.txt"
+      ],
+      "security_scope": "Synthetic financial consistency injection with recomputed hashes, same class as original003; not native ACL bypass, deployment or actual funds loss"
+    }
+  ],
+  "new_separate_findings": [],
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "full_historical_host": "NOT VERIFIED; accepted package/lock/oldRef/result replay scope only",
+  "user_phase_acceptance": false,
+  "merge_tag_deploy_live_P6": false
+}

@@ -1,0 +1,81 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "executor": "GPT Work supplemental reviewer",
+  "installed_aqrp": "E:\\WORK\\AQRP-runs\\gpt-p5-bf5e5a8-20261023\\aqrp-be90b0d1-9aad-4527-bba8-11a8e5de700e\\venv\\Lib\\site-packages\\aqrp\\__init__.py",
+  "records": [
+    {
+      "case": "CONTROL",
+      "status": "FAILED",
+      "verification": "VERIFIED_COMMITTED_PREFIX",
+      "financial_state_known": true,
+      "expected_financial_state_known": true,
+      "known_account_present": true,
+      "expected_known_account_present": true,
+      "original_fill_price": "99.9",
+      "original_Journal_cash_set": "997.8",
+      "correct_S_set": "999/10",
+      "correct_available": "7979/10",
+      "claimed_S_set": "99.9",
+      "claimed_available": "797.9",
+      "changed_state_fields": [],
+      "raw_Journal_and_Fills_unchanged": true,
+      "hash_chain_manifest_getter_verified": true,
+      "core_gate_accepted": true,
+      "normal_full_projection": "ACCEPTED",
+      "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\settled-short-backing-probe\\CONTROL",
+      "result": "PASS"
+    },
+    {
+      "case": "CONTRACT_ERROR",
+      "status": "FAILED",
+      "verification": "VERIFIED_COMMITTED_PREFIX",
+      "financial_state_known": true,
+      "expected_financial_state_known": false,
+      "known_account_present": true,
+      "expected_known_account_present": false,
+      "original_fill_price": "99.9",
+      "original_Journal_cash_set": "997.8",
+      "correct_S_set": "999/10",
+      "correct_available": "7979/10",
+      "claimed_S_set": "98.9",
+      "claimed_available": "798.9",
+      "changed_state_fields": [
+        "/assets/SYNTH:1/lots/0/price",
+        "/cashlots/0/amount"
+      ],
+      "raw_Journal_and_Fills_unchanged": true,
+      "hash_chain_manifest_getter_verified": true,
+      "core_gate_accepted": true,
+      "normal_full_projection": "LONG_SHORT_ATTRIBUTION_MISMATCH",
+      "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\settled-short-backing-probe\\CONTRACT_ERROR",
+      "result": "REPRODUCED_MISMATCH"
+    },
+    {
+      "case": "KEYBOARD_INTERRUPT",
+      "status": "CANCELLED",
+      "verification": "VERIFIED_COMMITTED_PREFIX",
+      "financial_state_known": true,
+      "expected_financial_state_known": false,
+      "known_account_present": true,
+      "expected_known_account_present": false,
+      "original_fill_price": "99.9",
+      "original_Journal_cash_set": "997.8",
+      "correct_S_set": "999/10",
+      "correct_available": "7979/10",
+      "claimed_S_set": "98.9",
+      "claimed_available": "798.9",
+      "changed_state_fields": [
+        "/assets/SYNTH:1/lots/0/price",
+        "/cashlots/0/amount"
+      ],
+      "raw_Journal_and_Fills_unchanged": true,
+      "hash_chain_manifest_getter_verified": true,
+      "core_gate_accepted": true,
+      "normal_full_projection": "LONG_SHORT_ATTRIBUTION_MISMATCH",
+      "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\settled-short-backing-probe\\KEYBOARD_INTERRUPT",
+      "result": "REPRODUCED_MISMATCH"
+    }
+  ],
+  "result": "REPRODUCED_MISMATCH",
+  "scope": "Synthetic public service AFTER_COMMIT recovery financial consistency, no native privileges or formal Test"
+}

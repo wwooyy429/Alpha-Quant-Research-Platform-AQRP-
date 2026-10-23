@@ -1,0 +1,734 @@
+{
+  "fixed_sha": "bf5e5a89209f2dd24042cd806626f832b531de52",
+  "executor": "GPT Work supplemental reviewer",
+  "scope": "Actual installed-wheel service/commit and financial direction/leg controls, synthetic data only",
+  "records": [
+    {
+      "id": "BEFORE_COMMIT-KeyboardInterrupt",
+      "actual": {
+        "status": "CANCELLED",
+        "cash": "1000",
+        "commits": 8,
+        "transactions": 8,
+        "committed_trace": 8,
+        "cash_from_raw_commit": "1000",
+        "qty": "0",
+        "fees": "0",
+        "fills": 0,
+        "remaining_capacity": "20",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "expected": {
+        "status": "CANCELLED",
+        "cash": "1000",
+        "commits": 8,
+        "transactions": 8,
+        "committed_trace": 8,
+        "cash_from_raw_commit": "1000",
+        "qty": "0",
+        "fees": "0",
+        "fills": 0,
+        "remaining_capacity": "20",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "status": "PASS",
+      "detail": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\BEFORE_COMMIT-KeyboardInterrupt\\e72a1c87-6bdf-4d7c-bec3-21aed33c787f"
+    },
+    {
+      "id": "BEFORE_COMMIT-ContractError",
+      "actual": {
+        "status": "FAILED",
+        "cash": "1000",
+        "commits": 8,
+        "transactions": 8,
+        "committed_trace": 8,
+        "cash_from_raw_commit": "1000",
+        "qty": "0",
+        "fees": "0",
+        "fills": 0,
+        "remaining_capacity": "20",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "cash": "1000",
+        "commits": 8,
+        "transactions": 8,
+        "committed_trace": 8,
+        "cash_from_raw_commit": "1000",
+        "qty": "0",
+        "fees": "0",
+        "fills": 0,
+        "remaining_capacity": "20",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "status": "PASS",
+      "detail": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\BEFORE_COMMIT-ContractError\\b2ecab97-7970-4c6f-8a85-53102ad5f24c"
+    },
+    {
+      "id": "BEFORE_COMMIT-RuntimeError",
+      "actual": {
+        "status": "FAILED",
+        "cash": "1000",
+        "commits": 8,
+        "transactions": 8,
+        "committed_trace": 8,
+        "cash_from_raw_commit": "1000",
+        "qty": "0",
+        "fees": "0",
+        "fills": 0,
+        "remaining_capacity": "20",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "cash": "1000",
+        "commits": 8,
+        "transactions": 8,
+        "committed_trace": 8,
+        "cash_from_raw_commit": "1000",
+        "qty": "0",
+        "fees": "0",
+        "fills": 0,
+        "remaining_capacity": "20",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": true
+      },
+      "status": "PASS",
+      "detail": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\BEFORE_COMMIT-RuntimeError\\f9e95ea1-1fd4-42bb-a9cb-f45c81eb520d"
+    },
+    {
+      "id": "AFTER_COMMIT-KeyboardInterrupt",
+      "actual": {
+        "status": "CANCELLED",
+        "cash": "98.1",
+        "commits": 9,
+        "transactions": 9,
+        "committed_trace": 9,
+        "cash_from_raw_commit": "981/10",
+        "qty": "9",
+        "fees": "1",
+        "fills": 1,
+        "remaining_capacity": "11",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "expected": {
+        "status": "CANCELLED",
+        "cash": "98.1",
+        "commits": 9,
+        "transactions": 9,
+        "committed_trace": 9,
+        "cash_from_raw_commit": "981/10",
+        "qty": "9",
+        "fees": "1",
+        "fills": 1,
+        "remaining_capacity": "11",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "status": "PASS",
+      "detail": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\AFTER_COMMIT-KeyboardInterrupt\\d044e559-1623-4b29-a68b-316c695f906c"
+    },
+    {
+      "id": "AFTER_COMMIT-ContractError",
+      "actual": {
+        "status": "FAILED",
+        "cash": "98.1",
+        "commits": 9,
+        "transactions": 9,
+        "committed_trace": 9,
+        "cash_from_raw_commit": "981/10",
+        "qty": "9",
+        "fees": "1",
+        "fills": 1,
+        "remaining_capacity": "11",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "cash": "98.1",
+        "commits": 9,
+        "transactions": 9,
+        "committed_trace": 9,
+        "cash_from_raw_commit": "981/10",
+        "qty": "9",
+        "fees": "1",
+        "fills": 1,
+        "remaining_capacity": "11",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": false
+      },
+      "status": "PASS",
+      "detail": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\AFTER_COMMIT-ContractError\\ea337d70-3f2a-474b-aff5-54ae8ad6da71"
+    },
+    {
+      "id": "AFTER_COMMIT-RuntimeError",
+      "actual": {
+        "status": "FAILED",
+        "cash": "98.1",
+        "commits": 9,
+        "transactions": 9,
+        "committed_trace": 9,
+        "cash_from_raw_commit": "981/10",
+        "qty": "9",
+        "fees": "1",
+        "fills": 1,
+        "remaining_capacity": "11",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "cash": "98.1",
+        "commits": 9,
+        "transactions": 9,
+        "committed_trace": 9,
+        "cash_from_raw_commit": "981/10",
+        "qty": "9",
+        "fees": "1",
+        "fills": 1,
+        "remaining_capacity": "11",
+        "failed_state_equals_latest_commit": true,
+        "verification": "VERIFIED_COMMITTED_PREFIX",
+        "runtime_error_reraised": true
+      },
+      "status": "PASS",
+      "detail": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\AFTER_COMMIT-RuntimeError\\6db9cfb0-4c93-4c24-9535-dd237d42d2c9"
+    },
+    {
+      "id": "UNKNOWN_chain",
+      "actual": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "status": "PASS",
+      "detail": {
+        "run": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\UNKNOWN-chain\\2b52de62-0e3c-4591-a6f7-2caad76b6721",
+        "reasons": [
+          "INDEPENDENT_CAPTURED_FAULT",
+          "COMMITTED_STATE_UNVERIFIED"
+        ],
+        "claimed_account": null
+      }
+    },
+    {
+      "id": "UNKNOWN_read_denied",
+      "actual": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "status": "PASS",
+      "detail": {
+        "run": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\UNKNOWN-read_denied\\50b14506-11be-4e23-9ef4-302a2e732532",
+        "reasons": [
+          "INDEPENDENT_CAPTURED_FAULT",
+          "COMMITTED_STATE_UNVERIFIED"
+        ],
+        "claimed_account": null
+      }
+    },
+    {
+      "id": "UNKNOWN_total_cash",
+      "actual": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "status": "PASS",
+      "detail": {
+        "run": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\UNKNOWN-total_cash\\ff5b28a8-6691-45f9-8348-5cd624014d3d",
+        "reasons": [
+          "INDEPENDENT_CAPTURED_FAULT",
+          "COMMITTED_STATE_UNVERIFIED"
+        ],
+        "claimed_account": null
+      }
+    },
+    {
+      "id": "UNKNOWN_bucket_reclassification",
+      "actual": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "verification": "UNVERIFIED_COMMITTED_STATE",
+        "last_committed_account_present": false,
+        "failed_state_present": false,
+        "transactions_present": false
+      },
+      "status": "PASS",
+      "detail": {
+        "run": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair\\UNKNOWN-bucket_reclassification\\926d01bf-8825-43f7-8a11-679bbcb1379b",
+        "reasons": [
+          "INDEPENDENT_CAPTURED_FAULT",
+          "COMMITTED_STATE_UNVERIFIED"
+        ],
+        "claimed_account": null,
+        "raw_Journal_cash_buckets": {
+          "cash_set": "981/10",
+          "U_free": "0",
+          "U_short": "0"
+        },
+        "post_state_cash_set": "971/10",
+        "post_state_U_free": "1",
+        "aggregate_cash_matches": true
+      }
+    },
+    {
+      "id": "LEGS_0_3",
+      "actual": {
+        "direction": "LONG",
+        "execution_side": "BUY",
+        "position_before": "0",
+        "position_after": "3",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "LONG",
+        "execution_side": "BUY",
+        "position_before": "0",
+        "position_after": "3",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_0_-3",
+      "actual": {
+        "direction": "SHORT",
+        "execution_side": "SELL",
+        "position_before": "0",
+        "position_after": "-3",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "SHORT",
+        "execution_side": "SELL",
+        "position_before": "0",
+        "position_after": "-3",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_2_3",
+      "actual": {
+        "direction": "LONG",
+        "execution_side": "BUY",
+        "position_before": "2",
+        "position_after": "5",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "LONG",
+        "execution_side": "BUY",
+        "position_before": "2",
+        "position_after": "5",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_-2_-3",
+      "actual": {
+        "direction": "SHORT",
+        "execution_side": "SELL",
+        "position_before": "-2",
+        "position_after": "-5",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "SHORT",
+        "execution_side": "SELL",
+        "position_before": "-2",
+        "position_after": "-5",
+        "position_legs": [
+          {
+            "effect": "OPEN",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "1",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_3_-2",
+      "actual": {
+        "direction": "LONG",
+        "execution_side": "SELL",
+        "position_before": "3",
+        "position_after": "1",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "LONG",
+            "quantity": "2",
+            "signed_qty": "-2",
+            "fee": "1",
+            "realized_gross": "2"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "LONG",
+        "execution_side": "SELL",
+        "position_before": "3",
+        "position_after": "1",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "LONG",
+            "quantity": "2",
+            "signed_qty": "-2",
+            "fee": "1",
+            "realized_gross": "2"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_-3_2",
+      "actual": {
+        "direction": "SHORT",
+        "execution_side": "BUY",
+        "position_before": "-3",
+        "position_after": "-1",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "SHORT",
+            "quantity": "2",
+            "signed_qty": "2",
+            "fee": "1",
+            "realized_gross": "-2"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "SHORT",
+        "execution_side": "BUY",
+        "position_before": "-3",
+        "position_after": "-1",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "SHORT",
+            "quantity": "2",
+            "signed_qty": "2",
+            "fee": "1",
+            "realized_gross": "-2"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_3_-3",
+      "actual": {
+        "direction": "LONG",
+        "execution_side": "SELL",
+        "position_before": "3",
+        "position_after": "0",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "1",
+            "realized_gross": "3"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "LONG",
+        "execution_side": "SELL",
+        "position_before": "3",
+        "position_after": "0",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "1",
+            "realized_gross": "3"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_-3_3",
+      "actual": {
+        "direction": "SHORT",
+        "execution_side": "BUY",
+        "position_before": "-3",
+        "position_after": "0",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "1",
+            "realized_gross": "-3"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "SHORT",
+        "execution_side": "BUY",
+        "position_before": "-3",
+        "position_after": "0",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "1",
+            "realized_gross": "-3"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_2_-5",
+      "actual": {
+        "direction": "MIXED",
+        "execution_side": "SELL",
+        "position_before": "2",
+        "position_after": "-3",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "LONG",
+            "quantity": "2",
+            "signed_qty": "-2",
+            "fee": "2/5",
+            "realized_gross": "2"
+          },
+          {
+            "effect": "OPEN",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "3/5",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "MIXED",
+        "execution_side": "SELL",
+        "position_before": "2",
+        "position_after": "-3",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "LONG",
+            "quantity": "2",
+            "signed_qty": "-2",
+            "fee": "2/5",
+            "realized_gross": "2"
+          },
+          {
+            "effect": "OPEN",
+            "direction": "SHORT",
+            "quantity": "3",
+            "signed_qty": "-3",
+            "fee": "3/5",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "id": "LEGS_-2_5",
+      "actual": {
+        "direction": "MIXED",
+        "execution_side": "BUY",
+        "position_before": "-2",
+        "position_after": "3",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "SHORT",
+            "quantity": "2",
+            "signed_qty": "2",
+            "fee": "2/5",
+            "realized_gross": "-2"
+          },
+          {
+            "effect": "OPEN",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "3/5",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "expected": {
+        "direction": "MIXED",
+        "execution_side": "BUY",
+        "position_before": "-2",
+        "position_after": "3",
+        "position_legs": [
+          {
+            "effect": "CLOSE",
+            "direction": "SHORT",
+            "quantity": "2",
+            "signed_qty": "2",
+            "fee": "2/5",
+            "realized_gross": "-2"
+          },
+          {
+            "effect": "OPEN",
+            "direction": "LONG",
+            "quantity": "3",
+            "signed_qty": "3",
+            "fee": "3/5",
+            "realized_gross": "0"
+          }
+        ]
+      },
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "PASS": 20,
+  "MISMATCH": 0,
+  "artifact_root": "E:\\WORK\\AQRP-audits\\p5-bf5e5a8\\extended-repair"
+}
