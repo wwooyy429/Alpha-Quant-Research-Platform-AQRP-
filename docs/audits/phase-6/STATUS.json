@@ -1,7 +1,7 @@
 {
   "phase": 6,
-  "current": "G1_BLOCKED_DESIGN_REVISED_PENDING_FIXED_SHA_RECHECK",
-  "G1": "PLAN_BLOCKED_AT_F7A1A68; REVISED_CANDIDATE_NOT_INDEPENDENTLY_PASSED",
+  "current": "G1_PLAN_PASS_WITH_CONDITIONS_AWAITING_HUMAN_CHOICES_AND_IMPLEMENTATION_AUTHORIZATION",
+  "G1": "PLAN PASS WITH CONDITIONS AT E71F6F0",
   "G2": "NOT_APPLICABLE_IMPLEMENTATION_NOT_STARTED",
   "requirements": 8,
   "tiers": {
@@ -22,16 +22,16 @@
   "full_historical_host": "NOT VERIFIED beyond accepted package/lock/oldRef/result replay",
   "actual_P6_business_or_browser_tests": "NONE; inherited P5 regression is not P6 implementation evidence",
   "dependency_resolution": "Windows51/Linux50 candidate packages resolved; no UI installation or active lock changes",
-  "review_lock": "Only complete40 SHA in plan PR AQRP_FIXED_REVIEW_SHA; never drifting HEAD",
-  "last_independent_reviewed_sha": "f7a1a68c5f747090f8c8a0e934f2fea859aec998",
+  "review_lock": "AQRP_FIXED_REVIEW_SHA stays full40 reviewed e71f6f0; archival descendant separately identified, not automatically reviewed",
+  "last_independent_reviewed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
   "reviewer": "GPT Work",
   "findings": {
-    "WORK-P6-G1-001": "OPEN_PENDING_INDEPENDENT_RECHECK",
-    "WORK-P6-G1-002": "OPEN_PENDING_INDEPENDENT_RECHECK",
-    "WORK-P6-G1-003": "OPEN_PENDING_INDEPENDENT_RECHECK"
+    "WORK-P6-G1-001": "CLOSED_DESIGN",
+    "WORK-P6-G1-002": "CLOSED_DESIGN",
+    "WORK-P6-G1-003": "CLOSED_DESIGN"
   },
-  "review_record": "g1-f7a1a68/received/REPORT.md",
-  "developer_response": "g1-f7a1a68/DEVELOPER_RESPONSE.md",
+  "review_record": "g1-e71f6f0/received/REPORT.md",
+  "developer_response": "g1-e71f6f0/DEVELOPER_RESPONSE.md",
   "candidate_design_validation": {
     "original32": 32,
     "supplemental95": 95,
@@ -39,5 +39,27 @@
     "Fraction_oracle_cases": 35,
     "scope": "Developer design reference only; P6 product/concurrency/browser tests0"
   },
-  "numeric_adapter_range": "PROPOSED_NOT_ACCEPTED: ASCII ordinary decimal4096 digits/4098text; legacy core APIs unchanged"
+  "numeric_adapter_range": "INDEPENDENT_G1_DESIGN_ACCEPTABLE; USER_ACCEPTANCE_PENDING C-P6-003",
+  "human_design_conditions": "g1-e71f6f0/CONDITIONS_AND_AUTHORIZATION.json",
+  "new_blocking_technical_findings": 0,
+  "independent_design_reference_checks": {
+    "fixed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
+    "scope": "G1 design/numeric reference only; zero P6 product/UI/SQLite/OS tests",
+    "original_groups": 32,
+    "supplemental_groups": 95,
+    "independent_answer_passed": 127,
+    "supplemental_counts": {
+      "completion": 31,
+      "binding": 30,
+      "numeric": 24,
+      "refusal": 10
+    },
+    "extended_numeric_cases": 817,
+    "numeric_cases_with_original": 852,
+    "context_observations": 5112,
+    "completion_subset_cases": 3456,
+    "binding_extension_cases": 25,
+    "old_precision_counterexamples": 2,
+    "all_passed": true
+  }
 }

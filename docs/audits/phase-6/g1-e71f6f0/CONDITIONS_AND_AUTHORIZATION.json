@@ -1,0 +1,31 @@
+{
+  "reviewed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
+  "independent_G1": "PLAN PASS WITH CONDITIONS",
+  "conditions": [
+    {
+      "id": "C-P6-001",
+      "decision": "All required P4 must actually SUCCEEDED for Task success; legitimate risk rejection keeps original P4/P5 result but Task FAILED/REQUIRED_STAGE_REJECTED",
+      "status": "PENDING_EXPLICIT_USER_ACCEPTANCE",
+      "user_accepted": false
+    },
+    {
+      "id": "C-P6-002",
+      "decision": "New engineering pipeline requires N>=1 decisions; empty interval NO_REQUIRED_DECISIONS; existing P5 zero-decision API unchanged",
+      "status": "PENDING_EXPLICIT_USER_ACCEPTANCE",
+      "user_accepted": false
+    },
+    {
+      "id": "C-P6-003",
+      "decision": "New adapter ASCII ordinary finite decimal strings <=4096 digits/4098 raw characters; preserve raw/hash; explicit range/syntax/type refusal; display-only HALF_EVEN, legacy financial API/domain unchanged",
+      "status": "PENDING_EXPLICIT_USER_ACCEPTANCE",
+      "user_accepted": false
+    }
+  ],
+  "separate_implementation_authorization": "NOT_AUTHORIZED",
+  "implementation_started": false,
+  "UI_install_start_authorized": false,
+  "human_phase_acceptance": false,
+  "merge_tag_release_P7_authorized": false,
+  "source_of_human_decisions": "Current user supplied independent audit result; no explicit acceptance of choices or new implementation permission was given",
+  "original_P6_G1_planning_authorization": "../AUTHORIZATION.json"
+}

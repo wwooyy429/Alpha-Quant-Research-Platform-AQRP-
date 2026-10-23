@@ -1,5 +1,8 @@
 # 变更记录
 
+2026-10-23 当前Phase6 G1：GPT Work固定e71f6f090b102e4abfd70a5999e495f49546a1b5判PLAN PASS WITH CONDITIONS，001 High、002/003 Medium均CLOSED_DESIGN，无新增技术阻断。原报告/675865677-byte包142成员核验及当前处置见docs/audits/phase-6/g1-e71f6f0/。仍待用户明确接受C-P6-001必需P4全成功、C-P6-002新流水线N>=1、C-P6-003新十进制4096数字位/4098字符，并单独授权8项实施；P6 NOT AUTHORIZED / NOT STARTED，非G2/阶段验收。原32+95独立答案及扩展仅设计模型/参考核验；新CI只有P5回归API成功，原ZIP未核。已审设计/答案/依赖/4738冻结文件、main及旧标签不改；锁保持已审e71、归档SHA另列。WI-R2延期/正式Test未运行/金融NONE/历史宿主边界保留，无UI安装启动、真实权限、部署、实盘、合并、标签或P7。以下旧状态保留历史。
+
+
 2026-10-23 Phase6 G1：GPT Work固定f7a1a68c5f747090f8c8a0e934f2fea859aec998判PLAN BLOCKED，001High、002/003Medium均OPEN。本轮仅修订三kind全Task完成屏障、P5内部P4可信上下文/原目录/恢复与重放，以及整数精确数值参考/明确量程；原32答案字节不改，新增95设计参考通过，均非P6产品/并发/GUI通过。原报告/584855382-byte包核验、失败重现及实际日志见docs/audits/phase-6/g1-f7a1a68/；三项仍OPEN_PENDING_RECHECK，待PR #9新完整40SHA独立G1复核。P5基线/旧标签、4738冻结文件、8项需求/依赖/core锁不改；P6实施未授权，WI-R2延期/正式Test未运行/金融NONE/历史宿主边界保留，无UI安装启动、真实权限、部署、实盘、合并、标签或P7。以下旧状态保留历史。
 
 

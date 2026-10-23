@@ -1,0 +1,28 @@
+{
+  "old_source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g1-f7a1a68-independent\\reviewed-source\\docs\\audits\\phase-6\\reference_check.py",
+  "old_sha256": "19fd645cf60f39de7675bbf53b1dd699308610839c006a65c29f72848732ef5a",
+  "records": [
+    {
+      "kind": "weight",
+      "inputs": {
+        "percent": "0.123456789012345678901234567890123456789"
+      },
+      "independent_expected": "0.00123456789012345678901234567890123456789",
+      "old": "0.001234567890123456789012345679",
+      "old_error": null,
+      "revised": "0.00123456789012345678901234567890123456789",
+      "passed": true
+    },
+    {
+      "kind": "money",
+      "inputs": {
+        "value": "999999999999999999999999999999.995"
+      },
+      "independent_expected": "1,000,000,000,000,000,000,000,000,000,000.00",
+      "old": null,
+      "old_error": "InvalidOperation",
+      "revised": "1,000,000,000,000,000,000,000,000,000,000.00",
+      "passed": true
+    }
+  ]
+}

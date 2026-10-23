@@ -1,0 +1,47 @@
+{
+  "plan_manifest_members": 164,
+  "exact_tracked_set": true,
+  "developer_model_binding": {
+    "fixed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
+    "original_run_identity": "Actual commands ran on dirty G1 design parent f7a1a68; identical model/input bytes verified against this committed SHA, no claim of a new clean product SDK execution",
+    "models_and_inputs": {
+      "reference_check.py": "6f8bc5075eaa43869bbe9b140c288d93d7cd45facbfaf9ac71ce437d58239b3c",
+      "revision_reference.py": "d697820acce0a06b0733ae989645f4dd07afe1bbce6b01f74b4cef4c317169e3",
+      "GOLDEN_CANDIDATES.json": "efe19655aca6f47e040d21f137511b012e4b789bb4732ef114245257d23354c2",
+      "SUPPLEMENTAL_CANDIDATES.json": "30129bcf2f8e1f054b997dbf25be49790e359a53a6ea56a9671e3cc69d7a8206"
+    },
+    "scope": "Developer design references only",
+    "verified_utc": "2026-10-23T11:30:00.821810+00:00"
+  },
+  "actual_developer_run": "Parent f7 plus dirty design; hashes bind exact current committed input/model bytes; not clean SDK or GPT Work",
+  "original_failure_record": {
+    "executor": "Codex developer actual execution of repository design reference, not P6 product or independent audit",
+    "reference_file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-g1-revision-20261023\\original-reference_check.py",
+    "reference_sha256": "19fd645cf60f39de7675bbf53b1dd699308610839c006a65c29f72848732ef5a",
+    "records": [
+      {
+        "kind": "weight",
+        "inputs": {
+          "percent": "0.123456789012345678901234567890123456789"
+        },
+        "expected": "0.00123456789012345678901234567890123456789",
+        "actual": "0.001234567890123456789012345679",
+        "error": null,
+        "match": false
+      },
+      {
+        "kind": "money",
+        "inputs": {
+          "value": "999999999999999999999999999999.995"
+        },
+        "expected": "1,000,000,000,000,000,000,000,000,000,000.00",
+        "actual": null,
+        "error": "InvalidOperation",
+        "match": false
+      }
+    ],
+    "matched": 0,
+    "mismatched": 2
+  },
+  "passed": true
+}

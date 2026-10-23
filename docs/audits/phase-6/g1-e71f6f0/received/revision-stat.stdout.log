@@ -1,0 +1,136 @@
+ AGENTS.md                                          |     3 +
+ README.md                                          |     3 +
+ docs/CHANGELOG.md                                  |     3 +
+ docs/DECISIONS.md                                  |     3 +
+ docs/PROGRESS.md                                   |     3 +
+ docs/ROADMAP.md                                    |     3 +
+ docs/TRACEABILITY.md                               |     3 +
+ .../phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md   |     2 +-
+ docs/audits/phase-6/FILE_MANIFEST.json             |   662 +-
+ docs/audits/phase-6/G2_FAULT_MATRIX.md             |    21 +
+ docs/audits/phase-6/INTERFACE_DRAFT.md             |     4 +-
+ .../audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md |     2 +
+ docs/audits/phase-6/NESTED_CONTEXT_CONTRACT.md     |    53 +
+ docs/audits/phase-6/NUMERIC_REFERENCE_CONTRACT.md  |    13 +
+ docs/audits/phase-6/OPEN_QUESTIONS.md              |    14 +-
+ docs/audits/phase-6/PLAN.md                        |     2 +
+ docs/audits/phase-6/REQUIREMENTS_TRACEABILITY.md   |     2 +
+ docs/audits/phase-6/REVIEW_PACKAGE.md              |    18 +-
+ docs/audits/phase-6/STATUS.json                    |    23 +-
+ docs/audits/phase-6/SUPPLEMENTAL_CANDIDATES.json   |  3719 +++
+ docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md  |    16 +-
+ docs/audits/phase-6/TASK_COMPLETION_CONTRACT.md    |    44 +
+ docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md      |     2 +
+ docs/audits/phase-6/g1-f7a1a68/.gitattributes      |     5 +
+ .../g1-f7a1a68/DESIGN_REVISION_IDENTITY.json       |    94 +
+ .../phase-6/g1-f7a1a68/DEVELOPER_RESPONSE.md       |    15 +
+ .../phase-6/g1-f7a1a68/FINDING_DISPOSITION.json    |    54 +
+ .../phase-6/g1-f7a1a68/RECEIVED_IDENTITY.json      |   393 +
+ .../BEFORE_NUMERIC_COUNTEREXAMPLES.json            |    29 +
+ .../before-numeric.command.json                    |    17 +
+ .../developer-validation/before-numeric.stderr.log |     0
+ .../developer-validation/before-numeric.stdout.log |     1 +
+ .../AFTER_NUMERIC_COUNTEREXAMPLES.json             |    29 +
+ .../NUMERIC_PROPERTIES.json                        |  1815 +
+ .../ORIGINAL32_RESULTS.json                        |   235 +
+ .../SUPPLEMENTAL_RESULTS.json                      |  1100 +
+ .../WORKING_DESIGN_DIFF.patch                      |   220 +
+ .../numeric-context-Fraction.command.json          |    23 +
+ .../numeric-context-Fraction.stderr.log            |     0
+ .../numeric-context-Fraction.stdout.log            |     1 +
+ .../original-counterexamples-after.command.json    |    23 +
+ .../original-counterexamples-after.stderr.log      |     0
+ .../original-counterexamples-after.stdout.log      |     1 +
+ .../original32.command.json                        |    22 +
+ .../original32.stderr.log                          |     0
+ .../original32.stdout.log                          |     1 +
+ .../supplemental95.command.json                    |    22 +
+ .../supplemental95.stderr.log                      |     0
+ .../supplemental95.stdout.log                      |     1 +
+ .../EXECUTION_ENVIRONMENT.json                     |    31 +
+ .../STATIC_VERIFICATION.json                       |   217 +
+ .../existing-P5-package.command.json               |    14 +
+ .../existing-P5-package.stderr.log                 |     0
+ .../existing-P5-package.stdout.log                 |     1 +
+ .../static-20261023T112540/numeric_probe.py        |    17 +
+ .../static-20261023T112540/property_reference.py   |    33 +
+ .../static-20261023T112540/reproduce_before.py     |    12 +
+ .../static-20261023T112540/run_references.py       |    21 +
+ .../static-20261023T112540/scan-findings.json      |     1 +
+ .../secret-scan.command.json                       |    22 +
+ .../static-20261023T112540/secret-scan.stderr.log  |     2 +
+ .../static-20261023T112540/secret-scan.stdout.log  |     0
+ .../static-20261023T112540/validate_revision.py    |    67 +
+ .../received/AUDIT_SCRIPTS_FINAL_HASHES.json       |    42 +
+ .../g1-f7a1a68/received/BASELINE_TREE_NUL.bin      |   Bin 0 -> 635945 bytes
+ .../g1-f7a1a68/received/CANDIDATE_DIFF.patch       | 33023 +++++++++++++++++++
+ .../g1-f7a1a68/received/CI_ARTIFACTS_API.json      |    42 +
+ .../phase-6/g1-f7a1a68/received/CI_JOBS_API.json   |   120 +
+ .../phase-6/g1-f7a1a68/received/CI_RUNS_API.json   |    14 +
+ .../received/DEPENDENCY_VERIFICATION.json          |   151 +
+ .../g1-f7a1a68/received/DEVELOPER_HANDOFF.md       |     1 +
+ .../phase-6/g1-f7a1a68/received/ENVIRONMENT.json   |    10 +
+ .../g1-f7a1a68/received/EVIDENCE_MANIFEST.json     |   547 +
+ .../received/EXECUTION_DISPOSITIONS.json           |    24 +
+ .../g1-f7a1a68/received/FINAL_IDENTITY.json        |    10 +
+ .../phase-6/g1-f7a1a68/received/FINDINGS.json      |    97 +
+ .../received/INDEPENDENT_DESIGN_RESULTS.json       |   660 +
+ .../phase-6/g1-f7a1a68/received/PR8_RELEASE.json   |    38 +
+ .../phase-6/g1-f7a1a68/received/PR9_FINAL.json     |    38 +
+ .../phase-6/g1-f7a1a68/received/PR9_START.json     |    38 +
+ .../g1-f7a1a68/received/PREREQUISITE_BINDINGS.json |    10 +
+ .../phase-6/g1-f7a1a68/received/RECEIPT.json       |    24 +
+ .../received/RELEASE_EXTRAS_VERIFICATION.json      |    17 +
+ .../g1-f7a1a68/received/REMOTE_REFS_FINAL.txt      |    23 +
+ .../g1-f7a1a68/received/REMOTE_REFS_START.txt      |    23 +
+ docs/audits/phase-6/g1-f7a1a68/received/REPORT.md  |    87 +
+ .../received/REVIEWED_DOCUMENT_BINDINGS.json       |   102 +
+ .../received/REVIEWED_SOURCE_CONTEXT.txt           |   258 +
+ .../received/SCOPE_RELEASE_VERIFICATION.json       |   234 +
+ .../received/dependency-verification.command.json  |    15 +
+ .../received/dependency-verification.stderr.log    |     0
+ .../received/dependency-verification.stdout.log    |     1 +
+ .../received/independent-design.command.json       |    15 +
+ .../received/independent-design.stderr.log         |     0
+ .../received/independent-design.stdout.log         |     1 +
+ ...ependent-resolution-x86_64-pc-windows-msvc.lock |  1294 +
+ ...endent-resolution-x86_64-unknown-linux-gnu.lock |  1291 +
+ .../g1-f7a1a68/received/independent_design.py      |    96 +
+ .../phase-6/g1-f7a1a68/received/initialize.py      |    11 +
+ .../received/inspect-context.command.json          |    15 +
+ .../g1-f7a1a68/received/inspect-context.stderr.log |     0
+ .../g1-f7a1a68/received/inspect-context.stdout.log |     1 +
+ .../received/inspect_identity_and_context.py       |    18 +
+ .../g1-f7a1a68/received/plotly-official-pypi.json  |     1 +
+ .../received/release-extras.command.json           |    15 +
+ .../g1-f7a1a68/received/release-extras.stderr.log  |     0
+ .../g1-f7a1a68/received/release-extras.stdout.log  |     1 +
+ .../phase-6/g1-f7a1a68/received/run_capture.py     |     9 +
+ .../received/scope-release-batch.command.json      |    15 +
+ .../received/scope-release-batch.stderr.log        |     0
+ .../received/scope-release-batch.stdout.log        |     1 +
+ .../g1-f7a1a68/received/scope-release.command.json |    15 +
+ .../g1-f7a1a68/received/scope-release.stderr.log   |     0
+ .../g1-f7a1a68/received/scope-release.stdout.log   |     0
+ .../phase-6/g1-f7a1a68/received/seal.command.json  |    15 +
+ .../phase-6/g1-f7a1a68/received/seal.stderr.log    |     0
+ .../phase-6/g1-f7a1a68/received/seal.stdout.log    |     1 +
+ .../phase-6/g1-f7a1a68/received/seal_evidence.py   |    48 +
+ .../received/streamlit-official-pypi.json          |     1 +
+ .../g1-f7a1a68/received/verify_dependencies.py     |    31 +
+ .../g1-f7a1a68/received/verify_release_extras.py   |    13 +
+ .../received/verify_scope_release.first-attempt.py |    59 +
+ .../g1-f7a1a68/received/verify_scope_release.py    |    62 +
+ .../g1-f7a1a68/received/write-report.command.json  |    15 +
+ .../g1-f7a1a68/received/write-report.stderr.log    |     0
+ .../g1-f7a1a68/received/write-report.stdout.log    |     1 +
+ .../phase-6/g1-f7a1a68/received/write_report.py    |   100 +
+ .../x86_64-pc-windows-msvc.resolve.command.json    |    23 +
+ .../x86_64-pc-windows-msvc.resolve.stderr.log      |     1 +
+ .../x86_64-pc-windows-msvc.resolve.stdout.log      |  1294 +
+ .../x86_64-unknown-linux-gnu.resolve.command.json  |    23 +
+ .../x86_64-unknown-linux-gnu.resolve.stderr.log    |     1 +
+ .../x86_64-unknown-linux-gnu.resolve.stdout.log    |  1291 +
+ docs/audits/phase-6/reference_check.py             |    85 +-
+ docs/audits/phase-6/revision_reference.py          |   156 +
+ 135 files changed, 50748 insertions(+), 77 deletions(-)

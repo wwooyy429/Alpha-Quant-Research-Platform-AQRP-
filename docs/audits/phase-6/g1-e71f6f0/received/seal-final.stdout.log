@@ -1,0 +1,33 @@
+{
+  "fixed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
+  "verdict": "PLAN PASS WITH CONDITIONS",
+  "findings": {
+    "WORK-P6-G1-001": "CLOSED_DESIGN",
+    "WORK-P6-G1-002": "CLOSED_DESIGN",
+    "WORK-P6-G1-003": "CLOSED_DESIGN"
+  },
+  "new_blocking_findings": 0,
+  "archive": "EVIDENCE.zip",
+  "bytes": 675865677,
+  "sha256": "eae0cd90c75e79c64ca1d06f0e7fc0ae367fbd91a1678af0632c933f0a72d31e",
+  "manifest_sha256": "c326ebb6acf2f747184eb9253e04ab43d7c0bea81fd93b622af7b33fbc45f1df",
+  "manifest_files": 141,
+  "zip_members": 142,
+  "CRC_exact_members_all_sizes_hashes_verified": true,
+  "executor": "GPT Work supplemental reviewer",
+  "not_a_digital_signature": true,
+  "conditions": [
+    "User acceptance C-P6-001 strict all-required-P4 success",
+    "User acceptance C-P6-002 N>=1 for new pipeline",
+    "User acceptance C-P6-003 ordinary ASCII decimal4096digits/4098text",
+    "Separate P6 implementation authorization"
+  ],
+  "P6_business_implementation": false,
+  "UI_install_AppTest_browser_tests": 0,
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "merge_tag_deploy_live_P7": false,
+  "created_utc": "2026-10-23T11:58:26.293591+00:00"
+}
+

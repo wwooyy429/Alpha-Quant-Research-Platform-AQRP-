@@ -1,0 +1,45 @@
+{
+  "prior_13_assets_exact": true,
+  "old_reference_32_bytes_exact": true,
+  "old_independent_zip_crc_member_hashes": {
+    "fixed_sha": "f7a1a68c5f747090f8c8a0e934f2fea859aec998",
+    "verdict": "PLAN BLOCKED / REQUEST CHANGES",
+    "findings": {
+      "High": 1,
+      "Medium": 2
+    },
+    "archive": "EVIDENCE.zip",
+    "bytes": 584855382,
+    "sha256": "22cc883e7bd46f2b83ce4e5251505776862dedde3c532e15eddb5a8e07854273",
+    "manifest_sha256": "206bc0174296dceefb04fcf7278c6d7d9db113d7b6f2ee2f6dfab6a044403c8c",
+    "manifest_files": 105,
+    "zip_members": 106,
+    "CRC_exact_members_all_sizes_hashes_verified": true,
+    "executor": "GPT Work supplemental reviewer",
+    "not_a_digital_signature": true,
+    "P6_business_implementation": false,
+    "UI_install_AppTest_browser_tests": 0,
+    "formal_Test": false,
+    "financial_approval": "NONE",
+    "Windows_R2": "DEFERRED / NOT VERIFIED",
+    "merge_tag_deploy_live_P7": false,
+    "created_utc": "2026-10-23T10:39:22.457640+00:00"
+  },
+  "received_original_files": 70,
+  "developer_models_bound": [
+    {
+      "path": "reference_check.py",
+      "sha256": "6f8bc5075eaa43869bbe9b140c288d93d7cd45facbfaf9ac71ce437d58239b3c"
+    },
+    {
+      "path": "revision_reference.py",
+      "sha256": "d697820acce0a06b0733ae989645f4dd07afe1bbce6b01f74b4cef4c317169e3"
+    },
+    {
+      "path": "SUPPLEMENTAL_CANDIDATES.json",
+      "sha256": "30129bcf2f8e1f054b997dbf25be49790e359a53a6ea56a9671e3cc69d7a8206"
+    }
+  ],
+  "prior_dependency_evidence": "Same thirteen input/lock/metadata assets; prior metadata-only independent resolution retained, no fresh install/runtime or resolver claimed",
+  "new_developer_source_all_tracked": true
+}
