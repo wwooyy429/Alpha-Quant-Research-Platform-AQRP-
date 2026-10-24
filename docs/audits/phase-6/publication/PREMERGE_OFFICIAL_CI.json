@@ -1,0 +1,93 @@
+{
+  "result": "PASS",
+  "scope": "Developer administrative premerge gate; not a new independent implementation audit",
+  "verified_at_utc": "2026-10-24T12:10:09.800684+00:00",
+  "actual_head_sha": "a4d650d5d15e814600fde0bb6858fe97f14e5229",
+  "independently_reviewed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "tests_per_os": 1567,
+  "run_id": 40089881581,
+  "run_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/40089881581",
+  "jobs": [
+    {
+      "id": 120860218405,
+      "name": "data-contracts (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "a4d650d5d15e814600fde0bb6858fe97f14e5229"
+    },
+    {
+      "id": 120860218493,
+      "name": "data-contracts (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "a4d650d5d15e814600fde0bb6858fe97f14e5229"
+    }
+  ],
+  "official_artifacts": [
+    {
+      "id": 12559283652,
+      "name": "phase6-windows-latest-1",
+      "original_zip": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\premerge-ci\\H2-a4d650d\\ci-40089881581\\phase6-windows-latest-1-official-original.zip",
+      "bytes": 198331547,
+      "sha256": "07964a81a0f57985794146c0663534c06151bad5733850507431be5036537dcf",
+      "official_digest": "sha256:07964a81a0f57985794146c0663534c06151bad5733850507431be5036537dcf",
+      "official_size_and_digest_match": true,
+      "CRC_pass": true,
+      "verification_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\premerge-ci\\H2-a4d650d\\ci-40089881581\\verify-windows\\VERIFICATION.json",
+      "junit": {
+        "tests": 1567,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "selected_file_count": 15044,
+      "wheel": {
+        "path": "wheel/aqrp-0.6.0.dev5-py3-none-any.whl",
+        "sha256": "51d9d0c19a8690bd51fa97d42246559ae1bb85d822b677e789cf2695b37ab96f",
+        "source_modules": 83,
+        "bundle_sha256": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+      },
+      "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+      "os": "Windows-2025Server-10.0.26100-SP0"
+    },
+    {
+      "id": 12559246418,
+      "name": "phase6-ubuntu-24.04-1",
+      "original_zip": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\premerge-ci\\H2-a4d650d\\ci-40089881581\\phase6-ubuntu-24.04-1-official-original.zip",
+      "bytes": 239460414,
+      "sha256": "179cbb19970959d1ffd2d0959dd323e589bebdfd1380095b13805488554a3b3b",
+      "official_digest": "sha256:179cbb19970959d1ffd2d0959dd323e589bebdfd1380095b13805488554a3b3b",
+      "official_size_and_digest_match": true,
+      "CRC_pass": true,
+      "verification_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\premerge-ci\\H2-a4d650d\\ci-40089881581\\verify-ubuntu\\VERIFICATION.json",
+      "junit": {
+        "tests": 1567,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "selected_file_count": 15043,
+      "wheel": {
+        "path": "wheel/aqrp-0.6.0.dev5-py3-none-any.whl",
+        "sha256": "803127208932db3eeb31ba001fcca9b1c475d0452c7a654b9540ef2d3650da09",
+        "source_modules": 83,
+        "bundle_sha256": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+      },
+      "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+      "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39"
+    }
+  ],
+  "original_run_logs": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\premerge-ci\\H2-a4d650d\\ci-40089881581\\official-run-logs-original.zip",
+    "bytes": 30296,
+    "sha256": "e765914b72e17ecddb085fcf4107f120f1b0473bc75b344788ee9a639bfcbb2c",
+    "CRC_pass": true
+  },
+  "verification_details": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\premerge-ci\\H2-a4d650d\\PREMERGE_CI_VERIFICATION.json",
+  "strictly_equal_executable_tree_and_locks": true,
+  "source_identity_from_reviewed_commit": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "actual_execution_commit": "a4d650d5d15e814600fde0bb6858fe97f14e5229",
+  "formal_Test_run": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED"
+}

@@ -1,3 +1,6 @@
+<!-- Phase6 release-publication override -->
+2026-10-24 最新人工验收及发布覆盖说明：Phase6八项受限工程范围已由用户ACCEPTED，GPT Work固定3017a097b49ecdae68228ca9a417fcd03c313200 G2 PASS及三项修复关闭维持。PR #9批准归档头a4d650d5d15e814600fde0bb6858fe97f14e5229只改文档/审计存储/身份元数据，双系统实际CI各1567通过；旧H1扫描失败及原证据保留，7份外部原件位置/哈希明确，扫描规则未改。实际普通合并7b4864f4d750fa96b5b5634c4bba0cd84b5b077f整树等于批准头；开发方合并后新干净SDK1567、原20＋4及数学91通过。发布证据提交仅文档及其身份元数据，main/phase6-baseline/v0.6.0原子同点核验后才RELEASED，旧标签不移动，已审包仍0.6.0.dev5。仅授权其后Phase7 G1计划，不授权业务实现。WI-R2两项和真实隔离持续DEFERRED / NOT VERIFIED，正式Test未运行、金融批准NONE、历史宿主边界及原native原因NOT VERIFIED维持；无部署/实盘/真实权限操作。详docs/audits/phase-6/BASELINE.md。以下既有轮次为历史，不覆盖本次最新人工决定。
+
 > 2026-10-24 当前独立G2：GPT Work审查eae807f957f178d19bc55dcfbd668caff5470c6e为BLOCKED，WORK-P6-G2-001 High、002/003 Medium blocking均OPEN；配置编辑DEV-P6-001独立确认CLOSED。dev3修复候选/接收原件见docs/audits/phase-6/g2-eae807f/，新完整SHA须重新SDK/双OS原ZIP/真实浏览器并交固定版本G2，不自行关闭。八项授权范围与所有延期不变，无合并、标签、部署、实盘、正式Test、金融批准或P7。以下旧状态均保留为历史。
 
 # Alpha Quant Research Platform（AQRP）

@@ -1,0 +1,26 @@
+{
+  "source": "Direct human instruction in current conversation",
+  "recorded_utc": "2026-10-24T11:10:08.809991+00:00",
+  "exact_user_instruction": "我验收 Phase6 八项受限工程范围。请核对 PR #9 与已审 SHA `3017a097b49ecdae68228ca9a417fcd03c313200` 的差异仅为文档和身份元数据，确认 CI 通过后合并并发布 Phase6 基线标签，旧标签不移动；随后仅启动 Phase7 G1 计划预审，不开始业务实现。既有延期与限制保持，不部署、不实盘、不运行正式 Test、不授予金融批准。",
+  "phase6_accepted": true,
+  "requirements": 8,
+  "tiers": {
+    "MVP": 5,
+    "Competition Ready": 3
+  },
+  "reviewed_implementation_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "expected_archival_head": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee",
+  "previous_main": "59246f9fd391c1713b6bed65dd22280f4d248493",
+  "merge_baseline_tags_authorized_after_document_metadata_only_diff_and_CI_success": true,
+  "new_tags": [
+    "phase6-baseline",
+    "v0.6.0"
+  ],
+  "old_tags_must_not_move": true,
+  "Phase7": "G1_PLANNING_ONLY_AFTER_VERIFIED_PHASE6_RELEASE",
+  "Phase7_business_implementation": false,
+  "deployment_live_formal_Test_financial_approval": false,
+  "WI-R2-001": "DEFERRED / NOT VERIFIED",
+  "WI-R2-002": "DEFERRED / NOT VERIFIED",
+  "historical_host": "Existing accepted package/lock/oldRef/result replay limits retained"
+}

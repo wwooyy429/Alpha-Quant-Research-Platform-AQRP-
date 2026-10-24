@@ -1,6 +1,6 @@
 {
   "phase": 6,
-  "current": "G2_PASS_RESTRICTED_ENGINEERING_HUMAN_ACCEPTANCE_PENDING",
+  "current": "ACCEPTED_RELEASED_RESTRICTED_ENGINEERING",
   "G1": "PLAN PASS WITH CONDITIONS AT E71F6F0",
   "G2": "PASS at 3017a097b49ecdae68228ca9a417fcd03c313200",
   "requirements": 8,
@@ -9,11 +9,11 @@
     "Competition Ready": 3
   },
   "baseline": "59246f9fd391c1713b6bed65dd22280f4d248493",
-  "capabilities": "All eight UI-001–008 independently PASS within restricted engineering scope; no user stage acceptance or release.",
+  "capabilities": "All eight UI-001–008 independently PASS and expressly user ACCEPTED in restricted engineering scope; no expansion to deferred real/formal/financial capabilities",
   "implementation_authorized": true,
-  "human_phase_acceptance": false,
-  "main_merge_tag_authorized": false,
-  "P7_authorized": false,
+  "human_phase_acceptance": true,
+  "main_merge_tag_authorized": true,
+  "P7_authorized": "G1_PLANNING_ONLY_AFTER_VERIFIED_P6_RELEASE",
   "formal_Test": "DEFERRED_NOT_RUN",
   "financial_approval": "NONE",
   "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
@@ -75,7 +75,7 @@
   "candidate_version": "0.6.0.dev5",
   "developer_resource_finding": "CLOSED — FIX VERIFIED (connection lifetime)",
   "developer_followup": "CLOSED — FIX VERIFIED within restricted engineering scope",
-  "released": false,
+  "released": true,
   "independent_execution_summary": {
     "independent_SDK_tests": 1567,
     "official_CI_tests_per_OS": 1567,
@@ -93,5 +93,24 @@
     "verdict": "G2 BLOCKED; immutable historical report preserved",
     "record": "g2-eae807f/received/REPORT.md"
   },
-  "original_native_crash_cause": "NOT VERIFIED; engineering harness closure does not prove exact native cause"
+  "original_native_crash_cause": "NOT VERIFIED; engineering harness closure does not prove exact native cause",
+  "phase_acceptance": "ACCEPTED_EIGHT_RESTRICTED_ENGINEERING_REQUIREMENTS",
+  "merge_commit": "7b4864f4d750fa96b5b5634c4bba0cd84b5b077f",
+  "approved_archival_head": "a4d650d5d15e814600fde0bb6858fe97f14e5229",
+  "acceptance_record": "publication/APPROVAL.json",
+  "postmerge_validation": "publication/VALIDATION.json",
+  "baseline_record": "BASELINE.md",
+  "baseline_scope": "Original baseline field is the Phase5 development starting point; released target is the verified phase6-baseline tag",
+  "released_baseline_ref": "phase6-baseline^{}",
+  "release_identity": "Resolve main / phase6-baseline / v0.6.0 from actual remote refs and publication receipt; final self SHA is not embedded in this commit",
+  "release": "RELEASED_ONLY_EFFECTIVE_ON_VERIFIED_ATOMIC_MAIN_PHASE6_BASELINE_V0_6_0_PUBLICATION",
+  "Phase7_business_implementation": "NOT_AUTHORIZED",
+  "pending_human_decisions": [
+    {
+      "id": "HUMAN-P7-IMPLEMENTATION",
+      "owner": "User",
+      "status": "NOT_AUTHORIZED",
+      "decision": "Separate fixed-SHA G1 and explicit implementation authorization required"
+    }
+  ]
 }

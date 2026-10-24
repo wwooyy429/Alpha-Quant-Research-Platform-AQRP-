@@ -1,0 +1,1233 @@
+{
+  "executor": "Codex developer evidence verifier, not independent GPT Work G2",
+  "fixed_sha": "7b4864f4d750fa96b5b5634c4bba0cd84b5b077f",
+  "source": "E:\\WORK\\AQRP-runs\\p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5\\aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6",
+  "official": null,
+  "environment": {
+    "run_id": "aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6",
+    "started_utc": "2026-10-24T12:11:09.625871+00:00",
+    "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "os": "Windows-11-10.0.26300-SP0",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "code_commit": "7b4864f4d750fa96b5b5634c4bba0cd84b5b077f",
+    "dirty": false,
+    "complete": true,
+    "workspace": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+    "run_root": "E:\\WORK\\AQRP-runs\\p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5\\aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6",
+    "lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "github_sha": null,
+    "ui_lock_sha256": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+    "source_git_archive_sha256": "9d65aa3b8708aacfe7c895b0daaa83340d4f6a2cbd152bc70fc8f4ac26b6c0e1",
+    "wheel_sha256": "235889632a0bf7459dde99ac15dfd381ead44a3b2e46751e936b5db34cc6f3e3",
+    "ended_utc": "2026-10-24T12:47:38.620087+00:00"
+  },
+  "execution_tree": "c6ee593f0046734bf71fe205b578fb64b2176e2a",
+  "execution_parents": [
+    "59246f9fd391c1713b6bed65dd22280f4d248493",
+    "a4d650d5d15e814600fde0bb6858fe97f14e5229"
+  ],
+  "selected_file_count": 15044,
+  "all_member_hashes_verified": true,
+  "exact_original_ZIP_member_set_verified": false,
+  "member_set_policy": "Declared original selected files + independently byte-matched uploader-expanded pytest current aliases + self-excluded upload-selection.json; original selection alone does not equal official ZIP",
+  "supplemental_upload_aliases": null,
+  "junit": {
+    "tests": 1567,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_modules": [
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/contracts.py",
+      "line": 99.45652173913044,
+      "branch": 99.03846153846153,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/engine.py",
+      "line": 97.92207792207792,
+      "branch": 94.30379746835443,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/exact.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/ledger.py",
+      "line": 98.83040935672514,
+      "branch": 96.80851063829788,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/provider.py",
+      "line": 99.28057553956835,
+      "branch": 98.27586206896552,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/risk.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/synthetic.py",
+      "line": 98.63013698630137,
+      "branch": 95.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/backtest/transactions.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/canonical.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/environment.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/errors.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/math.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/security/__init__.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/time.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/core/units.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/actions.py",
+      "line": 100.0,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/exposures.py",
+      "line": 98.98989898989899,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/pit.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/quality.py",
+      "line": 100.0,
+      "branch": 98.59154929577464,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/query.py",
+      "line": 98.71794871794872,
+      "branch": 95.83333333333333,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/schemas.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/snapshot.py",
+      "line": 99.01960784313725,
+      "branch": 97.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/store.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/data/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/execution/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/execution/liquidity.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/execution/model.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/experiments/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/experiments/ledger.py",
+      "line": 98.1651376146789,
+      "branch": 97.14285714285714,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/experiments/replay_worker.py",
+      "line": 100.0,
+      "branch": 95.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/experiments/reproduction.py",
+      "line": 97.02970297029702,
+      "branch": 92.5,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/__init__.py",
+      "line": 100.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/admission.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/builtins.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/contracts.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/engine.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/input.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/registry.py",
+      "line": 98.93617021276596,
+      "branch": 96.42857142857143,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/factors/versions.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/performance/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/performance/metrics.py",
+      "line": 100.0,
+      "branch": 92.85714285714286,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/portfolio/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/portfolio/construct.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/portfolio/contracts.py",
+      "line": 98.99665551839465,
+      "branch": 97.94520547945206,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/portfolio/research_input.py",
+      "line": 96.3963963963964,
+      "branch": 90.9090909090909,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/portfolio/service.py",
+      "line": 98.94736842105263,
+      "branch": 94.44444444444444,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/portfolio/weights.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/research/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/research/numerics.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/research/pipeline.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/research/synthetic.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/risk/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/risk/checks.py",
+      "line": 99.04761904761905,
+      "branch": 97.22222222222223,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/backtest.py",
+      "line": 98.58490566037736,
+      "branch": 93.54838709677419,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/backtest_cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/cli.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/research.py",
+      "line": 97.6923076923077,
+      "branch": 94.0677966101695,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_campaigns.py",
+      "line": 99.1304347826087,
+      "branch": 95.23809523809524,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_cli.py",
+      "line": 100.0,
+      "branch": 97.5,
+      "gate": [
+        80,
+        70
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_context.py",
+      "line": 97.77777777777777,
+      "branch": 95.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_history.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_inputs.py",
+      "line": 97.61904761904762,
+      "branch": 91.66666666666667,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_requests.py",
+      "line": 98.00995024875621,
+      "branch": 96.73913043478261,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_state.py",
+      "line": 98.4375,
+      "branch": 95.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/task_worker.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/services/tasks.py",
+      "line": 97.18614718614718,
+      "branch": 92.3076923076923,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/ui/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/ui/app.py",
+      "line": 92.12827988338192,
+      "branch": 91.66666666666667,
+      "gate": [
+        80,
+        70
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/ui/environment.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/ui/launch.py",
+      "line": 83.33333333333333,
+      "branch": 75.0,
+      "gate": [
+        80,
+        70
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/ui/numbers.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        90,
+        85
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/validation/__init__.py",
+      "line": 0.0,
+      "branch": 100,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/validation/approvals.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/validation/evaluator.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/validation/inference.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/validation/labels.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    },
+    {
+      "path": "E:/WORK/AQRP-runs/p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5/aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6/venv/Lib/site-packages/aqrp/validation/splits.py",
+      "line": 100.0,
+      "branch": 100.0,
+      "gate": [
+        95,
+        90
+      ]
+    }
+  ],
+  "wheel": {
+    "path": "wheel/aqrp-0.6.0.dev5-py3-none-any.whl",
+    "sha256": "235889632a0bf7459dde99ac15dfd381ead44a3b2e46751e936b5db34cc6f3e3",
+    "source_modules": 83,
+    "bundle_sha256": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+  },
+  "dependency_wheels": 22,
+  "original_refs": 3,
+  "UI_dependency_wheels": 29,
+  "UI_raw_parity": {
+    "momentum": {
+      "actors": [
+        "sdk",
+        "task-cli",
+        "component",
+        "legacy-cli"
+      ],
+      "exact_request_hash": "56a77149d1a83d1058189217ee0f668ae7fbf296045942328d2e2e36e5205c0d",
+      "raw_projection_recomputed": true,
+      "all_fields_and_bindings_verified": true
+    },
+    "reversal": {
+      "actors": [
+        "sdk",
+        "task-cli",
+        "component",
+        "legacy-cli"
+      ],
+      "exact_request_hash": "53cb6f8d1a9206134783f6a76ac468f043f91fc077ccc61a140eee54a85c6c78",
+      "raw_projection_recomputed": true,
+      "all_fields_and_bindings_verified": true
+    }
+  },
+  "original_publication_files": 66,
+  "P1_snapshots": [
+    {
+      "path": "backtest/input/inputs/dataset/5128ce3d-8cae-449d-b291-ee88ba5dfe04",
+      "snapshot_id": "5128ce3d-8cae-449d-b291-ee88ba5dfe04",
+      "manifest_hash": "bee13c09b3326275928b00a05684fe557117dcbdf161127ac93e218d5b4de2da",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "dataset/f5417911-ba03-4384-b98c-fa9b2ca4ddb3",
+      "snapshot_id": "f5417911-ba03-4384-b98c-fa9b2ca4ddb3",
+      "manifest_hash": "0c2b7fdef776062ee80be6f00a3da9bca24faea35222a349134cc731188fe94f",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "factor-dataset/c558ca45-d8c4-4a2c-8a58-24247b05c286",
+      "snapshot_id": "c558ca45-d8c4-4a2c-8a58-24247b05c286",
+      "manifest_hash": "3deb240eed71d2e26e149df5ea30e991defd84e4735116f1c450b89daaed899f",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "reproduction/dataset/18e6c34d-4874-4f00-a26d-d480022b272c",
+      "snapshot_id": "18e6c34d-4874-4f00-a26d-d480022b272c",
+      "manifest_hash": "c343a64f8b0094aad33e7627c15f00c6e95a4c4644c53e42b11b6d92f765f56d",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/inputs/dataset/e74e8f03-24e7-4146-8cfa-8bab70ae440b",
+      "snapshot_id": "e74e8f03-24e7-4146-8cfa-8bab70ae440b",
+      "manifest_hash": "99420b36e615df0d904994de2c713a6d4da7193a876ac1370bf4a6544faea56c",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "research/replacement-inputs/dataset/9a5641ef-9663-4bb4-ab0d-63e91cf8dfb6",
+      "snapshot_id": "9a5641ef-9663-4bb4-ab0d-63e91cf8dfb6",
+      "manifest_hash": "3e0cdb1211577280228a9a218687c0ee753034b2904dd970102adb0f4b130b79",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "ui/workspace/inputs/pools/3efd0eea-9e3c-4154-8671-7da61578dd1b",
+      "snapshot_id": "3efd0eea-9e3c-4154-8671-7da61578dd1b",
+      "manifest_hash": "5a9517f80d53fc3536dde2946ab5b32259cf6d8ae710ea0602747dd4d5fddee7",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    },
+    {
+      "path": "ui/workspace/inputs/source/dataset/4a2f3eba-1152-4d56-a3dc-d680c137e7a9",
+      "snapshot_id": "4a2f3eba-1152-4d56-a3dc-d680c137e7a9",
+      "manifest_hash": "07140ce08c543ac768d0c89008d6ab7f0face3f2c7e5724d7f7311bd14ed8ef9",
+      "tables": 8,
+      "input_files_including_manifest": 9
+    }
+  ],
+  "terminal_smoke_runs": [
+    {
+      "path": "backtest/formal-refusal-only/9d81fde1-4681-489e-b40a-8835702e163d",
+      "run_id": "9d81fde1-4681-489e-b40a-8835702e163d",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/input/research-runs/8d09d5ba-ddba-4bd0-b52f-03c9094431e2",
+      "run_id": "8d09d5ba-ddba-4bd0-b52f-03c9094431e2",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "backtest/momentum-replay/8259b4ab-40be-46ff-bdcb-1bd0aec6f071/portfolio-runs/6f6c005f-99f6-4de4-a768-f1852e95d111",
+      "run_id": "6f6c005f-99f6-4de4-a768-f1852e95d111",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-replay/8259b4ab-40be-46ff-bdcb-1bd0aec6f071/portfolio-runs/9b59d814-f4d2-4713-894c-60ce671dca41",
+      "run_id": "9b59d814-f4d2-4713-894c-60ce671dca41",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/momentum-replay/8259b4ab-40be-46ff-bdcb-1bd0aec6f071/portfolio-runs/b471185a-6108-4913-8c5b-063894c2e817",
+      "run_id": "b471185a-6108-4913-8c5b-063894c2e817",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/90cd66b4-1a81-42d6-b795-f111122a9b3d",
+      "run_id": "90cd66b4-1a81-42d6-b795-f111122a9b3d",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/momentum-runs/90cd66b4-1a81-42d6-b795-f111122a9b3d/portfolio-runs/068a134b-1347-422d-8d0f-5c75ea8e4995",
+      "run_id": "068a134b-1347-422d-8d0f-5c75ea8e4995",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/momentum-runs/90cd66b4-1a81-42d6-b795-f111122a9b3d/portfolio-runs/bbcdf97c-5cee-4cb9-affe-416c9efa93bf",
+      "run_id": "bbcdf97c-5cee-4cb9-affe-416c9efa93bf",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/momentum-runs/90cd66b4-1a81-42d6-b795-f111122a9b3d/portfolio-runs/cf1ab8c3-f049-407a-bb38-f239f926d67f",
+      "run_id": "cf1ab8c3-f049-407a-bb38-f239f926d67f",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/retained-failure/87572672-cd2a-4b36-ba67-bb50227ea270",
+      "run_id": "87572672-cd2a-4b36-ba67-bb50227ea270",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "backtest/reversal-replay/8c352bcf-0265-4103-97d5-bb8401ea7d6e/portfolio-runs/75762610-a2c3-485f-934b-f7782b913747",
+      "run_id": "75762610-a2c3-485f-934b-f7782b913747",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/reversal-replay/8c352bcf-0265-4103-97d5-bb8401ea7d6e/portfolio-runs/abe297ae-4839-4e1e-ab45-c260c61da6e4",
+      "run_id": "abe297ae-4839-4e1e-ab45-c260c61da6e4",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-replay/8c352bcf-0265-4103-97d5-bb8401ea7d6e/portfolio-runs/e105ed8a-9c02-4f42-95d1-f39c8ac4c309",
+      "run_id": "e105ed8a-9c02-4f42-95d1-f39c8ac4c309",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/f9941636-4089-4c41-9966-3180904e685d",
+      "run_id": "f9941636-4089-4c41-9966-3180904e685d",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "backtest/reversal-runs/f9941636-4089-4c41-9966-3180904e685d/portfolio-runs/2c78d9b6-a822-4a9c-8d32-336b21d72e77",
+      "run_id": "2c78d9b6-a822-4a9c-8d32-336b21d72e77",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "backtest/reversal-runs/f9941636-4089-4c41-9966-3180904e685d/portfolio-runs/5eb69c0d-0c83-4bd4-a3dc-914332142ee8",
+      "run_id": "5eb69c0d-0c83-4bd4-a3dc-914332142ee8",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "backtest/reversal-runs/f9941636-4089-4c41-9966-3180904e685d/portfolio-runs/fc9a01d4-74b7-4fe0-aba7-9e2430cd15b5",
+      "run_id": "fc9a01d4-74b7-4fe0-aba7-9e2430cd15b5",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/formal-gate/e8f38105-9a14-48c7-8efa-f15a59cb15e9",
+      "run_id": "e8f38105-9a14-48c7-8efa-f15a59cb15e9",
+      "status": "FAILED",
+      "files": 3
+    },
+    {
+      "path": "portfolio/runs/22c0cf06-6494-48ba-8430-cbacadef691c",
+      "run_id": "22c0cf06-6494-48ba-8430-cbacadef691c",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/463173e2-f9da-4d4b-a5e4-44c17fc1791d",
+      "run_id": "463173e2-f9da-4d4b-a5e4-44c17fc1791d",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/754df155-7830-4021-b740-8f13be912c71",
+      "run_id": "754df155-7830-4021-b740-8f13be912c71",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/c9cdd936-4536-4c77-8cdb-76aad70badda",
+      "run_id": "c9cdd936-4536-4c77-8cdb-76aad70badda",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "portfolio/runs/d041705f-f200-4aaf-80a2-e52c853b67b0",
+      "run_id": "d041705f-f200-4aaf-80a2-e52c853b67b0",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "portfolio/runs/edb787ba-1b35-4a51-8902-9accf28af944",
+      "run_id": "edb787ba-1b35-4a51-8902-9accf28af944",
+      "status": "FAILED",
+      "files": 5
+    },
+    {
+      "path": "research/replacement-runs/09445a60-a4f4-42fe-9814-a2182192db17",
+      "run_id": "09445a60-a4f4-42fe-9814-a2182192db17",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "research/runs/2951a815-de04-4678-9881-af6e71c5ef97",
+      "run_id": "2951a815-de04-4678-9881-af6e71c5ef97",
+      "status": "SUCCEEDED",
+      "files": 18
+    },
+    {
+      "path": "research/runs/e0705506-c50a-431f-ab42-ee1724738e6f",
+      "run_id": "e0705506-c50a-431f-ab42-ee1724738e6f",
+      "status": "SUCCEEDED",
+      "files": 18
+    },
+    {
+      "path": "ui/momentum-legacy-p5/6fa07949-5ffc-43b3-a7f7-d32a8f76a980",
+      "run_id": "6fa07949-5ffc-43b3-a7f7-d32a8f76a980",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/momentum-legacy-p5/6fa07949-5ffc-43b3-a7f7-d32a8f76a980/portfolio-runs/f807f07c-86aa-4acd-aebc-cb51fae8e779",
+      "run_id": "f807f07c-86aa-4acd-aebc-cb51fae8e779",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/reversal-legacy-p5/c3ad5706-92ee-416e-a986-3c1c0cbe9257",
+      "run_id": "c3ad5706-92ee-416e-a986-3c1c0cbe9257",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/reversal-legacy-p5/c3ad5706-92ee-416e-a986-3c1c0cbe9257/portfolio-runs/6772415a-375a-4800-9494-29e69789410b",
+      "run_id": "6772415a-375a-4800-9494-29e69789410b",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/workspace/backtest-runs/42928c55-22fd-49b5-bb12-f0b4cefb6b00",
+      "run_id": "42928c55-22fd-49b5-bb12-f0b4cefb6b00",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/workspace/backtest-runs/42928c55-22fd-49b5-bb12-f0b4cefb6b00/portfolio-runs/9b3349cc-b8a5-486a-8172-4801d530ac09",
+      "run_id": "9b3349cc-b8a5-486a-8172-4801d530ac09",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/workspace/backtest-runs/4399d232-5441-4355-86b7-412fd27faabf",
+      "run_id": "4399d232-5441-4355-86b7-412fd27faabf",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/workspace/backtest-runs/4399d232-5441-4355-86b7-412fd27faabf/portfolio-runs/218ac6fe-4e92-4851-aff0-07f1e63509db",
+      "run_id": "218ac6fe-4e92-4851-aff0-07f1e63509db",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/workspace/backtest-runs/5dd91122-c977-4343-9281-4e27ec8ff235",
+      "run_id": "5dd91122-c977-4343-9281-4e27ec8ff235",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/workspace/backtest-runs/5dd91122-c977-4343-9281-4e27ec8ff235/portfolio-runs/6465b778-6f4f-45ce-a793-2713b20ec1f2",
+      "run_id": "6465b778-6f4f-45ce-a793-2713b20ec1f2",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/workspace/backtest-runs/a14b5371-c76c-4964-9fbb-479e76e8bbdc",
+      "run_id": "a14b5371-c76c-4964-9fbb-479e76e8bbdc",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/workspace/backtest-runs/a14b5371-c76c-4964-9fbb-479e76e8bbdc/portfolio-runs/b9fd305f-741a-4dd5-92ce-8be49f33b77a",
+      "run_id": "b9fd305f-741a-4dd5-92ce-8be49f33b77a",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/workspace/backtest-runs/a9edac29-0200-4587-877d-1518eb76e27c",
+      "run_id": "a9edac29-0200-4587-877d-1518eb76e27c",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/workspace/backtest-runs/a9edac29-0200-4587-877d-1518eb76e27c/portfolio-runs/63aadff6-bb1f-427c-8bf3-69bc48fd9e61",
+      "run_id": "63aadff6-bb1f-427c-8bf3-69bc48fd9e61",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/workspace/backtest-runs/d3fb9d29-b3cd-4f2f-b7ca-d1d4da8558bf",
+      "run_id": "d3fb9d29-b3cd-4f2f-b7ca-d1d4da8558bf",
+      "status": "SUCCEEDED",
+      "files": 9
+    },
+    {
+      "path": "ui/workspace/backtest-runs/d3fb9d29-b3cd-4f2f-b7ca-d1d4da8558bf/portfolio-runs/f11be71b-b82b-458c-8d1d-d2307c26644a",
+      "run_id": "f11be71b-b82b-458c-8d1d-d2307c26644a",
+      "status": "SUCCEEDED",
+      "files": 6
+    },
+    {
+      "path": "ui/workspace/replay-runs/820300ec-8516-44fa-b014-5af9aa13028b",
+      "run_id": "820300ec-8516-44fa-b014-5af9aa13028b",
+      "status": "SUCCEEDED",
+      "files": 4
+    },
+    {
+      "path": "ui/workspace/research-runs/0513dacc-b0b1-4245-88fe-d5d6b0c9ae36",
+      "run_id": "0513dacc-b0b1-4245-88fe-d5d6b0c9ae36",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "ui/workspace/research-runs/34ee288d-1819-4dcd-804a-2f742d403f54",
+      "run_id": "34ee288d-1819-4dcd-804a-2f742d403f54",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "ui/workspace/research-runs/533372f6-1069-416c-befd-fcc9a0ded2cc",
+      "run_id": "533372f6-1069-416c-befd-fcc9a0ded2cc",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "ui/workspace/research-runs/a515d0f3-eb1c-4ed0-a4fb-e892c15623bd",
+      "run_id": "a515d0f3-eb1c-4ed0-a4fb-e892c15623bd",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "ui/workspace/research-runs/a52d6df4-ea8b-4649-b74a-1cba20785334",
+      "run_id": "a52d6df4-ea8b-4649-b74a-1cba20785334",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "ui/workspace/research-runs/b3884001-9bf1-4d5c-b837-6e3be0432ca0",
+      "run_id": "b3884001-9bf1-4d5c-b837-6e3be0432ca0",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "ui/workspace/research-runs/b545e0ec-7ef0-43da-aa79-dcecbed32760",
+      "run_id": "b545e0ec-7ef0-43da-aa79-dcecbed32760",
+      "status": "SUCCEEDED",
+      "files": 17
+    },
+    {
+      "path": "ui/workspace/research-runs/b5e60ccd-2568-4e78-8dad-d418a4032fbb",
+      "run_id": "b5e60ccd-2568-4e78-8dad-d418a4032fbb",
+      "status": "SUCCEEDED",
+      "files": 17
+    }
+  ],
+  "P5_outcomes": {
+    "momentum": {
+      "run_id": "90cd66b4-1a81-42d6-b795-f111122a9b3d",
+      "fills": 1,
+      "state_sha256": "7e71c25ebff51064897c97c9c656e822f53d580c2fbf471db9feb209bdd98047",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "2f809eba4958a0f42afe5eb7964a8faaa7611818d2800a777a848387ca28ad2f"
+    },
+    "reversal": {
+      "run_id": "f9941636-4089-4c41-9966-3180904e685d",
+      "fills": 1,
+      "state_sha256": "f0eaa57fdcf3b8f1a77c7ab0afd546fd4801747bb68522e1db583ebb705a7233",
+      "replay": "NUMERICAL_REPLAY_VERIFIED",
+      "request_sha256": "79451b7de86dfa3eb9dc38a5f54009863b6bfb28b70ab2580d523d5344f575c8"
+    }
+  },
+  "independent_developer_raw_reference": {
+    "momentum": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    },
+    "reversal": {
+      "result": "PASS",
+      "assertions": 1026,
+      "committed_transactions": 30,
+      "scope": "Developer independent stdlib raw-event/journal reconstruction; not independent GPT Work G2"
+    }
+  },
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+  "result": "PASS"
+}
