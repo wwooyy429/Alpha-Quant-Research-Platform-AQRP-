@@ -1,0 +1,55 @@
+{
+  "scope": "Actual P6 baseline artifact/installed metadata for G1 planning only; these are not future P7 runtime locks",
+  "phase6_released_sha": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "installed_M_execution_sha": "7b4864f4d750fa96b5b5634c4bba0cd84b5b077f",
+  "baseline_factor_refs": [
+    {
+      "factor_id": "momentum",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    },
+    {
+      "factor_id": "reversal",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    },
+    {
+      "factor_id": "volume",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    },
+    {
+      "factor_id": "price_volume",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    }
+  ],
+  "baseline_policy_bundle_sha256": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+  "baseline_metadata_command": "preflight/factor-ref-metadata.command.json",
+  "runtime_factor_refs": "Must be resolved and independently reviewed from the actual future fixed P7 implementation package; adding modules/wiring changes whole-package bundle hash; do not reuse P6 hashes as implicit runtime defaults",
+  "old_three_original_refs": [
+    {
+      "factor_id": "momentum",
+      "factor_version": "1.0.0",
+      "implementation_hash": "51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d"
+    },
+    {
+      "factor_id": "reversal",
+      "factor_version": "1.0.0",
+      "implementation_hash": "51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d"
+    },
+    {
+      "factor_id": "volume",
+      "factor_version": "1.0.0",
+      "implementation_hash": "51933fe2508e61a25fef53ea73b4210a67cb19d6531e1bf614e206db32a1d62d"
+    }
+  ],
+  "old_ref_evidence": {
+    "original_path": "E:\\WORK\\AQRP-runs\\p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5\\aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6\\reproduction\\result.json",
+    "sha256": "dcd905975d41ba983d5f974ec0a93e5d50f6ab2c523e63e0bbe164e16e594764",
+    "status": "THREE_ORIGINAL_REFS_EXECUTED",
+    "execution_scope": "Existing actual M postmerge P6 clean SDK; not a new P7 run or complete historical-host claim"
+  },
+  "INT_003_old_pin_rule": "Replay the exact old pin only in its retained original approved package/locked dependency environment and declared replay; never claim that a new package bundle loads the old implementation hash",
+  "abstract_design_versions_warning": "Any synthetic version1.0.1 in a literal identity-isolation candidate is an abstract oracle label, not a claim that this approved artifact exists; implementation must bind actual approved artifact refs"
+}

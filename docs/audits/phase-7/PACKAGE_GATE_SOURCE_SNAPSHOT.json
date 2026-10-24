@@ -1,0 +1,81 @@
+{
+  "scope": "Read-only actual source examination for P7 package/CI design; no tools executed, no R modifications, no product pass claim",
+  "audited_p6_implementation_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "p6_release_sha": "待父代理核实Phase6 RELEASED后填写",
+  "observed_phase6_identity": {
+    "bundle_modules": 83,
+    "preserved_files": 5016,
+    "current_files": 91,
+    "bundle_sha256": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+  },
+  "actual_blockers": [
+    "P6 checker requires full P6 current identity/bundle and 8 phase6 rows",
+    "P6 checker explicitly forbids src/aqrp/competition and broker",
+    "ci.py invokes check_phase6_package before original replay and all tests",
+    "ci.py upload-selection excludes new e2e/competition subtrees",
+    "workflow artifact path list excludes new e2e/competition subtrees"
+  ],
+  "sources": [
+    {
+      "path": "tools/check_phase6_package.py",
+      "bytes": 2949,
+      "sha256": "2e301eb345c5f202bdae90e3894c94aecd11edefd0b1c51f35c05ef6a59c6311"
+    },
+    {
+      "path": "tools/check_phase5_package.py",
+      "bytes": 2920,
+      "sha256": "2268ca333ade81a6a2623b29e9d7bab180978a9e7ab1e20342c77b553b18c34a"
+    },
+    {
+      "path": "tools/ci.py",
+      "bytes": 11880,
+      "sha256": "9b93525d4848bcec5e547835c66f38fae26607fcb9e4765bb830f67275dc3b5c"
+    },
+    {
+      "path": "tools/check_coverage.py",
+      "bytes": 2258,
+      "sha256": "c6df7cd2ce9e8b83b15af0104cfaf8d84c0926882983524659f083ae485be5a9"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 2292,
+      "sha256": "6110441b4bfadb25fd82edc33f0e2bf0e7608431df03bedac8713351fa4546ad"
+    },
+    {
+      "path": "tests/environment/test_installation.py",
+      "bytes": 1146,
+      "sha256": "26891523ce9a58e9094da836232f61c9826328333789dce43edc17271c52592a"
+    },
+    {
+      "path": "docs/audits/phase-6/IMPLEMENTATION_IDENTITY.json",
+      "bytes": 1103088,
+      "sha256": "ed0a5bb3d11bba8feb1e8d1e270a6719adbe2125544e3ae0beecb6764b82813b"
+    },
+    {
+      "path": "docs/audits/phase-6/IMPLEMENTATION_AUTHORIZATION.json",
+      "bytes": 1548,
+      "sha256": "9939079aa091153a7c19c5ad743135f3ae08be1f5dd7b74fd072e74280c01fdb"
+    },
+    {
+      "path": "docs/audits/phase-6/REQUIREMENTS_SNAPSHOT.json",
+      "bytes": 5447,
+      "sha256": "67b205b7454646603163da310088ee1be1da7953fe8ec6a4aac1b02a7d3b40cc"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 41531,
+      "sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb"
+    },
+    {
+      "path": "requirements-ui-windows.lock",
+      "bytes": 65963,
+      "sha256": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3"
+    },
+    {
+      "path": "requirements-ui-linux.lock",
+      "bytes": 65963,
+      "sha256": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3"
+    }
+  ],
+  "required_design": "PACKAGE_GATE_AND_CI_PLAN.md; exact allowed path and mode distinction in COMPATIBILITY_IMPACT_DRAFT.md"
+}

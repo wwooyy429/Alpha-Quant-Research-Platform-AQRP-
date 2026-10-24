@@ -1,0 +1,1421 @@
+{
+  "scope": "Original unreviewed design counterexamples preserved; not product bug or execution",
+  "daily19_Tplus1": {
+    "model_status": "EXPECTED_DESIGN_REJECTION",
+    "day_index": 3,
+    "stage": "P4_REQUIRED_DECISION",
+    "errors": [
+      "SELLABLE"
+    ],
+    "trace": [
+      {
+        "day_index": 1,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 1,
+        "stage": "CLOSE_VALUATION",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 2,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 2,
+        "stage": "CLOSE_VALUATION",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 2,
+        "stage": "ORDERS_ACCEPTED",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "420",
+          "O_F": "4",
+          "F_unused": "96",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "576",
+          "cash_alloc": "480",
+          "equity_alloc": "480",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [
+          {
+            "sid": "SYN_A:001",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": {
+          "decision": 0,
+          "new_N": "420",
+          "new_F": "4"
+        }
+      },
+      {
+        "day_index": 3,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "420",
+          "O_F": "4",
+          "F_unused": "96",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "576",
+          "cash_alloc": "480",
+          "equity_alloc": "480",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [
+          {
+            "sid": "SYN_A:001",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 3,
+        "stage": "CANDIDATE_FILL",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "99",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "2993/5",
+          "cash_alloc": "2498/5",
+          "equity_alloc": "4498/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": {
+          "day_index": 3,
+          "sid": "SYN_A:001",
+          "side": "BUY",
+          "quantity": "4",
+          "actual_price": "1001/10",
+          "fee": "1",
+          "sell_tax": "0",
+          "slippage": "2/5",
+          "P4_post": {
+            "passed": true,
+            "errors": [],
+            "equity_alloc": "4498/5",
+            "free_cash": "2498/5",
+            "max_asset_weight": "1000/2249",
+            "gross": "1000/2249",
+            "turnover": "1000/2249"
+          },
+          "P5_post": {
+            "passed": true,
+            "errors": [],
+            "account": {
+              "cash_set": "2993/5",
+              "U_free": "0",
+              "U_short": "0",
+              "S_set": "0",
+              "cash_total": "2993/5",
+              "marked_value": "400",
+              "O_N": "0",
+              "O_F": "0",
+              "F_unused": "99",
+              "short_value": "0",
+              "P_res": "0",
+              "Z": "0",
+              "available": "2993/5",
+              "cash_alloc": "2498/5",
+              "equity_alloc": "4498/5",
+              "equity": "4993/5"
+            },
+            "decision_turnover": "2002/5",
+            "decision_equity": "1000"
+          }
+        }
+      },
+      {
+        "day_index": 3,
+        "stage": "CLOSE_VALUATION",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "99",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "2993/5",
+          "cash_alloc": "2498/5",
+          "equity_alloc": "4498/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": null
+      },
+      {
+        "day_index": 3,
+        "stage": "P4_REQUIRED_DECISION",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "100",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "2993/5",
+          "cash_alloc": "2493/5",
+          "equity_alloc": "4493/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": "100",
+        "paid_this_decision": "0",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": {
+          "decision": 1,
+          "selected": "SYN_A:002",
+          "ideal": {
+            "SYN_A:001": "0",
+            "SYN_A:002": "4493/1000",
+            "SYN_A:003": "0",
+            "SYN_A:004": "0",
+            "SYN_A:005": "0",
+            "SYN_A:006": "0"
+          },
+          "target": {
+            "SYN_A:001": "0",
+            "SYN_A:002": "4",
+            "SYN_A:003": "0",
+            "SYN_A:004": "0",
+            "SYN_A:005": "0",
+            "SYN_A:006": "0"
+          },
+          "P4_pre": {
+            "passed": true,
+            "errors": [],
+            "equity_alloc": "4493/5",
+            "free_cash": "4493/10",
+            "max_asset_weight": "1/2",
+            "gross": "1/2",
+            "turnover": "8493/8986"
+          },
+          "P4_post_rounding": {
+            "passed": true,
+            "errors": [],
+            "equity_alloc": "4493/5",
+            "free_cash": "2493/5",
+            "max_asset_weight": "2000/4493",
+            "gross": "2000/4493",
+            "turnover": "4000/4493"
+          },
+          "unavailable_long_sales": {
+            "SYN_A:001": "4"
+          }
+        }
+      }
+    ],
+    "P4": [
+      {
+        "decision": 0,
+        "selected": "SYN_A:001",
+        "ideal": {
+          "SYN_A:001": "9/2",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "target": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "P4_pre": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "900",
+          "free_cash": "450",
+          "max_asset_weight": "1/2",
+          "gross": "1/2",
+          "turnover": "1/2"
+        },
+        "P4_post_rounding": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "900",
+          "free_cash": "500",
+          "max_asset_weight": "4/9",
+          "gross": "4/9",
+          "turnover": "4/9"
+        },
+        "unavailable_long_sales": {}
+      },
+      {
+        "decision": 1,
+        "selected": "SYN_A:002",
+        "ideal": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "4493/1000",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "target": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "4",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "P4_pre": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "4493/5",
+          "free_cash": "4493/10",
+          "max_asset_weight": "1/2",
+          "gross": "1/2",
+          "turnover": "8493/8986"
+        },
+        "P4_post_rounding": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "4493/5",
+          "free_cash": "2493/5",
+          "max_asset_weight": "2000/4493",
+          "gross": "2000/4493",
+          "turnover": "4000/4493"
+        },
+        "unavailable_long_sales": {
+          "SYN_A:001": "4"
+        }
+      }
+    ],
+    "fills": [
+      {
+        "day_index": 3,
+        "sid": "SYN_A:001",
+        "side": "BUY",
+        "quantity": "4",
+        "actual_price": "1001/10",
+        "fee": "1",
+        "sell_tax": "0",
+        "slippage": "2/5",
+        "P4_post": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "4498/5",
+          "free_cash": "2498/5",
+          "max_asset_weight": "1000/2249",
+          "gross": "1000/2249",
+          "turnover": "1000/2249"
+        },
+        "P5_post": {
+          "passed": true,
+          "errors": [],
+          "account": {
+            "cash_set": "2993/5",
+            "U_free": "0",
+            "U_short": "0",
+            "S_set": "0",
+            "cash_total": "2993/5",
+            "marked_value": "400",
+            "O_N": "0",
+            "O_F": "0",
+            "F_unused": "99",
+            "short_value": "0",
+            "P_res": "0",
+            "Z": "0",
+            "available": "2993/5",
+            "cash_alloc": "2498/5",
+            "equity_alloc": "4498/5",
+            "equity": "4993/5"
+          },
+          "decision_turnover": "2002/5",
+          "decision_equity": "1000"
+        }
+      }
+    ]
+  },
+  "sparse10_fee100_SELL_FIRST": {
+    "model_status": "EXPECTED_DESIGN_REJECTION",
+    "day_index": 5,
+    "stage": "ATOMIC_FILL_WOULD_CANCEL",
+    "errors": [
+      "P4_TURNOVER"
+    ],
+    "trace": [
+      {
+        "day_index": 1,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 1,
+        "stage": "CLOSE_VALUATION",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 2,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 2,
+        "stage": "CLOSE_VALUATION",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "0",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "1000",
+          "cash_alloc": "1000",
+          "equity_alloc": "1000",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": null,
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 2,
+        "stage": "ORDERS_ACCEPTED",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "420",
+          "O_F": "4",
+          "F_unused": "96",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "576",
+          "cash_alloc": "480",
+          "equity_alloc": "480",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [
+          {
+            "sid": "SYN_A:001",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": {
+          "decision": 0,
+          "new_N": "420",
+          "new_F": "4"
+        }
+      },
+      {
+        "day_index": 3,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "1000",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "1000",
+          "marked_value": "0",
+          "O_N": "420",
+          "O_F": "4",
+          "F_unused": "96",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "576",
+          "cash_alloc": "480",
+          "equity_alloc": "480",
+          "equity": "1000"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [
+          {
+            "sid": "SYN_A:001",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "0",
+        "cumulative_fees": "0",
+        "cumulative_slippage": "0",
+        "detail": null
+      },
+      {
+        "day_index": 3,
+        "stage": "CANDIDATE_FILL",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "99",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "2993/5",
+          "cash_alloc": "2498/5",
+          "equity_alloc": "4498/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": {
+          "day_index": 3,
+          "sid": "SYN_A:001",
+          "side": "BUY",
+          "quantity": "4",
+          "actual_price": "1001/10",
+          "fee": "1",
+          "sell_tax": "0",
+          "slippage": "2/5",
+          "P4_post": {
+            "passed": true,
+            "errors": [],
+            "equity_alloc": "4498/5",
+            "free_cash": "2498/5",
+            "max_asset_weight": "1000/2249",
+            "gross": "1000/2249",
+            "turnover": "1000/2249"
+          },
+          "P5_post": {
+            "passed": true,
+            "errors": [],
+            "account": {
+              "cash_set": "2993/5",
+              "U_free": "0",
+              "U_short": "0",
+              "S_set": "0",
+              "cash_total": "2993/5",
+              "marked_value": "400",
+              "O_N": "0",
+              "O_F": "0",
+              "F_unused": "99",
+              "short_value": "0",
+              "P_res": "0",
+              "Z": "0",
+              "available": "2993/5",
+              "cash_alloc": "2498/5",
+              "equity_alloc": "4498/5",
+              "equity": "4993/5"
+            },
+            "decision_turnover": "2002/5",
+            "decision_equity": "1000"
+          }
+        }
+      },
+      {
+        "day_index": 3,
+        "stage": "CLOSE_VALUATION",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "99",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "2993/5",
+          "cash_alloc": "2498/5",
+          "equity_alloc": "4498/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": null
+      },
+      {
+        "day_index": 4,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "99",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "2993/5",
+          "cash_alloc": "2498/5",
+          "equity_alloc": "4498/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": null
+      },
+      {
+        "day_index": 4,
+        "stage": "CLOSE_VALUATION",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "0",
+          "O_F": "0",
+          "F_unused": "99",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "2993/5",
+          "cash_alloc": "2498/5",
+          "equity_alloc": "4498/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": null
+      },
+      {
+        "day_index": 4,
+        "stage": "ORDERS_ACCEPTED",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "420",
+          "O_F": "8",
+          "F_unused": "92",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "853/5",
+          "cash_alloc": "393/5",
+          "equity_alloc": "2393/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [
+          {
+            "sid": "SYN_A:001",
+            "side": "SELL",
+            "quantity": "4"
+          },
+          {
+            "sid": "SYN_A:002",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "0",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": {
+          "decision": 1,
+          "new_N": "420",
+          "new_F": "8"
+        }
+      },
+      {
+        "day_index": 5,
+        "stage": "SETTLEMENT_OPEN",
+        "account": {
+          "cash_set": "2993/5",
+          "U_free": "0",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "2993/5",
+          "marked_value": "400",
+          "O_N": "420",
+          "O_F": "8",
+          "F_unused": "92",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "853/5",
+          "cash_alloc": "393/5",
+          "equity_alloc": "2393/5",
+          "equity": "4993/5"
+        },
+        "positions": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [],
+        "live_orders": [
+          {
+            "sid": "SYN_A:001",
+            "side": "SELL",
+            "quantity": "4"
+          },
+          {
+            "sid": "SYN_A:002",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "0",
+        "cumulative_fees": "1",
+        "cumulative_slippage": "2/5",
+        "detail": null
+      },
+      {
+        "day_index": 5,
+        "stage": "CANDIDATE_FILL",
+        "account": {
+          "cash_set": "2988/5",
+          "U_free": "1998/5",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "4986/5",
+          "marked_value": "0",
+          "O_N": "420",
+          "O_F": "4",
+          "F_unused": "95",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "868/5",
+          "cash_alloc": "393/5",
+          "equity_alloc": "393/5",
+          "equity": "4986/5"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [
+          {
+            "amount": "1998/5",
+            "due": 6
+          }
+        ],
+        "live_orders": [
+          {
+            "sid": "SYN_A:002",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "2",
+        "cumulative_slippage": "4/5",
+        "detail": {
+          "day_index": 5,
+          "sid": "SYN_A:001",
+          "side": "SELL",
+          "quantity": "4",
+          "actual_price": "999/10",
+          "fee": "1",
+          "sell_tax": "0",
+          "slippage": "2/5",
+          "P4_post": {
+            "passed": false,
+            "errors": [
+              "P4_TURNOVER"
+            ],
+            "equity_alloc": "393/5",
+            "free_cash": "393/5",
+            "max_asset_weight": "0",
+            "gross": "0",
+            "turnover": "2000/393"
+          },
+          "P5_post": {
+            "passed": true,
+            "errors": [],
+            "account": {
+              "cash_set": "2988/5",
+              "U_free": "1998/5",
+              "U_short": "0",
+              "S_set": "0",
+              "cash_total": "4986/5",
+              "marked_value": "0",
+              "O_N": "420",
+              "O_F": "4",
+              "F_unused": "95",
+              "short_value": "0",
+              "P_res": "0",
+              "Z": "0",
+              "available": "868/5",
+              "cash_alloc": "393/5",
+              "equity_alloc": "393/5",
+              "equity": "4986/5"
+            },
+            "decision_turnover": "1998/5",
+            "decision_equity": "4993/5"
+          }
+        }
+      },
+      {
+        "day_index": 5,
+        "stage": "ATOMIC_FILL_WOULD_CANCEL",
+        "account": {
+          "cash_set": "2988/5",
+          "U_free": "1998/5",
+          "U_short": "0",
+          "S_set": "0",
+          "cash_total": "4986/5",
+          "marked_value": "0",
+          "O_N": "420",
+          "O_F": "4",
+          "F_unused": "95",
+          "short_value": "0",
+          "P_res": "0",
+          "Z": "0",
+          "available": "868/5",
+          "cash_alloc": "393/5",
+          "equity_alloc": "393/5",
+          "equity": "4986/5"
+        },
+        "positions": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "cashlots": [
+          {
+            "amount": "1998/5",
+            "due": 6
+          }
+        ],
+        "live_orders": [
+          {
+            "sid": "SYN_A:002",
+            "side": "BUY",
+            "quantity": "4"
+          }
+        ],
+        "budget": "100",
+        "paid_this_decision": "1",
+        "cumulative_fees": "2",
+        "cumulative_slippage": "4/5",
+        "detail": {
+          "candidate": {
+            "day_index": 5,
+            "sid": "SYN_A:001",
+            "side": "SELL",
+            "quantity": "4",
+            "actual_price": "999/10",
+            "fee": "1",
+            "sell_tax": "0",
+            "slippage": "2/5",
+            "P4_post": {
+              "passed": false,
+              "errors": [
+                "P4_TURNOVER"
+              ],
+              "equity_alloc": "393/5",
+              "free_cash": "393/5",
+              "max_asset_weight": "0",
+              "gross": "0",
+              "turnover": "2000/393"
+            },
+            "P5_post": {
+              "passed": true,
+              "errors": [],
+              "account": {
+                "cash_set": "2988/5",
+                "U_free": "1998/5",
+                "U_short": "0",
+                "S_set": "0",
+                "cash_total": "4986/5",
+                "marked_value": "0",
+                "O_N": "420",
+                "O_F": "4",
+                "F_unused": "95",
+                "short_value": "0",
+                "P_res": "0",
+                "Z": "0",
+                "available": "868/5",
+                "cash_alloc": "393/5",
+                "equity_alloc": "393/5",
+                "equity": "4986/5"
+              },
+              "decision_turnover": "1998/5",
+              "decision_equity": "4993/5"
+            }
+          },
+          "note": "Model candidate rejected before atomic commit; not a product transaction"
+        }
+      }
+    ],
+    "P4": [
+      {
+        "decision": 0,
+        "selected": "SYN_A:001",
+        "ideal": {
+          "SYN_A:001": "9/2",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "target": {
+          "SYN_A:001": "4",
+          "SYN_A:002": "0",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "P4_pre": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "900",
+          "free_cash": "450",
+          "max_asset_weight": "1/2",
+          "gross": "1/2",
+          "turnover": "1/2"
+        },
+        "P4_post_rounding": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "900",
+          "free_cash": "500",
+          "max_asset_weight": "4/9",
+          "gross": "4/9",
+          "turnover": "4/9"
+        },
+        "unavailable_long_sales": {}
+      },
+      {
+        "decision": 1,
+        "selected": "SYN_A:002",
+        "ideal": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "4493/1000",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "target": {
+          "SYN_A:001": "0",
+          "SYN_A:002": "4",
+          "SYN_A:003": "0",
+          "SYN_A:004": "0",
+          "SYN_A:005": "0",
+          "SYN_A:006": "0"
+        },
+        "P4_pre": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "4493/5",
+          "free_cash": "4493/10",
+          "max_asset_weight": "1/2",
+          "gross": "1/2",
+          "turnover": "8493/8986"
+        },
+        "P4_post_rounding": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "4493/5",
+          "free_cash": "2493/5",
+          "max_asset_weight": "2000/4493",
+          "gross": "2000/4493",
+          "turnover": "4000/4493"
+        },
+        "unavailable_long_sales": {}
+      }
+    ],
+    "fills": [
+      {
+        "day_index": 3,
+        "sid": "SYN_A:001",
+        "side": "BUY",
+        "quantity": "4",
+        "actual_price": "1001/10",
+        "fee": "1",
+        "sell_tax": "0",
+        "slippage": "2/5",
+        "P4_post": {
+          "passed": true,
+          "errors": [],
+          "equity_alloc": "4498/5",
+          "free_cash": "2498/5",
+          "max_asset_weight": "1000/2249",
+          "gross": "1000/2249",
+          "turnover": "1000/2249"
+        },
+        "P5_post": {
+          "passed": true,
+          "errors": [],
+          "account": {
+            "cash_set": "2993/5",
+            "U_free": "0",
+            "U_short": "0",
+            "S_set": "0",
+            "cash_total": "2993/5",
+            "marked_value": "400",
+            "O_N": "0",
+            "O_F": "0",
+            "F_unused": "99",
+            "short_value": "0",
+            "P_res": "0",
+            "Z": "0",
+            "available": "2993/5",
+            "cash_alloc": "2498/5",
+            "equity_alloc": "4498/5",
+            "equity": "4993/5"
+          },
+          "decision_turnover": "2002/5",
+          "decision_equity": "1000"
+        }
+      }
+    ]
+  }
+}

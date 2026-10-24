@@ -1,0 +1,6 @@
+{
+  "scope": "Developer draft harness failure, not product test",
+  "observed_error": "AssertionError no_main_or_tag_claim=False; other six structure checks True",
+  "cause": "Exact Chinese substring in check omitted spaces present in PLAN.md placeholder. No release SHA or tag was claimed; draft still contained explicit pending-parent-verification text.",
+  "correction": "Normalize whitespace for placeholder presence; do not alter authorization or invent a baseline"
+}

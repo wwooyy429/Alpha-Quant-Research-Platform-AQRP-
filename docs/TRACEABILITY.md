@@ -1,3 +1,6 @@
+<!-- Phase7 G1 planning override -->
+最新已核实状态：Phase6八项受限工程已ACCEPTED并RELEASED，main/phase6-baseline/v0.6.0在本次计划启动时同指完整SHA `d563347ad11e1f26e131dc06e343250282c05c33`；旧标签保留，证据见docs/audits/phase-7/PHASE6_RELEASE_RECEIPT.json。用户只授权从该基线开始Phase7 G1计划预审：五项原需求（3 MVP / 2 Competition Ready），包括需求映射、接口/数学口径、独立答案及测试证据计划、阶段依赖，交GPT Work固定40位SHA审查。本轮不开始P7业务实现，不把P6的1567回归写成P7产品通过。WI-R2两项/真实隔离持续DEFERRED / NOT VERIFIED，正式Test未运行、金融批准NONE、历史宿主受限边界保留；不授权部署/实盘/真实权限操作。以下旧阶段摘要作为历史保留，当前P7状态以docs/audits/phase-7/STATUS.json为准。
+
 <!-- Phase6 release-publication override -->
 2026-10-24 最新人工验收及发布覆盖说明：Phase6八项受限工程范围已由用户ACCEPTED，GPT Work固定3017a097b49ecdae68228ca9a417fcd03c313200 G2 PASS及三项修复关闭维持。PR #9批准归档头a4d650d5d15e814600fde0bb6858fe97f14e5229只改文档/审计存储/身份元数据，双系统实际CI各1567通过；旧H1扫描失败及原证据保留，7份外部原件位置/哈希明确，扫描规则未改。实际普通合并7b4864f4d750fa96b5b5634c4bba0cd84b5b077f整树等于批准头；开发方合并后新干净SDK1567、原20＋4及数学91通过。发布证据提交仅文档及其身份元数据，main/phase6-baseline/v0.6.0原子同点核验后才RELEASED，旧标签不移动，已审包仍0.6.0.dev5。仅授权其后Phase7 G1计划，不授权业务实现。WI-R2两项和真实隔离持续DEFERRED / NOT VERIFIED，正式Test未运行、金融批准NONE、历史宿主边界及原native原因NOT VERIFIED维持；无部署/实盘/真实权限操作。详docs/audits/phase-6/BASELINE.md。以下既有轮次为历史，不覆盖本次最新人工决定。
 
