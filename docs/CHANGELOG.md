@@ -378,3 +378,5 @@
 ## 一并保留的既有静态回归修复
 
 本轮首次P4静态冻结检查因docs/REVIEW_PROTOCOL.md失败；该文件在此前1ab819a延期记录提交中被加了提示，已存在于bd18d1b。现恢复为已发布32ea基线原字节，不改检查/期望hash；延期原话与义务仍完整保留于AGENTS及windows-isolation-deferral专项记录。首次失败原命令/stdout/stderr和处置在developer-validation/PREEXISTING_REGRESSION_DISPOSITION.json；仅重新执行受影响检查，通过3440冻结文件核对，没有重复已通过的算术或改写失败。此恢复是文档一致性修复，需随新固定SHA复核，不改变main/旧标签。
+
+Phase6 developer follow-up (0.6.0.dev5): existing ten-process clean-SDK case exposed first-open WAL contention; bounded pre-BEGIN admission repair and seven deterministic controls added, original failure retained. Full fixed-SHA evidence and independent G2 still pending; no acceptance, merge, tag, deployment, formal Test, financial approval or P7. Windows R2 stays DEFERRED / NOT VERIFIED.

@@ -186,3 +186,5 @@ Phase0已RELEASED。main仍502c6931dcfce50bee2f71a80524475fae6396bf；phase0-bas
 14项Phase1实现/102项测试的实际映射和来源保留。src/tests/tools/CI/依赖锁/Golden及50份P0冻结文件不变，106项/16组目录不变。本轮当前文件清单为implementation/SDK_HASH_INCREMENTAL_MANIFEST.json，旧清单属于各固定SHA历史快照。F-002/F-003/PRE-001/PRE-003限定范围CLOSED；PRE-002仍MITIGATED，原Baidu源码/锁/未提交内容未重置或自动迁移。
 
 停止于审查记录更新。尚需独立执行补齐或用户明确接受限制、用户阶段验收、分别授权合并/标签、最终主干内容及检查/追溯和稳定基线核验；Phase2须单独启动授权。任何报告建议均不代替这些决定。
+
+Phase6 developer follow-up (0.6.0.dev5): existing ten-process clean-SDK case exposed first-open WAL contention; bounded pre-BEGIN admission repair and seven deterministic controls added, original failure retained. Full fixed-SHA evidence and independent G2 still pending; no acceptance, merge, tag, deployment, formal Test, financial approval or P7. Windows R2 stays DEFERRED / NOT VERIFIED.

@@ -2,6 +2,7 @@
 
 import json
 import sqlite3
+import time
 import uuid
 from contextlib import contextmanager
 
@@ -9,6 +10,8 @@ from aqrp.backtest.transactions import guard_path
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.errors import ContractError
 from aqrp.experiments.ledger import immutable_write, mutex, read_chain
+
+SETUP_TIMEOUT_SECONDS = 30.0
 
 TERMINAL = {"SUCCEEDED", "FAILED", "CANCELLED"}
 
@@ -49,11 +52,32 @@ class TaskState:
     @contextmanager
     def transaction(self):
         guard_path(self.db)
-        c = sqlite3.connect(self.db, timeout=30, isolation_level=None)
+        c = sqlite3.connect(self.db, timeout=0, isolation_level=None)
         try:
             c.row_factory = sqlite3.Row
-            c.execute("PRAGMA journal_mode=WAL")
+            # journal_mode can return SQLITE_BUSY immediately during a first-open
+            # race. Wait only before a transaction exists; never rerun its body.
+            deadline = time.monotonic() + SETUP_TIMEOUT_SECONDS
+            while True:
+                try:
+                    row = c.execute("PRAGMA journal_mode=WAL").fetchone()
+                    if row is None or row[0] != "wal":
+                        raise ContractError("TASK_JOURNAL_MODE_UNVERIFIED")
+                    break
+                except sqlite3.OperationalError as exc:
+                    code = getattr(exc, "sqlite_errorcode", None)
+                    if code is None or code & 0xFF not in (
+                        sqlite3.SQLITE_BUSY,
+                        sqlite3.SQLITE_LOCKED,
+                    ):
+                        raise
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        raise
+                    time.sleep(min(0.01, remaining))
             c.execute("PRAGMA synchronous=FULL")
+            remaining_ms = max(0, int(1000 * (deadline - time.monotonic())))
+            c.execute("PRAGMA busy_timeout=" + str(remaining_ms))
             c.execute("BEGIN IMMEDIATE")
             try:
                 yield c

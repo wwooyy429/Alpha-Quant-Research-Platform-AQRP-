@@ -16,3 +16,7 @@
 
 
 DEV-P6-002：C3固定418c17fad8fefe50dedc866f95c14ccf0fa433ca的1558项预检及覆盖率门禁通过，安装包测试亦已1558通过；收尾发现只读SQLite连接未显式关闭造成资源警告。dev4改用closing确保正常/异常路径均关闭，增加两项实际连接生命周期回归，不降低检查、不改变金融数学或预算。C3原日志/工件/浏览器前缀保留，不能移作dev4证明；最终重新锁完整SHA执行SDK/双OS/原ZIP/真实浏览器。见RESOURCE_LIFECYCLE_REPAIR.json。三项独立G2仍OPEN，DEV-P6-001独立关闭结论保留，DEV-P6-002是开发自查修复待主审。
+
+### Developer self-test follow-up: DEV-P6-004
+
+C5 clean SDK discovered first-open SQLite WAL contention in the existing real ten-process test. Original1559/1560failure is retained. Version0.6.0.dev5 waits for BUSY/LOCKED only before BEGIN, rejects unconfirmed WAL, retains FULL durability and remaining native busy timeout, and never retries transaction bodies/commits. Seven deterministic controls added; all original mathematical/financial/ten-process assertions retained. This is an additional developer defect, not closure of independent001/002/003. New fixed-version full evidence and GPT Work review remain required.

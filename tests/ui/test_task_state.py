@@ -84,13 +84,16 @@ def test_ten_real_processes_allocate_one_task_and_one_workspace(tmp_path):
         )
         for _ in range(10)
     ]
-    outputs = []
+    outputs, codes = [], []
     for index, p in enumerate(processes):
         out, err = p.communicate(timeout=90)
         (tmp_path / f"process-{index}.stdout.log").write_bytes(out)
         (tmp_path / f"process-{index}.stderr.log").write_bytes(err)
-        assert p.returncode == 0, err.decode()
-        outputs.append(tuple(json.loads(out)))
+        codes.append(p.returncode)
+        if p.returncode == 0:
+            outputs.append(tuple(json.loads(out)))
+    # Drain and retain every child's original output before reporting a failure.
+    assert codes == [0] * 10, codes
     assert len(set(outputs)) == 1
     with TaskState(tmp_path).transaction() as c:
         assert c.execute("SELECT count(*) FROM tasks").fetchone()[0] == 1

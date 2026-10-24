@@ -22,3 +22,7 @@ C3 CI 40069640065 Windows failed 1/1558 with child native exception 0xC0000005; 
 ### DEV-P6-003 follow-up — all six abrupt-death boundaries
 
 C4 CI 40072608848 Windows failed on another remaining os._exit P4_PARTIAL control (1559/1560); Ubuntu passed1560. Previous repair covered only two boundaries and was incomplete. All six P6 deliberate death controls now share fsynced point/PID/Task/code/method records, native diagnostics and strict exact exits73/74/75. No recovery assertion or original answer removed; no business source change vs C4. See SECOND_CANDIDATE_CI_FAILURE.json. Native cause is not proven; both old failures retained. New fixed-version full evidence and independent review still required.
+
+## DEV-P6-004 — simultaneous first-open WAL admission
+
+C5 local clean SDK failed the existing required ten-process test (1559/1560) before transaction entry: journal_mode=WAL reported database locked. Added bounded native lock waiting before BEGIN, verified wal mode and retained FULL durability/remaining busy timeout. Body and commit are never rerun. Seven deterministic native-contention/fail-closed controls and unchanged ten-process outcomes cover this. All child outputs are now drained before reporting failures; missing outputs from the old failure are not invented. Original failure, C5 Ubuntu success and Windows environment refusal/retry remain separate. See SQLITE_INITIALIZATION_REPAIR.json. New version0.6.0.dev5 still requires fixed-SHA full SDK/dual OS/browser and GPT Work review.
