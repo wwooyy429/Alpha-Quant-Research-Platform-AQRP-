@@ -195,6 +195,29 @@ def main():
     command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
     command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
     command([str(py), str(source / "tools/check_phase7_package.py")], cwd=source)
+    # The protected historical base policy remains byte-exact. The child only
+    # scopes independently recomputed public variant identifiers to exact files.
+    os.environ["GITLEAKS_CONFIG"] = str(source / ".gitleaks-phase7.toml")
+    env["secret_scan_policy"] = {
+        "base_sha256": hashlib.sha256((source / ".gitleaks.toml").read_bytes()).hexdigest(),
+        "effective_child_sha256": hashlib.sha256(
+            (source / ".gitleaks-phase7.toml").read_bytes()
+        ).hexdigest(),
+        "effective_config": str(source / ".gitleaks-phase7.toml"),
+        "timing": "Scan before expensive tests; exact entire scanned-source bytes rechecked before complete",
+    }
+    (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
+    command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
+    command(
+        [
+            str(py),
+            str(source / "tools/check_phase7_scan_policy.py"),
+            str(RUN),
+            "--operation",
+            "capture",
+        ],
+        cwd=source,
+    )
     command([str(py), str(source / "tools/original_replay_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/released_p6_smoke.py"), str(RUN)], cwd=source)
     os.environ["AQRP_ORIGINAL_ENV_ARCHIVE"] = str(RUN / "reproduction/environment-archive.json")
@@ -253,7 +276,16 @@ def main():
     command([str(py), str(source / "tools/ui_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/e2e_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/competition_smoke.py"), str(RUN)], cwd=source)
-    command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
+    command(
+        [
+            str(py),
+            str(source / "tools/check_phase7_scan_policy.py"),
+            str(RUN),
+            "--operation",
+            "verify",
+        ],
+        cwd=source,
+    )
     env["complete_scope"] = (
         "Complete clean SDK and P7 non-browser protocol; actual browser and overall E2E recorded separately"
     )
@@ -302,6 +334,7 @@ def main():
                 "ui-wheelhouse",
                 "e2e",
                 "competition",
+                "scan-policy",
                 "tmp",
             )
             or (

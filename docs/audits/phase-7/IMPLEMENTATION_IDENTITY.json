@@ -360,8 +360,13 @@
   "current_files": [
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 2851,
-      "sha256": "5d49e636a774d5cad1a3edfa5c03733b74e1f093e4581efb9a3d566df4dd2dc4"
+      "bytes": 2915,
+      "sha256": "610924a3c414cd5eadccaa07199609a61ef3d02cf224537f5bf57fdfafb24f78"
+    },
+    {
+      "path": ".gitleaks-phase7.toml",
+      "bytes": 2442,
+      "sha256": "62bc71df9274add6c9d0323783dbb8add02f6c409ea941d27c16773b70ff5be5"
     },
     {
       "path": "AGENTS.md",
@@ -375,8 +380,8 @@
     },
     {
       "path": "docs/CHANGELOG.md",
-      "bytes": 53638,
-      "sha256": "8f0e9576fd7dc3906e9bb66b902165d5cf74ac556ba1e2434c518d86359366de"
+      "bytes": 54320,
+      "sha256": "131b3185507debac7abc9b0fbc29512a1ae7087cfe5e20d530c419787fa29523"
     },
     {
       "path": "docs/DECISIONS.md",
@@ -385,8 +390,8 @@
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 48167,
-      "sha256": "9e6f9084d575ec56b12f215633a4932d7ac93e7dfd127bba33133334256bdcdf"
+      "bytes": 48849,
+      "sha256": "d2eedf82a927c03e20a9006d29f927f2206a6f6926151784d0f86ab6e80a4bbd"
     },
     {
       "path": "docs/ROADMAP.md",
@@ -405,13 +410,13 @@
     },
     {
       "path": "docs/audits/phase-7/ENGINEERING_CODE_REVIEW.md",
-      "bytes": 3705,
-      "sha256": "9a5b4403b28153ac649abac0f26bd732c605ea24c6459f712bd1d5f5835ba7c3"
+      "bytes": 4506,
+      "sha256": "e3b098b46f5a6b63af2bceaa0dcb7a37c6da698b35c240bf2e7e191ed5ac35ca"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_ALLOWED_PATHS.json",
-      "bytes": 8055,
-      "sha256": "9d4dd9c75f2a40c49691b1d92e6b5f6014a4e25df92c4bf0d4ab2674a02f7451"
+      "bytes": 8525,
+      "sha256": "010ac596db75255441b53f99924150e6761c101f68e26daa9b6cdfe6fde1ba02"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_AUTHORIZATION.json",
@@ -450,8 +455,8 @@
     },
     {
       "path": "docs/audits/phase-7/STATUS.json",
-      "bytes": 5243,
-      "sha256": "6af815b5c329ff854344fe078279dd7df00b45ca8cc6952c4b1c9b05658bd794"
+      "bytes": 6087,
+      "sha256": "9f19e8d9ff88e09a60587498deede2fc8f484f34facf9db7f09cb7c052221508"
     },
     {
       "path": "docs/audits/phase-7/p6-source-overrides/.github/workflows/ci.yml",
@@ -799,6 +804,36 @@
       "sha256": "0911bc6a09acdc1581aa397934c20e08b4d1acb217e760a6c162db1a4f1bf7da"
     },
     {
+      "path": "docs/audits/phase-7/self-review/SEC-001/DEVELOPER_RESPONSE.json",
+      "bytes": 4758,
+      "sha256": "495c5454ea7c79a5e038486cfbec03d18b48cd641634e86a4c7ef0da8b158e5b"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/SEC-001/PROOF.json",
+      "bytes": 9961,
+      "sha256": "4a80ee5e831e76e8ed731eb35030babae83f033539e5269023c507dabb29a7a0"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/SEC-001/PUBLIC_CONFIG_PREIMAGE_1.json",
+      "bytes": 1606,
+      "sha256": "d5e1f18fe297b64d03b3c007e9dbf0b74c59a125b4e0bc0d6dcd76b636d51e91"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/SEC-001/PUBLIC_CONFIG_PREIMAGE_2.json",
+      "bytes": 1606,
+      "sha256": "a7b8680f192f1300e1134818d42f2ee4a10ef61329c6758b31a9ff238152f396"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/SEC-001/README.md",
+      "bytes": 4465,
+      "sha256": "a752efbdf47b36f6ad406dc3580a52b1d04f9acfc9527565b0f4b5f5366853cf"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/SEC-001/recompute.py",
+      "bytes": 875,
+      "sha256": "eeb73c1651ef9ffc3f0d787fd92dbd80f80a6fdc8a5c6c4f990fb4e135f6c550"
+    },
+    {
       "path": "pyproject.toml",
       "bytes": 1401,
       "sha256": "7fa95b7da6057e7277efd69388140099304f5921ba8e61be884b9a8b3f07202d"
@@ -976,12 +1011,17 @@
     {
       "path": "tools/check_phase7_package.py",
       "bytes": 8066,
-      "sha256": "c8c8e8c06ccdabaf20c07a40877eaf7d76bef81088af49100dc1f50810faf166"
+      "sha256": "71123789eb60a64247d21dd0ea07c7f433cf3aa868480d119e19a56b2df595f4"
+    },
+    {
+      "path": "tools/check_phase7_scan_policy.py",
+      "bytes": 18078,
+      "sha256": "6632496a03436916d8aa94d122d644998eb5e48c5cf4915cbe999a70e7a2d6ac"
     },
     {
       "path": "tools/ci.py",
-      "bytes": 12696,
-      "sha256": "e27f24f3ce31f7345efecb9a78b407cf6a76e57ee1989ddb828147e8e54e4362"
+      "bytes": 13921,
+      "sha256": "2fa3d20d70ffe104ccf27bf56bceb6e9dd6da68a1aa9251442d71e959e008bcc"
     },
     {
       "path": "tools/competition_smoke.py",

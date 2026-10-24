@@ -1,0 +1,44 @@
+title = "AQRP Phase7 exact public configuration digest exceptions"
+[extend]
+path = ".gitleaks.toml"
+
+# Pinned8.30.1 child global arrays replace inherited arrays; preserve exact parent blocks.
+[[allowlists]]
+description = "Historical immutable artifacts.json: verified SHA-256 of redacted secret-scan.log, not a credential. Exact path and exact full hash only."
+condition = "AND"
+paths = ['''docs/audits/phase-1/implementation/local-history/aqrp-3261ca7b-86e1-4f60-b77f-966595712fa9/artifacts\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"secret-scan\.log": "274b2f11da75e61139784d4f975193c507870a1ffe3ce75f6b3cef7a774b9da9",?\s*$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Exact immutable Phase3 cache-hit event: independently recomputed SHA-256 of public synthetic cache inputs, not a credential. Exact path AND exact extracted SHA-256 only."
+condition = "AND"
+paths = ['''docs/audits/phase\-3/implementation/validation\-07e7c88/sdk/research/runs/826873ac\-7112\-4114\-8518\-1ae98b5c11d9/events\.jsonl$''']
+regexTarget = "secret"
+regexes = ['''^69266f2ffa606b5e7b3f052cb193dcf9de2e8c0b70a71467217e8b848332c554$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Independently reproduced public synthetic configuration digest; exact immutable file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/ORIGINAL_SUCCEEDED_STATUS\.json$''',
+  '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/HEALTHY_MIGRATION_CONTROL\.json$''',
+  '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/RESULT\.json$''',
+]
+regexes = ['''^d5e1f18fe297b64d03b3c007e9dbf0b74c59a125b4e0bc0d6dcd76b636d51e91$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Independently reproduced public synthetic configuration digest; exact immutable file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/cancelled\-prefix/LIVE_REFUSAL_BEFORE_IMPORT\.json$''',
+  '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/cancelled\-prefix/HEALTHY_MIGRATION_CONTROL\.json$''',
+  '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/cancelled\-prefix/ORIGINAL_CANCELLED_STATUS\.json$''',
+  '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/cancelled\-prefix/RESULT\.json$''',
+]
+regexes = ['''^a7b8680f192f1300e1134818d42f2ee4a10ef61329c6758b31a9ff238152f396$''']

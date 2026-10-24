@@ -82,7 +82,16 @@
       "original_fixed_sha": "05fc498bfcfc703eb58f14eb7107ed483c30fbe3",
       "original_result": "LOCAL AND BOTH OFFICIAL OS: 1892 test assertions passed, four required module coverage gates failed; complete SDK FAILED",
       "production_bundle_unchanged": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
-      "evidence": "self-review/COV-001/DEVELOPER_RESPONSE.json"
+      "evidence": "self-review/COV-001/DEVELOPER_RESPONSE.json",
+      "replacement_validation": "6fc actual local1962 and both official OS1962 original coverage gates passed, but overall SDK failed late scanner; new full fixed SDK required"
+    },
+    "SEC-001": {
+      "status": "CORRECTION_IMPLEMENTED / FRESH_FULL_FIXED_VALIDATION_REQUIRED / INDEPENDENT_G2_PENDING",
+      "original_fixed_sha": "6fc3e74fc44f5e2faafa25e9f2b7d072accd17a8",
+      "evidence": "self-review/SEC-001/DEVELOPER_RESPONSE.json",
+      "original_sdk_result": "FAILED_NOT_PASS: late9finding scanner blocker after1962 assertions/coverage/10nonbrowser PASS",
+      "new_effective_policy": "Explicit exact-path/public-identifier child; original parent/scanner unchanged; inherited known P1 runtime limitation disclosed",
+      "fresh_validation": "New full40SHA SDK +dualOS originalZIP +realbrowser mandatory; independentG2 PENDING"
     }
   }
 }

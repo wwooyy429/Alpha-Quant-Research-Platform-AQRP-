@@ -1,3 +1,6 @@
+<!-- Phase7 developer SEC-001 exact public identifier policy correction20261025 -->
+Phase7仍IMPLEMENTING / G2 PENDING。6fc双OS各1962项及覆盖门槛通过但晚期扫描失败，整体FAILED，原ZIP/日志保留。两份公开配置前像独立复算后新增确切路径/完整哈希子策略，原父策略/扫描程序/产品包6045a40/测试/阈值不改；继承与负例准备失败、父策略既有P1局限如实保留。扫描提前并增加全源端点字节核对，新SHA必须重跑完整SDK、双OS及实际浏览器；不转用旧部分通过。见docs/audits/phase-7/self-review/SEC-001/。未验收/发布，全部延期与限制保持。以下为历史。
+
 <!-- Phase7 developer COV-001 test-only follow-up20261025 -->
 Phase7当前仍IMPLEMENTING / G2 PENDING。05fc498的本地及双OS1892项断言通过，但四个模块覆盖门槛失败，完整SDK仍FAILED；原始证据保留。开发方仅补充70项针对性测试，不改生产包6045a40、阈值、旧答案或锁；须新固定SHA完整SDK/双OS/原始ZIP和实际浏览器重新执行。收据见docs/audits/phase-7/self-review/COV-001/。未验收、未发布，既有延期与安全边界保持。以下均为此前轮次历史。
 

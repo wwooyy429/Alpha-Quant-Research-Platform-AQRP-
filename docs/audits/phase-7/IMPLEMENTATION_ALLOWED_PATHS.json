@@ -31,6 +31,7 @@
     "tools/ci.py"
   ],
   "added": [
+    ".gitleaks-phase7.toml",
     "docs/audits/phase-7/DESIGN_IDENTITY.json",
     "docs/audits/phase-7/ENGINEERING_CODE_REVIEW.md",
     "docs/audits/phase-7/IMPLEMENTATION_ALLOWED_PATHS.json",
@@ -111,6 +112,12 @@
     "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/PROBE_SOURCE.py",
     "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/RESULT.json",
     "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/SINGLE_PHYSICAL_MUTATION.json",
+    "docs/audits/phase-7/self-review/SEC-001/DEVELOPER_RESPONSE.json",
+    "docs/audits/phase-7/self-review/SEC-001/PROOF.json",
+    "docs/audits/phase-7/self-review/SEC-001/PUBLIC_CONFIG_PREIMAGE_1.json",
+    "docs/audits/phase-7/self-review/SEC-001/PUBLIC_CONFIG_PREIMAGE_2.json",
+    "docs/audits/phase-7/self-review/SEC-001/README.md",
+    "docs/audits/phase-7/self-review/SEC-001/recompute.py",
     "src/aqrp/competition/__init__.py",
     "src/aqrp/competition/adapter.py",
     "src/aqrp/experiments/admission.py",
@@ -131,6 +138,7 @@
     "tests/integration/test_p7_task_history_and_recovery_controls.py",
     "tests/ui/test_p7_selection.py",
     "tools/check_phase7_package.py",
+    "tools/check_phase7_scan_policy.py",
     "tools/competition_smoke.py",
     "tools/e2e_reference.py",
     "tools/e2e_smoke.py",
