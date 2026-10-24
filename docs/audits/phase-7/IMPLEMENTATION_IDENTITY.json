@@ -5,7 +5,7 @@
   "phase6_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
   "version": "0.7.0.dev1",
   "factor_semantic_version": "1.2.1 (algorithm unchanged); new implementation_hash means distinct full Ref",
-  "bundle_sha256": "d9d020a80111e2f679e3bb00b1151d6961e28e9bf0569c80cd03169352e77f4a",
+  "bundle_sha256": "513f53bfe2f04e24da29485b5c7f5ba42b67463d3f43cd960718680d907bc432",
   "bundle_manifest": {
     "factor_api": "1.0.0",
     "data_contract": "contracts/1.0.0",
@@ -301,7 +301,7 @@
       },
       {
         "path": "services/task_state.py",
-        "sha256": "b1b97aa7178ce3e23419c4c7f169906f2722f77a1e2d421e14e49e107443fc02"
+        "sha256": "c08e676f61a559ea2ed1de7c07b01c242f0d947fe2633edb40ef2602e9391488"
       },
       {
         "path": "services/task_worker.py",
@@ -309,7 +309,7 @@
       },
       {
         "path": "services/tasks.py",
-        "sha256": "c37dde178e64c35291231288007015322eab6d72e857ae8968034299360bd810"
+        "sha256": "65df029dbbdfa68c0aea632d495bc07d49b77b40d0a78d12ddc1adb081e03401"
       },
       {
         "path": "ui/__init__.py",
@@ -405,13 +405,13 @@
     },
     {
       "path": "docs/audits/phase-7/ENGINEERING_CODE_REVIEW.md",
-      "bytes": 1804,
-      "sha256": "68de57b648741c0ac589a481a6e9e544a4de687c0ba79994cff8d4aa73915f2f"
+      "bytes": 2337,
+      "sha256": "6c6765a25ebbc6675012e5f9566f2073988be3142768c9e31267fa44ed13e929"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_ALLOWED_PATHS.json",
-      "bytes": 4510,
-      "sha256": "ab029c8b6d9f5dd5b927e2d13efbc1ccd1936a7eb57b6877a66cb4bfdb233415"
+      "bytes": 6884,
+      "sha256": "029e8ff7b8d3387aa078088bf84ac7d5ba4713b344c73b504ba94a87e5a96cd7"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_AUTHORIZATION.json",
@@ -435,8 +435,8 @@
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_REVIEW_PACKAGE.md",
-      "bytes": 3951,
-      "sha256": "50fb7823ad47d590a3114cd306239e705c5c0074684ba304ce4899340379381f"
+      "bytes": 4245,
+      "sha256": "21be0a8d951064bfa797ec3478baf537df07b7d11f20c6db8cd8afb0a65c8554"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_TRACEABILITY.md",
@@ -450,8 +450,8 @@
     },
     {
       "path": "docs/audits/phase-7/STATUS.json",
-      "bytes": 2976,
-      "sha256": "5e5b786dd566be1276ef631150e03d01b623c0cd37534b2507d9bb58ef744e3d"
+      "bytes": 3776,
+      "sha256": "558e9dd03a49afaeb0d583b4e422672afc5be4d185b9c7155d99e3dc66174e2c"
     },
     {
       "path": "docs/audits/phase-7/p6-source-overrides/.github/workflows/ci.yml",
@@ -584,6 +584,151 @@
       "sha256": "9b93525d4848bcec5e547835c66f38fae26607fcb9e4765bb830f67275dc3b5c"
     },
     {
+      "path": "docs/audits/phase-7/self-review/MIG-001/ABORTED_872_RECEIPT.json",
+      "bytes": 548,
+      "sha256": "3a1b963978334aca550bf242a7f0f7758a050c60528680bb578e2d337ec68c5c"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/ARCHIVE_RECEIPT.json",
+      "bytes": 1685,
+      "sha256": "bf7f5dea5cad99cb6f264248d80e884f7e60ec5f09ef165f9e63e6e63179875b"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/DECLARED_PROBE.json",
+      "bytes": 765,
+      "sha256": "23ba308c4571efb570b00bf95b5e1b84fe8d646d4f70dcc69a14b3a57051312b"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/DEVELOPER_RESPONSE.json",
+      "bytes": 2567,
+      "sha256": "7fb2f7f475c7cf4dfea6317a00bdba2bcd3705c3d04623fc31b9d741d035e311"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/EVIDENCE_INDEX.json",
+      "bytes": 9405,
+      "sha256": "2eef449e5bfa09653c5d59fea29f74290cd13ddbbf205c90493d8146a7b0f620"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/HEALTHY_MIGRATION_CONTROL.json",
+      "bytes": 4089,
+      "sha256": "5a94d339f9300ba40a1e7024242493d8962ba4392e5922825087c7732b4fdb9d"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/MANIFEST.json",
+      "bytes": 13655,
+      "sha256": "4eefb22017854a34a253ec6d6f617d8a4d201591a9b93981799121d418c1fb62"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/ORIGINAL_COMPLETION_BYTES.json",
+      "bytes": 555,
+      "sha256": "f47b657b262384ca4c3fc7b5ac68b27ca90a97f7daccece9a57f223b79be82a9"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/ORIGINAL_HISTORY.json",
+      "bytes": 901,
+      "sha256": "fc32b7264d14cc0e9cbff91db537b6832cac25aa708956bddff2af4d61e0eebd"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/ORIGINAL_MANIFEST_VERIFICATION.json",
+      "bytes": 1114,
+      "sha256": "e029c162ee64674eb9f00970171fbc2ac197385f867827f62c74acadcb1d8697"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/ORIGINAL_SUCCEEDED_STATUS.json",
+      "bytes": 3161,
+      "sha256": "bd4538b767045f36dacabfb95f8319cbe02e7fba0bdcacb2e05a45cba1f6b2cd"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/PROBE_SCRIPT.py",
+      "bytes": 6313,
+      "sha256": "171d943ccfec6c46f60169c27bc0c0ac44c75786e8551385cec23e67cc29c5de"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/RESULT.json",
+      "bytes": 8796,
+      "sha256": "3edea1e0274c464c20c5dd21116d368e02763254328aba678bcbd12af67039a1"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/SINGLE_LOGICAL_MUTATION.json",
+      "bytes": 26531,
+      "sha256": "ba02334898014920684e6b7e84e6fee61e293eb339f59bbe9801ab43490a4925"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ABORTED_872_RECEIPT.json",
+      "bytes": 548,
+      "sha256": "3a1b963978334aca550bf242a7f0f7758a050c60528680bb578e2d337ec68c5c"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ARCHIVE_RECEIPT.json",
+      "bytes": 1704,
+      "sha256": "b2647a8c8116503f5610bc7ccb1de112c683238cfd594518cad5d37946006973"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/EVIDENCE_INDEX.json",
+      "bytes": 9562,
+      "sha256": "c9a3cd82cbc3d4ec1c8108de68f0228d7ceac3a10139c89541614ee08e52785b"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/FILE_MANIFEST.json",
+      "bytes": 21606,
+      "sha256": "16d5a2fed3566f1eb19944fcf8b556522632fea85137221cfb3570b40eea75b5"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/HEALTHY_MIGRATION_CONTROL.json",
+      "bytes": 6599,
+      "sha256": "a241c29a7e25a9f74c4842836665dddd599022ec1f1d1ca3d91dc40b440dd9c9"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/LIVE_REFUSAL_BEFORE_IMPORT.json",
+      "bytes": 5791,
+      "sha256": "4fc3f0e0b36fe6932faa660be7dae6f93f8f0d6938dabe954d2a5c0f2bb7392c"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ORIGINAL_CANCELLED_STATUS.json",
+      "bytes": 5661,
+      "sha256": "149b76ac113ccf1948965242ea97c8cde9975a007cd472c7259b3ee8e1bf1f18"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ORIGINAL_HISTORY.json",
+      "bytes": 911,
+      "sha256": "8d8ebc0608168d26ba71de48fae934463880536e7885efb9dfc1bfaea4993174"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ORIGINAL_LAST_COMMIT.json",
+      "bytes": 53282,
+      "sha256": "5b67754ab38311ea7b36a9ff83a90d331271a9f52152036aa46b9f23b3767fe2"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ORIGINAL_MANIFEST_VERIFICATION.json",
+      "bytes": 768,
+      "sha256": "c55a3f269240e86c969a0231af21345cfb10a80e1c0b96f039ef283061dfd942"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/POST_EXIT_VERIFICATION.json",
+      "bytes": 27736,
+      "sha256": "d8a69a844662f9385345821dfb0402a8094ef0233351dc37e7098f5cdeec3688"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/PREREGISTRATION.json",
+      "bytes": 1142,
+      "sha256": "88a1a913c0de577c895357d62954d8233c6bf064a85dee193981af94f2b1646c"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/PROBE_SOURCE.py",
+      "bytes": 5808,
+      "sha256": "92a98c9d599d767f7ca6494e511b82858171b23cfdf5d39c8a12782449343aa0"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/RESULT.json",
+      "bytes": 11842,
+      "sha256": "f16d6668b9cf6a7965590747bd3998da9af88c80716146af24141b68dcab50b7"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/SINGLE_PHYSICAL_MUTATION.json",
+      "bytes": 565,
+      "sha256": "0911bc6a09acdc1581aa397934c20e08b4d1acb217e760a6c162db1a4f1bf7da"
+    },
+    {
       "path": "pyproject.toml",
       "bytes": 1401,
       "sha256": "7fa95b7da6057e7277efd69388140099304f5921ba8e61be884b9a8b3f07202d"
@@ -616,7 +761,7 @@
     {
       "path": "src/aqrp/factors/reviewed_code.json",
       "bytes": 658,
-      "sha256": "a7bf4d07df1d9442cece319a058a17d137e1093b0bc475a9452501e29aa48cad"
+      "sha256": "8abb16e1ec1849dd16b840498d3ca1873f21ca9c56efbe1f1493343ba7699953"
     },
     {
       "path": "src/aqrp/services/research.py",
@@ -645,13 +790,13 @@
     },
     {
       "path": "src/aqrp/services/task_state.py",
-      "bytes": 37335,
-      "sha256": "b1b97aa7178ce3e23419c4c7f169906f2722f77a1e2d421e14e49e107443fc02"
+      "bytes": 41984,
+      "sha256": "c08e676f61a559ea2ed1de7c07b01c242f0d947fe2633edb40ef2602e9391488"
     },
     {
       "path": "src/aqrp/services/tasks.py",
-      "bytes": 42851,
-      "sha256": "c37dde178e64c35291231288007015322eab6d72e857ae8968034299360bd810"
+      "bytes": 42544,
+      "sha256": "65df029dbbdfa68c0aea632d495bc07d49b77b40d0a78d12ddc1adb081e03401"
     },
     {
       "path": "src/aqrp/ui/app.py",
@@ -704,6 +849,11 @@
       "sha256": "f451627da2b448df8f0bdf44b7b256602aff3d4cb59e201a5eca4d125ed2d869"
     },
     {
+      "path": "tests/integration/test_p7_history_integrity.py",
+      "bytes": 15443,
+      "sha256": "d0701d20ac372780b7a578e9f04d11d28a23c99f40a4dcb033acce084ede3c72"
+    },
+    {
       "path": "tests/integration/test_p7_planned_budget_probes.py",
       "bytes": 7418,
       "sha256": "33405ab81a98c4e403cf850a884611b9dccf843ba801655b4a63cdb49d859caa"
@@ -736,7 +886,7 @@
     {
       "path": "tools/check_phase7_package.py",
       "bytes": 8066,
-      "sha256": "ddece864fca1c046edc4d6138853c8f705ff7b34a05b3b8c5f9ad2e5a18b6d90"
+      "sha256": "ca47677bc4e5f5eda1b319924b8367f0ea4a5760ac5f7eb6661888a1bc402e99"
     },
     {
       "path": "tools/ci.py",

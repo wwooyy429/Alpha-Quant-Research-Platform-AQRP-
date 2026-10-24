@@ -1,0 +1,45 @@
+{
+  "finding": "MIG-001",
+  "role": "Codex developer self-review; not independent GPT Work G2",
+  "classification": "High, developer classification",
+  "requirements": [
+    "INT-003",
+    "INT-004",
+    "INT-005"
+  ],
+  "candidates": [
+    "BUD-018",
+    "BUD-019"
+  ],
+  "state": "FIX_IMPLEMENTED_SELF_TEST_IN_PROGRESS_G2_PENDING",
+  "original_reports_preserved": true,
+  "counterexamples": [
+    {
+      "evidence": "EVIDENCE_INDEX.json",
+      "problem": "Migration accepted an original-byte completion pointer that ordinary live Task reading rejects, then granted a new unit.",
+      "actual_original_commit": "b6ed148ba73e478ebc4b6581403714fb39781316",
+      "same_product_commit": "872c05b14513644cbf8031dfbb6be8faa8a7a926"
+    },
+    {
+      "evidence": "cancelled-prefix/EVIDENCE_INDEX.json",
+      "problem": "Migration accepted physical committed-prefix corruption in a cancelled Task although live status reports unknown integrity, then granted new research.",
+      "actual_original_commit": "872c05b14513644cbf8031dfbb6be8faa8a7a926"
+    }
+  ],
+  "fix": {
+    "success": "Reuse complete original live core proof validation, exact canonical pointer/basename/bytes/claim epoch/config/full proof values/required stages/resolved plan and source identity.",
+    "cancelled": "Reuse unchanged actual financial-prefix and replay/source guards for cancelled histories; no cache-only financial certification.",
+    "failed": "Preserve legitimate FAILED/unknown-finance semantics and original opaque error evidence; never promote cash/result or refund budget.",
+    "atomicity": "Reject before migrated anchor/new grant, preserving original corrupt bytes, legacy rows and complete failure evidence.",
+    "shared_proof_refactor": "Developer AST peer comparison confirms original financial proof body unchanged after explicit workspace/SQL callback extraction."
+  },
+  "tests": "tests/integration/test_p7_history_integrity.py plus original whole import/selected P3-P4-P5/replay/cancel regressions; precise executed counts only in each actual command log",
+  "validation": "Initial pointer/healthy/replay5 passed on developer snapshot; expanded49 selected controls running. New fixed full SHA, bundle, complete clean SDK, dualOS official raw ZIPs and actual browser evidence still required.",
+  "independent_G2": "PENDING; developer has not independently closed this finding",
+  "restrictions": {
+    "Windows_R2": "DEFERRED / NOT VERIFIED",
+    "formal_Test": "NOT RUN",
+    "financial_approval": "NONE",
+    "merge_tag_deployment_live_authorization": false
+  }
+}

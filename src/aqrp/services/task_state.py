@@ -1,6 +1,7 @@
 """SQLite task allocation/claims. Engineering integrity, not OS isolation."""
 
 import json
+import re
 import sqlite3
 import time
 import uuid
@@ -317,8 +318,8 @@ class TaskState:
 
         from aqrp.experiments.ledger import ExperimentLedger
         from aqrp.services.task_campaigns import campaigns, variant_key
-        from aqrp.services.task_requests import catalogue
-        from aqrp.services.tasks import read_core
+        from aqrp.services.task_requests import catalogue, freeze_request
+        from aqrp.services.tasks import TaskService, read_core, verify_core_proofs
 
         cat = catalogue(self.root)  # Preserves exact bundle, environment and P1 identities.
         task_rows = list(c.execute("SELECT * FROM tasks ORDER BY rowid"))
@@ -363,17 +364,52 @@ class TaskState:
             req = json.loads(raw)
             if canonical(req) != raw or row["raw"] != raw.decode() or row["hash"] != digest(req):
                 raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            revision = req["defaults_revision"]
+            defaults = c.execute(
+                "SELECT payload,hash FROM defaults WHERE revision=?", (revision,)
+            ).fetchone()
+            if revision != 0 and (
+                defaults is None or digest(json.loads(defaults[0])) != defaults[1]
+            ):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            draft = (
+                {
+                    "kind": "replay",
+                    **{k: v for k, v in req["payload"].items() if k in ("source_task", "profile")},
+                }
+                if req["kind"] == "replay"
+                else req["payload"]["raw_draft"]
+            )
+            if freeze_request(self.root, draft, revision).raw != raw:
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
             events = list(
                 c.execute("SELECT kind,payload FROM events WHERE task=? ORDER BY seq", (row["id"],))
             )
+            if any(canonical(json.loads(e[1])).decode() != e[1] for e in events):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
             submissions = [json.loads(e[1]) for e in events if e[0] == "SUBMITTED"]
+            task_claims = [json.loads(e[1]) for e in events if e[0] == "CLAIMED"]
             if (
                 len(submissions) != 1
                 or submissions[0]["config_hash"] != row["hash"]
                 or row["status"] == "RUNNING"
+                or row["status"] not in TERMINAL | {"QUEUED"}
+                or type(row["epoch"]) is not int
+                or row["epoch"] < 0
+                or row["cancel"] not in (0, 1)
                 or row["owner"] is not None
             ):
                 raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            if any(
+                type(claim["epoch"]) is not int or type(claim["owner"]) is not str
+                for claim in task_claims
+            ):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            if [claim["epoch"] for claim in task_claims] != list(range(1, row["epoch"] + 1)):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            for claim in task_claims:
+                if str(uuid.UUID(claim["owner"])) != claim["owner"]:
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
             campaign = req.get("payload", {}).get("campaign")
             if campaign is not None:
                 expected_campaigns.add(row["id"])
@@ -437,6 +473,8 @@ class TaskState:
                     if (
                         row["status"] == "SUCCEEDED"
                         or slot_states[name] not in ("ALLOCATED", "BOUND")
+                        or row["status"] == "CANCELLED"
+                        and slot_states[name] != "ALLOCATED"
                         or any(e.get("slot_id") == name for e in starts)
                     ):
                         raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
@@ -449,25 +487,72 @@ class TaskState:
                     raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
                 if name == "R":
                     run_owners[binding["child_run_id"]] = ("TASK", row["id"], units)
+                if row["status"] == "CANCELLED" and binding["service_kind"] in ("P5", "P5_REPLAY"):
+                    TaskService._verified_financial_prefix(binding)
+                    if binding["service_kind"] == "P5_REPLAY":
+                        source = c.execute(
+                            "SELECT binding FROM slots WHERE task=? AND slot='B'",
+                            (req["payload"]["source_task"],),
+                        ).fetchone()
+                        if source is None:
+                            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                        TaskService._verified_financial_prefix(json.loads(source[0]))
+                    for path in (root / "transactions").iterdir():
+                        if path.name != ".lock":
+                            remember(path)
             if row["status"] == "SUCCEEDED":
                 pointer = json.loads(row["completion"])
-                completion_raw = remember(self.root / "tasks" / row["id"] / pointer["file"])
-                completion = json.loads(completion_raw)
                 if (
-                    hashlib.sha256(completion_raw).hexdigest() != pointer["sha256"]
-                    or completion["config_hash"] != row["hash"]
-                    or set(completion["core_proofs"]) != set(slots)
+                    canonical(pointer).decode() != row["completion"]
+                    or set(pointer) != {"file", "sha256"}
+                    or type(pointer["file"]) is not str
+                    or re.fullmatch(r"completion(?:-[0-9]+)?\.json", pointer["file"]) is None
                 ):
                     raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
-                if req["kind"] != "research":
-                    plan_raw = remember(self.root / "tasks" / row["id"] / "resolved-plan.json")
-                    plan = json.loads(plan_raw)
-                    if completion["resolved_plan_sha256"] != hashlib.sha256(
-                        plan_raw
-                    ).hexdigest() or plan["slots"] != {
-                        n: b["child_run_id"] for n, b in slots.items()
-                    }:
-                        raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                completion_raw = remember(self.root / "tasks" / row["id"] / pointer["file"])
+                completion = json.loads(completion_raw)
+                terminals = [json.loads(e[1]) for e in events if e[0] == "SUCCEEDED"]
+                proofs = verify_core_proofs(
+                    self.root,
+                    self.workspace_id,
+                    row["id"],
+                    row,
+                    {
+                        name: {"binding": binding, "state": slot_states[name]}
+                        for name, binding in slots.items()
+                    },
+                    lambda name: c.execute(
+                        "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
+                        (row["id"], name),
+                    ).fetchone(),
+                )
+                plan_path = self.root / "tasks" / row["id"] / "resolved-plan.json"
+                plan_raw = remember(plan_path) if plan_path.exists() else None
+                if (
+                    canonical(completion) != completion_raw
+                    or hashlib.sha256(completion_raw).hexdigest() != pointer["sha256"]
+                    or completion["config_hash"] != row["hash"]
+                    or completion["task_id"] != row["id"]
+                    or completion["kind"] != req["kind"]
+                    or completion["scope"] != "ENGINEERING_TEST_ONLY"
+                    or completion["financial_approval"] != "NONE"
+                    or completion["claim_epoch"] != row["epoch"]
+                    or terminals != [{"completion": pointer, "claim_epoch": row["epoch"]}]
+                    or completion["core_proofs"] != proofs
+                    or completion["resolved_plan_sha256"]
+                    != (hashlib.sha256(plan_raw).hexdigest() if plan_raw is not None else None)
+                ):
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                for binding in slots.values():
+                    if binding["service_kind"] in ("P5", "P5_REPLAY"):
+                        transactions = (
+                            guard_path(binding["physical_ledger_root"])
+                            / binding["child_run_id"]
+                            / "transactions"
+                        )
+                        for path in transactions.iterdir():
+                            if path.name != ".lock":
+                                remember(path)
         if expected_campaigns != set(campaign_rows):
             raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
         ledger = ExperimentLedger(self.root / "research-runs")

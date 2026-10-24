@@ -1,0 +1,147 @@
+{
+  "finding_id": "MIG-001",
+  "evidence_variant": "cancelled-prefix",
+  "severity": "HIGH",
+  "status": "OPEN_FIXING_G2_PENDING",
+  "review_role": "Codex developer-discovered regression and archival evidence; GPT Work independent fixed-SHA review remains pending",
+  "requirements": [
+    "INT-003",
+    "INT-004",
+    "INT-005"
+  ],
+  "candidate_ids": [
+    "BUD-018",
+    "BUD-019"
+  ],
+  "original_actual_candidate_sha": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
+  "affected_candidate_sha": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
+  "shared_product_module_bundle_sha256": "d9d020a80111e2f679e3bb00b1151d6961e28e9bf0569c80cd03169352e77f4a",
+  "equivalence_scope": "This cancelled-prefix counterexample executed the installed872c05b candidate and d9d020 product module bundle. No later fixed candidate or bundle is covered.",
+  "observed_original_result": {
+    "migration": "ACCEPTED",
+    "expected_refusal_observed": false,
+    "new_admission": true
+  },
+  "originals": [
+    {
+      "file": "FILE_MANIFEST.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\FILE_MANIFEST.json",
+      "bytes": 21606,
+      "sha256": "16d5a2fed3566f1eb19944fcf8b556522632fea85137221cfb3570b40eea75b5",
+      "byte_identical": true
+    },
+    {
+      "file": "HEALTHY_MIGRATION_CONTROL.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\HEALTHY_MIGRATION_CONTROL.json",
+      "bytes": 6599,
+      "sha256": "a241c29a7e25a9f74c4842836665dddd599022ec1f1d1ca3d91dc40b440dd9c9",
+      "byte_identical": true
+    },
+    {
+      "file": "LIVE_REFUSAL_BEFORE_IMPORT.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\LIVE_REFUSAL_BEFORE_IMPORT.json",
+      "bytes": 5791,
+      "sha256": "4fc3f0e0b36fe6932faa660be7dae6f93f8f0d6938dabe954d2a5c0f2bb7392c",
+      "byte_identical": true
+    },
+    {
+      "file": "ORIGINAL_CANCELLED_STATUS.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\ORIGINAL_CANCELLED_STATUS.json",
+      "bytes": 5661,
+      "sha256": "149b76ac113ccf1948965242ea97c8cde9975a007cd472c7259b3ee8e1bf1f18",
+      "byte_identical": true
+    },
+    {
+      "file": "ORIGINAL_HISTORY.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\ORIGINAL_HISTORY.json",
+      "bytes": 911,
+      "sha256": "8d8ebc0608168d26ba71de48fae934463880536e7885efb9dfc1bfaea4993174",
+      "byte_identical": true
+    },
+    {
+      "file": "ORIGINAL_LAST_COMMIT.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\ORIGINAL_LAST_COMMIT.json",
+      "bytes": 53282,
+      "sha256": "5b67754ab38311ea7b36a9ff83a90d331271a9f52152036aa46b9f23b3767fe2",
+      "byte_identical": true
+    },
+    {
+      "file": "PREREGISTRATION.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\PREREGISTRATION.json",
+      "bytes": 1142,
+      "sha256": "88a1a913c0de577c895357d62954d8233c6bf064a85dee193981af94f2b1646c",
+      "byte_identical": true
+    },
+    {
+      "file": "PROBE_SOURCE.py",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\PROBE_SOURCE.py",
+      "bytes": 5808,
+      "sha256": "92a98c9d599d767f7ca6494e511b82858171b23cfdf5d39c8a12782449343aa0",
+      "byte_identical": true
+    },
+    {
+      "file": "RESULT.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\RESULT.json",
+      "bytes": 11842,
+      "sha256": "f16d6668b9cf6a7965590747bd3998da9af88c80716146af24141b68dcab50b7",
+      "byte_identical": true
+    },
+    {
+      "file": "SINGLE_PHYSICAL_MUTATION.json",
+      "original_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\SINGLE_PHYSICAL_MUTATION.json",
+      "bytes": 565,
+      "sha256": "0911bc6a09acdc1581aa397934c20e08b4d1acb217e760a6c162db1a4f1bf7da",
+      "byte_identical": true
+    }
+  ],
+  "raw_archive": {
+    "status": "CURRENT_AVAILABLE_RAW_BYTES_ARCHIVED_AND_ZIP_VERIFIED",
+    "original_manifest_status": "ORIGINAL_MANIFEST_MATCHES_CURRENT_BYTES",
+    "missing_original_members": 0,
+    "changed_original_members": 0,
+    "source_unchanged_during_archival": true,
+    "source": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8",
+    "archive": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\MIG001_CANCELLED_PREFIX_RAW_ac99664a-1340-4be3-a4a9-960e2c37b51b\\MIG001_CANCELLED_PREFIX_RAW.zip",
+    "bytes": 506771,
+    "sha256": "bfbf4605fef36c26971d54d0cbba77a6e76693df9fcf3b6581e5891646467280",
+    "members": 126,
+    "member_manifest_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\MIG001_CANCELLED_PREFIX_RAW_ac99664a-1340-4be3-a4a9-960e2c37b51b\\ARCHIVE_MEMBERS.json",
+    "member_manifest_sha256": "f2711907ad3cbab34e774fde27c62e39469975c7db5c780aad85e67528330b0f",
+    "original_manifest_verification_sha256": "c55a3f269240e86c969a0231af21345cfb10a80e1c0b96f039ef283061dfd942",
+    "actual_candidate_sha": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
+    "affected_candidate_sha": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
+    "bundle_sha256": "d9d020a80111e2f679e3bb00b1151d6961e28e9bf0569c80cd03169352e77f4a",
+    "finding_state": "OPEN_FIXING_G2_PENDING",
+    "scope": "Archive preservation only; not complete SDK, independent review, technical acceptance, financial approval or repair verification"
+  },
+  "archive_receipt_sha256": "b2647a8c8116503f5610bc7ccb1de112c683238cfd594518cad5d37946006973",
+  "original_manifest_verification": {
+    "status": "ORIGINAL_MANIFEST_MATCHES_CURRENT_BYTES",
+    "original_manifest_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\migration-cancelled-prefix-probe-a56ed861-7ef4-4621-b182-1ef32453b0e8\\FILE_MANIFEST.json",
+    "original_manifest_sha256": "16d5a2fed3566f1eb19944fcf8b556522632fea85137221cfb3570b40eea75b5",
+    "original_listed_files": 122,
+    "currently_present_files_including_manifest": 123,
+    "matched_files": 122,
+    "missing": [],
+    "changed": [],
+    "unlisted_current_files": [],
+    "claim": "Only listed current bytes that match are verified; no missing or changed member is reconstructed or claimed verified.",
+    "checked_utc": "2026-10-24T18:10:35.462982+00:00"
+  },
+  "aborted_872_sdk_receipt": {
+    "receipt_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\ABORTED_872_RAW_78249a68-ccad-4b63-8025-67955908430b\\RECEIPT.json",
+    "receipt_sha256": "3a1b963978334aca550bf242a7f0f7758a050c60528680bb578e2d337ec68c5c",
+    "archive_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\ABORTED_872_RAW_78249a68-ccad-4b63-8025-67955908430b\\ABORTED_ORIGINAL_RAW.zip",
+    "archive_sha256": "2281220e924e9b1cb8af7e3a2264d5f9ab4a7e401d0403cc5fa602f7d88a2703",
+    "status": "ABORTED_KNOWN_DEFECT_NOT_A_COMPLETE_SDK_OR_PASS"
+  },
+  "fixture_lineage_note": "This original synthetic engineering workspace records the actual872c05b code identity. It is not a real account, formal Test or historical-host reproduction.",
+  "limitations": [
+    "No repair or independent closure is claimed by this archive.",
+    "Any missing or changed original manifest members are explicitly listed; they are not restored, omitted from disclosure or declared verified.",
+    "This original cancelled-prefix negative belongs to872c05b and d9d020; it does not cover a later fixed candidate.",
+    "The aborted872 SDK is RAW_PRESERVED_NOT_A_PASS.",
+    "Windows R2 remains DEFERRED / NOT VERIFIED, formal Test NOT RUN and financial approval NONE."
+  ],
+  "created_utc": "2026-10-24T18:10:35.678628+00:00"
+}

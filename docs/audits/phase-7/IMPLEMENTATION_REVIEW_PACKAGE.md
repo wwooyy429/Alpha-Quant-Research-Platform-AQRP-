@@ -1,5 +1,7 @@
 # Phase7 实现 G2 审查资料
 
+开发方发现的MIG-001及原始反例见 `self-review/MIG-001/EVIDENCE_INDEX.json`。旧d9d020包和872c05b本地SDK不能据此视为完整通过；后者已因确认缺陷中止并封存。修订版需新包哈希和固定提交的完整验证，修复自测也不等于独立G2关闭。
+
 五项受限工程实现依据用户明确接受的C-P7-001～004（含修订003）及单独授权，G1固定 `645049ae9b08710ed93189b80547d14c87d80584`。实施从归档提交 `8106bbe6fbb73b5b4336d42e4c27b3adb1cf6ff8` 继续PR #10。G1通过不等于实现通过；本资料与开发方自测均不替代GPT Work固定版本G2。
 
 审查仓库：https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP- 。PR：https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/10 。**请只审PR描述唯一 AQRP_FIXED_REVIEW_SHA 的完整40位实现提交**，先核对Git对象/包/日志/工件身份，不以漂移HEAD代替。后续证据归档提交若存在，须与已执行代码提交分列并核对差异范围。

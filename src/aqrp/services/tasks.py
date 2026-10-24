@@ -337,163 +337,18 @@ class TaskService:
 
     def _proofs(self, task):
         row = self._snapshot(task)
-        x = load(row["raw"])
         slots = self.state.slots(task)
-        expected = {"R"} if x["kind"] == "research" else {"R", "B"}
-        if x["kind"] == "replay":
-            expected = {"E"}
-        plan_path = guard_path(self.root / "tasks" / task / "resolved-plan.json")
-        if x["kind"] != "research":
-            plan = load(plan_path.read_bytes())
-            if x["kind"] == "engineering_pipeline":
-                selected = execution_selection(x["payload"])
-            elif x["payload"]["profile"] != "PUBLISHED_REF_PROJECTION":
-                source = x["payload"]["source_task"]
-                source_plan = load(
-                    guard_path(self.root / "tasks" / source / "resolved-plan.json").read_bytes()
-                )
-                selected = source_plan["execution_selection"]
-                if source_plan["request_sha256"] != plan["request_sha256"]:
-                    raise ContractError("TASK_REPLAY_SELECTION_CHANGED")
-            else:
-                selected = {"resolved": []}
-            if x["payload"].get("profile") != "PUBLISHED_REF_PROJECTION" and (
-                plan.get("execution_selection") != selected
-                or plan["decision_count"] != len(selected["resolved"])
-            ):
-                raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
-            expected |= {f"P:{i}" for i in range(plan["decision_count"])}
-            if (
-                plan["task_config_hash"] != row["hash"]
-                or set(plan["slots"]) != expected
-                or plan["slots"] != {n: s["binding"]["child_run_id"] for n, s in slots.items()}
-                or hashlib.sha256(plan["request_utf8"].encode()).hexdigest()
-                != plan["request_sha256"]
-            ):
-                raise ContractError("TASK_RESOLVED_PLAN_CHANGED")
-        if set(slots) != expected:
-            raise ContractError("TASK_REQUIRED_SLOT_SET_MISMATCH")
-        proofs = {}
-        for name, slot in slots.items():
-            b = slot["binding"]
-            if (
-                b["task_id"] != task
-                or b["workspace_id"] != self.state.workspace_id
-                or b["plan_hash"] != row["hash"]
-            ):
-                raise ContractError("TASK_SLOT_PARENT_CHANGED")
-            m, contents = read_core(b)
-            if m["status"] != "SUCCEEDED":
-                raise ContractError("REQUIRED_STAGE_REJECTED")
-            if name.startswith("P:"):
-                parent = slots["B" if x["kind"] == "engineering_pipeline" else "E"]["binding"]
-                decision = load(plan["request_utf8"])["decisions"][b["decision_index"]]
-                original = load(decision["portfolio_request_utf8"])
-                selected_decision = selected["resolved"][b["decision_index"]]
-                if (
-                    b["parent_slot_id"] != parent["slot_id"]
-                    or b["parent_execution_run_id"] != parent["child_run_id"]
-                    or b["physical_ledger_root"]
-                    != str(
-                        guard_path(parent["physical_ledger_root"])
-                        / parent["child_run_id"]
-                        / "portfolio-runs"
-                    )
-                    or b["source_request_hash"]
-                    != hashlib.sha256(decision["portfolio_request_utf8"].encode()).hexdigest()
-                    or b["decision_time_UTC"]
-                    != utc(original["context"]["decision_time"]).isoformat()
-                    or b["decision_time_UTC"] != utc(selected_decision["decision_time"]).isoformat()
-                ):
-                    raise ContractError("TASK_NESTED_P4_BINDING_MISMATCH")
-                with self.state.transaction() as c:
-                    adapted = c.execute(
-                        "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
-                        (task, name),
-                    ).fetchone()
-                if (
-                    adapted is None
-                    or adapted[1] != b["adapted_request_hash"]
-                    or hashlib.sha256(adapted[0].encode()).hexdigest() != adapted[1]
-                    or load(contents["config.json"])["raw_request_hex"] != adapted[0].encode().hex()
-                ):
-                    raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
-            if b["service_kind"] == "PUBLISHED_REF_PROJECTION":
-                from aqrp.services.task_history import history_catalogue
 
-                if digest(history_catalogue(self.root)) != x["payload"]["history_sha256"]:
-                    raise ContractError("HISTORICAL_CATALOG_CHANGED")
-                result = load(contents["result.json"])
-                registration = load(contents["source-registration.json"])
-                if (
-                    digest(registration) != x["payload"]["history_sha256"]
-                    or result["status"] != "ALL_ORIGINAL_BYTES_VERIFIED_AND_THREE_RUNS_REPLAYED"
-                    or len(result["runs"]) != 3
-                    or any(v["status"] != "DECLARED_PROJECTION_MATCH" for v in result["runs"])
-                ):
-                    raise ContractError("TASK_HISTORICAL_REPLAY_UNVERIFIED")
-            elif name in ("B", "E"):
-                root = guard_path(b["physical_ledger_root"]) / b["child_run_id"]
-                if (
-                    not (root / "transactions").is_dir()
-                    or not (root / "transactions/initial.json").is_file()
-                ):
-                    raise ContractError("TASK_TRANSACTION_FILES_MISSING")
-                state, records, transaction_files = TransactionStore(
-                    root / "transactions"
-                ).verified_snapshot()
-                if transaction_files != load(contents["transaction-files.json"]):
-                    raise ContractError("TASK_TRANSACTION_FILES_CHANGED")
-                current = projection(state, records)
-                if name == "E":
-                    comparison = load(contents["comparison.json"])
-                    if (
-                        not comparison["equal"]
-                        or comparison["actual"] != current
-                        or comparison["expected"] != current
-                    ):
-                        raise ContractError("TASK_REPLAY_COMPARISON_CHANGED")
-                children = guard_path(root / "portfolio-runs")
-                actual = {p.name for p in children.iterdir()} if children.exists() else set()
-                intended = {
-                    s["binding"]["child_run_id"] for n, s in slots.items() if n.startswith("P:")
-                }
-                if actual != intended:
-                    raise ContractError("TASK_NESTED_CHILD_SET_MISMATCH")
-                for p in children.iterdir() if children.exists() else []:
-                    guard_path(p)
-                if name == "B":
-                    result = result_engineering(b["physical_ledger_root"], b["child_run_id"])
-                    if (
-                        result["status"] != "SUCCEEDED"
-                        or result.get("committed_state_verification", {}).get(
-                            "financial_state_known"
-                        )
-                        is False
-                    ):
-                        raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
-                    if any(result[k] != v for k, v in current.items()):
-                        raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
-                    config = load(contents["config.json"])
-                    if config["raw_request_hex"] != plan["request_utf8"].encode().hex():
-                        raise ContractError("TASK_EXECUTION_PLAN_REQUEST_CHANGED")
-                    actual_lineage = load(contents["portfolio-lineage.json"])
-                    if len(actual_lineage) != plan["decision_count"]:
-                        raise ContractError("TASK_PORTFOLIO_LINEAGE_MISSING")
-                    for p in actual_lineage:
-                        child = slots[f"P:{p['index']}"]["binding"]
-                        if (
-                            p["result"]["run_id"] != child["child_run_id"]
-                            or hashlib.sha256(p["request_utf8"].encode()).hexdigest()
-                            != child["adapted_request_hash"]
-                        ):
-                            raise ContractError("TASK_PORTFOLIO_LINEAGE_CHANGED")
-            proofs[name] = {
-                "binding_hash": digest(b),
-                "manifest_hash": digest(m),
-                "status": m["status"],
-            }
-        return proofs
+        def read_adapted(name):
+            with self.state.transaction() as c:
+                return c.execute(
+                    "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
+                    (task, name),
+                ).fetchone()
+
+        return verify_core_proofs(
+            self.root, self.state.workspace_id, task, row, slots, read_adapted
+        )
 
     def artifact(self, task, slot, name):
         self._snapshot(task)
@@ -507,7 +362,8 @@ class TaskService:
             raise ContractError("TASK_ARTIFACT_NOT_MANIFESTED")
         return contents[name]
 
-    def _verified_financial_prefix(self, binding):
+    @staticmethod
+    def _verified_financial_prefix(binding):
         """Current physical financial authority, also for already successful children."""
         _, contents = read_core(binding)
         result = load(contents["result.json"])
@@ -922,3 +778,155 @@ class TaskService:
             "source_task": source["task_id"],
             "replay": {k: v for k, v in prior.items() if k != "manifest"},
         }
+
+
+def verify_core_proofs(workspace_root, workspace_id, task, row, slots, read_adapted):
+    """One complete original-byte proof contract for live tasks and history import."""
+    x = load(row["raw"])
+    expected = {"R"} if x["kind"] == "research" else {"R", "B"}
+    if x["kind"] == "replay":
+        expected = {"E"}
+    plan_path = guard_path(workspace_root / "tasks" / task / "resolved-plan.json")
+    if x["kind"] != "research":
+        plan = load(plan_path.read_bytes())
+        if x["kind"] == "engineering_pipeline":
+            selected = execution_selection(x["payload"])
+        elif x["payload"]["profile"] != "PUBLISHED_REF_PROJECTION":
+            source = x["payload"]["source_task"]
+            source_plan = load(
+                guard_path(workspace_root / "tasks" / source / "resolved-plan.json").read_bytes()
+            )
+            selected = source_plan["execution_selection"]
+            if source_plan["request_sha256"] != plan["request_sha256"]:
+                raise ContractError("TASK_REPLAY_SELECTION_CHANGED")
+        else:
+            selected = {"resolved": []}
+        if x["payload"].get("profile") != "PUBLISHED_REF_PROJECTION" and (
+            plan.get("execution_selection") != selected
+            or plan["decision_count"] != len(selected["resolved"])
+        ):
+            raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
+        expected |= {f"P:{i}" for i in range(plan["decision_count"])}
+        if (
+            plan["task_config_hash"] != row["hash"]
+            or set(plan["slots"]) != expected
+            or plan["slots"] != {n: s["binding"]["child_run_id"] for n, s in slots.items()}
+            or hashlib.sha256(plan["request_utf8"].encode()).hexdigest() != plan["request_sha256"]
+        ):
+            raise ContractError("TASK_RESOLVED_PLAN_CHANGED")
+    if set(slots) != expected:
+        raise ContractError("TASK_REQUIRED_SLOT_SET_MISMATCH")
+    proofs = {}
+    for name, slot in slots.items():
+        b = slot["binding"]
+        if (
+            b["task_id"] != task
+            or b["workspace_id"] != workspace_id
+            or b["plan_hash"] != row["hash"]
+        ):
+            raise ContractError("TASK_SLOT_PARENT_CHANGED")
+        m, contents = read_core(b)
+        if m["status"] != "SUCCEEDED":
+            raise ContractError("REQUIRED_STAGE_REJECTED")
+        if name.startswith("P:"):
+            parent = slots["B" if x["kind"] == "engineering_pipeline" else "E"]["binding"]
+            decision = load(plan["request_utf8"])["decisions"][b["decision_index"]]
+            original = load(decision["portfolio_request_utf8"])
+            selected_decision = selected["resolved"][b["decision_index"]]
+            if (
+                b["parent_slot_id"] != parent["slot_id"]
+                or b["parent_execution_run_id"] != parent["child_run_id"]
+                or b["physical_ledger_root"]
+                != str(
+                    guard_path(parent["physical_ledger_root"])
+                    / parent["child_run_id"]
+                    / "portfolio-runs"
+                )
+                or b["source_request_hash"]
+                != hashlib.sha256(decision["portfolio_request_utf8"].encode()).hexdigest()
+                or b["decision_time_UTC"] != utc(original["context"]["decision_time"]).isoformat()
+                or b["decision_time_UTC"] != utc(selected_decision["decision_time"]).isoformat()
+            ):
+                raise ContractError("TASK_NESTED_P4_BINDING_MISMATCH")
+            adapted = read_adapted(name)
+            if (
+                adapted is None
+                or adapted[1] != b["adapted_request_hash"]
+                or hashlib.sha256(adapted[0].encode()).hexdigest() != adapted[1]
+                or load(contents["config.json"])["raw_request_hex"] != adapted[0].encode().hex()
+            ):
+                raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
+        if b["service_kind"] == "PUBLISHED_REF_PROJECTION":
+            from aqrp.services.task_history import history_catalogue
+
+            if digest(history_catalogue(workspace_root)) != x["payload"]["history_sha256"]:
+                raise ContractError("HISTORICAL_CATALOG_CHANGED")
+            result = load(contents["result.json"])
+            registration = load(contents["source-registration.json"])
+            if (
+                digest(registration) != x["payload"]["history_sha256"]
+                or result["status"] != "ALL_ORIGINAL_BYTES_VERIFIED_AND_THREE_RUNS_REPLAYED"
+                or len(result["runs"]) != 3
+                or any(v["status"] != "DECLARED_PROJECTION_MATCH" for v in result["runs"])
+            ):
+                raise ContractError("TASK_HISTORICAL_REPLAY_UNVERIFIED")
+        elif name in ("B", "E"):
+            root = guard_path(b["physical_ledger_root"]) / b["child_run_id"]
+            if (
+                not (root / "transactions").is_dir()
+                or not (root / "transactions/initial.json").is_file()
+            ):
+                raise ContractError("TASK_TRANSACTION_FILES_MISSING")
+            state, records, transaction_files = TransactionStore(
+                root / "transactions"
+            ).verified_snapshot()
+            if transaction_files != load(contents["transaction-files.json"]):
+                raise ContractError("TASK_TRANSACTION_FILES_CHANGED")
+            current = projection(state, records)
+            if name == "E":
+                comparison = load(contents["comparison.json"])
+                if (
+                    not comparison["equal"]
+                    or comparison["actual"] != current
+                    or comparison["expected"] != current
+                ):
+                    raise ContractError("TASK_REPLAY_COMPARISON_CHANGED")
+            children = guard_path(root / "portfolio-runs")
+            actual = {p.name for p in children.iterdir()} if children.exists() else set()
+            intended = {
+                s["binding"]["child_run_id"] for n, s in slots.items() if n.startswith("P:")
+            }
+            if actual != intended:
+                raise ContractError("TASK_NESTED_CHILD_SET_MISMATCH")
+            for p in children.iterdir() if children.exists() else []:
+                guard_path(p)
+            if name == "B":
+                result = result_engineering(b["physical_ledger_root"], b["child_run_id"])
+                if (
+                    result["status"] != "SUCCEEDED"
+                    or result.get("committed_state_verification", {}).get("financial_state_known")
+                    is False
+                ):
+                    raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
+                if any(result[k] != v for k, v in current.items()):
+                    raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+                config = load(contents["config.json"])
+                if config["raw_request_hex"] != plan["request_utf8"].encode().hex():
+                    raise ContractError("TASK_EXECUTION_PLAN_REQUEST_CHANGED")
+                actual_lineage = load(contents["portfolio-lineage.json"])
+                if len(actual_lineage) != plan["decision_count"]:
+                    raise ContractError("TASK_PORTFOLIO_LINEAGE_MISSING")
+                for p in actual_lineage:
+                    child = slots[f"P:{p['index']}"]["binding"]
+                    if (
+                        p["result"]["run_id"] != child["child_run_id"]
+                        or hashlib.sha256(p["request_utf8"].encode()).hexdigest()
+                        != child["adapted_request_hash"]
+                    ):
+                        raise ContractError("TASK_PORTFOLIO_LINEAGE_CHANGED")
+        proofs[name] = {
+            "binding_hash": digest(b),
+            "manifest_hash": digest(m),
+            "status": m["status"],
+        }
+    return proofs
