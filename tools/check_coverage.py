@@ -32,9 +32,13 @@ def main():
             "builtins.py",
             "engine.py",
         }
+        task_critical = normalized.endswith(
+            ("/services/tasks.py", "/services/task_state.py", "/services/task_context.py")
+        )
         minimum = (
             (95, 90)
-            if normalized.split("/")[-1] in critical
+            if task_critical
+            or normalized.split("/")[-1] in critical
             or factor_critical
             or "/core/security/" in normalized
             or "/validation/" in normalized
@@ -47,6 +51,8 @@ def main():
             or normalized.endswith("/services/research.py")
             else (90, 85)
         )
+        if normalized.endswith(("/ui/app.py", "/ui/launch.py", "/services/task_cli.py")):
+            minimum = (80, 70)  # G1-approved thin views/CLI only; no financial/state logic here
         if s["num_statements"] and (line < minimum[0] or branch < minimum[1]):
             failures.append(f"{file}: line={line:.2f}, branch={branch:.2f}, required={minimum}")
     if failures:

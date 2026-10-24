@@ -1,0 +1,13 @@
+{
+  "executor": "Codex developer administrative archival fix, not independent GPT Work G2",
+  "UTC": "2026-10-24T11:25:54.234522+00:00",
+  "reviewed_implementation": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "original_failed_head": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee",
+  "new_CI_status": "REQUIRED_NOT_YET_EXECUTED",
+  "pinned_scanner": "gitleaks8.30.1 original unchanged rules; positive and negative controls PASS; current repository scan0 findings",
+  "static_package_gate": "tools/check_phase6_package.py PASS;83modules5016protectedfiles8requirements",
+  "all_originals_retained": "../EXTERNAL_ORIGINALS.json",
+  "externalization_classification": "54 public configuration SHA256 identities stdlib-recomputed; no real credential; no scanner allowlist or code/security control changed",
+  "old_CI_verdict": "FAILURE retained; successful pytest1567 does not override failure",
+  "source_tests_tools_CI_locks_unchanged": true
+}

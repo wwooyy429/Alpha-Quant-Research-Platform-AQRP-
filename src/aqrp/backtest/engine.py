@@ -48,12 +48,17 @@ from .transactions import TransactionStore
 
 
 class Simulator:
-    def __init__(self, config, root, code_commit, *, fault=None):
+    def __init__(self, config, root, code_commit, *, fault=None, task_context=None):
         self.config = config
         self.namespace = uuid.UUID(config["request_id"])
         self.root = root
         self.code_commit = code_commit
         self.fault = fault
+        self.task_context = task_context
+        if task_context is not None:
+            from aqrp.services.task_context import require_context
+
+            require_context(task_context)
         self.store = TransactionStore(
             root / "transactions", initial_state(money(config["initial_cash"]), config["assets"])
         )
@@ -185,6 +190,8 @@ class Simulator:
 
     def run(self):
         while self.queue:
+            if self.task_context is not None:
+                self.task_context.checkpoint()
             at, phase, seq, kind, payload = heapq.heappop(self.queue)
             self.current_key = (at, phase, seq)
             self._dispatch(kind, payload)
@@ -321,10 +328,26 @@ class Simulator:
     def _risk_portfolio(self, index):
         dec = self.decisions[index]
         request, projection = dec["request"], dec["projection"]
-        result = construct_engineering(
-            request, self.root / "portfolio-runs", self.code_commit
-        ).read()
-        verify_portfolio_result(request, result, self.root / "portfolio-runs")
+        context = (
+            self.task_context.child(index, request, self.root / "portfolio-runs")
+            if self.task_context is not None
+            else None
+        )
+        result = context.existing() if context is not None else None
+        if result is None:
+            result = construct_engineering(
+                request,
+                self.root / "portfolio-runs",
+                self.code_commit,
+                **({"task_context": context} if context is not None else {}),
+            ).read()
+        dec["task_context"] = context
+        verify_portfolio_result(
+            request,
+            result,
+            self.root / "portfolio-runs",
+            **({"task_context": context} if context is not None else {}),
+        )
         dec["result"] = result
         self.portfolios.append(
             {
@@ -349,7 +372,14 @@ class Simulator:
     def _submit(self, index):
         dec = self.decisions[index]
         cfg = dec["configuration"]
-        verify_portfolio_result(dec["request"], dec["result"], self.root / "portfolio-runs")
+        verify_portfolio_result(
+            dec["request"],
+            dec["result"],
+            self.root / "portfolio-runs",
+            **(
+                {"task_context": dec["task_context"]} if dec.get("task_context") is not None else {}
+            ),
+        )
         submitted = self.current_key[0]
         eligible = next(
             (i for i, v in enumerate(self.config["sessions"]) if utc(v["open"]) > submitted), None

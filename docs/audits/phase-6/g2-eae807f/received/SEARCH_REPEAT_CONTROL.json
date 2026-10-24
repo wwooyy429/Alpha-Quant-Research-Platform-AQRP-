@@ -1,0 +1,1657 @@
+{
+  "scope": "Installed exact-SHA application; synthetic engineering data only. No real formal Test or financial approval.",
+  "executor": "GPT Work supplemental reviewer",
+  "python": "E:\\WORK\\AQRP-runs\\gpt-p6-eae807f-20261024-e9c8e3a6-d633-423a-b48a-fe1c7adbbabb\\aqrp-b7f5fb35-2718-48ce-b655-058d50f92c96\\venv\\Scripts\\python.exe",
+  "root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-probes-20261024\\search-family-repeat-control",
+  "configurations": [
+    {
+      "task": "b5b5adc1-a416-4ae8-8384-40fcbf778f8a",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": false,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": false,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.626610+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": false,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "c88b56c9-c859-45cf-9618-0c7457bc8088",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "7ab098f9-05e7-4046-9b48-d16927ad6b93",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "8d925d9d-91f1-4030-b36a-f539a0e48602",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "1c51e68d-7c99-47fc-8718-3c698b93ba94",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "39a025a3-147e-4aa7-acff-05f2438e898f",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "d1343521-a1c1-4a7f-b36e-be83bd7dea26",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "4220db0f-e5ed-4b44-8240-c5a8a0b80d4f",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "35804f79-7a23-4327-8701-180bbd073fc1",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "d1b0a16b-447b-4c2b-90d1-a70fff60415b",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "b5928bd3-d60a-436a-85f8-bc081f799ee8",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "1f53eb0f-d506-4dd8-b414-3f341aafdd1d",
+      "lookback": 2,
+      "status": "SUCCEEDED",
+      "error": null,
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "adjusted": [
+            1
+          ],
+          "bh_evidence": null,
+          "complete": false,
+          "contaminated": true,
+          "failed_slots": [
+            0
+          ],
+          "hypotheses": [
+            "momentum::h=1"
+          ],
+          "m": 1,
+          "method": "holm",
+          "raw": [
+            null
+          ]
+        },
+        "approvals.json": {
+          "momentum::h=1": {
+            "candidate": {
+              "direction": 1,
+              "horizon": 1,
+              "hypothesis": "momentum::h=1",
+              "parameters": {
+                "lookback": 2
+              },
+              "ref": {
+                "factor_id": "momentum",
+                "factor_version": "1.2.1",
+                "implementation_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab"
+              },
+              "score_key": "momentum",
+              "stage": "final"
+            },
+            "eligible": false,
+            "evaluation": {
+              "independence_verified": false,
+              "purpose": "ENGINEERING_DEMO"
+            },
+            "evidence": {
+              "all_candidates_recorded": true,
+              "code_hash": "7ddc968a3e2f2de42a95ed7538735e34af1778b947032e5e0b61587cabc5c4ab",
+              "contaminated": true,
+              "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+              "environment_hash": "e16e5b6bccaf7c64b6737ad7a0b401b6d7264fe125567add4a3d316c5ecf206c",
+              "frozen_protocol_hash": "686c170bd6c94e1bde5bcffbcbf44d9752373108196244afff1b5dea66aa7db0",
+              "implementation_review_ref": null,
+              "independent_golden_ref": null,
+              "validation_first_access_at": "2026-10-23T17:33:06.756479+00:00"
+            },
+            "failures": [
+              "UNAPPROVED_STANDARDS",
+              "INDEPENDENT_TEST_NOT_VERIFIED",
+              "FAMILY_INCOMPLETE_OR_CONTAMINATED",
+              "INCOMPLETE_APPROVAL_EVIDENCE"
+            ],
+            "metrics": {
+              "annualized": false,
+              "icir": null,
+              "mean": null,
+              "n": 0,
+              "positive_fraction": null,
+              "std_ddof1": null,
+              "zero_fraction": null
+            },
+            "multiplicity": {
+              "adjusted": [
+                1
+              ],
+              "bh_evidence": null,
+              "complete": false,
+              "contaminated": true,
+              "failed_slots": [
+                0
+              ],
+              "hypotheses": [
+                "momentum::h=1"
+              ],
+              "m": 1,
+              "method": "holm",
+              "raw": [
+                null
+              ]
+            },
+            "protocol_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "state": "REJECTED",
+            "strategy_approval": false
+          }
+        }
+      }
+    },
+    {
+      "task": "ea507aed-3d07-4fc3-ba70-2879c2e178dc",
+      "lookback": 2,
+      "status": "FAILED",
+      "error": "EXPERIMENT_BUDGET_EXCEEDED",
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "unavailable": "TASK_ARTIFACT_NOT_MANIFESTED"
+        },
+        "approvals.json": {
+          "unavailable": "TASK_ARTIFACT_NOT_MANIFESTED"
+        }
+      }
+    },
+    {
+      "task": "8bdef073-f9ca-4b1b-8b67-cdb338887fd3",
+      "lookback": 2,
+      "status": "FAILED",
+      "error": "EXPERIMENT_BUDGET_EXCEEDED",
+      "family": {
+        "budget": 12,
+        "definitions": {
+          "momentum::h=1": "5e856ac08e75e15bd1e9521d86a9ace9e09fbff0fad4455a27294e0c4863b2be"
+        },
+        "hypotheses": [
+          "momentum::h=1"
+        ],
+        "id": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+        "method": "holm"
+      },
+      "files": {
+        "multiplicity.json": {
+          "unavailable": "TASK_ARTIFACT_NOT_MANIFESTED"
+        },
+        "approvals.json": {
+          "unavailable": "TASK_ARTIFACT_NOT_MANIFESTED"
+        }
+      }
+    }
+  ],
+  "trials": [
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.626610+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 0,
+      "repeat_of": [],
+      "run_id": "66bbf8ce-e498-4317-8f27-70e7e72692ef"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 1,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef"
+      ],
+      "run_id": "adb801ac-2100-40b7-8e2b-e1f953a75c29"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 2,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29"
+      ],
+      "run_id": "0d197d69-db67-4698-b17f-9ae1f2f8c378"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 3,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378"
+      ],
+      "run_id": "159bb305-8bf7-4480-be63-a173870ec2b0"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 4,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0"
+      ],
+      "run_id": "705e1919-3bea-48a6-b7ff-5b1f90a078d7"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 5,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7"
+      ],
+      "run_id": "a25774e0-996e-4083-a6fc-63b1ebf66c7b"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 6,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b"
+      ],
+      "run_id": "2249ec45-9d06-436b-9c5e-ae9158d32edc"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 7,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b",
+        "2249ec45-9d06-436b-9c5e-ae9158d32edc"
+      ],
+      "run_id": "846cf51c-08eb-4dc3-9623-ad38cb879c42"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 8,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b",
+        "2249ec45-9d06-436b-9c5e-ae9158d32edc",
+        "846cf51c-08eb-4dc3-9623-ad38cb879c42"
+      ],
+      "run_id": "b3c82b06-cb24-4282-81bd-f999cc5dd4dd"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 9,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b",
+        "2249ec45-9d06-436b-9c5e-ae9158d32edc",
+        "846cf51c-08eb-4dc3-9623-ad38cb879c42",
+        "b3c82b06-cb24-4282-81bd-f999cc5dd4dd"
+      ],
+      "run_id": "681bfdb2-dd46-4379-b9f8-45d44723a489"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 10,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b",
+        "2249ec45-9d06-436b-9c5e-ae9158d32edc",
+        "846cf51c-08eb-4dc3-9623-ad38cb879c42",
+        "b3c82b06-cb24-4282-81bd-f999cc5dd4dd",
+        "681bfdb2-dd46-4379-b9f8-45d44723a489"
+      ],
+      "run_id": "0b5d77ee-070d-4626-9ac3-0049b7d5432e"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": false,
+      "prior_data_attempts": 11,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b",
+        "2249ec45-9d06-436b-9c5e-ae9158d32edc",
+        "846cf51c-08eb-4dc3-9623-ad38cb879c42",
+        "b3c82b06-cb24-4282-81bd-f999cc5dd4dd",
+        "681bfdb2-dd46-4379-b9f8-45d44723a489",
+        "0b5d77ee-070d-4626-9ac3-0049b7d5432e"
+      ],
+      "run_id": "9665d593-933a-423d-af1c-447e37179185"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": true,
+      "prior_data_attempts": 12,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b",
+        "2249ec45-9d06-436b-9c5e-ae9158d32edc",
+        "846cf51c-08eb-4dc3-9623-ad38cb879c42",
+        "b3c82b06-cb24-4282-81bd-f999cc5dd4dd",
+        "681bfdb2-dd46-4379-b9f8-45d44723a489",
+        "0b5d77ee-070d-4626-9ac3-0049b7d5432e",
+        "9665d593-933a-423d-af1c-447e37179185"
+      ],
+      "run_id": "70892d48-5e71-40bc-acb0-c39867b4d894"
+    },
+    {
+      "data_hash": "e713f517a3509d3a53c2893ec6d6830bb00d2b495bfdb37012fff88a06237608",
+      "family": "ui-engineering-e044de1a49f0149b450373937ccd3ceee949d94da6c7883fdfa6419263bcea0a",
+      "fingerprint": "c6a715d02c43ff0fb01f8bde1090c355d4461db4d943fcbe60d707a766556087",
+      "first_validation_access_at": "2026-10-23T17:33:06.756479+00:00",
+      "hypothesis": "momentum::h=1",
+      "over_budget": true,
+      "prior_data_attempts": 13,
+      "repeat_of": [
+        "66bbf8ce-e498-4317-8f27-70e7e72692ef",
+        "adb801ac-2100-40b7-8e2b-e1f953a75c29",
+        "0d197d69-db67-4698-b17f-9ae1f2f8c378",
+        "159bb305-8bf7-4480-be63-a173870ec2b0",
+        "705e1919-3bea-48a6-b7ff-5b1f90a078d7",
+        "a25774e0-996e-4083-a6fc-63b1ebf66c7b",
+        "2249ec45-9d06-436b-9c5e-ae9158d32edc",
+        "846cf51c-08eb-4dc3-9623-ad38cb879c42",
+        "b3c82b06-cb24-4282-81bd-f999cc5dd4dd",
+        "681bfdb2-dd46-4379-b9f8-45d44723a489",
+        "0b5d77ee-070d-4626-9ac3-0049b7d5432e",
+        "9665d593-933a-423d-af1c-447e37179185",
+        "70892d48-5e71-40bc-acb0-c39867b4d894"
+      ],
+      "run_id": "50af1f93-427b-4651-9b24-99d646f1727d"
+    }
+  ],
+  "distinct_families": 1,
+  "total_trials": 14,
+  "any_over_budget": true,
+  "contamination_flags": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    null,
+    null
+  ]
+}

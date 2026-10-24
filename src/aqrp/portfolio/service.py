@@ -15,7 +15,7 @@ from .construct import build_candidate
 from .contracts import PortfolioRequest, PortfolioResult, load
 
 
-def construct_engineering(request, ledger_root, code_commit):
+def construct_engineering(request, ledger_root, code_commit, *, task_context=None):
     policy = reviewed_policy()
     if not isinstance(request, PortfolioRequest):
         raise ContractError("FROZEN_REQUEST_REQUIRED")
@@ -41,7 +41,7 @@ def construct_engineering(request, ledger_root, code_commit):
         "permission_domain": "ENGINEERING_TEST_ONLY",
         "seed": 0,
     }
-    run_id = ledger.start(config, lineage)
+    run_id = ledger.start(config, lineage, task_context=task_context)
     result = {
         "schema_version": "portfolio-result/1.0.0",
         "run_id": run_id,

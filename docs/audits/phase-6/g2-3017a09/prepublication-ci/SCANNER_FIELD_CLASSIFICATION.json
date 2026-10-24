@@ -1,0 +1,778 @@
+{
+  "findings": 54,
+  "rules": {
+    "generic-api-key": 54
+  },
+  "paths": {
+    "docs/audits/phase-6/g2-3017a09/received/cli-SYN_CORE4.stdout.log": 1,
+    "docs/audits/phase-6/g2-3017a09/received/cli-SYN_TAIL4.stdout.log": 1,
+    "docs/audits/phase-6/g2-3017a09/received/cli-SYN_U.stdout.log": 1,
+    "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json": 33,
+    "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json": 5,
+    "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json": 11,
+    "docs/audits/phase-6/g2-3017a09/received/HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json": 2
+  },
+  "field_names": {
+    "variant_key": 3,
+    "ariant_key": 51
+  },
+  "classified_findings": [
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/cli-SYN_CORE4.stdout.log",
+      "line": 1,
+      "start_column": 687,
+      "end_column": 766,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "variant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "5128589a083a9e088495ce0b9675d5e07093bb22e8eb15cf34a30e89869ea760",
+      "matched_segment_length": 80,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/cli-SYN_TAIL4.stdout.log",
+      "line": 1,
+      "start_column": 687,
+      "end_column": 766,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "variant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "be3ecb23ec670228014347bc62a631a6711d4ac528f6da1865a9080c9e29940c",
+      "matched_segment_length": 80,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/cli-SYN_U.stdout.log",
+      "line": 1,
+      "start_column": 687,
+      "end_column": 766,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "variant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "b20be24a2a5ccdfa0cfaba002cb4ff61bf140958bcc029b60787ed0e2ac62b33",
+      "matched_segment_length": 80,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2034,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2131,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2228,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2325,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2422,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2519,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2616,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2713,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2810,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2907,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3004,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 37,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 2847,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 3096,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3101,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3198,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3225,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3392,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3416,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3449,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3482,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3515,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3548,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3581,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3614,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3647,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 3333,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 3570,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 124,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 232,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 267,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 620,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 655,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1008,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1043,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1395,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1430,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 2298,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 2334,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "line": 166,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "04d27310bc5f3082ba74e4e704e4741e3cec35c700d407896afad4e2e24d6aa8",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "line": 2124,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "04d27310bc5f3082ba74e4e704e4741e3cec35c700d407896afad4e2e24d6aa8",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3680,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3713,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3746,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3779,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3984,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4042,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4076,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4110,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4144,
+      "start_column": 17,
+      "end_column": 96,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4179,
+      "start_column": 15,
+      "end_column": 94,
+      "rule": "generic-api-key",
+      "hex64_field_names_near_match": [
+        "ariant_key"
+      ],
+      "hex64_shape": true,
+      "original_file_sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "matched_segment_length": 79,
+      "raw_match_not_disclosed": true
+    }
+  ],
+  "judgment": "Shape/classification only, no scanner bypass and no complete CI PASS claimed."
+}

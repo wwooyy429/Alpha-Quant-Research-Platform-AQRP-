@@ -1,0 +1,45 @@
+{
+  "candidate": "f03ebe7c65117e082608a82474461d876265bf7e",
+  "developer_finding": "DEV-P6-001",
+  "actual_input": [
+    {
+      "lookback": 3
+    },
+    {
+      "lookback": 2
+    }
+  ],
+  "actual_saved": [
+    {
+      "lookback": 3
+    },
+    {
+      "lookback": 3
+    }
+  ],
+  "SDK_and_both_CI_passed_but_do_not_cover_counterexample": true,
+  "C1_not_ready_for_G2_delivery": true,
+  "raw_evidence": [
+    {
+      "path": "E:\\WORK\\AQRP-runs\\p6-browser-f03ebe7-ee9eaecd-643c-4ab3-a98f-9c985c7fe0d4\\browser\\DEFAULTS_AFTER_TWO_BROWSER_SAVES.json",
+      "bytes": 523,
+      "sha256": "5ec2291f05cbf3181240eb0083703dabea761b28c7223cc94d1c0c3a4bd6d9bf"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p6-implementation-20261023\\steps\\20261023T154558-reproduce-c1-editor-lost-input-7d8e1af0\\stdout.log",
+      "bytes": 2464,
+      "sha256": "cbaa725ac57f41c2db5d08a70b4f0b4fcf7bf849d87ea447db6bb08a85b05b0d"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p6-implementation-20261023\\ci-39976579342\\DOWNLOAD_RECEIPT.json",
+      "bytes": 2647,
+      "sha256": "9497ddeb2c516c8c5306dcb6ca194ada40702fc5b9560312d091aefdbee3f911"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p6-implementation-20261023\\SDK-f03ebe7.completion.json",
+      "bytes": 701,
+      "sha256": "363a6053f9e13085e23c411224b5aaaf18351c11125e24231cf55178582d4563"
+    }
+  ],
+  "independent_G2": "PENDING"
+}

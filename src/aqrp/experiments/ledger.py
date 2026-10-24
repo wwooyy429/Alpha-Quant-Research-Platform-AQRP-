@@ -109,7 +109,7 @@ class ExperimentLedger:
             raise ContractError("INVALID_RUN_ID") from exc
         return self.root / key
 
-    def start(self, config, lineage):
+    def start(self, config, lineage, *, task_context=None):
         required = {
             "code_commit",
             "code_bundle",
@@ -122,8 +122,13 @@ class ExperimentLedger:
         if not required <= set(lineage) or not re.fullmatch("[0-9a-f]{40}", lineage["code_commit"]):
             raise ContractError("INCOMPLETE_RUN_LINEAGE")
         content = canonical(config)
+        if task_context is not None:
+            from aqrp.services.task_context import require_context
+
+            run_id, lineage = require_context(task_context).start(self.root, config, lineage)
+        else:
+            run_id = str(uuid.uuid4())
         metadata = canonical(lineage)
-        run_id = str(uuid.uuid4())
         root = self.path(run_id)
         root.mkdir(exist_ok=False)
         immutable_write(root / "config.json", content)
@@ -240,7 +245,16 @@ class ExperimentLedger:
             {
                 "config": fingerprint_config,
                 "lineage": {
-                    k: v for k, v in lineage.items() if k not in ("protocol_hash", "code_commit")
+                    k: v
+                    for k, v in lineage.items()
+                    if k
+                    not in (
+                        "protocol_hash",
+                        "code_commit",
+                        "task_binding",
+                        "task_binding_hash",
+                        "campaign_control",
+                    )
                 },
                 "hypothesis_spec": {
                     k: v
@@ -255,13 +269,32 @@ class ExperimentLedger:
             repeated = [
                 x["payload"]["run_id"] for x in past if x["payload"]["fingerprint"] == fingerprint
             ]
+            campaign = config.get("family", {}).get("campaign")
+            control = lineage.get("campaign_control", {})
             item = {
+                "cross_campaign_data_access": bool(campaign)
+                and (
+                    campaign["registration_history"]["contaminated_before_registration"]
+                    or any(
+                        x["payload"].get("data_hash") == lineage["data_hash"]
+                        and x["payload"]["family"] != family
+                        for x in past
+                    )
+                    or control.get("prior_other_campaign_attempts", 0) > 0
+                    or control.get("prior_other_family_legacy_trials", 0) > 0
+                ),
+                "campaign_control": control,
                 "run_id": run_id,
                 "family": family,
                 "hypothesis": hypothesis,
                 "fingerprint": fingerprint,
                 "repeat_of": repeated,
-                "over_budget": len(peers) >= budget,
+                "over_budget": len(peers) >= budget
+                or (
+                    bool(campaign)
+                    and sum(x["payload"].get("data_hash") == lineage["data_hash"] for x in past)
+                    >= budget
+                ),
                 "prior_data_attempts": sum(
                     r["payload"].get("data_hash") == lineage["data_hash"] for r in past
                 ),

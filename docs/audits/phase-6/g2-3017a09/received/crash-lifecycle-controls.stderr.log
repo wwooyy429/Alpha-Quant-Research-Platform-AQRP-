@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p6-g2-recheck-3017a09-independent-20261024\verify_crash_controls.py", line 33, in <module>
+    new=(C/'src/aqrp/ui/app.py').read_text()
+  File "C:\Users\11638\AppData\Local\AQRP\runtime\Python31316\Lib\pathlib\_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\runtime\Python31316\Lib\pathlib\_abc.py", line 633, in read_text
+    return f.read()
+           ~~~~~~^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x94 in position 6178: illegal multibyte sequence

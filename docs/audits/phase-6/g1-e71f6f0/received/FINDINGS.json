@@ -1,0 +1,91 @@
+{
+  "fixed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
+  "verdict": "PLAN PASS WITH CONDITIONS",
+  "implementation_authorized": false,
+  "scope": "G1 design only",
+  "findings": [
+    {
+      "id": "WORK-P6-G1-001",
+      "severity": "High",
+      "status": "CLOSED_DESIGN",
+      "locations": [
+        {
+          "path": "docs/audits/phase-6/TASK_COMPLETION_CONTRACT.md",
+          "line": 9
+        },
+        {
+          "path": "docs/audits/phase-6/TASK_COMPLETION_CONTRACT.md",
+          "line": 24
+        }
+      ],
+      "basis": "All required fixed-kind stages and preallocated decision slots; actual final artifacts and lineage; completion receipt and SQLite terminal barrier; resume no duplicate executions; explicit failure/cancel/integrity rules",
+      "independent_evidence": [
+        "INDEPENDENT_127_ANSWERS.json",
+        "COMPLETION_SUBSET_CHALLENGES.json"
+      ],
+      "limitations": "No TaskService/SQLite/crash/concurrency implementation executed; C-P6-001/002 need user acceptance"
+    },
+    {
+      "id": "WORK-P6-G1-002",
+      "severity": "Medium",
+      "status": "CLOSED_DESIGN",
+      "locations": [
+        {
+          "path": "docs/audits/phase-6/NESTED_CONTEXT_CONTRACT.md",
+          "line": 7
+        },
+        {
+          "path": "docs/audits/phase-6/NESTED_CONTEXT_CONTRACT.md",
+          "line": 13
+        },
+        {
+          "path": "docs/audits/phase-6/NESTED_CONTEXT_CONTRACT.md",
+          "line": 36
+        }
+      ],
+      "basis": "Explicit optional instance context reaches actual internal P4/provider/ledger; 19 immutable fields bound pre-call; P3 family versus nested P5 roots; same-slot resume reuse and new replay ownership; legacy no-context and all original gates retained",
+      "independent_evidence": [
+        "BINDING_EXTENSION_CHALLENGES.json",
+        "FIXED_LINE_CONTEXT.txt"
+      ],
+      "limitations": "Local engineering integrity design; real authority, concurrency, ACL and three-principal isolation NOT VERIFIED"
+    },
+    {
+      "id": "WORK-P6-G1-003",
+      "severity": "Medium",
+      "status": "CLOSED_DESIGN",
+      "locations": [
+        {
+          "path": "docs/audits/phase-6/NUMERIC_REFERENCE_CONTRACT.md",
+          "line": 5
+        },
+        {
+          "path": "docs/audits/phase-6/reference_check.py",
+          "line": 15
+        },
+        {
+          "path": "docs/audits/phase-6/reference_check.py",
+          "line": 55
+        }
+      ],
+      "basis": "Actual old failures reproduced; same expected values pass repaired helper; Fraction-derived exact answers, limits, HALF_EVEN and six Decimal contexts",
+      "independent_evidence": [
+        "ORIGINAL_TWO_COUNTEREXAMPLES.json",
+        "NUMERIC_EXTENSION_INPUTS.json",
+        "NUMERIC_CONTEXT_OBSERVATIONS.json"
+      ],
+      "limitations": "Helper repair execution verified; UI persistence, raw download and product behavior remain unimplemented; C-P6-003 needs user acceptance"
+    }
+  ],
+  "new_blocking_findings": [],
+  "conditions": [
+    "C-P6-001: explicit user acceptance of strict all-required-P4-success Task status",
+    "C-P6-002: explicit user acceptance of N>=1 for new engineering pipeline only",
+    "C-P6-003: explicit user acceptance of 4096-digit/4098-text ordinary ASCII decimal adapter scope",
+    "Separate user authorization before P6 business/UI implementation"
+  ],
+  "real_windows_isolation": "DEFERRED / NOT VERIFIED",
+  "formal_Test": false,
+  "financial_approval": "NONE"
+}
+

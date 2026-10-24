@@ -1,0 +1,29 @@
+{
+  "executor": "Codex developer actual execution of repository design reference, not P6 product or independent audit",
+  "reference_file": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-g1-revision-20261023\\original-reference_check.py",
+  "reference_sha256": "19fd645cf60f39de7675bbf53b1dd699308610839c006a65c29f72848732ef5a",
+  "records": [
+    {
+      "kind": "weight",
+      "inputs": {
+        "percent": "0.123456789012345678901234567890123456789"
+      },
+      "expected": "0.00123456789012345678901234567890123456789",
+      "actual": "0.001234567890123456789012345679",
+      "error": null,
+      "match": false
+    },
+    {
+      "kind": "money",
+      "inputs": {
+        "value": "999999999999999999999999999999.995"
+      },
+      "expected": "1,000,000,000,000,000,000,000,000,000,000.00",
+      "actual": null,
+      "error": "InvalidOperation",
+      "match": false
+    }
+  ],
+  "matched": 0,
+  "mismatched": 2
+}

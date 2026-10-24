@@ -1,0 +1,2789 @@
+Browser tab: 4, Title: "AQRP Research", URL: "http://127.0.0.1:13975/".
+0 AXWebArea AQRP Research, URL: 127.0.0.1:13975/
+	1 container
+		3 container
+			4 link Description: Skip to main content, Value: 127.0.0.1:13975/#stMain
+			5 container Description: Sidebar, ID: stSidebar
+				6 container
+					7 heading AQRP, Value: 1
+						8 text AQRP
+					9 Description: Workspace, ID: react-aria486831609-:r3:
+						10 container
+							11 radio button (settable, integer) Description: Dashboard, Value: 0
+							12 text Dashboard
+						13 container
+							14 radio button (settable, integer) Description: Factor Library, Value: 0
+							15 text Factor Library
+						16 container
+							17 radio button (settable, integer) Description: Alpha Research, Value: 0
+							18 text Alpha Research
+						19 container
+							20 radio button (settable, integer) Description: Strategy Backtest, Value: 1
+							21 text Strategy Backtest
+						22 container
+							23 radio button (settable, integer) Description: Experiment Manager, Value: 0
+							24 text Experiment Manager
+						25 container
+							26 radio button (settable, integer) Description: Settings, Value: 0
+							27 text Settings
+					28 text ENGINEERING TEST ONLY Financial approval: NONE
+			29 container
+				30 button Deploy
+				31 pop up button (collapsed) Description: Main menu, Secondary Actions: Expand
+			32 container stMain
+				33 heading Strategy Backtest, Value: 1, ID: strategy-backtest
+					34 text Strategy Backtest
+					35 link Description: Link to heading, Value: 127.0.0.1:13975/#strategy-backtest
+				36 text Alpha Quant Research Platform · local engineering workspace
+				37 text Engineering simulation only. Formal strategy approval and formal Test remain unavailable.
+				38 button Check formal-entry gate
+					39 text Check formal-entry gate
+				40 text Synthetic engineering data · UTC decision timestamps and split/fit rules are preserved.
+				41 text Select a trusted synthetic historical universe. Snapshot, membership and availability identities enter the immutable request. Parameters must belong to a preregistered campaign; all campaigns share the same data budget of 12 hypotheses. Failed and cancelled attempts consume budget.
+				42 container
+					43 container Selected values
+						44 container momentum
+							45 text momentum
+							46 button Remove momentum
+					47 combo box (collapsed, settable) Description: Factors, ID: react-aria486831609-:r6j:, Secondary Actions: Expand
+					48 button Description: Clear all, ID: react-aria486831609-:r6q:
+					49 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r6f:, Secondary Actions: Expand
+				50 container
+					51 text field (settable) Description: First decision session (YYYY-MM-DD), Value: 2024-01-06, ID: :r6u:
+				52 container
+					53 text field (settable) Description: Last decision session (YYYY-MM-DD), Value: 2024-01-06, ID: :r74:
+				54 container
+					55 stepper (settable, integer) Description: Lookback sessions, Value: 2, ID: :r7a:
+					56 button Decrement
+					57 button Increment
+				58 container
+					59 text field (settable) Description: Prediction horizons (session counts), Value: 1, ID: :r7g:
+				60 container
+					61 combo box (collapsed, settable) Description: Factor direction, Value: 1, ID: react-aria486831609-:r7r:, Secondary Actions: Expand
+					62 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r7n:, Secondary Actions: Expand
+				63 container
+					64 checkbox (settable, integer) Description: Industry / size neutralization, Value: 1
+					65 text Industry / size neutralization
+				66 container
+					67 combo box (collapsed, settable) Description: Stock universe, Value: SYN_CORE4, ID: react-aria486831609-:r8b:, Secondary Actions: Expand
+					68 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r87:, Secondary Actions: Expand
+				69 container
+					70 combo box (collapsed, settable) Description: Preregistered research campaign, Value: engineering-default, ID: react-aria486831609-:r8p:, Secondary Actions: Expand
+					71 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r8l:, Secondary Actions: Expand
+				72 container
+					73 text entry area (settable) Description: Factor weights in percent — JSON decimal strings, Value: {"momentum": "100"}, ID: :r92:
+				74 container
+					75 text field (settable) Description: Initial cash (exact decimal), Value: 1000, ID: :r93:
+				76 container
+					77 text field (settable) Description: Fee budget (exact decimal), Value: 10, ID: :r99:
+				78 container
+					79 text entry area (settable) Description: Portfolio policy overrides (existing schema), Value: {"top_k": 1}, ID: :r9f:
+				80 container
+					81 text entry area (settable) Description: Risk overrides (existing schema), Value: {}, ID: :r9g:
+				82 text Existing SYNTHETIC_EXECUTION_1 fees and event economics remain fixed. Empty decisions are refused; trades need not occur.
+				83 button Submit engineering pipeline
+					84 text Submit engineering pipeline
+				85 button New experiment key
+					86 text New experiment key
+				2616 text Task status: SUCCEEDED
+				2617 text ebfd51e9-0d52-42d0-822f-bd29b5745dd2
+				92 button Refresh task
+					93 text Refresh task
+				2618 text Cancellation is acknowledged at safe stage or atomic-transaction boundaries.
+				2614 button Download worker log prefix
+					2615 text Download worker log prefix
+				2619 container
+					2620 combo box (collapsed, settable) Description: Child stage, Value: B, ID: react-aria486831609-:rdc:, Secondary Actions: Expand
+					2621 pop up button (collapsed) Description: Open, ID: react-aria486831609-:rd8:, Secondary Actions: Expand
+				2622 container
+					2623 combo box (collapsed, settable) Description: Manifest artifact, Value: config.json, ID: react-aria486831609-:rdq:, Secondary Actions: Expand
+					2624 pop up button (collapsed) Description: Open, ID: react-aria486831609-:rdm:, Secondary Actions: Expand
+				2625 button Download verified original
+					2626 text Download verified original
+				2627 button (collapsed) Verified original artifact, Secondary Actions: Expand
+					2628 text Verified original artifact
+				2629 button (collapsed) Task events (persistent), Secondary Actions: Expand
+					2630 text Task events (persistent)
+				2631 button Download task event prefix
+					2632 text Download task event prefix
+				2633 text Event download is a persistent log prefix, not a terminal financial result.
+				2634 heading IC, Rank IC, ICIR and stratified returns, Value: 3, ID: ic-rank-ic-icir-and-stratified-returns
+					2635 text IC, Rank IC, ICIR and stratified returns
+					2636 link Description: Link to heading, Value: 127.0.0.1:13975/#ic-rank-ic-icir-and-stratified-returns
+				2637 container
+					2638 button Show/hide columns
+					2639 button Download as CSV
+					2640 button Search
+					2641 button Fullscreen
+					2642 container
+						2643 image
+							2644 table
+								2645 row factor_key horizon split stage annual.2024.annualized annual.2024.icir annual.2024.mean annual.2024.n
+									2646 cell (selectable)
+									2647 cell (selectable) factor_key
+									2648 cell (selectable) horizon
+									2649 cell (selectable) split
+									2650 cell (selectable) stage
+									2651 cell (selectable) annual.2024.annualized
+									2652 cell (selectable) annual.2024.icir
+									2653 cell (selectable) annual.2024.mean
+									2654 cell (selectable) annual.2024.n
+								2655 container
+									2656 row (selectable) 0 momentum 1 train clean False N/A 0.14899330232590682 1
+										2657 cell (selectable) Value: 0, ID: glide-cell-0-0
+										2658 cell (selectable) Value: momentum, ID: glide-cell-1-0
+										2659 cell (selectable) Value: 1, ID: glide-cell-2-0
+										2660 cell (selectable) Value: train, ID: glide-cell-3-0
+										2661 cell (selectable) Value: clean, ID: glide-cell-4-0
+										2662 cell (selectable) Value: False, ID: glide-cell-5-0
+										2663 cell (selectable) Value: N/A, ID: glide-cell-6-0
+										2664 cell (selectable) Value: 0.14899330232590682, ID: glide-cell-7-0
+										2665 cell (selectable) Value: 1, ID: glide-cell-8-0
+									2666 row (selectable) 1 momentum 1 train final False N/A 0.06603685702568302 1
+										2667 cell (selectable) Value: 1, ID: glide-cell-0-1
+										2668 cell (selectable) Value: momentum, ID: glide-cell-1-1
+										2669 cell (selectable) Value: 1, ID: glide-cell-2-1
+										2670 cell (selectable) Value: train, ID: glide-cell-3-1
+										2671 cell (selectable) Value: final, ID: glide-cell-4-1
+										2672 cell (selectable) Value: False, ID: glide-cell-5-1
+										2673 cell (selectable) Value: N/A, ID: glide-cell-6-1
+										2674 cell (selectable) Value: 0.06603685702568302, ID: glide-cell-7-1
+										2675 cell (selectable) Value: 1, ID: glide-cell-8-1
+									2676 row (selectable) 2 momentum 1 train neutralized False N/A 0.06603685702568302 1
+										2677 cell (selectable) Value: 2, ID: glide-cell-0-2
+										2678 cell (selectable) Value: momentum, ID: glide-cell-1-2
+										2679 cell (selectable) Value: 1, ID: glide-cell-2-2
+										2680 cell (selectable) Value: train, ID: glide-cell-3-2
+										2681 cell (selectable) Value: neutralized, ID: glide-cell-4-2
+										2682 cell (selectable) Value: False, ID: glide-cell-5-2
+										2683 cell (selectable) Value: N/A, ID: glide-cell-6-2
+										2684 cell (selectable) Value: 0.06603685702568302, ID: glide-cell-7-2
+										2685 cell (selectable) Value: 1, ID: glide-cell-8-2
+									2686 row (selectable) 3 momentum 1 train raw False N/A 0.13814993736578965 1
+										2687 cell (selectable) Value: 3, ID: glide-cell-0-3
+										2688 cell (selectable) Value: momentum, ID: glide-cell-1-3
+										2689 cell (selectable) Value: 1, ID: glide-cell-2-3
+										2690 cell (selectable) Value: train, ID: glide-cell-3-3
+										2691 cell (selectable) Value: raw, ID: glide-cell-4-3
+										2692 cell (selectable) Value: False, ID: glide-cell-5-3
+										2693 cell (selectable) Value: N/A, ID: glide-cell-6-3
+										2694 cell (selectable) Value: 0.13814993736578965, ID: glide-cell-7-3
+										2695 cell (selectable) Value: 1, ID: glide-cell-8-3
+									2696 row (selectable) 4 momentum 1 train standardized False N/A 0.14899330232590685 1
+										2697 cell (selectable) Value: 4, ID: glide-cell-0-4
+										2698 cell (selectable) Value: momentum, ID: glide-cell-1-4
+										2699 cell (selectable) Value: 1, ID: glide-cell-2-4
+										2700 cell (selectable) Value: train, ID: glide-cell-3-4
+										2701 cell (selectable) Value: standardized, ID: glide-cell-4-4
+										2702 cell (selectable) Value: False, ID: glide-cell-5-4
+										2703 cell (selectable) Value: N/A, ID: glide-cell-6-4
+										2704 cell (selectable) Value: 0.14899330232590685, ID: glide-cell-7-4
+										2705 cell (selectable) Value: 1, ID: glide-cell-8-4
+						2706 image
+				2707 container
+					2708 image
+						2709 image
+						2710 image
+						2711 image
+						2712 image
+						2713 image
+						2714 image
+						2715 image
+						2716 image
+						2717 image
+						2718 image
+						2719 image
+						2720 container
+							2721 text 23:59:59.999 Jan 5, 2024
+						2722 text 23:59:59.9995
+						2723 container
+							2724 text 00:00:00 Jan 6, 2024
+						2725 text 00:00:00.0005
+						2726 text 0.06
+						2727 text 0.08
+						2728 text 0.1
+						2729 text 0.12
+						2730 text 0.14
+					2731 image
+						2732 text Pearson IC by session / stage
+					2733 toolbar modebar-ca542f
+						2734 button Download plot as a PNG
+							2735 image
+						2736 container
+							2737 button Zoom
+								2738 image
+							2739 button Pan
+								2740 image
+						2741 container
+							2742 button Zoom in
+								2743 image
+							2744 button Zoom out
+								2745 image
+							2746 button Autoscale
+								2747 image
+							2748 button Reset axes
+								2749 image
+						2750 button Fullscreen
+							2751 image
+					2752 image
+				2753 text Charts use approximate browser numbers. Raw tables and downloads retain original values; N/A retains its reason.
+				2754 button (collapsed) Rank IC and group returns by session, Secondary Actions: Expand
+					2755 text Rank IC and group returns by session
+				2756 heading Horizon decay, Value: 3, ID: horizon-decay
+					2757 text Horizon decay
+					2758 link Description: Link to heading, Value: 127.0.0.1:13975/#horizon-decay
+				2759 container
+					2760 button Show/hide columns
+					2761 button Download as CSV
+					2762 button Search
+					2763 button Fullscreen
+					2764 container
+						2765 image
+							2766 table
+								2767 row factor_key horizon mean_ic split
+									2768 cell (selectable)
+									2769 cell (selectable) factor_key
+									2770 cell (selectable) horizon
+									2771 cell (selectable) mean_ic
+									2772 cell (selectable) split
+								2773 row (selectable) 0 momentum 1 0.06603685702568302 train
+									2774 cell (selectable) Value: 0, ID: glide-cell-0-0
+									2775 cell (selectable) Value: momentum, ID: glide-cell-1-0
+									2776 cell (selectable) Value: 1, ID: glide-cell-2-0
+									2777 cell (selectable) Value: 0.06603685702568302, ID: glide-cell-3-0
+									2778 cell (selectable) Value: train, ID: glide-cell-4-0
+						2779 image
+				2780 heading Out-of-sample / walk-forward, Value: 3, ID: out-of-sample-walk-forward
+					2781 text Out-of-sample / walk-forward
+					2782 link Description: Link to heading, Value: 127.0.0.1:13975/#out-of-sample-walk-forward
+				2783 container
+					2784 text {
+					2785 container
+						2786 text " train_for_validation " :
+					2787 text {
+					2788 container
+						2789 image
+						2790 text " embargo_days "
+						2791 text :
+						2792 text [
+					2793 text ]
+					2794 container
+						2795 image
+						2796 text " eval "
+						2797 text :
+						2798 text [
+					2799 text ]
+					2800 container
+						2801 text " fit_cutoff "
+					2802 text :
+					2803 container
+						2804 text " 2024-01-10T00:00:00.000000+00:00 "
+					2805 container
+						2806 image
+						2807 text " rejected "
+						2808 text :
+						2809 text [
+					2810 text ]
+					2811 container
+						2812 text " train " :
+					2813 text [
+					2814 container
+						2815 text 0 :
+					2816 text {
+					2817 container
+						2818 text " available_at "
+					2819 text :
+					2820 container
+						2821 text " 2024-01-08T12:05:00.000000+00:00 "
+					2822 container
+						2823 text " coverage_hash "
+					2824 text :
+					2825 container
+						2826 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					2827 container
+						2828 text " coverage_revision "
+					2829 text :
+					2830 text 1
+					2831 container
+						2832 text " credit "
+					2833 text :
+					2834 container
+						2835 text " 0 "
+					2836 container
+						2837 text " decision_time "
+					2838 text :
+					2839 container
+						2840 text " 2024-01-06T12:05:00.000000+00:00 "
+					2841 container
+						2842 text " dependency_hash "
+					2843 text :
+					2844 container
+						2845 text " 26e63538cf09529a25a049e0e019e3e112541d06e64ac5e76248fd1f555f2c9a "
+					2846 container
+						2847 text " entitlement_interval " :
+					2848 text [
+					2849 container
+						2850 text 0 :
+					2851 container
+						2852 text " 2024-01-07T09:00:00.000000+00:00 "
+					2853 container
+						2854 text 1 :
+					2855 container
+						2856 text " 2024-01-08T09:00:00.000000+00:00 "
+					2857 text ]
+					2858 container
+						2859 text " entry_at "
+					2860 text :
+					2861 container
+						2862 text " 2024-01-07T09:00:00.000000+00:00 "
+					2863 container
+						2864 text " exit_at "
+					2865 text :
+					2866 container
+						2867 text " 2024-01-08T09:00:00.000000+00:00 "
+					2868 container
+						2869 text " horizon "
+					2870 text :
+					2871 text 1
+					2872 container
+						2873 text " information_interval " :
+					2874 text [
+					2875 container
+						2876 text 0 :
+					2877 container
+						2878 text " 2024-01-06T12:05:00.000000+00:00 "
+					2879 container
+						2880 text 1 :
+					2881 container
+						2882 text " 2024-01-08T12:05:00.000000+00:00 "
+					2883 text ]
+					2884 container
+						2885 text " label "
+					2886 text :
+					2887 text -0.03361344537815126
+					2888 container
+						2889 text " profile "
+					2890 text :
+					2891 container
+						2892 text " SYNTHETIC_V1_LABEL_1 "
+					2893 container
+						2894 text " reason "
+					2895 text :
+					2896 container
+						2897 text " NONE "
+					2898 container
+						2899 text " security_id "
+					2900 text :
+					2901 container
+						2902 text " SYN_A:001 "
+					2903 container
+						2904 text " security_master_ref " :
+					2905 text {
+					2906 container
+						2907 text " available_at "
+					2908 text :
+					2909 container
+						2910 text " 2024-01-01T00:00:00.000000+00:00 "
+					2911 container
+						2912 text " event_time "
+					2913 text :
+					2914 container
+						2915 text " 2024-01-01T00:00:00.000000+00:00 "
+					2916 container
+						2917 text " revision_id "
+					2918 text :
+					2919 text 1
+					2920 container
+						2921 text " row_hash "
+					2922 text :
+					2923 container
+						2924 text " d44615bacf21bfbf75b50013c6a67c0f4e7559b64896d7e2a39f81541978e4df "
+					2925 text }
+					2926 container
+						2927 text " session "
+					2928 text :
+					2929 container
+						2930 text " 2024-01-06 "
+					2931 container
+						2932 text " shares "
+					2933 text :
+					2934 container
+						2935 text " 1 "
+					2936 container
+						2937 text " snapshot_hash "
+					2938 text :
+					2939 container
+						2940 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					2941 container
+						2942 text " split_reason "
+					2943 text :
+					2944 container
+						2945 text " NONE "
+					2946 text }
+					2947 container
+						2948 text 1 :
+					2949 text {
+					2950 container
+						2951 text " available_at "
+					2952 text :
+					2953 container
+						2954 text " 2024-01-08T12:05:00.000000+00:00 "
+					2955 container
+						2956 text " coverage_hash "
+					2957 text :
+					2958 container
+						2959 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					2960 container
+						2961 text " coverage_revision "
+					2962 text :
+					2963 text 1
+					2964 container
+						2965 text " credit "
+					2966 text :
+					2967 container
+						2968 text " 0 "
+					2969 container
+						2970 text " decision_time "
+					2971 text :
+					2972 container
+						2973 text " 2024-01-06T12:05:00.000000+00:00 "
+					2974 container
+						2975 text " dependency_hash "
+					2976 text :
+					2977 container
+						2978 text " 80a0b642dd89a2c188b4d8d4f452ca181095e30aa89775df12bc30a8881def16 "
+					2979 container
+						2980 text " entitlement_interval " :
+					2981 text [
+					2982 container
+						2983 text 0 :
+					2984 container
+						2985 text " 2024-01-07T09:00:00.000000+00:00 "
+					2986 container
+						2987 text 1 :
+					2988 container
+						2989 text " 2024-01-08T09:00:00.000000+00:00 "
+					2990 text ]
+					2991 container
+						2992 text " entry_at "
+					2993 text :
+					2994 container
+						2995 text " 2024-01-07T09:00:00.000000+00:00 "
+					2996 container
+						2997 text " exit_at "
+					2998 text :
+					2999 container
+						3000 text " 2024-01-08T09:00:00.000000+00:00 "
+					3001 container
+						3002 text " horizon "
+					3003 text :
+					3004 text 1
+					3005 container
+						3006 text " information_interval " :
+					3007 text [
+					3008 container
+						3009 text 0 :
+					3010 container
+						3011 text " 2024-01-06T12:05:00.000000+00:00 "
+					3012 container
+						3013 text 1 :
+					3014 container
+						3015 text " 2024-01-08T12:05:00.000000+00:00 "
+					3016 text ]
+					3017 container
+						3018 text " label "
+					3019 text :
+					3020 text -0.016666666666666666
+					3021 container
+						3022 text " profile "
+					3023 text :
+					3024 container
+						3025 text " SYNTHETIC_V1_LABEL_1 "
+					3026 container
+						3027 text " reason "
+					3028 text :
+					3029 container
+						3030 text " NONE "
+					3031 container
+						3032 text " security_id "
+					3033 text :
+					3034 container
+						3035 text " SYN_A:002 "
+					3036 container
+						3037 text " security_master_ref " :
+					3038 text {
+					3039 container
+						3040 text " available_at "
+					3041 text :
+					3042 container
+						3043 text " 2024-01-01T00:00:00.000000+00:00 "
+					3044 container
+						3045 text " event_time "
+					3046 text :
+					3047 container
+						3048 text " 2024-01-01T00:00:00.000000+00:00 "
+					3049 container
+						3050 text " revision_id "
+					3051 text :
+					3052 text 1
+					3053 container
+						3054 text " row_hash "
+					3055 text :
+					3056 container
+						3057 text " 94eade5b5ab618ef0493261ee5727e6ac006c8d772469dd187752a900e31c8cc "
+					3058 text }
+					3059 container
+						3060 text " session "
+					3061 text :
+					3062 container
+						3063 text " 2024-01-06 "
+					3064 container
+						3065 text " shares "
+					3066 text :
+					3067 container
+						3068 text " 1 "
+					3069 container
+						3070 text " snapshot_hash "
+					3071 text :
+					3072 container
+						3073 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					3074 container
+						3075 text " split_reason "
+					3076 text :
+					3077 container
+						3078 text " NONE "
+					3079 text }
+					3080 container
+						3081 text 2 :
+					3082 text {
+					3083 container
+						3084 text " available_at "
+					3085 text :
+					3086 container
+						3087 text " 2024-01-08T12:05:00.000000+00:00 "
+					3088 container
+						3089 text " coverage_hash "
+					3090 text :
+					3091 container
+						3092 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					3093 container
+						3094 text " coverage_revision "
+					3095 text :
+					3096 text 1
+					3097 container
+						3098 text " credit "
+					3099 text :
+					3100 container
+						3101 text " 0 "
+					3102 container
+						3103 text " decision_time "
+					3104 text :
+					3105 container
+						3106 text " 2024-01-06T12:05:00.000000+00:00 "
+					3107 container
+						3108 text " dependency_hash "
+					3109 text :
+					3110 container
+						3111 text " 1c9e8183862ea68d14e2fd5558d25287ae746e08a5b0094e3ec2299aca8a243f "
+					3112 container
+						3113 text " entitlement_interval " :
+					3114 text [
+					3115 container
+						3116 text 0 :
+					3117 container
+						3118 text " 2024-01-07T09:00:00.000000+00:00 "
+					3119 container
+						3120 text 1 :
+					3121 container
+						3122 text " 2024-01-08T09:00:00.000000+00:00 "
+					3123 text ]
+					3124 container
+						3125 text " entry_at "
+					3126 text :
+					3127 container
+						3128 text " 2024-01-07T09:00:00.000000+00:00 "
+					3129 container
+						3130 text " exit_at "
+					3131 text :
+					3132 container
+						3133 text " 2024-01-08T09:00:00.000000+00:00 "
+					3134 container
+						3135 text " horizon "
+					3136 text :
+					3137 text 1
+					3138 container
+						3139 text " information_interval " :
+					3140 text [
+					3141 container
+						3142 text 0 :
+					3143 container
+						3144 text " 2024-01-06T12:05:00.000000+00:00 "
+					3145 container
+						3146 text 1 :
+					3147 container
+						3148 text " 2024-01-08T12:05:00.000000+00:00 "
+					3149 text ]
+					3150 container
+						3151 text " label "
+					3152 text :
+					3153 text 0
+					3154 container
+						3155 text " profile "
+					3156 text :
+					3157 container
+						3158 text " SYNTHETIC_V1_LABEL_1 "
+					3159 container
+						3160 text " reason "
+					3161 text :
+					3162 container
+						3163 text " NONE "
+					3164 container
+						3165 text " security_id "
+					3166 text :
+					3167 container
+						3168 text " SYN_A:003 "
+					3169 container
+						3170 text " security_master_ref " :
+					3171 text {
+					3172 container
+						3173 text " available_at "
+					3174 text :
+					3175 container
+						3176 text " 2024-01-01T00:00:00.000000+00:00 "
+					3177 container
+						3178 text " event_time "
+					3179 text :
+					3180 container
+						3181 text " 2024-01-01T00:00:00.000000+00:00 "
+					3182 container
+						3183 text " revision_id "
+					3184 text :
+					3185 text 1
+					3186 container
+						3187 text " row_hash "
+					3188 text :
+					3189 container
+						3190 text " 64987eef0c21433ebe85e2eba34e46592de9511c52d5760f3ce6387baa5da577 "
+					3191 text }
+					3192 container
+						3193 text " session "
+					3194 text :
+					3195 container
+						3196 text " 2024-01-06 "
+					3197 container
+						3198 text " shares "
+					3199 text :
+					3200 container
+						3201 text " 1 "
+					3202 container
+						3203 text " snapshot_hash "
+					3204 text :
+					3205 container
+						3206 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					3207 container
+						3208 text " split_reason "
+					3209 text :
+					3210 container
+						3211 text " NONE "
+					3212 text }
+					3213 container
+						3214 text 3 :
+					3215 text {
+					3216 container
+						3217 text " available_at "
+					3218 text :
+					3219 container
+						3220 text " 2024-01-08T12:05:00.000000+00:00 "
+					3221 container
+						3222 text " coverage_hash "
+					3223 text :
+					3224 container
+						3225 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					3226 container
+						3227 text " coverage_revision "
+					3228 text :
+					3229 text 1
+					3230 container
+						3231 text " credit "
+					3232 text :
+					3233 container
+						3234 text " 0 "
+					3235 container
+						3236 text " decision_time "
+					3237 text :
+					3238 container
+						3239 text " 2024-01-06T12:05:00.000000+00:00 "
+					3240 container
+						3241 text " dependency_hash "
+					3242 text :
+					3243 container
+						3244 text " bbeccf1bea6f7b44213e5b4ecf8d1a4e85c59094592beaa3337d078bd35138f9 "
+					3245 container
+						3246 text " entitlement_interval " :
+					3247 text [
+					3248 container
+						3249 text 0 :
+					3250 container
+						3251 text " 2024-01-07T09:00:00.000000+00:00 "
+					3252 container
+						3253 text 1 :
+					3254 container
+						3255 text " 2024-01-08T09:00:00.000000+00:00 "
+					3256 text ]
+					3257 container
+						3258 text " entry_at "
+					3259 text :
+					3260 container
+						3261 text " 2024-01-07T09:00:00.000000+00:00 "
+					3262 container
+						3263 text " exit_at "
+					3264 text :
+					3265 container
+						3266 text " 2024-01-08T09:00:00.000000+00:00 "
+					3267 container
+						3268 text " horizon "
+					3269 text :
+					3270 text 1
+					3271 container
+						3272 text " information_interval " :
+					3273 text [
+					3274 container
+						3275 text 0 :
+					3276 container
+						3277 text " 2024-01-06T12:05:00.000000+00:00 "
+					3278 container
+						3279 text 1 :
+					3280 container
+						3281 text " 2024-01-08T12:05:00.000000+00:00 "
+					3282 text ]
+					3283 container
+						3284 text " label "
+					3285 text :
+					3286 text 0.015503875968992248
+					3287 container
+						3288 text " profile "
+					3289 text :
+					3290 container
+						3291 text " SYNTHETIC_V1_LABEL_1 "
+					3292 container
+						3293 text " reason "
+					3294 text :
+					3295 container
+						3296 text " NONE "
+					3297 container
+						3298 text " security_id "
+					3299 text :
+					3300 container
+						3301 text " SYN_A:004 "
+					3302 container
+						3303 text " security_master_ref " :
+					3304 text {
+					3305 container
+						3306 text " available_at "
+					3307 text :
+					3308 container
+						3309 text " 2024-01-01T00:00:00.000000+00:00 "
+					3310 container
+						3311 text " event_time "
+					3312 text :
+					3313 container
+						3314 text " 2024-01-01T00:00:00.000000+00:00 "
+					3315 container
+						3316 text " revision_id "
+					3317 text :
+					3318 text 1
+					3319 container
+						3320 text " row_hash "
+					3321 text :
+					3322 container
+						3323 text " f0b46bb928806a46ac7360e441b9c0bd700c15d30799b9aeaac7614a3245f4bd "
+					3324 text }
+					3325 container
+						3326 text " session "
+					3327 text :
+					3328 container
+						3329 text " 2024-01-06 "
+					3330 container
+						3331 text " shares "
+					3332 text :
+					3333 container
+						3334 text " 1 "
+					3335 container
+						3336 text " snapshot_hash "
+					3337 text :
+					3338 container
+						3339 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					3340 container
+						3341 text " split_reason "
+					3342 text :
+					3343 container
+						3344 text " NONE "
+					3345 text } ] }
+					3346 container
+						3347 text " walk_forward " :
+					3348 text [
+					3349 container
+						3350 text 0 :
+					3351 text {
+					3352 container
+						3353 text " cross_fold_policy "
+					3354 text :
+					3355 container
+						3356 text " ALL_PRIOR_HELDOUT_PROTECTED "
+					3357 container
+						3358 image
+						3359 text " embargo_days "
+						3360 text :
+						3361 text [
+					3362 text ]
+					3363 container
+						3364 image
+						3365 text " eval "
+						3366 text :
+						3367 text [
+					3368 text ]
+					3369 container
+						3370 text " fit_cutoff "
+					3371 text :
+					3372 container
+						3373 text " 2024-01-10T00:00:00.000000+00:00 "
+					3374 container
+						3375 image
+						3376 text " rejected "
+						3377 text :
+						3378 text [
+					3379 text ]
+					3380 container
+						3381 text " train " :
+					3382 text [
+					3383 container
+						3384 text 0 :
+					3385 text {
+					3386 container
+						3387 text " available_at "
+					3388 text :
+					3389 container
+						3390 text " 2024-01-08T12:05:00.000000+00:00 "
+					3391 container
+						3392 text " coverage_hash "
+					3393 text :
+					3394 container
+						3395 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					3396 container
+						3397 text " coverage_revision "
+					3398 text :
+					3399 text 1
+					3400 container
+						3401 text " credit "
+					3402 text :
+					3403 container
+						3404 text " 0 "
+					3405 container
+						3406 text " decision_time "
+					3407 text :
+					3408 container
+						3409 text " 2024-01-06T12:05:00.000000+00:00 "
+					3410 container
+						3411 text " dependency_hash "
+					3412 text :
+					3413 container
+						3414 text " 26e63538cf09529a25a049e0e019e3e112541d06e64ac5e76248fd1f555f2c9a "
+					3415 container
+						3416 text " entitlement_interval " :
+					3417 text [
+					3418 container
+						3419 text 0 :
+					3420 container
+						3421 text " 2024-01-07T09:00:00.000000+00:00 "
+					3422 container
+						3423 text 1 :
+					3424 container
+						3425 text " 2024-01-08T09:00:00.000000+00:00 "
+					3426 text ]
+					3427 container
+						3428 text " entry_at "
+					3429 text :
+					3430 container
+						3431 text " 2024-01-07T09:00:00.000000+00:00 "
+					3432 container
+						3433 text " exit_at "
+					3434 text :
+					3435 container
+						3436 text " 2024-01-08T09:00:00.000000+00:00 "
+					3437 container
+						3438 text " horizon "
+					3439 text :
+					3440 text 1
+					3441 container
+						3442 text " information_interval " :
+					3443 text [
+					3444 container
+						3445 text 0 :
+					3446 container
+						3447 text " 2024-01-06T12:05:00.000000+00:00 "
+					3448 container
+						3449 text 1 :
+					3450 container
+						3451 text " 2024-01-08T12:05:00.000000+00:00 "
+					3452 text ]
+					3453 container
+						3454 text " label "
+					3455 text :
+					3456 text -0.03361344537815126
+					3457 container
+						3458 text " profile "
+					3459 text :
+					3460 container
+						3461 text " SYNTHETIC_V1_LABEL_1 "
+					3462 container
+						3463 text " reason "
+					3464 text :
+					3465 container
+						3466 text " NONE "
+					3467 container
+						3468 text " security_id "
+					3469 text :
+					3470 container
+						3471 text " SYN_A:001 "
+					3472 container
+						3473 text " security_master_ref " :
+					3474 text {
+					3475 container
+						3476 text " available_at "
+					3477 text :
+					3478 container
+						3479 text " 2024-01-01T00:00:00.000000+00:00 "
+					3480 container
+						3481 text " event_time "
+					3482 text :
+					3483 container
+						3484 text " 2024-01-01T00:00:00.000000+00:00 "
+					3485 container
+						3486 text " revision_id "
+					3487 text :
+					3488 text 1
+					3489 container
+						3490 text " row_hash "
+					3491 text :
+					3492 container
+						3493 text " d44615bacf21bfbf75b50013c6a67c0f4e7559b64896d7e2a39f81541978e4df "
+					3494 text }
+					3495 container
+						3496 text " session "
+					3497 text :
+					3498 container
+						3499 text " 2024-01-06 "
+					3500 container
+						3501 text " shares "
+					3502 text :
+					3503 container
+						3504 text " 1 "
+					3505 container
+						3506 text " snapshot_hash "
+					3507 text :
+					3508 container
+						3509 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					3510 container
+						3511 text " split_reason "
+					3512 text :
+					3513 container
+						3514 text " NONE "
+					3515 text }
+					3516 container
+						3517 text 1 :
+					3518 text {
+					3519 container
+						3520 text " available_at "
+					3521 text :
+					3522 container
+						3523 text " 2024-01-08T12:05:00.000000+00:00 "
+					3524 container
+						3525 text " coverage_hash "
+					3526 text :
+					3527 container
+						3528 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					3529 container
+						3530 text " coverage_revision "
+					3531 text :
+					3532 text 1
+					3533 container
+						3534 text " credit "
+					3535 text :
+					3536 container
+						3537 text " 0 "
+					3538 container
+						3539 text " decision_time "
+					3540 text :
+					3541 container
+						3542 text " 2024-01-06T12:05:00.000000+00:00 "
+					3543 container
+						3544 text " dependency_hash "
+					3545 text :
+					3546 container
+						3547 text " 80a0b642dd89a2c188b4d8d4f452ca181095e30aa89775df12bc30a8881def16 "
+					3548 container
+						3549 text " entitlement_interval " :
+					3550 text [
+					3551 container
+						3552 text 0 :
+					3553 container
+						3554 text " 2024-01-07T09:00:00.000000+00:00 "
+					3555 container
+						3556 text 1 :
+					3557 container
+						3558 text " 2024-01-08T09:00:00.000000+00:00 "
+					3559 text ]
+					3560 container
+						3561 text " entry_at "
+					3562 text :
+					3563 container
+						3564 text " 2024-01-07T09:00:00.000000+00:00 "
+					3565 container
+						3566 text " exit_at "
+					3567 text :
+					3568 container
+						3569 text " 2024-01-08T09:00:00.000000+00:00 "
+					3570 container
+						3571 text " horizon "
+					3572 text :
+					3573 text 1
+					3574 container
+						3575 text " information_interval " :
+					3576 text [
+					3577 container
+						3578 text 0 :
+					3579 container
+						3580 text " 2024-01-06T12:05:00.000000+00:00 "
+					3581 container
+						3582 text 1 :
+					3583 container
+						3584 text " 2024-01-08T12:05:00.000000+00:00 "
+					3585 text ]
+					3586 container
+						3587 text " label "
+					3588 text :
+					3589 text -0.016666666666666666
+					3590 container
+						3591 text " profile "
+					3592 text :
+					3593 container
+						3594 text " SYNTHETIC_V1_LABEL_1 "
+					3595 container
+						3596 text " reason "
+					3597 text :
+					3598 container
+						3599 text " NONE "
+					3600 container
+						3601 text " security_id "
+					3602 text :
+					3603 container
+						3604 text " SYN_A:002 "
+					3605 container
+						3606 text " security_master_ref " :
+					3607 text {
+					3608 container
+						3609 text " available_at "
+					3610 text :
+					3611 container
+						3612 text " 2024-01-01T00:00:00.000000+00:00 "
+					3613 container
+						3614 text " event_time "
+					3615 text :
+					3616 container
+						3617 text " 2024-01-01T00:00:00.000000+00:00 "
+					3618 container
+						3619 text " revision_id "
+					3620 text :
+					3621 text 1
+					3622 container
+						3623 text " row_hash "
+					3624 text :
+					3625 container
+						3626 text " 94eade5b5ab618ef0493261ee5727e6ac006c8d772469dd187752a900e31c8cc "
+					3627 text }
+					3628 container
+						3629 text " session "
+					3630 text :
+					3631 container
+						3632 text " 2024-01-06 "
+					3633 container
+						3634 text " shares "
+					3635 text :
+					3636 container
+						3637 text " 1 "
+					3638 container
+						3639 text " snapshot_hash "
+					3640 text :
+					3641 container
+						3642 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					3643 container
+						3644 text " split_reason "
+					3645 text :
+					3646 container
+						3647 text " NONE "
+					3648 text }
+					3649 container
+						3650 text 2 :
+					3651 text {
+					3652 container
+						3653 text " available_at "
+					3654 text :
+					3655 container
+						3656 text " 2024-01-08T12:05:00.000000+00:00 "
+					3657 container
+						3658 text " coverage_hash "
+					3659 text :
+					3660 container
+						3661 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					3662 container
+						3663 text " coverage_revision "
+					3664 text :
+					3665 text 1
+					3666 container
+						3667 text " credit "
+					3668 text :
+					3669 container
+						3670 text " 0 "
+					3671 container
+						3672 text " decision_time "
+					3673 text :
+					3674 container
+						3675 text " 2024-01-06T12:05:00.000000+00:00 "
+					3676 container
+						3677 text " dependency_hash "
+					3678 text :
+					3679 container
+						3680 text " 1c9e8183862ea68d14e2fd5558d25287ae746e08a5b0094e3ec2299aca8a243f "
+					3681 container
+						3682 text " entitlement_interval " :
+					3683 text [
+					3684 container
+						3685 text 0 :
+					3686 container
+						3687 text " 2024-01-07T09:00:00.000000+00:00 "
+					3688 container
+						3689 text 1 :
+					3690 container
+						3691 text " 2024-01-08T09:00:00.000000+00:00 "
+					3692 text ]
+					3693 container
+						3694 text " entry_at "
+					3695 text :
+					3696 container
+						3697 text " 2024-01-07T09:00:00.000000+00:00 "
+					3698 container
+						3699 text " exit_at "
+					3700 text :
+					3701 container
+						3702 text " 2024-01-08T09:00:00.000000+00:00 "
+					3703 container
+						3704 text " horizon "
+					3705 text :
+					3706 text 1
+					3707 container
+						3708 text " information_interval " :
+					3709 text [
+					3710 container
+						3711 text 0 :
+					3712 container
+						3713 text " 2024-01-06T12:05:00.000000+00:00 "
+					3714 container
+						3715 text 1 :
+					3716 container
+						3717 text " 2024-01-08T12:05:00.000000+00:00 "
+					3718 text ]
+					3719 container
+						3720 text " label "
+					3721 text :
+					3722 text 0
+					3723 container
+						3724 text " profile "
+					3725 text :
+					3726 container
+						3727 text " SYNTHETIC_V1_LABEL_1 "
+					3728 container
+						3729 text " reason "
+					3730 text :
+					3731 container
+						3732 text " NONE "
+					3733 container
+						3734 text " security_id "
+					3735 text :
+					3736 container
+						3737 text " SYN_A:003 "
+					3738 container
+						3739 text " security_master_ref " :
+					3740 text {
+					3741 container
+						3742 text " available_at "
+					3743 text :
+					3744 container
+						3745 text " 2024-01-01T00:00:00.000000+00:00 "
+					3746 container
+						3747 text " event_time "
+					3748 text :
+					3749 container
+						3750 text " 2024-01-01T00:00:00.000000+00:00 "
+					3751 container
+						3752 text " revision_id "
+					3753 text :
+					3754 text 1
+					3755 container
+						3756 text " row_hash "
+					3757 text :
+					3758 container
+						3759 text " 64987eef0c21433ebe85e2eba34e46592de9511c52d5760f3ce6387baa5da577 "
+					3760 text }
+					3761 container
+						3762 text " session "
+					3763 text :
+					3764 container
+						3765 text " 2024-01-06 "
+					3766 container
+						3767 text " shares "
+					3768 text :
+					3769 container
+						3770 text " 1 "
+					3771 container
+						3772 text " snapshot_hash "
+					3773 text :
+					3774 container
+						3775 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					3776 container
+						3777 text " split_reason "
+					3778 text :
+					3779 container
+						3780 text " NONE "
+					3781 text }
+					3782 container
+						3783 text 3 :
+					3784 text {
+					3785 container
+						3786 text " available_at "
+					3787 text :
+					3788 container
+						3789 text " 2024-01-08T12:05:00.000000+00:00 "
+					3790 container
+						3791 text " coverage_hash "
+					3792 text :
+					3793 container
+						3794 text " 13b296de54f4a1e9a8ce73b214936af6a1e74a64b6e71ac99facce6f032b2659 "
+					3795 container
+						3796 text " coverage_revision "
+					3797 text :
+					3798 text 1
+					3799 container
+						3800 text " credit "
+					3801 text :
+					3802 container
+						3803 text " 0 "
+					3804 container
+						3805 text " decision_time "
+					3806 text :
+					3807 container
+						3808 text " 2024-01-06T12:05:00.000000+00:00 "
+					3809 container
+						3810 text " dependency_hash "
+					3811 text :
+					3812 container
+						3813 text " bbeccf1bea6f7b44213e5b4ecf8d1a4e85c59094592beaa3337d078bd35138f9 "
+					3814 container
+						3815 text " entitlement_interval " :
+					3816 text [
+					3817 container
+						3818 text 0 :
+					3819 container
+						3820 text " 2024-01-07T09:00:00.000000+00:00 "
+					3821 container
+						3822 text 1 :
+					3823 container
+						3824 text " 2024-01-08T09:00:00.000000+00:00 "
+					3825 text ]
+					3826 container
+						3827 text " entry_at "
+					3828 text :
+					3829 container
+						3830 text " 2024-01-07T09:00:00.000000+00:00 "
+					3831 container
+						3832 text " exit_at "
+					3833 text :
+					3834 container
+						3835 text " 2024-01-08T09:00:00.000000+00:00 "
+					3836 container
+						3837 text " horizon "
+					3838 text :
+					3839 text 1
+					3840 container
+						3841 text " information_interval " :
+					3842 text [
+					3843 container
+						3844 text 0 :
+					3845 container
+						3846 text " 2024-01-06T12:05:00.000000+00:00 "
+					3847 container
+						3848 text 1 :
+					3849 container
+						3850 text " 2024-01-08T12:05:00.000000+00:00 "
+					3851 text ]
+					3852 container
+						3853 text " label "
+					3854 text :
+					3855 text 0.015503875968992248
+					3856 container
+						3857 text " profile "
+					3858 text :
+					3859 container
+						3860 text " SYNTHETIC_V1_LABEL_1 "
+					3861 container
+						3862 text " reason "
+					3863 text :
+					3864 container
+						3865 text " NONE "
+					3866 container
+						3867 text " security_id "
+					3868 text :
+					3869 container
+						3870 text " SYN_A:004 "
+					3871 container
+						3872 text " security_master_ref " :
+					3873 text {
+					3874 container
+						3875 text " available_at "
+					3876 text :
+					3877 container
+						3878 text " 2024-01-01T00:00:00.000000+00:00 "
+					3879 container
+						3880 text " event_time "
+					3881 text :
+					3882 container
+						3883 text " 2024-01-01T00:00:00.000000+00:00 "
+					3884 container
+						3885 text " revision_id "
+					3886 text :
+					3887 text 1
+					3888 container
+						3889 text " row_hash "
+					3890 text :
+					3891 container
+						3892 text " f0b46bb928806a46ac7360e441b9c0bd700c15d30799b9aeaac7614a3245f4bd "
+					3893 text }
+					3894 container
+						3895 text " session "
+					3896 text :
+					3897 container
+						3898 text " 2024-01-06 "
+					3899 container
+						3900 text " shares "
+					3901 text :
+					3902 container
+						3903 text " 1 "
+					3904 container
+						3905 text " snapshot_hash "
+					3906 text :
+					3907 container
+						3908 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					3909 container
+						3910 text " split_reason "
+					3911 text :
+					3912 container
+						3913 text " NONE "
+					3914 text } ]
+					3915 container
+						3916 text " window "
+					3917 text :
+					3918 text 0
+					3919 text } ] }
+				3920 heading Trials and multiple testing, Value: 3, ID: trials-and-multiple-testing
+					3921 text Trials and multiple testing
+					3922 link Description: Link to heading, Value: 127.0.0.1:13975/#trials-and-multiple-testing
+				3923 container
+					3924 text {
+					3925 container
+						3926 text " adjusted " :
+					3927 text [
+					3928 container
+						3929 text 0 :
+					3930 text 1
+					3931 container
+						3932 text 1 :
+					3933 text 1
+					3934 container
+						3935 text 2 :
+					3936 text 1
+					3937 container
+						3938 text 3 :
+					3939 text 1
+					3940 container
+						3941 text 4 :
+					3942 text 1
+					3943 container
+						3944 text 5 :
+					3945 text 1
+					3946 container
+						3947 text 6 :
+					3948 text 1
+					3949 container
+						3950 text 7 :
+					3951 text 1
+					3952 container
+						3953 text 8 :
+					3954 text 1
+					3955 container
+						3956 text 9 :
+					3957 text 1
+					3958 container
+						3959 text 10 :
+					3960 text 1
+					3961 container
+						3962 text 11 :
+					3963 text 1
+					3964 container
+						3965 text 12 :
+					3966 text 1
+					3967 container
+						3968 text 13 :
+					3969 text 1
+					3970 container
+						3971 text 14 :
+					3972 text 1
+					3973 container
+						3974 text 15 :
+					3975 text 1
+					3976 container
+						3977 text 16 :
+					3978 text 1
+					3979 container
+						3980 text 17 :
+					3981 text 1
+					3982 container
+						3983 text 18 :
+					3984 text 1
+					3985 container
+						3986 text 19 :
+					3987 text 1
+					3988 container
+						3989 text 20 :
+					3990 text 1
+					3991 container
+						3992 text 21 :
+					3993 text 1
+					3994 container
+						3995 text 22 :
+					3996 text 1
+					3997 container
+						3998 text 23 :
+					3999 text 1
+					4000 container
+						4001 text 24 :
+					4002 text 1
+					4003 container
+						4004 text 25 :
+					4005 text 1
+					4006 container
+						4007 text 26 :
+					4008 text 1
+					4009 container
+						4010 text 27 :
+					4011 text 1
+					4012 container
+						4013 text 28 :
+					4014 text 1
+					4015 container
+						4016 text 29 :
+					4017 text 1
+					4018 container
+						4019 text 30 :
+					4020 text 1
+					4021 container
+						4022 text 31 :
+					4023 text 1
+					4024 container
+						4025 text 32 :
+					4026 text 1
+					4027 container
+						4028 text 33 :
+					4029 text 1
+					4030 container
+						4031 text 34 :
+					4032 text 1
+					4033 container
+						4034 text 35 :
+					4035 text 1
+					4036 text ]
+					4037 container
+						4038 text " bh_evidence "
+					4039 text :
+					4040 text NULL
+					4041 container
+						4042 text " complete "
+					4043 text :
+					4044 text false
+					4045 container
+						4046 text " contaminated "
+					4047 text :
+					4048 text false
+					4049 container
+						4050 text " failed_slots " :
+					4051 text [
+					4052 container
+						4053 text 0 :
+					4054 text 0
+					4055 container
+						4056 text 1 :
+					4057 text 1
+					4058 container
+						4059 text 2 :
+					4060 text 2
+					4061 container
+						4062 text 3 :
+					4063 text 3
+					4064 container
+						4065 text 4 :
+					4066 text 4
+					4067 container
+						4068 text 5 :
+					4069 text 5
+					4070 container
+						4071 text 6 :
+					4072 text 6
+					4073 container
+						4074 text 7 :
+					4075 text 7
+					4076 container
+						4077 text 8 :
+					4078 text 8
+					4079 container
+						4080 text 9 :
+					4081 text 9
+					4082 container
+						4083 text 10 :
+					4084 text 10
+					4085 container
+						4086 text 11 :
+					4087 text 11
+					4088 container
+						4089 text 12 :
+					4090 text 12
+					4091 container
+						4092 text 13 :
+					4093 text 13
+					4094 container
+						4095 text 14 :
+					4096 text 14
+					4097 container
+						4098 text 15 :
+					4099 text 15
+					4100 container
+						4101 text 16 :
+					4102 text 16
+					4103 container
+						4104 text 17 :
+					4105 text 17
+					4106 container
+						4107 text 18 :
+					4108 text 18
+					4109 container
+						4110 text 19 :
+					4111 text 19
+					4112 container
+						4113 text 20 :
+					4114 text 20
+					4115 container
+						4116 text 21 :
+					4117 text 21
+					4118 container
+						4119 text 22 :
+					4120 text 22
+					4121 container
+						4122 text 23 :
+					4123 text 23
+					4124 container
+						4125 text 24 :
+					4126 text 24
+					4127 container
+						4128 text 25 :
+					4129 text 25
+					4130 container
+						4131 text 26 :
+					4132 text 26
+					4133 container
+						4134 text 27 :
+					4135 text 27
+					4136 container
+						4137 text 28 :
+					4138 text 28
+					4139 container
+						4140 text 29 :
+					4141 text 29
+					4142 container
+						4143 text 30 :
+					4144 text 30
+					4145 container
+						4146 text 31 :
+					4147 text 31
+					4148 container
+						4149 text 32 :
+					4150 text 32
+					4151 container
+						4152 text 33 :
+					4153 text 33
+					4154 container
+						4155 text 34 :
+					4156 text 34
+					4157 container
+						4158 text 35 :
+					4159 text 35
+					4160 text ]
+					4161 container
+						4162 text " hypotheses " :
+					4163 text [
+					4164 container
+						4165 text 0 :
+					4166 container
+						4167 text " 03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1 "
+					4168 container
+						4169 text 1 :
+					4170 container
+						4171 text " 03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2 "
+					4172 container
+						4173 text 2 :
+					4174 container
+						4175 text " 11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1 "
+					4176 container
+						4177 text 3 :
+					4178 container
+						4179 text " 14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1 "
+					4180 container
+						4181 text 4 :
+					4182 container
+						4183 text " 20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1 "
+					4184 container
+						4185 text 5 :
+					4186 container
+						4187 text " 273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1 "
+					4188 container
+						4189 text 6 :
+					4190 container
+						4191 text " 331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1 "
+					4192 container
+						4193 text 7 :
+					4194 container
+						4195 text " 331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2 "
+					4196 container
+						4197 text 8 :
+					4198 container
+						4199 text " 33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1 "
+					4200 container
+						4201 text 9 :
+					4202 container
+						4203 text " 33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2 "
+					4204 container
+						4205 text 10 :
+					4206 container
+						4207 text " 3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1 "
+					4208 container
+						4209 text 11 :
+					4210 container
+						4211 text " 4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1 "
+					4212 container
+						4213 text 12 :
+					4214 container
+						4215 text " 4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2 "
+					4216 container
+						4217 text 13 :
+					4218 container
+						4219 text " 4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1 "
+					4220 container
+						4221 text 14 :
+					4222 container
+						4223 text " 7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1 "
+					4224 container
+						4225 text 15 :
+					4226 container
+						4227 text " 7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2 "
+					4228 container
+						4229 text 16 :
+					4230 container
+						4231 text " 70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1 "
+					4232 container
+						4233 text 17 :
+					4234 container
+						4235 text " 70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2 "
+					4236 container
+						4237 text 18 :
+					4238 container
+						4239 text " 73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1 "
+					4240 container
+						4241 text 19 :
+					4242 container
+						4243 text " 73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2 "
+					4244 container
+						4245 text 20 :
+					4246 container
+						4247 text " 77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1 "
+					4248 container
+						4249 text 21 :
+					4250 container
+						4251 text " 77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2 "
+					4252 container
+						4253 text 22 :
+					4254 container
+						4255 text " 79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1 "
+					4256 container
+						4257 text 23 :
+					4258 container
+						4259 text " 79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2 "
+					4260 container
+						4261 text 24 :
+					4262 container
+						4263 text " 7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1 "
+					4264 container
+						4265 text 25 :
+					4266 container
+						4267 text " 87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1 "
+					4268 container
+						4269 text 26 :
+					4270 container
+						4271 text " 9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1 "
+					4272 container
+						4273 text 27 :
+					4274 container
+						4275 text " 9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2 "
+					4276 container
+						4277 text 28 :
+					4278 container
+						4279 text " 9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1 "
+					4280 container
+						4281 text 29 :
+					4282 container
+						4283 text " 9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2 "
+					4284 container
+						4285 text 30 :
+					4286 container
+						4287 text " c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1 "
+					4288 container
+						4289 text 31 :
+					4290 container
+						4291 text " ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1 "
+					4292 container
+						4293 text 32 :
+					4294 container
+						4295 text " db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1 "
+					4296 container
+						4297 text 33 :
+					4298 container
+						4299 text " eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1 "
+					4300 container
+						4301 text 34 :
+					4302 container
+						4303 text " f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1 "
+					4304 container
+						4305 text 35 :
+					4306 container
+						4307 text " f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2 "
+					4308 text ]
+					4309 container
+						4310 text " m "
+					4311 text :
+					4312 text 36
+					4313 container
+						4314 text " method "
+					4315 text :
+					4316 container
+						4317 text " holm "
+					4318 container
+						4319 text " raw " :
+					4320 text [
+					4321 container
+						4322 text 0 :
+					4323 text NULL
+					4324 container
+						4325 text 1 :
+					4326 text NULL
+					4327 container
+						4328 text 2 :
+					4329 text NULL
+					4330 container
+						4331 text 3 :
+					4332 text NULL
+					4333 container
+						4334 text 4 :
+					4335 text NULL
+					4336 container
+						4337 text 5 :
+					4338 text NULL
+					4339 container
+						4340 text 6 :
+					4341 text NULL
+					4342 container
+						4343 text 7 :
+					4344 text NULL
+					4345 container
+						4346 text 8 :
+					4347 text NULL
+					4348 container
+						4349 text 9 :
+					4350 text NULL
+					4351 container
+						4352 text 10 :
+					4353 text NULL
+					4354 container
+						4355 text 11 :
+					4356 text NULL
+					4357 container
+						4358 text 12 :
+					4359 text NULL
+					4360 container
+						4361 text 13 :
+					4362 text NULL
+					4363 container
+						4364 text 14 :
+					4365 text NULL
+					4366 container
+						4367 text 15 :
+					4368 text NULL
+					4369 container
+						4370 text 16 :
+					4371 text NULL
+					4372 container
+						4373 text 17 :
+					4374 text NULL
+					4375 container
+						4376 text 18 :
+					4377 text NULL
+					4378 container
+						4379 text 19 :
+					4380 text NULL
+					4381 container
+						4382 text 20 :
+					4383 text NULL
+					4384 container
+						4385 text 21 :
+					4386 text NULL
+					4387 container
+						4388 text 22 :
+					4389 text NULL
+					4390 container
+						4391 text 23 :
+					4392 text NULL
+					4393 container
+						4394 text 24 :
+					4395 text NULL
+					4396 container
+						4397 text 25 :
+					4398 text NULL
+					4399 container
+						4400 text 26 :
+					4401 text NULL
+					4402 container
+						4403 text 27 :
+					4404 text NULL
+					4405 container
+						4406 text 28 :
+					4407 text NULL
+					4408 container
+						4409 text 29 :
+					4410 text NULL
+					4411 container
+						4412 text 30 :
+					4413 text NULL
+					4414 container
+						4415 text 31 :
+					4416 text NULL
+					4417 container
+						4418 text 32 :
+					4419 text NULL
+					4420 container
+						4421 text 33 :
+					4422 text NULL
+					4423 container
+						4424 text 34 :
+					4425 text NULL
+					4426 container
+						4427 text 35 :
+					4428 text NULL
+					4429 text ] }
+				4430 heading Approval proposals — no financial approval, Value: 3, ID: approval-proposals-no-financial-approval
+					4431 text Approval proposals — no financial approval
+					4432 link Description: Link to heading, Value: 127.0.0.1:13975/#approval-proposals-no-financial-approval
+				4433 container
+					4434 text {
+					4435 container
+						4436 text " 4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1 " :
+					4437 text {
+					4438 container
+						4439 text " candidate " :
+					4440 text {
+					4441 container
+						4442 text " direction "
+					4443 text :
+					4444 text 1
+					4445 container
+						4446 text " horizon "
+					4447 text :
+					4448 text 1
+					4449 container
+						4450 text " hypothesis "
+					4451 text :
+					4452 container
+						4453 text " 4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1 "
+					4454 container
+						4455 text " parameters " :
+					4456 text {
+					4457 container
+						4458 text " lookback "
+					4459 text :
+					4460 text 2
+					4461 text }
+					4462 container
+						4463 text " ref " :
+					4464 text {
+					4465 container
+						4466 text " factor_id "
+					4467 text :
+					4468 container
+						4469 text " momentum "
+					4470 container
+						4471 text " factor_version "
+					4472 text :
+					4473 container
+						4474 text " 1.2.1 "
+					4475 container
+						4476 text " implementation_hash "
+					4477 text :
+					4478 container
+						4479 text " 28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b "
+					4480 text }
+					4481 container
+						4482 text " score_key "
+					4483 text :
+					4484 container
+						4485 text " momentum "
+					4486 container
+						4487 text " stage "
+					4488 text :
+					4489 container
+						4490 text " final "
+					4491 text }
+					4492 container
+						4493 text " eligible "
+					4494 text :
+					4495 text false
+					4496 container
+						4497 text " evaluation " :
+					4498 text {
+					4499 container
+						4500 text " independence_verified "
+					4501 text :
+					4502 text false
+					4503 container
+						4504 text " purpose "
+					4505 text :
+					4506 container
+						4507 text " ENGINEERING_DEMO "
+					4508 text }
+					4509 container
+						4510 text " evidence " :
+					4511 text {
+					4512 container
+						4513 text " all_candidates_recorded "
+					4514 text :
+					4515 text false
+					4516 container
+						4517 text " code_hash "
+					4518 text :
+					4519 container
+						4520 text " 28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b "
+					4521 container
+						4522 text " contaminated "
+					4523 text :
+					4524 text false
+					4525 container
+						4526 text " data_hash "
+					4527 text :
+					4528 container
+						4529 text " af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1 "
+					4530 container
+						4531 text " environment_hash "
+					4532 text :
+					4533 container
+						4534 text " 257d3f0cff0c8072d88f857a24cfdba09c8540e24ebdd6c19291effbc9606892 "
+					4535 container
+						4536 text " frozen_protocol_hash "
+					4537 text :
+					4538 container
+						4539 text " bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b "
+					4540 container
+						4541 text " implementation_review_ref "
+					4542 text :
+					4543 text NULL
+					4544 container
+						4545 text " independent_golden_ref "
+					4546 text :
+					4547 text NULL
+					4548 container
+						4549 text " validation_first_access_at "
+					4550 text :
+					4551 container
+						4552 text " 2026-10-24T10:05:52.604031+00:00 "
+					4553 text }
+					4554 container
+						4555 text " failures " :
+					4556 text [
+					4557 container
+						4558 text 0 :
+					4559 container
+						4560 text " UNAPPROVED_STANDARDS "
+					4561 container
+						4562 text 1 :
+					4563 container
+						4564 text " INDEPENDENT_TEST_NOT_VERIFIED "
+					4565 container
+						4566 text 2 :
+					4567 container
+						4568 text " FAMILY_INCOMPLETE_OR_CONTAMINATED "
+					4569 container
+						4570 text 3 :
+					4571 container
+						4572 text " INCOMPLETE_APPROVAL_EVIDENCE "
+					4573 text ]
+					4574 container
+						4575 text " metrics " :
+					4576 text {
+					4577 container
+						4578 text " annualized "
+					4579 text :
+					4580 text false
+					4581 container
+						4582 text " icir "
+					4583 text :
+					4584 text NULL
+					4585 container
+						4586 text " mean "
+					4587 text :
+					4588 text NULL
+					4589 container
+						4590 text " n "
+					4591 text :
+					4592 text 0
+					4593 container
+						4594 text " positive_fraction "
+					4595 text :
+					4596 text NULL
+					4597 container
+						4598 text " std_ddof1 "
+					4599 text :
+					4600 text NULL
+					4601 container
+						4602 text " zero_fraction "
+					4603 text :
+					4604 text NULL
+					4605 text }
+					4606 container
+						4607 text " multiplicity " :
+					4608 text {
+					4609 container
+						4610 text " adjusted " :
+					4611 text [
+					4612 container
+						4613 text 0 :
+					4614 text 1
+					4615 container
+						4616 text 1 :
+					4617 text 1
+					4618 container
+						4619 text 2 :
+					4620 text 1
+					4621 container
+						4622 text 3 :
+					4623 text 1
+					4624 container
+						4625 text 4 :
+					4626 text 1
+					4627 container
+						4628 text 5 :
+					4629 text 1
+					4630 container
+						4631 text 6 :
+					4632 text 1
+					4633 container
+						4634 text 7 :
+					4635 text 1
+					4636 container
+						4637 text 8 :
+					4638 text 1
+					4639 container
+						4640 text 9 :
+					4641 text 1
+					4642 container
+						4643 text 10 :
+					4644 text 1
+					4645 container
+						4646 text 11 :
+					4647 text 1
+					4648 container
+						4649 text 12 :
+					4650 text 1
+					4651 container
+						4652 text 13 :
+					4653 text 1
+					4654 container
+						4655 text 14 :
+					4656 text 1
+					4657 container
+						4658 text 15 :
+					4659 text 1
+					4660 container
+						4661 text 16 :
+					4662 text 1
+					4663 container
+						4664 text 17 :
+					4665 text 1
+					4666 container
+						4667 text 18 :
+					4668 text 1
+					4669 container
+						4670 text 19 :
+					4671 text 1
+					4672 container
+						4673 text 20 :
+					4674 text 1
+					4675 container
+						4676 text 21 :
+					4677 text 1
+					4678 container
+						4679 text 22 :
+					4680 text 1
+					4681 container
+						4682 text 23 :
+					4683 text 1
+					4684 container
+						4685 text 24 :
+					4686 text 1
+					4687 container
+						4688 text 25 :
+					4689 text 1
+					4690 container
+						4691 text 26 :
+					4692 text 1
+					4693 container
+						4694 text 27 :
+					4695 text 1
+					4696 container
+						4697 text 28 :
+					4698 text 1
+					4699 container
+						4700 text 29 :
+					4701 text 1
+					4702 container
+						4703 text 30 :
+					4704 text 1
+					4705 container
+						4706 text 31 :
+					4707 text 1
+					4708 container
+						4709 text 32 :
+					4710 text 1
+					4711 container
+						4712 text 33 :
+					4713 text 1
+					4714 container
+						4715 text 34 :
+					4716 text 1
+					4717 container
+						4718 text 35 :
+					4719 text 1
+					4720 text ]
+					4721 container
+						4722 text " bh_evidence "
+					4723 text :
+					4724 text NULL
+					4725 container
+						4726 text " complete "
+					4727 text :
+					4728 text false
+					4729 container
+						4730 text " contaminated "
+					4731 text :
+					4732 text false
+					4733 container
+						4734 text " failed_slots " :
+					4735 text [
+					4736 container
+						4737 text 0 :
+					4738 text 0
+					4739 container
+						4740 text 1 :
+					4741 text 1
+					4742 container
+						4743 text 2 :
+					4744 text 2
+					4745 container
+						4746 text 3 :
+					4747 text 3
+					4748 container
+						4749 text 4 :
+					4750 text 4
+					4751 container
+						4752 text 5 :
+					4753 text 5
+					4754 container
+						4755 text 6 :
+					4756 text 6
+					4757 container
+						4758 text 7 :
+					4759 text 7
+					4760 container
+						4761 text 8 :
+					4762 text 8
+					4763 container
+						4764 text 9 :
+					4765 text 9
+					4766 container
+						4767 text 10 :
+					4768 text 10
+					4769 container
+						4770 text 11 :
+					4771 text 11
+					4772 container
+						4773 text 12 :
+					4774 text 12
+					4775 container
+						4776 text 13 :
+					4777 text 13
+					4778 container
+						4779 text 14 :
+					4780 text 14
+					4781 container
+						4782 text 15 :
+					4783 text 15
+					4784 container
+						4785 text 16 :
+					4786 text 16
+					4787 container
+						4788 text 17 :
+					4789 text 17
+					4790 container
+						4791 text 18 :
+					4792 text 18
+					4793 container
+						4794 text 19 :
+					4795 text 19
+					4796 container
+						4797 text 20 :
+					4798 text 20
+					4799 container
+						4800 text 21 :
+					4801 text 21
+					4802 container
+						4803 text 22 :
+					4804 text 22
+					4805 container
+						4806 text 23 :
+					4807 text 23
+					4808 container
+						4809 text 24 :
+					4810 text 24
+					4811 container
+						4812 text 25 :
+					4813 text 25
+					4814 container
+						4815 text 26 :
+					4816 text 26
+					4817 container
+						4818 text 27 :
+					4819 text 27
+					4820 container
+						4821 text 28 :
+					4822 text 28
+					4823 container
+						4824 text 29 :
+					4825 text 29
+					4826 container
+						4827 text 30 :
+					4828 text 30
+					4829 container
+						4830 text 31 :
+					4831 text 31
+					4832 container
+						4833 text 32 :
+					4834 text 32
+					4835 container
+						4836 text 33 :
+					4837 text 33
+					4838 container
+						4839 text 34 :
+					4840 text 34
+					4841 container
+						4842 text 35 :
+					4843 text 35
+					4844 text ]
+					4845 container
+						4846 text " hypotheses " :
+					4847 text [
+					4848 container
+						4849 text 0 :
+					4850 container
+						4851 text " 03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1 "
+					4852 container
+						4853 text 1 :
+					4854 container
+						4855 text " 03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2 "
+					4856 container
+						4857 text 2 :
+					4858 container
+						4859 text " 11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1 "
+					4860 container
+						4861 text 3 :
+					4862 container
+						4863 text " 14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1 "
+					4864 container
+						4865 text 4 :
+					4866 container
+						4867 text " 20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1 "
+					4868 container
+						4869 text 5 :
+					4870 container
+						4871 text " 273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1 "
+					4872 container
+						4873 text 6 :
+					4874 container
+						4875 text " 331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1 "
+					4876 container
+						4877 text 7 :
+					4878 container
+						4879 text " 331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2 "
+					4880 container
+						4881 text 8 :
+					4882 container
+						4883 text " 33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1 "
+					4884 container
+						4885 text 9 :
+					4886 container
+						4887 text " 33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2 "
+					4888 container
+						4889 text 10 :
+					4890 container
+						4891 text " 3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1 "
+					4892 container
+						4893 text 11 :
+					4894 container
+						4895 text " 4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1 "
+					4896 container
+						4897 text 12 :
+					4898 container
+						4899 text " 4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2 "
+					4900 container
+						4901 text 13 :
+					4902 container
+						4903 text " 4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1 "
+					4904 container
+						4905 text 14 :
+					4906 container
+						4907 text " 7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1 "
+					4908 container
+						4909 text 15 :
+					4910 container
+						4911 text " 7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2 "
+					4912 container
+						4913 text 16 :
+					4914 container
+						4915 text " 70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1 "
+					4916 container
+						4917 text 17 :
+					4918 container
+						4919 text " 70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2 "
+					4920 container
+						4921 text 18 :
+					4922 container
+						4923 text " 73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1 "
+					4924 container
+						4925 text 19 :
+					4926 container
+						4927 text " 73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2 "
+					4928 container
+						4929 text 20 :
+					4930 container
+						4931 text " 77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1 "
+					4932 container
+						4933 text 21 :
+					4934 container
+						4935 text " 77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2 "
+					4936 container
+						4937 text 22 :
+					4938 container
+						4939 text " 79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1 "
+					4940 container
+						4941 text 23 :
+					4942 container
+						4943 text " 79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2 "
+					4944 container
+						4945 text 24 :
+					4946 container
+						4947 text " 7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1 "
+					4948 container
+						4949 text 25 :
+					4950 container
+						4951 text " 87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1 "
+					4952 container
+						4953 text 26 :
+					4954 container
+						4955 text " 9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1 "
+					4956 container
+						4957 text 27 :
+					4958 container
+						4959 text " 9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2 "
+					4960 container
+						4961 text 28 :
+					4962 container
+						4963 text " 9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1 "
+					4964 container
+						4965 text 29 :
+					4966 container
+						4967 text " 9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2 "
+					4968 container
+						4969 text 30 :
+					4970 container
+						4971 text " c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1 "
+					4972 container
+						4973 text 31 :
+					4974 container
+						4975 text " ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1 "
+					4976 container
+						4977 text 32 :
+					4978 container
+						4979 text " db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1 "
+					4980 container
+						4981 text 33 :
+					4982 container
+						4983 text " eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1 "
+					4984 container
+						4985 text 34 :
+					4986 container
+						4987 text " f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1 "
+					4988 container
+						4989 text 35 :
+					4990 container
+						4991 text " f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2 "
+					4992 text ]
+					4993 container
+						4994 text " m "
+					4995 text :
+					4996 text 36
+					4997 container
+						4998 text " method "
+					4999 text :
+					5000 container
+						5001 text " holm "
+					5002 container
+						5003 text " raw " :
+					5004 text [
+					5005 container
+						5006 text 0 :
+					5007 text NULL
+					5008 container
+						5009 text 1 :
+					5010 text NULL
+					5011 container
+						5012 text 2 :
+					5013 text NULL
+					5014 container
+						5015 text 3 :
+					5016 text NULL
+					5017 container
+						5018 text 4 :
+					5019 text NULL
+					5020 container
+						5021 text 5 :
+					5022 text NULL
+					5023 container
+						5024 text 6 :
+					5025 text NULL
+					5026 container
+						5027 text 7 :
+					5028 text NULL
+					5029 container
+						5030 text 8 :
+					5031 text NULL
+					5032 container
+						5033 text 9 :
+					5034 text NULL
+					5035 container
+						5036 text 10 :
+					5037 text NULL
+					5038 container
+						5039 text 11 :
+					5040 text NULL
+					5041 container
+						5042 text 12 :
+					5043 text NULL
+					5044 container
+						5045 text 13 :
+					5046 text NULL
+					5047 container
+						5048 text 14 :
+					5049 text NULL
+					5050 container
+						5051 text 15 :
+					5052 text NULL
+					5053 container
+						5054 text 16 :
+					5055 text NULL
+					5056 container
+						5057 text 17 :
+					5058 text NULL
+					5059 container
+						5060 text 18 :
+					5061 text NULL
+					5062 container
+						5063 text 19 :
+					5064 text NULL
+					5065 container
+						5066 text 20 :
+					5067 text NULL
+					5068 container
+						5069 text 21 :
+					5070 text NULL
+					5071 container
+						5072 text 22 :
+					5073 text NULL
+					5074 container
+						5075 text 23 :
+					5076 text NULL
+					5077 container
+						5078 text 24 :
+					5079 text NULL
+					5080 container
+						5081 text 25 :
+					5082 text NULL
+					5083 container
+						5084 text 26 :
+					5085 text NULL
+					5086 container
+						5087 text 27 :
+					5088 text NULL
+					5089 container
+						5090 text 28 :
+					5091 text NULL
+					5092 container
+						5093 text 29 :
+					5094 text NULL
+					5095 container
+						5096 text 30 :
+					5097 text NULL
+					5098 container
+						5099 text 31 :
+					5100 text NULL
+					5101 container
+						5102 text 32 :
+					5103 text NULL
+					5104 container
+						5105 text 33 :
+					5106 text NULL
+					5107 container
+						5108 text 34 :
+					5109 text NULL
+					5110 container
+						5111 text 35 :
+					5112 text NULL
+					5113 text ] }
+					5114 container
+						5115 text " protocol_hash "
+					5116 text :
+					5117 container
+						5118 text " 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a "
+					5119 container
+						5120 text " state "
+					5121 text :
+					5122 container
+						5123 text " REJECTED "
+					5124 container
+						5125 text " strategy_approval "
+					5126 text :
+					5127 text false
+					5128 text } }
+				5129 button (collapsed) Raw / clean / standardized / neutralized / final, Secondary Actions: Expand
+					5130 text Raw / clean / standardized / neutralized / final
+				5131 heading Verified account buckets, Value: 3, ID: verified-account-buckets
+					5132 text Verified account buckets
+					5133 link Description: Link to heading, Value: 127.0.0.1:13975/#verified-account-buckets
+				5134 container
+					5135 text {
+					5136 container
+						5137 text " F_unused "
+					5138 text :
+					5139 container
+						5140 text " 9 "
+					5141 container
+						5142 text " H "
+					5143 text :
+					5144 container
+						5145 text " 0 "
+					5146 container
+						5147 text " O_F "
+					5148 text :
+					5149 container
+						5150 text " 0 "
+					5151 container
+						5152 text " O_N "
+					5153 text :
+					5154 container
+						5155 text " 0 "
+					5156 container
+						5157 text " P4_free "
+					5158 text :
+					5159 container
+						5160 text " 89.1 "
+					5161 container
+						5162 text " P4_nonshort "
+					5163 text :
+					5164 container
+						5165 text " 0 "
+					5166 container
+						5167 text " P_res "
+					5168 text :
+					5169 container
+						5170 text " 0 "
+					5171 container
+						5172 text " S_set "
+					5173 text :
+					5174 container
+						5175 text " 0 "
+					5176 container
+						5177 text " U_free "
+					5178 text :
+					5179 container
+						5180 text " 0 "
+					5181 container
+						5182 text " U_short "
+					5183 text :
+					5184 container
+						5185 text " 0 "
+					5186 container
+						5187 text " Z "
+					5188 text :
+					5189 container
+						5190 text " 0 "
+					5191 container
+						5192 text " available "
+					5193 text :
+					5194 container
+						5195 text " 98.1 "
+					5196 container
+						5197 text " cash_alloc "
+					5198 text :
+					5199 container
+						5200 text " 89.1 "
+					5201 container
+						5202 text " cash_set "
+					5203 text :
+					5204 container
+						5205 text " 98.1 "
+					5206 container
+						5207 text " cash_total "
+					5208 text :
+					5209 container
+						5210 text " 98.1 "
+					5211 container
+						5212 text " equity "
+					5213 text :
+					5214 container
+						5215 text " 998.1 "
+					5216 container
+						5217 text " equity_alloc "
+					5218 text :
+					5219 container
+						5220 text " 989.1 "
+					5221 container
+						5222 text " marked_value "
+					5223 text :
+					5224 container
+						5225 text " 900 "
+					5226 container
+						5227 text " payable "
+					5228 text :
+					5229 container
+						5230 text " 0 "
+					5231 container
+						5232 text " receivable "
+					5233 text :
+					5234 container
+						5235 text " 0 "
+					5236 container
+						5237 text " short_value "
+					5238 text :
+					5239 container
+						5240 text " 0 "
+					5241 text }
+				5242 container
+					5243 text Maximum drawdown (core result)
+					5244 text 0.1900%
+				5245 container
+					5246 image
+						5247 image
+						5248 image
+						5249 image
+						5250 image
+						5251 image
+						5252 image
+						5253 image
+						5254 image
+						5255 image
+						5256 image
+						5257 image
+						5258 text 0
+						5259 text 0.5
+						5260 text 1
+						5261 text 1.5
+						5262 text 2
+						5263 text 2.5
+						5264 text 3
+						5265 text 3.5
+						5266 text 4
+						5267 text 0.998
+						5268 text 0.9985
+						5269 text 0.999
+						5270 text 0.9995
+						5271 text 1
+					5272 image
+						5273 text Flow-adjusted NAV · core result
+					5274 toolbar modebar-bf8db2
+						5275 button Download plot as a PNG
+							5276 image
+						5277 container
+							5278 button Zoom
+								5279 image
+							5280 button Pan
+								5281 image
+						5282 container
+							5283 button Zoom in
+								5284 image
+							5285 button Zoom out
+								5286 image
+							5287 button Autoscale
+								5288 image
+							5289 button Reset axes
+								5290 image
+						5291 button Fullscreen
+							5292 image
+					5293 image
+				5294 text Charts use approximate browser numbers. Raw tables and downloads retain original values; N/A retains its reason.
+				5295 button (collapsed) Performance, Secondary Actions: Expand
+					5296 text Performance
+				5297 button (collapsed) Orders, Secondary Actions: Expand
+					5298 text Orders
+				5299 button (collapsed) Fills, Secondary Actions: Expand
+					5300 text Fills
+				5301 button (collapsed) Positions, Secondary Actions: Expand
+					5302 text Positions
+				5303 button (collapsed) Journal, Secondary Actions: Expand
+					5304 text Journal
+				5305 button (collapsed) Valuations, Secondary Actions: Expand
+					5306 text Valuations
+				5307 button (collapsed) Reconciliation, Secondary Actions: Expand
+					5308 text Reconciliation
+				5309 button (collapsed) Actual P4 source, target, risk and request lineage, Secondary Actions: Expand
+					5310 text Actual P4 source, target, risk and request lineage
+		2607 image js-plotly-tester
+
+The focused UI element is 92 button Refresh task

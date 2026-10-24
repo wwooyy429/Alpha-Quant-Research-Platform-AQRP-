@@ -1,0 +1,3719 @@
+{
+  "scope": "Supplemental G1 design and exact numeric literal answers only; not product, concurrency, actual authority or independent G1 pass",
+  "original32_file": "GOLDEN_CANDIDATES.json",
+  "original32_sha256": "efe19655aca6f47e040d21f137511b012e4b789bb4732ef114245257d23354c2",
+  "original32_bytes_unchanged": true,
+  "groups": 95,
+  "group_counts": {
+    "binding": 30,
+    "completion": 31,
+    "numeric": 24,
+    "numeric_refusal": 10
+  },
+  "expected_derivation": "Specified lifecycle/ownership outcomes and manual decimal shifts/tie-even literals; maximum boundary literals use basic string repetition/stdlib integer format, never candidate reference functions",
+  "cases": [
+    {
+      "id": "P6-R001",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": false,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "PLAN_NOT_FROZEN"
+      },
+      "basis": "Original High counterexample: P3 success restores only R; P4/P5 absent cannot succeed",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R002",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "REQUIRED_SLOTS_PENDING"
+      },
+      "basis": "One P4 success cannot stand in for P5 and remaining P4",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R003",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS",
+          "B": "FAILED"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "REQUIRED_CHILD_FAILED"
+      },
+      "basis": "P3 and both P4 succeeded but P5 failed",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R004",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "unknown_side_effects": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "RECOVERY_REQUIRED"
+      },
+      "basis": "P5 START_INTENT then missing directory is not evidence of never-started",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R005",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "RECOVERY_REQUIRED"
+      },
+      "basis": "P5 success with one missing nested P4 must not be completed post hoc",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R006",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "SUCCEEDED",
+        "reason": "ALL_REQUIRED_EVIDENCE_COMMITTED"
+      },
+      "basis": "All required slots, final artifacts, parent bindings, completion receipt and index transaction verified",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R007",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "GLOBAL_COMPLETION_PENDING"
+      },
+      "basis": "All children succeeded, no global completion commit yet",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R008",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "GLOBAL_COMPLETION_PENDING"
+      },
+      "basis": "Completion file exists but SQLite terminal transaction not committed",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R009",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": true,
+        "cancel_intent": true
+      },
+      "expected": {
+        "status": "CANCELLED",
+        "reason": "SAFE_CANCELLATION_VERIFIED"
+      },
+      "basis": "Cancel accepted before global completion, actual quiescence verified",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R010",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "cancel_intent": true,
+        "success_committed_first": true
+      },
+      "expected": {
+        "status": "SUCCEEDED",
+        "reason": "ALL_REQUIRED_EVIDENCE_COMMITTED"
+      },
+      "basis": "Verified success committed first; later cancel is too late",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R011",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "cancel_intent": true,
+        "financial_unknown": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "COMMITTED_STATE_UNVERIFIED"
+      },
+      "basis": "Unknown financial state dominates safe-cancel claims",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R012",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "REJECTED"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "REQUIRED_STAGE_REJECTED"
+      },
+      "basis": "Original risk rejection is retained, overall strict all-stage Task success is refused",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R013",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "binding_conflict": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "RECOVERY_REQUIRED"
+      },
+      "basis": "A legal but wrong child binding invalidates the completion barrier",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R014",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1",
+          "P:2"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "SLOT_SET_MISMATCH"
+      },
+      "basis": "No extra unplanned child may be hidden",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R015",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "SLOT_SET_MISMATCH"
+      },
+      "basis": "Duplicate required slot registration is not complete coverage",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R016",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "artifact_corruption": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "RECOVERY_REQUIRED"
+      },
+      "basis": "Whole chain status cannot override a corrupted manifest member",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R017",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": false,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "DISPATCH_NOT_CLOSED"
+      },
+      "basis": "Known successes do not prove there are no remaining dynamic calls",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R018",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "claimed_success": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "INTEGRITY_ERROR"
+      },
+      "basis": "SQL success pointing at an absent/invalid global receipt is unusable",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R019",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "partial_publication": true
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "RECOVERY_REQUIRED"
+      },
+      "basis": "Original P5 partial-publication refusal remains strict",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R020",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": false,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "FAILED"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "REQUIRED_CHILD_FAILED"
+      },
+      "basis": "Research failure cannot be hidden by pending plan expansion",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R021",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": false,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": true,
+        "cancel_intent": true
+      },
+      "expected": {
+        "status": "CANCELLED",
+        "reason": "SAFE_CANCELLATION_VERIFIED"
+      },
+      "basis": "After verified R only, safe cancel does not rerun/erase the completed trial",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R022",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": false,
+        "safe_cancel_verified": false,
+        "cancel_intent": true
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "CANCEL_REQUESTED"
+      },
+      "basis": "Intent alone is not actual cancellation",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R023",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "research",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "RV"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "REQUIRED_SLOTS_PENDING"
+      },
+      "basis": "Research report/manifest verification still required",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R024",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "research",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "RV"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "RV": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "SUCCEEDED",
+        "reason": "ALL_REQUIRED_EVIDENCE_COMMITTED"
+      },
+      "basis": "Research needs only its declared R/RV stages, plus global barrier",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R025",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "replay",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "SV",
+          "E",
+          "CV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "SV": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "profile": "P5_NUMERICAL",
+        "comparison_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "REQUIRED_SLOTS_PENDING"
+      },
+      "basis": "Verified original run is not execution of replay",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R026",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "replay",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "SV",
+          "E",
+          "CV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "SV": "VERIFIED_SUCCESS",
+          "E": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": false,
+        "terminal_commit_verified": false,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "profile": "P5_NUMERICAL",
+        "comparison_verified": false
+      },
+      "expected": {
+        "status": "RUNNING",
+        "reason": "REQUIRED_SLOTS_PENDING"
+      },
+      "basis": "Replay execution still needs comparison/target sealing",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R027",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "replay",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "SV",
+          "E",
+          "CV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "SV": "VERIFIED_SUCCESS",
+          "E": "VERIFIED_SUCCESS",
+          "CV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "profile": "P5_NUMERICAL",
+        "comparison_verified": true
+      },
+      "expected": {
+        "status": "SUCCEEDED",
+        "reason": "ALL_REQUIRED_EVIDENCE_COMMITTED"
+      },
+      "basis": "Actual numerical replay, children, comparison, destination and global receipt verified",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R028",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "replay",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "SV",
+          "E",
+          "CV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "SV": "VERIFIED_SUCCESS",
+          "E": "VERIFIED_SUCCESS",
+          "CV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "profile": "P5_NUMERICAL",
+        "comparison_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "REPLAY_COMPARISON_FAILED"
+      },
+      "basis": "Success strings cannot replace exact declared-projection comparison",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R029",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "replay",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "SV",
+          "E",
+          "CV"
+        ],
+        "slot_statuses": {
+          "SV": "VERIFIED_SUCCESS",
+          "E": "VERIFIED_SUCCESS",
+          "CV": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "profile": "PUBLISHED_REF_PROJECTION",
+        "comparison_verified": true
+      },
+      "expected": {
+        "status": "SUCCEEDED",
+        "reason": "ALL_REQUIRED_EVIDENCE_COMMITTED"
+      },
+      "basis": "Archived profile stays within accepted package/lock/oldRef/result scope",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R030",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "replay",
+        "decisions": 2,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV",
+          "P:0",
+          "P:1"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS",
+          "P:0": "VERIFIED_SUCCESS",
+          "P:1": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false,
+        "profile": "ANY_HISTORICAL_HOST"
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "REPLAY_PROFILE_NOT_APPROVED"
+      },
+      "basis": "Full historical host is not silently added",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R031",
+      "group": "completion",
+      "kind": "task_completion",
+      "inputs": {
+        "kind": "engineering_pipeline",
+        "decisions": 0,
+        "resolved_plan_frozen": true,
+        "registry_slots": [
+          "R",
+          "PLAN",
+          "B",
+          "BV"
+        ],
+        "slot_statuses": {
+          "R": "VERIFIED_SUCCESS",
+          "PLAN": "VERIFIED_SUCCESS",
+          "B": "VERIFIED_SUCCESS",
+          "BV": "VERIFIED_SUCCESS"
+        },
+        "required_artifacts_verified": true,
+        "all_bindings_verified": true,
+        "dispatch_closed": true,
+        "completion_verified": true,
+        "terminal_commit_verified": true,
+        "quiescent": true,
+        "safe_cancel_verified": false
+      },
+      "expected": {
+        "status": "FAILED",
+        "reason": "NO_REQUIRED_DECISIONS"
+      },
+      "basis": "New application pipeline rejects an empty decision plan; core P5 API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R032",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "REUSE_VERIFIED_SLOT",
+        "task_terminal": false
+      },
+      "basis": "Internal P4 committed before slot mapping: validate/reuse original child only, never promote Task",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R033",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": null,
+        "core_terminal_seq": null,
+        "terminal_verified": true,
+        "slot_state": "BOUND",
+        "no_core_side_effects_proven": true
+      },
+      "expected": {
+        "action": "CALL_ONCE",
+        "task_terminal": false
+      },
+      "basis": "Bound pre-call child with proof no side effects may be called first time",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R034",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "OTHER-W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable workspace_id cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R035",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "OTHER-T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable task_id cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R036",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:1",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable slot_id cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R037",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P3",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable service_kind cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R038",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 1,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable decision_index cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R039",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-06T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable decision_time_UTC cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R040",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-B",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable source_request_hash cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R041",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-B",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable adapted_request_hash cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R042",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "OTHER-B",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable parent_execution_run_id cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R043",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "OTHER-LEGAL-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable child_run_id cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R044",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/OTHER-B/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable physical_ledger_root cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R045",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-B",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable core_config_hash cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R046",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-B",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable code_sha cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R047",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-B",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable code_bundle cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R048",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-B",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable core_lock_hash cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R049",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-B"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable ui_lock_hash cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R050",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-B",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Mismatch in immutable plan_hash cannot be repaired from a legal UUID",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R051",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 21,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Registration after child start/terminal is not pre-call ownership",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R052",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": false,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "No adoption of an unregistered but otherwise legal P4",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R053",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": false,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Child initial lineage must bind the registered context",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R054",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 1,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Old worker handle cannot execute after claim takeover",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R055",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": false,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Concurrent duplicate claim cannot invoke or reuse child",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R056",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": false,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Enumeration failure is not empty/safe root",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R057",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": false,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Actual adapted request must be finalized before construct call",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R058",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": null,
+        "terminal_verified": false,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Partly initialized P4 has no new resume permission",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R059",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": false,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/backtest-runs/B-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "LEGACY_UNCHANGED",
+        "task_terminal": false
+      },
+      "basis": "Old no-context public calls retain original behavior; this model does not claim reexecution",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R060",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "replay",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "E",
+          "parent_execution_run_id": "REPLAY-UUID",
+          "child_run_id": "REPLAY-P4-UUID",
+          "physical_ledger_root": "/workspace/replay-runs/REPLAY-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "replay",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "E",
+          "parent_execution_run_id": "REPLAY-UUID",
+          "child_run_id": "REPLAY-P4-UUID",
+          "physical_ledger_root": "/workspace/replay-runs/REPLAY-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/replay-runs/REPLAY-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "REUSE_VERIFIED_SLOT",
+        "task_terminal": false
+      },
+      "basis": "Replay uses a new owner/physical root, source P5 remains read-only",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R061",
+      "group": "binding",
+      "kind": "nested_binding",
+      "inputs": {
+        "has_context": true,
+        "record_preexists": true,
+        "initial_binding_valid": true,
+        "unique_active_claim": true,
+        "handle_epoch": 2,
+        "active_epoch": 2,
+        "expected": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "replay",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "E",
+          "parent_execution_run_id": "REPLAY-UUID",
+          "child_run_id": "REPLAY-P4-UUID",
+          "physical_ledger_root": "/workspace/replay-runs/REPLAY-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "actual": {
+          "workspace_id": "W",
+          "task_id": "T",
+          "task_kind": "engineering_pipeline",
+          "plan_hash": "plan-A",
+          "slot_id": "P:0",
+          "service_kind": "P4",
+          "decision_index": 0,
+          "decision_time_UTC": "2026-01-05T16:00:00.000000+00:00",
+          "source_request_hash": "source-A",
+          "adapted_request_hash": "adapted-A",
+          "parent_slot_id": "B",
+          "parent_execution_run_id": "B-UUID",
+          "child_run_id": "P4-UUID",
+          "physical_ledger_root": "/workspace/backtest-runs/B-UUID/portfolio-runs",
+          "core_config_hash": "cfg-A",
+          "code_sha": "code-A",
+          "code_bundle": "bundle-A",
+          "core_lock_hash": "core-lock-A",
+          "ui_lock_hash": "ui-lock-A"
+        },
+        "parent_root": "/workspace/replay-runs/REPLAY-UUID",
+        "root_enumeration_complete": true,
+        "adapted_bytes_bound_before_call": true,
+        "registration_seq": 12,
+        "core_start_seq": 13,
+        "core_terminal_seq": 20,
+        "terminal_verified": true,
+        "slot_state": "VERIFIED",
+        "no_core_side_effects_proven": false
+      },
+      "expected": {
+        "action": "RECOVERY_REQUIRED",
+        "task_terminal": false
+      },
+      "basis": "Replay cannot borrow the original source task child",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R062",
+      "group": "numeric",
+      "kind": "weight",
+      "inputs": {
+        "percent": "0.123456789012345678901234567890123456789"
+      },
+      "expected": "0.00123456789012345678901234567890123456789",
+      "basis": "Original39-digit counterexample; move decimal point by2 exactly",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R063",
+      "group": "numeric",
+      "kind": "weight",
+      "inputs": {
+        "percent": "-0.123456789012345678901234567890123456789"
+      },
+      "expected": "-0.00123456789012345678901234567890123456789",
+      "basis": "Negative long weight keeps sign and every significant digit",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R064",
+      "group": "numeric",
+      "kind": "weight",
+      "inputs": {
+        "percent": "0.000000000000000000000000000000000000001"
+      },
+      "expected": "0.00000000000000000000000000000000000000001",
+      "basis": "Very small finite weight does not underflow to zero",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R065",
+      "group": "numeric",
+      "kind": "weight",
+      "inputs": {
+        "percent": "-0.000"
+      },
+      "expected": "0",
+      "basis": "Signed zero is normalized without changing raw input",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R066",
+      "group": "numeric",
+      "kind": "weight",
+      "inputs": {
+        "percent": "12.5000000000000000000000000000000000000001"
+      },
+      "expected": "0.125000000000000000000000000000000000000001",
+      "basis": "Long fractional tail must survive exact division",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R067",
+      "group": "numeric",
+      "kind": "weight",
+      "inputs": {
+        "percent": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+      },
+      "expected": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.99",
+      "basis": "Exactly4096 input digits; dividing integer by100 splits last2 digits",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R068",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "999999999999999999999999999999.995"
+      },
+      "expected": "1,000,000,000,000,000,000,000,000,000,000.00",
+      "basis": "Original large-money carry at HALF_EVEN; exact1e30",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R069",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "-999999999999999999999999999999.995"
+      },
+      "expected": "-1,000,000,000,000,000,000,000,000,000,000.00",
+      "basis": "Negative large carry uses symmetric HALF_EVEN",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R070",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "1009.005"
+      },
+      "expected": "1,009.00",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R071",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "1009.015"
+      },
+      "expected": "1,009.02",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R072",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "-1009.005"
+      },
+      "expected": "-1,009.00",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R073",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "-1009.015"
+      },
+      "expected": "-1,009.02",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R074",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "0.005"
+      },
+      "expected": "0.00",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R075",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "-0.005"
+      },
+      "expected": "0.00",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R076",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "0.015"
+      },
+      "expected": "0.02",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R077",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "-0.015"
+      },
+      "expected": "-0.02",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R078",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "0.00499999999999999999999999999999999"
+      },
+      "expected": "0.00",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R079",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "0.00500000000000000000000000000000001"
+      },
+      "expected": "0.01",
+      "basis": "Independent literal cent boundary; nearest with even tie, no default precision",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R080",
+      "group": "numeric",
+      "kind": "money",
+      "inputs": {
+        "value": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.995"
+      },
+      "expected": "10,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000.00",
+      "basis": "4096 input digits and one output carry digit; stdlib integer literal reference, not candidate helper",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R081",
+      "group": "numeric",
+      "kind": "small",
+      "inputs": {
+        "value": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "expected": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "basis": "4096 digits including leading integer zero; exact subnormal text retained",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R082",
+      "group": "numeric",
+      "kind": "percent_display",
+      "inputs": {
+        "value": "0.123456789012345678901234567890123456789"
+      },
+      "expected": "12.3457%",
+      "basis": "Display-only percent100 and HALF_EVEN4 decimals",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R083",
+      "group": "numeric",
+      "kind": "percent_display",
+      "inputs": {
+        "value": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+      },
+      "expected": "999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999900.0000%",
+      "basis": "Maximum ordinary-decimal integer; multiply100 and display4 digits safely",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R084",
+      "group": "numeric",
+      "kind": "ic_display",
+      "inputs": {
+        "value": "0.123456789012345678901234567890123456789"
+      },
+      "expected": "0.1235",
+      "basis": "Long IC view rounded to declared4 places; raw not overwritten",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R085",
+      "group": "numeric",
+      "kind": "quantity",
+      "inputs": {
+        "value": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+      },
+      "expected": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+      "basis": "4096 digit quantity string survives exactly",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R086",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "weight",
+        "fields": {
+          "percent": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_RANGE",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R087",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "money",
+        "fields": {
+          "value": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_RANGE",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R088",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "weight",
+        "fields": {
+          "percent": "1e1000000"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_SYNTAX",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R089",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "money",
+        "fields": {
+          "value": "NaN"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_SYNTAX",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R090",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "money",
+        "fields": {
+          "value": "Infinity"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_SYNTAX",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R091",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "weight",
+        "fields": {
+          "percent": "１２.５"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_SYNTAX",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R092",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "weight",
+        "fields": {
+          "percent": 12
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_TYPE",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R093",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "money",
+        "fields": {
+          "value": "1..2"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_SYNTAX",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R094",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "quantity",
+        "fields": {
+          "value": "1.5"
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_INTEGER_REQUIRED",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    },
+    {
+      "id": "P6-R095",
+      "group": "numeric_refusal",
+      "kind": "numeric_rejection",
+      "inputs": {
+        "numeric_kind": "weight",
+        "fields": {
+          "percent": ""
+        }
+      },
+      "expected": {
+        "error": "REFERENCE_NUMERIC_SYNTAX",
+        "raw_retained": true
+      },
+      "basis": "Explicit proposed adapter schema rejection; never silently round/truncate, legacy core API unchanged",
+      "tolerance": "exact state/type/string/integer; no float or default Decimal context"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "source_candidate": "e20f8edc49cba1af883ed72436d68492a368dc3a",
+  "developer_finding": "DEV-P6-004",
+  "severity": "Medium / required concurrency verification blocking final handoff",
+  "actual_local_SDK": "1559 passed /1 failed /2warnings, exit1. Required ten real processes: sqlite3.OperationalError database is locked at first PRAGMA journal_mode=WAL, TaskState.__init__ before body.",
+  "failure_evidence": "C5_LOCAL_FAILURE.json and SDK-e20f8ed.completion.json in p6-g2-crash-controls-20261024, plus original SDK root commands.log/junit.xml and native child logs. Full SDK1559/1560 failure remains failure. The original test stopped at the first child error, so uncaptured remaining pipe outputs are not invented.",
+  "change": "Fresh connection timeout0; at most30s monotonic WAL-admission budget; retry only primary SQLITE_BUSY/SQLITE_LOCKED before BEGIN; require confirmed wal mode; keep synchronousFULL and give remaining native busy_timeout to BEGIN. No transaction body or commit replay; unrelated errors and exhausted deadline propagate, connection closes. Original concurrency10 assertion retained, now drain all child outputs before asserting.",
+  "new_literal_controls": [
+    "Actual native rollback-journal reader blocks WAL; release then one workspace/sentinel17, synchronous2",
+    "Held reader exceeds finite budget -> native lock error, no workspace allocation or sentinel change",
+    "I/O/unclassified error propagate once, close connection",
+    "None/delete journal modes reject before BEGIN",
+    "Body BUSY rolls back exactly once; zero default rows"
+  ],
+  "package": "0.6.0.dev5,83 modules; core/UI locks and financial answers unchanged",
+  "status": "FIX_IMPLEMENTED / PENDING_FIXED_SHA_FULL_SDK_DUAL_OS_BROWSER_AND_GPT_WORK",
+  "references": [
+    "https://www.sqlite.org/pragma.html#pragma_journal_mode",
+    "https://www.sqlite.org/c3ref/busy_timeout.html",
+    "https://www.sqlite.org/rescode.html#busy",
+    "https://www.sqlite.org/c3ref/busy_handler.html"
+  ],
+  "test_fault_injection": "Real reader / actual SQLite immediate BUSY control explicitly sets only test connection native timeout0 for both old/new versions; models documented skipped native handler and original default30 failure. First old-wheel control was confounded by native30 wait and is labelled invalid; raw outputs retained, not counted."
+}

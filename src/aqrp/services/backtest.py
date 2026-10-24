@@ -160,7 +160,7 @@ def _failure_snapshot(ledger, run, simulator, result):
     ledger.artifact(run, "failure-recovery.json", evidence)
 
 
-def simulate_engineering(request, ledger_root, code_commit):
+def simulate_engineering(request, ledger_root, code_commit, *, task_context=None):
     if not isinstance(request, EngineeringBacktestRequest):
         raise ContractError("FROZEN_SIMULATION_REQUEST_REQUIRED")
     policy = reviewed_policy()
@@ -184,11 +184,13 @@ def simulate_engineering(request, ledger_root, code_commit):
         "request_sha256": request.content_hash,
         "protocol": PROTOCOL,
     }
-    run = ledger.start(config, lineage)
-    return _execute_engineering(request, ledger, run, code_commit, policy)
+    run = ledger.start(config, lineage, task_context=task_context)
+    return _execute_engineering(
+        request, ledger, run, code_commit, policy, task_context=task_context
+    )
 
 
-def _execute_engineering(request, ledger, run, code_commit, policy):
+def _execute_engineering(request, ledger, run, code_commit, policy, *, task_context=None):
     result = {
         "schema_version": "simulation-result/1.0.0",
         "run_id": run,
@@ -203,7 +205,12 @@ def _execute_engineering(request, ledger, run, code_commit, policy):
     simulator = None
     try:
         x = validate(request)
-        simulator = Simulator(x, ledger.path(run), code_commit)
+        simulator = Simulator(
+            x,
+            ledger.path(run),
+            code_commit,
+            **({"task_context": task_context} if task_context is not None else {}),
+        )
         state = simulator.run()
         durable, records, transaction_files = simulator.store.verified_snapshot()
         if durable != state:
@@ -254,7 +261,7 @@ def _execute_engineering(request, ledger, run, code_commit, policy):
     return BacktestResult(wire)
 
 
-def resume_engineering(ledger_root, run_id):
+def resume_engineering(ledger_root, run_id, *, task_context=None):
     """Resume an interrupted unfinished engineering run with its exact original config/code."""
     policy = reviewed_policy()
     verify_runtime(runtime_manifest())
@@ -281,6 +288,10 @@ def resume_engineering(ledger_root, run_id):
         for n in ("result.json", "state.json", "trace.json", "transactions.json")
     ):
         raise ContractError("PARTIAL_PUBLICATION_REQUIRES_EVIDENCE_REVIEW")
+    if task_context is not None:
+        from aqrp.services.task_context import require_context
+
+        require_context(task_context).verify(ledger_root, run_id, config, terminal=False)
     request = EngineeringBacktestRequest(bytes.fromhex(config["raw_request_hex"]))
     if (
         request.content_hash != config["request_sha256"]
@@ -292,7 +303,9 @@ def resume_engineering(ledger_root, run_id):
         "ENGINEERING_RECOVERY_STARTED",
         {"original_config_hash": digest(config), "native_isolation": "DEFERRED / NOT VERIFIED"},
     )
-    return _execute_engineering(request, ledger, run_id, lineage["code_commit"], policy)
+    return _execute_engineering(
+        request, ledger, run_id, lineage["code_commit"], policy, task_context=task_context
+    )
 
 
 def simulate_approved(request, ledger_root, code_commit):
@@ -336,7 +349,7 @@ def result_engineering(ledger_root, run_id):
     return load(_bound_read(ledger, run_id, "result.json", m))
 
 
-def replay_engineering(ledger_root, run_id, destination):
+def replay_engineering(ledger_root, run_id, destination, *, task_context=None):
     ledger = ExperimentLedger(guard_path(ledger_root))
     manifest = ledger.verify(run_id)
     original = result_engineering(ledger_root, run_id)
@@ -360,8 +373,26 @@ def replay_engineering(ledger_root, run_id, destination):
     state = thaw(load(_bound_read(ledger, run_id, "state.json", manifest)))
     if digest(freeze(state)) != original["state_sha256"]:
         raise ContractError("REPLAY_STATE_CHANGED")
-    out = guard_path(Path(destination) / str(uuid.uuid4()))
-    rerun = Simulator(validate(request), out, lineage["code_commit"])
+    replay_ledger = None
+    if task_context is not None:
+        from aqrp.services.task_context import require_context
+
+        context = require_context(task_context)
+        replay_ledger = ExperimentLedger(guard_path(destination))
+        replay_id = replay_ledger.start(
+            {"source_run_id": run_id, "request_sha256": request.content_hash},
+            {**lineage, "task_binding": None, "source_run_id": run_id},
+            task_context=context,
+        )
+        out = guard_path(Path(destination) / replay_id)
+    else:
+        out = guard_path(Path(destination) / str(uuid.uuid4()))
+    rerun = Simulator(
+        validate(request),
+        out,
+        lineage["code_commit"],
+        **({"task_context": task_context} if task_context is not None else {}),
+    )
     replayed = rerun.run()
     durable, records, _ = rerun.store.verified_snapshot()
     if replayed != durable:
@@ -370,7 +401,7 @@ def replay_engineering(ledger_root, run_id, destination):
     expected = {k: original[k] for k in recomputed}
     if recomputed != expected:
         raise ContractError("NUMERICAL_SIMULATION_REPLAY_MISMATCH")
-    return {
+    result = {
         "status": "NUMERICAL_REPLAY_VERIFIED",
         "original_run_id": run_id,
         "state_sha256": recomputed["state_sha256"],
@@ -379,3 +410,16 @@ def replay_engineering(ledger_root, run_id, destination):
         "financial_approval": "NONE",
         "full_historical_host_reproduced": False,
     }
+    if replay_ledger is not None:
+        replay_ledger.artifact(replay_id, "result.json", result)
+        replay_ledger.artifact(replay_id, "portfolio-lineage.json", rerun.portfolios)
+        replay_ledger.artifact(
+            replay_id,
+            "comparison.json",
+            {"expected": expected, "actual": recomputed, "equal": True},
+        )
+        replay_ledger.artifact(
+            replay_id, "transaction-files.json", rerun.store.verified_snapshot()[2]
+        )
+        result["manifest"] = replay_ledger.finish(replay_id, "SUCCEEDED")
+    return result

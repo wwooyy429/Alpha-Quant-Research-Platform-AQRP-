@@ -1,0 +1,16 @@
+{
+  "candidate": "418c17fad8fefe50dedc866f95c14ccf0fa433ca",
+  "official_run": 40069640065,
+  "windows_original_zip_sha256": "756f7dfdbfe0ab16540bf4c5083437c0cb7d9dd68ae25c68ca4292ada1451c76",
+  "windows_result": "1557 passed / 1 failed; expected intentional child exit 73, actual 3221225477 (0xC0000005)",
+  "ubuntu_result": "success,1558 passed",
+  "observation": "Original Windows ZIP contains durable Task completion.json (claim_epoch 1), R terminal SUCCEEDED and manifest, before SQL success; stdout/stderr empty. Exact native fault instruction was not captured, so DLL shutdown attribution remains a hypothesis, not a proven root cause. Original failure remains FAILURE.",
+  "change": "Only abrupt-death test harness: fsync named boundary+PID+Task marker, enable faulthandler, Windows self-TerminateProcess(73); Unix retains os._exit(73). Exact code 73 and original recovery invariants still mandatory. No unexpected native crash accepted, no test skipped, no financial/result changes. New same-SHA Windows and Linux SDK required.",
+  "primary_references": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess",
+    "https://learn.microsoft.com/en-us/windows/win32/procthread/terminating-a-process",
+    "https://docs.python.org/3.13/library/os.html#os._exit"
+  ],
+  "status": "DEVELOPER_HARNESS_REPAIR_PENDING_FIXED_VERSION_VALIDATION_AND_GPT_WORK",
+  "original_failure_retained": true
+}

@@ -1,0 +1,58 @@
+Hashing original archive...
+Archive size/SHA read; checking 348 manifest entries...
+Checked 50/349 members
+Checked 100/349 members
+Checked 150/349 members
+Checked 200/349 members
+Checked 250/349 members
+Checked 300/349 members
+{
+  "kind": "administrative_received_evidence_integrity_check",
+  "not_an_independent_G2_audit": true,
+  "source_directory": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024",
+  "fixed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "started_utc": "2026-10-24T10:41:43.354109+00:00",
+  "errors": [],
+  "archive": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+    "bytes": 2981176853,
+    "sha256": "b71ef0c6413493c5cb0e4cc244dbe0436a0deb502da99f00112c5a44caa8aa0f",
+    "receipt_bytes": 2981176853,
+    "receipt_sha256": "b71ef0c6413493c5cb0e4cc244dbe0436a0deb502da99f00112c5a44caa8aa0f"
+  },
+  "manifest": {
+    "bytes": 67953,
+    "sha256": "253af951aae9c9b99f344a9ebac94df22a8318ac0fdb272c19a44896d892b849",
+    "declared_file_count": 348
+  },
+  "exact_member_sets": {
+    "expected_count": 349,
+    "actual_count": 349,
+    "missing": [],
+    "extra": []
+  },
+  "members_checked": 349,
+  "declared_files_checked": 348,
+  "uncompressed_bytes_streamed": 2988792069,
+  "external_report_copies": {
+    "DEVELOPER_HANDOFF.txt": {
+      "bytes": 1101,
+      "sha256": "187d5ea3eef78f7af4db1159aebfe3f202f5a9e346c9aa466a8b7e00e414881a",
+      "matches_ZIP_original_bytes": true
+    },
+    "FINDINGS.json": {
+      "bytes": 4740,
+      "sha256": "c6ead4854a42cd7f648dd16ffc56112896ee9451d313cc5823d75c75e4d5d355",
+      "matches_ZIP_original_bytes": true
+    },
+    "REPORT.md": {
+      "bytes": 15539,
+      "sha256": "34c7d6af22eb38600c37abff7a6dfb63b18dd11b6980cd42e64033ca1eb28bd2",
+      "matches_ZIP_original_bytes": true
+    }
+  },
+  "fixed_SHA_in_report_handoff_findings": true,
+  "completed_utc": "2026-10-24T10:41:48.329585+00:00",
+  "result": "PASS",
+  "scope_limit": "Bytes, hashes, CRC, member safety and fixed identity only; no G2 reevaluation, business/test execution, acceptance, merge, release or deployment."
+}

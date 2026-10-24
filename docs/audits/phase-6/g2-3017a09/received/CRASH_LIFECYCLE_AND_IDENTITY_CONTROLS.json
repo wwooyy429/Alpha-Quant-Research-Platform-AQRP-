@@ -1,0 +1,225 @@
+{
+  "result": "PASS",
+  "strict_raw_markers": [
+    {
+      "label": "independent-Windows",
+      "markers": [
+        {
+          "path": "tmp/test_real_process_b_terminal_b0/injected-crash-boundary.json",
+          "point": "B_TERMINAL_BEFORE_MAPPING",
+          "pid": 75744,
+          "task_id": "928b43c4-3cc4-4333-b7e8-5205683e3e79",
+          "exit_code": 75,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_crash_recove0/injected-crash-boundary.json",
+          "point": "R_TERMINAL_BEFORE_MAPPING",
+          "pid": 61716,
+          "task_id": "642a4292-5689-4b68-aed0-cabde4d2640e",
+          "exit_code": 73,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_crash_recove1/injected-crash-boundary.json",
+          "point": "COMPLETION_BEFORE_SQL",
+          "pid": 93068,
+          "task_id": "d16d7e48-b24c-4fee-bb08-8ad5f4cf0993",
+          "exit_code": 73,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr0/injected-crash-boundary.json",
+          "point": "BOUND",
+          "pid": 94736,
+          "task_id": "48081835-f2e9-4caa-9836-b6f1c378aa06",
+          "exit_code": 74,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr1/injected-crash-boundary.json",
+          "point": "P4_TERMINAL",
+          "pid": 94584,
+          "task_id": "db93ef5b-c514-4161-8d65-60348f1033bc",
+          "exit_code": 74,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr2/injected-crash-boundary.json",
+          "point": "P4_PARTIAL",
+          "pid": 89136,
+          "task_id": "9043632d-6471-4f3d-bb5b-41fbe4124aae",
+          "exit_code": 74,
+          "method": "self-TerminateProcess"
+        }
+      ],
+      "intended_exit_values": {
+        "R_TERMINAL_BEFORE_MAPPING": 73,
+        "COMPLETION_BEFORE_SQL": 73,
+        "BOUND": 74,
+        "P4_TERMINAL": 74,
+        "P4_PARTIAL": 74,
+        "B_TERMINAL_BEFORE_MAPPING": 75
+      },
+      "actual_exit_codes_verified_by_strict_passing_pytest_assertions": true,
+      "strict_testcases": [
+        "test_real_process_crash_recovery_reuses_research_and_retains_receipts[R_TERMINAL_BEFORE_MAPPING]",
+        "test_real_process_crash_recovery_reuses_research_and_retains_receipts[COMPLETION_BEFORE_SQL]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[BOUND]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[P4_TERMINAL]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[P4_PARTIAL]",
+        "test_real_process_b_terminal_before_mapping_reuses_same_run"
+      ]
+    },
+    {
+      "label": "official-Windows",
+      "markers": [
+        {
+          "path": "tmp/test_real_process_b_terminal_b0/injected-crash-boundary.json",
+          "point": "B_TERMINAL_BEFORE_MAPPING",
+          "pid": 1088,
+          "task_id": "182c8a15-574f-4437-b173-8a62af5af2b7",
+          "exit_code": 75,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_crash_recove0/injected-crash-boundary.json",
+          "point": "R_TERMINAL_BEFORE_MAPPING",
+          "pid": 8084,
+          "task_id": "22c49a7d-ebec-4a75-8c2a-39e0fc0b9612",
+          "exit_code": 73,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_crash_recove1/injected-crash-boundary.json",
+          "point": "COMPLETION_BEFORE_SQL",
+          "pid": 7056,
+          "task_id": "02c8a3f0-d85e-42fa-9172-268fa389fb85",
+          "exit_code": 73,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr0/injected-crash-boundary.json",
+          "point": "BOUND",
+          "pid": 10108,
+          "task_id": "e5da6550-409f-40fb-b687-dd1d4c92459a",
+          "exit_code": 74,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr1/injected-crash-boundary.json",
+          "point": "P4_TERMINAL",
+          "pid": 3576,
+          "task_id": "59acc413-087f-4bce-8240-6e484064beb7",
+          "exit_code": 74,
+          "method": "self-TerminateProcess"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr2/injected-crash-boundary.json",
+          "point": "P4_PARTIAL",
+          "pid": 6928,
+          "task_id": "ddbbb961-6e35-4086-8de8-1177dd7003f8",
+          "exit_code": 74,
+          "method": "self-TerminateProcess"
+        }
+      ],
+      "intended_exit_values": {
+        "R_TERMINAL_BEFORE_MAPPING": 73,
+        "COMPLETION_BEFORE_SQL": 73,
+        "BOUND": 74,
+        "P4_TERMINAL": 74,
+        "P4_PARTIAL": 74,
+        "B_TERMINAL_BEFORE_MAPPING": 75
+      },
+      "actual_exit_codes_verified_by_strict_passing_pytest_assertions": true,
+      "strict_testcases": [
+        "test_real_process_crash_recovery_reuses_research_and_retains_receipts[R_TERMINAL_BEFORE_MAPPING]",
+        "test_real_process_crash_recovery_reuses_research_and_retains_receipts[COMPLETION_BEFORE_SQL]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[BOUND]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[P4_TERMINAL]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[P4_PARTIAL]",
+        "test_real_process_b_terminal_before_mapping_reuses_same_run"
+      ]
+    },
+    {
+      "label": "official-Ubuntu",
+      "markers": [
+        {
+          "path": "tmp/test_real_process_b_terminal_b0/injected-crash-boundary.json",
+          "point": "B_TERMINAL_BEFORE_MAPPING",
+          "pid": 10589,
+          "task_id": "72ed5d6a-653e-4aa7-b0fe-275bc515b4bf",
+          "exit_code": 75,
+          "method": "os._exit"
+        },
+        {
+          "path": "tmp/test_real_process_crash_recove0/injected-crash-boundary.json",
+          "point": "R_TERMINAL_BEFORE_MAPPING",
+          "pid": 9165,
+          "task_id": "f28638f6-b606-49f0-963a-906995685933",
+          "exit_code": 73,
+          "method": "os._exit"
+        },
+        {
+          "path": "tmp/test_real_process_crash_recove1/injected-crash-boundary.json",
+          "point": "COMPLETION_BEFORE_SQL",
+          "pid": 9227,
+          "task_id": "a52d348c-c76c-405b-975a-01c52ff46077",
+          "exit_code": 73,
+          "method": "os._exit"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr0/injected-crash-boundary.json",
+          "point": "BOUND",
+          "pid": 9594,
+          "task_id": "4436ca4b-38b3-456b-81e7-c27602cc1adf",
+          "exit_code": 74,
+          "method": "os._exit"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr1/injected-crash-boundary.json",
+          "point": "P4_TERMINAL",
+          "pid": 9711,
+          "task_id": "f2eda634-abd6-49a8-a611-61a11cc400f4",
+          "exit_code": 74,
+          "method": "os._exit"
+        },
+        {
+          "path": "tmp/test_real_process_nested_p4_cr2/injected-crash-boundary.json",
+          "point": "P4_PARTIAL",
+          "pid": 9827,
+          "task_id": "e2e05ee6-cfe7-409d-8576-a3c53ad8c2ff",
+          "exit_code": 74,
+          "method": "os._exit"
+        }
+      ],
+      "intended_exit_values": {
+        "R_TERMINAL_BEFORE_MAPPING": 73,
+        "COMPLETION_BEFORE_SQL": 73,
+        "BOUND": 74,
+        "P4_TERMINAL": 74,
+        "P4_PARTIAL": 74,
+        "B_TERMINAL_BEFORE_MAPPING": 75
+      },
+      "actual_exit_codes_verified_by_strict_passing_pytest_assertions": true,
+      "strict_testcases": [
+        "test_real_process_crash_recovery_reuses_research_and_retains_receipts[R_TERMINAL_BEFORE_MAPPING]",
+        "test_real_process_crash_recovery_reuses_research_and_retains_receipts[COMPLETION_BEFORE_SQL]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[BOUND]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[P4_TERMINAL]",
+        "test_real_process_nested_p4_crash_resume_never_constructs_second_child[P4_PARTIAL]",
+        "test_real_process_b_terminal_before_mapping_reuses_same_run"
+      ]
+    }
+  ],
+  "current_vs_retained_old_machine": [
+    "AMD64",
+    "x86_64",
+    ""
+  ],
+  "original_environment_failure_cause_not_proved": true,
+  "unchanged_editor_functions": [
+    "main(): complete Settings branch AST"
+  ],
+  "scope": "Abrupt termination harness and engineering recovery; original native fault exact cause remains NOT VERIFIED"
+}

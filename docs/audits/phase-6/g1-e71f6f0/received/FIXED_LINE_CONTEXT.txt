@@ -1,0 +1,517 @@
+
+===== docs/audits/phase-6/TASK_COMPLETION_CONTRACT.md =====
+1: # 固定三种Task的完成屏障与恢复契约（G1修订候选）
+2: 
+3: 本契约修订WORK-P6-G1-001，供新固定SHA独立复核，发现仍OPEN_PENDING_RECHECK；不是P6实现。Task的成功与任一核心子run的成功严格分开。核心终态只更新它所属的slot；只有TaskService完成本文件的全Task屏障和提交，才可发布Task SUCCEEDED。没有通用DAG/插件调度框架。
+4: 
+5: ## 固定kind、必需阶段和产物
+6: 
+7: | kind | 冻结的必需阶段 / slot | 成功的必要证据 |
+8: |---|---|---|
+9: | research | R=一次P3研究；RV=研究工件验证/发布 | R的真实SUCCEEDED终态、原始report/metrics/审批建议/全部manifest成员与输入/家族记录绑定；RV验证回执；Task全局完成回执 |
+10: | engineering_pipeline | R=P3研究 → PLAN=冻结P5请求和决策集合 → B=P5模拟，内部P[i]=逐决策P4 → BV=全链验证/发布 | R真终态、不可变ResolvedPlan、B真SUCCEEDED及已核金融投影、全部必需P[i]真SUCCEEDED和P5实际portfolio-lineage一致、BV全链工件/来源验证及Task回执 |
+11: | replay | SV=原run/包/锁/投影范围验证 → E=声明范围内实际重放（含其内部P4 slots，如适用） → CV=独立比较/封存 | SV回执、E实际NUMERICAL_REPLAY_VERIFIED或目录已登记的原Ref投影重放成功、CV比较与目标工件清单、Task完成回执；原run成功仅是SV输入 |
+12: 
+13: RV/PLAN/BV/SV/CV是受限编排的校验/封存步骤，不伪装成既有P3/P4/P5业务run。其原始输入hash、声明投影、结果与检查证据都写不可变Task工件清单。replay仅允许catalog登记的P5_NUMERICAL或PUBLISHED_REF_PROJECTION；不支持的旧宿主/缺包范围明确拒绝，不能把验证原始源文件当执行了重放。
+14: 
+15: engineering_pipeline不另造外层假P4 run：必需P4就是P5内部真实逐决策调用。R验证后，用原P3/P1来源、共享builder和已冻结有效配置构造P5请求；这只是请求/来源组装，不重复拟合或改PIT。先冻结ResolvedPlan（父TaskPlan hash、P5请求原字节/hash、严格有序决策表index/decision_time/source-request hash、N、每个必需slot/UUID/root）。N取已验证请求decisions的完整集合，本应用流水线要求N>=1；空区间在此以NO_REQUIRED_DECISIONS明确拒绝，不修改底层P5合法零决策API。ResolvedPlan在B启动前持久化，之后不能缩减N、删失败/缺失slot或事后追加替代UUID。P[i]适配请求hash在调用前按NESTED_CONTEXT_CONTRACT做一次性finalize。
+16: 
+17: ## 成功屏障
+18: 
+19: TaskService在可信同一claim中逐项确认：
+20: 1. 有效配置/初始TaskPlan、必要时ResolvedPlan、catalog/defaults、代码/bundle/core与UI锁/输入快照及侧车身份全部一致；plan已封闭，固定必需slot集合完整且实际注册调用集合精确对账，无遗漏/多余/未登记run。
+21: 2. 每个必需slot的服务类型、Task/parent/decision/root/config绑定已核；各核心真实终态和原始manifest/成员hash通过既有完整门禁。R/P[i]/B均真实SUCCEEDED；RV/BV/SV/CV相应验证回执完整。replay的E必须有本次实际重放/比较证据，不能借原run的SUCCEEDED替代。
+22: 3. B成功必须具有原始result/state/transactions/transaction-files/portfolio-lineage/published-byte-audit/trace等manifest内所需工件及既有完整金融对账证明。每个P[i]原始result/candidate/risk/成功审计与B对应决策/真实父链一致；只凭P5返回success或一个合法UUID不足以通过。
+23: 4. 没有运行中的worker/未处理副作用或未决取消；取消与完成竞争在同一任务终态事务串行化。若完整成功屏障先完成并提交，后来的取消TOO_LATE；若取消意图先被接收，禁止继续提升成功，等待安全取消/对账。未知财务状态一律FAILED+COMMITTED_STATE_UNVERIFIED，不能CANCELLED known=true。
+24: 5. 所有上述证据写成一次性completion.json，列出task/kind/config/plan hashes、完整required slots及绑定、各终态/产物/父链hash、验证结果和最后claim。先原子发布并验证回执，再在SQLite事务内检查同一plan/claim/取消版本并提交Task SUCCEEDED及回执hash。两侧未闭环时仍RUNNING/finalizing，不因文件存在报成功。
+25: 
+26: SQLite提交前宕机，恢复者重新验证整个屏障及completion.json，才可追加恢复Task终态；绝不能从一个恢复的P3/P4终态提升整个Task。SQL终态若指向丢失/损坏回执，保留原记录并对外标INTEGRITY_ERROR/usable=false，不作为成功计数，也不重写旧证据来维持成功。
+27: 
+28: 这是明确的应用级严格全链成功口径：合法P4风险拒绝仍保留真实P4 REJECTED/FAILED与P5可能SUCCEEDED的原始事实，但该Task以FAILED/REQUIRED_STAGE_REJECTED展示，不能说全链所有必需阶段成功。此规则不改P5风险/事件/金融算法、不把拒绝改成下单、不强制中断原模拟，也不要求成交数或收益为正。所有真实子结果可按各自状态查看。
+29: 
+30: ## 恢复与未完成阶段
+31: 
+32: | 观察到的可信状态 | 只允许的恢复动作 | Task不能宣称的事实 |
+33: |---|---|---|
+34: | R终态已提交、slot映射未写；P4/P5尚未启动 | 核原预分配R绑定后恢复R slot；用其原字节组装/验证PLAN；只有未启动且ALLOCATED的后续slot可执行 | 不能Task成功，不能重跑R、重计或退还试验 |
+35: | R/部分P[i]成功，B未形成终态 | 只恢复这些slots；严格满足原P5 resume条件时使用同一B run/请求/上下文和原始事务prefix恢复；否则RECOVERY_REQUIRED | 不能凭已完成P4或缓存余额成功，不能新建B替代 |
+36: | R/P[i]成功，B缺失但START_INTENT已登记，或存在半初始化/部分发布 | FAILED/RECOVERY_REQUIRED，保留所有记录；不自动从缺目录推断未执行 | 不能自动重做或抹去已提交副作用 |
+37: | B声称SUCCEEDED但缺必需P4记录/归属/原始工件 | FAILED/RECOVERY_REQUIRED；不能在B结束后补开P4来填清单 | 不能接受B的success字符串替代全链 |
+38: | B真实FAILED、P[i]失败/拒绝、unknown或真实取消 | 分别记录全部子事实并按失败/安全取消规则归并；未运行后续slot标明未执行 | 不能删掉失败slot来满足all条件 |
+39: | 全部必需slots、最终工件及父链成功，但Task回执/索引未提交 | 全量重验证，补完成回执/终态事务；不重新执行核心 | 不能在补验证之前发布成功 |
+40: | 全部屏障、回执及终态事务通过 | 返回原Task和原子run引用，后续同key幂等读取 | 不能生成新核心run或覆盖历史 |
+41: 
+42: 只有slot仍ALLOCATED、无START_INTENT、无核心目录/初始记录且完整枚举和claim证据均能证明从未执行时，才可首次调用。任何枚举错误、未知/冲突、活跃旧claim、配置漂移都失败关闭。P5恢复只适用既有resume_engineering条件（同包/原config/原prefix、无部分发布等）；不能借Task恢复放宽原拒绝。replay是新执行且新归属，resume是同一执行同一slot，不能互换。
+43: 
+44: G2必须在真实服务/SQLite/磁盘执行R、每个P[i]、B、RV/BV/CV提交及映射前后、completion发布与SQL提交之间的断点，验证未完成任务不成功、无重复核心调用/试验或金融提交，取消竞态和原始失败仍完整。设计模型通过不代表这些实际故障已测。
+
+===== docs/audits/phase-6/NESTED_CONTEXT_CONTRACT.md =====
+1: # 可信上下文到P5内部P4的传播与物理目录（G1候选）
+2: 
+3: 本文件处理WORK-P6-G1-002，状态OPEN_PENDING_RECHECK。源事实：P5 Simulator._risk_portfolio现在调用construct_engineering(request, self.root/portfolio-runs, code_commit)，provider.verify_portfolio_result在同根核验，_submit还会复核；P5 replay又创建独立Simulator。因此只有外层service参数不足，以下为明确且非金融的适配设计。
+4: 
+5: ## 注入链与绑定
+6: 
+7: 采用显式可选keyword参数，不使用全局变量、thread-local/contextvars、monkeypatch或事后从UUID猜所有权：TaskService/可信worker → services.backtest的simulate/_execute/resume/replay → Simulator实例的execution_context → 每次_risk_portfolio的P4 child context → portfolio.service/ExperimentLedger.start。_risk_portfolio和_submit的verify_portfolio_result同时取得对应expected child binding。上下文只提供登记/解析/验证/安全取消能力，不选择因子、不改风险或记账。
+8: 
+9: TaskAuthority由可信本地launcher连接既定workspace任务库并在worker进程内创建；前端/JSON/普通用户draft不能提供authority、context、run_id、root或trusted=true。核心入口拿到上下文后必须用已配置authority核实际持久化记录和当前claim，不能接受调用者自报布尔或任意duck-typed函数返回“可信”。此为本地工程应用完整性协议，不是OS隔离/密码签名；任意拥有进程/磁盘写权的主体隔离仍属延期事项，不声称Python对象不可伪造。
+10: 
+11: 每个绑定的不可变元组为(workspace_id, task_id, task_kind, plan_hash, slot_id, service_kind, decision_index, decision_time_UTC, source_request_hash, adapted_request_hash, parent_slot_id, parent_execution_run_id, child_run_id, physical_ledger_root, core_config_hash, code_sha, code_bundle, core_lock_hash, ui_lock_hash)。不适用字段显式null。P4的parent是实际当前B执行UUID；重放时是新的replay执行UUID，原source P5 UUID另列source_ref，绝不冒用原任务的孩子。
+12: 
+13: 初始Task事务先登记R/B（或replay执行）固定slot和UUID。ResolvedPlan封闭时，从P5请求的完整有序decision集合预分配P[i] slot、UUID、预期parent及root。P4实际适配请求依赖当时真实账户，不能提前伪造hash：_risk_portfolio获得原adapt_portfolio返回的request后、调用construct之前，authority在SQLite事务中以同一task/parent/index/time/source hash核对预分配记录，保存适配raw bytes/hash和core_config_hash，状态由ALLOCATED一次性变BOUND/START_INTENT，提交后才能创建P4目录/初始事件。已绑定的不同hash、时间、root或父run拒绝；不能在P4返回后补填原来不存在的登记。
+14: 
+15: 新的可选TaskRunContext将不可变binding_hash写入核心初始lineage并由start核配置/UUID/root/服务匹配。当前worker claim/epoch每次由authority验证：不可变孩子归属不随接管重写；恢复新claim追加授权接管事件，旧handle epoch失效。禁止两个并发claim执行同一slot；不同task/P5实例有各自不可变context引用，SQLite事务约束和原文件锁互补，不以全局“当前任务”切换。
+16: 
+17: ## 固定目录，不移动原P5内部P4
+18: 
+19: ```text
+20: workspace/
+21:   task-control/tasks.sqlite
+22:   tasks/<task_id>/request,plan,completion,task-events...
+23:   research-runs/<P3_uuid>/                 # 所有研究Task共享家族/试验预算根
+24:   backtest-runs/<B_uuid>/                 # P5原物理根
+25:     portfolio-runs/<P4_uuid>/             # 继续使用P5现有内部根
+26:   replay-runs/<new_replay_execution_uuid>/
+27:     portfolio-runs/<new_replay_P4_uuid>/   # 新执行的内部P4，绝不写原run
+28: ```
+29: 
+30: “共享根”要求准确收窄到P3研究家族/预算，不强迫P5内部P4移到全局目录。任务库维护全局索引，但必须记录并验证上图真实物理根。P5的P4 root恒等于guard_path(parent_execution_root / portfolio-runs)，不能由网页传路径或从合法UUID拼另一个任务根；原终态manifest、candidate/risk/result原字节与发布审计、P1/P3原输入来源的所有检查全部保留。目录枚举/权限错误、链接或reparse逃逸不能当空目录成功。
+31: 
+32: ## 内部断点与恢复/重放
+33: 
+34: 内部P4合法终态已写但slot映射未写：只可找到原先已BOUND/START_INTENT的slot，核全部元组、初始binding/config/lineage、物理根及原始终态门禁后追加该slot VERIFIED，不新建P4、不提升Task。若无预登记或binding缺失，即使UUID和manifest合法也RECOVERY_REQUIRED。相同UUID换根、换parent/decision/请求、其他task的合法P4、重复别名、未知子目录都拒绝。
+35: 
+36: P5按原resume条件重放已提交事务prefix时，execution_context先解析同一index的原P4 slot。已有已核终态且适配raw request相同则返回原P4结果，经原provider校验后继续原事务比较；不能再调construct创建第二个P4。若尚未启动且可证明ALLOCATED则首次调用；半初始化/非终态P4无现成恢复协议，一律RECOVERY_REQUIRED，不借P5 resume重做P4。适配request与旧绑定不同则拒绝，不改输入迎合重放。已提交Fill及原错误记录不覆盖。
+37: 
+38: replay_engineering使用新的Task replay context/预分配目标根和内部P4 slots，原P5 source只读；原金融request_id仍保持以维持原确定性订单/事件算法，任务执行UUID另行绑定。完成后Task层封存本次返回、比较证据、目标事务和内部P4清单；仅NUMERICAL_REPLAY_VERIFIED字符串而缺本次目标/所有权/比较证据不足以使Task成功。旧无context的所有公开API继续原随机UUID、原目录/验证流程与行为，不连接任务数据库、不改旧结果/Ref或强迫旧run迁移。
+39: 
+40: ## 实施后的完整非金融适配文件表
+41: 
+42: | 文件 | 允许的适配 | 禁止变化 |
+43: |---|---|---|
+44: | 新services/tasks.py、task_context.py、task_state.py / 请求builder | 固定kind、SQLite分配/claim/完成屏障、authority/上下文、请求及结果封存 | 无任意DAG/脚本；不实现第二套金融内核 |
+45: | experiments/ledger.py:start | 可选预分配UUID和binding初始记录、独占创建/验证 | 无context原行为完全保持；不覆盖旧run |
+46: | services/research.py | 可选上下文/协作取消，P3共享家族根绑定 | 不改fit/标签/推断/试验预算语义 |
+47: | portfolio/service.py:construct_engineering | P4孩子context转交start和来源绑定 | 不改构造/风险/取整/发布数值 |
+48: | services/backtest.py:simulate/_execute/resume/replay | 传递/恢复上下文、原resume条件再加绑定验证、replay目标归属和封存 | 不放宽原金融/状态/部分发布拒绝 |
+49: | backtest/engine.py:Simulator.__init__/_risk_portfolio/_submit | 实例context、调用前P4登记/原终态复用、把expected binding传入两处验证 | 不改事件排序、预算、交易、风险算法或事务数学 |
+50: | backtest/provider.py:verify_portfolio_result | 可选expected binding与authority核元组/根/初始记录，再执行全部原门禁 | 不移除prepare/guard_sources/manifest/candidate/risk/发布字节校验 |
+51: | 构建/准入/CI/覆盖与UI新模块 | 原兼容计划列明的版本/新bundle/扩展依赖/证据测试 | core锁、旧制品、答案、金融公式不改 |
+52: 
+53: G1仅列设计，不修改上述业务文件。未来若需其他既有文件适配或金融计算变化，应先列影响并取得适用批准/新固定SHA审查，不能以本表泛化许可。
+
+===== docs/audits/phase-6/NUMERIC_REFERENCE_CONTRACT.md =====
+1: # 精确十进制参考、显示舍入与明确量程（G1候选）
+2: 
+3: WORK-P6-G1-003在原参考中已实际复现：39位小百分比除100静默舍入，30位以上大金额quantize抛InvalidOperation。原32组正确答案的整个GOLDEN_CANDIDATES.json保持原始字节；新边界另存SUPPLEMENTAL_CANDIDATES.json。当前只修设计参考，不代表UI已实现或该发现独立关闭。
+4: 
+5: 拟新增P6输入/参考只接受ASCII普通有限十进制字符串：可选正负号、至少一个数字、可选小数点与数字；允许`.5`，不接受空白、Unicode数字、指数、NaN/Infinity或非字符串。输入数字位总数（含前导/小数零）最多4096，原文本长度最多4098；先检查长度/语法/位数，超限明确REFERENCE_NUMERIC_RANGE，语法错误REFERENCE_NUMERIC_SYNTAX，均保留原字符串/其hash，不截断、不静默舍入。本量程是待G1及后续用户实施授权确认的新增薄适配方案，**不修改P1–P5既有数值API或core锁**。
+6: 
+7: 数值解析只得到有符号整数coefficient及十进制scale。百分比除100仅将scale增加2，转成普通十进制并移除无意义尾零，不调用Decimal除法或normalize。金额/IC/百分比视图用整数商余数：对目标最小显示单位计算绝对商q、余r，`2r>den`或`2r==den且q为奇数`时进位，再恢复符号；此即HALF_EVEN。分组分隔符通过十进制字符串处理。输出的进位可比输入多一位，百分比视图可增加有限位数，最长仍低于Python默认整数文本限制；不调整全局Decimal context或int_max_str_digits。
+8: 
+9: 除声明的视图位数外不进行任何舍入：money保留2位、ic_display保留4位、percent_display先精确乘100再保留4位；展示零统一为无负号的`0.00`/`0.0000%`。权重/请求数值没有视图舍入，`-12.50%`精确为`-0.125`。原始数据/配置、精确资金/数量及原报告不回写，原字符串始终可读取/下载；JS图表无法准确表达的值仍按既定精度警告与原始表格策略处理。
+10: 
+11: 独立字面边界至少包括两条原反例、正负长百分比/超小数、整数与跨位进位大金额、正负HALF_EVEN（奇/偶分位及零）、4096位边界/4097位拒绝、非有限/指数/Unicode/类型拒绝。设计参考还应在不同ambient Decimal精度和陷阱下得到相同结果，且使用Fraction/字面数等另一个参考独立核数值；不得用被测转换函数生成expected。有效范围内的量值不能因默认28位精度失败。
+12: 
+13: 通过此数值词法/量程检查不等于通过金融领域校验：P3/P4/P5仍按原schema、有限样本、权重/风险/可执行量等明确接受或拒绝；不得为适配4096位展示而放宽或重写旧金融计算。
+
+===== docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md =====
+1: # 持久化任务、完成屏障与安全恢复
+2: 
+3: 当前为G1修订候选，三项原发现OPEN_PENDING_RECHECK，P6业务未授权/未实现。TaskService使用stdlib SQLite（BEGIN IMMEDIATE、workspace/idempotency_key唯一约束、WAL、同步提交）持久化分配/claim/追加事件，P3/P4/P5原实验账本及事务仍是核心事实来源。任务元数据目录分开，P3共享研究家族根；P5内部P4保留原P5 run下portfolio-runs。详细且唯一的完成/恢复与目录规范分别见[TASK_COMPLETION_CONTRACT](TASK_COMPLETION_CONTRACT.md)、[NESTED_CONTEXT_CONTRACT](NESTED_CONTEXT_CONTRACT.md)。
+4: 
+5: 状态QUEUED→RUNNING→SUCCEEDED/FAILED/CANCELLED；CANCEL_REQUESTED是待执行意图而非已取消。单个slot终态只更新slot，不能直接提升Task。仅冻结kind全部required slots、实际工件/父链/完整金融验证、全局completion回执和SQLite终态闭环才SUCCEEDED。原G16–G19单状态模型只说明孤立slot的终态单调性，不是多阶段Task归并规则；本轮另增多阶段答案。
+6: 
+7: 同key同有效config_hash返回原task，不再调用；同key异hash拒绝。相同配置新key是新实验，继续写同一P3家族/次数/预算；取消/失败不退款、不丢试验。并发只有一份有效claim，恢复epoch只追加、旧handle失效。网页和JSON不能提供context/root/归属布尔。
+8: 
+9: 取消先持久化，在P3阶段间或P5完整原子事务边界检查，禁止中途kill并伪称安全取消；提交后继续原重读对账。取消先于全局成功提交则不提升成功；成功提交先完成则取消TOO_LATE。未知金融状态FAILED+COMMITTED_STATE_UNVERIFIED，不显示旧余额、不认证CANCELLED known=true。一次完整事务或既定阶段是取消响应边界，不虚构延迟SLA。
+10: 
+11: 崩溃恢复只恢复已核slot；后续未执行阶段仅在原计划、有效claim和“确定未启动”证据齐全时继续。P5只能使用既有严格resume条件，同slot原P4终态可复用但不重算；不明/半初始化/部分发布进入RECOVERY_REQUIRED。最终Task屏障重新验证，不从PID/mtime、一个成功P3或文件存在推定成功。失败、首次异常、磁盘提交、原始日志及旧hash完整保留。
+12: 
+13: G2须实际覆盖SQLite/真实核心服务及磁盘的每阶段提交/映射、内部P4绑定、取消/成功竞争、completion与索引断点、同key并发和跨Task家族预算。模型通过只是G1参考，不是实际实现/并发/隔离验证。真实Windows R2两项及正式Test/金融批准/历史宿主限制不变。
+
+===== docs/audits/phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md =====
+1: # 固定依赖候选及兼容影响（尚未安装/批准）
+2: 
+3: 元数据候选：Streamlit==1.66.1、Plotly==7.1.0；来源与轮子SHA见DEPENDENCY_METADATA_CANDIDATES。使用已验收uv0.13.4、Python3.13.16目标分别解析Windows x64与Linux x64，得到51/50个包的完整hash候选锁，原21个通用core依赖及Windows colorama版本逐项固定，未升级NumPy/Pandas/PyArrow/DuckDB或既有测试/构建工具。
+4: 
+5: **当前仅metadata解析成功，不是实际安装、浏览器、双OS UI或安全验收通过。** UI_CANDIDATE_*.lock只在审查资料目录，不替换根requirements.lock。已从各组合解析候选中导出UI_EXTENSION_WINDOWS/LINUX.lock，各恰好29个额外包、不含任何core包项；实现授权后使用原core锁 + 对应扩展锁安装，避免重复core条目扩大原批准wheel哈希集合（保留core锁原字节），`--require-hashes --only-binary=:all:`干净安装，逐包核真实兼容wheel、官方SHA、Requires-Python、pip check与实际import/版本；失败禁止静默降级/换版本。G1候选锁变动需新固定SHA，不能在实现时漂移latest。
+6: 
+7: 拟采用同一Python3.13.16工程虚拟环境的core+UI扩展组合，避免第二套数值内核。core原锁和core环境核验仍按原精确包执行；TaskService另记录并校验完整UI扩展distribution/version/RECORD与扩展锁hash，绑定任务/图表/报告来源，不能把旧core manifest冒充完整UI环境身份。额外UI包不得授予因子或金融权限。不启用Streamlit云部署、auth/pdf/SQL/Snowflake等extras，也不引入第二回测引擎或新Web微服务。
+8: 
+9: 实施期预期允许的包装兼容变更需独立审查：pyproject的可选UI依赖/入口、src/aqrp/__init__.py版本、当前bundle准入收据、tools/ci.py的新增UI验证/工件选择、覆盖门槛适配、安装元数据测试、新UI扩展锁和新增ui/services/任务CLI模块。原FactorRef不可重写；旧wheel/锁/原答案保留。root core lock/admission LOCK_HASH保持原值；若实际设计需改变，则作为契约/兼容变更重新提交预审，不能悄悄放宽verify_runtime或reviewed_policy。
+10: 
+11: 明确的全部既有非金融适配位置见NESTED_CONTEXT_CONTRACT文件表：除experiments/ledger、P3/P4/P5外层服务外，必须包含backtest/engine.py的Simulator构造/_risk_portfolio/_submit及backtest/provider.py的来源验证，覆盖P5内部真实P4、resume与replay。采用实例显式可选context，调用前事务登记完整绑定，P3共享家族根与P5内部物理根分别保持。旧无context调用、原请求wire schema与金融算法不变；不能用全局monkeypatch或后补UUID代替所有权。原数据/统计/构造/撮合/账本/绩效和全部既有安全门禁不改，具体完成屏障见TASK_COMPLETION_CONTRACT。
+12: 
+13: 主要资料：[Streamlit发行](https://pypi.org/project/streamlit/1.66.1/)、[Plotly发行](https://pypi.org/project/plotly/7.1.0/)、[AppTest官方说明](https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest)、[AppTest覆盖范围](https://docs.streamlit.io/develop/concepts/app-testing/cheat-sheet)。AppTest是模拟执行检查页面元素；不把它写成实际浏览器/网络或部署验证。
+
+===== docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md =====
+1: # 实现后的测试与原始证据计划
+2: 
+3: G1当前无UI业务实现/安装/浏览器通过记录。已有1158只验证P5，不增加P6产品通过数。实施后必须同时完成以下层次，必要自测由Codex执行，独立固定SHA G2以GPT Work为主；不能以开发方或子代理冒充独立审查。
+4: 
+5: | 测试组 | 实际对象与独立期望 | 关键负例 |
+6: |---|---|---|
+7: | T6-DASH/FACTOR/CONFIG/SETTINGS | 真实目录、6页面交互、配置revision、精确Ref/权重与原始状态；literal夹具/独立JSON对照 | rerun重复提交、回滚改旧文件、撤销或伪造Ref、坏manifest计成功 |
+8: | T6-RESEARCH/BT | 真实P1→P3→P4→P5服务与原始artifact绑定，IC/分层/OOS/风险/资金/订单/Fill/绩效展示 | 同一合法UUID错血缘、后补清单文件、无知财务状态旧余额回退、未来输入 |
+9: | T6-PARITY/REPLACE | 同一canonical请求走原CLI/新任务CLI/SDK/实际Streamlit事件，Momentum→Reversal仅改Ref各跑完整链，独立投影/原金融答案 | 只对比截图、过宽忽略hash/lineage/null、改变core后假称同核 |
+10: | T6-TASK/IDEMP/CRASH | 实际并发进程/持久化索引/原核心账本，10并发同key、崩溃前后、取消与成功竞态 | 同key异hash、提交后异常旧余额、预分配run映射丢失自动重复执行、伪终态、分task目录重置研究家族预算 |
+11: | T6-ARTIFACT/REPLAY/SAFE | 真manifest/hash/目录边界、原始下载、历史声明重放、日志安全、无任意代码和私有路径 | path traversal/reparse/symlink逃逸、清单删项/目录枚举报错、HTML注入/敏感字段泄漏 |
+12: | T6-FORMAL | 所有入口formal/FINAL_TEST安全拒绝，真实私有入口不调用 | 前端改布尔或候选Ref后仍执行、默默转工程模式 |
+13: 
+14: 正确性须已知答案+边界+性质+独立参考。GOLDEN_CANDIDATES为预先指定设计答案；不得从待测UI/service函数生成期望。运行scope为工程数据，保留全部失败、取消、unknown和恢复证据，既有P1–P5 Golden及G2反例全部回归。
+15: 
+16: 覆盖率：金融及关键安全/任务持久化路径保持既定核心行95%/分支90%或更严格现行门槛；一般服务行90%/分支85%；纯UI/CLI薄适配行80%/分支70%，关键流程必须100%有用例。不能把复杂状态/金融逻辑移到UI以套低门槛。门槛适配需明确文件分类和新固定SHA审查，不能直接降低现有模块要求。
+17: 
+18: 完整SDK：新干净venv、Python3.13.16、core/扩展依赖哈希安装、wheel构建安装、lint/format/覆盖、全部旧回归/原20+4/数学91、P1八表/九文件及旧Ref重放、P3/P4/P5完整服务、P6六页面/AppTest/任务故障/三入口数值。双OS CI各跑同版本，保存run/attempt/job、完整退出码/通过失败跳过、原始ZIP/API digest/长度/CRC/精确成员清单、source/wheel/环境/数据/终态链；上传器复制的pytest current目录需全子树字节对账，不冒称原symlink或ACL身份。
+19: 
+20: AppTest用于页面状态和组件断言，真实浏览器另留本地工程启动的argv/地址绑定/进程身份/交互与截图、六页面/两因子/取消/失败/下载链日志。不得把AppTest或mock结果宣称真实浏览器验证；没有真实浏览器证据则该项NOT VERIFIED，阻断所需UI验收。任何未来本地工程启动都需先有实施授权，不涉及外网发布/管理员操作，本轮不启动。
+21: 
+22: 每次run唯一UUID、不可变有效配置、代码40SHA/dirty、core bundle/两套锁/实际distribution+RECORD/interpreter/OS、数据manifest/sidecar、输入/输出工件、开始结束UTC、原始命令/stdout/stderr/报告/hash。固定G2版本用PR AQRP_FIXED_REVIEW_SHA，HEAD漂移单列，不继承旧PASS。保留扫描正/负控及所有原失败记录；真实Windows R2延期不因这些测试关闭。
+23: 
+24: 本轮专项G2必需矩阵：research/pipeline/replay各固定阶段及最终Task屏障；R已成功但P5未启动、部分P4成功但B缺失/失败/取消/unknown、全部子run成功但全局回执缺失、completion发布与SQLite提交双断点；P5内部P4调用前登记/半初始化/提交后映射前/原slot恢复、跨Task/parent/decision/root/config/合法错UUID拒绝；resume同子run不重复调用及replay新归属不写原源；32原答案+额外长百分比/大金额/正负HALF_EVEN/明确量程拒绝与不同Decimal context性质核对。新增模型答案不能替代上述真实服务/磁盘/并发G2执行。
+
+===== docs/audits/phase-6/G2_FAULT_MATRIX.md =====
+1: # 修订设计必须落实到真实G2的专项矩阵（全部Planned）
+2: 
+3: 当前32+95是设计参考，以下真实服务/SQLite/磁盘/并发/浏览器均未执行；不能以模型成功关闭发现。
+4: 
+5: | 断点/反例 | 要求的真实验收结果 |
+6: |---|---|
+7: | P3 start前、初始记录后、试验登记后、终态后/slot映射前后 | 未启动可首次调用；不明中间态失败关闭；原终态只恢复R，家族记录不重做/退款，Task不提前成功 |
+8: | R成功、PLAN未冻/已冻，P5未启动 | 保留R；纯来源/请求组装可重验证；只执行确定未启动的后续slot |
+9: | P4预分配/BOUND提交前后、核心半初始化、真实P4终态后/映射前 | 调用前已有元组/适配raw hash；合法终态仅复用原child；半初始化无新恢复许可，不新建第二P4 |
+10: | P5内部P4错Task/slot/服务/decision/time/source/adapted/parent/run/root/config/code/bundle/锁/epoch | 即使UUID和manifest合法也拒绝；不全局切换context或事后补归属 |
+11: | 枚举报错、链接/reparse、重复alias、缺必需slot/未知额外child | 失败关闭，不当空目录/完成覆盖；原根/manifest/candidate/risk/发布审计不删 |
+12: | P5同原请求resume再次到已完成P4 | 在原严格resume条件下复用同slot/result，真实核心构造调用次数不增加；旧无contextSDK保持原行为 |
+13: | P3/P4成功但B未启动/缺失/FAILED/取消/unknown | 无全Task成功；不输出旧账户认证；原001/003提交后故障例继续回归 |
+14: | B已SUCCEEDED但必需P4或最终工件/来源缺失 | RECOVERY_REQUIRED，不在B结束后补跑孩子或删slot |
+15: | 全子run成功，completion未写/写后SQL前/SQL后回执损坏 | 只有全量重验证+回执/SQL闭环才成功；损坏显示不可用完整性错误并留原记录 |
+16: | 取消排队、R后B前、P5完整事务后、成功/取消竞争 | 意图与实际取消分开；先成功提交则TOO_LATE，先接受取消则不成功；unknown始终FAILED |
+17: | replay只核原源、已重放但未比较、真实比较及目标封存 | 原源成功不代表新重放成功；新目标/context/内部P4正确，原源只读，声明范围不扩大宿主复现 |
+18: | 同key10并发、异hash碰撞、不同Task并发与claim接管 | 一任务/一有效claim，异hash冲突，旧epoch无效，研究家族根/计数不按Task重置 |
+19: | 精确长权重、大金额/正负HALF_EVEN/4096位与超限 | 端到端精确传递与原始显示，数值词法通过不替代后端领域约束；超限明确拒绝不截断，正确原答案不改 |
+20: 
+21: 全SDK、旧20+4/91/G2反例、双OS原ZIP完整身份/成员/环境/终态链、六页面实际浏览器、同核两因子与正式拒绝仍按原TEST_AND_EVIDENCE_PLAN执行；真实Windows隔离/正式Test/金融批准不在授权中。
+
+===== docs/audits/phase-6/INTERFACE_DRAFT.md =====
+1: # 拟新增薄适配接口（设计签名，尚未实现）
+2: 
+3: 实际既有核心：`ResearchRequest.create(config, snapshot, exposures, coverage, code_commit)` 与 `research(request, output_root)`；`PortfolioRequest` / `construct_engineering`；`EngineeringBacktestRequest.create(data)` / `simulate_engineering`、`result_engineering`、`replay_engineering`；`ExperimentLedger.verify/catalogue/compare`。P6不得在页面复制其数值逻辑。
+4: 
+5: 拟统一接口：`catalogue() -> verified resource/version/status records`；`freeze_request(kind, draft, defaults_revision, catalogue_revision) -> EffectiveRequest(raw_bytes, config_hash, lineage_refs)`；`submit(effective_request, idempotency_key) -> TaskReceipt`；`task_status(task_id)`；`cancel(task_id)`；`task_result(task_id)`；`artifact(task_id, artifact_name)`；`compare(run_ids, declared_projection)`；`replay(run_id, destination_catalog_id)`；`save_defaults(expected_revision, patch)` / `rollback_defaults(target_revision)`。新TaskCLI和Streamlit使用同一入口；旧CLI的同核兼容测试不可删除。
+6: 
+7: EffectiveRequest只允许已知schema/kind（research/engineering_pipeline/replay）和已审参数。服务端解析可信catalog ID到真实SnapshotRef/ExposureRef/CoverageRef/源run，校验字节、双时点、终态和代码/环境身份；来源hash、批准状态、code_commit、worker路径不能信任网页字段。未知字段/NaN/Infinity/重复键/伪造精确Ref/路径穿越拒绝。整数、价格、权重使用明确字符串/精确单位，转换只在共享builder中执行；UI不可归一化或改变经济profile。
+8: 
+9: `engineering_pipeline`由共享应用编排器顺序调用既有P3/P4/P5与PIT输入构造，必须生成真实源run/终态文件/manifest hash链；不能创建假P3/P4回执或把同UUID当证明。每次决策继续按P5数据可用性投影，不把研究期末整段结果提前回填历史。表单仅提供原契约允许的字段（股票池、区间、因子/权重、允许仓位/费用/风险设置）；组装代码属于services，页面只传draft与展示结果。
+10: 
+11: TaskReceipt包含task_id、预分配child slot/run_id及已核TaskContext绑定、canonical config_hash、defaults/catalogue版本、完整源/环境hash、当前状态和已绑定run IDs。任务元数据路径由服务生成的UUID+可信根确定，P3共享家族根不按task重置；P5内部P4根保留其父执行run下portfolio-runs（详NESTED_CONTEXT_CONTRACT）。输出run_id与随机时间可以不同，输入配置/语义数值不可因入口变化。
+12: 
+13: Artifact API先验证服务所属workspace、task/run绑定、原始账本终态和manifest，再按唯一条目读取原字节并复核hash。清单外追加proposal/同名替代/侧车篡改/别的run的合法UUID都拒绝。运行中可读追加日志须带明确prefix和非终态标识，不允许把部分result.json当SUCCEEDED。渲染器转义文本，结构化图表只消费白名单字段；不执行存储HTML/任意Markdown脚本。下载原始工件时保留媒体类型、文件名白名单和校验值。
+14: 
+15: Settings只能保存经共享schema校验的新默认配置revision，CAS冲突拒绝，rollback也新增revision并记录target；不可原地改旧配置或历史实验。catalog由可信本地启动配置限定工程根；网页不能任意切换根、上传代码、改Registry批准收据、启用formal或私有operator配置。
+16: 
+17: 允许本地受控worker子进程，固定解释器/模块/argv（shell=False）、最小工程环境，无任意命令/插件路径。无新Web API微服务、Redis/Celery、后台常驻服务或调度部署。单工程用户模型不宣称多主体OS隔离。当前G1不启动worker/Streamlit。
+18: 
+19: 时间表单保留证券市场/交易日历/时区与UTC微秒语义；共享builder按既定DATA_CONTRACT转为带时区时间，页面不以本机时区、weekday或当前墙钟推测交易日/decision_time/available_at。日期区间、拟合截止、期限、purge/embargo仍交P3原校验，不暴露私有FINAL_TEST。
+20: 
+21: 页面缓存只用于明确不可变键（数据/侧车/Ref/bundle/锁/config/defaults revision）对应的已核只读投影；提交与claim不能放进缓存。每次状态/终态/原工件读取仍重新验证服务来源与manifest，不因session_state或缓存命中跳过完整性门禁。会话仅存draft/幂等键，不能作为真实任务/金融状态来源。
+22: 
+23: TaskReceipt还绑定固定kind、初始TaskPlan/ResolvedPlan hashes、完整required slot集合与各slot状态；研究/流水线/replay的全局完成条件见TASK_COMPLETION_CONTRACT。任何子run成功只改变该slot，Task成功须completion回执和终态事务全闭环。工程流水线真实P4为P5内部逐决策调用，不新增假外层P4；显式上下文传播、调用前登记、目录布局与原resume/replay兼容见NESTED_CONTEXT_CONTRACT。
+
+===== docs/audits/phase-6/OPEN_QUESTIONS.md =====
+1: # 当前G1技术阻断与候选方案
+2: 
+3: GPT Work只对f7a1a68作PLAN BLOCKED，001High、002/003Medium均OPEN。本轮提供具体修订供新固定SHA复核，开发方不能自行CLOSED/PLAN PASS。完成屏障、嵌套上下文与精确参考属于技术设计责任，不请求用户替未定义方案作批准。
+4: 
+5: 1. TASK_COMPLETION_CONTRACT冻结三kind必需阶段/动态slots、全局回执与恢复。严格全链成功口径下，真实P4风险拒绝仍保留原P5可能成功的事实，但Task不宣称所有阶段成功，显示FAILED/REQUIRED_STAGE_REJECTED。请主审核其语义/覆盖，不改金融行为。
+6: 2. NESTED_CONTEXT_CONTRACT固定显式传播、原P5内部P4根和完整绑定，补engine/provider/resume/replay适配表；不通过新的Task数据库弱化原门禁。
+7: 3. NUMERIC_REFERENCE_CONTRACT拟定新P6精确适配的普通十进制字符串量程（最多4096数字位，超限明确拒绝并保留raw），使用整数计算及HALF_EVEN展示。只约束拟新增适配/参考，不修改既有P1–P5数值API。新增范围需G1审查且在未来用户单独实施授权时明确确认，不视为既有批准。
+8: 
+9: 原32正确答案、8需求、Python3.13.16与候选依赖/core锁全部保留。原问题解决与G1通过后，仍须用户单独批准具体实施方案；阶段验收、P6合并/标签/发布、P7均未授权。没有新金融经济或真实权限申请。WI-R2延期、正式Test未运行/金融NONE/完整历史宿主限制不变。
+
+===== docs/audits/phase-6/reference_check.py =====
+1: """Independent stdlib design model; no application imports, no P6 implementation claim."""
+2: from pathlib import Path
+3: import argparse, html, json
+4: 
+5: MAX_DIGITS = 4096
+6: 
+7: 
+8: class ReferenceNumberError(ValueError):
+9:     """Explicit design-reference input refusal, never silent numeric rounding."""
+10: 
+11:     def __init__(self, code):
+12:         super().__init__(code)
+13:         self.code = code
+14: 
+15: 
+16: def decimal_parts(text):
+17:     if not isinstance(text, str):
+18:         raise ReferenceNumberError("REFERENCE_NUMERIC_TYPE")
+19:     if len(text) > MAX_DIGITS + 2:
+20:         raise ReferenceNumberError("REFERENCE_NUMERIC_RANGE")
+21:     sign = -1 if text.startswith("-") else 1
+22:     body = text[1:] if text.startswith(("-", "+")) else text
+23:     parts = body.split(".")
+24:     if len(parts) > 2:
+25:         raise ReferenceNumberError("REFERENCE_NUMERIC_SYNTAX")
+26:     whole = parts[0]
+27:     fraction = parts[1] if len(parts) == 2 else ""
+28:     digits = whole + fraction
+29:     if not digits or (len(parts) == 2 and not fraction) or any(c not in "0123456789" for c in digits):
+30:         raise ReferenceNumberError("REFERENCE_NUMERIC_SYNTAX")
+31:     if len(digits) > MAX_DIGITS:
+32:         raise ReferenceNumberError("REFERENCE_NUMERIC_RANGE")
+33:     return sign * int(digits), len(fraction)
+34: 
+35: 
+36: def exact_text(coefficient, scale, *, trim=True):
+37:     negative = coefficient < 0
+38:     digits = str(abs(coefficient))
+39:     if scale:
+40:         digits = digits.zfill(scale + 1)
+41:         whole, fraction = digits[:-scale], digits[-scale:]
+42:         if trim:
+43:             fraction = fraction.rstrip("0")
+44:         result = whole + ("." + fraction if fraction else "")
+45:     else:
+46:         result = digits
+47:     return ("-" if negative else "") + result
+48: 
+49: 
+50: def rounded_units(coefficient, scale, places):
+51:     if scale <= places:
+52:         return coefficient * 10 ** (places - scale)
+53:     denominator = 10 ** (scale - places)
+54:     q, r = divmod(abs(coefficient), denominator)
+55:     if 2 * r > denominator or (2 * r == denominator and q % 2):
+56:         q += 1
+57:     return -q if coefficient < 0 else q
+58: 
+59: 
+60: def fixed_view(text, places, *, multiply=1, grouping=False):
+61:     coefficient, scale = decimal_parts(text)
+62:     value = exact_text(rounded_units(coefficient * multiply, scale, places), places, trim=False)
+63:     if grouping:
+64:         negative = value.startswith("-")
+65:         whole, fraction = value.lstrip("-").split(".")
+66:         chunks = [whole[max(0, i - 3):i] for i in range(len(whole), 0, -3)]
+67:         value = ("-" if negative else "") + ",".join(reversed(chunks)) + "." + fraction
+68:     return value
+69: 
+70: 
+71: def reference(case):
+72:     kind=case["kind"];x=case["inputs"]
+73:     if kind=="weight":
+74:         coefficient, scale = decimal_parts(x["percent"])
+75:         return exact_text(coefficient, scale + 2)
+76:     if kind=="money":return fixed_view(x["value"], 2, grouping=True)
+77:     if kind=="quantity":
+78:         coefficient, scale = decimal_parts(x["value"])
+79:         if scale:
+80:             raise ReferenceNumberError("REFERENCE_INTEGER_REQUIRED")
+81:         return str(coefficient)
+82:     if kind=="small":return exact_text(*decimal_parts(x["value"]))
+83:     if kind=="ic_display":return fixed_view(x["value"], 4)
+84:     if kind=="nullable":return {"text":"N/A" if x["value"] is None else str(x["value"]),"reason":x["reason"]}
+85:     if kind=="percent_display":return fixed_view(x["value"], 4, multiply=100)+"%"
+86:     if kind=="canonical":return json.dumps(json.loads(x["raw"]),ensure_ascii=False,sort_keys=True,separators=(",",":"),allow_nan=False)
+87:     if kind=="array_order":return x["left"]==x["right"]
+88:     if kind=="status_counts":return {"total":len(x["rows"]),"succeeded":sum(r["status"]=="SUCCEEDED" and r["verified"] for r in x["rows"]),"integrity_errors":sum(not r["verified"] for r in x["rows"])}
+89:     if kind=="financial_view":return x["verified_balance"] if x["known"] and x["manifest_valid"] and x["reported_balance"]==x["verified_balance"] else None
+90:     if kind=="idempotency":
+91:         seen={};conflicts=0
+92:         for key,value in x["calls"]:
+93:             if key in seen:conflicts+=seen[key]!=value
+94:             else:seen[key]=value
+95:         return {"tasks":len(seen),"conflicts":conflicts}
+96:     if kind=="lifecycle":
+97:         state="QUEUED"
+98:         for event in x["trace"]:
+99:             if state in {"SUCCEEDED","FAILED","CANCELLED"}:continue
+100:             if event=="START":state="RUNNING"
+101:             elif event=="CANCEL_REQUEST":state="CANCELLED" if state=="QUEUED" else "CANCEL_REQUESTED"
+102:             elif event=="SUCCESS":state="SUCCEEDED"
+103:             elif event=="SAFE_CANCEL":state="CANCELLED"
+104:             elif event=="FINANCIAL_UNKNOWN":state="FAILED"
+105:         return state
+106:     if kind=="artifact_membership":return x["manifest"].count(x["name"])==1
+107:     if kind=="defaults_rollback":
+108:         history=[dict(v) for v in x["history"]];history.append(dict(history[x["rollback_to"]]))
+109:         return {"old_fee":history[0]["fee"],"active_fee":history[-1]["fee"],"revisions":len(history)}
+110:     if kind=="nullable_equal":return type(x["left"]) is type(x["right"]) and x["left"]==x["right"]
+111:     if kind=="formal_gate":return "APPROVAL_REQUIRED" if x["financial_approval"]=="NONE" else "REQUIRES_REAL_APPROVAL_VALIDATION"
+112:     if kind=="family_trials":return x["initial"]+len({key for key,status in x["attempts"]})
+113:     if kind=="escape":return html.escape(x["value"])
+114:     if kind=="parent_identity":return x["expected_parent"]==x["actual_parent"] or x["mapping_proven"]
+115:     if kind=="rerun":return x["explicit_submits"]
+116:     raise AssertionError(kind)
+117: 
+118: def main():
+119:     parser=argparse.ArgumentParser();parser.add_argument("output",type=Path);args=parser.parse_args()
+120:     data=json.loads((Path(__file__).parent/"GOLDEN_CANDIDATES.json").read_bytes());records=[]
+121:     for case in data["cases"]:
+122:         got=reference(case);records.append({"id":case["id"],"expected":case["expected"],"actual":got,"pass":type(got) is type(case["expected"]) and got==case["expected"]})
+123:     result={"executor":"Codex developer independent-stdlib design reference; not GPT Work independent review","scope":"Pre-implementation design model only, NOT P6 products or browser tests","groups":len(records),"passed":sum(r["pass"] for r in records),"failed":sum(not r["pass"] for r in records),"records":records}
+124:     args.output.write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8",newline="\n")
+125:     print(json.dumps({k:result[k] for k in ("scope","groups","passed","failed")}));assert not result["failed"]
+126: if __name__=="__main__":main()
+
+===== docs/audits/phase-6/revision_reference.py =====
+1: """G1 finite design examples only: not a task runner, authority or UI implementation."""
+2: 
+3: import argparse
+4: import importlib.util
+5: import json
+6: from pathlib import Path, PurePosixPath
+7: 
+8: ROOT = Path(__file__).parent
+9: spec = importlib.util.spec_from_file_location("numeric_design_reference", ROOT / "reference_check.py")
+10: numeric = importlib.util.module_from_spec(spec)
+11: spec.loader.exec_module(numeric)
+12: 
+13: 
+14: def completion_example(x):
+15:     """Decide the declared model outcome; all flags are model premises, not real evidence."""
+16:     def result(status, reason):
+17:         return {"status": status, "reason": reason}
+18: 
+19:     if x.get("financial_unknown"):
+20:         return result("FAILED", "COMMITTED_STATE_UNVERIFIED")
+21:     if x.get("unknown_side_effects") or x.get("partial_publication"):
+22:         return result("FAILED", "RECOVERY_REQUIRED")
+23:     if x.get("binding_conflict") or x.get("artifact_corruption"):
+24:         return result("FAILED", "RECOVERY_REQUIRED")
+25:     if any(v == "FAILED" for v in x["slot_statuses"].values()):
+26:         return result("FAILED", "REQUIRED_CHILD_FAILED")
+27:     if any(v == "REJECTED" for v in x["slot_statuses"].values()):
+28:         return result("FAILED", "REQUIRED_STAGE_REJECTED")
+29:     if x.get("claimed_success") and not (
+30:         x.get("completion_verified") and x.get("terminal_commit_verified")
+31:     ):
+32:         return result("FAILED", "INTEGRITY_ERROR")
+33:     if x.get("cancel_intent") and not x.get("success_committed_first"):
+34:         if x.get("quiescent") and x.get("safe_cancel_verified"):
+35:             return result("CANCELLED", "SAFE_CANCELLATION_VERIFIED")
+36:         return result("RUNNING", "CANCEL_REQUESTED")
+37:     kind = x["kind"]
+38:     if kind == "research":
+39:         required = {"R", "RV"}
+40:     elif kind == "engineering_pipeline":
+41:         required = {"R", "PLAN", "B", "BV"}
+42:         if not x.get("resolved_plan_frozen"):
+43:             return result("FAILED", "INTEGRITY_ERROR") if x.get("claimed_success") else result("RUNNING", "PLAN_NOT_FROZEN")
+44:         if x["decisions"] < 1:
+45:             return result("FAILED", "NO_REQUIRED_DECISIONS")
+46:         required |= {f"P:{i}" for i in range(x["decisions"])}
+47:     elif kind == "replay":
+48:         required = {"SV", "E", "CV"}
+49:         if x["profile"] not in {"P5_NUMERICAL", "PUBLISHED_REF_PROJECTION"}:
+50:             return result("FAILED", "REPLAY_PROFILE_NOT_APPROVED")
+51:         if x["profile"] == "P5_NUMERICAL":
+52:             required |= {f"P:{i}" for i in range(x["decisions"])}
+53:     else:
+54:         return result("FAILED", "TASK_KIND_NOT_APPROVED")
+55:     registered = set(x["registry_slots"])
+56:     if registered != required or len(x["registry_slots"]) != len(registered):
+57:         return result("FAILED", "SLOT_SET_MISMATCH")
+58:     statuses = x["slot_statuses"]
+59:     if set(statuses) - required:
+60:         return result("FAILED", "SLOT_SET_MISMATCH")
+61:     if any(v == "FAILED" for v in statuses.values()):
+62:         return result("FAILED", "REQUIRED_CHILD_FAILED")
+63:     if any(v == "REJECTED" for v in statuses.values()):
+64:         return result("FAILED", "REQUIRED_STAGE_REJECTED")
+65:     complete = all(statuses.get(k) == "VERIFIED_SUCCESS" for k in required)
+66:     if statuses.get("B") == "VERIFIED_SUCCESS" and any(
+67:         statuses.get(k) != "VERIFIED_SUCCESS" for k in required if k.startswith("P:")
+68:     ):
+69:         return result("FAILED", "RECOVERY_REQUIRED")
+70:     if x.get("claimed_success") and not (
+71:         complete and x.get("completion_verified") and x.get("terminal_commit_verified")
+72:     ):
+73:         return result("FAILED", "INTEGRITY_ERROR")
+74:     if x.get("cancel_intent") and not x.get("success_committed_first"):
+75:         if x.get("quiescent") and x.get("safe_cancel_verified"):
+76:             return result("CANCELLED", "SAFE_CANCELLATION_VERIFIED")
+77:         return result("RUNNING", "CANCEL_REQUESTED")
+78:     if not complete:
+79:         return result("RUNNING", "REQUIRED_SLOTS_PENDING")
+80:     if not x.get("required_artifacts_verified") or not x.get("all_bindings_verified"):
+81:         return result("FAILED", "RECOVERY_REQUIRED")
+82:     if kind == "replay" and not x.get("comparison_verified"):
+83:         return result("FAILED", "REPLAY_COMPARISON_FAILED")
+84:     if not x.get("dispatch_closed"):
+85:         return result("RUNNING", "DISPATCH_NOT_CLOSED")
+86:     if not x.get("completion_verified") or not x.get("terminal_commit_verified"):
+87:         return result("RUNNING", "GLOBAL_COMPLETION_PENDING")
+88:     return result("SUCCEEDED", "ALL_REQUIRED_EVIDENCE_COMMITTED")
+89: 
+90: 
+91: def binding_example(x):
+92:     """Compare literal premises only; this does not authenticate a live worker or filesystem."""
+93:     if not x["has_context"]:
+94:         return {"action": "LEGACY_UNCHANGED", "task_terminal": False}
+95:     reject = {"action": "RECOVERY_REQUIRED", "task_terminal": False}
+96:     if not x["record_preexists"] or not x["initial_binding_valid"]:
+97:         return reject
+98:     if not x["unique_active_claim"] or x["handle_epoch"] != x["active_epoch"]:
+99:         return reject
+100:     if x["actual"] != x["expected"]:
+101:         return reject
+102:     root = str(PurePosixPath(x["parent_root"]) / "portfolio-runs")
+103:     if root != x["actual"]["physical_ledger_root"] or not x["root_enumeration_complete"]:
+104:         return reject
+105:     if not x["adapted_bytes_bound_before_call"]:
+106:         return reject
+107:     started, terminal = x["core_start_seq"], x["core_terminal_seq"]
+108:     if started is not None and x["registration_seq"] >= started:
+109:         return reject
+110:     if terminal is not None:
+111:         if started is None or terminal <= started or not x["terminal_verified"]:
+112:             return reject
+113:         return {"action": "REUSE_VERIFIED_SLOT", "task_terminal": False}
+114:     if started is None and x["slot_state"] == "BOUND" and x["no_core_side_effects_proven"]:
+115:         return {"action": "CALL_ONCE", "task_terminal": False}
+116:     return reject
+117: 
+118: 
+119: def evaluate(case):
+120:     if case["kind"] == "task_completion":
+121:         return completion_example(case["inputs"])
+122:     if case["kind"] == "nested_binding":
+123:         return binding_example(case["inputs"])
+124:     if case["kind"] == "numeric_rejection":
+125:         try:
+126:             numeric.reference({"kind": case["inputs"]["numeric_kind"], "inputs": case["inputs"]["fields"]})
+127:         except numeric.ReferenceNumberError as error:
+128:             return {"error": error.code, "raw_retained": True}
+129:         return {"error": None, "raw_retained": True}
+130:     return numeric.reference(case)
+131: 
+132: 
+133: def main():
+134:     parser = argparse.ArgumentParser()
+135:     parser.add_argument("output", type=Path)
+136:     args = parser.parse_args()
+137:     data = json.loads((ROOT / "SUPPLEMENTAL_CANDIDATES.json").read_bytes())
+138:     records = []
+139:     for case in data["cases"]:
+140:         try:
+141:             actual, error = evaluate(case), None
+142:         except Exception as exc:
+143:             actual, error = None, type(exc).__name__
+144:         records.append({"id": case["id"], "expected": case["expected"], "actual": actual,
+145:                         "error": error, "pass": error is None and type(actual) is type(case["expected"]) and actual == case["expected"]})
+146:     result = {"executor": "Codex developer G1 reference, not independent GPT Work audit",
+147:               "scope": "Finite design/numeric examples only; no actual TaskService/core/P6 UI/concurrency tests",
+148:               "groups": len(records), "passed": sum(r["pass"] for r in records),
+149:               "failed": sum(not r["pass"] for r in records), "records": records}
+150:     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
+151:     print(json.dumps({k: result[k] for k in ("scope", "groups", "passed", "failed")}))
+152:     assert not result["failed"]
+153: 
+154: 
+155: if __name__ == "__main__":
+156:     main()

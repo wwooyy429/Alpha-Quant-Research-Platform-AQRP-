@@ -1,0 +1,20 @@
+{
+  "scope": "Administrative receipt/archival verification only; no new product tests or independent G2",
+  "first_reader": {
+    "result": "INTERRUPTED / NO VALIDATION VERDICT",
+    "reason": "One git subprocess per old file was unnecessarily slow; only this owned administrative process was stopped. Original command/stdout/stderr retained; not recast as passed.",
+    "actual_child_exit": 4294967295,
+    "raw": "reception/archival-validation/interrupted-first-reader/"
+  },
+  "replacement": {
+    "result": "PASS",
+    "method": "Read one immutable fixed Git archive, retaining byte comparisons for every old file, current identity, exact incoming files and permissions.",
+    "raw": "reception/archival-validation/batched-reader-pass/",
+    "old_fixed_files": 5108,
+    "unchanged_old_files": 5097,
+    "changed_old_document_metadata_files": 11,
+    "protected_files": 5016
+  },
+  "current_snapshot_count_note": "The retained pre-commit snapshot counted365 new archive files before these extra administrative logs were added; final Git diff count is recorded externally/PR after commit. No self-referential final manifest.",
+  "product_or_original_audit_files_changed": false
+}

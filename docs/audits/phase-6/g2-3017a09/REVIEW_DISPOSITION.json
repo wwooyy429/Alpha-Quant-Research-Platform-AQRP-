@@ -1,0 +1,44 @@
+{
+  "schema": "aqrp-independent-review-disposition/1",
+  "phase": 6,
+  "fixed_review_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "reviewer": "GPT Work",
+  "verdict": "G2 PASS — RESTRICTED ENGINEERING SCOPE",
+  "requirements": 8,
+  "tiers": {
+    "MVP": 5,
+    "Competition Ready": 3
+  },
+  "findings": {
+    "WORK-P6-G2-001": "CLOSED — FIX VERIFIED",
+    "WORK-P6-G2-002": "CLOSED — FIX VERIFIED",
+    "WORK-P6-G2-003": "CLOSED — FIX VERIFIED",
+    "DEV-P6-004": "CLOSED — FIX VERIFIED within restricted engineering scope",
+    "DEV-P6-002": "CLOSED — FIX VERIFIED (connection lifetime)",
+    "DEV-P6-003": "CLOSED — engineering harness FIX VERIFIED; original native cause NOT VERIFIED",
+    "DEV-P6-001": "CLOSED — FIX VERIFIED (prior independent disposition maintained)"
+  },
+  "new_blocking_findings": [],
+  "independent_report": "received/REPORT.md",
+  "original_receipt": "received/RECEIPT.json",
+  "user_phase_acceptance": false,
+  "released": false,
+  "main_merge_tag_authorized": false,
+  "P7_authorized": false,
+  "WI-R2-001": "DEFERRED / NOT VERIFIED",
+  "WI-R2-002": "DEFERRED / NOT VERIFIED",
+  "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+  "financial_approval": "NONE",
+  "formal_Test": "NOT_RUN",
+  "full_historical_host": "NOT VERIFIED beyond accepted package/lock/oldRef/result projection",
+  "DEV-P6-003_original_native_cause": "NOT VERIFIED",
+  "documentation_commit": "Separate archival SHA recorded in PR and external verification; not automatically independently audited.",
+  "remaining_release_conditions": [
+    "Explicit user Phase6 acceptance",
+    "Separate user merge/baseline/tag authorization",
+    "Verify archival HEAD differs from reviewed SHA only in disclosed documentation/metadata; applicable checks",
+    "After authorized merge, verify final content, run required clean SDK/regressions, and verify main/baseline/new tag traceability; preserve old tags"
+  ],
+  "stage7": "Separate next-stage authorization and gates; no automatic startup",
+  "deferred_scope": "Deferred items remain deferred; this engineering G2 PASS does not close them."
+}

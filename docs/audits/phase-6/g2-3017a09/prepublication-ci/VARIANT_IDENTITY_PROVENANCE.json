@@ -1,0 +1,1170 @@
+{
+  "scope": "Stdlib-only independent recomputation of public engineering identity hashes; no product SDK execution or scanner bypass. Developer administrative evidence, not independent GPT Work review.",
+  "source_h": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee",
+  "reviewed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "canonical_spec_source": "src/aqrp/services/task_campaigns.py::variant_key and core/canonical.py",
+  "findings": 54,
+  "recomputed_matches": 54,
+  "unique_config_digests": 241,
+  "raw_engineering_files_read": 16,
+  "classification": [
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/cli-SYN_CORE4.stdout.log",
+      "line": 1,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/browser_tasks/0/frozen_request/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/1/request/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_CORE4.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/cli-SYN_TAIL4.stdout.log",
+      "line": 1,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/browser_tasks/1/frozen_request/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/2/request/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_TAIL4.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/cli-SYN_U.stdout.log",
+      "line": 1,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/0/request/payload/research",
+          "config_source_sha256": "d854f97090d1863b1b83f0b32d133f2a1d8ca2f4c0b3d07f4f0564932c225876",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_U.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "d854f97090d1863b1b83f0b32d133f2a1d8ca2f4c0b3d07f4f0564932c225876",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2034,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/14991dd38e972a15849ec1526891596dfd13f3c97dbe296c25473cc0e9314639",
+          "config_source_sha256": "065b40065662b860fc023729716236af21355e60b04a0c3aa913b5b5d1c99c58",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/14991dd38e972a15849ec1526891596dfd13f3c97dbe296c25473cc0e9314639",
+          "config_source_sha256": "065b40065662b860fc023729716236af21355e60b04a0c3aa913b5b5d1c99c58",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2131,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "9dea7582947fdd1c3284572894a37e6694bec1b438093d909f94cebc57d19397",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/late_plan/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "17b94f054db388838e01e94dfb64591d8001c110811e077ab0e787e1a70e20c3",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "9dea7582947fdd1c3284572894a37e6694bec1b438093d909f94cebc57d19397",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\5be5b85aef1a1b08185dc9cee010f4e3c251c7bbe6ab23c8f83fd67a4000edcd.json",
+          "json_path": "/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "17b94f054db388838e01e94dfb64591d8001c110811e077ab0e787e1a70e20c3",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2228,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/1f79ee5321ab96df339f864443f7af6cf796b5d50c7301662f610a53d3281102",
+          "config_source_sha256": "996c5f3d76ed3fe117b703c8902dad0c4980e4b33719767f51a31230669b1f0a",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/1f79ee5321ab96df339f864443f7af6cf796b5d50c7301662f610a53d3281102",
+          "config_source_sha256": "996c5f3d76ed3fe117b703c8902dad0c4980e4b33719767f51a31230669b1f0a",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2325,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/ccab2da13ab72226da0f7709ce8b52062cabc6f5932c28081f930491423149b6",
+          "config_source_sha256": "5a650e53ae32f74c69ede2c6ae27c721a6a8f952c4fa203116cd01f51a2c3d50",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/ccab2da13ab72226da0f7709ce8b52062cabc6f5932c28081f930491423149b6",
+          "config_source_sha256": "5a650e53ae32f74c69ede2c6ae27c721a6a8f952c4fa203116cd01f51a2c3d50",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2422,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/3fdfe9dc3e0a336b7bb7fc1190583b2cf6bb99fcd802cf917c8c085c6bb7b0d0",
+          "config_source_sha256": "44186362b9bdb25466166adae46573b531f4a6ade852e3b06edf85e1b6a906a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/3fdfe9dc3e0a336b7bb7fc1190583b2cf6bb99fcd802cf917c8c085c6bb7b0d0",
+          "config_source_sha256": "44186362b9bdb25466166adae46573b531f4a6ade852e3b06edf85e1b6a906a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2519,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/222f347da6760d63f5d3d978e5d30a6a50cdd23425954fadb4b5bf5df330bd8d",
+          "config_source_sha256": "cfefbec2d56d7ea0cbc0775075f3f6e775d1390023404687e9b73974d17d8995",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/222f347da6760d63f5d3d978e5d30a6a50cdd23425954fadb4b5bf5df330bd8d",
+          "config_source_sha256": "cfefbec2d56d7ea0cbc0775075f3f6e775d1390023404687e9b73974d17d8995",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2616,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/275517a5c8adc018669f74f0d38dae6ff56cb5bd71e96e9d63c58b8c1e33c8a5",
+          "config_source_sha256": "c207b759c1d8c92185c2fd6081493bfdde51e6413712bb96b70a938d568e8d2d",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/275517a5c8adc018669f74f0d38dae6ff56cb5bd71e96e9d63c58b8c1e33c8a5",
+          "config_source_sha256": "c207b759c1d8c92185c2fd6081493bfdde51e6413712bb96b70a938d568e8d2d",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2713,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/b179b12cc01b8eca06d90b8a0e9fae9d92e8fafdbee49910ab7371a0a36937d9",
+          "config_source_sha256": "7d1000535f6324febf31ab3672a5d89c780ca3d616f1a998d90235f54be3b73b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/b179b12cc01b8eca06d90b8a0e9fae9d92e8fafdbee49910ab7371a0a36937d9",
+          "config_source_sha256": "7d1000535f6324febf31ab3672a5d89c780ca3d616f1a998d90235f54be3b73b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2810,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/d773f7a245531b9c5049698e6e15b11a7311259d09c387ec0def30d22833c68c",
+          "config_source_sha256": "aac7741860cab8006d626fc15c5b7d5595c3fa022356121f4482a55154bdf0f2",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/d773f7a245531b9c5049698e6e15b11a7311259d09c387ec0def30d22833c68c",
+          "config_source_sha256": "aac7741860cab8006d626fc15c5b7d5595c3fa022356121f4482a55154bdf0f2",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 2907,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/dea6a8b8327694a8a18c61568c55c021fd5f7e331b3f8fcd9ccddfcf7c72eb14",
+          "config_source_sha256": "42201ee4426f27913d99920bf65f91a71ab98d789960d34d8930939b860535d1",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/dea6a8b8327694a8a18c61568c55c021fd5f7e331b3f8fcd9ccddfcf7c72eb14",
+          "config_source_sha256": "42201ee4426f27913d99920bf65f91a71ab98d789960d34d8930939b860535d1",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3004,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/a062df60a1307005f0226981f4966dcb7568597eb819f38b0759e8dc96b97c71",
+          "config_source_sha256": "99cf06e7c4ffdfcb10ef70e8bcbc051314ee359e97d7301810802ac8e2f67cac",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/a062df60a1307005f0226981f4966dcb7568597eb819f38b0759e8dc96b97c71",
+          "config_source_sha256": "99cf06e7c4ffdfcb10ef70e8bcbc051314ee359e97d7301810802ac8e2f67cac",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 37,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/browser_tasks/0/frozen_request/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/1/request/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_CORE4.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 2847,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/browser_tasks/1/frozen_request/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/2/request/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_TAIL4.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 3096,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/0/request/payload/research",
+          "config_source_sha256": "d854f97090d1863b1b83f0b32d133f2a1d8ca2f4c0b3d07f4f0564932c225876",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_U.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "d854f97090d1863b1b83f0b32d133f2a1d8ca2f4c0b3d07f4f0564932c225876",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3101,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/bea87a9663f90d007c62cd34dd4cef073b4f796195555597c30c839aaae86013",
+          "config_source_sha256": "37815a49640c568d9b1c4f7a40992069e5a738c229caa83e2cfdf7aae82b17a0",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/bea87a9663f90d007c62cd34dd4cef073b4f796195555597c30c839aaae86013",
+          "config_source_sha256": "37815a49640c568d9b1c4f7a40992069e5a738c229caa83e2cfdf7aae82b17a0",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3198,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/a9ced8d478758d802db4e5d0350e7cb74c25b4721852791aeeb6f6e28bde5c94",
+          "config_source_sha256": "ac448e54e6e6e2a8979e7273a828ed3d82ade6c21c8e69691fcbeb5c089c9104",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/a9ced8d478758d802db4e5d0350e7cb74c25b4721852791aeeb6f6e28bde5c94",
+          "config_source_sha256": "ac448e54e6e6e2a8979e7273a828ed3d82ade6c21c8e69691fcbeb5c089c9104",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3225,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/5d34ed84b64f26e7cf79abfa1b75c7ed17b35d03a7cb2da2b8f9986d653e4e62",
+          "config_source_sha256": "d713a83a879a7c7b83e818291503c0b1d0b8c11a30982f53e1bb06c9545b0585",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/5d34ed84b64f26e7cf79abfa1b75c7ed17b35d03a7cb2da2b8f9986d653e4e62",
+          "config_source_sha256": "d713a83a879a7c7b83e818291503c0b1d0b8c11a30982f53e1bb06c9545b0585",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3392,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "9dea7582947fdd1c3284572894a37e6694bec1b438093d909f94cebc57d19397",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/late_plan/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "17b94f054db388838e01e94dfb64591d8001c110811e077ab0e787e1a70e20c3",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "9dea7582947fdd1c3284572894a37e6694bec1b438093d909f94cebc57d19397",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\5be5b85aef1a1b08185dc9cee010f4e3c251c7bbe6ab23c8f83fd67a4000edcd.json",
+          "json_path": "/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "17b94f054db388838e01e94dfb64591d8001c110811e077ab0e787e1a70e20c3",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3416,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/14991dd38e972a15849ec1526891596dfd13f3c97dbe296c25473cc0e9314639",
+          "config_source_sha256": "065b40065662b860fc023729716236af21355e60b04a0c3aa913b5b5d1c99c58",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/14991dd38e972a15849ec1526891596dfd13f3c97dbe296c25473cc0e9314639",
+          "config_source_sha256": "065b40065662b860fc023729716236af21355e60b04a0c3aa913b5b5d1c99c58",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3449,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "9dea7582947fdd1c3284572894a37e6694bec1b438093d909f94cebc57d19397",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/late_plan/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "17b94f054db388838e01e94dfb64591d8001c110811e077ab0e787e1a70e20c3",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "9dea7582947fdd1c3284572894a37e6694bec1b438093d909f94cebc57d19397",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\5be5b85aef1a1b08185dc9cee010f4e3c251c7bbe6ab23c8f83fd67a4000edcd.json",
+          "json_path": "/variants/7e83137431c44de55dcf21c7bc6066d79e1e8431d12d0e4bc5d45e8edb2080df",
+          "config_source_sha256": "17b94f054db388838e01e94dfb64591d8001c110811e077ab0e787e1a70e20c3",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3482,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/1f79ee5321ab96df339f864443f7af6cf796b5d50c7301662f610a53d3281102",
+          "config_source_sha256": "996c5f3d76ed3fe117b703c8902dad0c4980e4b33719767f51a31230669b1f0a",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/1f79ee5321ab96df339f864443f7af6cf796b5d50c7301662f610a53d3281102",
+          "config_source_sha256": "996c5f3d76ed3fe117b703c8902dad0c4980e4b33719767f51a31230669b1f0a",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3515,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/ccab2da13ab72226da0f7709ce8b52062cabc6f5932c28081f930491423149b6",
+          "config_source_sha256": "5a650e53ae32f74c69ede2c6ae27c721a6a8f952c4fa203116cd01f51a2c3d50",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/ccab2da13ab72226da0f7709ce8b52062cabc6f5932c28081f930491423149b6",
+          "config_source_sha256": "5a650e53ae32f74c69ede2c6ae27c721a6a8f952c4fa203116cd01f51a2c3d50",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3548,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/3fdfe9dc3e0a336b7bb7fc1190583b2cf6bb99fcd802cf917c8c085c6bb7b0d0",
+          "config_source_sha256": "44186362b9bdb25466166adae46573b531f4a6ade852e3b06edf85e1b6a906a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/3fdfe9dc3e0a336b7bb7fc1190583b2cf6bb99fcd802cf917c8c085c6bb7b0d0",
+          "config_source_sha256": "44186362b9bdb25466166adae46573b531f4a6ade852e3b06edf85e1b6a906a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3581,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/222f347da6760d63f5d3d978e5d30a6a50cdd23425954fadb4b5bf5df330bd8d",
+          "config_source_sha256": "cfefbec2d56d7ea0cbc0775075f3f6e775d1390023404687e9b73974d17d8995",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/222f347da6760d63f5d3d978e5d30a6a50cdd23425954fadb4b5bf5df330bd8d",
+          "config_source_sha256": "cfefbec2d56d7ea0cbc0775075f3f6e775d1390023404687e9b73974d17d8995",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3614,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/275517a5c8adc018669f74f0d38dae6ff56cb5bd71e96e9d63c58b8c1e33c8a5",
+          "config_source_sha256": "c207b759c1d8c92185c2fd6081493bfdde51e6413712bb96b70a938d568e8d2d",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/275517a5c8adc018669f74f0d38dae6ff56cb5bd71e96e9d63c58b8c1e33c8a5",
+          "config_source_sha256": "c207b759c1d8c92185c2fd6081493bfdde51e6413712bb96b70a938d568e8d2d",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3647,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/b179b12cc01b8eca06d90b8a0e9fae9d92e8fafdbee49910ab7371a0a36937d9",
+          "config_source_sha256": "7d1000535f6324febf31ab3672a5d89c780ca3d616f1a998d90235f54be3b73b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/b179b12cc01b8eca06d90b8a0e9fae9d92e8fafdbee49910ab7371a0a36937d9",
+          "config_source_sha256": "7d1000535f6324febf31ab3672a5d89c780ca3d616f1a998d90235f54be3b73b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 3333,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/browser_tasks/0/frozen_request/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/1/request/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_CORE4.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "bd23615706611c121a13241534712628abf1323cc6dbbed612fbde88d455867b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+      "line": 3570,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/browser_tasks/1/frozen_request/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json",
+          "json_path": "/CLI_SDK_canonical_parity/2/request/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_TAIL4.stdout.log",
+          "json_path": "/payload/research",
+          "config_source_sha256": "dd5df7cfce84b4fe013fd832194828d82d9310a031b8f2197d57dec354ae07a8",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 124,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e",
+          "config_source_sha256": "d9b1362aaeeca1193084f8b7442aac68861d6782c1220a260f957b6fea970cfc",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 232,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e",
+          "config_source_sha256": "d9b1362aaeeca1193084f8b7442aac68861d6782c1220a260f957b6fea970cfc",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 267,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e",
+          "config_source_sha256": "d9b1362aaeeca1193084f8b7442aac68861d6782c1220a260f957b6fea970cfc",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 620,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/2b3e8f21dc8d64e04409b79a7226ed9ff6712b9be2115dd5143b9aa2033ef715",
+          "config_source_sha256": "c1cf558d7d554b054eb20cb3b45f2c1cc59e7326fc674dbb5e89e798f307bae5",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 655,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/2b3e8f21dc8d64e04409b79a7226ed9ff6712b9be2115dd5143b9aa2033ef715",
+          "config_source_sha256": "c1cf558d7d554b054eb20cb3b45f2c1cc59e7326fc674dbb5e89e798f307bae5",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1008,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/30389c1258a737c0fe275a65c7b5dccfcfac22e7b2e10ff63af0eeeb1124a902",
+          "config_source_sha256": "752e8e5350198f33389de008bdb55a79926123ba91e7ac21d1935fb8d55deb4b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1043,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/30389c1258a737c0fe275a65c7b5dccfcfac22e7b2e10ff63af0eeeb1124a902",
+          "config_source_sha256": "752e8e5350198f33389de008bdb55a79926123ba91e7ac21d1935fb8d55deb4b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1395,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/c13b2090d0d98ef55066c73d18fff4b6000bc01f785bedd8f31b82e0a918b676",
+          "config_source_sha256": "5d5a8a6e63d82597461c094f841f121fc9cac554d34dfd9c836a45fbef29902d",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 1430,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/c13b2090d0d98ef55066c73d18fff4b6000bc01f785bedd8f31b82e0a918b676",
+          "config_source_sha256": "5d5a8a6e63d82597461c094f841f121fc9cac554d34dfd9c836a45fbef29902d",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 2298,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/0bebcd68be077e472733d7f8845b329bae45e22d657f57fbc14450685812735d",
+          "config_source_sha256": "bce986c8913c7bd073aba0e9a11e3dfb0c927859afd8fcb281b413bbf1a03628",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json",
+      "line": 2334,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\research-campaigns\\f78f0b4f70c95e437d69226ed2f6ac899c7a984588a0d74233c4a6af55378b83.json",
+          "json_path": "/variants/0bebcd68be077e472733d7f8845b329bae45e22d657f57fbc14450685812735d",
+          "config_source_sha256": "bce986c8913c7bd073aba0e9a11e3dfb0c927859afd8fcb281b413bbf1a03628",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "line": 166,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\p6-browser-3017a09-e1d8c2b5-c339-40b6-97f2-193688a0d89d\\controls\\workspace\\research-campaigns\\f5add74e8652fded7ed75ab628d6b6d6801852d1fe39aa7fdd375acc7b88935a.json",
+          "json_path": "/variants/dbed74c391147a600e9f447bb49bc4b39e162dc7de8dfa563b7ba8f71b0eb580",
+          "config_source_sha256": "f5ed4971f7c6fbb8225d634e952c666585823729dadf351233eb01ec04eefe64",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "line": 2124,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\p6-browser-3017a09-e1d8c2b5-c339-40b6-97f2-193688a0d89d\\controls\\workspace\\research-campaigns\\f5add74e8652fded7ed75ab628d6b6d6801852d1fe39aa7fdd375acc7b88935a.json",
+          "json_path": "/variants/a5a516651f57df382f1eca2966ef19b8dff618e5f36e514335b377b7b0eea271",
+          "config_source_sha256": "20c4f266317830f03eead961d04888e19913e083f50b22af55ddd2df7bb327c4",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3680,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/d773f7a245531b9c5049698e6e15b11a7311259d09c387ec0def30d22833c68c",
+          "config_source_sha256": "aac7741860cab8006d626fc15c5b7d5595c3fa022356121f4482a55154bdf0f2",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/d773f7a245531b9c5049698e6e15b11a7311259d09c387ec0def30d22833c68c",
+          "config_source_sha256": "aac7741860cab8006d626fc15c5b7d5595c3fa022356121f4482a55154bdf0f2",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3713,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/dea6a8b8327694a8a18c61568c55c021fd5f7e331b3f8fcd9ccddfcf7c72eb14",
+          "config_source_sha256": "42201ee4426f27913d99920bf65f91a71ab98d789960d34d8930939b860535d1",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/dea6a8b8327694a8a18c61568c55c021fd5f7e331b3f8fcd9ccddfcf7c72eb14",
+          "config_source_sha256": "42201ee4426f27913d99920bf65f91a71ab98d789960d34d8930939b860535d1",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3746,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/a062df60a1307005f0226981f4966dcb7568597eb819f38b0759e8dc96b97c71",
+          "config_source_sha256": "99cf06e7c4ffdfcb10ef70e8bcbc051314ee359e97d7301810802ac8e2f67cac",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/a062df60a1307005f0226981f4966dcb7568597eb819f38b0759e8dc96b97c71",
+          "config_source_sha256": "99cf06e7c4ffdfcb10ef70e8bcbc051314ee359e97d7301810802ac8e2f67cac",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3779,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/1/plan/variants/bea87a9663f90d007c62cd34dd4cef073b4f796195555597c30c839aaae86013",
+          "config_source_sha256": "37815a49640c568d9b1c4f7a40992069e5a738c229caa83e2cfdf7aae82b17a0",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\registered14-execution\\research-campaigns\\18b6ba9d9883f866cc909c0a5756e39b58eca2f50c20624b3f3340592c784316.json",
+          "json_path": "/variants/bea87a9663f90d007c62cd34dd4cef073b4f796195555597c30c839aaae86013",
+          "config_source_sha256": "37815a49640c568d9b1c4f7a40992069e5a738c229caa83e2cfdf7aae82b17a0",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 3984,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+          "json_path": "/records/2/plan/variants/d2afbbcd5f0cb476c21448e315177c58d89961862ee87d1778a40409b43eba4b",
+          "config_source_sha256": "58ff71510a5f727f0b7739664b722d8e1fa57bd5c0b4707b5624e2210e01b2a9",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\cross-plan-contamination\\research-campaigns\\e5396a5787cfb54f2f489fc64a419526b04056feae5dd1785217ec70f4dc8b18.json",
+          "json_path": "/variants/d2afbbcd5f0cb476c21448e315177c58d89961862ee87d1778a40409b43eba4b",
+          "config_source_sha256": "58ff71510a5f727f0b7739664b722d8e1fa57bd5c0b4707b5624e2210e01b2a9",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4042,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\concurrent-no-refunds\\research-campaigns\\7d12955c590b9f600ec5834ec7ef72a98ecd8ed41ab2e475982cbd54cc5e2d94.json",
+          "json_path": "/variants/813a8c2df6aa40726b2c3d53bc040b263d10a0cc904b8b0d1a3a2ac686551342",
+          "config_source_sha256": "eefd7cd2a5649bb5cd97e3a3a9d0da7952d9581ca77842cd9f82eac222a0023b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4076,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\concurrent-no-refunds\\research-campaigns\\7d12955c590b9f600ec5834ec7ef72a98ecd8ed41ab2e475982cbd54cc5e2d94.json",
+          "json_path": "/variants/813a8c2df6aa40726b2c3d53bc040b263d10a0cc904b8b0d1a3a2ac686551342",
+          "config_source_sha256": "eefd7cd2a5649bb5cd97e3a3a9d0da7952d9581ca77842cd9f82eac222a0023b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4110,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\concurrent-no-refunds\\research-campaigns\\7d12955c590b9f600ec5834ec7ef72a98ecd8ed41ab2e475982cbd54cc5e2d94.json",
+          "json_path": "/variants/813a8c2df6aa40726b2c3d53bc040b263d10a0cc904b8b0d1a3a2ac686551342",
+          "config_source_sha256": "eefd7cd2a5649bb5cd97e3a3a9d0da7952d9581ca77842cd9f82eac222a0023b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4144,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\concurrent-no-refunds\\research-campaigns\\7d12955c590b9f600ec5834ec7ef72a98ecd8ed41ab2e475982cbd54cc5e2d94.json",
+          "json_path": "/variants/813a8c2df6aa40726b2c3d53bc040b263d10a0cc904b8b0d1a3a2ac686551342",
+          "config_source_sha256": "eefd7cd2a5649bb5cd97e3a3a9d0da7952d9581ca77842cd9f82eac222a0023b",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    },
+    {
+      "path": "docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "line": 4179,
+      "rule": "generic-api-key",
+      "field": "variant_key",
+      "independent_recomputation_match": true,
+      "value_not_disclosed": true,
+      "provenance": [
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\concurrent-no-refunds\\research-campaigns\\5ea482fd42f92f98fb6ba6000118b5be61f14041630c9dc6a558c2d6675845ff.json",
+          "json_path": "/variants/0b1a86b215c7f0dc2fcf39ee670c3c97dc32af03dec3e724376d835bffb64a78",
+          "config_source_sha256": "8e5f1b1e950746c1455da6b179c1d3b5727b236cc4dc90d29d8da1d7e66efcd3",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        },
+        {
+          "origin": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024-retry\\concurrent-no-refunds\\research-campaigns\\7d12955c590b9f600ec5834ec7ef72a98ecd8ed41ab2e475982cbd54cc5e2d94.json",
+          "json_path": "/variants/0b1a86b215c7f0dc2fcf39ee670c3c97dc32af03dec3e724376d835bffb64a78",
+          "config_source_sha256": "f03e1468f694b841819c31533413d9bb5ada2e04749b6ab7a1767db0a9861a71",
+          "computation": "SHA256(UTF8 JSON sort_keys=True separators=(comma,colon) ensure_ascii=False allow_nan=False of config excluding family)"
+        }
+      ]
+    }
+  ]
+}

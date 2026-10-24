@@ -89,7 +89,7 @@ def hypotheses(config):
                 "stage": "composite",
             }
         )
-    return [
+    result = [
         {
             **c,
             "score_key": c["hypothesis"],
@@ -99,6 +99,15 @@ def hypotheses(config):
         for c in bases
         for h in config["horizons"]
     ]
+    aliases = config.get("family", {}).get("hypothesis_aliases")
+    if aliases is not None:
+        if set(aliases) != {h["hypothesis"] for h in result} or any(
+            type(v) is not str or not v for v in aliases.values()
+        ):
+            raise ContractError("INVALID_CAMPAIGN_HYPOTHESIS_ALIASES")
+        for h in result:
+            h["hypothesis"] = aliases[h["hypothesis"]]
+    return result
 
 
 def measurements(stages, labels, config):
@@ -184,12 +193,12 @@ def hypothesis_definition(candidate, config, snapshot_hash, exposure_hash, cover
     )
 
 
-def research(request, output_root):
+def research(request, output_root, *, task_context=None):
     """One shared service for CLI and SDK. Formal Test is a separate sealed entry."""
-    return _research(request, output_root)
+    return _research(request, output_root, task_context=task_context)
 
 
-def _research(request, output_root, *, operator_claims=None):
+def _research(request, output_root, *, operator_claims=None, task_context=None):
     config = json.loads(request.config)
     ledger = ExperimentLedger(output_root)
     bundle = digest(bundle_manifest())
@@ -205,8 +214,12 @@ def _research(request, output_root, *, operator_claims=None):
         "seed": config.get("seed"),
         "cost_rules": "NOT_APPLICABLE_P3_RESEARCH_NO_EXECUTION_ORDERS",
     }
-    run_id = ledger.start(config, lineage)
+    if task_context is not None and config.get("family", {}).get("campaign"):
+        lineage["campaign_control"] = task_context.research_attempt()
+    run_id = ledger.start(config, lineage, task_context=task_context)
     try:
+        if task_context is not None:
+            task_context.checkpoint()
         verify_runtime(lineage["environment"])
         validate_splits(config["splits"])
         if config["purpose"] not in ("DEVELOPMENT", "ENGINEERING_DEMO") and not (
@@ -310,6 +323,8 @@ def _research(request, output_root, *, operator_claims=None):
         cached = ledger.cache_get(cache_key)
         if cached is None:
             for decision in decisions:
+                if task_context is not None:
+                    task_context.checkpoint()
                 members = universe_at(
                     config["universe_id"], decision["decision_time"], request.snapshot
                 )
@@ -380,6 +395,8 @@ def _research(request, output_root, *, operator_claims=None):
             ledger.cache_put(cache_key, cached)
         else:
             ledger.event(run_id, "CACHE_HIT", {"key_hash": digest(cache_key)})
+        if task_context is not None:
+            task_context.checkpoint()
         ledger.artifact(run_id, "engine.json", cached["engine_evidence"])
         stages = pipeline(
             pd.DataFrame(cached["rows"]),
@@ -500,7 +517,7 @@ def _research(request, output_root, *, operator_claims=None):
         multiplicity.update(
             hypotheses=declarations,
             contaminated=bool(family["duplicate_hypotheses"])
-            or any(t["repeat_of"] for t in trials),
+            or any(t["repeat_of"] or t.get("cross_campaign_data_access", False) for t in trials),
         )
         for name, payload in (
             ("labels", labels),
@@ -577,6 +594,8 @@ def _research(request, output_root, *, operator_claims=None):
                 "sha256": hashlib.sha256(document.encode()).hexdigest(),
             },
         )
+        if task_context is not None:
+            task_context.checkpoint()
         ledger.finish(run_id, "SUCCEEDED")
         return {"run_id": run_id, "manifest": ledger.verify(run_id), "report": serial(report)}
     except BaseException as exc:

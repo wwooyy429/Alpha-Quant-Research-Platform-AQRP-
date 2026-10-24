@@ -1,0 +1,258 @@
+docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md
+1: # 持久化任务、取消与恢复设计
+2: 
+3: TaskService固定采用stdlib SQLite任务库（BEGIN IMMEDIATE事务、workspace+idempotency_key唯一约束、WAL、同步提交）管理分配/claim/任务事件与幂等绑定；底层P3/P4/P5实验账本仍是核心执行及财务事实来源。任务元数据目录彼此独立，但P3/P4/P5使用可信workspace预配置的共享ledger根，**不能为每个任务另开P3研究家族/试验预算库**。SQLite原始请求blob/事件/claim和导出不可变任务回执都保留，丢失或冲突时失败关闭，不推定索引可无损重建。
+4: 
+5: 状态总序：QUEUED → RUNNING → SUCCEEDED / FAILED / CANCELLED；RUNNING可先进入CANCEL_REQUESTED，该状态不等于已经取消。排队时取消在未启动副作用前成为CANCELLED；worker已在运行时先持久化取消意图，只在安全检查点响应。已有SUCCEEDED或其他终态后取消返回TOO_LATE，不回写终态。未知财务状态仍是FAILED+COMMITTED_STATE_UNVERIFIED，绝不能认证CANCELLED且known=true。
+6: 
+7: `(workspace,idempotency_key)`通过OS互斥和原子持久化绑定canonical config_hash，事务内分配唯一task_id与任务元数据目录；同key同hash所有重试返回原task，不再次运行。同key不同hash明确IDEMPOTENCY_CONFLICT。相同配置但新key属于新实验，必须记录试验次数/家族，不能吞掉重复研究记录。并发10次同key也只能一个worker claim；Streamlit rerun/刷新在未显式submit时不得提交新任务，表单提交与幂等键分配分开。
+8: 
+9: worker在调用核心前提交claim/启动意图和输入证据，事务内先登记每个子阶段唯一slot及预分配UUID run_id（动态调仓slot也先登记再调用）。拟为ExperimentLedger.start和P3/P4/P5应用服务增加可选trusted TaskContext：只可由TaskService从任务库重建并验证，原无context调用保持随机UUID及原行为；网页不可传入或替换。核心初始记录绑定task_id/slot/config_hash，目录独占创建，禁止覆盖既有run。宕机恢复首先核验任务库事件、claim/预分配run_id与共享ledger根中的真实核心账本，而不依据pid存活或mtime。若核心已形成合法终态且请求/配置/来源完全匹配，只恢复原run映射和Task终态，不再调用服务。若尚无核心目录/初始事件且事务claim可确认未执行，才可重领；出现STARTED/磁盘prefix不明、缺绑定或多run歧义时进入FAILED/RECOVERY_REQUIRED，不自动重跑、伪造成功或丢失已提交Fill。用户显式新实验需新key并关联失败原task。
+10: 
+11: 取消扩展只允许向现有服务加入可选的协作检查点参数（旧调用默认无回调），在P3候选/期限或处理阶段之间、P5完整原子事务边界响应。提交内不得注入异步异常或强制kill并伪称取消；已提交Fill后先执行现有完整重读对账/终态流程。窗口最坏取消延迟是一笔原子事务或已登记阶段的完成时间，不虚构毫秒SLA。若进程真实崩溃则按恢复协议核对持久化前缀，不能把内存旧余额展示为已知。
+12: 
+13: 失败保留首次异常、磁盘提交、任务/核心身份和所有失败工件；新的恢复事件追加，不改原日志、状态或旧hash。UI显示request_cancelled与actual_terminal分离，失败/取消不复用旧成功图表。G2必须在实际核心服务和磁盘中注入提交前/后、映射前/后、取消/成功竞争、数据库恢复等故障，模型测试只作补充，不是实现证明。
+14: 
+15: 所有新key产生的真实重复试验、取消/失败后的新实验都继续写入同一P3家族/次数/预算登记，已有试验不因取消退款或换task目录而消失。TaskContext只解决所有权/来源/UUID预分配，不授金融权限，也不修改金融计算。G2必须额外验证跨任务相同家族计数、取消后的保留与预算耗尽拒绝。
+docs/audits/phase-6/DEPENDENCY_AND_COMPATIBILITY_PLAN.md
+1: # 固定依赖候选及兼容影响（尚未安装/批准）
+2: 
+3: 元数据候选：Streamlit==1.66.1、Plotly==7.1.0；来源与轮子SHA见DEPENDENCY_METADATA_CANDIDATES。使用已验收uv0.13.4、Python3.13.16目标分别解析Windows x64与Linux x64，得到51/50个包的完整hash候选锁，原21个通用core依赖及Windows colorama版本逐项固定，未升级NumPy/Pandas/PyArrow/DuckDB或既有测试/构建工具。
+4: 
+5: **当前仅metadata解析成功，不是实际安装、浏览器、双OS UI或安全验收通过。** UI_CANDIDATE_*.lock只在审查资料目录，不替换根requirements.lock。已从各组合解析候选中导出UI_EXTENSION_WINDOWS/LINUX.lock，各恰好29个额外包、不含任何core包项；实现授权后使用原core锁 + 对应扩展锁安装，避免重复core条目扩大原批准wheel哈希集合（保留core锁原字节），`--require-hashes --only-binary=:all:`干净安装，逐包核真实兼容wheel、官方SHA、Requires-Python、pip check与实际import/版本；失败禁止静默降级/换版本。G1候选锁变动需新固定SHA，不能在实现时漂移latest。
+6: 
+7: 拟采用同一Python3.13.16工程虚拟环境的core+UI扩展组合，避免第二套数值内核。core原锁和core环境核验仍按原精确包执行；TaskService另记录并校验完整UI扩展distribution/version/RECORD与扩展锁hash，绑定任务/图表/报告来源，不能把旧core manifest冒充完整UI环境身份。额外UI包不得授予因子或金融权限。不启用Streamlit云部署、auth/pdf/SQL/Snowflake等extras，也不引入第二回测引擎或新Web微服务。
+8: 
+9: 实施期预期允许的包装兼容变更需独立审查：pyproject的可选UI依赖/入口、src/aqrp/__init__.py版本、当前bundle准入收据、tools/ci.py的新增UI验证/工件选择、覆盖门槛适配、安装元数据测试、新UI扩展锁和新增ui/services/任务CLI模块。原FactorRef不可重写；旧wheel/锁/原答案保留。root core lock/admission LOCK_HASH保持原值；若实际设计需改变，则作为契约/兼容变更重新提交预审，不能悄悄放宽verify_runtime或reviewed_policy。
+10: 
+11: 明确的既有服务兼容适配为：experiments/ledger.py 的可选可信预分配run_id/TaskContext，以及services/research.py、portfolio/service.py、services/backtest.py的可选context转交和协作取消检查点。它们必须校验持久化task/slot所有权，不能信任网页伪造context；属于应用编排，禁止改变数值计算。上述适配（见TASK_AND_RECOVERY_CONTRACT），旧调用不传参数应完全保持行为和结果；必须列出每处差异与原SDK及G2故障回归。P1/P2算法、P3统计/标签/OOS、P4构造/风险、P5订单/时序/逐笔账本/绩效不在UI重写范围。不得删除旧完整性、安全门禁或降低覆盖率来迁就界面。
+12: 
+13: 主要资料：[Streamlit发行](https://pypi.org/project/streamlit/1.66.1/)、[Plotly发行](https://pypi.org/project/plotly/7.1.0/)、[AppTest官方说明](https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest)、[AppTest覆盖范围](https://docs.streamlit.io/develop/concepts/app-testing/cheat-sheet)。AppTest是模拟执行检查页面元素；不把它写成实际浏览器/网络或部署验证。
+docs/audits/phase-6/INTERFACE_DRAFT.md
+1: # 拟新增薄适配接口（设计签名，尚未实现）
+2: 
+3: 实际既有核心：`ResearchRequest.create(config, snapshot, exposures, coverage, code_commit)` 与 `research(request, output_root)`；`PortfolioRequest` / `construct_engineering`；`EngineeringBacktestRequest.create(data)` / `simulate_engineering`、`result_engineering`、`replay_engineering`；`ExperimentLedger.verify/catalogue/compare`。P6不得在页面复制其数值逻辑。
+4: 
+5: 拟统一接口：`catalogue() -> verified resource/version/status records`；`freeze_request(kind, draft, defaults_revision, catalogue_revision) -> EffectiveRequest(raw_bytes, config_hash, lineage_refs)`；`submit(effective_request, idempotency_key) -> TaskReceipt`；`task_status(task_id)`；`cancel(task_id)`；`task_result(task_id)`；`artifact(task_id, artifact_name)`；`compare(run_ids, declared_projection)`；`replay(run_id, destination_catalog_id)`；`save_defaults(expected_revision, patch)` / `rollback_defaults(target_revision)`。新TaskCLI和Streamlit使用同一入口；旧CLI的同核兼容测试不可删除。
+6: 
+7: EffectiveRequest只允许已知schema/kind（research/engineering_pipeline/replay）和已审参数。服务端解析可信catalog ID到真实SnapshotRef/ExposureRef/CoverageRef/源run，校验字节、双时点、终态和代码/环境身份；来源hash、批准状态、code_commit、worker路径不能信任网页字段。未知字段/NaN/Infinity/重复键/伪造精确Ref/路径穿越拒绝。整数、价格、权重使用明确字符串/精确单位，转换只在共享builder中执行；UI不可归一化或改变经济profile。
+8: 
+9: `engineering_pipeline`由共享应用编排器顺序调用既有P3/P4/P5与PIT输入构造，必须生成真实源run/终态文件/manifest hash链；不能创建假P3/P4回执或把同UUID当证明。每次决策继续按P5数据可用性投影，不把研究期末整段结果提前回填历史。表单仅提供原契约允许的字段（股票池、区间、因子/权重、允许仓位/费用/风险设置）；组装代码属于services，页面只传draft与展示结果。
+10: 
+11: TaskReceipt包含task_id、预分配child slot/run_id及已核TaskContext绑定、canonical config_hash、defaults/catalogue版本、完整源/环境hash、当前状态和已绑定run IDs。任务元数据路径由服务生成的UUID+可信根确定，核心共享ledger根不会按task重置家族/试验登记。输出run_id与随机时间可以不同，输入配置/语义数值不可因入口变化。
+12: 
+13: Artifact API先验证服务所属workspace、task/run绑定、原始账本终态和manifest，再按唯一条目读取原字节并复核hash。清单外追加proposal/同名替代/侧车篡改/别的run的合法UUID都拒绝。运行中可读追加日志须带明确prefix和非终态标识，不允许把部分result.json当SUCCEEDED。渲染器转义文本，结构化图表只消费白名单字段；不执行存储HTML/任意Markdown脚本。下载原始工件时保留媒体类型、文件名白名单和校验值。
+14: 
+15: Settings只能保存经共享schema校验的新默认配置revision，CAS冲突拒绝，rollback也新增revision并记录target；不可原地改旧配置或历史实验。catalog由可信本地启动配置限定工程根；网页不能任意切换根、上传代码、改Registry批准收据、启用formal或私有operator配置。
+16: 
+17: 允许本地受控worker子进程，固定解释器/模块/argv（shell=False）、最小工程环境，无任意命令/插件路径。无新Web API微服务、Redis/Celery、后台常驻服务或调度部署。单工程用户模型不宣称多主体OS隔离。当前G1不启动worker/Streamlit。
+18: 
+19: 时间表单保留证券市场/交易日历/时区与UTC微秒语义；共享builder按既定DATA_CONTRACT转为带时区时间，页面不以本机时区、weekday或当前墙钟推测交易日/decision_time/available_at。日期区间、拟合截止、期限、purge/embargo仍交P3原校验，不暴露私有FINAL_TEST。
+20: 
+21: 页面缓存只用于明确不可变键（数据/侧车/Ref/bundle/锁/config/defaults revision）对应的已核只读投影；提交与claim不能放进缓存。每次状态/终态/原工件读取仍重新验证服务来源与manifest，不因session_state或缓存命中跳过完整性门禁。会话仅存draft/幂等键，不能作为真实任务/金融状态来源。
+docs/audits/phase-6/MATH_AND_COMPARISON_CONTRACT.md
+1: # 数值呈现与同核比较口径
+2: 
+3: 全部收益/IC/ICIR/检验/组合/资金/成本/绩效仍由既有内核产生，本阶段不定义新的金融经济或统计口径。沿用P3已审推断/OOS、P4约束、P5-D01–D10/C-P5-001等。UI不得重新拟合、从展示数值重算权重/账本、按显著性过滤掉失败实验，或将null填0。
+4: 
+5: 输入：权重/金额/价格/数量以schema规定精确字符串或整数传递。百分数字段仅在共享请求builder按十进制精确除100（12.50%→0.125），不使用二进制float，不自动把不合格总权重归一化。有效配置包含defaults revision与实际展开的值、精确Ref、数据/sidecar hash、seed和既有经济profile；UI隐藏默认值同样冻结。canonical JSON使用与核心一致的UTF-8/sorted keys/无NaN规则；原始对象不同键序等价，数组顺序及字符串精度契约不得任意忽略。
+6: 
+7: 原始输出不经展示舍入回写。资金/数量字符串及big-int在表格、tooltip和原JSON下载保持精确；展示金额可用Decimal HALF_EVEN到2位，百分比可到4位，标明只影响视图。图表只取已验证原始series，不另算回撤或收益。JS浮点不能安全表示的超大/极小/非有限点必须给精度警告和精确表/下载；不把舍入图点/缺失值冒充原数值或再次作为订单输入。渲染数据须保留每个点对应的原始索引和值。
+8: 
+9: 比较三入口时，输入canonical config_hash应完全相同。金融精确字段（含P5 rational/decimal字符串、数量、现金桶、订单/Fill/费用/风险、方向/状态/known标志）完全相等；研究float沿用P3已有数值容差，默认abs<=1e-12、rel<=1e-10且不得放宽既有更严Golden标准。null只等于null，0/false/空串不是null，NaN/Infinity不能进入canonical。图表payload中的精确source值与原表一一相等，渲染像素不是数值真值。
+10: 
+11: 允许差异必须预先枚举：各次生成run_id/task_id、recorded_at/墙钟、工作目录绝对定位以及由这些字段必然引出的非金融事件/manifest hash链；这些字段在各自链内仍必须独立验证，不可通配忽略所有hash、lineage或error。快照ID、数据/sidecar内容hash、真实父run映射的语义绑定、FactorRef、config_hash、状态、原因、预测可用时间、源code/bundle/lock必须一致或在不同run映射表中逐项证明；不得把合法但错误UUID当可忽略元数据。比较器在生产函数之外独立读取原工件做声明投影，不比较生产函数自身生成的预期值。
+12: 
+13: Golden候选只验证呈现/请求/任务契约，不是P6产品测试。独立主审应扩展未知财务状态、边界大整数、同key竞争、伪造来源、缺清单项及相同错误输入三入口一致拒绝等反例。
+docs/audits/phase-6/TEST_AND_EVIDENCE_PLAN.md
+1: # 实现后的测试与原始证据计划
+2: 
+3: G1当前无UI业务实现/安装/浏览器通过记录。已有1158只验证P5，不增加P6产品通过数。实施后必须同时完成以下层次，必要自测由Codex执行，独立固定SHA G2以GPT Work为主；不能以开发方或子代理冒充独立审查。
+4: 
+5: | 测试组 | 实际对象与独立期望 | 关键负例 |
+6: |---|---|---|
+7: | T6-DASH/FACTOR/CONFIG/SETTINGS | 真实目录、6页面交互、配置revision、精确Ref/权重与原始状态；literal夹具/独立JSON对照 | rerun重复提交、回滚改旧文件、撤销或伪造Ref、坏manifest计成功 |
+8: | T6-RESEARCH/BT | 真实P1→P3→P4→P5服务与原始artifact绑定，IC/分层/OOS/风险/资金/订单/Fill/绩效展示 | 同一合法UUID错血缘、后补清单文件、无知财务状态旧余额回退、未来输入 |
+9: | T6-PARITY/REPLACE | 同一canonical请求走原CLI/新任务CLI/SDK/实际Streamlit事件，Momentum→Reversal仅改Ref各跑完整链，独立投影/原金融答案 | 只对比截图、过宽忽略hash/lineage/null、改变core后假称同核 |
+10: | T6-TASK/IDEMP/CRASH | 实际并发进程/持久化索引/原核心账本，10并发同key、崩溃前后、取消与成功竞态 | 同key异hash、提交后异常旧余额、预分配run映射丢失自动重复执行、伪终态、分task目录重置研究家族预算 |
+11: | T6-ARTIFACT/REPLAY/SAFE | 真manifest/hash/目录边界、原始下载、历史声明重放、日志安全、无任意代码和私有路径 | path traversal/reparse/symlink逃逸、清单删项/目录枚举报错、HTML注入/敏感字段泄漏 |
+12: | T6-FORMAL | 所有入口formal/FINAL_TEST安全拒绝，真实私有入口不调用 | 前端改布尔或候选Ref后仍执行、默默转工程模式 |
+13: 
+14: 正确性须已知答案+边界+性质+独立参考。GOLDEN_CANDIDATES为预先指定设计答案；不得从待测UI/service函数生成期望。运行scope为工程数据，保留全部失败、取消、unknown和恢复证据，既有P1–P5 Golden及G2反例全部回归。
+15: 
+16: 覆盖率：金融及关键安全/任务持久化路径保持既定核心行95%/分支90%或更严格现行门槛；一般服务行90%/分支85%；纯UI/CLI薄适配行80%/分支70%，关键流程必须100%有用例。不能把复杂状态/金融逻辑移到UI以套低门槛。门槛适配需明确文件分类和新固定SHA审查，不能直接降低现有模块要求。
+17: 
+18: 完整SDK：新干净venv、Python3.13.16、core/扩展依赖哈希安装、wheel构建安装、lint/format/覆盖、全部旧回归/原20+4/数学91、P1八表/九文件及旧Ref重放、P3/P4/P5完整服务、P6六页面/AppTest/任务故障/三入口数值。双OS CI各跑同版本，保存run/attempt/job、完整退出码/通过失败跳过、原始ZIP/API digest/长度/CRC/精确成员清单、source/wheel/环境/数据/终态链；上传器复制的pytest current目录需全子树字节对账，不冒称原symlink或ACL身份。
+19: 
+20: AppTest用于页面状态和组件断言，真实浏览器另留本地工程启动的argv/地址绑定/进程身份/交互与截图、六页面/两因子/取消/失败/下载链日志。不得把AppTest或mock结果宣称真实浏览器验证；没有真实浏览器证据则该项NOT VERIFIED，阻断所需UI验收。任何未来本地工程启动都需先有实施授权，不涉及外网发布/管理员操作，本轮不启动。
+21: 
+22: 每次run唯一UUID、不可变有效配置、代码40SHA/dirty、core bundle/两套锁/实际distribution+RECORD/interpreter/OS、数据manifest/sidecar、输入/输出工件、开始结束UTC、原始命令/stdout/stderr/报告/hash。固定G2版本用PR AQRP_FIXED_REVIEW_SHA，HEAD漂移单列，不继承旧PASS。保留扫描正/负控及所有原失败记录；真实Windows R2延期不因这些测试关闭。
+docs/audits/phase-6/reference_check.py
+1: """Independent stdlib design model; no application imports, no P6 implementation claim."""
+2: from pathlib import Path
+3: from decimal import Decimal, ROUND_HALF_EVEN
+4: import argparse, html, json
+5: 
+6: def reference(case):
+7:     kind=case["kind"];x=case["inputs"]
+8:     if kind=="weight":return format((Decimal(x["percent"])/100).normalize(),"f")
+9:     if kind=="money":return format(Decimal(x["value"]).quantize(Decimal("0.01"),rounding=ROUND_HALF_EVEN),",.2f")
+10:     if kind=="quantity":return str(int(x["value"]))
+11:     if kind=="small":return format(Decimal(x["value"]),"f")
+12:     if kind=="ic_display":return format(Decimal(x["value"]).quantize(Decimal("0.0001"),rounding=ROUND_HALF_EVEN),"f")
+13:     if kind=="nullable":return {"text":"N/A" if x["value"] is None else str(x["value"]),"reason":x["reason"]}
+14:     if kind=="percent_display":return format((Decimal(x["value"])*100).quantize(Decimal("0.0001"),rounding=ROUND_HALF_EVEN),"f")+"%"
+15:     if kind=="canonical":return json.dumps(json.loads(x["raw"]),ensure_ascii=False,sort_keys=True,separators=(",",":"),allow_nan=False)
+16:     if kind=="array_order":return x["left"]==x["right"]
+17:     if kind=="status_counts":return {"total":len(x["rows"]),"succeeded":sum(r["status"]=="SUCCEEDED" and r["verified"] for r in x["rows"]),"integrity_errors":sum(not r["verified"] for r in x["rows"])}
+18:     if kind=="financial_view":return x["verified_balance"] if x["known"] and x["manifest_valid"] and x["reported_balance"]==x["verified_balance"] else None
+19:     if kind=="idempotency":
+20:         seen={};conflicts=0
+21:         for key,value in x["calls"]:
+22:             if key in seen:conflicts+=seen[key]!=value
+23:             else:seen[key]=value
+24:         return {"tasks":len(seen),"conflicts":conflicts}
+25:     if kind=="lifecycle":
+26:         state="QUEUED"
+27:         for event in x["trace"]:
+28:             if state in {"SUCCEEDED","FAILED","CANCELLED"}:continue
+29:             if event=="START":state="RUNNING"
+30:             elif event=="CANCEL_REQUEST":state="CANCELLED" if state=="QUEUED" else "CANCEL_REQUESTED"
+31:             elif event=="SUCCESS":state="SUCCEEDED"
+32:             elif event=="SAFE_CANCEL":state="CANCELLED"
+33:             elif event=="FINANCIAL_UNKNOWN":state="FAILED"
+34:         return state
+35:     if kind=="artifact_membership":return x["manifest"].count(x["name"])==1
+36:     if kind=="defaults_rollback":
+37:         history=[dict(v) for v in x["history"]];history.append(dict(history[x["rollback_to"]]))
+38:         return {"old_fee":history[0]["fee"],"active_fee":history[-1]["fee"],"revisions":len(history)}
+39:     if kind=="nullable_equal":return type(x["left"]) is type(x["right"]) and x["left"]==x["right"]
+40:     if kind=="formal_gate":return "APPROVAL_REQUIRED" if x["financial_approval"]=="NONE" else "REQUIRES_REAL_APPROVAL_VALIDATION"
+41:     if kind=="family_trials":return x["initial"]+len({key for key,status in x["attempts"]})
+42:     if kind=="escape":return html.escape(x["value"])
+43:     if kind=="parent_identity":return x["expected_parent"]==x["actual_parent"] or x["mapping_proven"]
+44:     if kind=="rerun":return x["explicit_submits"]
+45:     raise AssertionError(kind)
+46: 
+47: def main():
+48:     parser=argparse.ArgumentParser();parser.add_argument("output",type=Path);args=parser.parse_args()
+49:     data=json.loads((Path(__file__).parent/"GOLDEN_CANDIDATES.json").read_bytes());records=[]
+50:     for case in data["cases"]:
+51:         got=reference(case);records.append({"id":case["id"],"expected":case["expected"],"actual":got,"pass":type(got) is type(case["expected"]) and got==case["expected"]})
+52:     result={"executor":"Codex developer independent-stdlib design reference; not GPT Work independent review","scope":"Pre-implementation design model only, NOT P6 products or browser tests","groups":len(records),"passed":sum(r["pass"] for r in records),"failed":sum(not r["pass"] for r in records),"records":records}
+53:     args.output.write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8",newline="\n")
+54:     print(json.dumps({k:result[k] for k in ("scope","groups","passed","failed")}));assert not result["failed"]
+55: if __name__=="__main__":main()
+src/aqrp/backtest/engine.py
+320: 
+321:     def _risk_portfolio(self, index):
+322:         dec = self.decisions[index]
+323:         request, projection = dec["request"], dec["projection"]
+324:         result = construct_engineering(
+325:             request, self.root / "portfolio-runs", self.code_commit
+326:         ).read()
+327:         verify_portfolio_result(request, result, self.root / "portfolio-runs")
+328:         dec["result"] = result
+329:         self.portfolios.append(
+330:             {
+331:                 "index": index,
+332:                 "request_utf8": request.raw.decode("utf-8"),
+333:                 "projection": freeze(projection),
+334:                 "result": result,
+335:             }
+336:         )
+337:         self._observe(
+338:             "RISK",
+src/aqrp/backtest/provider.py
+191: def verify_portfolio_result(request, returned, root):
+192:     import hashlib
+193: 
+194:     guard_sources(request)
+195:     ledger = ExperimentLedger(guard_path(root))
+196:     run = returned["run_id"]
+197:     manifest = ledger.verify(run)
+198: 
+199:     def read(name):
+200:         rows = [e for e in manifest["files"] if e["path"] == name]
+201:         if len(rows) != 1:
+202:             raise ContractError("P4_ARTIFACT_NOT_TERMINAL_MANIFESTED")
+203:         path = guard_path(ledger.path(run) / name)
+204:         raw = path.read_bytes()
+205:         if path.is_symlink() or hashlib.sha256(raw).hexdigest() != rows[0]["sha256"]:
+206:             raise ContractError("P4_TERMINAL_BYTES_CHANGED")
+207:         return raw
+208: 
+209:     original = read("result.json")
+210:     if (
+211:         canonical({k: v for k, v in returned.items() if k != "manifest"}) != original
+212:         or returned["manifest"] != manifest
+213:     ):
+214:         raise ContractError("P4_RETURN_TERMINAL_BINDING_MISMATCH")
+215:     if returned["status"] == "SUCCEEDED":
+216:         candidate = build_candidate(request)
+217:         if candidate.raw != read("candidate.json") or load(read("risk.json")) != returned["risk"]:
+218:             raise ContractError("P4_CANDIDATE_RISK_BYTES_CHANGED")
+src/aqrp/services/backtest.py
+186:     }
+187:     run = ledger.start(config, lineage)
+188:     return _execute_engineering(request, ledger, run, code_commit, policy)
+189: 
+190: 
+191: def _execute_engineering(request, ledger, run, code_commit, policy):
+192:     result = {
+193:         "schema_version": "simulation-result/1.0.0",
+194:         "run_id": run,
+195:         "status": "FAILED",
+196:         "scope": "ENGINEERING_TEST_ONLY",
+197:         "financial_approval": "NONE",
+198:         "executable": False,
+199:         "request_sha256": request.content_hash,
+200:         "code_bundle": policy["bundle_sha256"],
+201:     }
+202:     base_result = result.copy()
+203:     simulator = None
+204:     try:
+205:         x = validate(request)
+206:         simulator = Simulator(x, ledger.path(run), code_commit)
+207:         state = simulator.run()
+208:         durable, records, transaction_files = simulator.store.verified_snapshot()
+209:         if durable != state:
+210:             raise ContractError("FINAL_COMMITTED_STATE_DIVERGED")
+211:         computed = projection(durable, records)
+212:         ledger.artifact(run, "state.json", freeze(state))
+213:         ledger.artifact(run, "trace.json", simulator.trace)
+214:         ledger.artifact(run, "portfolio-lineage.json", simulator.portfolios)
+215:         ledger.artifact(run, "transactions.json", records)
+src/aqrp/experiments/ledger.py
+109:             raise ContractError("INVALID_RUN_ID") from exc
+110:         return self.root / key
+111: 
+112:     def start(self, config, lineage):
+113:         required = {
+114:             "code_commit",
+115:             "code_bundle",
+116:             "data_hash",
+117:             "environment",
+118:             "protocol_hash",
+119:             "permission_domain",
+120:             "seed",
+121:         }
+122:         if not required <= set(lineage) or not re.fullmatch("[0-9a-f]{40}", lineage["code_commit"]):
+123:             raise ContractError("INCOMPLETE_RUN_LINEAGE")
+124:         content = canonical(config)
+125:         metadata = canonical(lineage)
+126:         run_id = str(uuid.uuid4())
+127:         root = self.path(run_id)
+128:         root.mkdir(exist_ok=False)
+129:         immutable_write(root / "config.json", content)
+130:         immutable_write(root / "lineage.json", metadata)
+131:         append_chain(
+132:             root / "events.jsonl",
+133:             "RUNNING",
+134:             {"config_hash": digest(config), "lineage_hash": digest(lineage)},
+135:         )
+136:         return run_id
+137: 
+138:     def event(self, run_id, kind, payload):
+139:         root = self.path(run_id)
+140:         with mutex(root / ".lock"):

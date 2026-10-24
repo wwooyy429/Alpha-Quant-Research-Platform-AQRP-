@@ -1,0 +1,18 @@
+{
+  "access_date": "2026-10-24",
+  "primary_sources": [
+    {
+      "url": "https://www.sqlite.org/c3ref/busy_handler.html",
+      "verified_fact": "Having a busy handler does not guarantee that SQLite will call it; a deadlock risk can produce an immediate BUSY."
+    },
+    {
+      "url": "https://www.sqlite.org/rescode.html",
+      "verified_fact": "The low8 bits identify the primary result code."
+    },
+    {
+      "url": "https://www.sqlite.org/pragma.html#pragma_journal_mode",
+      "scope": "Official PRAGMA reference inspected; candidate must explicitly verify returned wal mode."
+    }
+  ],
+  "limits": "These documents do not prove the precise cause of the old native crashes or the exact C5 race. Actual independent controls are separate."
+}

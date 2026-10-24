@@ -1,0 +1,18 @@
+{
+  "superseded_candidate": "d432c6d23a88fc7a288812760793c17ede602951",
+  "official_run": 40072608848,
+  "windows": "1559 passed / 1 failed / 2 warnings. P4_PARTIAL child expected74 actual0xC0000005; old os._exit remained in lifecycle test. Original failure remains failure.",
+  "Ubuntu": "1560 passed; official original retained",
+  "original_windows_zip": {
+    "bytes": 193109026,
+    "sha256": "0beec54ae10d2b76bd1afd8b1b1f96e646893b775074e39abe499a4234c20252"
+  },
+  "original_ubuntu_zip": {
+    "bytes": 239447874,
+    "sha256": "4506815fb669100f059cd94d74bec4583bcf6ccc49950ea2325e0996794ca2ca"
+  },
+  "repair": "All six P6 deliberate abrupt-death boundaries use one test-only support string: R/completion exits73, nestedP4 BOUND/terminal/partial exits74, B-terminal exit75. fsync point/PID/task/code/method marker; faulthandler; Windows self-TerminateProcess and Unix os._exit. All mandatory exact exit, no duplicate child/trial, old files, durable receipt and recovery status assertions retained.",
+  "limitation": "Exact native fault instruction and cause remain unproven; no unexpected native crash accepted as intentional kill. Independent G2 must evaluate harness sufficient.",
+  "business_source_change": "NONE vs d432c6d:83 Python package modules, version0.6.0.dev4, bundle fe3b12714f953c5a9a7767367b1529f86c17949071177ea188639a40f120e82a unchanged. No package/lock/financial mathematics change. New exact-SHA SDK and dual OS and browser required.",
+  "status": "PENDING_FIXED_SHA_VALIDATION_AND_GPT_WORK"
+}
