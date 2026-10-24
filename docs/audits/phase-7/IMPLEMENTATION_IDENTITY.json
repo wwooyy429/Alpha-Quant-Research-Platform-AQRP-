@@ -375,8 +375,8 @@
     },
     {
       "path": "docs/CHANGELOG.md",
-      "bytes": 53096,
-      "sha256": "c36c8e298fb4feeff621ea684a9ff2cf59f82aaf300fbfd89c53ccc1e6909750"
+      "bytes": 53638,
+      "sha256": "8f0e9576fd7dc3906e9bb66b902165d5cf74ac556ba1e2434c518d86359366de"
     },
     {
       "path": "docs/DECISIONS.md",
@@ -385,8 +385,8 @@
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 47625,
-      "sha256": "293d2c68dd8c75a72ef74f2957d9ef6750f9c670ce3688418d915ac094ba6e63"
+      "bytes": 48167,
+      "sha256": "9e6f9084d575ec56b12f215633a4932d7ac93e7dfd127bba33133334256bdcdf"
     },
     {
       "path": "docs/ROADMAP.md",
@@ -405,13 +405,13 @@
     },
     {
       "path": "docs/audits/phase-7/ENGINEERING_CODE_REVIEW.md",
-      "bytes": 3030,
-      "sha256": "53608b77376e01d5b7fd13e18f7d087cb15d2de6baa8abc8e76095681ad6fbb3"
+      "bytes": 3705,
+      "sha256": "9a5b4403b28153ac649abac0f26bd732c605ea24c6459f712bd1d5f5835ba7c3"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_ALLOWED_PATHS.json",
-      "bytes": 7400,
-      "sha256": "8cda6ef556a7ec128b1e8015a49d0a34be49d2b611133d4063cf2e93dd132454"
+      "bytes": 8055,
+      "sha256": "9d4dd9c75f2a40c49691b1d92e6b5f6014a4e25df92c4bf0d4ab2674a02f7451"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_AUTHORIZATION.json",
@@ -450,8 +450,8 @@
     },
     {
       "path": "docs/audits/phase-7/STATUS.json",
-      "bytes": 4601,
-      "sha256": "21173fb16b5a34476733407922949fd098ce3c5dfbe811bcdced315cf1cc7598"
+      "bytes": 5243,
+      "sha256": "6af815b5c329ff854344fe078279dd7df00b45ca8cc6952c4b1c9b05658bd794"
     },
     {
       "path": "docs/audits/phase-7/p6-source-overrides/.github/workflows/ci.yml",
@@ -617,6 +617,41 @@
       "path": "docs/audits/phase-7/self-review/COMPAT-001/stdout.log",
       "bytes": 2840,
       "sha256": "16437d9938ade6dc584ef37acfb3cf8814fd5d7540015e78169abb7f7a99a22c"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COV-001/DEVELOPER_RESPONSE.json",
+      "bytes": 2536,
+      "sha256": "a8fdcc81e43287a514191689a9ea35ee0096304dc542115b45ac337bd80cd045"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COV-001/EVIDENCE_INDEX.json",
+      "bytes": 9633,
+      "sha256": "eb9bd42336867d903f4296d97d29bae1c14439ae44f7ace06363ef732534c6a4"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COV-001/JOBS.json",
+      "bytes": 7182,
+      "sha256": "ac8eb1833fe5625be6adb07664a7542bc5bd813ce1173ab5c915196cb74fa98e"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COV-001/TRIAGE.json",
+      "bytes": 19948,
+      "sha256": "986e6e05f40ed1b7eb3d2d53df98d7f03c945666657a15a864386f1d7534909f"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COV-001/coverage-windows-original.json",
+      "bytes": 716982,
+      "sha256": "c9e75220dcc165676c244d91ed49b5a91844817b8b28ba0a0d1a4bfa49cac776"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COV-001/job-120956361411.log",
+      "bytes": 36553,
+      "sha256": "7b35dc29cf494184010b22966b84ddebbfaeed931b9d4a1707c7db52ac939a7e"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COV-001/job-120956361562.log",
+      "bytes": 38599,
+      "sha256": "dacf7bea6daf78fd27670b2067d181be948ba7d82cda259cf48c3a0854fbb22a"
     },
     {
       "path": "docs/audits/phase-7/self-review/MIG-001/ABORTED_872_RECEIPT.json",
@@ -844,6 +879,11 @@
       "sha256": "6a1166250a22252b689d1c37ec634252acf0768f6f58f0df4cbe1a6dbb8f9895"
     },
     {
+      "path": "tests/competition/test_p7_adapter_fail_closed.py",
+      "bytes": 7578,
+      "sha256": "bf7cb8d93611dbd76ea5dfe6e58161b6cef033e4132cebbc71898eac0051016a"
+    },
+    {
       "path": "tests/environment/test_installation.py",
       "bytes": 1146,
       "sha256": "4530a59cd49ccbc4ad5f9423ee6023b3d308ef1fb5d44d95fe87e86b51c607d9"
@@ -867,6 +907,11 @@
       "path": "tests/experiments/test_p7_admission_edges.py",
       "bytes": 10093,
       "sha256": "0651dd5d7df14f9574013f9eea87da73b7c0cc80f1469559f3832f46db3df77b"
+    },
+    {
+      "path": "tests/experiments/test_p7_ledger_integrity_guards.py",
+      "bytes": 18900,
+      "sha256": "a784d1a0f6bc253b442974bd4e89e2e5f82fc79e594dc410aceffaf18003a8e8"
     },
     {
       "path": "tests/integration/test_p7_admission_error_compatibility.py",
@@ -904,6 +949,11 @@
       "sha256": "71405232f3d9872a089dea846c0bd5a00d9c0d0c0fa98585bcca0cfcb477bede"
     },
     {
+      "path": "tests/integration/test_p7_task_history_and_recovery_controls.py",
+      "bytes": 16324,
+      "sha256": "e92c60cdb7908934ddce83a54a1de2e6949d505511236fba7114b0dedd76c242"
+    },
+    {
       "path": "tests/ui/test_g2_cancel_proof_controls.py",
       "bytes": 6082,
       "sha256": "abe4aebdb242abc4ce7dc721c3245db198c6a8791aa76071a4c45626f08a59b9"
@@ -926,7 +976,7 @@
     {
       "path": "tools/check_phase7_package.py",
       "bytes": 8066,
-      "sha256": "bf8c3e5d31e3a110f73b2af13acabf2733098b7f63df04ce84b9143823a90250"
+      "sha256": "c8c8e8c06ccdabaf20c07a40877eaf7d76bef81088af49100dc1f50810faf166"
     },
     {
       "path": "tools/ci.py",

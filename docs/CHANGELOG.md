@@ -1,3 +1,6 @@
+<!-- Phase7 developer COV-001 test-only follow-up20261025 -->
+Phase7当前仍IMPLEMENTING / G2 PENDING。05fc498的本地及双OS1892项断言通过，但四个模块覆盖门槛失败，完整SDK仍FAILED；原始证据保留。开发方仅补充70项针对性测试，不改生产包6045a40、阈值、旧答案或锁；须新固定SHA完整SDK/双OS/原始ZIP和实际浏览器重新执行。收据见docs/audits/phase-7/self-review/COV-001/。未验收、未发布，既有延期与安全边界保持。以下均为此前轮次历史。
+
 <!-- Phase7 implementation authorization20261025 -->
 用户于2026-10-25明确接受固定645049ae9b08710ed93189b80547d14c87d80584 G1的C-P7-001～004（含修订003）并单独授权五项受限工程实现，当前IMPLEMENTING。原话/范围见docs/audits/phase-7/IMPLEMENTATION_AUTHORIZATION.json；从归档起点8106bbe6fbb73b5b4336d42e4c27b3adb1cf6ff8继续PR #10，G2须新完整40位固定SHA、独立答案/完整SDK/双OS原ZIP/真实浏览器实际证据。不是G2/阶段验收/合并标签/发布许可；R2延期未验证、正式Test未运行/失败关闭、金融NONE及历史宿主边界保留，无部署实盘/真实权限变更。以下旧待接受/未授权摘要保留历史，不覆盖本次直接授权。
 

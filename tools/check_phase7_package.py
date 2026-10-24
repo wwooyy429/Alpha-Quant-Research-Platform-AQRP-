@@ -16,7 +16,7 @@ from aqrp.factors.admission import LOCK_HASH, PACKAGE, bundle_manifest, reviewed
 ROOT = Path(__file__).resolve().parents[1]
 D = "docs/audits/phase-7/"
 BASELINE_SHA256 = "4bac5d9c98e2e3f74065d1c95b5ce94f482420c022a8e146f59375a37081b646"
-ALLOWLIST_SHA256 = "8cda6ef556a7ec128b1e8015a49d0a34be49d2b611133d4063cf2e93dd132454"
+ALLOWLIST_SHA256 = "9d4dd9c75f2a40c49691b1d92e6b5f6014a4e25df92c4bf0d4ab2674a02f7451"
 G1 = "645049ae9b08710ed93189b80547d14c87d80584"
 P6 = "d563347ad11e1f26e131dc06e343250282c05c33"
 

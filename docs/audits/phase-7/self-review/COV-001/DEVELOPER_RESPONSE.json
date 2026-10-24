@@ -1,0 +1,45 @@
+{
+  "finding": "COV-001",
+  "classification": "Developer verification blocker; not an independent audit finding",
+  "original_fixed_sha": "05fc498bfcfc703eb58f14eb7107ed483c30fbe3",
+  "original_result": "LOCAL AND BOTH OFFICIAL OS: 1892 test assertions passed, four required module coverage gates failed; complete SDK FAILED",
+  "official_run_id": 40122323730,
+  "status": "MEANINGFUL_TESTS_ADDED / FRESH_FIXED_FULL_SDK_AND_DUAL_OS_REQUIRED / INDEPENDENT_G2_PENDING",
+  "production_bundle_unchanged": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+  "tests": [
+    {
+      "path": "tests/competition/test_p7_adapter_fail_closed.py",
+      "new_cases": 30,
+      "sha256": "bf7cb8d93611dbd76ea5dfe6e58161b6cef033e4132cebbc71898eac0051016a"
+    },
+    {
+      "path": "tests/experiments/test_p7_ledger_integrity_guards.py",
+      "new_cases": 19,
+      "sha256": "a784d1a0f6bc253b442974bd4e89e2e5f82fc79e594dc410aceffaf18003a8e8"
+    },
+    {
+      "path": "tests/integration/test_p7_task_history_and_recovery_controls.py",
+      "new_cases": 21,
+      "sha256": "e92c60cdb7908934ddce83a54a1de2e6949d505511236fba7114b0dedd76c242"
+    }
+  ],
+  "actual_scoped_results": "Adapter69 (old39+new30), ledger19, task/state21 all PASS against actual installed05fc/6045; these are scoped developer tests, not complete SDK",
+  "coverage_predictions": "Separate same-byte official base + scoped execution union predicts unchanged gates satisfied; NOT native complete coverage PASS and never replaces fresh full run",
+  "unchanged": [
+    "production modules",
+    "coverage thresholds and scanner controls",
+    "original tests and expected answers",
+    "dependency locks",
+    "financial algorithms",
+    "106 requirements / five P7 items",
+    "frozen original G1 and P6 evidence"
+  ],
+  "failed_attempts_retained": [
+    "Original official two OS ZIPs/job logs and coverage",
+    "Original local failed SDK/raw logs/fixtures and controller",
+    "Ledger first supplemental fixture failure (incorrectly narrowed frozen catalogue) and corrected reruns",
+    "Task helper first supplemental run ResourceWarnings and explicit connection-close rerun",
+    "Archival helper first assumption upload-selection exists: FileNotFoundError; failed native SDK generates no success-only upload selection; no SDK bytes altered"
+  ],
+  "future_requirement": "New full40SHA, fresh clean package/SDK, unchanged gates, both official OS original ZIPs, existing regressions, literal controls and actual browser execution. No G2 self-approval."
+}

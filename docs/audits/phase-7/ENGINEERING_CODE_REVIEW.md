@@ -13,3 +13,6 @@
 开发方在d9d020包上复现MIG-001：迁移接受了正常读取会拒绝的旧完成证明，继而允许新准入。原始失败、SQLite快照和中止SDK见self-review/MIG-001/EVIDENCE_INDEX.json，未改判通过。修订将正常读取的完整子运行验证提为共享函数供迁移调用，保留所有金融核对，并要求完成证明的规范字节、路径、轮次、配置和完整子证明一致。修复后的实际拒绝、回滚、健康迁移及完整新版本验证须另行记录；独立G2仍待审。
 
 开发方另确认COMPAT-001：旧双OS CI及e610b9f实际安装包在缺失campaign_attempts记录时仍拒绝执行，但新增的激活验证先于原TaskState兼容边界运行，公开错误码从CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE变成ADMISSION_HISTORY_UNVERIFIED，导致未改动的原回归失败。原命令、stdout、JUnit及失败索引见self-review/COMPAT-001/EVIDENCE_INDEX.json。修订仅抽取原有严格原因匹配的异常转换并覆盖公开submit边界；所有权威验证、顺序、事务及原测试答案保留，其他历史损坏继续按原通用错误失败关闭。新版本仍须完整SDK、双OS及实际浏览器验证；原失败SDK不计为通过。
+
+
+开发方COV-001：05fc498完整本地与双OS均1892项测试通过，但adapter/ledger/task_state/tasks四个原覆盖门槛未过，因此整体仍FAILED。原始官方ZIP、命令、覆盖和本地失败保留，不能以断言通过代替SDK通过。仅新增70项有实际拒绝/历史/恢复/无额外准入断言的测试；生产包6045a40、原测试、数学答案、覆盖阈值及锁未改。新增30/19/21项分别在实际安装包通过；同字节覆盖合并预测明确不是原生完整覆盖结果。后续固定新SHA必须重新执行完整SDK、双OS、原始ZIP及实际浏览器。处理与原失败见self-review/COV-001/，独立G2仍PENDING。

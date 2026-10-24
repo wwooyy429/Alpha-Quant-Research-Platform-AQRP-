@@ -63,7 +63,7 @@
       "original_actual_probe_commit": "b6ed148ba73e478ebc4b6581403714fb39781316",
       "same_product_bundle_commit": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
       "prior_local_872_SDK": "ABORTED_FOR_CONFIRMED_PRODUCT_FIX_NOT_A_PASS",
-      "replacement_validation": "New full implementation SHA/package/clean SDK/dualOS/raw ZIP/browser required; pending",
+      "replacement_validation": "05fc assertions passed locally and on both OS, but coverage gate failed; next fixed complete SDK/CI/browser required",
       "cancelled_prefix_evidence": "self-review/MIG-001/cancelled-prefix/EVIDENCE_INDEX.json",
       "focused_self_tests": "49 targeted tests passed on e610b9f source snapshot (42 new integrity controls plus7 healthy import/selection/replay regressions); not fullSDK or independent G2"
     },
@@ -74,8 +74,15 @@
       "actual_installed_probe_sha": "e610b9fced33ccc6e13f76e0ccce0905f0560197",
       "original_assertion": "UNCHANGED",
       "prior_local_e610_SDK": "ABORTED_AFTER_CONFIRMED_PUBLIC_ERROR_REGRESSION; ORIGINAL_RAW_PRESERVED; NOT_A_PASS",
-      "replacement_validation": "Fresh fixed package/full SDK/dualOS/raw ZIP/browser required",
+      "replacement_validation": "Original old regression and all1892 tests passed locally/bothOS on05fc; complete SDK still failed coverage; next fixed complete validation required",
       "targeted_self_tests": 7
+    },
+    "COV-001": {
+      "status": "MEANINGFUL_TESTS_ADDED / FRESH_FIXED_FULL_SDK_AND_DUAL_OS_REQUIRED / INDEPENDENT_G2_PENDING",
+      "original_fixed_sha": "05fc498bfcfc703eb58f14eb7107ed483c30fbe3",
+      "original_result": "LOCAL AND BOTH OFFICIAL OS: 1892 test assertions passed, four required module coverage gates failed; complete SDK FAILED",
+      "production_bundle_unchanged": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+      "evidence": "self-review/COV-001/DEVELOPER_RESPONSE.json"
     }
   }
 }
