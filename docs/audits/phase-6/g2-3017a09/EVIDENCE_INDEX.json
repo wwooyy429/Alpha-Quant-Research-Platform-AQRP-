@@ -177,24 +177,9 @@
       "sha256": "2b497aa9fb83b10c5848df47f2129a8275fbe2f2cec856b1d03b65506782f106"
     },
     {
-      "path": "HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
-      "bytes": 90036,
-      "sha256": "04d27310bc5f3082ba74e4e704e4741e3cec35c700d407896afad4e2e24d6aa8"
-    },
-    {
       "path": "IMPLEMENTATION_DIFF.patch",
       "bytes": 2125973,
       "sha256": "70180693fcbd10daf71a8bfeeb57c48099decb8a28bbb532ad183a80cfdefd47"
-    },
-    {
-      "path": "INDEPENDENT_CAMPAIGN_RECHECK.json",
-      "bytes": 209264,
-      "sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b"
-    },
-    {
-      "path": "INDEPENDENT_CANCELLATION_RECHECK.json",
-      "bytes": 141148,
-      "sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4"
     },
     {
       "path": "INDEPENDENT_FILL_LITERAL_CHECK.json",
@@ -205,11 +190,6 @@
       "path": "INDEPENDENT_SDK_VERIFICATION.json",
       "bytes": 2431,
       "sha256": "64a9b5146754a2ef47606d3c07036597d74c3263efa30f49976885a85c0dbe3f"
-    },
-    {
-      "path": "INDEPENDENT_UNIVERSE_RECHECK.json",
-      "bytes": 193282,
-      "sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a"
     },
     {
       "path": "INDEPENDENT_WAL_RECHECK.json",
@@ -477,11 +457,6 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "cli-SYN_CORE4.stdout.log",
-      "bytes": 12497,
-      "sha256": "5128589a083a9e088495ce0b9675d5e07093bb22e8eb15cf34a30e89869ea760"
-    },
-    {
       "path": "cli-SYN_TAIL4.json",
       "bytes": 109,
       "sha256": "9bc6aecc4ced2bdb3e103e1fba8fcc1bf919c0a7bf3e0cab1b16cd9af96f99ff"
@@ -492,11 +467,6 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "cli-SYN_TAIL4.stdout.log",
-      "bytes": 12497,
-      "sha256": "be3ecb23ec670228014347bc62a631a6711d4ac528f6da1865a9080c9e29940c"
-    },
-    {
       "path": "cli-SYN_U.json",
       "bytes": 105,
       "sha256": "3a439f9462a0b142fb488be50a87e70c4568bace60be5c533539e1456a8163d3"
@@ -505,11 +475,6 @@
       "path": "cli-SYN_U.stderr.log",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "cli-SYN_U.stdout.log",
-      "bytes": 12481,
-      "sha256": "b20be24a2a5ccdfa0cfaba002cb4ff61bf140958bcc029b60787ed0e2ac62b33"
     },
     {
       "path": "coverage-verification.command.json",
@@ -1813,5 +1778,84 @@
   "original_manifest": "received/EVIDENCE_MANIFEST.json",
   "reception_verification": "RECEIPT_VERIFICATION.json",
   "all_large_original_bytes_retained_in_original_ZIP": true,
-  "no_received_scripts_executed": true
+  "no_received_scripts_executed": true,
+  "external_small_original_files": [
+    {
+      "path": "HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "bytes": 90036,
+      "sha256": "04d27310bc5f3082ba74e4e704e4741e3cec35c700d407896afad4e2e24d6aa8",
+      "storage": "EXTERNAL_ORIGINAL_BYTES_NOT_REDACTED",
+      "direct_read_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\external-review-originals\\HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "original_archive_path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+      "original_zip_member": "HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "also_retained_in_git_history": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json"
+    },
+    {
+      "path": "INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "bytes": 209264,
+      "sha256": "0a29e9a15e890714ece2916a9dd102650b2b6138dcfc2695e97342cd1ad3984b",
+      "storage": "EXTERNAL_ORIGINAL_BYTES_NOT_REDACTED",
+      "direct_read_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\external-review-originals\\INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "original_archive_path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+      "original_zip_member": "INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "also_retained_in_git_history": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CAMPAIGN_RECHECK.json"
+    },
+    {
+      "path": "INDEPENDENT_CANCELLATION_RECHECK.json",
+      "bytes": 141148,
+      "sha256": "d6b8e4404d3d6460b8bc7c9e8c083db20d40609528dfabf03e04d68139c791c4",
+      "storage": "EXTERNAL_ORIGINAL_BYTES_NOT_REDACTED",
+      "direct_read_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\external-review-originals\\INDEPENDENT_CANCELLATION_RECHECK.json",
+      "original_archive_path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+      "original_zip_member": "INDEPENDENT_CANCELLATION_RECHECK.json",
+      "also_retained_in_git_history": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_CANCELLATION_RECHECK.json"
+    },
+    {
+      "path": "INDEPENDENT_UNIVERSE_RECHECK.json",
+      "bytes": 193282,
+      "sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a",
+      "storage": "EXTERNAL_ORIGINAL_BYTES_NOT_REDACTED",
+      "direct_read_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\external-review-originals\\INDEPENDENT_UNIVERSE_RECHECK.json",
+      "original_archive_path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+      "original_zip_member": "INDEPENDENT_UNIVERSE_RECHECK.json",
+      "also_retained_in_git_history": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/INDEPENDENT_UNIVERSE_RECHECK.json"
+    },
+    {
+      "path": "cli-SYN_CORE4.stdout.log",
+      "bytes": 12497,
+      "sha256": "5128589a083a9e088495ce0b9675d5e07093bb22e8eb15cf34a30e89869ea760",
+      "storage": "EXTERNAL_ORIGINAL_BYTES_NOT_REDACTED",
+      "direct_read_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\external-review-originals\\cli-SYN_CORE4.stdout.log",
+      "original_archive_path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+      "original_zip_member": "cli-SYN_CORE4.stdout.log",
+      "also_retained_in_git_history": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_CORE4.stdout.log"
+    },
+    {
+      "path": "cli-SYN_TAIL4.stdout.log",
+      "bytes": 12497,
+      "sha256": "be3ecb23ec670228014347bc62a631a6711d4ac528f6da1865a9080c9e29940c",
+      "storage": "EXTERNAL_ORIGINAL_BYTES_NOT_REDACTED",
+      "direct_read_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\external-review-originals\\cli-SYN_TAIL4.stdout.log",
+      "original_archive_path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+      "original_zip_member": "cli-SYN_TAIL4.stdout.log",
+      "also_retained_in_git_history": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_TAIL4.stdout.log"
+    },
+    {
+      "path": "cli-SYN_U.stdout.log",
+      "bytes": 12481,
+      "sha256": "b20be24a2a5ccdfa0cfaba002cb4ff61bf140958bcc029b60787ed0e2ac62b33",
+      "storage": "EXTERNAL_ORIGINAL_BYTES_NOT_REDACTED",
+      "direct_read_path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\external-review-originals\\cli-SYN_U.stdout.log",
+      "original_archive_path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-recheck-3017a09-independent-20261024\\EVIDENCE.zip",
+      "original_zip_member": "cli-SYN_U.stdout.log",
+      "also_retained_in_git_history": "e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee:docs/audits/phase-6/g2-3017a09/received/cli-SYN_U.stdout.log"
+    }
+  ],
+  "storage_policy_update": {
+    "reason": "Public engineering variant-identity hashes in seven new reviewer attachments triggered generic-api-key during H final secret scan. All 54 independently recomputed. Preserve raw originals externally instead of altering scanner or original audit files.",
+    "original_manifest_scope": "received/EVIDENCE_MANIFEST.json describes all 348 files in the original sealed349-member ZIP, not the subset copied into Git. It remains byte-identical.",
+    "external_originals": "EXTERNAL_ORIGINALS.json",
+    "new_CI_required": true,
+    "old_CI_failure_retained": true
+  }
 }

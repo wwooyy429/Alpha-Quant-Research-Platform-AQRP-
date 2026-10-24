@@ -1,3 +1,5 @@
+> 2026-10-24 发布前归档修正：用户已验收八项并有条件授权发布。归档头 `e0d8d79cecbb0f3d36ace7fa9fdc983c13b30bee` 的 Windows CI 在最终密钥扫描失败，1567用例全通过也不能把该CI改判成功。54项触发均已由独立stdlib重算为公开工程配置哈希。7份新审查附件按原字节完整保留于外部直读目录、原始封存ZIP及旧Git历史，定位/成员/长度/SHA见 [EXTERNAL_ORIGINALS.json](EXTERNAL_ORIGINALS.json)，原报告/manifest原字节不改；其余Git镜像清单见 EVIDENCE_INDEX。密钥扫描规则、业务、测试、工具、CI及锁完全不改，新文档头须重新CI通过才可合并。以下原接收说明保留为当时历史。
+
 # Phase6 G2 独立复核接收与开发处置
 
 已审实现：`3017a097b49ecdae68228ca9a417fcd03c313200`；主审：GPT Work。原始[报告](received/REPORT.md)、[发现清单](received/FINDINGS.json)、[交接说明](received/DEVELOPER_HANDOFF.txt)和[收据](received/RECEIPT.json)均按原字节归档。
