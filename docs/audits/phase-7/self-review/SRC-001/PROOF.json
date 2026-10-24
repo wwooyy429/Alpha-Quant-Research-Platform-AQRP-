@@ -1,0 +1,214 @@
+{
+  "schema": "phase7-developer-self-review-SRC-001/1",
+  "finding": "SRC-001",
+  "created_utc": "2026-10-24T23:23:37.853851+00:00",
+  "failed_fixed_sha": "33ca8187d1aab1ba62a9fb193befae9fc1a91bff",
+  "classification": "CI orchestration writes a source-side import cache after the scanned-source capture",
+  "status": "FIX_IMPLEMENTED_AWAITING_NEW_FIXED_SHA_FULL_VALIDATION_AND_INDEPENDENT_G2",
+  "executor": "Codex developer cause/control; not GPT Work independent audit",
+  "actual_observation": {
+    "scope": "Read-only local native SDK mid-run source endpoint observation; complete=false at observation, not a final native SDK result",
+    "original_file_count": 6071,
+    "observed_file_count": 6072,
+    "sole_added_path": "docs/audits/phase-6/__pycache__/reference_check.cpython-313.pyc",
+    "removed": [],
+    "changed": [],
+    "source_guard_exclusions": [],
+    "source_diff_receipt": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\NATIVE_SOURCE_DIFF_33CA818_a27325aa-c1b6-4e5a-9100-d3338652d363\\RECEIPT.json",
+      "bytes": 3181,
+      "sha256": "d83ac11a1f0dbb72c10a7f6c116833d2aeae8bdd23c616725d090f534dda0d0c"
+    },
+    "source_diff": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\NATIVE_SOURCE_DIFF_33CA818_a27325aa-c1b6-4e5a-9100-d3338652d363\\SOURCE_DIFF_33CA818.json",
+      "bytes": 3287,
+      "sha256": "42f0dba2de23513b1783c9dc9f14056f92e514c0fefdb162c71b00af16b93142"
+    },
+    "original_capture_and_all_source_rows_and_actual_added_pyc_RAW_ZIP": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\NATIVE_SOURCE_DIFF_33CA818_a27325aa-c1b6-4e5a-9100-d3338652d363\\NATIVE_SOURCE_DIFF_33CA818_RAW.zip",
+      "bytes": 571954,
+      "sha256": "f0cc3c1309aa7512ea6b933f36968c8c89b243d1c73f2d67bed9f0432f1d499e",
+      "members": 8,
+      "CRC_and_every_member_hash_verified": true
+    },
+    "SDK_writes_by_observer": 0,
+    "pyc_deleted_or_replaced": false
+  },
+  "reported_official_failure": {
+    "scope": "Authenticated original Ubuntu artifact verified by the developer artifact receiver; not an independent GPT Work G2 verdict",
+    "result": "FAILED_ORIGINAL_UBUNTU_BYTES_VERIFIED_NOT_A_PASS",
+    "fixed_sha": "33ca8187d1aab1ba62a9fb193befae9fc1a91bff",
+    "run_id": 40135738029,
+    "attempt": 1,
+    "job_id": 120996747487,
+    "artifact_id": 12579655020,
+    "original_zip": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\33CA818_UBUNTU_EARLY_ORIGINAL_2b653cfc-0ff5-49f2-a53f-c76330879a5a\\phase7-ubuntu-24.04-1-artifact-12579655020.zip",
+      "bytes": 312141324,
+      "sha256": "5a66a4a1fd478c62a252b67ac58cc5c249497bb1fb71e64534ce61f6b2b15d12",
+      "official_digest": "sha256:5a66a4a1fd478c62a252b67ac58cc5c249497bb1fb71e64534ce61f6b2b15d12"
+    },
+    "original_scoped_failure_verification": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\33CA818_UBUNTU_EARLY_ORIGINAL_2b653cfc-0ff5-49f2-a53f-c76330879a5a\\SCOPED_FAILURE_VERIFICATION.json",
+      "bytes": 3234,
+      "sha256": "f75114674291cb90df1f909232c856d6c060ec9c2adc453473534c2d8fabd5c9"
+    },
+    "whole_original_ZIP_size_and_sha256_rechecked_for_this_proof": true,
+    "original_receiver_ZIP_CRC_verified": true,
+    "CRC_repeated_by_this_proof": false,
+    "actual_junit": {
+      "tests": 1962,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "scanner_capture_controls": {
+      "benign_exact_exceptions": 5,
+      "detection_positives": 10,
+      "known_baseline_limitations": 2,
+      "total": 17
+    },
+    "actual_nonbrowser_actors": 10,
+    "offline_adapter_cases": 33,
+    "actual_sdk_complete": false,
+    "actual_late_endpoint_failure": {
+      "captured_utc": "2026-10-24T23:18:54.872713+00:00",
+      "error_type": "ValueError",
+      "operation": "verify",
+      "original_failures_preserved": true,
+      "reason": "SCANNED_SOURCE_FILE_SET_OR_BYTES_CHANGED",
+      "result": "FAIL",
+      "source": "/home/runner/work/_temp/aqrp-evidence/aqrp-cebb4dc6-fe3b-406d-b24a-8a7d8d997d14/source"
+    },
+    "actual_revision_reference_command": {
+      "argv": [
+        "/home/runner/work/_temp/aqrp-evidence/aqrp-cebb4dc6-fe3b-406d-b24a-8a7d8d997d14/venv/bin/python",
+        "-I",
+        "/home/runner/work/_temp/aqrp-evidence/aqrp-cebb4dc6-fe3b-406d-b24a-8a7d8d997d14/source/docs/audits/phase-6/revision_reference.py",
+        "/home/runner/work/_temp/aqrp-evidence/aqrp-cebb4dc6-fe3b-406d-b24a-8a7d8d997d14/p6-revision_reference.json"
+      ],
+      "cwd": "/home/runner/work/_temp/aqrp-evidence/aqrp-cebb4dc6-fe3b-406d-b24a-8a7d8d997d14/source",
+      "started_utc": "2026-10-24T22:45:30.977258+00:00",
+      "ended_utc": "2026-10-24T22:45:31.024239+00:00",
+      "exit": 0,
+      "combined_raw_log": "commands.log"
+    },
+    "actual_final_source_bytes_uploaded": false,
+    "precise_Ubuntu_added_file_independently_observed": false,
+    "cause_evidence_limit": "Official ZIP retains exact captured source manifest and final failure reason, but does not upload actual source/current failure manifest. The precise added file cannot be independently enumerated for this Ubuntu host from the artifact. Frozen -I reference command is recorded; native separate read-only manifest diff and isolated external reproduction must remain separately scoped.",
+    "other_host_outcomes": "Native and Windows terminal results remain separate pending evidence at proof creation; no partial success is promoted to an overall SDK pass."
+  },
+  "cause": {
+    "ci_sets_environment_variable": "PYTHONPYCACHEPREFIX",
+    "isolated_reference_option": "-I",
+    "effect": "-I sets ignore_environment and ignores PYTHONPYCACHEPREFIX; revision_reference.py executes reference_check.py with importlib SourceFileLoader, which writes a source-adjacent pyc unless bytecode writes are disabled explicitly.",
+    "protected_import_location": "docs/audits/phase-6/revision_reference.py:9-11",
+    "no_business_algorithm_or_financial_answer_changed": true
+  },
+  "targeted_actual_control": {
+    "receipt": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\PYCACHE_ISOLATED_REFERENCE_CAUSE_33CA818_f4c39997-fc08-4190-9763-034458c2dde1\\RECEIPT.json",
+      "bytes": 8759,
+      "sha256": "e60fb6938136bce5dd93ed46e04b90a2303dc2db8a6666c026c67787cb4b1e00"
+    },
+    "manifest": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\PYCACHE_ISOLATED_REFERENCE_CAUSE_33CA818_f4c39997-fc08-4190-9763-034458c2dde1\\FILE_MANIFEST.json",
+      "bytes": 5515,
+      "sha256": "ad2ed396fde395d6a011a9f4baa1ec0855cc7a87109349cdd0a3c8fdcae55e5e"
+    },
+    "source": "Exact Git blobs from failed fixed SHA copied to two new external directories; original protected repository files untouched.",
+    "old_argv_flags": [
+      "-I"
+    ],
+    "old_added_files": 1,
+    "new_argv_flags": [
+      "-I",
+      "-B"
+    ],
+    "new_added_files": 0,
+    "changed_or_removed_files_in_both_controls": 0,
+    "literal_original_groups": 32,
+    "literal_supplemental_groups": 95,
+    "passed_groups_each_control": 127,
+    "both_reference_result_files_byte_equal": true,
+    "actual_environment_identity": "C:\\Users\\11638\\AQRP-runs\\p7-clean-sdk-33ca818-aa8c78c3-30c4-4218-b624-e2ecd868a80b\\aqrp-b7b78809-5b82-4080-a999-a5f7000bac41\\venv\\Scripts\\python.exe",
+    "no_full_SDK_or_browser_claim": true
+  },
+  "minimal_fix": {
+    "path": "tools/ci.py",
+    "change": "Add explicit -B to both existing -I protected-reference loops (P3 and P6) only.",
+    "old_ci_sha256": "2fa3d20d70ffe104ccf27bf56bceb6e9dd6da68a1aa9251442d71e959e008bcc",
+    "new_ci_sha256": "abb2dd0c48b57df4219427698fa6db6e643cc4c36b5e8d82253f3f4618660b63",
+    "exact_change_is_two_explicit_B_argv_additions": true,
+    "other_commands_changed": false,
+    "protected_reference_scripts_changed": false,
+    "source_gate_exclusions_added": false,
+    "scan_policy_or_17_controls_changed": false,
+    "source_pyc_precreated_or_deleted": false,
+    "limits": "-B prevents Python bytecode writes for these invocations; it does not certify OS isolation or continuous source immutability."
+  },
+  "unchanged_file_proofs": [
+    {
+      "path": "docs/audits/phase-6/reference_check.py",
+      "sha256": "6f8bc5075eaa43869bbe9b140c288d93d7cd45facbfaf9ac71ce437d58239b3c",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": "docs/audits/phase-6/revision_reference.py",
+      "sha256": "d697820acce0a06b0733ae989645f4dd07afe1bbce6b01f74b4cef4c317169e3",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": "docs/audits/phase-3/reference_arithmetic.py",
+      "sha256": "a6bbde61f5ea8262acb1f023e4b4ad5916ad7b6314bc27ff2e6572f92a114530",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": "docs/audits/phase-3/supplemental_reference.py",
+      "sha256": "86b99eb4b83ff0c98e0001378303b9331531afc6e2bc94a9587130e7d9d5fdd9",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": "docs/audits/phase-3/recheck_reference_v2.py",
+      "sha256": "b7931c3dc086f516afa36e0d484a7f1af7f8f8e8e8f82028ec74b19f0da3135b",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": ".gitleaks.toml",
+      "sha256": "73dbfe9e8ddd221da5ffd18a3cfa467ea8435dfa57b1ce4f28159eb6c5bab928",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": ".gitleaks-phase7.toml",
+      "sha256": "62bc71df9274add6c9d0323783dbb8add02f6c409ea941d27c16773b70ff5be5",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": "tools/secret_scan.py",
+      "sha256": "644e2a76cd1949f17c07ca88308587d025e41f1907fd9e3487ab65a42308d171",
+      "byte_equal_to_failed_fixed_sha": true
+    },
+    {
+      "path": "tools/check_phase7_scan_policy.py",
+      "sha256": "6632496a03436916d8aa94d122d644998eb5e48c5cf4915cbe999a70e7a2d6ac",
+      "byte_equal_to_failed_fixed_sha": true
+    }
+  ],
+  "required_follow_up": [
+    "Freeze and push a new complete 40-character SHA; retain the failed S33 native and official artifacts without relabeling them.",
+    "Execute a fresh full clean SDK, unchanged coverage gates, scan17 controls and exact all-source capture/late verification at that new SHA.",
+    "Execute and verify both official OS runs and original ZIPs at that new SHA.",
+    "Rebind and reexecute required literal and real-browser proofs at the new fixed SHA; no old-S PASS transfer.",
+    "Submit the new fixed version to independent GPT Work G2; developer targeted cause/control cannot close the overall stage."
+  ],
+  "independent_G2": "PENDING",
+  "accepted": false,
+  "released": false,
+  "merged": false,
+  "tagged": false,
+  "deployed": false,
+  "formal_Test": "NOT RUN",
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "official_binding_updated_utc": "2026-10-24T23:24:40.292176+00:00"
+}

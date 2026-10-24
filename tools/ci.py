@@ -260,7 +260,7 @@ def main():
         "recheck_reference_v2.py",
     ):
         command(
-            [str(py), "-I", str(source / "docs/audits/phase-3" / script)],
+            [str(py), "-I", "-B", str(source / "docs/audits/phase-3" / script)],
             cwd=source / "docs/audits/phase-3",
         )
     for name in ("reference_check.py", "revision_reference.py"):
@@ -268,6 +268,7 @@ def main():
             [
                 str(py),
                 "-I",
+                "-B",
                 str(source / "docs/audits/phase-6" / name),
                 str(RUN / ("p6-" + name.replace(".py", ".json"))),
             ],
