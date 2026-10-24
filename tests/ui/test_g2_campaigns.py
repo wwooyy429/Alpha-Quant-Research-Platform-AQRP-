@@ -227,3 +227,44 @@ def test_unknown_campaign_and_duplicate_index_are_refused(tmp_path):
         s.campaigns()
     with pytest.raises(ContractError, match="RESEARCH_CAMPAIGN_NOT_REGISTERED"):
         s.freeze({**SINGLE, "campaign_id": "study"})
+
+
+@pytest.mark.parametrize("query_failure", [False, True])
+def test_readonly_registration_history_releases_connection_on_every_exit(
+    tmp_path, monkeypatch, query_failure
+):
+    import sqlite3
+
+    import aqrp.services.task_campaigns as campaigns
+
+    s = service(tmp_path)
+    data_hash = catalogue(s.root)["snapshot"]["manifest_hash"]
+    connect = sqlite3.connect
+    connections = []
+
+    class ObservedConnection(sqlite3.Connection):
+        closed = False
+
+        def execute(self, sql, *args):
+            if query_failure and sql.startswith("SELECT count"):
+                raise sqlite3.OperationalError("controlled read failure")
+            return super().execute(sql, *args)
+
+        def close(self):
+            self.closed = True
+            return super().close()
+
+    def observed(*args, **kwargs):
+        c = connect(*args, **kwargs, factory=ObservedConnection)
+        connections.append(c)
+        return c
+
+    monkeypatch.setattr(campaigns.sqlite3, "connect", observed)
+    if query_failure:
+        with pytest.raises(sqlite3.OperationalError, match="controlled read failure"):
+            campaigns.history(s.root, data_hash)
+    else:
+        assert campaigns.history(s.root, data_hash)["prior_reserved_task_attempts"] == 0
+    assert len(connections) == 1 and connections[0].closed
+    with pytest.raises(sqlite3.ProgrammingError, match="closed"):
+        connections[0].execute("SELECT 1")

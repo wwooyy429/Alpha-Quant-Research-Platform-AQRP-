@@ -2,6 +2,7 @@
 
 import re
 import sqlite3
+from contextlib import closing
 from copy import deepcopy
 
 from aqrp.backtest.transactions import guard_path
@@ -34,7 +35,7 @@ def history(root, data_hash):
     }
     db = guard_path(root / "task-control/tasks.sqlite")
     if db.is_file():
-        with sqlite3.connect("file:" + db.as_posix() + "?mode=ro", uri=True) as c:
+        with closing(sqlite3.connect("file:" + db.as_posix() + "?mode=ro", uri=True)) as c:
             if c.execute("SELECT 1 FROM sqlite_master WHERE name='campaign_attempts'").fetchone():
                 result["prior_reserved_task_attempts"] = c.execute(
                     "SELECT count(*) FROM campaign_attempts WHERE data_hash=?", (data_hash,)

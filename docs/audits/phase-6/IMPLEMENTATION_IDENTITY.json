@@ -2,7 +2,7 @@
   "scope": "P6 implementation file identity; no independent G2 verdict or financial approval",
   "archival_start": "0242db37b4c822e7c73ef6c17faf104bcea54892",
   "phase5_baseline": "59246f9fd391c1713b6bed65dd22280f4d248493",
-  "bundle_sha256": "449a7a0481c5222019f371039a2f358b5309ee2b3959176ddb409a390066b2c6",
+  "bundle_sha256": "fe3b12714f953c5a9a7767367b1529f86c17949071177ea188639a40f120e82a",
   "bundle_manifest": {
     "factor_api": "1.0.0",
     "data_contract": "contracts/1.0.0",
@@ -10,7 +10,7 @@
     "files": [
       {
         "path": "__init__.py",
-        "sha256": "d76f10233bc1431bcff3f355316215c0ddca69d1cca67ea8430dd1bf3baa3e34"
+        "sha256": "3bd21b96fe0352cc2e9ffc4761b9f427c857179b3e5ddf80895e74e8f66a8488"
       },
       {
         "path": "backtest/__init__.py",
@@ -262,7 +262,7 @@
       },
       {
         "path": "services/task_campaigns.py",
-        "sha256": "bad253b90eb3df2cac3b751d7385b00ae22af7524c3e4019ebb796ced9961de8"
+        "sha256": "cb6c235fc0ccc6e9273128750f2eaf598c98ddd5c95bf43877ef74028416aa98"
       },
       {
         "path": "services/task_cli.py",
@@ -25482,8 +25482,8 @@
     },
     {
       "path": "docs/audits/phase-6/DEVELOPER_FINDINGS.md",
-      "bytes": 2413,
-      "sha256": "7e8e33e0290e85c80015b677315ec0dff257ba0626e98aea7b5b6a1091e1fe1a"
+      "bytes": 3591,
+      "sha256": "3ce706bcc589b3408b1fb086c1f3713f36c975125d01b418458a2d39a27ec0f4"
     },
     {
       "path": "docs/audits/phase-6/ENGINEERING_CODE_REVIEW.md",
@@ -25517,8 +25517,8 @@
     },
     {
       "path": "docs/audits/phase-6/STATUS.json",
-      "bytes": 3436,
-      "sha256": "20ec77920d07a45a7ad2d0fff6c6d7d3ad884618d2ebedfa2a75e1a8349ca049"
+      "bytes": 3571,
+      "sha256": "fcdeb697cb0ca1b7144cdf9ff02f5da9e8714aa56d9adf408778874ab1280ac8"
     },
     {
       "path": "docs/audits/phase-6/g2-eae807f/CAMPAIGNS_AND_UNIVERSES.md",
@@ -25526,14 +25526,24 @@
       "sha256": "82f0e145916cb1e69adaab5019dc46cf45070b513afe4522eeb745686082d865"
     },
     {
+      "path": "docs/audits/phase-6/g2-eae807f/CANDIDATE_CI_FAILURE.json",
+      "bytes": 1457,
+      "sha256": "6a3d20f22751099617b3396a12ae52aa0f8f3daa12a5edb8646871369f7c66e9"
+    },
+    {
       "path": "docs/audits/phase-6/g2-eae807f/DEVELOPER_RESPONSE.md",
-      "bytes": 2995,
-      "sha256": "5895bc71e1d88a4b1e9120a9b9e2870b8b532ae17ba5b0e1478b799a046e9af2"
+      "bytes": 3625,
+      "sha256": "f1dcb5429ae37b2934a043884e007ec68683aa1e0d64972856d03f54516b69b5"
     },
     {
       "path": "docs/audits/phase-6/g2-eae807f/RECEIPT_VERIFICATION.json",
       "bytes": 3182,
       "sha256": "7dd9cd0245fbcbea58bd325c195deaa42cd02320f51d1d73c8249aa3e7fae546"
+    },
+    {
+      "path": "docs/audits/phase-6/g2-eae807f/RESOURCE_LIFECYCLE_REPAIR.json",
+      "bytes": 2097,
+      "sha256": "5544c6f08b1b34a244ea76ceb04c49b4515be5e481862cb4f9b93019a1918af4"
     },
     {
       "path": "docs/audits/phase-6/g2-eae807f/received/CANCELLATION_FINANCIAL_PROBE.json",
@@ -25603,7 +25613,7 @@
     {
       "path": "pyproject.toml",
       "bytes": 1401,
-      "sha256": "9cee506667fe2dcfa40725028715b36fa6e2cd29253ebd7e8742f0d1f06c6cdb"
+      "sha256": "9f1ad570b7aa0749e9efde19690615a8ad2fbc57f5d5659db71628dd984349bf"
     },
     {
       "path": "requirements-ui-linux.lock",
@@ -25618,7 +25628,7 @@
     {
       "path": "src/aqrp/__init__.py",
       "bytes": 114,
-      "sha256": "d76f10233bc1431bcff3f355316215c0ddca69d1cca67ea8430dd1bf3baa3e34"
+      "sha256": "3bd21b96fe0352cc2e9ffc4761b9f427c857179b3e5ddf80895e74e8f66a8488"
     },
     {
       "path": "src/aqrp/backtest/engine.py",
@@ -25638,7 +25648,7 @@
     {
       "path": "src/aqrp/factors/reviewed_code.json",
       "bytes": 655,
-      "sha256": "d23c8653f5def73cb5998166f934b3728fc2b3c5911718264536fb258d5327ce"
+      "sha256": "1209c486f46c8c1ee7a4466ecb00b7221a87135ebb8f16d615f9f107a903c605"
     },
     {
       "path": "src/aqrp/portfolio/service.py",
@@ -25657,8 +25667,8 @@
     },
     {
       "path": "src/aqrp/services/task_campaigns.py",
-      "bytes": 8292,
-      "sha256": "bad253b90eb3df2cac3b751d7385b00ae22af7524c3e4019ebb796ced9961de8"
+      "bytes": 8332,
+      "sha256": "cb6c235fc0ccc6e9273128750f2eaf598c98ddd5c95bf43877ef74028416aa98"
     },
     {
       "path": "src/aqrp/services/task_cli.py",
@@ -25738,7 +25748,7 @@
     {
       "path": "tests/environment/test_installation.py",
       "bytes": 1146,
-      "sha256": "ec42148b64387481d66fd0613cc8c2a221a1c67548462e42e474fd5c594d6357"
+      "sha256": "48c8523fa5b5c7f908acfce9d6ffc9e484c026075d5d2ccb447d2184d3289d85"
     },
     {
       "path": "tests/ui/test_defaults_editor.py",
@@ -25747,8 +25757,8 @@
     },
     {
       "path": "tests/ui/test_g2_campaigns.py",
-      "bytes": 9657,
-      "sha256": "85ccd3ef6345a2f119d66b454b0a7b153d1ab4123300f9338eea94593eb00f88"
+      "bytes": 11078,
+      "sha256": "69c170be12f3d11970ee98609c8452edfe4c50f8bfb9b54e90c0ae95f717fb1d"
     },
     {
       "path": "tests/ui/test_g2_cancel_finances.py",
@@ -25782,8 +25792,8 @@
     },
     {
       "path": "tests/ui/test_task_core.py",
-      "bytes": 9944,
-      "sha256": "08ea727b1fd5507e3f1c0905e46e9ea353ebc129e4751e50450d6f41f7d20166"
+      "bytes": 11229,
+      "sha256": "8da45b387d0032da94b4236263b3cab8bb58f298cb5a32abdd8c35fe8cb37654"
     },
     {
       "path": "tests/ui/test_task_frontends.py",

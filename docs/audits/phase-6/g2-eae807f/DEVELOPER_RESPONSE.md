@@ -13,3 +13,6 @@
 旧catalog/1工程目录及dev2轮次保持只读历史，不原地迁移或改写旧family。dev3新工程目录使用catalog/2；共享预算/污染控制边界为一个工程workspace内同数据身份，不能冒充跨机器、跨数据克隆的真实隔离或金融批准。默认计划公开其有限集合，不能把first-use登记描述成用户正式预注册研究或正式Test。其余金融数学和原G1 Golden答案不变。
 
 八项受限P6工程范围；不合并、标签、部署、实盘、正式Test、金融批准或P7。WI-R2-001/002和真实Windows隔离DEFERRED / NOT VERIFIED；完整历史宿主限制保留。
+
+
+DEV-P6-002：C3固定418c17fad8fefe50dedc866f95c14ccf0fa433ca的1558项预检及覆盖率门禁通过，安装包测试亦已1558通过；收尾发现只读SQLite连接未显式关闭造成资源警告。dev4改用closing确保正常/异常路径均关闭，增加两项实际连接生命周期回归，不降低检查、不改变金融数学或预算。C3原日志/工件/浏览器前缀保留，不能移作dev4证明；最终重新锁完整SHA执行SDK/双OS/原ZIP/真实浏览器。见RESOURCE_LIFECYCLE_REPAIR.json。三项独立G2仍OPEN，DEV-P6-001独立关闭结论保留，DEV-P6-002是开发自查修复待主审。

@@ -1,0 +1,32 @@
+{
+  "superseded_candidate": "418c17fad8fefe50dedc866f95c14ccf0fa433ca",
+  "developer_preflight": {
+    "root": "E:/WORK/AQRP-runs/p6-repair-preflight-6523c541-1af7-46d7-b666-7fcd06ac8855",
+    "tests": 1558,
+    "failures": 0,
+    "coverage_gate": "PASS",
+    "scope": "Editable preflight, not final fixed-SHA SDK"
+  },
+  "installed_C3_SDK": "E:/WORK/AQRP-runs/p6-sdk-418c17f-09f67c90-c0ce-48c0-9450-75c94cf16d5c/aqrp-1ef470ec-6949-49e5-b42a-7a846de61f69",
+  "developer_finding": "DEV-P6-002: sqlite3.Connection context manager ends a transaction but does not close the handle. Explicit closing now guarantees release for normal and failed history reads. Financial formulae, quotas, immutable definitions, data and independent answers unchanged.",
+  "disposition": "FIX_IMPLEMENTED / PENDING_FINAL_FIXED_SHA_EVIDENCE_AND_GPT_WORK",
+  "original_evidence_root": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-g2-repair-eae807f-20261024",
+  "source_receipts": [
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-g2-repair-eae807f-20261024\\CANDIDATE_COMMIT.json",
+      "sha256": "bdbb9ee4ee25753921f5b4cf38b0ad86d794373ed6a78278e79e483c8e36b2ad"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-g2-repair-eae807f-20261024\\PR9-locked-418c17f.json",
+      "sha256": "f44b11e3738606c39c90016007248197c5e85b97eb045485af834741b7f2d7d3"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-g2-repair-eae807f-20261024\\PREFLIGHT.json",
+      "sha256": "69067d8a9cde102059cb42038942023166be7185e8c1eb0d84dc7e8f11c186ab"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p6-g2-repair-eae807f-20261024\\BROWSER_FIXED_ROOT.json",
+      "sha256": "239a1514b5fd7a772b8fc710e06b3c103c9cf27b7b941f7e391c48e0b719bc2f"
+    }
+  ]
+}

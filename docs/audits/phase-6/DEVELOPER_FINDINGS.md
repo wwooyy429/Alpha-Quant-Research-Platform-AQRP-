@@ -11,3 +11,10 @@ DEV-P6-001：固定 C1 `f03ebe7c65117e082608a82474461d876265bf7e` 的完整 SDK 
 回归覆盖连续两个不同输入、即时版本显示、双会话过期CAS拒绝/保留文本/显式重载、非法文本不落库、历史快照损坏与回滚拒绝、因子选择保留其他字段、旧冻结请求不改。原字面期望 `[3,2]` 保留，不通过增加手工rerun或改变正确答案迎合旧实现。
 
 处置为 **FIX_IMPLEMENTED / PENDING_FIXED_SHA_G2**，不冒充GPT Work独立关闭。本次修复只属P6配置/视图/非金融状态，不修改金融算法、core锁、原Golden及既有延期。新完整SHA必须重跑干净SDK、双系统原ZIP与真实浏览器，C1通过记录不能移作新版证明。
+
+
+DEV-P6-002：C3固定418c17fad8fefe50dedc866f95c14ccf0fa433ca的1558项预检及覆盖率门禁通过，安装包测试亦已1558通过；收尾发现只读SQLite连接未显式关闭造成资源警告。dev4改用closing确保正常/异常路径均关闭，增加两项实际连接生命周期回归，不降低检查、不改变金融数学或预算。C3原日志/工件/浏览器前缀保留，不能移作dev4证明；最终重新锁完整SHA执行SDK/双OS/原ZIP/真实浏览器。见RESOURCE_LIFECYCLE_REPAIR.json。三项独立G2仍OPEN，DEV-P6-001独立关闭结论保留，DEV-P6-002是开发自查修复待主审。
+
+## DEV-P6-003 — candidate Windows abrupt-death harness
+
+C3 CI 40069640065 Windows failed 1/1558 with child native exception 0xC0000005; Ubuntu and local installed SDK passed 1558. Original failure is retained, not reclassified. Exact native fault cause is not proven. The new harness records/fsyncs the reached boundary, enables native traceback capture and uses Windows self-TerminateProcess(73), retaining exact exit and every recovery assertion. See g2-eae807f/CANDIDATE_CI_FAILURE.json. Pending new same-SHA SDK/dual OS and GPT Work review.
