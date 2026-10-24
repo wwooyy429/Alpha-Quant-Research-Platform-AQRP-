@@ -6,6 +6,7 @@ from aqrp.backtest.contracts import timestamp
 from aqrp.backtest.synthetic import NAMESPACE, fixture_request, portfolio_template, seal_sidecar
 from aqrp.core.canonical import canonical
 from aqrp.core.errors import ContractError
+from aqrp.data.query import universe_at
 from aqrp.data.snapshot import verify_snapshot
 from aqrp.portfolio.contracts import load
 from aqrp.portfolio.research_input import bind_research
@@ -66,6 +67,11 @@ def execution_requests(c, ref, ledger_root, r):
         and str(row["session_date"]) in {s["session_id"] for s in sessions}
     ]
     # Independently declared synthetic opening/mark input; never exposes P1 daily OHLCV at open.
+    membership = {
+        t: {row["security_id"] for row in universe_at(c["universe_id"], t, ref)}
+        for s in sessions
+        for t in (s["open"], s["close"])
+    }
     for s in sessions:
         for a in assets:
             for kind in ("OPEN", "CLOSE"):
@@ -83,7 +89,7 @@ def execution_requests(c, ref, ledger_root, r):
                         "known_at": t,
                         "price": "100",
                         "tradable": True,
-                        "in_universe": True,
+                        "in_universe": a["security_id"] in membership[t],
                         "short_permission": True,
                         "borrow_limit": "1000",
                         "industry": "I",

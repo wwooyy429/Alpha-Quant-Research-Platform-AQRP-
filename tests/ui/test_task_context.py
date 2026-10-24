@@ -13,9 +13,10 @@ from aqrp.services.task_requests import initialize
 from aqrp.services.tasks import TaskService
 
 
-@pytest.fixture(scope="module")
-def root(tmp_path_factory):
-    p = tmp_path_factory.mktemp("context-controls")
+@pytest.fixture
+def root(tmp_path):
+    # Each ownership fault is a separate engineering control; no shared quota reset.
+    p = tmp_path / "context-controls"
     initialize(p, "a" * 40)
     return p
 

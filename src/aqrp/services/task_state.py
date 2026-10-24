@@ -8,7 +8,7 @@ from contextlib import contextmanager
 from aqrp.backtest.transactions import guard_path
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.errors import ContractError
-from aqrp.experiments.ledger import immutable_write
+from aqrp.experiments.ledger import immutable_write, mutex, read_chain
 
 TERMINAL = {"SUCCEEDED", "FAILED", "CANCELLED"}
 
@@ -35,6 +35,9 @@ class TaskState:
                   PRIMARY KEY(task,slot));
                 CREATE TABLE IF NOT EXISTS events (
                   seq INTEGER PRIMARY KEY, task TEXT, kind TEXT, payload TEXT);
+                CREATE TABLE IF NOT EXISTS campaign_attempts (
+                  task TEXT PRIMARY KEY, campaign TEXT, plan_hash TEXT, data_hash TEXT,
+                  units INTEGER, payload TEXT, hash TEXT);
                 CREATE TABLE IF NOT EXISTS defaults (
                   revision INTEGER PRIMARY KEY, payload TEXT, hash TEXT);
             """)
@@ -76,7 +79,7 @@ class TaskState:
                 raise ContractError("UNKNOWN_TASK")
             return dict(row)
 
-    def submit(self, raw, key):
+    def submit(self, raw, key, *, campaign=None):
         if not isinstance(key, str) or not 1 <= len(key) <= 128:
             raise ContractError("INVALID_IDEMPOTENCY_KEY")
         request = json.loads(raw)
@@ -94,8 +97,133 @@ class TaskState:
                 "INSERT INTO tasks(id,key,raw,hash,status,epoch) VALUES (?,?,?,?,?,0)",
                 (task, key, raw.decode(), digest(request), "QUEUED"),
             )
-            self.event(c, task, "SUBMITTED", {"config_hash": digest(request)})
+            control = None
+            if campaign is not None:
+                control = self._reserve_campaign(c, task, request, campaign, directory)
+            self.event(
+                c,
+                task,
+                "SUBMITTED",
+                {
+                    "config_hash": digest(request),
+                    "campaign_attempt_sha256": None if control is None else digest(control),
+                },
+            )
+            if control is not None:
+                self.event(c, task, "CAMPAIGN_ATTEMPT_RESERVED", control)
+            if control is not None and control["over_budget"]:
+                c.execute(
+                    "UPDATE tasks SET status='FAILED',error=? WHERE id=?",
+                    ("EXPERIMENT_BUDGET_EXCEEDED", task),
+                )
+                self.event(
+                    c,
+                    task,
+                    "FAILED",
+                    {"code": "EXPERIMENT_BUDGET_EXCEEDED", "campaign_attempt": control},
+                )
             return task
+
+    def _checked_campaign_record(self, c, row):
+        from aqrp.services.research import hypotheses
+
+        raw = guard_path(self.root / "tasks" / row["task"] / "campaign-attempt.json").read_bytes()
+        item = json.loads(raw)
+        reqrow = c.execute("SELECT raw,hash FROM tasks WHERE id=?", (row["task"],)).fetchone()
+        if reqrow is None:
+            raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE")
+        req = json.loads(reqrow["raw"])
+        actual_raw = guard_path(self.root / "tasks" / row["task"] / "request.json").read_bytes()
+        if (
+            canonical(item) != raw
+            or raw.decode() != row["payload"]
+            or digest(item) != row["hash"]
+            or actual_raw.decode() != reqrow["raw"]
+            or digest(req) != reqrow["hash"]
+            or item["task_config_hash"] != reqrow["hash"]
+            or item["campaign"] != req["payload"]["campaign"]
+            or item["hypothesis_ids"]
+            != [h["hypothesis"] for h in hypotheses(req["payload"]["research"])]
+            or item["units"] != row["units"]
+            or item["units"] != len(item["hypothesis_ids"])
+            or row["data_hash"] != item["campaign"]["data_hash"]
+            or row["plan_hash"] != item["campaign"]["campaign_hash"]
+            or row["campaign"] != item["campaign"]["id"]
+            or item["campaign"]["budget"] != 12
+        ):
+            raise ContractError("CAMPAIGN_ATTEMPT_IDENTITY_CHANGED")
+        return item
+
+    def _reserve_campaign(self, c, task, request, campaign, directory):
+        from aqrp.services.research import hypotheses
+
+        if campaign != request["payload"]["campaign"] or campaign["budget"] != 12:
+            raise ContractError("CAMPAIGN_ATTEMPT_IDENTITY_CHANGED")
+        rows = list(c.execute("SELECT * FROM campaign_attempts"))
+        expected = {
+            r["id"]
+            for r in c.execute("SELECT id,raw FROM tasks WHERE id!=?", (task,))
+            if "campaign" in json.loads(r["raw"]).get("payload", {})
+        }
+        if expected != {r["task"] for r in rows}:
+            raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE")
+        verified = [self._checked_campaign_record(c, r) for r in rows]
+        own_runs = {
+            json.loads(r[0])["child_run_id"]
+            for r in c.execute(
+                "SELECT binding FROM slots JOIN campaign_attempts ON slots.task=campaign_attempts.task WHERE slot='R'"
+            )
+        }
+        trial_root = guard_path(self.root / "research-runs")
+        trial_root.mkdir(exist_ok=True)
+        with mutex(trial_root / ".trials-lock"):
+            legacy = [
+                r["payload"]
+                for r in read_chain(trial_root / "trials.jsonl")
+                if r["payload"].get("data_hash") == campaign["data_hash"]
+                and r["payload"]["run_id"] not in own_runs
+            ]
+        peers = [x for x in verified if x["campaign"]["data_hash"] == campaign["data_hash"]]
+        units = [h["hypothesis"] for h in hypotheses(request["payload"]["research"])]
+        used = sum(x["units"] for x in peers) + len(legacy)
+        record = {
+            "campaign": campaign,
+            "task_id": task,
+            "task_config_hash": digest(request),
+            "hypothesis_ids": units,
+            "units": len(units),
+            "prior_reserved_units": used,
+            "prior_legacy_trials": len(legacy),
+            "prior_other_campaign_attempts": sum(
+                x["campaign"]["campaign_hash"] != campaign["campaign_hash"] for x in peers
+            ),
+            "prior_other_family_legacy_trials": sum(
+                x["family"] != request["payload"]["research"]["family"]["id"] for x in legacy
+            ),
+            "over_budget": used + len(units) > 12,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+        }
+        immutable_write(directory / "campaign-attempt.json", canonical(record))
+        c.execute(
+            "INSERT INTO campaign_attempts VALUES (?,?,?,?,?,?,?)",
+            (
+                task,
+                campaign["id"],
+                campaign["campaign_hash"],
+                campaign["data_hash"],
+                len(units),
+                canonical(record).decode(),
+                digest(record),
+            ),
+        )
+        return record
+
+    def research_attempt(self, task):
+        with self.transaction() as c:
+            row = c.execute("SELECT * FROM campaign_attempts WHERE task=?", (task,)).fetchone()
+            if row is None:
+                raise ContractError("CAMPAIGN_ATTEMPT_REQUIRED")
+            return self._checked_campaign_record(c, row)
 
     def claim(self, task, *, recover=False):
         owner = str(uuid.uuid4())

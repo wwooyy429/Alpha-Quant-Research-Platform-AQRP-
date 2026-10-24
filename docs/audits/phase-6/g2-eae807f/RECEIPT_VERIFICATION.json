@@ -1,0 +1,90 @@
+{
+  "received_utc": "2026-10-24T05:43:26.686310+00:00",
+  "fixed_sha": "eae807f957f178d19bc55dcfbd668caff5470c6e",
+  "executor": "Codex developer receipt verification, not independent audit",
+  "independent_verdict": "G2 BLOCKED / REQUEST CHANGES",
+  "independent_findings": {
+    "WORK-P6-G2-001": "High / OPEN",
+    "WORK-P6-G2-002": "Medium / OPEN / BLOCKING",
+    "WORK-P6-G2-003": "Medium / OPEN / BLOCKING",
+    "DEV-P6-001": "CLOSED \u2014 FIX VERIFIED"
+  },
+  "original_archive": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p6-g2-eae807f-independent-20261024\\EVIDENCE.zip",
+  "original_archive_bytes": 902364045,
+  "original_archive_sha256": "086c0a1d7128c241bff30cfed32f9d5178940c9decf3942cd462021f30983b3c",
+  "CRC_exact_members_all_sizes_hashes_verified": true,
+  "manifest_files": 304,
+  "ZIP_members": 305,
+  "received_originals": [
+    {
+      "path": "REPORT.md",
+      "bytes": 20520,
+      "sha256": "86a023e51f5aea36ee2f2eb5f4d0910226134b3cbefdd94c6eec640f7ae52b1c"
+    },
+    {
+      "path": "DEVELOPER_HANDOFF.txt",
+      "bytes": 1901,
+      "sha256": "9917359a9374b30611bb9a96e3c565b3f5e2684b3421b34d14abb594717b0e63"
+    },
+    {
+      "path": "RECEIPT.json",
+      "bytes": 1301,
+      "sha256": "adfb9aabc9d0d6cde6a2534109164f4d449f8776d1cd7dcb7d7a3f3a5a096c47"
+    },
+    {
+      "path": "EVIDENCE_MANIFEST.json",
+      "bytes": 60420,
+      "sha256": "3e6c36db64f90764164d7ec8b39542ef0c0dfccd81243921b22eb18b024ad649"
+    },
+    {
+      "path": "SEARCH_VARIANT_PROBE.json",
+      "bytes": 59191,
+      "sha256": "0f1d9f4aee5190c2f968dcda2d986553efab517ca7ad6e25a1b1090623e6f868"
+    },
+    {
+      "path": "SEARCH_REPEAT_CONTROL.json",
+      "bytes": 57961,
+      "sha256": "a1746084b6d1918544eebb2e0eaae418f89c767c5072f1e42d0d1175c6d67568"
+    },
+    {
+      "path": "CANCELLATION_FINANCIAL_PROBE.json",
+      "bytes": 90597,
+      "sha256": "9bc5596134bea3c4f14bebe5f2503ba1519f18f2c46ead54f4ce75be914214fc"
+    },
+    {
+      "path": "STOCK_POOL_SCOPE_PROBE.json",
+      "bytes": 1106,
+      "sha256": "f9150ee52c2406673a9cd50033d6b3122accb8769213637ba775d0d6359e2910"
+    },
+    {
+      "path": "COVERAGE_AND_FINDING_CONTROLS.json",
+      "bytes": 16611,
+      "sha256": "e57c09775cc64fcc25387abdbfea0c1939476cb98e27a8a090d44449602a4222"
+    },
+    {
+      "path": "probe_search_variants.py",
+      "bytes": 1984,
+      "sha256": "6bfa145d5e272f547d79781b82ee67ea06e0edf2d9cc7e5d40dbbf34e034c4cc"
+    },
+    {
+      "path": "probe_repeat_control.py",
+      "bytes": 2017,
+      "sha256": "5bd9fbf68582192bacbc1a41ca0988522f9317d86d5e25eb1cbd3feaa4b5dce5"
+    },
+    {
+      "path": "probe_cancellation_financial.py",
+      "bytes": 3013,
+      "sha256": "28dc763bbcda715da13885924beaa435ffe6251b83177f08d444d67b9b7fd9c0"
+    },
+    {
+      "path": "probe_stock_pool.py",
+      "bytes": 1391,
+      "sha256": "f8def7653c0774dc61abe6068d98fcee976a767960216569adb1c3aec9ce6e5f"
+    }
+  ],
+  "source_archive_preserved": true,
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "merge_tag_deploy_P7": false
+}

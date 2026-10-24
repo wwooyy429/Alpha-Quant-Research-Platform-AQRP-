@@ -1,3 +1,5 @@
+> 2026-10-24 当前修复记录：更新：GPT Work在eae807f已将DEV-P6-001确认CLOSED — FIX VERIFIED。新增WORK-P6-G2-001/002/003保持OPEN待修复新固定版本复核；下文是原dev2开发记录，不覆盖当前独立状态。 八项受限P6工程范围；不合并、标签、部署、实盘、正式Test、金融批准或P7。WI-R2-001/002和真实Windows隔离DEFERRED / NOT VERIFIED；完整历史宿主限制保留。
+
 # 真实浏览器补充发现及开发修复（待固定版本G2）
 
 DEV-P6-001：固定 C1 `f03ebe7c65117e082608a82474461d876265bf7e` 的完整 SDK 1486 与双OS CI均成功，真实浏览器后续发现 Settings 连续保存 `lookback=3`、再输入 `2`，实际数据库却保存 `[3,3]`；安装包上的独立字面回归也失败复现。页面显示 Saved revision2 时仍显示旧 Current revision1。原网页状态、截图、数据库核对、失败日志、原始SDK/官方ZIP保留，事实/哈希见 C1_BROWSER_FINDING_EVIDENCE.json。该C1不作为完整实现交付，CI成功不覆盖反例。

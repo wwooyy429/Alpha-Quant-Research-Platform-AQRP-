@@ -1,3 +1,5 @@
+> 2026-10-24 当前修复记录：当前独立G2：eae807f BLOCKED，三项仍OPEN；DEV-P6-001独立确认关闭。原件与开发处理见g2-eae807f/received和DEVELOPER_RESPONSE.md。dev3修复需新的完整固定SHA及全新SDK/官方双OS ZIP/真实浏览器证据，不能继承C2结果。 八项受限P6工程范围；不合并、标签、部署、实盘、正式Test、金融批准或P7。WI-R2-001/002和真实Windows隔离DEFERRED / NOT VERIFIED；完整历史宿主限制保留。
+
 # 当前实现审查入口
 
 用户已明确接受 C-P6-001/002/003 并授权八项实现。实现说明见 IMPLEMENTATION.md，八项逐项追踪见 IMPLEMENTATION_TRACEABILITY.md，兼容影响与原字节/当前文件身份见 COMPATIBILITY_IMPACT.md / IMPLEMENTATION_IDENTITY.json，完整实施授权见 IMPLEMENTATION_AUTHORIZATION.json。

@@ -18,6 +18,8 @@ def main(argv=None):
         choices=[
             "init",
             "catalogue",
+            "campaigns",
+            "campaign-register",
             "freeze",
             "submit",
             "work",
@@ -41,6 +43,7 @@ def main(argv=None):
     parser.add_argument("--slot", default="R")
     parser.add_argument("--name", default="report.json")
     parser.add_argument("--key")
+    parser.add_argument("--campaign")
     parser.add_argument("--wait", action="store_true")
     parser.add_argument("--recover", action="store_true")
     parser.add_argument("--revision", type=int)
@@ -54,6 +57,10 @@ def main(argv=None):
             from aqrp.services.task_requests import catalogue
 
             result = catalogue(args.workspace)
+        elif args.operation == "campaigns":
+            result = service.campaigns()
+        elif args.operation == "campaign-register":
+            result = service.register_campaign(args.campaign, load(args.request.read_bytes()))
         elif args.operation in ("freeze", "submit"):
             raw = args.request.read_bytes()
             value = load(raw)

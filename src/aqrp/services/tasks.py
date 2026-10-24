@@ -26,10 +26,12 @@ from aqrp.services.task_context import authority
 from aqrp.services.task_inputs import execution_requests
 from aqrp.services.task_requests import (
     EffectiveRequest,
+    build_research_config,
     catalogue,
     freeze_request,
     references,
     research_request,
+    validate_defaults,
     validate_draft,
 )
 from aqrp.services.task_state import TERMINAL, TaskState
@@ -136,6 +138,27 @@ class TaskService:
         d = self.state.defaults()
         return freeze_request(self.root, draft, d["revision"], json.loads(d["payload"]))
 
+    def campaigns(self):
+        from aqrp.services.task_campaigns import campaigns
+
+        return campaigns(self.root, catalogue(self.root))
+
+    def register_campaign(self, name, variants):
+        from aqrp.services.task_campaigns import register
+
+        if not isinstance(variants, list) or not variants or len(variants) > 64:
+            raise ContractError("INVALID_CAMPAIGN_VARIANTS")
+        cat = catalogue(self.root)
+        configs = []
+        for draft in variants:
+            validate_draft(draft)
+            if set(draft) & {"campaign_id", "source_task", "profile"} or draft.get(
+                "kind", "research"
+            ) not in ("research", "engineering_pipeline"):
+                raise ContractError("INVALID_CAMPAIGN_VARIANT_KIND")
+            configs.append(build_research_config(cat, draft))
+        return register(self.root, name, configs, cat)
+
     def validate_effective(self, raw):
         x = load(raw)
         with self.state.transaction() as c:
@@ -161,8 +184,10 @@ class TaskService:
     def submit(self, effective, idempotency_key):
         if type(effective) is not EffectiveRequest:
             raise ContractError("FROZEN_TASK_REQUEST_REQUIRED")
-        self.validate_effective(effective.raw)
-        return self.status(self.state.submit(effective.raw, idempotency_key))
+        x = self.validate_effective(effective.raw)
+        return self.status(
+            self.state.submit(effective.raw, idempotency_key, campaign=x["payload"].get("campaign"))
+        )
 
     def cancel(self, task):
         return self.state.cancel(task)
@@ -171,7 +196,7 @@ class TaskService:
         validate_draft(patch)
         if patch.get("kind") == "replay":
             raise ContractError("REPLAY_REQUIRES_EXPLICIT_SOURCE")
-        freeze_request(self.root, patch, expected)
+        validate_defaults(self.root, patch)
         return self.state.save_defaults(expected, patch)
 
     def _snapshot(self, task):
@@ -193,6 +218,19 @@ class TaskService:
             "scope": "ENGINEERING_TEST_ONLY",
             "financial_approval": "NONE",
         }
+        if "campaign" in load(row["raw"].encode()).get("payload", {}):
+            public["research_control"] = self.state.research_attempt(task)
+        if row["status"] == "CANCELLED":
+            try:
+                self._verify_cancelled_finances(task)
+            except (Exception, KeyboardInterrupt) as exc:
+                public.update(
+                    status="INTEGRITY_ERROR",
+                    usable=False,
+                    error="COMMITTED_STATE_UNVERIFIED",
+                    financial_verification_error=getattr(exc, "code", type(exc).__name__),
+                    original_terminal_status="CANCELLED",
+                )
         if row["status"] == "SUCCEEDED":
             try:
                 self.validate_effective(row["raw"].encode())
@@ -427,29 +465,81 @@ class TaskService:
             raise ContractError("TASK_ARTIFACT_NOT_MANIFESTED")
         return contents[name]
 
+    def _verified_financial_prefix(self, binding):
+        """Current physical financial authority, also for already successful children."""
+        _, contents = read_core(binding)
+        result = load(contents["result.json"])
+        evidence = result.get("committed_state_verification", {})
+        if evidence.get("financial_state_known") is False:
+            raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
+        root = guard_path(binding["physical_ledger_root"]) / binding["child_run_id"]
+        # Never let TransactionStore create a missing directory and call it an empty prefix.
+        if (
+            not guard_path(root / "transactions").is_dir()
+            or not guard_path(root / "transactions/initial.json").is_file()
+        ):
+            raise ContractError("TASK_TRANSACTION_FILES_MISSING")
+        state, records, files = TransactionStore(root / "transactions").verified_snapshot()
+        computed = projection(state, records)
+        if files != load(contents["transaction-files.json"]):
+            raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+        if binding["service_kind"] == "P5_REPLAY":
+            comparison = load(contents["comparison.json"])
+            if (
+                result["status"] != "NUMERICAL_REPLAY_VERIFIED"
+                or comparison != {"expected": computed, "actual": computed, "equal": True}
+                or result["state_sha256"] != computed["state_sha256"]
+            ):
+                raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+        elif result["status"] == "SUCCEEDED":
+            if any(result[k] != v for k, v in computed.items()):
+                raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+        elif (
+            evidence.get("financial_state_known") is not True
+            or result.get("last_committed_account") != computed["account"]
+            or evidence.get("state_sha256") != computed["state_sha256"]
+            or evidence.get("financial_proof_sha256") != digest(computed["reconciliation"])
+            or evidence.get("commit_count") != len(records)
+            or evidence.get("prefix_sha256")
+            != (records[-1]["sha256"] if records else computed["state_sha256"])
+        ):
+            raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+        return result
+
+    def _verify_cancelled_finances(self, task):
+        """No safe cancellation certificate may rely on a cached known-state flag."""
+        for slot in self.state.slots(task).values():
+            binding = slot["binding"]
+            if binding["service_kind"] not in ("P5", "P5_REPLAY"):
+                continue
+            root = guard_path(binding["physical_ledger_root"]) / binding["child_run_id"]
+            if slot["state"] == "ALLOCATED" and not root.exists():
+                continue
+            self._verified_financial_prefix(binding)
+            if binding["service_kind"] == "P5_REPLAY":
+                x = load(self._snapshot(task)["raw"].encode())
+                source = self.state.slots(x["payload"]["source_task"])["B"]["binding"]
+                self._verified_financial_prefix(source)
+
     def financial_result(self, task):
         row = self._snapshot(task)
         self.validate_effective(row["raw"].encode())
         slots = self.state.slots(task)
         if "B" not in slots:
             raise ContractError("NO_BACKTEST_STAGE")
-        binding = slots["B"]["binding"]
-        _, contents = read_core(binding)
-        result = load(contents["result.json"])
-        if result["status"] != "SUCCEEDED":
-            return result
-        if result.get("committed_state_verification", {}).get("financial_state_known") is False:
-            raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
-        root = guard_path(binding["physical_ledger_root"]) / binding["child_run_id"]
-        if not (root / "transactions/initial.json").is_file():
-            raise ContractError("TASK_TRANSACTION_FILES_MISSING")
-        state, records, files = TransactionStore(root / "transactions").verified_snapshot()
-        computed = projection(state, records)
-        if files != load(contents["transaction-files.json"]) or any(
-            result[k] != v for k, v in computed.items()
+        _, contents = read_core(slots["B"]["binding"])
+        original = load(contents["result.json"])
+        # Preserve the original opaque failure report for diagnosis; this never
+        # certifies cash, and cancellation always calls the strict prefix gate.
+        if (
+            original["status"] != "SUCCEEDED"
+            and original.get("committed_state_verification", {}).get("financial_state_known")
+            is False
         ):
-            raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
-        return result
+            if "account" in original or "last_committed_account" in original:
+                raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
+            return original
+        return self._verified_financial_prefix(slots["B"]["binding"])
 
     def _pipeline_request(self, x, r):
         cat = catalogue(self.root)
@@ -618,24 +708,15 @@ class TaskService:
         except (Exception, KeyboardInterrupt) as exc:
             cancelled = isinstance(exc, KeyboardInterrupt)
             unknown = False
+            verification_error = None
             if cancelled:
-                for slot in self.state.slots(task).values():
-                    if (
-                        slot["binding"]["service_kind"] in ("P5", "P5_REPLAY")
-                        and slot["state"] != "ALLOCATED"
-                    ):
-                        try:
-                            _, files = read_core(slot["binding"])
-                            core = load(files["result.json"])
-                            if (
-                                core.get("committed_state_verification", {}).get(
-                                    "financial_state_known"
-                                )
-                                is False
-                            ):
-                                unknown = True
-                        except (ContractError, OSError, KeyError, ValueError):
-                            unknown = True
+                try:
+                    self._verify_cancelled_finances(task)
+                except (Exception, KeyboardInterrupt) as financial_error:
+                    unknown = True
+                    verification_error = getattr(
+                        financial_error, "code", type(financial_error).__name__
+                    )
             with self.state.transaction() as c:
                 final = "CANCELLED" if cancelled and not unknown else "FAILED"
                 code = (
@@ -648,7 +729,17 @@ class TaskService:
                     (final, code, task, owner, epoch),
                 )
                 if updated.rowcount:
-                    self.state.event(c, task, final, {"code": code})
+                    self.state.event(
+                        c,
+                        task,
+                        final,
+                        {
+                            "code": code,
+                            "original_error": getattr(exc, "code", type(exc).__name__),
+                            "cancellation_intent": cancelled,
+                            "financial_verification_error": verification_error,
+                        },
+                    )
         return self.status(task)
 
     def compare(self, left, right):

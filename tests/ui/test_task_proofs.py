@@ -184,7 +184,8 @@ def test_service_metadata_and_unknown_task_refusals(completed):
     assert s.worker_log(t) == b"captured diagnostic prefix"
     assert s.save_defaults(0, {"lookback": 3}) == 1
     assert s.rollback_defaults(1, 1) == 2
-    pending = s.submit(s.freeze({"kind": "research"}), "no-b")
+    s.register_campaign("metadata-next", [{"lookback": 3}])
+    pending = s.submit(s.freeze({"kind": "research", "campaign_id": "metadata-next"}), "no-b")
     with pytest.raises(ContractError, match="NO_BACKTEST_STAGE"):
         s.financial_result(pending["task_id"])
     with pytest.raises(ContractError, match="TASK_REQUIRED_SLOT_SET_MISMATCH"):

@@ -84,7 +84,10 @@ def test_settings_rollback_and_actual_queue_cancellation(workspace, monkeypatch)
     a = app(workspace, monkeypatch, "Settings")
     press(a, "Rollback by adding a revision")
     assert s.defaults()["revision"] == 2
-    queued = s.submit(s.freeze({"kind": "research"}), "queued-cancel")
+    queued = s.submit(
+        s.freeze({"kind": "research", "start": "2024-01-06", "end": "2024-01-06", "horizons": [1]}),
+        "queued-cancel",
+    )
     a.sidebar.radio[0].set_value("Experiment Manager").run()
     next(x for x in a.selectbox if x.label == "Task").set_value(queued["task_id"]).run()
     press(a, "Cancel safely")

@@ -248,7 +248,13 @@ class ExperimentLedger:
                     k: v
                     for k, v in lineage.items()
                     if k
-                    not in ("protocol_hash", "code_commit", "task_binding", "task_binding_hash")
+                    not in (
+                        "protocol_hash",
+                        "code_commit",
+                        "task_binding",
+                        "task_binding_hash",
+                        "campaign_control",
+                    )
                 },
                 "hypothesis_spec": {
                     k: v
@@ -263,13 +269,32 @@ class ExperimentLedger:
             repeated = [
                 x["payload"]["run_id"] for x in past if x["payload"]["fingerprint"] == fingerprint
             ]
+            campaign = config.get("family", {}).get("campaign")
+            control = lineage.get("campaign_control", {})
             item = {
+                "cross_campaign_data_access": bool(campaign)
+                and (
+                    campaign["registration_history"]["contaminated_before_registration"]
+                    or any(
+                        x["payload"].get("data_hash") == lineage["data_hash"]
+                        and x["payload"]["family"] != family
+                        for x in past
+                    )
+                    or control.get("prior_other_campaign_attempts", 0) > 0
+                    or control.get("prior_other_family_legacy_trials", 0) > 0
+                ),
+                "campaign_control": control,
                 "run_id": run_id,
                 "family": family,
                 "hypothesis": hypothesis,
                 "fingerprint": fingerprint,
                 "repeat_of": repeated,
-                "over_budget": len(peers) >= budget,
+                "over_budget": len(peers) >= budget
+                or (
+                    bool(campaign)
+                    and sum(x["payload"].get("data_hash") == lineage["data_hash"] for x in past)
+                    >= budget
+                ),
                 "prior_data_attempts": sum(
                     r["payload"].get("data_hash") == lineage["data_hash"] for r in past
                 ),

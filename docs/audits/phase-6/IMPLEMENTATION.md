@@ -1,3 +1,5 @@
+> 2026-10-24 当前修复记录：dev3三项G2修复说明以g2-eae807f/DEVELOPER_RESPONSE.md和新回归为准。catalog/2新工程目录，显式冻结campaign、共享12单位预算、取消重核真实财务前缀、三个历史合成股票池。下文固定six-asset/family配置哈希内容是dev2历史，不再用于新候选声明。 八项受限P6工程范围；不合并、标签、部署、实盘、正式Test、金融批准或P7。WI-R2-001/002和真实Windows隔离DEFERRED / NOT VERIFIED；完整历史宿主限制保留。
+
 # Phase6 八项受限工程实现候选
 
 本次依据 IMPLEMENTATION_AUTHORIZATION.json 记录的用户实施授权，落实 G1 固定 e71f6f090b102e4abfd70a5999e495f49546a1b5 的八项范围。G1 原件、127 组设计答案及独立复核原文保持原字节；本文件记录实现，不修改原设计审查历史。当前 G2 PENDING，不是阶段验收。

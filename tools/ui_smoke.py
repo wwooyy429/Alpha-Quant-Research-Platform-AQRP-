@@ -51,6 +51,8 @@ def main():
         draft = {
             "kind": "engineering_pipeline",
             "factor_ids": [factor],
+            "universe_id": "SYN_U",
+            "campaign_id": "engineering-default",
             "start": "2024-01-06",
             "end": "2024-01-06",
             "lookback": 2,

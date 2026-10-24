@@ -247,7 +247,7 @@ def submit_page(service, cat, pipeline):
     )
     config = cat["config"]
     st.caption(
-        "Universe: fixed public synthetic six-asset catalogue; membership and data hashes are in the immutable request. Preprocessing and split definitions use the approved P3 pipeline."
+        "Select a trusted synthetic historical universe. Snapshot, membership and availability identities enter the immutable request. Parameters must belong to a preregistered campaign; all campaigns share the same data budget of 12 hypotheses. Failed and cancelled attempts consume budget."
     )
     defaults = json.loads(service.defaults()["payload"])
     selection = st.session_state.get("selected_factors", defaults.get("factor_ids", ["momentum"]))
@@ -280,6 +280,22 @@ def submit_page(service, cat, pipeline):
         neutralize = st.checkbox(
             "Industry / size neutralization", value=defaults.get("neutralize", True)
         )
+        universes = list(cat["universes"])
+        universe = st.selectbox(
+            "Stock universe",
+            universes,
+            index=universes.index(defaults.get("universe_id", "SYN_U")),
+            key=kind + "-universe",
+        )
+        campaign_ids = ["engineering-default"] + [
+            x["id"] for x in service.campaigns() if x["id"] != "engineering-default"
+        ]
+        campaign = st.selectbox(
+            "Preregistered research campaign",
+            campaign_ids,
+            index=campaign_ids.index(defaults.get("campaign_id", "engineering-default")),
+            key=kind + "-campaign",
+        )
         weights = st.text_area(
             "Factor weights in percent — JSON decimal strings",
             value=json.dumps(defaults.get("weights_percent", {n: "100" for n in selection})),
@@ -311,6 +327,8 @@ def submit_page(service, cat, pipeline):
         draft = {
             "kind": kind,
             "factor_ids": factors,
+            "universe_id": universe,
+            "campaign_id": campaign,
             "start": start,
             "end": end,
             "lookback": lookback,
@@ -474,6 +492,24 @@ def main():
                     st.error(exc.code)
             submit_page(service, cat, True)
         elif page == "Experiment Manager":
+            st.subheader("Preregister research variants before observing results")
+            st.caption(
+                "A plan freezes its complete variant set and multiplicity definitions. New plans retain prior data access and share budget12; creating a new name cannot reset the budget. The first-use default freezes current parameters, four single factors, horizons1/1,2 and the three synthetic pools once. Later edits outside that set are refused."
+            )
+            with st.form("campaign-registration"):
+                campaign_name = st.text_input(
+                    "New immutable campaign ID", value="engineering-study"
+                )
+                variants = st.text_area(
+                    "Preregistered variant drafts (JSON list)",
+                    value='[{"factor_ids":["momentum"],"lookback":2,"horizons":[1]}]',
+                )
+                register = st.form_submit_button("Freeze research campaign")
+            if register:
+                plan = service.register_campaign(campaign_name, load(variants.encode()))
+                st.success("Campaign frozen: " + plan["id"] + " · " + plan["campaign_hash"])
+            with st.expander("Immutable campaigns / variants / prior data access"):
+                st.json(service.campaigns())
             if (service.root / "history.json").exists() and st.button(
                 "Replay registered original factor artifacts"
             ):

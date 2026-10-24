@@ -1,3 +1,5 @@
+> 2026-10-24 当前修复记录：dev3修复新增task_campaigns.py，catalog/2在新工程目录发布，不迁移旧数据。旧原始运行/版本/Golden保留；hypotheses别名与trial污染仅campaign路径启用；未改变金融算法或core锁。 八项受限P6工程范围；不合并、标签、部署、实盘、正式Test、金融批准或P7。WI-R2-001/002和真实Windows隔离DEFERRED / NOT VERIFIED；完整历史宿主限制保留。
+
 # 兼容性增量及冻结范围
 
 IMPLEMENTATION_IDENTITY.json 以归档起点0242db37b4c822e7c73ef6c17faf104bcea54892为逐文件事实来源，分别列出全部原字节保留文件和本轮明确变更/新增文件；原 G1 FROZEN_INPUTS/FILE_MANIFEST 是当时的历史记录，不冒充实现后全文件未改。新增根/UI包内扩展锁与已审G1锁逐字节一致，原core锁和全部既有金融数学/Golden/审计原文保留。

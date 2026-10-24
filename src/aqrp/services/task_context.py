@@ -147,6 +147,12 @@ class TaskRunContext:
     def checkpoint(self):
         self.authority.check(cancel=True)
 
+    def research_attempt(self):
+        require_context(self)
+        if self.slot != "R":
+            raise ContractError("RESEARCH_CAMPAIGN_CONTEXT_REQUIRED")
+        return self.authority.state.research_attempt(self.authority.task)
+
     def mark_verified(self, manifest):
         binding = self.binding()
         with self.authority.state.transaction() as c:

@@ -1,3 +1,5 @@
+> 2026-10-24 当前修复记录：0.6.0.dev3候选修复三项P6 G2：预登记候选集合/跨campaign共享不可退预算及污染；取消收尾重核物理财务前缀；可信历史股票池选择。原独立G2仍BLOCKED，旧Golden/原报告/失败证据保留。 八项受限P6工程范围；不合并、标签、部署、实盘、正式Test、金融批准或P7。WI-R2-001/002和真实Windows隔离DEFERRED / NOT VERIFIED；完整历史宿主限制保留。
+
 # 变更记录
 
 2026-10-23 用户明确接受C-P6-001/002/003并单独授权Phase6八项（5MVP/3CR）实现，当前IMPLEMENTING；原话及G1固定e71/归档起点0242见docs/audits/phase-6/IMPLEMENTATION_AUTHORIZATION.json。保留独立答案、完整SDK、双OS原始ZIP与实际浏览器证据；完成锁定新40SHA交GPT Work G2。不是G2/阶段验收/发布许可，WI-R2/正式Test/金融NONE/历史宿主边界保留；无合并标签、真实权限、部署实盘或P7。以下旧待授权状态保留历史。

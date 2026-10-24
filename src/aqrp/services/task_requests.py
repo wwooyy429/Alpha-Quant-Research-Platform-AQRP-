@@ -10,8 +10,10 @@ from aqrp.core.canonical import canonical, digest
 from aqrp.core.contracts import SnapshotRef
 from aqrp.core.environment import runtime_manifest, verify_runtime
 from aqrp.core.errors import ContractError
-from aqrp.data.exposures import ExposureRef, exposures_as_of
-from aqrp.data.snapshot import verify_snapshot
+from aqrp.data.exposures import ExposureRef, exposures_as_of, publish_exposures
+from aqrp.data.snapshot import publish_snapshot, verify_snapshot
+from aqrp.data.store import read_snapshot
+from aqrp.data.synthetic import PROVENANCE
 from aqrp.experiments.ledger import immutable_write, mutex
 from aqrp.factors.admission import BUILTINS, LOCK_HASH, builtin_spec, bundle_hash
 from aqrp.portfolio.contracts import load
@@ -31,6 +33,59 @@ class EffectiveRequest:
         return digest(load(self.raw))
 
 
+def _universe_catalogue(snapshot):
+    manifest, tables = read_snapshot(snapshot)
+    all_rows = tables["universe_membership"].to_pylist()
+    return {
+        name: {
+            "universe_id": name,
+            "market_id": "SYN_A",
+            "snapshot_id": snapshot.snapshot_id,
+            "snapshot_manifest_hash": snapshot.manifest_hash,
+            "membership_table_sha256": manifest["tables"]["universe_membership"]["sha256"],
+            "membership_history_sha256": digest([r for r in all_rows if r["universe_id"] == name]),
+            "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+        }
+        for name in ("SYN_U", "SYN_CORE4", "SYN_TAIL4")
+    }
+
+
+def _engineering_inputs(root):
+    # Extend only this P6 engineering snapshot. Original P3 generator/fixtures remain untouched.
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+
+    c, original, exposures, coverage = synthetic_research(
+        root / "inputs/source", sessions=24, assets=6, factor_ids=BUILTINS
+    )
+    _, tables = read_snapshot(original)
+    rows = tables["universe_membership"].to_pylist()
+    extra = []
+    for name, members in (("SYN_CORE4", range(1, 5)), ("SYN_TAIL4", range(3, 7))):
+        for row in rows:
+            if row["security_id"] in {f"SYN_A:{i:03d}" for i in members}:
+                extra.append({**row, "universe_id": name})
+    tables["universe_membership"] = pa.Table.from_pylist(
+        rows + extra, schema=tables["universe_membership"].schema
+    )
+    snapshot = publish_snapshot(tables, PROVENANCE, root / "inputs/pools")
+    exposure_rows = pq.read_table(exposures.root / "exposures.parquet").to_pylist()
+    for row in exposure_rows:
+        row["risk_exposures"] = load(row.pop("risk_exposures_json").encode())
+    e = publish_exposures(exposure_rows, snapshot, root / "inputs/pool-exposures")
+    body = coverage.read(original.manifest_hash)
+    v = CoverageRef.create(
+        snapshot.manifest_hash, body["versions"], authority=body["authority"], scope=body["scope"]
+    )
+    c["family"]["definitions"] = {
+        h["hypothesis"]: hypothesis_definition(
+            h, c, snapshot.manifest_hash, e.manifest_hash, v.checksum
+        )
+        for h in hypotheses(c)
+    }
+    return c, snapshot, e, v
+
+
 def initialize(root, code_commit):
     root = guard_path(root)
     root.mkdir(parents=True, exist_ok=True)
@@ -43,9 +98,10 @@ def initialize(root, code_commit):
             if current["code_commit"] != code_commit:
                 raise ContractError("CATALOG_CODE_COMMIT_CHANGED")
             return current
-        c, s, e, v = synthetic_research(root / "inputs", sessions=24, assets=6, factor_ids=BUILTINS)
+        c, s, e, v = _engineering_inputs(root)
         body = {
-            "schema": "task-catalog/1",
+            "schema": "task-catalog/2",
+            "universes": _universe_catalogue(s),
             "code_commit": code_commit,
             "code_bundle": bundle_hash(),
             "config": load(canonical(c)),
@@ -86,7 +142,7 @@ def catalogue(root):
     ):
         raise ContractError("CATALOG_IDENTITY_CHANGED")
     if (
-        cat.get("schema") != "task-catalog/1"
+        cat.get("schema") != "task-catalog/2"
         or type(cat.get("code_commit")) is not str
         or not re.fullmatch("[0-9a-f]{40}", cat["code_commit"])
         or cat["factor_specs"] != load(canonical([asdict(builtin_spec(n)) for n in BUILTINS]))
@@ -100,6 +156,8 @@ def catalogue(root):
         raise ContractError("CATALOG_ENVIRONMENT_CHANGED")
     s, e, v = references(root, cat)
     verify_snapshot(s)
+    if cat["universes"] != _universe_catalogue(s):
+        raise ContractError("CATALOG_UNIVERSE_IDENTITY_CHANGED")
     exposures_as_of(
         e,
         cat["config"]["evaluation_cutoff"],
@@ -114,6 +172,8 @@ def catalogue(root):
 FIELDS = {
     "kind",
     "factor_ids",
+    "universe_id",
+    "campaign_id",
     "factor_refs",
     "lookback",
     "direction",
@@ -201,6 +261,71 @@ def validate_draft(draft):
     return draft
 
 
+def build_research_config(cat, base):
+    config = deepcopy(cat["config"])
+    names = base.get("factor_ids", ["momentum"])
+    if not names or len(names) != len(set(names)) or not set(names) <= set(BUILTINS):
+        raise ContractError("UNKNOWN_OR_DUPLICATE_CATALOG_FACTOR")
+    expected_refs = [asdict(builtin_spec(n).ref) for n in names]
+    if "factor_refs" in base and base["factor_refs"] != expected_refs:
+        raise ContractError("EXACT_RESEARCH_REF_MISMATCH")
+    config["candidates"] = [
+        {
+            "ref": r,
+            "parameters": {"lookback": base.get("lookback", 2)},
+            "direction": base.get("direction", 1),
+            "hypothesis": n,
+        }
+        for n, r in zip(names, expected_refs, strict=True)
+    ]
+    if "horizons" in base:
+        config["horizons"] = base["horizons"]
+    if (
+        not config["horizons"]
+        or any(type(h) is not int or h < 1 or h > 10 for h in config["horizons"])
+        or len(set(config["horizons"])) != len(config["horizons"])
+    ):
+        raise ContractError("INVALID_RESEARCH_HORIZON_GRID")
+    config["pipeline"]["neutralize"] = base.get("neutralize", True)
+    for field in ["start", "end"]:
+        if field in base:
+            from datetime import date
+
+            if date.fromisoformat(base[field]).isoformat() != base[field]:
+                raise ContractError("INVALID_SESSION_DATE")
+    config["decisions"] = [
+        d
+        for d in config["decisions"]
+        if base.get("start", d["session"]) <= d["session"] <= base.get("end", d["session"])
+    ]
+    if not config["decisions"]:
+        raise ContractError("NO_REQUIRED_DECISIONS")
+    name = base.get("universe_id", "SYN_U")
+    if type(name) is not str or name not in cat["universes"]:
+        raise ContractError("UNKNOWN_ENGINEERING_UNIVERSE")
+    config["universe_id"] = name
+    config["universe_ref"] = deepcopy(cat["universes"][name])
+    return config
+
+
+def _weights(base, names):
+    weights = base.get("weights_percent", {n: "100" for n in names})
+    if set(weights) != set(names):
+        raise ContractError("FACTOR_WEIGHT_SELECTION_MISMATCH")
+    return weights
+
+
+def validate_defaults(root, patch):
+    validate_draft(patch)
+    config = build_research_config(catalogue(root), patch)
+    _weights(patch, [c["hypothesis"] for c in config["candidates"]])
+    if "campaign_id" in patch:
+        from aqrp.services.task_campaigns import get_campaign
+
+        get_campaign(root, patch["campaign_id"], catalogue(root))
+    return config
+
+
 def freeze_request(root, draft, defaults_revision=0, defaults=None):
     validate_draft(draft)
     base = deepcopy(defaults or {}) if draft.get("kind") != "replay" else {}
@@ -228,61 +353,16 @@ def freeze_request(root, draft, defaults_revision=0, defaults=None):
             source = str(__import__("uuid").UUID(base["source_task"]))
             payload = {"source_task": source, "profile": "P5_NUMERICAL"}
     else:
-        config = deepcopy(cat["config"])
-        names = base.get("factor_ids", ["momentum"])
-        if not names or len(names) != len(set(names)) or not set(names) <= set(BUILTINS):
-            raise ContractError("UNKNOWN_OR_DUPLICATE_CATALOG_FACTOR")
-        expected_refs = [asdict(builtin_spec(n).ref) for n in names]
-        if "factor_refs" in base and base["factor_refs"] != expected_refs:
-            raise ContractError("EXACT_RESEARCH_REF_MISMATCH")
-        config["candidates"] = [
-            {
-                "ref": r,
-                "parameters": {"lookback": base.get("lookback", 2)},
-                "direction": base.get("direction", 1),
-                "hypothesis": n,
-            }
-            for n, r in zip(names, expected_refs, strict=True)
-        ]
-        if "horizons" in base:
-            config["horizons"] = base["horizons"]
-        if (
-            not config["horizons"]
-            or any(type(h) is not int or h < 1 or h > 10 for h in config["horizons"])
-            or len(set(config["horizons"])) != len(config["horizons"])
-        ):
-            raise ContractError("INVALID_RESEARCH_HORIZON_GRID")
-        config["pipeline"]["neutralize"] = base.get("neutralize", True)
-        for field in ["start", "end"]:
-            if field in base:
-                from datetime import date
+        from aqrp.services.task_campaigns import resolve
 
-                if date.fromisoformat(base[field]).isoformat() != base[field]:
-                    raise ContractError("INVALID_SESSION_DATE")
-        config["decisions"] = [
-            d
-            for d in config["decisions"]
-            if base.get("start", d["session"]) <= d["session"] <= base.get("end", d["session"])
-        ]
-        if not config["decisions"]:
-            raise ContractError("NO_REQUIRED_DECISIONS")
-        config["family"].update(
-            id="ui-engineering-" + digest({k: v for k, v in config.items() if k != "family"}),
-            budget=12,
-        )
-        config["family"]["hypotheses"] = [h["hypothesis"] for h in hypotheses(config)]
-        s, e, v = references(root, cat)
-        config["family"]["definitions"] = {
-            h["hypothesis"]: hypothesis_definition(
-                h, config, s.manifest_hash, e.manifest_hash, v.checksum
-            )
-            for h in hypotheses(config)
-        }
-        weights = base.get("weights_percent", {n: "100" for n in names})
-        if set(weights) != set(names):
-            raise ContractError("FACTOR_WEIGHT_SELECTION_MISMATCH")
+        config = build_research_config(cat, base)
+        names = [c["hypothesis"] for c in config["candidates"]]
+        weights = _weights(base, names)
+        config, campaign = resolve(root, base.get("campaign_id"), config, cat)
         payload = {
             "research": config,
+            "campaign": campaign,
+            "universe": config["universe_ref"],
             "execution": {
                 "initial_cash": base.get("initial_cash", "1000"),
                 "fee_budget": base.get("fee_budget", "10"),

@@ -1,15 +1,15 @@
 {
   "phase": 6,
-  "current": "IMPLEMENTATION_CANDIDATE_PENDING_FIXED_SHA_EVIDENCE_AND_G2",
+  "current": "G2_BLOCKED_REPAIR_CANDIDATE_PENDING_NEW_FIXED_SHA_RECHECK",
   "G1": "PLAN PASS WITH CONDITIONS AT E71F6F0",
-  "G2": "PENDING_NOT_PASSED",
+  "G2": "BLOCKED / REQUEST CHANGES at eae807f957f178d19bc55dcfbd668caff5470c6e",
   "requirements": 8,
   "tiers": {
     "MVP": 5,
     "Competition Ready": 3
   },
   "baseline": "59246f9fd391c1713b6bed65dd22280f4d248493",
-  "capabilities": "ALL_EIGHT_IMPLEMENTED_IN_REVIEW_CANDIDATE; not independent G2 or phase acceptance",
+  "capabilities": "UI-003 stock universe omission repaired in candidate; all eight require fixed-version G2, not stage acceptance",
   "implementation_authorized": true,
   "human_phase_acceptance": false,
   "main_merge_tag_authorized": false,
@@ -20,18 +20,21 @@
   "WI-R2-001": "DEFERRED / NOT VERIFIED",
   "WI-R2-002": "DEFERRED / NOT VERIFIED",
   "full_historical_host": "NOT VERIFIED beyond accepted package/lock/oldRef/result replay",
-  "actual_P6_business_or_browser_tests": "C1 clean SDK 1486 and both official CI succeeded; real browser found consecutive defaults edit loss, so C1 not delivered as complete. dev2 correction targeted25 passed; required final exact-SHA SDK/CI/browser evidence in PR9 and sealed handoff must be independently verified.",
+  "actual_P6_business_or_browser_tests": "C2 independently1496 passed with three new blocking counterexamples. Repair candidate must provide fresh exact-SHA clean SDK, official dual-OS ZIP and real browser evidence externally; old results never transferred.",
   "dependency_resolution": "Original core lock unchanged; exact G1 UI extension locks hash-installed in clean venvs and original 29 dependency wheels retained per OS.",
   "review_lock": "Use PR9 AQRP_FIXED_REVIEW_SHA full40 and same-SHA actual raw evidence; C1 pass does not transfer to corrected dev2.",
-  "last_independent_reviewed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
+  "last_independent_reviewed_sha": "eae807f957f178d19bc55dcfbd668caff5470c6e",
   "reviewer": "GPT Work",
   "findings": {
     "WORK-P6-G1-001": "CLOSED_DESIGN",
     "WORK-P6-G1-002": "CLOSED_DESIGN",
-    "WORK-P6-G1-003": "CLOSED_DESIGN"
+    "WORK-P6-G1-003": "CLOSED_DESIGN",
+    "WORK-P6-G2-001": "OPEN / FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK",
+    "WORK-P6-G2-002": "OPEN / FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK",
+    "WORK-P6-G2-003": "OPEN / FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK"
   },
-  "review_record": "g1-e71f6f0/received/REPORT.md",
-  "developer_response": "g1-e71f6f0/DEVELOPER_RESPONSE.md",
+  "review_record": "g2-eae807f/received/REPORT.md",
+  "developer_response": "g2-eae807f/DEVELOPER_RESPONSE.md",
   "candidate_design_validation": {
     "original32": 32,
     "supplemental95": 95,
@@ -41,7 +44,7 @@
   },
   "numeric_adapter_range": "USER_EXPLICITLY_ACCEPTED C-P6-003; implementation developer verification in progress",
   "human_design_conditions": "g1-e71f6f0/CONDITIONS_AND_AUTHORIZATION.json",
-  "new_blocking_technical_findings": 0,
+  "new_blocking_technical_findings": 3,
   "independent_design_reference_checks": {
     "fixed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
     "scope": "G1 design/numeric reference only; zero P6 product/UI/SQLite/OS tests",
@@ -64,5 +67,5 @@
   },
   "conditions_user_acceptance": "EXPLICITLY_ACCEPTED_C_P6_001_002_003",
   "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json",
-  "developer_finding": "DEV-P6-001 FIX_IMPLEMENTED / PENDING_FIXED_SHA_G2; DEVELOPER_FINDINGS.md"
+  "developer_finding": "DEV-P6-001 CLOSED — FIX VERIFIED by GPT Work at eae807f"
 }

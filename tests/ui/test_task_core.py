@@ -64,7 +64,7 @@ def test_no_unknown_slot_or_unverified_comparison(completed):
     s, r = completed
     with pytest.raises(ContractError, match="UNKNOWN_TASK_SLOT"):
         s.artifact(r["task_id"], "unknown", "result.json")
-    pending = s.submit(s.freeze({"kind": "research"}), "comparison-pending")
+    pending = s.submit(s.freeze({**SINGLE, "kind": "research"}), "comparison-pending")
     with pytest.raises(ContractError, match="VERIFIED_SUCCESS_REQUIRED"):
         s.compare(r["task_id"], pending["task_id"])
     assert s.cancel(pending["task_id"]) == "CANCELLED"

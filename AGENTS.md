@@ -1,3 +1,5 @@
+> 2026-10-24 当前独立G2：GPT Work审查eae807f957f178d19bc55dcfbd668caff5470c6e为BLOCKED，WORK-P6-G2-001 High、002/003 Medium blocking均OPEN；配置编辑DEV-P6-001独立确认CLOSED。dev3修复候选/接收原件见docs/audits/phase-6/g2-eae807f/，新完整SHA须重新SDK/双OS原ZIP/真实浏览器并交固定版本G2，不自行关闭。八项授权范围与所有延期不变，无合并、标签、部署、实盘、正式Test、金融批准或P7。以下旧状态均保留为历史。
+
 # AQRP 项目执行规则（V3.0 + V3.1 + V3.2）
 
 2026-10-23 用户明确接受C-P6-001/002/003并单独授权Phase6八项（5MVP/3CR）实现，当前IMPLEMENTING；原话及G1固定e71/归档起点0242见docs/audits/phase-6/IMPLEMENTATION_AUTHORIZATION.json。保留独立答案、完整SDK、双OS原始ZIP与实际浏览器证据；完成锁定新40SHA交GPT Work G2。不是G2/阶段验收/发布许可，WI-R2/正式Test/金融NONE/历史宿主边界保留；无合并标签、真实权限、部署实盘或P7。以下旧待授权状态保留历史。

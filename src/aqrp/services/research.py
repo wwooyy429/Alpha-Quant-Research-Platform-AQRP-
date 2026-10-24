@@ -89,7 +89,7 @@ def hypotheses(config):
                 "stage": "composite",
             }
         )
-    return [
+    result = [
         {
             **c,
             "score_key": c["hypothesis"],
@@ -99,6 +99,15 @@ def hypotheses(config):
         for c in bases
         for h in config["horizons"]
     ]
+    aliases = config.get("family", {}).get("hypothesis_aliases")
+    if aliases is not None:
+        if set(aliases) != {h["hypothesis"] for h in result} or any(
+            type(v) is not str or not v for v in aliases.values()
+        ):
+            raise ContractError("INVALID_CAMPAIGN_HYPOTHESIS_ALIASES")
+        for h in result:
+            h["hypothesis"] = aliases[h["hypothesis"]]
+    return result
 
 
 def measurements(stages, labels, config):
@@ -205,6 +214,8 @@ def _research(request, output_root, *, operator_claims=None, task_context=None):
         "seed": config.get("seed"),
         "cost_rules": "NOT_APPLICABLE_P3_RESEARCH_NO_EXECUTION_ORDERS",
     }
+    if task_context is not None and config.get("family", {}).get("campaign"):
+        lineage["campaign_control"] = task_context.research_attempt()
     run_id = ledger.start(config, lineage, task_context=task_context)
     try:
         if task_context is not None:
@@ -506,7 +517,7 @@ def _research(request, output_root, *, operator_claims=None, task_context=None):
         multiplicity.update(
             hypotheses=declarations,
             contaminated=bool(family["duplicate_hypotheses"])
-            or any(t["repeat_of"] for t in trials),
+            or any(t["repeat_of"] or t.get("cross_campaign_data_access", False) for t in trials),
         )
         for name, payload in (
             ("labels", labels),

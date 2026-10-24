@@ -1,3 +1,5 @@
+> 2026-10-24 当前修复记录：UI-003：网页研究/回测及CLI/SDK绑定可信历史universe_ref，实际P3和P5时点成员；G2-003仍待独立复核。GOV/试验记录：campaign冻结/共享12单位/失败取消保留；取消资金未知失败关闭，G2-001/002同待审。 八项受限P6工程范围；不合并、标签、部署、实盘、正式Test、金融批准或P7。WI-R2-001/002和真实Windows隔离DEFERRED / NOT VERIFIED；完整历史宿主限制保留。
+
 # 双向需求追踪矩阵（待审）
 
 2026-10-23 用户明确接受C-P6-001/002/003并单独授权Phase6八项（5MVP/3CR）实现，当前IMPLEMENTING；原话及G1固定e71/归档起点0242见docs/audits/phase-6/IMPLEMENTATION_AUTHORIZATION.json。保留独立答案、完整SDK、双OS原始ZIP与实际浏览器证据；完成锁定新40SHA交GPT Work G2。不是G2/阶段验收/发布许可，WI-R2/正式Test/金融NONE/历史宿主边界保留；无合并标签、真实权限、部署实盘或P7。以下旧待授权状态保留历史。

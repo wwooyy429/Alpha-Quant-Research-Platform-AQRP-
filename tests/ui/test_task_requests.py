@@ -155,7 +155,8 @@ def test_default_revision_is_bound_and_existing_effective_request_immutable(work
     snapshot = first.raw
     d = service.state.defaults()
     revision = service.save_defaults(d["revision"], {"lookback": 3})
-    second = service.freeze({"kind": "research"})
+    service.register_campaign("defaults-revision3", [{"lookback": 3}])
+    second = service.freeze({"kind": "research", "campaign_id": "defaults-revision3"})
     assert first.raw == snapshot and first.config_hash != second.config_hash
     assert json.loads(second.raw)["defaults_revision"] == revision
     assert json.loads(second.raw)["payload"]["research"]["candidates"][0]["parameters"] == {
