@@ -1,0 +1,86 @@
+AQRP Phase7 G1 增量独立复核
+主审：GPT Work；日期2026-10-24。
+指定并实际检出的完整SHA：645049ae9b08710ed93189b80547d14c87d80584。
+原审计划：3c34e3ca75c9799307b8a98b34f045b40988bbca。
+结论：PLAN PASS WITH CONDITIONS（受限工程设计）。WORK-P7-G1-001/002均CLOSED_DESIGN，无新增阻断设计发现。
+这不是FIX VERIFIED、P7实现/G2通过、阶段验收或实施许可；既有P6业务反例并未由本轮代码修复。
+
+1. 固定身份、范围与原件
+
+主审实际读取PR #10描述，唯一AQRP_FIXED_REVIEW_SHA及head均为645049ae9b08710ed93189b80547d14c87d80584；独立无alternates clone、detach checkout该版本。开始/结束PR快照均Draft/open/unmerged。H唯一父提交为原G，P6发布基线P=d563347ad11e1f26e131dc06e343250282c05c33为祖先。独立检出目录：E:/WORK/AQRP-audits/p7-645049a/src。
+
+G→H共168路径，仅文档/审计归档/身份元数据，无删除。5615份原G未改路径逐一从Git原blob与当前文件核对；5552份P冻结文件、5016份原保护文件及83个Python模块保持原字节。原106项/五项P7字段不变，仍INT-003/004/005三MVP、DATA-013/INT-006两Competition Ready；原十项P7交付和跨阶段约束延续，无静默删项。src/tests/tools/CI/锁/版本/扫描规则、原金融算法与正确答案不变。当前P7内部清单222项+自身223精确闭合。P6身份只刷新七份全局文档哈希并增明确g1_design_revision_metadata；G原身份快照逐字节保留，旧preserved/bundle数组不改。
+
+core锁22固定依赖、Python3.13.16、UI锁副本维持原样；无新增依赖或安装升级。主审远端读取确认main、phase6-baseline、v0.6.0仍同指P，与上一主审快照相比旧标签全部未动。
+
+新开发证据包199866661字节，SHA256 39f029fb7b52a7d536d85d7a22ff5ab22aac94ed7a1996fb6ca17dfbc2e66b49；manifest SHA256 b6d25c30ad1c625c6752b31094098e5a65bdbd5c457a31631f19d230bc350fd5。主审实际读取全部329声明项+manifest自身330成员，大小/SHA256/CRC/精确集合核验通过。
+
+原主审封存103757388字节/SHA256 f7772c8ab36944420a9bf7a820a50d7a68662b1dfa9b0800f6881e9806bd754b保持。H Git中的79份接收原件由主审与上一主审实际原文件逐一对齐；其中77份是原ZIP成员，RECEIPT.json与SEAL_EXECUTION.json为原ZIP外seal sidecar，不把79项说成原366项完整manifest。补充核验另核原366+自身367成员、完整外部370文件、13条扫描记录及12项失败历史，未发现缺失/重写。原完整反例/SQLite/链仍外置可读，未把扫描触发文件改字段/编码来伪造通过；只对原审计.log空白样式设局部属性例外，不涉及源码/安全扫描规则。
+
+2. WORK-P7-G1-001：High → CLOSED_DESIGN
+
+设计依据位置：COMMON_BUDGET_ADMISSION_DESIGN.md:7–49、55–108；COMMON_BUDGET_ADMISSION_CANDIDATES.json；BUDGET_DESIGN_DECISIONS.json；COMPATIBILITY_IMPACT.md:26起。
+
+原缺陷是Task预留与无TaskContext旧入口只数trials，无法共同约束取消/并发。H现明确：
+（a）凡输入或输出属于受管W，Task SDK/CLI/UI/adapter、旧研究CLI、公共research、direct ledger均强制物理域解析；缺上下文/receipt、改family/campaign/输出/adapter都不能选旧计数分支。源或输出跨域先拒绝。只有源与输出均真正不属受管W的standalone保留原P3 family/budget语义，不把该例外冒充共同准入。
+（b）唯一计数权威用原tasks.sqlite，域键W/data；同一BEGIN IMMEDIATE事务原子创建Task和完整N个candidate×horizon预留，legacy同样先整组准入后观察研究/缓存。保留family更小子预算。拒绝无debit，失败/取消/风险拒绝不退款；requested/rejected/admitted/registered/executed分栏，旧超额申请原字面历史不抹掉。
+（c）Task R只能由可信owner/epoch/physical slot/run/config/lineage认领父预留，不双扣；direct ledger自身必须检查整份冻结config和原始输入绑定，不能相信caller伪造的campaign_control或字符串receipt。
+（d）可信runner按冻结顺序CAS激活actor；无用户可选slot/purpose；UI实例绑定activation epoch防旧session认领下一actor。旧CLI先按plan+slot查原owner，首次才分配UUID，exact retry恢复同run或显式拒绝。主12同canonical入口不靠随机key认领其他空slot。
+（e）错误顺序域/历史→plan/身份/key→共享/家族额度→slot容量→同事务绑定。合法expected-budget-rejection探针cap0使原12取消反例真正到EXPERIMENT_BUDGET_EXCEEDED；无合法slot的主协议额外actor报UNAUTHORIZED；前提仅11时cap0报SLOT_EXHAUSTED且用例判前提失败，三者没有再混淆。
+（f）authority commit后才发布原JSONL/sidecar，冻结outbox/seq/hash、单一锁序、完整原件恢复；缺失/截断/外来写入/DB丢失拒绝并保留故障，不能空扫描重置预算。可写迁移限同bundle可核catalog；旧P6包与旧根仍独立原环境，不能关闭catalog门禁混写。
+
+以上足以约束未来实现，原取消后旧入口绕过的设计缺口可关闭。主审本轮没有运行旧反例或未来产品；旧P6代码未改，故不登记FIX VERIFIED。未来G2必须在实际新固定实现上执行原12取消后旧入口拒绝、双向顺序、剩1混合并发、N=2整体拒绝、幂等/所有权、崩溃/outbox、缺损历史及旧包边界。
+
+36项候选已由主审逐案静态审阅，PRIMARY_DESIGN_RECHECK.json逐ID给出理由与范围。001–009涵盖双入口/整体扣记/错域；010–016涵盖幂等、父子认领、失败和恢复；017–024涵盖缺损迁移/子预算/外来写入；025–036涵盖主/风险/零研究slot、旧CLI无key、同canonical多入口、stale activation及拒绝探针前提。未发现当前候选与修订设计的必然冲突。
+
+主审另以不导入AQRP的有限约束模型独立枚举0–12已用额度、1–3单位整组请求、所有失败终态不退款、剩1时Task/legacy两种提交次序、父子claim计数和B/C/D错误顺序，连同浏览器风险独立算术共394个抽象断言通过。此为计划模型，不是36项产品测试通过，也不证明SQLite实际接线/进程并发实现。
+
+3. WORK-P7-G1-002：Medium blocking → CLOSED_DESIGN
+
+设计依据：BROWSER_NEGATIVE_PROTOCOL.md全文；BROWSER_NEGATIVE_PROTOCOL_CANDIDATES.json；COMMON_BUDGET_ADMISSION_DESIGN.md:55–74；E2E_PROTOCOL_CANDIDATES.json研究分账；TEST_AND_EVIDENCE_PLAN.md新增两组及浏览器条目。
+
+MAIN-12原四变体/actor/答案全部保留，仍12单位。额外风险负例使用事前登记的原P6故障夹具Wneg，自己的可信inputs/catalog/侧车/output/实际data身份；共同产品上限仍12，protocol cap1是更严格的唯一slot，不是主第13个成功actor。两根及其来源/配置在任何本轮输出前一并冻结；不可主失败后换根补数，不要求两次可信初始化的UUID/manifest/hash必相同。ROOT-MIX正反向和链接别名必须先拒绝，ROOT-SAME合法同根必须真正到达P4。
+
+BR-RISK-ORIGINAL-01：真实Strategy Backtest表单gross_max=0并真实提交pipeline。主审静态核真实UI、Task请求builder、P4服务、P5 _risk_portfolio及全Task证明门禁；此请求是合法风险拒绝，不是字段错误。独立算术：1000−fee10=990可投资，long-only理想9.9股、取整9，GROSS pre=1、post=10/11均大于0。故应R成功，真实P4 result REJECTED/ledger FAILED/slot VERIFIED_FAILURE；P5无订单/fills、现金及权益1000但B成功；整Task由P4失败而FAILED REQUIRED_STAGE_REJECTED。不能用预算拒绝冒充P4拒绝。失败消耗唯一1单位，第二新key即使产品还剩11也拒绝。
+
+BR-CANCEL-REPLAY-01：在MAIN根用预指定成功源，SDK仅freeze/submit排队replay、无worker；同一复合activation内真实browser选择该Task并Cancel safely。主审核原inspect_task仅取消/刷新，原TaskState.cancel与TaskService.work terminal返回路径支持QUEUE取消后无R/P4/B/E。后续真实worker work必须no-op，源与计数不变，同key复用原取消Task；SDK准备不能冒充browser提交。此例只覆盖真实排队取消，运行中/提交后取消继续原SDK资金故障回归。
+
+BR-REPLAY-01：由真实UI Replay按钮提交并启动，冻结原B请求，产生新E及十个P4、比较声明投影，且不创建R或研究trial。零研究不是零执行，不能增加主成功研究actor数。旧源原字节必须不变，仅同受审bundle，跨包旧pin另在原包环境。
+
+外层必须如实分列MAIN12、风险1、取消0、正常replay0，共13个研究attempt（另列原SDK故障夹具），不称全轮只研究12次或有统计独立/金融有效性。上述分配消除了原未定义预算冲突，002可以关闭设计；真实浏览器、hardcap1、混合域拒绝和实际终态仍NOT VERIFIED，须实施后完整原件证明。
+
+4. 兼容、允许路径及非阻断实施精度要求
+
+同一新bundle/catalog、输入/defaults相同的缺省布局/raw hash不注入execution_sessions或隐含admission字段；新schema控制用独立记录。不能承诺新P7与旧P6跨bundle全部raw/config_hash相同或原地恢复。旧pin/历史任务继续原包/锁/独立原根/声明重放，catalog/Ref校验不放宽。原审非阻断兼容表述意见已得到明确处理。
+
+共同准入新允许范围明确为experiments/admission.py、ledger.py；services/research/task_state/task_campaigns/task_context/tasks.py及必要旧cli显示；新tools/p7_engineering_protocol.py；薄UI/task_cli/可信启动接线及相应实验/CLI/Task/UI/集成测试。与既定execution_sessions、competition薄适配、版本身份/package gate/CI范围取明确并集；不能通配扩大到P1/P3金融数学、P4风险或P5执行/账本算法。新模块必须新bundle/固定实现/全包受审，不能沿用旧收据。预算模块置experiments层并使用同connection，避免ledger反向依赖TaskState和双库原子性假设。
+
+以下属于未来必须精确实现/证据检查，目前没有另立技术阻断：
+① 两个权威事务先后commit、却逆序取得trials-lock时，冻结outbox/原JSONL链仍须按确定性seq/previous_hash顺序发布；不能把并发错序当允许损坏后继续。
+② 原legacy进程仍活着时exact retry必须显式拒绝重复，或采用排他恢复fencing，不能同时执行同run。
+③ actor推进后迟到的旧key/session只能返回原核验owner或拒绝，不可认领下一同canonical actor。
+这些是现有幂等/冻结链/过期activation约束的验收细化，不是给予开发方跳过的豁免。若未来实现改变其语义须重新审设计。
+
+5. 原数学、证据与实际执行
+
+主审逐字节确认原19截面/32 Golden/768路径相关输入、公式、答案、容差、源方法和失败候选未改；115159679字节外部完整轨迹实际重读SHA256仍74d968f318172afa21df2def55a393bcf00efb22531f5c47ee60420364153980。本轮没有必要重跑上轮19/768复算，也未将旧数值通过重复计成新测试。19研究/10执行、fee50候选与旧profile/默认边界保持。
+
+主审实际执行：固定Git/拓扑/diff与5615旧blob；5552/5016/83及223清单文件；新包全部330成员大小/hash/CRC；79原审计副本；外部数学hash；36项逐案静态阅读、394抽象断言；PR/官方CI API。记录在PRIMARY_INTEGRITY.json、PRIMARY_DESIGN_RECHECK.json、*.command.json/stdout.log/stderr.log。所有写入只在本次独立审查目录，候选Git clean。
+
+三名补充代理分别作预算协议、浏览器静态链和嵌套封存/源码/原件交叉核验；其文件在assistance-*，身份单列ASSISTANCE_PROVENANCE.json，不冒充主审执行。补充核验固定H源码ZIP93511079字节SHA256前缀42436050、5783文件与H一致；原完整审计包/外部原件/失败保留核验通过。完整digest和逐成员数据在辅助证据记录，不以补充意见替代上述主审实际核对。
+
+环境：Windows11 build26300，标准GIL CPython3.13.16 x64；基础解释器C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe，SHA256 31fe10b4ed82a2f960af0ef9931f46a4b84ff286f8b6ffd9dee098cf4f10f17f。无新库、SDK安装、worker、研究/产品探针、AppTest或浏览器启动。原命令包含git clone --no-local --no-checkout、fetch --no-tags明确H、checkout --detach H、rev-list --parents、diff --name-status G H、cat-file --batch旧blob、ls-remote及Python -X utf8 primary_verify.py / primary_design_reference.py，完整argv/cwd/UTC/退出码在原JSON。
+
+官方CI run40102034541在主审开始时in_progress、结束读取时Windows/Ubuntu两job均completed/success。只属于原P6回归。H官方原工件ZIP、每项原始新CI日志本轮未下载核验，明确NOT VERIFIED；不据API success声称P7测试通过或新的独立SDK1567通过。开发方静态门禁/参考候选与独立主审设计判断分别记账；两次格式失败和原扫描触发历史均保留。
+
+6. 条件、责任与后续关卡
+
+技术设计阻断已关闭；以下具体条件仍须用户明确接受，且P7业务实现须单独授权：
+C-P7-001：只做受限工程最终运行/可重建安装/操作手册与部署边界；真实部署/最终外部验收另列，不能把工程PASS当原完整部署义务已完结。
+C-P7-002：第一通用适配限定已审SYN_A/SYNCCY/SYN_A_CAL合成profile及恒等单位映射；通用接口/能力矩阵/真实请求运行仍必须交付，未知真实源/比赛规则明确外部阻断，不猜许可/税费/日历。
+C-P7-003（修订版）：接受共同authority的上述精确接线与受管行为收紧、原standalone兼容边界；预冻结可信runner/activation/全部输入及actor；MAIN12与独立原风险夹具1、排队取消/正常replay零研究分列。不能事后换根补数，不能把内部seal/API对象称真实OS主体权限隔离。
+C-P7-004：预冻结execution_sessions的19/10双时钟、主夹具每决策fee50、同包缺省布局/旧包独立恢复边界、新全bundle及分模式package/CI/上传选集接线；原正确答案/核心经济规则不改。
+
+开发方负责仅在接受条件并获实施授权后实现、保留原始失败、自测与固定SHA；主审负责后续固定实现G2；用户负责条件/范围、阶段验收以及另行合并/发布授权。G1通过不互相代替上述关卡。
+
+WI-R2-001/002及整体真实Windows隔离继续DEFERRED / NOT VERIFIED；最终集成固定SHA真实三主体复验另行方案/权限授权。正式Test NOT RUN且入口失败关闭；金融批准NONE，不以正IC/显著性或工程结果代替用户金融批准。完整历史宿主仍限已接受包/锁/旧Ref/声明重放，其他NOT VERIFIED。无账户/ACL/服务/调度修改，无部署、实盘、合并或打标签。本轮不开始P7实现。

@@ -1,0 +1,785 @@
+{
+  "executor": "Primary GPT Work incremental verifier",
+  "fixed_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+  "parent": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+  "baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "changed_paths": [
+    "M\tAGENTS.md",
+    "M\tREADME.md",
+    "M\tdocs/CHANGELOG.md",
+    "M\tdocs/DECISIONS.md",
+    "M\tdocs/PROGRESS.md",
+    "M\tdocs/ROADMAP.md",
+    "M\tdocs/TRACEABILITY.md",
+    "M\tdocs/audits/phase-6/IMPLEMENTATION_IDENTITY.json",
+    "A\tdocs/audits/phase-7/BROWSER_NEGATIVE_PROTOCOL.md",
+    "A\tdocs/audits/phase-7/BROWSER_NEGATIVE_PROTOCOL_CANDIDATES.json",
+    "A\tdocs/audits/phase-7/BROWSER_SOURCE_IDENTITY_INDEX.json",
+    "A\tdocs/audits/phase-7/BUDGET_DESIGN_DECISIONS.json",
+    "A\tdocs/audits/phase-7/COMMON_BUDGET_ADMISSION_CANDIDATES.json",
+    "A\tdocs/audits/phase-7/COMMON_BUDGET_ADMISSION_DESIGN.md",
+    "M\tdocs/audits/phase-7/COMPATIBILITY_IMPACT.md",
+    "M\tdocs/audits/phase-7/E2E_PROTOCOL_CANDIDATES.json",
+    "M\tdocs/audits/phase-7/EXECUTION_SELECTION_CONTRACT.md",
+    "M\tdocs/audits/phase-7/FILE_MANIFEST.json",
+    "A\tdocs/audits/phase-7/G1_REVISION_PREFLIGHT.json",
+    "M\tdocs/audits/phase-7/INTERFACE_DRAFT.md",
+    "M\tdocs/audits/phase-7/OPEN_QUESTIONS.md",
+    "M\tdocs/audits/phase-7/PACKAGE_GATE_AND_CI_PLAN.md",
+    "M\tdocs/audits/phase-7/PLAN.md",
+    "M\tdocs/audits/phase-7/REQUIREMENTS_TRACEABILITY.md",
+    "M\tdocs/audits/phase-7/REVIEW_PACKAGE.md",
+    "M\tdocs/audits/phase-7/SCOPE_AND_DEPENDENCIES.md",
+    "M\tdocs/audits/phase-7/STATUS.json",
+    "M\tdocs/audits/phase-7/TEST_AND_EVIDENCE_PLAN.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/.gitattributes",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/DEVELOPER_DRAFT_PROVENANCE.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/DEVELOPER_RESPONSE.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/EVIDENCE_INDEX.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/FINDING_DISPOSITION.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/GIT_RECEIVED_FILES_MANIFEST.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/INTEGRATION_RESULT.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/ORIGINAL_SUBSET_SCAN_FINDINGS.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/RAW_LOG_FORMAT_SCOPE.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/RECEIVED_INTEGRITY_VERIFICATION.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/REVIEWED_E2E_PROTOCOL_CANDIDATES.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/REVIEWED_FILE_MANIFEST.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/REVIEWED_P6_IDENTITY.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/REVIEWED_STATUS.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/REVISION_SCOPE.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/STORAGE_SCOPE.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/first-attempt-staged-whitespace.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/first-attempt-staged-whitespace.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/diff-whitespace.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/diff-whitespace.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/diff-whitespace.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/package-static.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/package-static.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/package-static.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/pinned-secret-scan.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/pinned-secret-scan.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/pinned-secret-scan.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/diff-whitespace.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/diff-whitespace.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/diff-whitespace.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/package-static.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/package-static.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/package-static.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/pinned-secret-scan.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/pinned-secret-scan.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/pinned-secret-scan.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141745609755Z/scan-findings.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/diff-whitespace.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/diff-whitespace.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/diff-whitespace.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/package-static.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/package-static.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/package-static.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/pinned-secret-scan.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/pinned-secret-scan.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/pinned-secret-scan.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/preflight-20261024T141919526827Z/scan-findings.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/preflight/scan-findings.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/.gitattributes",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/ASSISTANCE_PROVENANCE.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/DEVELOPER_HANDOFF.txt",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/EVIDENCE_MANIFEST.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/EXTERNAL_EVIDENCE_INPUTS.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/FINDINGS.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/P6_H2_ARTIFACTS_API.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/P6_H2_JOBS_API.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/P6_M_JOBS_API.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/P6_M_PR_TRIGGERED_RUNS.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/P7_CI_ARTIFACTS_API.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/P7_CI_FINAL_JOBS.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/P7_CI_RUNS_START.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/PR10_FINAL.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/PR10_START.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/PR9_RELEASE_START.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/PRIMARY_FINANCE.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/PRIMARY_MATH.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/PRIMARY_ORIGINAL_SEVEN.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/PRIMARY_SCOPE.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/RECEIPT.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/REMOTE_REFS_PRIMARY.txt",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/REPORT.txt",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/SEAL_EXECUTION.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-00.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-00.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-00.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-01.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-01.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-01.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-02.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-02.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-02.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-03.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-03.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-03.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-04.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-04.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-04.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-05.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-05.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-05.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-06.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-06.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/init-06.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/initialize.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/prepare_primary_delivery.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-budget-probe-first-attempt.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-budget-probe-first-attempt.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-budget-probe-first-attempt.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-budget-probe.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-budget-probe.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-budget-probe.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-delivery-prepare.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-delivery-prepare.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-delivery-prepare.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-finance.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-finance.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-finance.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-math-first-attempt.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-math-first-attempt.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-math-first-attempt.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-math.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-math.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-math.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-scope-first-attempt.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-scope-first-attempt.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-scope-first-attempt.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-scope.command.json",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-scope.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary-scope.stdout.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary_budget_probe.first-attempt.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary_budget_probe.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary_finance.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary_math.first-attempt.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary_math.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary_scope.first-attempt.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/primary_scope.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/run_capture.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/received/seal_evidence.py",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/COMPATIBILITY_IMPACT.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/EXECUTION_SELECTION_CONTRACT.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/INTERFACE_DRAFT.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/OPEN_QUESTIONS.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/PACKAGE_GATE_AND_CI_PLAN.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/PLAN.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/REQUIREMENTS_TRACEABILITY.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/REVIEW_PACKAGE.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/SCOPE_AND_DEPENDENCIES.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/reviewed-design/TEST_AND_EVIDENCE_PLAN.md",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/second-attempt-staged-whitespace.stderr.log",
+    "A\tdocs/audits/phase-7/g1-3c34e3c/second-attempt-staged-whitespace.stdout.log"
+  ],
+  "unchanged_G_paths_checked": 5615,
+  "frozen_baseline_files": 5552,
+  "protected": 5016,
+  "source_modules": 83,
+  "plan_manifest_members": 223,
+  "math_originals_unchanged": {
+    "GOLDEN_CANDIDATES.json": "7667c17a24d408780bc39d87fdbf14bf0ef2916ef2839610f4d226e7bed7777c",
+    "MAIN_PIPELINE_CANDIDATES.json": "89862cab91be59d7b86b038ce76fc18f73985f7fd7c705c3a542e0110b13ad9d",
+    "MAIN_REFERENCE_METHOD.md": "a8a9a67dd795cc79e3f2685d492f3c70a6409a9c699ce1b103a93ba9ebd65260",
+    "FINANCIAL_FEASIBILITY_CANDIDATES.json": "cd9f0336938f1e7b93c5593df8af15fbe96a3a16db36d0f9f6efe4bbc1b773ef",
+    "FINANCIAL_FEASIBILITY.md": "d4f0cee34776216e04c7ffa6e41410efd69dbd41e5ac2e168eadd12bb3163495",
+    "FINANCIAL_MODEL_BOUNDS.json": "66db52666b68ff161b8b5fd7bffbc6507e0c8b1cccdfe02029783255dd47326b",
+    "FINANCIAL_REFERENCE_METHOD.md": "f16a98d60ddba0b5d758ddefb2d189d95fc9185157a6ea86ca09bbbe08578577"
+  },
+  "large_math_original_unchanged": true,
+  "MAIN_original_fields_all_unchanged": true,
+  "original_received_copies": [
+    {
+      "path": "ASSISTANCE_PROVENANCE.json",
+      "bytes": 1942,
+      "sha256": "cb1286adbbe0f0ff2abba6ce3407b1867f5f7e5efd3f71b7d0f3633241de3b53"
+    },
+    {
+      "path": "DEVELOPER_HANDOFF.txt",
+      "bytes": 1374,
+      "sha256": "943969e7160c006d8433c358c8ee541260cd4d72779e74e85ec56a799a502c5d"
+    },
+    {
+      "path": "EVIDENCE_MANIFEST.json",
+      "bytes": 70586,
+      "sha256": "246dfa472565aac60c0b08b4399521da13bd6fb66d710540e52a3725c201a616"
+    },
+    {
+      "path": "EXTERNAL_EVIDENCE_INPUTS.json",
+      "bytes": 2984,
+      "sha256": "4b8f36f7bf97dc4234007a2af184330eb1353675fd25b23050e720ce8c026fe7"
+    },
+    {
+      "path": "FINDINGS.json",
+      "bytes": 2576,
+      "sha256": "8851bd23cd61bdbc779e5e0d164e348c2c9834dfa546de25da2bc48328769f1c"
+    },
+    {
+      "path": "init-00.command.json",
+      "bytes": 518,
+      "sha256": "1ed6d5b411c2422bc27fd86564d6121610f5096bbe871a7844f675aae34d900e"
+    },
+    {
+      "path": "init-00.stderr.log",
+      "bytes": 53,
+      "sha256": "4b0d4725b49fc0e1c26a8a74e5c06ded61c1cafd6cefa1a2099da921785f1704"
+    },
+    {
+      "path": "init-00.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-01.command.json",
+      "bytes": 482,
+      "sha256": "7793d4a87e4eb100378aa216ed29ddb718ef5108a419f37a7b47d7b17f93e97f"
+    },
+    {
+      "path": "init-01.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-01.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-02.command.json",
+      "bytes": 482,
+      "sha256": "9c88bd63d9b0e3c9f3c29a39f1f405cb961541c023beb122798a4385cb57f0bf"
+    },
+    {
+      "path": "init-02.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-02.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-03.command.json",
+      "bytes": 554,
+      "sha256": "35b217efd59403fb0535e90b494d2dc29195d3b8df6c8fae91c647e3d9c0b7f4"
+    },
+    {
+      "path": "init-03.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-03.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-04.command.json",
+      "bytes": 723,
+      "sha256": "f0a6ab175f0df09ff884a95dfca8b5c88e144d25b39826a5cdfbc0d0cdfba394"
+    },
+    {
+      "path": "init-04.stderr.log",
+      "bytes": 450,
+      "sha256": "b61ed555d023db8267477f4c6deb72b8dafee37a3f06e2d47ae3e2140fb37629"
+    },
+    {
+      "path": "init-04.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-05.command.json",
+      "bytes": 514,
+      "sha256": "925862cb9cf43dc435b4c5728301201ea89675c8022bb9d3ca4fb0c797f45b2e"
+    },
+    {
+      "path": "init-05.stderr.log",
+      "bytes": 182,
+      "sha256": "f85affde8bd9946d9e610464ce2c52d21c0e7fe0abe75b3e9c056376d51b3262"
+    },
+    {
+      "path": "init-05.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-06.command.json",
+      "bytes": 469,
+      "sha256": "bf5f95fcc51b4b571c1d1c91c86ffa44e8df1be47361325f51f0530f75d89c12"
+    },
+    {
+      "path": "init-06.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-06.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "initialize.py",
+      "bytes": 1562,
+      "sha256": "4b811c3ecf243011ba3ee531b4aad91ad87ae1e0dea573ffb6a118543f162731"
+    },
+    {
+      "path": "P6_H2_ARTIFACTS_API.json",
+      "bytes": 1766,
+      "sha256": "1e87d3cdb81d7d3b7a03bddc9f49500d7988c59c6403be0f904031e98faea3c9"
+    },
+    {
+      "path": "P6_H2_JOBS_API.json",
+      "bytes": 3337,
+      "sha256": "6e017eb076234015eb82353c3f2990da947883b1584544083eb453d6e2c0c952"
+    },
+    {
+      "path": "P6_M_JOBS_API.json",
+      "bytes": 3337,
+      "sha256": "ed5656105e7472bbd2b3c8d0ac35135a70cc33c61f74c71fe50d3ed8aa76eaa3"
+    },
+    {
+      "path": "P6_M_PR_TRIGGERED_RUNS.json",
+      "bytes": 26,
+      "sha256": "70ec735ad150567865276fca143f06a38cf203f39febb4d4e6454478c381fc1a"
+    },
+    {
+      "path": "P7_CI_ARTIFACTS_API.json",
+      "bytes": 1784,
+      "sha256": "7b62119b379fb56d59e56640425b260ec641cabfc5292da9418526af40b94e74"
+    },
+    {
+      "path": "P7_CI_FINAL_JOBS.json",
+      "bytes": 3710,
+      "sha256": "40f31e312f9a563ef4ac59fe3682513c8a2f8cd99b93b38e040c9e55033554c3"
+    },
+    {
+      "path": "P7_CI_RUNS_START.json",
+      "bytes": 467,
+      "sha256": "90c61feef24c7f43176587dfdbf76162da0638e0c53f26eb530027d741e22b05"
+    },
+    {
+      "path": "PR10_FINAL.json",
+      "bytes": 6309,
+      "sha256": "5e2300490b449a980f5a638c4b4d2a7f149ea988b298afa2c9eb54cead464257"
+    },
+    {
+      "path": "PR10_START.json",
+      "bytes": 6100,
+      "sha256": "c0682e9881a3c43bd66da303031606a29bcc25ef268b0cbb37791419bae77e5c"
+    },
+    {
+      "path": "PR9_RELEASE_START.json",
+      "bytes": 11188,
+      "sha256": "f54070548a8ae0f89ae6aaa6f427b7512a1771f352130b50729990a4683a9080"
+    },
+    {
+      "path": "prepare_primary_delivery.py",
+      "bytes": 2696,
+      "sha256": "6847efe2905269d2bb1f7b0dfbe45aa61a80381b343cdae12a0563edbc57b1dc"
+    },
+    {
+      "path": "primary-budget-probe-first-attempt.command.json",
+      "bytes": 640,
+      "sha256": "201701660f5400b3e5f562393981789c2c69f1475dece0fb6be951bce2478fd6"
+    },
+    {
+      "path": "primary-budget-probe-first-attempt.stderr.log",
+      "bytes": 1116,
+      "sha256": "d472c13249ceb1f0f148e06c0e6eab2404b7f22163756f1f34e328c04d3c1d38"
+    },
+    {
+      "path": "primary-budget-probe-first-attempt.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-budget-probe.command.json",
+      "bytes": 640,
+      "sha256": "a5d438b1ec83c86f1dbeaf327d3c3c76670473c985e304be7561f62ef01b248b"
+    },
+    {
+      "path": "primary-budget-probe.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-budget-probe.stdout.log",
+      "bytes": 137,
+      "sha256": "bbb553a275c8a4b9bf97af0bf3ca69c78b8f0d2eea32e4ce2a7f63273aa03e03"
+    },
+    {
+      "path": "primary-delivery-prepare.command.json",
+      "bytes": 522,
+      "sha256": "80b5e01a0d64acaa860f0a9f049a643ec30d0cfc4864e7e03121415a8857a7b2"
+    },
+    {
+      "path": "primary-delivery-prepare.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-delivery-prepare.stdout.log",
+      "bytes": 187,
+      "sha256": "336712ffe5d39178d8de033fff4b4c222e6f67e8536868a0d0a3dd1eaa8fe83d"
+    },
+    {
+      "path": "primary-finance.command.json",
+      "bytes": 513,
+      "sha256": "a66d8f73d8dde3cc0b349e29f9707b8eebe0e5f686513d5312736a3fb9790643"
+    },
+    {
+      "path": "primary-finance.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-finance.stdout.log",
+      "bytes": 1237,
+      "sha256": "6210c1661605c893141c853f19171cd7a869df6617c7848f74cb4b22001fb56f"
+    },
+    {
+      "path": "primary-math-first-attempt.command.json",
+      "bytes": 510,
+      "sha256": "fc32acd3c74cf1237837aa3a38386ad84984c73241dd37227327f7540535213d"
+    },
+    {
+      "path": "primary-math-first-attempt.stderr.log",
+      "bytes": 947,
+      "sha256": "8aab9683faeafd75dfb15a7dee821f7f6b7f2c787b5608c8111fbc9af1f934b0"
+    },
+    {
+      "path": "primary-math-first-attempt.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-math.command.json",
+      "bytes": 510,
+      "sha256": "366a39b81d874b2726a8d82f36b2fee674c72ba72fd7cc4b3c3139860d5b157e"
+    },
+    {
+      "path": "primary-math.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-math.stdout.log",
+      "bytes": 73,
+      "sha256": "5e2313ea8a78a9aaaf4e8b9c4f63ddf2c6b812456426c6297ee9f7cce3913a3c"
+    },
+    {
+      "path": "primary-scope-first-attempt.command.json",
+      "bytes": 511,
+      "sha256": "2174aba92657e596bd6ee6bf611be441bee7b98c30a62a2f2571565632f5e91a"
+    },
+    {
+      "path": "primary-scope-first-attempt.stderr.log",
+      "bytes": 362,
+      "sha256": "cf5e5086e4641535cf3a1e89cda10df3d5d75e3953cede5dec29e4a42c97dd21"
+    },
+    {
+      "path": "primary-scope-first-attempt.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-scope.command.json",
+      "bytes": 511,
+      "sha256": "0d7830a496285a584cae4291510f2682a54ccf486cecffdcd4ccd87bcad1db63"
+    },
+    {
+      "path": "primary-scope.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary-scope.stdout.log",
+      "bytes": 794,
+      "sha256": "7c551b4fc590d9701a679874ba70b2fce02b770c632cec56adade6320099b147"
+    },
+    {
+      "path": "primary_budget_probe.first-attempt.py",
+      "bytes": 3390,
+      "sha256": "7aaa44593fd996c8f4b12aa799bf9371c63992ebead5790fbef42e84af08577e"
+    },
+    {
+      "path": "primary_budget_probe.py",
+      "bytes": 3409,
+      "sha256": "3c897355e9f89b5dc3c1d0d01cf0d39c3d575a702a756a832c47da966483e855"
+    },
+    {
+      "path": "PRIMARY_FINANCE.json",
+      "bytes": 1618,
+      "sha256": "59acc4f6e53ad89457bdfed64754d2ba305c2700c7c7f33006226955faf3e209"
+    },
+    {
+      "path": "primary_finance.py",
+      "bytes": 7456,
+      "sha256": "f73d14509c825a6937959603a7ae0e8969d9c7f1c140d539bcf98647c5f60282"
+    },
+    {
+      "path": "primary_math.first-attempt.py",
+      "bytes": 6725,
+      "sha256": "805cefa703aeff0e5a753ce7355dcc54ce1b091a53f82868106440a0270f3077"
+    },
+    {
+      "path": "PRIMARY_MATH.json",
+      "bytes": 17797,
+      "sha256": "bc596a948a15e196daf7d90d8a6be13a9107771caf522ff62610c8320d0f1c20"
+    },
+    {
+      "path": "primary_math.py",
+      "bytes": 6728,
+      "sha256": "f8dd33184e1f39d2f4b7af06b1ef6d7e20828c6c5e66b6a8f16a2acf4ba56290"
+    },
+    {
+      "path": "PRIMARY_ORIGINAL_SEVEN.json",
+      "bytes": 1507,
+      "sha256": "2f543a27123f5b6601981483c21fa63cdfa438e35bdf6979579422f968084a3d"
+    },
+    {
+      "path": "primary_scope.first-attempt.py",
+      "bytes": 6500,
+      "sha256": "32e78b0ab5e1edbb073c9c3dd7dbbd28f9c6334476dcd84396d3c5f116dc6699"
+    },
+    {
+      "path": "PRIMARY_SCOPE.json",
+      "bytes": 57665,
+      "sha256": "3a8e9039ba07f1fade2467e0a725bb4125d53e21d100cb0a85aee6ce24771d7e"
+    },
+    {
+      "path": "primary_scope.py",
+      "bytes": 6885,
+      "sha256": "ec0772ec3885c8ad62dd60b83bd5207dc76f53dd0c9680b471bb79fdd87d4b49"
+    },
+    {
+      "path": "RECEIPT.json",
+      "bytes": 1661,
+      "sha256": "3701fb2625fddf74d510234d4011140e342fc102c3548b9f3504e81de6df8c82"
+    },
+    {
+      "path": "REMOTE_REFS_PRIMARY.txt",
+      "bytes": 1757,
+      "sha256": "e55e2ea052776cc5ed61c0637adbe6260101fd30b18de0c16782da6cce285064"
+    },
+    {
+      "path": "REPORT.txt",
+      "bytes": 16955,
+      "sha256": "f3bb7e7ee3b365c30f97213dbaeb2051ea2ccee3911ef62ae8bd13bb543a9ebe"
+    },
+    {
+      "path": "run_capture.py",
+      "bytes": 805,
+      "sha256": "00f59b4f7d5127f7c491e0b7602513823c8fca2b0f8b7836b3acc3504f070127"
+    },
+    {
+      "path": "seal_evidence.py",
+      "bytes": 3616,
+      "sha256": "c0a953a3cf82c95853895da22dc2b1e6cca27fa521db828d0c8ba689a5043877"
+    },
+    {
+      "path": "SEAL_EXECUTION.json",
+      "bytes": 523,
+      "sha256": "c2ea94c106bda4ed1f8e394b7a57f6373e22ffb7f1b18101181245171b424f10"
+    }
+  ],
+  "new_archive": {
+    "bytes": 199866661,
+    "sha256": "39f029fb7b52a7d536d85d7a22ff5ab22aac94ed7a1996fb6ca17dfbc2e66b49",
+    "manifest_sha256": "b6d25c30ad1c625c6752b31094098e5a65bdbd5c457a31631f19d230bc350fd5",
+    "declared": 329,
+    "members": 330,
+    "CRC_all_sizes_hashes_exact_members": true
+  },
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-list",
+        "--parents",
+        "-n",
+        "1",
+        "645049ae9b08710ed93189b80547d14c87d80584"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-status",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+        "645049ae9b08710ed93189b80547d14c87d80584"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-6/IMPLEMENTATION_IDENTITY.json"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-6/IMPLEMENTATION_IDENTITY.json"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-tree",
+        "-r",
+        "--name-only",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "--batch"
+      ],
+      "count": 5615,
+      "exit": 0
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/E2E_PROTOCOL_CANDIDATES.json"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/GOLDEN_CANDIDATES.json"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/MAIN_PIPELINE_CANDIDATES.json"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/MAIN_REFERENCE_METHOD.md"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/FINANCIAL_FEASIBILITY_CANDIDATES.json"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/FINANCIAL_FEASIBILITY.md"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/FINANCIAL_MODEL_BOUNDS.json"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "3c34e3ca75c9799307b8a98b34f045b40988bbca:docs/audits/phase-7/FINANCIAL_REFERENCE_METHOD.md"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+        "refs/tags/*"
+      ],
+      "exit": 0,
+      "cwd": "E:\\WORK\\AQRP-audits\\p7-645049a\\src",
+      "stderr": ""
+    }
+  ],
+  "environment": {
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "GIL": true,
+    "python_sha256": "31fe10b4ed82a2f960af0ef9931f46a4b84ff286f8b6ffd9dee098cf4f10f17f",
+    "utc": "2026-10-24T14:56:02.412673+00:00"
+  }
+}

@@ -25432,38 +25432,38 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 53819,
-      "sha256": "d88fe9f9dce99187467de4e705739e58e9e446f1e3233a9ba28291e7f7e881b2"
+      "bytes": 54783,
+      "sha256": "3a4f1538b808da0d7d2c5609723d51a31f0c19f63756e1835f0b62f4dcad909a"
     },
     {
       "path": "README.md",
-      "bytes": 37156,
-      "sha256": "8cadb094597d9a3ee9653842780c38716a8e2d5fb1f457c0196c0706929a7643"
+      "bytes": 38120,
+      "sha256": "fd918c921ad1e1146e7f2141bffc3fd1bd69705d0073eefe6fa97a08b58f494f"
     },
     {
       "path": "docs/CHANGELOG.md",
-      "bytes": 51400,
-      "sha256": "d744733a69a02b58cdd27eb055504c5ddc35a25557f5aa8f369d3b6636624a89"
+      "bytes": 52364,
+      "sha256": "1464eb86a69b8b852473f7288ea9bb8e22d4e4ee13bfa3e452543d03f9cb3c69"
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 50356,
-      "sha256": "da30cec7a026f873d4dcda0477fdd792042c0033778b8442cca74a56267a197c"
+      "bytes": 51320,
+      "sha256": "a90f07a9f72bbdaa0d1164d9d2bc4160921688d6520dd2168f177465525e388f"
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 45929,
-      "sha256": "19130805d5c7a6ebc0c7ec52e0bd0f20914d8ae31b930e4689bd795bb84dd580"
+      "bytes": 46893,
+      "sha256": "6218b2e59728134a6a1bb8508152942ae8948124e2db8c5459d9783e3509cf11"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 43272,
-      "sha256": "2a7bcdf91e395ab379b4378da2bc875b6115dc974ed6dc688956f0e96b08da53"
+      "bytes": 44236,
+      "sha256": "34e0ba96d8b42c7174e27aebb3fb2babbe5b4b6fc520967a00950673a6f30d6c"
     },
     {
       "path": "docs/TRACEABILITY.md",
-      "bytes": 49971,
-      "sha256": "5841b91d23f0295384fea00b75936c9af7e8d2109c989948d39d5a89e908adf1"
+      "bytes": 50935,
+      "sha256": "aa6a8f6302a94185d51040bd94964bab8e5108c55a29c250bdd295ac2053fc28"
     },
     {
       "path": "docs/audits/phase-6/C1_BROWSER_FINDING_EVIDENCE.json",
@@ -25960,5 +25960,25 @@
     "protected_files": 5016,
     "business_bundle_unchanged": true,
     "finding_states": "OPEN_PENDING_INDEPENDENT_RECHECK; no new G1 PASS"
+  },
+  "g1_conditional_pass_archival_metadata": {
+    "scope": "Seven current global status-document hash rows only; reviewed design/business/protected files unchanged",
+    "reviewed_plan_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+    "verdict": "PLAN PASS WITH CONDITIONS",
+    "reviewed_identity_snapshot": "../phase-7/g1-645049a/REVIEWED_P6_IDENTITY.json",
+    "reviewed_identity_snapshot_sha256": "794fd7213ef342605dd62a479e35d79c2f053c4428d170b5dd0526ee61d1318d",
+    "changed_rows": [
+      "AGENTS.md",
+      "README.md",
+      "docs/CHANGELOG.md",
+      "docs/DECISIONS.md",
+      "docs/PROGRESS.md",
+      "docs/ROADMAP.md",
+      "docs/TRACEABILITY.md"
+    ],
+    "protected_files": 5016,
+    "bundle_unchanged": true,
+    "user_conditions_or_implementation_authorized": false,
+    "current_report": "../phase-7/g1-645049a/received/REPORT.txt"
   }
 }
