@@ -35,7 +35,7 @@ from aqrp.services.task_requests import (
     validate_defaults,
     validate_draft,
 )
-from aqrp.services.task_state import TERMINAL, TaskState
+from aqrp.services.task_state import TERMINAL, TaskState, campaign_admission_boundary
 
 
 def read_core(binding):
@@ -188,21 +188,22 @@ class TaskService:
     def submit(self, effective, idempotency_key):
         from aqrp.experiments.admission import verify_activation
 
-        if self.state.managed:
-            verify_activation(self.root, self._activation)
-        if type(effective) is not EffectiveRequest:
-            raise ContractError("FROZEN_TASK_REQUEST_REQUIRED")
-        x = self.validate_effective(effective.raw)
-        return self.status(
-            self.state.submit(
-                effective.raw,
-                idempotency_key,
-                campaign=x["payload"].get("campaign"),
-                activation=self._activation
-                if self._activation is not None
-                else {"inactive_service": True},
+        with campaign_admission_boundary():
+            if self.state.managed:
+                verify_activation(self.root, self._activation)
+            if type(effective) is not EffectiveRequest:
+                raise ContractError("FROZEN_TASK_REQUEST_REQUIRED")
+            x = self.validate_effective(effective.raw)
+            return self.status(
+                self.state.submit(
+                    effective.raw,
+                    idempotency_key,
+                    campaign=x["payload"].get("campaign"),
+                    activation=self._activation
+                    if self._activation is not None
+                    else {"inactive_service": True},
+                )
             )
-        )
 
     def cancel(self, task):
         from aqrp.experiments.admission import verify_activation

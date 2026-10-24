@@ -64,7 +64,18 @@
       "same_product_bundle_commit": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
       "prior_local_872_SDK": "ABORTED_FOR_CONFIRMED_PRODUCT_FIX_NOT_A_PASS",
       "replacement_validation": "New full implementation SHA/package/clean SDK/dualOS/raw ZIP/browser required; pending",
-      "cancelled_prefix_evidence": "self-review/MIG-001/cancelled-prefix/EVIDENCE_INDEX.json"
+      "cancelled_prefix_evidence": "self-review/MIG-001/cancelled-prefix/EVIDENCE_INDEX.json",
+      "focused_self_tests": "49 targeted tests passed on e610b9f source snapshot (42 new integrity controls plus7 healthy import/selection/replay regressions); not fullSDK or independent G2"
+    },
+    "COMPAT-001": {
+      "severity": "Medium (developer classification)",
+      "status": "FIX_IMPLEMENTED / TARGETED_SELF_TEST_PASS / COMPLETE_FIXED_VALIDATION_PENDING / INDEPENDENT_G2_PENDING",
+      "evidence": "self-review/COMPAT-001/EVIDENCE_INDEX.json",
+      "actual_installed_probe_sha": "e610b9fced33ccc6e13f76e0ccce0905f0560197",
+      "original_assertion": "UNCHANGED",
+      "prior_local_e610_SDK": "ABORTED_AFTER_CONFIRMED_PUBLIC_ERROR_REGRESSION; ORIGINAL_RAW_PRESERVED; NOT_A_PASS",
+      "replacement_validation": "Fresh fixed package/full SDK/dualOS/raw ZIP/browser required",
+      "targeted_self_tests": 7
     }
   }
 }

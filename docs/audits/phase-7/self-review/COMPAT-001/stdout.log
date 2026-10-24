@@ -1,0 +1,44 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_ test_immutable_registration_tamper_partial_publication_and_missing_history __
+
+tmp_path = WindowsPath('C:/Users/11638/AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/AQRP/runs/p7-implementation-20261025/E610_OFFICIAL_FAILURE_TARGET_7a9053a4-5463-41ef-9b05-bfcc094838d8/fixture/test_immutable_registration_ta0')
+
+    def test_immutable_registration_tamper_partial_publication_and_missing_history(tmp_path):
+        s = service(tmp_path)
+        plan = s.register_campaign("study", [SINGLE])
+        assert s.register_campaign("study", [SINGLE]) == plan
+        with pytest.raises(ContractError, match="FAMILY_REDEFINED_AFTER_REGISTRATION"):
+            s.register_campaign("study", [{**SINGLE, "lookback": 3}])
+        cat = catalogue(tmp_path)
+        path = tmp_path / "research-campaigns" / (digest("study") + ".json")
+        original = path.read_bytes()
+        changed = deepcopy(plan)
+        changed["budget"] = 13
+        changed["campaign_hash"] = digest({k: v for k, v in changed.items() if k != "campaign_hash"})
+        path.write_bytes(canonical(changed))
+        with pytest.raises(ContractError, match="RESEARCH_CAMPAIGN_IDENTITY_CHANGED"):
+            get_campaign(tmp_path, "study", cat)
+        path.write_bytes(original)
+        index = tmp_path / "research-campaigns/index.jsonl"
+        saved = index.read_bytes()
+        index.write_bytes(b"")
+        with pytest.raises(ContractError, match="RESEARCH_CAMPAIGN_NOT_REGISTERED"):
+            s.freeze({**SINGLE, "campaign_id": "study"})
+        with pytest.raises(ContractError, match="CAMPAIGN_REGISTRATION_INCOMPLETE"):
+            s.register_campaign("study", [SINGLE])
+        index.write_bytes(saved)
+        frozen = s.freeze({**SINGLE, "campaign_id": "study"})
+        task = s.submit(frozen, "attempt")["task_id"]
+        with s.state.transaction() as c:
+            c.execute("DELETE FROM campaign_attempts WHERE task=?", (task,))
+>       with pytest.raises(ContractError, match="CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE'
+E         Actual message: 'ADMISSION_HISTORY_UNVERIFIED: '
+
+E:\WORK\AQRP-runs\p7-sdk-e610b9f-3a744130-0e39-4e29-97bf-0ec371fd5e16\aqrp-eff1bf5c-0dfb-4167-8a21-945ae39a2e14\source\tests\ui\test_g2_campaigns.py:132: AssertionError
+=========================== short test summary info ===========================
+FAILED ::test_immutable_registration_tamper_partial_publication_and_missing_history
+1 failed in 13.09s

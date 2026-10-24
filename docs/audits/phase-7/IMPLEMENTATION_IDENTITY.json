@@ -5,7 +5,7 @@
   "phase6_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
   "version": "0.7.0.dev1",
   "factor_semantic_version": "1.2.1 (algorithm unchanged); new implementation_hash means distinct full Ref",
-  "bundle_sha256": "513f53bfe2f04e24da29485b5c7f5ba42b67463d3f43cd960718680d907bc432",
+  "bundle_sha256": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
   "bundle_manifest": {
     "factor_api": "1.0.0",
     "data_contract": "contracts/1.0.0",
@@ -301,7 +301,7 @@
       },
       {
         "path": "services/task_state.py",
-        "sha256": "c08e676f61a559ea2ed1de7c07b01c242f0d947fe2633edb40ef2602e9391488"
+        "sha256": "2ea6df1dd00e5730f753eab19202f88145c17dee868f802f5e7424b61ddfff5a"
       },
       {
         "path": "services/task_worker.py",
@@ -309,7 +309,7 @@
       },
       {
         "path": "services/tasks.py",
-        "sha256": "65df029dbbdfa68c0aea632d495bc07d49b77b40d0a78d12ddc1adb081e03401"
+        "sha256": "c2ad8d349cac5597d709d16d49ef36c67bad9c30b586f2456aa128529342e96a"
       },
       {
         "path": "ui/__init__.py",
@@ -405,13 +405,13 @@
     },
     {
       "path": "docs/audits/phase-7/ENGINEERING_CODE_REVIEW.md",
-      "bytes": 2337,
-      "sha256": "6c6765a25ebbc6675012e5f9566f2073988be3142768c9e31267fa44ed13e929"
+      "bytes": 3030,
+      "sha256": "53608b77376e01d5b7fd13e18f7d087cb15d2de6baa8abc8e76095681ad6fbb3"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_ALLOWED_PATHS.json",
-      "bytes": 6884,
-      "sha256": "029e8ff7b8d3387aa078088bf84ac7d5ba4713b344c73b504ba94a87e5a96cd7"
+      "bytes": 7400,
+      "sha256": "8cda6ef556a7ec128b1e8015a49d0a34be49d2b611133d4063cf2e93dd132454"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_AUTHORIZATION.json",
@@ -450,8 +450,8 @@
     },
     {
       "path": "docs/audits/phase-7/STATUS.json",
-      "bytes": 3776,
-      "sha256": "558e9dd03a49afaeb0d583b4e422672afc5be4d185b9c7155d99e3dc66174e2c"
+      "bytes": 4601,
+      "sha256": "21173fb16b5a34476733407922949fd098ce3c5dfbe811bcdced315cf1cc7598"
     },
     {
       "path": "docs/audits/phase-7/p6-source-overrides/.github/workflows/ci.yml",
@@ -582,6 +582,41 @@
       "path": "docs/audits/phase-7/p6-source-overrides/tools/ci.py",
       "bytes": 11880,
       "sha256": "9b93525d4848bcec5e547835c66f38fae26607fcb9e4765bb830f67275dc3b5c"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COMPAT-001/COMMAND.json",
+      "bytes": 2358,
+      "sha256": "4a855dcfb1ec3c38d3625db022040144ba7043daa69e0c13defa73a082120ee9"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COMPAT-001/DEVELOPER_RESPONSE.json",
+      "bytes": 2790,
+      "sha256": "acf57702e02e904a75bf0c26ef950d32daa7d56fcafaf30e70559cc356dba749"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COMPAT-001/EVIDENCE_INDEX.json",
+      "bytes": 3113,
+      "sha256": "77079148d1d65432c6f417ba960b2cb530d5357766499c6adfda958f51a798c3"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COMPAT-001/junit.xml",
+      "bytes": 2972,
+      "sha256": "8a445cbc2a26eb4dfca1985645530bb746f827e85e1fc596044c002f70c07c59"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COMPAT-001/pytest.ini",
+      "bytes": 10,
+      "sha256": "578fc1cd12d8d642df8eff41d71d5119626e9f88f21fafadba6b1092ac840a93"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COMPAT-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audits/phase-7/self-review/COMPAT-001/stdout.log",
+      "bytes": 2840,
+      "sha256": "16437d9938ade6dc584ef37acfb3cf8814fd5d7540015e78169abb7f7a99a22c"
     },
     {
       "path": "docs/audits/phase-7/self-review/MIG-001/ABORTED_872_RECEIPT.json",
@@ -761,7 +796,7 @@
     {
       "path": "src/aqrp/factors/reviewed_code.json",
       "bytes": 658,
-      "sha256": "8abb16e1ec1849dd16b840498d3ca1873f21ca9c56efbe1f1493343ba7699953"
+      "sha256": "ec6544aba83c702321dc73e27ecaa3e1b9194d5d7bf46222508024ba9f3077f4"
     },
     {
       "path": "src/aqrp/services/research.py",
@@ -790,13 +825,13 @@
     },
     {
       "path": "src/aqrp/services/task_state.py",
-      "bytes": 41984,
-      "sha256": "c08e676f61a559ea2ed1de7c07b01c242f0d947fe2633edb40ef2602e9391488"
+      "bytes": 42144,
+      "sha256": "2ea6df1dd00e5730f753eab19202f88145c17dee868f802f5e7424b61ddfff5a"
     },
     {
       "path": "src/aqrp/services/tasks.py",
-      "bytes": 42544,
-      "sha256": "65df029dbbdfa68c0aea632d495bc07d49b77b40d0a78d12ddc1adb081e03401"
+      "bytes": 42677,
+      "sha256": "c2ad8d349cac5597d709d16d49ef36c67bad9c30b586f2456aa128529342e96a"
     },
     {
       "path": "src/aqrp/ui/app.py",
@@ -832,6 +867,11 @@
       "path": "tests/experiments/test_p7_admission_edges.py",
       "bytes": 10093,
       "sha256": "0651dd5d7df14f9574013f9eea87da73b7c0cc80f1469559f3832f46db3df77b"
+    },
+    {
+      "path": "tests/integration/test_p7_admission_error_compatibility.py",
+      "bytes": 2620,
+      "sha256": "4a29f01af52625d35f8cc0d419fe3a620ef2fd6faa6b5008b7b33a61c0030b6e"
     },
     {
       "path": "tests/integration/test_p7_budget_schema.py",
@@ -886,7 +926,7 @@
     {
       "path": "tools/check_phase7_package.py",
       "bytes": 8066,
-      "sha256": "ca47677bc4e5f5eda1b319924b8367f0ea4a5760ac5f7eb6661888a1bc402e99"
+      "sha256": "bf8c3e5d31e3a110f73b2af13acabf2733098b7f63df04ce84b9143823a90250"
     },
     {
       "path": "tools/ci.py",

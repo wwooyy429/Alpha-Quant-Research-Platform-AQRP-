@@ -11,3 +11,5 @@
 开发方实际命令、失败、完整SDK、双OS原始ZIP和实际浏览器证据须分别按实际执行身份封存。此收据不能代替这些证据，也不能据自测关闭独立发现。
 
 开发方在d9d020包上复现MIG-001：迁移接受了正常读取会拒绝的旧完成证明，继而允许新准入。原始失败、SQLite快照和中止SDK见self-review/MIG-001/EVIDENCE_INDEX.json，未改判通过。修订将正常读取的完整子运行验证提为共享函数供迁移调用，保留所有金融核对，并要求完成证明的规范字节、路径、轮次、配置和完整子证明一致。修复后的实际拒绝、回滚、健康迁移及完整新版本验证须另行记录；独立G2仍待审。
+
+开发方另确认COMPAT-001：旧双OS CI及e610b9f实际安装包在缺失campaign_attempts记录时仍拒绝执行，但新增的激活验证先于原TaskState兼容边界运行，公开错误码从CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE变成ADMISSION_HISTORY_UNVERIFIED，导致未改动的原回归失败。原命令、stdout、JUnit及失败索引见self-review/COMPAT-001/EVIDENCE_INDEX.json。修订仅抽取原有严格原因匹配的异常转换并覆盖公开submit边界；所有权威验证、顺序、事务及原测试答案保留，其他历史损坏继续按原通用错误失败关闭。新版本仍须完整SDK、双OS及实际浏览器验证；原失败SDK不计为通过。

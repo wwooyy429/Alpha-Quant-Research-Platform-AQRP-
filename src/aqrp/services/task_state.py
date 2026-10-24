@@ -18,6 +18,21 @@ SETUP_TIMEOUT_SECONDS = 30.0
 TERMINAL = {"SUCCEEDED", "FAILED", "CANCELLED"}
 
 
+@contextmanager
+def campaign_admission_boundary():
+    """Retain the Task API's specific diagnosis without relaxing shared verification."""
+    try:
+        yield
+    except ContractError as exc:
+        if (
+            exc.code == "ADMISSION_HISTORY_UNVERIFIED"
+            and type(exc.__cause__) is ValueError
+            and exc.__cause__.args == ("campaign admission set",)
+        ):
+            raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE") from exc
+        raise
+
+
 class TaskState:
     def __init__(self, root):
         self.root = guard_path(root)
@@ -124,24 +139,16 @@ class TaskState:
     def submit(self, raw, key, *, campaign=None, activation=None):
         if not self.managed:
             return self._submit_standalone(raw, key, campaign=campaign)
-        for _ in range(128):
-            try:
+        with campaign_admission_boundary():
+            for _ in range(128):
                 self.budget.materialize()
-            except ContractError as exc:
-                if (
-                    exc.code == "ADMISSION_HISTORY_UNVERIFIED"
-                    and type(exc.__cause__) is ValueError
-                    and exc.__cause__.args == ("campaign admission set",)
-                ):
-                    raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE") from exc
-                raise
-            task = self._submit_once(raw, key, campaign=campaign, activation=activation)
-            if task is not None:
-                self.budget.materialize()
-                return task
-            # Only a pre-admission empty transaction may ask for projection drain.
-            # No reservation, Task insertion or caller business body is retried.
-        raise ContractError("ADMISSION_PUBLICATION_BUSY", retryable=True)
+                task = self._submit_once(raw, key, campaign=campaign, activation=activation)
+                if task is not None:
+                    self.budget.materialize()
+                    return task
+                # Only a pre-admission empty transaction may ask for projection drain.
+                # No reservation, Task insertion or caller business body is retried.
+            raise ContractError("ADMISSION_PUBLICATION_BUSY", retryable=True)
 
     def _submit_standalone(self, raw, key, *, campaign=None):
         """Original data-free SQLite queue; it cannot execute a frozen research request."""
