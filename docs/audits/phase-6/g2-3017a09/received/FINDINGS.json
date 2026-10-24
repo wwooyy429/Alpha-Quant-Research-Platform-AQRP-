@@ -1,0 +1,93 @@
+{
+  "fixed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "verdict": "G2 PASS — restricted engineering scope",
+  "new_open_findings": [],
+  "findings": [
+    {
+      "id": "WORK-P6-G2-001",
+      "severity": "High",
+      "status": "CLOSED — FIX VERIFIED",
+      "location": [
+        "src/aqrp/services/task_campaigns.py:76",
+        "src/aqrp/services/task_campaigns.py:188",
+        "src/aqrp/services/task_state.py:181",
+        "src/aqrp/experiments/ledger.py:275",
+        "src/aqrp/services/research.py:519"
+      ],
+      "basis": "P3统计契约禁止事后换family绕过预算/多重检验；G1同根试验历史与预算要求",
+      "evidence": "INDEPENDENT_CAMPAIGN_RECHECK.json",
+      "disposition": "Immutable campaign declarations and common Holm definitions; atomic same-data quota, cross-family contamination and nonrefund independently verified."
+    },
+    {
+      "id": "WORK-P6-G2-002",
+      "severity": "Medium / blocking",
+      "status": "CLOSED — FIX VERIFIED",
+      "location": [
+        "src/aqrp/services/tasks.py:468",
+        "src/aqrp/services/tasks.py:509",
+        "src/aqrp/services/tasks.py:723"
+      ],
+      "basis": "P6取消/完整完成屏障与P5未知财务状态必须失败关闭",
+      "evidence": "INDEPENDENT_CANCELLATION_RECHECK.json",
+      "disposition": "Re-read actual journal, anchor, file set and complete financial projection, including completed replay and source. Unknown cancellation becomes FAILED/COMMITTED_STATE_UNVERIFIED."
+    },
+    {
+      "id": "WORK-P6-G2-003",
+      "severity": "Medium / blocking",
+      "status": "CLOSED — FIX VERIFIED",
+      "location": [
+        "src/aqrp/ui/app.py:285",
+        "src/aqrp/services/task_requests.py:264",
+        "src/aqrp/services/task_inputs.py:67"
+      ],
+      "basis": "UI-003 canonical股票池选择及P1时点成员契约；G1研究/回测两入口范围",
+      "evidence": "INDEPENDENT_UNIVERSE_RECHECK.json",
+      "disposition": "Actual CUA TAIL4/Core4, immutable P1 memberships, P3 rows and P5 sidecar verified; all three pool IDs have CLI/SDK canonical parity."
+    },
+    {
+      "id": "DEV-P6-004",
+      "severity": "Medium / required concurrency verification",
+      "status": "CLOSED — FIX VERIFIED within restricted engineering scope",
+      "location": [
+        "src/aqrp/services/task_state.py:53",
+        "tests/ui/test_task_state_setup.py:1"
+      ],
+      "basis": "Observed actual C5 SDK native WAL lock failure and required multiprocess task admission",
+      "evidence": "INDEPENDENT_WAL_RECHECK.json",
+      "disposition": "Before-BEGIN retry only for primary BUSY/LOCKED with finite deadline, confirmed WAL; no body/commit replay. New fixed SDK and40 additional real processes verified. Historical native crash cause remains unproved."
+    },
+    {
+      "id": "DEV-P6-002",
+      "severity": "Developer lifecycle finding",
+      "status": "CLOSED — FIX VERIFIED (connection lifetime)",
+      "location": [
+        "src/aqrp/services/task_campaigns.py:38"
+      ],
+      "basis": "Read-only sqlite connections need explicit closure on success/error",
+      "evidence": "Fixed SDK tests/ui/test_g2_campaigns.py lifecycle controls",
+      "disposition": "contextlib.closing and both actual connection lifecycle controls verified."
+    },
+    {
+      "id": "DEV-P6-003",
+      "severity": "Developer abrupt-death harness finding",
+      "status": "CLOSED — engineering harness FIX VERIFIED; original native cause NOT VERIFIED",
+      "location": [
+        "tests/ui/crash_support.py:1"
+      ],
+      "basis": "Original C3/C4 strict exit failures; six deliberate process-death boundaries must remain strict",
+      "evidence": "Fixed SDK raw crash markers and six recovery controls; prior failure originals retained",
+      "disposition": "Actual strict self-TerminateProcess/os._exit records and same-run recovery verified; no claim exact old native cause proved."
+    },
+    {
+      "id": "DEV-P6-001",
+      "severity": "Original developer browser defect",
+      "status": "CLOSED — FIX VERIFIED (prior independent disposition maintained)",
+      "location": [
+        "src/aqrp/ui/app.py (unchanged defaults-editor logic)"
+      ],
+      "basis": "Prior independent two-session CAS/default history [3,2,4,3]",
+      "evidence": "prior-independent-inputs/REPORT.md + HISTORY_AND_DEVELOPER_BROWSER_VERIFICATION.json",
+      "disposition": "Relevant editor behavior unchanged; current SDK regressions and developer raw browser sequence preserve fix. Current reviewer browser work covers pool selection, not a falsely claimed repetition of all earlier browser cases."
+    }
+  ]
+}

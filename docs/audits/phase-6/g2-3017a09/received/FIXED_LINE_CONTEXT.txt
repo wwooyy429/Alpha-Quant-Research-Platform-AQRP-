@@ -1,0 +1,2976 @@
+
+===== src/aqrp/services/tasks.py =====
+1: """Restricted real-core task orchestration shared by SDK, task CLI and Streamlit."""
+2: 
+3: import hashlib
+4: import json
+5: import re
+6: from copy import deepcopy
+7: 
+8: from aqrp.backtest.contracts import EngineeringBacktestRequest, validate
+9: from aqrp.backtest.synthetic import seal_sidecar
+10: from aqrp.backtest.transactions import TransactionStore, guard_path
+11: from aqrp.core.canonical import canonical, digest
+12: from aqrp.core.errors import ContractError
+13: from aqrp.core.time import utc
+14: from aqrp.experiments.ledger import ExperimentLedger, immutable_write, read_chain
+15: from aqrp.portfolio.contracts import load
+16: from aqrp.portfolio.research_input import bind_research
+17: from aqrp.services.backtest import (
+18:     projection,
+19:     replay_engineering,
+20:     result_engineering,
+21:     resume_engineering,
+22:     simulate_engineering,
+23: )
+24: from aqrp.services.research import research
+25: from aqrp.services.task_context import authority
+26: from aqrp.services.task_inputs import execution_requests
+27: from aqrp.services.task_requests import (
+28:     EffectiveRequest,
+29:     build_research_config,
+30:     catalogue,
+31:     freeze_request,
+32:     references,
+33:     research_request,
+34:     validate_defaults,
+35:     validate_draft,
+36: )
+37: from aqrp.services.task_state import TERMINAL, TaskState
+38: 
+39: 
+40: def read_core(binding):
+41:     """Read-only terminal proof including original bytes and pre-call initial binding."""
+42:     root = guard_path(binding["physical_ledger_root"])
+43:     run = binding["child_run_id"]
+44:     ledger = ExperimentLedger(root)
+45:     m = ledger.verify(run)
+46:     directory = guard_path(ledger.path(run))
+47:     entries = {e["path"]: e for e in m["files"]}
+48:     if len(entries) != len(m["files"]):
+49:         raise ContractError("TASK_DUPLICATE_MANIFEST_MEMBER")
+50:     required = {"config.json", "lineage.json"}
+51:     if m["status"] == "SUCCEEDED":
+52:         required |= {
+53:             "P3": {
+54:                 "engine.json",
+55:                 "raw.json",
+56:                 "clean.json",
+57:                 "standardized.json",
+58:                 "neutralized.json",
+59:                 "final.json",
+60:                 "labels.json",
+61:                 "metrics.json",
+62:                 "oos.json",
+63:                 "inference.json",
+64:                 "multiplicity.json",
+65:                 "approvals.json",
+66:                 "report.json",
+67:                 "report.html",
+68:                 "report-html.json",
+69:             },
+70:             "P4": {"candidate.json", "risk.json", "result.json", "published-byte-audit.json"},
+71:             "P5": {
+72:                 "state.json",
+73:                 "transactions.json",
+74:                 "transaction-files.json",
+75:                 "portfolio-lineage.json",
+76:                 "trace.json",
+77:                 "result.json",
+78:                 "published-byte-audit.json",
+79:             },
+80:             "P5_REPLAY": {
+81:                 "result.json",
+82:                 "comparison.json",
+83:                 "portfolio-lineage.json",
+84:                 "transaction-files.json",
+85:             },
+86:             "PUBLISHED_REF_PROJECTION": {"result.json", "source-registration.json"},
+87:         }[binding["service_kind"]]
+88:     if not required <= set(entries):
+89:         raise ContractError("TASK_REQUIRED_ARTIFACT_MISSING")
+90:     contents = {}
+91:     for name, e in entries.items():
+92:         p = guard_path(directory / name)
+93:         if (
+94:             not re.fullmatch(r"[a-z0-9_-]+\.(json|html)", name)
+95:             or not p.is_relative_to(directory)
+96:             or p.parent != directory
+97:         ):
+98:             raise ContractError("TASK_ARTIFACT_BOUNDARY")
+99:         raw = p.read_bytes()
+100:         if hashlib.sha256(raw).hexdigest() != e["sha256"]:
+101:             raise ContractError("TASK_CORE_ARTIFACT_CHANGED")
+102:         contents[name] = raw
+103:     lineage = load(contents["lineage.json"])
+104:     config = load(contents["config.json"])
+105:     initial = read_chain(directory / "events.jsonl")[0]["payload"]
+106:     if initial["config_hash"] != digest(config) or initial["lineage_hash"] != digest(lineage):
+107:         raise ContractError("TASK_INITIAL_RECORD_CHANGED")
+108:     if m["status"] == "SUCCEEDED" and binding["service_kind"] == "P3":
+109:         report = load(contents["report.json"])
+110:         if (
+111:             report.get("schema") != "research-report/1"
+112:             or report.get("run_id") != run
+113:             or report.get("purpose") != "ENGINEERING_DEMO"
+114:             or report.get("financial_approval") != "NONE"
+115:             or report.get("independence_verified") is not False
+116:         ):
+117:             raise ContractError("TASK_RESEARCH_REPORT_IDENTITY_CHANGED")
+118:     if (
+119:         lineage.get("task_binding") != binding
+120:         or lineage.get("task_binding_hash") != digest(binding)
+121:         or digest(config) != binding["core_config_hash"]
+122:     ):
+123:         raise ContractError("TASK_INITIAL_BINDING_MISMATCH")
+124:     return m, contents
+125: 
+126: 
+127: class TaskService:
+128:     def __init__(self, root, *, fault=None):
+129:         self.state = TaskState(root)
+130:         self.root = self.state.root
+131:         self.fault = fault
+132: 
+133:     def checkpoint(self, name):
+134:         if self.fault is not None:
+135:             self.fault(name)
+136: 
+137:     def freeze(self, draft):
+138:         d = self.state.defaults()
+139:         return freeze_request(self.root, draft, d["revision"], json.loads(d["payload"]))
+140: 
+141:     def campaigns(self):
+142:         from aqrp.services.task_campaigns import campaigns
+143: 
+144:         return campaigns(self.root, catalogue(self.root))
+145: 
+146:     def register_campaign(self, name, variants):
+147:         from aqrp.services.task_campaigns import register
+148: 
+149:         if not isinstance(variants, list) or not variants or len(variants) > 64:
+150:             raise ContractError("INVALID_CAMPAIGN_VARIANTS")
+151:         cat = catalogue(self.root)
+152:         configs = []
+153:         for draft in variants:
+154:             validate_draft(draft)
+155:             if set(draft) & {"campaign_id", "source_task", "profile"} or draft.get(
+156:                 "kind", "research"
+157:             ) not in ("research", "engineering_pipeline"):
+158:                 raise ContractError("INVALID_CAMPAIGN_VARIANT_KIND")
+159:             configs.append(build_research_config(cat, draft))
+160:         return register(self.root, name, configs, cat)
+161: 
+162:     def validate_effective(self, raw):
+163:         x = load(raw)
+164:         with self.state.transaction() as c:
+165:             row = c.execute(
+166:                 "SELECT * FROM defaults WHERE revision=?", (x["defaults_revision"],)
+167:             ).fetchone()
+168:             if x["defaults_revision"] != 0 and (
+169:                 row is None or digest(load(row["payload"])) != row["hash"]
+170:             ):
+171:                 raise ContractError("DEFAULTS_REVISION_IDENTITY_CHANGED")
+172:         if x["kind"] == "replay":
+173:             draft = {
+174:                 "kind": "replay",
+175:                 **{k: v for k, v in x["payload"].items() if k in ("source_task", "profile")},
+176:             }
+177:         else:
+178:             draft = x["payload"]["raw_draft"]
+179:         expected = freeze_request(self.root, draft, x["defaults_revision"])
+180:         if expected.raw != raw:
+181:             raise ContractError("EFFECTIVE_REQUEST_CHANGED")
+182:         return x
+183: 
+184:     def submit(self, effective, idempotency_key):
+185:         if type(effective) is not EffectiveRequest:
+186:             raise ContractError("FROZEN_TASK_REQUEST_REQUIRED")
+187:         x = self.validate_effective(effective.raw)
+188:         return self.status(
+189:             self.state.submit(effective.raw, idempotency_key, campaign=x["payload"].get("campaign"))
+190:         )
+191: 
+192:     def cancel(self, task):
+193:         return self.state.cancel(task)
+194: 
+195:     def save_defaults(self, expected, patch):
+196:         validate_draft(patch)
+197:         if patch.get("kind") == "replay":
+198:             raise ContractError("REPLAY_REQUIRES_EXPLICIT_SOURCE")
+199:         validate_defaults(self.root, patch)
+200:         return self.state.save_defaults(expected, patch)
+201: 
+202:     def _snapshot(self, task):
+203:         row = self.state.get(task)
+204:         raw = guard_path(self.root / "tasks" / task / "request.json").read_bytes()
+205:         if raw.decode() != row["raw"] or digest(load(raw)) != row["hash"]:
+206:             raise ContractError("TASK_REQUEST_IDENTITY_CHANGED")
+207:         return row
+208: 
+209:     def status(self, task):
+210:         row = self._snapshot(task)
+211:         public = {
+212:             "task_id": task,
+213:             "config_hash": row["hash"],
+214:             "status": row["status"],
+215:             "cancel_requested": bool(row["cancel"]),
+216:             "error": row["error"],
+217:             "slots": self.state.slots(task),
+218:             "scope": "ENGINEERING_TEST_ONLY",
+219:             "financial_approval": "NONE",
+220:         }
+221:         if "campaign" in load(row["raw"].encode()).get("payload", {}):
+222:             public["research_control"] = self.state.research_attempt(task)
+223:         if row["status"] == "CANCELLED":
+224:             try:
+225:                 self._verify_cancelled_finances(task)
+226:             except (Exception, KeyboardInterrupt) as exc:
+227:                 public.update(
+228:                     status="INTEGRITY_ERROR",
+229:                     usable=False,
+230:                     error="COMMITTED_STATE_UNVERIFIED",
+231:                     financial_verification_error=getattr(exc, "code", type(exc).__name__),
+232:                     original_terminal_status="CANCELLED",
+233:                 )
+234:         if row["status"] == "SUCCEEDED":
+235:             try:
+236:                 self.validate_effective(row["raw"].encode())
+237:                 pointer = load(row["completion"])
+238:                 if set(pointer) != {"file", "sha256"} or not re.fullmatch(
+239:                     r"completion(?:-[0-9]+)?\.json", pointer["file"]
+240:                 ):
+241:                     raise ContractError("TASK_COMPLETION_CHANGED")
+242:                 raw = guard_path(self.root / "tasks" / task / pointer["file"]).read_bytes()
+243:                 receipt = load(raw)
+244:                 plan_path = guard_path(self.root / "tasks" / task / "resolved-plan.json")
+245:                 plan_hash = (
+246:                     hashlib.sha256(plan_path.read_bytes()).hexdigest()
+247:                     if plan_path.exists()
+248:                     else None
+249:                 )
+250:                 if (
+251:                     hashlib.sha256(raw).hexdigest() != pointer["sha256"]
+252:                     or canonical(receipt) != raw
+253:                     or receipt["claim_epoch"] != row["epoch"]
+254:                     or receipt["config_hash"] != row["hash"]
+255:                     or receipt["core_proofs"] != self._proofs(task)
+256:                     or receipt["resolved_plan_sha256"] != plan_hash
+257:                 ):
+258:                     raise ContractError("TASK_COMPLETION_CHANGED")
+259:                 public["result"] = receipt["result"]
+260:             except (ContractError, OSError, KeyError, ValueError, TypeError, IndexError) as exc:
+261:                 public.update(
+262:                     status="INTEGRITY_ERROR",
+263:                     error=getattr(exc, "code", type(exc).__name__),
+264:                     usable=False,
+265:                 )
+266:         return public
+267: 
+268:     def list(self):
+269:         with self.state.transaction() as c:
+270:             ids = [r[0] for r in c.execute("SELECT id FROM tasks ORDER BY rowid DESC")]
+271:         rows = []
+272:         for task in ids:
+273:             try:
+274:                 rows.append(self.status(task))
+275:             except (ContractError, OSError, ValueError) as exc:
+276:                 rows.append(
+277:                     {
+278:                         "task_id": task,
+279:                         "status": "INTEGRITY_ERROR",
+280:                         "error": getattr(exc, "code", type(exc).__name__),
+281:                     }
+282:                 )
+283:         return rows
+284: 
+285:     def logs(self, task):
+286:         self._snapshot(task)
+287:         with self.state.transaction() as c:
+288:             return [
+289:                 {"seq": r["seq"], "kind": r["kind"], "payload": json.loads(r["payload"])}
+290:                 for r in c.execute("SELECT * FROM events WHERE task=? ORDER BY seq", (task,))
+291:             ]
+292: 
+293:     def request(self, task):
+294:         return load(self._snapshot(task)["raw"])
+295: 
+296:     def defaults(self, revision=None):
+297:         return self.state.defaults(revision)
+298: 
+299:     def rollback_defaults(self, expected, target):
+300:         return self.state.rollback_defaults(expected, target)
+301: 
+302:     def artifact_catalogue(self, task, slot):
+303:         self._snapshot(task)
+304:         slots = self.state.slots(task)
+305:         if slot not in slots:
+306:             raise ContractError("UNKNOWN_TASK_SLOT")
+307:         manifest, _ = read_core(slots[slot]["binding"])
+308:         return manifest
+309: 
+310:     def worker_log(self, task):
+311:         self._snapshot(task)
+312:         # Only this fixed log name; it is a captured diagnostic prefix, never a financial proof.
+313:         return guard_path(self.root / "tasks" / task / "worker.log").read_bytes()
+314: 
+315:     def _proofs(self, task):
+316:         row = self._snapshot(task)
+317:         x = load(row["raw"])
+318:         slots = self.state.slots(task)
+319:         expected = {"R"} if x["kind"] == "research" else {"R", "B"}
+320:         if x["kind"] == "replay":
+321:             expected = {"E"}
+322:         plan_path = guard_path(self.root / "tasks" / task / "resolved-plan.json")
+323:         if x["kind"] != "research":
+324:             plan = load(plan_path.read_bytes())
+325:             expected |= {f"P:{i}" for i in range(plan["decision_count"])}
+326:             if (
+327:                 plan["task_config_hash"] != row["hash"]
+328:                 or set(plan["slots"]) != expected
+329:                 or plan["slots"] != {n: s["binding"]["child_run_id"] for n, s in slots.items()}
+330:                 or hashlib.sha256(plan["request_utf8"].encode()).hexdigest()
+331:                 != plan["request_sha256"]
+332:             ):
+333:                 raise ContractError("TASK_RESOLVED_PLAN_CHANGED")
+334:         if set(slots) != expected:
+335:             raise ContractError("TASK_REQUIRED_SLOT_SET_MISMATCH")
+336:         proofs = {}
+337:         for name, slot in slots.items():
+338:             b = slot["binding"]
+339:             if (
+340:                 b["task_id"] != task
+341:                 or b["workspace_id"] != self.state.workspace_id
+342:                 or b["plan_hash"] != row["hash"]
+343:             ):
+344:                 raise ContractError("TASK_SLOT_PARENT_CHANGED")
+345:             m, contents = read_core(b)
+346:             if m["status"] != "SUCCEEDED":
+347:                 raise ContractError("REQUIRED_STAGE_REJECTED")
+348:             if name.startswith("P:"):
+349:                 parent = slots["B" if x["kind"] == "engineering_pipeline" else "E"]["binding"]
+350:                 decision = load(plan["request_utf8"])["decisions"][b["decision_index"]]
+351:                 original = load(decision["portfolio_request_utf8"])
+352:                 if (
+353:                     b["parent_slot_id"] != parent["slot_id"]
+354:                     or b["parent_execution_run_id"] != parent["child_run_id"]
+355:                     or b["physical_ledger_root"]
+356:                     != str(
+357:                         guard_path(parent["physical_ledger_root"])
+358:                         / parent["child_run_id"]
+359:                         / "portfolio-runs"
+360:                     )
+361:                     or b["source_request_hash"]
+362:                     != hashlib.sha256(decision["portfolio_request_utf8"].encode()).hexdigest()
+363:                     or b["decision_time_UTC"]
+364:                     != utc(original["context"]["decision_time"]).isoformat()
+365:                 ):
+366:                     raise ContractError("TASK_NESTED_P4_BINDING_MISMATCH")
+367:                 with self.state.transaction() as c:
+368:                     adapted = c.execute(
+369:                         "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
+370:                         (task, name),
+371:                     ).fetchone()
+372:                 if (
+373:                     adapted is None
+374:                     or adapted[1] != b["adapted_request_hash"]
+375:                     or hashlib.sha256(adapted[0].encode()).hexdigest() != adapted[1]
+376:                     or load(contents["config.json"])["raw_request_hex"] != adapted[0].encode().hex()
+377:                 ):
+378:                     raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
+379:             if b["service_kind"] == "PUBLISHED_REF_PROJECTION":
+380:                 from aqrp.services.task_history import history_catalogue
+381: 
+382:                 if digest(history_catalogue(self.root)) != x["payload"]["history_sha256"]:
+383:                     raise ContractError("HISTORICAL_CATALOG_CHANGED")
+384:                 result = load(contents["result.json"])
+385:                 registration = load(contents["source-registration.json"])
+386:                 if (
+387:                     digest(registration) != x["payload"]["history_sha256"]
+388:                     or result["status"] != "ALL_ORIGINAL_BYTES_VERIFIED_AND_THREE_RUNS_REPLAYED"
+389:                     or len(result["runs"]) != 3
+390:                     or any(v["status"] != "DECLARED_PROJECTION_MATCH" for v in result["runs"])
+391:                 ):
+392:                     raise ContractError("TASK_HISTORICAL_REPLAY_UNVERIFIED")
+393:             elif name in ("B", "E"):
+394:                 root = guard_path(b["physical_ledger_root"]) / b["child_run_id"]
+395:                 if (
+396:                     not (root / "transactions").is_dir()
+397:                     or not (root / "transactions/initial.json").is_file()
+398:                 ):
+399:                     raise ContractError("TASK_TRANSACTION_FILES_MISSING")
+400:                 state, records, transaction_files = TransactionStore(
+401:                     root / "transactions"
+402:                 ).verified_snapshot()
+403:                 if transaction_files != load(contents["transaction-files.json"]):
+404:                     raise ContractError("TASK_TRANSACTION_FILES_CHANGED")
+405:                 current = projection(state, records)
+406:                 if name == "E":
+407:                     comparison = load(contents["comparison.json"])
+408:                     if (
+409:                         not comparison["equal"]
+410:                         or comparison["actual"] != current
+411:                         or comparison["expected"] != current
+412:                     ):
+413:                         raise ContractError("TASK_REPLAY_COMPARISON_CHANGED")
+414:                 children = guard_path(root / "portfolio-runs")
+415:                 actual = {p.name for p in children.iterdir()} if children.exists() else set()
+416:                 intended = {
+417:                     s["binding"]["child_run_id"] for n, s in slots.items() if n.startswith("P:")
+418:                 }
+419:                 if actual != intended:
+420:                     raise ContractError("TASK_NESTED_CHILD_SET_MISMATCH")
+421:                 for p in children.iterdir() if children.exists() else []:
+422:                     guard_path(p)
+423:                 if name == "B":
+424:                     result = result_engineering(b["physical_ledger_root"], b["child_run_id"])
+425:                     if (
+426:                         result["status"] != "SUCCEEDED"
+427:                         or result.get("committed_state_verification", {}).get(
+428:                             "financial_state_known"
+429:                         )
+430:                         is False
+431:                     ):
+432:                         raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
+433:                     if any(result[k] != v for k, v in current.items()):
+434:                         raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+435:                     config = load(contents["config.json"])
+436:                     if config["raw_request_hex"] != plan["request_utf8"].encode().hex():
+437:                         raise ContractError("TASK_EXECUTION_PLAN_REQUEST_CHANGED")
+438:                     actual_lineage = load(contents["portfolio-lineage.json"])
+439:                     if len(actual_lineage) != plan["decision_count"]:
+440:                         raise ContractError("TASK_PORTFOLIO_LINEAGE_MISSING")
+441:                     for p in actual_lineage:
+442:                         child = slots[f"P:{p['index']}"]["binding"]
+443:                         if (
+444:                             p["result"]["run_id"] != child["child_run_id"]
+445:                             or hashlib.sha256(p["request_utf8"].encode()).hexdigest()
+446:                             != child["adapted_request_hash"]
+447:                         ):
+448:                             raise ContractError("TASK_PORTFOLIO_LINEAGE_CHANGED")
+449:             proofs[name] = {
+450:                 "binding_hash": digest(b),
+451:                 "manifest_hash": digest(m),
+452:                 "status": m["status"],
+453:             }
+454:         return proofs
+455: 
+456:     def artifact(self, task, slot, name):
+457:         self._snapshot(task)
+458:         if not re.fullmatch(r"[a-z0-9_-]+\.(json|html)", name):
+459:             raise ContractError("INVALID_TASK_ARTIFACT")
+460:         entries = self.state.slots(task)
+461:         if slot not in entries:
+462:             raise ContractError("UNKNOWN_TASK_SLOT")
+463:         _, contents = read_core(entries[slot]["binding"])
+464:         if name not in contents:
+465:             raise ContractError("TASK_ARTIFACT_NOT_MANIFESTED")
+466:         return contents[name]
+467: 
+468:     def _verified_financial_prefix(self, binding):
+469:         """Current physical financial authority, also for already successful children."""
+470:         _, contents = read_core(binding)
+471:         result = load(contents["result.json"])
+472:         evidence = result.get("committed_state_verification", {})
+473:         if evidence.get("financial_state_known") is False:
+474:             raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
+475:         root = guard_path(binding["physical_ledger_root"]) / binding["child_run_id"]
+476:         # Never let TransactionStore create a missing directory and call it an empty prefix.
+477:         if (
+478:             not guard_path(root / "transactions").is_dir()
+479:             or not guard_path(root / "transactions/initial.json").is_file()
+480:         ):
+481:             raise ContractError("TASK_TRANSACTION_FILES_MISSING")
+482:         state, records, files = TransactionStore(root / "transactions").verified_snapshot()
+483:         computed = projection(state, records)
+484:         if files != load(contents["transaction-files.json"]):
+485:             raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+486:         if binding["service_kind"] == "P5_REPLAY":
+487:             comparison = load(contents["comparison.json"])
+488:             if (
+489:                 result["status"] != "NUMERICAL_REPLAY_VERIFIED"
+490:                 or comparison != {"expected": computed, "actual": computed, "equal": True}
+491:                 or result["state_sha256"] != computed["state_sha256"]
+492:             ):
+493:                 raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+494:         elif result["status"] == "SUCCEEDED":
+495:             if any(result[k] != v for k, v in computed.items()):
+496:                 raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+497:         elif (
+498:             evidence.get("financial_state_known") is not True
+499:             or result.get("last_committed_account") != computed["account"]
+500:             or evidence.get("state_sha256") != computed["state_sha256"]
+501:             or evidence.get("financial_proof_sha256") != digest(computed["reconciliation"])
+502:             or evidence.get("commit_count") != len(records)
+503:             or evidence.get("prefix_sha256")
+504:             != (records[-1]["sha256"] if records else computed["state_sha256"])
+505:         ):
+506:             raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+507:         return result
+508: 
+509:     def _verify_cancelled_finances(self, task):
+510:         """No safe cancellation certificate may rely on a cached known-state flag."""
+511:         for slot in self.state.slots(task).values():
+512:             binding = slot["binding"]
+513:             if binding["service_kind"] not in ("P5", "P5_REPLAY"):
+514:                 continue
+515:             root = guard_path(binding["physical_ledger_root"]) / binding["child_run_id"]
+516:             if slot["state"] == "ALLOCATED" and not root.exists():
+517:                 continue
+518:             self._verified_financial_prefix(binding)
+519:             if binding["service_kind"] == "P5_REPLAY":
+520:                 x = load(self._snapshot(task)["raw"].encode())
+521:                 source = self.state.slots(x["payload"]["source_task"])["B"]["binding"]
+522:                 self._verified_financial_prefix(source)
+523: 
+524:     def financial_result(self, task):
+525:         row = self._snapshot(task)
+526:         self.validate_effective(row["raw"].encode())
+527:         slots = self.state.slots(task)
+528:         if "B" not in slots:
+529:             raise ContractError("NO_BACKTEST_STAGE")
+530:         _, contents = read_core(slots["B"]["binding"])
+531:         original = load(contents["result.json"])
+532:         # Preserve the original opaque failure report for diagnosis; this never
+533:         # certifies cash, and cancellation always calls the strict prefix gate.
+534:         if (
+535:             original["status"] != "SUCCEEDED"
+536:             and original.get("committed_state_verification", {}).get("financial_state_known")
+537:             is False
+538:         ):
+539:             if "account" in original or "last_committed_account" in original:
+540:                 raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
+541:             return original
+542:         return self._verified_financial_prefix(slots["B"]["binding"])
+543: 
+544:     def _pipeline_request(self, x, r):
+545:         cat = catalogue(self.root)
+546:         ref, _, _ = references(self.root, cat)
+547:         options = x["payload"]["execution"]
+548:         requests = execution_requests(x["payload"]["research"], ref, self.root / "research-runs", r)
+549:         values = [load(req.raw) for req in requests.values()]
+550:         combined = deepcopy(values[0])
+551:         combined.update(initial_cash=options["initial_cash"], fee_budget=options["fee_budget"])
+552:         for i, decision in enumerate(combined["decisions"]):
+553:             portfolios = [load(v["decisions"][i]["portfolio_request_utf8"]) for v in values]
+554:             p = portfolios[0]
+555:             p["policy"].update(options["policy"])
+556:             p["policy"]["factor_weights"] = options["factor_weights"]
+557:             p["constraints"].update(options["constraints"])
+558:             # Existing bind_research owns score/source construction and validation.
+559:             p = bind_research(p, self.root / "research-runs", r["run_id"], source_snapshot=ref)
+560:             decision["portfolio_request_utf8"] = p.raw.decode()
+561:         return seal_sidecar(combined)
+562: 
+563:     def _plan(self, auth, parent, request):
+564:         x = validate(request)
+565:         slots = {parent.slot: parent.binding()["child_run_id"]}
+566:         if parent.slot == "B":
+567:             slots["R"] = auth.context("R").binding()["child_run_id"]
+568:         for index, d in enumerate(x["decisions"]):
+569:             p = load(d["portfolio_request_utf8"])
+570:             child = auth.allocate(
+571:                 f"P:{index}",
+572:                 "P4",
+573:                 guard_path(parent.binding()["physical_ledger_root"])
+574:                 / parent.binding()["child_run_id"]
+575:                 / "portfolio-runs",
+576:                 parent=parent,
+577:                 index=index,
+578:                 time=utc(p["context"]["decision_time"]).isoformat(),
+579:                 source=hashlib.sha256(d["portfolio_request_utf8"].encode()).hexdigest(),
+580:             )
+581:             slots[child.slot] = child.binding()["child_run_id"]
+582:         if parent.slot == "B" and not x["decisions"]:
+583:             raise ContractError("NO_REQUIRED_DECISIONS")
+584:         plan = {
+585:             "task_config_hash": auth.check()["hash"],
+586:             "request_sha256": request.content_hash,
+587:             "request_utf8": request.raw.decode(),
+588:             "decision_count": len(x["decisions"]),
+589:             "slots": slots,
+590:         }
+591:         path = guard_path(self.root / "tasks" / auth.task / "resolved-plan.json")
+592:         if path.exists():
+593:             if path.read_bytes() != canonical(plan):
+594:                 raise ContractError("TASK_RESOLVED_PLAN_CHANGED")
+595:         else:
+596:             immutable_write(path, canonical(plan))
+597: 
+598:     def work(self, task, *, recover=False):
+599:         if self.state.get(task)["status"] in TERMINAL:
+600:             return self.status(task)
+601:         owner, epoch = self.state.claim(task, recover=recover)
+602:         auth = authority(self.state, task, owner, epoch)
+603:         try:
+604:             x = self.validate_effective(auth.check()["raw"].encode())
+605:             auth.check(cancel=True)
+606:             if x["kind"] == "replay":
+607:                 result = self._replay(auth, x)
+608:             else:
+609:                 ctx = auth.allocate("R", "P3", self.root / "research-runs")
+610:                 r = ctx.existing()
+611:                 if r is None:
+612:                     r = research(
+613:                         research_request(self.root, x),
+614:                         self.root / "research-runs",
+615:                         task_context=ctx,
+616:                     )
+617:                 ctx.verify(self.root / "research-runs", r["run_id"])
+618:                 if r["manifest"]["status"] != "SUCCEEDED":
+619:                     raise ContractError("REQUIRED_STAGE_REJECTED")
+620:                 self.checkpoint("R_TERMINAL_BEFORE_MAPPING")
+621:                 ctx.mark_verified(r["manifest"])
+622:                 auth.check(cancel=True)
+623:                 result = {"research_run_id": r["run_id"]}
+624:                 if x["kind"] == "engineering_pipeline":
+625:                     b = auth.allocate("B", "P5", self.root / "backtest-runs")
+626:                     req = self._pipeline_request(x, r)
+627:                     self._plan(auth, b, req)
+628:                     self.checkpoint("PLAN_FROZEN_BEFORE_B")
+629:                     try:
+630:                         bt = b.existing()
+631:                     except ContractError as exc:
+632:                         if exc.code != "NONTERMINAL_RUN":
+633:                             raise
+634:                         bt = resume_engineering(
+635:                             self.root / "backtest-runs", b.binding()["child_run_id"], task_context=b
+636:                         ).read()
+637:                     if bt is None:
+638:                         bt = simulate_engineering(
+639:                             req, self.root / "backtest-runs", x["code_commit"], task_context=b
+640:                         ).read()
+641:                     if (
+642:                         bt.get("committed_state_verification", {}).get("financial_state_known")
+643:                         is False
+644:                     ):
+645:                         raise ContractError("COMMITTED_STATE_UNVERIFIED")
+646:                     if bt["status"] == "CANCELLED":
+647:                         raise KeyboardInterrupt("TASK_SAFE_CANCEL_CHECKPOINT")
+648:                     if bt["status"] != "SUCCEEDED":
+649:                         raise ContractError("TASK_BACKTEST_FAILED")
+650:                     self.checkpoint("B_TERMINAL_BEFORE_MAPPING")
+651:                     b.mark_verified(bt["manifest"])
+652:                     result["backtest_run_id"] = bt["run_id"]
+653:             proofs = self._proofs(task)
+654:             auth.check(cancel=True)
+655:             completion = {
+656:                 "task_id": task,
+657:                 "kind": x["kind"],
+658:                 "config_hash": digest(x),
+659:                 "core_proofs": proofs,
+660:                 "result": result,
+661:                 "scope": "ENGINEERING_TEST_ONLY",
+662:                 "financial_approval": "NONE",
+663:                 "claim_epoch": epoch,
+664:                 "resolved_plan_sha256": hashlib.sha256(
+665:                     (self.root / "tasks" / task / "resolved-plan.json").read_bytes()
+666:                 ).hexdigest()
+667:                 if x["kind"] != "research"
+668:                 else None,
+669:                 "validation_steps": {
+670:                     "research": ["RV"],
+671:                     "engineering_pipeline": ["PLAN", "RV", "BV"],
+672:                     "replay": ["SV", "CV"],
+673:                 }[x["kind"]],
+674:             }
+675:             path = guard_path(self.root / "tasks" / task / "completion.json")
+676:             self.checkpoint("BEFORE_COMPLETION")
+677:             if path.exists():
+678:                 old = load(path.read_bytes())
+679:                 if {k: v for k, v in old.items() if k != "claim_epoch"} != {
+680:                     k: v for k, v in completion.items() if k != "claim_epoch"
+681:                 }:
+682:                     raise ContractError("TASK_COMPLETION_CHANGED")
+683:                 if old["claim_epoch"] != epoch:
+684:                     completion["previous_completion_sha256"] = hashlib.sha256(
+685:                         path.read_bytes()
+686:                     ).hexdigest()
+687:                     path = path.with_name(f"completion-{epoch}.json")
+688:             if path.exists():
+689:                 if path.read_bytes() != canonical(completion):
+690:                     raise ContractError("TASK_COMPLETION_CHANGED")
+691:             else:
+692:                 immutable_write(path, canonical(completion))
+693:             pointer = {"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+694:             self.checkpoint("COMPLETION_BEFORE_SQL")
+695:             with self.state.transaction() as c:
+696:                 row = c.execute("SELECT * FROM tasks WHERE id=?", (task,)).fetchone()
+697:                 if (row["owner"], row["epoch"], row["status"]) != (owner, epoch, "RUNNING"):
+698:                     raise ContractError("STALE_TASK_CLAIM")
+699:                 if row["cancel"]:
+700:                     raise KeyboardInterrupt("TASK_SAFE_CANCEL_CHECKPOINT")
+701:                 c.execute(
+702:                     "UPDATE tasks SET status='SUCCEEDED',completion=?,owner=NULL WHERE id=?",
+703:                     (canonical(pointer).decode(), task),
+704:                 )
+705:                 self.state.event(
+706:                     c, task, "SUCCEEDED", {"completion": pointer, "claim_epoch": epoch}
+707:                 )
+708:         except (Exception, KeyboardInterrupt) as exc:
+709:             cancelled = isinstance(exc, KeyboardInterrupt)
+710:             unknown = False
+711:             verification_error = None
+712:             if cancelled:
+713:                 try:
+714:                     self._verify_cancelled_finances(task)
+715:                 except (Exception, KeyboardInterrupt) as financial_error:
+716:                     unknown = True
+717:                     verification_error = getattr(
+718:                         financial_error, "code", type(financial_error).__name__
+719:                     )
+720:             with self.state.transaction() as c:
+721:                 final = "CANCELLED" if cancelled and not unknown else "FAILED"
+722:                 code = (
+723:                     "COMMITTED_STATE_UNVERIFIED"
+724:                     if unknown
+725:                     else getattr(exc, "code", type(exc).__name__)
+726:                 )
+727:                 updated = c.execute(
+728:                     "UPDATE tasks SET status=?,error=?,owner=NULL WHERE id=? AND owner=? AND epoch=? AND status='RUNNING'",
+729:                     (final, code, task, owner, epoch),
+730:                 )
+731:                 if updated.rowcount:
+732:                     self.state.event(
+733:                         c,
+734:                         task,
+735:                         final,
+736:                         {
+737:                             "code": code,
+738:                             "original_error": getattr(exc, "code", type(exc).__name__),
+739:                             "cancellation_intent": cancelled,
+740:                             "financial_verification_error": verification_error,
+741:                         },
+742:                     )
+743:         return self.status(task)
+744: 
+745:     def compare(self, left, right):
+746:         a, b = self.status(left), self.status(right)
+747:         if a["status"] != "SUCCEEDED" or b["status"] != "SUCCEEDED":
+748:             raise ContractError("VERIFIED_SUCCESS_REQUIRED")
+749: 
+750:         def projection(row):
+751:             result = row["result"]
+752:             if "backtest_run_id" in result:
+753:                 x = result_engineering(self.root / "backtest-runs", result["backtest_run_id"])
+754:                 return {
+755:                     k: x[k] for k in ["account", "positions", "fills", "performance", "valuations"]
+756:                 }
+757:             if "replay" in result:
+758:                 values = load(self.artifact(row["task_id"], "E", "comparison.json"))["actual"]
+759:                 return {
+760:                     k: values[k]
+761:                     for k in ["account", "positions", "fills", "performance", "valuations"]
+762:                 }
+763:             if "historical_replay" in result:
+764:                 return {"historical_runs": result["historical_replay"]["runs"]}
+765:             return {
+766:                 name: load(self.artifact(row["task_id"], "R", name + ".json"))
+767:                 for name in ("metrics", "oos")
+768:             }
+769: 
+770:         pa, pb = projection(a), projection(b)
+771:         return {
+772:             "left": left,
+773:             "right": right,
+774:             "config_equal": a["config_hash"] == b["config_hash"],
+775:             "numeric_equal": pa == pb,
+776:             "left_projection": pa,
+777:             "right_projection": pb,
+778:             "scope": "DECLARED_RESULT_PROJECTION",
+779:             "projection_fields": {
+780:                 "research": ["metrics", "oos"],
+781:                 "historical_replay": ["historical_runs"],
+782:                 "backtest": ["account", "positions", "fills", "performance", "valuations"],
+783:             },
+784:             "excluded_metadata": [
+785:                 "task_id",
+786:                 "run_id",
+787:                 "wallclock_events",
+788:                 "file_roots",
+789:                 "task_ownership",
+790:                 "trial_history_and_approval_proposals_retained_separately",
+791:             ],
+792:         }
+793: 
+794:     def _replay(self, auth, x):
+795:         if x["payload"]["profile"] == "PUBLISHED_REF_PROJECTION":
+796:             from aqrp.services.task_history import execute_history
+797: 
+798:             return execute_history(self, auth, x)
+799:         source = self.status(x["payload"]["source_task"])
+800:         if source["status"] != "SUCCEEDED" or "backtest_run_id" not in source["result"]:
+801:             raise ContractError("VERIFIED_PIPELINE_SOURCE_REQUIRED")
+802:         run = source["result"]["backtest_run_id"]
+803:         ledger = ExperimentLedger(self.root / "backtest-runs")
+804:         ledger.verify(run)
+805:         config = load((ledger.path(run) / "config.json").read_bytes())
+806:         req = EngineeringBacktestRequest(bytes.fromhex(config["raw_request_hex"]))
+807:         e = auth.allocate("E", "P5_REPLAY", self.root / "replay-runs")
+808:         self._plan(auth, e, req)
+809:         prior = e.existing()
+810:         if prior is None:
+811:             prior = replay_engineering(
+812:                 self.root / "backtest-runs", run, self.root / "replay-runs", task_context=e
+813:             )
+814:         e.mark_verified(prior["manifest"])
+815:         return {
+816:             "source_task": source["task_id"],
+817:             "replay": {k: v for k, v in prior.items() if k != "manifest"},
+818:         }
+
+===== src/aqrp/services/task_requests.py =====
+1: """Trusted workspace catalogue and shared frozen request builder for CLI/SDK/UI."""
+2: 
+3: import re
+4: from copy import deepcopy
+5: from dataclasses import asdict, dataclass
+6: from pathlib import Path
+7: 
+8: from aqrp.backtest.transactions import guard_path
+9: from aqrp.core.canonical import canonical, digest
+10: from aqrp.core.contracts import SnapshotRef
+11: from aqrp.core.environment import runtime_manifest, verify_runtime
+12: from aqrp.core.errors import ContractError
+13: from aqrp.data.exposures import ExposureRef, exposures_as_of, publish_exposures
+14: from aqrp.data.snapshot import publish_snapshot, verify_snapshot
+15: from aqrp.data.store import read_snapshot
+16: from aqrp.data.synthetic import PROVENANCE
+17: from aqrp.experiments.ledger import immutable_write, mutex
+18: from aqrp.factors.admission import BUILTINS, LOCK_HASH, builtin_spec, bundle_hash
+19: from aqrp.portfolio.contracts import load
+20: from aqrp.research.synthetic import synthetic_research
+21: from aqrp.services.research import ResearchRequest, hypotheses, hypothesis_definition
+22: from aqrp.ui.environment import ui_environment
+23: from aqrp.ui.numbers import decimal_parts, percent
+24: from aqrp.validation.labels import CoverageRef
+25: 
+26: 
+27: @dataclass(frozen=True)
+28: class EffectiveRequest:
+29:     raw: bytes
+30: 
+31:     @property
+32:     def config_hash(self):
+33:         return digest(load(self.raw))
+34: 
+35: 
+36: def _universe_catalogue(snapshot):
+37:     manifest, tables = read_snapshot(snapshot)
+38:     all_rows = tables["universe_membership"].to_pylist()
+39:     return {
+40:         name: {
+41:             "universe_id": name,
+42:             "market_id": "SYN_A",
+43:             "snapshot_id": snapshot.snapshot_id,
+44:             "snapshot_manifest_hash": snapshot.manifest_hash,
+45:             "membership_table_sha256": manifest["tables"]["universe_membership"]["sha256"],
+46:             "membership_history_sha256": digest([r for r in all_rows if r["universe_id"] == name]),
+47:             "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+48:         }
+49:         for name in ("SYN_U", "SYN_CORE4", "SYN_TAIL4")
+50:     }
+51: 
+52: 
+53: def _engineering_inputs(root):
+54:     # Extend only this P6 engineering snapshot. Original P3 generator/fixtures remain untouched.
+55:     import pyarrow as pa
+56:     import pyarrow.parquet as pq
+57: 
+58:     c, original, exposures, coverage = synthetic_research(
+59:         root / "inputs/source", sessions=24, assets=6, factor_ids=BUILTINS
+60:     )
+61:     _, tables = read_snapshot(original)
+62:     rows = tables["universe_membership"].to_pylist()
+63:     extra = []
+64:     for name, members in (("SYN_CORE4", range(1, 5)), ("SYN_TAIL4", range(3, 7))):
+65:         for row in rows:
+66:             if row["security_id"] in {f"SYN_A:{i:03d}" for i in members}:
+67:                 extra.append({**row, "universe_id": name})
+68:     tables["universe_membership"] = pa.Table.from_pylist(
+69:         rows + extra, schema=tables["universe_membership"].schema
+70:     )
+71:     snapshot = publish_snapshot(tables, PROVENANCE, root / "inputs/pools")
+72:     exposure_rows = pq.read_table(exposures.root / "exposures.parquet").to_pylist()
+73:     for row in exposure_rows:
+74:         row["risk_exposures"] = load(row.pop("risk_exposures_json").encode())
+75:     e = publish_exposures(exposure_rows, snapshot, root / "inputs/pool-exposures")
+76:     body = coverage.read(original.manifest_hash)
+77:     v = CoverageRef.create(
+78:         snapshot.manifest_hash, body["versions"], authority=body["authority"], scope=body["scope"]
+79:     )
+80:     c["family"]["definitions"] = {
+81:         h["hypothesis"]: hypothesis_definition(
+82:             h, c, snapshot.manifest_hash, e.manifest_hash, v.checksum
+83:         )
+84:         for h in hypotheses(c)
+85:     }
+86:     return c, snapshot, e, v
+87: 
+88: 
+89: def initialize(root, code_commit):
+90:     root = guard_path(root)
+91:     root.mkdir(parents=True, exist_ok=True)
+92:     if not re.fullmatch("[0-9a-f]{40}", code_commit):
+93:         raise ContractError("FULL_CODE_SHA_REQUIRED")
+94:     with mutex(root / ".catalog-lock"):
+95:         path = root / "catalog.json"
+96:         if path.exists():
+97:             current = catalogue(root)
+98:             if current["code_commit"] != code_commit:
+99:                 raise ContractError("CATALOG_CODE_COMMIT_CHANGED")
+100:             return current
+101:         c, s, e, v = _engineering_inputs(root)
+102:         body = {
+103:             "schema": "task-catalog/2",
+104:             "universes": _universe_catalogue(s),
+105:             "code_commit": code_commit,
+106:             "code_bundle": bundle_hash(),
+107:             "config": load(canonical(c)),
+108:             "snapshot": {**asdict(s), "root": str(s.root)},
+109:             "exposures": {**asdict(e), "root": str(e.root)},
+110:             "coverage": {"payload": v.payload.decode(), "checksum": v.checksum},
+111:             "scope": "ENGINEERING_TEST_ONLY",
+112:             "financial_approval": "NONE",
+113:             "core_environment": runtime_manifest(),
+114:             "ui_environment": ui_environment(),
+115:             "factor_specs": [asdict(builtin_spec(n)) for n in BUILTINS],
+116:         }
+117:         body["revision"] = digest(body)
+118:         immutable_write(path, canonical(body))
+119:     return catalogue(root)
+120: 
+121: 
+122: def references(root, cat):
+123:     s = cat["snapshot"]
+124:     e = cat["exposures"]
+125:     v = cat["coverage"]
+126:     for item in [s, e]:
+127:         if not guard_path(item["root"]).is_relative_to(guard_path(root)):
+128:             raise ContractError("CATALOG_INPUT_OUTSIDE_WORKSPACE")
+129:     return (
+130:         SnapshotRef(Path(s["root"]), s["snapshot_id"], s["manifest_hash"]),
+131:         ExposureRef(Path(e["root"]), e["manifest_hash"], e["parent_hash"]),
+132:         CoverageRef(v["payload"].encode(), v["checksum"]),
+133:     )
+134: 
+135: 
+136: def catalogue(root):
+137:     raw = guard_path(Path(root) / "catalog.json").read_bytes()
+138:     cat = load(raw)
+139:     if (
+140:         canonical(cat) != raw
+141:         or digest({k: v for k, v in cat.items() if k != "revision"}) != cat["revision"]
+142:     ):
+143:         raise ContractError("CATALOG_IDENTITY_CHANGED")
+144:     if (
+145:         cat.get("schema") != "task-catalog/2"
+146:         or type(cat.get("code_commit")) is not str
+147:         or not re.fullmatch("[0-9a-f]{40}", cat["code_commit"])
+148:         or cat["factor_specs"] != load(canonical([asdict(builtin_spec(n)) for n in BUILTINS]))
+149:         or cat["code_bundle"] != bundle_hash()
+150:         or cat["scope"] != "ENGINEERING_TEST_ONLY"
+151:         or cat["financial_approval"] != "NONE"
+152:     ):
+153:         raise ContractError("CATALOG_EXECUTION_IDENTITY_CHANGED")
+154:     verify_runtime(runtime_manifest())
+155:     if cat["core_environment"] != runtime_manifest() or cat["ui_environment"] != ui_environment():
+156:         raise ContractError("CATALOG_ENVIRONMENT_CHANGED")
+157:     s, e, v = references(root, cat)
+158:     verify_snapshot(s)
+159:     if cat["universes"] != _universe_catalogue(s):
+160:         raise ContractError("CATALOG_UNIVERSE_IDENTITY_CHANGED")
+161:     exposures_as_of(
+162:         e,
+163:         cat["config"]["evaluation_cutoff"],
+164:         cat["config"]["market_id"],
+165:         cat["config"]["currency"],
+166:         [],
+167:     )
+168:     v.read(s.manifest_hash)
+169:     return cat
+170: 
+171: 
+172: FIELDS = {
+173:     "kind",
+174:     "factor_ids",
+175:     "universe_id",
+176:     "campaign_id",
+177:     "factor_refs",
+178:     "lookback",
+179:     "direction",
+180:     "weights_percent",
+181:     "start",
+182:     "end",
+183:     "horizons",
+184:     "neutralize",
+185:     "initial_cash",
+186:     "fee_budget",
+187:     "policy",
+188:     "constraints",
+189:     "source_task",
+190:     "profile",
+191: }
+192: 
+193: 
+194: def validate_draft(draft):
+195:     if not isinstance(draft, dict) or set(draft) - FIELDS:
+196:         raise ContractError("UNKNOWN_TASK_DRAFT_FIELD")
+197:     if draft.get("kind", "research") not in ("research", "engineering_pipeline", "replay"):
+198:         raise ContractError("APPROVAL_REQUIRED")
+199:     if draft.get("kind", "research") != "replay" and set(draft) & {"source_task", "profile"}:
+200:         raise ContractError("INVALID_TASK_KIND_FIELD")
+201:     if "factor_ids" in draft and (
+202:         not isinstance(draft["factor_ids"], list)
+203:         or any(type(n) is not str for n in draft["factor_ids"])
+204:     ):
+205:         raise ContractError("INVALID_FACTOR_SELECTION")
+206:     if "horizons" in draft and not isinstance(draft["horizons"], list):
+207:         raise ContractError("INVALID_RESEARCH_HORIZON_GRID")
+208:     if "weights_percent" in draft and not isinstance(draft["weights_percent"], dict):
+209:         raise ContractError("FACTOR_WEIGHTS_REQUIRED")
+210:     if "policy" in draft:
+211:         policy = draft["policy"]
+212:         if not isinstance(policy, dict) or set(policy) - {
+213:             "mode",
+214:             "weighting",
+215:             "top_k",
+216:             "long_k",
+217:             "short_k",
+218:             "gross",
+219:             "net",
+220:         }:
+221:             raise ContractError("INVALID_PORTFOLIO_POLICY_OVERRIDE")
+222:         if policy.get("mode", "LONG_ONLY") not in ("LONG_ONLY", "LONG_SHORT") or policy.get(
+223:             "weighting", "equal"
+224:         ) not in ("equal", "score"):
+225:             raise ContractError("INVALID_PORTFOLIO_POLICY_OVERRIDE")
+226:     if "constraints" in draft and (
+227:         not isinstance(draft["constraints"], dict)
+228:         or set(draft["constraints"])
+229:         - {
+230:             "per_asset",
+231:             "gross_max",
+232:             "net_min",
+233:             "net_max",
+234:             "leverage_max",
+235:             "turnover_max",
+236:             "beta_min",
+237:             "beta_max",
+238:             "industries",
+239:             "allow_cash_only",
+240:         }
+241:     ):
+242:         raise ContractError("INVALID_RISK_OVERRIDE")
+243:     for name in ["initial_cash", "fee_budget"]:
+244:         if name in draft:
+245:             coef, _ = decimal_parts(draft[name])
+246:             if coef < 0:
+247:                 raise ContractError("INVALID_ENGINEERING_BUDGET", name)
+248:     if "weights_percent" in draft:
+249:         for value in draft["weights_percent"].values():
+250:             percent(value)
+251:     if "lookback" in draft and (
+252:         type(draft["lookback"]) is not int or not 1 <= draft["lookback"] <= 20
+253:     ):
+254:         raise ContractError("INVALID_LOOKBACK")
+255:     if "direction" in draft and (
+256:         type(draft["direction"]) is not int or draft["direction"] not in [-1, 1]
+257:     ):
+258:         raise ContractError("INVALID_DIRECTION")
+259:     if "neutralize" in draft and type(draft["neutralize"]) is not bool:
+260:         raise ContractError("INVALID_NEUTRALIZATION")
+261:     return draft
+262: 
+263: 
+264: def build_research_config(cat, base):
+265:     config = deepcopy(cat["config"])
+266:     names = base.get("factor_ids", ["momentum"])
+267:     if not names or len(names) != len(set(names)) or not set(names) <= set(BUILTINS):
+268:         raise ContractError("UNKNOWN_OR_DUPLICATE_CATALOG_FACTOR")
+269:     expected_refs = [asdict(builtin_spec(n).ref) for n in names]
+270:     if "factor_refs" in base and base["factor_refs"] != expected_refs:
+271:         raise ContractError("EXACT_RESEARCH_REF_MISMATCH")
+272:     config["candidates"] = [
+273:         {
+274:             "ref": r,
+275:             "parameters": {"lookback": base.get("lookback", 2)},
+276:             "direction": base.get("direction", 1),
+277:             "hypothesis": n,
+278:         }
+279:         for n, r in zip(names, expected_refs, strict=True)
+280:     ]
+281:     if "horizons" in base:
+282:         config["horizons"] = base["horizons"]
+283:     if (
+284:         not config["horizons"]
+285:         or any(type(h) is not int or h < 1 or h > 10 for h in config["horizons"])
+286:         or len(set(config["horizons"])) != len(config["horizons"])
+287:     ):
+288:         raise ContractError("INVALID_RESEARCH_HORIZON_GRID")
+289:     config["pipeline"]["neutralize"] = base.get("neutralize", True)
+290:     for field in ["start", "end"]:
+291:         if field in base:
+292:             from datetime import date
+293: 
+294:             if date.fromisoformat(base[field]).isoformat() != base[field]:
+295:                 raise ContractError("INVALID_SESSION_DATE")
+296:     config["decisions"] = [
+297:         d
+298:         for d in config["decisions"]
+299:         if base.get("start", d["session"]) <= d["session"] <= base.get("end", d["session"])
+300:     ]
+301:     if not config["decisions"]:
+302:         raise ContractError("NO_REQUIRED_DECISIONS")
+303:     name = base.get("universe_id", "SYN_U")
+304:     if type(name) is not str or name not in cat["universes"]:
+305:         raise ContractError("UNKNOWN_ENGINEERING_UNIVERSE")
+306:     config["universe_id"] = name
+307:     config["universe_ref"] = deepcopy(cat["universes"][name])
+308:     return config
+309: 
+310: 
+311: def _weights(base, names):
+312:     weights = base.get("weights_percent", {n: "100" for n in names})
+313:     if set(weights) != set(names):
+314:         raise ContractError("FACTOR_WEIGHT_SELECTION_MISMATCH")
+315:     return weights
+316: 
+317: 
+318: def validate_defaults(root, patch):
+319:     validate_draft(patch)
+320:     config = build_research_config(catalogue(root), patch)
+321:     _weights(patch, [c["hypothesis"] for c in config["candidates"]])
+322:     if "campaign_id" in patch:
+323:         from aqrp.services.task_campaigns import get_campaign
+324: 
+325:         get_campaign(root, patch["campaign_id"], catalogue(root))
+326:     return config
+327: 
+328: 
+329: def freeze_request(root, draft, defaults_revision=0, defaults=None):
+330:     validate_draft(draft)
+331:     base = deepcopy(defaults or {}) if draft.get("kind") != "replay" else {}
+332:     base.update(draft)
+333:     validate_draft(base)
+334:     cat = catalogue(root)
+335:     kind = base.get("kind", "research")
+336:     if kind == "replay":
+337:         if set(base) - {"kind", "source_task", "profile"} or base.get(
+338:             "profile", "P5_NUMERICAL"
+339:         ) not in ("P5_NUMERICAL", "PUBLISHED_REF_PROJECTION"):
+340:             raise ContractError("REPLAY_PROFILE_NOT_REGISTERED")
+341:         if base.get("profile") == "PUBLISHED_REF_PROJECTION":
+342:             from aqrp.services.task_history import history_catalogue
+343: 
+344:             history = history_catalogue(root)
+345:             if base["source_task"] != history["id"]:
+346:                 raise ContractError("HISTORICAL_CATALOG_CHANGED")
+347:             payload = {
+348:                 "source_task": history["id"],
+349:                 "profile": "PUBLISHED_REF_PROJECTION",
+350:                 "history_sha256": digest(history),
+351:             }
+352:         else:
+353:             source = str(__import__("uuid").UUID(base["source_task"]))
+354:             payload = {"source_task": source, "profile": "P5_NUMERICAL"}
+355:     else:
+356:         from aqrp.services.task_campaigns import resolve
+357: 
+358:         config = build_research_config(cat, base)
+359:         names = [c["hypothesis"] for c in config["candidates"]]
+360:         weights = _weights(base, names)
+361:         config, campaign = resolve(root, base.get("campaign_id"), config, cat)
+362:         payload = {
+363:             "research": config,
+364:             "campaign": campaign,
+365:             "universe": config["universe_ref"],
+366:             "execution": {
+367:                 "initial_cash": base.get("initial_cash", "1000"),
+368:                 "fee_budget": base.get("fee_budget", "10"),
+369:                 "factor_weights": {n: percent(weights[n]) for n in names},
+370:                 "policy": base.get("policy", {}),
+371:                 "constraints": base.get("constraints", {}),
+372:             },
+373:             "raw_draft": base,
+374:         }
+375:     return EffectiveRequest(
+376:         canonical(
+377:             {
+378:                 "schema": "task-request/1",
+379:                 "kind": kind,
+380:                 "catalogue_revision": cat["revision"],
+381:                 "defaults_revision": defaults_revision,
+382:                 "code_commit": cat["code_commit"],
+383:                 "code_bundle": cat["code_bundle"],
+384:                 "core_lock_hash": LOCK_HASH,
+385:                 "ui_lock_hash": cat["ui_environment"]["lock_sha256"],
+386:                 "environment_hash": digest(
+387:                     {"core": cat["core_environment"], "ui": cat["ui_environment"]}
+388:                 ),
+389:                 "payload": payload,
+390:             }
+391:         )
+392:     )
+393: 
+394: 
+395: def research_request(root, request):
+396:     cat = catalogue(root)
+397:     s, e, v = references(root, cat)
+398:     return ResearchRequest.create(request["payload"]["research"], s, e, v, request["code_commit"])
+
+===== src/aqrp/services/task_state.py =====
+1: """SQLite task allocation/claims. Engineering integrity, not OS isolation."""
+2: 
+3: import json
+4: import sqlite3
+5: import time
+6: import uuid
+7: from contextlib import contextmanager
+8: 
+9: from aqrp.backtest.transactions import guard_path
+10: from aqrp.core.canonical import canonical, digest
+11: from aqrp.core.errors import ContractError
+12: from aqrp.experiments.ledger import immutable_write, mutex, read_chain
+13: 
+14: SETUP_TIMEOUT_SECONDS = 30.0
+15: 
+16: TERMINAL = {"SUCCEEDED", "FAILED", "CANCELLED"}
+17: 
+18: 
+19: class TaskState:
+20:     def __init__(self, root):
+21:         self.root = guard_path(root)
+22:         self.root.mkdir(parents=True, exist_ok=True)
+23:         control = guard_path(self.root / "task-control")
+24:         control.mkdir(exist_ok=True)
+25:         self.db = control / "tasks.sqlite"
+26:         with self.transaction() as c:
+27:             c.executescript("""
+28:                 CREATE TABLE IF NOT EXISTS workspace (id TEXT PRIMARY KEY);
+29:                 CREATE TABLE IF NOT EXISTS tasks (
+30:                   id TEXT PRIMARY KEY, key TEXT UNIQUE, raw TEXT, hash TEXT,
+31:                   status TEXT, owner TEXT, epoch INTEGER, cancel INTEGER DEFAULT 0,
+32:                   completion TEXT, error TEXT);
+33:                 CREATE TABLE IF NOT EXISTS slots (
+34:                   task TEXT, slot TEXT, binding TEXT, state TEXT,
+35:                   PRIMARY KEY(task,slot));
+36:                 CREATE TABLE IF NOT EXISTS adapted_requests (
+37:                   task TEXT, slot TEXT, raw TEXT, hash TEXT,
+38:                   PRIMARY KEY(task,slot));
+39:                 CREATE TABLE IF NOT EXISTS events (
+40:                   seq INTEGER PRIMARY KEY, task TEXT, kind TEXT, payload TEXT);
+41:                 CREATE TABLE IF NOT EXISTS campaign_attempts (
+42:                   task TEXT PRIMARY KEY, campaign TEXT, plan_hash TEXT, data_hash TEXT,
+43:                   units INTEGER, payload TEXT, hash TEXT);
+44:                 CREATE TABLE IF NOT EXISTS defaults (
+45:                   revision INTEGER PRIMARY KEY, payload TEXT, hash TEXT);
+46:             """)
+47:             c.execute("BEGIN IMMEDIATE")
+48:             if not c.execute("SELECT id FROM workspace").fetchone():
+49:                 c.execute("INSERT INTO workspace VALUES (?)", (str(uuid.uuid4()),))
+50:             self.workspace_id = c.execute("SELECT id FROM workspace").fetchone()[0]
+51: 
+52:     @contextmanager
+53:     def transaction(self):
+54:         guard_path(self.db)
+55:         c = sqlite3.connect(self.db, timeout=0, isolation_level=None)
+56:         try:
+57:             c.row_factory = sqlite3.Row
+58:             # journal_mode can return SQLITE_BUSY immediately during a first-open
+59:             # race. Wait only before a transaction exists; never rerun its body.
+60:             deadline = time.monotonic() + SETUP_TIMEOUT_SECONDS
+61:             while True:
+62:                 try:
+63:                     row = c.execute("PRAGMA journal_mode=WAL").fetchone()
+64:                     if row is None or row[0] != "wal":
+65:                         raise ContractError("TASK_JOURNAL_MODE_UNVERIFIED")
+66:                     break
+67:                 except sqlite3.OperationalError as exc:
+68:                     code = getattr(exc, "sqlite_errorcode", None)
+69:                     if code is None or code & 0xFF not in (
+70:                         sqlite3.SQLITE_BUSY,
+71:                         sqlite3.SQLITE_LOCKED,
+72:                     ):
+73:                         raise
+74:                     remaining = deadline - time.monotonic()
+75:                     if remaining <= 0:
+76:                         raise
+77:                     time.sleep(min(0.01, remaining))
+78:             c.execute("PRAGMA synchronous=FULL")
+79:             remaining_ms = max(0, int(1000 * (deadline - time.monotonic())))
+80:             c.execute("PRAGMA busy_timeout=" + str(remaining_ms))
+81:             c.execute("BEGIN IMMEDIATE")
+82:             try:
+83:                 yield c
+84:                 c.commit()
+85:             except BaseException:
+86:                 c.rollback()
+87:                 raise
+88: 
+89:         finally:
+90:             c.close()
+91: 
+92:     @staticmethod
+93:     def event(c, task, kind, payload):
+94:         c.execute(
+95:             "INSERT INTO events(task,kind,payload) VALUES (?,?,?)",
+96:             (task, kind, canonical(payload).decode()),
+97:         )
+98: 
+99:     def get(self, task):
+100:         with self.transaction() as c:
+101:             row = c.execute("SELECT * FROM tasks WHERE id=?", (task,)).fetchone()
+102:             if row is None:
+103:                 raise ContractError("UNKNOWN_TASK")
+104:             return dict(row)
+105: 
+106:     def submit(self, raw, key, *, campaign=None):
+107:         if not isinstance(key, str) or not 1 <= len(key) <= 128:
+108:             raise ContractError("INVALID_IDEMPOTENCY_KEY")
+109:         request = json.loads(raw)
+110:         with self.transaction() as c:
+111:             prior = c.execute("SELECT * FROM tasks WHERE key=?", (key,)).fetchone()
+112:             if prior:
+113:                 if prior["hash"] != digest(request):
+114:                     raise ContractError("IDEMPOTENCY_CONFIG_CONFLICT")
+115:                 return prior["id"]
+116:             task = str(uuid.uuid4())
+117:             directory = guard_path(self.root / "tasks" / task)
+118:             directory.mkdir(parents=True)
+119:             immutable_write(directory / "request.json", raw)
+120:             c.execute(
+121:                 "INSERT INTO tasks(id,key,raw,hash,status,epoch) VALUES (?,?,?,?,?,0)",
+122:                 (task, key, raw.decode(), digest(request), "QUEUED"),
+123:             )
+124:             control = None
+125:             if campaign is not None:
+126:                 control = self._reserve_campaign(c, task, request, campaign, directory)
+127:             self.event(
+128:                 c,
+129:                 task,
+130:                 "SUBMITTED",
+131:                 {
+132:                     "config_hash": digest(request),
+133:                     "campaign_attempt_sha256": None if control is None else digest(control),
+134:                 },
+135:             )
+136:             if control is not None:
+137:                 self.event(c, task, "CAMPAIGN_ATTEMPT_RESERVED", control)
+138:             if control is not None and control["over_budget"]:
+139:                 c.execute(
+140:                     "UPDATE tasks SET status='FAILED',error=? WHERE id=?",
+141:                     ("EXPERIMENT_BUDGET_EXCEEDED", task),
+142:                 )
+143:                 self.event(
+144:                     c,
+145:                     task,
+146:                     "FAILED",
+147:                     {"code": "EXPERIMENT_BUDGET_EXCEEDED", "campaign_attempt": control},
+148:                 )
+149:             return task
+150: 
+151:     def _checked_campaign_record(self, c, row):
+152:         from aqrp.services.research import hypotheses
+153: 
+154:         raw = guard_path(self.root / "tasks" / row["task"] / "campaign-attempt.json").read_bytes()
+155:         item = json.loads(raw)
+156:         reqrow = c.execute("SELECT raw,hash FROM tasks WHERE id=?", (row["task"],)).fetchone()
+157:         if reqrow is None:
+158:             raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE")
+159:         req = json.loads(reqrow["raw"])
+160:         actual_raw = guard_path(self.root / "tasks" / row["task"] / "request.json").read_bytes()
+161:         if (
+162:             canonical(item) != raw
+163:             or raw.decode() != row["payload"]
+164:             or digest(item) != row["hash"]
+165:             or actual_raw.decode() != reqrow["raw"]
+166:             or digest(req) != reqrow["hash"]
+167:             or item["task_config_hash"] != reqrow["hash"]
+168:             or item["campaign"] != req["payload"]["campaign"]
+169:             or item["hypothesis_ids"]
+170:             != [h["hypothesis"] for h in hypotheses(req["payload"]["research"])]
+171:             or item["units"] != row["units"]
+172:             or item["units"] != len(item["hypothesis_ids"])
+173:             or row["data_hash"] != item["campaign"]["data_hash"]
+174:             or row["plan_hash"] != item["campaign"]["campaign_hash"]
+175:             or row["campaign"] != item["campaign"]["id"]
+176:             or item["campaign"]["budget"] != 12
+177:         ):
+178:             raise ContractError("CAMPAIGN_ATTEMPT_IDENTITY_CHANGED")
+179:         return item
+180: 
+181:     def _reserve_campaign(self, c, task, request, campaign, directory):
+182:         from aqrp.services.research import hypotheses
+183: 
+184:         if campaign != request["payload"]["campaign"] or campaign["budget"] != 12:
+185:             raise ContractError("CAMPAIGN_ATTEMPT_IDENTITY_CHANGED")
+186:         rows = list(c.execute("SELECT * FROM campaign_attempts"))
+187:         expected = {
+188:             r["id"]
+189:             for r in c.execute("SELECT id,raw FROM tasks WHERE id!=?", (task,))
+190:             if "campaign" in json.loads(r["raw"]).get("payload", {})
+191:         }
+192:         if expected != {r["task"] for r in rows}:
+193:             raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE")
+194:         verified = [self._checked_campaign_record(c, r) for r in rows]
+195:         own_runs = {
+196:             json.loads(r[0])["child_run_id"]
+197:             for r in c.execute(
+198:                 "SELECT binding FROM slots JOIN campaign_attempts ON slots.task=campaign_attempts.task WHERE slot='R'"
+199:             )
+200:         }
+201:         trial_root = guard_path(self.root / "research-runs")
+202:         trial_root.mkdir(exist_ok=True)
+203:         with mutex(trial_root / ".trials-lock"):
+204:             legacy = [
+205:                 r["payload"]
+206:                 for r in read_chain(trial_root / "trials.jsonl")
+207:                 if r["payload"].get("data_hash") == campaign["data_hash"]
+208:                 and r["payload"]["run_id"] not in own_runs
+209:             ]
+210:         peers = [x for x in verified if x["campaign"]["data_hash"] == campaign["data_hash"]]
+211:         units = [h["hypothesis"] for h in hypotheses(request["payload"]["research"])]
+212:         used = sum(x["units"] for x in peers) + len(legacy)
+213:         record = {
+214:             "campaign": campaign,
+215:             "task_id": task,
+216:             "task_config_hash": digest(request),
+217:             "hypothesis_ids": units,
+218:             "units": len(units),
+219:             "prior_reserved_units": used,
+220:             "prior_legacy_trials": len(legacy),
+221:             "prior_other_campaign_attempts": sum(
+222:                 x["campaign"]["campaign_hash"] != campaign["campaign_hash"] for x in peers
+223:             ),
+224:             "prior_other_family_legacy_trials": sum(
+225:                 x["family"] != request["payload"]["research"]["family"]["id"] for x in legacy
+226:             ),
+227:             "over_budget": used + len(units) > 12,
+228:             "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+229:         }
+230:         immutable_write(directory / "campaign-attempt.json", canonical(record))
+231:         c.execute(
+232:             "INSERT INTO campaign_attempts VALUES (?,?,?,?,?,?,?)",
+233:             (
+234:                 task,
+235:                 campaign["id"],
+236:                 campaign["campaign_hash"],
+237:                 campaign["data_hash"],
+238:                 len(units),
+239:                 canonical(record).decode(),
+240:                 digest(record),
+241:             ),
+242:         )
+243:         return record
+244: 
+245:     def research_attempt(self, task):
+246:         with self.transaction() as c:
+247:             row = c.execute("SELECT * FROM campaign_attempts WHERE task=?", (task,)).fetchone()
+248:             if row is None:
+249:                 raise ContractError("CAMPAIGN_ATTEMPT_REQUIRED")
+250:             return self._checked_campaign_record(c, row)
+251: 
+252:     def claim(self, task, *, recover=False):
+253:         owner = str(uuid.uuid4())
+254:         with self.transaction() as c:
+255:             row = c.execute("SELECT * FROM tasks WHERE id=?", (task,)).fetchone()
+256:             if row is None or row["status"] in TERMINAL:
+257:                 raise ContractError("TASK_NOT_CLAIMABLE")
+258:             if row["owner"]:
+259:                 raise ContractError("TASK_ALREADY_CLAIMED")
+260:             if row["status"] != "QUEUED" and not recover:
+261:                 raise ContractError("TASK_RECOVERY_REQUIRED")
+262:             epoch = row["epoch"] + 1
+263:             c.execute(
+264:                 "UPDATE tasks SET owner=?,epoch=?,status='RUNNING' WHERE id=?", (owner, epoch, task)
+265:             )
+266:             self.event(c, task, "CLAIMED", {"owner": owner, "epoch": epoch, "recovery": recover})
+267:         return owner, epoch
+268: 
+269:     def abandon(self, task, owner, epoch):
+270:         """Explicit owner release; no PID/mtime takeover and no automatic duplicate worker."""
+271:         with self.transaction() as c:
+272:             row = c.execute("SELECT owner,epoch FROM tasks WHERE id=?", (task,)).fetchone()
+273:             if row is None or (row[0], row[1]) != (owner, epoch):
+274:                 raise ContractError("STALE_TASK_CLAIM")
+275:             c.execute("UPDATE tasks SET owner=NULL WHERE id=?", (task,))
+276:             self.event(c, task, "CLAIM_RELEASED", {"epoch": epoch})
+277: 
+278:     def cancel(self, task):
+279:         with self.transaction() as c:
+280:             row = c.execute("SELECT status FROM tasks WHERE id=?", (task,)).fetchone()
+281:             if row is None:
+282:                 raise ContractError("UNKNOWN_TASK")
+283:             if row[0] in TERMINAL:
+284:                 return "TOO_LATE"
+285:             c.execute("UPDATE tasks SET cancel=1 WHERE id=?", (task,))
+286:             if row[0] == "QUEUED":
+287:                 c.execute("UPDATE tasks SET status='CANCELLED' WHERE id=?", (task,))
+288:             self.event(c, task, "CANCEL_REQUESTED", {})
+289:             return "CANCELLED" if row[0] == "QUEUED" else "CANCEL_REQUESTED"
+290: 
+291:     def slots(self, task):
+292:         with self.transaction() as c:
+293:             return {
+294:                 r["slot"]: {"binding": json.loads(r["binding"]), "state": r["state"]}
+295:                 for r in c.execute("SELECT * FROM slots WHERE task=? ORDER BY slot", (task,))
+296:             }
+297: 
+298:     def defaults(self, revision=None):
+299:         if revision is not None and (type(revision) is not int or revision < 0):
+300:             raise ContractError("UNKNOWN_DEFAULTS_REVISION")
+301:         empty = {"revision": 0, "payload": "{}", "hash": digest({})}
+302:         if revision == 0:
+303:             return empty
+304:         with self.transaction() as c:
+305:             row = (
+306:                 c.execute("SELECT * FROM defaults ORDER BY revision DESC LIMIT 1").fetchone()
+307:                 if revision is None
+308:                 else c.execute("SELECT * FROM defaults WHERE revision=?", (revision,)).fetchone()
+309:             )
+310:             if row is None:
+311:                 if revision is None:
+312:                     return empty
+313:                 raise ContractError("UNKNOWN_DEFAULTS_REVISION")
+314:             if digest(json.loads(row["payload"])) != row["hash"]:
+315:                 raise ContractError("DEFAULTS_REVISION_IDENTITY_CHANGED")
+316:             return dict(row)
+317: 
+318:     def save_defaults(self, expected, payload):
+319:         with self.transaction() as c:
+320:             row = c.execute("SELECT max(revision) FROM defaults").fetchone()[0] or 0
+321:             if row != expected:
+322:                 raise ContractError("DEFAULTS_REVISION_CONFLICT")
+323:             c.execute(
+324:                 "INSERT INTO defaults VALUES (?,?,?)",
+325:                 (row + 1, canonical(payload).decode(), digest(payload)),
+326:             )
+327:         return row + 1
+328: 
+329:     def rollback_defaults(self, expected, target):
+330:         if type(target) is not int or target < 1:
+331:             raise ContractError("UNKNOWN_DEFAULTS_REVISION")
+332:         payload = json.loads(self.defaults(target)["payload"])
+333:         return self.save_defaults(expected, payload)
+
+===== src/aqrp/services/task_context.py =====
+1: """Explicit per-instance preallocated ownership. No global current-task state."""
+2: 
+3: import hashlib
+4: import json
+5: import re
+6: import uuid
+7: 
+8: from aqrp.backtest.transactions import guard_path
+9: from aqrp.core.canonical import canonical, digest
+10: from aqrp.core.errors import ContractError
+11: from aqrp.experiments.ledger import ExperimentLedger, read_chain
+12: 
+13: _SEAL = object()
+14: 
+15: 
+16: class TaskAuthority:
+17:     def __init__(self, state, task, owner, epoch, *, seal):
+18:         if seal is not _SEAL:
+19:             raise ContractError("TRUSTED_TASK_LAUNCHER_REQUIRED")
+20:         self.state, self.task, self.owner, self.epoch = state, task, owner, epoch
+21: 
+22:     def check(self, *, cancel=False, connection=None):
+23:         row = (
+24:             self.state.get(self.task)
+25:             if connection is None
+26:             else connection.execute("SELECT * FROM tasks WHERE id=?", (self.task,)).fetchone()
+27:         )
+28:         if (row["owner"], row["epoch"], row["status"]) != (self.owner, self.epoch, "RUNNING"):
+29:             raise ContractError("STALE_TASK_CLAIM")
+30:         raw = guard_path(self.state.root / "tasks" / self.task / "request.json").read_bytes()
+31:         if raw.decode() != row["raw"] or digest(json.loads(raw)) != row["hash"]:
+32:             raise ContractError("TASK_REQUEST_IDENTITY_CHANGED")
+33:         if cancel and row["cancel"]:
+34:             raise KeyboardInterrupt("TASK_SAFE_CANCEL_CHECKPOINT")
+35:         return row
+36: 
+37:     def allocate(self, slot, service, root, *, parent=None, index=None, time=None, source=None):
+38:         row = self.check()
+39:         req = json.loads(row["raw"])
+40:         root = guard_path(root)
+41:         expected_root = {
+42:             "R": self.state.root / "research-runs",
+43:             "B": self.state.root / "backtest-runs",
+44:             "E": self.state.root / "replay-runs",
+45:         }
+46:         if service == "P4":
+47:             if (
+48:                 parent is None
+49:                 or slot != f"P:{index}"
+50:                 or type(index) is not int
+51:                 or index < 0
+52:                 or parent.authority is not self
+53:             ):
+54:                 raise ContractError("TASK_SLOT_SCHEMA_MISMATCH")
+55:             if parent.binding()["service_kind"] not in ("P5", "P5_REPLAY"):
+56:                 raise ContractError("TASK_SLOT_SCHEMA_MISMATCH")
+57:             expected_root[slot] = (
+58:                 guard_path(parent.binding()["physical_ledger_root"])
+59:                 / parent.binding()["child_run_id"]
+60:                 / "portfolio-runs"
+61:             )
+62:         elif (slot, service) not in {
+63:             ("R", "P3"),
+64:             ("B", "P5"),
+65:             ("E", "P5_REPLAY"),
+66:             ("E", "PUBLISHED_REF_PROJECTION"),
+67:         }:
+68:             raise ContractError("TASK_SLOT_SCHEMA_MISMATCH")
+69:         if (
+70:             (req["kind"] == "research" and slot != "R")
+71:             or (req["kind"] == "engineering_pipeline" and slot == "E")
+72:             or (req["kind"] == "replay" and slot in ("R", "B"))
+73:             or root != expected_root[slot]
+74:         ):
+75:             raise ContractError("TASK_SLOT_ROOT_OR_KIND_MISMATCH")
+76:         if not root.is_relative_to(self.state.root):
+77:             raise ContractError("TASK_ROOT_OUTSIDE_WORKSPACE")
+78:         binding = {
+79:             "workspace_id": self.state.workspace_id,
+80:             "task_id": self.task,
+81:             "task_kind": req["kind"],
+82:             "plan_hash": row["hash"],
+83:             "slot_id": slot,
+84:             "service_kind": service,
+85:             "decision_index": index,
+86:             "decision_time_UTC": time,
+87:             "source_request_hash": source,
+88:             "adapted_request_hash": None,
+89:             "parent_slot_id": parent.slot if parent else None,
+90:             "parent_execution_run_id": parent.binding()["child_run_id"] if parent else None,
+91:             "child_run_id": str(uuid.uuid4()),
+92:             "physical_ledger_root": str(root),
+93:             "core_config_hash": None,
+94:             "code_sha": req["code_commit"],
+95:             "code_bundle": req["code_bundle"],
+96:             "core_lock_hash": req["core_lock_hash"],
+97:             "ui_lock_hash": req["ui_lock_hash"],
+98:         }
+99:         with self.state.transaction() as c:
+100:             self.check(connection=c)
+101:             existing = c.execute(
+102:                 "SELECT binding FROM slots WHERE task=? AND slot=?", (self.task, slot)
+103:             ).fetchone()
+104:             if existing:
+105:                 old = json.loads(existing[0])
+106:                 for key in binding:
+107:                     if (
+108:                         key not in ("child_run_id", "core_config_hash", "adapted_request_hash")
+109:                         and old[key] != binding[key]
+110:                     ):
+111:                         raise ContractError("TASK_SLOT_BINDING_CONFLICT", key)
+112:             else:
+113:                 c.execute(
+114:                     "INSERT INTO slots VALUES (?,?,?,'ALLOCATED')",
+115:                     (self.task, slot, canonical(binding).decode()),
+116:                 )
+117:                 self.state.event(c, self.task, "SLOT_ALLOCATED", binding)
+118:         return TaskRunContext(self, slot, seal=_SEAL)
+119: 
+120:     def context(self, slot):
+121:         if slot not in self.state.slots(self.task):
+122:             raise ContractError("UNREGISTERED_TASK_SLOT")
+123:         return TaskRunContext(self, slot, seal=_SEAL)
+124: 
+125: 
+126: def authority(state, task, owner, epoch):
+127:     return TaskAuthority(state, task, owner, epoch, seal=_SEAL)
+128: 
+129: 
+130: def require_context(context):
+131:     if type(context) is not TaskRunContext or type(context.authority) is not TaskAuthority:
+132:         raise ContractError("TRUSTED_TASK_CONTEXT_REQUIRED")
+133:     context.authority.check()
+134:     return context
+135: 
+136: 
+137: class TaskRunContext:
+138:     def __init__(self, auth, slot, *, seal):
+139:         if seal is not _SEAL:
+140:             raise ContractError("TRUSTED_TASK_CONTEXT_REQUIRED")
+141:         self.authority, self.slot = auth, slot
+142: 
+143:     def binding(self):
+144:         self.authority.check()
+145:         return self.authority.state.slots(self.authority.task)[self.slot]["binding"]
+146: 
+147:     def checkpoint(self):
+148:         self.authority.check(cancel=True)
+149: 
+150:     def research_attempt(self):
+151:         require_context(self)
+152:         if self.slot != "R":
+153:             raise ContractError("RESEARCH_CAMPAIGN_CONTEXT_REQUIRED")
+154:         return self.authority.state.research_attempt(self.authority.task)
+155: 
+156:     def mark_verified(self, manifest):
+157:         binding = self.binding()
+158:         with self.authority.state.transaction() as c:
+159:             self.authority.check(connection=c)
+160:             state = "VERIFIED_SUCCESS" if manifest["status"] == "SUCCEEDED" else "VERIFIED_FAILURE"
+161:             c.execute(
+162:                 "UPDATE slots SET state=? WHERE task=? AND slot=?",
+163:                 (state, binding["task_id"], self.slot),
+164:             )
+165:             self.authority.state.event(
+166:                 c,
+167:                 binding["task_id"],
+168:                 "SLOT_TERMINAL_VERIFIED",
+169:                 {
+170:                     "slot": self.slot,
+171:                     "manifest_hash": digest(manifest),
+172:                     "binding_hash": digest(binding),
+173:                     "state": state,
+174:                 },
+175:             )
+176: 
+177:     def start(self, root, config, lineage):
+178:         self.checkpoint()
+179:         b = self.binding()
+180:         planned = json.loads(self.authority.check()["raw"])
+181:         if (
+182:             b["service_kind"] == "PUBLISHED_REF_PROJECTION"
+183:             and config.get("registered_history_sha256") != planned["payload"]["history_sha256"]
+184:         ):
+185:             raise ContractError("TASK_PLANNED_REPLAY_CHANGED")
+186:         if b["service_kind"] == "P3" and config != planned["payload"]["research"]:
+187:             raise ContractError("TASK_PLANNED_RESEARCH_CHANGED")
+188:         if b["service_kind"] in ("P5", "P5_REPLAY"):
+189:             plan = json.loads(
+190:                 guard_path(
+191:                     self.authority.state.root / "tasks" / b["task_id"] / "resolved-plan.json"
+192:                 ).read_bytes()
+193:             )
+194:             if (
+195:                 b["service_kind"] == "P5"
+196:                 and config.get("raw_request_hex") != plan["request_utf8"].encode().hex()
+197:             ):
+198:                 raise ContractError("TASK_PLANNED_SIMULATION_CHANGED")
+199:             if (
+200:                 b["service_kind"] == "P5_REPLAY"
+201:                 and config.get("request_sha256") != plan["request_sha256"]
+202:             ):
+203:                 raise ContractError("TASK_PLANNED_REPLAY_CHANGED")
+204:         if b["service_kind"] == "P4" and (
+205:             config.get("request_sha256") != b["adapted_request_hash"]
+206:             or hashlib.sha256(bytes.fromhex(config["raw_request_hex"])).hexdigest()
+207:             != b["adapted_request_hash"]
+208:         ):
+209:             raise ContractError("TASK_PLANNED_PORTFOLIO_CHANGED")
+210:         if (
+211:             str(guard_path(root)) != b["physical_ledger_root"]
+212:             or lineage["code_commit"] != b["code_sha"]
+213:             or lineage["code_bundle"] != b["code_bundle"]
+214:         ):
+215:             raise ContractError("TASK_CORE_IDENTITY_MISMATCH")
+216:         h = digest(config)
+217:         with self.authority.state.transaction() as c:
+218:             self.authority.check(connection=c)
+219:             row = c.execute(
+220:                 "SELECT * FROM slots WHERE task=? AND slot=?", (b["task_id"], self.slot)
+221:             ).fetchone()
+222:             if row["state"] not in ("ALLOCATED", "BOUND") or b["core_config_hash"] not in (None, h):
+223:                 raise ContractError("TASK_SLOT_ALREADY_STARTED")
+224:             b["core_config_hash"] = h
+225:             c.execute(
+226:                 "UPDATE slots SET binding=?,state='START_INTENT' WHERE task=? AND slot=?",
+227:                 (canonical(b).decode(), b["task_id"], self.slot),
+228:             )
+229:             self.authority.state.event(c, b["task_id"], "CORE_START_INTENT", b)
+230:         return b["child_run_id"], {**lineage, "task_binding": b, "task_binding_hash": digest(b)}
+231: 
+232:     def verify(self, root, run, config=None, *, terminal=True):
+233:         b = self.binding()
+234:         if str(guard_path(root)) != b["physical_ledger_root"] or run != b["child_run_id"]:
+235:             raise ContractError("TASK_CORE_OWNERSHIP_MISMATCH")
+236:         ledger = ExperimentLedger(root)
+237:         m = ledger.verify(run) if terminal else {"files": []}
+238:         lineage = json.loads((ledger.path(run) / "lineage.json").read_bytes())
+239:         actual = json.loads((ledger.path(run) / "config.json").read_bytes())
+240:         if (
+241:             lineage.get("task_binding") != b
+242:             or lineage.get("task_binding_hash") != digest(b)
+243:             or digest(actual) != b["core_config_hash"]
+244:             or (config is not None and actual != config)
+245:         ):
+246:             raise ContractError("TASK_INITIAL_BINDING_MISMATCH")
+247:         if len({e["path"] for e in m["files"]}) != len(m["files"]):
+248:             raise ContractError("TASK_DUPLICATE_MANIFEST_MEMBER")
+249:         if any(not re.fullmatch(r"[a-z0-9_-]+\.(json|html)", e["path"]) for e in m["files"]):
+250:             raise ContractError("TASK_ARTIFACT_BOUNDARY")
+251:         initial = read_chain(ledger.path(run) / "events.jsonl")[0]["payload"]
+252:         if initial["config_hash"] != digest(actual) or initial["lineage_hash"] != digest(lineage):
+253:             raise ContractError("TASK_INITIAL_RECORD_CHANGED")
+254:         return m
+255: 
+256:     def existing(self):
+257:         b = self.binding()
+258:         root = guard_path(b["physical_ledger_root"]) / b["child_run_id"]
+259:         slot = self.authority.state.slots(self.authority.task)[self.slot]
+260:         if slot["state"] in ("ALLOCATED", "BOUND"):
+261:             if root.exists():
+262:                 raise ContractError("TASK_UNREGISTERED_CORE_DIRECTORY")
+263:             return None
+264:         if not root.exists():
+265:             raise ContractError("RECOVERY_REQUIRED")
+266:         try:
+267:             m = self.verify(root.parent, root.name)
+268:         except ContractError as exc:
+269:             if exc.code == "NONTERMINAL_RUN" and b["service_kind"] == "P4":
+270:                 raise ContractError("RECOVERY_REQUIRED") from exc
+271:             raise
+272:         name = "report.json" if b["service_kind"] == "P3" else "result.json"
+273:         raw = guard_path(root / name).read_bytes()
+274:         matches = [e for e in m["files"] if e["path"] == name]
+275:         if len(matches) != 1 or hashlib.sha256(raw).hexdigest() != matches[0]["sha256"]:
+276:             raise ContractError("TASK_RESULT_NOT_MANIFESTED")
+277:         result = json.loads(raw)
+278:         if b["service_kind"] == "P3":
+279:             return {"run_id": root.name, "manifest": m, "report": result}
+280:         return {**result, "manifest": m}
+281: 
+282:     def child(self, index, request, root):
+283:         self.checkpoint()
+284:         parent = self.binding()
+285:         self.verify(parent["physical_ledger_root"], parent["child_run_id"], terminal=False)
+286:         child = self.authority.context(f"P:{index}")
+287:         b = child.binding()
+288:         from aqrp.core.time import utc
+289:         from aqrp.portfolio.contracts import load
+290: 
+291:         x = load(request.raw)
+292:         if (
+293:             b["parent_execution_run_id"] != self.binding()["child_run_id"]
+294:             or str(guard_path(root)) != b["physical_ledger_root"]
+295:             or utc(x["context"]["decision_time"]).isoformat() != b["decision_time_UTC"]
+296:         ):
+297:             raise ContractError("TASK_NESTED_P4_BINDING_MISMATCH")
+298:         with self.authority.state.transaction() as c:
+299:             self.authority.check(connection=c)
+300:             if b["adapted_request_hash"] not in (None, request.content_hash):
+301:                 raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
+302:             b["adapted_request_hash"] = request.content_hash
+303:             raw = c.execute(
+304:                 "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
+305:                 (b["task_id"], child.slot),
+306:             ).fetchone()
+307:             if raw is not None and (
+308:                 raw[0] != request.raw.decode() or raw[1] != request.content_hash
+309:             ):
+310:                 raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
+311:             if raw is None:
+312:                 c.execute(
+313:                     "INSERT INTO adapted_requests VALUES (?,?,?,?)",
+314:                     (b["task_id"], child.slot, request.raw.decode(), request.content_hash),
+315:                 )
+316:             c.execute(
+317:                 "UPDATE slots SET binding=?,state=CASE WHEN state='ALLOCATED' THEN 'BOUND' ELSE state END WHERE task=? AND slot=?",
+318:                 (canonical(b).decode(), b["task_id"], child.slot),
+319:             )
+320:         return child
+
+===== src/aqrp/ui/app.py =====
+1: """Six thin local engineering views over the shared application service."""
+2: 
+3: import json
+4: import math
+5: import os
+6: import uuid
+7: from decimal import Decimal, InvalidOperation
+8: 
+9: import pandas as pd
+10: import plotly.graph_objects as go
+11: import streamlit as st
+12: 
+13: from aqrp.core.errors import ContractError
+14: from aqrp.portfolio.contracts import load
+15: from aqrp.services.task_requests import catalogue
+16: from aqrp.services.task_worker import start_worker
+17: from aqrp.services.tasks import TaskService
+18: from aqrp.ui.numbers import fixed_view
+19: 
+20: PAGES = [
+21:     "Dashboard",
+22:     "Factor Library",
+23:     "Alpha Research",
+24:     "Strategy Backtest",
+25:     "Experiment Manager",
+26:     "Settings",
+27: ]
+28: 
+29: 
+30: def table(value):
+31:     if isinstance(value, list) and value and isinstance(value[0], dict):
+32:         frame = pd.json_normalize(value)
+33:         st.dataframe(
+34:             frame.map(
+35:                 lambda x: "N/A" if x is None or (isinstance(x, float) and math.isnan(x)) else str(x)
+36:             ),
+37:             width="stretch",
+38:         )
+39:     else:
+40:         st.json(value)
+41: 
+42: 
+43: def chart(xs, ys, title):
+44:     values = []
+45:     for x in ys:
+46:         if x is None:
+47:             values.append(None)
+48:             continue
+49:         try:
+50:             d = Decimal(str(x))
+51:             f = float(d)
+52:             if not d.is_finite() or d.copy_abs() > 2**53 or (d and not f):
+53:                 st.warning("Chart precision unavailable; use the exact raw table/download.")
+54:                 return
+55:             values.append(f)
+56:         except (ValueError, InvalidOperation, OverflowError):
+57:             st.warning("Chart precision unavailable; use the exact raw table/download.")
+58:             return
+59:     fig = go.Figure(
+60:         go.Scatter(
+61:             x=xs,
+62:             y=values,
+63:             mode="lines+markers",
+64:             customdata=[
+65:                 [str(x), "N/A" if y is None else str(y)] for x, y in zip(xs, ys, strict=True)
+66:             ],
+67:             hovertemplate="%{customdata[0]}<br>raw=%{customdata[1]}<extra></extra>",
+68:         )
+69:     )
+70:     fig.update_layout(title=title, height=300, margin=dict(l=12, r=12, t=45, b=12))
+71:     st.plotly_chart(fig, width="stretch")
+72:     st.caption(
+73:         "Charts use approximate browser numbers. Raw tables and downloads retain original values; N/A retains its reason."
+74:     )
+75: 
+76: 
+77: def picker(service, key, *, success=False, rows=None):
+78:     rows = service.list() if rows is None else rows
+79:     if success:
+80:         rows = [r for r in rows if r["status"] == "SUCCEEDED"]
+81:     if not rows:
+82:         st.info("No matching tasks yet.")
+83:         return None
+84:     labels = {r["task_id"]: r for r in rows}
+85:     task = st.selectbox(
+86:         "Task", list(labels), format_func=lambda t: t + " · " + labels[t]["status"], key=key
+87:     )
+88:     return labels[task]
+89: 
+90: 
+91: def inspect_task(service, row, key):
+92:     st.write("Task status: " + row["status"])
+93:     st.code(row["task_id"], language=None)
+94:     if row.get("error"):
+95:         st.error(str(row["error"]))
+96:     if row["status"] == "INTEGRITY_ERROR":
+97:         st.error("Task integrity failed; verified results and downloads are unavailable.")
+98:         return
+99:     if st.button("Refresh task", key=key + "refresh"):
+100:         st.rerun()
+101:     if row["status"] in ("QUEUED", "RUNNING") and st.button("Cancel safely", key=key + "cancel"):
+102:         st.info(service.cancel(row["task_id"]))
+103:         st.rerun()
+104:     st.caption("Cancellation is acknowledged at safe stage or atomic-transaction boundaries.")
+105:     slots = row.get("slots", {})
+106:     try:
+107:         raw_log = service.worker_log(row["task_id"])
+108:         st.download_button(
+109:             "Download worker log prefix",
+110:             raw_log,
+111:             file_name="worker.log",
+112:             mime="text/plain",
+113:             key=key + "worker-download",
+114:         )
+115:     except FileNotFoundError:
+116:         st.caption(
+117:             "No subprocess worker log for this task; persistent task events remain available."
+118:         )
+119:     if not slots:
+120:         return
+121:     slot = st.selectbox("Child stage", list(slots), key=key + "slot")
+122:     try:
+123:         m = service.artifact_catalogue(row["task_id"], slot)
+124:         name = st.selectbox(
+125:             "Manifest artifact", [e["path"] for e in m["files"]], key=key + "artifact"
+126:         )
+127:         raw = service.artifact(row["task_id"], slot, name)
+128:         st.download_button(
+129:             "Download verified original",
+130:             raw,
+131:             file_name=slot.replace(":", "-") + "-" + name,
+132:             mime="text/html" if name.endswith(".html") else "application/json",
+133:             key=key + "download",
+134:         )
+135:         with st.expander("Verified original artifact"):
+136:             if name.endswith(".json"):
+137:                 st.json(json.loads(raw))
+138:             else:
+139:                 st.code(raw.decode(), language="html")
+140:     except (ContractError, OSError, ValueError) as exc:
+141:         st.info("Child artifact unavailable: " + getattr(exc, "code", type(exc).__name__))
+142:     events = service.logs(row["task_id"])
+143:     with st.expander("Task events (persistent)"):
+144:         table(events)
+145:     st.download_button(
+146:         "Download task event prefix",
+147:         json.dumps(events).encode(),
+148:         file_name="task-events.json",
+149:         mime="application/json",
+150:         key=key + "event-download",
+151:     )
+152:     st.caption("Event download is a persistent log prefix, not a terminal financial result.")
+153: 
+154: 
+155: def research_view(service, row):
+156:     if row["status"] == "INTEGRITY_ERROR":
+157:         return
+158:     if "R" not in row.get("slots", {}):
+159:         return
+160:     try:
+161:         metrics = json.loads(service.artifact(row["task_id"], "R", "metrics.json"))
+162:         st.subheader("IC, Rank IC, ICIR and stratified returns")
+163:         table(metrics["summaries"])
+164:         daily = metrics["daily"]
+165:         if daily:
+166:             chart(
+167:                 [r["session"] for r in daily],
+168:                 [r["ic"]["value"] for r in daily],
+169:                 "Pearson IC by session / stage",
+170:             )
+171:         with st.expander("Rank IC and group returns by session"):
+172:             table(daily)
+173:         st.subheader("Horizon decay")
+174:         table(metrics["decay"])
+175:         for name, label in [
+176:             ("oos.json", "Out-of-sample / walk-forward"),
+177:             ("multiplicity.json", "Trials and multiple testing"),
+178:             ("approvals.json", "Approval proposals — no financial approval"),
+179:         ]:
+180:             st.subheader(label)
+181:             st.json(json.loads(service.artifact(row["task_id"], "R", name)))
+182:         with st.expander("Raw / clean / standardized / neutralized / final"):
+183:             stage = st.selectbox(
+184:                 "Research stage", ["raw", "clean", "standardized", "neutralized", "final"]
+185:             )
+186:             table(json.loads(service.artifact(row["task_id"], "R", stage + ".json")))
+187:     except (ContractError, OSError, ValueError) as exc:
+188:         st.info("Research results pending or invalid: " + getattr(exc, "code", type(exc).__name__))
+189: 
+190: 
+191: def backtest_view(service, row):
+192:     if "B" not in row.get("slots", {}):
+193:         return
+194:     if row["status"] == "INTEGRITY_ERROR":
+195:         st.error("No trusted financial results for an invalid task.")
+196:         return
+197:     try:
+198:         result = service.financial_result(row["task_id"])
+199:         if result["status"] != "SUCCEEDED":
+200:             st.error(
+201:                 "No verified complete financial result. "
+202:                 + str(result.get("committed_state_verification", {}))
+203:             )
+204:             st.json(
+205:                 {
+206:                     k: v
+207:                     for k, v in result.items()
+208:                     if k not in ("account", "performance", "positions", "last_committed_account")
+209:                 }
+210:             )
+211:             return
+212:         st.subheader("Verified account buckets")
+213:         st.json(result["account"])
+214:         performance = result["performance"]
+215:         drawdown = performance["maximum_drawdown"]
+216:         st.metric(
+217:             "Maximum drawdown (core result)",
+218:             fixed_view(str(drawdown["value"]), 4, multiply=100) + "%"
+219:             if drawdown["value"] is not None
+220:             else "N/A",
+221:         )
+222:         if drawdown["reason"]:
+223:             st.caption(drawdown["reason"])
+224:         nav = performance["flow_adjusted_nav"]
+225:         chart(list(range(len(nav))), nav, "Flow-adjusted NAV · core result")
+226:         for key in [
+227:             "performance",
+228:             "orders",
+229:             "fills",
+230:             "positions",
+231:             "journal",
+232:             "valuations",
+233:             "reconciliation",
+234:         ]:
+235:             with st.expander(key.title()):
+236:                 table(result[key])
+237:         with st.expander("Actual P4 source, target, risk and request lineage"):
+238:             st.json(json.loads(service.artifact(row["task_id"], "B", "portfolio-lineage.json")))
+239:     except (ContractError, OSError, ValueError, KeyError) as exc:
+240:         st.error("Financial result unavailable: " + getattr(exc, "code", type(exc).__name__))
+241: 
+242: 
+243: def submit_page(service, cat, pipeline):
+244:     kind = "engineering_pipeline" if pipeline else "research"
+245:     st.caption(
+246:         "Synthetic engineering data · UTC decision timestamps and split/fit rules are preserved."
+247:     )
+248:     config = cat["config"]
+249:     st.caption(
+250:         "Select a trusted synthetic historical universe. Snapshot, membership and availability identities enter the immutable request. Parameters must belong to a preregistered campaign; all campaigns share the same data budget of 12 hypotheses. Failed and cancelled attempts consume budget."
+251:     )
+252:     defaults = json.loads(service.defaults()["payload"])
+253:     selection = st.session_state.get("selected_factors", defaults.get("factor_ids", ["momentum"]))
+254:     with st.form(kind + "-form"):
+255:         factors = st.multiselect(
+256:             "Factors", ["momentum", "reversal", "volume", "price_volume"], default=selection
+257:         )
+258:         start = st.text_input(
+259:             "First decision session (YYYY-MM-DD)",
+260:             value=defaults.get("start", config["decisions"][2]["session"]),
+261:         )
+262:         end = st.text_input(
+263:             "Last decision session (YYYY-MM-DD)",
+264:             value=defaults.get("end", config["decisions"][2]["session"]),
+265:         )
+266:         lookback = st.number_input(
+267:             "Lookback sessions",
+268:             min_value=1,
+269:             max_value=20,
+270:             value=defaults.get("lookback", 2),
+271:             step=1,
+272:         )
+273:         horizons = st.text_input(
+274:             "Prediction horizons (session counts)",
+275:             value=",".join(map(str, defaults.get("horizons", [1, 2]))),
+276:         )
+277:         direction = st.selectbox(
+278:             "Factor direction", [1, -1], index=0 if defaults.get("direction", 1) == 1 else 1
+279:         )
+280:         neutralize = st.checkbox(
+281:             "Industry / size neutralization", value=defaults.get("neutralize", True)
+282:         )
+283:         universes = list(cat["universes"])
+284:         universe = st.selectbox(
+285:             "Stock universe",
+286:             universes,
+287:             index=universes.index(defaults.get("universe_id", "SYN_U")),
+288:             key=kind + "-universe",
+289:         )
+290:         campaign_ids = ["engineering-default"] + [
+291:             x["id"] for x in service.campaigns() if x["id"] != "engineering-default"
+292:         ]
+293:         campaign = st.selectbox(
+294:             "Preregistered research campaign",
+295:             campaign_ids,
+296:             index=campaign_ids.index(defaults.get("campaign_id", "engineering-default")),
+297:             key=kind + "-campaign",
+298:         )
+299:         weights = st.text_area(
+300:             "Factor weights in percent — JSON decimal strings",
+301:             value=json.dumps(defaults.get("weights_percent", {n: "100" for n in selection})),
+302:         )
+303:         if pipeline:
+304:             cash = st.text_input(
+305:                 "Initial cash (exact decimal)", value=defaults.get("initial_cash", "1000")
+306:             )
+307:             budget = st.text_input(
+308:                 "Fee budget (exact decimal)", value=defaults.get("fee_budget", "10")
+309:             )
+310:             policy = st.text_area(
+311:                 "Portfolio policy overrides (existing schema)",
+312:                 value=json.dumps(defaults.get("policy", {"top_k": 1})),
+313:             )
+314:             constraints = st.text_area(
+315:                 "Risk overrides (existing schema)",
+316:                 value=json.dumps(defaults.get("constraints", {})),
+317:             )
+318:             st.caption(
+319:                 "Existing SYNTHETIC_EXECUTION_1 fees and event economics remain fixed. Empty decisions are refused; trades need not occur."
+320:             )
+321:         submit = st.form_submit_button(
+322:             "Submit engineering pipeline" if pipeline else "Submit research"
+323:         )
+324:     if st.button("New experiment key", key=kind + "newkey"):
+325:         st.session_state[kind + "key"] = str(uuid.uuid4())
+326:     if submit:
+327:         draft = {
+328:             "kind": kind,
+329:             "factor_ids": factors,
+330:             "universe_id": universe,
+331:             "campaign_id": campaign,
+332:             "start": start,
+333:             "end": end,
+334:             "lookback": lookback,
+335:             "horizons": [int(h.strip()) for h in horizons.split(",")],
+336:             "neutralize": neutralize,
+337:             "weights_percent": load(weights.encode()),
+338:         }
+339:         if direction != 1 or "direction" in defaults:
+340:             draft["direction"] = direction
+341:         if pipeline:
+342:             draft.update(
+343:                 initial_cash=cash,
+344:                 fee_budget=budget,
+345:                 policy=load(policy.encode()),
+346:                 constraints=load(constraints.encode()),
+347:             )
+348:         frozen = service.freeze(draft)
+349:         key = st.session_state.setdefault(kind + "key", str(uuid.uuid4()))
+350:         receipt = service.submit(frozen, key)
+351:         st.session_state[kind + "task"] = receipt["task_id"]
+352:         worker = start_worker(service, receipt["task_id"])
+353:         st.success("Task submitted: " + receipt["task_id"])
+354:         st.caption(
+355:             "Request hash: " + receipt["config_hash"] + " · " + worker["status"]
+356:             if "status" in worker
+357:             else "Request hash: " + receipt["config_hash"]
+358:         )
+359:     task = st.session_state.get(kind + "task")
+360:     row = service.status(task) if task else picker(service, kind + "pick")
+361:     if row:
+362:         inspect_task(service, row, kind)
+363:         research_view(service, row)
+364:         if pipeline:
+365:             backtest_view(service, row)
+366: 
+367: 
+368: def main():
+369:     st.set_page_config(page_title="AQRP Research", layout="wide")
+370:     st.sidebar.title("AQRP")
+371:     page = st.sidebar.radio("Workspace", PAGES, key="workspace-page")
+372:     st.sidebar.caption("ENGINEERING TEST ONLY\nFinancial approval: NONE")
+373:     st.title(page)
+374:     st.caption("Alpha Quant Research Platform · local engineering workspace")
+375:     service = TaskService(os.environ["AQRP_WORKSPACE"])
+376:     try:
+377:         cat = catalogue(service.root)
+378:         if page == "Dashboard":
+379:             rows = service.list()
+380:             a, b, c = st.columns(3)
+381:             a.metric("Engineering built-in factors", len(cat["factor_specs"]))
+382:             b.metric("Tasks", len(rows))
+383:             c.metric("Verified successful tasks", sum(r["status"] == "SUCCEEDED" for r in rows))
+384:             table(
+385:                 [{k: r.get(k) for k in ("task_id", "status", "error", "config_hash")} for r in rows]
+386:             )
+387:             st.subheader("Recent actual runs")
+388: 
+389:             def open_run(task, pipeline):
+390:                 kind = "engineering_pipeline" if pipeline else "research"
+391:                 st.session_state[kind + "task"] = task
+392:                 st.session_state["workspace-page"] = (
+393:                     "Strategy Backtest" if pipeline else "Alpha Research"
+394:                 )
+395: 
+396:             for row in rows[:10]:
+397:                 slots = row.get("slots", {})
+398:                 if "R" in slots:
+399:                     st.button(
+400:                         "Open research run " + slots["R"]["binding"]["child_run_id"],
+401:                         key="open-R-" + row["task_id"],
+402:                         on_click=open_run,
+403:                         args=(row["task_id"], False),
+404:                     )
+405:                 if "B" in slots:
+406:                     st.button(
+407:                         "Open backtest run " + slots["B"]["binding"]["child_run_id"],
+408:                         key="open-B-" + row["task_id"],
+409:                         on_click=open_run,
+410:                         args=(row["task_id"], True),
+411:                     )
+412:             st.button("Refresh dashboard")
+413:         elif page == "Factor Library":
+414:             table(cat["factor_specs"])
+415:             chosen = st.multiselect(
+416:                 "Selected factors",
+417:                 ["momentum", "reversal", "volume", "price_volume"],
+418:                 default=st.session_state.get("selected_factors", ["momentum"]),
+419:             )
+420:             if st.button("Apply selection to new forms"):
+421:                 st.session_state["selected_factors"] = chosen
+422:                 st.success("Selection saved for new drafts")
+423:             st.caption(
+424:                 "Exact Ref and parameter identities remain pinned. Historical runs retain their original versions; configuration rollback does not approve code."
+425:             )
+426:             defaults = service.defaults()
+427:             notice = st.session_state.pop("factor-defaults-notice", None)
+428:             if notice:
+429:                 st.success(notice)
+430:             if st.button("Save factor selection as a defaults revision"):
+431:                 patch = {
+432:                     **load(defaults["payload"]),
+433:                     "factor_ids": chosen,
+434:                     "weights_percent": {n: "100" for n in chosen},
+435:                 }
+436:                 revision = service.save_defaults(defaults["revision"], patch)
+437:                 st.session_state["selected_factors"] = chosen
+438:                 st.session_state["factor-defaults-notice"] = (
+439:                     "New defaults revision " + str(revision) + " saved"
+440:                 )
+441:                 st.rerun()
+442:             if defaults["revision"]:
+443:                 revision = st.selectbox(
+444:                     "Factor configuration rollback revision",
+445:                     list(range(1, defaults["revision"] + 1)),
+446:                 )
+447:                 if st.button("Rollback factor configuration"):
+448:                     new_revision = service.rollback_defaults(defaults["revision"], revision)
+449:                     restored = load(service.defaults(new_revision)["payload"])
+450:                     st.session_state["selected_factors"] = restored.get("factor_ids", ["momentum"])
+451:                     st.session_state["factor-defaults-notice"] = "New revision " + str(new_revision)
+452:                     st.rerun()
+453:             rows = service.list()
+454:             if len(rows) > 1:
+455:                 first = st.selectbox("Compare version / parameters A", [r["task_id"] for r in rows])
+456:                 second = st.selectbox(
+457:                     "Compare version / parameters B", [r["task_id"] for r in rows], index=1
+458:                 )
+459:                 if st.button("Compare frozen factor configurations"):
+460:                     st.json(
+461:                         {
+462:                             "A": service.request(first),
+463:                             "B": service.request(second),
+464:                         }
+465:                     )
+466:             if rows:
+467:                 row = picker(service, "factorhistory")
+468:                 if row:
+469:                     st.json(service.request(row["task_id"])["payload"])
+470:             if (service.root / "history.json").exists():
+471:                 from aqrp.services.task_history import history_catalogue
+472: 
+473:                 history = history_catalogue(service.root)
+474:                 st.subheader("Registered historical factor artifacts")
+475:                 st.caption(history["scope"] + " · full historical host NOT VERIFIED")
+476:                 publication = __import__("pathlib").Path(history["publication_root"])
+477:                 old = [
+478:                     json.loads(p.read_bytes())["spec"]
+479:                     for p in sorted((publication / "sdk/factor-runs").glob("*/config.json"))
+480:                 ]
+481:                 table(old)
+482:         elif page == "Alpha Research":
+483:             submit_page(service, cat, False)
+484:         elif page == "Strategy Backtest":
+485:             st.info(
+486:                 "Engineering simulation only. Formal strategy approval and formal Test remain unavailable."
+487:             )
+488:             if st.button("Check formal-entry gate"):
+489:                 try:
+490:                     service.freeze({"kind": "formal"})
+491:                 except ContractError as exc:
+492:                     st.error(exc.code)
+493:             submit_page(service, cat, True)
+494:         elif page == "Experiment Manager":
+495:             st.subheader("Preregister research variants before observing results")
+496:             st.caption(
+497:                 "A plan freezes its complete variant set and multiplicity definitions. New plans retain prior data access and share budget12; creating a new name cannot reset the budget. The first-use default freezes current parameters, four single factors, horizons1/1,2 and the three synthetic pools once. Later edits outside that set are refused."
+498:             )
+499:             with st.form("campaign-registration"):
+500:                 campaign_name = st.text_input(
+501:                     "New immutable campaign ID", value="engineering-study"
+502:                 )
+503:                 variants = st.text_area(
+504:                     "Preregistered variant drafts (JSON list)",
+505:                     value='[{"factor_ids":["momentum"],"lookback":2,"horizons":[1]}]',
+506:                 )
+507:                 register = st.form_submit_button("Freeze research campaign")
+508:             if register:
+509:                 plan = service.register_campaign(campaign_name, load(variants.encode()))
+510:                 st.success("Campaign frozen: " + plan["id"] + " · " + plan["campaign_hash"])
+511:             with st.expander("Immutable campaigns / variants / prior data access"):
+512:                 st.json(service.campaigns())
+513:             if (service.root / "history.json").exists() and st.button(
+514:                 "Replay registered original factor artifacts"
+515:             ):
+516:                 receipt = service.submit(
+517:                     service.freeze(
+518:                         {
+519:                             "kind": "replay",
+520:                             "profile": "PUBLISHED_REF_PROJECTION",
+521:                             "source_task": "published-original",
+522:                         }
+523:                     ),
+524:                     "old-ref-" + str(uuid.uuid4()),
+525:                 )
+526:                 start_worker(service, receipt["task_id"])
+527:                 st.success("Historical replay task: " + receipt["task_id"])
+528:             query = st.text_input("Task / run ID contains")
+529:             statuses = st.multiselect(
+530:                 "Task states",
+531:                 ["QUEUED", "RUNNING", "SUCCEEDED", "FAILED", "CANCELLED", "INTEGRITY_ERROR"],
+532:             )
+533:             rows = [
+534:                 r
+535:                 for r in service.list()
+536:                 if (not statuses or r["status"] in statuses)
+537:                 and (
+538:                     not query
+539:                     or query in r["task_id"]
+540:                     or any(
+541:                         query in x["binding"]["child_run_id"] for x in r.get("slots", {}).values()
+542:                     )
+543:                 )
+544:             ]
+545:             row = picker(service, "experiments", rows=rows)
+546:             if row:
+547:                 inspect_task(service, row, "exp")
+548:                 if row["status"] == "SUCCEEDED":
+549:                     other = st.selectbox(
+550:                         "Compare with task",
+551:                         [r["task_id"] for r in service.list() if r["status"] == "SUCCEEDED"],
+552:                     )
+553:                     if st.button("Compare declared results"):
+554:                         st.json(service.compare(row["task_id"], other))
+555:                     if "backtest_run_id" in row.get("result", {}) and st.button(
+556:                         "Replay verified P5 result"
+557:                     ):
+558:                         replay = service.submit(
+559:                             service.freeze({"kind": "replay", "source_task": row["task_id"]}),
+560:                             "ui-replay-" + str(uuid.uuid4()),
+561:                         )
+562:                         start_worker(service, replay["task_id"])
+563:                         st.success("Replay task: " + replay["task_id"])
+564:                 with st.expander("Immutable effective request / versions / parameters"):
+565:                     st.json(service.request(row["task_id"]))
+566:         else:
+567:             st.subheader("Default configuration revisions")
+568:             defaults = service.defaults()
+569:             editor_key = "settings-defaults-editor"
+570:             base_key = "settings-defaults-editor-base"
+571:             pending = st.session_state.pop("settings-defaults-pending", None)
+572:             if pending is not None or base_key not in st.session_state:
+573:                 snapshot = pending if pending is not None else defaults
+574:                 st.session_state[base_key] = snapshot["revision"]
+575:                 st.session_state[editor_key] = snapshot["payload"]
+576:             if st.button("Reload latest defaults"):
+577:                 st.session_state[base_key] = defaults["revision"]
+578:                 st.session_state[editor_key] = defaults["payload"]
+579:             base = st.session_state[base_key]
+580:             st.write("Current revision", defaults["revision"])
+581:             st.write("Editor base revision", base)
+582:             notice = st.session_state.pop("settings-defaults-notice", None)
+583:             if notice:
+584:                 st.success(notice)
+585:             if base != defaults["revision"]:
+586:                 st.warning(
+587:                     "Defaults changed after this editor was loaded. Reload latest defaults before saving; unsaved text is retained."
+588:                 )
+589:             payload = st.text_area("Defaults JSON (new requests only)", key=editor_key)
+590:             if st.button("Save defaults revision"):
+591:                 revision = service.save_defaults(base, load(payload.encode()))
+592:                 st.session_state["settings-defaults-pending"] = service.defaults(revision)
+593:                 st.session_state["settings-defaults-notice"] = "Saved revision " + str(revision)
+594:                 st.rerun()
+595:             if defaults["revision"]:
+596:                 target = st.selectbox(
+597:                     "Rollback target revision", list(range(1, defaults["revision"] + 1))
+598:                 )
+599:                 if st.button("Rollback by adding a revision"):
+600:                     revision = service.rollback_defaults(base, target)
+601:                     st.session_state["settings-defaults-pending"] = service.defaults(revision)
+602:                     st.session_state["settings-defaults-notice"] = "New revision " + str(revision)
+603:                     st.rerun()
+604:             with st.expander("Synthetic input catalogue / core and UI environment"):
+605:                 st.json(
+606:                     {
+607:                         k: cat[k]
+608:                         for k in [
+609:                             "revision",
+610:                             "scope",
+611:                             "financial_approval",
+612:                             "snapshot",
+613:                             "exposures",
+614:                             "core_environment",
+615:                             "ui_environment",
+616:                         ]
+617:                     }
+618:                 )
+619:             st.caption("No credentials or account/ACL/service/scheduler settings are stored here.")
+620:     except (ContractError, OSError, ValueError, TypeError, KeyError) as exc:
+621:         st.error(getattr(exc, "code", type(exc).__name__))
+622: 
+623: 
+624: main()
+
+===== src/aqrp/experiments/ledger.py =====
+1: """Durable append-only hash chains, UUID runs and whole-config artifact integrity."""
+2: 
+3: import hashlib
+4: import json
+5: import os
+6: import re
+7: import time
+8: import uuid
+9: from contextlib import contextmanager
+10: from datetime import UTC, datetime
+11: from pathlib import Path
+12: 
+13: import duckdb
+14: 
+15: from aqrp.core.canonical import canonical, digest
+16: from aqrp.core.errors import ContractError
+17: from aqrp.data.snapshot import safe_path
+18: 
+19: IS_WINDOWS = os.name == "nt"
+20: 
+21: 
+22: @contextmanager
+23: def mutex(path, timeout=5):
+24:     f = Path(path).open("a+b")
+25:     if f.tell() == 0:
+26:         f.write(b"0")
+27:         f.flush()
+28:     start = time.monotonic()
+29:     while True:
+30:         try:
+31:             f.seek(0)
+32:             if IS_WINDOWS:
+33:                 import msvcrt
+34: 
+35:                 msvcrt.locking(f.fileno(), msvcrt.LK_NBLCK, 1)
+36:             else:
+37:                 import fcntl
+38: 
+39:                 fcntl.flock(f.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+40:             break
+41:         except OSError as exc:
+42:             if time.monotonic() - start >= timeout:
+43:                 f.close()
+44:                 raise ContractError("LEDGER_LOCK_TIMEOUT") from exc
+45:             time.sleep(0.01)
+46:     try:
+47:         yield
+48:     finally:
+49:         f.seek(0)
+50:         if IS_WINDOWS:
+51:             import msvcrt
+52: 
+53:             msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+54:         else:
+55:             import fcntl
+56: 
+57:             fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+58:         f.close()
+59: 
+60: 
+61: def read_chain(path):
+62:     if not Path(path).exists():
+63:         return []
+64:     previous = "0" * 64
+65:     records = []
+66:     for index, line in enumerate(Path(path).read_bytes().splitlines()):
+67:         item = json.loads(line)
+68:         value = {k: v for k, v in item.items() if k != "hash"}
+69:         if value["seq"] != index or value["previous"] != previous or digest(value) != item["hash"]:
+70:             raise ContractError("LEDGER_CHAIN_CORRUPTED")
+71:         previous = item["hash"]
+72:         records.append(item)
+73:     return records
+74: 
+75: 
+76: def append_chain(path, kind, payload):
+77:     records = read_chain(path)
+78:     item = {
+79:         "seq": len(records),
+80:         "recorded_at": datetime.now(UTC).isoformat(timespec="microseconds"),
+81:         "previous": records[-1]["hash"] if records else "0" * 64,
+82:         "kind": kind,
+83:         "payload": payload,
+84:     }
+85:     item["hash"] = digest(item)
+86:     with Path(path).open("ab") as f:
+87:         f.write(canonical(item) + b"\n")
+88:         f.flush()
+89:         os.fsync(f.fileno())
+90:     return item
+91: 
+92: 
+93: def immutable_write(path, content):
+94:     with Path(path).open("xb") as f:
+95:         f.write(content)
+96:         f.flush()
+97:         os.fsync(f.fileno())
+98: 
+99: 
+100: class ExperimentLedger:
+101:     def __init__(self, root):
+102:         self.root = Path(root)
+103:         self.root.mkdir(parents=True, exist_ok=True)
+104: 
+105:     def path(self, run_id):
+106:         try:
+107:             key = str(uuid.UUID(run_id))
+108:         except (TypeError, ValueError, AttributeError) as exc:
+109:             raise ContractError("INVALID_RUN_ID") from exc
+110:         return self.root / key
+111: 
+112:     def start(self, config, lineage, *, task_context=None):
+113:         required = {
+114:             "code_commit",
+115:             "code_bundle",
+116:             "data_hash",
+117:             "environment",
+118:             "protocol_hash",
+119:             "permission_domain",
+120:             "seed",
+121:         }
+122:         if not required <= set(lineage) or not re.fullmatch("[0-9a-f]{40}", lineage["code_commit"]):
+123:             raise ContractError("INCOMPLETE_RUN_LINEAGE")
+124:         content = canonical(config)
+125:         if task_context is not None:
+126:             from aqrp.services.task_context import require_context
+127: 
+128:             run_id, lineage = require_context(task_context).start(self.root, config, lineage)
+129:         else:
+130:             run_id = str(uuid.uuid4())
+131:         metadata = canonical(lineage)
+132:         root = self.path(run_id)
+133:         root.mkdir(exist_ok=False)
+134:         immutable_write(root / "config.json", content)
+135:         immutable_write(root / "lineage.json", metadata)
+136:         append_chain(
+137:             root / "events.jsonl",
+138:             "RUNNING",
+139:             {"config_hash": digest(config), "lineage_hash": digest(lineage)},
+140:         )
+141:         return run_id
+142: 
+143:     def event(self, run_id, kind, payload):
+144:         root = self.path(run_id)
+145:         with mutex(root / ".lock"):
+146:             events = read_chain(root / "events.jsonl")
+147:             if not events or events[-1]["kind"] in ("SUCCEEDED", "FAILED", "CANCELLED"):
+148:                 raise ContractError("IMMUTABLE_TERMINAL_RUN")
+149:             return append_chain(root / "events.jsonl", kind, payload)
+150: 
+151:     def artifact(self, run_id, name, payload):
+152:         if not re.fullmatch(r"[a-z0-9_-]+\.(json|html)", name) or name in (
+153:             "config.json",
+154:             "lineage.json",
+155:             "manifest.json",
+156:         ):
+157:             raise ContractError("INVALID_RUN_ARTIFACT")
+158:         root = self.path(run_id)
+159:         with mutex(root / ".lock"):
+160:             if read_chain(root / "events.jsonl")[-1]["kind"] in (
+161:                 "SUCCEEDED",
+162:                 "FAILED",
+163:                 "CANCELLED",
+164:             ):
+165:                 raise ContractError("IMMUTABLE_TERMINAL_RUN")
+166:             immutable_write(
+167:                 root / name,
+168:                 payload.encode("utf-8") if name.endswith(".html") else canonical(payload),
+169:             )
+170: 
+171:     def finish(self, run_id, status):
+172:         if status not in ("SUCCEEDED", "FAILED", "CANCELLED"):
+173:             raise ContractError("INVALID_TERMINAL_STATUS")
+174:         root = self.path(run_id)
+175:         with mutex(root / ".lock"):
+176:             events = read_chain(root / "events.jsonl")
+177:             if events[-1]["kind"] in ("SUCCEEDED", "FAILED", "CANCELLED"):
+178:                 raise ContractError("IMMUTABLE_TERMINAL_RUN")
+179:             manifest = {
+180:                 "run_id": run_id,
+181:                 "status": status,
+182:                 "event_prefix_hash": events[-1]["hash"],
+183:                 "files": [
+184:                     {"path": p.name, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
+185:                     for p in sorted(root.iterdir())
+186:                     if p.suffix in (".json", ".html")
+187:                 ],
+188:             }
+189:             immutable_write(root / "manifest.json", canonical(manifest))
+190:             append_chain(
+191:                 root / "events.jsonl",
+192:                 status,
+193:                 {
+194:                     "manifest_sha256": hashlib.sha256(
+195:                         (root / "manifest.json").read_bytes()
+196:                     ).hexdigest()
+197:                 },
+198:             )
+199:         return self.verify(run_id)
+200: 
+201:     def verify(self, run_id):
+202:         root = self.path(run_id)
+203:         events = read_chain(root / "events.jsonl")
+204:         if not events or events[-1]["kind"] not in ("SUCCEEDED", "FAILED", "CANCELLED"):
+205:             raise ContractError("NONTERMINAL_RUN")
+206:         raw = (root / "manifest.json").read_bytes()
+207:         m = json.loads(raw)
+208:         if (
+209:             hashlib.sha256(raw).hexdigest() != events[-1]["payload"]["manifest_sha256"]
+210:             or m["event_prefix_hash"] != events[-2]["hash"]
+211:             or m["status"] != events[-1]["kind"]
+212:             or m["run_id"] != run_id
+213:         ):
+214:             raise ContractError("RUN_MANIFEST_MISMATCH")
+215:         for entry in m["files"]:
+216:             p = safe_path(root, entry["path"])
+217:             if (root / entry["path"]).is_symlink() or hashlib.sha256(
+218:                 p.read_bytes()
+219:             ).hexdigest() != entry["sha256"]:
+220:                 raise ContractError("RUN_ARTIFACT_HASH_MISMATCH")
+221:         return m
+222: 
+223:     def decision(self, run_id, record):
+224:         """Post-run decisions never mutate terminal research artifacts."""
+225:         manifest = self.verify(run_id)
+226:         with mutex(self.root / ".decision-lock"):
+227:             return append_chain(
+228:                 self.root / "decisions.jsonl",
+229:                 "HUMAN_RESEARCH_DECISION",
+230:                 {"run_id": run_id, "manifest_hash": digest(manifest), "record": record},
+231:             )
+232: 
+233:     def register_trial(self, run_id, family, hypothesis, *, budget, hypothesis_spec=None):
+234:         if not family or not hypothesis or type(budget) is not int or budget < 1:
+235:             raise ContractError("INVALID_EXPERIMENT_FAMILY")
+236:         root = self.path(run_id)
+237:         config = json.loads((root / "config.json").read_bytes())
+238:         lineage = json.loads((root / "lineage.json").read_bytes())
+239:         fingerprint_config = {k: v for k, v in config.items() if k not in ("family", "candidates")}
+240:         if "candidates" in config:
+241:             fingerprint_config["candidates"] = [
+242:                 {k: v for k, v in c.items() if k != "hypothesis"} for c in config["candidates"]
+243:             ]
+244:         fingerprint = digest(
+245:             {
+246:                 "config": fingerprint_config,
+247:                 "lineage": {
+248:                     k: v
+249:                     for k, v in lineage.items()
+250:                     if k
+251:                     not in (
+252:                         "protocol_hash",
+253:                         "code_commit",
+254:                         "task_binding",
+255:                         "task_binding_hash",
+256:                         "campaign_control",
+257:                     )
+258:                 },
+259:                 "hypothesis_spec": {
+260:                     k: v
+261:                     for k, v in (hypothesis_spec or {}).items()
+262:                     if k not in ("hypothesis", "score_key")
+263:                 },
+264:             }
+265:         )
+266:         with mutex(self.root / ".trials-lock"):
+267:             past = read_chain(self.root / "trials.jsonl")
+268:             peers = [x for x in past if x["payload"]["family"] == family]
+269:             repeated = [
+270:                 x["payload"]["run_id"] for x in past if x["payload"]["fingerprint"] == fingerprint
+271:             ]
+272:             campaign = config.get("family", {}).get("campaign")
+273:             control = lineage.get("campaign_control", {})
+274:             item = {
+275:                 "cross_campaign_data_access": bool(campaign)
+276:                 and (
+277:                     campaign["registration_history"]["contaminated_before_registration"]
+278:                     or any(
+279:                         x["payload"].get("data_hash") == lineage["data_hash"]
+280:                         and x["payload"]["family"] != family
+281:                         for x in past
+282:                     )
+283:                     or control.get("prior_other_campaign_attempts", 0) > 0
+284:                     or control.get("prior_other_family_legacy_trials", 0) > 0
+285:                 ),
+286:                 "campaign_control": control,
+287:                 "run_id": run_id,
+288:                 "family": family,
+289:                 "hypothesis": hypothesis,
+290:                 "fingerprint": fingerprint,
+291:                 "repeat_of": repeated,
+292:                 "over_budget": len(peers) >= budget
+293:                 or (
+294:                     bool(campaign)
+295:                     and sum(x["payload"].get("data_hash") == lineage["data_hash"] for x in past)
+296:                     >= budget
+297:                 ),
+298:                 "prior_data_attempts": sum(
+299:                     r["payload"].get("data_hash") == lineage["data_hash"] for r in past
+300:                 ),
+301:                 "data_hash": lineage["data_hash"],
+302:                 "first_validation_access_at": min(
+303:                     (
+304:                         r["recorded_at"]
+305:                         for r in past
+306:                         if r["payload"].get("data_hash") == lineage["data_hash"]
+307:                     ),
+308:                     default=read_chain(root / "events.jsonl")[0]["recorded_at"],
+309:                 ),
+310:             }
+311:             append_chain(self.root / "trials.jsonl", "TRIAL_ATTEMPT", item)
+312:         self.event(run_id, "TRIAL_REGISTERED", item)
+313:         if item["over_budget"]:
+314:             raise ContractError("EXPERIMENT_BUDGET_EXCEEDED")
+315:         return item
+316: 
+317:     def cache_get(self, key):
+318:         path = self.root / ("cache-" + digest(key) + ".json")
+319:         if not path.exists():
+320:             return None
+321:         item = json.loads(path.read_bytes())
+322:         if item["key"] != key or item["checksum"] != digest(item["payload"]):
+323:             raise ContractError("CACHE_CORRUPTION")
+324:         return item["payload"]
+325: 
+326:     def cache_put(self, key, payload):
+327:         data = canonical({"key": key, "payload": payload, "checksum": digest(payload)})
+328:         path = self.root / ("cache-" + digest(key) + ".json")
+329:         with mutex(self.root / ".cache-lock"):
+330:             if path.exists():
+331:                 if path.read_bytes() != data:
+332:                     raise ContractError("NONDETERMINISTIC_CACHE_RESULT")
+333:             else:
+334:                 immutable_write(path, data)
+335: 
+336:     def catalogue(self):
+337:         rows = []
+338:         for p in self.root.glob("*/manifest.json"):
+339:             m = self.verify(p.parent.name)
+340:             rows.append({"run_id": m["run_id"], "status": m["status"]})
+341:         if not rows:
+342:             return []
+343:         import pandas as pd
+344: 
+345:         with duckdb.connect(":memory:") as db:
+346:             db.register("runs", pd.DataFrame(rows))
+347:             return db.sql("SELECT * FROM runs ORDER BY run_id").df().to_dict("records")
+348: 
+349:     def compare(self, a, b):
+350:         ma, mb = self.verify(a), self.verify(b)
+351:         return {
+352:             "a": a,
+353:             "b": b,
+354:             "status_equal": ma["status"] == mb["status"],
+355:             "artifact_differences": sorted(
+356:                 set((r["path"], r["sha256"]) for r in ma["files"])
+357:                 ^ set((r["path"], r["sha256"]) for r in mb["files"])
+358:             ),
+359:         }
+360: 
+361:     def family(self, family, declarations, results=None, *, definitions=None):
+362:         if not declarations or len(set(declarations)) != len(declarations):
+363:             raise ContractError("INVALID_FAMILY_DECLARATIONS")
+364:         with mutex(self.root / ".family-lock"):
+365:             path = self.root / ("family-" + digest(family) + ".jsonl")
+366:             rows = read_chain(path)
+367:             if not rows:
+368:                 append_chain(path, "DECLARED", {"ids": declarations, "definitions": definitions})
+369:                 rows = read_chain(path)
+370:             if rows[0]["payload"] != {"ids": declarations, "definitions": definitions}:
+371:                 raise ContractError("FAMILY_REDEFINED_AFTER_REGISTRATION")
+372:             if results is not None:
+373:                 if not set(results) <= set(declarations):
+374:                     raise ContractError("UNREGISTERED_HYPOTHESIS")
+375:                 append_chain(path, "RESULTS", results)
+376:                 rows = read_chain(path)
+377:             latest = {}
+378:             duplicates = set()
+379:             for row in rows[1:]:
+380:                 for k, v in row["payload"].items():
+381:                     if k in latest:
+382:                         duplicates.add(k)
+383:                     latest[k] = v
+384:             return {
+385:                 "ids": declarations,
+386:                 "results": latest,
+387:                 "duplicate_hypotheses": sorted(duplicates),
+388:             }
+
+===== docs/audits/phase-3/STATISTICAL_CONVENTIONS.md =====
+1: # 研究数值与统计口径提案
+2: 
+3: 所有选择在开发资料中预注册，改变方向/参数/处理链/期限/lag/分组/tie规则均是新实验。以下是待G1批准的工程定义，不是正式因子收益通过阈值。
+4: 
+5: - 顺序raw→clean(缺失规则及去极值)→standardized→neutralized→final；可选环节明确SKIPPED，不计算标签驱动的处理参数。MAD为median(abs(x-median(x)))，k须配置，MAD=0时invalid而非悄悄放过异常；分位去极值固定linear插值。截面z用sample std(ddof=1)，n<2/零方差invalid；横截面rank用平均并列秩/n，Ts_Rank用窗口平均并列秩/L。
+6: - rolling完整session网格、min_periods=L；缺失不压缩时间；Std ddof=1、Correlation成对且非零方差，窗口一证券独立。Delay/Delta只找本证券前k个预定session，不是随意前k条非缺数据。Conditional仅白名单比较/布尔与字段，不eval任意Python。
+7: - 中性化截面OLS：截距+industry dummy（固定字典排序第一类为基准）+log正市值；PIT暴露缺失排除并计数，n<=列数、秩亏/无法求解返回invalid及诊断。NumPy lstsq提议固定rcond=1e-12并记录rank/singular values/残差，不能把空residuals数组当零残差。工程参考用独立有理数矩阵，不从待测实现反算。
+8: - IC每日对同stage/时点/股票池的有效score/forward label成对过滤，n>=3、双方方差非零。Spearman是平均并列秩后的Pearson。MeanIC有效日等权，std ddof1，ICIR=mean/std默认非年化；至少2日/零std返回null。正值比例只计>0，并另报零值与有效日分母。
+9: - 分组按平均并列秩确定bin=min(q-1,floor((rank_avg-1)*q/n))，完整tie块不拆分、security_id仅稳定展示。同分位组过小/空组不强行凑数；min_group_n预注册，TMB需两端合格。等权组标签均值、TMB=top-bottom；单调Spearman及相邻违反数，n不足不报假精度。多期限/年度按固定网格及样本计数，跨因子相关仅同样本交集及stage。
+10: - HAC提案：去均值IC序列u，gamma_k=sum(u_t*u_(t-k))/n，S=gamma0+2*sum((1-k/(q+1))*gamma_k,k1..q)，Var(mean)=S/n；显式small_sample_correction=none。若用statsmodels参考必须use_correction=False且固定q，不能混用默认修正/自动lag。q>=h-1且额外自相关lag在开发期冻结。仅在等间隔/样本与假设合格时给渐近正态双侧p=erfc(abs(mean)/sqrt(2*Var(mean)))，明确不是Student有限样本保证；短样本/空洞/零或负有效方差给null+reason。min_hac_n必须在预注册标准中给出并经预审，不凭空默认“足够”。
+11: - 确认性family用Holm；探索性可用BY。BH须预先记录适用依赖依据，缺依据不执行。m是观察结果前已登记的全部假设，未完成/失败候选保留（对需保守纳入者记p=1并披露），不能只数赢家或跨family改名避校正；超预算/重复Test/自适应选择触发污染标记，校正不使污染自动消失。
+12: - 财务标签按一致拆股/现金红利权益口径；不当作P5账本收益。可见公司行动不得在signal cutoff前注入，标签只在evaluation_cutoff有全部必要信息后生成。现金再投资/税/退市未知规则不虚构，先限明确合成profile，正式规则缺失返回Unsupported/invalid。
+13: 
+14: 已阅读的主源（2026-10-22）：[HAC假设、Bartlett、修正参数](https://www.statsmodels.org/stable/generated/statsmodels.stats.sandwich_covariance.cov_hac.html)、[Holm/BH/BY接口](https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html)、[lstsq rank/rcond与residuals](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html)。仅作为方法边界参考，不声称当前已安装statsmodels或已独立核验所有库，亦不代替锁版本核验和Golden。资料中的默认参数不自动成为本项目默认。
+15: 
+16: ## G1修订补充（覆盖此前未选定机制，仍待审）
+17: 
+18: HAC的正式工程候选/模式、数值边界与拒绝契约现具体冻结于HAC_INFERENCE_PROFILE.md，尚需统计预审及正式用户标准；不使用任意自动lag。行动标签及label_available_at/fit/purge采用LABEL_ACTION_PROFILE.md；研究级合成与冗余采用COMPOSITE_RESEARCH.md，不能只交相关矩阵。原公式与15组正确候选不变，新独立候选单列supplemental_cases.json。
+19: 
+20: 当前覆盖：固定q formal提案已在005复核后撤回；采用HAC_INFERENCE_PROFILE的P3-HAC-GROWING-MDEP-2新候选，旧252/20/5只保留历史/算术。旧数值公式与Golden仍正确；正式方法待新SHA独立复核。
+
+===== docs/audits/phase-6/TASK_AND_RECOVERY_CONTRACT.md =====
+1: # 持久化任务、完成屏障与安全恢复
+2: 
+3: 当前为G1修订候选，三项原发现OPEN_PENDING_RECHECK，P6业务未授权/未实现。TaskService使用stdlib SQLite（BEGIN IMMEDIATE、workspace/idempotency_key唯一约束、WAL、同步提交）持久化分配/claim/追加事件，P3/P4/P5原实验账本及事务仍是核心事实来源。任务元数据目录分开，P3共享研究家族根；P5内部P4保留原P5 run下portfolio-runs。详细且唯一的完成/恢复与目录规范分别见[TASK_COMPLETION_CONTRACT](TASK_COMPLETION_CONTRACT.md)、[NESTED_CONTEXT_CONTRACT](NESTED_CONTEXT_CONTRACT.md)。
+4: 
+5: 状态QUEUED→RUNNING→SUCCEEDED/FAILED/CANCELLED；CANCEL_REQUESTED是待执行意图而非已取消。单个slot终态只更新slot，不能直接提升Task。仅冻结kind全部required slots、实际工件/父链/完整金融验证、全局completion回执和SQLite终态闭环才SUCCEEDED。原G16–G19单状态模型只说明孤立slot的终态单调性，不是多阶段Task归并规则；本轮另增多阶段答案。
+6: 
+7: 同key同有效config_hash返回原task，不再调用；同key异hash拒绝。相同配置新key是新实验，继续写同一P3家族/次数/预算；取消/失败不退款、不丢试验。并发只有一份有效claim，恢复epoch只追加、旧handle失效。网页和JSON不能提供context/root/归属布尔。
+8: 
+9: 取消先持久化，在P3阶段间或P5完整原子事务边界检查，禁止中途kill并伪称安全取消；提交后继续原重读对账。取消先于全局成功提交则不提升成功；成功提交先完成则取消TOO_LATE。未知金融状态FAILED+COMMITTED_STATE_UNVERIFIED，不显示旧余额、不认证CANCELLED known=true。一次完整事务或既定阶段是取消响应边界，不虚构延迟SLA。
+10: 
+11: 崩溃恢复只恢复已核slot；后续未执行阶段仅在原计划、有效claim和“确定未启动”证据齐全时继续。P5只能使用既有严格resume条件，同slot原P4终态可复用但不重算；不明/半初始化/部分发布进入RECOVERY_REQUIRED。最终Task屏障重新验证，不从PID/mtime、一个成功P3或文件存在推定成功。失败、首次异常、磁盘提交、原始日志及旧hash完整保留。
+12: 
+13: G2须实际覆盖SQLite/真实核心服务及磁盘的每阶段提交/映射、内部P4绑定、取消/成功竞争、completion与索引断点、同key并发和跨Task家族预算。模型通过只是G1参考，不是实际实现/并发/隔离验证。真实Windows R2两项及正式Test/金融批准/历史宿主限制不变。
+
+===== docs/audits/phase-6/TASK_COMPLETION_CONTRACT.md =====
+1: # 固定三种Task的完成屏障与恢复契约（G1修订候选）
+2: 
+3: 本契约修订WORK-P6-G1-001，供新固定SHA独立复核，发现仍OPEN_PENDING_RECHECK；不是P6实现。Task的成功与任一核心子run的成功严格分开。核心终态只更新它所属的slot；只有TaskService完成本文件的全Task屏障和提交，才可发布Task SUCCEEDED。没有通用DAG/插件调度框架。
+4: 
+5: ## 固定kind、必需阶段和产物
+6: 
+7: | kind | 冻结的必需阶段 / slot | 成功的必要证据 |
+8: |---|---|---|
+9: | research | R=一次P3研究；RV=研究工件验证/发布 | R的真实SUCCEEDED终态、原始report/metrics/审批建议/全部manifest成员与输入/家族记录绑定；RV验证回执；Task全局完成回执 |
+10: | engineering_pipeline | R=P3研究 → PLAN=冻结P5请求和决策集合 → B=P5模拟，内部P[i]=逐决策P4 → BV=全链验证/发布 | R真终态、不可变ResolvedPlan、B真SUCCEEDED及已核金融投影、全部必需P[i]真SUCCEEDED和P5实际portfolio-lineage一致、BV全链工件/来源验证及Task回执 |
+11: | replay | SV=原run/包/锁/投影范围验证 → E=声明范围内实际重放（含其内部P4 slots，如适用） → CV=独立比较/封存 | SV回执、E实际NUMERICAL_REPLAY_VERIFIED或目录已登记的原Ref投影重放成功、CV比较与目标工件清单、Task完成回执；原run成功仅是SV输入 |
+12: 
+13: RV/PLAN/BV/SV/CV是受限编排的校验/封存步骤，不伪装成既有P3/P4/P5业务run。其原始输入hash、声明投影、结果与检查证据都写不可变Task工件清单。replay仅允许catalog登记的P5_NUMERICAL或PUBLISHED_REF_PROJECTION；不支持的旧宿主/缺包范围明确拒绝，不能把验证原始源文件当执行了重放。
+14: 
+15: engineering_pipeline不另造外层假P4 run：必需P4就是P5内部真实逐决策调用。R验证后，用原P3/P1来源、共享builder和已冻结有效配置构造P5请求；这只是请求/来源组装，不重复拟合或改PIT。先冻结ResolvedPlan（父TaskPlan hash、P5请求原字节/hash、严格有序决策表index/decision_time/source-request hash、N、每个必需slot/UUID/root）。N取已验证请求decisions的完整集合，本应用流水线要求N>=1；空区间在此以NO_REQUIRED_DECISIONS明确拒绝，不修改底层P5合法零决策API。ResolvedPlan在B启动前持久化，之后不能缩减N、删失败/缺失slot或事后追加替代UUID。P[i]适配请求hash在调用前按NESTED_CONTEXT_CONTRACT做一次性finalize。
+16: 
+17: ## 成功屏障
+18: 
+19: TaskService在可信同一claim中逐项确认：
+20: 1. 有效配置/初始TaskPlan、必要时ResolvedPlan、catalog/defaults、代码/bundle/core与UI锁/输入快照及侧车身份全部一致；plan已封闭，固定必需slot集合完整且实际注册调用集合精确对账，无遗漏/多余/未登记run。
+21: 2. 每个必需slot的服务类型、Task/parent/decision/root/config绑定已核；各核心真实终态和原始manifest/成员hash通过既有完整门禁。R/P[i]/B均真实SUCCEEDED；RV/BV/SV/CV相应验证回执完整。replay的E必须有本次实际重放/比较证据，不能借原run的SUCCEEDED替代。
+22: 3. B成功必须具有原始result/state/transactions/transaction-files/portfolio-lineage/published-byte-audit/trace等manifest内所需工件及既有完整金融对账证明。每个P[i]原始result/candidate/risk/成功审计与B对应决策/真实父链一致；只凭P5返回success或一个合法UUID不足以通过。
+23: 4. 没有运行中的worker/未处理副作用或未决取消；取消与完成竞争在同一任务终态事务串行化。若完整成功屏障先完成并提交，后来的取消TOO_LATE；若取消意图先被接收，禁止继续提升成功，等待安全取消/对账。未知财务状态一律FAILED+COMMITTED_STATE_UNVERIFIED，不能CANCELLED known=true。
+24: 5. 所有上述证据写成一次性completion.json，列出task/kind/config/plan hashes、完整required slots及绑定、各终态/产物/父链hash、验证结果和最后claim。先原子发布并验证回执，再在SQLite事务内检查同一plan/claim/取消版本并提交Task SUCCEEDED及回执hash。两侧未闭环时仍RUNNING/finalizing，不因文件存在报成功。
+25: 
+26: SQLite提交前宕机，恢复者重新验证整个屏障及completion.json，才可追加恢复Task终态；绝不能从一个恢复的P3/P4终态提升整个Task。SQL终态若指向丢失/损坏回执，保留原记录并对外标INTEGRITY_ERROR/usable=false，不作为成功计数，也不重写旧证据来维持成功。
+27: 
+28: 这是明确的应用级严格全链成功口径：合法P4风险拒绝仍保留真实P4 REJECTED/FAILED与P5可能SUCCEEDED的原始事实，但该Task以FAILED/REQUIRED_STAGE_REJECTED展示，不能说全链所有必需阶段成功。此规则不改P5风险/事件/金融算法、不把拒绝改成下单、不强制中断原模拟，也不要求成交数或收益为正。所有真实子结果可按各自状态查看。
+29: 
+30: ## 恢复与未完成阶段
+31: 
+32: | 观察到的可信状态 | 只允许的恢复动作 | Task不能宣称的事实 |
+33: |---|---|---|
+34: | R终态已提交、slot映射未写；P4/P5尚未启动 | 核原预分配R绑定后恢复R slot；用其原字节组装/验证PLAN；只有未启动且ALLOCATED的后续slot可执行 | 不能Task成功，不能重跑R、重计或退还试验 |
+35: | R/部分P[i]成功，B未形成终态 | 只恢复这些slots；严格满足原P5 resume条件时使用同一B run/请求/上下文和原始事务prefix恢复；否则RECOVERY_REQUIRED | 不能凭已完成P4或缓存余额成功，不能新建B替代 |
+36: | R/P[i]成功，B缺失但START_INTENT已登记，或存在半初始化/部分发布 | FAILED/RECOVERY_REQUIRED，保留所有记录；不自动从缺目录推断未执行 | 不能自动重做或抹去已提交副作用 |
+37: | B声称SUCCEEDED但缺必需P4记录/归属/原始工件 | FAILED/RECOVERY_REQUIRED；不能在B结束后补开P4来填清单 | 不能接受B的success字符串替代全链 |
+38: | B真实FAILED、P[i]失败/拒绝、unknown或真实取消 | 分别记录全部子事实并按失败/安全取消规则归并；未运行后续slot标明未执行 | 不能删掉失败slot来满足all条件 |
+39: | 全部必需slots、最终工件及父链成功，但Task回执/索引未提交 | 全量重验证，补完成回执/终态事务；不重新执行核心 | 不能在补验证之前发布成功 |
+40: | 全部屏障、回执及终态事务通过 | 返回原Task和原子run引用，后续同key幂等读取 | 不能生成新核心run或覆盖历史 |
+41: 
+42: 只有slot仍ALLOCATED、无START_INTENT、无核心目录/初始记录且完整枚举和claim证据均能证明从未执行时，才可首次调用。任何枚举错误、未知/冲突、活跃旧claim、配置漂移都失败关闭。P5恢复只适用既有resume_engineering条件（同包/原config/原prefix、无部分发布等）；不能借Task恢复放宽原拒绝。replay是新执行且新归属，resume是同一执行同一slot，不能互换。
+43: 
+44: G2必须在真实服务/SQLite/磁盘执行R、每个P[i]、B、RV/BV/CV提交及映射前后、completion发布与SQL提交之间的断点，验证未完成任务不成功、无重复核心调用/试验或金融提交，取消竞态和原始失败仍完整。设计模型通过不代表这些实际故障已测。

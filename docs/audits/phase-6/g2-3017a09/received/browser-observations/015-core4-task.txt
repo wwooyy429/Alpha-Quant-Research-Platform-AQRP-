@@ -1,0 +1,101 @@
+Browser tab: 4, Title: "AQRP Research", URL: "http://127.0.0.1:13975/".
+0 AXWebArea AQRP Research, URL: 127.0.0.1:13975/
+	1 container
+		3 container
+			4 link Description: Skip to main content, Value: 127.0.0.1:13975/#stMain
+			5 container Description: Sidebar, ID: stSidebar
+				6 container
+					7 heading AQRP, Value: 1
+						8 text AQRP
+					9 Description: Workspace, ID: react-aria486831609-:r3:
+						10 container
+							11 radio button (settable, integer) Description: Dashboard, Value: 0
+							12 text Dashboard
+						13 container
+							14 radio button (settable, integer) Description: Factor Library, Value: 0
+							15 text Factor Library
+						16 container
+							17 radio button (settable, integer) Description: Alpha Research, Value: 0
+							18 text Alpha Research
+						19 container
+							20 radio button (settable, integer) Description: Strategy Backtest, Value: 1
+							21 text Strategy Backtest
+						22 container
+							23 radio button (settable, integer) Description: Experiment Manager, Value: 0
+							24 text Experiment Manager
+						25 container
+							26 radio button (settable, integer) Description: Settings, Value: 0
+							27 text Settings
+					28 text ENGINEERING TEST ONLY Financial approval: NONE
+			29 container
+				30 button Deploy
+				31 pop up button (collapsed) Description: Main menu, Secondary Actions: Expand
+			32 container stMain
+				33 heading Strategy Backtest, Value: 1, ID: strategy-backtest
+					34 text Strategy Backtest
+					35 link Description: Link to heading, Value: 127.0.0.1:13975/#strategy-backtest
+				36 text Alpha Quant Research Platform · local engineering workspace
+				37 text Engineering simulation only. Formal strategy approval and formal Test remain unavailable.
+				38 button Check formal-entry gate
+					39 text Check formal-entry gate
+				40 text Synthetic engineering data · UTC decision timestamps and split/fit rules are preserved.
+				41 text Select a trusted synthetic historical universe. Snapshot, membership and availability identities enter the immutable request. Parameters must belong to a preregistered campaign; all campaigns share the same data budget of 12 hypotheses. Failed and cancelled attempts consume budget.
+				42 container
+					43 container Selected values
+						44 container momentum
+							45 text momentum
+							46 button Remove momentum
+					47 combo box (collapsed, settable) Description: Factors, ID: react-aria486831609-:r6j:, Secondary Actions: Expand
+					48 button Description: Clear all, ID: react-aria486831609-:r6q:
+					49 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r6f:, Secondary Actions: Expand
+				50 container
+					51 text field (settable) Description: First decision session (YYYY-MM-DD), Value: 2024-01-06, ID: :r6u:
+				52 container
+					53 text field (settable) Description: Last decision session (YYYY-MM-DD), Value: 2024-01-06, ID: :r74:
+				54 container
+					55 stepper (settable, integer) Description: Lookback sessions, Value: 2, ID: :r7a:
+					56 button Decrement
+					57 button Increment
+				58 container
+					59 text field (settable) Description: Prediction horizons (session counts), Value: 1, ID: :r7g:
+				60 container
+					61 combo box (collapsed, settable) Description: Factor direction, Value: 1, ID: react-aria486831609-:r7r:, Secondary Actions: Expand
+					62 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r7n:, Secondary Actions: Expand
+				63 container
+					64 checkbox (settable, integer) Description: Industry / size neutralization, Value: 1
+					65 text Industry / size neutralization
+				66 container
+					67 combo box (collapsed, settable) Description: Stock universe, Value: SYN_CORE4, ID: react-aria486831609-:r8b:, Secondary Actions: Expand
+					68 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r87:, Secondary Actions: Expand
+				69 container
+					70 combo box (collapsed, settable) Description: Preregistered research campaign, Value: engineering-default, ID: react-aria486831609-:r8p:, Secondary Actions: Expand
+					71 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r8l:, Secondary Actions: Expand
+				72 container
+					73 text entry area (settable) Description: Factor weights in percent — JSON decimal strings, Value: {"momentum": "100"}, ID: :r92:
+				74 container
+					75 text field (settable) Description: Initial cash (exact decimal), Value: 1000, ID: :r93:
+				76 container
+					77 text field (settable) Description: Fee budget (exact decimal), Value: 10, ID: :r99:
+				78 container
+					79 text entry area (settable) Description: Portfolio policy overrides (existing schema), Value: {"top_k": 1}, ID: :r9f:
+				80 container
+					81 text entry area (settable) Description: Risk overrides (existing schema), Value: {}, ID: :r9g:
+				82 text Existing SYNTHETIC_EXECUTION_1 fees and event economics remain fixed. Empty decisions are refused; trades need not occur.
+				83 button Submit engineering pipeline
+					84 text Submit engineering pipeline
+				85 button New experiment key
+					86 text New experiment key
+				2608 text Task submitted: ebfd51e9-0d52-42d0-822f-bd29b5745dd2
+				90 text Request hash: 09839d73b8a379818c101cbebbd64eea2d5864eaf844715e55035340ba3da18a
+				2609 text Task status: QUEUED
+				2610 text ebfd51e9-0d52-42d0-822f-bd29b5745dd2
+				92 button Refresh task
+					93 text Refresh task
+				2611 button Cancel safely
+					2612 text Cancel safely
+				2613 text Cancellation is acknowledged at safe stage or atomic-transaction boundaries.
+				2614 button Download worker log prefix
+					2615 text Download worker log prefix
+		2607 image js-plotly-tester
+
+The focused UI element is 83 button Submit engineering pipeline

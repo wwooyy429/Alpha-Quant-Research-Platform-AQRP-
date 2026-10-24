@@ -1,0 +1,3793 @@
+{
+  "fixed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "executor": "GPT Work",
+  "scope": "Actual reviewer CUA browser submissions; readback via installed SDK/SQLite plus literal expectations; synthetic only",
+  "browser_tasks": [
+    {
+      "task": "ebfd51e9-0d52-42d0-822f-bd29b5745dd2",
+      "status": "SUCCEEDED",
+      "kind": "engineering_pipeline",
+      "universe": "SYN_CORE4",
+      "literal_members": [
+        "SYN_A:001",
+        "SYN_A:002",
+        "SYN_A:003",
+        "SYN_A:004"
+      ],
+      "actual_P3_members": [
+        "SYN_A:001",
+        "SYN_A:002",
+        "SYN_A:003",
+        "SYN_A:004"
+      ],
+      "frozen_request": {
+        "catalogue_revision": "8ddc3938f29cf0eaad8400d7c505520fdc34bf135db6f4ba39e57f4a190f1aee",
+        "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+        "code_commit": "3017a097b49ecdae68228ca9a417fcd03c313200",
+        "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "defaults_revision": 0,
+        "environment_hash": "53355b3b67d22729fb22f2bd23d6238f40d900bb958ddbac1bfa029d777e0e90",
+        "kind": "engineering_pipeline",
+        "payload": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "03754be6418b2874e9dce6e9e9bf98b0afec41acfbf9554ea043d4f29b1db6b0",
+            "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "id": "engineering-default",
+            "variant_key": "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05"
+          },
+          "execution": {
+            "constraints": {},
+            "factor_weights": {
+              "momentum": "1"
+            },
+            "fee_budget": "10",
+            "initial_cash": "1000",
+            "policy": {
+              "top_k": 1
+            }
+          },
+          "raw_draft": {
+            "campaign_id": "engineering-default",
+            "constraints": {},
+            "end": "2024-01-06",
+            "factor_ids": [
+              "momentum"
+            ],
+            "fee_budget": "10",
+            "horizons": [
+              1
+            ],
+            "initial_cash": "1000",
+            "kind": "engineering_pipeline",
+            "lookback": 2,
+            "neutralize": true,
+            "policy": {
+              "top_k": 1
+            },
+            "start": "2024-01-06",
+            "universe_id": "SYN_CORE4",
+            "weights_percent": {
+              "momentum": "100"
+            }
+          },
+          "research": {
+            "calendar_id": "SYN_A_CAL",
+            "candidates": [
+              {
+                "direction": 1,
+                "hypothesis": "momentum",
+                "parameters": {
+                  "lookback": 2
+                },
+                "ref": {
+                  "factor_id": "momentum",
+                  "factor_version": "1.2.1",
+                  "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+                }
+              }
+            ],
+            "currency": "SYNCCY",
+            "decisions": [
+              {
+                "decision_time": "2024-01-06T12:05:00Z",
+                "session": "2024-01-06"
+              }
+            ],
+            "development_cutoff": "2024-01-25T12:10:00Z",
+            "evaluation_cutoff": "2024-01-25T12:10:00Z",
+            "family": {
+              "budget": 12,
+              "campaign": {
+                "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+                "id": "engineering-default",
+                "identity": "f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+                "registration_history": {
+                  "contaminated_before_registration": false,
+                  "prior_research_trials": 0,
+                  "prior_reserved_task_attempts": 0
+                }
+              },
+              "definitions": {
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1": "a3e3ddbd18b6fad9f54386d9dfda49f79d2dda0360bf16f8bca955fb28b334cd",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2": "3adbd2b75d666e1a1811cbae274e3354c5f7ac57b88feb4fb302850cecbbbdef",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1": "ec004804e279170246893eb5171eea85053ed4b243f4756f29d1245cb44cc45f",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1": "af5bd61c65530874a9784770dcd86a8ee68208aec2c1656fef8418d45996745b",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1": "02265da18750ca0ac7f5a6fe751725cb256796f6ec720f099268814ea65581a5",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1": "f24373e614b33ab36da41c2980f7e9bba24a2f78b83d38c268c0ffc42c4184d0",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1": "b101fef733b724086e777ad83e899271d99438aec5c371c72f593221f5c6e950",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2": "088a337302c400f625cb7ebb54bc7afa26ac989d0304017eb932bc01314bb7fd",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1": "44bd22eb0fadf3cd6cd4442b7b6cfe7fc553c34dfc953fe5772fe58910a74e83",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2": "958222a37e3c237d785320f99e6c80886af049ac102bd89d5a0afec6e4a6c643",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1": "12f407793bfa399d2bed61bbd853779f3e8e3ca7ee0f9854ce75864ee831402a",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1": "5eba5bd0b92ce231c1406f05ebd09f8c23af48ff610277e18bd6b6a17d717f3d",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2": "bffe88d5a040f136eb1dd461866e84879b4a71a5556f77d3fcb32dbd53ead0c2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1": "18dac61a7f62d086897cf43c3e2a5af3547036a372d63aceb724f73c132fbaa1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1": "15f726d6aa6fbc7eeb95a08fb8ebfd5eac1df475ede570353d6ca3ad68174651",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2": "163f934e4f8382783d7f527b36fcee40b8503304b281aae7b8447428d6c89d3d",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1": "3a178b5abe2a7c1828035f9ec17c686e450f342d1821cb3335c7206b333ee57b",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2": "7e2c8a2631bb84eec4a2c227fdbc2cb282b50a756ff8714e9452c75cbf0c1758",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1": "0a5fe7944b24b2336abe2196d1ec4ca13bde46767bceedfcb37af9e21b37ac96",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2": "34586986497a67cb72965041bb2561027c64c0bdabc027de19e6afc3f7d84386",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1": "b38e05894d6379460a8ef2b1ab8c3c5f56f4e2102621f173c575d9242a7ee44c",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2": "1c7ac0a5cc35f28adfa29af7aace7c0a2b5915ed43250f89f0b7db8d1d05ba1e",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1": "ca58c1a1b1d5723a14a7bc745de2a96ae1175f47476feacf07415c1a72ee6a89",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2": "3f128c2f8ae1b239089a50c71bad1ba9998f759d0af2fc79df0e2917db476638",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1": "c4573834dd725c1f8aeb4e3d8f4f92a97df00dcd12e2009d224790cbfc292a0f",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1": "e0b39673544c9657223f087cc73a6a72649d09e76810a0f4f6c15d6efbfcd076",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1": "4437513083eeef821a791a643f87294027d8839000fdd011d64f615d78751cbd",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2": "c98aa1547fc178f92e848fb3efbbd0a8c126b25a14d3749ee1fc1149e68ccd53",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1": "0e19fc2338bf810a217675b88ece2d36d4c96075dd0ce0115f46b9090a694903",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2": "b194825c14b1f7f9cf5df9efe032e6dbb4e75562e49e948fec3e7d6fde7d2e53",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1": "fc5982a1586e3559cbf262a3b45cd656d8749390160feb01f8d4f7a7108bf80e",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1": "2fecda042017d9b097af6c21135424da6d700bacfb6d36be3297901cb58dbe35",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1": "9c6d4bde6839a388816d7a44864a8048630c638a0066d60bf8a134e2b451f2cb",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1": "4308603cd03ac45f4ef26fdbff07767a745af981bd140c427b695265a233ace1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1": "07f5cca247013d6ea52a501a62e8661a9bdc0fa7881cd28e5219b5b2d07e26bb",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2": "b51f3ed23b6ec129aa5088e53f6072cc136850f132c5775480db26aa590a5271"
+              },
+              "hypotheses": [
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2"
+              ],
+              "hypothesis_aliases": {
+                "momentum::h=1": "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1"
+              },
+              "id": "ui-campaign-f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+              "method": "holm"
+            },
+            "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+            "groups": 3,
+            "horizons": [
+              1
+            ],
+            "inference": {
+              "horizon": 1,
+              "m0": 0
+            },
+            "market_id": "SYN_A",
+            "min_group_n": 1,
+            "min_ic_n": 3,
+            "pipeline": {
+              "clean": {
+                "method": "quantile",
+                "quantiles": [
+                  0.05,
+                  0.95
+                ]
+              },
+              "neutralize": true,
+              "standardized": {
+                "method": "zscore"
+              }
+            },
+            "purpose": "ENGINEERING_DEMO",
+            "schema": "research/1",
+            "seed": 17,
+            "splits": {
+              "embargo_sessions": 1,
+              "test": [
+                "2024-01-18",
+                "2024-01-26"
+              ],
+              "train": [
+                "2024-01-02",
+                "2024-01-10"
+              ],
+              "validation": [
+                "2024-01-10",
+                "2024-01-18"
+              ]
+            },
+            "universe_id": "SYN_CORE4",
+            "universe_ref": {
+              "market_id": "SYN_A",
+              "membership_history_sha256": "4cc54a2cef279edb6c301a644d72becd3b5dca0159052575832b31cd2359e12e",
+              "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+              "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+              "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+              "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+              "universe_id": "SYN_CORE4"
+            },
+            "walk_forward": [
+              {
+                "evaluate": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ],
+                "fit": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "fit_cutoff": "2024-01-10T00:00:00Z"
+              }
+            ]
+          },
+          "universe": {
+            "market_id": "SYN_A",
+            "membership_history_sha256": "4cc54a2cef279edb6c301a644d72becd3b5dca0159052575832b31cd2359e12e",
+            "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+            "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+            "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+            "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "universe_id": "SYN_CORE4"
+          }
+        },
+        "schema": "task-request/1",
+        "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3"
+      },
+      "raw_sha256": "80516e108813bd979785f9c13e96bcf7d23b81ad676a3d95daba3d822f396bf5",
+      "finance": {
+        "account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+        "executable": false,
+        "fills": [
+          {
+            "at": "2024-01-07T09:00:00.000000+00:00",
+            "direction": "LONG",
+            "execution_side": "BUY",
+            "fee": "1",
+            "fill_id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23",
+            "position_after": "9",
+            "position_before": "0",
+            "position_legs": [
+              {
+                "direction": "LONG",
+                "effect": "OPEN",
+                "fee": "1",
+                "quantity": "9",
+                "realized_gross": "0",
+                "signed_qty": "9"
+              }
+            ],
+            "price": "100.1",
+            "raw_price": "100",
+            "realized_gross": "0",
+            "security_id": "SYN_A:003",
+            "signed_qty": "9",
+            "slippage_cost": "0.9"
+          }
+        ],
+        "financial_approval": "NONE",
+        "fragments": [],
+        "journal": [
+          {
+            "entries": [],
+            "event_id": "0867433e-5a51-5c97-a839-357b0ca2542b",
+            "kind": "SETTLEMENT",
+            "settlement_session": 0
+          },
+          {
+            "entries": [],
+            "event_id": "bada5ff6-4191-5707-ae71-ea13717b6e50",
+            "kind": "SETTLEMENT",
+            "settlement_session": 1
+          },
+          {
+            "entries": [],
+            "event_id": "8d8142b6-b230-5c42-88f6-af250980f965",
+            "kind": "SETTLEMENT",
+            "settlement_session": 2
+          },
+          {
+            "entries": [
+              {
+                "account": "cash_set",
+                "amount": "-901.9",
+                "unit": "CCY"
+              },
+              {
+                "account": "positions_cost",
+                "amount": "900.9",
+                "unit": "CCY"
+              },
+              {
+                "account": "commission_expense",
+                "amount": "1",
+                "unit": "CCY"
+              },
+              {
+                "account": "position_quantity",
+                "amount": "9",
+                "unit": "SYN_A:003"
+              },
+              {
+                "account": "quantity_control",
+                "amount": "-9",
+                "unit": "SYN_A:003"
+              }
+            ],
+            "event_id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23",
+            "kind": "FILL"
+          },
+          {
+            "entries": [
+              {
+                "account": "positions_valuation",
+                "amount": "-0.9",
+                "unit": "CCY"
+              },
+              {
+                "account": "unrealized_pnl",
+                "amount": "0.9",
+                "unit": "CCY"
+              }
+            ],
+            "event_id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23:valuation",
+            "kind": "MARK_TO_MARKET"
+          },
+          {
+            "entries": [],
+            "event_id": "7e170151-69fd-5db4-b4a2-7ba8a6ef6f62",
+            "kind": "SETTLEMENT",
+            "settlement_session": 3
+          }
+        ],
+        "liquidations": [],
+        "orders": {
+          "9c51e1f5-e6ca-524c-b8bf-c30adad7e533": {
+            "P4_request_sha256": "7dc10389cc6de0c4d1622fad8fb972f026a9f9483ca6c07f4426121ab18dddd0",
+            "P4_request_utf8": "{\"constraints\":{\"allow_cash_only\":true,\"beta_max\":\"3\",\"beta_min\":\"-3\",\"gross_max\":\"2\",\"industries\":{\"I\":{\"gross_max\":\"2\",\"net_max\":\"2\",\"net_min\":\"-2\"}},\"leverage_max\":\"2\",\"net_max\":\"2\",\"net_min\":\"-2\",\"per_asset\":{\"SYN_A:001\":\"1\",\"SYN_A:002\":\"1\",\"SYN_A:003\":\"1\",\"SYN_A:004\":\"1\",\"SYN_A:005\":\"1\",\"SYN_A:006\":\"1\"},\"turnover_max\":\"4\"},\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"inputs\":{\"account\":{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"content_sha256\":\"4ee8acc06309cd1f4678ef2484b60cc6d10cb2eddb003e88fb983aaa9ef61a37\",\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"data\":{\"equity\":\"99e1\",\"nonshort_restriction\":\"0\",\"positions\":[{\"quantity\":\"0\",\"security_id\":\"SYN_A:001\"},{\"quantity\":\"0\",\"security_id\":\"SYN_A:002\"},{\"quantity\":\"0\",\"security_id\":\"SYN_A:003\"},{\"quantity\":\"0\",\"security_id\":\"SYN_A:004\"},{\"quantity\":\"0\",\"security_id\":\"SYN_A:005\"},{\"quantity\":\"0\",\"security_id\":\"SYN_A:006\"}],\"price_ref\":\"fixture-prices\",\"restricted_cash\":\"0\",\"short_restriction\":\"0\",\"total_cash\":\"99e1\",\"valuation_time\":\"2024-01-06T12:05:00Z\"},\"event_time\":\"2024-01-06T12:05:00Z\",\"kind\":\"account\",\"ref\":\"fixture-account\",\"schema_version\":\"portfolio-input/1.0.0\"},\"exposures\":{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"content_sha256\":\"68a0e87330ae36aa15a29e08daeb796e6cfb8ce2e0b6b1ca0feaa686cc8ea488\",\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"data\":[{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"beta\":\"1\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"industry\":\"I\",\"security_id\":\"SYN_A:001\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"beta\":\"1\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"industry\":\"I\",\"security_id\":\"SYN_A:002\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"beta\":\"1\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"industry\":\"I\",\"security_id\":\"SYN_A:003\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"beta\":\"1\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"industry\":\"I\",\"security_id\":\"SYN_A:004\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"beta\":\"1\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"industry\":\"I\",\"security_id\":\"SYN_A:005\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"beta\":\"1\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"industry\":\"I\",\"security_id\":\"SYN_A:006\"}],\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"kind\":\"exposures\",\"ref\":\"fixture-exposures\",\"schema_version\":\"portfolio-input/1.0.0\"},\"permissions\":{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"content_sha256\":\"5e26913220e537087344ac5f375f0186450cb43e1aeda1ed36b3a7635e13f031\",\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"data\":[{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"borrow_limit_total\":\"1e3\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"security_id\":\"SYN_A:001\",\"sellable_qty\":\"0\",\"short_permission\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"borrow_limit_total\":\"1e3\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"security_id\":\"SYN_A:002\",\"sellable_qty\":\"0\",\"short_permission\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"borrow_limit_total\":\"1e3\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"security_id\":\"SYN_A:003\",\"sellable_qty\":\"0\",\"short_permission\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"borrow_limit_total\":\"1e3\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"security_id\":\"SYN_A:004\",\"sellable_qty\":\"0\",\"short_permission\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"borrow_limit_total\":\"1e3\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"security_id\":\"SYN_A:005\",\"sellable_qty\":\"0\",\"short_permission\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"borrow_limit_total\":\"1e3\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"security_id\":\"SYN_A:006\",\"sellable_qty\":\"0\",\"short_permission\":true}],\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"kind\":\"permissions\",\"ref\":\"fixture-permissions\",\"schema_version\":\"portfolio-input/1.0.0\"},\"prices\":{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"content_sha256\":\"585d572b660b25d31000d55d380e2ffeb4d44fec045aae7403f6fa1701c2ea2e\",\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"data\":[{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"lot\":\"1\",\"price\":\"1e2\",\"security_id\":\"SYN_A:001\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"lot\":\"1\",\"price\":\"1e2\",\"security_id\":\"SYN_A:002\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"lot\":\"1\",\"price\":\"1e2\",\"security_id\":\"SYN_A:003\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"lot\":\"1\",\"price\":\"1e2\",\"security_id\":\"SYN_A:004\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"lot\":\"1\",\"price\":\"1e2\",\"security_id\":\"SYN_A:005\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"lot\":\"1\",\"price\":\"1e2\",\"security_id\":\"SYN_A:006\"}],\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"kind\":\"prices\",\"ref\":\"fixture-prices\",\"schema_version\":\"portfolio-input/1.0.0\"},\"scores\":[{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00.000000+00:00\",\"content_sha256\":\"fb8ea1758d1ccd46237cada1b090e8b2061d1ea323f0702494c22e2aa1fa48f8\",\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"data\":{\"factor_key\":\"momentum\",\"factor_ref\":{\"factor_id\":\"momentum\",\"factor_version\":\"1.2.1\",\"implementation_hash\":\"28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b\"},\"params_hash\":\"d2ea008501da68504fa28051557feea4ed79557265e686116ab513be787cceab\",\"rows\":[{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"score\":-0.5074851427195166,\"security_id\":\"SYN_A:001\",\"session_index\":1,\"signal_time\":\"2024-01-06T12:00:00.000000+00:00\",\"valid\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"score\":0.4574866050866765,\"security_id\":\"SYN_A:002\",\"session_index\":1,\"signal_time\":\"2024-01-06T12:00:00.000000+00:00\",\"valid\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"score\":0.5074851427195146,\"security_id\":\"SYN_A:003\",\"session_index\":1,\"signal_time\":\"2024-01-06T12:00:00.000000+00:00\",\"valid\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"score\":-0.45748660508668243,\"security_id\":\"SYN_A:004\",\"session_index\":1,\"signal_time\":\"2024-01-06T12:00:00.000000+00:00\",\"valid\":true}],\"stage\":\"final\"},\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"kind\":\"scores\",\"ref\":\"p3-4d85149a-9248-4348-8a7c-da032eed763f-final-momentum\",\"schema_version\":\"portfolio-input/1.0.0\"}],\"securities\":{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"content_sha256\":\"15441830555810a6ebbbd214874470f0c86dc76d3054ed1018fab3fba6887612\",\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"data\":[{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"currency\":\"SYNCCY\",\"event_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"security_id\":\"SYN_A:001\",\"symbol\":\"SYN_A:001\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"currency\":\"SYNCCY\",\"event_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"security_id\":\"SYN_A:002\",\"symbol\":\"SYN_A:002\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"currency\":\"SYNCCY\",\"event_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"security_id\":\"SYN_A:003\",\"symbol\":\"SYN_A:003\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"currency\":\"SYNCCY\",\"event_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"security_id\":\"SYN_A:004\",\"symbol\":\"SYN_A:004\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"currency\":\"SYNCCY\",\"event_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"security_id\":\"SYN_A:005\",\"symbol\":\"SYN_A:005\"},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:05:00Z\",\"currency\":\"SYNCCY\",\"event_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"security_id\":\"SYN_A:006\",\"symbol\":\"SYN_A:006\"}],\"event_time\":\"2024-01-06T12:05:00Z\",\"kind\":\"securities\",\"ref\":\"fixture-securities\",\"schema_version\":\"portfolio-input/1.0.0\"},\"status\":{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"content_sha256\":\"a07a208c88ec1cd2d9cdeb995ddda37760f6842b7726bd33266ad43679226e08\",\"context\":{\"calendar_id\":\"SYNTHETIC_V1\",\"currency\":\"SYNCCY\",\"decision_time\":\"2024-01-06T12:05:00Z\",\"market_id\":\"SYN_A\",\"session_index\":1,\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\",\"snapshot_sha256\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\"},\"data\":[{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"in_universe\":true,\"security_id\":\"SYN_A:001\",\"tradable\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"in_universe\":true,\"security_id\":\"SYN_A:002\",\"tradable\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"in_universe\":true,\"security_id\":\"SYN_A:003\",\"tradable\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"in_universe\":true,\"security_id\":\"SYN_A:004\",\"tradable\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"in_universe\":false,\"security_id\":\"SYN_A:005\",\"tradable\":true},{\"as_of\":\"2024-01-06T12:05:00Z\",\"available_at\":\"2024-01-06T12:00:00.000000+00:00\",\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"in_universe\":false,\"security_id\":\"SYN_A:006\",\"tradable\":true}],\"event_time\":\"2024-01-06T12:00:00.000000+00:00\",\"kind\":\"status\",\"ref\":\"fixture-status\",\"schema_version\":\"portfolio-input/1.0.0\"}},\"policy\":{\"factor_weights\":{\"momentum\":\"1\"},\"gross\":\"1\",\"long_k\":1,\"mode\":\"LONG_ONLY\",\"net\":\"1\",\"short_k\":1,\"top_k\":1,\"weighting\":\"equal\"},\"profile\":{\"allow_full_close_odd_lot\":true,\"fee_reserve\":\"0\",\"max_age_sessions\":0,\"profile_id\":\"SYNTHETIC_PORTFOLIO_1\"},\"schema_version\":\"portfolio-request/1.0.0\",\"source\":{\"dataset_kind\":\"SYNTHETIC\",\"financial_approval\":\"NONE\",\"fixture_manifest\":{\"fixture-account\":\"4ee8acc06309cd1f4678ef2484b60cc6d10cb2eddb003e88fb983aaa9ef61a37\",\"fixture-exposures\":\"68a0e87330ae36aa15a29e08daeb796e6cfb8ce2e0b6b1ca0feaa686cc8ea488\",\"fixture-permissions\":\"5e26913220e537087344ac5f375f0186450cb43e1aeda1ed36b3a7635e13f031\",\"fixture-prices\":\"585d572b660b25d31000d55d380e2ffeb4d44fec045aae7403f6fa1701c2ea2e\",\"fixture-securities\":\"15441830555810a6ebbbd214874470f0c86dc76d3054ed1018fab3fba6887612\",\"fixture-status\":\"a07a208c88ec1cd2d9cdeb995ddda37760f6842b7726bd33266ad43679226e08\",\"p3-4d85149a-9248-4348-8a7c-da032eed763f-final-momentum\":\"fb8ea1758d1ccd46237cada1b090e8b2061d1ea323f0702494c22e2aa1fa48f8\"},\"kind\":\"RESEARCH_ARTIFACT\",\"research_bindings\":[{\"artifact_sha256\":\"b35ab3c951cb648bdcca082485cd9d9e9d4900cd3a2010e0e784eb630ff7ebe5\",\"factor_key\":\"momentum\",\"ledger_root\":\"E:\\\\WORK\\\\AQRP-runs\\\\gpt-p6-browser-3017a09-independent-20261024\\\\workspace\\\\research-runs\",\"manifest_sha256\":\"081927e636cc3127b233002c0cff7a57a427ca753100663565dccd29715a4a15\",\"run_id\":\"4d85149a-9248-4348-8a7c-da032eed763f\",\"snapshot\":{\"manifest_hash\":\"af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1\",\"root\":\"E:\\\\WORK\\\\AQRP-runs\\\\gpt-p6-browser-3017a09-independent-20261024\\\\workspace\\\\inputs\\\\pools\",\"snapshot_id\":\"af4932e7-8376-4c9a-a070-690bea7e56b6\"},\"snapshot_manifest_sha256\":\"9366d7d323f4b531826744c5ee785e598e2f7f321c50cb1fad695b9b5c3ab940\",\"source_calendar_id\":\"SYN_A_CAL\",\"stage\":\"final\"}],\"scope\":\"ENGINEERING_TEST_ONLY\"}}",
+            "P4_risk_sha256": "b638b3412acb54553f358e1e4bc28baffba25919b6ec08c428277be7574cdc85",
+            "P4_target_sha256": "e8453d319f8026cdcb9771a02436df0e889f1c0807fbee56249345227f3aa76c",
+            "budget_id": "c521df1e-fa52-5c05-822c-fba767aaad8c",
+            "cancelled_qty": "0",
+            "constraints": {
+              "allow_cash_only": true,
+              "beta_max": "3",
+              "beta_min": "-3",
+              "gross_max": "2",
+              "industries": {
+                "I": {
+                  "gross_max": "2",
+                  "net_max": "2",
+                  "net_min": "-2"
+                }
+              },
+              "leverage_max": "2",
+              "net_max": "2",
+              "net_min": "-2",
+              "per_asset": {
+                "SYN_A:001": "1",
+                "SYN_A:002": "1",
+                "SYN_A:003": "1",
+                "SYN_A:004": "1",
+                "SYN_A:005": "1",
+                "SYN_A:006": "1"
+              },
+              "turnover_max": "4"
+            },
+            "decision_time": "2024-01-06T12:05:00Z",
+            "eligible_at": "2024-01-07T09:00:00.000000+00:00",
+            "expired_remaining": "0",
+            "expires_session": 2,
+            "filled_qty": "9",
+            "high": "105",
+            "history": [
+              {
+                "reason": null,
+                "status": "CREATED"
+              },
+              {
+                "reason": null,
+                "status": "SUBMITTED"
+              },
+              {
+                "reason": null,
+                "status": "ACCEPTED"
+              },
+              {
+                "reason": null,
+                "status": "FILLED"
+              }
+            ],
+            "kind": "MARKET",
+            "limit_price": null,
+            "lot": "1",
+            "low": "95",
+            "order_id": "9c51e1f5-e6ca-524c-b8bf-c30adad7e533",
+            "original_qty": "9",
+            "reference_price": "100",
+            "remaining": "0",
+            "reserve_notional": "0",
+            "security_id": "SYN_A:003",
+            "side": "BUY",
+            "signed_remaining": "0",
+            "status": "FILLED",
+            "submission_liquidity": {
+              "as_of": "2024-01-06T12:05:00+00:00",
+              "average": "138",
+              "history_revisions": [
+                1
+              ],
+              "minimum": "10",
+              "passed": true,
+              "reason": null,
+              "sessions": [
+                "2024-01-06"
+              ]
+            },
+            "submitted_at": "2024-01-06T12:05:00.000000+00:00",
+            "time_in_force": "DAY"
+          }
+        },
+        "performance": {
+          "annual_return": {
+            "reason": null,
+            "value": -0.11291445587661271
+          },
+          "annualization": 252,
+          "borrow": "0",
+          "commission": "1",
+          "contribution": {
+            "LONG": "-1.9",
+            "SHORT": "0"
+          },
+          "cumulative_return": {
+            "reason": null,
+            "value": "-0.0019"
+          },
+          "ddof": 1,
+          "dividends": "0",
+          "fifo": {
+            "convention": "CLOSED_FIFO_FRAGMENT",
+            "count": 0,
+            "losers": 0,
+            "profit_loss_ratio": {
+              "reason": "NO_CLOSED_FRAGMENTS",
+              "value": null
+            },
+            "win_rate": {
+              "reason": "NO_CLOSED_FRAGMENTS",
+              "value": null
+            },
+            "winners": 0,
+            "zero": 0
+          },
+          "flow_adjusted_nav": [
+            "1",
+            "1",
+            "1",
+            "0.9981",
+            "0.9981"
+          ],
+          "maximum_drawdown": {
+            "reason": null,
+            "value": "0.0019"
+          },
+          "net_pnl": "-1.9",
+          "open_lot_pools": [
+            {
+              "borrow": "0",
+              "entry_fee": "1",
+              "entry_fill_id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23",
+              "long_dividend": "0",
+              "net_contribution": "-1.9",
+              "remaining": "9",
+              "security_id": "SYN_A:003",
+              "short_dividend": "0"
+            }
+          ],
+          "returns": [
+            "0",
+            "0",
+            "-0.0019",
+            "0"
+          ],
+          "rf_daily": "0",
+          "sample_variance": {
+            "reason": null,
+            "value": "0.0000009025"
+          },
+          "schema_version": "performance/1.0.0",
+          "session_intervals": 4,
+          "sharpe": {
+            "reason": null,
+            "value": -7.937253933193772
+          },
+          "slippage_cost_already_in_prices": "0.9",
+          "turnover_full": "0.9009",
+          "turnover_half": "0.45045",
+          "volatility": {
+            "reason": null,
+            "value": 0.015080782473068167
+          }
+        },
+        "positions": {
+          "SYN_A:001": {
+            "beta": "1",
+            "borrow_limit": "1000",
+            "cost": "0",
+            "delisted": false,
+            "in_universe": true,
+            "industry": "I",
+            "last_mark_session": 3,
+            "lot": "1",
+            "lots": [],
+            "mark": "100",
+            "mark_ref": {
+              "available_at": "2024-01-08T12:00:00.000000+00:00",
+              "beta": "1",
+              "borrow_limit": "1000",
+              "event_time": "2024-01-08T12:00:00.000000+00:00",
+              "in_universe": true,
+              "industry": "I",
+              "kind": "CLOSE",
+              "known_at": "2024-01-08T12:00:00.000000+00:00",
+              "price": "100",
+              "security_id": "SYN_A:001",
+              "session_id": "2024-01-08",
+              "short_permission": true,
+              "slice_id": "7bacd5f9-9220-5ef2-aa9e-04279dab6cd2",
+              "status": "ACTIVE",
+              "tradable": true
+            },
+            "quantity": "0",
+            "short_permission": true,
+            "tradable": true,
+            "valuation_adjustment": "0"
+          },
+          "SYN_A:002": {
+            "beta": "1",
+            "borrow_limit": "1000",
+            "cost": "0",
+            "delisted": false,
+            "in_universe": true,
+            "industry": "I",
+            "last_mark_session": 3,
+            "lot": "1",
+            "lots": [],
+            "mark": "100",
+            "mark_ref": {
+              "available_at": "2024-01-08T12:00:00.000000+00:00",
+              "beta": "1",
+              "borrow_limit": "1000",
+              "event_time": "2024-01-08T12:00:00.000000+00:00",
+              "in_universe": true,
+              "industry": "I",
+              "kind": "CLOSE",
+              "known_at": "2024-01-08T12:00:00.000000+00:00",
+              "price": "100",
+              "security_id": "SYN_A:002",
+              "session_id": "2024-01-08",
+              "short_permission": true,
+              "slice_id": "c79a7589-3e10-5e66-82bc-4fbee7becd6b",
+              "status": "ACTIVE",
+              "tradable": true
+            },
+            "quantity": "0",
+            "short_permission": true,
+            "tradable": true,
+            "valuation_adjustment": "0"
+          },
+          "SYN_A:003": {
+            "beta": "1",
+            "borrow_limit": "1000",
+            "cost": "100.1",
+            "delisted": false,
+            "in_universe": true,
+            "industry": "I",
+            "last_mark_session": 3,
+            "lot": "1",
+            "lots": [
+              {
+                "at": "2024-01-07T09:00:00.000000+00:00",
+                "borrow": "0",
+                "direction": 1,
+                "entry_fee": "1",
+                "id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23",
+                "long_dividend": "0",
+                "price": "100.1",
+                "remaining": "9",
+                "settles": 3,
+                "short_dividend": "0"
+              }
+            ],
+            "mark": "100",
+            "mark_ref": {
+              "available_at": "2024-01-08T12:00:00.000000+00:00",
+              "beta": "1",
+              "borrow_limit": "1000",
+              "event_time": "2024-01-08T12:00:00.000000+00:00",
+              "in_universe": true,
+              "industry": "I",
+              "kind": "CLOSE",
+              "known_at": "2024-01-08T12:00:00.000000+00:00",
+              "price": "100",
+              "security_id": "SYN_A:003",
+              "session_id": "2024-01-08",
+              "short_permission": true,
+              "slice_id": "4dd58ba7-dca5-562a-8912-04e7f2cca797",
+              "status": "ACTIVE",
+              "tradable": true
+            },
+            "quantity": "9",
+            "short_permission": true,
+            "tradable": true,
+            "valuation_adjustment": "-0.9"
+          },
+          "SYN_A:004": {
+            "beta": "1",
+            "borrow_limit": "1000",
+            "cost": "0",
+            "delisted": false,
+            "in_universe": true,
+            "industry": "I",
+            "last_mark_session": 3,
+            "lot": "1",
+            "lots": [],
+            "mark": "100",
+            "mark_ref": {
+              "available_at": "2024-01-08T12:00:00.000000+00:00",
+              "beta": "1",
+              "borrow_limit": "1000",
+              "event_time": "2024-01-08T12:00:00.000000+00:00",
+              "in_universe": true,
+              "industry": "I",
+              "kind": "CLOSE",
+              "known_at": "2024-01-08T12:00:00.000000+00:00",
+              "price": "100",
+              "security_id": "SYN_A:004",
+              "session_id": "2024-01-08",
+              "short_permission": true,
+              "slice_id": "712c20bf-9633-55be-988a-a05c374dfc68",
+              "status": "ACTIVE",
+              "tradable": true
+            },
+            "quantity": "0",
+            "short_permission": true,
+            "tradable": true,
+            "valuation_adjustment": "0"
+          },
+          "SYN_A:005": {
+            "beta": "1",
+            "borrow_limit": "1000",
+            "cost": "0",
+            "delisted": false,
+            "in_universe": false,
+            "industry": "I",
+            "last_mark_session": 3,
+            "lot": "1",
+            "lots": [],
+            "mark": "100",
+            "mark_ref": {
+              "available_at": "2024-01-08T12:00:00.000000+00:00",
+              "beta": "1",
+              "borrow_limit": "1000",
+              "event_time": "2024-01-08T12:00:00.000000+00:00",
+              "in_universe": false,
+              "industry": "I",
+              "kind": "CLOSE",
+              "known_at": "2024-01-08T12:00:00.000000+00:00",
+              "price": "100",
+              "security_id": "SYN_A:005",
+              "session_id": "2024-01-08",
+              "short_permission": true,
+              "slice_id": "fff8eb14-8a8b-5b55-a96c-2f72488422ec",
+              "status": "ACTIVE",
+              "tradable": true
+            },
+            "quantity": "0",
+            "short_permission": true,
+            "tradable": true,
+            "valuation_adjustment": "0"
+          },
+          "SYN_A:006": {
+            "beta": "1",
+            "borrow_limit": "1000",
+            "cost": "0",
+            "delisted": false,
+            "in_universe": false,
+            "industry": "I",
+            "last_mark_session": 3,
+            "lot": "1",
+            "lots": [],
+            "mark": "100",
+            "mark_ref": {
+              "available_at": "2024-01-08T12:00:00.000000+00:00",
+              "beta": "1",
+              "borrow_limit": "1000",
+              "event_time": "2024-01-08T12:00:00.000000+00:00",
+              "in_universe": false,
+              "industry": "I",
+              "kind": "CLOSE",
+              "known_at": "2024-01-08T12:00:00.000000+00:00",
+              "price": "100",
+              "security_id": "SYN_A:006",
+              "session_id": "2024-01-08",
+              "short_permission": true,
+              "slice_id": "0c0e85ce-5870-5505-bd30-bcd41baf1630",
+              "status": "ACTIVE",
+              "tradable": true
+            },
+            "quantity": "0",
+            "short_permission": true,
+            "tradable": true,
+            "valuation_adjustment": "0"
+          }
+        },
+        "reconciliation": {
+          "balances": {
+            "U_free": "0",
+            "U_short": "0",
+            "cash_set": "98.1",
+            "commission_expense": "1",
+            "payable": "0",
+            "positions_cost": "900.9",
+            "positions_valuation": "-0.9",
+            "receivable": "0",
+            "unrealized_pnl": "0.9"
+          },
+          "cash_structure": {
+            "cash_lots": 0,
+            "settled_through_session": 3,
+            "short_entries": 0,
+            "status": "INTERNAL_LOT_STRUCTURE_CHECKED_EXECUTION_PROOF_REQUIRED"
+          },
+          "cash_total": "98.1",
+          "execution_backing": {
+            "S_set": "0",
+            "fills": 1,
+            "prefix_commits": 19,
+            "recoveries": 0,
+            "status": "RAW_COMMITTED_EXECUTIONS_FIFO_AND_SETTLEMENT_VERIFIED"
+          },
+          "quantities": {
+            "SYN_A:001": "0",
+            "SYN_A:002": "0",
+            "SYN_A:003": "9",
+            "SYN_A:004": "0",
+            "SYN_A:005": "0",
+            "SYN_A:006": "0"
+          }
+        },
+        "request_sha256": "aa9dbaeb24510d3b4ce5ee1fa45953440ea4b9a971e9939dc9f0bc4e89470625",
+        "run_id": "22239a83-cae5-4620-9967-4988cf6806bc",
+        "schema_version": "simulation-result/1.0.0",
+        "scope": "ENGINEERING_TEST_ONLY",
+        "state_sha256": "52afed4c3af10c53c73a79bbcf61cc5564948ec4348aa36b863d197e289d9f72",
+        "status": "SUCCEEDED",
+        "valuations": [
+          {
+            "account": {
+              "F_unused": "0",
+              "H": "0",
+              "O_F": "0",
+              "O_N": "0",
+              "P4_free": "1000",
+              "P4_nonshort": "0",
+              "P_res": "0",
+              "S_set": "0",
+              "U_free": "0",
+              "U_short": "0",
+              "Z": "0",
+              "available": "1000",
+              "cash_alloc": "1000",
+              "cash_set": "1000",
+              "cash_total": "1000",
+              "equity": "1000",
+              "equity_alloc": "1000",
+              "marked_value": "0",
+              "payable": "0",
+              "receivable": "0",
+              "short_value": "0"
+            },
+            "at": "2024-01-05T12:00:00.000000+00:00",
+            "economic": {
+              "equity": "1000",
+              "pnl": "0",
+              "unrealized": "0"
+            },
+            "kind": "SESSION_CLOSE",
+            "positions": {
+              "SYN_A:001": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 0,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-05T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-05T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-05T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:001",
+                  "session_id": "2024-01-05",
+                  "short_permission": true,
+                  "slice_id": "6d94f300-ab33-57d7-b815-aa781ca1608a",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:002": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 0,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-05T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-05T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-05T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:002",
+                  "session_id": "2024-01-05",
+                  "short_permission": true,
+                  "slice_id": "3fd0b1e1-4bdc-5298-ac95-7e3979512752",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:003": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 0,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-05T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-05T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-05T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:003",
+                  "session_id": "2024-01-05",
+                  "short_permission": true,
+                  "slice_id": "ebebace1-e702-563b-900c-41b2bbdc3a4b",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:004": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 0,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-05T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-05T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-05T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:004",
+                  "session_id": "2024-01-05",
+                  "short_permission": true,
+                  "slice_id": "c90842ae-d32a-55d8-ac80-67dbfdc48d6a",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:005": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 0,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-05T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-05T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-05T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:005",
+                  "session_id": "2024-01-05",
+                  "short_permission": true,
+                  "slice_id": "de173fd7-7603-57e6-a090-23b08dcddcfa",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:006": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 0,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-05T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-05T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-05T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:006",
+                  "session_id": "2024-01-05",
+                  "short_permission": true,
+                  "slice_id": "4d05163d-8b51-5298-957a-8087449ee8a9",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              }
+            },
+            "session": 0
+          },
+          {
+            "account": {
+              "F_unused": "0",
+              "H": "0",
+              "O_F": "0",
+              "O_N": "0",
+              "P4_free": "1000",
+              "P4_nonshort": "0",
+              "P_res": "0",
+              "S_set": "0",
+              "U_free": "0",
+              "U_short": "0",
+              "Z": "0",
+              "available": "1000",
+              "cash_alloc": "1000",
+              "cash_set": "1000",
+              "cash_total": "1000",
+              "equity": "1000",
+              "equity_alloc": "1000",
+              "marked_value": "0",
+              "payable": "0",
+              "receivable": "0",
+              "short_value": "0"
+            },
+            "at": "2024-01-06T12:00:00.000000+00:00",
+            "economic": {
+              "equity": "1000",
+              "pnl": "0",
+              "unrealized": "0"
+            },
+            "kind": "SESSION_CLOSE",
+            "positions": {
+              "SYN_A:001": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 1,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-06T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-06T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-06T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:001",
+                  "session_id": "2024-01-06",
+                  "short_permission": true,
+                  "slice_id": "60687c0e-13c1-514b-b28c-585de7496484",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:002": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 1,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-06T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-06T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-06T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:002",
+                  "session_id": "2024-01-06",
+                  "short_permission": true,
+                  "slice_id": "25e174d8-c11b-546c-b912-b5733977bdcb",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:003": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 1,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-06T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-06T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-06T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:003",
+                  "session_id": "2024-01-06",
+                  "short_permission": true,
+                  "slice_id": "39e314e6-cee2-5af3-8f2f-9543764b6c06",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:004": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 1,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-06T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-06T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-06T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:004",
+                  "session_id": "2024-01-06",
+                  "short_permission": true,
+                  "slice_id": "bc3d73f6-39a8-5a93-a6a3-8c52ceefd962",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:005": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 1,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-06T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-06T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-06T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:005",
+                  "session_id": "2024-01-06",
+                  "short_permission": true,
+                  "slice_id": "12b2611d-6f09-553c-8301-4409348a34ae",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:006": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 1,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-06T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-06T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-06T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:006",
+                  "session_id": "2024-01-06",
+                  "short_permission": true,
+                  "slice_id": "221aaac8-f170-5b43-bf48-8395415629f6",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              }
+            },
+            "session": 1
+          },
+          {
+            "account": {
+              "F_unused": "9",
+              "H": "0",
+              "O_F": "0",
+              "O_N": "0",
+              "P4_free": "89.1",
+              "P4_nonshort": "0",
+              "P_res": "0",
+              "S_set": "0",
+              "U_free": "0",
+              "U_short": "0",
+              "Z": "0",
+              "available": "98.1",
+              "cash_alloc": "89.1",
+              "cash_set": "98.1",
+              "cash_total": "98.1",
+              "equity": "998.1",
+              "equity_alloc": "989.1",
+              "marked_value": "900",
+              "payable": "0",
+              "receivable": "0",
+              "short_value": "0"
+            },
+            "at": "2024-01-07T12:00:00.000000+00:00",
+            "economic": {
+              "equity": "998.1",
+              "pnl": "-1.9",
+              "unrealized": "-0.9"
+            },
+            "kind": "SESSION_CLOSE",
+            "positions": {
+              "SYN_A:001": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 2,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-07T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-07T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-07T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:001",
+                  "session_id": "2024-01-07",
+                  "short_permission": true,
+                  "slice_id": "58193063-3306-50e5-9418-8435ed4ac1ce",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:002": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 2,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-07T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-07T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-07T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:002",
+                  "session_id": "2024-01-07",
+                  "short_permission": true,
+                  "slice_id": "87e162df-f8ad-5f31-98ea-c2ac7e54c87f",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:003": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "100.1",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 2,
+                "lot": "1",
+                "lots": [
+                  {
+                    "at": "2024-01-07T09:00:00.000000+00:00",
+                    "borrow": "0",
+                    "direction": 1,
+                    "entry_fee": "1",
+                    "id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23",
+                    "long_dividend": "0",
+                    "price": "100.1",
+                    "remaining": "9",
+                    "settles": 3,
+                    "short_dividend": "0"
+                  }
+                ],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-07T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-07T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-07T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:003",
+                  "session_id": "2024-01-07",
+                  "short_permission": true,
+                  "slice_id": "c4efd842-812d-5615-bb9a-82d714582083",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "9",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "-0.9"
+              },
+              "SYN_A:004": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 2,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-07T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-07T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-07T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:004",
+                  "session_id": "2024-01-07",
+                  "short_permission": true,
+                  "slice_id": "4b7787f2-5a9b-50f9-b372-13152985e9eb",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:005": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 2,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-07T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-07T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-07T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:005",
+                  "session_id": "2024-01-07",
+                  "short_permission": true,
+                  "slice_id": "4a2b8547-f665-5451-8ea4-6310041f8be6",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:006": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 2,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-07T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-07T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-07T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:006",
+                  "session_id": "2024-01-07",
+                  "short_permission": true,
+                  "slice_id": "184a2e4b-4bf6-51b3-a5a4-3e9f3a42e8b9",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              }
+            },
+            "session": 2
+          },
+          {
+            "account": {
+              "F_unused": "9",
+              "H": "0",
+              "O_F": "0",
+              "O_N": "0",
+              "P4_free": "89.1",
+              "P4_nonshort": "0",
+              "P_res": "0",
+              "S_set": "0",
+              "U_free": "0",
+              "U_short": "0",
+              "Z": "0",
+              "available": "98.1",
+              "cash_alloc": "89.1",
+              "cash_set": "98.1",
+              "cash_total": "98.1",
+              "equity": "998.1",
+              "equity_alloc": "989.1",
+              "marked_value": "900",
+              "payable": "0",
+              "receivable": "0",
+              "short_value": "0"
+            },
+            "at": "2024-01-08T12:00:00.000000+00:00",
+            "economic": {
+              "equity": "998.1",
+              "pnl": "-1.9",
+              "unrealized": "-0.9"
+            },
+            "kind": "SESSION_CLOSE",
+            "positions": {
+              "SYN_A:001": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 3,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-08T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-08T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-08T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:001",
+                  "session_id": "2024-01-08",
+                  "short_permission": true,
+                  "slice_id": "7bacd5f9-9220-5ef2-aa9e-04279dab6cd2",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:002": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 3,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-08T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-08T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-08T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:002",
+                  "session_id": "2024-01-08",
+                  "short_permission": true,
+                  "slice_id": "c79a7589-3e10-5e66-82bc-4fbee7becd6b",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:003": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "100.1",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 3,
+                "lot": "1",
+                "lots": [
+                  {
+                    "at": "2024-01-07T09:00:00.000000+00:00",
+                    "borrow": "0",
+                    "direction": 1,
+                    "entry_fee": "1",
+                    "id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23",
+                    "long_dividend": "0",
+                    "price": "100.1",
+                    "remaining": "9",
+                    "settles": 3,
+                    "short_dividend": "0"
+                  }
+                ],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-08T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-08T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-08T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:003",
+                  "session_id": "2024-01-08",
+                  "short_permission": true,
+                  "slice_id": "4dd58ba7-dca5-562a-8912-04e7f2cca797",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "9",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "-0.9"
+              },
+              "SYN_A:004": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": true,
+                "industry": "I",
+                "last_mark_session": 3,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-08T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-08T12:00:00.000000+00:00",
+                  "in_universe": true,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-08T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:004",
+                  "session_id": "2024-01-08",
+                  "short_permission": true,
+                  "slice_id": "712c20bf-9633-55be-988a-a05c374dfc68",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:005": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 3,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-08T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-08T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-08T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:005",
+                  "session_id": "2024-01-08",
+                  "short_permission": true,
+                  "slice_id": "fff8eb14-8a8b-5b55-a96c-2f72488422ec",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              },
+              "SYN_A:006": {
+                "beta": "1",
+                "borrow_limit": "1000",
+                "cost": "0",
+                "delisted": false,
+                "in_universe": false,
+                "industry": "I",
+                "last_mark_session": 3,
+                "lot": "1",
+                "lots": [],
+                "mark": "100",
+                "mark_ref": {
+                  "available_at": "2024-01-08T12:00:00.000000+00:00",
+                  "beta": "1",
+                  "borrow_limit": "1000",
+                  "event_time": "2024-01-08T12:00:00.000000+00:00",
+                  "in_universe": false,
+                  "industry": "I",
+                  "kind": "CLOSE",
+                  "known_at": "2024-01-08T12:00:00.000000+00:00",
+                  "price": "100",
+                  "security_id": "SYN_A:006",
+                  "session_id": "2024-01-08",
+                  "short_permission": true,
+                  "slice_id": "0c0e85ce-5870-5505-bd30-bcd41baf1630",
+                  "status": "ACTIVE",
+                  "tradable": true
+                },
+                "quantity": "0",
+                "short_permission": true,
+                "tradable": true,
+                "valuation_adjustment": "0"
+              }
+            },
+            "session": 3
+          }
+        ]
+      },
+      "sidecar": {
+        "content_sha256": "7de5a74549c00ccb7db716e8b211f00253a01fa25707eb563a157b7a6281abb9",
+        "rows": [
+          {
+            "available_at": "2024-01-05T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-05T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "1d106bc7-642f-5a96-862e-36407d51da0e",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-05T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "6d94f300-ab33-57d7-b815-aa781ca1608a",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-05T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "5fdf64f7-eb91-5a37-8889-c23289e4b074",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-05T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "3fd0b1e1-4bdc-5298-ac95-7e3979512752",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-05T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "2be2500d-4ae2-54cd-8cd8-cc18f7a0c576",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-05T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "ebebace1-e702-563b-900c-41b2bbdc3a4b",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-05T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "2efbc1cb-0160-5cc8-9b18-5ab572278d3c",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-05T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "c90842ae-d32a-55d8-ac80-67dbfdc48d6a",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-05T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "26072086-a00f-53e6-98c3-eead0b4856a2",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-05T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "de173fd7-7603-57e6-a090-23b08dcddcfa",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-05T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "5fa75a82-8e4f-5b28-8074-72ad40221a40",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-05T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-05T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-05",
+            "short_permission": true,
+            "slice_id": "4d05163d-8b51-5298-957a-8087449ee8a9",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-06T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "ceb2f00a-ee56-5119-aa18-806d943bdfed",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-06T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "60687c0e-13c1-514b-b28c-585de7496484",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-06T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "e3db6dd1-c21c-533d-bd08-803ac0ce4b3b",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-06T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "25e174d8-c11b-546c-b912-b5733977bdcb",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-06T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "09a620c7-0af9-5c1d-8752-ed9aabe6ed0c",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-06T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "39e314e6-cee2-5af3-8f2f-9543764b6c06",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-06T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "8afc5a45-c5ca-51f8-a368-02ca359126eb",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-06T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "bc3d73f6-39a8-5a93-a6a3-8c52ceefd962",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-06T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "7c46079c-467d-5fc3-be5b-171edeb07fe0",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-06T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "12b2611d-6f09-553c-8301-4409348a34ae",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-06T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "5a46da9e-3bd1-5292-af62-e89920a562ca",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-06T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-06T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-06",
+            "short_permission": true,
+            "slice_id": "221aaac8-f170-5b43-bf48-8395415629f6",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-07T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "9f4a6b17-e856-5e75-aa49-e43890da37db",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-07T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "58193063-3306-50e5-9418-8435ed4ac1ce",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-07T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "0cba4571-cbb7-59a2-a598-6d5222fc5b4a",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-07T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "87e162df-f8ad-5f31-98ea-c2ac7e54c87f",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-07T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "09395068-c142-5053-96c8-afa656eb67b0",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-07T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "c4efd842-812d-5615-bb9a-82d714582083",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-07T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "ca870f5e-2c33-56db-a40f-a12f132cdbf4",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-07T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "4b7787f2-5a9b-50f9-b372-13152985e9eb",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-07T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "23d04cbd-a0c3-59cd-96f9-5cf233d2294f",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-07T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "4a2b8547-f665-5451-8ea4-6310041f8be6",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-07T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "3c4d70e3-c1f2-5445-a6b6-8b364646e1c4",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-07T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-07T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-07",
+            "short_permission": true,
+            "slice_id": "184a2e4b-4bf6-51b3-a5a4-3e9f3a42e8b9",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-08T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "6e6da107-313c-5bde-b79e-403e8f25608a",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-08T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "7bacd5f9-9220-5ef2-aa9e-04279dab6cd2",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-08T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "6b7e2f2c-5ef2-52d6-9bb5-33a9c1eb07d3",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-08T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "c79a7589-3e10-5e66-82bc-4fbee7becd6b",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-08T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "b902388a-a65e-59fa-93b2-e73520ad5017",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-08T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "4dd58ba7-dca5-562a-8912-04e7f2cca797",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T09:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-08T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "3f6faf47-f64e-57e9-9309-76c38dfd6069",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "in_universe": true,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-08T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "712c20bf-9633-55be-988a-a05c374dfc68",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-08T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "ba59fb33-3ff0-580b-a2af-6be485734d4d",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-08T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "fff8eb14-8a8b-5b55-a96c-2f72488422ec",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T09:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T09:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "OPEN",
+            "known_at": "2024-01-08T09:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "16a719b9-990e-57e5-aeb3-1a59c331aeff",
+            "status": "ACTIVE",
+            "tradable": true
+          },
+          {
+            "available_at": "2024-01-08T12:00:00.000000+00:00",
+            "beta": "1",
+            "borrow_limit": "1000",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "in_universe": false,
+            "industry": "I",
+            "kind": "CLOSE",
+            "known_at": "2024-01-08T12:00:00.000000+00:00",
+            "price": "100",
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-08",
+            "short_permission": true,
+            "slice_id": "0c0e85ce-5870-5505-bd30-bcd41baf1630",
+            "status": "ACTIVE",
+            "tradable": true
+          }
+        ],
+        "schema_version": "execution-sidecar/1.0.0",
+        "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+        "snapshot_sha256": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+        "volume_history": [
+          {
+            "available_at": "2024-01-05T12:05:00.000000+00:00",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-05",
+            "shares": "143.00000000"
+          },
+          {
+            "available_at": "2024-01-06T12:05:00.000000+00:00",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-06",
+            "shares": "104.00000000"
+          },
+          {
+            "available_at": "2024-01-07T12:05:00.000000+00:00",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-07",
+            "shares": "132.00000000"
+          },
+          {
+            "available_at": "2024-01-08T12:05:00.000000+00:00",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:001",
+            "session_id": "2024-01-08",
+            "shares": "105.00000000"
+          },
+          {
+            "available_at": "2024-01-05T12:05:00.000000+00:00",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-05",
+            "shares": "159.00000000"
+          },
+          {
+            "available_at": "2024-01-06T12:05:00.000000+00:00",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-06",
+            "shares": "121.00000000"
+          },
+          {
+            "available_at": "2024-01-07T12:05:00.000000+00:00",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-07",
+            "shares": "150.00000000"
+          },
+          {
+            "available_at": "2024-01-08T12:05:00.000000+00:00",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:002",
+            "session_id": "2024-01-08",
+            "shares": "124.00000000"
+          },
+          {
+            "available_at": "2024-01-05T12:05:00.000000+00:00",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-05",
+            "shares": "114.00000000"
+          },
+          {
+            "available_at": "2024-01-06T12:05:00.000000+00:00",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-06",
+            "shares": "138.00000000"
+          },
+          {
+            "available_at": "2024-01-07T12:05:00.000000+00:00",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-07",
+            "shares": "107.00000000"
+          },
+          {
+            "available_at": "2024-01-08T12:05:00.000000+00:00",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:003",
+            "session_id": "2024-01-08",
+            "shares": "143.00000000"
+          },
+          {
+            "available_at": "2024-01-05T12:05:00.000000+00:00",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-05",
+            "shares": "130.00000000"
+          },
+          {
+            "available_at": "2024-01-06T12:05:00.000000+00:00",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-06",
+            "shares": "155.00000000"
+          },
+          {
+            "available_at": "2024-01-07T12:05:00.000000+00:00",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-07",
+            "shares": "125.00000000"
+          },
+          {
+            "available_at": "2024-01-08T12:05:00.000000+00:00",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:004",
+            "session_id": "2024-01-08",
+            "shares": "101.00000000"
+          },
+          {
+            "available_at": "2024-01-05T12:05:00.000000+00:00",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-05",
+            "shares": "146.00000000"
+          },
+          {
+            "available_at": "2024-01-06T12:05:00.000000+00:00",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-06",
+            "shares": "111.00000000"
+          },
+          {
+            "available_at": "2024-01-07T12:05:00.000000+00:00",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-07",
+            "shares": "143.00000000"
+          },
+          {
+            "available_at": "2024-01-08T12:05:00.000000+00:00",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:005",
+            "session_id": "2024-01-08",
+            "shares": "120.00000000"
+          },
+          {
+            "available_at": "2024-01-05T12:05:00.000000+00:00",
+            "event_time": "2024-01-05T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-05",
+            "shares": "101.00000000"
+          },
+          {
+            "available_at": "2024-01-06T12:05:00.000000+00:00",
+            "event_time": "2024-01-06T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-06",
+            "shares": "128.00000000"
+          },
+          {
+            "available_at": "2024-01-07T12:05:00.000000+00:00",
+            "event_time": "2024-01-07T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-07",
+            "shares": "100.00000000"
+          },
+          {
+            "available_at": "2024-01-08T12:05:00.000000+00:00",
+            "event_time": "2024-01-08T12:00:00.000000+00:00",
+            "revision_id": 1,
+            "security_id": "SYN_A:006",
+            "session_id": "2024-01-08",
+            "shares": "139.00000000"
+          }
+        ]
+      },
+      "membership_times": [
+        "2024-01-05T09:00:00.000000+00:00",
+        "2024-01-05T12:00:00.000000+00:00",
+        "2024-01-06T09:00:00.000000+00:00",
+        "2024-01-06T12:00:00.000000+00:00",
+        "2024-01-07T09:00:00.000000+00:00",
+        "2024-01-07T12:00:00.000000+00:00",
+        "2024-01-08T09:00:00.000000+00:00",
+        "2024-01-08T12:00:00.000000+00:00"
+      ]
+    },
+    {
+      "task": "0b097957-25e6-4f70-a84d-24f10ad53cbd",
+      "status": "SUCCEEDED",
+      "kind": "research",
+      "universe": "SYN_TAIL4",
+      "literal_members": [
+        "SYN_A:003",
+        "SYN_A:004",
+        "SYN_A:005",
+        "SYN_A:006"
+      ],
+      "actual_P3_members": [
+        "SYN_A:003",
+        "SYN_A:004",
+        "SYN_A:005",
+        "SYN_A:006"
+      ],
+      "frozen_request": {
+        "catalogue_revision": "8ddc3938f29cf0eaad8400d7c505520fdc34bf135db6f4ba39e57f4a190f1aee",
+        "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+        "code_commit": "3017a097b49ecdae68228ca9a417fcd03c313200",
+        "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "defaults_revision": 0,
+        "environment_hash": "53355b3b67d22729fb22f2bd23d6238f40d900bb958ddbac1bfa029d777e0e90",
+        "kind": "research",
+        "payload": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "03754be6418b2874e9dce6e9e9bf98b0afec41acfbf9554ea043d4f29b1db6b0",
+            "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "id": "engineering-default",
+            "variant_key": "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6"
+          },
+          "execution": {
+            "constraints": {},
+            "factor_weights": {
+              "momentum": "1"
+            },
+            "fee_budget": "10",
+            "initial_cash": "1000",
+            "policy": {}
+          },
+          "raw_draft": {
+            "campaign_id": "engineering-default",
+            "end": "2024-01-06",
+            "factor_ids": [
+              "momentum"
+            ],
+            "horizons": [
+              1
+            ],
+            "kind": "research",
+            "lookback": 2,
+            "neutralize": true,
+            "start": "2024-01-06",
+            "universe_id": "SYN_TAIL4",
+            "weights_percent": {
+              "momentum": "100"
+            }
+          },
+          "research": {
+            "calendar_id": "SYN_A_CAL",
+            "candidates": [
+              {
+                "direction": 1,
+                "hypothesis": "momentum",
+                "parameters": {
+                  "lookback": 2
+                },
+                "ref": {
+                  "factor_id": "momentum",
+                  "factor_version": "1.2.1",
+                  "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+                }
+              }
+            ],
+            "currency": "SYNCCY",
+            "decisions": [
+              {
+                "decision_time": "2024-01-06T12:05:00Z",
+                "session": "2024-01-06"
+              }
+            ],
+            "development_cutoff": "2024-01-25T12:10:00Z",
+            "evaluation_cutoff": "2024-01-25T12:10:00Z",
+            "family": {
+              "budget": 12,
+              "campaign": {
+                "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+                "id": "engineering-default",
+                "identity": "f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+                "registration_history": {
+                  "contaminated_before_registration": false,
+                  "prior_research_trials": 0,
+                  "prior_reserved_task_attempts": 0
+                }
+              },
+              "definitions": {
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1": "a3e3ddbd18b6fad9f54386d9dfda49f79d2dda0360bf16f8bca955fb28b334cd",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2": "3adbd2b75d666e1a1811cbae274e3354c5f7ac57b88feb4fb302850cecbbbdef",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1": "ec004804e279170246893eb5171eea85053ed4b243f4756f29d1245cb44cc45f",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1": "af5bd61c65530874a9784770dcd86a8ee68208aec2c1656fef8418d45996745b",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1": "02265da18750ca0ac7f5a6fe751725cb256796f6ec720f099268814ea65581a5",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1": "f24373e614b33ab36da41c2980f7e9bba24a2f78b83d38c268c0ffc42c4184d0",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1": "b101fef733b724086e777ad83e899271d99438aec5c371c72f593221f5c6e950",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2": "088a337302c400f625cb7ebb54bc7afa26ac989d0304017eb932bc01314bb7fd",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1": "44bd22eb0fadf3cd6cd4442b7b6cfe7fc553c34dfc953fe5772fe58910a74e83",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2": "958222a37e3c237d785320f99e6c80886af049ac102bd89d5a0afec6e4a6c643",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1": "12f407793bfa399d2bed61bbd853779f3e8e3ca7ee0f9854ce75864ee831402a",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1": "5eba5bd0b92ce231c1406f05ebd09f8c23af48ff610277e18bd6b6a17d717f3d",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2": "bffe88d5a040f136eb1dd461866e84879b4a71a5556f77d3fcb32dbd53ead0c2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1": "18dac61a7f62d086897cf43c3e2a5af3547036a372d63aceb724f73c132fbaa1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1": "15f726d6aa6fbc7eeb95a08fb8ebfd5eac1df475ede570353d6ca3ad68174651",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2": "163f934e4f8382783d7f527b36fcee40b8503304b281aae7b8447428d6c89d3d",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1": "3a178b5abe2a7c1828035f9ec17c686e450f342d1821cb3335c7206b333ee57b",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2": "7e2c8a2631bb84eec4a2c227fdbc2cb282b50a756ff8714e9452c75cbf0c1758",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1": "0a5fe7944b24b2336abe2196d1ec4ca13bde46767bceedfcb37af9e21b37ac96",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2": "34586986497a67cb72965041bb2561027c64c0bdabc027de19e6afc3f7d84386",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1": "b38e05894d6379460a8ef2b1ab8c3c5f56f4e2102621f173c575d9242a7ee44c",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2": "1c7ac0a5cc35f28adfa29af7aace7c0a2b5915ed43250f89f0b7db8d1d05ba1e",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1": "ca58c1a1b1d5723a14a7bc745de2a96ae1175f47476feacf07415c1a72ee6a89",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2": "3f128c2f8ae1b239089a50c71bad1ba9998f759d0af2fc79df0e2917db476638",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1": "c4573834dd725c1f8aeb4e3d8f4f92a97df00dcd12e2009d224790cbfc292a0f",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1": "e0b39673544c9657223f087cc73a6a72649d09e76810a0f4f6c15d6efbfcd076",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1": "4437513083eeef821a791a643f87294027d8839000fdd011d64f615d78751cbd",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2": "c98aa1547fc178f92e848fb3efbbd0a8c126b25a14d3749ee1fc1149e68ccd53",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1": "0e19fc2338bf810a217675b88ece2d36d4c96075dd0ce0115f46b9090a694903",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2": "b194825c14b1f7f9cf5df9efe032e6dbb4e75562e49e948fec3e7d6fde7d2e53",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1": "fc5982a1586e3559cbf262a3b45cd656d8749390160feb01f8d4f7a7108bf80e",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1": "2fecda042017d9b097af6c21135424da6d700bacfb6d36be3297901cb58dbe35",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1": "9c6d4bde6839a388816d7a44864a8048630c638a0066d60bf8a134e2b451f2cb",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1": "4308603cd03ac45f4ef26fdbff07767a745af981bd140c427b695265a233ace1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1": "07f5cca247013d6ea52a501a62e8661a9bdc0fa7881cd28e5219b5b2d07e26bb",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2": "b51f3ed23b6ec129aa5088e53f6072cc136850f132c5775480db26aa590a5271"
+              },
+              "hypotheses": [
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2"
+              ],
+              "hypothesis_aliases": {
+                "momentum::h=1": "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1"
+              },
+              "id": "ui-campaign-f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+              "method": "holm"
+            },
+            "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+            "groups": 3,
+            "horizons": [
+              1
+            ],
+            "inference": {
+              "horizon": 1,
+              "m0": 0
+            },
+            "market_id": "SYN_A",
+            "min_group_n": 1,
+            "min_ic_n": 3,
+            "pipeline": {
+              "clean": {
+                "method": "quantile",
+                "quantiles": [
+                  0.05,
+                  0.95
+                ]
+              },
+              "neutralize": true,
+              "standardized": {
+                "method": "zscore"
+              }
+            },
+            "purpose": "ENGINEERING_DEMO",
+            "schema": "research/1",
+            "seed": 17,
+            "splits": {
+              "embargo_sessions": 1,
+              "test": [
+                "2024-01-18",
+                "2024-01-26"
+              ],
+              "train": [
+                "2024-01-02",
+                "2024-01-10"
+              ],
+              "validation": [
+                "2024-01-10",
+                "2024-01-18"
+              ]
+            },
+            "universe_id": "SYN_TAIL4",
+            "universe_ref": {
+              "market_id": "SYN_A",
+              "membership_history_sha256": "ff3ca924d801f8f870637e6b52bf4aa76fe9e2767829131dd22496ed13074678",
+              "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+              "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+              "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+              "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+              "universe_id": "SYN_TAIL4"
+            },
+            "walk_forward": [
+              {
+                "evaluate": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ],
+                "fit": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "fit_cutoff": "2024-01-10T00:00:00Z"
+              }
+            ]
+          },
+          "universe": {
+            "market_id": "SYN_A",
+            "membership_history_sha256": "ff3ca924d801f8f870637e6b52bf4aa76fe9e2767829131dd22496ed13074678",
+            "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+            "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+            "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+            "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "universe_id": "SYN_TAIL4"
+          }
+        },
+        "schema": "task-request/1",
+        "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3"
+      },
+      "raw_sha256": "a8a73d4dfa311965e5dab166000668d560bb220976fcd5ebbde50b5c9db5a5fe"
+    }
+  ],
+  "CLI_SDK_canonical_parity": [
+    {
+      "pool": "SYN_U",
+      "config_hash": "7f5dc2974212530ab413f4e191716a39fb3fa389214571a5f349e252b302c68d",
+      "request": {
+        "catalogue_revision": "8ddc3938f29cf0eaad8400d7c505520fdc34bf135db6f4ba39e57f4a190f1aee",
+        "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+        "code_commit": "3017a097b49ecdae68228ca9a417fcd03c313200",
+        "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "defaults_revision": 0,
+        "environment_hash": "53355b3b67d22729fb22f2bd23d6238f40d900bb958ddbac1bfa029d777e0e90",
+        "kind": "research",
+        "payload": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "03754be6418b2874e9dce6e9e9bf98b0afec41acfbf9554ea043d4f29b1db6b0",
+            "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "id": "engineering-default",
+            "variant_key": "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57"
+          },
+          "execution": {
+            "constraints": {},
+            "factor_weights": {
+              "momentum": "1"
+            },
+            "fee_budget": "10",
+            "initial_cash": "1000",
+            "policy": {}
+          },
+          "raw_draft": {
+            "end": "2024-01-06",
+            "horizons": [
+              1
+            ],
+            "kind": "research",
+            "start": "2024-01-06",
+            "universe_id": "SYN_U"
+          },
+          "research": {
+            "calendar_id": "SYN_A_CAL",
+            "candidates": [
+              {
+                "direction": 1,
+                "hypothesis": "momentum",
+                "parameters": {
+                  "lookback": 2
+                },
+                "ref": {
+                  "factor_id": "momentum",
+                  "factor_version": "1.2.1",
+                  "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+                }
+              }
+            ],
+            "currency": "SYNCCY",
+            "decisions": [
+              {
+                "decision_time": "2024-01-06T12:05:00Z",
+                "session": "2024-01-06"
+              }
+            ],
+            "development_cutoff": "2024-01-25T12:10:00Z",
+            "evaluation_cutoff": "2024-01-25T12:10:00Z",
+            "family": {
+              "budget": 12,
+              "campaign": {
+                "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+                "id": "engineering-default",
+                "identity": "f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+                "registration_history": {
+                  "contaminated_before_registration": false,
+                  "prior_research_trials": 0,
+                  "prior_reserved_task_attempts": 0
+                }
+              },
+              "definitions": {
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1": "a3e3ddbd18b6fad9f54386d9dfda49f79d2dda0360bf16f8bca955fb28b334cd",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2": "3adbd2b75d666e1a1811cbae274e3354c5f7ac57b88feb4fb302850cecbbbdef",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1": "ec004804e279170246893eb5171eea85053ed4b243f4756f29d1245cb44cc45f",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1": "af5bd61c65530874a9784770dcd86a8ee68208aec2c1656fef8418d45996745b",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1": "02265da18750ca0ac7f5a6fe751725cb256796f6ec720f099268814ea65581a5",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1": "f24373e614b33ab36da41c2980f7e9bba24a2f78b83d38c268c0ffc42c4184d0",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1": "b101fef733b724086e777ad83e899271d99438aec5c371c72f593221f5c6e950",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2": "088a337302c400f625cb7ebb54bc7afa26ac989d0304017eb932bc01314bb7fd",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1": "44bd22eb0fadf3cd6cd4442b7b6cfe7fc553c34dfc953fe5772fe58910a74e83",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2": "958222a37e3c237d785320f99e6c80886af049ac102bd89d5a0afec6e4a6c643",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1": "12f407793bfa399d2bed61bbd853779f3e8e3ca7ee0f9854ce75864ee831402a",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1": "5eba5bd0b92ce231c1406f05ebd09f8c23af48ff610277e18bd6b6a17d717f3d",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2": "bffe88d5a040f136eb1dd461866e84879b4a71a5556f77d3fcb32dbd53ead0c2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1": "18dac61a7f62d086897cf43c3e2a5af3547036a372d63aceb724f73c132fbaa1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1": "15f726d6aa6fbc7eeb95a08fb8ebfd5eac1df475ede570353d6ca3ad68174651",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2": "163f934e4f8382783d7f527b36fcee40b8503304b281aae7b8447428d6c89d3d",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1": "3a178b5abe2a7c1828035f9ec17c686e450f342d1821cb3335c7206b333ee57b",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2": "7e2c8a2631bb84eec4a2c227fdbc2cb282b50a756ff8714e9452c75cbf0c1758",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1": "0a5fe7944b24b2336abe2196d1ec4ca13bde46767bceedfcb37af9e21b37ac96",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2": "34586986497a67cb72965041bb2561027c64c0bdabc027de19e6afc3f7d84386",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1": "b38e05894d6379460a8ef2b1ab8c3c5f56f4e2102621f173c575d9242a7ee44c",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2": "1c7ac0a5cc35f28adfa29af7aace7c0a2b5915ed43250f89f0b7db8d1d05ba1e",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1": "ca58c1a1b1d5723a14a7bc745de2a96ae1175f47476feacf07415c1a72ee6a89",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2": "3f128c2f8ae1b239089a50c71bad1ba9998f759d0af2fc79df0e2917db476638",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1": "c4573834dd725c1f8aeb4e3d8f4f92a97df00dcd12e2009d224790cbfc292a0f",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1": "e0b39673544c9657223f087cc73a6a72649d09e76810a0f4f6c15d6efbfcd076",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1": "4437513083eeef821a791a643f87294027d8839000fdd011d64f615d78751cbd",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2": "c98aa1547fc178f92e848fb3efbbd0a8c126b25a14d3749ee1fc1149e68ccd53",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1": "0e19fc2338bf810a217675b88ece2d36d4c96075dd0ce0115f46b9090a694903",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2": "b194825c14b1f7f9cf5df9efe032e6dbb4e75562e49e948fec3e7d6fde7d2e53",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1": "fc5982a1586e3559cbf262a3b45cd656d8749390160feb01f8d4f7a7108bf80e",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1": "2fecda042017d9b097af6c21135424da6d700bacfb6d36be3297901cb58dbe35",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1": "9c6d4bde6839a388816d7a44864a8048630c638a0066d60bf8a134e2b451f2cb",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1": "4308603cd03ac45f4ef26fdbff07767a745af981bd140c427b695265a233ace1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1": "07f5cca247013d6ea52a501a62e8661a9bdc0fa7881cd28e5219b5b2d07e26bb",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2": "b51f3ed23b6ec129aa5088e53f6072cc136850f132c5775480db26aa590a5271"
+              },
+              "hypotheses": [
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2"
+              ],
+              "hypothesis_aliases": {
+                "momentum::h=1": "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1"
+              },
+              "id": "ui-campaign-f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+              "method": "holm"
+            },
+            "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+            "groups": 3,
+            "horizons": [
+              1
+            ],
+            "inference": {
+              "horizon": 1,
+              "m0": 0
+            },
+            "market_id": "SYN_A",
+            "min_group_n": 1,
+            "min_ic_n": 3,
+            "pipeline": {
+              "clean": {
+                "method": "quantile",
+                "quantiles": [
+                  0.05,
+                  0.95
+                ]
+              },
+              "neutralize": true,
+              "standardized": {
+                "method": "zscore"
+              }
+            },
+            "purpose": "ENGINEERING_DEMO",
+            "schema": "research/1",
+            "seed": 17,
+            "splits": {
+              "embargo_sessions": 1,
+              "test": [
+                "2024-01-18",
+                "2024-01-26"
+              ],
+              "train": [
+                "2024-01-02",
+                "2024-01-10"
+              ],
+              "validation": [
+                "2024-01-10",
+                "2024-01-18"
+              ]
+            },
+            "universe_id": "SYN_U",
+            "universe_ref": {
+              "market_id": "SYN_A",
+              "membership_history_sha256": "a12567d75eba76efed18a8495c376702ff1e4450a271782170304263ee43b281",
+              "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+              "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+              "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+              "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+              "universe_id": "SYN_U"
+            },
+            "walk_forward": [
+              {
+                "evaluate": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ],
+                "fit": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "fit_cutoff": "2024-01-10T00:00:00Z"
+              }
+            ]
+          },
+          "universe": {
+            "market_id": "SYN_A",
+            "membership_history_sha256": "a12567d75eba76efed18a8495c376702ff1e4450a271782170304263ee43b281",
+            "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+            "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+            "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+            "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "universe_id": "SYN_U"
+          }
+        },
+        "schema": "task-request/1",
+        "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3"
+      }
+    },
+    {
+      "pool": "SYN_CORE4",
+      "config_hash": "00f47d12d9fd022f025a42bc37804fc531fb5f4f192f884ba444a9b52aada7de",
+      "request": {
+        "catalogue_revision": "8ddc3938f29cf0eaad8400d7c505520fdc34bf135db6f4ba39e57f4a190f1aee",
+        "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+        "code_commit": "3017a097b49ecdae68228ca9a417fcd03c313200",
+        "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "defaults_revision": 0,
+        "environment_hash": "53355b3b67d22729fb22f2bd23d6238f40d900bb958ddbac1bfa029d777e0e90",
+        "kind": "research",
+        "payload": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "03754be6418b2874e9dce6e9e9bf98b0afec41acfbf9554ea043d4f29b1db6b0",
+            "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "id": "engineering-default",
+            "variant_key": "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05"
+          },
+          "execution": {
+            "constraints": {},
+            "factor_weights": {
+              "momentum": "1"
+            },
+            "fee_budget": "10",
+            "initial_cash": "1000",
+            "policy": {}
+          },
+          "raw_draft": {
+            "end": "2024-01-06",
+            "horizons": [
+              1
+            ],
+            "kind": "research",
+            "start": "2024-01-06",
+            "universe_id": "SYN_CORE4"
+          },
+          "research": {
+            "calendar_id": "SYN_A_CAL",
+            "candidates": [
+              {
+                "direction": 1,
+                "hypothesis": "momentum",
+                "parameters": {
+                  "lookback": 2
+                },
+                "ref": {
+                  "factor_id": "momentum",
+                  "factor_version": "1.2.1",
+                  "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+                }
+              }
+            ],
+            "currency": "SYNCCY",
+            "decisions": [
+              {
+                "decision_time": "2024-01-06T12:05:00Z",
+                "session": "2024-01-06"
+              }
+            ],
+            "development_cutoff": "2024-01-25T12:10:00Z",
+            "evaluation_cutoff": "2024-01-25T12:10:00Z",
+            "family": {
+              "budget": 12,
+              "campaign": {
+                "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+                "id": "engineering-default",
+                "identity": "f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+                "registration_history": {
+                  "contaminated_before_registration": false,
+                  "prior_research_trials": 0,
+                  "prior_reserved_task_attempts": 0
+                }
+              },
+              "definitions": {
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1": "a3e3ddbd18b6fad9f54386d9dfda49f79d2dda0360bf16f8bca955fb28b334cd",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2": "3adbd2b75d666e1a1811cbae274e3354c5f7ac57b88feb4fb302850cecbbbdef",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1": "ec004804e279170246893eb5171eea85053ed4b243f4756f29d1245cb44cc45f",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1": "af5bd61c65530874a9784770dcd86a8ee68208aec2c1656fef8418d45996745b",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1": "02265da18750ca0ac7f5a6fe751725cb256796f6ec720f099268814ea65581a5",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1": "f24373e614b33ab36da41c2980f7e9bba24a2f78b83d38c268c0ffc42c4184d0",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1": "b101fef733b724086e777ad83e899271d99438aec5c371c72f593221f5c6e950",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2": "088a337302c400f625cb7ebb54bc7afa26ac989d0304017eb932bc01314bb7fd",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1": "44bd22eb0fadf3cd6cd4442b7b6cfe7fc553c34dfc953fe5772fe58910a74e83",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2": "958222a37e3c237d785320f99e6c80886af049ac102bd89d5a0afec6e4a6c643",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1": "12f407793bfa399d2bed61bbd853779f3e8e3ca7ee0f9854ce75864ee831402a",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1": "5eba5bd0b92ce231c1406f05ebd09f8c23af48ff610277e18bd6b6a17d717f3d",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2": "bffe88d5a040f136eb1dd461866e84879b4a71a5556f77d3fcb32dbd53ead0c2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1": "18dac61a7f62d086897cf43c3e2a5af3547036a372d63aceb724f73c132fbaa1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1": "15f726d6aa6fbc7eeb95a08fb8ebfd5eac1df475ede570353d6ca3ad68174651",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2": "163f934e4f8382783d7f527b36fcee40b8503304b281aae7b8447428d6c89d3d",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1": "3a178b5abe2a7c1828035f9ec17c686e450f342d1821cb3335c7206b333ee57b",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2": "7e2c8a2631bb84eec4a2c227fdbc2cb282b50a756ff8714e9452c75cbf0c1758",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1": "0a5fe7944b24b2336abe2196d1ec4ca13bde46767bceedfcb37af9e21b37ac96",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2": "34586986497a67cb72965041bb2561027c64c0bdabc027de19e6afc3f7d84386",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1": "b38e05894d6379460a8ef2b1ab8c3c5f56f4e2102621f173c575d9242a7ee44c",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2": "1c7ac0a5cc35f28adfa29af7aace7c0a2b5915ed43250f89f0b7db8d1d05ba1e",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1": "ca58c1a1b1d5723a14a7bc745de2a96ae1175f47476feacf07415c1a72ee6a89",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2": "3f128c2f8ae1b239089a50c71bad1ba9998f759d0af2fc79df0e2917db476638",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1": "c4573834dd725c1f8aeb4e3d8f4f92a97df00dcd12e2009d224790cbfc292a0f",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1": "e0b39673544c9657223f087cc73a6a72649d09e76810a0f4f6c15d6efbfcd076",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1": "4437513083eeef821a791a643f87294027d8839000fdd011d64f615d78751cbd",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2": "c98aa1547fc178f92e848fb3efbbd0a8c126b25a14d3749ee1fc1149e68ccd53",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1": "0e19fc2338bf810a217675b88ece2d36d4c96075dd0ce0115f46b9090a694903",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2": "b194825c14b1f7f9cf5df9efe032e6dbb4e75562e49e948fec3e7d6fde7d2e53",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1": "fc5982a1586e3559cbf262a3b45cd656d8749390160feb01f8d4f7a7108bf80e",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1": "2fecda042017d9b097af6c21135424da6d700bacfb6d36be3297901cb58dbe35",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1": "9c6d4bde6839a388816d7a44864a8048630c638a0066d60bf8a134e2b451f2cb",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1": "4308603cd03ac45f4ef26fdbff07767a745af981bd140c427b695265a233ace1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1": "07f5cca247013d6ea52a501a62e8661a9bdc0fa7881cd28e5219b5b2d07e26bb",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2": "b51f3ed23b6ec129aa5088e53f6072cc136850f132c5775480db26aa590a5271"
+              },
+              "hypotheses": [
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2"
+              ],
+              "hypothesis_aliases": {
+                "momentum::h=1": "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1"
+              },
+              "id": "ui-campaign-f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+              "method": "holm"
+            },
+            "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+            "groups": 3,
+            "horizons": [
+              1
+            ],
+            "inference": {
+              "horizon": 1,
+              "m0": 0
+            },
+            "market_id": "SYN_A",
+            "min_group_n": 1,
+            "min_ic_n": 3,
+            "pipeline": {
+              "clean": {
+                "method": "quantile",
+                "quantiles": [
+                  0.05,
+                  0.95
+                ]
+              },
+              "neutralize": true,
+              "standardized": {
+                "method": "zscore"
+              }
+            },
+            "purpose": "ENGINEERING_DEMO",
+            "schema": "research/1",
+            "seed": 17,
+            "splits": {
+              "embargo_sessions": 1,
+              "test": [
+                "2024-01-18",
+                "2024-01-26"
+              ],
+              "train": [
+                "2024-01-02",
+                "2024-01-10"
+              ],
+              "validation": [
+                "2024-01-10",
+                "2024-01-18"
+              ]
+            },
+            "universe_id": "SYN_CORE4",
+            "universe_ref": {
+              "market_id": "SYN_A",
+              "membership_history_sha256": "4cc54a2cef279edb6c301a644d72becd3b5dca0159052575832b31cd2359e12e",
+              "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+              "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+              "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+              "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+              "universe_id": "SYN_CORE4"
+            },
+            "walk_forward": [
+              {
+                "evaluate": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ],
+                "fit": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "fit_cutoff": "2024-01-10T00:00:00Z"
+              }
+            ]
+          },
+          "universe": {
+            "market_id": "SYN_A",
+            "membership_history_sha256": "4cc54a2cef279edb6c301a644d72becd3b5dca0159052575832b31cd2359e12e",
+            "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+            "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+            "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+            "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "universe_id": "SYN_CORE4"
+          }
+        },
+        "schema": "task-request/1",
+        "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3"
+      }
+    },
+    {
+      "pool": "SYN_TAIL4",
+      "config_hash": "2cc860e75e15f471063e98c8298fe4b3ca8aa908b3fdef2712d7019756979ddf",
+      "request": {
+        "catalogue_revision": "8ddc3938f29cf0eaad8400d7c505520fdc34bf135db6f4ba39e57f4a190f1aee",
+        "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+        "code_commit": "3017a097b49ecdae68228ca9a417fcd03c313200",
+        "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+        "defaults_revision": 0,
+        "environment_hash": "53355b3b67d22729fb22f2bd23d6238f40d900bb958ddbac1bfa029d777e0e90",
+        "kind": "research",
+        "payload": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "03754be6418b2874e9dce6e9e9bf98b0afec41acfbf9554ea043d4f29b1db6b0",
+            "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "id": "engineering-default",
+            "variant_key": "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6"
+          },
+          "execution": {
+            "constraints": {},
+            "factor_weights": {
+              "momentum": "1"
+            },
+            "fee_budget": "10",
+            "initial_cash": "1000",
+            "policy": {}
+          },
+          "raw_draft": {
+            "end": "2024-01-06",
+            "horizons": [
+              1
+            ],
+            "kind": "research",
+            "start": "2024-01-06",
+            "universe_id": "SYN_TAIL4"
+          },
+          "research": {
+            "calendar_id": "SYN_A_CAL",
+            "candidates": [
+              {
+                "direction": 1,
+                "hypothesis": "momentum",
+                "parameters": {
+                  "lookback": 2
+                },
+                "ref": {
+                  "factor_id": "momentum",
+                  "factor_version": "1.2.1",
+                  "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+                }
+              }
+            ],
+            "currency": "SYNCCY",
+            "decisions": [
+              {
+                "decision_time": "2024-01-06T12:05:00Z",
+                "session": "2024-01-06"
+              }
+            ],
+            "development_cutoff": "2024-01-25T12:10:00Z",
+            "evaluation_cutoff": "2024-01-25T12:10:00Z",
+            "family": {
+              "budget": 12,
+              "campaign": {
+                "data_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+                "id": "engineering-default",
+                "identity": "f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+                "registration_history": {
+                  "contaminated_before_registration": false,
+                  "prior_research_trials": 0,
+                  "prior_reserved_task_attempts": 0
+                }
+              },
+              "definitions": {
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1": "a3e3ddbd18b6fad9f54386d9dfda49f79d2dda0360bf16f8bca955fb28b334cd",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2": "3adbd2b75d666e1a1811cbae274e3354c5f7ac57b88feb4fb302850cecbbbdef",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1": "ec004804e279170246893eb5171eea85053ed4b243f4756f29d1245cb44cc45f",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1": "af5bd61c65530874a9784770dcd86a8ee68208aec2c1656fef8418d45996745b",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1": "02265da18750ca0ac7f5a6fe751725cb256796f6ec720f099268814ea65581a5",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1": "f24373e614b33ab36da41c2980f7e9bba24a2f78b83d38c268c0ffc42c4184d0",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1": "b101fef733b724086e777ad83e899271d99438aec5c371c72f593221f5c6e950",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2": "088a337302c400f625cb7ebb54bc7afa26ac989d0304017eb932bc01314bb7fd",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1": "44bd22eb0fadf3cd6cd4442b7b6cfe7fc553c34dfc953fe5772fe58910a74e83",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2": "958222a37e3c237d785320f99e6c80886af049ac102bd89d5a0afec6e4a6c643",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1": "12f407793bfa399d2bed61bbd853779f3e8e3ca7ee0f9854ce75864ee831402a",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1": "5eba5bd0b92ce231c1406f05ebd09f8c23af48ff610277e18bd6b6a17d717f3d",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2": "bffe88d5a040f136eb1dd461866e84879b4a71a5556f77d3fcb32dbd53ead0c2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1": "18dac61a7f62d086897cf43c3e2a5af3547036a372d63aceb724f73c132fbaa1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1": "15f726d6aa6fbc7eeb95a08fb8ebfd5eac1df475ede570353d6ca3ad68174651",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2": "163f934e4f8382783d7f527b36fcee40b8503304b281aae7b8447428d6c89d3d",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1": "3a178b5abe2a7c1828035f9ec17c686e450f342d1821cb3335c7206b333ee57b",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2": "7e2c8a2631bb84eec4a2c227fdbc2cb282b50a756ff8714e9452c75cbf0c1758",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1": "0a5fe7944b24b2336abe2196d1ec4ca13bde46767bceedfcb37af9e21b37ac96",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2": "34586986497a67cb72965041bb2561027c64c0bdabc027de19e6afc3f7d84386",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1": "b38e05894d6379460a8ef2b1ab8c3c5f56f4e2102621f173c575d9242a7ee44c",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2": "1c7ac0a5cc35f28adfa29af7aace7c0a2b5915ed43250f89f0b7db8d1d05ba1e",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1": "ca58c1a1b1d5723a14a7bc745de2a96ae1175f47476feacf07415c1a72ee6a89",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2": "3f128c2f8ae1b239089a50c71bad1ba9998f759d0af2fc79df0e2917db476638",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1": "c4573834dd725c1f8aeb4e3d8f4f92a97df00dcd12e2009d224790cbfc292a0f",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1": "e0b39673544c9657223f087cc73a6a72649d09e76810a0f4f6c15d6efbfcd076",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1": "4437513083eeef821a791a643f87294027d8839000fdd011d64f615d78751cbd",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2": "c98aa1547fc178f92e848fb3efbbd0a8c126b25a14d3749ee1fc1149e68ccd53",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1": "0e19fc2338bf810a217675b88ece2d36d4c96075dd0ce0115f46b9090a694903",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2": "b194825c14b1f7f9cf5df9efe032e6dbb4e75562e49e948fec3e7d6fde7d2e53",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1": "fc5982a1586e3559cbf262a3b45cd656d8749390160feb01f8d4f7a7108bf80e",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1": "2fecda042017d9b097af6c21135424da6d700bacfb6d36be3297901cb58dbe35",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1": "9c6d4bde6839a388816d7a44864a8048630c638a0066d60bf8a134e2b451f2cb",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1": "4308603cd03ac45f4ef26fdbff07767a745af981bd140c427b695265a233ace1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1": "07f5cca247013d6ea52a501a62e8661a9bdc0fa7881cd28e5219b5b2d07e26bb",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2": "b51f3ed23b6ec129aa5088e53f6072cc136850f132c5775480db26aa590a5271"
+              },
+              "hypotheses": [
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=1",
+                "03c5e97d06d3270526ebbbc16dc54dd05b7dbdaef3a91aa3ea744efb922756d9::price_volume::h=2",
+                "11c2a34a81ed24188df8e5ef973c901f0da8dd3782602cfcaf6f734c943ec7c7::price_volume::h=1",
+                "14b4bad4d7ea26ce5a9171223028a7d0a04694274e45baea06db79bc3037b7d9::price_volume::h=1",
+                "20bde279d6b1d052c5e88b8b47781d20dc864875bd00d441252710a7b8bd1e8b::price_volume::h=1",
+                "273e7c44ed16acebbaf6f1fbe287d73fc7e446edfe2de1dc9e3204d8eb08fb10::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=1",
+                "331e0e1778f12e4ac801a7ef2c22d1ec2636823eb898d64d87a0367fd5cb2a3f::volume::h=2",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=1",
+                "33a0046e96c612b76b4a8ecaa02a792a90158aa56cb68bcb20fdae0aecf4abca::reversal::h=2",
+                "3990f19df1af1945eae851e614e16ba573fdc0d38aadf5a6620d5d498278c435::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=1",
+                "4b1e92d79e84b059c204f78344ff83a086838036f7732da5ee1963ea3aa8ce23::volume::h=2",
+                "4dfa31b135efb1b2e7f38be25eda01d6483c0ac051511b0b035f9ef2f9c4fe05::momentum::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=1",
+                "7049919456b99b505e453015d57ad3eeedb752e5136f55401ec0ada87197f00c::price_volume::h=2",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=1",
+                "70f6fe3e0fcec482589931881b5e9885765ecb1bac19c44ac52463501dd4d2d8::price_volume::h=2",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=1",
+                "73acc463edefd0679feae8d51c2257f782a42eb66a139af856873c8ee54420f6::volume::h=2",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=1",
+                "77869211e02660c60b72597565c8486f78c4f4b65811c75c23bf51364f64c13f::reversal::h=2",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=1",
+                "79a798cab0e46b62a27c792e73e8ab11f5e7f703cfb8b0674cb3ffe2a0ebe0c6::momentum::h=2",
+                "7fa5ea53b80f1bef129e67ebd606f76a678c73a796b66a1f4fb29ab7e253bd57::momentum::h=1",
+                "87eb3a5b13d918c767cd708258585ec7ab2654c65d590c95da867298586d4536::volume::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=1",
+                "9120ae7554bdd305f150f5962a9335f6b62caa9cc559beb388d4a45cffe48d74::reversal::h=2",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=1",
+                "9deea7cae92c778bf8bf1ccfba1fcf90da1ac2c19ead43552c71c0b0e8376b31::momentum::h=2",
+                "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1",
+                "ce9bb5f19afea28a2b89dedb25f15af16c1069c1cad176ca3fd224e5b30d3b24::reversal::h=1",
+                "db3f957a859cc168820e8dda611d181dfa2eba87ba179f796b0c9f27c8b97aa3::reversal::h=1",
+                "eef16894fb86c12e4c83b0d5a8643d43ff0cb6217abea92ec28aad7095dc2794::reversal::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=1",
+                "f9fdb736cc9695eb90800d38c87c056ced208d70c1dfc19c75b619873da092c1::momentum::h=2"
+              ],
+              "hypothesis_aliases": {
+                "momentum::h=1": "c63c04d8eab73b2585fbcfbbf3371a87a85848f0b3bc4790fbfa321fe5edfaa6::momentum::h=1"
+              },
+              "id": "ui-campaign-f8f1b7760fd1477964e57180276803b62b42a942e96db2b3ed7288a03b5e47b8",
+              "method": "holm"
+            },
+            "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+            "groups": 3,
+            "horizons": [
+              1
+            ],
+            "inference": {
+              "horizon": 1,
+              "m0": 0
+            },
+            "market_id": "SYN_A",
+            "min_group_n": 1,
+            "min_ic_n": 3,
+            "pipeline": {
+              "clean": {
+                "method": "quantile",
+                "quantiles": [
+                  0.05,
+                  0.95
+                ]
+              },
+              "neutralize": true,
+              "standardized": {
+                "method": "zscore"
+              }
+            },
+            "purpose": "ENGINEERING_DEMO",
+            "schema": "research/1",
+            "seed": 17,
+            "splits": {
+              "embargo_sessions": 1,
+              "test": [
+                "2024-01-18",
+                "2024-01-26"
+              ],
+              "train": [
+                "2024-01-02",
+                "2024-01-10"
+              ],
+              "validation": [
+                "2024-01-10",
+                "2024-01-18"
+              ]
+            },
+            "universe_id": "SYN_TAIL4",
+            "universe_ref": {
+              "market_id": "SYN_A",
+              "membership_history_sha256": "ff3ca924d801f8f870637e6b52bf4aa76fe9e2767829131dd22496ed13074678",
+              "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+              "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+              "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+              "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+              "universe_id": "SYN_TAIL4"
+            },
+            "walk_forward": [
+              {
+                "evaluate": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ],
+                "fit": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "fit_cutoff": "2024-01-10T00:00:00Z"
+              }
+            ]
+          },
+          "universe": {
+            "market_id": "SYN_A",
+            "membership_history_sha256": "ff3ca924d801f8f870637e6b52bf4aa76fe9e2767829131dd22496ed13074678",
+            "membership_table_sha256": "0074bae9212cf0a23459b16ae20231f3cff822ac829e69eb57f2c04378c36b08",
+            "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+            "snapshot_id": "af4932e7-8376-4c9a-a070-690bea7e56b6",
+            "snapshot_manifest_hash": "af0aff7d026b773c790c441d1a60f7c91639b7f3e61a82349868c314f88157a1",
+            "universe_id": "SYN_TAIL4"
+          }
+        },
+        "schema": "task-request/1",
+        "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3"
+      }
+    }
+  ],
+  "unknown_universes_refused_without_tasks": true,
+  "result": "PASS"
+}

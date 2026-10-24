@@ -1,0 +1,36 @@
+{
+  "result": "PASS",
+  "expected_source": "Original independent golden economic convention, recomputed with stdlib Fraction; no AQRP expected generator",
+  "input_cash": "1000",
+  "shares": 9,
+  "price": "100.1",
+  "fee": "1",
+  "cash_fraction": "981/10",
+  "equity_fraction": "9981/10",
+  "actual_first_fill": {
+    "at": "2024-01-07T09:00:00.000000+00:00",
+    "direction": "LONG",
+    "execution_side": "BUY",
+    "fee": "1",
+    "fill_id": "335a837c-3a8e-5f4a-abb2-e0d762bfbe23",
+    "position_after": "9",
+    "position_before": "0",
+    "position_legs": [
+      {
+        "direction": "LONG",
+        "effect": "OPEN",
+        "fee": "1",
+        "quantity": "9",
+        "realized_gross": "0",
+        "signed_qty": "9"
+      }
+    ],
+    "price": "100.1",
+    "raw_price": "100",
+    "realized_gross": "0",
+    "security_id": "SYN_A:003",
+    "signed_qty": "9",
+    "slippage_cost": "0.9"
+  },
+  "source_sha256": "5f6a82654281f502aea046ef0bdc61f69fec868b8752c4268c4c07862fda2c8a"
+}

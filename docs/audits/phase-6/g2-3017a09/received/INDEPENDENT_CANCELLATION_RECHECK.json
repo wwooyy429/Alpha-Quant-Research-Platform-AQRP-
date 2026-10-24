@@ -1,0 +1,2819 @@
+{
+  "fixed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "executor": "GPT Work",
+  "python": "E:\\WORK\\AQRP-runs\\gpt-p6-3017a09-20261024-05b3298b-ecfc-49e7-bd8d-5827f1354391\\aqrp-4353a1a2-3dae-4db1-aa5d-ff6f56ba351c\\venv\\Scripts\\python.exe",
+  "records": [
+    {
+      "case": "valid",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid",
+      "task": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "cancel_ack": "CANCEL_REQUESTED",
+        "post_terminal_corruption": {
+          "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+          "config_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+          "status": "INTEGRITY_ERROR",
+          "cancel_requested": true,
+          "error": "COMMITTED_STATE_UNVERIFIED",
+          "slots": {
+            "B": {
+              "binding": {
+                "adapted_request_hash": null,
+                "child_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+                "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+                "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+                "core_config_hash": "2ecfd9710717098e855a63df3b0befb4f136dc350bedd1a6a6016f0fcb0bbec6",
+                "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+                "decision_index": null,
+                "decision_time_UTC": null,
+                "parent_execution_run_id": null,
+                "parent_slot_id": null,
+                "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs",
+                "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+                "service_kind": "P5",
+                "slot_id": "B",
+                "source_request_hash": null,
+                "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+                "task_kind": "engineering_pipeline",
+                "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+                "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+              },
+              "state": "VERIFIED_SUCCESS"
+            },
+            "P:0": {
+              "binding": {
+                "adapted_request_hash": "2b469d44499f7a7b2714b4ca22059ac65cc73e7fbe388dbef3feb25d6e1c95c1",
+                "child_run_id": "65df8d30-9e6a-4333-a102-b0490e408152",
+                "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+                "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+                "core_config_hash": "223984a3224ccfb8c2653cc9fa1e8d57926213db9596d4619f67ab72b85d16eb",
+                "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+                "decision_index": 0,
+                "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+                "parent_execution_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+                "parent_slot_id": "B",
+                "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs\\291e1c4c-d0cf-4ec9-aaa6-98077d9f9521\\portfolio-runs",
+                "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+                "service_kind": "P4",
+                "slot_id": "P:0",
+                "source_request_hash": "64e3c952139604d93449a232b97a55f24748fc75742d1c40a7d5e2a0d45f14be",
+                "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+                "task_kind": "engineering_pipeline",
+                "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+                "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+              },
+              "state": "VERIFIED_SUCCESS"
+            },
+            "R": {
+              "binding": {
+                "adapted_request_hash": null,
+                "child_run_id": "c4d09729-e6d1-425c-88ca-dfb1c89c28ff",
+                "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+                "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+                "core_config_hash": "d9b1362aaeeca1193084f8b7442aac68861d6782c1220a260f957b6fea970cfc",
+                "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+                "decision_index": null,
+                "decision_time_UTC": null,
+                "parent_execution_run_id": null,
+                "parent_slot_id": null,
+                "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\research-runs",
+                "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+                "service_kind": "P3",
+                "slot_id": "R",
+                "source_request_hash": null,
+                "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+                "task_kind": "engineering_pipeline",
+                "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+                "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+              },
+              "state": "VERIFIED_SUCCESS"
+            }
+          },
+          "scope": "ENGINEERING_TEST_ONLY",
+          "financial_approval": "NONE",
+          "research_control": {
+            "campaign": {
+              "budget": 12,
+              "campaign_hash": "e6c4213e6d45f41a4ad7f3124369a94673c998a4fb37d6f6f596be01d9e1449b",
+              "data_hash": "c2cf00af9d80b9760eb088310edee871b2e906613656e441332357756bcf9be5",
+              "id": "engineering-default",
+              "variant_key": "35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e"
+            },
+            "hypothesis_ids": [
+              "35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e::momentum::h=1"
+            ],
+            "over_budget": false,
+            "prior_legacy_trials": 0,
+            "prior_other_campaign_attempts": 0,
+            "prior_other_family_legacy_trials": 0,
+            "prior_reserved_units": 0,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+            "task_config_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "units": 1
+          },
+          "usable": false,
+          "financial_verification_error": "TRANSACTION_CHAIN_CORRUPTED",
+          "original_terminal_status": "CANCELLED"
+        }
+      },
+      "result": {
+        "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+        "config_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+        "status": "CANCELLED",
+        "cancel_requested": true,
+        "error": "KeyboardInterrupt",
+        "slots": {
+          "B": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "2ecfd9710717098e855a63df3b0befb4f136dc350bedd1a6a6016f0fcb0bbec6",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs",
+              "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+              "service_kind": "P5",
+              "slot_id": "B",
+              "source_request_hash": null,
+              "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "2b469d44499f7a7b2714b4ca22059ac65cc73e7fbe388dbef3feb25d6e1c95c1",
+              "child_run_id": "65df8d30-9e6a-4333-a102-b0490e408152",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "223984a3224ccfb8c2653cc9fa1e8d57926213db9596d4619f67ab72b85d16eb",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+              "parent_slot_id": "B",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs\\291e1c4c-d0cf-4ec9-aaa6-98077d9f9521\\portfolio-runs",
+              "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "64e3c952139604d93449a232b97a55f24748fc75742d1c40a7d5e2a0d45f14be",
+              "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "R": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "c4d09729-e6d1-425c-88ca-dfb1c89c28ff",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "d9b1362aaeeca1193084f8b7442aac68861d6782c1220a260f957b6fea970cfc",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\research-runs",
+              "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+              "service_kind": "P3",
+              "slot_id": "R",
+              "source_request_hash": null,
+              "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "e6c4213e6d45f41a4ad7f3124369a94673c998a4fb37d6f6f596be01d9e1449b",
+            "data_hash": "c2cf00af9d80b9760eb088310edee871b2e906613656e441332357756bcf9be5",
+            "id": "engineering-default",
+            "variant_key": "35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e"
+          },
+          "hypothesis_ids": [
+            "35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+          "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+          "units": 1
+        }
+      },
+      "db_status": "CANCELLED",
+      "logs": [
+        {
+          "seq": 1,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": "8af97b9aa153f4212ecb2be68abf2d2d1a3b9f3ce0dea4cea2109935106df5f9",
+            "config_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6"
+          }
+        },
+        {
+          "seq": 2,
+          "kind": "CAMPAIGN_ATTEMPT_RESERVED",
+          "payload": {
+            "campaign": {
+              "budget": 12,
+              "campaign_hash": "e6c4213e6d45f41a4ad7f3124369a94673c998a4fb37d6f6f596be01d9e1449b",
+              "data_hash": "c2cf00af9d80b9760eb088310edee871b2e906613656e441332357756bcf9be5",
+              "id": "engineering-default",
+              "variant_key": "35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e"
+            },
+            "hypothesis_ids": [
+              "35401be2b71d027180c932a784bdf569c1305729db83785ba7942d6fc1a5819e::momentum::h=1"
+            ],
+            "over_budget": false,
+            "prior_legacy_trials": 0,
+            "prior_other_campaign_attempts": 0,
+            "prior_other_family_legacy_trials": 0,
+            "prior_reserved_units": 0,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+            "task_config_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "units": 1
+          }
+        },
+        {
+          "seq": 3,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "38ad07a3-367f-402f-8056-38b9457efe47",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 4,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "c4d09729-e6d1-425c-88ca-dfb1c89c28ff",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\research-runs",
+            "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+          }
+        },
+        {
+          "seq": 5,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "c4d09729-e6d1-425c-88ca-dfb1c89c28ff",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "d9b1362aaeeca1193084f8b7442aac68861d6782c1220a260f957b6fea970cfc",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\research-runs",
+            "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+          }
+        },
+        {
+          "seq": 6,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "f7ffc111ff3fd96e686a9de2754e6559f39ee2f69ef240b7ba35276adc6554bc",
+            "manifest_hash": "c9724847c355adc35df16fcc81e0f314c596c566259ed96d0a8142d912614a9c",
+            "slot": "R",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 7,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs",
+            "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+          }
+        },
+        {
+          "seq": 8,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "65df8d30-9e6a-4333-a102-b0490e408152",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs\\291e1c4c-d0cf-4ec9-aaa6-98077d9f9521\\portfolio-runs",
+            "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "64e3c952139604d93449a232b97a55f24748fc75742d1c40a7d5e2a0d45f14be",
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+          }
+        },
+        {
+          "seq": 9,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "2ecfd9710717098e855a63df3b0befb4f136dc350bedd1a6a6016f0fcb0bbec6",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs",
+            "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+          }
+        },
+        {
+          "seq": 10,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "2b469d44499f7a7b2714b4ca22059ac65cc73e7fbe388dbef3feb25d6e1c95c1",
+            "child_run_id": "65df8d30-9e6a-4333-a102-b0490e408152",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "223984a3224ccfb8c2653cc9fa1e8d57926213db9596d4619f67ab72b85d16eb",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "291e1c4c-d0cf-4ec9-aaa6-98077d9f9521",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid\\backtest-runs\\291e1c4c-d0cf-4ec9-aaa6-98077d9f9521\\portfolio-runs",
+            "plan_hash": "b3f8e2eb8a4a0edc8603547a6cd7d665a0bc912b248a771169c8fc0feb2c9fb6",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "64e3c952139604d93449a232b97a55f24748fc75742d1c40a7d5e2a0d45f14be",
+            "task_id": "390d6f16-1629-4e9d-909c-5d2f09d346f5",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "92a3ce70-7404-4532-902f-1f7ae828d826"
+          }
+        },
+        {
+          "seq": 11,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "47016689d59c3e9110731d3393bca3236c0b66e508b2b1b3aadc71aebcebe779",
+            "manifest_hash": "a929ab421c4747fb69d5b11bf5dbdada61cd88a85df01f01cc930c2171e66694",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 12,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "47016689d59c3e9110731d3393bca3236c0b66e508b2b1b3aadc71aebcebe779",
+            "manifest_hash": "a929ab421c4747fb69d5b11bf5dbdada61cd88a85df01f01cc930c2171e66694",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 13,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "711125f6cb3f8806773e042e3492bb61ba60cb425014098261c37edf2dbf6c55",
+            "manifest_hash": "9f6463e7d09eaab6051a63271923d61cdd68991e7ec55f3ef3874b2cee9e41e1",
+            "slot": "B",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 14,
+          "kind": "CANCEL_REQUESTED",
+          "payload": {}
+        },
+        {
+          "seq": 15,
+          "kind": "CANCELLED",
+          "payload": {
+            "cancellation_intent": true,
+            "code": "KeyboardInterrupt",
+            "financial_verification_error": null,
+            "original_error": "KeyboardInterrupt"
+          }
+        }
+      ]
+    },
+    {
+      "case": "original-commit-corrupt",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt",
+      "task": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "original_sha256": "58b99580605964a8d0f4ada847bfb27791422796da18ea03305e9498759c43d8",
+        "damaged_path": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\backtest-runs\\a2431b23-3b58-44a4-b4e6-c4602c267819\\transactions\\commit-000000000019.json",
+        "cancel_ack": "CANCEL_REQUESTED"
+      },
+      "result": {
+        "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+        "config_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+        "status": "FAILED",
+        "cancel_requested": true,
+        "error": "COMMITTED_STATE_UNVERIFIED",
+        "slots": {
+          "B": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "a2431b23-3b58-44a4-b4e6-c4602c267819",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "0f12e523d6f0ac69e7115b1c94069e4e87febfe8d49c9fc6cb35f7b546fac80a",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\backtest-runs",
+              "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+              "service_kind": "P5",
+              "slot_id": "B",
+              "source_request_hash": null,
+              "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "4569fb99c6e4f132f78fcea615cc4e614bf49d015132dbb6e47f6903b2d26537",
+              "child_run_id": "5cebb59a-9362-44c2-baea-8f52981f3418",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "e1c8ae9846ee9705d710a288ec4353acd61d1494b2effae36dd5b71e6a1a76ce",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "a2431b23-3b58-44a4-b4e6-c4602c267819",
+              "parent_slot_id": "B",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\backtest-runs\\a2431b23-3b58-44a4-b4e6-c4602c267819\\portfolio-runs",
+              "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "802fcbc8c4d2f7421dcbc42a1f118d91bd927b348abf31929aa2fab65e3a3357",
+              "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "R": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "b54ee0d5-2d82-4349-8267-06bc494fb72e",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "c1cf558d7d554b054eb20cb3b45f2c1cc59e7326fc674dbb5e89e798f307bae5",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\research-runs",
+              "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+              "service_kind": "P3",
+              "slot_id": "R",
+              "source_request_hash": null,
+              "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "cc0705409980807aa25d17e5bb9a5704eb0e68b05ee1243659e27e165dcae04b",
+            "data_hash": "e18d319034ee0f879602a5719629e1555ed84501a67e6a7c2f6742c10032c830",
+            "id": "engineering-default",
+            "variant_key": "2b3e8f21dc8d64e04409b79a7226ed9ff6712b9be2115dd5143b9aa2033ef715"
+          },
+          "hypothesis_ids": [
+            "2b3e8f21dc8d64e04409b79a7226ed9ff6712b9be2115dd5143b9aa2033ef715::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+          "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+          "units": 1
+        }
+      },
+      "db_status": "FAILED",
+      "logs": [
+        {
+          "seq": 1,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": "f1aaee5a1c571f10ce5890f126843b275da575e27e2e16e1596f0aefba2139b4",
+            "config_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62"
+          }
+        },
+        {
+          "seq": 2,
+          "kind": "CAMPAIGN_ATTEMPT_RESERVED",
+          "payload": {
+            "campaign": {
+              "budget": 12,
+              "campaign_hash": "cc0705409980807aa25d17e5bb9a5704eb0e68b05ee1243659e27e165dcae04b",
+              "data_hash": "e18d319034ee0f879602a5719629e1555ed84501a67e6a7c2f6742c10032c830",
+              "id": "engineering-default",
+              "variant_key": "2b3e8f21dc8d64e04409b79a7226ed9ff6712b9be2115dd5143b9aa2033ef715"
+            },
+            "hypothesis_ids": [
+              "2b3e8f21dc8d64e04409b79a7226ed9ff6712b9be2115dd5143b9aa2033ef715::momentum::h=1"
+            ],
+            "over_budget": false,
+            "prior_legacy_trials": 0,
+            "prior_other_campaign_attempts": 0,
+            "prior_other_family_legacy_trials": 0,
+            "prior_reserved_units": 0,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+            "task_config_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+            "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+            "units": 1
+          }
+        },
+        {
+          "seq": 3,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "645e2596-c013-42d5-874e-5c31d75a6ee7",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 4,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "b54ee0d5-2d82-4349-8267-06bc494fb72e",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\research-runs",
+            "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+          }
+        },
+        {
+          "seq": 5,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "b54ee0d5-2d82-4349-8267-06bc494fb72e",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "c1cf558d7d554b054eb20cb3b45f2c1cc59e7326fc674dbb5e89e798f307bae5",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\research-runs",
+            "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+          }
+        },
+        {
+          "seq": 6,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "9d03f4e8332f51323125ccc8fc1adfcdb301efa4aabbc651e9e10aa32cf065a1",
+            "manifest_hash": "49f66ac479f94177f80d81e85d2ec98c33a98383f8e67b073d18761fdc3dbea8",
+            "slot": "R",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 7,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "a2431b23-3b58-44a4-b4e6-c4602c267819",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\backtest-runs",
+            "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+          }
+        },
+        {
+          "seq": 8,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "5cebb59a-9362-44c2-baea-8f52981f3418",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "a2431b23-3b58-44a4-b4e6-c4602c267819",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\backtest-runs\\a2431b23-3b58-44a4-b4e6-c4602c267819\\portfolio-runs",
+            "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "802fcbc8c4d2f7421dcbc42a1f118d91bd927b348abf31929aa2fab65e3a3357",
+            "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+          }
+        },
+        {
+          "seq": 9,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "a2431b23-3b58-44a4-b4e6-c4602c267819",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "0f12e523d6f0ac69e7115b1c94069e4e87febfe8d49c9fc6cb35f7b546fac80a",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\backtest-runs",
+            "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+          }
+        },
+        {
+          "seq": 10,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "4569fb99c6e4f132f78fcea615cc4e614bf49d015132dbb6e47f6903b2d26537",
+            "child_run_id": "5cebb59a-9362-44c2-baea-8f52981f3418",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "e1c8ae9846ee9705d710a288ec4353acd61d1494b2effae36dd5b71e6a1a76ce",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "a2431b23-3b58-44a4-b4e6-c4602c267819",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-original-commit-corrupt\\backtest-runs\\a2431b23-3b58-44a4-b4e6-c4602c267819\\portfolio-runs",
+            "plan_hash": "6dfe9cfe1d7e1987f8c2c6c7f636b9f80a44fac607eb3894f8c34d8a87fced62",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "802fcbc8c4d2f7421dcbc42a1f118d91bd927b348abf31929aa2fab65e3a3357",
+            "task_id": "bf2d0212-29ce-432f-ba79-6b3d854badb6",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "51ae778f-bd6d-4454-9d79-1089da8000d3"
+          }
+        },
+        {
+          "seq": 11,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "3dece7cceccca156981f846a67265e911b810dd330fd0642c4855463157547e8",
+            "manifest_hash": "9ebfde9950edd2d294ec0f1ac6ad99084459022cf0362189c1481bae6c35057c",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 12,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "3dece7cceccca156981f846a67265e911b810dd330fd0642c4855463157547e8",
+            "manifest_hash": "9ebfde9950edd2d294ec0f1ac6ad99084459022cf0362189c1481bae6c35057c",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 13,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "abc1a8005bdbb1da443043719d52b06a96a564fd1a0b1a6aec30329e7dbc3fe1",
+            "manifest_hash": "3b061202d5f41e445c1e9ba7bf2d013eda6db9eb83d3e91e664496f1e9df5a3f",
+            "slot": "B",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 14,
+          "kind": "CANCEL_REQUESTED",
+          "payload": {}
+        },
+        {
+          "seq": 15,
+          "kind": "FAILED",
+          "payload": {
+            "cancellation_intent": true,
+            "code": "COMMITTED_STATE_UNVERIFIED",
+            "financial_verification_error": "TRANSACTION_CHAIN_CORRUPTED",
+            "original_error": "KeyboardInterrupt"
+          }
+        }
+      ]
+    },
+    {
+      "case": "initial-missing",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing",
+      "task": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "original_sha256": "3d72f0ade6ce7724bf8d1c750075c2f48f1e1bedce6a4180bde6b43f6416aa43",
+        "damaged_path": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\backtest-runs\\d0df39e3-3f63-49d1-976d-a7909b7b5769\\transactions\\initial.json",
+        "cancel_ack": "CANCEL_REQUESTED"
+      },
+      "result": {
+        "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+        "config_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+        "status": "FAILED",
+        "cancel_requested": true,
+        "error": "COMMITTED_STATE_UNVERIFIED",
+        "slots": {
+          "B": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "d0df39e3-3f63-49d1-976d-a7909b7b5769",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "ed9906dc26c89960833de201cc44e94003cdd1d9d70c2599c8d4fb0b7c0a1a92",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\backtest-runs",
+              "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+              "service_kind": "P5",
+              "slot_id": "B",
+              "source_request_hash": null,
+              "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "9f0d004bb58db6d6bf12a9ed15f076a3198baf05e2d3a7255aa952701e70b4f7",
+              "child_run_id": "9464b0be-a197-438d-8d4f-9c2d5e59c6f9",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "9a0e3c2428ef706a3473339486766bf1907499f7cd0b419c4cc09898c16b339b",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "d0df39e3-3f63-49d1-976d-a7909b7b5769",
+              "parent_slot_id": "B",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\backtest-runs\\d0df39e3-3f63-49d1-976d-a7909b7b5769\\portfolio-runs",
+              "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "0da10205fa5c6952965c61dedd8cf0ab7c23fe544a5dedc58c3e113225e9a15e",
+              "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "R": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "67b07e6b-c1ab-460d-9a3e-978a9c430bd9",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "752e8e5350198f33389de008bdb55a79926123ba91e7ac21d1935fb8d55deb4b",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\research-runs",
+              "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+              "service_kind": "P3",
+              "slot_id": "R",
+              "source_request_hash": null,
+              "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "61eff2349cd0c98b1a76391a8c764a795aa37df499011b6803d8aa4fa95eb098",
+            "data_hash": "87056f96f9f13e161d7bb4b69613798ee89cb1f9bb3e3b45cb06d5ea349665ee",
+            "id": "engineering-default",
+            "variant_key": "30389c1258a737c0fe275a65c7b5dccfcfac22e7b2e10ff63af0eeeb1124a902"
+          },
+          "hypothesis_ids": [
+            "30389c1258a737c0fe275a65c7b5dccfcfac22e7b2e10ff63af0eeeb1124a902::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+          "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+          "units": 1
+        }
+      },
+      "db_status": "FAILED",
+      "logs": [
+        {
+          "seq": 1,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": "072ccc7aa003242e56e0cfda812b8adbee804ff518858bcd4ac078f954a06385",
+            "config_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4"
+          }
+        },
+        {
+          "seq": 2,
+          "kind": "CAMPAIGN_ATTEMPT_RESERVED",
+          "payload": {
+            "campaign": {
+              "budget": 12,
+              "campaign_hash": "61eff2349cd0c98b1a76391a8c764a795aa37df499011b6803d8aa4fa95eb098",
+              "data_hash": "87056f96f9f13e161d7bb4b69613798ee89cb1f9bb3e3b45cb06d5ea349665ee",
+              "id": "engineering-default",
+              "variant_key": "30389c1258a737c0fe275a65c7b5dccfcfac22e7b2e10ff63af0eeeb1124a902"
+            },
+            "hypothesis_ids": [
+              "30389c1258a737c0fe275a65c7b5dccfcfac22e7b2e10ff63af0eeeb1124a902::momentum::h=1"
+            ],
+            "over_budget": false,
+            "prior_legacy_trials": 0,
+            "prior_other_campaign_attempts": 0,
+            "prior_other_family_legacy_trials": 0,
+            "prior_reserved_units": 0,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+            "task_config_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+            "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+            "units": 1
+          }
+        },
+        {
+          "seq": 3,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "3c22e245-a6ea-4757-afd5-eedf852ddf85",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 4,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "67b07e6b-c1ab-460d-9a3e-978a9c430bd9",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\research-runs",
+            "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+          }
+        },
+        {
+          "seq": 5,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "67b07e6b-c1ab-460d-9a3e-978a9c430bd9",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "752e8e5350198f33389de008bdb55a79926123ba91e7ac21d1935fb8d55deb4b",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\research-runs",
+            "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+          }
+        },
+        {
+          "seq": 6,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "ed0f1f7aeb5c5c5c2c5cb3b330f871477e3e79e3897b7dce46e979a9727a5873",
+            "manifest_hash": "5e28aeb74227cd963deaf7179dfdc6e8aff8d687c27bb8c9a499834e3eb13a9b",
+            "slot": "R",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 7,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "d0df39e3-3f63-49d1-976d-a7909b7b5769",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\backtest-runs",
+            "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+          }
+        },
+        {
+          "seq": 8,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "9464b0be-a197-438d-8d4f-9c2d5e59c6f9",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "d0df39e3-3f63-49d1-976d-a7909b7b5769",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\backtest-runs\\d0df39e3-3f63-49d1-976d-a7909b7b5769\\portfolio-runs",
+            "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "0da10205fa5c6952965c61dedd8cf0ab7c23fe544a5dedc58c3e113225e9a15e",
+            "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+          }
+        },
+        {
+          "seq": 9,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "d0df39e3-3f63-49d1-976d-a7909b7b5769",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "ed9906dc26c89960833de201cc44e94003cdd1d9d70c2599c8d4fb0b7c0a1a92",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\backtest-runs",
+            "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+          }
+        },
+        {
+          "seq": 10,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "9f0d004bb58db6d6bf12a9ed15f076a3198baf05e2d3a7255aa952701e70b4f7",
+            "child_run_id": "9464b0be-a197-438d-8d4f-9c2d5e59c6f9",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "9a0e3c2428ef706a3473339486766bf1907499f7cd0b419c4cc09898c16b339b",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "d0df39e3-3f63-49d1-976d-a7909b7b5769",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-initial-missing\\backtest-runs\\d0df39e3-3f63-49d1-976d-a7909b7b5769\\portfolio-runs",
+            "plan_hash": "a9d93865879bf6950892269743bc24b2c0d12d899dae0074521d742a9ed076b4",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "0da10205fa5c6952965c61dedd8cf0ab7c23fe544a5dedc58c3e113225e9a15e",
+            "task_id": "5ee6cee6-06d0-4ccd-b31c-550326002552",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "a8334b98-8a90-4a9d-abca-8a3717cba622"
+          }
+        },
+        {
+          "seq": 11,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "e84d492d234df4fb9c1dbb0b3d6803f34f8aab89ee883bf8a61f4df344dc179a",
+            "manifest_hash": "6294e4ed7db4c7f8a73bfdf8c9e1d2868fa7ed94ead80f51ffa072b1b67adaea",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 12,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "e84d492d234df4fb9c1dbb0b3d6803f34f8aab89ee883bf8a61f4df344dc179a",
+            "manifest_hash": "6294e4ed7db4c7f8a73bfdf8c9e1d2868fa7ed94ead80f51ffa072b1b67adaea",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 13,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "bc169fc3cbb5fad5d00847947e1867ee5394166626775784e5f810590eae5f8b",
+            "manifest_hash": "4fb730c0e12b6d0cd3a04f30c866e017c729565f661a33a4a56f2d7f803b2fd7",
+            "slot": "B",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 14,
+          "kind": "CANCEL_REQUESTED",
+          "payload": {}
+        },
+        {
+          "seq": 15,
+          "kind": "FAILED",
+          "payload": {
+            "cancellation_intent": true,
+            "code": "COMMITTED_STATE_UNVERIFIED",
+            "financial_verification_error": "TASK_TRANSACTION_FILES_MISSING",
+            "original_error": "KeyboardInterrupt"
+          }
+        }
+      ]
+    },
+    {
+      "case": "extra-file",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file",
+      "task": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "damaged_path": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\backtest-runs\\484b6e26-ada3-488f-bee7-76d70652bc21\\transactions\\unexpected-unlisted.json",
+        "cancel_ack": "CANCEL_REQUESTED"
+      },
+      "result": {
+        "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+        "config_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+        "status": "FAILED",
+        "cancel_requested": true,
+        "error": "COMMITTED_STATE_UNVERIFIED",
+        "slots": {
+          "B": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "484b6e26-ada3-488f-bee7-76d70652bc21",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "64c774a5dec0384f3b02ac8ccea9f20aed0b3cc1d30db50275891281ca40ae0b",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\backtest-runs",
+              "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+              "service_kind": "P5",
+              "slot_id": "B",
+              "source_request_hash": null,
+              "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "24464c3c19bd0990dd50b546c1d74911855de2c969d2d40147862bc3d15efe58",
+              "child_run_id": "8823774c-d393-4f58-9fd8-a7ef4f7b51c0",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "c597796aac5116d56479e7de6c15a4dd89b04c6aa171843de121de314f29bae6",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "484b6e26-ada3-488f-bee7-76d70652bc21",
+              "parent_slot_id": "B",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\backtest-runs\\484b6e26-ada3-488f-bee7-76d70652bc21\\portfolio-runs",
+              "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "24b8d810bc533d577cf8f359011124b26331163e02444e35a9d43d3a629a4ffb",
+              "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "R": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "d3a7a20c-b4b5-475a-a2c3-bf642b885f35",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "5d5a8a6e63d82597461c094f841f121fc9cac554d34dfd9c836a45fbef29902d",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\research-runs",
+              "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+              "service_kind": "P3",
+              "slot_id": "R",
+              "source_request_hash": null,
+              "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "f404f261879ed9f3652fdc2033a5ae030792e91012b08b9d4fd8eefe65978a1d",
+            "data_hash": "e978be099391b9db540845cbe9c076b0c108f1fc334405127bfda93e27c73a17",
+            "id": "engineering-default",
+            "variant_key": "c13b2090d0d98ef55066c73d18fff4b6000bc01f785bedd8f31b82e0a918b676"
+          },
+          "hypothesis_ids": [
+            "c13b2090d0d98ef55066c73d18fff4b6000bc01f785bedd8f31b82e0a918b676::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+          "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+          "units": 1
+        }
+      },
+      "db_status": "FAILED",
+      "logs": [
+        {
+          "seq": 1,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": "22895158bff651eace34cc41ea6165ef84074e0b4a9e5f26b075785bfd5beb8a",
+            "config_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b"
+          }
+        },
+        {
+          "seq": 2,
+          "kind": "CAMPAIGN_ATTEMPT_RESERVED",
+          "payload": {
+            "campaign": {
+              "budget": 12,
+              "campaign_hash": "f404f261879ed9f3652fdc2033a5ae030792e91012b08b9d4fd8eefe65978a1d",
+              "data_hash": "e978be099391b9db540845cbe9c076b0c108f1fc334405127bfda93e27c73a17",
+              "id": "engineering-default",
+              "variant_key": "c13b2090d0d98ef55066c73d18fff4b6000bc01f785bedd8f31b82e0a918b676"
+            },
+            "hypothesis_ids": [
+              "c13b2090d0d98ef55066c73d18fff4b6000bc01f785bedd8f31b82e0a918b676::momentum::h=1"
+            ],
+            "over_budget": false,
+            "prior_legacy_trials": 0,
+            "prior_other_campaign_attempts": 0,
+            "prior_other_family_legacy_trials": 0,
+            "prior_reserved_units": 0,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+            "task_config_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+            "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+            "units": 1
+          }
+        },
+        {
+          "seq": 3,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "d25668fd-ba57-4c6e-860e-e5163a064980",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 4,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "d3a7a20c-b4b5-475a-a2c3-bf642b885f35",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\research-runs",
+            "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+          }
+        },
+        {
+          "seq": 5,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "d3a7a20c-b4b5-475a-a2c3-bf642b885f35",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "5d5a8a6e63d82597461c094f841f121fc9cac554d34dfd9c836a45fbef29902d",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\research-runs",
+            "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+          }
+        },
+        {
+          "seq": 6,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "70ecde5a8945944b8ed2c89523dea02ca971bf522ae5742edb31468abd1807af",
+            "manifest_hash": "e39d5c8c73843a691611ba68892004919a8dc9a66177d15da784cac27ea56c9c",
+            "slot": "R",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 7,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "484b6e26-ada3-488f-bee7-76d70652bc21",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\backtest-runs",
+            "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+          }
+        },
+        {
+          "seq": 8,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "8823774c-d393-4f58-9fd8-a7ef4f7b51c0",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "484b6e26-ada3-488f-bee7-76d70652bc21",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\backtest-runs\\484b6e26-ada3-488f-bee7-76d70652bc21\\portfolio-runs",
+            "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "24b8d810bc533d577cf8f359011124b26331163e02444e35a9d43d3a629a4ffb",
+            "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+          }
+        },
+        {
+          "seq": 9,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "484b6e26-ada3-488f-bee7-76d70652bc21",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "64c774a5dec0384f3b02ac8ccea9f20aed0b3cc1d30db50275891281ca40ae0b",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\backtest-runs",
+            "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+          }
+        },
+        {
+          "seq": 10,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "24464c3c19bd0990dd50b546c1d74911855de2c969d2d40147862bc3d15efe58",
+            "child_run_id": "8823774c-d393-4f58-9fd8-a7ef4f7b51c0",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "c597796aac5116d56479e7de6c15a4dd89b04c6aa171843de121de314f29bae6",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "484b6e26-ada3-488f-bee7-76d70652bc21",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-extra-file\\backtest-runs\\484b6e26-ada3-488f-bee7-76d70652bc21\\portfolio-runs",
+            "plan_hash": "50c1b902632ed05cfc8525b8574d392b3382e8ec53dc7ec5b78faf179c19d96b",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "24b8d810bc533d577cf8f359011124b26331163e02444e35a9d43d3a629a4ffb",
+            "task_id": "9a3fd361-16f5-45bb-b8bd-c209743d7386",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "f07d2134-1501-4bd5-9a86-3ea4006d60dd"
+          }
+        },
+        {
+          "seq": 11,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "c67b3b5871828f355f65af8276d88bd49d11c0f20e275958408755cc5b02d712",
+            "manifest_hash": "87a77e4d0742a794c9e3ffd5d0bc9b5f69ebd1042414defe245ce19ecc203124",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 12,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "c67b3b5871828f355f65af8276d88bd49d11c0f20e275958408755cc5b02d712",
+            "manifest_hash": "87a77e4d0742a794c9e3ffd5d0bc9b5f69ebd1042414defe245ce19ecc203124",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 13,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "3e4b5d3c47d62438eea5b09386cc6dce2f4a0b6eb2cc82c7ff257db874827b90",
+            "manifest_hash": "36e96f2741b41c782644318143d807f768d2c68011fb67b99539474e541dac20",
+            "slot": "B",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 14,
+          "kind": "CANCEL_REQUESTED",
+          "payload": {}
+        },
+        {
+          "seq": 15,
+          "kind": "FAILED",
+          "payload": {
+            "cancellation_intent": true,
+            "code": "COMMITTED_STATE_UNVERIFIED",
+            "financial_verification_error": "TASK_FINANCIAL_RESULT_CHANGED",
+            "original_error": "KeyboardInterrupt"
+          }
+        }
+      ]
+    },
+    {
+      "case": "replay-child-corrupt",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt",
+      "task": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "original_sha256": "4f18e104e798aec02997cdbfa431e383802d071dd859d0d13796573aa82daf7f",
+        "damaged_path": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt\\replay-runs\\455be517-19c0-4606-b440-829bf318eb0c\\transactions\\commit-000000000019.json",
+        "cancel_ack": "CANCEL_REQUESTED"
+      },
+      "result": {
+        "task_id": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+        "config_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760",
+        "status": "FAILED",
+        "cancel_requested": true,
+        "error": "COMMITTED_STATE_UNVERIFIED",
+        "slots": {
+          "E": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "455be517-19c0-4606-b440-829bf318eb0c",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "966bc49ac3bb3985328a0db620c63d3dd2bfbb289829991b1072fd6f7a0b6f55",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt\\replay-runs",
+              "plan_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760",
+              "service_kind": "P5_REPLAY",
+              "slot_id": "E",
+              "source_request_hash": null,
+              "task_id": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+              "task_kind": "replay",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "2ac6c929-c6d7-4ed4-b358-2f2d3a503ab7"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "ab5968de56952400595b8a138343f50da6cef166e32c585ef6eec2e1182731fd",
+              "child_run_id": "7c71f4dd-a9c2-480f-876f-7381450fd9d6",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "0c707b027a3267df6ab96cdebbefce1cac4619fe6461cb2a6c5543b16066635f",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "455be517-19c0-4606-b440-829bf318eb0c",
+              "parent_slot_id": "E",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt\\replay-runs\\455be517-19c0-4606-b440-829bf318eb0c\\portfolio-runs",
+              "plan_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "bcc7b8e5f59f522ec0dbbd936ceb0778ae364c84dfa09bad0ae312ffd0891cdb",
+              "task_id": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+              "task_kind": "replay",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "2ac6c929-c6d7-4ed4-b358-2f2d3a503ab7"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE"
+      },
+      "db_status": "FAILED",
+      "logs": [
+        {
+          "seq": 15,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": null,
+            "config_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760"
+          }
+        },
+        {
+          "seq": 16,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "88d95be4-30ef-465d-b9fd-76e4c306664f",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 17,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "455be517-19c0-4606-b440-829bf318eb0c",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt\\replay-runs",
+            "plan_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760",
+            "service_kind": "P5_REPLAY",
+            "slot_id": "E",
+            "source_request_hash": null,
+            "task_id": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "2ac6c929-c6d7-4ed4-b358-2f2d3a503ab7"
+          }
+        },
+        {
+          "seq": 18,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "7c71f4dd-a9c2-480f-876f-7381450fd9d6",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "455be517-19c0-4606-b440-829bf318eb0c",
+            "parent_slot_id": "E",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt\\replay-runs\\455be517-19c0-4606-b440-829bf318eb0c\\portfolio-runs",
+            "plan_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "bcc7b8e5f59f522ec0dbbd936ceb0778ae364c84dfa09bad0ae312ffd0891cdb",
+            "task_id": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "2ac6c929-c6d7-4ed4-b358-2f2d3a503ab7"
+          }
+        },
+        {
+          "seq": 19,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "455be517-19c0-4606-b440-829bf318eb0c",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "966bc49ac3bb3985328a0db620c63d3dd2bfbb289829991b1072fd6f7a0b6f55",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt\\replay-runs",
+            "plan_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760",
+            "service_kind": "P5_REPLAY",
+            "slot_id": "E",
+            "source_request_hash": null,
+            "task_id": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "2ac6c929-c6d7-4ed4-b358-2f2d3a503ab7"
+          }
+        },
+        {
+          "seq": 20,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "ab5968de56952400595b8a138343f50da6cef166e32c585ef6eec2e1182731fd",
+            "child_run_id": "7c71f4dd-a9c2-480f-876f-7381450fd9d6",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "0c707b027a3267df6ab96cdebbefce1cac4619fe6461cb2a6c5543b16066635f",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "455be517-19c0-4606-b440-829bf318eb0c",
+            "parent_slot_id": "E",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-child-corrupt\\replay-runs\\455be517-19c0-4606-b440-829bf318eb0c\\portfolio-runs",
+            "plan_hash": "1f223d839f393c2651bbde9618e0e9b10570491866f55d6c1115580f756f7760",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "bcc7b8e5f59f522ec0dbbd936ceb0778ae364c84dfa09bad0ae312ffd0891cdb",
+            "task_id": "0f029bc3-a45b-4adc-8b7a-924bade09aa6",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "2ac6c929-c6d7-4ed4-b358-2f2d3a503ab7"
+          }
+        },
+        {
+          "seq": 21,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "34568dfafc7f71707657d9256ca9a68ff213baad85f76b3529081aef083b1c3d",
+            "manifest_hash": "f472ff71ecc797b06e95304e1461f530f514f258da06b520163fdfd48663ec86",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 22,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "34568dfafc7f71707657d9256ca9a68ff213baad85f76b3529081aef083b1c3d",
+            "manifest_hash": "f472ff71ecc797b06e95304e1461f530f514f258da06b520163fdfd48663ec86",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 23,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "65728e5f54bee7eecc82309b71b792dbae9a6558bcdc333a8c0a06f0b9f134cc",
+            "manifest_hash": "80f90f5090d30be16c88ca7b4479434beebe4520d287f2c5dddd3f8adc1963b8",
+            "slot": "E",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 24,
+          "kind": "CANCEL_REQUESTED",
+          "payload": {}
+        },
+        {
+          "seq": 25,
+          "kind": "FAILED",
+          "payload": {
+            "cancellation_intent": true,
+            "code": "COMMITTED_STATE_UNVERIFIED",
+            "financial_verification_error": "TRANSACTION_CHAIN_CORRUPTED",
+            "original_error": "KeyboardInterrupt"
+          }
+        }
+      ]
+    },
+    {
+      "case": "replay-source-corrupt",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt",
+      "task": "158d9494-556a-400a-90ba-f7565d592b98",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "original_sha256": "63d814047071d1fd76c8ad28db7c3db4407136b18b8a1964f68637146c7e6577",
+        "damaged_path": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt\\backtest-runs\\cb16c080-2e5f-4378-8c7c-25afa71c68fd\\transactions\\commit-000000000019.json",
+        "cancel_ack": "CANCEL_REQUESTED"
+      },
+      "result": {
+        "task_id": "158d9494-556a-400a-90ba-f7565d592b98",
+        "config_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c",
+        "status": "FAILED",
+        "cancel_requested": true,
+        "error": "COMMITTED_STATE_UNVERIFIED",
+        "slots": {
+          "E": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "4ac4baa0-dc73-4948-9a7f-f20816dc8049",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "75e441de501dcd87f1580946ce3fe608e6a764c939e3cc9053c2f861331ec5b8",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt\\replay-runs",
+              "plan_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c",
+              "service_kind": "P5_REPLAY",
+              "slot_id": "E",
+              "source_request_hash": null,
+              "task_id": "158d9494-556a-400a-90ba-f7565d592b98",
+              "task_kind": "replay",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "90f2bff3-96fa-4235-b0c0-404123f8a9f7"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "355926de72e2c3ce1a351ec3e8f2ad1c1ce1958bca0cde2498a22bf197628db9",
+              "child_run_id": "de428779-86e3-4770-ad75-92e84f418645",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "ce88255b71050bc30e6828956395d79ca0d23c14dbf012546d29bff7fc15649e",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "4ac4baa0-dc73-4948-9a7f-f20816dc8049",
+              "parent_slot_id": "E",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt\\replay-runs\\4ac4baa0-dc73-4948-9a7f-f20816dc8049\\portfolio-runs",
+              "plan_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "4c8ca0409f40375687a49f7a9aec4fe5ff47d8d8c40d2f73d4df484471b26ea7",
+              "task_id": "158d9494-556a-400a-90ba-f7565d592b98",
+              "task_kind": "replay",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "90f2bff3-96fa-4235-b0c0-404123f8a9f7"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE"
+      },
+      "db_status": "FAILED",
+      "logs": [
+        {
+          "seq": 15,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": null,
+            "config_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c"
+          }
+        },
+        {
+          "seq": 16,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "75324654-d9f9-4ff7-b0e9-c74b3956acc9",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 17,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "4ac4baa0-dc73-4948-9a7f-f20816dc8049",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt\\replay-runs",
+            "plan_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c",
+            "service_kind": "P5_REPLAY",
+            "slot_id": "E",
+            "source_request_hash": null,
+            "task_id": "158d9494-556a-400a-90ba-f7565d592b98",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "90f2bff3-96fa-4235-b0c0-404123f8a9f7"
+          }
+        },
+        {
+          "seq": 18,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "de428779-86e3-4770-ad75-92e84f418645",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "4ac4baa0-dc73-4948-9a7f-f20816dc8049",
+            "parent_slot_id": "E",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt\\replay-runs\\4ac4baa0-dc73-4948-9a7f-f20816dc8049\\portfolio-runs",
+            "plan_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "4c8ca0409f40375687a49f7a9aec4fe5ff47d8d8c40d2f73d4df484471b26ea7",
+            "task_id": "158d9494-556a-400a-90ba-f7565d592b98",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "90f2bff3-96fa-4235-b0c0-404123f8a9f7"
+          }
+        },
+        {
+          "seq": 19,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "4ac4baa0-dc73-4948-9a7f-f20816dc8049",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "75e441de501dcd87f1580946ce3fe608e6a764c939e3cc9053c2f861331ec5b8",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt\\replay-runs",
+            "plan_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c",
+            "service_kind": "P5_REPLAY",
+            "slot_id": "E",
+            "source_request_hash": null,
+            "task_id": "158d9494-556a-400a-90ba-f7565d592b98",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "90f2bff3-96fa-4235-b0c0-404123f8a9f7"
+          }
+        },
+        {
+          "seq": 20,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "355926de72e2c3ce1a351ec3e8f2ad1c1ce1958bca0cde2498a22bf197628db9",
+            "child_run_id": "de428779-86e3-4770-ad75-92e84f418645",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "ce88255b71050bc30e6828956395d79ca0d23c14dbf012546d29bff7fc15649e",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "4ac4baa0-dc73-4948-9a7f-f20816dc8049",
+            "parent_slot_id": "E",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-replay-source-corrupt\\replay-runs\\4ac4baa0-dc73-4948-9a7f-f20816dc8049\\portfolio-runs",
+            "plan_hash": "cb679053d4dfd2cfd041bbc3c1d5378fa8627a538e01bb2c69d672f642b4324c",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "4c8ca0409f40375687a49f7a9aec4fe5ff47d8d8c40d2f73d4df484471b26ea7",
+            "task_id": "158d9494-556a-400a-90ba-f7565d592b98",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "90f2bff3-96fa-4235-b0c0-404123f8a9f7"
+          }
+        },
+        {
+          "seq": 21,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "4c3cfe5d1cc40447e430265c5ef70fa63129c376616d8856ecb474e9fdae1dc0",
+            "manifest_hash": "9c8115df8c1f899e185aceedbfab32dc9e53b02b581924f434be7dcfa4d12aee",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 22,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "4c3cfe5d1cc40447e430265c5ef70fa63129c376616d8856ecb474e9fdae1dc0",
+            "manifest_hash": "9c8115df8c1f899e185aceedbfab32dc9e53b02b581924f434be7dcfa4d12aee",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 23,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "458e72999f17f0e88cb6e41f1278b207dd53691d40af9f684328b9e8fd8638b0",
+            "manifest_hash": "237775b72f2185b8064a52e432ed73aa89d7980b7417f2258b41adec6b7c640a",
+            "slot": "E",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 24,
+          "kind": "CANCEL_REQUESTED",
+          "payload": {}
+        },
+        {
+          "seq": 25,
+          "kind": "FAILED",
+          "payload": {
+            "cancellation_intent": true,
+            "code": "COMMITTED_STATE_UNVERIFIED",
+            "financial_verification_error": "TRANSACTION_CHAIN_CORRUPTED",
+            "original_error": "KeyboardInterrupt"
+          }
+        }
+      ]
+    },
+    {
+      "case": "success-corrupt",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt",
+      "task": "0f037ebc-f234-4484-8524-674b6519c128",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "original_sha256": "b182e2be5168b5fd954145d5ddee0f912dd5d55a88a8c704e1b5f5715a9711f9",
+        "damaged_path": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\backtest-runs\\88af322b-ebcb-4f79-89db-903286e7fd52\\transactions\\commit-000000000019.json"
+      },
+      "result": {
+        "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+        "config_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+        "status": "INTEGRITY_ERROR",
+        "cancel_requested": false,
+        "error": "TRANSACTION_CHAIN_CORRUPTED",
+        "slots": {
+          "B": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "88af322b-ebcb-4f79-89db-903286e7fd52",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "a03e0bd83b340478e20ccdb6c0a8cd8bcd28c5b5c2b7ced17a2dd37e12844da0",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\backtest-runs",
+              "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+              "service_kind": "P5",
+              "slot_id": "B",
+              "source_request_hash": null,
+              "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "33ad377cdbecb890a09630332608a28e581088b1da0cfcf4b52358b2ac2f9273",
+              "child_run_id": "026dcc8c-e3b7-4c14-878b-4fc81807dbda",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "a4ac949683e2057949a0949dc4c366286ddc51543bc10280b0d3eadd61577d0b",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "88af322b-ebcb-4f79-89db-903286e7fd52",
+              "parent_slot_id": "B",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\backtest-runs\\88af322b-ebcb-4f79-89db-903286e7fd52\\portfolio-runs",
+              "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "04456adbcf480e001b79fac5d9295ab02b25be7e768b6f5c645d113ba62a053b",
+              "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "R": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "c81b5ea5-e108-439a-8d1d-31fff3d202d3",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "bce986c8913c7bd073aba0e9a11e3dfb0c927859afd8fcb281b413bbf1a03628",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\research-runs",
+              "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+              "service_kind": "P3",
+              "slot_id": "R",
+              "source_request_hash": null,
+              "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+              "task_kind": "engineering_pipeline",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "54569fe1b662300223bf01378a482d12a2e996e9d5b15e96de9458bf3307ebcb",
+            "data_hash": "305e07fb23268be5f9162ce6e0862df46d6e025a29fcbf2025e4977c12cee259",
+            "id": "engineering-default",
+            "variant_key": "0bebcd68be077e472733d7f8845b329bae45e22d657f57fbc14450685812735d"
+          },
+          "hypothesis_ids": [
+            "0bebcd68be077e472733d7f8845b329bae45e22d657f57fbc14450685812735d::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+          "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+          "units": 1
+        },
+        "usable": false
+      },
+      "db_status": "SUCCEEDED",
+      "logs": [
+        {
+          "seq": 1,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": "5c9a80e91521db018940343002c6d4d055caaeb0fbacfd2cee4168701e53ea75",
+            "config_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600"
+          }
+        },
+        {
+          "seq": 2,
+          "kind": "CAMPAIGN_ATTEMPT_RESERVED",
+          "payload": {
+            "campaign": {
+              "budget": 12,
+              "campaign_hash": "54569fe1b662300223bf01378a482d12a2e996e9d5b15e96de9458bf3307ebcb",
+              "data_hash": "305e07fb23268be5f9162ce6e0862df46d6e025a29fcbf2025e4977c12cee259",
+              "id": "engineering-default",
+              "variant_key": "0bebcd68be077e472733d7f8845b329bae45e22d657f57fbc14450685812735d"
+            },
+            "hypothesis_ids": [
+              "0bebcd68be077e472733d7f8845b329bae45e22d657f57fbc14450685812735d::momentum::h=1"
+            ],
+            "over_budget": false,
+            "prior_legacy_trials": 0,
+            "prior_other_campaign_attempts": 0,
+            "prior_other_family_legacy_trials": 0,
+            "prior_reserved_units": 0,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+            "task_config_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+            "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+            "units": 1
+          }
+        },
+        {
+          "seq": 3,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "0268a922-3458-40cf-8235-257a36d58285",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 4,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "c81b5ea5-e108-439a-8d1d-31fff3d202d3",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\research-runs",
+            "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+          }
+        },
+        {
+          "seq": 5,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "c81b5ea5-e108-439a-8d1d-31fff3d202d3",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "bce986c8913c7bd073aba0e9a11e3dfb0c927859afd8fcb281b413bbf1a03628",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\research-runs",
+            "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+            "service_kind": "P3",
+            "slot_id": "R",
+            "source_request_hash": null,
+            "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+          }
+        },
+        {
+          "seq": 6,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "10bfe1b704b3b23c0f9c4e059ca304202bacb762240d438c2c62f54f667d286f",
+            "manifest_hash": "0b04812bdf52b739725944bce735ab3a786a5904157c002b0d249e6ef6b097f3",
+            "slot": "R",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 7,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "88af322b-ebcb-4f79-89db-903286e7fd52",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\backtest-runs",
+            "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+          }
+        },
+        {
+          "seq": 8,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "026dcc8c-e3b7-4c14-878b-4fc81807dbda",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "88af322b-ebcb-4f79-89db-903286e7fd52",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\backtest-runs\\88af322b-ebcb-4f79-89db-903286e7fd52\\portfolio-runs",
+            "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "04456adbcf480e001b79fac5d9295ab02b25be7e768b6f5c645d113ba62a053b",
+            "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+          }
+        },
+        {
+          "seq": 9,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "88af322b-ebcb-4f79-89db-903286e7fd52",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "a03e0bd83b340478e20ccdb6c0a8cd8bcd28c5b5c2b7ced17a2dd37e12844da0",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\backtest-runs",
+            "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+            "service_kind": "P5",
+            "slot_id": "B",
+            "source_request_hash": null,
+            "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+          }
+        },
+        {
+          "seq": 10,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "33ad377cdbecb890a09630332608a28e581088b1da0cfcf4b52358b2ac2f9273",
+            "child_run_id": "026dcc8c-e3b7-4c14-878b-4fc81807dbda",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "a4ac949683e2057949a0949dc4c366286ddc51543bc10280b0d3eadd61577d0b",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "88af322b-ebcb-4f79-89db-903286e7fd52",
+            "parent_slot_id": "B",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-success-corrupt\\backtest-runs\\88af322b-ebcb-4f79-89db-903286e7fd52\\portfolio-runs",
+            "plan_hash": "90c19cad2698f2561f84ad7481a9b2b9247c40ec99a9c1e32f792b274f873600",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "04456adbcf480e001b79fac5d9295ab02b25be7e768b6f5c645d113ba62a053b",
+            "task_id": "0f037ebc-f234-4484-8524-674b6519c128",
+            "task_kind": "engineering_pipeline",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "c3cde4cb-9f56-4d7d-ad80-5e2781c50535"
+          }
+        },
+        {
+          "seq": 11,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "c2d4f6dfb702af6a077e534c218f09546cee8b507825a653889c2d72a0e669a1",
+            "manifest_hash": "01f41e4971e028a1cd0e9e7479d88e90d6b8a03d236858b631564f4bdd5656f8",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 12,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "c2d4f6dfb702af6a077e534c218f09546cee8b507825a653889c2d72a0e669a1",
+            "manifest_hash": "01f41e4971e028a1cd0e9e7479d88e90d6b8a03d236858b631564f4bdd5656f8",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 13,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "5368558e26d7d00be0ceff9ad290179beb19a2bfe780708af6f1b382b45ddf75",
+            "manifest_hash": "8d8e0893f7c31d2c9256dcd9936333dc89811db4ceed03db01e9b80da969a54b",
+            "slot": "B",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 14,
+          "kind": "SUCCEEDED",
+          "payload": {
+            "claim_epoch": 1,
+            "completion": {
+              "file": "completion.json",
+              "sha256": "a54f697d5ce18c98b8fa012f35828c76362d5282fdf66f8a51764c7b13f9601f"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "valid-replay",
+      "workspace": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid-replay",
+      "task": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+      "observed": {
+        "before_transactions": 19,
+        "before_account": {
+          "F_unused": "9",
+          "H": "0",
+          "O_F": "0",
+          "O_N": "0",
+          "P4_free": "89.1",
+          "P4_nonshort": "0",
+          "P_res": "0",
+          "S_set": "0",
+          "U_free": "0",
+          "U_short": "0",
+          "Z": "0",
+          "available": "98.1",
+          "cash_alloc": "89.1",
+          "cash_set": "98.1",
+          "cash_total": "98.1",
+          "equity": "998.1",
+          "equity_alloc": "989.1",
+          "marked_value": "900",
+          "payable": "0",
+          "receivable": "0",
+          "short_value": "0"
+        },
+        "cancel_ack": "CANCEL_REQUESTED"
+      },
+      "result": {
+        "task_id": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+        "config_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2",
+        "status": "CANCELLED",
+        "cancel_requested": true,
+        "error": "KeyboardInterrupt",
+        "slots": {
+          "E": {
+            "binding": {
+              "adapted_request_hash": null,
+              "child_run_id": "e0fed2cb-c5f5-475a-9430-970a92927bd3",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "d244cde85df6a849778bc87cc185e88df59446287bf48bb501c913d405f1ac6c",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": null,
+              "decision_time_UTC": null,
+              "parent_execution_run_id": null,
+              "parent_slot_id": null,
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid-replay\\replay-runs",
+              "plan_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2",
+              "service_kind": "P5_REPLAY",
+              "slot_id": "E",
+              "source_request_hash": null,
+              "task_id": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+              "task_kind": "replay",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "6ca76e93-aee3-4eff-8afd-4e23ccb8c293"
+            },
+            "state": "VERIFIED_SUCCESS"
+          },
+          "P:0": {
+            "binding": {
+              "adapted_request_hash": "2a0536eeca49c33e0b38aec51d31f9b1d31eebe99220445c59ae5dbc5f2aec04",
+              "child_run_id": "99401c49-ebf2-4e86-a974-e8e24724059f",
+              "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+              "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+              "core_config_hash": "b27fb040698bd91db2bf94cea2849d6fd9d20db58b6333c6f90fcf9f6bb4a053",
+              "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+              "decision_index": 0,
+              "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+              "parent_execution_run_id": "e0fed2cb-c5f5-475a-9430-970a92927bd3",
+              "parent_slot_id": "E",
+              "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid-replay\\replay-runs\\e0fed2cb-c5f5-475a-9430-970a92927bd3\\portfolio-runs",
+              "plan_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2",
+              "service_kind": "P4",
+              "slot_id": "P:0",
+              "source_request_hash": "cc66ad589db77a37394554e1ffb099cbf431f1f0de4001e0dc9a5d174de6c5c8",
+              "task_id": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+              "task_kind": "replay",
+              "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+              "workspace_id": "6ca76e93-aee3-4eff-8afd-4e23ccb8c293"
+            },
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE"
+      },
+      "db_status": "CANCELLED",
+      "logs": [
+        {
+          "seq": 15,
+          "kind": "SUBMITTED",
+          "payload": {
+            "campaign_attempt_sha256": null,
+            "config_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2"
+          }
+        },
+        {
+          "seq": 16,
+          "kind": "CLAIMED",
+          "payload": {
+            "epoch": 1,
+            "owner": "27bf4003-6ff5-48fb-ae28-50d350db9876",
+            "recovery": false
+          }
+        },
+        {
+          "seq": 17,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "e0fed2cb-c5f5-475a-9430-970a92927bd3",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid-replay\\replay-runs",
+            "plan_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2",
+            "service_kind": "P5_REPLAY",
+            "slot_id": "E",
+            "source_request_hash": null,
+            "task_id": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "6ca76e93-aee3-4eff-8afd-4e23ccb8c293"
+          }
+        },
+        {
+          "seq": 18,
+          "kind": "SLOT_ALLOCATED",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "99401c49-ebf2-4e86-a974-e8e24724059f",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": null,
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "e0fed2cb-c5f5-475a-9430-970a92927bd3",
+            "parent_slot_id": "E",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid-replay\\replay-runs\\e0fed2cb-c5f5-475a-9430-970a92927bd3\\portfolio-runs",
+            "plan_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "cc66ad589db77a37394554e1ffb099cbf431f1f0de4001e0dc9a5d174de6c5c8",
+            "task_id": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "6ca76e93-aee3-4eff-8afd-4e23ccb8c293"
+          }
+        },
+        {
+          "seq": 19,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": null,
+            "child_run_id": "e0fed2cb-c5f5-475a-9430-970a92927bd3",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "d244cde85df6a849778bc87cc185e88df59446287bf48bb501c913d405f1ac6c",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": null,
+            "decision_time_UTC": null,
+            "parent_execution_run_id": null,
+            "parent_slot_id": null,
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid-replay\\replay-runs",
+            "plan_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2",
+            "service_kind": "P5_REPLAY",
+            "slot_id": "E",
+            "source_request_hash": null,
+            "task_id": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "6ca76e93-aee3-4eff-8afd-4e23ccb8c293"
+          }
+        },
+        {
+          "seq": 20,
+          "kind": "CORE_START_INTENT",
+          "payload": {
+            "adapted_request_hash": "2a0536eeca49c33e0b38aec51d31f9b1d31eebe99220445c59ae5dbc5f2aec04",
+            "child_run_id": "99401c49-ebf2-4e86-a974-e8e24724059f",
+            "code_bundle": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+            "code_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+            "core_config_hash": "b27fb040698bd91db2bf94cea2849d6fd9d20db58b6333c6f90fcf9f6bb4a053",
+            "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+            "decision_index": 0,
+            "decision_time_UTC": "2024-01-06T12:05:00+00:00",
+            "parent_execution_run_id": "e0fed2cb-c5f5-475a-9430-970a92927bd3",
+            "parent_slot_id": "E",
+            "physical_ledger_root": "E:\\WORK\\AQRP-runs\\gpt-p6-independent-3017a09-20261024\\cancel-valid-replay\\replay-runs\\e0fed2cb-c5f5-475a-9430-970a92927bd3\\portfolio-runs",
+            "plan_hash": "27de2990fac51f5594385dd828be2e99de40cbb64912ee99c802195d228711b2",
+            "service_kind": "P4",
+            "slot_id": "P:0",
+            "source_request_hash": "cc66ad589db77a37394554e1ffb099cbf431f1f0de4001e0dc9a5d174de6c5c8",
+            "task_id": "d6cad199-2dc3-458c-80d3-6783c5e42389",
+            "task_kind": "replay",
+            "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+            "workspace_id": "6ca76e93-aee3-4eff-8afd-4e23ccb8c293"
+          }
+        },
+        {
+          "seq": 21,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "09c481f422d58b61e093fd7d66215a1001008f113b456ca0bc35ff7dae0e0292",
+            "manifest_hash": "487b13cf90e0cdf2b57ac530d1ef2be3e74d39b9e85784885db78de8785a5a11",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 22,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "09c481f422d58b61e093fd7d66215a1001008f113b456ca0bc35ff7dae0e0292",
+            "manifest_hash": "487b13cf90e0cdf2b57ac530d1ef2be3e74d39b9e85784885db78de8785a5a11",
+            "slot": "P:0",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 23,
+          "kind": "SLOT_TERMINAL_VERIFIED",
+          "payload": {
+            "binding_hash": "bc351394049cf1baf8e5d06e829f7c2c1a4d3143f1c28a5e23d87a4d48896db3",
+            "manifest_hash": "a129cbc8e852cd48a2a15bbbd32aaf2981aad98b236b3f16e42429b26318ecef",
+            "slot": "E",
+            "state": "VERIFIED_SUCCESS"
+          }
+        },
+        {
+          "seq": 24,
+          "kind": "CANCEL_REQUESTED",
+          "payload": {}
+        },
+        {
+          "seq": 25,
+          "kind": "CANCELLED",
+          "payload": {
+            "cancellation_intent": true,
+            "code": "KeyboardInterrupt",
+            "financial_verification_error": null,
+            "original_error": "KeyboardInterrupt"
+          }
+        }
+      ]
+    }
+  ]
+}

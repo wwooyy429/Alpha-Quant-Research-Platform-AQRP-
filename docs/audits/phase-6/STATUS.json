@@ -1,15 +1,15 @@
 {
   "phase": 6,
-  "current": "G2_BLOCKED_REPAIR_CANDIDATE_PENDING_NEW_FIXED_SHA_RECHECK",
+  "current": "G2_PASS_RESTRICTED_ENGINEERING_HUMAN_ACCEPTANCE_PENDING",
   "G1": "PLAN PASS WITH CONDITIONS AT E71F6F0",
-  "G2": "BLOCKED / REQUEST CHANGES at eae807f957f178d19bc55dcfbd668caff5470c6e",
+  "G2": "PASS at 3017a097b49ecdae68228ca9a417fcd03c313200",
   "requirements": 8,
   "tiers": {
     "MVP": 5,
     "Competition Ready": 3
   },
   "baseline": "59246f9fd391c1713b6bed65dd22280f4d248493",
-  "capabilities": "UI-003 stock universe omission repaired in candidate; all eight require fixed-version G2, not stage acceptance",
+  "capabilities": "All eight UI-001–008 independently PASS within restricted engineering scope; no user stage acceptance or release.",
   "implementation_authorized": true,
   "human_phase_acceptance": false,
   "main_merge_tag_authorized": false,
@@ -20,31 +20,35 @@
   "WI-R2-001": "DEFERRED / NOT VERIFIED",
   "WI-R2-002": "DEFERRED / NOT VERIFIED",
   "full_historical_host": "NOT VERIFIED beyond accepted package/lock/oldRef/result replay",
-  "actual_P6_business_or_browser_tests": "C2 independently1496 passed with three new blocking counterexamples. Repair candidate must provide fresh exact-SHA clean SDK, official dual-OS ZIP and real browser evidence externally; old results never transferred.",
+  "actual_P6_business_or_browser_tests": "Independent clean SDK1567; verified official Windows/Ubuntu1567 each; original20+4/91 math and5112 numeric context observations. Reviewer actual pool browser17AX/4JPEG distinct from verified developer57AX/27JPEG.",
   "dependency_resolution": "Original core lock unchanged; exact G1 UI extension locks hash-installed in clean venvs and original 29 dependency wheels retained per OS.",
-  "review_lock": "Use PR9 AQRP_FIXED_REVIEW_SHA full40 and same-SHA actual raw evidence; C1 pass does not transfer to corrected dev2.",
-  "last_independent_reviewed_sha": "eae807f957f178d19bc55dcfbd668caff5470c6e",
+  "review_lock": "PR9 AQRP_FIXED_REVIEW_SHA remains 3017a097b49ecdae68228ca9a417fcd03c313200; documentation-only archival HEAD separately disclosed, no automatic transfer of G2.",
+  "last_independent_reviewed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
   "reviewer": "GPT Work",
   "findings": {
     "WORK-P6-G1-001": "CLOSED_DESIGN",
     "WORK-P6-G1-002": "CLOSED_DESIGN",
     "WORK-P6-G1-003": "CLOSED_DESIGN",
-    "WORK-P6-G2-001": "OPEN / FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK",
-    "WORK-P6-G2-002": "OPEN / FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK",
-    "WORK-P6-G2-003": "OPEN / FIX_IMPLEMENTED_PENDING_INDEPENDENT_RECHECK"
+    "WORK-P6-G2-001": "CLOSED — FIX VERIFIED",
+    "WORK-P6-G2-002": "CLOSED — FIX VERIFIED",
+    "WORK-P6-G2-003": "CLOSED — FIX VERIFIED",
+    "DEV-P6-004": "CLOSED — FIX VERIFIED within restricted engineering scope",
+    "DEV-P6-002": "CLOSED — FIX VERIFIED (connection lifetime)",
+    "DEV-P6-003": "CLOSED — engineering harness FIX VERIFIED; original native cause NOT VERIFIED",
+    "DEV-P6-001": "CLOSED — FIX VERIFIED (prior independent disposition maintained)"
   },
-  "review_record": "g2-eae807f/received/REPORT.md",
-  "developer_response": "g2-eae807f/DEVELOPER_RESPONSE.md",
+  "review_record": "g2-3017a09/received/REPORT.md",
+  "developer_response": "g2-3017a09/DEVELOPER_RESPONSE.md",
   "candidate_design_validation": {
     "original32": 32,
     "supplemental95": 95,
     "ambient_context_observations": 270,
     "Fraction_oracle_cases": 35,
-    "scope": "Developer design reference only; P6 product/concurrency/browser tests0"
+    "scope": "Historical developer G1 design reference only; this entry is not a count of current P6 product tests."
   },
-  "numeric_adapter_range": "USER_EXPLICITLY_ACCEPTED C-P6-003; implementation developer verification in progress",
+  "numeric_adapter_range": "USER_ACCEPTED C-P6-003; restricted-engineering independent installed numeric verification PASS (4096 digits /4098 characters)",
   "human_design_conditions": "g1-e71f6f0/CONDITIONS_AND_AUTHORIZATION.json",
-  "new_blocking_technical_findings": 3,
+  "new_blocking_technical_findings": 0,
   "independent_design_reference_checks": {
     "fixed_sha": "e71f6f090b102e4abfd70a5999e495f49546a1b5",
     "scope": "G1 design/numeric reference only; zero P6 product/UI/SQLite/OS tests",
@@ -67,8 +71,27 @@
   },
   "conditions_user_acceptance": "EXPLICITLY_ACCEPTED_C_P6_001_002_003",
   "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json",
-  "developer_finding": "DEV-P6-001 CLOSED — FIX VERIFIED by GPT Work at eae807f",
+  "developer_finding": "CLOSED — FIX VERIFIED (prior independent disposition maintained)",
   "candidate_version": "0.6.0.dev5",
-  "developer_resource_finding": "DEV-P6-002 FIX_IMPLEMENTED_PENDING_FINAL_EVIDENCE_AND_GPT_WORK",
-  "developer_followup": "DEV-P6-004 SQLite admission repair; seven deterministic controls; full fixed-SHA evidence rebuilding. Independent001/002/003 still OPEN pending GPT Work."
+  "developer_resource_finding": "CLOSED — FIX VERIFIED (connection lifetime)",
+  "developer_followup": "CLOSED — FIX VERIFIED within restricted engineering scope",
+  "released": false,
+  "independent_execution_summary": {
+    "independent_SDK_tests": 1567,
+    "official_CI_tests_per_OS": 1567,
+    "original_extra_regressions": "20 + 4",
+    "independent_math_checks": 91,
+    "installed_numeric_context_observations": 5112,
+    "reviewer_additional_real_processes": 40,
+    "reviewer_browser_AX": 17,
+    "reviewer_browser_screenshots": 4,
+    "developer_browser_main_AX": 57,
+    "developer_browser_main_screenshots": 27
+  },
+  "previous_independent_review": {
+    "fixed_sha": "eae807f957f178d19bc55dcfbd668caff5470c6e",
+    "verdict": "G2 BLOCKED; immutable historical report preserved",
+    "record": "g2-eae807f/received/REPORT.md"
+  },
+  "original_native_crash_cause": "NOT VERIFIED; engineering harness closure does not prove exact native cause"
 }

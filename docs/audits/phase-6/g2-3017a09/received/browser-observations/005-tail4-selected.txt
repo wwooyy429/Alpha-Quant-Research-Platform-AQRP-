@@ -1,0 +1,79 @@
+Browser tab: 4, Title: "AQRP Research", URL: "http://127.0.0.1:13975/".
+0 AXWebArea AQRP Research, URL: 127.0.0.1:13975/
+	1 container
+		2 text 3 options available.
+		3 container
+			4 link Description: Skip to main content, Value: 127.0.0.1:13975/#stMain
+			5 container Description: Sidebar, ID: stSidebar
+				6 container
+					7 heading AQRP, Value: 1
+						8 text AQRP
+					9 Description: Workspace, ID: react-aria486831609-:r3:
+						10 container
+							11 radio button (settable, integer) Description: Dashboard, Value: 0
+							12 text Dashboard
+						13 container
+							14 radio button (settable, integer) Description: Factor Library, Value: 0
+							15 text Factor Library
+						16 container
+							17 radio button (settable, integer) Description: Alpha Research, Value: 1
+							18 text Alpha Research
+						19 container
+							20 radio button (settable, integer) Description: Strategy Backtest, Value: 0
+							21 text Strategy Backtest
+						22 container
+							23 radio button (settable, integer) Description: Experiment Manager, Value: 0
+							24 text Experiment Manager
+						25 container
+							26 radio button (settable, integer) Description: Settings, Value: 0
+							27 text Settings
+					28 text ENGINEERING TEST ONLY Financial approval: NONE
+			29 container
+				30 button Deploy
+				31 pop up button (collapsed) Description: Main menu, Secondary Actions: Expand
+			32 container stMain
+				33 heading Alpha Research, Value: 1, ID: alpha-research
+					34 text Alpha Research
+					35 link Description: Link to heading, Value: 127.0.0.1:13975/#alpha-research
+				36 text Alpha Quant Research Platform · local engineering workspace
+				37 text Synthetic engineering data · UTC decision timestamps and split/fit rules are preserved.
+				38 text Select a trusted synthetic historical universe. Snapshot, membership and availability identities enter the immutable request. Parameters must belong to a preregistered campaign; all campaigns share the same data budget of 12 hypotheses. Failed and cancelled attempts consume budget.
+				39 container
+					40 container Selected values
+						41 container momentum
+							42 text momentum
+							43 button Remove momentum
+					44 combo box (collapsed, settable) Description: Factors, ID: react-aria486831609-:ro:, Secondary Actions: Expand
+					45 button Description: Clear all, ID: react-aria486831609-:rv:
+					46 pop up button (collapsed) Description: Open, ID: react-aria486831609-:rk:, Secondary Actions: Expand
+				47 container
+					48 text field (settable) Description: First decision session (YYYY-MM-DD), Value: 2024-01-06, ID: :r13:
+				49 container
+					50 text field (settable) Description: Last decision session (YYYY-MM-DD), Value: 2024-01-06, ID: :r19:
+				51 container
+					52 stepper (settable, integer) Description: Lookback sessions, Value: 2, ID: :r1l:
+					53 button Decrement
+					54 button Increment
+				55 container
+					56 text field (settable) Description: Prediction horizons (session counts), Value: 1, ID: :r1f:
+				57 container
+					58 combo box (collapsed, settable) Description: Factor direction, Value: 1, ID: react-aria486831609-:r20:, Secondary Actions: Expand
+					59 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r1s:, Secondary Actions: Expand
+				60 container
+					61 checkbox (settable, integer) Description: Industry / size neutralization, Value: 1
+					62 text Industry / size neutralization
+				63 container
+					64 combo box (collapsed, settable) Description: Stock universe, Value: SYN_TAIL4, ID: react-aria486831609-:r2g:, Secondary Actions: Expand
+					65 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r2c:, Secondary Actions: Expand
+				66 container
+					67 combo box (collapsed, settable) Description: Preregistered research campaign, Value: engineering-default, ID: react-aria486831609-:r2u:, Secondary Actions: Expand
+					68 pop up button (collapsed) Description: Open, ID: react-aria486831609-:r2q:, Secondary Actions: Expand
+				69 container
+					70 text entry area (settable) Description: Factor weights in percent — JSON decimal strings, Value: {"momentum": "100"}, ID: :r37:
+				71 button Submit research
+					72 text Submit research
+				73 button New experiment key
+					74 text New experiment key
+				75 text No matching tasks yet.
+
+The focused UI element is 64 combo box (collapsed, settable) Description: Stock universe, Value: SYN_TAIL4, ID: react-aria486831609-:r2g:, Secondary Actions: Expand
