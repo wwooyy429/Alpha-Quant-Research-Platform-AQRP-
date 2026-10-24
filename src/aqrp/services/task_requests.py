@@ -97,6 +97,9 @@ def initialize(root, code_commit):
             current = catalogue(root)
             if current["code_commit"] != code_commit:
                 raise ContractError("CATALOG_CODE_COMMIT_CHANGED")
+            from aqrp.services.task_state import TaskState
+
+            TaskState(root)
             return current
         c, s, e, v = _engineering_inputs(root)
         body = {
@@ -116,7 +119,11 @@ def initialize(root, code_commit):
         }
         body["revision"] = digest(body)
         immutable_write(path, canonical(body))
-    return catalogue(root)
+    verified = catalogue(root)
+    from aqrp.services.task_state import TaskState
+
+    TaskState(root)
+    return verified
 
 
 def references(root, cat):
@@ -188,6 +195,7 @@ FIELDS = {
     "constraints",
     "source_task",
     "profile",
+    "execution_sessions",
 }
 
 
@@ -198,6 +206,10 @@ def validate_draft(draft):
         raise ContractError("APPROVAL_REQUIRED")
     if draft.get("kind", "research") != "replay" and set(draft) & {"source_task", "profile"}:
         raise ContractError("INVALID_TASK_KIND_FIELD")
+    if "execution_sessions" in draft:
+        if draft.get("kind", "research") != "engineering_pipeline":
+            raise ContractError("EXECUTION_SELECTION_PIPELINE_ONLY")
+        _session_list(draft["execution_sessions"])
     if "factor_ids" in draft and (
         not isinstance(draft["factor_ids"], list)
         or any(type(n) is not str for n in draft["factor_ids"])
@@ -261,6 +273,66 @@ def validate_draft(draft):
     return draft
 
 
+def _session_list(sessions):
+    """Reject malformed selections instead of silently sorting/filtering them."""
+    from datetime import date
+
+    if type(sessions) is not list or not sessions:
+        raise ContractError("INVALID_EXECUTION_SESSIONS")
+    for session in sessions:
+        if type(session) is not str or re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", session) is None:
+            raise ContractError("INVALID_EXECUTION_SESSIONS")
+        try:
+            if date.fromisoformat(session).isoformat() != session:
+                raise ValueError(session)
+        except ValueError as exc:
+            raise ContractError("INVALID_EXECUTION_SESSIONS") from exc
+    if sessions != sorted(set(sessions)):
+        raise ContractError("EXECUTION_SESSIONS_NOT_STRICTLY_ORDERED")
+    return sessions
+
+
+def execution_selection(payload):
+    """Derive both clocks from original research decisions, never from results.
+
+    An omitted selection is a derived view only: it is not added to old request
+    bytes. Explicit selection proofs are independently reconstructed and compared.
+    """
+    decisions = payload["research"]["decisions"]
+    explicit = "execution_sessions" in payload["raw_draft"]
+    sessions = (
+        _session_list(payload["raw_draft"]["execution_sessions"])
+        if explicit
+        else [d["session"] for d in decisions]
+    )
+    if len({d["session"] for d in decisions}) != len(decisions):
+        raise ContractError("AMBIGUOUS_RESEARCH_SESSION")
+    lookup = {d["session"]: (i, d) for i, d in enumerate(decisions)}
+    if not set(sessions) <= set(lookup):
+        raise ContractError("EXECUTION_SESSION_OUTSIDE_RESEARCH")
+    selection = {
+        "schema_version": "execution-selection/1",
+        "mode": "EXPLICIT_SESSIONS" if explicit else "ALL_RESEARCH_DECISIONS",
+        "sessions": list(sessions),
+        "research_decisions_sha256": digest(decisions),
+        "resolved": [
+            {
+                "research_ordinal": lookup[s][0],
+                "session": s,
+                "decision_time": lookup[s][1]["decision_time"],
+            }
+            for s in sessions
+        ],
+    }
+    selection["selection_sha256"] = digest(selection)
+    saved = payload["execution"].get("selection")
+    if saved is not None and saved != selection:
+        raise ContractError("EXECUTION_SELECTION_CHANGED")
+    if not explicit and "selection" in payload["execution"]:
+        raise ContractError("UNEXPECTED_EXECUTION_SELECTION")
+    return selection
+
+
 def build_research_config(cat, base):
     config = deepcopy(cat["config"])
     names = base.get("factor_ids", ["momentum"])
@@ -318,6 +390,8 @@ def _weights(base, names):
 def validate_defaults(root, patch):
     validate_draft(patch)
     config = build_research_config(catalogue(root), patch)
+    if "execution_sessions" in patch:
+        execution_selection({"research": config, "raw_draft": patch, "execution": {}})
     _weights(patch, [c["hypothesis"] for c in config["candidates"]])
     if "campaign_id" in patch:
         from aqrp.services.task_campaigns import get_campaign
@@ -372,6 +446,8 @@ def freeze_request(root, draft, defaults_revision=0, defaults=None):
             },
             "raw_draft": base,
         }
+        if "execution_sessions" in base:
+            payload["execution"]["selection"] = execution_selection(payload)
     return EffectiveRequest(
         canonical(
             {

@@ -28,6 +28,7 @@ from aqrp.services.task_requests import (
     EffectiveRequest,
     build_research_config,
     catalogue,
+    execution_selection,
     freeze_request,
     references,
     research_request,
@@ -129,6 +130,9 @@ class TaskService:
         self.state = TaskState(root)
         self.root = self.state.root
         self.fault = fault
+        from aqrp.experiments.admission import capture_activation
+
+        self._activation = capture_activation(self.root) if self.state.managed else None
 
     def checkpoint(self, name):
         if self.fault is not None:
@@ -182,15 +186,31 @@ class TaskService:
         return x
 
     def submit(self, effective, idempotency_key):
+        from aqrp.experiments.admission import verify_activation
+
+        if self.state.managed:
+            verify_activation(self.root, self._activation)
         if type(effective) is not EffectiveRequest:
             raise ContractError("FROZEN_TASK_REQUEST_REQUIRED")
         x = self.validate_effective(effective.raw)
         return self.status(
-            self.state.submit(effective.raw, idempotency_key, campaign=x["payload"].get("campaign"))
+            self.state.submit(
+                effective.raw,
+                idempotency_key,
+                campaign=x["payload"].get("campaign"),
+                activation=self._activation
+                if self._activation is not None
+                else {"inactive_service": True},
+            )
         )
 
     def cancel(self, task):
-        return self.state.cancel(task)
+        from aqrp.experiments.admission import verify_activation
+
+        if self.state.managed:
+            verify_activation(self.root, self._activation)
+            self._verify_planned_replay_source(task)
+        return self.state.cancel(task, activation=self._activation)
 
     def save_defaults(self, expected, patch):
         validate_draft(patch)
@@ -204,6 +224,9 @@ class TaskService:
         raw = guard_path(self.root / "tasks" / task / "request.json").read_bytes()
         if raw.decode() != row["raw"] or digest(load(raw)) != row["hash"]:
             raise ContractError("TASK_REQUEST_IDENTITY_CHANGED")
+        if self.state.managed:
+            with self.state.transaction() as c:
+                self.state.budget.verify(c)
         return row
 
     def status(self, task):
@@ -322,6 +345,23 @@ class TaskService:
         plan_path = guard_path(self.root / "tasks" / task / "resolved-plan.json")
         if x["kind"] != "research":
             plan = load(plan_path.read_bytes())
+            if x["kind"] == "engineering_pipeline":
+                selected = execution_selection(x["payload"])
+            elif x["payload"]["profile"] != "PUBLISHED_REF_PROJECTION":
+                source = x["payload"]["source_task"]
+                source_plan = load(
+                    guard_path(self.root / "tasks" / source / "resolved-plan.json").read_bytes()
+                )
+                selected = source_plan["execution_selection"]
+                if source_plan["request_sha256"] != plan["request_sha256"]:
+                    raise ContractError("TASK_REPLAY_SELECTION_CHANGED")
+            else:
+                selected = {"resolved": []}
+            if x["payload"].get("profile") != "PUBLISHED_REF_PROJECTION" and (
+                plan.get("execution_selection") != selected
+                or plan["decision_count"] != len(selected["resolved"])
+            ):
+                raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
             expected |= {f"P:{i}" for i in range(plan["decision_count"])}
             if (
                 plan["task_config_hash"] != row["hash"]
@@ -349,6 +389,7 @@ class TaskService:
                 parent = slots["B" if x["kind"] == "engineering_pipeline" else "E"]["binding"]
                 decision = load(plan["request_utf8"])["decisions"][b["decision_index"]]
                 original = load(decision["portfolio_request_utf8"])
+                selected_decision = selected["resolved"][b["decision_index"]]
                 if (
                     b["parent_slot_id"] != parent["slot_id"]
                     or b["parent_execution_run_id"] != parent["child_run_id"]
@@ -362,6 +403,7 @@ class TaskService:
                     != hashlib.sha256(decision["portfolio_request_utf8"].encode()).hexdigest()
                     or b["decision_time_UTC"]
                     != utc(original["context"]["decision_time"]).isoformat()
+                    or b["decision_time_UTC"] != utc(selected_decision["decision_time"]).isoformat()
                 ):
                     raise ContractError("TASK_NESTED_P4_BINDING_MISMATCH")
                 with self.state.transaction() as c:
@@ -508,6 +550,7 @@ class TaskService:
 
     def _verify_cancelled_finances(self, task):
         """No safe cancellation certificate may rely on a cached known-state flag."""
+        self._verify_planned_replay_source(task)
         for slot in self.state.slots(task).values():
             binding = slot["binding"]
             if binding["service_kind"] not in ("P5", "P5_REPLAY"):
@@ -520,6 +563,45 @@ class TaskService:
                 x = load(self._snapshot(task)["raw"].encode())
                 source = self.state.slots(x["payload"]["source_task"])["B"]["binding"]
                 self._verified_financial_prefix(source)
+
+    def _verify_planned_replay_source(self, task):
+        """A zero-research planned cancellation still retains a real source proof."""
+        if not self.state.managed:
+            return
+        source_task = None
+        with self.state.transaction() as c:
+            self.state.budget.verify(c)
+            actor = c.execute(
+                "SELECT payload,binding FROM execution_plan_slots WHERE owner_id=?", (task,)
+            ).fetchone()
+            if actor is None:
+                return
+            spec, binding = load(actor[0]), load(actor[1])
+            if spec["service_kind"] != "TASK_REPLAY" or "source_slot" not in spec:
+                return
+            source = c.execute(
+                "SELECT payload,binding FROM execution_plan_slots WHERE slot=?",
+                (spec["source_slot"],),
+            ).fetchone()
+            if source is None or source[1] is None:
+                raise ContractError("TASK_CANCEL_SOURCE_UNVERIFIED")
+            original, owner = load(source[0]), load(source[1])
+            row = c.execute("SELECT raw,hash FROM tasks WHERE id=?", (task,)).fetchone()
+            if (
+                row is None
+                or binding["owner_id"] != task
+                or original["service_kind"] != "TASK"
+                or original["request_hash"] != spec["originalsource_request_hash"]
+                or load(row[0])["payload"]
+                != {"source_task": owner["owner_id"], "profile": "P5_NUMERICAL"}
+            ):
+                raise ContractError("TASK_CANCEL_SOURCE_UNVERIFIED")
+            source_task = owner["owner_id"]
+        # The existing status/proof gate opens its own transaction and reconciles
+        # the physical source ledger. Never call it under an authority lock.
+        source = self.status(source_task)
+        if source["status"] != "SUCCEEDED" or source.get("usable") is False:
+            raise ContractError("TASK_CANCEL_SOURCE_UNVERIFIED")
 
     def financial_result(self, task):
         row = self._snapshot(task)
@@ -545,7 +627,13 @@ class TaskService:
         cat = catalogue(self.root)
         ref, _, _ = references(self.root, cat)
         options = x["payload"]["execution"]
-        requests = execution_requests(x["payload"]["research"], ref, self.root / "research-runs", r)
+        selection = execution_selection(x["payload"])
+        selected_research = deepcopy(x["payload"]["research"])
+        selected_research["decisions"] = [
+            selected_research["decisions"][entry["research_ordinal"]]
+            for entry in selection["resolved"]
+        ]
+        requests = execution_requests(selected_research, ref, self.root / "research-runs", r)
         values = [load(req.raw) for req in requests.values()]
         combined = deepcopy(values[0])
         combined.update(initial_cash=options["initial_cash"], fee_budget=options["fee_budget"])
@@ -588,6 +676,24 @@ class TaskService:
             "decision_count": len(x["decisions"]),
             "slots": slots,
         }
+        effective = load(auth.check()["raw"])
+        if parent.slot == "B":
+            selected = execution_selection(effective["payload"])
+        else:
+            source = effective["payload"]["source_task"]
+            original_plan = load(
+                guard_path(self.root / "tasks" / source / "resolved-plan.json").read_bytes()
+            )
+            selected = original_plan["execution_selection"]
+            if original_plan["request_sha256"] != request.content_hash:
+                raise ContractError("TASK_REPLAY_SELECTION_CHANGED")
+        if len(selected["resolved"]) != len(x["decisions"]):
+            raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
+        for entry, decision in zip(selected["resolved"], x["decisions"], strict=True):
+            portfolio = load(decision["portfolio_request_utf8"])
+            if utc(portfolio["context"]["decision_time"]) != utc(entry["decision_time"]):
+                raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
+        plan["execution_selection"] = selected
         path = guard_path(self.root / "tasks" / auth.task / "resolved-plan.json")
         if path.exists():
             if path.read_bytes() != canonical(plan):

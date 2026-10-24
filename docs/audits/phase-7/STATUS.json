@@ -1,5 +1,5 @@
 {
-  "scope": "Phase7 independent G1 conditional design PASS at fixed H; archival metadata only, no implementation",
+  "scope": "Authorized Phase7 restricted engineering implementation; independent G1 passed; G2 PENDING",
   "phase": 7,
   "requirements": 5,
   "tiers": {
@@ -7,8 +7,8 @@
     "Competition Ready": 2
   },
   "g1": "PLAN PASS WITH CONDITIONS",
-  "implementation": "NOT AUTHORIZED / NOT STARTED",
-  "g2": "NOT PERFORMED / NO P7 BUSINESS IMPLEMENTATION",
+  "implementation": "AUTHORIZED / IMPLEMENTING",
+  "g2": "PENDING FUTURE FIXED IMPLEMENTATION REVIEW",
   "accepted": false,
   "released": false,
   "real_windows_isolation": "DEFERRED / NOT VERIFIED",
@@ -20,30 +20,25 @@
   "deployment": "NOT AUTHORIZED / NOT PERFORMED",
   "historical_host": "NOT VERIFIED; existing restricted reproduction boundary retained",
   "phase6_released_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
-  "proposed_optional_input": "execution_sessions; P3 full19/P5 predeclared10, backwards-compatible absent-field; user implementation authorization still required",
+  "proposed_optional_input": "Accepted C-P7-004: P3 full19 / P5 predeclared10; absent field retains same-bundle default layout",
   "design_financial_analysis": "Independent-of-product stdlib finite model768 paths/109350 developer checks, not product tests",
-  "current": "G1_PLAN_PASS_WITH_CONDITIONS_PENDING_USER_ACCEPTANCE_AND_IMPLEMENTATION_AUTHORIZATION",
-  "authorization": "AUTHORIZATION.json",
+  "current": "IMPLEMENTING_RESTRICTED_ENGINEERING",
+  "authorization": "IMPLEMENTATION_AUTHORIZATION.json",
   "plan_authorized": true,
-  "implementation_authorized": false,
+  "implementation_authorized": true,
   "last_reviewed_plan_sha": "645049ae9b08710ed93189b80547d14c87d80584",
   "last_review_verdict": "PLAN PASS WITH CONDITIONS",
   "findings": {
     "WORK-P7-G1-001": "CLOSED_DESIGN",
     "WORK-P7-G1-002": "CLOSED_DESIGN"
   },
-  "current_developer_action": "Receive report and update current archival status only; no changes to reviewed design or business implementation",
+  "current_developer_action": "Implement five authorized requirements with full original evidence; fixed new implementation required for independent G2",
   "independent_audit_record": "g1-645049a/EVIDENCE_INDEX.json",
   "developer_response": "g1-645049a/DEVELOPER_RESPONSE.md",
-  "user_C_P7_acceptance": "PENDING; no explicit acceptance received",
+  "user_C_P7_acceptance": "EXPLICITLY_ACCEPTED C-P7-001..004 incl revised003 on2026-10-25",
   "new_blocking_design_findings": 0,
-  "current_review_package": "REVIEW_PACKAGE_CURRENT.md",
-  "pending_user_conditions": [
-    "C-P7-001",
-    "C-P7-002",
-    "C-P7-003 revised",
-    "C-P7-004"
-  ],
+  "current_review_package": "IMPLEMENTATION_REVIEW_PACKAGE.md",
+  "pending_user_conditions": [],
   "pending_user_conditions_record": "g1-645049a/PENDING_USER_CONDITIONS.json",
   "implementation_verified": false,
   "independent_design_evidence": {
@@ -54,7 +49,9 @@
   },
   "H_CI": "Official dual-OS success, existing P6 regression only",
   "H_official_original_ZIPs": "NOT VERIFIED",
-  "fixed_review_lock": "645049ae9b08710ed93189b80547d14c87d80584",
-  "archival_HEAD_scope": "Documentation/receipt/current-state only, not a newly reviewed design",
-  "implementation_precision_record": "g1-645049a/IMPLEMENTATION_OBLIGATIONS.md"
+  "fixed_review_lock": "New implementation fixed SHA supplied by unique PR10 AQRP_FIXED_REVIEW_SHA after committed clean validation; old H is independent G1 only",
+  "archival_HEAD_scope": "Authorized implementation; future fixed implementation SHA requires independent G2; no release permission",
+  "implementation_precision_record": "g1-645049a/IMPLEMENTATION_OBLIGATIONS.md",
+  "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json",
+  "implementation_verified_scope": "Independent G2 PENDING; developer execution evidence recorded separately"
 }

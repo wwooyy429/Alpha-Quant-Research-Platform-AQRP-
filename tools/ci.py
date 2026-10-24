@@ -194,8 +194,9 @@ def main():
     command([str(py), "-m", "pip", "install", "--no-index", "--no-deps", str(project_wheel)])
     command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
     command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
-    command([str(py), str(source / "tools/check_phase6_package.py")], cwd=source)
+    command([str(py), str(source / "tools/check_phase7_package.py")], cwd=source)
     command([str(py), str(source / "tools/original_replay_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/released_p6_smoke.py"), str(RUN)], cwd=source)
     os.environ["AQRP_ORIGINAL_ENV_ARCHIVE"] = str(RUN / "reproduction/environment-archive.json")
     command(
         [
@@ -250,7 +251,14 @@ def main():
             cwd=source,
         )
     command([str(py), str(source / "tools/ui_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/e2e_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/competition_smoke.py"), str(RUN)], cwd=source)
     command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
+    env["complete_scope"] = (
+        "Complete clean SDK and P7 non-browser protocol; actual browser and overall E2E recorded separately"
+    )
+    env["phase7_actual_browser_complete"] = False
+    env["phase7_full_e2e_complete"] = False
     env["complete"] = True
     env["ended_utc"] = datetime.now(UTC).isoformat()
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
@@ -292,9 +300,19 @@ def main():
                 "backtest",
                 "ui",
                 "ui-wheelhouse",
+                "e2e",
+                "competition",
                 "tmp",
             )
-            or (relative.parts[0] == "reproduction" and relative.parts[1] != "venv")
+            or (
+                relative.parts[0] == "reproduction"
+                and relative.parts[1] != "venv"
+                and not (
+                    relative.parts[1] == "p6"
+                    and len(relative.parts) > 2
+                    and relative.parts[2] in ("venv", "source", "pytest-cache")
+                )
+            )
         ):
             selected.append(
                 {

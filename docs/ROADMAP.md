@@ -1,3 +1,6 @@
+<!-- Phase7 implementation authorization20261025 -->
+用户于2026-10-25明确接受固定645049ae9b08710ed93189b80547d14c87d80584 G1的C-P7-001～004（含修订003）并单独授权五项受限工程实现，当前IMPLEMENTING。原话/范围见docs/audits/phase-7/IMPLEMENTATION_AUTHORIZATION.json；从归档起点8106bbe6fbb73b5b4336d42e4c27b3adb1cf6ff8继续PR #10，G2须新完整40位固定SHA、独立答案/完整SDK/双OS原ZIP/真实浏览器实际证据。不是G2/阶段验收/合并标签/发布许可；R2延期未验证、正式Test未运行/失败关闭、金融NONE及历史宿主边界保留，无部署实盘/真实权限变更。以下旧待接受/未授权摘要保留历史，不覆盖本次直接授权。
+
 <!-- Phase7 G1 645049a conditional-PASS receipt -->
 最新独立结论：GPT Work固定645049ae9b08710ed93189b80547d14c87d80584判Phase7 G1 PLAN PASS WITH CONDITIONS，WORK-P7-G1-001/002均CLOSED_DESIGN，无新增阻断设计；36逐案静态候选、394抽象断言不是产品测试（产品0），P7实现与真实浏览器仍NOT VERIFIED。原已审设计/数学/失败原字节不改，当前记录见docs/audits/phase-7/REVIEW_PACKAGE_CURRENT.md及g1-645049a/。PR #10审查锁继续H，后续归档SHA另列不冒称新已审版本。C-P7-001～004用户接受及单独实施授权均PENDING，P7 NOT AUTHORIZED / NOT STARTED、未验收/发布。P6 main/phase6-baseline/v0.6.0仍d563347ad11e1f26e131dc06e343250282c05c33；R2延期未验证、正式Test未运行/失败关闭、金融NONE、历史宿主限制保持，无合并标签/部署实盘/真实权限变更。以下旧BLOCKED/待复核文字保留为历史，不覆盖本轮独立设计结论。
 
