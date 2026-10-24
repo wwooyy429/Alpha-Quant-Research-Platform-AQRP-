@@ -32,10 +32,14 @@ def test_real_reader_blocks_wal_then_released_setup_succeeds_once(tmp_path, monk
 
     class Observed(sqlite3.Connection):
         closed = False
+        successful_wal_setups = 0
 
         def execute(self, sql, *a):
             try:
-                return super().execute(sql, *a)
+                result = super().execute(sql, *a)
+                if sql == "PRAGMA journal_mode=WAL":
+                    self.successful_wal_setups += 1
+                return result
             except sqlite3.OperationalError as e:
                 if sql == "PRAGMA journal_mode=WAL":
                     assert e.sqlite_errorcode & 0xFF in (sqlite3.SQLITE_BUSY, sqlite3.SQLITE_LOCKED)
@@ -64,7 +68,10 @@ def test_real_reader_blocks_wal_then_released_setup_succeeds_once(tmp_path, monk
             holder.rollback()
             holder.close()
         state = future.result(timeout=5)
-    assert state.workspace_id and len(observed) == 1 and observed[0].closed
+    # P7 also opens a read-only connection to reject hidden managed history.
+    # Count successful writer setup, and verify every actual connection closes.
+    assert state.workspace_id and observed and all(c.closed for c in observed)
+    assert sum(c.successful_wal_setups for c in observed) == 1
     with closing(connect(db)) as c:
         assert c.execute("SELECT value FROM sentinel").fetchone() == (17,)
         assert c.execute("SELECT count(*) FROM workspace").fetchone() == (1,)

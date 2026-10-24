@@ -119,6 +119,7 @@ def main():
             "-m",
             "pytest",
             "tests/ui/test_g2_cancel_proof_controls.py::test_legacy_data_attempts_consume_shared_quota_without_automatic_registration",
+            "tests/ui/test_task_state_setup.py",
             "--junitxml=" + str(output / "legacy-history.junit.xml"),
             "-o",
             "cache_dir=" + str(output / "pytest-cache"),

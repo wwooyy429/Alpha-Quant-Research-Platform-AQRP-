@@ -28,3 +28,5 @@ adapter-submit接受原冻结receipt并重新核验原始字节、当时defaults
 设计候选中的p7_engineering_protocol控制面最终实现于tools/e2e_smoke.py；身份冻结和PlanAuthority语义相同，最终逐文件清单明确锁定该名称。该工具的`--developer-fixture`只用于可追溯的开发脚手架诊断，不能生成固定版本完整协议收据或替代干净SDK。正式送审证据必须来自无该参数、dirty=false的固定提交运行。
 
 受已批准BUD-024共同准入契约影响，旧P6的单项历史污染测试由手工追加无归属记录改为完整、合法登记并取消的历史试验，保留原污染、额度及损坏检测断言；后补无归属记录另设负例，要求失败关闭、原字节不变且不消耗新额度。原测试完整字节保留在p6-source-overrides/tests/ui/test_g2_cancel_proof_controls.py，并在原P6源码及wheel环境中另行实际执行；不得以新契约抹去旧结果。冻结的5016文件未因此改变。
+
+旧TaskState原生WAL竞争测试同时验证全部连接关闭和恰好一次成功WAL建库，继续保留实际BUSY、持锁释放、单工作区及sentinel原值断言。P7增加只读遗留authority探测，因此连接总次数不再固定为一；旧完整测试文件同样封存并在原P6环境执行，生产安全探测和原超时策略保持。
