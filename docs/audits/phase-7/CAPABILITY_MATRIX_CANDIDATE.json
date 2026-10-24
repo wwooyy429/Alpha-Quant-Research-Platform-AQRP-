@@ -1,0 +1,73 @@
+{
+  "scope": "G1 design matrix only; not an implemented adapter or actual competition support claim",
+  "generic_adapter_version": "engineering-adapter/1 candidate",
+  "required_rule_policy": "All required rules exact and supported by reviewed engineering profile; missing/conflicting/unknown/unsupported rejects before Task submit, no fallback",
+  "rows": [
+    {
+      "capability": "offline trusted synthetic source",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "profile": "P6 SYN_A / SYNCCY / SYN_A_CAL, P1 eight tables plus independently bound exposures and coverage",
+      "real_market_claim": false
+    },
+    {
+      "capability": "temporal and history mapping",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "rule": "P1 event_time/available_at/decision_time, calendar and actual historical universe; identity mapping only, never fetch-time backfill"
+    },
+    {
+      "capability": "execution price domain",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "rule": "Original SYNTHETIC_V1; positive cent prices; inclusive [ceil_tick(.95*p0),floor_tick(1.05*p0)] fixed bidirectional domain"
+    },
+    {
+      "capability": "market and limit with DAY",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "rule": "Only original validated order types, eligible future slices and fixed limit intersection; no new order algorithm"
+    },
+    {
+      "capability": "slippage and commission",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "rule": "BUY ceil_tick(raw*1.001), SELL floor_tick(raw*.999); commission round_cent(max(1,qty*actual_price/1000)); original worst cumulative partial-fill fee bound; do not replace with fixed+rate"
+    },
+    {
+      "capability": "liquidity capacity",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "rule": "Original completed-visible historical ADV, lookback1/minimum10, per slice min(10,ADV) shares; not an assumed10% participation rate"
+    },
+    {
+      "capability": "lot, settlement and restrictions",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "rule": "Original declared lot/target+delta checks/full-close exception, session+1 settlement, short proceeds/margin/fees/no double freeze, actual pre/post account; no exchange claim"
+    },
+    {
+      "capability": "corporate actions, borrow, performance",
+      "proposal": "REQUIRED_REAL_IMPLEMENTATION_IN_P7",
+      "rule": "Existing P3 label and P5 action entitlement/availability/borrow/FIFO/statistical conventions; generic adapter cannot revise their economic rules"
+    },
+    {
+      "capability": "specific competition provider and data license",
+      "proposal": "EXTERNAL_DEPENDENCY_BLOCKED",
+      "rule": "User official source, authority and rules required; no network integration in initial generic profile"
+    },
+    {
+      "capability": "real market/calendar/unit/currency conversion",
+      "proposal": "EXTERNAL_DEPENDENCY_BLOCKED_OR_UNSUPPORTED",
+      "rule": "Explicit refusal outside reviewed engineering identity mapping; no invented exchange assumptions"
+    },
+    {
+      "capability": "live account/network order submission",
+      "proposal": "NOT AUTHORIZED / NOT IMPLEMENTED",
+      "rule": "Production Extension outside scope"
+    },
+    {
+      "capability": "real deployment / ACL / three subjects",
+      "proposal": "NOT AUTHORIZED; WI-R2 DEFERRED / NOT VERIFIED",
+      "rule": "Final fixed full40SHA and separate explicit operation authorization required"
+    },
+    {
+      "capability": "formal Test and financial approval",
+      "proposal": "NOT RUN / NONE",
+      "rule": "All original entry gates fail closed; no engineering fallback"
+    }
+  ]
+}

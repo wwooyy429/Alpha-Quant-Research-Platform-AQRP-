@@ -1,0 +1,32 @@
+{
+  "scope": "Actual user-authorized Phase7 G1 planning only after verified Phase6 release; not implementation authorization",
+  "user_authorization_source": "Current user message; full original must be archived by parent",
+  "authorized_after_phase6_release": [
+    "Phase7 G1 plan, interfaces, independent-answer candidates, evidence plan, requirements and dependencies",
+    "Create plan PR and lock full40 AQRP_FIXED_REVIEW_SHA for GPT Work G1"
+  ],
+  "phase6_reviewed_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "phase6_released_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "implementation_authorized": false,
+  "forbidden": [
+    "Business implementation",
+    "Merge or tag Phase7",
+    "Real deployment/live trading/accounts/ACL/services/scheduling",
+    "Formal Test",
+    "Financial approval"
+  ],
+  "deferred": [
+    "WI-R2-001 DEFERRED / NOT VERIFIED",
+    "WI-R2-002 DEFERRED / NOT VERIFIED",
+    "Real Windows isolation DEFERRED / NOT VERIFIED"
+  ],
+  "historical_reproduction_boundary": "Verified packages, locked dependencies, old exact FactorRefs and declared result replay only; complete historical host NOT VERIFIED",
+  "source": "Direct human instruction already archived in Phase6 publication approval",
+  "exact_user_instruction": "我验收 Phase6 八项受限工程范围。请核对 PR #9 与已审 SHA `3017a097b49ecdae68228ca9a417fcd03c313200` 的差异仅为文档和身份元数据，确认 CI 通过后合并并发布 Phase6 基线标签，旧标签不移动；随后仅启动 Phase7 G1 计划预审，不开始业务实现。既有延期与限制保持，不部署、不实盘、不运行正式 Test、不授予金融批准。",
+  "source_approval_file": "../phase-6/publication/APPROVAL.json",
+  "source_approval_sha256": "b8d12224ae23d2b499d13078573b4dbb2f34a00372a209eb5861a10a91198829",
+  "phase6_main_tag_receipt": "PHASE6_RELEASE_RECEIPT.json",
+  "plan_authorized": true,
+  "Phase7_merge_or_tag_authorized": false,
+  "real_permissions_deployment_live_formal_Test_financial_approval_authorized": false
+}

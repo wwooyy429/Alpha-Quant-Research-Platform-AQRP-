@@ -1,0 +1,52 @@
+{
+  "verification_kind": "Developer receipt-integrity verification, not a new independent G1 audit or product execution",
+  "status": "PASS",
+  "source_directory": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p7-g1-recheck-645049a-independent-20261024",
+  "complete_external_archive_copy": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-g1-pass-645049a-20261024\\audit-receipt\\originals",
+  "reviewed_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+  "source_original_file_count": 113,
+  "copied_original_file_count": 113,
+  "manifest_declared_files": 109,
+  "zip_members": 110,
+  "archive_bytes": 201331115,
+  "archive_sha256": "0e245025a3bbfcf0ed7d87a8c9377a09490fe0260158c6a6c08672a6d131ac8f",
+  "manifest_sha256": "3e493daca559f6dae205c49ed7c6a83589e9a3ce465632f9b118af458ea1dd79",
+  "exact_members_no_duplicates_no_traversal_all_CRC_sizes_sha256": true,
+  "original_raw_bytes_unchanged": true,
+  "original_failed_logs_and_seal_sidecars_retained": true,
+  "source_snapshot_unchanged_after_copy": true,
+  "suggested_git_root_subset_files": 49,
+  "verdict": "PLAN PASS WITH CONDITIONS",
+  "findings": {
+    "WORK-P7-G1-001": "CLOSED_DESIGN",
+    "WORK-P7-G1-002": "CLOSED_DESIGN"
+  },
+  "new_blocking_findings": 0,
+  "primary_static_candidates": 36,
+  "primary_abstract_assertions": 394,
+  "product_tests_executed": 0,
+  "independent_report_scripts_executed": false,
+  "user_conditions_accepted": false,
+  "implementation_authorized": false,
+  "pending_user_conditions": [
+    "C-P7-001",
+    "C-P7-002",
+    "C-P7-003 revised",
+    "C-P7-004"
+  ],
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "formal_Test": "NOT RUN",
+  "financial_approval": "NONE",
+  "repository_or_PR_modified": false,
+  "started_utc": "2026-10-24T15:19:20.713381+00:00",
+  "completed_utc": "2026-10-24T15:19:23.821096+00:00",
+  "environment": {
+    "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "verifier_sha256": "dea60ed4e6104f90a4b8615822abe00b872fc820d955f0c8138368a0db8b19ab",
+  "all_original_files_manifest_sha256": "4773ff60c324ae1e7f0e36d75face78d0eee7e327476f78e3e4ddf0382e429f5",
+  "zip_member_verification_sha256": "24060b7300ec7fdef16ec2ba0eaf34108d7f3560ea7531abf43a884c7cfdc018",
+  "not_a_digital_signature": true
+}

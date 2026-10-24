@@ -1,0 +1,165 @@
+{
+  "scope": "Design candidate only; G1 must review profile feasibility; no product runs or accepted requirement changes",
+  "phase6_released_baseline": "待父代理核实Phase6 RELEASED后填写",
+  "code_sha": "Resolved at actual fixed plan/implementation version; never drift HEAD",
+  "exact_factor_refs": "Resolve approved artifacts from actual fixed version and freeze full id/version/implementation_hash; no fabricated hashes embedded here",
+  "data": "P6 trusted 24-session6-asset P1 snapshot and exposures/coverage/universe bindings; original bytes and actual hashes to be pinned",
+  "campaign": "Pre-register all four complete variants before observing any output, same workspace/data budget12; no automatic new family",
+  "variants": [
+    {
+      "protocol": "main",
+      "factor": "momentum",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-04",
+        "end": "2024-01-22",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": true,
+        "initial_cash": "1000",
+        "fee_budget": "100",
+        "policy": {
+          "mode": "LONG_SHORT",
+          "weighting": "equal",
+          "long_k": 1,
+          "short_k": 1,
+          "gross": "0.5",
+          "net": "0.5"
+        },
+        "constraints": {},
+        "factor_ids": [
+          "momentum"
+        ],
+        "weights_percent": {
+          "momentum": "100"
+        }
+      }
+    },
+    {
+      "protocol": "main",
+      "factor": "reversal",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-04",
+        "end": "2024-01-22",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": true,
+        "initial_cash": "1000",
+        "fee_budget": "100",
+        "policy": {
+          "mode": "LONG_SHORT",
+          "weighting": "equal",
+          "long_k": 1,
+          "short_k": 1,
+          "gross": "0.5",
+          "net": "0.5"
+        },
+        "constraints": {},
+        "factor_ids": [
+          "reversal"
+        ],
+        "weights_percent": {
+          "reversal": "100"
+        }
+      }
+    },
+    {
+      "protocol": "transparent",
+      "factor": "momentum",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-06",
+        "end": "2024-01-06",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": false,
+        "initial_cash": "1000",
+        "fee_budget": "10",
+        "policy": {
+          "mode": "LONG_ONLY",
+          "weighting": "equal",
+          "top_k": 1
+        },
+        "constraints": {},
+        "factor_ids": [
+          "momentum"
+        ],
+        "weights_percent": {
+          "momentum": "100"
+        }
+      }
+    },
+    {
+      "protocol": "transparent",
+      "factor": "reversal",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-06",
+        "end": "2024-01-06",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": false,
+        "initial_cash": "1000",
+        "fee_budget": "10",
+        "policy": {
+          "mode": "LONG_ONLY",
+          "weighting": "equal",
+          "top_k": 1
+        },
+        "constraints": {},
+        "factor_ids": [
+          "reversal"
+        ],
+        "weights_percent": {
+          "reversal": "100"
+        }
+      }
+    }
+  ],
+  "actor_allocation": {
+    "main": [
+      "SDK momentum",
+      "SDK reversal",
+      "TaskCLI momentum",
+      "TaskCLI reversal",
+      "AppTest momentum",
+      "AppTest reversal",
+      "real browser momentum",
+      "real browser reversal",
+      "legacy research CLI momentum then legacy backtest reusing that P3",
+      "legacy research CLI reversal then legacy backtest reusing that P3"
+    ],
+    "transparent": [
+      "SDK momentum",
+      "SDK reversal"
+    ]
+  },
+  "candidate_horizon_units": 12,
+  "decision_count_per_main_task": 19,
+  "decision_count_per_transparent_task": 1,
+  "expected_all_main_stages": "Actual R/P4 per decision/B/completion with original Task terminal barrier; main feasibility remains G1 model check, not preclaimed PASS",
+  "main_reference": "MAIN_PIPELINE_CANDIDATES.json (stages/statistics only, not financial execution)",
+  "transparent_reference": "GOLDEN_CANDIDATES.json P7-G01..G12",
+  "main_financial_reference": "Independent original P5 state/transaction/journal reconstruction + all independent known finance answers; G1 check full requested schedule, G2 verify raw physical run",
+  "retry_policy": "No quota reset/family/workspace swap/refund to complete success count; retained failed attempts; report incomplete and revise protocol if needed",
+  "formal_test": "NOT RUN / FORBIDDEN",
+  "financial_approval": "NONE",
+  "real_windows_isolation": "DEFERRED / NOT VERIFIED"
+}

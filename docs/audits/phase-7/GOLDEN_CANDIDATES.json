@@ -1,0 +1,654 @@
+{
+  "scope": "Developer-authored finite DESIGN CANDIDATES ONLY; not independent GPT Work review, product tests or executed P7 outcomes",
+  "derivation": "Literal rational/integer/manual contract reasoning; no AQRP functions imported or called; original correct answers remain unmodified",
+  "groups": 32,
+  "cases": [
+    {
+      "id": "P7-G01",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "literal_prices",
+      "inputs": {
+        "public_formula": "100+3*a+((i*i+7*a*i) % (5*a+17))",
+        "assets": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "indices": [
+          2,
+          4
+        ]
+      },
+      "expected": {
+        "i2": [
+          121,
+          111,
+          123,
+          135,
+          147,
+          159
+        ],
+        "i4": [
+          103,
+          124,
+          113,
+          129,
+          145,
+          161
+        ]
+      },
+      "basis": "Independent integer substitution in public synthetic INPUT formula; no AQRP imports",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G02",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "raw_momentum",
+      "inputs": {
+        "old": [
+          121,
+          111,
+          123,
+          135,
+          147,
+          159
+        ],
+        "new": [
+          103,
+          124,
+          113,
+          129,
+          145,
+          161
+        ]
+      },
+      "expected": [
+        "-18/121",
+        "13/111",
+        "-10/123",
+        "-2/45",
+        "-2/147",
+        "2/159"
+      ],
+      "basis": "Momentum=new/old-1 at L2; fractions reduced by hand",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G03",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "raw_reversal",
+      "inputs": {
+        "momentum": [
+          "-18/121",
+          "13/111",
+          "-10/123",
+          "-2/45",
+          "-2/147",
+          "2/159"
+        ]
+      },
+      "expected": [
+        "18/121",
+        "-13/111",
+        "10/123",
+        "2/45",
+        "2/147",
+        "-2/159"
+      ],
+      "basis": "Reversal is negative return, direction remains +1",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G04",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "rank_desc",
+      "inputs": {
+        "raw": [
+          "-18/121",
+          "13/111",
+          "-10/123",
+          "-2/45",
+          "-2/147",
+          "2/159"
+        ]
+      },
+      "expected": [
+        "SYN_A:002",
+        "SYN_A:006",
+        "SYN_A:005",
+        "SYN_A:004",
+        "SYN_A:003",
+        "SYN_A:001"
+      ],
+      "basis": "Rational comparisons; no ties",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G05",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "transparent_top1",
+      "inputs": {
+        "neutralize": false,
+        "momentum_clean_zscore_monotonic": true,
+        "reversal_clean_zscore_monotonic": true
+      },
+      "expected": {
+        "momentum": "SYN_A:002",
+        "reversal": "SYN_A:001"
+      },
+      "basis": "5/95 clipping plus zscore preserves strict extreme ranking for this sample; do not apply to OLS-neutralized main protocol",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G06",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "quantity",
+      "inputs": {
+        "initial_cash": "1000",
+        "unused_fee_budget": "10",
+        "mark": "100",
+        "lot": "1"
+      },
+      "expected": "9",
+      "basis": "floor((1000-10)/100)=9 shares, original profile",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G07",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "commission_and_slippage",
+      "inputs": {
+        "quantity": "9",
+        "raw_open": "100",
+        "BUY_slippage_multiplier": "1001/1000",
+        "tick": "0.01",
+        "commission_minimum": "1",
+        "commission_rate": "1/1000"
+      },
+      "expected": {
+        "actual_fill_price": "100.1",
+        "notional": "900.9",
+        "commission": "1",
+        "slippage_cost": "0.9",
+        "total_equity_drag": "1.9"
+      },
+      "basis": "ceil_tick(100*1001/1000)=100.10; round_cent(max(1,900.90/1000))=1.00; 9*(100.10-100)=0.90. Total drag is not commission.",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G08",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "cash",
+      "inputs": {
+        "initial_cash": "1000",
+        "quantity": "9",
+        "actual_fill_price": "100.1",
+        "commission": "1"
+      },
+      "expected": "98.1",
+      "basis": "1000-9*100.1-1=98.1; mark remains100, not actual fill100.1",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G09",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "marked_value",
+      "inputs": {
+        "quantity": "9",
+        "mark": "100"
+      },
+      "expected": "900",
+      "basis": "9*100",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G10",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "equity",
+      "inputs": {
+        "cash": "98.1",
+        "marked_value": "900",
+        "receivable": "0",
+        "payable": "0"
+      },
+      "expected": "998.1",
+      "basis": "98.1+900",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G11",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "net_return",
+      "inputs": {
+        "initial": "1000",
+        "equity": "998.1"
+      },
+      "expected": "-19/10000",
+      "basis": "(998.1-1000)/1000=-0.0019",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G12",
+      "requirements": [
+        "INT-005"
+      ],
+      "kind": "cross_factor_finance",
+      "inputs": {
+        "momentum_asset": "SYN_A:002",
+        "reversal_asset": "SYN_A:001",
+        "raw_open_both": "100",
+        "actual_fill_price_both": "100.1",
+        "quantity_both": "9",
+        "commission_both": "1",
+        "slippage_cost_both": "0.9"
+      },
+      "expected": {
+        "different_selected_security": true,
+        "same_cash": "98.1",
+        "same_equity": "998.1"
+      },
+      "basis": "Changed asset/order does not require changed return under constant engineering execution prices",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G13",
+      "requirements": [
+        "INT-003",
+        "INT-005"
+      ],
+      "kind": "risk_rejection_preservation",
+      "inputs": {
+        "required_P4_status": "REJECTED",
+        "P5_status": "SUCCEEDED",
+        "P5_fills": 0
+      },
+      "expected": {
+        "Task_status": "FAILED",
+        "Task_error": "REQUIRED_STAGE_REJECTED",
+        "P4_and_P5_raw_results": "PRESERVED"
+      },
+      "basis": "Accepted C-P6-001 all required P4 succeed barrier remains",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G14",
+      "requirements": [
+        "INT-003",
+        "INT-005"
+      ],
+      "kind": "cancel_corrupt_ledger",
+      "inputs": {
+        "cancel_requested": true,
+        "completed_P5_physical_transaction": "CORRUPT",
+        "lifecycle_phase": "RUNNING_CANCELLATION_FINALIZATION_NOT_ALREADY_SEALED_CANCELLED"
+      },
+      "expected": {
+        "Task_status": "FAILED",
+        "error": "COMMITTED_STATE_UNVERIFIED",
+        "financial_state_known": false
+      },
+      "basis": "P6 G2 fix: corruption is financial uncertainty, not successful cancellation",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G15",
+      "requirements": [
+        "INT-003",
+        "INT-005"
+      ],
+      "kind": "future_revision_invisible",
+      "inputs": {
+        "decision": "2024-01-06T12:05:00Z",
+        "event_time": "2024-01-05T12:00:00Z",
+        "revision_available": "2024-01-07T00:00:00Z"
+      },
+      "expected": {
+        "visible_at_decision": false,
+        "past_signal_projection": "UNCHANGED"
+      },
+      "basis": "PIT event time alone is insufficient; available_at is after decision",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G16",
+      "requirements": [
+        "INT-003",
+        "INT-005"
+      ],
+      "kind": "visible_reverse_control",
+      "inputs": {
+        "old_previous": "100",
+        "old_current": "110",
+        "new_visible_current": "120",
+        "lookback": 1
+      },
+      "expected": {
+        "old_momentum": "1/10",
+        "new_momentum": "1/5",
+        "changed": true
+      },
+      "basis": "110/100-1 vs120/100-1; prevents constant-output false passing mutation tests",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G17",
+      "requirements": [
+        "INT-006",
+        "DATA-013"
+      ],
+      "kind": "unknown_competition",
+      "inputs": {
+        "source_kind": "REAL_PROVIDER",
+        "official_rules": null
+      },
+      "expected": {
+        "specific_competition": "EXTERNAL_DEPENDENCY_BLOCKED",
+        "submit_called": false,
+        "synthetic_fallback": false
+      },
+      "basis": "Unknown real source/rules cannot silently select known engineering profile",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G18",
+      "requirements": [
+        "INT-006",
+        "DATA-013"
+      ],
+      "kind": "missing_source_authority",
+      "inputs": {
+        "source_authority": null,
+        "license_statement": null
+      },
+      "expected": {
+        "adapter": "REJECTED",
+        "submit_called": false
+      },
+      "basis": "Source/permission declaration required; declaration itself does not certify real license",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G19",
+      "requirements": [
+        "INT-006",
+        "DATA-013"
+      ],
+      "kind": "missing_available_time",
+      "inputs": {
+        "event_time": "2024-01-06T12:00:00Z",
+        "available_at": null
+      },
+      "expected": {
+        "adapter": "REJECTED",
+        "default_to_event_or_fetch": false
+      },
+      "basis": "No invention of historical publication time",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G20",
+      "requirements": [
+        "INT-006",
+        "DATA-013"
+      ],
+      "kind": "unsupported_unit_conversion",
+      "inputs": {
+        "declared_unit": "lots",
+        "target_unit": "shares",
+        "conversion_authority": null
+      },
+      "expected": {
+        "adapter": "REJECTED",
+        "infer_lot_size": false
+      },
+      "basis": "First generic profile only identity units; unsupported mapping explicit",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G21",
+      "requirements": [
+        "INT-006",
+        "DATA-013"
+      ],
+      "kind": "wrong_snapshot_binding",
+      "inputs": {
+        "source_ref_manifest_matches_catalog": false,
+        "uuid_is_legal": true
+      },
+      "expected": {
+        "adapter": "REJECTED",
+        "submit_called": false
+      },
+      "basis": "A well-formed UUID is not immutable identity proof",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G22",
+      "requirements": [
+        "INT-003",
+        "INT-004",
+        "INT-005"
+      ],
+      "kind": "preregistered_actor_budget",
+      "inputs": {
+        "main_actors": 4,
+        "main_factors": 2,
+        "legacy_research_actors": 1,
+        "legacy_factors": 2,
+        "transparent_sdk_actors": 1,
+        "transparent_factors": 2,
+        "horizons_per_candidate": 1
+      },
+      "expected": 12,
+      "basis": "4*2+1*2+1*2=12 actual candidate/horizon attempts, old backtest reuses old P3",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G23",
+      "requirements": [
+        "INT-003"
+      ],
+      "kind": "budget_boundary",
+      "inputs": {
+        "used": 11,
+        "new_units": 1,
+        "limit": 12
+      },
+      "expected": {
+        "allowed": true,
+        "used_after": 12
+      },
+      "basis": "11+1=12; final reserved attempt",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G24",
+      "requirements": [
+        "INT-003"
+      ],
+      "kind": "budget_overflow",
+      "inputs": {
+        "used": 12,
+        "new_units": 1,
+        "limit": 12
+      },
+      "expected": {
+        "allowed": false,
+        "reserved_attempt_units_after": 13,
+        "over_budget": true,
+        "Task_status": "FAILED",
+        "error": "EXPERIMENT_BUDGET_EXCEEDED",
+        "new_research_run": false
+      },
+      "basis": "Original TaskState preserves the 13th atomic reservation/FAILED attempt; actual new research is not run. Do not erase the rejected request or falsely claim reservation remains12.",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G25",
+      "requirements": [
+        "INT-003"
+      ],
+      "kind": "failed_attempt_no_refund",
+      "inputs": {
+        "reserved": 12,
+        "outcome": "FAILED_OR_CANCELLED"
+      },
+      "expected": {
+        "used_after": 12,
+        "refund": 0
+      },
+      "basis": "Repeated actor attempts are still experiments, failed/cancelled never replenish quota",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G26",
+      "requirements": [
+        "INT-003"
+      ],
+      "kind": "unregistered_variant",
+      "inputs": {
+        "registered_lookback": 2,
+        "submitted_lookback": 3
+      },
+      "expected": {
+        "error": "UNREGISTERED_CAMPAIGN_VARIANT",
+        "new_family": false
+      },
+      "basis": "Parameter editing cannot auto-register a new family; receipt error is not new execution",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G27",
+      "requirements": [
+        "INT-003"
+      ],
+      "kind": "candidate_vs_pin",
+      "inputs": {
+        "strategy_pin_version": "1.0.0",
+        "strategy_pin_hash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "candidate_version": "1.0.1",
+        "candidate_hash": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+      },
+      "expected": {
+        "strategy_pin_version": "1.0.0",
+        "strategy_pin_hash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "old_experiment_bytes_changed": false
+      },
+      "basis": "Synthetic identity literals only; real test must bind actual approved code bytes and exact refs",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G28",
+      "requirements": [
+        "INT-003",
+        "INT-004"
+      ],
+      "kind": "formal_boundary",
+      "inputs": {
+        "requested_mode": "FORMAL",
+        "financial_approval": "NONE"
+      },
+      "expected": {
+        "error": "APPROVAL_REQUIRED",
+        "private_test_read": false,
+        "orders": 0
+      },
+      "basis": "Engineering approval is not financial approval; no fallback",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G29",
+      "requirements": [
+        "INT-004",
+        "INT-005"
+      ],
+      "kind": "missing_completion",
+      "inputs": {
+        "R": "SUCCEEDED",
+        "all_P4": "SUCCEEDED",
+        "B": "SUCCEEDED",
+        "completion_receipt": null
+      },
+      "expected": {
+        "Task_status": "NOT_SUCCEEDED"
+      },
+      "basis": "All child success without verified global completion/terminal transaction cannot imply Task success",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G30",
+      "requirements": [
+        "INT-004",
+        "INT-005"
+      ],
+      "kind": "wrong_parent_uuid",
+      "inputs": {
+        "uuid_syntax_valid": true,
+        "source_parent_binding_matches": false
+      },
+      "expected": {
+        "read_result": "REJECTED",
+        "numeric_comparison_attempted": false
+      },
+      "basis": "Verify original bindings before any allowed UUID mapping",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G31",
+      "requirements": [
+        "INT-004",
+        "INT-005"
+      ],
+      "kind": "null_not_zero",
+      "inputs": {
+        "left": null,
+        "right": 0
+      },
+      "expected": false,
+      "basis": "Undefined statistics cannot be silently changed to zero",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    },
+    {
+      "id": "P7-G32",
+      "requirements": [
+        "INT-004"
+      ],
+      "kind": "exact_large_quantity",
+      "inputs": {
+        "raw": "9007199254740993",
+        "display": "9007199254740992"
+      },
+      "expected": {
+        "equal": false,
+        "raw_roundtrip": "9007199254740993"
+      },
+      "basis": "2**53+1 must retain integer precision; JS display rounding is not a financial value",
+      "tolerance": "Exact finite values / strings / states; no product execution claim"
+    }
+  ]
+}

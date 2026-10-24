@@ -1,0 +1,77 @@
+{
+  "executor": "Codex developer archival quality checks only",
+  "reviewed_fixed_H": "645049ae9b08710ed93189b80547d14c87d80584",
+  "review_lock_stays": "645049ae9b08710ed93189b80547d14c87d80584",
+  "reviewed_design_math_and_business_unchanged": true,
+  "original_H_unchanged_files": 5773,
+  "protected_files": 5016,
+  "P6_current_hash_rows": 91,
+  "P6_baseline_frozen_files": 5552,
+  "actual_received_Git_originals": 49,
+  "complete_external_originals": 113,
+  "original_audit_ZIP_members": 110,
+  "H_official_API_CI": "Dual-OS SUCCESS, P6 regression only",
+  "H_official_raw_ZIPs": "NOT VERIFIED BY_THIS_ARCHIVAL",
+  "structure_AST_byte_integrity_static_package_secret_scan": "PASS",
+  "report_verdict": "PLAN PASS WITH CONDITIONS",
+  "finding_closure": "CLOSED_DESIGN only",
+  "static_candidates_in_independent_report": 36,
+  "abstract_assertions_in_independent_report": 394,
+  "independent_report_product_tests": 0,
+  "new_SDK_or_browser_or_product_or_audit_scripts_executed": false,
+  "user_conditions_accepted": false,
+  "implementation_authorized": false,
+  "main_merge_tags_deployment_live": false,
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "commands": [
+    {
+      "scope": "Developer receipt/documentation static checks only, not product or independent design re-review",
+      "argv": [
+        "E:\\WORK\\AQRP-runs\\p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5\\aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6\\venv\\Scripts\\python.exe",
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\tools\\check_phase6_package.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "based_on_reviewed_H": "645049ae9b08710ed93189b80547d14c87d80584",
+      "started_utc": "2026-10-24T15:25:33.763914+00:00",
+      "finished_utc": "2026-10-24T15:25:37.126275+00:00",
+      "exit_code": 0
+    },
+    {
+      "scope": "Developer receipt/documentation static checks only, not product or independent design re-review",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "based_on_reviewed_H": "645049ae9b08710ed93189b80547d14c87d80584",
+      "started_utc": "2026-10-24T15:25:37.127979+00:00",
+      "finished_utc": "2026-10-24T15:25:37.427755+00:00",
+      "exit_code": 0
+    },
+    {
+      "scope": "Developer receipt/documentation static checks only, not product or independent design re-review",
+      "argv": [
+        "E:\\WORK\\AQRP-runs\\p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5\\aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner",
+        "--report-format",
+        "json",
+        "--report-path",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g1-pass-645049a-20261024\\preflight\\scan-findings.json"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "based_on_reviewed_H": "645049ae9b08710ed93189b80547d14c87d80584",
+      "started_utc": "2026-10-24T15:25:37.428838+00:00",
+      "finished_utc": "2026-10-24T15:25:48.240840+00:00",
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "Developer finite design model subprocess only; not AQRP/P7 product tests or independent audit",
+  "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\p7-draft\\FINANCIAL_REFERENCE_METHOD.md",
+  "source_sha256": "f16a98d60ddba0b5d758ddefb2d189d95fc9185157a6ea86ca09bbbe08578577",
+  "code_sha256": "102cf5d20042747e0d1ccb0e6bfe5873b2e4e51deacf87218e281c3befea3cf6",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "argv_prefix": [
+    "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+    "-X",
+    "utf8",
+    "-c"
+  ],
+  "start_utc": "2026-10-24T11:42:33.125833+00:00",
+  "end_utc": "2026-10-24T11:42:44.689159+00:00",
+  "exit_code": 0,
+  "stdout": "{\"paths\": 768, \"developer_model_checks\": 109350, \"summaries\": [{\"name\": \"momentum\", \"selected_sequence\": [\"SYN_A:001\", \"SYN_A:002\", \"SYN_A:004\", \"SYN_A:003\", \"SYN_A:002\", \"SYN_A:001\", \"SYN_A:001\", \"SYN_A:006\", \"SYN_A:004\", \"SYN_A:004\"], \"switches\": 7, \"permutations\": 128, \"required_P4_each\": 10, \"fills_each\": 15, \"final\": {\"cash_set\": \"579\", \"U_free\": \"0\", \"U_short\": \"0\", \"S_set\": \"0\", \"cash_total\": \"579\", \"marked_value\": \"400\", \"O_N\": \"0\", \"O_F\": \"0\", \"F_unused\": \"50\", \"short_value\": \"0\", \"P_res\": \"0\", \"Z\": \"0\", \"available\": \"579\", \"cash_alloc\": \"529\", \"equity_alloc\": \"929\", \"equity\": \"979\"}, \"cumulative_fees\": \"15\", \"cumulative_slippage\": \"6\", \"final_positions\": {\"SYN_A:001\": \"0\", \"SYN_A:002\": \"0\", \"SYN_A:003\": \"0\", \"SYN_A:004\": \"4\", \"SYN_A:005\": \"0\", \"SYN_A:006\": \"0\"}}, {\"name\": \"reversal\", \"selected_sequence\": [\"SYN_A:003\", \"SYN_A:004\", \"SYN_A:006\", \"SYN_A:005\", \"SYN_A:001\", \"SYN_A:002\", \"SYN_A:002\", \"SYN_A:004\", \"SYN_A:002\", \"SYN_A:002\"], \"switches\": 7, \"permutations\": 128, \"required_P4_each\": 10, \"fills_each\": 15, \"final\": {\"cash_set\": \"579\", \"U_free\": \"0\", \"U_short\": \"0\", \"S_set\": \"0\", \"cash_total\": \"579\", \"marked_value\": \"400\", \"O_N\": \"0\", \"O_F\": \"0\", \"F_unused\": \"50\", \"short_value\": \"0\", \"P_res\": \"0\", \"Z\": \"0\", \"available\": \"579\", \"cash_alloc\": \"529\", \"equity_alloc\": \"929\", \"equity\": \"979\"}, \"cumulative_fees\": \"15\", \"cumulative_slippage\": \"6\", \"final_positions\": {\"SYN_A:001\": \"0\", \"SYN_A:002\": \"4\", \"SYN_A:003\": \"0\", \"SYN_A:004\": \"0\", \"SYN_A:005\": \"0\", \"SYN_A:006\": \"0\"}}, {\"name\": \"adversarial_nine_switches\", \"selected_sequence\": [\"SYN_A:001\", \"SYN_A:002\", \"SYN_A:001\", \"SYN_A:002\", \"SYN_A:001\", \"SYN_A:002\", \"SYN_A:001\", \"SYN_A:002\", \"SYN_A:001\", \"SYN_A:002\"], \"switches\": 9, \"permutations\": 512, \"required_P4_each\": 10, \"fills_each\": 19, \"final\": {\"cash_set\": \"2867/5\", \"U_free\": \"0\", \"U_short\": \"0\", \"S_set\": \"0\", \"cash_total\": \"2867/5\", \"marked_value\": \"400\", \"O_N\": \"0\", \"O_F\": \"0\", \"F_unused\": \"48\", \"short_value\": \"0\", \"P_res\": \"0\", \"Z\": \"0\", \"available\": \"2867/5\", \"cash_alloc\": \"2627/5\", \"equity_alloc\": \"4627/5\", \"equity\": \"4867/5\"}, \"cumulative_fees\": \"19\", \"cumulative_slippage\": \"38/5\", \"final_positions\": {\"SYN_A:001\": \"0\", \"SYN_A:002\": \"4\", \"SYN_A:003\": \"0\", \"SYN_A:004\": \"0\", \"SYN_A:005\": \"0\", \"SYN_A:006\": \"0\"}}], \"retained_counterexamples\": [[\"SELLABLE\"], [\"P4_TURNOVER\"]]}\n",
+  "stderr": ""
+}

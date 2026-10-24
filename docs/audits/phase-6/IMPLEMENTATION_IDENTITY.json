@@ -25432,38 +25432,38 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 51981,
-      "sha256": "5f3a19a7a70a8248e32aaa856913b7be207bc2326b3d6244c6d7c7d7485109c2"
+      "bytes": 54783,
+      "sha256": "3a4f1538b808da0d7d2c5609723d51a31f0c19f63756e1835f0b62f4dcad909a"
     },
     {
       "path": "README.md",
-      "bytes": 35318,
-      "sha256": "b9c45ed4c9a7cd6eaa98ae765630aad1e23f89c0ea1e76c105d65c4465717660"
+      "bytes": 38120,
+      "sha256": "fd918c921ad1e1146e7f2141bffc3fd1bd69705d0073eefe6fa97a08b58f494f"
     },
     {
       "path": "docs/CHANGELOG.md",
-      "bytes": 49562,
-      "sha256": "ccb679f4cd80983567df9af1a194816b5b0eb903b63146dac7a5226e85761563"
+      "bytes": 52364,
+      "sha256": "1464eb86a69b8b852473f7288ea9bb8e22d4e4ee13bfa3e452543d03f9cb3c69"
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 48518,
-      "sha256": "52c75ec94d2d2516283b01a2a63ba0bf8e414f1e3b08bdd3dd1f8d9335057e41"
+      "bytes": 51320,
+      "sha256": "a90f07a9f72bbdaa0d1164d9d2bc4160921688d6520dd2168f177465525e388f"
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 44091,
-      "sha256": "24cdfebb9e81accf8162ce554258f6f4289ac821087ee7ed5906e77dc4609aa6"
+      "bytes": 46893,
+      "sha256": "6218b2e59728134a6a1bb8508152942ae8948124e2db8c5459d9783e3509cf11"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 41434,
-      "sha256": "1bf848cf14acbf4566f6426c73313034d8195a161c2c69e584307741c202b722"
+      "bytes": 44236,
+      "sha256": "34e0ba96d8b42c7174e27aebb3fb2babbe5b4b6fc520967a00950673a6f30d6c"
     },
     {
       "path": "docs/TRACEABILITY.md",
-      "bytes": 48133,
-      "sha256": "6b3caa5da9ee833ac022faa356418151f27720f6f39ac1c6212c970016826097"
+      "bytes": 50935,
+      "sha256": "aa6a8f6302a94185d51040bd94964bab8e5108c55a29c250bdd295ac2053fc28"
     },
     {
       "path": "docs/audits/phase-6/C1_BROWSER_FINDING_EVIDENCE.json",
@@ -25924,5 +25924,61 @@
     ],
     "preserved_files_unchanged": 5016,
     "business_modules_unchanged": 83
+  },
+  "plan_documentation_metadata": {
+    "scope": "Seven global status-document hash rows only; P6 business and protected evidence unchanged; not new P6/P7 independent audit",
+    "phase7_start_baseline_sha": "d563347ad11e1f26e131dc06e343250282c05c33",
+    "baseline_identity_snapshot": "../phase-7/PHASE6_IMPLEMENTATION_IDENTITY.json",
+    "baseline_identity_sha256": "226885161cb443c6fe1cb95e064f68a2576b39124a7abcda9d8ee43ae412f919",
+    "changed_document_hash_rows": [
+      "AGENTS.md",
+      "README.md",
+      "docs/CHANGELOG.md",
+      "docs/DECISIONS.md",
+      "docs/PROGRESS.md",
+      "docs/ROADMAP.md",
+      "docs/TRACEABILITY.md"
+    ],
+    "preserved_files_unchanged": 5016,
+    "bundle_sha256_unchanged": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+    "future_plan_review_sha": "Resolved externally from actual plan commit + unique PR AQRP_FIXED_REVIEW_SHA; never an embedded future/self SHA"
+  },
+  "g1_design_revision_metadata": {
+    "scope": "Seven global documentation hash rows only, current P7 G1 blocking review and design revisions",
+    "reviewed_plan_sha": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+    "reviewed_identity_snapshot": "../phase-7/g1-3c34e3c/REVIEWED_P6_IDENTITY.json",
+    "reviewed_identity_snapshot_sha256": "81e3d3765af42261f9281e6c9cf7d14f86689dcfcdf6eeaa70ec8c1357d6d0bd",
+    "changed_global_docs": [
+      "AGENTS.md",
+      "README.md",
+      "docs/CHANGELOG.md",
+      "docs/DECISIONS.md",
+      "docs/PROGRESS.md",
+      "docs/ROADMAP.md",
+      "docs/TRACEABILITY.md"
+    ],
+    "protected_files": 5016,
+    "business_bundle_unchanged": true,
+    "finding_states": "OPEN_PENDING_INDEPENDENT_RECHECK; no new G1 PASS"
+  },
+  "g1_conditional_pass_archival_metadata": {
+    "scope": "Seven current global status-document hash rows only; reviewed design/business/protected files unchanged",
+    "reviewed_plan_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+    "verdict": "PLAN PASS WITH CONDITIONS",
+    "reviewed_identity_snapshot": "../phase-7/g1-645049a/REVIEWED_P6_IDENTITY.json",
+    "reviewed_identity_snapshot_sha256": "794fd7213ef342605dd62a479e35d79c2f053c4428d170b5dd0526ee61d1318d",
+    "changed_rows": [
+      "AGENTS.md",
+      "README.md",
+      "docs/CHANGELOG.md",
+      "docs/DECISIONS.md",
+      "docs/PROGRESS.md",
+      "docs/ROADMAP.md",
+      "docs/TRACEABILITY.md"
+    ],
+    "protected_files": 5016,
+    "bundle_unchanged": true,
+    "user_conditions_or_implementation_authorized": false,
+    "current_report": "../phase-7/g1-645049a/received/REPORT.txt"
   }
 }

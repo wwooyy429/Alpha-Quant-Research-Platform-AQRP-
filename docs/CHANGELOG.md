@@ -1,3 +1,12 @@
+<!-- Phase7 G1 645049a conditional-PASS receipt -->
+最新独立结论：GPT Work固定645049ae9b08710ed93189b80547d14c87d80584判Phase7 G1 PLAN PASS WITH CONDITIONS，WORK-P7-G1-001/002均CLOSED_DESIGN，无新增阻断设计；36逐案静态候选、394抽象断言不是产品测试（产品0），P7实现与真实浏览器仍NOT VERIFIED。原已审设计/数学/失败原字节不改，当前记录见docs/audits/phase-7/REVIEW_PACKAGE_CURRENT.md及g1-645049a/。PR #10审查锁继续H，后续归档SHA另列不冒称新已审版本。C-P7-001～004用户接受及单独实施授权均PENDING，P7 NOT AUTHORIZED / NOT STARTED、未验收/发布。P6 main/phase6-baseline/v0.6.0仍d563347ad11e1f26e131dc06e343250282c05c33；R2延期未验证、正式Test未运行/失败关闭、金融NONE、历史宿主限制保持，无合并标签/部署实盘/真实权限变更。以下旧BLOCKED/待复核文字保留为历史，不覆盖本轮独立设计结论。
+
+<!-- Phase7 G1 3c34e3c blocked-design revision -->
+最新独立G1：GPT Work固定3c34e3ca75c9799307b8a98b34f045b40988bbca判PLAN BLOCKED，WORK-P7-G1-001 High、002 Medium blocking均OPEN。本轮仅修订共同Task/legacy/public/direct-ledger原子预算准入、可信plan/幂等/恢复，以及MAIN12+预登记原风险夹具1+主根零研究取消/replay；原报告/失败/答案完整保留，详docs/audits/phase-7/REVIEW_PACKAGE.md与g1-3c34e3c/。两项OPEN_PENDING_INDEPENDENT_RECHECK，新完整SHA以PR #10唯一AQRP_FIXED_REVIEW_SHA锁定，未自行关闭。P6 main/phase6-baseline/v0.6.0仍d563347ad11e1f26e131dc06e343250282c05c33；原106/五项需求、保护业务与19/768答案不改，原设计验证不是P7产品通过。C-P7修订及实现仍待用户接受/单独授权；R2延期未验证、正式Test未运行、金融NONE、历史宿主及不部署实盘/真实权限边界维持。以下旧待审文字保留为历史。
+
+<!-- Phase7 G1 planning override -->
+最新已核实状态：Phase6八项受限工程已ACCEPTED并RELEASED，main/phase6-baseline/v0.6.0在本次计划启动时同指完整SHA `d563347ad11e1f26e131dc06e343250282c05c33`；旧标签保留，证据见docs/audits/phase-7/PHASE6_RELEASE_RECEIPT.json。用户只授权从该基线开始Phase7 G1计划预审：五项原需求（3 MVP / 2 Competition Ready），包括需求映射、接口/数学口径、独立答案及测试证据计划、阶段依赖，交GPT Work固定40位SHA审查。本轮不开始P7业务实现，不把P6的1567回归写成P7产品通过。WI-R2两项/真实隔离持续DEFERRED / NOT VERIFIED，正式Test未运行、金融批准NONE、历史宿主受限边界保留；不授权部署/实盘/真实权限操作。以下旧阶段摘要作为历史保留，当前P7状态以docs/audits/phase-7/STATUS.json为准。
+
 <!-- Phase6 release-publication override -->
 2026-10-24 最新人工验收及发布覆盖说明：Phase6八项受限工程范围已由用户ACCEPTED，GPT Work固定3017a097b49ecdae68228ca9a417fcd03c313200 G2 PASS及三项修复关闭维持。PR #9批准归档头a4d650d5d15e814600fde0bb6858fe97f14e5229只改文档/审计存储/身份元数据，双系统实际CI各1567通过；旧H1扫描失败及原证据保留，7份外部原件位置/哈希明确，扫描规则未改。实际普通合并7b4864f4d750fa96b5b5634c4bba0cd84b5b077f整树等于批准头；开发方合并后新干净SDK1567、原20＋4及数学91通过。发布证据提交仅文档及其身份元数据，main/phase6-baseline/v0.6.0原子同点核验后才RELEASED，旧标签不移动，已审包仍0.6.0.dev5。仅授权其后Phase7 G1计划，不授权业务实现。WI-R2两项和真实隔离持续DEFERRED / NOT VERIFIED，正式Test未运行、金融批准NONE、历史宿主边界及原native原因NOT VERIFIED维持；无部署/实盘/真实权限操作。详docs/audits/phase-6/BASELINE.md。以下既有轮次为历史，不覆盖本次最新人工决定。
 

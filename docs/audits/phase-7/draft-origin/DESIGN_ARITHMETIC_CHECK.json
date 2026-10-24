@@ -1,0 +1,15 @@
+{
+  "scope": "Developer stdlib check of finite literal design arithmetic only; NO AQRP imports, NO P7 product tests, NO independent audit verdict",
+  "python": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "assertions": 40,
+  "result": "LITERAL_ARITHMETIC_MATCHES",
+  "checked_groups": [
+    "P7-G01..G12",
+    "P7-G16",
+    "P7-G22..G24",
+    "P7-G32"
+  ],
+  "not_checked": "Contract/state examples are intended expectations only; no adapter, service, browser or production behavior was executed",
+  "notes": "Current literals include original max(minimum,proportional) commission and separate adverse slippage. Developer draft corrections disclosed in DRAFT_REVIEW_NOTES.md."
+}
