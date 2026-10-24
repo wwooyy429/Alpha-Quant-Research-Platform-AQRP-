@@ -1,0 +1,39 @@
+{
+  "reviewed_sha": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+  "gate": "Phase7 G1 plan only",
+  "verdict": "PLAN BLOCKED / REQUEST CHANGES",
+  "findings": [
+    {
+      "id": "WORK-P7-G1-001",
+      "severity": "High",
+      "status": "OPEN",
+      "blocking": true,
+      "title": "旧研究CLI缺少与Task预留共同的预算准入设计",
+      "file": "docs/audits/phase-7/OPEN_QUESTIONS.md",
+      "line": 14,
+      "requirements": ["INT-003", "INT-004", "INT-005"],
+      "evidence": "PRIMARY_BUDGET_COUNTEREXAMPLE.json",
+      "actual_primary_probe": "12 Task reservations cancelled before work; zero trials; no-TaskContext legacy ledger admission accepts next trial, over_budget=false. No worker/research()/simulation executed.",
+      "required_change": "Specify enforceable common admission, ownership, deduplication, cancellation/failure/retry and concurrent recovery protocol; explicit allowed paths and compatibility. Add cancelled-budget exhaustion then legacy rejection and mixed-entry concurrent cases. Preserve budget12/old answers/evidence. Submit new fixed SHA."
+    },
+    {
+      "id": "WORK-P7-G1-002",
+      "severity": "Medium",
+      "status": "OPEN",
+      "blocking": true,
+      "title": "必需真实浏览器负例未绑定可执行预算与冻结输入",
+      "file": "docs/audits/phase-7/TEST_AND_EVIDENCE_PLAN.md",
+      "line": 30,
+      "requirements": ["INT-003", "INT-004", "INT-005"],
+      "evidence": ["docs/audits/phase-7/E2E_PROTOCOL_CANDIDATES.json:160-188", "src/aqrp/ui/app.py:348-352"],
+      "counterexample": "All12 units allocated to success actors; new risk-rejection pipeline is attempt13 rejected for budget before P4, so cannot prove actual risk gate. Existing-fault-fixture exemption not explicitly bound to required browser cases.",
+      "required_change": "Preregister each negative input/entry/campaign/data identity/research units and expected P4/B/Task state; explicitly allocate supported zero-research or original fault fixtures, or revise protocol. No workspace/family/quota workaround or budget rejection relabelled as risk refusal. New fixed SHA."
+    }
+  ],
+  "nonblocking_opinion": "Clarify missing-field raw/config_hash compatibility is same-package identity, and original P6 tasks/pins use original package; do not promise cross-bundle in-place recovery.",
+  "conditions_pending_user": ["C-P7-001", "C-P7-002", "C-P7-003 after technical repair", "C-P7-004"],
+  "implementation_authorized": false,
+  "formal_Test": "NOT RUN",
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED"
+}

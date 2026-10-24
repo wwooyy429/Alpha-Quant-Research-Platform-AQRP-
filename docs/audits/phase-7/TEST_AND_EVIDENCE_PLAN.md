@@ -5,6 +5,8 @@
 | 测试组 | 正例 / 独立期望来源 | 必需负例和边界 | 原需求 |
 |---|---|---|---|
 | T7-REPLACE | 固定P1/侧车/精确Ref，Momentum与Reversal分别完整研究→组合风险→订单撮合→资金/绩效→报告→Task；逐阶段原始工件独立读取，透明层字面答案+主层独立参考 | 仅改显示名而未改代码Ref；同UUID换父源；不同core/数据/风险偷偷夹带；某子阶段缺失但整任务成功；订单未变化却不按预期解释 | INT-005 |
+| T7-ADMISSION | Task/旧CLI/公共research/direct ledger同域共同原子准入；32+候选与原审反例；同key去重、N单位完整预留、可信R认领、不退款、恢复/历史清单 | 12取消后旧入口拒绝；剩余1混合并发；输出/上下文/家族绕过；DB/投影缺损；UI随机key/旧CLI slot去重；原失败完整保留 | INT-003/004/005 + EXP/UI-007 |
+| T7-BROWSER-NEGATIVE | 原风险夹具真实UI提交gross_max=0；主根排队replay由UI取消及正常UI重放，逐案例原字节 | 不能用预算拒绝冒充P4拒绝；risk第二attempt拒绝；worker不得在取消前偷跑；source不变，零研究必须真实无R | INT-004/005 + UI-007/008 |
 | T7-MODES | 研究候选参数/受审版本/停用回滚变更，固定工程strategy pin与历史快照不变；新candidate结果应受已知变更影响（反向控制） | 自动latest升级、改旧config或历史manifest；新family/新adapter绕共享12预算；失败/取消退款；未审任意代码执行；formal/FINAL_TEST改字段强行通过 | INT-003 |
 | T7-CLEAN | 全新源checkout→3.13.16→固定hash依赖→build/install wheel→数据→全部测试→CLI研究/回测→真实网页→数值→日志，实际路径/RECORD/环境 | editable包、脏tree、假Python版本、lock/RECORD篡改、host/OS/machine缺失、复用旧site-packages、只起UI无任务/对比 | INT-004 |
 | T7-PARITY | 旧研究CLI/旧回测CLI/TaskCLI/SDK/AppTest/真实浏览器按同canonical请求，同核原字节投影与来源证明 | 过宽排除hash/lineage/null；精确资金被显示舍入覆盖；旧defaults影响既有请求；相同错误输入入口不一致拒绝 | INT-004/005 |
@@ -27,6 +29,8 @@
 
 新的P7工具/CI/工件选择接线按PACKAGE_GATE_AND_CI_PLAN执行：当前P7树用新阶段准入，旧P6 checker原字节仅用于其固定基线包/源码；原P6全部业务回归与正确答案仍保留。e2e/competition新输出同时进入tools/ci上传选择器和workflow原包路径，并纳入exact-member/whole-subtree字节审计。阶段文档模式成功只证明P6回归和允许文档范围，不称P7实现通过。
 
-真实浏览器须在单独授权实施之后以本机受控工程启动完成：六页面加载/两因子全链/实际股票池/预注册campaign/风险拒绝/取消/重放/下载/比较/defaults CAS与回滚，保存启动命令/解释器/固定SHA/进程绑定、地址、AX、截图、实际Task/run IDs、原字节和前后hash。AppTest不冒充真实浏览器；截图不替代原账本/数值证明。只停止本次自有进程，不动其他应用或真实账户。
+真实浏览器实施后必须按 [BROWSER_NEGATIVE_PROTOCOL.md](BROWSER_NEGATIVE_PROTOCOL.md) 与结构化CANDIDATES逐案执行，不再把负例留到主12耗尽后临时安排。MAIN-12原actor/原答案不变；原P6风险故障夹具在任何结果前单独冻结根/来源/purpose/1-slot，使用现有Risk overrides真实提交gross_max=0，需R成功、真实P4 REJECTED/FAILED、B成功无fills现金1000、整Task FAILED REQUIRED_STAGE_REJECTED。负例消耗1独立故障单位，明确分列，不声称主预算只有12却暗中执行13次研究，不用于补主成功数或金融推断。
+
+主根取消案例由可信SDK仅排队固定源的replay，再真实浏览器点击Cancel safely；无新研究/无新R、P4、B或E，之后真实worker no-op及同key重试证明。正常重放由真实UI按钮提交，零新研究但会有新E及P4执行，必须正确记录。主成功actor不能用replay替代。记录六页面/两因子/股票池/campaign/风险/取消/replay/下载/比较/defaults CAS与回滚、AX/截图、进程/URL/解释器/Task及run身份；AppTest/SDK准备步骤不得冒充browser提交。所有主体与工件前后hash、原账本及审计清单保留，只停止本次自有进程。
 
 最终证据清单为不可变配置、数据/代码/环境/规则/旧制品/输入/输出/失败原件的大小与SHA256；清单自身/外层ZIP/外部seal边界明确，避免循环hash。独立主审可读取所有工程输入和原始工件；真实ACL验证另授权且R2延期未关闭。最终工程报告列每项需求/测试/缺口/实际命令、四种关卡状态，不能将设计/代码自查/CI/独立审查/用户验收混成一个PASS。

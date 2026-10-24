@@ -1,18 +1,17 @@
 # 待核实事项、外部规则与准入条件
 
-## 当前G1前必须由开发方补齐的事实
+## 当前独立结论与仍待复核的设计
 
-1. 父代理核实并填入P6最终RELEASED完整SHA、tree、phase6-baseline及新版本tag、合并/归档/发布差异、合并后实际SDK/回归与原始证据。此草案的占位不能进入声称正式起点的PR。
-2. 冻结G1实际文档/原始来源/原需求快照文件清单和hash，保护P6业务/锁/旧答案/失败证据；计划提交不得夹业务实现。实际计划PR及唯一完整40位AQRP_FIXED_REVIEW_SHA由主开发创建后填写。
-3. 本提案候选的透明层输入/手算和主层原Golden/独立参考映射要由GPT Work在G1核对；预登记actor和共享预算控制须能覆盖所有重复执行，不可为了验收重置统计历史。计划不预先给出P7产品通过数。
-4. 主层19研究点/隔日10执行点、LONG_SHORT gross=net=0.5、每决策费用预算50的设计金融分析已由开发方纯stdlib有限模型/上下界补齐；原19日执行和fee100反例完整保留。主审应独立核对FINANCIAL_FEASIBILITY、逐步路径及源码对真实规则的映射；这是设计数学，不冒充产品/真实金融执行已验证。
+GPT Work已对固定 `3c34e3ca75c9799307b8a98b34f045b40988bbca` 判PLAN BLOCKED；001 High、002 Medium blocking均OPEN。原P6基线/5552冻结范围及19截面/768路径已由该报告核对，不能拿这些通过掩盖预算缺口。本轮开发方修订共同authority、完整跨入口准入及浏览器负例分账，**仍为OPEN_PENDING_FIXED_SHA_RECHECK**，没有P7实施许可。原件、反例和处置见g1-3c34e3c/。
+
+PR为实际 #10，新完整SHA仅由本轮真实提交及描述唯一AQRP_FIXED_REVIEW_SHA确定；不在文档内伪填自SHA。P6正式起点已核实P=d563347ad11e1f26e131dc06e343250282c05c33，旧草案占位仅历史，原独立参考/金融答案和失败不变。新准入/负例候选是设计表，当前未执行产品/浏览器/SDK，不自判关闭。
 
 ## 提交主审判断的设计事项
 
 - **C-P7-001 · 受限工程最终验收与外部验收分列。** INT-004原称“部署及最终运行”，本次明确不部署。提案交付可重建安装/实际受控本地工程运行/手册与部署边界，真实部署NOT AUTHORIZED；P7工程结论不等于原全平台部署验收。主审G1可审设计；未来用户如授权实施，应明确接受该边界，不能静默删除原义务。
 - **C-P7-002 · 第一通用适配profile。** 使用已有P6受信SYN_A/SYNCCY/SYN_A_CAL数据和已审SYNTHETIC执行profile，第一适配仅支持声明合成规则和单位恒等映射。通用接口/能力报告/真实请求运行全部必做；外部比赛未知拒绝，不承诺任意真实源。没有新经济假设或依赖库。
-- **C-P7-003 · 试验预算可审执行方案。** 同一数据身份/同一工程workspace先登记两因子×两个处理协议（主层中性化true、透明层false），horizons=[1]，每次候选×期限1单位。主层SDK、TaskCLI、AppTest、真实浏览器各两因子=8次，旧研究CLI两因子=2次（其后旧回测CLI复用这两个真实P3父源，不再研究），透明层SDK两因子=2次，总计12。研究、组合和回测在同一pipeline Task完成，不能额外提交研究Task或重跑失败actor补满“成功12次”；失败/取消也消耗且不退款。重放无新研究才可不消费；因新增负例/重试超预算，应如实报告本次协议未完成并重新审查计划，不增大预算、换workspace或注册新family绕过。旧单元/故障回归各自原夹具是代码测试，分列记录、不声称统计独立或金融证据；不新增跨workspace产品预算或改变原控制。
-- **C-P7-004 · 主层双时钟与兼容接线。** 新可选execution_sessions在提交前冻结10个P5点，P3完整19点不改；缺省维持原P6全部研究点的P5执行及旧请求字节。具体schema/可信来源/Task slots/恢复重放和允许文件范围见EXECUTION_SELECTION_CONTRACT、COMPATIBILITY_IMPACT。主层预算50仅为尚未送审的新工程夹具参数，原已审profile/默认/G2答案不变；INT-003旧pin继续使用原包独立环境，未来P7新bundle/runtimeRefs不能伪填旧hash。
+- **C-P7-003 · 经修订的跨入口准入与逐案预算提案。** MAIN-12两因子×主/透明处理、各入口分配及12单位保持；Task、旧研究CLI、公共research和直接ledger在受管W/data内必须共同SQLite原子准入，取消/异常不退款、R子运行不双扣，完整历史与outbox恢复失败关闭。未来允许明确修改ledger/research/TaskState等原接线，不假称旧P6原计数已经足够。受信plan/active actor、旧CLI无key及UI随机key的所有权/去重按COMMON_BUDGET_ADMISSION_DESIGN冻结。原风险回归夹具事前登记独立根/目的/实际输入身份，产品12上限内再限1-slot且不能补主actor；主根排队取消/正常replay 0新研究。两类研究消耗在外层分列12与1，绝不宣称风险负例“免费”或第13次预算拒绝等于P4风险拒绝。详BROWSER_NEGATIVE_PROTOCOL及CANDIDATES。该具体修订仍待GPT Work G1及用户明确接受，不预先授权实现。
+- **C-P7-004 · 主层双时钟与兼容接线。** 新可选execution_sessions在提交前冻结10个P5点，P3完整19点不改；同一新bundle/catalog内缺省维持全部研究点P5执行和原布局；不保证跨旧P6 bundle原地恢复/字节相等。具体schema/可信来源/Task slots/恢复重放和允许文件范围见EXECUTION_SELECTION_CONTRACT、COMPATIBILITY_IMPACT。主层预算50仅为尚未送审的新工程夹具参数，原已审profile/默认/G2答案不变；INT-003旧pin继续使用原包独立环境，未来P7新bundle/runtimeRefs不能伪填旧hash。
 
 C-P7-004还包含必需的阶段包准入/CI接线：原P6 checker绑定旧identity/83模块且禁止competition，不能删旧检查伪装兼容；P7新checker核具体授权/设计/差异/新bundle，旧checker在固定P6源码+旧包环境保留使用。旧5016保护/原正确答案/完整旧业务回归、锁/Actions不放宽；新e2e/competition输出须同时接上传选择器和workflow并精确核原包成员。详PACKAGE_GATE_AND_CI_PLAN，不留到实现时临时规避守门。
 

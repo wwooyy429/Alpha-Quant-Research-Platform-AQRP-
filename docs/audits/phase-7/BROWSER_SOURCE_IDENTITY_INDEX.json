@@ -1,0 +1,93 @@
+{
+  "scope": "Static read and independent source identity check only; not product execution, financial or audit PASS",
+  "fixed_plan_sha": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+  "created_UTC": "2026-10-24T14:00:04.966146+00:00",
+  "actual_interpreter": "E:\\WORK\\Anaconda\\envs\\aqrp-p1\\python.exe",
+  "version": "3.13.16 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [MSC v.1942 64 bit (AMD64)]",
+  "sources": [
+    {
+      "path": "src/aqrp/ui/app.py",
+      "size": 27175,
+      "sha256": "96cc8a9927440af9fb23642933add86d972bedb41dc94fcbbc8cf0f74bfc5fe8",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/services/task_requests.py",
+      "size": 15366,
+      "sha256": "f0fa824c5dd77bc2d144a41123e0f0e44602c6bd6fa6819130d262b7022f5561",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/services/task_state.py",
+      "size": 14960,
+      "sha256": "6c37bbd9d35c9a2f271d868ebe6b392c9bfb56a86d162e91e224d68c28c39614",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/services/tasks.py",
+      "size": 37492,
+      "sha256": "1661b5429fb55363dac89eca2d649b81b5782f9afc118be1a30e5c86f2311e5b",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/services/task_worker.py",
+      "size": 1263,
+      "sha256": "2f6e809edac4a860d13a6e316284fecaa8d333e261445cd23c1099e8f49bc247",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/services/task_context.py",
+      "size": 14120,
+      "sha256": "8868b5c67085db554e476413b97ee47961cde0407d1d429d7ddaaf15c95eab2c",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/portfolio/service.py",
+      "size": 8390,
+      "sha256": "ce50c0701eb99fbb099d9abfe1fbfb5405fc41f46f1b645e928a43c575c8b9ac",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/risk/checks.py",
+      "size": 10097,
+      "sha256": "eb0e073e454d65463f291e88fecbda721db7abb1507eb80f21241de160b330e9",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/backtest/engine.py",
+      "size": 29636,
+      "sha256": "be479f474e96f8fb3fcb0a7f79573b7af8f37bd82fc0e7d7c096bf9b19bc4521",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/backtest/provider.py",
+      "size": 8979,
+      "sha256": "198e82ab2856c097ae8778b2e633dc070bf13ab0d73e66d3e492732dd8b5ce85",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "tests/ui/test_task_core.py",
+      "size": 10152,
+      "sha256": "acff0406ff393df443ef930918d29a628a50035084206f1e8bb49e1a03fe923a",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "tests/ui/test_view_interactions.py",
+      "size": 5527,
+      "sha256": "004dac2d49f7003d32e506e586b034174d960fa56ad1dace6f87cebabc634601",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "tests/ui/test_task_lifecycle.py",
+      "size": 12961,
+      "sha256": "5ddd51470c194f5ba71a4680e2143606f5cf3301edd59951b4c32827209e07e3",
+      "verified_equal_fixed_git_blob": true
+    },
+    {
+      "path": "src/aqrp/backtest/ledger.py",
+      "size": 26147,
+      "sha256": "428935a8a6764d5ac53687f825694e962220444391e7e15039d3bca83b5aac5d",
+      "verified_equal_fixed_git_blob": true
+    }
+  ]
+}

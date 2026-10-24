@@ -1,6 +1,6 @@
 # P7 拟增薄接口与完整链路 · 设计签名
 
-本文件只有契约草案。复用真实入口 `TaskService.freeze/submit/work/status/result/cancel/register_campaign`、原Registry.resolve、ResearchRequest/research、construct_engineering、simulate_engineering/result_engineering/resume_engineering/replay_engineering，以及原CLI和Streamlit。原公共API保持兼容，不另设交易引擎或把新测试运行器当金融服务。
+本文件只有契约草案。复用真实入口 `TaskService.freeze/submit/work/status/result/cancel/register_campaign`、原Registry.resolve、ResearchRequest/research、construct_engineering、simulate_engineering/result_engineering/resume_engineering/replay_engineering，以及原CLI和Streamlit。原公共签名及同一新包内缺省经济请求字节保持，受管工程域的预算拒绝行为按本轮共同准入明确收紧；不承诺旧P6包原地写入/恢复新P7域。不另设交易引擎或把新测试运行器当金融服务。
 
 ## 离线通用模拟适配
 
@@ -14,7 +14,9 @@
 
 `execute_engineering(receipt_ref, idempotency_key) -> existing TaskReceipt`：先重新核receipt原始字节和数据/代码/catalog身份，再调用原submit/work；不新增状态机。参数变化必须属于事先登记campaign变体；原12共享候选×期限预算、污染历史、失败/取消不退款不改变。多个adapter ID或新family名不能重置预算。状态和任务成败仍按P6全部必需R/P4/B/全局completion屏障；风险拒绝保留原始P4/P5事实，不能把子run成功升成总Task成功。
 
-预算对账区分“准入额度”和“已记录申请”：原TaskState会为第13个注册变体申请仍原子留下reservation/FAILED记录（`over_budget=true`、`EXPERIMENT_BUDGET_EXCEEDED`），不启动真实研究；其后已预留累计可为13，不得删记录伪称仍只有12次申请。独立报告同时列请求/预留/实际执行数量，不把被拒申请说成已执行试验，也不通过退款使下一次获得准入。非法未登记变体在freeze阶段拒绝，不自动生成family或Task。
+共同预算不再依赖原Task预留与legacy trials两个单向扫描。未来由 `experiments/admission.py` 在现 `W/task-control/tasks.sqlite` 建立唯一authority；Task、旧CLI、公共research及直接ledger调用都强制解析受管域，省略TaskContext/令牌或换输出/家族不得回退到另一计数。Task与全N单位准入同一SQLite事务；R子运行可信认领父预留不双扣；取消/失败不退款。完整所有权、幂等、锁序、outbox原字节发布、历史缺损失败关闭及计划slot约束见 [COMMON_BUDGET_ADMISSION_DESIGN.md](COMMON_BUDGET_ADMISSION_DESIGN.md)，具体候选见同名CANDIDATES。
+
+分列requested/admitted/rejected/registered/executed：新共享admitted debit不超过12，第13个拒绝申请保留但不运行研究；原P6历史campaign_attempts及其over_budget计数字面不删除，不把迁移解释当退款。主协议12 charged slots不变；预登记原风险故障夹具单独1-slot严格子限额及主根0研究replay见 [BROWSER_NEGATIVE_PROTOCOL.md](BROWSER_NEGATIVE_PROTOCOL.md)。当前仅设计，001/002仍OPEN，未来实现与严格跨入口行为须新G1及单独用户授权。
 
 `read_adapter_result(receipt_ref, task_id) -> VerifiedResultLinks`：验证receipt→Task原始请求→TaskContext/slots→P3终态与P4实际来源→P5事务prefix/全量清单→completion。只给原始工件引用和读取校验，不能复制一个可变JSON当新真值。输出报告不得从缓存success flag决定金融已知状态；取消/异常仍重读物理账本，缺文件/错桶/错血缘/清单外文件失败关闭。
 
@@ -29,3 +31,7 @@
 主层P3研究19点与P5执行10点通过拟增可选execution_sessions预冻结分离，具体兼容/来源/全Task屏障见EXECUTION_SELECTION_CONTRACT、COMPATIBILITY_IMPACT。它不改P3五阶段/OOS，不跳过实际执行点的风险拒绝；没有字段时保留原P6行为/旧请求字节。
 
 Research/Strategy状态隔离使用原精确Ref与不可变配置：启动时pin的id/version/hash/参数/范围不随Registry后续候选变更自动替换；显式紧急停止按旧契约记录，不能自动升级。未审新代码不进入任何已批准执行环境。修改候选版本的运行测试只使用已审随库版本/只读独立registry夹具，不执行未审任意外部插件。实际OS权限验证不属于此接口或本轮实施授权。
+
+## 原审3c34e3c之后的强制准入接线
+
+共同authority API草案为 resolve_domain / admit_all_units / claim_unit / materialize_outbox / verify_history，TaskState复用同一connection，ledger不反向import TaskState。受信P7执行计划由已审本地runner冻结并绑定W；actor激活、UI随机key首次绑定、legacy无幂等参数时的固定slot映射与恢复必须按COMMON_BUDGET设计，不接受网页自报purpose/slot当权限凭证。新的普通研究观察必须先准入，不能在登记前命中缓存或评估。独立standalone旧P3原family/budget保留，不作为受管W跨入口证明。具体新增API、计划激活和兼容路径都列入允许实施差异，但当前没有实现。

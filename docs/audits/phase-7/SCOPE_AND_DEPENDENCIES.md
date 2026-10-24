@@ -23,3 +23,7 @@
 - 真实部署/实盘：NOT AUTHORIZED / NOT PERFORMED；受控本地工程运行的验收另列，不冒充部署。
 
 原R2/R3失败、SDK/CI失败、无效控制及执行勘误按原字节保留。P6通过数仅作P6前置回归；G1期间即使文档CI重跑1567项也不能写成P7实现或P7金融/隔离验证通过。
+
+## G1发现修订的必要实施依赖（尚未实施）
+
+INT-003/004/005的共同准入模块、ledger/research/Task事务接线是后续E2E成功与负例运行的前置依赖，不再假设P6两套计数能支持新跨入口承诺。INT-004浏览器风险案例依赖受信单次故障plan和真实P4门禁；取消/replay依赖预指定主源成功且无新研究。范围仍原五项，不新增金融算法/真实权限。详细允许路径及版本迁移见COMMON_BUDGET_ADMISSION_DESIGN、COMPATIBILITY_IMPACT。

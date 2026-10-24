@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p7-g1-3c34e3c-independent-20261024\primary_budget_probe.py", line 17, in <module>
+    cat=initialize(root,'3017a097b49ecdae68228ca9a417fcd03c313200');s=TaskService(root)
+  File "E:\WORK\AQRP-runs\gpt-p6-3017a09-20261024-05b3298b-ecfc-49e7-bd8d-5827f1354391\aqrp-4353a1a2-3dae-4db1-aa5d-ff6f56ba351c\venv\Lib\site-packages\aqrp\services\task_requests.py", line 119, in initialize
+    return catalogue(root)
+  File "E:\WORK\AQRP-runs\gpt-p6-3017a09-20261024-05b3298b-ecfc-49e7-bd8d-5827f1354391\aqrp-4353a1a2-3dae-4db1-aa5d-ff6f56ba351c\venv\Lib\site-packages\aqrp\services\task_requests.py", line 157, in catalogue
+    s, e, v = references(root, cat)
+              ~~~~~~~~~~^^^^^^^^^^^
+  File "E:\WORK\AQRP-runs\gpt-p6-3017a09-20261024-05b3298b-ecfc-49e7-bd8d-5827f1354391\aqrp-4353a1a2-3dae-4db1-aa5d-ff6f56ba351c\venv\Lib\site-packages\aqrp\services\task_requests.py", line 128, in references
+    raise ContractError("CATALOG_INPUT_OUTSIDE_WORKSPACE")
+aqrp.core.errors.ContractError: CATALOG_INPUT_OUTSIDE_WORKSPACE: 

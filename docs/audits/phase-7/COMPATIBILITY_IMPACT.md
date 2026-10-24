@@ -4,9 +4,9 @@
 
 | 允许文件/类别 | 必要变化 | 不变条件/回归 |
 |---|---|---|
-| src/aqrp/services/task_requests.py | 新可选execution_sessions词法/可信日历子集校验，pipeline的服务生成selection进入新请求字节 | 未给字段的原task-request/1须保持原字节及config_hash；不得强加新字段到旧请求；unknown/research/replay字段拒绝；研究19点及campaign控制不变 |
-| src/aqrp/services/tasks.py | 由冻结selection构造P5输入、冻结原ordinal→执行ordinal/hash映射、resolved-plan及读取校验 | 原P5内P4分配/physical root/全required屏障不放宽；无新金融逻辑，旧请求/恢复/重放按原schema兼容 |
-| src/aqrp/services/task_cli.py | 如需新增原命令参数，仅将显式列表传统一builder | 原JSON request入口继续接受旧请求，不在CLI挑选日期或计算时点 |
+| src/aqrp/services/task_requests.py | 新可选execution_sessions词法/可信日历子集校验，pipeline的服务生成selection进入新请求字节 | 同一新bundle/catalog、相同输入未给字段时的原task-request/1布局、原字节及config_hash保持；不得强加新字段到旧请求；unknown/research/replay字段拒绝；研究19点及campaign控制不变 |
+| src/aqrp/services/tasks.py | 由冻结selection构造P5输入、冻结原ordinal→执行ordinal/hash映射、resolved-plan及读取校验 | 原P5内P4分配/physical root/全required屏障不放宽；无新金融逻辑，同一新bundle/catalog内旧布局恢复/重放按原schema；跨包回原包隔离路径 |
+| src/aqrp/services/task_cli.py | 如需新增原命令参数，仅将显式列表传统一builder | 原JSON request入口在同包catalog匹配时继续接受缺省旧布局；旧包跨bundle仅原环境只读/声明重放，不在CLI挑选日期或计算时点 |
 | src/aqrp/ui/app.py | pipeline新增可选执行session表单；只传draft和展示已核解析结果 | 原默认页面/配置/CAS/旧请求不改；不以结果动态改执行点 |
 | 新src/aqrp/competition/薄适配 | 已核离线输入/规则/能力报告映射到相同原服务请求 | 不得新增另一风控、模拟器、账户或任意Python/网络真实源 |
 | tests/integration、tests/e2e、tests/competition及受影响UI任务测试 | 新字段/双时钟/全链/合法风险拒绝/错血缘/恢复/重放/入口一致 | 旧单元/故障/原Golden全部保留，不把新通过覆盖旧失败或真实R2 |
@@ -22,3 +22,11 @@ Task optional字段兼容策略：缺省请求保留原task-request/1布局，�
 上述业务/实施模式接线须G1闭环和用户单独实施授权。计划模式仅限当前已授权G1所需文档/包范围校验及明确CI接线，源bundle/业务保持P6，不得据此运行或开发P7业务；实际采用时同样列明工具hash、差异和原始CI证据供G1审查。此刻该子任务只交外部设计，不执行任何R修改。真实Windows隔离R2、正式Test、金融NONE、历史宿主及不部署边界不受此接线改变。
 
 计划PR文档CI与实施CI分模式：P7只有设计时不增加competition业务，仅以独立PLAN_DOCUMENTS准入证明P6源bundle/核心不变和明确文档差异；实际P7实现模式须另核G1和用户实施授权。二者不得共享一个含糊PASS，旧P6历史identity/checker不因当前文档变更被抹改。具体stage gate、精确允许工具路径和证据选择见PACKAGE_GATE_AND_CI_PLAN.md。
+
+## C-P7-003 共同准入新增接线与兼容收紧（仍待G1和用户接受）
+
+原Task预留不能覆盖无TaskContext旧入口，必须显式增加以下范围，不用“原控制不变”掩盖缺口：新 `src/aqrp/experiments/admission.py`；原 `experiments/ledger.py`、`services/research.py`、`services/task_state.py`、`services/task_campaigns.py`、`services/task_context.py`、`services/tasks.py`，必要 `services/cli.py`拒绝显示；P7受信E2E runner的plan激活/受控launcher证据；相关实验/CLI/Task/UI/集成回归及原包身份/version/gate。其完整逐路径允许表以COMMON_BUDGET_ADMISSION_DESIGN第7节为准，与既有execution_sessions/adapter/gate/CI允许表取并集，不能扩大到P1/P3数学、P4风险或P5账本算法。
+
+包内所有受管W入口强制共同事务准入与完整历史核验，不能让调用者选择省略receipt而走旧逻辑。旧函数/CLI签名及非受管standalone family/budget语义保留；受管W省略context/绕输出/跨plan的旧错误放行行为明确拒绝，不声称行为完全兼容。原旧P6包没有新门禁，只能在其原包/锁/独立冻结路径回归或声明重放，不承诺旧进程与新P7包并发写同W；外来写入被发现后失败关闭，不据此宣称真实ACL已验证。
+
+“缺省字节兼容”只是在**同一新P7 bundle及同一catalog、相同输入和defaults**中，不提供execution_sessions时不注入selection或其他隐含预算字段。新bundle自身会改变catalog/Ref，不能许诺与旧P6全部raw/config_hash跨bundle相同；更不能为原地恢复关闭catalog检查。实际准入凭证/plan/claims使用单独版本化控制记录，不重写旧Task请求/已审答案/历史工件。旧包旧pin受原INT-003边界限制。

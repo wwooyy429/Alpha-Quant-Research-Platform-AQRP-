@@ -1,3 +1,6 @@
+<!-- Phase7 G1 3c34e3c blocked-design revision -->
+最新独立G1：GPT Work固定3c34e3ca75c9799307b8a98b34f045b40988bbca判PLAN BLOCKED，WORK-P7-G1-001 High、002 Medium blocking均OPEN。本轮仅修订共同Task/legacy/public/direct-ledger原子预算准入、可信plan/幂等/恢复，以及MAIN12+预登记原风险夹具1+主根零研究取消/replay；原报告/失败/答案完整保留，详docs/audits/phase-7/REVIEW_PACKAGE.md与g1-3c34e3c/。两项OPEN_PENDING_INDEPENDENT_RECHECK，新完整SHA以PR #10唯一AQRP_FIXED_REVIEW_SHA锁定，未自行关闭。P6 main/phase6-baseline/v0.6.0仍d563347ad11e1f26e131dc06e343250282c05c33；原106/五项需求、保护业务与19/768答案不改，原设计验证不是P7产品通过。C-P7修订及实现仍待用户接受/单独授权；R2延期未验证、正式Test未运行、金融NONE、历史宿主及不部署实盘/真实权限边界维持。以下旧待审文字保留为历史。
+
 <!-- Phase7 G1 planning override -->
 最新已核实状态：Phase6八项受限工程已ACCEPTED并RELEASED，main/phase6-baseline/v0.6.0在本次计划启动时同指完整SHA `d563347ad11e1f26e131dc06e343250282c05c33`；旧标签保留，证据见docs/audits/phase-7/PHASE6_RELEASE_RECEIPT.json。用户只授权从该基线开始Phase7 G1计划预审：五项原需求（3 MVP / 2 Competition Ready），包括需求映射、接口/数学口径、独立答案及测试证据计划、阶段依赖，交GPT Work固定40位SHA审查。本轮不开始P7业务实现，不把P6的1567回归写成P7产品通过。WI-R2两项/真实隔离持续DEFERRED / NOT VERIFIED，正式Test未运行、金融批准NONE、历史宿主受限边界保留；不授权部署/实盘/真实权限操作。以下旧阶段摘要作为历史保留，当前P7状态以docs/audits/phase-7/STATUS.json为准。
 

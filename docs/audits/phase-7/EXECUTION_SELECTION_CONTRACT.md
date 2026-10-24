@@ -14,4 +14,6 @@ resolved-plan在P5调用前冻结：完整研究列表hash、选择hash、实际
 
 恢复不重新选点：核对原request、冻结selection、resolved-plan及实际原P3/B/P4绑定；重放保持已冻结执行点和原P5原始请求、重新绑定新Task所有权，不写原源。篡改合法session、错序/删点/用另一合法time、旧policy或defaults变化不能悄悄改变已提交请求。公开UI、TaskCLI和SDK使用同一builder；旧研究/回测CLI使用同一已冻结研究及P5请求原字节，不各自猜步长。
 
-精确范围：未来授权实施时仅允许对task_requests字段/规范化、tasks的P5输入接线/plan证明、TaskCLI与UI薄字段、相关测试/证据读取器及新competition适配接线作必要变更。P1/P3因子/预处理/标签/统计、P4权重风险、P5事件/执行/账本不改。字段缺省兼容、旧config_hash/原Task完成屏障需回归，细节见COMPATIBILITY_IMPACT.md。
+精确范围：execution_sessions本身仅对task_requests字段/规范化、tasks的P5输入接线/plan证明、TaskCLI与UI薄字段及相关证据作必要变更；本轮另将共同预算准入/ledger/Research/Task事务接线显式列为C-P7-003修订提案，具体路径见COMMON_BUDGET_ADMISSION_DESIGN与COMPATIBILITY_IMPACT。P1/P3因子/预处理/标签/统计、P4权重风险、P5事件/执行/账本不改。字段缺省兼容、旧config_hash/原Task完成屏障需回归，细节见COMPATIBILITY_IMPACT.md。
+
+兼容限定：旧布局缺省比较只在同一新P7 bundle/catalog、相同输入与defaults下进行。原P6 raw内含旧bundle/catalog，原地在新P7宿主解析可能按原门禁拒绝，不能为“兼容”放宽检查；其恢复与声明重放在已审原包/锁/独立原工件路径。新的共同准入控制记录不混进旧raw，不修改金融或时序答案。

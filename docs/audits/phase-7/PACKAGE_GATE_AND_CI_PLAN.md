@@ -52,3 +52,7 @@ environment.json在所有新命令、旧回归和必要证据选集校验完成�
 官方ZIP仍按API artifact ID/run/attempt/job/head/平台、长度/官方digest/实际SHA256/CRC/精确成员逐项核验。所有upload-selection条目必须存在且hash相同；原文件、选择器自身、已解释的pytest-current复制别名子树须做**完整精确成员集合对账**，不接受大概数量或只读根manifest。新e2e/competition目录及失败子树也必须参与whole-subtree对账；清单外/缺失/重复路径、解包别名/越界、错误run/源码SHA一律拒绝。
 
 保留原失败attempt及官方ZIP；同SHA重试不覆盖旧包，不以某OS成功抵消另一OS失败。真实浏览器仍是单独本机工程证据，不把AppTest或CI自动化输出称为真实浏览器；115MB开发模型路径保持外部，它的hash索引只是有限模型身份，不是CI产品工件或P7实现通过证明。
+
+## G1-001/002修订的新增包/工件范围
+
+未来IMPLEMENTATION准入显式包含 COMMON_BUDGET_ADMISSION_DESIGN第7节的experiments/admission.py、ledger/research/Task接线及可信plan runner；不能仅允许competition/selection后临时放宽新文件检查。依赖仍stdlib+现有SQLite，不升级锁。共同authority/claims/outbox/plan与actor激活证据、主12/风险1/零研究replay、混合并发/损坏历史/原反例完整失败控制均进入e2e上传选集及workflow同路径，逐原ZIP成员核验。新版本实际源码集合与whole-bundle必须重新核准；原P6包/源码/checker、5016保护项、正确答案及失败历史不改。此轮PLAN_DOCUMENTS仅文档静态，未改任何工具/工作流、未执行P7产品。
