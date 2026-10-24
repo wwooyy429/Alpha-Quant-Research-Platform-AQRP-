@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from crash_support import CHILD_CRASH_SUPPORT, assert_crash_marker
 
 from aqrp.core.errors import ContractError
 from aqrp.experiments.ledger import read_chain
@@ -34,7 +35,9 @@ def test_real_process_nested_p4_crash_resume_never_constructs_second_child(tmp_p
     initialize(tmp_path, "a" * 40)
     s = TaskService(tmp_path)
     t = s.submit(s.freeze(DRAFT), "p4-crash")["task_id"]
-    script = """
+    script = (
+        CHILD_CRASH_SUPPORT
+        + """
 import os,sys
 import aqrp.backtest.engine as engine
 from aqrp.experiments.ledger import ExperimentLedger
@@ -42,22 +45,24 @@ from aqrp.services.tasks import TaskService
 boundary=sys.argv[3]
 old=engine.construct_engineering
 def wrapped(*a,**k):
-    if boundary=='BOUND': os._exit(74)
+    if boundary=='BOUND': hard_exit(74, boundary)
     r=old(*a,**k)
-    if boundary=='P4_TERMINAL': os._exit(74)
+    if boundary=='P4_TERMINAL': hard_exit(74, boundary)
     return r
 engine.construct_engineering=wrapped
 finish=ExperimentLedger.finish
 def partial(self,run,status):
     import json
     line=json.loads((self.path(run)/'lineage.json').read_bytes())
-    if boundary=='P4_PARTIAL' and line.get('task_binding',{}).get('service_kind')=='P4': os._exit(74)
+    if boundary=='P4_PARTIAL' and line.get('task_binding',{}).get('service_kind')=='P4': hard_exit(74, boundary)
     return finish(self,run,status)
 ExperimentLedger.finish=partial
 TaskService(sys.argv[1]).work(sys.argv[2])
 """
+    )
     p = run_child(tmp_path, script, t, boundary)
     assert p.returncode == 74, p.stderr.decode(errors="replace")
+    assert_crash_marker(tmp_path, t, boundary, 74)
     row = s.state.get(t)
     slots = s.state.slots(t)
     child = slots["P:0"]["binding"]
@@ -238,9 +243,13 @@ def test_real_process_b_terminal_before_mapping_reuses_same_run(tmp_path):
     initialize(tmp_path, "a" * 40)
     s = TaskService(tmp_path)
     t = s.submit(s.freeze(DRAFT), "b-terminal-crash")["task_id"]
-    script = "import os,sys; from aqrp.services.tasks import TaskService; TaskService(sys.argv[1],fault=lambda p:os._exit(75) if p=='B_TERMINAL_BEFORE_MAPPING' else None).work(sys.argv[2])"
+    script = (
+        CHILD_CRASH_SUPPORT
+        + "from aqrp.services.tasks import TaskService; TaskService(sys.argv[1],fault=lambda p:hard_exit(75, p) if p=='B_TERMINAL_BEFORE_MAPPING' else None).work(sys.argv[2])"
+    )
     p = run_child(tmp_path, script, t)
     assert p.returncode == 75, p.stderr.decode(errors="replace")
+    assert_crash_marker(tmp_path, t, "B_TERMINAL_BEFORE_MAPPING", 75)
     row = s.state.get(t)
     before = s.state.slots(t)
     b = before["B"]["binding"]

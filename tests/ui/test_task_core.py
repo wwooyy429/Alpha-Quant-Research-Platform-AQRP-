@@ -6,6 +6,7 @@ import sys
 import uuid
 
 import pytest
+from crash_support import CHILD_CRASH_SUPPORT, assert_crash_marker
 
 from aqrp.core.canonical import canonical
 from aqrp.core.errors import ContractError
@@ -215,32 +216,13 @@ def test_real_process_crash_recovery_reuses_research_and_retains_receipts(tmp_pa
         s.freeze({"kind": "research", "start": "2024-01-06", "end": "2024-01-06", "horizons": [1]}),
         "crash",
     )
-    # Kill only this deliberately isolated child at the named durable boundary.
-    # Windows TerminateProcess avoids invoking native DLL detach callbacks; an
-    # unexpected native crash is never accepted as the injected exit code.
-    script = r"""
-import ctypes, faulthandler, json, os, sys
-from pathlib import Path
+    script = (
+        CHILD_CRASH_SUPPORT
+        + r"""
 from aqrp.services.tasks import TaskService
-faulthandler.enable(all_threads=True)
-def stop(point):
-    if point != sys.argv[3]:
-        return
-    marker = Path(sys.argv[1]) / "injected-crash-boundary.json"
-    with marker.open("x", encoding="utf-8") as f:
-        json.dump({"point": point, "pid": os.getpid(), "task_id": sys.argv[2]}, f)
-        f.flush()
-        os.fsync(f.fileno())
-    if os.name == "nt":
-        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
-        kernel.GetCurrentProcess.restype = ctypes.c_void_p
-        kernel.TerminateProcess.argtypes = (ctypes.c_void_p, ctypes.c_uint)
-        kernel.TerminateProcess.restype = ctypes.c_int
-        kernel.TerminateProcess(kernel.GetCurrentProcess(), 73)
-        raise RuntimeError("TerminateProcess returned: " + str(ctypes.get_last_error()))
-    os._exit(73)
-TaskService(sys.argv[1], fault=stop).work(sys.argv[2])
+TaskService(sys.argv[1], fault=lambda point: hard_exit(73, point) if point == sys.argv[3] else None).work(sys.argv[2])
 """
+    )
     p = subprocess.run(
         [sys.executable, "-I", "-c", script, str(tmp_path), t["task_id"], boundary],
         capture_output=True,
@@ -249,9 +231,7 @@ TaskService(sys.argv[1], fault=stop).work(sys.argv[2])
     (tmp_path / "crash.stdout.log").write_bytes(p.stdout)
     (tmp_path / "crash.stderr.log").write_bytes(p.stderr)
     assert p.returncode == 73, (p.returncode, p.stdout, p.stderr)
-    marker = json.loads((tmp_path / "injected-crash-boundary.json").read_bytes())
-    assert marker["point"] == boundary and marker["task_id"] == t["task_id"]
-    assert isinstance(marker["pid"], int) and marker["pid"] > 0
+    assert_crash_marker(tmp_path, t["task_id"], boundary, 73)
     row = s.state.get(t["task_id"])
     assert row["status"] == "RUNNING"
     before = s.state.slots(t["task_id"])["R"]["binding"]["child_run_id"]

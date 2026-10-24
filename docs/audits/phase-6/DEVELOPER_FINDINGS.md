@@ -18,3 +18,7 @@ DEV-P6-002：C3固定418c17fad8fefe50dedc866f95c14ccf0fa433ca的1558项预检及
 ## DEV-P6-003 — candidate Windows abrupt-death harness
 
 C3 CI 40069640065 Windows failed 1/1558 with child native exception 0xC0000005; Ubuntu and local installed SDK passed 1558. Original failure is retained, not reclassified. Exact native fault cause is not proven. The new harness records/fsyncs the reached boundary, enables native traceback capture and uses Windows self-TerminateProcess(73), retaining exact exit and every recovery assertion. See g2-eae807f/CANDIDATE_CI_FAILURE.json. Pending new same-SHA SDK/dual OS and GPT Work review.
+
+### DEV-P6-003 follow-up — all six abrupt-death boundaries
+
+C4 CI 40072608848 Windows failed on another remaining os._exit P4_PARTIAL control (1559/1560); Ubuntu passed1560. Previous repair covered only two boundaries and was incomplete. All six P6 deliberate death controls now share fsynced point/PID/Task/code/method records, native diagnostics and strict exact exits73/74/75. No recovery assertion or original answer removed; no business source change vs C4. See SECOND_CANDIDATE_CI_FAILURE.json. Native cause is not proven; both old failures retained. New fixed-version full evidence and independent review still required.
