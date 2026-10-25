@@ -700,7 +700,7 @@ def complete_browser(output, metadata, which, evidence_path):
         try:
             service.submit(changed, "p7-browser-cancel-replay-01")
         except ContractError as exc:
-            assert exc.code == "IDEMPOTENCY_CONFIG_CONFLICT"
+            assert exc.code == "ADMISSION_IDEMPOTENCY_CONFLICT"
             save(
                 output / "controls/cancel-replay-different-request.json",
                 {
