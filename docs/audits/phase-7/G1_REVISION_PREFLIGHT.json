@@ -1,0 +1,85 @@
+{
+  "executor": "Codex developer documentation/static checks, not independent review",
+  "reviewed_old_plan": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+  "phase6_released_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "current_fixed_new_plan": "Resolved only after actual commit and unique PR10 AQRP_FIXED_REVIEW_SHA",
+  "requirements_original_total": 106,
+  "P7_requirements": 5,
+  "tiers": {
+    "MVP": 3,
+    "Competition Ready": 2
+  },
+  "protected_files": 5016,
+  "current_document_identity_rows": 91,
+  "P6_baseline_frozen_files": 5552,
+  "existing_G_files_unchanged_except_explicit_design_metadata": 5615,
+  "business_src_tests_tools_CI_build_locks_scanner_catalog_contracts_unchanged": true,
+  "all_old_math_answers_sources_and_failed_designs_unchanged": true,
+  "MAIN_12_variants_and_actors_unchanged": true,
+  "budget_design_candidates": 36,
+  "browser_negative_cases": "Risk1; queued replay cancel0; normal replay0; explicit physical-root controls",
+  "structure_source_AST_static_gate_secret_scan": "PASS",
+  "received_raw_original_scanner_findings_retained": "13 in one external original JSON; no rule changes, see EVIDENCE_INDEX",
+  "product_or_browser_or_auditor_scripts_executed": false,
+  "full_SDK_executed_this_revision": false,
+  "independent_G1": "BLOCKED at oldG; new fixed recheck pending",
+  "WORK-P7-G1-001": "OPEN_PENDING_INDEPENDENT_RECHECK",
+  "WORK-P7-G1-002": "OPEN_PENDING_INDEPENDENT_RECHECK",
+  "user_implementation_authorization": false,
+  "formal_Test": false,
+  "financial_approval": "NONE",
+  "deployment_live": false,
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "commands": [
+    {
+      "scope": "Developer static design preflight only; not SDK/product/independent G1",
+      "argv": [
+        "E:\\WORK\\AQRP-runs\\p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5\\aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6\\venv\\Scripts\\python.exe",
+        "-I",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\tools\\check_phase6_package.py"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "base_commit": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+      "dirty_design_worktree": true,
+      "started_utc": "2026-10-24T14:19:28.119330+00:00",
+      "finished_utc": "2026-10-24T14:19:29.729501+00:00",
+      "exit_code": 0
+    },
+    {
+      "scope": "Developer static design preflight only; not SDK/product/independent G1",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "base_commit": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+      "dirty_design_worktree": true,
+      "started_utc": "2026-10-24T14:19:29.730318+00:00",
+      "finished_utc": "2026-10-24T14:19:29.868619+00:00",
+      "exit_code": 0
+    },
+    {
+      "scope": "Developer static design preflight only; not SDK/product/independent G1",
+      "argv": [
+        "E:\\WORK\\AQRP-runs\\p6-release-7b4864f-390b1e36-93c3-4c85-abbf-345c1da178e5\\aqrp-2f26b9e8-fa35-4393-9145-6d25f41bd1e6\\gitleaks.exe",
+        "dir",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+        "--config",
+        "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\.gitleaks.toml",
+        "--redact=100",
+        "--no-banner",
+        "--report-format",
+        "json",
+        "--report-path",
+        "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g1-revision-3c34e3c-20261024\\preflight-20261024T141919526827Z\\scan-findings.json"
+      ],
+      "cwd": "C:\\Users\\11638\\AppData\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29",
+      "base_commit": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+      "dirty_design_worktree": true,
+      "started_utc": "2026-10-24T14:19:29.869361+00:00",
+      "finished_utc": "2026-10-24T14:19:34.634101+00:00",
+      "exit_code": 0
+    }
+  ]
+}

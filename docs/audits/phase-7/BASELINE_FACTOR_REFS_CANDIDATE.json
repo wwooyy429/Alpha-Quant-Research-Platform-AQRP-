@@ -1,0 +1,27 @@
+{
+  "scope": "Known reviewed Phase6 implementation C/current archival identity only, read from fixed reviewed source/policy without product execution; release P must verify unchanged identity",
+  "audited_implementation_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "phase6_released_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "factor_api": "1.0.0",
+  "data_contract": "contracts/1.0.0",
+  "bundle_sha256": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b",
+  "factor_refs": [
+    {
+      "factor_id": "momentum",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    },
+    {
+      "factor_id": "reversal",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    }
+  ],
+  "basis": "admission.builtin_spec default factor_version1.2.1; FactorSpec.ref binds implementation_version; packaged reviewed_code bundle",
+  "policy_file_sha256": "e39f73c6192a2f8544fb6d3c52c6a15cae857c89663ca789f5232354add5bc19",
+  "core_lock_sha256": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+  "ui_lock_sha256": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+  "execution_scope": "ENGINEERING_APPROVED / TEST_ONLY / financial_approval NONE",
+  "future_p7_runtime_refs": "To be calculated and reviewed at actual implementation fixed40SHA; new modules/wiring change package bundle, do not fabricate or claim oldhash loads in new bundle",
+  "old_pin_reproduction": "Retained original package/locked dependencies/old reviewed artifacts in separate original package environment and declared replay; no complete historical host claim"
+}

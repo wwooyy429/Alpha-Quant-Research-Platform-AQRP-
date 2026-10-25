@@ -28,13 +28,14 @@ from aqrp.services.task_requests import (
     EffectiveRequest,
     build_research_config,
     catalogue,
+    execution_selection,
     freeze_request,
     references,
     research_request,
     validate_defaults,
     validate_draft,
 )
-from aqrp.services.task_state import TERMINAL, TaskState
+from aqrp.services.task_state import TERMINAL, TaskState, campaign_admission_boundary
 
 
 def read_core(binding):
@@ -129,6 +130,9 @@ class TaskService:
         self.state = TaskState(root)
         self.root = self.state.root
         self.fault = fault
+        from aqrp.experiments.admission import capture_activation
+
+        self._activation = capture_activation(self.root) if self.state.managed else None
 
     def checkpoint(self, name):
         if self.fault is not None:
@@ -182,15 +186,32 @@ class TaskService:
         return x
 
     def submit(self, effective, idempotency_key):
-        if type(effective) is not EffectiveRequest:
-            raise ContractError("FROZEN_TASK_REQUEST_REQUIRED")
-        x = self.validate_effective(effective.raw)
-        return self.status(
-            self.state.submit(effective.raw, idempotency_key, campaign=x["payload"].get("campaign"))
-        )
+        from aqrp.experiments.admission import verify_activation
+
+        with campaign_admission_boundary():
+            if self.state.managed:
+                verify_activation(self.root, self._activation)
+            if type(effective) is not EffectiveRequest:
+                raise ContractError("FROZEN_TASK_REQUEST_REQUIRED")
+            x = self.validate_effective(effective.raw)
+            return self.status(
+                self.state.submit(
+                    effective.raw,
+                    idempotency_key,
+                    campaign=x["payload"].get("campaign"),
+                    activation=self._activation
+                    if self._activation is not None
+                    else {"inactive_service": True},
+                )
+            )
 
     def cancel(self, task):
-        return self.state.cancel(task)
+        from aqrp.experiments.admission import verify_activation
+
+        if self.state.managed:
+            verify_activation(self.root, self._activation)
+            self._verify_planned_replay_source(task)
+        return self.state.cancel(task, activation=self._activation)
 
     def save_defaults(self, expected, patch):
         validate_draft(patch)
@@ -204,6 +225,9 @@ class TaskService:
         raw = guard_path(self.root / "tasks" / task / "request.json").read_bytes()
         if raw.decode() != row["raw"] or digest(load(raw)) != row["hash"]:
             raise ContractError("TASK_REQUEST_IDENTITY_CHANGED")
+        if self.state.managed:
+            with self.state.transaction() as c:
+                self.state.budget.verify(c)
         return row
 
     def status(self, task):
@@ -314,144 +338,18 @@ class TaskService:
 
     def _proofs(self, task):
         row = self._snapshot(task)
-        x = load(row["raw"])
         slots = self.state.slots(task)
-        expected = {"R"} if x["kind"] == "research" else {"R", "B"}
-        if x["kind"] == "replay":
-            expected = {"E"}
-        plan_path = guard_path(self.root / "tasks" / task / "resolved-plan.json")
-        if x["kind"] != "research":
-            plan = load(plan_path.read_bytes())
-            expected |= {f"P:{i}" for i in range(plan["decision_count"])}
-            if (
-                plan["task_config_hash"] != row["hash"]
-                or set(plan["slots"]) != expected
-                or plan["slots"] != {n: s["binding"]["child_run_id"] for n, s in slots.items()}
-                or hashlib.sha256(plan["request_utf8"].encode()).hexdigest()
-                != plan["request_sha256"]
-            ):
-                raise ContractError("TASK_RESOLVED_PLAN_CHANGED")
-        if set(slots) != expected:
-            raise ContractError("TASK_REQUIRED_SLOT_SET_MISMATCH")
-        proofs = {}
-        for name, slot in slots.items():
-            b = slot["binding"]
-            if (
-                b["task_id"] != task
-                or b["workspace_id"] != self.state.workspace_id
-                or b["plan_hash"] != row["hash"]
-            ):
-                raise ContractError("TASK_SLOT_PARENT_CHANGED")
-            m, contents = read_core(b)
-            if m["status"] != "SUCCEEDED":
-                raise ContractError("REQUIRED_STAGE_REJECTED")
-            if name.startswith("P:"):
-                parent = slots["B" if x["kind"] == "engineering_pipeline" else "E"]["binding"]
-                decision = load(plan["request_utf8"])["decisions"][b["decision_index"]]
-                original = load(decision["portfolio_request_utf8"])
-                if (
-                    b["parent_slot_id"] != parent["slot_id"]
-                    or b["parent_execution_run_id"] != parent["child_run_id"]
-                    or b["physical_ledger_root"]
-                    != str(
-                        guard_path(parent["physical_ledger_root"])
-                        / parent["child_run_id"]
-                        / "portfolio-runs"
-                    )
-                    or b["source_request_hash"]
-                    != hashlib.sha256(decision["portfolio_request_utf8"].encode()).hexdigest()
-                    or b["decision_time_UTC"]
-                    != utc(original["context"]["decision_time"]).isoformat()
-                ):
-                    raise ContractError("TASK_NESTED_P4_BINDING_MISMATCH")
-                with self.state.transaction() as c:
-                    adapted = c.execute(
-                        "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
-                        (task, name),
-                    ).fetchone()
-                if (
-                    adapted is None
-                    or adapted[1] != b["adapted_request_hash"]
-                    or hashlib.sha256(adapted[0].encode()).hexdigest() != adapted[1]
-                    or load(contents["config.json"])["raw_request_hex"] != adapted[0].encode().hex()
-                ):
-                    raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
-            if b["service_kind"] == "PUBLISHED_REF_PROJECTION":
-                from aqrp.services.task_history import history_catalogue
 
-                if digest(history_catalogue(self.root)) != x["payload"]["history_sha256"]:
-                    raise ContractError("HISTORICAL_CATALOG_CHANGED")
-                result = load(contents["result.json"])
-                registration = load(contents["source-registration.json"])
-                if (
-                    digest(registration) != x["payload"]["history_sha256"]
-                    or result["status"] != "ALL_ORIGINAL_BYTES_VERIFIED_AND_THREE_RUNS_REPLAYED"
-                    or len(result["runs"]) != 3
-                    or any(v["status"] != "DECLARED_PROJECTION_MATCH" for v in result["runs"])
-                ):
-                    raise ContractError("TASK_HISTORICAL_REPLAY_UNVERIFIED")
-            elif name in ("B", "E"):
-                root = guard_path(b["physical_ledger_root"]) / b["child_run_id"]
-                if (
-                    not (root / "transactions").is_dir()
-                    or not (root / "transactions/initial.json").is_file()
-                ):
-                    raise ContractError("TASK_TRANSACTION_FILES_MISSING")
-                state, records, transaction_files = TransactionStore(
-                    root / "transactions"
-                ).verified_snapshot()
-                if transaction_files != load(contents["transaction-files.json"]):
-                    raise ContractError("TASK_TRANSACTION_FILES_CHANGED")
-                current = projection(state, records)
-                if name == "E":
-                    comparison = load(contents["comparison.json"])
-                    if (
-                        not comparison["equal"]
-                        or comparison["actual"] != current
-                        or comparison["expected"] != current
-                    ):
-                        raise ContractError("TASK_REPLAY_COMPARISON_CHANGED")
-                children = guard_path(root / "portfolio-runs")
-                actual = {p.name for p in children.iterdir()} if children.exists() else set()
-                intended = {
-                    s["binding"]["child_run_id"] for n, s in slots.items() if n.startswith("P:")
-                }
-                if actual != intended:
-                    raise ContractError("TASK_NESTED_CHILD_SET_MISMATCH")
-                for p in children.iterdir() if children.exists() else []:
-                    guard_path(p)
-                if name == "B":
-                    result = result_engineering(b["physical_ledger_root"], b["child_run_id"])
-                    if (
-                        result["status"] != "SUCCEEDED"
-                        or result.get("committed_state_verification", {}).get(
-                            "financial_state_known"
-                        )
-                        is False
-                    ):
-                        raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
-                    if any(result[k] != v for k, v in current.items()):
-                        raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
-                    config = load(contents["config.json"])
-                    if config["raw_request_hex"] != plan["request_utf8"].encode().hex():
-                        raise ContractError("TASK_EXECUTION_PLAN_REQUEST_CHANGED")
-                    actual_lineage = load(contents["portfolio-lineage.json"])
-                    if len(actual_lineage) != plan["decision_count"]:
-                        raise ContractError("TASK_PORTFOLIO_LINEAGE_MISSING")
-                    for p in actual_lineage:
-                        child = slots[f"P:{p['index']}"]["binding"]
-                        if (
-                            p["result"]["run_id"] != child["child_run_id"]
-                            or hashlib.sha256(p["request_utf8"].encode()).hexdigest()
-                            != child["adapted_request_hash"]
-                        ):
-                            raise ContractError("TASK_PORTFOLIO_LINEAGE_CHANGED")
-            proofs[name] = {
-                "binding_hash": digest(b),
-                "manifest_hash": digest(m),
-                "status": m["status"],
-            }
-        return proofs
+        def read_adapted(name):
+            with self.state.transaction() as c:
+                return c.execute(
+                    "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
+                    (task, name),
+                ).fetchone()
+
+        return verify_core_proofs(
+            self.root, self.state.workspace_id, task, row, slots, read_adapted
+        )
 
     def artifact(self, task, slot, name):
         self._snapshot(task)
@@ -465,7 +363,8 @@ class TaskService:
             raise ContractError("TASK_ARTIFACT_NOT_MANIFESTED")
         return contents[name]
 
-    def _verified_financial_prefix(self, binding):
+    @staticmethod
+    def _verified_financial_prefix(binding):
         """Current physical financial authority, also for already successful children."""
         _, contents = read_core(binding)
         result = load(contents["result.json"])
@@ -508,6 +407,7 @@ class TaskService:
 
     def _verify_cancelled_finances(self, task):
         """No safe cancellation certificate may rely on a cached known-state flag."""
+        self._verify_planned_replay_source(task)
         for slot in self.state.slots(task).values():
             binding = slot["binding"]
             if binding["service_kind"] not in ("P5", "P5_REPLAY"):
@@ -520,6 +420,45 @@ class TaskService:
                 x = load(self._snapshot(task)["raw"].encode())
                 source = self.state.slots(x["payload"]["source_task"])["B"]["binding"]
                 self._verified_financial_prefix(source)
+
+    def _verify_planned_replay_source(self, task):
+        """A zero-research planned cancellation still retains a real source proof."""
+        if not self.state.managed:
+            return
+        source_task = None
+        with self.state.transaction() as c:
+            self.state.budget.verify(c)
+            actor = c.execute(
+                "SELECT payload,binding FROM execution_plan_slots WHERE owner_id=?", (task,)
+            ).fetchone()
+            if actor is None:
+                return
+            spec, binding = load(actor[0]), load(actor[1])
+            if spec["service_kind"] != "TASK_REPLAY" or "source_slot" not in spec:
+                return
+            source = c.execute(
+                "SELECT payload,binding FROM execution_plan_slots WHERE slot=?",
+                (spec["source_slot"],),
+            ).fetchone()
+            if source is None or source[1] is None:
+                raise ContractError("TASK_CANCEL_SOURCE_UNVERIFIED")
+            original, owner = load(source[0]), load(source[1])
+            row = c.execute("SELECT raw,hash FROM tasks WHERE id=?", (task,)).fetchone()
+            if (
+                row is None
+                or binding["owner_id"] != task
+                or original["service_kind"] != "TASK"
+                or original["request_hash"] != spec["originalsource_request_hash"]
+                or load(row[0])["payload"]
+                != {"source_task": owner["owner_id"], "profile": "P5_NUMERICAL"}
+            ):
+                raise ContractError("TASK_CANCEL_SOURCE_UNVERIFIED")
+            source_task = owner["owner_id"]
+        # The existing status/proof gate opens its own transaction and reconciles
+        # the physical source ledger. Never call it under an authority lock.
+        source = self.status(source_task)
+        if source["status"] != "SUCCEEDED" or source.get("usable") is False:
+            raise ContractError("TASK_CANCEL_SOURCE_UNVERIFIED")
 
     def financial_result(self, task):
         row = self._snapshot(task)
@@ -545,7 +484,13 @@ class TaskService:
         cat = catalogue(self.root)
         ref, _, _ = references(self.root, cat)
         options = x["payload"]["execution"]
-        requests = execution_requests(x["payload"]["research"], ref, self.root / "research-runs", r)
+        selection = execution_selection(x["payload"])
+        selected_research = deepcopy(x["payload"]["research"])
+        selected_research["decisions"] = [
+            selected_research["decisions"][entry["research_ordinal"]]
+            for entry in selection["resolved"]
+        ]
+        requests = execution_requests(selected_research, ref, self.root / "research-runs", r)
         values = [load(req.raw) for req in requests.values()]
         combined = deepcopy(values[0])
         combined.update(initial_cash=options["initial_cash"], fee_budget=options["fee_budget"])
@@ -588,6 +533,24 @@ class TaskService:
             "decision_count": len(x["decisions"]),
             "slots": slots,
         }
+        effective = load(auth.check()["raw"])
+        if parent.slot == "B":
+            selected = execution_selection(effective["payload"])
+        else:
+            source = effective["payload"]["source_task"]
+            original_plan = load(
+                guard_path(self.root / "tasks" / source / "resolved-plan.json").read_bytes()
+            )
+            selected = original_plan["execution_selection"]
+            if original_plan["request_sha256"] != request.content_hash:
+                raise ContractError("TASK_REPLAY_SELECTION_CHANGED")
+        if len(selected["resolved"]) != len(x["decisions"]):
+            raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
+        for entry, decision in zip(selected["resolved"], x["decisions"], strict=True):
+            portfolio = load(decision["portfolio_request_utf8"])
+            if utc(portfolio["context"]["decision_time"]) != utc(entry["decision_time"]):
+                raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
+        plan["execution_selection"] = selected
         path = guard_path(self.root / "tasks" / auth.task / "resolved-plan.json")
         if path.exists():
             if path.read_bytes() != canonical(plan):
@@ -816,3 +779,155 @@ class TaskService:
             "source_task": source["task_id"],
             "replay": {k: v for k, v in prior.items() if k != "manifest"},
         }
+
+
+def verify_core_proofs(workspace_root, workspace_id, task, row, slots, read_adapted):
+    """One complete original-byte proof contract for live tasks and history import."""
+    x = load(row["raw"])
+    expected = {"R"} if x["kind"] == "research" else {"R", "B"}
+    if x["kind"] == "replay":
+        expected = {"E"}
+    plan_path = guard_path(workspace_root / "tasks" / task / "resolved-plan.json")
+    if x["kind"] != "research":
+        plan = load(plan_path.read_bytes())
+        if x["kind"] == "engineering_pipeline":
+            selected = execution_selection(x["payload"])
+        elif x["payload"]["profile"] != "PUBLISHED_REF_PROJECTION":
+            source = x["payload"]["source_task"]
+            source_plan = load(
+                guard_path(workspace_root / "tasks" / source / "resolved-plan.json").read_bytes()
+            )
+            selected = source_plan["execution_selection"]
+            if source_plan["request_sha256"] != plan["request_sha256"]:
+                raise ContractError("TASK_REPLAY_SELECTION_CHANGED")
+        else:
+            selected = {"resolved": []}
+        if x["payload"].get("profile") != "PUBLISHED_REF_PROJECTION" and (
+            plan.get("execution_selection") != selected
+            or plan["decision_count"] != len(selected["resolved"])
+        ):
+            raise ContractError("TASK_EXECUTION_SELECTION_CHANGED")
+        expected |= {f"P:{i}" for i in range(plan["decision_count"])}
+        if (
+            plan["task_config_hash"] != row["hash"]
+            or set(plan["slots"]) != expected
+            or plan["slots"] != {n: s["binding"]["child_run_id"] for n, s in slots.items()}
+            or hashlib.sha256(plan["request_utf8"].encode()).hexdigest() != plan["request_sha256"]
+        ):
+            raise ContractError("TASK_RESOLVED_PLAN_CHANGED")
+    if set(slots) != expected:
+        raise ContractError("TASK_REQUIRED_SLOT_SET_MISMATCH")
+    proofs = {}
+    for name, slot in slots.items():
+        b = slot["binding"]
+        if (
+            b["task_id"] != task
+            or b["workspace_id"] != workspace_id
+            or b["plan_hash"] != row["hash"]
+        ):
+            raise ContractError("TASK_SLOT_PARENT_CHANGED")
+        m, contents = read_core(b)
+        if m["status"] != "SUCCEEDED":
+            raise ContractError("REQUIRED_STAGE_REJECTED")
+        if name.startswith("P:"):
+            parent = slots["B" if x["kind"] == "engineering_pipeline" else "E"]["binding"]
+            decision = load(plan["request_utf8"])["decisions"][b["decision_index"]]
+            original = load(decision["portfolio_request_utf8"])
+            selected_decision = selected["resolved"][b["decision_index"]]
+            if (
+                b["parent_slot_id"] != parent["slot_id"]
+                or b["parent_execution_run_id"] != parent["child_run_id"]
+                or b["physical_ledger_root"]
+                != str(
+                    guard_path(parent["physical_ledger_root"])
+                    / parent["child_run_id"]
+                    / "portfolio-runs"
+                )
+                or b["source_request_hash"]
+                != hashlib.sha256(decision["portfolio_request_utf8"].encode()).hexdigest()
+                or b["decision_time_UTC"] != utc(original["context"]["decision_time"]).isoformat()
+                or b["decision_time_UTC"] != utc(selected_decision["decision_time"]).isoformat()
+            ):
+                raise ContractError("TASK_NESTED_P4_BINDING_MISMATCH")
+            adapted = read_adapted(name)
+            if (
+                adapted is None
+                or adapted[1] != b["adapted_request_hash"]
+                or hashlib.sha256(adapted[0].encode()).hexdigest() != adapted[1]
+                or load(contents["config.json"])["raw_request_hex"] != adapted[0].encode().hex()
+            ):
+                raise ContractError("TASK_ADAPTED_REQUEST_CHANGED")
+        if b["service_kind"] == "PUBLISHED_REF_PROJECTION":
+            from aqrp.services.task_history import history_catalogue
+
+            if digest(history_catalogue(workspace_root)) != x["payload"]["history_sha256"]:
+                raise ContractError("HISTORICAL_CATALOG_CHANGED")
+            result = load(contents["result.json"])
+            registration = load(contents["source-registration.json"])
+            if (
+                digest(registration) != x["payload"]["history_sha256"]
+                or result["status"] != "ALL_ORIGINAL_BYTES_VERIFIED_AND_THREE_RUNS_REPLAYED"
+                or len(result["runs"]) != 3
+                or any(v["status"] != "DECLARED_PROJECTION_MATCH" for v in result["runs"])
+            ):
+                raise ContractError("TASK_HISTORICAL_REPLAY_UNVERIFIED")
+        elif name in ("B", "E"):
+            root = guard_path(b["physical_ledger_root"]) / b["child_run_id"]
+            if (
+                not (root / "transactions").is_dir()
+                or not (root / "transactions/initial.json").is_file()
+            ):
+                raise ContractError("TASK_TRANSACTION_FILES_MISSING")
+            state, records, transaction_files = TransactionStore(
+                root / "transactions"
+            ).verified_snapshot()
+            if transaction_files != load(contents["transaction-files.json"]):
+                raise ContractError("TASK_TRANSACTION_FILES_CHANGED")
+            current = projection(state, records)
+            if name == "E":
+                comparison = load(contents["comparison.json"])
+                if (
+                    not comparison["equal"]
+                    or comparison["actual"] != current
+                    or comparison["expected"] != current
+                ):
+                    raise ContractError("TASK_REPLAY_COMPARISON_CHANGED")
+            children = guard_path(root / "portfolio-runs")
+            actual = {p.name for p in children.iterdir()} if children.exists() else set()
+            intended = {
+                s["binding"]["child_run_id"] for n, s in slots.items() if n.startswith("P:")
+            }
+            if actual != intended:
+                raise ContractError("TASK_NESTED_CHILD_SET_MISMATCH")
+            for p in children.iterdir() if children.exists() else []:
+                guard_path(p)
+            if name == "B":
+                result = result_engineering(b["physical_ledger_root"], b["child_run_id"])
+                if (
+                    result["status"] != "SUCCEEDED"
+                    or result.get("committed_state_verification", {}).get("financial_state_known")
+                    is False
+                ):
+                    raise ContractError("TASK_FINANCIAL_RESULT_UNKNOWN")
+                if any(result[k] != v for k, v in current.items()):
+                    raise ContractError("TASK_FINANCIAL_RESULT_CHANGED")
+                config = load(contents["config.json"])
+                if config["raw_request_hex"] != plan["request_utf8"].encode().hex():
+                    raise ContractError("TASK_EXECUTION_PLAN_REQUEST_CHANGED")
+                actual_lineage = load(contents["portfolio-lineage.json"])
+                if len(actual_lineage) != plan["decision_count"]:
+                    raise ContractError("TASK_PORTFOLIO_LINEAGE_MISSING")
+                for p in actual_lineage:
+                    child = slots[f"P:{p['index']}"]["binding"]
+                    if (
+                        p["result"]["run_id"] != child["child_run_id"]
+                        or hashlib.sha256(p["request_utf8"].encode()).hexdigest()
+                        != child["adapted_request_hash"]
+                    ):
+                        raise ContractError("TASK_PORTFOLIO_LINEAGE_CHANGED")
+        proofs[name] = {
+            "binding_hash": digest(b),
+            "manifest_hash": digest(m),
+            "status": m["status"],
+        }
+    return proofs

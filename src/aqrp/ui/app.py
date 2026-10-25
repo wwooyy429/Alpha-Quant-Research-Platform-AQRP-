@@ -11,8 +11,9 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from aqrp.core.errors import ContractError
+from aqrp.experiments.admission import capture_activation, verify_activation
 from aqrp.portfolio.contracts import load
-from aqrp.services.task_requests import catalogue
+from aqrp.services.task_requests import catalogue, execution_selection
 from aqrp.services.task_worker import start_worker
 from aqrp.services.tasks import TaskService
 from aqrp.ui.numbers import fixed_view
@@ -315,8 +316,12 @@ def submit_page(service, cat, pipeline):
                 "Risk overrides (existing schema)",
                 value=json.dumps(defaults.get("constraints", {})),
             )
+            execution_sessions = st.text_input(
+                "Execution sessions (optional comma-separated YYYY-MM-DD)",
+                value=",".join(defaults.get("execution_sessions", [])),
+            )
             st.caption(
-                "Existing SYNTHETIC_EXECUTION_1 fees and event economics remain fixed. Empty decisions are refused; trades need not occur."
+                "Existing SYNTHETIC_EXECUTION_1 fees and event economics remain fixed. Blank follows the saved execution-session default; without one, every research decision executes. Explicit sessions must be an ordered nonempty subset. All research observations are retained."
             )
         submit = st.form_submit_button(
             "Submit engineering pipeline" if pipeline else "Submit research"
@@ -345,6 +350,8 @@ def submit_page(service, cat, pipeline):
                 policy=load(policy.encode()),
                 constraints=load(constraints.encode()),
             )
+            if execution_sessions.strip():
+                draft["execution_sessions"] = [s.strip() for s in execution_sessions.split(",")]
         frozen = service.freeze(draft)
         key = st.session_state.setdefault(kind + "key", str(uuid.uuid4()))
         receipt = service.submit(frozen, key)
@@ -362,6 +369,10 @@ def submit_page(service, cat, pipeline):
         inspect_task(service, row, kind)
         research_view(service, row)
         if pipeline:
+            payload = service.request(row["task_id"])["payload"]
+            if "research" in payload:
+                with st.expander("Frozen research and execution clocks"):
+                    st.json(execution_selection(payload))
             backtest_view(service, row)
 
 
@@ -374,6 +385,10 @@ def main():
     st.caption("Alpha Quant Research Platform · local engineering workspace")
     service = TaskService(os.environ["AQRP_WORKSPACE"])
     try:
+        activation_key = "trusted-launch-activation:" + str(service.root)
+        if activation_key not in st.session_state:
+            st.session_state[activation_key] = capture_activation(service.root)
+        verify_activation(service.root, st.session_state[activation_key])
         cat = catalogue(service.root)
         if page == "Dashboard":
             rows = service.list()

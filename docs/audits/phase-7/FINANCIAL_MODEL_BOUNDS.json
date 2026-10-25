@@ -1,0 +1,38 @@
+{
+  "scope": "Read-only aggregation of finite developer model paths; not product/independent tests",
+  "paths": 768,
+  "source_sha256": "74d968f318172afa21df2def55a393bcf00efb22531f5c47ee60420364153980",
+  "minimum_exact": {
+    "cash_set": "869/5",
+    "cash_total": "874/5",
+    "available": "741/5",
+    "cash_alloc": "531/5",
+    "equity_alloc": "531/5",
+    "equity": "4867/5",
+    "F_unused": "0",
+    "post_P4_equity_alloc": "531/5",
+    "post_P4_free_cash": "531/5"
+  },
+  "maximum_exact": {
+    "post_P4_turnover": "2000/531"
+  },
+  "analytic_conservative_bounds": {
+    "at_most_decisions": 10,
+    "at_most_switches": 9,
+    "positions_at_decision": "0 before first;4 thereafter, all old lots settled",
+    "max_fill_qty": "4 <= original capacity10",
+    "fees_per_decision": "first1 or switching2 or no-op0; source budget resets per decision",
+    "basket_fee_worst_reserve": "8 <= budget50",
+    "max_cumulative_commission": "19",
+    "max_cumulative_slippage": "7.6",
+    "min_end_cash_set": "573.4",
+    "min_true_equity": "973.4",
+    "pretrade_cash_set_lower_bound_used_for_uniform_proof": "573.4 (conservative, not exact before-switch minimum)",
+    "after_SELL_first_P4_equity_alloc_lower": "103.4 =573.4-470",
+    "after_SELL_first_P4_turnover_upper": "400/103.4 =2000/517 <4",
+    "minimum_available_during_live_basket_lower": "145.4 =573.4-420-8",
+    "remaining_order_fee_bound": "4, unused50-paid-of; no double subtraction",
+    "short_value_Ushort_Sset_borrow": "all0 because (gross-net)/2=0",
+    "sell_tax": "no separate tax term in frozen engineering profile; modeled0, no real exchange claim"
+  }
+}

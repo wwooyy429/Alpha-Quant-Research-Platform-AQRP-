@@ -1,6 +1,7 @@
 """SQLite task allocation/claims. Engineering integrity, not OS isolation."""
 
 import json
+import re
 import sqlite3
 import time
 import uuid
@@ -9,11 +10,27 @@ from contextlib import contextmanager
 from aqrp.backtest.transactions import guard_path
 from aqrp.core.canonical import canonical, digest
 from aqrp.core.errors import ContractError
-from aqrp.experiments.ledger import immutable_write, mutex, read_chain
+from aqrp.experiments.admission import BudgetAuthority
+from aqrp.experiments.ledger import immutable_write, read_chain
 
 SETUP_TIMEOUT_SECONDS = 30.0
 
 TERMINAL = {"SUCCEEDED", "FAILED", "CANCELLED"}
+
+
+@contextmanager
+def campaign_admission_boundary():
+    """Retain the Task API's specific diagnosis without relaxing shared verification."""
+    try:
+        yield
+    except ContractError as exc:
+        if (
+            exc.code == "ADMISSION_HISTORY_UNVERIFIED"
+            and type(exc.__cause__) is ValueError
+            and exc.__cause__.args == ("campaign admission set",)
+        ):
+            raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE") from exc
+        raise
 
 
 class TaskState:
@@ -23,6 +40,16 @@ class TaskState:
         control = guard_path(self.root / "task-control")
         control.mkdir(exist_ok=True)
         self.db = control / "tasks.sqlite"
+        self.budget = BudgetAuthority(self.root)
+        self.managed = (self.root / "catalog.json").exists() or self.budget.anchor.exists()
+        if not self.managed:
+            from aqrp.experiments.admission import resolve_admission_domain
+
+            # An empty child queue cannot masquerade as another authority under W.
+            resolve_admission_domain(self.root / "research-runs")
+        if self.budget.anchor.exists():
+            with self.budget.transaction() as connection:
+                self.budget.verify(connection)
         with self.transaction() as c:
             c.executescript("""
                 CREATE TABLE IF NOT EXISTS workspace (id TEXT PRIMARY KEY);
@@ -48,6 +75,12 @@ class TaskState:
             if not c.execute("SELECT id FROM workspace").fetchone():
                 c.execute("INSERT INTO workspace VALUES (?)", (str(uuid.uuid4()),))
             self.workspace_id = c.execute("SELECT id FROM workspace").fetchone()[0]
+            if self.managed:
+                self.budget.initialize(
+                    c, self.workspace_id, history_verifier=self._migration_history
+                )
+        if self.managed:
+            self.budget.materialize()
 
     @contextmanager
     def transaction(self):
@@ -103,13 +136,39 @@ class TaskState:
                 raise ContractError("UNKNOWN_TASK")
             return dict(row)
 
-    def submit(self, raw, key, *, campaign=None):
+    def submit(self, raw, key, *, campaign=None, activation=None):
+        if not self.managed:
+            return self._submit_standalone(raw, key, campaign=campaign)
+        with campaign_admission_boundary():
+            for _ in range(128):
+                self.budget.materialize()
+                task = self._submit_once(raw, key, campaign=campaign, activation=activation)
+                if task is not None:
+                    self.budget.materialize()
+                    return task
+                # Only a pre-admission empty transaction may ask for projection drain.
+                # No reservation, Task insertion or caller business body is retried.
+            raise ContractError("ADMISSION_PUBLICATION_BUSY", retryable=True)
+
+    def _submit_standalone(self, raw, key, *, campaign=None):
+        """Original data-free SQLite queue; it cannot execute a frozen research request."""
+        from aqrp.experiments.admission import resolve_admission_domain
+
+        resolve_admission_domain(self.root / "research-runs")
         if not isinstance(key, str) or not 1 <= len(key) <= 128:
             raise ContractError("INVALID_IDEMPOTENCY_KEY")
         request = json.loads(raw)
+        if (
+            campaign is not None
+            or request.get("schema") == "task-request/1"
+            or "payload" in request
+        ):
+            raise ContractError("ADMISSION_DOMAIN_CONFLICT")
+        if (self.root / "catalog.json").exists() or self.budget.anchor.exists():
+            raise ContractError("ADMISSION_DOMAIN_CONFLICT")
         with self.transaction() as c:
             prior = c.execute("SELECT * FROM tasks WHERE key=?", (key,)).fetchone()
-            if prior:
+            if prior is not None:
                 if prior["hash"] != digest(request):
                     raise ContractError("IDEMPOTENCY_CONFIG_CONFLICT")
                 return prior["id"]
@@ -117,13 +176,62 @@ class TaskState:
             directory = guard_path(self.root / "tasks" / task)
             directory.mkdir(parents=True)
             immutable_write(directory / "request.json", raw)
-            c.execute(
-                "INSERT INTO tasks(id,key,raw,hash,status,epoch) VALUES (?,?,?,?,?,0)",
-                (task, key, raw.decode(), digest(request), "QUEUED"),
+            self._insert_task(c, task, key, raw, request)
+            self.event(
+                c,
+                task,
+                "SUBMITTED",
+                {"config_hash": digest(request), "campaign_attempt_sha256": None},
             )
+        return task
+
+    def _submit_once(self, raw, key, *, campaign=None, activation=None):
+        if not isinstance(key, str) or not 1 <= len(key) <= 128:
+            raise ContractError("INVALID_IDEMPOTENCY_KEY")
+        request = json.loads(raw)
+        with self.transaction() as c:
+            if c.execute("SELECT count(*) FROM admission_outbox WHERE materialized=0").fetchone()[
+                0
+            ]:
+                return None
+            prior = c.execute("SELECT * FROM tasks WHERE key=?", (key,)).fetchone()
+            if prior:
+                if prior["hash"] != digest(request):
+                    raise ContractError("ADMISSION_IDEMPOTENCY_CONFLICT")
+                self.budget.verify(c)
+                return prior["id"]
+            task = str(uuid.uuid4())
+            directory = guard_path(self.root / "tasks" / task)
             control = None
             if campaign is not None:
-                control = self._reserve_campaign(c, task, request, campaign, directory)
+                control = self._reserve_campaign(
+                    c, task, request, campaign, directory, raw=raw, key=key, activation=activation
+                )
+                admission = control["admission"]
+            else:
+                from aqrp.services.task_requests import catalogue
+
+                cat = catalogue(self.root)
+                self._insert_task(c, task, key, raw, request)
+                admission = self.budget.reserve(
+                    c,
+                    data_hash=cat["snapshot"]["manifest_hash"],
+                    owner_kind="TASK",
+                    owner_id=task,
+                    key=key,
+                    request_hash=digest(request),
+                    units=[],
+                    service_kind="TASK_REPLAY",
+                    output_root=self.root / "replay-runs",
+                    activation=activation,
+                )
+            self.budget.queue_projection(
+                c,
+                directory / "request.json",
+                raw,
+                admission["admission_id"],
+                kind="SIDECAR",
+            )
             self.event(
                 c,
                 task,
@@ -146,9 +254,16 @@ class TaskState:
                     "FAILED",
                     {"code": "EXPERIMENT_BUDGET_EXCEEDED", "campaign_attempt": control},
                 )
-            return task
+        return task
 
-    def _checked_campaign_record(self, c, row):
+    @staticmethod
+    def _insert_task(c, task, key, raw, request):
+        c.execute(
+            "INSERT INTO tasks(id,key,raw,hash,status,epoch) VALUES (?,?,?,?,?,0)",
+            (task, key, raw.decode(), digest(request), "QUEUED"),
+        )
+
+    def _checked_campaign_record(self, c, row, *, legacy=False, authority_verified=False):
         from aqrp.services.research import hypotheses
 
         raw = guard_path(self.root / "tasks" / row["task"] / "campaign-attempt.json").read_bytes()
@@ -176,9 +291,436 @@ class TaskState:
             or item["campaign"]["budget"] != 12
         ):
             raise ContractError("CAMPAIGN_ATTEMPT_IDENTITY_CHANGED")
+        if not legacy:
+            admitted = self.budget.lookup_owner(c, "TASK", row["task"])
+            if item.get("admission") != admitted and not (
+                admitted is not None
+                and admitted.get("migrated") is True
+                and admitted["request_hash"] == reqrow["hash"]
+                and admitted["units"]
+                == [
+                    {
+                        "hypothesis_alias": alias,
+                        "definition_hash": req["payload"]["research"]["family"]["definitions"][
+                            alias
+                        ],
+                    }
+                    for alias in item["hypothesis_ids"]
+                ]
+            ):
+                raise ContractError("CAMPAIGN_ATTEMPT_IDENTITY_CHANGED")
+            if not authority_verified:
+                self.budget.verify_admission_projections(c, admitted["admission_id"])
         return item
 
-    def _reserve_campaign(self, c, task, request, campaign, directory):
+    def _migration_history(self, c):
+        try:
+            return self._verified_legacy_history(c)
+        except (ContractError, OSError, ValueError, TypeError, KeyError, IndexError) as exc:
+            raise ContractError("ADMISSION_HISTORY_UNVERIFIED") from exc
+
+    def _verified_legacy_history(self, c):
+        """Complete, same-package legacy import; no old bundle or partial-history fallback."""
+        import hashlib
+
+        from aqrp.experiments.ledger import ExperimentLedger
+        from aqrp.services.task_campaigns import campaigns, variant_key
+        from aqrp.services.task_requests import catalogue, freeze_request
+        from aqrp.services.tasks import TaskService, read_core, verify_core_proofs
+
+        cat = catalogue(self.root)  # Preserves exact bundle, environment and P1 identities.
+        task_rows = list(c.execute("SELECT * FROM tasks ORDER BY rowid"))
+        campaign_rows = {r["task"]: r for r in c.execute("SELECT * FROM campaign_attempts")}
+        task_ids = {r["id"] for r in task_rows}
+        task_directory = guard_path(self.root / "tasks")
+        if task_directory.exists() and {p.name for p in task_directory.iterdir()} != task_ids:
+            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+        records, projections, claims, files = [], [], [], {}
+        run_owners = {}
+        financial_children, checked_financial_children = [], set()
+
+        def remember(path):
+            path = guard_path(path)
+            raw = path.read_bytes()
+            files[str(path)] = {
+                "path": str(path),
+                "sha256": hashlib.sha256(raw).hexdigest(),
+                "bytes": len(raw),
+            }
+            return raw
+
+        def projection(path, raw, owner_kind, owner_id, kind="SIDECAR"):
+            projections.append(
+                {
+                    "path": str(path),
+                    "content_hex": raw.hex(),
+                    "kind": kind,
+                    "owner_kind": owner_kind,
+                    "owner_id": owner_id,
+                }
+            )
+
+        def financial_history(binding, parent_status):
+            """Physical finance is independent of the enclosing Task's final state."""
+            identity = (binding["physical_ledger_root"], binding["child_run_id"])
+            if identity in checked_financial_children:
+                return
+            manifest, contents = read_core(binding)
+            result = json.loads(contents["result.json"])
+            unknown = (
+                result.get("committed_state_verification", {}).get("financial_state_known") is False
+            )
+            # An original authenticated opaque failure remains opaque. It cannot
+            # certify cash, but must not be recast as a successful/known prefix.
+            opaque_failure = (
+                parent_status == "FAILED"
+                and manifest["status"] == result["status"] == "FAILED"
+                and unknown
+                and "account" not in result
+                and "last_committed_account" not in result
+            )
+            transactions = guard_path(
+                guard_path(binding["physical_ledger_root"])
+                / binding["child_run_id"]
+                / "transactions"
+            )
+            not_started_failure = (
+                parent_status == "FAILED"
+                and manifest["status"] == result["status"] == "FAILED"
+                and result.get("committed_state_verification") == {"status": "NOT_STARTED"}
+                and "account" not in result
+                and "last_committed_account" not in result
+                and not transactions.exists()
+            )
+            if not (opaque_failure or not_started_failure):
+                TaskService._verified_financial_prefix(binding)
+            if transactions.exists():
+                for path in transactions.iterdir():
+                    if path.name != ".lock":
+                        remember(path)
+            financial_children.append(
+                {
+                    "binding_hash": digest(binding),
+                    "service_kind": binding["service_kind"],
+                    "child_run_id": binding["child_run_id"],
+                    "original_manifest_status": manifest["status"],
+                    "physical_prefix_verified": not (opaque_failure or not_started_failure),
+                    "original_opaque_unknown_failure": opaque_failure,
+                    "original_not_started_failure": not_started_failure,
+                }
+            )
+            checked_financial_children.add(identity)
+
+        remember(self.root / "catalog.json")
+        registered = {record["id"]: record for record in campaigns(self.root, cat)}
+        if registered:
+            remember(self.root / "research-campaigns/index.jsonl")
+            for name in registered:
+                remember(self.root / "research-campaigns" / (digest(name) + ".json"))
+        expected_campaigns = set()
+        for row in task_rows:
+            raw = remember(self.root / "tasks" / row["id"] / "request.json")
+            req = json.loads(raw)
+            if canonical(req) != raw or row["raw"] != raw.decode() or row["hash"] != digest(req):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            revision = req["defaults_revision"]
+            defaults = c.execute(
+                "SELECT payload,hash FROM defaults WHERE revision=?", (revision,)
+            ).fetchone()
+            if revision != 0 and (
+                defaults is None or digest(json.loads(defaults[0])) != defaults[1]
+            ):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            draft = (
+                {
+                    "kind": "replay",
+                    **{k: v for k, v in req["payload"].items() if k in ("source_task", "profile")},
+                }
+                if req["kind"] == "replay"
+                else req["payload"]["raw_draft"]
+            )
+            if freeze_request(self.root, draft, revision).raw != raw:
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            events = list(
+                c.execute("SELECT kind,payload FROM events WHERE task=? ORDER BY seq", (row["id"],))
+            )
+            if any(canonical(json.loads(e[1])).decode() != e[1] for e in events):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            submissions = [json.loads(e[1]) for e in events if e[0] == "SUBMITTED"]
+            task_claims = [json.loads(e[1]) for e in events if e[0] == "CLAIMED"]
+            if (
+                len(submissions) != 1
+                or submissions[0]["config_hash"] != row["hash"]
+                or row["status"] == "RUNNING"
+                or row["status"] not in TERMINAL | {"QUEUED"}
+                or type(row["epoch"]) is not int
+                or row["epoch"] < 0
+                or row["cancel"] not in (0, 1)
+                or row["owner"] is not None
+            ):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            if any(
+                type(claim["epoch"]) is not int or type(claim["owner"]) is not str
+                for claim in task_claims
+            ):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            if [claim["epoch"] for claim in task_claims] != list(range(1, row["epoch"] + 1)):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            for claim in task_claims:
+                if str(uuid.UUID(claim["owner"])) != claim["owner"]:
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            campaign = req.get("payload", {}).get("campaign")
+            if campaign is not None:
+                expected_campaigns.add(row["id"])
+                if row["id"] not in campaign_rows:
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                item = self._checked_campaign_record(c, campaign_rows[row["id"]], legacy=True)
+                config = req["payload"]["research"]
+                registered_campaign = registered.get(campaign["id"])
+                if (
+                    registered_campaign is None
+                    or registered_campaign["campaign_hash"] != campaign["campaign_hash"]
+                    or registered_campaign["variants"].get(variant_key(config)) != config
+                ):
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                units = ExperimentLedger._research_units(config)
+                if item["units"] != len(units):
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                projection(
+                    self.root / "tasks" / row["id"] / "campaign-attempt.json",
+                    remember(self.root / "tasks" / row["id"] / "campaign-attempt.json"),
+                    "TASK",
+                    row["id"],
+                )
+            else:
+                if req["kind"] != "replay":
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                config, units = None, []
+            records.append(
+                {
+                    "data_hash": cat["snapshot"]["manifest_hash"],
+                    "owner_kind": "TASK",
+                    "owner_id": row["id"],
+                    "key": row["key"],
+                    "request_hash": row["hash"],
+                    "units": units,
+                    "family_id": config["family"]["id"] if config else None,
+                    "family_limit": config["family"]["budget"] if config else None,
+                    "service_kind": "TASK" if config else "TASK_REPLAY",
+                    "output_root": str(self.root / ("research-runs" if config else "replay-runs")),
+                    "_migration_decision": "REJECTED"
+                    if campaign and item["over_budget"]
+                    else "ADMITTED",
+                }
+            )
+            projection(self.root / "tasks" / row["id"] / "request.json", raw, "TASK", row["id"])
+            slot_rows = list(c.execute("SELECT * FROM slots WHERE task=?", (row["id"],)))
+            slot_states = {r["slot"]: r["state"] for r in slot_rows}
+            slots = {r["slot"]: json.loads(r["binding"]) for r in slot_rows}
+            if row["status"] == "QUEUED" and slots:
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            for name, binding in slots.items():
+                if (
+                    binding["task_id"] != row["id"]
+                    or binding["plan_hash"] != row["hash"]
+                    or binding["workspace_id"] != self.workspace_id
+                ):
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                root = guard_path(binding["physical_ledger_root"]) / binding["child_run_id"]
+                if not root.exists():
+                    starts = [json.loads(e[1]) for e in events if e[0] == "CORE_START_INTENT"]
+                    if (
+                        row["status"] == "SUCCEEDED"
+                        or slot_states[name] not in ("ALLOCATED", "BOUND")
+                        or row["status"] == "CANCELLED"
+                        and slot_states[name] != "ALLOCATED"
+                        or any(e.get("slot_id") == name for e in starts)
+                    ):
+                        raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                    continue
+                manifest, _ = read_core(binding)
+                for path in root.iterdir():
+                    if path.is_file() and path.suffix in (".json", ".jsonl", ".html"):
+                        remember(path)
+                if row["status"] == "SUCCEEDED" and manifest["status"] != "SUCCEEDED":
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                if name == "R":
+                    run_owners[binding["child_run_id"]] = ("TASK", row["id"], units)
+                if binding["service_kind"] in ("P5", "P5_REPLAY"):
+                    financial_history(binding, row["status"])
+                    if binding["service_kind"] == "P5_REPLAY":
+                        source = c.execute(
+                            "SELECT s.binding,t.status,t.hash FROM slots s JOIN tasks t ON t.id=s.task "
+                            "WHERE s.task=? AND s.slot='B'",
+                            (req["payload"]["source_task"],),
+                        ).fetchone()
+                        if source is None:
+                            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                        source_binding = json.loads(source[0])
+                        if (
+                            source_binding["task_id"] != req["payload"]["source_task"]
+                            or source_binding["workspace_id"] != self.workspace_id
+                            or source_binding["plan_hash"] != source[2]
+                            or source_binding["service_kind"] != "P5"
+                        ):
+                            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                        financial_history(source_binding, source[1])
+            if row["status"] == "SUCCEEDED":
+                pointer = json.loads(row["completion"])
+                if (
+                    canonical(pointer).decode() != row["completion"]
+                    or set(pointer) != {"file", "sha256"}
+                    or type(pointer["file"]) is not str
+                    or re.fullmatch(r"completion(?:-[0-9]+)?\.json", pointer["file"]) is None
+                ):
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                completion_raw = remember(self.root / "tasks" / row["id"] / pointer["file"])
+                completion = json.loads(completion_raw)
+                terminals = [json.loads(e[1]) for e in events if e[0] == "SUCCEEDED"]
+                proofs = verify_core_proofs(
+                    self.root,
+                    self.workspace_id,
+                    row["id"],
+                    row,
+                    {
+                        name: {"binding": binding, "state": slot_states[name]}
+                        for name, binding in slots.items()
+                    },
+                    lambda name: c.execute(
+                        "SELECT raw,hash FROM adapted_requests WHERE task=? AND slot=?",
+                        (row["id"], name),
+                    ).fetchone(),
+                )
+                plan_path = self.root / "tasks" / row["id"] / "resolved-plan.json"
+                plan_raw = remember(plan_path) if plan_path.exists() else None
+                if (
+                    canonical(completion) != completion_raw
+                    or hashlib.sha256(completion_raw).hexdigest() != pointer["sha256"]
+                    or completion["config_hash"] != row["hash"]
+                    or completion["task_id"] != row["id"]
+                    or completion["kind"] != req["kind"]
+                    or completion["scope"] != "ENGINEERING_TEST_ONLY"
+                    or completion["financial_approval"] != "NONE"
+                    or completion["claim_epoch"] != row["epoch"]
+                    or terminals != [{"completion": pointer, "claim_epoch": row["epoch"]}]
+                    or completion["core_proofs"] != proofs
+                    or completion["resolved_plan_sha256"]
+                    != (hashlib.sha256(plan_raw).hexdigest() if plan_raw is not None else None)
+                ):
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+        if expected_campaigns != set(campaign_rows):
+            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+        ledger = ExperimentLedger(self.root / "research-runs")
+        trial_path = self.root / "research-runs/trials.jsonl"
+        trial_rows = read_chain(trial_path)
+        if trial_path.exists():
+            remember(trial_path)
+        trial_keys = set()
+        for trial in trial_rows:
+            payload = trial["payload"]
+            run = payload["run_id"]
+            root = ledger.path(run)
+            cfg_raw, line_raw = remember(root / "config.json"), remember(root / "lineage.json")
+            cfg, lineage = json.loads(cfg_raw), json.loads(line_raw)
+            if (
+                lineage["data_hash"] != cat["snapshot"]["manifest_hash"]
+                or lineage["code_bundle"] != cat["code_bundle"]
+            ):
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            ledger.verify(run)
+            registered = [
+                e
+                for e in read_chain(root / "events.jsonl")
+                if e["kind"] == "TRIAL_REGISTERED" and e["payload"] == payload
+            ]
+            if len(registered) != 1 or (run, payload["hypothesis"]) in trial_keys:
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            trial_keys.add((run, payload["hypothesis"]))
+            if run not in run_owners:
+                if lineage.get("task_binding") is not None:
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                units = ExperimentLedger._research_units(cfg)
+                run_trials = [r for r in trial_rows if r["payload"]["run_id"] == run]
+                if {r["payload"]["hypothesis"] for r in run_trials} != {
+                    u["hypothesis_alias"] for u in units
+                }:
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                decisions = {bool(r["payload"]["over_budget"]) for r in run_trials}
+                if len(decisions) != 1:
+                    raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                records.append(
+                    {
+                        "data_hash": lineage["data_hash"],
+                        "owner_kind": "LEGACY",
+                        "owner_id": run,
+                        "key": digest({"ledger_root": str(ledger.root.resolve()), "run_id": run}),
+                        "request_hash": digest(cfg),
+                        "units": units,
+                        "family_id": cfg["family"]["id"],
+                        "family_limit": cfg["family"]["budget"],
+                        "service_kind": "LEGACY",
+                        "output_root": str(ledger.root),
+                        "_migration_decision": "REJECTED" if next(iter(decisions)) else "ADMITTED",
+                    }
+                )
+                run_owners[run] = ("LEGACY", run, units)
+            owner_kind, owner_id, units = run_owners[run]
+            ordinals = [
+                i for i, u in enumerate(units) if u["hypothesis_alias"] == payload["hypothesis"]
+            ]
+            if len(ordinals) != 1 or cfg["family"]["id"] != payload["family"]:
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            claims.append(
+                {
+                    "owner_kind": owner_kind,
+                    "owner_id": owner_id,
+                    "ordinal": ordinals[0],
+                    "ledger_root": str(ledger.root),
+                    "run_id": run,
+                    "config_hash": digest(cfg),
+                    "lineage_hash": digest(lineage),
+                    "claim_payload": {
+                        "hypothesis": payload["hypothesis"],
+                        "definition_hash": units[ordinals[0]]["definition_hash"],
+                    },
+                }
+            )
+            projection(trial_path, canonical(trial) + b"\n", owner_kind, owner_id, "TRIAL")
+        # Orphan/nonterminal research directories cannot be ignored by an empty trial scan.
+        actual_runs = {p.name for p in ledger.root.iterdir() if p.is_dir()}
+        if actual_runs != set(run_owners):
+            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+        for run in run_owners:
+            registered = [
+                e["payload"]
+                for e in read_chain(ledger.path(run) / "events.jsonl")
+                if e["kind"] == "TRIAL_REGISTERED"
+            ]
+            original_trials = [r["payload"] for r in trial_rows if r["payload"]["run_id"] == run]
+            if registered != original_trials:
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            for path in ledger.path(run).iterdir():
+                if path.is_file() and path.suffix in (".json", ".jsonl", ".html"):
+                    remember(path)
+        return {
+            "complete": True,
+            "records": records,
+            "projections": projections,
+            "claims": claims,
+            "evidence": {
+                "schema": "complete-same-bundle-budget-migration/1",
+                "catalogue_hash": digest(cat),
+                "files": list(files.values()),
+                "task_ids": sorted(task_ids),
+                "financial_children": financial_children,
+                "trial_keys": sorted(trial_keys),
+                "source_rows_hash": digest([{k: row[k] for k in row.keys()} for row in task_rows]),
+            },
+        }
+
+    def _reserve_campaign(
+        self, c, task, request, campaign, directory, *, raw, key, activation=None
+    ):
         from aqrp.services.research import hypotheses
 
         if campaign != request["payload"]["campaign"] or campaign["budget"] != 12:
@@ -191,7 +733,10 @@ class TaskState:
         }
         if expected != {r["task"] for r in rows}:
             raise ContractError("CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE")
-        verified = [self._checked_campaign_record(c, r) for r in rows]
+        verified = [self._checked_campaign_record(c, r, authority_verified=True) for r in rows]
+        # This transaction entered only after all projections were published.
+        # Verify the complete immutable authority once, rather than once per peer.
+        self.budget.verify(c, require_projections=True)
         own_runs = {
             json.loads(r[0])["child_run_id"]
             for r in c.execute(
@@ -200,16 +745,51 @@ class TaskState:
         }
         trial_root = guard_path(self.root / "research-runs")
         trial_root.mkdir(exist_ok=True)
-        with mutex(trial_root / ".trials-lock"):
-            legacy = [
-                r["payload"]
-                for r in read_chain(trial_root / "trials.jsonl")
-                if r["payload"].get("data_hash") == campaign["data_hash"]
-                and r["payload"]["run_id"] not in own_runs
-            ]
+        legacy = [
+            r["payload"]
+            for r in (
+                json.loads(bytes(row[0]))
+                for row in c.execute(
+                    "SELECT content FROM admission_outbox WHERE kind='TRIAL' ORDER BY seq"
+                )
+            )
+            if r["payload"].get("data_hash") == campaign["data_hash"]
+            and r["payload"]["run_id"] not in own_runs
+        ]
         peers = [x for x in verified if x["campaign"]["data_hash"] == campaign["data_hash"]]
         units = [h["hypothesis"] for h in hypotheses(request["payload"]["research"])]
-        used = sum(x["units"] for x in peers) + len(legacy)
+        legacy_admissions = [
+            json.loads(row[0])
+            for row in c.execute(
+                "SELECT payload FROM admissions WHERE data_hash=? AND owner_kind='LEGACY'",
+                (campaign["data_hash"],),
+            )
+        ]
+        # Retain the original requested-attempt literal, including refusals.
+        # Actual debits and refused units are separate immutable authority fields.
+        used = sum(x["units"] for x in peers) + sum(len(a["units"]) for a in legacy_admissions)
+        config = request["payload"]["research"]
+        self._insert_task(c, task, key, raw, request)
+        admission = self.budget.reserve(
+            c,
+            data_hash=campaign["data_hash"],
+            owner_kind="TASK",
+            owner_id=task,
+            key=key,
+            request_hash=digest(request),
+            units=[
+                {
+                    "hypothesis_alias": alias,
+                    "definition_hash": config["family"]["definitions"][alias],
+                }
+                for alias in units
+            ],
+            family_id=config["family"]["id"],
+            family_limit=config["family"]["budget"],
+            service_kind="TASK",
+            output_root=self.root / "research-runs",
+            activation=activation,
+        )
         record = {
             "campaign": campaign,
             "task_id": task,
@@ -218,16 +798,24 @@ class TaskState:
             "units": len(units),
             "prior_reserved_units": used,
             "prior_legacy_trials": len(legacy),
+            "prior_legacy_admission_units": sum(len(a["units"]) for a in legacy_admissions),
             "prior_other_campaign_attempts": sum(
                 x["campaign"]["campaign_hash"] != campaign["campaign_hash"] for x in peers
             ),
             "prior_other_family_legacy_trials": sum(
                 x["family"] != request["payload"]["research"]["family"]["id"] for x in legacy
             ),
-            "over_budget": used + len(units) > 12,
+            "over_budget": admission["decision"] != "ADMITTED",
+            "admission": admission,
             "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
         }
-        immutable_write(directory / "campaign-attempt.json", canonical(record))
+        self.budget.queue_projection(
+            c,
+            directory / "campaign-attempt.json",
+            canonical(record),
+            admission["admission_id"],
+            kind="SIDECAR",
+        )
         c.execute(
             "INSERT INTO campaign_attempts VALUES (?,?,?,?,?,?,?)",
             (
@@ -243,7 +831,11 @@ class TaskState:
         return record
 
     def research_attempt(self, task):
+        if not self.managed:
+            raise ContractError("CAMPAIGN_ATTEMPT_REQUIRED")
+        self.budget.materialize()
         with self.transaction() as c:
+            self.budget.verify(c)
             row = c.execute("SELECT * FROM campaign_attempts WHERE task=?", (task,)).fetchone()
             if row is None:
                 raise ContractError("CAMPAIGN_ATTEMPT_REQUIRED")
@@ -251,7 +843,11 @@ class TaskState:
 
     def claim(self, task, *, recover=False):
         owner = str(uuid.uuid4())
+        if self.managed:
+            self.budget.materialize()
         with self.transaction() as c:
+            if self.managed:
+                self.budget.verify(c)
             row = c.execute("SELECT * FROM tasks WHERE id=?", (task,)).fetchone()
             if row is None or row["status"] in TERMINAL:
                 raise ContractError("TASK_NOT_CLAIMABLE")
@@ -275,8 +871,23 @@ class TaskState:
             c.execute("UPDATE tasks SET owner=NULL WHERE id=?", (task,))
             self.event(c, task, "CLAIM_RELEASED", {"epoch": epoch})
 
-    def cancel(self, task):
+    def cancel(self, task, *, activation=None):
         with self.transaction() as c:
+            current = (
+                c.execute(
+                    "SELECT payload FROM execution_plan_activations ORDER BY seq DESC LIMIT 1"
+                ).fetchone()
+                if self.managed
+                else None
+            )
+            if activation is not None and (current is None or json.loads(current[0]) != activation):
+                raise ContractError("EXECUTION_PLAN_ACTIVATION_STALE")
+            if current is not None:
+                admission = self.budget.lookup_owner(c, "TASK", task)
+                if admission is None or admission.get("actor", {}).get("activation") != json.loads(
+                    current[0]
+                ):
+                    raise ContractError("EXECUTION_PLAN_SLOT_IDENTITY_CONFLICT")
             row = c.execute("SELECT status FROM tasks WHERE id=?", (task,)).fetchone()
             if row is None:
                 raise ContractError("UNKNOWN_TASK")

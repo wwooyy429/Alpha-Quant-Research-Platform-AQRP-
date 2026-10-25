@@ -1,0 +1,579 @@
+{
+  "finding": "COV-001",
+  "recorded_utc": "2026-10-24T19:45:41.627113+00:00",
+  "reporter": "Codex developer actual official CI diagnosis, not independent G2",
+  "classification": "Required quality gate blocker; no failing unit assertions in this actual CI",
+  "affected_sha": "05fc498bfcfc703eb58f14eb7107ed483c30fbe3",
+  "package_bundle": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+  "official_run_id": 40122323730,
+  "attempt": 1,
+  "each_OS_pytest": "1892 passed",
+  "overall_SDK_CI": "FAILED coverage; complete=false; no downstream E2E/browser execution",
+  "modules": [
+    {
+      "module": "competition/adapter.py",
+      "actual_line_percent": 91.30434782608695,
+      "actual_branch_percent": 70.0,
+      "required": [
+        90,
+        85
+      ],
+      "missing_lines": [
+        85,
+        88,
+        102,
+        182,
+        184,
+        187,
+        273,
+        276,
+        279,
+        314,
+        328,
+        331
+      ],
+      "missing_branches": [
+        [
+          84,
+          85
+        ],
+        [
+          87,
+          88
+        ],
+        [
+          96,
+          102
+        ],
+        [
+          167,
+          182
+        ],
+        [
+          183,
+          184
+        ],
+        [
+          186,
+          187
+        ],
+        [
+          270,
+          273
+        ],
+        [
+          275,
+          276
+        ],
+        [
+          278,
+          279
+        ],
+        [
+          313,
+          314
+        ],
+        [
+          327,
+          328
+        ],
+        [
+          330,
+          331
+        ]
+      ]
+    },
+    {
+      "module": "experiments/ledger.py",
+      "actual_line_percent": 93.45794392523365,
+      "actual_branch_percent": 83.92857142857143,
+      "required": [
+        95,
+        90
+      ],
+      "missing_lines": [
+        37,
+        39,
+        55,
+        57,
+        137,
+        170,
+        250,
+        255,
+        292,
+        296,
+        320,
+        439,
+        563,
+        579,
+        614,
+        632,
+        637,
+        639,
+        663,
+        719,
+        730,
+        731,
+        732,
+        735,
+        736,
+        739,
+        777,
+        790
+      ],
+      "missing_branches": [
+        [
+          32,
+          37
+        ],
+        [
+          50,
+          55
+        ],
+        [
+          126,
+          137
+        ],
+        [
+          167,
+          170
+        ],
+        [
+          249,
+          250
+        ],
+        [
+          254,
+          255
+        ],
+        [
+          291,
+          292
+        ],
+        [
+          295,
+          296
+        ],
+        [
+          311,
+          313
+        ],
+        [
+          313,
+          320
+        ],
+        [
+          431,
+          439
+        ],
+        [
+          558,
+          563
+        ],
+        [
+          578,
+          579
+        ],
+        [
+          613,
+          614
+        ],
+        [
+          622,
+          632
+        ],
+        [
+          636,
+          637
+        ],
+        [
+          638,
+          639
+        ],
+        [
+          662,
+          663
+        ],
+        [
+          718,
+          719
+        ],
+        [
+          729,
+          730
+        ],
+        [
+          730,
+          731
+        ],
+        [
+          730,
+          732
+        ],
+        [
+          732,
+          735
+        ],
+        [
+          732,
+          736
+        ],
+        [
+          738,
+          739
+        ],
+        [
+          776,
+          777
+        ],
+        [
+          784,
+          790
+        ]
+      ]
+    },
+    {
+      "module": "services/task_state.py",
+      "actual_line_percent": 93.29004329004329,
+      "actual_branch_percent": 85.04672897196262,
+      "required": [
+        95,
+        90
+      ],
+      "missing_lines": [
+        151,
+        166,
+        168,
+        190,
+        273,
+        311,
+        373,
+        391,
+        414,
+        419,
+        433,
+        436,
+        445,
+        469,
+        487,
+        494,
+        505,
+        564,
+        581,
+        589,
+        593,
+        599,
+        602,
+        624,
+        644,
+        678,
+        686,
+        786,
+        792,
+        835,
+        841
+      ],
+      "missing_branches": [
+        [
+          143,
+          151
+        ],
+        [
+          161,
+          166
+        ],
+        [
+          167,
+          168
+        ],
+        [
+          189,
+          190
+        ],
+        [
+          272,
+          273
+        ],
+        [
+          296,
+          311
+        ],
+        [
+          364,
+          368
+        ],
+        [
+          372,
+          373
+        ],
+        [
+          390,
+          391
+        ],
+        [
+          410,
+          414
+        ],
+        [
+          418,
+          419
+        ],
+        [
+          428,
+          433
+        ],
+        [
+          435,
+          436
+        ],
+        [
+          444,
+          445
+        ],
+        [
+          468,
+          469
+        ],
+        [
+          480,
+          487
+        ],
+        [
+          493,
+          494
+        ],
+        [
+          504,
+          505
+        ],
+        [
+          563,
+          564
+        ],
+        [
+          577,
+          581
+        ],
+        [
+          588,
+          589
+        ],
+        [
+          592,
+          593
+        ],
+        [
+          596,
+          599
+        ],
+        [
+          601,
+          602
+        ],
+        [
+          623,
+          624
+        ],
+        [
+          643,
+          644
+        ],
+        [
+          677,
+          678
+        ],
+        [
+          685,
+          686
+        ],
+        [
+          785,
+          786
+        ],
+        [
+          791,
+          792
+        ],
+        [
+          834,
+          835
+        ],
+        [
+          838,
+          841
+        ]
+      ]
+    },
+    {
+      "module": "services/tasks.py",
+      "actual_line_percent": 96.25468164794007,
+      "actual_branch_percent": 89.34426229508196,
+      "required": [
+        95,
+        90
+      ],
+      "missing_lines": [
+        99,
+        392,
+        427,
+        444,
+        455,
+        479,
+        528,
+        546,
+        548,
+        552,
+        557,
+        582,
+        596,
+        652,
+        653,
+        802,
+        851,
+        864,
+        873,
+        916
+      ],
+      "missing_branches": [
+        [
+          94,
+          99
+        ],
+        [
+          192,
+          194
+        ],
+        [
+          211,
+          214
+        ],
+        [
+          228,
+          231
+        ],
+        [
+          387,
+          392
+        ],
+        [
+          426,
+          427
+        ],
+        [
+          443,
+          444
+        ],
+        [
+          447,
+          455
+        ],
+        [
+          478,
+          479
+        ],
+        [
+          527,
+          528
+        ],
+        [
+          545,
+          546
+        ],
+        [
+          547,
+          548
+        ],
+        [
+          551,
+          552
+        ],
+        [
+          556,
+          557
+        ],
+        [
+          581,
+          582
+        ],
+        [
+          595,
+          596
+        ],
+        [
+          646,
+          651
+        ],
+        [
+          651,
+          652
+        ],
+        [
+          652,
+          653
+        ],
+        [
+          652,
+          656
+        ],
+        [
+          773,
+          777
+        ],
+        [
+          801,
+          802
+        ],
+        [
+          837,
+          851
+        ],
+        [
+          863,
+          864
+        ],
+        [
+          867,
+          873
+        ],
+        [
+          915,
+          916
+        ]
+      ]
+    }
+  ],
+  "status": "MEANINGFUL_BRANCH_CONTROLS_IN_PROGRESS; ORIGINAL_GATES_UNCHANGED; INDEPENDENT_G2_PENDING",
+  "policy": "Do not lower thresholds, exclude branches, weaken old assertions, substitute counts, or merge coverage from different production source bytes",
+  "original_files": [
+    {
+      "path": "TRIAGE.json",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\05FC498_FAILURE_DIAGNOSIS_c4bd32da-5542-4cca-bafe-9801e58e842c\\TRIAGE.json",
+      "bytes": 19948,
+      "sha256": "986e6e05f40ed1b7eb3d2d53df98d7f03c945666657a15a864386f1d7534909f"
+    },
+    {
+      "path": "JOBS.json",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\05FC498_FAILURE_DIAGNOSIS_c4bd32da-5542-4cca-bafe-9801e58e842c\\JOBS.json",
+      "bytes": 7182,
+      "sha256": "ac8eb1833fe5625be6adb07664a7542bc5bd813ce1173ab5c915196cb74fa98e"
+    },
+    {
+      "path": "job-120956361411.log",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\05FC498_FAILURE_DIAGNOSIS_c4bd32da-5542-4cca-bafe-9801e58e842c\\job-120956361411.log",
+      "bytes": 36553,
+      "sha256": "7b35dc29cf494184010b22966b84ddebbfaeed931b9d4a1707c7db52ac939a7e"
+    },
+    {
+      "path": "job-120956361562.log",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\05FC498_FAILURE_DIAGNOSIS_c4bd32da-5542-4cca-bafe-9801e58e842c\\job-120956361562.log",
+      "bytes": 38599,
+      "sha256": "dacf7bea6daf78fd27670b2067d181be948ba7d82cda259cf48c3a0854fbb22a"
+    },
+    {
+      "path": "coverage-windows-original.json",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\05FC498_FAILURE_DIAGNOSIS_c4bd32da-5542-4cca-bafe-9801e58e842c\\coverage-windows-original.json",
+      "bytes": 716982,
+      "sha256": "c9e75220dcc165676c244d91ed49b5a91844817b8b28ba0a0d1a4bfa49cac776"
+    }
+  ]
+}

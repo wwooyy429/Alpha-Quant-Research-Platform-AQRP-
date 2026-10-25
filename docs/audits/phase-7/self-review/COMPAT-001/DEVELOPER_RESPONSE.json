@@ -1,0 +1,45 @@
+{
+  "finding": "COMPAT-001",
+  "status": "FIX_IMPLEMENTED / TARGETED_SELF_TEST_PASS / COMPLETE_FIXED_VALIDATION_PENDING / INDEPENDENT_G2_PENDING",
+  "change": "Extract identical exact controlled ValueError campaign admission set translation into campaign_admission_boundary; cover original TaskService.submit and TaskState.submit bodies without reordering or suppressing authority checks",
+  "original_assertion": "UNCHANGED",
+  "targeted_tests": 7,
+  "new_controls": 6,
+  "results": "Original specific public diagnosis restored; unrelated corruption retains ADMISSION_HISTORY_UNVERIFIED; no authority SQL or original JSON/JSONL mutations",
+  "source_bundle": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+  "raw_targeted_evidence": [
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\dev-snapshots\\integration-campaign-error-boundary-fix-34383071-d27d-4fba-9b1e-990989534a13\\COMMAND.json",
+      "bytes": 1281,
+      "sha256": "cc43164bb0d131529cd0deec6d5044270081efc2aa57005ac58056490170a6f2"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\dev-snapshots\\integration-campaign-error-boundary-fix-34383071-d27d-4fba-9b1e-990989534a13\\EXIT.json",
+      "bytes": 16,
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\dev-snapshots\\integration-campaign-error-boundary-fix-34383071-d27d-4fba-9b1e-990989534a13\\junit.xml",
+      "bytes": 1508,
+      "sha256": "a8a348e55f7a2c416710f41dddc46073beb64d6275e85f475df2e8f4122cbf1c"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\dev-snapshots\\integration-campaign-error-boundary-fix-34383071-d27d-4fba-9b1e-990989534a13\\pytest.log",
+      "bytes": 955,
+      "sha256": "fcf095ddca7e0656817286ea99e7279a1a23c0d05b7c67244b48d1e8ed297d4f"
+    }
+  ],
+  "developer_peer_AST": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\PUBLIC_ERROR_BOUNDARY_DEVELOPER_PEER_REVIEW.json",
+    "sha256": "ed0b786a052531d3c7235efb000807a425fd2f97aab3c76b3034fb4d08aa1506",
+    "scope": "Developer static review, not independent G2"
+  },
+  "aborted_e610_original_raw": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\ABORTED_E610_RAW_0f515be7-29ee-4a6a-9034-cda96b085b4e\\ABORTED_ORIGINAL_RAW.zip",
+    "bytes": 158722924,
+    "sha256": "30d0a4971dc63aea2b1f84b0ee33e41d8065bade8fa4ffd825542f7feb79aa1f",
+    "files": 8282,
+    "status": "NOT_A_PASS"
+  },
+  "requirements": "New complete fixed SHA SDK/CI/raw ZIP/browser; no old candidate coverage or success transfer"
+}

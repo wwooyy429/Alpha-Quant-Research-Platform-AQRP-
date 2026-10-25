@@ -4,6 +4,8 @@ import hashlib
 import html
 import json
 import math
+import sys
+from contextlib import nullcontext
 from dataclasses import asdict, dataclass
 from datetime import date
 
@@ -214,10 +216,55 @@ def _research(request, output_root, *, operator_claims=None, task_context=None):
         "seed": config.get("seed"),
         "cost_rules": "NOT_APPLICABLE_P3_RESEARCH_NO_EXECUTION_ORDERS",
     }
+    from aqrp.experiments.admission import resolve_admission_domain
+
+    managed = resolve_admission_domain(
+        output_root,
+        config=config,
+        lineage=lineage,
+        snapshot_ref=request.snapshot,
+        exposure_ref=request.exposures,
+    )
+    execution_lease = nullcontext()
+    if managed is not None:
+        lineage["admission_inputs"] = {
+            "snapshot_root": str(request.snapshot.root.resolve()),
+            "exposure_root": str(request.exposures.root.resolve()) if request.exposures else None,
+            "data_hash": request.snapshot.manifest_hash,
+        }
+        # Raw input identity and complete preregistration are checked before admission.
+        # No factor engine, cache, fit, label or metric result has been read here.
+        verify_runtime(lineage["environment"])
+        verify_snapshot(request.snapshot)
+        analysis = hypotheses(config)
+        definitions = config["family"]["definitions"]
+        if not analysis or len({c["hypothesis"] for c in analysis}) != len(analysis):
+            raise ContractError("DUPLICATE_RESEARCH_HYPOTHESIS")
+        for candidate in analysis:
+            if candidate["hypothesis"] not in config["family"]["hypotheses"] or definitions.get(
+                candidate["hypothesis"]
+            ) != hypothesis_definition(
+                candidate,
+                config,
+                request.snapshot.manifest_hash,
+                lineage["exposure_hash"],
+                request.coverage.checksum,
+            ):
+                raise ContractError("HYPOTHESIS_CHANGED_AFTER_PREREGISTRATION")
+        if task_context is None:
+            admitted = ledger.prepare_research(
+                config,
+                lineage,
+                snapshot_ref=request.snapshot,
+                exposure_ref=request.exposures,
+            )
+            execution_lease = managed.legacy_execution(admitted["admission_id"])
     if task_context is not None and config.get("family", {}).get("campaign"):
         lineage["campaign_control"] = task_context.research_attempt()
-    run_id = ledger.start(config, lineage, task_context=task_context)
+    execution_lease.__enter__()
+    run_id = None
     try:
+        run_id = ledger.start(config, lineage, task_context=task_context)
         if task_context is not None:
             task_context.checkpoint()
         verify_runtime(lineage["environment"])
@@ -285,6 +332,7 @@ def _research(request, output_root, *, operator_claims=None, task_context=None):
                     candidate["hypothesis"],
                     budget=config["family"]["budget"],
                     hypothesis_spec=candidate,
+                    task_context=task_context,
                 )
             )
             if candidate["direction"] not in (-1, 1) or type(candidate["direction"]) is not int:
@@ -599,13 +647,16 @@ def _research(request, output_root, *, operator_claims=None, task_context=None):
         ledger.finish(run_id, "SUCCEEDED")
         return {"run_id": run_id, "manifest": ledger.verify(run_id), "report": serial(report)}
     except BaseException as exc:
-        ledger.artifact(
-            run_id,
-            "failure.json",
-            {"error_type": type(exc).__name__, "code": getattr(exc, "code", "EXECUTION_ERROR")},
-        )
-        ledger.finish(run_id, "CANCELLED" if isinstance(exc, KeyboardInterrupt) else "FAILED")
+        if run_id is not None:
+            ledger.artifact(
+                run_id,
+                "failure.json",
+                {"error_type": type(exc).__name__, "code": getattr(exc, "code", "EXECUTION_ERROR")},
+            )
+            ledger.finish(run_id, "CANCELLED" if isinstance(exc, KeyboardInterrupt) else "FAILED")
         raise
+    finally:
+        execution_lease.__exit__(*sys.exc_info())
 
 
 def evaluate_sealed(request, evaluator):

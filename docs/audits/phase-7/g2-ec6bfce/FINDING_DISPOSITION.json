@@ -1,0 +1,79 @@
+{
+  "schema": "AQRP-phase7-independent-G2-received-disposition/1",
+  "fixed_review_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "PR": 10,
+  "reviewer": "Primary GPT Work independent G2 reviewer",
+  "verdict": "G2 BLOCKED / REQUEST CHANGES",
+  "findings": [
+    {
+      "id": "WORK-P7-G2-001",
+      "severity": "Medium blocking",
+      "status": "OPEN",
+      "developer_disposition": "ACKNOWLEDGED — FIX AND INDEPENDENT RECHECK REQUIRED",
+      "reviewed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+      "original_title": "旧 API 和 CLI 遗漏其他 campaign 已消耗但尚无 R trial 的污染历史",
+      "original_location": "src/aqrp/experiments/ledger.py:666-679",
+      "original_basis": [
+        "COMMON_BUDGET_ADMISSION_DESIGN.md:82",
+        "IMPLEMENTATION_CONTRACT.md:5",
+        "INT-003",
+        "INT-004",
+        "INT-005"
+      ],
+      "original_reproduction": "primary_pollution_probe.py; PRIMARY_POLLUTION_REPRODUCTION.json; pollution-legacy-cli.* 原始真实子进程流",
+      "original_required_regression": "三独立root无repeat_of混杂的入口对照，R前取消/失败、反向legacy→Task、并发以及投影恢复；应一致保留污染且额度不增加/不退款。",
+      "independent_closure": false,
+      "assigned_scope": "Common-authority pollution/admission history across public API, actual legacy CLI, Task and adapter-mediated services.",
+      "required_fix_boundary": "Committed prior admission/access history must drive every managed entry even if earlier cancelled/failed owners produced no R trial; preserve family limits, repeat_of, idempotency, no refund/reset and projection ordering.",
+      "affected_candidates": [
+        "BUD-008",
+        "BUD-013",
+        "BUD-023"
+      ]
+    },
+    {
+      "id": "WORK-P7-G2-002",
+      "severity": "High blocking",
+      "status": "OPEN",
+      "developer_disposition": "ACKNOWLEDGED — FIX AND INDEPENDENT RECHECK REQUIRED",
+      "reviewed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+      "original_title": "FAILED父Task的成功B物理事务损坏可通过历史迁移并取得新准入",
+      "original_location": "src/aqrp/services/task_state.py:489-510",
+      "original_basis": [
+        "COMMON_BUDGET_ADMISSION_DESIGN.md:107",
+        "IMPLEMENTATION_CONTRACT.md:6",
+        "INT-003",
+        "INT-004",
+        "INT-005"
+      ],
+      "original_reproduction": "primary_failed_history_probe.py; PRIMARY_FAILED_HISTORY_REPRODUCTION.json; healthy/corrupt原最后事务和完整新夹具原件",
+      "original_required_regression": "真实FAILED父Task+成功B的healthy/corrupt对照，FAILED replay及source，事务缺失/截断/字节变化；原SUCCEEDED指针与CANCELLED prefix回归；失败不改原业务文件、不重置/返还额度。",
+      "independent_closure": false,
+      "assigned_scope": "Migration validation of physically existing successful B/E and trusted replay sources under FAILED as well as SUCCEEDED/CANCELLED parent Tasks.",
+      "required_fix_boundary": "Validate complete original transaction bytes/prefix and source bindings before new anchor/grant. Preserve legal P4 rejection and genuinely unknown original financial-failure semantics; do not require all FAILED parents to succeed.",
+      "affected_candidates": [
+        "BUD-018",
+        "BUD-019",
+        "BUD-022"
+      ],
+      "MIG001_overall_status": "OPEN — prior specific SUCCEEDED/CANCELLED counterexample fixes do not cover this newly demonstrated FAILED branch."
+    }
+  ],
+  "G1": "PLAN PASS WITH CONDITIONS / CLOSED_DESIGN unchanged; not implementation closure",
+  "developer_role": "Receipt archival and repair planning only; code fixes elsewhere remain candidates until independent fixed-SHA recheck",
+  "limits": {
+    "WI-R2-001/002": "DEFERRED / NOT VERIFIED",
+    "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+    "formal_Test": "NOT RUN; entry fails closed",
+    "financial_approval": "NONE",
+    "full_historical_host_reproduction": "NOT VERIFIED beyond user-accepted package/lock/oldRef/replay scope",
+    "real_competition_sources_rules_licensing": "EXTERNAL_DEPENDENCY_BLOCKED",
+    "accepted": false,
+    "released": false,
+    "merged": false,
+    "tagged": false,
+    "deployed": false,
+    "real_orders": false
+  },
+  "original_records_unchanged": true
+}

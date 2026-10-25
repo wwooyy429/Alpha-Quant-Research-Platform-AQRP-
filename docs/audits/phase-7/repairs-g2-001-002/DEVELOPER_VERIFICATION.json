@@ -1,0 +1,100 @@
+{
+  "schema": "developer-Phase7-G2-001-002-precommit-verification/1",
+  "created_utc": "2026-10-25T10:34:05.138001+00:00",
+  "classification": "Precommit developer QA only; snapshots/versions kept separate, no full fixed SDK or independent close",
+  "original_independent_fixed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "original_independent_verdict": "G2 BLOCKED",
+  "version": "0.7.0.dev2",
+  "candidate_bundle_sha256": "f9f7fe0a54f05e06fb082dc7e7bfdcc20fadd5b30e3c837ec4c8a1f7e40d49ac",
+  "source_python_modules": 86,
+  "factor_semantic_version": "1.2.1 unchanged algorithm; new full FactorRef because implementation bundle changes",
+  "findings": {
+    "WORK-P7-G2-001": {
+      "status": "OPEN — FIX CANDIDATE / PENDING GPT WORK VERIFICATION",
+      "developer_summary": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\G2-001-DEVELOPER_VERIFICATION.json",
+        "bytes": 19026,
+        "sha256": "57e89649ec3e97536d4b12fcd139cbb4d66e585eab8e0b4f0ef755ddce7f5083"
+      },
+      "red": "Three independent roots: API and actual CLI failed, Task passed, 2/1; no repeat_of, debit2",
+      "green": "12 focused controls passed on declared immutable candidate snapshot, not final committed SDK",
+      "raw_receipt": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\G2-001_RAW_EVIDENCE_6db8be0c-3987-49e4-a5ad-8c8ed278328a\\RECEIPT.json",
+        "bytes": 1616,
+        "sha256": "9fa47252633d7ef8482f3b4af87915cf3530e1d22e2465be784e00be8e6b25b1"
+      }
+    },
+    "WORK-P7-G2-002": {
+      "status": "OPEN — FIX CANDIDATE / PENDING GPT WORK VERIFICATION",
+      "developer_summary": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\G2-002-DEVELOPER_VERIFICATION.json",
+        "bytes": 8898,
+        "sha256": "31f1547d1ac9e5a992a07f61f6841a3fb77495f322391b062013b76d860f6334"
+      },
+      "red": "Exact unchanged reviewer counterexample reproduced on installed ec6; corrupt finance refused but migration/new queue accepted",
+      "green_prior_candidate": "27 passed (17 new plus 8 old CANCELLED and 2 old SUCCEEDED controls); source predates NOT_STARTED refinement",
+      "green_final_refinement": "4 passed on final-source installed candidate; do not combine 27+4 as one same-version SDK run",
+      "raw_receipt": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\G2-002-RAW-PRESERVATION-3132326d-cfdd-4191-bac6-a6177c0884e2\\RECEIPT.json",
+        "bytes": 4155,
+        "sha256": "a6ed3982b38b8b40af379119e89c3cf54265c794eb1ba9d38afedb9a95cf9281"
+      }
+    }
+  },
+  "precommit_quality": {
+    "ruff_check": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\actual-command-lint-final-repair-source-820d1ba3-cd02-43f3-b56f-0c8cdbdcacff\\COMPLETION.json",
+      "bytes": 2130,
+      "sha256": "7536a868cbafeecb8f5e58e3295398cb2d44e7cbe32cdc3a49ffafc71f2541ef"
+    },
+    "ruff_format_203_files": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\actual-command-format-check-final-repair-source-c36af1a4-e167-43ef-9863-6cb8e97b4fde\\COMPLETION.json",
+      "bytes": 2146,
+      "sha256": "f77280d66240b8b5e49ea051f5cfcf6a8225af9cf5a334900b79079971af26c8"
+    },
+    "pytest_collection_1996_only": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\actual-command-collect-final-repair-test-count-d226040d-193d-448e-b1f7-88519b517bf1\\COMPLETION.json",
+      "bytes": 2439,
+      "sha256": "d442cd5a332d99449ecf616877dd1efe32ae16e3394c91e0b6cabd7ad7ff4380"
+    }
+  },
+  "expected_new_full_tests": 1996,
+  "new_tests": {
+    "001": 12,
+    "002": 21
+  },
+  "new_complete_SDK_at_this_record": "NOT RUN — requires forthcoming clean committed fixed SHA",
+  "new_dual_OS_original_ZIPs_at_this_record": "NOT RUN",
+  "new_real_browser_at_this_record": "NOT RUN",
+  "independent_G2_fix_recheck": "PENDING",
+  "accepted": false,
+  "released": false,
+  "merged": false,
+  "tagged": false,
+  "deployed": false,
+  "real_orders": false,
+  "formal_Test": "NOT RUN",
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "historical_host_boundary": "Existing accepted package/lock/oldRef/replay scope only",
+  "raw_failure_rule": "Original reviewer failures, developer RED, missing-altair environment failure and utility limitations remain original; no old evidence rewritten",
+  "received_audit_scan": {
+    "recorded_utc": "2026-10-25T11:11:59.558151+00:00",
+    "original_failure": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\actual-command-precommit-exact-Git-repair-archive-and-scan-31d2f040-21d5-433a-b8d1-f465a4701754\\COMPLETION.json",
+      "bytes": 2299,
+      "sha256": "6ae595afe40ffbb99f78c5e7d600beed7cef1a5f2ecb536efd70248c6bf505ef"
+    },
+    "original_result": "FAIL — 12 generic-api-key matches retained unchanged",
+    "developer_stdlib_provenance": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-g2-repairs-ec6bfce-20261025\\RECEIVED_SCAN_PUBLIC_DIGEST_ORIGINS_367aba53-cd28-4374-a937-ed4f1ed108dd\\PROVENANCE.json",
+      "bytes": 43128,
+      "sha256": "329d747199977fa99e12ca816c470f7a9367c428357dd65ed7743e67b8225a8f"
+    },
+    "distinct_public_sha256_identifiers": 7,
+    "unidentified_values": 0,
+    "scope": "Only exact public SHA256 plus exact original report plus generic-api-key AND exceptions; original 32 received files, protected parent and scanner pins unchanged; old17 controls retained and additional56 required. No directory or other-rule exemptions.",
+    "repository_proof": "scan-policy/PROOF.json",
+    "new_fixed_SDK_scan_status": "NOT RUN at precommit record"
+  }
+}

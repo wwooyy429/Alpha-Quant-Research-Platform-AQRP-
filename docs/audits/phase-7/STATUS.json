@@ -1,0 +1,120 @@
+{
+  "scope": "Phase7 G2 BLOCKED on ec6bfce; authorized restricted repair; new fixed implementation review pending",
+  "phase": 7,
+  "requirements": 5,
+  "tiers": {
+    "MVP": 3,
+    "Competition Ready": 2
+  },
+  "g1": "PLAN PASS WITH CONDITIONS",
+  "implementation": "AUTHORIZED / IMPLEMENTING",
+  "g2": "BLOCKED on ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "accepted": false,
+  "released": false,
+  "real_windows_isolation": "DEFERRED / NOT VERIFIED",
+  "WI-R2-001": "DEFERRED / NOT VERIFIED",
+  "WI-R2-002": "DEFERRED / NOT VERIFIED",
+  "formal_test": "NOT RUN",
+  "financial_approval": "NONE",
+  "specific_competition": "EXTERNAL_DEPENDENCY_BLOCKED",
+  "deployment": "NOT AUTHORIZED / NOT PERFORMED",
+  "historical_host": "NOT VERIFIED; existing restricted reproduction boundary retained",
+  "phase6_released_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "proposed_optional_input": "Accepted C-P7-004: P3 full19 / P5 predeclared10; absent field retains same-bundle default layout",
+  "design_financial_analysis": "Independent-of-product stdlib finite model768 paths/109350 developer checks, not product tests",
+  "current": "IMPLEMENTING_RESTRICTED_ENGINEERING",
+  "authorization": "IMPLEMENTATION_AUTHORIZATION.json",
+  "plan_authorized": true,
+  "implementation_authorized": true,
+  "last_reviewed_plan_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+  "last_review_verdict": "PLAN PASS WITH CONDITIONS",
+  "findings": {
+    "WORK-P7-G1-001": "CLOSED_DESIGN",
+    "WORK-P7-G1-002": "CLOSED_DESIGN"
+  },
+  "current_developer_action": "Implement five authorized requirements with full original evidence; fixed new implementation required for independent G2",
+  "independent_audit_record": "g1-645049a/EVIDENCE_INDEX.json",
+  "developer_response": "g1-645049a/DEVELOPER_RESPONSE.md",
+  "user_C_P7_acceptance": "EXPLICITLY_ACCEPTED C-P7-001..004 incl revised003 on2026-10-25",
+  "new_blocking_design_findings": 0,
+  "current_review_package": "IMPLEMENTATION_REVIEW_PACKAGE.md",
+  "pending_user_conditions": [],
+  "pending_user_conditions_record": "g1-645049a/PENDING_USER_CONDITIONS.json",
+  "implementation_verified": false,
+  "independent_design_evidence": {
+    "static_candidates": 36,
+    "abstract_assertions": 394,
+    "product_tests_executed": 0,
+    "actual_P7_browser_or_new_SDK": false
+  },
+  "H_CI": "Official dual-OS success, existing P6 regression only",
+  "H_official_original_ZIPs": "NOT VERIFIED",
+  "fixed_review_lock": "New implementation fixed SHA supplied by unique PR10 AQRP_FIXED_REVIEW_SHA after committed clean validation; old H is independent G1 only",
+  "archival_HEAD_scope": "Authorized implementation; future fixed implementation SHA requires independent G2; no release permission",
+  "implementation_precision_record": "g1-645049a/IMPLEMENTATION_OBLIGATIONS.md",
+  "implementation_authorization": "IMPLEMENTATION_AUTHORIZATION.json",
+  "implementation_verified_scope": "Independent G2 PENDING; developer execution evidence recorded separately",
+  "developer_findings": {
+    "MIG-001": {
+      "status": "FIX_IMPLEMENTED / SELF_TEST_IN_PROGRESS / INDEPENDENT_G2_PENDING",
+      "severity": "High (developer classification)",
+      "evidence": "self-review/MIG-001/EVIDENCE_INDEX.json",
+      "affected_bundle": "d9d020a80111e2f679e3bb00b1151d6961e28e9bf0569c80cd03169352e77f4a",
+      "original_actual_probe_commit": "b6ed148ba73e478ebc4b6581403714fb39781316",
+      "same_product_bundle_commit": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
+      "prior_local_872_SDK": "ABORTED_FOR_CONFIRMED_PRODUCT_FIX_NOT_A_PASS",
+      "replacement_validation": "05fc assertions passed locally and on both OS, but coverage gate failed; next fixed complete SDK/CI/browser required",
+      "cancelled_prefix_evidence": "self-review/MIG-001/cancelled-prefix/EVIDENCE_INDEX.json",
+      "focused_self_tests": "49 targeted tests passed on e610b9f source snapshot (42 new integrity controls plus7 healthy import/selection/replay regressions); not fullSDK or independent G2"
+    },
+    "COMPAT-001": {
+      "severity": "Medium (developer classification)",
+      "status": "FIX_IMPLEMENTED / TARGETED_SELF_TEST_PASS / COMPLETE_FIXED_VALIDATION_PENDING / INDEPENDENT_G2_PENDING",
+      "evidence": "self-review/COMPAT-001/EVIDENCE_INDEX.json",
+      "actual_installed_probe_sha": "e610b9fced33ccc6e13f76e0ccce0905f0560197",
+      "original_assertion": "UNCHANGED",
+      "prior_local_e610_SDK": "ABORTED_AFTER_CONFIRMED_PUBLIC_ERROR_REGRESSION; ORIGINAL_RAW_PRESERVED; NOT_A_PASS",
+      "replacement_validation": "Original old regression and all1892 tests passed locally/bothOS on05fc; complete SDK still failed coverage; next fixed complete validation required",
+      "targeted_self_tests": 7
+    },
+    "COV-001": {
+      "status": "MEANINGFUL_TESTS_ADDED / FRESH_FIXED_FULL_SDK_AND_DUAL_OS_REQUIRED / INDEPENDENT_G2_PENDING",
+      "original_fixed_sha": "05fc498bfcfc703eb58f14eb7107ed483c30fbe3",
+      "original_result": "LOCAL AND BOTH OFFICIAL OS: 1892 test assertions passed, four required module coverage gates failed; complete SDK FAILED",
+      "production_bundle_unchanged": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+      "evidence": "self-review/COV-001/DEVELOPER_RESPONSE.json",
+      "replacement_validation": "6fc actual local1962 and both official OS1962 original coverage gates passed, but overall SDK failed late scanner; new full fixed SDK required"
+    },
+    "SEC-001": {
+      "status": "CORRECTION_IMPLEMENTED / FRESH_FULL_FIXED_VALIDATION_REQUIRED / INDEPENDENT_G2_PENDING",
+      "original_fixed_sha": "6fc3e74fc44f5e2faafa25e9f2b7d072accd17a8",
+      "evidence": "self-review/SEC-001/DEVELOPER_RESPONSE.json",
+      "original_sdk_result": "FAILED_NOT_PASS: late9finding scanner blocker after1962 assertions/coverage/10nonbrowser PASS",
+      "new_effective_policy": "Explicit exact-path/public-identifier child; original parent/scanner unchanged; inherited known P1 runtime limitation disclosed",
+      "fresh_validation": "New full40SHA SDK +dualOS originalZIP +realbrowser mandatory; independentG2 PENDING"
+    },
+    "HAR-001": {
+      "status": "EXACT_CONTRACT_ASSERTION_CORRECTED / FRESH_FULL_FIXED_VALIDATION_REQUIRED / INDEPENDENT_G2_PENDING",
+      "original_fixed_sha": "e5e0b100680caa59706d7c3341988d9556b1f254",
+      "original_actual_result": "Native complete SDK and both official OS1962 passed; real browser cancel completion assertion failed, browser protocol incomplete and NOT G2 READY",
+      "normative_basis": "Frozen G1 COMMON_BUDGET_ADMISSION_DESIGN section3, BUD-012/BUD-027 require ADMISSION_IDEMPOTENCY_CONFLICT for changed request on a bound managed key",
+      "correction": "Exact cancellation-harness expectation plus actual managed zero-R cancelled-replay branch regression; production code and old standalone semantics unchanged",
+      "evidence": "ENGINEERING_CODE_REVIEW.md HAR-001; original failed command/GUI/worker logs and immutable ZIP recorded in external fixed-version evidence index",
+      "original_stderr_sha256": "5818ae184dbcd8f529158ac9914d1ad55f2558c88c2187f80bfdb5aff0aff899",
+      "fresh_validation": "New full40SHA SDK + dualOS originalZIP + entire realbrowser protocol mandatory; headless unit browser seam is NOT real browser"
+    }
+  },
+  "repair_version": "0.7.0.dev2",
+  "repair_status": "DEVELOPER_FOCUSED_QA_COMPLETE / NEW_FIXED_SDK_CI_BROWSER_PENDING",
+  "last_independent_review": {
+    "fixed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+    "verdict": "G2 BLOCKED",
+    "report": "g2-ec6bfce/received/REPORT.txt",
+    "findings": {
+      "WORK-P7-G2-001": "OPEN / PENDING INDEPENDENT FIX VERIFICATION",
+      "WORK-P7-G2-002": "OPEN / PENDING INDEPENDENT FIX VERIFICATION"
+    }
+  },
+  "repair_precommit_evidence": "repairs-g2-001-002/DEVELOPER_VERIFICATION.json",
+  "expected_new_complete_tests": 1996
+}

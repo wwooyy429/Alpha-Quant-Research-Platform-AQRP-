@@ -1,0 +1,9 @@
+{
+  "scope": "Developer design helper error retained as a tool-transcript description, NOT exact raw stderr file and NOT a product test",
+  "candidate_output_existed_after_failed_attempt": false,
+  "observed_error": "TypeError: decimal.Decimal object is not iterable",
+  "location": "corr helper -> mean(a) after comprehension target shadowed its list input",
+  "correction": "Compute am=mean(a), bm=mean(b) before centered comprehensions; actual successful source/command/stdout/exit in MAIN_REFERENCE_METHOD.md and MAIN_REFERENCE_EXECUTION.json",
+  "p7_product_test_count": 0,
+  "independent_audit_assertion_count": 0
+}

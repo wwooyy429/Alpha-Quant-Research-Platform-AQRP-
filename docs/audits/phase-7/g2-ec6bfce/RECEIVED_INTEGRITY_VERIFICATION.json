@@ -1,0 +1,314 @@
+{
+  "schema": "developer-received-independent-G2-evidence-integrity/1",
+  "fixed_review_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "created_utc": "2026-10-25T10:04:28.768917+00:00",
+  "actor": "Codex developer receipt verification; not independent G2 re-execution",
+  "original_reviewer": "Primary GPT Work",
+  "original_verdict": "G2 BLOCKED",
+  "original_findings": {
+    "WORK-P7-G2-001": "OPEN Medium blocking",
+    "WORK-P7-G2-002": "OPEN High blocking"
+  },
+  "result": "RECEIVED_BYTES_AND_SEALED_ZIP_INTEGRITY_VERIFIED",
+  "seal": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\SEAL.json",
+    "bytes": 3037,
+    "sha256": "31833d10611b373ad61298294b20186461c5db50deff650b45ed12ccef885b83"
+  },
+  "sealed_file_refs_verified": [
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\REPORT.txt",
+      "bytes": 22923,
+      "sha256": "a341ccaa3e53a9ab64df3ef2e3aeb3d2c2db31aa9052566f94ed07d3e7435202"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\DEVELOPER_HANDOFF.txt",
+      "bytes": 2598,
+      "sha256": "6c831f30e432668a5c54f36359165bd7a82f80afb4210d8a7d7f52f3f778d2f7"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\FINDINGS.json",
+      "bytes": 4058,
+      "sha256": "cebe621dded68ac53ec6e4fe9ed8856225a0878ed85383da94726acbc454d78d"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\FILE_MANIFEST.json",
+      "bytes": 158672,
+      "sha256": "4e33c69b492f8b45ba4afe7fee894b70f169b39c08f1aade1bb8d833df2a5e66"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\EVIDENCE_PACKAGE.zip",
+      "bytes": 25743393,
+      "sha256": "f5da1fedf5a5387172a1e48512bc5145aa1da370d56859a1677f766cdfada3fa"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_CLEAN_SDK_RAW.zip",
+      "bytes": 242753522,
+      "sha256": "9f4d1fbdf333f443b4832220490ed9234002d267866718fe2514e85b4517834b"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_COUNTEREXAMPLES_RAW.zip",
+      "bytes": 1044760,
+      "sha256": "5a1644945c780dcbb396bc5ff65b964651de2378033d5fdbd979a1fc02dbf4ca"
+    }
+  ],
+  "archives": [
+    {
+      "archive_role": "audit_package",
+      "archive": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\EVIDENCE_PACKAGE.zip",
+        "bytes": 25743393,
+        "sha256": "f5da1fedf5a5387172a1e48512bc5145aa1da370d56859a1677f766cdfada3fa"
+      },
+      "members": 794,
+      "full_CRC_length_SHA_streamed": true,
+      "member_manifest": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\RECEIVE_G2_EC6BFCE_b65bcd96-9edb-4fe6-856f-7d7dc26bd073\\audit_package_MEMBER_MANIFEST.json",
+        "bytes": 176539,
+        "sha256": "430aef79efdcaa3826002b80e3947caddf709ff107ad7c9e3e8c2411480abebd"
+      },
+      "checks": {
+        "exact_manifest_rows": 793,
+        "manifest_self_addition_only": true,
+        "reviewed_final_source": {
+          "fixed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+          "HEAD": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+          "git_status": "",
+          "candidate_unchanged_by_reviewer": true,
+          "utc": "2026-10-25T09:57:21.236044+00:00"
+        }
+      }
+    },
+    {
+      "archive_role": "own_counterexamples_raw",
+      "archive": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_COUNTEREXAMPLES_RAW.zip",
+        "bytes": 1044760,
+        "sha256": "5a1644945c780dcbb396bc5ff65b964651de2378033d5fdbd979a1fc02dbf4ca"
+      },
+      "members": 475,
+      "full_CRC_length_SHA_streamed": true,
+      "member_manifest": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\RECEIVE_G2_EC6BFCE_b65bcd96-9edb-4fe6-856f-7d7dc26bd073\\own_counterexamples_raw_MEMBER_MANIFEST.json",
+        "bytes": 129213,
+        "sha256": "92dfee53581525cd749b944af7a4b2eef160d1462b950232606fecbc30cd84d6"
+      },
+      "checks": {
+        "exact_raw_fixture_rows": 474,
+        "raw_manifest_schema_source": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+        "roots": [
+          [
+            "PRIMARY_POLLUTION_REPRODUCTION",
+            "E:\\AQ7\\primary-pollution-91dad3e9"
+          ],
+          [
+            "PRIMARY_FAILED_HISTORY_REPRODUCTION",
+            "E:\\AQ7\\primary-failed-history-86cfa8d8"
+          ],
+          [
+            "PRIMARY_BROWSER_RESULT",
+            "E:\\AQ7\\primary-browser-8fbd1408"
+          ]
+        ]
+      }
+    },
+    {
+      "archive_role": "own_sdk_raw",
+      "archive": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_CLEAN_SDK_RAW.zip",
+        "bytes": 242753522,
+        "sha256": "9f4d1fbdf333f443b4832220490ed9234002d267866718fe2514e85b4517834b"
+      },
+      "members": 27303,
+      "full_CRC_length_SHA_streamed": true,
+      "member_manifest": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\RECEIVE_G2_EC6BFCE_b65bcd96-9edb-4fe6-856f-7d7dc26bd073\\own_sdk_raw_MEMBER_MANIFEST.json",
+        "bytes": 7247993,
+        "sha256": "343817bed8d0de2c748b2ea476e23097cffa021d5d8ccc18eac6a099b4835a31"
+      },
+      "checks": {
+        "environment_source": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+        "environment_complete_scope": "Complete clean SDK and P7 non-browser protocol; actual browser and overall E2E recorded separately",
+        "actual_browser_complete": false,
+        "full_e2e_complete": false,
+        "Junit": {
+          "tests": 1963,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "limits": "Outer sealed identity and every member CRC/length/SHA were checked; this receiver did not rerun SDK or independently redo its entire provenance/selection checker."
+      }
+    }
+  ],
+  "selected_byte_exact_repository_originals": [
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\REPORT.txt",
+      "bytes": 22923,
+      "sha256": "a341ccaa3e53a9ab64df3ef2e3aeb3d2c2db31aa9052566f94ed07d3e7435202",
+      "repository_target": "received/REPORT.txt"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\DEVELOPER_HANDOFF.txt",
+      "bytes": 2598,
+      "sha256": "6c831f30e432668a5c54f36359165bd7a82f80afb4210d8a7d7f52f3f778d2f7",
+      "repository_target": "received/DEVELOPER_HANDOFF.txt"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\FINDINGS.json",
+      "bytes": 4058,
+      "sha256": "cebe621dded68ac53ec6e4fe9ed8856225a0878ed85383da94726acbc454d78d",
+      "repository_target": "received/FINDINGS.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\SEAL.json",
+      "bytes": 3037,
+      "sha256": "31833d10611b373ad61298294b20186461c5db50deff650b45ed12ccef885b83",
+      "repository_target": "received/SEAL.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\FILE_MANIFEST.json",
+      "bytes": 158672,
+      "sha256": "4e33c69b492f8b45ba4afe7fee894b70f169b39c08f1aade1bb8d833df2a5e66",
+      "repository_target": "received/FILE_MANIFEST.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary_pollution_probe.py",
+      "bytes": 4717,
+      "sha256": "21af0f2cc948f046e0dd38da9918608cf1b3a6d79d78bc2382071a800b46b881",
+      "repository_target": "received/primary_pollution_probe.py"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary_failed_history_probe.py",
+      "bytes": 4849,
+      "sha256": "0dd750cb587de277bcbcace611e741945967ccc759a7c8aa8be0841ed88f99fd",
+      "repository_target": "received/primary_failed_history_probe.py"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_POLLUTION_REPRODUCTION.json",
+      "bytes": 96397,
+      "sha256": "bc516147b4ac5305f3192925e69907f7b0658cee53c5920811e3446842222026",
+      "repository_target": "received/PRIMARY_POLLUTION_REPRODUCTION.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+      "bytes": 414819,
+      "sha256": "6edae8314d52b2680a662009f8092be0a01b665f92e7cdb72fd0ac1414f6e9d8",
+      "repository_target": "received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\ORIGINAL_PROBE_INPUTS.json",
+      "bytes": 297,
+      "sha256": "5e48563dbe8d0ef0298bf7e1a4dded523cce373b820eda5aae8d198dd3570f82",
+      "repository_target": "received/ORIGINAL_PROBE_INPUTS.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\ORIGINAL_PROBE_SOURCES.json",
+      "bytes": 1744,
+      "sha256": "5e111e3d4946942354f8b21391c679731dad3df83fa9f7a8c8990beb5f3fadda",
+      "repository_target": "received/ORIGINAL_PROBE_SOURCES.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_HELPER_LIMITS.txt",
+      "bytes": 3608,
+      "sha256": "c7236bf0f89798925b6e1f488cb9052fe9fd53601589d703e81f1837db687735",
+      "repository_target": "received/PRIMARY_HELPER_LIMITS.txt"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\FINAL_SOURCE_STATE.json",
+      "bytes": 231,
+      "sha256": "5d4a646b115131348750d4601c637909fadcaac96edee33b17f37b79fa67eab3",
+      "repository_target": "received/FINAL_SOURCE_STATE.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\RAW_FIXTURE_RECEIPT.json",
+      "bytes": 474,
+      "sha256": "26508cc3c6a744d7ae49b3b30b74b33bec3b6846e068ce3ec7d62178f682e72b",
+      "repository_target": "received/RAW_FIXTURE_RECEIPT.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary-pollution.command.json",
+      "bytes": 549,
+      "sha256": "4578724295f7173005755eba8e5803eddb52add315f3d8d3d6fe74542925fc62",
+      "repository_target": "received/primary-pollution.command.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary-pollution.stdout.log",
+      "bytes": 324,
+      "sha256": "a83969da0231e70d433b5413020b7c5dca60fd2d758de6498ae8d98d97e04ddb",
+      "repository_target": "received/primary-pollution.stdout.log"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary-pollution.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repository_target": "received/primary-pollution.stderr.log"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary-failed-history.command.json",
+      "bytes": 554,
+      "sha256": "b2173b2151d156745692126a1826cc27e2188e1ce8288a57ff05c17040825cb8",
+      "repository_target": "received/primary-failed-history.command.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary-failed-history.stdout.log",
+      "bytes": 255,
+      "sha256": "f7e5974cce07fc36813785bbe699034f11fa3734b35a534c703aa60e3e97d83c",
+      "repository_target": "received/primary-failed-history.stdout.log"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\primary-failed-history.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repository_target": "received/primary-failed-history.stderr.log"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\pollution-legacy-cli.command.json",
+      "bytes": 550,
+      "sha256": "055fa47bd269dfacf73508c8da1625a4f991f660a043d69cfa20c885f5bfa5df",
+      "repository_target": "received/pollution-legacy-cli.command.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\pollution-legacy-cli.stdout.log",
+      "bytes": 105,
+      "sha256": "911a439f9cb55125ddc7ec77580b440515f9254f27972d42117906bd982bf5df",
+      "repository_target": "received/pollution-legacy-cli.stdout.log"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\pollution-legacy-cli.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repository_target": "received/pollution-legacy-cli.stderr.log"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\healthy-original-last-transaction.json",
+      "bytes": 32229,
+      "sha256": "212f989a1562b4c1f29cab4648a1a6bd5a741785ab7209bb62c0ea72c4760eaf",
+      "repository_target": "received/healthy-original-last-transaction.json"
+    },
+    {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\corrupt_transaction-original-last-transaction.json",
+      "bytes": 32229,
+      "sha256": "212f989a1562b4c1f29cab4648a1a6bd5a741785ab7209bb62c0ea72c4760eaf",
+      "repository_target": "received/corrupt_transaction-original-last-transaction.json"
+    }
+  ],
+  "verification_source": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\RECEIVE_G2_EC6BFCE_b65bcd96-9edb-4fe6-856f-7d7dc26bd073\\verify_received_review.py",
+    "bytes": 7576,
+    "sha256": "9ebcfc9dbaec61af50d5eedbf9374980bead87ba35896c17f4aeb6a5e04c8fbd"
+  },
+  "limits": [
+    "No probe/SDK/product/UI/API was executed by receiving agent. Original independent outcomes are GPT Work evidence, not developer reruns.",
+    "Original audit ZIP/raw fixtures/own SDK ZIP remain outside Git at sealed original locations; no giant ZIP/generated runtime is copied into repository.",
+    "CRC and SHA verify received artifact bytes; they do not independently prove host ACL isolation, financial approval or correctness of every possible program path.",
+    "Both findings remain OPEN until fixed-version independent GPT Work recheck; original successful normal-path tests do not close them."
+  ],
+  "unchanged_limits": {
+    "WI-R2-001/002": "DEFERRED / NOT VERIFIED",
+    "formal_Test": "NOT RUN",
+    "financial_approval": "NONE",
+    "historical_host_reproduction": "NOT VERIFIED beyond accepted package/lock/oldRef/replay scope"
+  },
+  "independent_reexecution_by_receiver": false
+}

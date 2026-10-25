@@ -1,0 +1,177 @@
+{
+  "status": "DESIGN_CANDIDATE_PENDING_G1_NOT_EXECUTED",
+  "finding": "WORK-P7-G1-002",
+  "source_plan_sha": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+  "future_runtime_factor_ref": "Resolve and freeze actual complete Ref from the later independently reviewed P7 implementation package; no invented hash or baseline bundle substitution",
+  "immutable_main_protocol": "Original MAIN-12 actor allocation, exact data and answers unchanged; 12 consumed research units; cancellation/failure never refunded",
+  "risk_fixture": {
+    "case_id": "BR-RISK-ORIGINAL-01",
+    "purpose": "ORIGINAL_P6_LEGITIMATE_P4_RISK_REJECTION_REGRESSION",
+    "original_test": "tests/ui/test_task_core.py::test_legitimate_risk_rejection_is_task_failure_with_original_p5_result",
+    "preregistration_time": "Both fixed MAIN-12 and original negative fixture purposes, roots, data identities, campaigns and attempt allocations frozen before observing any output",
+    "root_policy": "One specifically bound independently declared original regression fixture root, never created/switched after MAIN-12 failure and never used to replace or increase MAIN-12 successes",
+    "data_policy": "Same original public SYN_U recipe and original P6 risk fixture semantics. Trusted initialization publishes actual inputs beneath Wneg itself; record W and Wneg actual snapshot_id/manifest/exposure/coverage/canonical data_hash separately. Equal semantic recipe does not imply equal UUID/manifest/data_hash or bytes; only actually verified equal members/digests may be so labelled. No financial independence claim.",
+    "campaign_id": "p7-original-risk-1",
+    "defaults_revision": 0,
+    "defaults_payload": {},
+    "protocol_slot_limit": 1,
+    "product_scope_budget_ceiling_unchanged": 12,
+    "hard_cap_requirement": "Shared trusted admission authority binds sealed negative protocol plan to purpose/root/data/variant and grants one slot only; second fresh attempt refused, not merely a prose instruction. Failure/cancel consumes slot permanently; same idempotency key returns original attempt. No product code executed or cap implementation supplied in this draft.",
+    "browser_entry": "Strategy Backtest / Risk overrides (existing schema) / Submit engineering pipeline; existing freeze -> submit -> start_worker path",
+    "draft_template": {
+      "kind": "engineering_pipeline",
+      "factor_ids": [
+        "momentum"
+      ],
+      "universe_id": "SYN_U",
+      "campaign_id": "p7-original-risk-1",
+      "start": "2024-01-06",
+      "end": "2024-01-06",
+      "lookback": 2,
+      "horizons": [
+        1
+      ],
+      "neutralize": true,
+      "weights_percent": {
+        "momentum": "100"
+      },
+      "initial_cash": "1000",
+      "fee_budget": "10",
+      "policy": {
+        "top_k": 1
+      },
+      "constraints": {
+        "gross_max": "0"
+      }
+    },
+    "direction_control": "+1; UI raw draft omits direction at defaults revision0 while effective research direction remains +1; record exact actual bytes, do not fake raw equality",
+    "new_research_units": 1,
+    "expected": {
+      "admission": "accepted within sealed one-slot fixture, not over budget",
+      "R_manifest": "SUCCEEDED",
+      "R_slot": "VERIFIED_SUCCESS",
+      "P4_result": "REJECTED",
+      "P4_manifest": "FAILED",
+      "P4_slot": "VERIFIED_FAILURE",
+      "risk_passed": false,
+      "failed_risk_check": "GROSS",
+      "B_result": "SUCCEEDED",
+      "B_slot": "VERIFIED_SUCCESS",
+      "fills": [],
+      "cash_total": "1000",
+      "equity": "1000",
+      "positions": "All asset quantity fields are zero; keep full original asset map and marks, do not require an empty object",
+      "Task": "FAILED",
+      "Task_error": "REQUIRED_STAGE_REJECTED",
+      "financial_approval": "NONE"
+    },
+    "not_counted_as": [
+      "MAIN-12 successful actor",
+      "financial test",
+      "formal Test",
+      "statistically independent sample",
+      "budget refusal control"
+    ],
+    "input_root_policy": {
+      "main_root": "W: actual predeclared canonical real workspace, immutable main inputs",
+      "negative_root": "Wneg: independently predeclared original negative fixture canonical real workspace, never created after observing main failure or budget exhaustion",
+      "negative_inputs": "Use trusted original _engineering_inputs/initialize process to publish below Wneg/inputs/source, Wneg/inputs/pools, Wneg/inputs/pool-exposures; coverage and catalog bind actual Wneg snapshot/paths and identity",
+      "same_unique_workspace_requirement": "All request inputs and research output/ledger/admission roots resolved to the same unique Wneg for this request; pointing to physical W inputs with Wneg output is refused",
+      "reuse_allowed_only_if": "Explicitly reviewed trusted publication can preserve and verify eligible exact original bytes/manifest/IDs and publish them beneath Wneg own managed input root; no catalog pointer to W or rewriting original IDs/manifests to fake equivalence",
+      "record_actual_differences": "Fresh initialization may change snapshot_id and all dependent hashes; record exact actual values and member comparison/provenance, never invent future identities or require hash equality without proof",
+      "preregister_both_before_outputs": "Freeze canonical roots, own actual catalog/manifests/data IDs, provenance recipe SHA, allowed member reuse, campaign/variant/purpose and one-slot policy before any current result",
+      "private_temporaries": "Original P1 private temporary-directory semantics preserved; no account/ACL/deployment authorization",
+      "main_immutability": "Do not change W input/catalog/manifests/admission or main actor allocation",
+      "rejection_controls": [
+        {
+          "id": "ROOT-MIX-01",
+          "input": "Physical P1 snapshot/exposures under W with Wneg research output/admission root",
+          "expected": "Reject before new research admission/trial/run; both root counters and originals unchanged; not a P4 risk rejection"
+        },
+        {
+          "id": "ROOT-MIX-02",
+          "input": "Physical Wneg inputs with W research output; link/alias variants of cross-root paths",
+          "expected": "Reject before admission; actual canonical ancestor validation required; original Task path guard may emit CATALOG_INPUT_OUTSIDE_WORKSPACE; shared legacy error frozen in reviewed design"
+        },
+        {
+          "id": "ROOT-SAME-01",
+          "input": "Trusted Wneg own inputs/catalog/canonical data ID and Wneg own outputs/admission with one allowed preregistered risk request",
+          "expected": "Accepted exactly once and reaches real P4 GROSS risk rejection; cross-root failure cannot replace this positive reachability control"
+        }
+      ]
+    }
+  },
+  "cancel_replay": {
+    "case_id": "BR-CANCEL-REPLAY-01",
+    "workspace": "Original MAIN-12 root and data identity retained",
+    "source": "Preselected successful MAIN-12 Momentum main-layer actor; actual ID appended to fixed mapping only after that actor exists, never output-selected",
+    "draft_template": {
+      "kind": "replay",
+      "source_task": "ACTUAL_PRESELECTED_SOURCE_TASK_UUID"
+    },
+    "idempotency_key": "p7-browser-cancel-replay-01",
+    "queue_preparer": "Trusted SDK freeze+submit only; neither work nor start_worker invoked; this is not claimed as browser submission",
+    "browser_entry": "Experiment Manager selects exact QUEUED replay task -> Cancel safely",
+    "precondition": "No background dispatcher/auto-worker; UI picker/status/Refresh do not start worker; slots empty before click",
+    "new_research_units": 0,
+    "new_campaign_attempts": 0,
+    "new_research_trials": 0,
+    "expected": {
+      "Task": "CANCELLED",
+      "cancel_requested": true,
+      "slots": {},
+      "R": "NOT_CREATED",
+      "P4": "NOT_CREATED",
+      "B": "NOT_CREATED",
+      "E": "NOT_CREATED",
+      "source_bytes": "UNCHANGED",
+      "main_budget_consumed": 12
+    },
+    "controls": [
+      "After browser cancellation real worker CLI work returns same terminal CANCELLED without child/trial/finance creation",
+      "start_worker returns ALREADY_SUBMITTED, not enough without real worker work no-op control",
+      "Same idempotency key and same request returns same canceled Task; changed request same key refused"
+    ],
+    "coverage_limit": "Real queued cancellation only; do not claim browser post-commit cancellation. Existing SDK transaction/corruption regression remains mandatory."
+  },
+  "normal_replay": {
+    "case_id": "BR-REPLAY-01",
+    "workspace": "Same MAIN-12 original root",
+    "source": "Same preselected verified MAIN-12 Momentum main actor",
+    "browser_entry": "Experiment Manager / Replay verified P5 result; real UI submit and worker launch",
+    "new_research_units": 0,
+    "new_campaign_attempts": 0,
+    "new_research_trials": 0,
+    "expected": {
+      "Task": "SUCCEEDED",
+      "replay_status": "NUMERICAL_REPLAY_VERIFIED",
+      "E": "VERIFIED_SUCCESS",
+      "P4_count": 10,
+      "P4_states": "ALL_VERIFIED_SUCCESS",
+      "comparison_equal": true,
+      "source_bytes": "UNCHANGED",
+      "main_budget_consumed": 12
+    },
+    "same_bundle_only": true,
+    "not_counted_as": "Additional successful research actor; zero new research is not zero execution"
+  },
+  "evidence_requirements": [
+    "Both root/purpose/data/campaign/variant/slot plans frozen before output",
+    "Both real canonical W/Wneg input and output inventories; actual separate catalog/snapshot/exposure/coverage/data hashes, source recipe SHA and eligible per-member byte equality/differences; ROOT-MIX pre-admission rejection with unchanged counters and originals",
+    "Actual request/catalog/defaults/source/package/locks/environment raw bytes and hashes",
+    "Admission/trial/Task SQLite/events/directory inventories before and after every case",
+    "Actual R/P4/B/E manifests/results and parent bindings; whole transaction and financial reconstruction",
+    "Real browser AX/screenshots/operations/download bytes with same task/run IDs and server process/root binding",
+    "Worker exact argv/pid/UTC/interpreter/exitcode and original logs",
+    "Per-member size/SHA256, manifest self boundary, outer ZIP hash; failed attempts retained"
+  ],
+  "independent_audit_state": "OPEN until GPT Work reviews actual new fixed plan; developer cannot close own finding",
+  "restrictions": [
+    "G1 design only",
+    "No workers, server, browser or product executions performed by this drafting task",
+    "No code/locks/old answers changes",
+    "No merge/tag/deployment/live/formal Test/financial approval",
+    "WI-R2-001/002 DEFERRED / NOT VERIFIED"
+  ],
+  "static_revision_note": "Physical-root clarification only; no product or initialization executed"
+}

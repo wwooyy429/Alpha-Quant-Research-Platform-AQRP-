@@ -1,0 +1,11 @@
+开发 Codex：GPT Work 已对 PR #10 固定实现 ec6bfcedc0c424b6fa3e817c9a094385bd971d6f 独立复核，本轮 G2 BLOCKED，两项发现 OPEN，不构成阶段验收或发布许可。
+
+WORK-P7-G2-001（Medium blocking，experiments/ledger.py:666–679）：三个全新独立工程root中，先预登记campaign A/B、提交并在R前取消A，再首次运行B，预算均为2且repeat_of均为空；旧公开API/真实旧CLI却输出contaminated=false、cross_campaign_data_access=false，而Task正确保留prior_other_campaign_attempts=1和污染。请使全部受管入口从共同authority统一导出先前已消耗但未产生TRIAL的跨campaign/家族历史，不依赖只有Task才有的campaign_control，不丢失重复/失败/取消证据，不退款或重置预算。补齐三独立root入口对照、R前取消/失败、反向入口、并发与恢复回归。
+
+WORK-P7-G2-002（High blocking，services/task_state.py:489–510）：真实风险拒绝形成FAILED父Task、SUCCEEDED B；仅在B最后物理commit尾部加一个空格，financial_result已正确报TRANSACTION_CHAIN_CORRUPTED，但声明的同包旧控制schema迁移仍成功并允许新Task入队。七张原业务表和原工件未被修复或替换。请对所有存在的B/E及可信source验证完整物理事务前缀并纳入迁移清单，覆盖FAILED父Task；在新anchor/grant前失败关闭，保留合法P4拒绝和原未知财务失败语义。补真实FAILED父Task的healthy/corrupt、FAILED replay/source、缺失/截断事务及原SUCCEEDED/CANCELLED回归，不以强制整Task成功证明替代合法失败历史的完整性检查。
+
+具体脚本、原始命令/输出、独立结果和修复验收要求见本轮REPORT.txt、FINDINGS.json及证据包。正常路径的既有通过数、设计CLOSED_DESIGN及已归档自测不关闭这两项新增发现；不得把本轮反例结论回写旧成功证据。
+
+修复后请更新PR #10唯一AQRP_FIXED_REVIEW_SHA为新完整40位提交，提交该固定版本新的干净完整SDK、双系统官方CI原ZIP/API身份、适用真实浏览器/全部协议与新增反例回归、原始失败记录及封存哈希，交GPT Work确认关闭。保留旧报告、原始反例和所有历史失败。
+
+继续维持WI-R2-001/002及真实Windows隔离DEFERRED / NOT VERIFIED；正式Test不运行、正式入口失败关闭、金融批准NONE、完整历史宿主受限边界不变。当前不启用账户、不改真实ACL/服务/调度、不合并、不打标签、不部署、不实盘；本说明不增加真实源/正式Test或金融批准权限。

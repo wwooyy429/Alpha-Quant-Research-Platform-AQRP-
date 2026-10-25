@@ -1,0 +1,91 @@
+{
+  "schema": "p7-g1-pending-user-conditions/1",
+  "classification": "DEVELOPER_ARCHIVAL_SCOPE_DRAFT_NOT_USER_APPROVAL",
+  "reviewed_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+  "independent_verdict": "PLAN PASS WITH CONDITIONS",
+  "finding_status": {
+    "WORK-P7-G1-001": "CLOSED_DESIGN",
+    "WORK-P7-G1-002": "CLOSED_DESIGN"
+  },
+  "new_blocking_design_findings": 0,
+  "conditions": [
+    {
+      "id": "C-P7-001",
+      "title": "受限工程最终验收与外部验收分列",
+      "acceptance_text": "仅以受限工程范围交付可重建安装、实际受控本地最终运行、操作手册与部署边界。真实部署及最终外部验收另列，不能把工程PASS当作原完整部署义务已经完成。",
+      "design_sources": [
+        "docs/audits/phase-7/OPEN_QUESTIONS.md:11",
+        "docs/audits/phase-7/SCOPE_AND_DEPENDENCIES.md"
+      ],
+      "user_acceptance": "PENDING"
+    },
+    {
+      "id": "C-P7-002",
+      "title": "第一通用适配profile",
+      "acceptance_text": "第一通用适配仅限已审SYN_A/SYNCCY/SYN_A_CAL合成profile、已审SYNTHETIC执行口径和恒等单位映射；通用接口、能力矩阵及真实请求运行仍为必需交付。未知真实源、比赛规则、许可、税费、日历明确外部阻断，不自行猜测。",
+      "design_sources": [
+        "docs/audits/phase-7/OPEN_QUESTIONS.md:12",
+        "docs/audits/phase-7/CAPABILITY_MATRIX_CANDIDATE.json"
+      ],
+      "user_acceptance": "PENDING"
+    },
+    {
+      "id": "C-P7-003",
+      "revision": "reviewed revised version",
+      "title": "共同准入接线、受管行为收紧及逐案预算",
+      "acceptance_text": "受管W/data内Task、旧研究CLI、公共research、direct ledger使用同一tasks.sqlite权威，对完整candidate×horizon集合原子准入、可信父子认领不双扣、失败取消不退款、完整历史及冻结outbox恢复失败关闭；真正非受管standalone保留原边界。可信runner/activation、全部输入与actor事前冻结，无caller自选slot或purpose。MAIN12研究与事前冻结的独立原风险夹具1分列，主根排队取消及正常replay零新研究；风险1-slot不是主第13个成功actor，禁止事后换根补数。该包内工程控制不等于真实OS主体权限隔离。",
+      "design_sources": [
+        "docs/audits/phase-7/OPEN_QUESTIONS.md:13",
+        "docs/audits/phase-7/COMMON_BUDGET_ADMISSION_DESIGN.md",
+        "docs/audits/phase-7/BROWSER_NEGATIVE_PROTOCOL.md",
+        "docs/audits/phase-7/BUDGET_DESIGN_DECISIONS.json"
+      ],
+      "user_acceptance": "PENDING"
+    },
+    {
+      "id": "C-P7-004",
+      "title": "双时钟、fee50及包与CI兼容边界",
+      "acceptance_text": "预冻结execution_sessions保留P3完整19研究截面，仅在10个指定时点执行P5/P4；主工程夹具每决策fee_budget=50，原profile、默认口径及正确答案不改。同一新bundle/catalog的缺省请求布局及字节边界保留；跨旧P6 bundle不承诺原地恢复或全部字节相等，旧pin在原包、原锁与独立原根/声明重放中验证。P7采用新全bundle及分模式package/CI/上传选集接线，旧P6 checker保留在固定旧源码/旧wheel环境，原保护文件、正确答案、完整旧业务回归和锁/Actions要求不放宽。",
+      "design_sources": [
+        "docs/audits/phase-7/OPEN_QUESTIONS.md:14",
+        "docs/audits/phase-7/OPEN_QUESTIONS.md:16",
+        "docs/audits/phase-7/EXECUTION_SELECTION_CONTRACT.md",
+        "docs/audits/phase-7/COMPATIBILITY_IMPACT.md",
+        "docs/audits/phase-7/PACKAGE_GATE_AND_CI_PLAN.md"
+      ],
+      "user_acceptance": "PENDING"
+    }
+  ],
+  "implementation_authorization": "PENDING_SEPARATE_EXPLICIT_USER_AUTHORIZATION",
+  "G2": "NOT PERFORMED",
+  "product_tests_executed_by_this_report": 0,
+  "phase_acceptance": "NOT GRANTED",
+  "merge_tag_release_authorization": "NOT GRANTED_FOR_PHASE7",
+  "unchanged_limits": {
+    "WI-R2-001": "DEFERRED / NOT VERIFIED",
+    "WI-R2-002": "DEFERRED / NOT VERIFIED",
+    "overall_true_Windows_isolation": "NOT VERIFIED",
+    "formal_Test": "NOT RUN; entry fails closed",
+    "financial_approval": "NONE",
+    "full_historical_host": "NOT VERIFIED beyond accepted packages/dependency locks/old FactorRefs/declared result replay",
+    "accounts_ACL_services_scheduling_deployment_live": "NOT AUTHORIZED"
+  },
+  "sources": {
+    "REPORT.txt": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p7-g1-recheck-645049a-independent-20261024\\REPORT.txt",
+      "bytes": 14870,
+      "sha256": "a5b79d10d2c0bea2281da0795b7605b994c96e853e6d615e477f22bfe871dc72"
+    },
+    "DEVELOPER_HANDOFF.txt": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p7-g1-recheck-645049a-independent-20261024\\DEVELOPER_HANDOFF.txt",
+      "bytes": 1222,
+      "sha256": "dc14b0f9f20be4a013064aeb0c510fa144de02a0e7670f3b936f332348a99c95"
+    },
+    "RECEIPT.json": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\reviews\\p7-g1-recheck-645049a-independent-20261024\\RECEIPT.json",
+      "bytes": 1345,
+      "sha256": "75163157297d9c19d8f98442ab524b9923d861b98529da58bfa4da012c53bd29"
+    }
+  },
+  "created_utc": "2026-10-24T15:20:42.955876+00:00"
+}

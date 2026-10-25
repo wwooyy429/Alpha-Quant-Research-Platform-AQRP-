@@ -1,0 +1,7 @@
+# 原审计资料原件与存储边界
+
+原固定3c34e3c的报告、发现及失败日志不改写；完整370文件在EVIDENCE_INDEX给出的外部归档根，原103757388字节ZIP精确367成员已核验。Git仅收79份原始小文件，原received/EVIDENCE_MANIFEST仍是完整原包清单，不冒称Git部分已包含所有原件。
+
+原始PRIMARY_BUDGET_COUNTEREXAMPLE.json触发未修改的固定扫描器13条generic-api-key记录；不为入库修改其内容、改扫描规则或增加allowlist。原文件及探针SQLite/链仍可按索引直接独立读取，或从完整原ZIP恢复。该事实不改变独立已复现的设计反例与原BLOCKED结论；缺失读取条件必须标NOT VERIFIED。
+
+当前仅开发方归档和设计修订，没有运行产品、审核脚本、浏览器、正式Test或金融批准。001/002仍OPEN，只有GPT Work新固定SHA复核可确认设计关闭。

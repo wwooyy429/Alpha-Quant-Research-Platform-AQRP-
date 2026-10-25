@@ -1,0 +1,215 @@
+{
+  "scope": "Design candidate only; G1 must review profile feasibility; no product runs or accepted requirement changes",
+  "phase6_released_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "code_sha": "Resolved at actual fixed plan/implementation version; never drift HEAD",
+  "exact_factor_refs": "Future actual P7 runtime refs must be resolved from its independently reviewed fixed implementation package; P6 baseline refs are provenance only, never an implicit execution lock",
+  "data": "P6 trusted 24-session6-asset P1 snapshot and exposures/coverage/universe bindings; original bytes and actual hashes to be pinned",
+  "campaign": "Pre-register all four complete variants before observing any output, same workspace/data budget12; no automatic new family",
+  "variants": [
+    {
+      "protocol": "main",
+      "factor": "momentum",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-04",
+        "end": "2024-01-22",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": true,
+        "initial_cash": "1000",
+        "fee_budget": "50",
+        "policy": {
+          "mode": "LONG_SHORT",
+          "weighting": "equal",
+          "long_k": 1,
+          "short_k": 1,
+          "gross": "0.5",
+          "net": "0.5"
+        },
+        "constraints": {},
+        "factor_ids": [
+          "momentum"
+        ],
+        "weights_percent": {
+          "momentum": "100"
+        },
+        "execution_sessions": [
+          "2024-01-04",
+          "2024-01-06",
+          "2024-01-08",
+          "2024-01-10",
+          "2024-01-12",
+          "2024-01-14",
+          "2024-01-16",
+          "2024-01-18",
+          "2024-01-20",
+          "2024-01-22"
+        ]
+      }
+    },
+    {
+      "protocol": "main",
+      "factor": "reversal",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-04",
+        "end": "2024-01-22",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": true,
+        "initial_cash": "1000",
+        "fee_budget": "50",
+        "policy": {
+          "mode": "LONG_SHORT",
+          "weighting": "equal",
+          "long_k": 1,
+          "short_k": 1,
+          "gross": "0.5",
+          "net": "0.5"
+        },
+        "constraints": {},
+        "factor_ids": [
+          "reversal"
+        ],
+        "weights_percent": {
+          "reversal": "100"
+        },
+        "execution_sessions": [
+          "2024-01-04",
+          "2024-01-06",
+          "2024-01-08",
+          "2024-01-10",
+          "2024-01-12",
+          "2024-01-14",
+          "2024-01-16",
+          "2024-01-18",
+          "2024-01-20",
+          "2024-01-22"
+        ]
+      }
+    },
+    {
+      "protocol": "transparent",
+      "factor": "momentum",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-06",
+        "end": "2024-01-06",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": false,
+        "initial_cash": "1000",
+        "fee_budget": "10",
+        "policy": {
+          "mode": "LONG_ONLY",
+          "weighting": "equal",
+          "top_k": 1
+        },
+        "constraints": {},
+        "factor_ids": [
+          "momentum"
+        ],
+        "weights_percent": {
+          "momentum": "100"
+        }
+      }
+    },
+    {
+      "protocol": "transparent",
+      "factor": "reversal",
+      "draft": {
+        "kind": "engineering_pipeline",
+        "universe_id": "SYN_U",
+        "start": "2024-01-06",
+        "end": "2024-01-06",
+        "lookback": 2,
+        "horizons": [
+          1
+        ],
+        "direction": 1,
+        "neutralize": false,
+        "initial_cash": "1000",
+        "fee_budget": "10",
+        "policy": {
+          "mode": "LONG_ONLY",
+          "weighting": "equal",
+          "top_k": 1
+        },
+        "constraints": {},
+        "factor_ids": [
+          "reversal"
+        ],
+        "weights_percent": {
+          "reversal": "100"
+        }
+      }
+    }
+  ],
+  "actor_allocation": {
+    "main": [
+      "SDK momentum",
+      "SDK reversal",
+      "TaskCLI momentum",
+      "TaskCLI reversal",
+      "AppTest momentum",
+      "AppTest reversal",
+      "real browser momentum",
+      "real browser reversal",
+      "legacy research CLI momentum then legacy backtest reusing that P3",
+      "legacy research CLI reversal then legacy backtest reusing that P3"
+    ],
+    "transparent": [
+      "SDK momentum",
+      "SDK reversal"
+    ]
+  },
+  "candidate_horizon_units": 12,
+  "decision_count_per_main_task": {
+    "P3_research": 19,
+    "P5_execution_and_required_P4": 10
+  },
+  "decision_count_per_transparent_task": 1,
+  "expected_all_main_stages": "Design model confirms all10 required P4 and both fill orderings under candidate; actual R/B/Task/lineage/hash still implementation/G2 obligations",
+  "main_reference": "MAIN_PIPELINE_CANDIDATES.json (stages/statistics only, not financial execution)",
+  "transparent_reference": "GOLDEN_CANDIDATES.json P7-G01..G12",
+  "main_financial_reference": "FINANCIAL_REFERENCE_METHOD.md + FINANCIAL_FEASIBILITY_CANDIDATES.json + ALL_PATHS + BOUNDS; 768 finite model paths, not product tests",
+  "retry_policy": "No quota reset/family/workspace swap/refund to complete success count; retained failed attempts; report incomplete and revise protocol if needed",
+  "formal_test": "NOT RUN / FORBIDDEN",
+  "financial_approval": "NONE",
+  "real_windows_isolation": "DEFERRED / NOT VERIFIED",
+  "new_optional_shared_input_contract": "EXECUTION_SELECTION_CONTRACT.md; absent field preserves P6 default all research decisions and old request bytes; COMPATIBILITY_IMPACT.md lists allowed files",
+  "superseded_unreviewed_draft": "SUPERSEDED_INITIAL_E2E_PROTOCOL_CANDIDATES.json and SUPERSEDED_FINANCIAL_COUNTEREXAMPLES.json preserve daily T+1/fee100 SELL-first risk counterexamples",
+  "baseline_factor_refs": [
+    {
+      "factor_id": "momentum",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    },
+    {
+      "factor_id": "reversal",
+      "factor_version": "1.2.1",
+      "implementation_hash": "28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b"
+    }
+  ],
+  "baseline_factor_ref_source": "PINNED_FACTOR_REFS.json and BASELINE_FACTOR_REFS_CANDIDATE.json; actual P6 baseline metadata only, not an executable future-P7 default",
+  "runtime_factor_refs": {
+    "status": "PLANNED_NOT_YET_RESOLVED",
+    "resolution": "At actual fixed40 P7 implementation SHA after engineering admission and independent review, freeze complete factor_id/factor_version/implementation_hash from actual P7 package; no invented future hashes",
+    "bundle_change": "New P7 modules or shared input wiring change whole-package bundle; P6 implementation_hash cannot be assumed valid in that new package",
+    "actor_consistency": "For each factor, SDK/TaskCLI/AppTest/real browser and declared legacy actors must use exactly the same precise runtime Ref and immutable protocol before comparison",
+    "two_factor_difference_whitelist": "Momentum-to-Reversal comparison permits only the selected approved factor Ref/config and explicit independently specified resulting signal/order/finance differences; no code/market/portfolio/risk/data/seed/budget drift",
+    "INT_003_old_pin": "Use retained original approved package/locked dependencies and declared replay in its original package environment; never pretend the P6/older hash loads under a changed P7 bundle"
+  }
+}

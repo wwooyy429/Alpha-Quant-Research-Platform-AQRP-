@@ -1,0 +1,100 @@
+AQRP Phase7 G1 独立计划预审报告
+主审：GPT Work（本对话实际执行）。日期：2026-10-24。
+指定且实际检出的完整SHA：3c34e3ca75c9799307b8a98b34f045b40988bbca。
+结论：PLAN BLOCKED / REQUEST CHANGES。WORK-P7-G1-001 High、002 Medium blocking均OPEN。
+本结论仅审上述固定计划；不撤销既有Phase6受限工程验收，不是P7实现、G2、用户验收或实施许可。
+
+1. 固定版本、范围与发布前置
+
+实际读取PR #10描述，AQRP_FIXED_REVIEW_SHA唯一值与PR head均为上述3c34完整SHA；开始和结束快照一致，PR为Draft/open/unmerged。独立clone无共享alternates，detach检出该版本，唯一父提交为已发布Phase6基线d563347ad11e1f26e131dc06e343250282c05c33，不审漂移HEAD。独立checkout：E:/WORK/AQRP-audits/p7-3c34e3c/src。
+
+前置身份分别为：已审实现3017a097b49ecdae68228ca9a417fcd03c313200；批准归档头a4d650d5d15e814600fde0bb6858fe97f14e5229；普通合并及开发方新干净SDK执行点7b4864f4d750fa96b5b5634c4bba0cd84b5b077f；发布登记基线d563347ad11e1f26e131dc06e343250282c05c33。H2与合并M的整树相等，C6→H2、M→发布P及P→G差异均仅文档/审计存储/身份元数据，没有业务变化。远端main、phase6-baseline、v0.6.0在本轮读取时同指P；与上一主审快照比较的22条旧标签引用记录均未移动。
+
+P→G共84路径：76份Phase7计划文件、七份全局状态文档、P6当前身份文件。5552份P基线冻结文件逐份与Git P原对象、当前checkout、声明大小及SHA256相等，P7内部清单75项+自身76精确闭合。原5016保护项、83个包内Python模块及其bundle、旧答案/失败证据、src/tests/tools/CI/扫描规则/核心契约/版本/依赖全部保持原字节。P6身份仅七份全局文档哈希行及明确的plan_documentation_metadata更新，P原身份完整快照保留。core锁仍22个固定依赖，Python3.13.16；11份物理依赖.lock文件与基线相同，两OS UI锁三处副本相同。没有猜测最新版或安装升级。
+
+业务bundle：28c3cc049efcce8fc3e55b4056e8e116f98deca39eeb1d2c8822799c8e98855b。
+core lock SHA256：86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb。
+
+原七份外置主审附件已由主审实际读取，与H1历史Git对象和上一主审原文件三方逐字节对齐；本轮另存received/p6-original-seven。H1扫描失败保留，旧扫描规则未改。草案占位由DRAFT_PROVENANCE及P真实发布证明明确覆盖；未把保留历史文字误判为缺失正式起点，也未伪造Gemini或新独立执行身份。
+
+2. 原需求及适用验收覆盖
+
+requirements.csv原106项及五项P7完整字段保持不变，3 MVP / 2 Competition Ready；跨阶段53项治理/契约引用保持原字段。原V3.0 Phase7十项交付均有映射，不能仅按五个ID删去集成、泄漏审计、独立代码审查、完整回归、干净运行、手册或最终报告。
+
+DATA-013（Competition Ready，依赖DATA-008/INT-006）：来源/授权声明、八表、时间/单位/日历/可用时点/历史池及侧车映射，T7-ADAPTER/BOUNDARY。通用工程映射必须真实执行；具体真实源未选定可列外部阻断，不能称真实源已验收。
+INT-003（MVP，依赖INT-002/UI-007）：候选状态/版本与固定策略pin、历史工件隔离，T7-MODES/TASK/LEAK。旧pin仅在原包/锁/制品环境验证；新全bundle须重新受审。共享预算接线存在001阻断。
+INT-004（MVP，依赖INT-003/ENV-002）：干净安装、CLI/TaskCLI/SDK/真实网页、操作文档、原始证据与运行对账，T7-CLEAN/PARITY/OPS/PACKAGE。部署原义务须由C-P7-001明确分列，当前不能声称完整部署验收。浏览器必需负例存在002阻断。
+INT-005（MVP，依赖INT-004/FACTOR-011/RESEARCH-009/BT-010/UI-007）：Momentum→Reversal全研究/组合/执行/Task/报告替换及同核比对、泄漏/账本/回归，T7-REPLACE/LEAK/LEDGER/EXEC-SELECTION；数学设计可行，实际运行尚未验证。
+INT-006（Competition Ready，依赖INT-002）：通用离线适配、规则能力矩阵、确定性映射、真实原服务运行及未知规则拒绝，T7-ADAPTER。第一profile恒等单位映射可作为明确受限候选，但接口、来源收据、能力报告及同核运行不能以Planned/Unsupported删掉。
+
+设计依赖P6→INT-003→004→005、INT-002→006→DATA-013清楚；未发现执行构建循环、第二撮合引擎、DAG/任意外部插件或后续范围扩张。
+
+3. 发现、依据及必须修订
+
+WORK-P7-G1-001，High，OPEN，阻断G1。
+位置：docs/audits/phase-7/OPEN_QUESTIONS.md:14；INTERFACE_DRAFT.md:15；COMPATIBILITY_IMPACT.md:7–17。
+依据：现设计让旧研究CLI两次进入与Task相同数据/campaign的12单位预算，并要求失败/取消不退款，却没有设计旧入口的共同原子准入。现有src/aqrp/services/cli.py:27–30调用research时无TaskContext；research.py:205–220仅有TaskContext才携带campaign_control；experiments/ledger.py:266–296仅检查实际trials；task_state.py:201–252的Task预留会读取旧trial，但旧入口不反查Task预留。两个方向的检查不构成共同原子协议。
+主审实际反例：使用上一轮已核wheel安装，83个Python源逐份与当前G相等；独立工程目录提交12个Task后在执行前全部取消，预留仍消耗12、真实trial为0。随后按旧入口实际无TaskContext路径执行ledger.start/register_trial，结果over_budget=false，接受了下一次trial登记；下一次Task则正确因EXPERIMENT_BUDGET_EXCEEDED拒绝。探针未调用Task.work、research()、CLI数值工作或模拟撮合，没有运行P7业务、正式Test或金融测试。证据PRIMARY_BUDGET_COUNTEREXAMPLE.json及primary-budget-probe原命令/日志/SQLite/链原件。
+影响：现有P6能力不能直接支撑本轮“所有入口共享12、取消不退款”的计划承诺；旧CLI与Task并发也没有共同准入线性化点。此为新增P7跨入口组合设计缺口，不把未承诺该跨入口场景的旧P6验收反向改判。
+修订要求：明确可信预算准入、Task/legacy所有权、去重、失败/取消与重试计数、并发与恢复协议，列明具体允许文件与兼容影响。可以提出统一可信准入或同等可证明、强制执行的编排边界，不能只靠操作者记得按顺序运行。不得改旧答案、退款、增加12上限或换workspace/family。增加“12个取消预留耗尽后旧CLI拒绝”、旧CLI/Task混合并发、同key去重及缺损历史拒绝的设计候选与验收证据，提交新固定SHA。
+
+WORK-P7-G1-002，Medium blocking，OPEN，阻断G1。
+位置：docs/audits/phase-7/TEST_AND_EVIDENCE_PLAN.md:30；OPEN_QUESTIONS.md:14；E2E_PROTOCOL_CANDIDATES.json:160–188。
+依据：12单位全部分配成功actor路径：SDK/TaskCLI/AppTest/真实浏览器各两因子8、旧研究CLI2、透明SDK2；但测试计划另强制真实浏览器风险拒绝/取消。现UI app.py:348–352直接freeze→submit→worker，新的合法pipeline会消耗额度；第13次首先因额度失败，无法证明P4金融风险拒绝。文档允许原单元/故障夹具另列，但未把这些真实浏览器负例逐一绑定到具体夹具、入口、预算和预期终态。取消可能采用无新增研究的replay，但当前方案未指定。
+影响：不能同时从现有协议得到12成功actor和全部必需浏览器负例；若临时另开workspace/family或把预算拒绝当风险拒绝，会使证据不成立。
+修订要求：逐个冻结浏览器风险拒绝、取消、重放等负例的输入、适用入口、campaign/数据身份、是否新增研究、预算计数、预期P4/B/Task终态及原始证据。可明确分列原故障夹具，或设计真正无需新增研究且受支持的路径，或重新提交可执行actor分配；禁止静默增加预算/临时换workspace补齐成功数。明确已知风险拒绝必须到达真实P4门禁，而非只验证字段/预算错误。需新固定SHA独立G1复核。
+
+非独立阻断意见：COMPATIBILITY_IMPACT.md:7,18关于“旧raw/config_hash/恢复重放”的承诺应进一步限定包身份。当前已明确原P6 pin要在原包环境执行；新bundle会触发task_requests.py:148–153的catalog身份拒绝，tasks.py:179还会按当前catalog重建。不可在实现时将同包缺省字节兼容扩成跨bundle原地恢复保证，或为迁移而弱化身份检查。C-P7-004正确的旧包隔离方向应保持。
+
+4. 接口、数学及安全设计意见
+
+AdapterSpec/CapabilityReport/AdapterReceipt仅做已核离线输入和规则映射，再调用原freeze/submit/work；未知真实源/规则、授权声明缺失、available_at缺失、单位换算无依据等在提交前拒绝。角色/API对象不等于OS隔离；本设计没有据此关闭R2或正式Test限制。全Task成功仍须R/B/十个真实P4及全局completion一致，账本损坏、未知财务状态、风险拒绝均失败关闭。未发现新的权限放宽设计。
+
+主层保持19个P3研究点，预冻结隔日10个P5执行点；可信日历、原ordinal/时间/selection hash、P3父源、physical root/所有权、恢复重放和完成屏障映射明确。日期按公开合成日历解释，不能套真实交易所工作日；selection缺省保持原行为，不能事后按风险或收益挑点。原P1/P3/P4/P5金融算法不在当前允许变更中。
+
+主审独立采用100位Decimal正交投影/QR回代而非开发方正规方程Gauss–Jordan，Fraction复算公开整数价格/收益/next-open标签。全部19截面的raw、5/95线性分位、样本z-score、OLS beta/残差、反向残差、top1、Pearson/Spearman（平均ties）、三分组/价差及19点IC汇总满足abs1e-12+rel1e-10容差。另核17个有限算术/数值Golden组，共1007断言通过。其余15组为接口/状态设计候选，按旧契约静态审阅，不能称新P7实现测试通过。
+
+透明层Jan6非中性化：Momentum选002、Reversal选001；9股，BUY100.10、佣金1、滑点0.9；现金98.1、权益998.1、收益-0.0019。“1.9”为佣金与滑点合计，不是佣金。不同股票在恒定执行价下权益相同合理；主层中性化不能照抄透明层排名。
+
+主审另写不导入AQRP/开发方模型的精确事件模拟器，实际读取115159679字节原轨迹，SHA256为74d968f318172afa21df2def55a393bcf00efb22531f5c47ee60420364153980。从自己算出的选股序列独立枚举全部768种顺序，重建55040个轨迹快照、13568个post-fill账户/风险记录、全部P4理想/整手目标和最终状态，共2945679个低层断言通过；这是设计算术，绝非产品测试数量。两因子各7次换仓、15 fills、现金579、权益979、佣金15、滑点6；最坏九换仓现金573.4、权益973.4。精确最紧post-P4可投资权益106.2，turnover=2000/531<4。逐桶、未交收销售款、订单费用预留及每决策费用50与现P4/P5规则相符。原daily T+1及fee100反例保留；19→10与fee50仍属于待用户接受的新工程夹具提案，不能改旧profile/正确答案。
+
+此轮没有新OLS/HAC/purge/多重检验算法或新正式金融阈值；冻结旧统计/标签/拟合隔离契约不变。有限合成参考不能证明真实市场有效性、正式ResearchValidated或金融批准。
+
+包准入/CI计划区分PLAN_DOCUMENTS与IMPLEMENTATION，旧P6 checker保留原字节在旧包环境运行，新P7全bundle/安装RECORD/源码集合/新输出上传选择器与workflow成对接线；原83常数不被用来认可新代码。不能通过删除旧禁止competition检查或放宽5016/覆盖率逃过新阶段准入。未来新增依赖不在本设计范围，须先候选锁定和双OS验证。
+
+5. 实际证据、执行身份及未验证
+
+主审实际执行：固定Git克隆/检出与拓扑/差异；全部冻结原对象/当前字节；PR和官方API读取；两份开发证据外层ZIP逐成员大小、SHA256、CRC及精确集合；七份历史原件；自己的数学及事件模拟；既有P6无worker准入探针。PRIMARY_SCOPE/MATH/FINANCE/BUDGET_COUNTEREXAMPLE/ORIGINAL_SEVEN及*.command.json/stdout.log/stderr.log为对应原始记录。未修改候选，所有写入仅独立审查目录。
+
+主审外层原包核验：
+P7 Evidence.zip：98586352 bytes，SHA256 0a8c761b0b6d62abf7dfa342c6d702dff47666c1ae5b0b482dcd8ea828349ca2；185声明项+清单自身186。
+P6 release Evidence.zip：1163589899 bytes，SHA256 1eb89bf2f9c1cea1bc53909a990f377c4fc93d6e6d6c56d322b2da24e638c794；1457声明项+自身1458。
+外层manifest SHA256分别a2b6c258dcf437492e953b6e9d81bf7c1f66674b8e2cfba5599148dc0ca780ed、c36939379af53fe1320e8f0a09d0d3fa6238864b5c69a9eefe7117b9333efd67。
+
+补充代理的接口交叉阅读、独立数学对照和嵌套工件核验分别列入ASSISTANCE_PROVENANCE及assistance-*，不冒充主审自己的SDK/CI/浏览器执行。主审已亲自复现001和完成上述数学/外层证据检查。补充核验：固定源码ZIP5636文件与G一致；H2官方run40089881581 Windows原ZIP198331547/Ubuntu239460414的实际digest匹配主审新取API，SHA256分别07964a81a0f57985794146c0663534c06151bad5733850507431be5036537dcf、179cbb19970959d1ffd2d0959dd323e589bebdfd1380095b13805488554a3b3b；嵌套原包CRC/完整上传选集/7278份别名复制/每OS265个完整子树闭合，包内安装源字节与G相同。别名字节相同不证明symlink/ACL身份。
+
+P6开发方合并M后干净SDK1567，H2双OS各1567，原20+4及91数学记录核实；不是本轮新主审SDK执行。91数学重跑原输出保留历史GPT Work/旧SHA字样，外层开发命令正确标明M上的开发方重执行，不能据原脚本标签声称新独立主审执行。
+M官方后补run40092876406与本轮G CI run40095736999均由主审官方API确认双OSsuccess；M后补包9796字节SHA256 7aea5245c1ade0e309fb090cb71eca2b2031377c0279f7a9ae576581abd5b3d5经补充核验8项+自身精确闭合。M后补及G的新官方原始工件ZIP本轮未下载/逐项核验，明确NOT VERIFIED，不能把API成功或原H2包扩写为M/G原包完整验证。G的CI仅原P6回归，绝非P7产品测试。
+
+实际主审环境：Windows11 build26300，CPython3.13.16标准GIL/x64，基础解释器C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe，SHA256 31fe10b4ed82a2f960af0ef9931f46a4b84ff286f8b6ffd9dee098cf4f10f17f。准入探针使用上一主审已安装0.6.0.dev5 venv，具体完整路径、83源哈希、argv/cwd/起止UTC/退出码在原记录中；没有新建/安装P7包。
+
+原始关键命令（完整argv另见原JSON）：
+git clone --no-local --no-checkout <上一独立仓库> E:/WORK/AQRP-audits/p7-3c34e3c/src
+git fetch --no-tags origin <明确完整G/P/M/H2/H1 SHA>
+git checkout --detach 3c34e3ca75c9799307b8a98b34f045b40988bbca
+git rev-list --parents -n 1 3c34e3ca75c9799307b8a98b34f045b40988bbca
+git diff --name-only <明确相邻固定SHA>
+git cat-file --batch （5552个P原blob）
+git ls-remote origin refs/heads/main refs/tags/* refs/heads/phase6-baseline
+<固定3.13.16> -X utf8 primary_scope.py / primary_math.py / primary_finance.py
+<上一主审已安装P6 venv python> -X utf8 primary_budget_probe.py
+
+本轮主审辅助脚本初次失败三次均保留：算术脚本一处Python整数除法意外转float、探针首次使用junction别名触发既有路径门禁、范围脚本最初未允许明确新增身份说明字段。修正的是独立审查脚本，未改产品或候选答案；原源/命令/stderr留存，最终对应执行均exit0。普通读取中一次误写task_campaigns路径造成FileNotFoundError；已按真实文件重读，不算产品失败。
+
+6. 待用户选择及边界
+
+C-P7-001受限工程运行与真实部署验收分列；C-P7-002第一合成profile和恒等映射；C-P7-003经修订后可执行的actor/campaign/12预算方案；C-P7-004预冻结execution_sessions、19/10双时钟、fee50夹具、旧包旧Ref与新bundle/阶段包接线。四项仅为提案，本轮不代用户接受。应先关闭001/002的技术设计缺口，再提交具体方案供用户接受适用条件及单独实施授权，不能要求用户用批准来掩盖尚未定义的准入/测试细节。
+
+真实Windows WI-R2-001/002及整体隔离持续DEFERRED / NOT VERIFIED；最终集成固定SHA真实三主体/权限/lifecycle验证另行方案及授权。正式Test NOT RUN且正式入口失败关闭；金融批准NONE。完整历史宿主仍限已接受软件包/锁/旧Ref/声明重放，超出部分NOT VERIFIED。具体真实源/比赛规则EXTERNAL_DEPENDENCY_BLOCKED。部署、实盘、真实账户/ACL/服务/调度均未授权且未操作。
+
+处置：退回开发方仅修订设计、保持原正确答案和失败原件，提交新的唯一完整固定SHA复核；不开始P7业务实现，不合并、打标签、部署或实盘。技术阻断未关闭，不能声称G1已通过。

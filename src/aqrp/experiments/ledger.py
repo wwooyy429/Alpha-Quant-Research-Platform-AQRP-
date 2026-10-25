@@ -101,6 +101,111 @@ class ExperimentLedger:
     def __init__(self, root):
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
+        self._prepared_research = None
+
+    @staticmethod
+    def _research_units(config, lineage=None):
+        """Freeze every candidate × horizon before any managed result is observed."""
+        from aqrp.services.research import hypotheses, hypothesis_definition
+
+        try:
+            units = hypotheses(config)
+            family = config["family"]
+            aliases = [u["hypothesis"] for u in units]
+            definitions = family["definitions"]
+            if (
+                not aliases
+                or len(set(aliases)) != len(aliases)
+                or not set(aliases) <= set(family["hypotheses"])
+                or set(definitions) != set(family["hypotheses"])
+                or type(family["budget"]) is not int
+                or family["budget"] < 1
+                or any(not re.fullmatch("[0-9a-f]{64}", definitions[a]) for a in aliases)
+            ):
+                raise ContractError("ADMISSION_SCHEMA_ERROR")
+            if lineage is not None and any(
+                definitions[u["hypothesis"]]
+                != hypothesis_definition(
+                    u,
+                    config,
+                    lineage["data_hash"],
+                    lineage.get("exposure_hash"),
+                    lineage["coverage_hash"],
+                )
+                for u in units
+            ):
+                raise ContractError("HYPOTHESIS_CHANGED_AFTER_PREREGISTRATION")
+            return [
+                {"hypothesis_alias": alias, "definition_hash": definitions[alias]}
+                for alias in aliases
+            ]
+        except (KeyError, TypeError, ValueError) as exc:
+            if isinstance(exc, ContractError):
+                raise
+            raise ContractError("ADMISSION_SCHEMA_ERROR") from exc
+
+    def prepare_research(self, config, lineage, *, snapshot_ref=None, exposure_ref=None):
+        """Mandatory managed legacy admission; standalone P3 retains its original API."""
+        from aqrp.experiments.admission import resolve_admission_domain
+
+        budget = resolve_admission_domain(
+            self.root,
+            config=config,
+            lineage=lineage,
+            snapshot_ref=snapshot_ref,
+            exposure_ref=exposure_ref,
+        )
+        if budget is None:
+            return None
+        source = json.loads((budget.root / "catalog.json").read_bytes())
+        input_binding = {
+            "snapshot_root": str(Path(source["snapshot"]["root"]).resolve()),
+            "exposure_root": str(Path(source["exposures"]["root"]).resolve()),
+            "data_hash": source["snapshot"]["manifest_hash"],
+        }
+        prior_binding = lineage.get("admission_inputs", {})
+        if not isinstance(prior_binding, dict) or any(
+            input_binding.get(k) != v for k, v in prior_binding.items()
+        ):
+            raise ContractError("ADMISSION_DOMAIN_CONFLICT")
+        # Direct public ledger calls get the original physical source binding too;
+        # copying their run files elsewhere cannot erase its managed provenance.
+        lineage["admission_inputs"] = input_binding
+        units = self._research_units(config, lineage)
+        budget.materialize()
+        with budget.transaction() as c:
+            budget.verify(c)
+            binding = budget.lookup_legacy_actor(c, digest(config), self.root)
+            run_id = (binding or {}).get("owner_id") or str(uuid.uuid4())
+            admission = budget.reserve(
+                c,
+                data_hash=lineage["data_hash"],
+                owner_kind="LEGACY",
+                owner_id=run_id,
+                key=binding["client_key"]
+                if binding
+                else digest({"ledger_root": str(self.root.resolve()), "run_id": run_id}),
+                request_hash=digest(config),
+                units=units,
+                family_id=config["family"]["id"],
+                family_limit=config["family"]["budget"],
+                service_kind="LEGACY",
+                output_root=self.root,
+            )
+            budget.queue_projection(
+                c,
+                budget.root / "task-control" / "admissions" / (admission["admission_id"] + ".json"),
+                canonical(admission),
+                admission["admission_id"],
+                kind="SIDECAR",
+            )
+        budget.materialize()
+        if admission["decision"] != "ADMITTED":
+            raise ContractError(admission.get("code") or "EXPERIMENT_BUDGET_EXCEEDED")
+        with budget.transaction() as c:
+            budget.verify_admission_projections(c, admission["admission_id"])
+        self._prepared_research = (run_id, digest(config), digest(lineage))
+        return admission
 
     def path(self, run_id):
         try:
@@ -122,23 +227,102 @@ class ExperimentLedger:
         if not required <= set(lineage) or not re.fullmatch("[0-9a-f]{40}", lineage["code_commit"]):
             raise ContractError("INCOMPLETE_RUN_LINEAGE")
         content = canonical(config)
+        managed_run = False
         if task_context is not None:
             from aqrp.services.task_context import require_context
 
             run_id, lineage = require_context(task_context).start(self.root, config, lineage)
         else:
-            run_id = str(uuid.uuid4())
+            if self._prepared_research is None and (
+                "candidates" in config or self.root.name == "research-runs"
+            ):
+                from aqrp.experiments.admission import resolve_admission_domain
+
+                managed = resolve_admission_domain(self.root, config=config, lineage=lineage)
+                if managed is not None:
+                    self.prepare_research(config, lineage)
+            if self._prepared_research is None:
+                run_id = str(uuid.uuid4())
+            else:
+                run_id, expected_config, expected_lineage = self._prepared_research
+                managed_run = True
+                if (expected_config, expected_lineage) != (digest(config), digest(lineage)):
+                    raise ContractError("ADMISSION_IDEMPOTENCY_CONFLICT")
+                self._prepared_research = None
         metadata = canonical(lineage)
         root = self.path(run_id)
+        if root.exists() and managed_run:
+            raise ContractError("ADMISSION_LEGACY_ALREADY_STARTED")
+        running = None
+        if "candidates" in config and self.root.name == "research-runs":
+            running = self._freeze_running_event(run_id, config, lineage, task_context)
         root.mkdir(exist_ok=False)
         immutable_write(root / "config.json", content)
         immutable_write(root / "lineage.json", metadata)
-        append_chain(
-            root / "events.jsonl",
-            "RUNNING",
-            {"config_hash": digest(config), "lineage_hash": digest(lineage)},
-        )
+        if running is None:
+            append_chain(
+                root / "events.jsonl",
+                "RUNNING",
+                {"config_hash": digest(config), "lineage_hash": digest(lineage)},
+            )
+        else:
+            immutable_write(root / "events.jsonl", canonical(running) + b"\n")
         return run_id
+
+    def _freeze_running_event(self, run_id, config, lineage, task_context):
+        from aqrp.experiments.admission import resolve_admission_domain
+
+        authority = resolve_admission_domain(self.root, config=config, lineage=lineage)
+        if authority is None:
+            return None
+        context = None
+        if task_context is not None:
+            from aqrp.services.task_context import require_context
+
+            context = require_context(task_context)
+        authority.materialize()
+        payload = {"config_hash": digest(config), "lineage_hash": digest(lineage)}
+        path = authority.root / "task-control/start-events" / (run_id + ".json")
+        with authority.transaction() as c:
+            authority.verify(c)
+            if context is not None:
+                context.authority.check(connection=c)
+                admission = authority.lookup_owner(c, "TASK", context.authority.task)
+                if context.slot != "R" or lineage["task_binding"]["child_run_id"] != run_id:
+                    raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+            else:
+                admission = authority.lookup_owner(c, "LEGACY", run_id)
+            if admission is None or admission["decision"] != "ADMITTED":
+                raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+            old = c.execute(
+                "SELECT content FROM admission_outbox WHERE path=?", (str(path),)
+            ).fetchone()
+            running = (
+                json.loads(bytes(old[0]))
+                if old is not None
+                else {
+                    "seq": 0,
+                    "recorded_at": datetime.now(UTC).isoformat(timespec="microseconds"),
+                    "previous": "0" * 64,
+                    "kind": "RUNNING",
+                    "payload": payload,
+                }
+            )
+            if old is None:
+                running["hash"] = digest(running)
+            if (
+                running["seq"] != 0
+                or running["previous"] != "0" * 64
+                or running["kind"] != "RUNNING"
+                or running["payload"] != payload
+                or digest({k: v for k, v in running.items() if k != "hash"}) != running["hash"]
+            ):
+                raise ContractError("ADMISSION_INTEGRITY_ERROR")
+            authority.queue_projection(
+                c, path, canonical(running), admission["admission_id"], kind="SIDECAR"
+            )
+        authority.materialize()
+        return running
 
     def event(self, run_id, kind, payload):
         root = self.path(run_id)
@@ -230,12 +414,29 @@ class ExperimentLedger:
                 {"run_id": run_id, "manifest_hash": digest(manifest), "record": record},
             )
 
-    def register_trial(self, run_id, family, hypothesis, *, budget, hypothesis_spec=None):
+    def register_trial(
+        self, run_id, family, hypothesis, *, budget, hypothesis_spec=None, task_context=None
+    ):
         if not family or not hypothesis or type(budget) is not int or budget < 1:
             raise ContractError("INVALID_EXPERIMENT_FAMILY")
         root = self.path(run_id)
-        config = json.loads((root / "config.json").read_bytes())
-        lineage = json.loads((root / "lineage.json").read_bytes())
+        config_raw, lineage_raw = (
+            (root / "config.json").read_bytes(),
+            (root / "lineage.json").read_bytes(),
+        )
+        config, lineage = json.loads(config_raw), json.loads(lineage_raw)
+        with mutex(root / ".lock"):
+            initial = read_chain(root / "events.jsonl")
+            initial_bytes = (root / "events.jsonl").read_bytes()
+        if (
+            not initial
+            or initial[0]["kind"] != "RUNNING"
+            or initial[0]["payload"]
+            != {"config_hash": digest(config), "lineage_hash": digest(lineage)}
+            or canonical(config) != config_raw
+            or canonical(lineage) != lineage_raw
+        ):
+            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
         fingerprint_config = {k: v for k, v in config.items() if k not in ("family", "candidates")}
         if "candidates" in config:
             fingerprint_config["candidates"] = [
@@ -263,6 +464,30 @@ class ExperimentLedger:
                 },
             }
         )
+        from aqrp.experiments.admission import resolve_admission_domain
+
+        authority = resolve_admission_domain(self.root, config=config, lineage=lineage)
+        if authority is not None:
+            if b"".join(canonical(event) + b"\n" for event in initial) != initial_bytes:
+                raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+            if initial[-1]["kind"] in ("SUCCEEDED", "FAILED", "CANCELLED") and not any(
+                event["kind"] == "TRIAL_REGISTERED"
+                and event["payload"].get("hypothesis") == hypothesis
+                for event in initial
+            ):
+                raise ContractError("IMMUTABLE_TERMINAL_RUN")
+            return self._register_managed_trial(
+                authority,
+                run_id,
+                family,
+                hypothesis,
+                budget,
+                hypothesis_spec,
+                config,
+                lineage,
+                fingerprint,
+                task_context,
+            )
         with mutex(self.root / ".trials-lock"):
             past = read_chain(self.root / "trials.jsonl")
             peers = [x for x in past if x["payload"]["family"] == family]
@@ -313,6 +538,264 @@ class ExperimentLedger:
         if item["over_budget"]:
             raise ContractError("EXPERIMENT_BUDGET_EXCEEDED")
         return item
+
+    def _register_managed_trial(
+        self,
+        authority,
+        run_id,
+        family,
+        hypothesis,
+        budget,
+        hypothesis_spec,
+        config,
+        lineage,
+        fingerprint,
+        task_context,
+    ):
+        """Claim an already debited unit; publish the exact authoritative outbox."""
+        units = self._research_units(config, lineage)
+        matches = [i for i, u in enumerate(units) if u["hypothesis_alias"] == hypothesis]
+        if (
+            len(matches) != 1
+            or family != config["family"]["id"]
+            or budget != config["family"]["budget"]
+        ):
+            raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+        context = None
+        if lineage.get("task_binding") is not None:
+            if task_context is None:
+                raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+            from aqrp.services.task_context import require_context
+
+            context = require_context(task_context)
+        authority.materialize()
+        if context is None:
+            with authority.transaction() as c:
+                authority.verify(c)
+                admission = authority.lookup_owner(c, "LEGACY", run_id)
+                if admission is None:
+                    binding = authority.lookup_legacy_actor(c, digest(config), self.root)
+                    if binding and binding.get("owner_id") not in (None, run_id):
+                        raise ContractError("EXECUTION_PLAN_SLOT_EXHAUSTED")
+                    admission = authority.reserve(
+                        c,
+                        data_hash=lineage["data_hash"],
+                        owner_kind="LEGACY",
+                        owner_id=run_id,
+                        key=binding["client_key"]
+                        if binding
+                        else digest({"ledger_root": str(self.root.resolve()), "run_id": run_id}),
+                        request_hash=digest(config),
+                        units=units,
+                        family_id=family,
+                        family_limit=budget,
+                        service_kind="LEGACY",
+                        output_root=self.root,
+                    )
+                    authority.queue_projection(
+                        c,
+                        authority.root
+                        / "task-control"
+                        / "admissions"
+                        / (admission["admission_id"] + ".json"),
+                        canonical(admission),
+                        admission["admission_id"],
+                        kind="SIDECAR",
+                    )
+            authority.materialize()
+            if admission["decision"] != "ADMITTED":
+                raise ContractError(admission.get("code") or "EXPERIMENT_BUDGET_EXCEEDED")
+        with authority.transaction() as c:
+            authority.verify(c)
+            task_binding = lineage.get("task_binding")
+            if task_binding is not None:
+                context.authority.check(connection=c)
+                if context.slot != "R":
+                    raise ContractError("RESEARCH_CAMPAIGN_CONTEXT_REQUIRED")
+                slot = c.execute(
+                    "SELECT binding FROM slots WHERE task=? AND slot='R'",
+                    (context.authority.task,),
+                ).fetchone()
+                task = c.execute(
+                    "SELECT raw,hash FROM tasks WHERE id=?", (context.authority.task,)
+                ).fetchone()
+                if (
+                    slot is None
+                    or json.loads(slot[0]) != task_binding
+                    or lineage.get("task_binding_hash") != digest(task_binding)
+                    or task_binding["child_run_id"] != run_id
+                    or task_binding["physical_ledger_root"] != str(self.root.resolve())
+                    or task_binding["core_config_hash"] != digest(config)
+                    or json.loads(task[0])["payload"]["research"] != config
+                    or task_binding["plan_hash"] != task[1]
+                ):
+                    raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+                admission = authority.lookup_owner(c, "TASK", context.authority.task)
+            else:
+                admission = authority.lookup_owner(c, "LEGACY", run_id)
+            if admission is None or admission["units"] != units:
+                raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+            if admission["decision"] != "ADMITTED":
+                raise ContractError(admission.get("code") or "EXPERIMENT_BUDGET_EXCEEDED")
+            access = authority.research_access_before(c, admission["admission_id"])
+            claim = authority.claim(
+                c,
+                admission["admission_id"],
+                matches[0],
+                self.root,
+                run_id,
+                digest(config),
+                digest(lineage),
+                {"hypothesis": hypothesis, "definition_hash": units[matches[0]]["definition_hash"]},
+            )
+            projected = [
+                json.loads(bytes(row[0]))
+                for row in c.execute(
+                    "SELECT content FROM admission_outbox WHERE kind='TRIAL' ORDER BY seq"
+                )
+            ]
+            existing = [
+                row
+                for row in projected
+                if row["payload"]["run_id"] == run_id and row["payload"]["hypothesis"] == hypothesis
+            ]
+            if existing:
+                if len(existing) != 1 or existing[0]["payload"]["fingerprint"] != fingerprint:
+                    raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+                item = existing[0]["payload"]
+            else:
+                campaign = config.get("family", {}).get("campaign")
+                control = lineage.get("campaign_control", {})
+                item = {
+                    "admission_history": access,
+                    "cross_campaign_data_access": access["prior_other_family_admitted_units"] > 0
+                    or bool(campaign)
+                    and (
+                        campaign["registration_history"]["contaminated_before_registration"]
+                        or any(
+                            r["payload"].get("data_hash") == lineage["data_hash"]
+                            and r["payload"]["family"] != family
+                            for r in projected
+                        )
+                        or control.get("prior_other_campaign_attempts", 0) > 0
+                        or control.get("prior_other_family_legacy_trials", 0) > 0
+                    ),
+                    "campaign_control": control,
+                    "run_id": run_id,
+                    "family": family,
+                    "hypothesis": hypothesis,
+                    "fingerprint": fingerprint,
+                    "repeat_of": [
+                        r["payload"]["run_id"]
+                        for r in projected
+                        if r["payload"]["fingerprint"] == fingerprint
+                    ],
+                    "over_budget": False,
+                    "prior_data_attempts": sum(
+                        r["payload"].get("data_hash") == lineage["data_hash"] for r in projected
+                    ),
+                    "data_hash": lineage["data_hash"],
+                    "first_validation_access_at": min(
+                        (
+                            r["recorded_at"]
+                            for r in projected
+                            if r["payload"].get("data_hash") == lineage["data_hash"]
+                        ),
+                        default=read_chain(self.path(run_id) / "events.jsonl")[0]["recorded_at"],
+                    ),
+                }
+                authority.project_trial(c, admission["admission_id"], claim, item)
+            self._freeze_trial_event(c, authority, admission, matches[0], run_id, item)
+        authority.materialize()
+        self._publish_trial_events(authority, run_id)
+        return item
+
+    def _freeze_trial_event(self, c, authority, admission, ordinal, run_id, item):
+        """Freeze the complete run-event wrapper before its authoritative commit."""
+        path = self.path(run_id) / f"admission-trial-event-{ordinal}.json"
+        old = c.execute(
+            "SELECT content FROM admission_outbox WHERE path=?", (str(path),)
+        ).fetchone()
+        if old is not None:
+            frozen = json.loads(bytes(old[0]))
+            if frozen["kind"] != "TRIAL_REGISTERED" or frozen["payload"] != item:
+                raise ContractError("ADMISSION_INTEGRITY_ERROR")
+            return
+        with mutex(self.path(run_id) / ".lock"):
+            events = read_chain(self.path(run_id) / "events.jsonl")
+        matching = [
+            e
+            for e in events
+            if e["kind"] == "TRIAL_REGISTERED"
+            and e["payload"].get("hypothesis") == item["hypothesis"]
+        ]
+        if matching:
+            if len(matching) != 1 or matching[0]["payload"] != item:
+                raise ContractError("ADMISSION_INTEGRITY_ERROR")
+            if admission.get("migrated"):
+                # Migration freezes the original entire run/event files. Do not
+                # add a new sidecar to an already immutable historical terminal.
+                return
+            frozen = matching[0]
+        else:
+            if events[-1]["kind"] in ("SUCCEEDED", "FAILED", "CANCELLED"):
+                raise ContractError("IMMUTABLE_TERMINAL_RUN")
+            queued = [
+                json.loads(bytes(row[1]))
+                for row in c.execute(
+                    "SELECT path,content FROM admission_outbox WHERE kind='SIDECAR'"
+                )
+                if Path(row[0]).parent == self.path(run_id)
+                and Path(row[0]).name.startswith("admission-trial-event-")
+            ]
+            tip = max([events[-1], *queued], key=lambda e: e["seq"])
+            frozen = {
+                "seq": tip["seq"] + 1,
+                "recorded_at": datetime.now(UTC).isoformat(timespec="microseconds"),
+                "previous": tip["hash"],
+                "kind": "TRIAL_REGISTERED",
+                "payload": item,
+            }
+            frozen["hash"] = digest(frozen)
+        authority.queue_projection(
+            c, path, canonical(frozen), admission["admission_id"], kind="SIDECAR"
+        )
+
+    def _publish_trial_events(self, authority, run_id):
+        """Append only committed wrappers, including crash-left predecessors."""
+        with authority.transaction() as c:
+            authority.verify(c)
+            queued = [
+                json.loads(bytes(row[1]))
+                for row in c.execute(
+                    "SELECT path,content FROM admission_outbox WHERE kind='SIDECAR'"
+                )
+                if Path(row[0]).parent == self.path(run_id)
+                and Path(row[0]).name.startswith("admission-trial-event-")
+            ]
+        with mutex(self.path(run_id) / ".lock"):
+            path = self.path(run_id) / "events.jsonl"
+            events = read_chain(path)
+            if b"".join(canonical(event) + b"\n" for event in events) != path.read_bytes():
+                raise ContractError("ADMISSION_INTEGRITY_ERROR")
+            for frozen in sorted(queued, key=lambda e: e["seq"]):
+                seq = frozen["seq"]
+                if seq < len(events):
+                    if events[seq] != frozen:
+                        raise ContractError("ADMISSION_INTEGRITY_ERROR")
+                    continue
+                if (
+                    seq != len(events)
+                    or frozen["previous"] != events[-1]["hash"]
+                    or events[-1]["kind"] in ("SUCCEEDED", "FAILED", "CANCELLED")
+                    or digest({k: v for k, v in frozen.items() if k != "hash"}) != frozen["hash"]
+                ):
+                    raise ContractError("ADMISSION_INTEGRITY_ERROR")
+                with path.open("ab") as stream:
+                    stream.write(canonical(frozen) + b"\n")
+                    stream.flush()
+                    os.fsync(stream.fileno())
+                events.append(frozen)
 
     def cache_get(self, key):
         path = self.root / ("cache-" + digest(key) + ".json")

@@ -1,0 +1,18 @@
+{
+  "reviewed_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+  "previous_reviewed_sha": "3c34e3ca75c9799307b8a98b34f045b40988bbca",
+  "gate": "Phase7 G1 plan only",
+  "verdict": "PLAN PASS WITH CONDITIONS",
+  "findings": [
+    {"id":"WORK-P7-G1-001","original_severity":"High","status":"CLOSED_DESIGN","reason":"All managed entry paths mandatory physical-domain resolution; one SQLite full-N admission, trusted parent claims, actor CAS/idempotency, outbox/integrity and legal rejection probe specified.","evidence":["COMMON_BUDGET_ADMISSION_DESIGN.md:7-108","COMMON_BUDGET_ADMISSION_CANDIDATES.json","PRIMARY_DESIGN_RECHECK.json"],"implementation_fix_verified":false},
+    {"id":"WORK-P7-G1-002","original_severity":"Medium blocking","status":"CLOSED_DESIGN","reason":"MAIN12 success actors preserved; distinct preregistered original risk fixture1 with own physical inputs; SDK-queued/browser cancellation0 and UI numerical replay0 precisely bound; real P4 failure oracle specified.","evidence":["BROWSER_NEGATIVE_PROTOCOL.md","BROWSER_NEGATIVE_PROTOCOL_CANDIDATES.json","PRIMARY_DESIGN_RECHECK.json"],"runtime_browser_verified":false}
+  ],
+  "new_blocking_findings": [],
+  "future_implementation_precision_checks": ["Deterministic outbox chain order despite reversed projection lock acquisition","Legacy same-owner active retry must refuse or fence recovery","Late prior key/session never binds next same-canonical actor"],
+  "pending_user_conditions": ["C-P7-001","C-P7-002","C-P7-003 revised authority/12+1+0 accounting","C-P7-004"],
+  "implementation_authorized": false,
+  "G2_or_stage_acceptance": "NOT PERFORMED",
+  "formal_Test": "NOT RUN",
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED"
+}

@@ -1,0 +1,94 @@
+{
+  "scope": "Read-only known source identity and finite developer MODEL trace retention, not product execution/independent audit/permission proof",
+  "audited_implementation_sha": "3017a097b49ecdae68228ca9a417fcd03c313200",
+  "phase6_release_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "trace": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p6-release-p7-plan-20261024\\p7-draft\\FINANCIAL_MODEL_ALL_PATHS.json",
+    "bytes": 115159679,
+    "sha256": "74d968f318172afa21df2def55a393bcf00efb22531f5c47ee60420364153980",
+    "git_policy": "EXTERNAL_ONLY; do not copy115MB file into repository",
+    "paths": 768,
+    "checks": 109350
+  },
+  "summary": "FINANCIAL_FEASIBILITY_CANDIDATES.json",
+  "bound_receipt": "FINANCIAL_MODEL_BOUNDS.json",
+  "retained_original_design_rejections": "SUPERSEDED_FINANCIAL_COUNTEREXAMPLES.json",
+  "model_source": "FINANCIAL_REFERENCE_METHOD.md",
+  "model_execution": "FINANCIAL_REFERENCE_EXECUTION.json",
+  "known_source_hashes": [
+    {
+      "path": "src/aqrp/portfolio/weights.py",
+      "sha256": "313c204b1c159985fa6edc262fcbe202317cd57b9043377c09f75fa20f14d274"
+    },
+    {
+      "path": "src/aqrp/portfolio/contracts.py",
+      "sha256": "b431079311697383238936fd04e00f4d024903776af58a69fd505f08e930c909"
+    },
+    {
+      "path": "src/aqrp/risk/checks.py",
+      "sha256": "eb0e073e454d65463f291e88fecbda721db7abb1507eb80f21241de160b330e9"
+    },
+    {
+      "path": "src/aqrp/backtest/ledger.py",
+      "sha256": "428935a8a6764d5ac53687f825694e962220444391e7e15039d3bca83b5aac5d"
+    },
+    {
+      "path": "src/aqrp/backtest/engine.py",
+      "sha256": "be479f474e96f8fb3fcb0a7f79573b7af8f37bd82fc0e7d7c096bf9b19bc4521"
+    },
+    {
+      "path": "src/aqrp/backtest/provider.py",
+      "sha256": "198e82ab2856c097ae8778b2e633dc070bf13ab0d73e66d3e492732dd8b5ce85"
+    },
+    {
+      "path": "src/aqrp/backtest/risk.py",
+      "sha256": "747f5f66bbd1a9a10bd186230162fc4dec7dcbd1dd6110c1580ecb1ed7cb4e30"
+    },
+    {
+      "path": "src/aqrp/execution/model.py",
+      "sha256": "5bb3dce60bfb26ef536034cea17bb8d3e768b9b43fb540a77dd6e8dee9440315"
+    },
+    {
+      "path": "src/aqrp/execution/liquidity.py",
+      "sha256": "ac0685946391d0e40228d843a21b627760528548d597c299889524a2ee50ebd6"
+    },
+    {
+      "path": "src/aqrp/services/task_requests.py",
+      "sha256": "f0fa824c5dd77bc2d144a41123e0f0e44602c6bd6fa6819130d262b7022f5561"
+    },
+    {
+      "path": "src/aqrp/services/task_inputs.py",
+      "sha256": "8a8c25782fa7193827bcce95d0122649b9ac6cb5eefd5d92a72d577b2aa63824"
+    },
+    {
+      "path": "src/aqrp/services/tasks.py",
+      "sha256": "1661b5429fb55363dac89eca2d649b81b5782f9afc118be1a30e5c86f2311e5b"
+    },
+    {
+      "path": "src/aqrp/research/synthetic.py",
+      "sha256": "56512be42191f837ed38c2cb5ee805f543811035f9e2ecb76760dbee40c8ab6b"
+    },
+    {
+      "path": "src/aqrp/research/pipeline.py",
+      "sha256": "d4f7b6eda91b99e3422d6c86b4ee037b4e2efeafe1d0c1d7c0b3cb4b14398b4f"
+    },
+    {
+      "path": "src/aqrp/factors/admission.py",
+      "sha256": "b0db15475f579f96fab025f316a63a99c983ab6b8e9c2d68c53e80a61335c41c"
+    },
+    {
+      "path": "src/aqrp/factors/contracts.py",
+      "sha256": "f38bb9fa018ecaf5c9076fd3b54f33bc6554be49f2464b1f8ba7be2fbc07323f"
+    },
+    {
+      "path": "src/aqrp/factors/reviewed_code.json",
+      "sha256": "e39f73c6192a2f8544fb6d3c52c6a15cae857c89663ca789f5232354add5bc19"
+    }
+  ],
+  "scope_limits": [
+    "No AQRP imports or product execution",
+    "No independent GPT Work verdict",
+    "No real ACL/accounts/deployment/formal Test/financial approval",
+    "Limited declared synthetic fixture and order permutations, not universal market proof"
+  ]
+}

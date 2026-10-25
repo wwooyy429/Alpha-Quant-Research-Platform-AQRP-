@@ -1,0 +1,245 @@
+{
+  "executor": "Primary GPT Work",
+  "scope": "Independent abstract finite arithmetic plus static review of36 candidates; not P7 code or product tests; no AQRP imports/workers/probes/browser execution",
+  "assertions": 394,
+  "mixed_interleavings": [
+    [
+      [
+        "TASK",
+        "ADMITTED",
+        1
+      ],
+      [
+        "LEGACY",
+        "EXPERIMENT_BUDGET_EXCEEDED",
+        0
+      ]
+    ],
+    [
+      [
+        "LEGACY",
+        "ADMITTED",
+        1
+      ],
+      [
+        "TASK",
+        "EXPERIMENT_BUDGET_EXCEEDED",
+        0
+      ]
+    ]
+  ],
+  "case_assessments": [
+    {
+      "id": "BUD-001",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "合法active probe先过域/身份再到共享12检查；原取消预留计入，不能被legacy忽略。"
+    },
+    {
+      "id": "BUD-002",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "反向legacy先耗12，Task同一authority整体拒绝并不分配研究子运行。"
+    },
+    {
+      "id": "BUD-003",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "同一COMMIT线性化两个入口；两种串行次序均只能新增1单位。"
+    },
+    {
+      "id": "BUD-004",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "完整N=2一次判定，剩1时0候选可观察或登记。"
+    },
+    {
+      "id": "BUD-005",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "Task行与完整N预留同事务，拒绝不运行R。"
+    },
+    {
+      "id": "BUD-006",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "可信R按父已预留两单位认领；两条trial不能再扣2。"
+    },
+    {
+      "id": "BUD-007",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "direct ledger须独立解析受管域和整config，不依赖可省略上下文。"
+    },
+    {
+      "id": "BUD-008",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "family/campaign/adapter/参数不是共享域键；各探针必须事前合法。"
+    },
+    {
+      "id": "BUD-009",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "受管源混外部输出先拒绝域冲突，不能创建新authority。"
+    },
+    {
+      "id": "BUD-010",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "exact key/owner只一份Task与admission；不能把随机key当actor身份。"
+    },
+    {
+      "id": "BUD-011",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "同unit重复claim必须同一run/root/config/lineage；原投影只发布一次。"
+    },
+    {
+      "id": "BUD-012",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "同key改request或unit定义在预算检查前拒绝，不能覆盖旧owner。"
+    },
+    {
+      "id": "BUD-013",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "只限已冻结独立预算回归无E2E actor限制；新UUID仍新实验并保留repeat_of。"
+    },
+    {
+      "id": "BUD-014",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "已用slot新key拒绝；取消不退款、不自动找其他actor空slot。"
+    },
+    {
+      "id": "BUD-015",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "commit后outbox发布前崩溃保留debit，原owner恢复冻结字节前不得研究。"
+    },
+    {
+      "id": "BUD-016",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "marker缺失只复用完整相同投影，不二次append/debit。"
+    },
+    {
+      "id": "BUD-017",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "截断或异字节保留原故障并拒绝；不能擅自修复历史以继续成功。"
+    },
+    {
+      "id": "BUD-018",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "迁移需精确历史全集，不能以能读子集充数。"
+    },
+    {
+      "id": "BUD-019",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "历史原P6只读核验；可写迁移仅同包新schema夹具，按可信R绑定去重。"
+    },
+    {
+      "id": "BUD-020",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "文字TaskID/campaign_control不能替代可信epoch/physical slot所有权。"
+    },
+    {
+      "id": "BUD-021",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "anchor/历史仍在时DB缺失不能自动归新0额度域。"
+    },
+    {
+      "id": "BUD-022",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "保留原requested/over_budget字面历史；不明计数饱和或拒绝，不退款式解释。"
+    },
+    {
+      "id": "BUD-023",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "共享12之外仍执行family更严子预算。"
+    },
+    {
+      "id": "BUD-024",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "旧外来写入触发完整性失败；不是OS层阻止管理员写入的证明。"
+    },
+    {
+      "id": "BUD-025",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "主12无合法下一slot，先报UNAUTHORIZED；与合法预算拒绝探针分开。"
+    },
+    {
+      "id": "BUD-026",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "预登记独立风险夹具cap1首次UI随机key绑定一次，第二新key在剩余11时仍拒绝。"
+    },
+    {
+      "id": "BUD-027",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "请求/根/key身份各自优先错误冻结；不可重新标成主成功actor。"
+    },
+    {
+      "id": "BUD-028",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "风险夹具失败保留唯一owner和debit，只恢复或拒绝重复，不能替换失败用例。"
+    },
+    {
+      "id": "BUD-029",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "复合actor SDK仅入队，browser实际取消；维持同activation且0R/研究。"
+    },
+    {
+      "id": "BUD-030",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "零研究slot必须为已核replay/source；不能自报units0包裹pipeline或研究。"
+    },
+    {
+      "id": "BUD-031",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "省略token/plan仍由受管根强制解析，不可选择旧无共同计数分支。"
+    },
+    {
+      "id": "BUD-032",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "R成功/P4失败/B无订单成功是不同事实；全Task由P4失败而失败。"
+    },
+    {
+      "id": "BUD-033",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "legacy分配新UUID前查固定slot原owner；恢复或显式拒绝重复。"
+    },
+    {
+      "id": "BUD-034",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "同canonical多个actor按受信CAS顺序唯一激活，页面不能自选purpose/slot。"
+    },
+    {
+      "id": "BUD-035",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "过期UI epoch必须拒绝；迟到旧key不得认领下一同canonical actor。"
+    },
+    {
+      "id": "BUD-036",
+      "primary_static_judgment": "DESIGN_CONSISTENT; product execution NOT VERIFIED",
+      "primary_reason": "若只11单位却运行cap0拒绝探针，应报slot不足并判夹具前提失败，不能冒称预算拒绝。"
+    }
+  ],
+  "browser_static_judgments": {
+    "BR-RISK-ORIGINAL-01": "Reachable under explicit future authority; existing real UI/service paths and positive gross oracle support Rsuccess/P4reject/Bsuccessnofills/Taskfailure",
+    "BR-CANCEL-REPLAY-01": "SDKqueues only, sameactivation realbrowsercancel, nochild, terminalworknoop; queue-only scope",
+    "BR-REPLAY-01": "RealUIstarts newE+10P4; noR/trial; verifiedsource unchanged"
+  },
+  "independent_risk_arithmetic": {
+    "allocatable": "990",
+    "ideal": "99/10",
+    "rounded": 9,
+    "pre_gross": "1",
+    "post_gross": "10/11",
+    "cash_no_orders": "1000"
+  },
+  "accounting": {
+    "main": 12,
+    "risk": 1,
+    "cancel_research": 0,
+    "normal_replay_research": 0,
+    "outer_research_attempts": 13,
+    "no_statistical_independence_claim": true
+  },
+  "future_G2_precision_checks": [
+    "Outbox chain/seq drains deterministically even if committed claim writers obtain trials-lock in reverse order",
+    "Legacy same-owner retry while prior process still alive must explicitly refuse or use exclusive recovery fencing",
+    "Late old key/session must return original verified owner or reject, never bind next same-canonical actor"
+  ],
+  "inputs_sha256": {
+    "COMMON_BUDGET_ADMISSION_DESIGN.md": "da227302ee68876ddb86a4d515ece3a796bd3de8481235e36af46e371bebdc6c",
+    "COMMON_BUDGET_ADMISSION_CANDIDATES.json": "cc0fde9008b42e33f72cec322a388e7363dc31d248bf6e75b225a7070ed44183",
+    "BROWSER_NEGATIVE_PROTOCOL.md": "434aa7beb8ce4b45d1bb3ad07f52adaf9fed053aa6ab24d7e278a228036da97b",
+    "BROWSER_NEGATIVE_PROTOCOL_CANDIDATES.json": "54ffee302abdc667e12fe4522d4f199005a9c6da4618d25b763cdde1ff790a5c"
+  }
+}

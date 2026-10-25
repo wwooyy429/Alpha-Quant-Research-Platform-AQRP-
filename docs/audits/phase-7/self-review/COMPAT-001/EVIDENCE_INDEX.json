@@ -1,0 +1,56 @@
+{
+  "finding": "COMPAT-001",
+  "recorded_utc": "2026-10-24T18:43:55.009926+00:00",
+  "reporter": "Codex developer reproduction; not independent GPT Work G2",
+  "severity": "Medium (developer classification; complete CI blocked)",
+  "original_actual_installed_sha": "e610b9fced33ccc6e13f76e0ccce0905f0560197",
+  "bundle_sha256": "513f53bfe2f04e24da29485b5c7f5ba42b67463d3f43cd960718680d907bc432",
+  "test": "tests/ui/test_g2_campaigns.py::test_immutable_registration_tamper_partial_publication_and_missing_history",
+  "original_test_file_sha256": "69c170be12f3d11970ee98609c8452edfe4c50f8bfb9b54e90c0ae95f717fb1d",
+  "actual": "ADMISSION_HISTORY_UNVERIFIED",
+  "required_original_contract": "CAMPAIGN_ATTEMPT_HISTORY_INCOMPLETE",
+  "consequence": "Still fail closed, but new activation check bypasses narrow existing public compatibility translation; original assertion must remain unchanged",
+  "original_official_run": 40116683477,
+  "official_head": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
+  "official_each_OS": "1844 total;1843 passed;1 failed; SDK complete=false",
+  "current_e610_SDK": "Explicitly aborted after actual installed fixed-version counterexample; only verified own pytest PID97460 stopped; original raw retained; no complete SDK or PASS claim",
+  "status": "FIX_IN_PROGRESS / ORIGINAL_EVIDENCE_PRESERVED / INDEPENDENT_G2_PENDING",
+  "files": [
+    {
+      "path": "COMMAND.json",
+      "bytes": 2358,
+      "sha256": "4a855dcfb1ec3c38d3625db022040144ba7043daa69e0c13defa73a082120ee9",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\E610_OFFICIAL_FAILURE_TARGET_7a9053a4-5463-41ef-9b05-bfcc094838d8\\COMMAND.json"
+    },
+    {
+      "path": "junit.xml",
+      "bytes": 2972,
+      "sha256": "8a445cbc2a26eb4dfca1985645530bb746f827e85e1fc596044c002f70c07c59",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\E610_OFFICIAL_FAILURE_TARGET_7a9053a4-5463-41ef-9b05-bfcc094838d8\\junit.xml"
+    },
+    {
+      "path": "pytest.ini",
+      "bytes": 10,
+      "sha256": "578fc1cd12d8d642df8eff41d71d5119626e9f88f21fafadba6b1092ac840a93",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\E610_OFFICIAL_FAILURE_TARGET_7a9053a4-5463-41ef-9b05-bfcc094838d8\\pytest.ini"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\E610_OFFICIAL_FAILURE_TARGET_7a9053a4-5463-41ef-9b05-bfcc094838d8\\stderr.log"
+    },
+    {
+      "path": "stdout.log",
+      "bytes": 2840,
+      "sha256": "16437d9938ade6dc584ef37acfb3cf8814fd5d7540015e78169abb7f7a99a22c",
+      "source": "C:\\Users\\11638\\AppData\\Local\\AQRP\\runs\\p7-implementation-20261025\\E610_OFFICIAL_FAILURE_TARGET_7a9053a4-5463-41ef-9b05-bfcc094838d8\\stdout.log"
+    }
+  ],
+  "restrictions": {
+    "Windows_R2": "DEFERRED / NOT VERIFIED",
+    "formal_Test": "NOT RUN",
+    "financial_approval": "NONE",
+    "release": "NOT AUTHORIZED"
+  }
+}

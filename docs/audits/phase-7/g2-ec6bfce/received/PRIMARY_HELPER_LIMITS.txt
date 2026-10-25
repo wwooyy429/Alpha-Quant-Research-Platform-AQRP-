@@ -1,0 +1,13 @@
+主审辅助工具执行勘误与边界（不改写历史输出）
+
+1. run_capture.py逐字继承前次执行模板后只替换固定SHA；其actual_executor字符串原写作“GPT Work supplemental reviewer”。本轮primary-*、original24*、original91实际由本聊天主审发起和执行，不是开发方/子代理执行；原日志字段保留，不回写伪造。之后原模板另存run_capture-inherited-original.py并以RUN_CAPTURE_TEMPLATE_CORRECTION.json绑定前后hash，仅更正未来执行caption。三份assistance-*输出才是补充子代理，最终报告分别标识。
+2. original24首轮因未复制原fixture两份phase1_input.json，collection exit2/FileNotFoundError；未发生产品断言失败。复制原输入原字节后original24-v2实际24通过；原失败流/XML保留。原91脚本内历史reviewed_sha保持原字节，外层当前命令/安装S和86成员身份为本次执行依据，不能把旧脚本头改写为当前审查结论。
+3. primary-original-archives首轮假设所有junit后缀只匹配一个，实际上还包含历史回归和测试fixture；v2固定根junit却忽略官方原ZIP的已记录run_id父目录。两次是读取工具假设错误，原stderr/exit1保留。v3按已观察且确定的三份原包根路径精确读取，不作通配排除；全原包流式CRC/size/SHA和根1963记录核验通过。原失败时脚本版本未另封存，不宣称具有逐次旧源码认证；最终脚本与原错误流各自封存。
+4. primary-literal-finance首轮将result.positions字典误读为列表，TypeError；修正读取结构后v2的254个精确独立财务检查通过，数学/数量/费用期望未改。两版日志保留，原错误不算产品财务失败。
+5. browser-result-v1只作条件式请求字段检查；v2新增直接断言已观察R binding.code_sha==S。两次结果各有原日志；最终结果是v2。真实下载是浏览器创建的下载路径中读出的原字节，未用直接服务导出替代下载动作。
+6. 少量一次性只读资料定位尝试未命中（不存在的stages/request/G2_REVIEW_PACKAGE/USER_DECISIONS_REQUIRED名称等），随后按实际目录/ZIP成员定位。没有执行这些猜测内容、修改源文件或损坏工件；不把定位错误当产品失败。
+7. GitHub连接器开始及后续均HTTP传输失败，原错误快照保留。公开只读API GET与git ls-remote之后成功；PR锁、CI/工件身份的当前结论仅依据实际成功的public-*.raw.json与PUBLIC_REMOTE_REQUESTS.json，不依据失败连接器快照或开发方自述。
+8. 主审浏览器是新独立root的一次单截面R、真实下载和正式入口工程拒绝检查；不是开发方原12研究单位/5浏览器Task的全量重跑。截图与AX（部分为diff）如实封存，正式Test没有运行，金融批准NONE。主审创建的localhost进程已按PID与命令/端口绑定后停止；未改系统服务或真实账户权限。
+9. 子代理辅助脚本初始错误和勘误各自在assistance-*报告中保留；其75,921数值断言、档案逐成员核验和36候选元数据核对不能写成主审运行的产品测试。主审另有实际反例、数学/资金复算、原包逐成员读取、原回归和新SDK独立执行。
+
+10. 最终报告一次性只读查看首轮未显式指定UTF8，Windows默认GBK读取UTF8文本产生UnicodeDecodeError；随后显式encoding=utf-8正常。该初次错误只出现在本聊天工具返回中，未另重定向为原始stderr文件，不冒称已认证该次完整原流；报告原字节和所有产品/SDK结果未改。

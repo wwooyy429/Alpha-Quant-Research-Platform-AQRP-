@@ -32,6 +32,10 @@ def main(argv=None):
             "compare",
             "defaults",
             "rollback",
+            "adapter-spec",
+            "adapter-capabilities",
+            "adapter-freeze",
+            "adapter-submit",
         ],
     )
     parser.add_argument("--workspace", type=Path, required=True)
@@ -48,9 +52,18 @@ def main(argv=None):
     parser.add_argument("--recover", action="store_true")
     parser.add_argument("--revision", type=int)
     parser.add_argument("--target", type=int)
+    parser.add_argument("--execution-sessions", nargs="+")
+    parser.add_argument("--rules", type=Path)
     args = parser.parse_args(argv)
-    service = TaskService(args.workspace)
     try:
+        if args.execution_sessions is not None and args.operation not in {
+            "freeze",
+            "submit",
+            "adapter-freeze",
+            "adapter-submit",
+        }:
+            raise ContractError("EXECUTION_SELECTION_PIPELINE_ONLY")
+        service = None if args.operation == "init" else TaskService(args.workspace)
         if args.operation == "init":
             result = initialize(args.workspace, args.commit)
         elif args.operation == "catalogue":
@@ -61,9 +74,56 @@ def main(argv=None):
             result = service.campaigns()
         elif args.operation == "campaign-register":
             result = service.register_campaign(args.campaign, load(args.request.read_bytes()))
+        elif args.operation.startswith("adapter-"):
+            from aqrp.competition import (
+                AdapterReceipt,
+                adapt_engineering,
+                adapter_spec,
+                capabilities,
+                execute_engineering,
+                input_reference,
+            )
+
+            spec = adapter_spec(args.workspace)
+            if args.operation == "adapter-spec":
+                result = load(spec.raw)
+            else:
+                if args.rules is None:
+                    raise ContractError("ADAPTER_RULE_REQUIREMENTS_REQUIRED")
+                rules = load(args.rules.read_bytes())
+                if args.operation == "adapter-capabilities":
+                    result = load(capabilities(spec, rules).raw)
+                else:
+                    request_raw = args.request.read_bytes()
+                    draft = load(request_raw)
+                    if draft.get("schema") == "engineering-adapter-receipt/1":
+                        if args.operation != "adapter-submit":
+                            raise ContractError("FROZEN_ADAPTER_RECEIPT_SUBMIT_ONLY")
+                        if args.execution_sessions is not None:
+                            raise ContractError("FROZEN_ADAPTER_SELECTION_OVERRIDE")
+                        if canonical(draft.get("requirements")) != canonical(rules):
+                            raise ContractError("ADAPTER_RECEIPT_RULES_CHANGED")
+                        receipt = AdapterReceipt(request_raw)
+                    else:
+                        if args.execution_sessions is not None:
+                            if "execution_sessions" in draft:
+                                raise ContractError("DUPLICATE_EXECUTION_SELECTION_SOURCE")
+                            draft["execution_sessions"] = args.execution_sessions
+                        receipt = adapt_engineering(
+                            args.workspace, spec, input_reference(args.workspace), draft, rules
+                        )
+                    result = (
+                        load(receipt.raw)
+                        if args.operation == "adapter-freeze"
+                        else execute_engineering(args.workspace, receipt, args.key, wait=args.wait)
+                    )
         elif args.operation in ("freeze", "submit"):
             raw = args.request.read_bytes()
             value = load(raw)
+            if args.execution_sessions is not None:
+                if value.get("schema") == "task-request/1" or "execution_sessions" in value:
+                    raise ContractError("FROZEN_OR_DUPLICATE_EXECUTION_SELECTION")
+                value["execution_sessions"] = args.execution_sessions
             frozen = (
                 EffectiveRequest(canonical(value))
                 if value.get("schema") == "task-request/1"
@@ -116,7 +176,11 @@ def main(argv=None):
         if args.output and args.operation != "artifact":
             with args.output.open("xb") as f:
                 f.write(
-                    frozen.raw if args.operation == "freeze" else (content + "\n").encode("utf-8")
+                    frozen.raw
+                    if args.operation == "freeze"
+                    else canonical(result)
+                    if args.operation.startswith("adapter-")
+                    else (content + "\n").encode("utf-8")
                 )
         print(content)
         return 0

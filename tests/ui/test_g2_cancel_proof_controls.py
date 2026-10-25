@@ -58,24 +58,46 @@ def test_only_unstarted_and_absent_p5_slot_is_safe_to_skip(completed):
 
 
 def test_legacy_data_attempts_consume_shared_quota_without_automatic_registration(tmp_path):
-    from aqrp.services.task_requests import catalogue, initialize
+    from aqrp.core.canonical import digest
+    from aqrp.experiments.ledger import ExperimentLedger
+    from aqrp.services.research import hypotheses, hypothesis_definition
+    from aqrp.services.task_requests import build_research_config, catalogue, initialize
     from aqrp.services.tasks import TaskService
 
     initialize(tmp_path, "a" * 40)
     s = TaskService(tmp_path)
-    root = tmp_path / "research-runs"
-    root.mkdir()
-    data_hash = catalogue(tmp_path)["snapshot"]["manifest_hash"]
-    append_chain(
-        root / "trials.jsonl",
-        "TRIAL_ATTEMPT",
-        {
-            "run_id": "historical-retained-attempt",
-            "data_hash": data_hash,
-            "family": "legacy-family",
+    draft = {"start": "2024-01-06", "end": "2024-01-06", "horizons": [1]}
+    cat = catalogue(tmp_path)
+    data_hash = cat["snapshot"]["manifest_hash"]
+    config = build_research_config(cat, draft)
+    config["family"] = {"id": "legacy-family", "budget": 12}
+    units = hypotheses(config)
+    config["family"]["hypotheses"] = [u["hypothesis"] for u in units]
+    config["family"].update(
+        definitions={
+            u["hypothesis"]: hypothesis_definition(
+                u, config, data_hash, cat["exposures"]["manifest_hash"], cat["coverage"]["checksum"]
+            )
+            for u in units
         },
     )
-    draft = {"start": "2024-01-06", "end": "2024-01-06", "horizons": [1]}
+    ledger = ExperimentLedger(tmp_path / "research-runs")
+    run = ledger.start(
+        config,
+        {
+            "code_commit": cat["code_commit"],
+            "code_bundle": cat["code_bundle"],
+            "data_hash": data_hash,
+            "exposure_hash": cat["exposures"]["manifest_hash"],
+            "coverage_hash": cat["coverage"]["checksum"],
+            "environment": {},
+            "protocol_hash": digest(config),
+            "permission_domain": "ENGINEERING_DEMO",
+            "seed": 17,
+        },
+    )
+    ledger.register_trial(run, "legacy-family", units[0]["hypothesis"], budget=12)
+    ledger.finish(run, "CANCELLED")
     with pytest.raises(ContractError, match="EXPLICIT_CAMPAIGN_REQUIRED_AFTER_DATA_ACCESS"):
         s.freeze(draft)
     p = s.register_campaign("after-legacy", [draft])
@@ -95,5 +117,36 @@ def test_legacy_data_attempts_consume_shared_quota_without_automatic_registratio
             "UPDATE campaign_attempts SET payload=? WHERE task=?",
             (canonical(record).decode(), task["task_id"]),
         )
-    with pytest.raises(ContractError, match="CAMPAIGN_ATTEMPT_IDENTITY_CHANGED"):
+    with pytest.raises(ContractError, match="ADMISSION_HISTORY_UNVERIFIED"):
         s.status(task["task_id"])
+
+
+def test_unowned_legacy_append_cannot_become_verified_campaign_history(tmp_path):
+    """BUD-024 rejects foreign writes without adopting them as authentic trials."""
+    from aqrp.experiments.admission import BudgetAuthority
+    from aqrp.services.task_requests import catalogue, initialize
+    from aqrp.services.tasks import TaskService
+
+    initialize(tmp_path, "a" * 40)
+    s = TaskService(tmp_path)
+    root = tmp_path / "research-runs"
+    root.mkdir()
+    append_chain(
+        root / "trials.jsonl",
+        "TRIAL_ATTEMPT",
+        {
+            "run_id": "historical-retained-attempt",
+            "data_hash": catalogue(tmp_path)["snapshot"]["manifest_hash"],
+            "family": "legacy-family",
+        },
+    )
+    original = (root / "trials.jsonl").read_bytes()
+    draft = {"start": "2024-01-06", "end": "2024-01-06", "horizons": [1]}
+    with pytest.raises(ContractError, match="ADMISSION_HISTORY_UNVERIFIED"):
+        s.freeze(draft)
+    with pytest.raises(ContractError, match="ADMISSION_HISTORY_UNVERIFIED"):
+        s.register_campaign("after-foreign", [draft])
+    assert (root / "trials.jsonl").read_bytes() == original
+    with BudgetAuthority(tmp_path).transaction() as c:
+        assert c.execute("SELECT count(*) FROM admissions").fetchone()[0] == 0
+        assert c.execute("SELECT count(*) FROM tasks").fetchone()[0] == 0

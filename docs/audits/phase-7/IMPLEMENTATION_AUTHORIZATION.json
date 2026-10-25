@@ -1,0 +1,45 @@
+{
+  "recorded_utc": "2026-10-24T16:17:08.115094+00:00",
+  "user_facing_date": "2026-10-25",
+  "authority": "Direct human user instruction in current task",
+  "exact_user_instruction": "我明确接受 C-P7-001～004（含修订版 C-P7-003），现单独授权按已审 G1 的五项受限工程范围开始 Phase7 实现。保留独立答案、完整 SDK、双系统 CI、原始 ZIP 和真实浏览器证据要求，完成后更新 PR #10，锁定完整40位 SHA 交 GPT Work 做 G2 审核。既有延期与限制保持；不合并、打标签、部署、实盘、运行正式 Test 或授予金融批准。",
+  "G1_reviewed_sha": "645049ae9b08710ed93189b80547d14c87d80584",
+  "G1_verdict": "PLAN PASS WITH CONDITIONS",
+  "G1_report": "g1-645049a/received/REPORT.txt",
+  "archival_start_commit": "8106bbe6fbb73b5b4336d42e4c27b3adb1cf6ff8",
+  "Phase6_released_main": "d563347ad11e1f26e131dc06e343250282c05c33",
+  "PR": 10,
+  "conditions": {
+    "C-P7-001": "EXPLICITLY_ACCEPTED",
+    "C-P7-002": "EXPLICITLY_ACCEPTED",
+    "C-P7-003 revised": "EXPLICITLY_ACCEPTED",
+    "C-P7-004": "EXPLICITLY_ACCEPTED"
+  },
+  "implementation_authorized": true,
+  "scope_requirements": [
+    "INT-003",
+    "INT-004",
+    "INT-005",
+    "DATA-013",
+    "INT-006"
+  ],
+  "tiers": {
+    "MVP": 3,
+    "Competition Ready": 2
+  },
+  "required_evidence": [
+    "Independent known answers",
+    "Complete clean SDK",
+    "Dual-OS official CI",
+    "Original Actions ZIPs/logs/identity/digests/exact members",
+    "Actual real browser engineering evidence",
+    "Unique complete40 AQRP_FIXED_REVIEW_SHA for GPT Work G2"
+  ],
+  "G2_or_user_stage_acceptance": false,
+  "merge_tag_release_authorized": false,
+  "deployment_live_accounts_ACL_services_scheduler_authorized": false,
+  "formal_Test_authorized": false,
+  "financial_approval": "NONE",
+  "Windows_R2": "DEFERRED / NOT VERIFIED",
+  "historical_host": "Existing package/lock/oldRef/declared replay restricted boundary retained"
+}

@@ -185,6 +185,27 @@ class TaskRunContext:
             raise ContractError("TASK_PLANNED_REPLAY_CHANGED")
         if b["service_kind"] == "P3" and config != planned["payload"]["research"]:
             raise ContractError("TASK_PLANNED_RESEARCH_CHANGED")
+        if b["service_kind"] == "P3":
+            attempt = self.research_attempt()
+            admission = attempt["admission"]
+            if (
+                admission["decision"] != "ADMITTED"
+                or admission["request_hash"] != digest(planned)
+                or admission["owner_id"] != self.authority.task
+                or admission["owner_kind"] != "TASK"
+            ):
+                raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
+            cat = json.loads(guard_path(self.authority.state.root / "catalog.json").read_bytes())
+            if cat["revision"] != planned["catalogue_revision"]:
+                raise ContractError("ADMISSION_DOMAIN_CONFLICT")
+            inputs = {
+                "snapshot_root": str(guard_path(cat["snapshot"]["root"])),
+                "exposure_root": str(guard_path(cat["exposures"]["root"])),
+                "data_hash": cat["snapshot"]["manifest_hash"],
+            }
+            if any(inputs.get(k) != v for k, v in lineage.get("admission_inputs", {}).items()):
+                raise ContractError("ADMISSION_DOMAIN_CONFLICT")
+            lineage = {**lineage, "admission_inputs": inputs}
         if b["service_kind"] in ("P5", "P5_REPLAY"):
             plan = json.loads(
                 guard_path(
@@ -216,6 +237,8 @@ class TaskRunContext:
         h = digest(config)
         with self.authority.state.transaction() as c:
             self.authority.check(connection=c)
+            if b["service_kind"] == "P3":
+                self.authority.state.budget.verify(c)
             row = c.execute(
                 "SELECT * FROM slots WHERE task=? AND slot=?", (b["task_id"], self.slot)
             ).fetchone()

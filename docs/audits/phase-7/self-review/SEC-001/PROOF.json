@@ -1,0 +1,205 @@
+{
+  "schema": "public-synthetic-config-digest-origin/1",
+  "created_utc": "2026-10-24T21:25:23.740165+00:00",
+  "observed_failed_candidate_sha": "6fc3e74fc44f5e2faafa25e9f2b7d072accd17a8",
+  "classification": "Verified public synthetic configuration identifiers; not credentials or execution capabilities. Developer origin review, not independent G2.",
+  "algorithm": "Reference uses Python standard-library json.dumps(sort_keys=True,separators=(comma,colon),ensure_ascii=False,allow_nan=False).encode(UTF8), then hashlib.sha256.hexdigest; imports no AQRP function.",
+  "records": [
+    {
+      "public_config_sha256": "d5e1f18fe297b64d03b3c007e9dbf0b74c59a125b4e0bc0d6dcd76b636d51e91",
+      "identifier_fingerprint_sha256": "aa4c844b4488dfc535757470e48b38da8176f22a41a00a9e39a4224bceb72c92",
+      "matched_metadata_field": "research_control.campaign.variant_key (also nested status/new_task projections)",
+      "preimage": {
+        "file": "PUBLIC_CONFIG_PREIMAGE_1.json",
+        "bytes": 1606,
+        "sha256": "d5e1f18fe297b64d03b3c007e9dbf0b74c59a125b4e0bc0d6dcd76b636d51e91"
+      },
+      "archived_public_request_sources": [
+        {
+          "archive_member": "original/workspace/tasks/4524d25d-7eeb-4358-87c6-9e3a2222caf8/request.json",
+          "request_sha256": "3aaf83810ed39586b7a4b322d8d3bccbef14a14af3be36c9d80e228f6676747c",
+          "schema": "task-request/1"
+        },
+        {
+          "archive_member": "original/workspace/tasks/a7f25c57-eaa1-4d57-9866-cb3b79972307/request.json",
+          "request_sha256": "3aaf83810ed39586b7a4b322d8d3bccbef14a14af3be36c9d80e228f6676747c",
+          "schema": "task-request/1"
+        }
+      ],
+      "raw_archive": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\MIG001_ORIGINAL_RAW_93ed1b54-e820-4378-8a90-c96f6505b04c\\MIG001_ORIGINAL_RAW.zip",
+        "bytes": 317344,
+        "sha256": "9b53081cf13e176a1d8f05410c33746af06b95408e6009571a093e0136b958a4",
+        "CRC_verified": true
+      },
+      "exact_repository_projection_files": [
+        "docs/audits/phase-7/self-review/MIG-001/ORIGINAL_SUCCEEDED_STATUS.json",
+        "docs/audits/phase-7/self-review/MIG-001/HEALTHY_MIGRATION_CONTROL.json",
+        "docs/audits/phase-7/self-review/MIG-001/RESULT.json"
+      ]
+    },
+    {
+      "public_config_sha256": "a7b8680f192f1300e1134818d42f2ee4a10ef61329c6758b31a9ff238152f396",
+      "identifier_fingerprint_sha256": "1d59ae4694b8232ccbdeb74ba082245c1f4e7dc3bea79091888be8a9ea2c4fc0",
+      "matched_metadata_field": "research_control.campaign.variant_key (also nested status/new_task projections)",
+      "preimage": {
+        "file": "PUBLIC_CONFIG_PREIMAGE_2.json",
+        "bytes": 1606,
+        "sha256": "a7b8680f192f1300e1134818d42f2ee4a10ef61329c6758b31a9ff238152f396"
+      },
+      "archived_public_request_sources": [
+        {
+          "archive_member": "original/workspace/tasks/232a79db-72b2-4b17-a11c-9f8e08a87891/request.json",
+          "request_sha256": "e70cd4fc3d648752e736c66ca6a65fd96bd3e4551e23908f4a3485e3e787a4bc",
+          "schema": "task-request/1"
+        },
+        {
+          "archive_member": "original/workspace/tasks/e68e4723-3b74-49b0-b2ea-1f83443301c4/request.json",
+          "request_sha256": "e70cd4fc3d648752e736c66ca6a65fd96bd3e4551e23908f4a3485e3e787a4bc",
+          "schema": "task-request/1"
+        }
+      ],
+      "raw_archive": {
+        "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\runs\\p7-implementation-20261025\\MIG001_CANCELLED_PREFIX_RAW_ac99664a-1340-4be3-a4a9-960e2c37b51b\\MIG001_CANCELLED_PREFIX_RAW.zip",
+        "bytes": 506771,
+        "sha256": "bfbf4605fef36c26971d54d0cbba77a6e76693df9fcf3b6581e5891646467280",
+        "CRC_verified": true
+      },
+      "exact_repository_projection_files": [
+        "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/LIVE_REFUSAL_BEFORE_IMPORT.json",
+        "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/HEALTHY_MIGRATION_CONTROL.json",
+        "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ORIGINAL_CANCELLED_STATUS.json",
+        "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/RESULT.json"
+      ]
+    }
+  ],
+  "safe_scanner_finding_mapping": [
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/ORIGINAL_SUCCEEDED_STATUS.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 1200,
+      "end_column": 1278,
+      "public_identifier_index": 1,
+      "identifier_fingerprint_sha256": "aa4c844b4488dfc535757470e48b38da8176f22a41a00a9e39a4224bceb72c92"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/HEALTHY_MIGRATION_CONTROL.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 2127,
+      "end_column": 2205,
+      "public_identifier_index": 1,
+      "identifier_fingerprint_sha256": "aa4c844b4488dfc535757470e48b38da8176f22a41a00a9e39a4224bceb72c92"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/LIVE_REFUSAL_BEFORE_IMPORT.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 1333,
+      "end_column": 1411,
+      "public_identifier_index": 2,
+      "identifier_fingerprint_sha256": "1d59ae4694b8232ccbdeb74ba082245c1f4e7dc3bea79091888be8a9ea2c4fc0"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/HEALTHY_MIGRATION_CONTROL.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 2161,
+      "end_column": 2239,
+      "public_identifier_index": 2,
+      "identifier_fingerprint_sha256": "1d59ae4694b8232ccbdeb74ba082245c1f4e7dc3bea79091888be8a9ea2c4fc0"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/ORIGINAL_CANCELLED_STATUS.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 1224,
+      "end_column": 1302,
+      "public_identifier_index": 2,
+      "identifier_fingerprint_sha256": "1d59ae4694b8232ccbdeb74ba082245c1f4e7dc3bea79091888be8a9ea2c4fc0"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/RESULT.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 4622,
+      "end_column": 4700,
+      "public_identifier_index": 1,
+      "identifier_fingerprint_sha256": "aa4c844b4488dfc535757470e48b38da8176f22a41a00a9e39a4224bceb72c92"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/RESULT.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 6646,
+      "end_column": 6724,
+      "public_identifier_index": 1,
+      "identifier_fingerprint_sha256": "aa4c844b4488dfc535757470e48b38da8176f22a41a00a9e39a4224bceb72c92"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/RESULT.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 5053,
+      "end_column": 5131,
+      "public_identifier_index": 2,
+      "identifier_fingerprint_sha256": "1d59ae4694b8232ccbdeb74ba082245c1f4e7dc3bea79091888be8a9ea2c4fc0"
+    },
+    {
+      "file": "docs/audits/phase-7/self-review/MIG-001/cancelled-prefix/RESULT.json",
+      "rule": "generic-api-key",
+      "line": 1,
+      "start_column": 7186,
+      "end_column": 7264,
+      "public_identifier_index": 2,
+      "identifier_fingerprint_sha256": "1d59ae4694b8232ccbdeb74ba082245c1f4e7dc3bea79091888be8a9ea2c4fc0"
+    }
+  ],
+  "finding_count": 9,
+  "unique_public_identifiers": 2,
+  "public_source_algorithm_checks": [
+    {
+      "fixed_sha": "b6ed148ba73e478ebc4b6581403714fb39781316",
+      "path": "src/aqrp/services/task_campaigns.py",
+      "source_sha256": "663afc933612a313401aa604829b57353e6bd5402d0e66c9616935f440908081",
+      "function": "variant_key",
+      "line": 19,
+      "verified_body": "SHA256(canonical(config with only family removed))"
+    },
+    {
+      "fixed_sha": "872c05b14513644cbf8031dfbb6be8faa8a7a926",
+      "path": "src/aqrp/services/task_campaigns.py",
+      "source_sha256": "663afc933612a313401aa604829b57353e6bd5402d0e66c9616935f440908081",
+      "function": "variant_key",
+      "line": 19,
+      "verified_body": "SHA256(canonical(config with only family removed))"
+    },
+    {
+      "fixed_sha": "6fc3e74fc44f5e2faafa25e9f2b7d072accd17a8",
+      "path": "src/aqrp/services/task_campaigns.py",
+      "source_sha256": "663afc933612a313401aa604829b57353e6bd5402d0e66c9616935f440908081",
+      "function": "variant_key",
+      "line": 19,
+      "verified_body": "SHA256(canonical(config with only family removed))"
+    }
+  ],
+  "use_review": {
+    "paths": [
+      "src/aqrp/services/task_campaigns.py:119",
+      "src/aqrp/services/task_campaigns.py:223",
+      "src/aqrp/services/task_campaigns.py:237",
+      "src/aqrp/services/task_campaigns.py:243",
+      "src/aqrp/services/task_state.py:431"
+    ],
+    "purpose": "Deterministic preregistered research-variant lookup/equality and audit metadata. Complete approved request, common budget authority, data/code identity and ownership remain separately verified. Possessing this publicly derivable digest grants no authentication, authorization, quota or access capability.",
+    "not_an_authentication_secret": true
+  },
+  "protected_parent_config": {
+    "path": ".gitleaks.toml",
+    "sha256": "73dbfe9e8ddd221da5ffd18a3cfa467ea8435dfa57b1ce4f28159eb6c5bab928"
+  },
+  "policy_boundary": "Only exact generic-api-key findings with the corresponding full identifier AND one of the exact seven immutable projection paths may be excepted. No line/directory/rule disable or other finding may be bypassed.",
+  "limitations": "This origin classification concerns these9 findings only. Full pinned scanner and adversarial controls must still pass; original scanner failures and all MIG-001 evidence stay unchanged.",
+  "primary_configuration_reference": "https://raw.githubusercontent.com/gitleaks/gitleaks/v8.30.1/README.md"
+}

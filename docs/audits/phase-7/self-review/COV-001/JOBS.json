@@ -1,0 +1,189 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 120956361411,
+      "run_id": 40122323730,
+      "workflow_name": "Phase 7 quality",
+      "head_branch": "codex/phase-7-integration-plan",
+      "run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/40122323730",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVQ3oOs8AAAAcKY-aww",
+      "head_sha": "05fc498bfcfc703eb58f14eb7107ed483c30fbe3",
+      "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/jobs/120956361411",
+      "html_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/40122323730/job/120956361411",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-24T18:47:32Z",
+      "started_at": "2026-10-24T18:47:34Z",
+      "completed_at": "2026-10-24T19:38:10Z",
+      "name": "data-contracts (ubuntu-24.04)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T18:47:34Z",
+          "completed_at": "2026-10-24T18:47:35Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T18:47:35Z",
+          "completed_at": "2026-10-24T18:47:38Z"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T18:47:38Z",
+          "completed_at": "2026-10-24T18:47:38Z"
+        },
+        {
+          "name": "Clean hashed install, wheel, tests and evidence",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 4,
+          "started_at": "2026-10-24T18:47:38Z",
+          "completed_at": "2026-10-24T19:37:28Z"
+        },
+        {
+          "name": "Upload raw evidence including failures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-24T19:37:28Z",
+          "completed_at": "2026-10-24T19:38:05Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9,
+          "started_at": "2026-10-24T19:38:05Z",
+          "completed_at": "2026-10-24T19:38:05Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-24T19:38:05Z",
+          "completed_at": "2026-10-24T19:38:05Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-24T19:38:05Z",
+          "completed_at": "2026-10-24T19:38:05Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/check-runs/120956361411",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000249,
+      "runner_name": "GitHub Actions 1000000249",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 120956361562,
+      "run_id": 40122323730,
+      "workflow_name": "Phase 7 quality",
+      "head_branch": "codex/phase-7-integration-plan",
+      "run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/40122323730",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVQ3oOs8AAAAcKY-bWg",
+      "head_sha": "05fc498bfcfc703eb58f14eb7107ed483c30fbe3",
+      "url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/jobs/120956361562",
+      "html_url": "https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/actions/runs/40122323730/job/120956361562",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-24T18:47:32Z",
+      "started_at": "2026-10-24T18:47:34Z",
+      "completed_at": "2026-10-24T19:35:36Z",
+      "name": "data-contracts (windows-latest)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T18:47:34Z",
+          "completed_at": "2026-10-24T18:47:35Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T18:47:35Z",
+          "completed_at": "2026-10-24T18:47:45Z"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T18:47:45Z",
+          "completed_at": "2026-10-24T18:47:45Z"
+        },
+        {
+          "name": "Clean hashed install, wheel, tests and evidence",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 4,
+          "started_at": "2026-10-24T18:47:45Z",
+          "completed_at": "2026-10-24T19:34:44Z"
+        },
+        {
+          "name": "Upload raw evidence including failures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-24T19:34:44Z",
+          "completed_at": "2026-10-24T19:35:27Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9,
+          "started_at": "2026-10-24T19:35:27Z",
+          "completed_at": "2026-10-24T19:35:27Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-24T19:35:27Z",
+          "completed_at": "2026-10-24T19:35:29Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-24T19:35:29Z",
+          "completed_at": "2026-10-24T19:35:29Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/check-runs/120956361562",
+      "labels": [
+        "windows-latest"
+      ],
+      "runner_id": 1000000250,
+      "runner_name": "GitHub Actions 1000000250",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

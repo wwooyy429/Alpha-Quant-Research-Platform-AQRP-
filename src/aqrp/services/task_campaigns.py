@@ -28,6 +28,45 @@ def _paths(root, name):
 
 
 def history(root, data_hash):
+    from aqrp.experiments.admission import BudgetAuthority
+
+    authority = BudgetAuthority(root)
+    if not authority.anchor.is_file() and (root / "catalog.json").exists():
+        raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+    if authority.anchor.is_file():
+        # A single connection owns one stable authority snapshot. Registration
+        # reads committed claims, including pending projections; it never mutates
+        # or repairs the research history. The write-intent lock prevents a newer
+        # projection from racing this snapshot's exact frozen-prefix validation.
+        with closing(sqlite3.connect(authority.db, timeout=30, isolation_level=None)) as c:
+            c.row_factory = sqlite3.Row
+            c.execute("BEGIN IMMEDIATE")
+            try:
+                try:
+                    shared = authority.history(c, data_hash)
+                    registered_trials = c.execute(
+                        "SELECT count(*) FROM trial_claims JOIN admissions ON trial_claims.admission_id=admissions.id WHERE admissions.data_hash=?",
+                        (data_hash,),
+                    ).fetchone()[0]
+                except ContractError as exc:
+                    if isinstance(exc.__cause__, sqlite3.DatabaseError):
+                        raise exc.__cause__
+                    raise
+            finally:
+                c.rollback()
+        result = {
+            "prior_research_trials": registered_trials,
+            "prior_reserved_task_attempts": sum(
+                a["owner_kind"] == "TASK" and bool(a["units"]) for a in shared["admissions"]
+            ),
+            "prior_legacy_admission_units": sum(
+                len(a["units"]) for a in shared["admissions"] if a["owner_kind"] == "LEGACY"
+            ),
+            "prior_admitted_units": shared["admitted_units"],
+            "prior_rejected_units": shared["rejected_units"],
+        }
+        result["contaminated_before_registration"] = any(result.values())
+        return result
     rows = read_chain(guard_path(root / "research-runs/trials.jsonl"))
     result = {
         "prior_research_trials": sum(x["payload"].get("data_hash") == data_hash for x in rows),
@@ -92,7 +131,7 @@ def register(root, name, configs, cat, *, automatic=False):
             raise ContractError("CAMPAIGN_REGISTRATION_INCOMPLETE")
         data_hash = cat["snapshot"]["manifest_hash"]
         prior = history(root, data_hash)
-        if automatic and (prior["prior_reserved_task_attempts"] or prior["prior_research_trials"]):
+        if automatic and prior["contaminated_before_registration"]:
             raise ContractError("EXPLICIT_CAMPAIGN_REQUIRED_AFTER_DATA_ACCESS")
         identity = digest(
             {

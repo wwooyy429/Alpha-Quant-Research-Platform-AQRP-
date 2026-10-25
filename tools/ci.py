@@ -194,8 +194,32 @@ def main():
     command([str(py), "-m", "pip", "install", "--no-index", "--no-deps", str(project_wheel)])
     command([str(py), "-m", "ruff", "check", "src", "tests", "tools"], cwd=source)
     command([str(py), "-m", "ruff", "format", "--check", "src", "tests", "tools"], cwd=source)
-    command([str(py), str(source / "tools/check_phase6_package.py")], cwd=source)
+    command([str(py), str(source / "tools/check_phase7_package.py")], cwd=source)
+    # The protected historical base policy remains byte-exact. The child only
+    # scopes independently recomputed public variant identifiers to exact files.
+    os.environ["GITLEAKS_CONFIG"] = str(source / ".gitleaks-phase7.toml")
+    env["secret_scan_policy"] = {
+        "base_sha256": hashlib.sha256((source / ".gitleaks.toml").read_bytes()).hexdigest(),
+        "effective_child_sha256": hashlib.sha256(
+            (source / ".gitleaks-phase7.toml").read_bytes()
+        ).hexdigest(),
+        "effective_config": str(source / ".gitleaks-phase7.toml"),
+        "timing": "Scan before expensive tests; exact entire scanned-source bytes rechecked before complete",
+    }
+    (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
+    command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
+    command(
+        [
+            str(py),
+            str(source / "tools/check_phase7_scan_policy.py"),
+            str(RUN),
+            "--operation",
+            "capture",
+        ],
+        cwd=source,
+    )
     command([str(py), str(source / "tools/original_replay_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/released_p6_smoke.py"), str(RUN)], cwd=source)
     os.environ["AQRP_ORIGINAL_ENV_ARCHIVE"] = str(RUN / "reproduction/environment-archive.json")
     command(
         [
@@ -236,7 +260,7 @@ def main():
         "recheck_reference_v2.py",
     ):
         command(
-            [str(py), "-I", str(source / "docs/audits/phase-3" / script)],
+            [str(py), "-I", "-B", str(source / "docs/audits/phase-3" / script)],
             cwd=source / "docs/audits/phase-3",
         )
     for name in ("reference_check.py", "revision_reference.py"):
@@ -244,13 +268,30 @@ def main():
             [
                 str(py),
                 "-I",
+                "-B",
                 str(source / "docs/audits/phase-6" / name),
                 str(RUN / ("p6-" + name.replace(".py", ".json"))),
             ],
             cwd=source,
         )
     command([str(py), str(source / "tools/ui_smoke.py"), str(RUN)], cwd=source)
-    command([str(py), str(source / "tools/secret_scan.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/e2e_smoke.py"), str(RUN)], cwd=source)
+    command([str(py), str(source / "tools/competition_smoke.py"), str(RUN)], cwd=source)
+    command(
+        [
+            str(py),
+            str(source / "tools/check_phase7_scan_policy.py"),
+            str(RUN),
+            "--operation",
+            "verify",
+        ],
+        cwd=source,
+    )
+    env["complete_scope"] = (
+        "Complete clean SDK and P7 non-browser protocol; actual browser and overall E2E recorded separately"
+    )
+    env["phase7_actual_browser_complete"] = False
+    env["phase7_full_e2e_complete"] = False
     env["complete"] = True
     env["ended_utc"] = datetime.now(UTC).isoformat()
     (RUN / "environment.json").write_text(json.dumps(env, indent=2), encoding="utf-8")
@@ -292,9 +333,20 @@ def main():
                 "backtest",
                 "ui",
                 "ui-wheelhouse",
+                "e2e",
+                "competition",
+                "scan-policy",
                 "tmp",
             )
-            or (relative.parts[0] == "reproduction" and relative.parts[1] != "venv")
+            or (
+                relative.parts[0] == "reproduction"
+                and relative.parts[1] != "venv"
+                and not (
+                    relative.parts[1] == "p6"
+                    and len(relative.parts) > 2
+                    and relative.parts[2] in ("venv", "source", "pytest-cache")
+                )
+            )
         ):
             selected.append(
                 {

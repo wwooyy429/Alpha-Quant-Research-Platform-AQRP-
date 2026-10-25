@@ -1,4 +1,4 @@
-name: Phase 6 quality
+name: Phase 7 quality
 on:
   pull_request:
   push:
@@ -29,7 +29,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: phase6-${{ matrix.os }}-${{ github.run_attempt }}
+          name: phase7-${{ matrix.os }}-${{ github.run_attempt }}
           path: |
             ${{ runner.temp }}/aqrp-evidence/*/*.log
             ${{ runner.temp }}/aqrp-evidence/*/*.json
@@ -44,12 +44,21 @@ jobs:
             ${{ runner.temp }}/aqrp-evidence/*/portfolio/**/*
             ${{ runner.temp }}/aqrp-evidence/*/backtest/**/*
             ${{ runner.temp }}/aqrp-evidence/*/ui/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/e2e/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/competition/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/scan-policy/**/*
             ${{ runner.temp }}/aqrp-evidence/*/ui-wheelhouse/*.whl
             ${{ runner.temp }}/aqrp-evidence/*/tmp/**/*
             ${{ runner.temp }}/aqrp-evidence/*/reproduction/*.json
             ${{ runner.temp }}/aqrp-evidence/*/reproduction/*.log
             ${{ runner.temp }}/aqrp-evidence/*/reproduction/dataset/**/*
             ${{ runner.temp }}/aqrp-evidence/*/reproduction/wheelhouse/*.whl
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/p6/*.json
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/p6/*.log
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/p6/*.xml
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/p6/wheel/*.whl
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/p6/dataset/**/*
+            ${{ runner.temp }}/aqrp-evidence/*/reproduction/p6/factor-runs/**/*
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 30

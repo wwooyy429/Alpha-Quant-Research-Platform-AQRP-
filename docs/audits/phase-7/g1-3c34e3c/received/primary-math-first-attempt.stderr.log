@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p7-g1-3c34e3c-independent-20261024\primary_math.py", line 88, in <module>
+    goldcheck(6,q);goldcheck(7,{'actual_fill_price':F('100.1'),'notional':notional,'commission':fee,'slippage_cost':q/10,'total_equity_drag':1000-equity})
+                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p7-g1-3c34e3c-independent-20261024\primary_math.py", line 81, in goldcheck
+    check(norm(actual)==norm(expected),'Golden '+str(n))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11638\AppData\Local\AQRP\reviews\p7-g1-3c34e3c-independent-20261024\primary_math.py", line 13, in check
+    if not v: raise AssertionError(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Golden 7

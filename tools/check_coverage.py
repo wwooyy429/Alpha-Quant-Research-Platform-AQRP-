@@ -38,6 +38,7 @@ def main():
         minimum = (
             (95, 90)
             if task_critical
+            or normalized.endswith("/experiments/admission.py")
             or normalized.split("/")[-1] in critical
             or factor_critical
             or "/core/security/" in normalized

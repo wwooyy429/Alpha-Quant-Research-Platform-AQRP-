@@ -1,0 +1,2255 @@
+{
+  "executor": "Primary GPT Work",
+  "fixed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "E:\\AQ7\\f70d5cd3\\aqrp-8fc37842-8ead-43d0-b845-62cf584391e9\\venv\\Scripts\\python.exe",
+  "installed_root": "E:\\AQ7\\f70d5cd3\\aqrp-8fc37842-8ead-43d0-b845-62cf584391e9\\venv\\Lib\\site-packages\\aqrp",
+  "source_identity86": [
+    {
+      "path": "__init__.py",
+      "sha256": "8d4410485d883ed1fe1a455145707ae22a4fc65be7058420ed7f67708f2d9429"
+    },
+    {
+      "path": "backtest/contracts.py",
+      "sha256": "ea35fe7ac7f9982e897c28bdf3735986724bf53b07be7ff8ed27b42805f724c7"
+    },
+    {
+      "path": "backtest/engine.py",
+      "sha256": "be479f474e96f8fb3fcb0a7f79573b7af8f37bd82fc0e7d7c096bf9b19bc4521"
+    },
+    {
+      "path": "backtest/exact.py",
+      "sha256": "90b38b8129196428d21bec4ba27cacb624f6a68dfaa0eaaf485952fe66e90156"
+    },
+    {
+      "path": "backtest/ledger.py",
+      "sha256": "428935a8a6764d5ac53687f825694e962220444391e7e15039d3bca83b5aac5d"
+    },
+    {
+      "path": "backtest/provider.py",
+      "sha256": "198e82ab2856c097ae8778b2e633dc070bf13ab0d73e66d3e492732dd8b5ce85"
+    },
+    {
+      "path": "backtest/risk.py",
+      "sha256": "747f5f66bbd1a9a10bd186230162fc4dec7dcbd1dd6110c1580ecb1ed7cb4e30"
+    },
+    {
+      "path": "backtest/synthetic.py",
+      "sha256": "7e41b191d8fbf48f62ffc95008e297b977e6e0c2b240361558af981a34f71e8a"
+    },
+    {
+      "path": "backtest/transactions.py",
+      "sha256": "9afd9cd82c3b08bf9f037998cb9eb1aee80c411dcc652da6d003360ce2e2a33e"
+    },
+    {
+      "path": "backtest/__init__.py",
+      "sha256": "4ff03e1507edd0620a1e98e3a685e363d16c16a10cb6bd5267b6c95a053cddd1"
+    },
+    {
+      "path": "competition/adapter.py",
+      "sha256": "2f6c9c25add90590459ac94aeabe51b93cfbba22cfc8d23758a0e5633ae0b1e3"
+    },
+    {
+      "path": "competition/__init__.py",
+      "sha256": "40c19f925c7d648b50e24d22f396ae6c7482a6f568a227eecbf8fb73121c70b3"
+    },
+    {
+      "path": "core/canonical.py",
+      "sha256": "1bd6ada40737205058f9641fe2649761aa878a8744d6233af60d651c41f1da30"
+    },
+    {
+      "path": "core/contracts.py",
+      "sha256": "51a89980e72ae18db2a8621650b791075cf46bb1e8fc60b13b444ad852edff7d"
+    },
+    {
+      "path": "core/environment.py",
+      "sha256": "5b1edfd577fc9829a6705db0455fabe47ff2ed466ea59040c65505a15dca6cf2"
+    },
+    {
+      "path": "core/errors.py",
+      "sha256": "c5c72b128a89cbe3c58b4b85cc35d4d50e43989667ffe97f6dfba1d2dc37f6a9"
+    },
+    {
+      "path": "core/math.py",
+      "sha256": "027fd74593444277a1fed83928d5a3002240ea29a2ecf8445b350de64c5668c2"
+    },
+    {
+      "path": "core/time.py",
+      "sha256": "c4d62e3fbf51fdb80aa33d70b29c77e31b408c898233aa39e9d5f62b7783741e"
+    },
+    {
+      "path": "core/units.py",
+      "sha256": "5226e0a590353c9d27d42199a44b2b59f79a069c8a324e20feb27fd63f38e98a"
+    },
+    {
+      "path": "core/__init__.py",
+      "sha256": "cfe70a553490b59514d6d98929fe0b0ac04368394b9bdfc33d7e7049a6c26448"
+    },
+    {
+      "path": "data/actions.py",
+      "sha256": "0dd59968eeb3ecc150656b745ad699176af347c5a564c7d2465f2fbbffdabe9d"
+    },
+    {
+      "path": "data/exposures.py",
+      "sha256": "943ef64e821f927f3da951185678bb6647ef5043b463950abda4e1e05aea1622"
+    },
+    {
+      "path": "data/pit.py",
+      "sha256": "d1584ec7b97173aa13798bc90c89ebd684193ca04608808aa26ab7ac334c0d2b"
+    },
+    {
+      "path": "data/quality.py",
+      "sha256": "443b58566e0a31b6362150ce03acae4135383392793a7558e627c7d04fb73191"
+    },
+    {
+      "path": "data/query.py",
+      "sha256": "b4c385568f47c3bd138764cca7bc43f0fb7ea271edf40070b1a756cf3928179f"
+    },
+    {
+      "path": "data/schemas.py",
+      "sha256": "6565845912a46b5f0ee390b1f213ed86150e2a144ae9ba38e3a61dd2469183fc"
+    },
+    {
+      "path": "data/snapshot.py",
+      "sha256": "d8fe10741718146046f1bfb0ea81fe7deb334666353252b769a8b10f3a2a71aa"
+    },
+    {
+      "path": "data/store.py",
+      "sha256": "b26b244289ba3d82d8b96a3bcb79eb6b603e3e11c9d36f3476a9c397e5be67ac"
+    },
+    {
+      "path": "data/synthetic.py",
+      "sha256": "4557605a9535b4e9a132fd8164302e056219ef5236d67054f6217cbd30630fd3"
+    },
+    {
+      "path": "data/__init__.py",
+      "sha256": "ae6a6a312cabe10abbd61c98a099b73ab7737768aa5b8216d2676b8c3fc10955"
+    },
+    {
+      "path": "execution/liquidity.py",
+      "sha256": "ac0685946391d0e40228d843a21b627760528548d597c299889524a2ee50ebd6"
+    },
+    {
+      "path": "execution/model.py",
+      "sha256": "5bb3dce60bfb26ef536034cea17bb8d3e768b9b43fb540a77dd6e8dee9440315"
+    },
+    {
+      "path": "execution/__init__.py",
+      "sha256": "bb8142fd90ed9c56ba58568654577a21d1a595e60af721d385669793a950de51"
+    },
+    {
+      "path": "experiments/admission.py",
+      "sha256": "93bc6ce55f26919bc8243f885dc6ad8265310ba3c70fc03402f1718a5205b888"
+    },
+    {
+      "path": "experiments/ledger.py",
+      "sha256": "b76d509a59e8e0d27f046a73b62f109f8528bb465c81fb3544d7fdd4cdbc3c15"
+    },
+    {
+      "path": "experiments/replay_worker.py",
+      "sha256": "50110ff438d5f2720d907f172ca3845fbf8c81b058f07df1fa40d54079a26dbd"
+    },
+    {
+      "path": "experiments/reproduction.py",
+      "sha256": "f2e92ca0ccbc4af83b5e6c3f7d3eff099a3f1f5cd69df121497d180bb0e68b4f"
+    },
+    {
+      "path": "experiments/__init__.py",
+      "sha256": "eccee2a2730063465d0c6ea447fa72d999b810d509c3c54c09f75b65ab3f5f15"
+    },
+    {
+      "path": "factors/admission.py",
+      "sha256": "b0db15475f579f96fab025f316a63a99c983ab6b8e9c2d68c53e80a61335c41c"
+    },
+    {
+      "path": "factors/builtins.py",
+      "sha256": "44631f4450ed0113d062245dff4f7e7c7357554b8c06f5ee807cf4c04b73d4a1"
+    },
+    {
+      "path": "factors/contracts.py",
+      "sha256": "f38bb9fa018ecaf5c9076fd3b54f33bc6554be49f2464b1f8ba7be2fbc07323f"
+    },
+    {
+      "path": "factors/engine.py",
+      "sha256": "08d50d4f738405d9a0fdbe499d67f1c41a9873567e3a9d16331d523ccd238c66"
+    },
+    {
+      "path": "factors/input.py",
+      "sha256": "97fa7709ebbcef066565c2ac69c9f6e59b75674bf512f9ab4f570d205bd38403"
+    },
+    {
+      "path": "factors/registry.py",
+      "sha256": "fe96756e4b69c334d51a501374bbf8f212a3d1cda766daf97575ee43d4e312f0"
+    },
+    {
+      "path": "factors/versions.py",
+      "sha256": "dff1438c5f7fc6f63f05a48778913af8eed32f1c2521a97b7d8e0d752bc27f0d"
+    },
+    {
+      "path": "factors/__init__.py",
+      "sha256": "34e4ae27d5e588b0cd90d3cfb7e7c4a16ce38139b84a66ffc1d86433aaa65a7d"
+    },
+    {
+      "path": "performance/metrics.py",
+      "sha256": "ce8bad1b5c91ad26a1c53c9ef9d6925f36fb36b6c23a4e96b2be409fcd5f612b"
+    },
+    {
+      "path": "performance/__init__.py",
+      "sha256": "1445c98017a1f812416dd190af9aa9f005d5c9778ddc51f442c204f0e81cf55a"
+    },
+    {
+      "path": "portfolio/construct.py",
+      "sha256": "6192b6e0ddd8ce0659ed29ebea626d1fee4a6aa942a33f0e64253c14c8c6356a"
+    },
+    {
+      "path": "portfolio/contracts.py",
+      "sha256": "b431079311697383238936fd04e00f4d024903776af58a69fd505f08e930c909"
+    },
+    {
+      "path": "portfolio/research_input.py",
+      "sha256": "f30b76e14189847abd197d7b2b17b44f956fe010ec102f6e434a0c5c7a304212"
+    },
+    {
+      "path": "portfolio/service.py",
+      "sha256": "ce50c0701eb99fbb099d9abfe1fbfb5405fc41f46f1b645e928a43c575c8b9ac"
+    },
+    {
+      "path": "portfolio/weights.py",
+      "sha256": "313c204b1c159985fa6edc262fcbe202317cd57b9043377c09f75fa20f14d274"
+    },
+    {
+      "path": "portfolio/__init__.py",
+      "sha256": "c347e7677215faf3a20d38d39aa70ee11c3b3e08b536ba3b002aa9b88f7ddcf1"
+    },
+    {
+      "path": "research/numerics.py",
+      "sha256": "7e1cd130a4117495ddc541738fe5c957957db76ceca9b16baa8cfd139d4a46e7"
+    },
+    {
+      "path": "research/pipeline.py",
+      "sha256": "d4f7b6eda91b99e3422d6c86b4ee037b4e2efeafe1d0c1d7c0b3cb4b14398b4f"
+    },
+    {
+      "path": "research/synthetic.py",
+      "sha256": "56512be42191f837ed38c2cb5ee805f543811035f9e2ecb76760dbee40c8ab6b"
+    },
+    {
+      "path": "research/__init__.py",
+      "sha256": "fc9cfb479f6fbbd7e7aa329300766f792633bf7c242336beee9e5edbe4974f50"
+    },
+    {
+      "path": "risk/checks.py",
+      "sha256": "eb0e073e454d65463f291e88fecbda721db7abb1507eb80f21241de160b330e9"
+    },
+    {
+      "path": "risk/__init__.py",
+      "sha256": "0e7646c13a8957e2a45333f6db79bcc621b9855748b48f0f045d43b7f877e635"
+    },
+    {
+      "path": "services/backtest.py",
+      "sha256": "82eb8a1596f8e4d8cc53ea071359ec7f3ea7f4b71ef3009bd0e8f911fd57f2a8"
+    },
+    {
+      "path": "services/backtest_cli.py",
+      "sha256": "3282daa0e42d29e2548971e3497546e0303c5ba642ae451a3ac14328f2ed5edf"
+    },
+    {
+      "path": "services/cli.py",
+      "sha256": "4604cb6971b2574f37788af26e86f0346880bed0e8f241d28e6c9baa0b3bcb93"
+    },
+    {
+      "path": "services/research.py",
+      "sha256": "b979d7320eae04bfe1df6c04297e3cccb925d444a312d3182b90a7c8e8522d87"
+    },
+    {
+      "path": "services/tasks.py",
+      "sha256": "c2ad8d349cac5597d709d16d49ef36c67bad9c30b586f2456aa128529342e96a"
+    },
+    {
+      "path": "services/task_campaigns.py",
+      "sha256": "663afc933612a313401aa604829b57353e6bd5402d0e66c9616935f440908081"
+    },
+    {
+      "path": "services/task_cli.py",
+      "sha256": "ecacd6290c507561d24d24f03e43ee250826b39701debab929dc421c0cf919a6"
+    },
+    {
+      "path": "services/task_context.py",
+      "sha256": "2d917b0f68722b4b740244a1c44fc083284c9da22e9ca2b928549441b725425c"
+    },
+    {
+      "path": "services/task_history.py",
+      "sha256": "6585ce0837e4518215c78b924c2bbe1e1900eb07aeb66fa5cdc120537d3046f4"
+    },
+    {
+      "path": "services/task_inputs.py",
+      "sha256": "8a8c25782fa7193827bcce95d0122649b9ac6cb5eefd5d92a72d577b2aa63824"
+    },
+    {
+      "path": "services/task_requests.py",
+      "sha256": "3d6f270f7d1e0913ffb687ad56b019686c9bcf89e14cd8414019d24f344a473d"
+    },
+    {
+      "path": "services/task_state.py",
+      "sha256": "2ea6df1dd00e5730f753eab19202f88145c17dee868f802f5e7424b61ddfff5a"
+    },
+    {
+      "path": "services/task_worker.py",
+      "sha256": "2f6e809edac4a860d13a6e316284fecaa8d333e261445cd23c1099e8f49bc247"
+    },
+    {
+      "path": "services/__init__.py",
+      "sha256": "2a34f719bbf40afa1188f75c46b50f4f758e564d32dee8bd4313c1575d99ef7c"
+    },
+    {
+      "path": "ui/app.py",
+      "sha256": "3925db6028f87f23fbda4d17bcd99a468c55fd43b0b3c83b8bd38af88602fa7c"
+    },
+    {
+      "path": "ui/environment.py",
+      "sha256": "27501d7c589b04e5dcc56b5a9b7661b30309bfe67ac46f44bdfcd9907c32cdb3"
+    },
+    {
+      "path": "ui/launch.py",
+      "sha256": "553a8e25563f3530cbb429dda9cf8e8b40a698eaa6b4779cdf35c3b20a9422da"
+    },
+    {
+      "path": "ui/numbers.py",
+      "sha256": "56491d7c0fb21146047798286ffc50b90f435de17e6feaf8a8a13677be90e18d"
+    },
+    {
+      "path": "ui/__init__.py",
+      "sha256": "442e8046f625cc86df30acb3e63bfbb52c051663e1431dc94abc886a97625754"
+    },
+    {
+      "path": "validation/approvals.py",
+      "sha256": "15197dfec508adad7ad6138d9348cc98e11e299879594dc89c2eb2e3c7e6d731"
+    },
+    {
+      "path": "validation/evaluator.py",
+      "sha256": "3604206b7d39da5d74608948f631caf4181983e00bed380ebb9a4497a4b3eff3"
+    },
+    {
+      "path": "validation/inference.py",
+      "sha256": "4fd0bd03b6905a67eff977b4a2531e6f26f00d1e6119842e3b140f26d2a07e8c"
+    },
+    {
+      "path": "validation/labels.py",
+      "sha256": "836aed705e01502cb11d980b63a3693af32dd9bb6df80d83e125731f72dacc26"
+    },
+    {
+      "path": "validation/splits.py",
+      "sha256": "f9344fe3042d5a80791361c09fceb636e0869efba8996ad84c8a9a26ed047b36"
+    },
+    {
+      "path": "validation/__init__.py",
+      "sha256": "8faf42f0957f98ac1d64b53f8036eadd8a3f3a83df5e28fde324b3c5a6aa6ae9"
+    },
+    {
+      "path": "core/security/__init__.py",
+      "sha256": "f37ac672ad0f11ad48d4890bbf0b723271a4510a01c317cdd317810499279336"
+    }
+  ],
+  "fixture_root": "E:\\AQ7\\primary-pollution-91dad3e9",
+  "context": "Three independent code-control fixtures, same logical clean-registration and A-cancel-before-R history; no repeated B research within any fixture",
+  "results": [
+    {
+      "mode": "legacy_api",
+      "workspace": "E:\\AQ7\\primary-pollution-91dad3e9\\legacy_api",
+      "campaign_registrations": [
+        {
+          "budget": 12,
+          "budget_scope": "Shared data identity within this workspace, all campaigns and reserved failed/cancelled tasks; no refunds",
+          "campaign_hash": "1eb7859cd38a7d6624f7aa98f86a41689325146588a494863e050167935d5204",
+          "catalogue_revision": "8f07f08fe22d3c9133041ed04aadc5e734074534958ba1f7250367ceba292198",
+          "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+          "family_id": "ui-campaign-30758e91ba13cd889eb01064c87a8473f0853829b201c5740f3eb04bb127be29",
+          "id": "campaign-a",
+          "registration": "EXPLICIT_PREREGISTRATION",
+          "registration_history": {
+            "contaminated_before_registration": false,
+            "prior_admitted_units": 0,
+            "prior_legacy_admission_units": 0,
+            "prior_rejected_units": 0,
+            "prior_research_trials": 0,
+            "prior_reserved_task_attempts": 0
+          },
+          "schema": "engineering-research-campaign/1",
+          "variants": {
+            "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7": {
+              "calendar_id": "SYN_A_CAL",
+              "candidates": [
+                {
+                  "direction": 1,
+                  "hypothesis": "momentum",
+                  "parameters": {
+                    "lookback": 2
+                  },
+                  "ref": {
+                    "factor_id": "momentum",
+                    "factor_version": "1.2.1",
+                    "implementation_hash": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c"
+                  }
+                }
+              ],
+              "currency": "SYNCCY",
+              "decisions": [
+                {
+                  "decision_time": "2024-01-06T12:05:00Z",
+                  "session": "2024-01-06"
+                }
+              ],
+              "development_cutoff": "2024-01-25T12:10:00Z",
+              "evaluation_cutoff": "2024-01-25T12:10:00Z",
+              "family": {
+                "budget": 12,
+                "campaign": {
+                  "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+                  "id": "campaign-a",
+                  "identity": "30758e91ba13cd889eb01064c87a8473f0853829b201c5740f3eb04bb127be29",
+                  "registration_history": {
+                    "contaminated_before_registration": false,
+                    "prior_admitted_units": 0,
+                    "prior_legacy_admission_units": 0,
+                    "prior_rejected_units": 0,
+                    "prior_research_trials": 0,
+                    "prior_reserved_task_attempts": 0
+                  }
+                },
+                "definitions": {
+                  "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1": "8d9dcbbff2a47f74152d5050e8478bf44ace7e14a77a4bb91cf1600c4421b5ce"
+                },
+                "hypotheses": [
+                  "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+                ],
+                "hypothesis_aliases": {
+                  "momentum::h=1": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+                },
+                "id": "ui-campaign-30758e91ba13cd889eb01064c87a8473f0853829b201c5740f3eb04bb127be29",
+                "method": "holm"
+              },
+              "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+              "groups": 3,
+              "horizons": [
+                1
+              ],
+              "inference": {
+                "horizon": 1,
+                "m0": 0
+              },
+              "market_id": "SYN_A",
+              "min_group_n": 1,
+              "min_ic_n": 3,
+              "pipeline": {
+                "clean": {
+                  "method": "quantile",
+                  "quantiles": [
+                    0.05,
+                    0.95
+                  ]
+                },
+                "neutralize": true,
+                "standardized": {
+                  "method": "zscore"
+                }
+              },
+              "purpose": "ENGINEERING_DEMO",
+              "schema": "research/1",
+              "seed": 17,
+              "splits": {
+                "embargo_sessions": 1,
+                "test": [
+                  "2024-01-18",
+                  "2024-01-26"
+                ],
+                "train": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "validation": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ]
+              },
+              "universe_id": "SYN_U",
+              "universe_ref": {
+                "market_id": "SYN_A",
+                "membership_history_sha256": "0aca244c63c973901e0e7b2338e91a9eacf4ed6cd96ea3a1d3624ba667159567",
+                "membership_table_sha256": "88964a05903bfeed3de3a65902c42601718f8f58448b962f6ca4a29994493e0e",
+                "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+                "snapshot_id": "4a90f8b2-208c-4428-9c14-1de4f48db1ea",
+                "snapshot_manifest_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+                "universe_id": "SYN_U"
+              },
+              "walk_forward": [
+                {
+                  "evaluate": [
+                    "2024-01-10",
+                    "2024-01-18"
+                  ],
+                  "fit": [
+                    "2024-01-02",
+                    "2024-01-10"
+                  ],
+                  "fit_cutoff": "2024-01-10T00:00:00Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "budget": 12,
+          "budget_scope": "Shared data identity within this workspace, all campaigns and reserved failed/cancelled tasks; no refunds",
+          "campaign_hash": "032d7a2bd86ccd29564c6526dcbc712985ad67bac5518415b4909c98f64ca903",
+          "catalogue_revision": "8f07f08fe22d3c9133041ed04aadc5e734074534958ba1f7250367ceba292198",
+          "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+          "family_id": "ui-campaign-802507657bd3e6fdfdda52890830c14a5edbf1472f018066d95f1acace578251",
+          "id": "campaign-b",
+          "registration": "EXPLICIT_PREREGISTRATION",
+          "registration_history": {
+            "contaminated_before_registration": false,
+            "prior_admitted_units": 0,
+            "prior_legacy_admission_units": 0,
+            "prior_rejected_units": 0,
+            "prior_research_trials": 0,
+            "prior_reserved_task_attempts": 0
+          },
+          "schema": "engineering-research-campaign/1",
+          "variants": {
+            "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7": {
+              "calendar_id": "SYN_A_CAL",
+              "candidates": [
+                {
+                  "direction": 1,
+                  "hypothesis": "momentum",
+                  "parameters": {
+                    "lookback": 2
+                  },
+                  "ref": {
+                    "factor_id": "momentum",
+                    "factor_version": "1.2.1",
+                    "implementation_hash": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c"
+                  }
+                }
+              ],
+              "currency": "SYNCCY",
+              "decisions": [
+                {
+                  "decision_time": "2024-01-06T12:05:00Z",
+                  "session": "2024-01-06"
+                }
+              ],
+              "development_cutoff": "2024-01-25T12:10:00Z",
+              "evaluation_cutoff": "2024-01-25T12:10:00Z",
+              "family": {
+                "budget": 12,
+                "campaign": {
+                  "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+                  "id": "campaign-b",
+                  "identity": "802507657bd3e6fdfdda52890830c14a5edbf1472f018066d95f1acace578251",
+                  "registration_history": {
+                    "contaminated_before_registration": false,
+                    "prior_admitted_units": 0,
+                    "prior_legacy_admission_units": 0,
+                    "prior_rejected_units": 0,
+                    "prior_research_trials": 0,
+                    "prior_reserved_task_attempts": 0
+                  }
+                },
+                "definitions": {
+                  "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1": "b22574b6ea1ba3dadd3e82fc462718f104eb6d3c9529688ed8d4b8e0c3e22e92"
+                },
+                "hypotheses": [
+                  "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+                ],
+                "hypothesis_aliases": {
+                  "momentum::h=1": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+                },
+                "id": "ui-campaign-802507657bd3e6fdfdda52890830c14a5edbf1472f018066d95f1acace578251",
+                "method": "holm"
+              },
+              "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+              "groups": 3,
+              "horizons": [
+                1
+              ],
+              "inference": {
+                "horizon": 1,
+                "m0": 0
+              },
+              "market_id": "SYN_A",
+              "min_group_n": 1,
+              "min_ic_n": 3,
+              "pipeline": {
+                "clean": {
+                  "method": "quantile",
+                  "quantiles": [
+                    0.05,
+                    0.95
+                  ]
+                },
+                "neutralize": true,
+                "standardized": {
+                  "method": "zscore"
+                }
+              },
+              "purpose": "ENGINEERING_DEMO",
+              "schema": "research/1",
+              "seed": 17,
+              "splits": {
+                "embargo_sessions": 1,
+                "test": [
+                  "2024-01-18",
+                  "2024-01-26"
+                ],
+                "train": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "validation": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ]
+              },
+              "universe_id": "SYN_U",
+              "universe_ref": {
+                "market_id": "SYN_A",
+                "membership_history_sha256": "0aca244c63c973901e0e7b2338e91a9eacf4ed6cd96ea3a1d3624ba667159567",
+                "membership_table_sha256": "88964a05903bfeed3de3a65902c42601718f8f58448b962f6ca4a29994493e0e",
+                "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+                "snapshot_id": "4a90f8b2-208c-4428-9c14-1de4f48db1ea",
+                "snapshot_manifest_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+                "universe_id": "SYN_U"
+              },
+              "walk_forward": [
+                {
+                  "evaluate": [
+                    "2024-01-10",
+                    "2024-01-18"
+                  ],
+                  "fit": [
+                    "2024-01-02",
+                    "2024-01-10"
+                  ],
+                  "fit_cutoff": "2024-01-10T00:00:00Z"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "cancelled_A_task": {
+        "task_id": "698d4152-55e1-4c1c-a7c2-7f0d32be40f5",
+        "config_hash": "a0022459c334015dde454c0e8fc0b6ed89312d881288c679b1b6ee52d2a7b097",
+        "status": "CANCELLED",
+        "cancel_requested": true,
+        "error": null,
+        "slots": {},
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "admission": {
+            "actor": null,
+            "admission_id": "a70be7d8-efe3-4df3-a0ed-b930f9fccd12",
+            "code": null,
+            "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-30758e91ba13cd889eb01064c87a8473f0853829b201c5740f3eb04bb127be29",
+            "family_limit": 12,
+            "key": "cancel-before-R",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "698d4152-55e1-4c1c-a7c2-7f0d32be40f5",
+            "owner_kind": "TASK",
+            "prior_debit": 0,
+            "prior_family_debit": 0,
+            "request_hash": "a0022459c334015dde454c0e8fc0b6ed89312d881288c679b1b6ee52d2a7b097",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "8d9dcbbff2a47f74152d5050e8478bf44ace7e14a77a4bb91cf1600c4421b5ce",
+                "hypothesis_alias": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+              }
+            ]
+          },
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "1eb7859cd38a7d6624f7aa98f86a41689325146588a494863e050167935d5204",
+            "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+            "id": "campaign-a",
+            "variant_key": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7"
+          },
+          "hypothesis_ids": [
+            "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_admission_units": 0,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "a0022459c334015dde454c0e8fc0b6ed89312d881288c679b1b6ee52d2a7b097",
+          "task_id": "698d4152-55e1-4c1c-a7c2-7f0d32be40f5",
+          "units": 1
+        }
+      },
+      "B_run_id": "d8f53a37-cbbd-483a-a7d7-60a310691e4d",
+      "B_lineage": {
+        "admission_inputs": {
+          "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+          "exposure_root": "E:\\AQ7\\primary-pollution-91dad3e9\\legacy_api\\inputs\\pool-exposures\\beb7d290-04e9-4582-995b-d9dd8208582e",
+          "snapshot_root": "E:\\AQ7\\primary-pollution-91dad3e9\\legacy_api\\inputs\\pools"
+        },
+        "code_bundle": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+        "code_commit": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+        "cost_rules": "NOT_APPLICABLE_P3_RESEARCH_NO_EXECUTION_ORDERS",
+        "coverage_hash": "69564a9eea2e670393a9f52141ee9acfdfc16034a262734100897ca09250e46d",
+        "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+        "environment": {
+          "interpreter_sha256": "21bba195c88bcc007c8fd8e99603e9c0d82be1e08cff2f23bd5b2264f3148289",
+          "lock": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "packages": [
+            {
+              "installed_record_sha256": "604a3b7d5f43917af5d96f4f1fcf7178e885db4c059b9f5ed9646a26d19e6d4c",
+              "name": "colorama",
+              "version": "0.4.6"
+            },
+            {
+              "installed_record_sha256": "c7f83e46154d0ee16fa3387f7a74a5167b41c0493db4d94687c42f7b01e55c76",
+              "name": "coverage",
+              "version": "7.16.2"
+            },
+            {
+              "installed_record_sha256": "4bafa14bbb2769e39b5db5d15eb198afe21c3a5f75e845f4b4a846b607e07f19",
+              "name": "duckdb",
+              "version": "1.5.6"
+            },
+            {
+              "installed_record_sha256": "a5575aa0cdbe0b9c2f9244159d26f7df6587d61f7db91025bc6be44e1a5b0354",
+              "name": "hypothesis",
+              "version": "6.170.5"
+            },
+            {
+              "installed_record_sha256": "15a784262bdb500322164c58e260b60a659560c6d85b94d3ba67f4560c40f504",
+              "name": "iniconfig",
+              "version": "2.3.1"
+            },
+            {
+              "installed_record_sha256": "01484bc84aa42f301300b75b4325672fcf7d06ce9f1c69c435cd36a838505673",
+              "name": "numpy",
+              "version": "2.5.4"
+            },
+            {
+              "installed_record_sha256": "67e9d0e1b1a0a7a9fe0f434f13ccc32e12d699bd5b9cd97012b868e61de5db96",
+              "name": "packaging",
+              "version": "26.3"
+            },
+            {
+              "installed_record_sha256": "de6f946c9c1fc7fdfe5a518ec0239dc98faa42bffb777b37e15a0f827af75f97",
+              "name": "pandas",
+              "version": "3.0.6"
+            },
+            {
+              "installed_record_sha256": "c24d1328e7e296fe90bd0fc9709134f62d54f3713c1e422f84ff3cd4bebd66ac",
+              "name": "pip",
+              "version": "26.2.1"
+            },
+            {
+              "installed_record_sha256": "4be2aff0826f1ac9233040ead47bedcc0683c23831e4f30f1076565b0af18aaa",
+              "name": "pluggy",
+              "version": "1.7.0"
+            },
+            {
+              "installed_record_sha256": "6b604d70ccf505e8ee8cfc5586bb5245002f2ea66f1acc2a140778037be8da6b",
+              "name": "pyarrow",
+              "version": "26.0.0"
+            },
+            {
+              "installed_record_sha256": "474a8c51fe661e0d4a627e46dff61f3e9500c1f18e73283b4d32d77d74857e8c",
+              "name": "pygments",
+              "version": "2.21.0"
+            },
+            {
+              "installed_record_sha256": "318f83c1bcf13177342fefbe76a57545854a52961ceb5c9d3c4a46465588a7bf",
+              "name": "pytest",
+              "version": "9.1.1"
+            },
+            {
+              "installed_record_sha256": "5a126b7cb1b3162dedbe3d1315afb8e48d9d503c29e189915fb6f9d345df1274",
+              "name": "pytest-cov",
+              "version": "7.1.0"
+            },
+            {
+              "installed_record_sha256": "fc1b296195bfc87a70eeca0ebfdb675be6e9fe07eac96c6da234e3be83dbbb92",
+              "name": "python-dateutil",
+              "version": "2.9.0.post0"
+            },
+            {
+              "installed_record_sha256": "ac0c9340a232ebcf81c7eb86947dc434e4436e923f5f9295baf86363b8a3e335",
+              "name": "ruff",
+              "version": "0.17.1"
+            },
+            {
+              "installed_record_sha256": "8a2e81c03ef56b9219ad3573c830d2824b507854cf93c562170c4d48271fc493",
+              "name": "setuptools",
+              "version": "84.2.0"
+            },
+            {
+              "installed_record_sha256": "9943a35b31e994611359b68f9b76dffbd844567a9d5831b7fa9c5a2d092c0358",
+              "name": "six",
+              "version": "1.17.0"
+            },
+            {
+              "installed_record_sha256": "12e2ab8b6108fc62cb2fb7ac62018a296363ba4d8476e903b5d1e2116bd1875e",
+              "name": "sortedcontainers",
+              "version": "2.4.0"
+            },
+            {
+              "installed_record_sha256": "30bb9c366992f855974b4f44c48a38359283aef6941875f5dbee6ce797966b2d",
+              "name": "tzdata",
+              "version": "2026.5"
+            },
+            {
+              "installed_record_sha256": "7f484d0608c01648714357d92e932bc07cb5d2a23e4a94994f8f6db273ed4f6b",
+              "name": "uv",
+              "version": "0.13.4"
+            },
+            {
+              "installed_record_sha256": "60fbb6d747430c911da8956b515909690430003f828ccd7aa5dab56906cc64af",
+              "name": "wheel",
+              "version": "0.48.0"
+            }
+          ],
+          "platform": "Windows-11-10.0.26300-SP0",
+          "python": "3.13.16",
+          "record_scope": "Actual distribution RECORD metadata; clean SDK additionally verifies original dependency wheel hashes",
+          "standard_gil": true,
+          "x64": true
+        },
+        "exposure_hash": "8af58ef73305e53cfe7bf786b8867cfd41ad6893c80aa850dc5770adad8cad85",
+        "permission_domain": "ENGINEERING_DEMO",
+        "protocol_hash": "3c769bba06561b2b825e5b5be5d05e53eef854058f66554c355fd21d44154379",
+        "seed": 17
+      },
+      "B_task_control": null,
+      "B_trial": {
+        "hash": "163c62911411f04e57f01af8cd23162be3367a3beb80e6975da52239fd795826",
+        "kind": "TRIAL_ATTEMPT",
+        "payload": {
+          "campaign_control": {},
+          "cross_campaign_data_access": false,
+          "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+          "family": "ui-campaign-802507657bd3e6fdfdda52890830c14a5edbf1472f018066d95f1acace578251",
+          "fingerprint": "0ea51818f5ba00daa420ba514c8a51cd1614ee72058bfab41178cfc2be600bfa",
+          "first_validation_access_at": "2026-10-25T08:05:53.381745+00:00",
+          "hypothesis": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1",
+          "over_budget": false,
+          "prior_data_attempts": 0,
+          "repeat_of": [],
+          "run_id": "d8f53a37-cbbd-483a-a7d7-60a310691e4d"
+        },
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-25T08:05:53.746242+00:00",
+        "seq": 0
+      },
+      "B_multiplicity": {
+        "adjusted": [
+          1
+        ],
+        "bh_evidence": null,
+        "complete": false,
+        "contaminated": false,
+        "failed_slots": [
+          0
+        ],
+        "hypotheses": [
+          "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+        ],
+        "m": 1,
+        "method": "holm",
+        "raw": [
+          null
+        ]
+      },
+      "authority_history": {
+        "requested_units": 2,
+        "admitted_units": 2,
+        "rejected_units": 0,
+        "admissions": [
+          {
+            "actor": null,
+            "admission_id": "a70be7d8-efe3-4df3-a0ed-b930f9fccd12",
+            "code": null,
+            "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-30758e91ba13cd889eb01064c87a8473f0853829b201c5740f3eb04bb127be29",
+            "family_limit": 12,
+            "key": "cancel-before-R",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "698d4152-55e1-4c1c-a7c2-7f0d32be40f5",
+            "owner_kind": "TASK",
+            "prior_debit": 0,
+            "prior_family_debit": 0,
+            "request_hash": "a0022459c334015dde454c0e8fc0b6ed89312d881288c679b1b6ee52d2a7b097",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "8d9dcbbff2a47f74152d5050e8478bf44ace7e14a77a4bb91cf1600c4421b5ce",
+                "hypothesis_alias": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+              }
+            ]
+          },
+          {
+            "actor": null,
+            "admission_id": "aa64acf4-99e2-4f25-8ea1-77d760369533",
+            "code": null,
+            "data_hash": "f292f322244ffb9d2283e4609f2ce5dea8eeedb29a2a2d8c5d0728d2d347217c",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-802507657bd3e6fdfdda52890830c14a5edbf1472f018066d95f1acace578251",
+            "family_limit": 12,
+            "key": "f7c4780fc4640b495a1b2a5b57ea8758d8109ef896d58d598033e4bb848b643e",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "d8f53a37-cbbd-483a-a7d7-60a310691e4d",
+            "owner_kind": "LEGACY",
+            "prior_debit": 1,
+            "prior_family_debit": 0,
+            "request_hash": "3c769bba06561b2b825e5b5be5d05e53eef854058f66554c355fd21d44154379",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "b22574b6ea1ba3dadd3e82fc462718f104eb6d3c9529688ed8d4b8e0c3e22e92",
+                "hypothesis_alias": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7::momentum::h=1"
+              }
+            ]
+          }
+        ],
+        "registered_trials": 1
+      }
+    },
+    {
+      "mode": "legacy_cli",
+      "workspace": "E:\\AQ7\\primary-pollution-91dad3e9\\legacy_cli",
+      "campaign_registrations": [
+        {
+          "budget": 12,
+          "budget_scope": "Shared data identity within this workspace, all campaigns and reserved failed/cancelled tasks; no refunds",
+          "campaign_hash": "490c8e157b4fa059cb067985e654759e3ed3c06524e96a2b2e0b5e1363467a20",
+          "catalogue_revision": "18dd81a50dfeb0bc56e9b4bab73f612a2301696acb041388a69f43af4f952018",
+          "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+          "family_id": "ui-campaign-42e72988af9ff969c2836372c8f678b474873e912c8082ce6d81b0c18c53a856",
+          "id": "campaign-a",
+          "registration": "EXPLICIT_PREREGISTRATION",
+          "registration_history": {
+            "contaminated_before_registration": false,
+            "prior_admitted_units": 0,
+            "prior_legacy_admission_units": 0,
+            "prior_rejected_units": 0,
+            "prior_research_trials": 0,
+            "prior_reserved_task_attempts": 0
+          },
+          "schema": "engineering-research-campaign/1",
+          "variants": {
+            "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73": {
+              "calendar_id": "SYN_A_CAL",
+              "candidates": [
+                {
+                  "direction": 1,
+                  "hypothesis": "momentum",
+                  "parameters": {
+                    "lookback": 2
+                  },
+                  "ref": {
+                    "factor_id": "momentum",
+                    "factor_version": "1.2.1",
+                    "implementation_hash": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c"
+                  }
+                }
+              ],
+              "currency": "SYNCCY",
+              "decisions": [
+                {
+                  "decision_time": "2024-01-06T12:05:00Z",
+                  "session": "2024-01-06"
+                }
+              ],
+              "development_cutoff": "2024-01-25T12:10:00Z",
+              "evaluation_cutoff": "2024-01-25T12:10:00Z",
+              "family": {
+                "budget": 12,
+                "campaign": {
+                  "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+                  "id": "campaign-a",
+                  "identity": "42e72988af9ff969c2836372c8f678b474873e912c8082ce6d81b0c18c53a856",
+                  "registration_history": {
+                    "contaminated_before_registration": false,
+                    "prior_admitted_units": 0,
+                    "prior_legacy_admission_units": 0,
+                    "prior_rejected_units": 0,
+                    "prior_research_trials": 0,
+                    "prior_reserved_task_attempts": 0
+                  }
+                },
+                "definitions": {
+                  "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1": "aa0bff4b806298ea5583bf3fc7bf47535de8f0840ad7577f7335f57e9b2a3cdc"
+                },
+                "hypotheses": [
+                  "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+                ],
+                "hypothesis_aliases": {
+                  "momentum::h=1": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+                },
+                "id": "ui-campaign-42e72988af9ff969c2836372c8f678b474873e912c8082ce6d81b0c18c53a856",
+                "method": "holm"
+              },
+              "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+              "groups": 3,
+              "horizons": [
+                1
+              ],
+              "inference": {
+                "horizon": 1,
+                "m0": 0
+              },
+              "market_id": "SYN_A",
+              "min_group_n": 1,
+              "min_ic_n": 3,
+              "pipeline": {
+                "clean": {
+                  "method": "quantile",
+                  "quantiles": [
+                    0.05,
+                    0.95
+                  ]
+                },
+                "neutralize": true,
+                "standardized": {
+                  "method": "zscore"
+                }
+              },
+              "purpose": "ENGINEERING_DEMO",
+              "schema": "research/1",
+              "seed": 17,
+              "splits": {
+                "embargo_sessions": 1,
+                "test": [
+                  "2024-01-18",
+                  "2024-01-26"
+                ],
+                "train": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "validation": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ]
+              },
+              "universe_id": "SYN_U",
+              "universe_ref": {
+                "market_id": "SYN_A",
+                "membership_history_sha256": "6718f3af05e6e90d9ec0123a57f961415c0aeed8d437d3bfb509a9d1af28489e",
+                "membership_table_sha256": "9a8ec4244b0ff18ce7f28794c2ebd52aa7bc02723da48e962d55d18ed9973f33",
+                "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+                "snapshot_id": "a1395610-c863-4486-b31f-270a45848adf",
+                "snapshot_manifest_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+                "universe_id": "SYN_U"
+              },
+              "walk_forward": [
+                {
+                  "evaluate": [
+                    "2024-01-10",
+                    "2024-01-18"
+                  ],
+                  "fit": [
+                    "2024-01-02",
+                    "2024-01-10"
+                  ],
+                  "fit_cutoff": "2024-01-10T00:00:00Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "budget": 12,
+          "budget_scope": "Shared data identity within this workspace, all campaigns and reserved failed/cancelled tasks; no refunds",
+          "campaign_hash": "5a3925f89cad3a715a66a05c5d5a648431f5bc15c2b030ae24c5cde399d0db9c",
+          "catalogue_revision": "18dd81a50dfeb0bc56e9b4bab73f612a2301696acb041388a69f43af4f952018",
+          "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+          "family_id": "ui-campaign-8d8436723f02418fb082d86db4aeff7b61e2175902b659d70e076a8f57ab6594",
+          "id": "campaign-b",
+          "registration": "EXPLICIT_PREREGISTRATION",
+          "registration_history": {
+            "contaminated_before_registration": false,
+            "prior_admitted_units": 0,
+            "prior_legacy_admission_units": 0,
+            "prior_rejected_units": 0,
+            "prior_research_trials": 0,
+            "prior_reserved_task_attempts": 0
+          },
+          "schema": "engineering-research-campaign/1",
+          "variants": {
+            "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73": {
+              "calendar_id": "SYN_A_CAL",
+              "candidates": [
+                {
+                  "direction": 1,
+                  "hypothesis": "momentum",
+                  "parameters": {
+                    "lookback": 2
+                  },
+                  "ref": {
+                    "factor_id": "momentum",
+                    "factor_version": "1.2.1",
+                    "implementation_hash": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c"
+                  }
+                }
+              ],
+              "currency": "SYNCCY",
+              "decisions": [
+                {
+                  "decision_time": "2024-01-06T12:05:00Z",
+                  "session": "2024-01-06"
+                }
+              ],
+              "development_cutoff": "2024-01-25T12:10:00Z",
+              "evaluation_cutoff": "2024-01-25T12:10:00Z",
+              "family": {
+                "budget": 12,
+                "campaign": {
+                  "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+                  "id": "campaign-b",
+                  "identity": "8d8436723f02418fb082d86db4aeff7b61e2175902b659d70e076a8f57ab6594",
+                  "registration_history": {
+                    "contaminated_before_registration": false,
+                    "prior_admitted_units": 0,
+                    "prior_legacy_admission_units": 0,
+                    "prior_rejected_units": 0,
+                    "prior_research_trials": 0,
+                    "prior_reserved_task_attempts": 0
+                  }
+                },
+                "definitions": {
+                  "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1": "0562a1cfb7d392231be218323505de13763939a676680a2260e031a55cc22664"
+                },
+                "hypotheses": [
+                  "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+                ],
+                "hypothesis_aliases": {
+                  "momentum::h=1": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+                },
+                "id": "ui-campaign-8d8436723f02418fb082d86db4aeff7b61e2175902b659d70e076a8f57ab6594",
+                "method": "holm"
+              },
+              "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+              "groups": 3,
+              "horizons": [
+                1
+              ],
+              "inference": {
+                "horizon": 1,
+                "m0": 0
+              },
+              "market_id": "SYN_A",
+              "min_group_n": 1,
+              "min_ic_n": 3,
+              "pipeline": {
+                "clean": {
+                  "method": "quantile",
+                  "quantiles": [
+                    0.05,
+                    0.95
+                  ]
+                },
+                "neutralize": true,
+                "standardized": {
+                  "method": "zscore"
+                }
+              },
+              "purpose": "ENGINEERING_DEMO",
+              "schema": "research/1",
+              "seed": 17,
+              "splits": {
+                "embargo_sessions": 1,
+                "test": [
+                  "2024-01-18",
+                  "2024-01-26"
+                ],
+                "train": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "validation": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ]
+              },
+              "universe_id": "SYN_U",
+              "universe_ref": {
+                "market_id": "SYN_A",
+                "membership_history_sha256": "6718f3af05e6e90d9ec0123a57f961415c0aeed8d437d3bfb509a9d1af28489e",
+                "membership_table_sha256": "9a8ec4244b0ff18ce7f28794c2ebd52aa7bc02723da48e962d55d18ed9973f33",
+                "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+                "snapshot_id": "a1395610-c863-4486-b31f-270a45848adf",
+                "snapshot_manifest_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+                "universe_id": "SYN_U"
+              },
+              "walk_forward": [
+                {
+                  "evaluate": [
+                    "2024-01-10",
+                    "2024-01-18"
+                  ],
+                  "fit": [
+                    "2024-01-02",
+                    "2024-01-10"
+                  ],
+                  "fit_cutoff": "2024-01-10T00:00:00Z"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "cancelled_A_task": {
+        "task_id": "92b4a0f3-8fd1-4e6b-a6dd-d5903163b2fc",
+        "config_hash": "cbd731bf2c39bd0162ec8dd2aa47b09ec6e60b1c2def1317c910cd159911c95c",
+        "status": "CANCELLED",
+        "cancel_requested": true,
+        "error": null,
+        "slots": {},
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "admission": {
+            "actor": null,
+            "admission_id": "f5db7683-efa9-4856-8f95-0f5fe4782f04",
+            "code": null,
+            "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-42e72988af9ff969c2836372c8f678b474873e912c8082ce6d81b0c18c53a856",
+            "family_limit": 12,
+            "key": "cancel-before-R",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "92b4a0f3-8fd1-4e6b-a6dd-d5903163b2fc",
+            "owner_kind": "TASK",
+            "prior_debit": 0,
+            "prior_family_debit": 0,
+            "request_hash": "cbd731bf2c39bd0162ec8dd2aa47b09ec6e60b1c2def1317c910cd159911c95c",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "aa0bff4b806298ea5583bf3fc7bf47535de8f0840ad7577f7335f57e9b2a3cdc",
+                "hypothesis_alias": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+              }
+            ]
+          },
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "490c8e157b4fa059cb067985e654759e3ed3c06524e96a2b2e0b5e1363467a20",
+            "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+            "id": "campaign-a",
+            "variant_key": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73"
+          },
+          "hypothesis_ids": [
+            "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_admission_units": 0,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "cbd731bf2c39bd0162ec8dd2aa47b09ec6e60b1c2def1317c910cd159911c95c",
+          "task_id": "92b4a0f3-8fd1-4e6b-a6dd-d5903163b2fc",
+          "units": 1
+        }
+      },
+      "B_run_id": "1e1743ae-2a68-49b3-972a-4aad6df8f4f8",
+      "B_lineage": {
+        "admission_inputs": {
+          "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+          "exposure_root": "E:\\AQ7\\primary-pollution-91dad3e9\\legacy_cli\\inputs\\pool-exposures\\65b12b4e-6aa2-4178-8393-35b4c0860c5e",
+          "snapshot_root": "E:\\AQ7\\primary-pollution-91dad3e9\\legacy_cli\\inputs\\pools"
+        },
+        "code_bundle": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+        "code_commit": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+        "cost_rules": "NOT_APPLICABLE_P3_RESEARCH_NO_EXECUTION_ORDERS",
+        "coverage_hash": "e8c75a5a9fbe0baa2004de992c34e6325c1b683f07be97a5c5205df28920a916",
+        "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+        "environment": {
+          "interpreter_sha256": "21bba195c88bcc007c8fd8e99603e9c0d82be1e08cff2f23bd5b2264f3148289",
+          "lock": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "packages": [
+            {
+              "installed_record_sha256": "604a3b7d5f43917af5d96f4f1fcf7178e885db4c059b9f5ed9646a26d19e6d4c",
+              "name": "colorama",
+              "version": "0.4.6"
+            },
+            {
+              "installed_record_sha256": "c7f83e46154d0ee16fa3387f7a74a5167b41c0493db4d94687c42f7b01e55c76",
+              "name": "coverage",
+              "version": "7.16.2"
+            },
+            {
+              "installed_record_sha256": "4bafa14bbb2769e39b5db5d15eb198afe21c3a5f75e845f4b4a846b607e07f19",
+              "name": "duckdb",
+              "version": "1.5.6"
+            },
+            {
+              "installed_record_sha256": "a5575aa0cdbe0b9c2f9244159d26f7df6587d61f7db91025bc6be44e1a5b0354",
+              "name": "hypothesis",
+              "version": "6.170.5"
+            },
+            {
+              "installed_record_sha256": "15a784262bdb500322164c58e260b60a659560c6d85b94d3ba67f4560c40f504",
+              "name": "iniconfig",
+              "version": "2.3.1"
+            },
+            {
+              "installed_record_sha256": "01484bc84aa42f301300b75b4325672fcf7d06ce9f1c69c435cd36a838505673",
+              "name": "numpy",
+              "version": "2.5.4"
+            },
+            {
+              "installed_record_sha256": "67e9d0e1b1a0a7a9fe0f434f13ccc32e12d699bd5b9cd97012b868e61de5db96",
+              "name": "packaging",
+              "version": "26.3"
+            },
+            {
+              "installed_record_sha256": "de6f946c9c1fc7fdfe5a518ec0239dc98faa42bffb777b37e15a0f827af75f97",
+              "name": "pandas",
+              "version": "3.0.6"
+            },
+            {
+              "installed_record_sha256": "c24d1328e7e296fe90bd0fc9709134f62d54f3713c1e422f84ff3cd4bebd66ac",
+              "name": "pip",
+              "version": "26.2.1"
+            },
+            {
+              "installed_record_sha256": "4be2aff0826f1ac9233040ead47bedcc0683c23831e4f30f1076565b0af18aaa",
+              "name": "pluggy",
+              "version": "1.7.0"
+            },
+            {
+              "installed_record_sha256": "6b604d70ccf505e8ee8cfc5586bb5245002f2ea66f1acc2a140778037be8da6b",
+              "name": "pyarrow",
+              "version": "26.0.0"
+            },
+            {
+              "installed_record_sha256": "474a8c51fe661e0d4a627e46dff61f3e9500c1f18e73283b4d32d77d74857e8c",
+              "name": "pygments",
+              "version": "2.21.0"
+            },
+            {
+              "installed_record_sha256": "318f83c1bcf13177342fefbe76a57545854a52961ceb5c9d3c4a46465588a7bf",
+              "name": "pytest",
+              "version": "9.1.1"
+            },
+            {
+              "installed_record_sha256": "5a126b7cb1b3162dedbe3d1315afb8e48d9d503c29e189915fb6f9d345df1274",
+              "name": "pytest-cov",
+              "version": "7.1.0"
+            },
+            {
+              "installed_record_sha256": "fc1b296195bfc87a70eeca0ebfdb675be6e9fe07eac96c6da234e3be83dbbb92",
+              "name": "python-dateutil",
+              "version": "2.9.0.post0"
+            },
+            {
+              "installed_record_sha256": "ac0c9340a232ebcf81c7eb86947dc434e4436e923f5f9295baf86363b8a3e335",
+              "name": "ruff",
+              "version": "0.17.1"
+            },
+            {
+              "installed_record_sha256": "8a2e81c03ef56b9219ad3573c830d2824b507854cf93c562170c4d48271fc493",
+              "name": "setuptools",
+              "version": "84.2.0"
+            },
+            {
+              "installed_record_sha256": "9943a35b31e994611359b68f9b76dffbd844567a9d5831b7fa9c5a2d092c0358",
+              "name": "six",
+              "version": "1.17.0"
+            },
+            {
+              "installed_record_sha256": "12e2ab8b6108fc62cb2fb7ac62018a296363ba4d8476e903b5d1e2116bd1875e",
+              "name": "sortedcontainers",
+              "version": "2.4.0"
+            },
+            {
+              "installed_record_sha256": "30bb9c366992f855974b4f44c48a38359283aef6941875f5dbee6ce797966b2d",
+              "name": "tzdata",
+              "version": "2026.5"
+            },
+            {
+              "installed_record_sha256": "7f484d0608c01648714357d92e932bc07cb5d2a23e4a94994f8f6db273ed4f6b",
+              "name": "uv",
+              "version": "0.13.4"
+            },
+            {
+              "installed_record_sha256": "60fbb6d747430c911da8956b515909690430003f828ccd7aa5dab56906cc64af",
+              "name": "wheel",
+              "version": "0.48.0"
+            }
+          ],
+          "platform": "Windows-11-10.0.26300-SP0",
+          "python": "3.13.16",
+          "record_scope": "Actual distribution RECORD metadata; clean SDK additionally verifies original dependency wheel hashes",
+          "standard_gil": true,
+          "x64": true
+        },
+        "exposure_hash": "0a45948410c82728072b5e14b1f54c52d2e2af2d3d4f428c722c967561f5f84a",
+        "permission_domain": "ENGINEERING_DEMO",
+        "protocol_hash": "d13027e42ed3b7cefbc5cb6a8141dff5a88c8d1477017fc21e93da11e65a3bc4",
+        "seed": 17
+      },
+      "B_task_control": null,
+      "B_trial": {
+        "hash": "b06314e4d80fc559e103d0c5b177034cc4c7b081884c8ff87d669828749dbfb8",
+        "kind": "TRIAL_ATTEMPT",
+        "payload": {
+          "campaign_control": {},
+          "cross_campaign_data_access": false,
+          "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+          "family": "ui-campaign-8d8436723f02418fb082d86db4aeff7b61e2175902b659d70e076a8f57ab6594",
+          "fingerprint": "3e4c9c5cbb1f1bc174c7f010289ab32c76e06a4f30b9461c9f521ce1cffc7232",
+          "first_validation_access_at": "2026-10-25T08:06:02.769750+00:00",
+          "hypothesis": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1",
+          "over_budget": false,
+          "prior_data_attempts": 0,
+          "repeat_of": [],
+          "run_id": "1e1743ae-2a68-49b3-972a-4aad6df8f4f8"
+        },
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-25T08:06:03.091738+00:00",
+        "seq": 0
+      },
+      "B_multiplicity": {
+        "adjusted": [
+          1
+        ],
+        "bh_evidence": null,
+        "complete": false,
+        "contaminated": false,
+        "failed_slots": [
+          0
+        ],
+        "hypotheses": [
+          "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+        ],
+        "m": 1,
+        "method": "holm",
+        "raw": [
+          null
+        ]
+      },
+      "authority_history": {
+        "requested_units": 2,
+        "admitted_units": 2,
+        "rejected_units": 0,
+        "admissions": [
+          {
+            "actor": null,
+            "admission_id": "f5db7683-efa9-4856-8f95-0f5fe4782f04",
+            "code": null,
+            "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-42e72988af9ff969c2836372c8f678b474873e912c8082ce6d81b0c18c53a856",
+            "family_limit": 12,
+            "key": "cancel-before-R",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "92b4a0f3-8fd1-4e6b-a6dd-d5903163b2fc",
+            "owner_kind": "TASK",
+            "prior_debit": 0,
+            "prior_family_debit": 0,
+            "request_hash": "cbd731bf2c39bd0162ec8dd2aa47b09ec6e60b1c2def1317c910cd159911c95c",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "aa0bff4b806298ea5583bf3fc7bf47535de8f0840ad7577f7335f57e9b2a3cdc",
+                "hypothesis_alias": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+              }
+            ]
+          },
+          {
+            "actor": null,
+            "admission_id": "b0705b63-cc81-4da8-aa71-9a9178592878",
+            "code": null,
+            "data_hash": "e9b523fe4ff30c6c5fdef1e02f74bb5d0cc3cacc45de16633f5f131213790715",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-8d8436723f02418fb082d86db4aeff7b61e2175902b659d70e076a8f57ab6594",
+            "family_limit": 12,
+            "key": "dc50294c091e241b4705ce4f5b1f6142fc2a4203f05bbb93dfa90921d8b40077",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "1e1743ae-2a68-49b3-972a-4aad6df8f4f8",
+            "owner_kind": "LEGACY",
+            "prior_debit": 1,
+            "prior_family_debit": 0,
+            "request_hash": "d13027e42ed3b7cefbc5cb6a8141dff5a88c8d1477017fc21e93da11e65a3bc4",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "0562a1cfb7d392231be218323505de13763939a676680a2260e031a55cc22664",
+                "hypothesis_alias": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73::momentum::h=1"
+              }
+            ]
+          }
+        ],
+        "registered_trials": 1
+      }
+    },
+    {
+      "mode": "task",
+      "workspace": "E:\\AQ7\\primary-pollution-91dad3e9\\task",
+      "campaign_registrations": [
+        {
+          "budget": 12,
+          "budget_scope": "Shared data identity within this workspace, all campaigns and reserved failed/cancelled tasks; no refunds",
+          "campaign_hash": "be004ce24ffd1d06226c049689784292c0aa477446b89bb0e093a2d5815ca9ad",
+          "catalogue_revision": "38a3b4eb7c0f764acc563c91097ca04c0792948d2e3ead0b0d83c15398a3e2dc",
+          "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+          "family_id": "ui-campaign-7377f734d509ef41dc4130798aca2f315beaf3896d0f198b60762405d7b966d4",
+          "id": "campaign-a",
+          "registration": "EXPLICIT_PREREGISTRATION",
+          "registration_history": {
+            "contaminated_before_registration": false,
+            "prior_admitted_units": 0,
+            "prior_legacy_admission_units": 0,
+            "prior_rejected_units": 0,
+            "prior_research_trials": 0,
+            "prior_reserved_task_attempts": 0
+          },
+          "schema": "engineering-research-campaign/1",
+          "variants": {
+            "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca": {
+              "calendar_id": "SYN_A_CAL",
+              "candidates": [
+                {
+                  "direction": 1,
+                  "hypothesis": "momentum",
+                  "parameters": {
+                    "lookback": 2
+                  },
+                  "ref": {
+                    "factor_id": "momentum",
+                    "factor_version": "1.2.1",
+                    "implementation_hash": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c"
+                  }
+                }
+              ],
+              "currency": "SYNCCY",
+              "decisions": [
+                {
+                  "decision_time": "2024-01-06T12:05:00Z",
+                  "session": "2024-01-06"
+                }
+              ],
+              "development_cutoff": "2024-01-25T12:10:00Z",
+              "evaluation_cutoff": "2024-01-25T12:10:00Z",
+              "family": {
+                "budget": 12,
+                "campaign": {
+                  "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+                  "id": "campaign-a",
+                  "identity": "7377f734d509ef41dc4130798aca2f315beaf3896d0f198b60762405d7b966d4",
+                  "registration_history": {
+                    "contaminated_before_registration": false,
+                    "prior_admitted_units": 0,
+                    "prior_legacy_admission_units": 0,
+                    "prior_rejected_units": 0,
+                    "prior_research_trials": 0,
+                    "prior_reserved_task_attempts": 0
+                  }
+                },
+                "definitions": {
+                  "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1": "0fddc5cedaf63d0e577840cda46a5579ecc535866946b353ad9d4d19b7417457"
+                },
+                "hypotheses": [
+                  "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+                ],
+                "hypothesis_aliases": {
+                  "momentum::h=1": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+                },
+                "id": "ui-campaign-7377f734d509ef41dc4130798aca2f315beaf3896d0f198b60762405d7b966d4",
+                "method": "holm"
+              },
+              "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+              "groups": 3,
+              "horizons": [
+                1
+              ],
+              "inference": {
+                "horizon": 1,
+                "m0": 0
+              },
+              "market_id": "SYN_A",
+              "min_group_n": 1,
+              "min_ic_n": 3,
+              "pipeline": {
+                "clean": {
+                  "method": "quantile",
+                  "quantiles": [
+                    0.05,
+                    0.95
+                  ]
+                },
+                "neutralize": true,
+                "standardized": {
+                  "method": "zscore"
+                }
+              },
+              "purpose": "ENGINEERING_DEMO",
+              "schema": "research/1",
+              "seed": 17,
+              "splits": {
+                "embargo_sessions": 1,
+                "test": [
+                  "2024-01-18",
+                  "2024-01-26"
+                ],
+                "train": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "validation": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ]
+              },
+              "universe_id": "SYN_U",
+              "universe_ref": {
+                "market_id": "SYN_A",
+                "membership_history_sha256": "0f6710c0ae2752afd41acb91cf43d5739c57918e4d19a9608eb93e89c69d2e63",
+                "membership_table_sha256": "bb19bc8e9d551cf8eab44b034100fc81d013f04fb9fe2b7594e3b295824b9d0a",
+                "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+                "snapshot_id": "09fe6dc6-85cc-4283-9df4-e6032bf9afda",
+                "snapshot_manifest_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+                "universe_id": "SYN_U"
+              },
+              "walk_forward": [
+                {
+                  "evaluate": [
+                    "2024-01-10",
+                    "2024-01-18"
+                  ],
+                  "fit": [
+                    "2024-01-02",
+                    "2024-01-10"
+                  ],
+                  "fit_cutoff": "2024-01-10T00:00:00Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "budget": 12,
+          "budget_scope": "Shared data identity within this workspace, all campaigns and reserved failed/cancelled tasks; no refunds",
+          "campaign_hash": "f25a458d3613b97e552cf7ad1d6f76be8db5919b46e118c6a7052d52aa2f648e",
+          "catalogue_revision": "38a3b4eb7c0f764acc563c91097ca04c0792948d2e3ead0b0d83c15398a3e2dc",
+          "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+          "family_id": "ui-campaign-1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+          "id": "campaign-b",
+          "registration": "EXPLICIT_PREREGISTRATION",
+          "registration_history": {
+            "contaminated_before_registration": false,
+            "prior_admitted_units": 0,
+            "prior_legacy_admission_units": 0,
+            "prior_rejected_units": 0,
+            "prior_research_trials": 0,
+            "prior_reserved_task_attempts": 0
+          },
+          "schema": "engineering-research-campaign/1",
+          "variants": {
+            "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca": {
+              "calendar_id": "SYN_A_CAL",
+              "candidates": [
+                {
+                  "direction": 1,
+                  "hypothesis": "momentum",
+                  "parameters": {
+                    "lookback": 2
+                  },
+                  "ref": {
+                    "factor_id": "momentum",
+                    "factor_version": "1.2.1",
+                    "implementation_hash": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c"
+                  }
+                }
+              ],
+              "currency": "SYNCCY",
+              "decisions": [
+                {
+                  "decision_time": "2024-01-06T12:05:00Z",
+                  "session": "2024-01-06"
+                }
+              ],
+              "development_cutoff": "2024-01-25T12:10:00Z",
+              "evaluation_cutoff": "2024-01-25T12:10:00Z",
+              "family": {
+                "budget": 12,
+                "campaign": {
+                  "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+                  "id": "campaign-b",
+                  "identity": "1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+                  "registration_history": {
+                    "contaminated_before_registration": false,
+                    "prior_admitted_units": 0,
+                    "prior_legacy_admission_units": 0,
+                    "prior_rejected_units": 0,
+                    "prior_research_trials": 0,
+                    "prior_reserved_task_attempts": 0
+                  }
+                },
+                "definitions": {
+                  "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1": "318824b0233b0fee93351c23f3392cde6b265f0b05788bdc8ad29662fc4af1bc"
+                },
+                "hypotheses": [
+                  "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+                ],
+                "hypothesis_aliases": {
+                  "momentum::h=1": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+                },
+                "id": "ui-campaign-1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+                "method": "holm"
+              },
+              "fit_cutoff": "2024-01-10T00:00:00.000000+00:00",
+              "groups": 3,
+              "horizons": [
+                1
+              ],
+              "inference": {
+                "horizon": 1,
+                "m0": 0
+              },
+              "market_id": "SYN_A",
+              "min_group_n": 1,
+              "min_ic_n": 3,
+              "pipeline": {
+                "clean": {
+                  "method": "quantile",
+                  "quantiles": [
+                    0.05,
+                    0.95
+                  ]
+                },
+                "neutralize": true,
+                "standardized": {
+                  "method": "zscore"
+                }
+              },
+              "purpose": "ENGINEERING_DEMO",
+              "schema": "research/1",
+              "seed": 17,
+              "splits": {
+                "embargo_sessions": 1,
+                "test": [
+                  "2024-01-18",
+                  "2024-01-26"
+                ],
+                "train": [
+                  "2024-01-02",
+                  "2024-01-10"
+                ],
+                "validation": [
+                  "2024-01-10",
+                  "2024-01-18"
+                ]
+              },
+              "universe_id": "SYN_U",
+              "universe_ref": {
+                "market_id": "SYN_A",
+                "membership_history_sha256": "0f6710c0ae2752afd41acb91cf43d5739c57918e4d19a9608eb93e89c69d2e63",
+                "membership_table_sha256": "bb19bc8e9d551cf8eab44b034100fc81d013f04fb9fe2b7594e3b295824b9d0a",
+                "selection_rule": "Original P1 universe_at(event_time, available_at, effective interval) at each decision; no static present-day survivor list",
+                "snapshot_id": "09fe6dc6-85cc-4283-9df4-e6032bf9afda",
+                "snapshot_manifest_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+                "universe_id": "SYN_U"
+              },
+              "walk_forward": [
+                {
+                  "evaluate": [
+                    "2024-01-10",
+                    "2024-01-18"
+                  ],
+                  "fit": [
+                    "2024-01-02",
+                    "2024-01-10"
+                  ],
+                  "fit_cutoff": "2024-01-10T00:00:00Z"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "cancelled_A_task": {
+        "task_id": "9772732c-0122-4e60-b2be-66fa048fc070",
+        "config_hash": "70043ecf2b9879084083ffbff82dc8f8dd7234dc0d4bdf50c65f79e5ce159abc",
+        "status": "CANCELLED",
+        "cancel_requested": true,
+        "error": null,
+        "slots": {},
+        "scope": "ENGINEERING_TEST_ONLY",
+        "financial_approval": "NONE",
+        "research_control": {
+          "admission": {
+            "actor": null,
+            "admission_id": "f50e256e-8c32-4ed9-8715-e873e94b0fba",
+            "code": null,
+            "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-7377f734d509ef41dc4130798aca2f315beaf3896d0f198b60762405d7b966d4",
+            "family_limit": 12,
+            "key": "cancel-before-R",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "9772732c-0122-4e60-b2be-66fa048fc070",
+            "owner_kind": "TASK",
+            "prior_debit": 0,
+            "prior_family_debit": 0,
+            "request_hash": "70043ecf2b9879084083ffbff82dc8f8dd7234dc0d4bdf50c65f79e5ce159abc",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "0fddc5cedaf63d0e577840cda46a5579ecc535866946b353ad9d4d19b7417457",
+                "hypothesis_alias": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+              }
+            ]
+          },
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "be004ce24ffd1d06226c049689784292c0aa477446b89bb0e093a2d5815ca9ad",
+            "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+            "id": "campaign-a",
+            "variant_key": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca"
+          },
+          "hypothesis_ids": [
+            "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_admission_units": 0,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 0,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 0,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "70043ecf2b9879084083ffbff82dc8f8dd7234dc0d4bdf50c65f79e5ce159abc",
+          "task_id": "9772732c-0122-4e60-b2be-66fa048fc070",
+          "units": 1
+        }
+      },
+      "B_run_id": "c5d6310d-1e2a-449a-9f22-ff79070f09a8",
+      "B_lineage": {
+        "admission_inputs": {
+          "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+          "exposure_root": "E:\\AQ7\\primary-pollution-91dad3e9\\task\\inputs\\pool-exposures\\55ef9300-2230-4cb4-bce2-2627cd4bac1e",
+          "snapshot_root": "E:\\AQ7\\primary-pollution-91dad3e9\\task\\inputs\\pools"
+        },
+        "campaign_control": {
+          "admission": {
+            "actor": null,
+            "admission_id": "f32a6807-2527-4005-99a8-b4a4e1b693ce",
+            "code": null,
+            "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+            "family_limit": 12,
+            "key": "actual-task-b",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+            "owner_kind": "TASK",
+            "prior_debit": 1,
+            "prior_family_debit": 0,
+            "request_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "318824b0233b0fee93351c23f3392cde6b265f0b05788bdc8ad29662fc4af1bc",
+                "hypothesis_alias": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+              }
+            ]
+          },
+          "campaign": {
+            "budget": 12,
+            "campaign_hash": "f25a458d3613b97e552cf7ad1d6f76be8db5919b46e118c6a7052d52aa2f648e",
+            "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+            "id": "campaign-b",
+            "variant_key": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca"
+          },
+          "hypothesis_ids": [
+            "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+          ],
+          "over_budget": false,
+          "prior_legacy_admission_units": 0,
+          "prior_legacy_trials": 0,
+          "prior_other_campaign_attempts": 1,
+          "prior_other_family_legacy_trials": 0,
+          "prior_reserved_units": 1,
+          "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+          "task_config_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+          "task_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+          "units": 1
+        },
+        "code_bundle": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+        "code_commit": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+        "cost_rules": "NOT_APPLICABLE_P3_RESEARCH_NO_EXECUTION_ORDERS",
+        "coverage_hash": "088f86e294f495f71200059db217decb6cbb71d0d8d8d9d32710c7772ee77759",
+        "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+        "environment": {
+          "interpreter_sha256": "21bba195c88bcc007c8fd8e99603e9c0d82be1e08cff2f23bd5b2264f3148289",
+          "lock": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "packages": [
+            {
+              "installed_record_sha256": "604a3b7d5f43917af5d96f4f1fcf7178e885db4c059b9f5ed9646a26d19e6d4c",
+              "name": "colorama",
+              "version": "0.4.6"
+            },
+            {
+              "installed_record_sha256": "c7f83e46154d0ee16fa3387f7a74a5167b41c0493db4d94687c42f7b01e55c76",
+              "name": "coverage",
+              "version": "7.16.2"
+            },
+            {
+              "installed_record_sha256": "4bafa14bbb2769e39b5db5d15eb198afe21c3a5f75e845f4b4a846b607e07f19",
+              "name": "duckdb",
+              "version": "1.5.6"
+            },
+            {
+              "installed_record_sha256": "a5575aa0cdbe0b9c2f9244159d26f7df6587d61f7db91025bc6be44e1a5b0354",
+              "name": "hypothesis",
+              "version": "6.170.5"
+            },
+            {
+              "installed_record_sha256": "15a784262bdb500322164c58e260b60a659560c6d85b94d3ba67f4560c40f504",
+              "name": "iniconfig",
+              "version": "2.3.1"
+            },
+            {
+              "installed_record_sha256": "01484bc84aa42f301300b75b4325672fcf7d06ce9f1c69c435cd36a838505673",
+              "name": "numpy",
+              "version": "2.5.4"
+            },
+            {
+              "installed_record_sha256": "67e9d0e1b1a0a7a9fe0f434f13ccc32e12d699bd5b9cd97012b868e61de5db96",
+              "name": "packaging",
+              "version": "26.3"
+            },
+            {
+              "installed_record_sha256": "de6f946c9c1fc7fdfe5a518ec0239dc98faa42bffb777b37e15a0f827af75f97",
+              "name": "pandas",
+              "version": "3.0.6"
+            },
+            {
+              "installed_record_sha256": "c24d1328e7e296fe90bd0fc9709134f62d54f3713c1e422f84ff3cd4bebd66ac",
+              "name": "pip",
+              "version": "26.2.1"
+            },
+            {
+              "installed_record_sha256": "4be2aff0826f1ac9233040ead47bedcc0683c23831e4f30f1076565b0af18aaa",
+              "name": "pluggy",
+              "version": "1.7.0"
+            },
+            {
+              "installed_record_sha256": "6b604d70ccf505e8ee8cfc5586bb5245002f2ea66f1acc2a140778037be8da6b",
+              "name": "pyarrow",
+              "version": "26.0.0"
+            },
+            {
+              "installed_record_sha256": "474a8c51fe661e0d4a627e46dff61f3e9500c1f18e73283b4d32d77d74857e8c",
+              "name": "pygments",
+              "version": "2.21.0"
+            },
+            {
+              "installed_record_sha256": "318f83c1bcf13177342fefbe76a57545854a52961ceb5c9d3c4a46465588a7bf",
+              "name": "pytest",
+              "version": "9.1.1"
+            },
+            {
+              "installed_record_sha256": "5a126b7cb1b3162dedbe3d1315afb8e48d9d503c29e189915fb6f9d345df1274",
+              "name": "pytest-cov",
+              "version": "7.1.0"
+            },
+            {
+              "installed_record_sha256": "fc1b296195bfc87a70eeca0ebfdb675be6e9fe07eac96c6da234e3be83dbbb92",
+              "name": "python-dateutil",
+              "version": "2.9.0.post0"
+            },
+            {
+              "installed_record_sha256": "ac0c9340a232ebcf81c7eb86947dc434e4436e923f5f9295baf86363b8a3e335",
+              "name": "ruff",
+              "version": "0.17.1"
+            },
+            {
+              "installed_record_sha256": "8a2e81c03ef56b9219ad3573c830d2824b507854cf93c562170c4d48271fc493",
+              "name": "setuptools",
+              "version": "84.2.0"
+            },
+            {
+              "installed_record_sha256": "9943a35b31e994611359b68f9b76dffbd844567a9d5831b7fa9c5a2d092c0358",
+              "name": "six",
+              "version": "1.17.0"
+            },
+            {
+              "installed_record_sha256": "12e2ab8b6108fc62cb2fb7ac62018a296363ba4d8476e903b5d1e2116bd1875e",
+              "name": "sortedcontainers",
+              "version": "2.4.0"
+            },
+            {
+              "installed_record_sha256": "30bb9c366992f855974b4f44c48a38359283aef6941875f5dbee6ce797966b2d",
+              "name": "tzdata",
+              "version": "2026.5"
+            },
+            {
+              "installed_record_sha256": "7f484d0608c01648714357d92e932bc07cb5d2a23e4a94994f8f6db273ed4f6b",
+              "name": "uv",
+              "version": "0.13.4"
+            },
+            {
+              "installed_record_sha256": "60fbb6d747430c911da8956b515909690430003f828ccd7aa5dab56906cc64af",
+              "name": "wheel",
+              "version": "0.48.0"
+            }
+          ],
+          "platform": "Windows-11-10.0.26300-SP0",
+          "python": "3.13.16",
+          "record_scope": "Actual distribution RECORD metadata; clean SDK additionally verifies original dependency wheel hashes",
+          "standard_gil": true,
+          "x64": true
+        },
+        "exposure_hash": "c3d4b53150e18f99e483705f2cde92cebc92c82afe1693e752c3d9d7123bbf63",
+        "permission_domain": "ENGINEERING_DEMO",
+        "protocol_hash": "d95cae618a65bd40f73c087bc3701ac7f527b58ec3b48ef7a447faf449142c21",
+        "seed": 17,
+        "task_binding": {
+          "adapted_request_hash": null,
+          "child_run_id": "c5d6310d-1e2a-449a-9f22-ff79070f09a8",
+          "code_bundle": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+          "code_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+          "core_config_hash": "d95cae618a65bd40f73c087bc3701ac7f527b58ec3b48ef7a447faf449142c21",
+          "core_lock_hash": "86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb",
+          "decision_index": null,
+          "decision_time_UTC": null,
+          "parent_execution_run_id": null,
+          "parent_slot_id": null,
+          "physical_ledger_root": "E:\\AQ7\\primary-pollution-91dad3e9\\task\\research-runs",
+          "plan_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+          "service_kind": "P3",
+          "slot_id": "R",
+          "source_request_hash": null,
+          "task_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+          "task_kind": "research",
+          "ui_lock_hash": "ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3",
+          "workspace_id": "858036e1-a21e-47fe-8936-a090d90d5690"
+        },
+        "task_binding_hash": "67e4e2b451406c0492176fa9f1c32cb767fee39d50c9ab83bc94b20b99ebe789"
+      },
+      "B_task_control": {
+        "admission": {
+          "actor": null,
+          "admission_id": "f32a6807-2527-4005-99a8-b4a4e1b693ce",
+          "code": null,
+          "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+          "debit": 1,
+          "decision": "ADMITTED",
+          "family_id": "ui-campaign-1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+          "family_limit": 12,
+          "key": "actual-task-b",
+          "migrated": false,
+          "original_migration_decision": null,
+          "owner_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+          "owner_kind": "TASK",
+          "prior_debit": 1,
+          "prior_family_debit": 0,
+          "request_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+          "schema": "common-research-admission/1",
+          "units": [
+            {
+              "definition_hash": "318824b0233b0fee93351c23f3392cde6b265f0b05788bdc8ad29662fc4af1bc",
+              "hypothesis_alias": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+            }
+          ]
+        },
+        "campaign": {
+          "budget": 12,
+          "campaign_hash": "f25a458d3613b97e552cf7ad1d6f76be8db5919b46e118c6a7052d52aa2f648e",
+          "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+          "id": "campaign-b",
+          "variant_key": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca"
+        },
+        "hypothesis_ids": [
+          "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+        ],
+        "over_budget": false,
+        "prior_legacy_admission_units": 0,
+        "prior_legacy_trials": 0,
+        "prior_other_campaign_attempts": 1,
+        "prior_other_family_legacy_trials": 0,
+        "prior_reserved_units": 1,
+        "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+        "task_config_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+        "task_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+        "units": 1
+      },
+      "B_trial": {
+        "hash": "b2e63912fff95199704c013b718a4dc34253e508c76ee278496840c06558647a",
+        "kind": "TRIAL_ATTEMPT",
+        "payload": {
+          "campaign_control": {
+            "admission": {
+              "actor": null,
+              "admission_id": "f32a6807-2527-4005-99a8-b4a4e1b693ce",
+              "code": null,
+              "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+              "debit": 1,
+              "decision": "ADMITTED",
+              "family_id": "ui-campaign-1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+              "family_limit": 12,
+              "key": "actual-task-b",
+              "migrated": false,
+              "original_migration_decision": null,
+              "owner_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+              "owner_kind": "TASK",
+              "prior_debit": 1,
+              "prior_family_debit": 0,
+              "request_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+              "schema": "common-research-admission/1",
+              "units": [
+                {
+                  "definition_hash": "318824b0233b0fee93351c23f3392cde6b265f0b05788bdc8ad29662fc4af1bc",
+                  "hypothesis_alias": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+                }
+              ]
+            },
+            "campaign": {
+              "budget": 12,
+              "campaign_hash": "f25a458d3613b97e552cf7ad1d6f76be8db5919b46e118c6a7052d52aa2f648e",
+              "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+              "id": "campaign-b",
+              "variant_key": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca"
+            },
+            "hypothesis_ids": [
+              "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+            ],
+            "over_budget": false,
+            "prior_legacy_admission_units": 0,
+            "prior_legacy_trials": 0,
+            "prior_other_campaign_attempts": 1,
+            "prior_other_family_legacy_trials": 0,
+            "prior_reserved_units": 1,
+            "reservation_policy": "Shared data budget12, atomic with Task; all failures/cancellations retained, no refunds; idempotent retries reuse original reservation",
+            "task_config_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+            "task_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+            "units": 1
+          },
+          "cross_campaign_data_access": true,
+          "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+          "family": "ui-campaign-1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+          "fingerprint": "65b7539fbda68266017c5828d2dd07964ec1b61d36e4a638556838b5432205c9",
+          "first_validation_access_at": "2026-10-25T08:06:12.935189+00:00",
+          "hypothesis": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1",
+          "over_budget": false,
+          "prior_data_attempts": 0,
+          "repeat_of": [],
+          "run_id": "c5d6310d-1e2a-449a-9f22-ff79070f09a8"
+        },
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-25T08:06:13.301921+00:00",
+        "seq": 0
+      },
+      "B_multiplicity": {
+        "adjusted": [
+          1
+        ],
+        "bh_evidence": null,
+        "complete": false,
+        "contaminated": true,
+        "failed_slots": [
+          0
+        ],
+        "hypotheses": [
+          "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+        ],
+        "m": 1,
+        "method": "holm",
+        "raw": [
+          null
+        ]
+      },
+      "authority_history": {
+        "requested_units": 2,
+        "admitted_units": 2,
+        "rejected_units": 0,
+        "admissions": [
+          {
+            "actor": null,
+            "admission_id": "f50e256e-8c32-4ed9-8715-e873e94b0fba",
+            "code": null,
+            "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-7377f734d509ef41dc4130798aca2f315beaf3896d0f198b60762405d7b966d4",
+            "family_limit": 12,
+            "key": "cancel-before-R",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "9772732c-0122-4e60-b2be-66fa048fc070",
+            "owner_kind": "TASK",
+            "prior_debit": 0,
+            "prior_family_debit": 0,
+            "request_hash": "70043ecf2b9879084083ffbff82dc8f8dd7234dc0d4bdf50c65f79e5ce159abc",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "0fddc5cedaf63d0e577840cda46a5579ecc535866946b353ad9d4d19b7417457",
+                "hypothesis_alias": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+              }
+            ]
+          },
+          {
+            "actor": null,
+            "admission_id": "f32a6807-2527-4005-99a8-b4a4e1b693ce",
+            "code": null,
+            "data_hash": "136c8497d3c4722c1bfe9c04135bdc5672b878a753a775be0da5ec4ee02dc719",
+            "debit": 1,
+            "decision": "ADMITTED",
+            "family_id": "ui-campaign-1e2bb6ddf013394774417a12f045c69eadef186d0605820e613ca242c8a59516",
+            "family_limit": 12,
+            "key": "actual-task-b",
+            "migrated": false,
+            "original_migration_decision": null,
+            "owner_id": "3d348f11-0414-49ff-ae91-bf1e4e463f75",
+            "owner_kind": "TASK",
+            "prior_debit": 1,
+            "prior_family_debit": 0,
+            "request_hash": "89f4822e04a4e1a0c82b737292f7bbe9b00b20ee1ad658f45387d6ef1f6b74cf",
+            "schema": "common-research-admission/1",
+            "units": [
+              {
+                "definition_hash": "318824b0233b0fee93351c23f3392cde6b265f0b05788bdc8ad29662fc4af1bc",
+                "hypothesis_alias": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca::momentum::h=1"
+              }
+            ]
+          }
+        ],
+        "registered_trials": 1
+      }
+    }
+  ]
+}
