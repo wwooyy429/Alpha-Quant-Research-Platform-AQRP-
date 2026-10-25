@@ -1,11 +1,11 @@
 {
-  "scope": "Developer Phase7 implementation identity; G2 PENDING; financial NONE; no acceptance/release",
+  "scope": "Developer Phase7 001/002 repair candidate identity; prior ec6 G2 BLOCKED; independent fixed recheck pending; not acceptance/release",
   "G1": "645049ae9b08710ed93189b80547d14c87d80584",
   "archival_start": "8106bbe6fbb73b5b4336d42e4c27b3adb1cf6ff8",
   "phase6_baseline": "d563347ad11e1f26e131dc06e343250282c05c33",
-  "version": "0.7.0.dev1",
+  "version": "0.7.0.dev2",
   "factor_semantic_version": "1.2.1 (algorithm unchanged); new implementation_hash means distinct full Ref",
-  "bundle_sha256": "6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c",
+  "bundle_sha256": "f9f7fe0a54f05e06fb082dc7e7bfdcc20fadd5b30e3c837ec4c8a1f7e40d49ac",
   "bundle_manifest": {
     "factor_api": "1.0.0",
     "data_contract": "contracts/1.0.0",
@@ -13,7 +13,7 @@
     "files": [
       {
         "path": "__init__.py",
-        "sha256": "8d4410485d883ed1fe1a455145707ae22a4fc65be7058420ed7f67708f2d9429"
+        "sha256": "e0fb6928343e19d472ac8cb0455a66f62e98510f62495610cfe75569cec113e1"
       },
       {
         "path": "backtest/__init__.py",
@@ -153,11 +153,11 @@
       },
       {
         "path": "experiments/admission.py",
-        "sha256": "93bc6ce55f26919bc8243f885dc6ad8265310ba3c70fc03402f1718a5205b888"
+        "sha256": "ab01776b7c9164ebf4458df456f525e450820aa90862cc24825ac00c3ef23013"
       },
       {
         "path": "experiments/ledger.py",
-        "sha256": "b76d509a59e8e0d27f046a73b62f109f8528bb465c81fb3544d7fdd4cdbc3c15"
+        "sha256": "b4f6301266647fc05d914b9f3ed644a8c9d5e4a019734a9cedc3a6f41ed1483c"
       },
       {
         "path": "experiments/replay_worker.py",
@@ -301,7 +301,7 @@
       },
       {
         "path": "services/task_state.py",
-        "sha256": "2ea6df1dd00e5730f753eab19202f88145c17dee868f802f5e7424b61ddfff5a"
+        "sha256": "24a029ecaa4cdf68995b6ea141546536f559e0035f2b33b08e8f8c7ebd70822a"
       },
       {
         "path": "services/task_worker.py",
@@ -365,43 +365,43 @@
     },
     {
       "path": ".gitleaks-phase7.toml",
-      "bytes": 2442,
-      "sha256": "62bc71df9274add6c9d0323783dbb8add02f6c409ea941d27c16773b70ff5be5"
+      "bytes": 5238,
+      "sha256": "c7f6d1a043dcc677dfc30583b3211684ed3c3ee6b2db4f7800e6a617dd14e386"
     },
     {
       "path": "AGENTS.md",
-      "bytes": 55515,
-      "sha256": "e4b35872323639615d56a7f732ff0fb7fc586a424f3629ba7b4e51a15a8236b1"
+      "bytes": 56516,
+      "sha256": "f058d6fb0751ce7d6a9af9084bd78cc92d5fdbbfff0f4f720e10e600a65fea89"
     },
     {
       "path": "README.md",
-      "bytes": 38852,
-      "sha256": "a690a70eae42d611887c98933a16459485584a31c8b8a839f4226ff93ad78845"
+      "bytes": 39853,
+      "sha256": "bb06cfb3c7408211cdfbc9d26ed19e6a08b60c00ddb226c6ea8c53498a6bc93a"
     },
     {
       "path": "docs/CHANGELOG.md",
-      "bytes": 54320,
-      "sha256": "131b3185507debac7abc9b0fbc29512a1ae7087cfe5e20d530c419787fa29523"
+      "bytes": 55321,
+      "sha256": "be0a5ba08030da7c38adde6e96a826a384395517d2390bca7051623305b0b21b"
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 52052,
-      "sha256": "6ccf8198ea0fad1aa38131062bfa7a8de6a0780e682d981e6b0deefbb3647c6a"
+      "bytes": 53053,
+      "sha256": "42902f8f0b4e1070c79ad518588b5e91be9a5453d977b6cc0f1794e322416cf2"
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 48849,
-      "sha256": "d2eedf82a927c03e20a9006d29f927f2206a6f6926151784d0f86ab6e80a4bbd"
+      "bytes": 49850,
+      "sha256": "64c95772bd25b7b5e297f9b6cb9f14fb507b305bc5b9a512985fda74a4d08f87"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 44968,
-      "sha256": "4de24939a58eb8b2f7c6cb988e2cbbb5be5d84d75b937c305ad63791e16baf55"
+      "bytes": 45969,
+      "sha256": "178f45dd013223521fcb2613e23df7029742dff58670cb43ec6d46d02ab2c1df"
     },
     {
       "path": "docs/TRACEABILITY.md",
-      "bytes": 51667,
-      "sha256": "f3d3e3336c2f3545470db1a3282c2bc9972fda991b056b8ac7f7d690cd5afbc9"
+      "bytes": 52668,
+      "sha256": "93a7fb7e3e8f1ac90492e971d50bcc39999d30d705aac611fe9e1e1ba22c9b39"
     },
     {
       "path": "docs/audits/phase-7/DESIGN_IDENTITY.json",
@@ -410,13 +410,13 @@
     },
     {
       "path": "docs/audits/phase-7/ENGINEERING_CODE_REVIEW.md",
-      "bytes": 5677,
-      "sha256": "776b9f7bf26a8a02b1c4230de009d5ded8fb69e31926179fccc570d2ad18a2e6"
+      "bytes": 6240,
+      "sha256": "91a487282c2f2e41b283b89e19d26d6d75739c97f4a3d2b0632c259a39fdf408"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_ALLOWED_PATHS.json",
-      "bytes": 8583,
-      "sha256": "e26a36ad94f1395fc588e7a24ae1c69c5a92b0528da70df4c3ffc1a78971343f"
+      "bytes": 11969,
+      "sha256": "90970efd4b05387ea49bee979ebcbdd72e277792b96ace2bb723125da00f5269"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_AUTHORIZATION.json",
@@ -440,13 +440,13 @@
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_REVIEW_PACKAGE.md",
-      "bytes": 4245,
-      "sha256": "21be0a8d951064bfa797ec3478baf537df07b7d11f20c6db8cd8afb0a65c8554"
+      "bytes": 4808,
+      "sha256": "f0eaa370d820ba48e711f7e1d9e3771d21b8d805e72bc7de0bc0403ae9f7d20d"
     },
     {
       "path": "docs/audits/phase-7/IMPLEMENTATION_TRACEABILITY.md",
-      "bytes": 2064,
-      "sha256": "9aa54ad99d01c522d57f6b15c227ba23c431ecb253d1a081dfb76903b802e611"
+      "bytes": 2627,
+      "sha256": "46b5593a6af157be9062cbf9a7825e5f1f86a00ea1bc1fcd2a4db1b92565a8fc"
     },
     {
       "path": "docs/audits/phase-7/P6_BASELINE_INPUTS.json",
@@ -455,8 +455,168 @@
     },
     {
       "path": "docs/audits/phase-7/STATUS.json",
-      "bytes": 7260,
-      "sha256": "0ae0c0aaacc126ea94d92142814c46a21764569ae9e6ae9f7bf6c45be63e8d86"
+      "bytes": 7858,
+      "sha256": "1e4e9da419366f8568493298a9ce31c977b1f7d99b551fba521c61051807d856"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/DEVELOPER_RESPONSE.md",
+      "bytes": 3176,
+      "sha256": "62d6dcaba7b75aafed42bf6b88e7e73f97c13d95d8a2cb5a6722ce0a5f54ac6a"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/EVIDENCE_INDEX.json",
+      "bytes": 7680,
+      "sha256": "db9c4911052f9bcbb06262b7b61354ec6fd4374d4dafa3f985769ccda3ed2983"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/FINDING_DISPOSITION.json",
+      "bytes": 4332,
+      "sha256": "645dcb218156327772a0c630837451072a4cd1125f8fa6707db344ca7dc58aeb"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/GIT_RECEIVED_FILES_MANIFEST.json",
+      "bytes": 12008,
+      "sha256": "a718af4600a43413782dba06173c1a4c9dda01c0b9c9327456c5788498adb6e7"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/METADATA_UPDATE_NOTES.json",
+      "bytes": 3638,
+      "sha256": "4c8c2acd256beb881adf118f12b48ccf64a9e8337781f9d6d894ac819804c484"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/RECEIVED_INTEGRITY_VERIFICATION.json",
+      "bytes": 17708,
+      "sha256": "884bf41aab1a93a7d3605c30ce86ed2aef2ed8972291004fbcd29a7aa0e6846c"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/REQUIREMENT_IMPACT.json",
+      "bytes": 8931,
+      "sha256": "47888464eda64563eb3882bafdd8fc069bc6eb3c0ccd1de67354feb6a4c7ef4b"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/DEVELOPER_HANDOFF.txt",
+      "bytes": 2598,
+      "sha256": "6c831f30e432668a5c54f36359165bd7a82f80afb4210d8a7d7f52f3f778d2f7"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/FILE_MANIFEST.json",
+      "bytes": 158672,
+      "sha256": "4e33c69b492f8b45ba4afe7fee894b70f169b39c08f1aade1bb8d833df2a5e66"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/FINAL_SOURCE_STATE.json",
+      "bytes": 231,
+      "sha256": "5d4a646b115131348750d4601c637909fadcaac96edee33b17f37b79fa67eab3"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/FINDINGS.json",
+      "bytes": 4058,
+      "sha256": "cebe621dded68ac53ec6e4fe9ed8856225a0878ed85383da94726acbc454d78d"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/ORIGINAL_PROBE_INPUTS.json",
+      "bytes": 297,
+      "sha256": "5e48563dbe8d0ef0298bf7e1a4dded523cce373b820eda5aae8d198dd3570f82"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/ORIGINAL_PROBE_SOURCES.json",
+      "bytes": 1744,
+      "sha256": "5e111e3d4946942354f8b21391c679731dad3df83fa9f7a8c8990beb5f3fadda"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+      "bytes": 414819,
+      "sha256": "6edae8314d52b2680a662009f8092be0a01b665f92e7cdb72fd0ac1414f6e9d8"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_HELPER_LIMITS.txt",
+      "bytes": 3608,
+      "sha256": "c7236bf0f89798925b6e1f488cb9052fe9fd53601589d703e81f1837db687735"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+      "bytes": 96397,
+      "sha256": "bc516147b4ac5305f3192925e69907f7b0658cee53c5920811e3446842222026"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/RAW_FIXTURE_RECEIPT.json",
+      "bytes": 474,
+      "sha256": "26508cc3c6a744d7ae49b3b30b74b33bec3b6846e068ce3ec7d62178f682e72b"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/REPORT.txt",
+      "bytes": 22923,
+      "sha256": "a341ccaa3e53a9ab64df3ef2e3aeb3d2c2db31aa9052566f94ed07d3e7435202"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/SEAL.json",
+      "bytes": 3037,
+      "sha256": "31833d10611b373ad61298294b20186461c5db50deff650b45ed12ccef885b83"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/corrupt_transaction-original-last-transaction.json",
+      "bytes": 32229,
+      "sha256": "212f989a1562b4c1f29cab4648a1a6bd5a741785ab7209bb62c0ea72c4760eaf"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/healthy-original-last-transaction.json",
+      "bytes": 32229,
+      "sha256": "212f989a1562b4c1f29cab4648a1a6bd5a741785ab7209bb62c0ea72c4760eaf"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/pollution-legacy-cli.command.json",
+      "bytes": 550,
+      "sha256": "055fa47bd269dfacf73508c8da1625a4f991f660a043d69cfa20c885f5bfa5df"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/pollution-legacy-cli.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/pollution-legacy-cli.stdout.log",
+      "bytes": 105,
+      "sha256": "911a439f9cb55125ddc7ec77580b440515f9254f27972d42117906bd982bf5df"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary-failed-history.command.json",
+      "bytes": 554,
+      "sha256": "b2173b2151d156745692126a1826cc27e2188e1ce8288a57ff05c17040825cb8"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary-failed-history.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary-failed-history.stdout.log",
+      "bytes": 255,
+      "sha256": "f7e5974cce07fc36813785bbe699034f11fa3734b35a534c703aa60e3e97d83c"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary-pollution.command.json",
+      "bytes": 549,
+      "sha256": "4578724295f7173005755eba8e5803eddb52add315f3d8d3d6fe74542925fc62"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary-pollution.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary-pollution.stdout.log",
+      "bytes": 324,
+      "sha256": "a83969da0231e70d433b5413020b7c5dca60fd2d758de6498ae8d98d97e04ddb"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary_failed_history_probe.py",
+      "bytes": 4849,
+      "sha256": "0dd750cb587de277bcbcace611e741945967ccc759a7c8aa8be0841ed88f99fd"
+    },
+    {
+      "path": "docs/audits/phase-7/g2-ec6bfce/received/primary_pollution_probe.py",
+      "bytes": 4717,
+      "sha256": "21af0f2cc948f046e0dd38da9918608cf1b3a6d79d78bc2382071a800b46b881"
     },
     {
       "path": "docs/audits/phase-7/p6-source-overrides/.github/workflows/ci.yml",
@@ -587,6 +747,61 @@
       "path": "docs/audits/phase-7/p6-source-overrides/tools/ci.py",
       "bytes": 11880,
       "sha256": "9b93525d4848bcec5e547835c66f38fae26607fcb9e4765bb830f67275dc3b5c"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/DEVELOPER_VERIFICATION.json",
+      "bytes": 6354,
+      "sha256": "b949d7f02f7efc3fd3e41f70541d6f322ddfc83f6b3520b2cde1e73a87a0c9d0"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/REPAIR_SCOPE.md",
+      "bytes": 3384,
+      "sha256": "62f6b00f00a81e416fbc2a38daf61f98fb9802596126f7367758c6d2b1936556"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/PROOF.json",
+      "bytes": 8132,
+      "sha256": "a4a0fa2d65ada964b1ac5546e2e2b5f912c9a0c3215a777a556350f8d14e5eb3"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/preimages/public-digest-00.json",
+      "bytes": 1606,
+      "sha256": "e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/preimages/public-digest-01.json",
+      "bytes": 128,
+      "sha256": "f7c4780fc4640b495a1b2a5b57ea8758d8109ef896d58d598033e4bb848b643e"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/preimages/public-digest-02.json",
+      "bytes": 1606,
+      "sha256": "7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/preimages/public-digest-03.json",
+      "bytes": 128,
+      "sha256": "dc50294c091e241b4705ce4f5b1f6142fc2a4203f05bbb93dfa90921d8b40077"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/preimages/public-digest-04.json",
+      "bytes": 1606,
+      "sha256": "cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/preimages/public-digest-05.json",
+      "bytes": 1606,
+      "sha256": "d8b7ee80c025cbff5c48bead40ccaf2ea9046d34712ec1933cdb5f6b204f60b2"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/preimages/public-digest-06.json",
+      "bytes": 1606,
+      "sha256": "e34a6c6e60c419f1280a01b64af6120142d050e8fa7546ebbf3e11d251b89c02"
+    },
+    {
+      "path": "docs/audits/phase-7/repairs-g2-001-002/scan-policy/recompute.py",
+      "bytes": 1717,
+      "sha256": "2353b9c2056c1f1aeed2127df2d1fa9da100f02fb07767ee5d6ec6a519dccd7c"
     },
     {
       "path": "docs/audits/phase-7/self-review/COMPAT-001/COMMAND.json",
@@ -841,12 +1056,12 @@
     {
       "path": "pyproject.toml",
       "bytes": 1401,
-      "sha256": "7fa95b7da6057e7277efd69388140099304f5921ba8e61be884b9a8b3f07202d"
+      "sha256": "4bd72af1287e3530ae2e82bc87a11ee5ea2213c4b728a17f084651cd0dd0a53c"
     },
     {
       "path": "src/aqrp/__init__.py",
       "bytes": 114,
-      "sha256": "8d4410485d883ed1fe1a455145707ae22a4fc65be7058420ed7f67708f2d9429"
+      "sha256": "e0fb6928343e19d472ac8cb0455a66f62e98510f62495610cfe75569cec113e1"
     },
     {
       "path": "src/aqrp/competition/__init__.py",
@@ -860,18 +1075,18 @@
     },
     {
       "path": "src/aqrp/experiments/admission.py",
-      "bytes": 77863,
-      "sha256": "93bc6ce55f26919bc8243f885dc6ad8265310ba3c70fc03402f1718a5205b888"
+      "bytes": 79542,
+      "sha256": "ab01776b7c9164ebf4458df456f525e450820aa90862cc24825ac00c3ef23013"
     },
     {
       "path": "src/aqrp/experiments/ledger.py",
-      "bytes": 36604,
-      "sha256": "b76d509a59e8e0d27f046a73b62f109f8528bb465c81fb3544d7fdd4cdbc3c15"
+      "bytes": 36808,
+      "sha256": "b4f6301266647fc05d914b9f3ed644a8c9d5e4a019734a9cedc3a6f41ed1483c"
     },
     {
       "path": "src/aqrp/factors/reviewed_code.json",
-      "bytes": 658,
-      "sha256": "ec6544aba83c702321dc73e27ecaa3e1b9194d5d7bf46222508024ba9f3077f4"
+      "bytes": 667,
+      "sha256": "5da1bddb9fa9366714cc7fc440c57e1caf150da22a0e4bc09d9a58acaf57ae1c"
     },
     {
       "path": "src/aqrp/services/research.py",
@@ -900,8 +1115,8 @@
     },
     {
       "path": "src/aqrp/services/task_state.py",
-      "bytes": 42144,
-      "sha256": "2ea6df1dd00e5730f753eab19202f88145c17dee868f802f5e7424b61ddfff5a"
+      "bytes": 44646,
+      "sha256": "24a029ecaa4cdf68995b6ea141546536f559e0035f2b33b08e8f8c7ebd70822a"
     },
     {
       "path": "src/aqrp/services/tasks.py",
@@ -926,7 +1141,7 @@
     {
       "path": "tests/environment/test_installation.py",
       "bytes": 1146,
-      "sha256": "4530a59cd49ccbc4ad5f9423ee6023b3d308ef1fb5d44d95fe87e86b51c607d9"
+      "sha256": "e7d1376206925594d67b65981e95b284a976ff9aa71b0ceb8edc543479242d9c"
     },
     {
       "path": "tests/environment/test_p7_package_gate.py",
@@ -964,6 +1179,11 @@
       "sha256": "7e2d8d895fd6c1f571aaa68512884945fd9389fd363dde8412dce77f4beed5ed"
     },
     {
+      "path": "tests/integration/test_p7_committed_access_contamination.py",
+      "bytes": 13763,
+      "sha256": "38c027e6509d0da4a6da3f68d883f6382ee16ec547fb3af76617dfcb4c6059a6"
+    },
+    {
       "path": "tests/integration/test_p7_common_budget.py",
       "bytes": 23933,
       "sha256": "bcc859d1fdf55a4fba0979536ab7a56c206c1f3004bdff38985c102978798694"
@@ -972,6 +1192,11 @@
       "path": "tests/integration/test_p7_execution_selection.py",
       "bytes": 3427,
       "sha256": "f451627da2b448df8f0bdf44b7b256602aff3d4cb59e201a5eca4d125ed2d869"
+    },
+    {
+      "path": "tests/integration/test_p7_failed_financial_history.py",
+      "bytes": 15232,
+      "sha256": "34db6fc3cbad6e7d719cec673b9335a9fbf131cf19842b75637bba94f4157746"
     },
     {
       "path": "tests/integration/test_p7_history_integrity.py",
@@ -1016,12 +1241,12 @@
     {
       "path": "tools/check_phase7_package.py",
       "bytes": 8066,
-      "sha256": "2561995bac9b27c333e958feef3f1911067dbacb581c02c6c729ed09f3d202d6"
+      "sha256": "488b524e118a51f857cd8ceca2a95ef3eefd77a3bb673ee145d1116f84dd6c45"
     },
     {
       "path": "tools/check_phase7_scan_policy.py",
-      "bytes": 18078,
-      "sha256": "6632496a03436916d8aa94d122d644998eb5e48c5cf4915cbe999a70e7a2d6ac"
+      "bytes": 46067,
+      "sha256": "ab06a60fc720c5e1c784e6f0e37f71d0800d1a712a221985c8b1705ddbbb0c5e"
     },
     {
       "path": "tools/ci.py",
@@ -1055,5 +1280,5 @@
     }
   ],
   "old_protected_files": 5016,
-  "independent_review": "PENDING fixed complete40 implementation SHA in PR10"
+  "independent_review": "WORK-P7-G2-001/002 OPEN — FIX CANDIDATE PENDING INDEPENDENT VERIFICATION"
 }

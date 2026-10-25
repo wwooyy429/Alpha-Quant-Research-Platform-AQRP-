@@ -16,7 +16,7 @@ from aqrp.factors.admission import LOCK_HASH, PACKAGE, bundle_manifest, reviewed
 ROOT = Path(__file__).resolve().parents[1]
 D = "docs/audits/phase-7/"
 BASELINE_SHA256 = "4bac5d9c98e2e3f74065d1c95b5ce94f482420c022a8e146f59375a37081b646"
-ALLOWLIST_SHA256 = "e26a36ad94f1395fc588e7a24ae1c69c5a92b0528da70df4c3ffc1a78971343f"
+ALLOWLIST_SHA256 = "90970efd4b05387ea49bee979ebcbdd72e277792b96ace2bb723125da00f5269"
 G1 = "645049ae9b08710ed93189b80547d14c87d80584"
 P6 = "d563347ad11e1f26e131dc06e343250282c05c33"
 
@@ -90,7 +90,7 @@ def verify_installed(root, manifest):
         assert item.hash.mode == "sha256" and item.hash.value == encoded, name
     for name in data_files:
         assert (PACKAGE / name).read_bytes() == (source / name).read_bytes(), name
-    assert distribution.version == "0.7.0.dev1"
+    assert distribution.version == "0.7.0.dev2"
     assert (
         not json.loads(distribution.read_text("direct_url.json"))
         .get("dir_info", {})

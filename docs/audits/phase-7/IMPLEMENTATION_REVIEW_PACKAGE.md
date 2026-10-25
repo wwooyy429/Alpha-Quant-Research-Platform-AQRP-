@@ -1,3 +1,6 @@
+<!-- Phase7 G2 repair candidate 001/002 -->
+当前固定旧版本 ec6bfcedc0c424b6fa3e817c9a094385bd971d6f 的独立 G2 为 BLOCKED，001 Medium blocking、002 High 均 OPEN。0.7.0.dev2 仅为两项修复候选；原报告在 g2-ec6bfce/，范围、原始反例与开发验证分层见 repairs-g2-001-002/。新已提交完整40位SHA的完整SDK、双系统原包、真实浏览器及独立G2必须重新核实；不得沿用ec6通过数。开发自测不关闭发现，main/旧标签与全部延期和操作限制保持。以下原轮记录按时点保留。
+
 # Phase7 实现 G2 审查资料
 
 开发方发现的MIG-001及原始反例见 `self-review/MIG-001/EVIDENCE_INDEX.json`。旧d9d020包和872c05b本地SDK不能据此视为完整通过；后者已因确认缺陷中止并封存。修订版需新包哈希和固定提交的完整验证，修复自测也不等于独立G2关闭。

@@ -1,0 +1,200 @@
+{
+  "schema": "developer-received-G2-canonical-requirement-impact/1",
+  "fixed_review_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "source": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\checkouts\\phase1-57461d5d-5de2-4c78-9b4e-5fad2b5ccb29\\docs\\audits\\phase-7\\REQUIREMENTS_SNAPSHOT.json",
+    "bytes": 4061,
+    "sha256": "c48debf1c6418079348099a1e11d89a2e7bc4429195b8d49eac604d21a5207ee"
+  },
+  "original_catalogue": {
+    "path": "docs/requirements.csv",
+    "sha256": "20dd4e6be7188d3121f3cb361faf8901bc91815a6e9752beb14054a12183f0c1",
+    "total": 106
+  },
+  "phase7_count": 5,
+  "tier_counts": {
+    "MVP": 3,
+    "Competition Ready": 2
+  },
+  "classification": "Codex developer response mapping, not an additional independent verdict",
+  "requirements": [
+    {
+      "id": "DATA-013",
+      "tier": "Competition Ready",
+      "original_requirement": {
+        "id": "DATA-013",
+        "source": "V3.0§4.1;V3.0§18;V3.1§5",
+        "tier": "Competition Ready",
+        "phase": "7",
+        "module": "competition",
+        "definition": "真实比赛数据源映射、授权/规则和能力边界",
+        "input": "用户选定源及比赛规范",
+        "output": "来源明确的数据适配",
+        "dependencies": "DATA-008;INT-006",
+        "acceptance": "未知源/规则保持外部待决，不假称真实接入",
+        "design": "DATA_CONTRACT.md",
+        "priority": "P1",
+        "planned_code": "src/aqrp/competition/",
+        "planned_test": "tests/competition/test_data_013.py",
+        "capability_status": "Planned",
+        "design_status": "DRAFT_PRESENT"
+      },
+      "original_catalogue_fields_modified": false,
+      "direct_adapter_mapping_defect_demonstrated": false,
+      "requirement_dependencies": [
+        "INT-006"
+      ],
+      "acceptance_state": "EXTERNAL_DEPENDENCY_BLOCKED_FOR_REAL_SOURCE; SHARED_SERVICE_PHASE_CLOSURE_PENDING",
+      "impact": "The two counterexamples do not directly refute eight-table/source/rules deterministic mapping. Real competition/source/rules/authorization remain external and unknown; synthetic local success does not certify real access."
+    },
+    {
+      "id": "INT-003",
+      "tier": "MVP",
+      "original_requirement": {
+        "id": "INT-003",
+        "source": "V3.0§12.3;V3.0§11.2",
+        "tier": "MVP",
+        "phase": "7",
+        "module": "integration",
+        "definition": "Research/Strategy状态与版本隔离",
+        "input": "候选变更与固定策略配置",
+        "output": "互不污染证据",
+        "dependencies": "INT-002;UI-007",
+        "acceptance": "候选代码/参数修改不影响策略pin及历史实验",
+        "design": "TESTING.md",
+        "priority": "P1",
+        "planned_code": "src/aqrp/services/;tests/integration/;tests/e2e/",
+        "planned_test": "tests/integration/test_int_003.py",
+        "capability_status": "Planned",
+        "design_status": "DRAFT_PRESENT"
+      },
+      "original_catalogue_fields_modified": false,
+      "findings": [
+        "WORK-P7-G2-001",
+        "WORK-P7-G2-002"
+      ],
+      "acceptance_state": "BLOCKED_PENDING_INDEPENDENT_FIX_RECHECK",
+      "impact": "Cross-entry research-history/pollution and migration integrity are required integration acceptance conditions. Existing successful normal-path SDK/E2E/math evidence remains scoped and cannot close either counterexample."
+    },
+    {
+      "id": "INT-004",
+      "tier": "MVP",
+      "original_requirement": {
+        "id": "INT-004",
+        "source": "V3.0§12.4;V3.0§18",
+        "tier": "MVP",
+        "phase": "7",
+        "module": "integration",
+        "definition": "全新环境源代码/锁依赖/数据/测试/CLI研究回测/网页执行数值比对/手册部署证据",
+        "input": "已审查全模块及干净环境",
+        "output": "部署及最终运行验收报告",
+        "dependencies": "INT-003;ENV-002",
+        "acceptance": "全部实际运行留日志，不以UI启动代完整部署",
+        "design": "TESTING.md",
+        "priority": "P1",
+        "planned_code": "src/aqrp/services/;tests/integration/;tests/e2e/",
+        "planned_test": "tests/integration/test_int_004.py",
+        "capability_status": "Planned",
+        "design_status": "DRAFT_PRESENT"
+      },
+      "original_catalogue_fields_modified": false,
+      "findings": [
+        "WORK-P7-G2-001",
+        "WORK-P7-G2-002"
+      ],
+      "acceptance_state": "BLOCKED_PENDING_INDEPENDENT_FIX_RECHECK",
+      "impact": "Cross-entry research-history/pollution and migration integrity are required integration acceptance conditions. Existing successful normal-path SDK/E2E/math evidence remains scoped and cannot close either counterexample."
+    },
+    {
+      "id": "INT-005",
+      "tier": "MVP",
+      "original_requirement": {
+        "id": "INT-005",
+        "source": "V3.0§3.6;V3.1§1;V3.2§7",
+        "tier": "MVP",
+        "phase": "7",
+        "module": "integration",
+        "definition": "固定快照和组合回测配置Momentum→Reversal完整替换/全回归",
+        "input": "固定SHA/数据/配置",
+        "output": "全链兼容与正确性证据",
+        "dependencies": "INT-004;FACTOR-011;RESEARCH-009;BT-010;UI-007",
+        "acceptance": "仅改因子配置且核心不变，信号订单按独立预期变化",
+        "design": "TESTING.md",
+        "priority": "P1",
+        "planned_code": "src/aqrp/services/;tests/integration/;tests/e2e/",
+        "planned_test": "tests/integration/test_int_005.py",
+        "capability_status": "Planned",
+        "design_status": "DRAFT_PRESENT"
+      },
+      "original_catalogue_fields_modified": false,
+      "findings": [
+        "WORK-P7-G2-001",
+        "WORK-P7-G2-002"
+      ],
+      "acceptance_state": "BLOCKED_PENDING_INDEPENDENT_FIX_RECHECK",
+      "impact": "Cross-entry research-history/pollution and migration integrity are required integration acceptance conditions. Existing successful normal-path SDK/E2E/math evidence remains scoped and cannot close either counterexample."
+    },
+    {
+      "id": "INT-006",
+      "tier": "Competition Ready",
+      "original_requirement": {
+        "id": "INT-006",
+        "source": "V3.0§1.2;V3.0§2.3;V3.0§18;V3.1§5",
+        "tier": "Competition Ready",
+        "phase": "7",
+        "module": "competition",
+        "definition": "比赛执行/数据规则适配及通用模拟能力声明",
+        "input": "正式比赛规则",
+        "output": "适配器/规则测试/能力清单",
+        "dependencies": "INT-002",
+        "acceptance": "未知规则明确外部阻断，不声称具体比赛验收通过",
+        "design": "INTERFACES.md",
+        "priority": "P1",
+        "planned_code": "src/aqrp/competition/",
+        "planned_test": "tests/competition/test_int_006.py",
+        "capability_status": "Planned",
+        "design_status": "DRAFT_PRESENT"
+      },
+      "original_catalogue_fields_modified": false,
+      "direct_adapter_mapping_defect_demonstrated": false,
+      "shared_service_dependencies": [
+        "WORK-P7-G2-001",
+        "WORK-P7-G2-002"
+      ],
+      "acceptance_state": "PHASE_CLOSURE_BLOCKED_BY_SHARED_SERVICE_DEPENDENCIES",
+      "impact": "Thin adapter mapping has scoped evidence, but it delegates to the same authority/Task/history services. No separate bypass or real-source acceptance is inferred."
+    }
+  ],
+  "supporting_independent_mapping": {
+    "archive_member": "assistance-budget/P7_CANONICAL_FIVE_REQUIREMENT_FINDING_MAP.json",
+    "identity": "Supplemental independent-review agent mapping, reviewed by primary; not primary execution or a separate G2 verdict",
+    "external_archive": {
+      "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\EVIDENCE_PACKAGE.zip",
+      "bytes": 25743393,
+      "sha256": "f5da1fedf5a5387172a1e48512bc5145aa1da370d56859a1677f766cdfada3fa"
+    }
+  },
+  "counts_not_combined": {
+    "primary_clean_SDK": 1963,
+    "primary_original_regression": 24,
+    "primary_original_math": 91,
+    "primary_extra_research_math_assertions": 5890,
+    "primary_extra_literal_finance_assertions": 254,
+    "supplementary_finance_assertions": 75921,
+    "two_new_counterexamples": "Actual primary reproductions; not negated by normal-path counts"
+  },
+  "limits": {
+    "WI-R2-001/002": "DEFERRED / NOT VERIFIED",
+    "real_Windows_isolation": "DEFERRED / NOT VERIFIED",
+    "formal_Test": "NOT RUN; entry fails closed",
+    "financial_approval": "NONE",
+    "full_historical_host_reproduction": "NOT VERIFIED beyond user-accepted package/lock/oldRef/replay scope",
+    "real_competition_sources_rules_licensing": "EXTERNAL_DEPENDENCY_BLOCKED",
+    "accepted": false,
+    "released": false,
+    "merged": false,
+    "tagged": false,
+    "deployed": false,
+    "real_orders": false
+  }
+}

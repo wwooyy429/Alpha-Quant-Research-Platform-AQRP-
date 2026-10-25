@@ -1,3 +1,6 @@
+<!-- Phase7 G2 ec6bfce BLOCKED repair20261025 -->
+GPT Work 对固定 `ec6bfcedc0c424b6fa3e817c9a094385bd971d6f` 的 Phase7 独立 G2 为 **BLOCKED**：WORK-P7-G2-001 Medium blocking、002 High 均 OPEN。原报告、反例与证据按原字节归档于 `docs/audits/phase-7/g2-ec6bfce/`；1963 SDK、旧24与数学91通过不关闭这两项反例。当前仅按既有五项受限工程授权进行 0.7.0.dev2 修复与必要验证，新固定40位SHA以 PR #10 的唯一 AQRP_FIXED_REVIEW_SHA 为准；开发方修复/自测不等于 GPT Work 确认关闭或阶段验收。G1设计结论保持，原302设计/5016保护文件及旧成功/失败不改写。main/P6及旧标签不移动；WI-R2两项和真实隔离 DEFERRED / NOT VERIFIED，正式 Test NOT RUN/入口失败关闭、金融批准 NONE、历史宿主受限边界保持；不合并、不打标签、不部署、不实盘、不操作真实账户/ACL/服务/调度。以下段落按历史时点保留，不覆盖本次独立阻断结论。
+
 <!-- Phase7 developer SEC-001 exact public identifier policy correction20261025 -->
 Phase7仍IMPLEMENTING / G2 PENDING。6fc双OS各1962项及覆盖门槛通过但晚期扫描失败，整体FAILED，原ZIP/日志保留。两份公开配置前像独立复算后新增确切路径/完整哈希子策略，原父策略/扫描程序/产品包6045a40/测试/阈值不改；继承与负例准备失败、父策略既有P1局限如实保留。扫描提前并增加全源端点字节核对，新SHA必须重跑完整SDK、双OS及实际浏览器；不转用旧部分通过。见docs/audits/phase-7/self-review/SEC-001/。未验收/发布，全部延期与限制保持。以下为历史。
 

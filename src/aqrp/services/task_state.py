@@ -337,6 +337,7 @@ class TaskState:
             raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
         records, projections, claims, files = [], [], [], {}
         run_owners = {}
+        financial_children, checked_financial_children = [], set()
 
         def remember(path):
             path = guard_path(path)
@@ -358,6 +359,57 @@ class TaskState:
                     "owner_id": owner_id,
                 }
             )
+
+        def financial_history(binding, parent_status):
+            """Physical finance is independent of the enclosing Task's final state."""
+            identity = (binding["physical_ledger_root"], binding["child_run_id"])
+            if identity in checked_financial_children:
+                return
+            manifest, contents = read_core(binding)
+            result = json.loads(contents["result.json"])
+            unknown = (
+                result.get("committed_state_verification", {}).get("financial_state_known") is False
+            )
+            # An original authenticated opaque failure remains opaque. It cannot
+            # certify cash, but must not be recast as a successful/known prefix.
+            opaque_failure = (
+                parent_status == "FAILED"
+                and manifest["status"] == result["status"] == "FAILED"
+                and unknown
+                and "account" not in result
+                and "last_committed_account" not in result
+            )
+            transactions = guard_path(
+                guard_path(binding["physical_ledger_root"])
+                / binding["child_run_id"]
+                / "transactions"
+            )
+            not_started_failure = (
+                parent_status == "FAILED"
+                and manifest["status"] == result["status"] == "FAILED"
+                and result.get("committed_state_verification") == {"status": "NOT_STARTED"}
+                and "account" not in result
+                and "last_committed_account" not in result
+                and not transactions.exists()
+            )
+            if not (opaque_failure or not_started_failure):
+                TaskService._verified_financial_prefix(binding)
+            if transactions.exists():
+                for path in transactions.iterdir():
+                    if path.name != ".lock":
+                        remember(path)
+            financial_children.append(
+                {
+                    "binding_hash": digest(binding),
+                    "service_kind": binding["service_kind"],
+                    "child_run_id": binding["child_run_id"],
+                    "original_manifest_status": manifest["status"],
+                    "physical_prefix_verified": not (opaque_failure or not_started_failure),
+                    "original_opaque_unknown_failure": opaque_failure,
+                    "original_not_started_failure": not_started_failure,
+                }
+            )
+            checked_financial_children.add(identity)
 
         remember(self.root / "catalog.json")
         registered = {record["id"]: record for record in campaigns(self.root, cat)}
@@ -494,19 +546,25 @@ class TaskState:
                     raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
                 if name == "R":
                     run_owners[binding["child_run_id"]] = ("TASK", row["id"], units)
-                if row["status"] == "CANCELLED" and binding["service_kind"] in ("P5", "P5_REPLAY"):
-                    TaskService._verified_financial_prefix(binding)
+                if binding["service_kind"] in ("P5", "P5_REPLAY"):
+                    financial_history(binding, row["status"])
                     if binding["service_kind"] == "P5_REPLAY":
                         source = c.execute(
-                            "SELECT binding FROM slots WHERE task=? AND slot='B'",
+                            "SELECT s.binding,t.status,t.hash FROM slots s JOIN tasks t ON t.id=s.task "
+                            "WHERE s.task=? AND s.slot='B'",
                             (req["payload"]["source_task"],),
                         ).fetchone()
                         if source is None:
                             raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
-                        TaskService._verified_financial_prefix(json.loads(source[0]))
-                    for path in (root / "transactions").iterdir():
-                        if path.name != ".lock":
-                            remember(path)
+                        source_binding = json.loads(source[0])
+                        if (
+                            source_binding["task_id"] != req["payload"]["source_task"]
+                            or source_binding["workspace_id"] != self.workspace_id
+                            or source_binding["plan_hash"] != source[2]
+                            or source_binding["service_kind"] != "P5"
+                        ):
+                            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+                        financial_history(source_binding, source[1])
             if row["status"] == "SUCCEEDED":
                 pointer = json.loads(row["completion"])
                 if (
@@ -550,16 +608,6 @@ class TaskState:
                     != (hashlib.sha256(plan_raw).hexdigest() if plan_raw is not None else None)
                 ):
                     raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
-                for binding in slots.values():
-                    if binding["service_kind"] in ("P5", "P5_REPLAY"):
-                        transactions = (
-                            guard_path(binding["physical_ledger_root"])
-                            / binding["child_run_id"]
-                            / "transactions"
-                        )
-                        for path in transactions.iterdir():
-                            if path.name != ".lock":
-                                remember(path)
         if expected_campaigns != set(campaign_rows):
             raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
         ledger = ExperimentLedger(self.root / "research-runs")
@@ -664,6 +712,7 @@ class TaskState:
                 "catalogue_hash": digest(cat),
                 "files": list(files.values()),
                 "task_ids": sorted(task_ids),
+                "financial_children": financial_children,
                 "trial_keys": sorted(trial_keys),
                 "source_rows_hash": digest([{k: row[k] for k in row.keys()} for row in task_rows]),
             },

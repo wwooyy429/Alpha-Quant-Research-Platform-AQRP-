@@ -1,5 +1,5 @@
 {
-  "scope": "Authorized Phase7 restricted engineering implementation; independent G1 passed; G2 PENDING",
+  "scope": "Phase7 G2 BLOCKED on ec6bfce; authorized restricted repair; new fixed implementation review pending",
   "phase": 7,
   "requirements": 5,
   "tiers": {
@@ -8,7 +8,7 @@
   },
   "g1": "PLAN PASS WITH CONDITIONS",
   "implementation": "AUTHORIZED / IMPLEMENTING",
-  "g2": "PENDING FUTURE FIXED IMPLEMENTATION REVIEW",
+  "g2": "BLOCKED on ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
   "accepted": false,
   "released": false,
   "real_windows_isolation": "DEFERRED / NOT VERIFIED",
@@ -103,5 +103,18 @@
       "original_stderr_sha256": "5818ae184dbcd8f529158ac9914d1ad55f2558c88c2187f80bfdb5aff0aff899",
       "fresh_validation": "New full40SHA SDK + dualOS originalZIP + entire realbrowser protocol mandatory; headless unit browser seam is NOT real browser"
     }
-  }
+  },
+  "repair_version": "0.7.0.dev2",
+  "repair_status": "DEVELOPER_FOCUSED_QA_COMPLETE / NEW_FIXED_SDK_CI_BROWSER_PENDING",
+  "last_independent_review": {
+    "fixed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+    "verdict": "G2 BLOCKED",
+    "report": "g2-ec6bfce/received/REPORT.txt",
+    "findings": {
+      "WORK-P7-G2-001": "OPEN / PENDING INDEPENDENT FIX VERIFICATION",
+      "WORK-P7-G2-002": "OPEN / PENDING INDEPENDENT FIX VERIFICATION"
+    }
+  },
+  "repair_precommit_evidence": "repairs-g2-001-002/DEVELOPER_VERIFICATION.json",
+  "expected_new_complete_tests": 1996
 }

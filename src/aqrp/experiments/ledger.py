@@ -637,6 +637,7 @@ class ExperimentLedger:
                 raise ContractError("ADMISSION_OWNERSHIP_CONFLICT")
             if admission["decision"] != "ADMITTED":
                 raise ContractError(admission.get("code") or "EXPERIMENT_BUDGET_EXCEEDED")
+            access = authority.research_access_before(c, admission["admission_id"])
             claim = authority.claim(
                 c,
                 admission["admission_id"],
@@ -666,7 +667,9 @@ class ExperimentLedger:
                 campaign = config.get("family", {}).get("campaign")
                 control = lineage.get("campaign_control", {})
                 item = {
-                    "cross_campaign_data_access": bool(campaign)
+                    "admission_history": access,
+                    "cross_campaign_data_access": access["prior_other_family_admitted_units"] > 0
+                    or bool(campaign)
                     and (
                         campaign["registration_history"]["contaminated_before_registration"]
                         or any(

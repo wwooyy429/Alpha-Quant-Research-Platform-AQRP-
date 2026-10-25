@@ -42,3 +42,73 @@ paths = [
   '''(^|/)docs/audits/phase\-7/self\-review/MIG\-001/cancelled\-prefix/RESULT\.json$''',
 ]
 regexes = ['''^a7b8680f192f1300e1134818d42f2ee4a10ef61329c6758b31a9ff238152f396$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Recomputed public synthetic audit identifier; exact immutable report file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/g2\-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION\.json$''',
+]
+regexes = ['''^e7a2a2fb8d941dd72d7a8b741882b311ad05db0c0a190c179ce37d1e41b1e7f7$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Recomputed public synthetic audit identifier; exact immutable report file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/g2\-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION\.json$''',
+]
+regexes = ['''^f7c4780fc4640b495a1b2a5b57ea8758d8109ef896d58d598033e4bb848b643e$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Recomputed public synthetic audit identifier; exact immutable report file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/g2\-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION\.json$''',
+]
+regexes = ['''^7d978f99f42f072555311cd6abae1bc9097b5062fbe46ce1205cc83c238c1c73$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Recomputed public synthetic audit identifier; exact immutable report file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/g2\-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION\.json$''',
+]
+regexes = ['''^dc50294c091e241b4705ce4f5b1f6142fc2a4203f05bbb93dfa90921d8b40077$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Recomputed public synthetic audit identifier; exact immutable report file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/g2\-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION\.json$''',
+]
+regexes = ['''^cd4e4689030dbf9572586bd35c0d5c3ed69e5890507b4aa2933339664fec4fca$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Recomputed public synthetic audit identifier; exact immutable report file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/g2\-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION\.json$''',
+]
+regexes = ['''^d8b7ee80c025cbff5c48bead40ccaf2ea9046d34712ec1933cdb5f6b204f60b2$''']
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Recomputed public synthetic audit identifier; exact immutable report file AND full identifier only."
+condition = "AND"
+regexTarget = "secret"
+paths = [
+  '''(^|/)docs/audits/phase\-7/g2\-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION\.json$''',
+]
+regexes = ['''^e34a6c6e60c419f1280a01b64af6120142d050e8fa7546ebbf3e11d251b89c02$''']

@@ -1,0 +1,54 @@
+{
+  "fixed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "verdict": "G2 BLOCKED",
+  "findings": {
+    "WORK-P7-G2-001": "OPEN Medium blocking",
+    "WORK-P7-G2-002": "OPEN High blocking"
+  },
+  "executor": "Primary GPT Work independent reviewer",
+  "actual_seal_argv": [
+    "C:\\Users\\11638\\AppData\\Local\\AQRP\\runtime\\Python31316\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\seal_review.py"
+  ],
+  "sealed_utc": "2026-10-25T09:57:24.412878+00:00",
+  "report": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\REPORT.txt",
+    "bytes": 22923,
+    "sha256": "a341ccaa3e53a9ab64df3ef2e3aeb3d2c2db31aa9052566f94ed07d3e7435202"
+  },
+  "handoff": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\DEVELOPER_HANDOFF.txt",
+    "bytes": 2598,
+    "sha256": "6c831f30e432668a5c54f36359165bd7a82f80afb4210d8a7d7f52f3f778d2f7"
+  },
+  "findings_file": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\FINDINGS.json",
+    "bytes": 4058,
+    "sha256": "cebe621dded68ac53ec6e4fe9ed8856225a0878ed85383da94726acbc454d78d"
+  },
+  "audit_package": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\EVIDENCE_PACKAGE.zip",
+    "bytes": 25743393,
+    "sha256": "f5da1fedf5a5387172a1e48512bc5145aa1da370d56859a1677f766cdfada3fa"
+  },
+  "audit_exact_members": 794,
+  "file_manifest": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\FILE_MANIFEST.json",
+    "bytes": 158672,
+    "sha256": "4e33c69b492f8b45ba4afe7fee894b70f169b39c08f1aade1bb8d833df2a5e66"
+  },
+  "own_sdk_raw": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_CLEAN_SDK_RAW.zip",
+    "bytes": 242753522,
+    "sha256": "9f4d1fbdf333f443b4832220490ed9234002d267866718fe2514e85b4517834b"
+  },
+  "own_counterexamples_raw": {
+    "path": "C:\\Users\\11638\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\AQRP\\reviews\\p7-g2-ec6bfce-independent-20261025\\PRIMARY_COUNTEREXAMPLES_RAW.zip",
+    "bytes": 1044760,
+    "sha256": "5a1644945c780dcbb396bc5ff65b964651de2378033d5fdbd979a1fc02dbf4ca"
+  },
+  "receipt_self_excluded": true,
+  "limits": "No merge/tag/release/deployment/live/formal Test/financial approval or real account/ACL/service/scheduler changes; WI-R2 and real isolation remain DEFERRED / NOT VERIFIED"
+}

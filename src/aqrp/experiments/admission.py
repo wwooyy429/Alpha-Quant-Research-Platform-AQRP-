@@ -787,6 +787,41 @@ class BudgetAuthority:
             "registered_trials": c.execute("SELECT count(*) FROM trial_claims").fetchone()[0],
         }
 
+    def research_access_before(self, c, admission_id):
+        """Read the committed research prefix before this immutable admission.
+
+        A debit is retained even when no TRIAL was ever produced.  Use the
+        authority event order, rather than publication order or a caller's Task
+        campaign_control, and never count this owner or later admissions.
+        """
+        self.verify(c)
+        admission = self.get(c, admission_id)
+        prior = []
+        for row in c.execute(
+            "SELECT payload FROM admission_events WHERE kind='ADMISSION' ORDER BY seq"
+        ):
+            item = _json(row[0])
+            if item["admission_id"] == admission_id:
+                break
+            if item["data_hash"] == admission["data_hash"] and item["debit"] > 0:
+                prior.append(item)
+        else:
+            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+        same_family = [p for p in prior if p["family_id"] == admission["family_id"]]
+        if (
+            sum(p["debit"] for p in prior) != admission["prior_debit"]
+            or sum(p["debit"] for p in same_family) != admission["prior_family_debit"]
+        ):
+            raise ContractError("ADMISSION_HISTORY_UNVERIFIED")
+        other = [p for p in prior if p["family_id"] != admission["family_id"]]
+        return {
+            "admission_id": admission_id,
+            "prior_admission_ids": [p["admission_id"] for p in prior],
+            "prior_other_family_admission_ids": [p["admission_id"] for p in other],
+            "prior_admitted_units": sum(p["debit"] for p in prior),
+            "prior_other_family_admitted_units": sum(p["debit"] for p in other),
+        }
+
     def reserve(
         self,
         c,

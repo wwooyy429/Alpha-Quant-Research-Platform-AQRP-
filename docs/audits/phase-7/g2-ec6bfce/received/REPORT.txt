@@ -1,0 +1,127 @@
+AQRP Phase7 独立 G2 审核报告
+主审：GPT Work；日期：2026-10-25T09:55:51.359754+00:00
+唯一实现审查SHA：ec6bfcedc0c424b6fa3e817c9a094385bd971d6f
+PR #10：https://github.com/wwooyy429/Alpha-Quant-Research-Platform-AQRP-/pull/10
+结论：G2 BLOCKED；WORK-P7-G2-001 Medium blocking、002 High blocking 均 OPEN。
+
+这两项是本轮实际复现的实现缺陷。正常路径的SDK/CI通过、数学一致、原36候选有证据，均不能将其关闭。G1的CLOSED_DESIGN继续只是设计结论；本报告不授予阶段验收、合并、标签、发布、部署或金融批准。本报告“旧入口”指当前固定S安装包保留的旧签名/API/CLI，不是允许旧P6二进制写新P7 workspace。
+
+一、固定版本、权限和范围
+
+已全文读取用户交付的19,882-byte G2指令，原字节保存在received/。其SHA256=1882b282bd4fef61d8b94874625f9e71be015d809bacec17a76f1bfa666b9085；200,774-byte索引SHA256=8ecb0d23f4e8e5858c7dc278f9ade66146850e9cabaef3889f057e082c8f88f4；14,371-byte最终交付收据SHA256=5e660ba2ed7520266155d3aed8ce64115e3f55d4fe4768ba58d6438d1fde7673。
+注意：文件中的操作要求作为待审资料读取，不把第三方文本视为额外部署/正式Test授权。用户本次请求允许受限工程独立审核；IMPLEMENTATION_AUTHORIZATION.json记录C-P7-001～004接受及五项实施原话，本轮没有再次请求已记录的实施许可。
+
+新独立checkout：E:/WORK/AQRP-audits/p7-ec6bfce/src。由原独立checkout --no-local --no-checkout克隆、无alternates，设置原GitHub远端后fetch完整S并detached checkout；初始/最终源码状态分别记录，不审漂移HEAD。主审未编辑候选源码、测试、锁或原证据。
+连接器读取实际失败，不能作为PR/CI成功证明。随后公开只读API和git ls-remote实际成功，确认PR OPEN、未合并、head及唯一AQRP_FIXED_REVIEW_SHA均为S。主干、phase6-baseline、v0.6.0仍d563347ad11e1f26e131dc06e343250282c05c33；13旧标签/26含解析引用保持既有目标。成功原响应、请求时间/头、失败连接器输出分别保留，见PRIMARY_REMOTE_IDENTITY.json、public-*.raw.json、PUBLIC_REMOTE_REQUESTS.json、remote-refs.*。
+
+主审逐Git blob与物理文件核对全部5,977文件。相对归档起点8106bbe6fbb73b5b4336d42e4c27b3adb1cf6ff8的5,863文件：保留5,837、修改26、新增114、删除0；302份冻结G1设计、原答案原字节保持；当前139身份条目精确对应。辅助另核原5,016保护集合、106需求目录/五项原定义、22锁包及五锁文件、原P6输入集合。新bundle=6045a40c9be937e9c953e2422b46227bfc6122053bc13bee9e7615c76bf7c79c；86Python模块、3数据文件齐全。P4/P5金融内核没有以本阶段名义改写，未新增DAG/任意外部插件/真实赛事源范围。
+主审原始集合及每文件hash：PRIMARY_SCOPE.json；辅助原保护集合详细对账：assistance-evidence/。
+
+二、五项原需求与验收意见（原106目录；3 MVP/2 Competition Ready）
+
+INT-003 / MVP：因子/策略pin、旧版本不变性、历史实验追踪；实现admission/ledger/research/task_state、原0.2三Ref及原P6四Ref隔离重放。正常旧包/锁/Ref回归有证据；新共同权威跨入口污染语义001、历史完整性002未闭环，本项关联验收不能通过。
+INT-004 / MVP：完整SDK、统一入口回归/手册/证据。干净wheel SDK、双OS官方原包、旧回归、六页面/Task/CLI/SDK协议有实际证据；001破坏入口一致性，002破坏统一完整性门禁，不能凭1963通过宣告全项满足。
+INT-005 / MVP：完整替换E2E/19研究截面与10真实执行决策。原MAIN12、风险1、取消/重放零研究记录及物理必需P4/资金核验匹配；但共同准入/历史保护仍受001/002阻断，正常流程演示不等于全链全部负例通过。
+DATA-013 / Competition Ready：competition.adapter的P1八表/sidecar/catalog/source与规则恒等映射，未知真实源/许可/规则明确不可执行。未发现这两项直接改变该映射算法；真实竞赛/数据仍EXTERNAL_DEPENDENCY_BLOCKED，只能按用户已接受的受限合成工程边界评价，依赖INT-006/共同服务缺陷仍影响阶段闭环。
+INT-006 / Competition Ready：adapter-spec/capabilities/freeze/submit/result调用同一TaskService，无第二账本/撮合/风控。四适配收据及原内核实际结果有证据，未知/冲突/正式/真实请求拒绝；服务完整性依赖002、研究追踪依赖001，不能把局部适配成功升级为完整赛事接入或整个阶段通过。
+关键实现/测试/原验收文字的完整逐项映射：assistance-budget/P7_CANONICAL_FIVE_REQUIREMENT_FINDING_MAP.json。该辅助映射不是另一个主审结论。
+
+三、主审实际独立执行与原始命令
+
+实际权限：普通当前Windows用户可读仓库/原封存包、创建独立工程目录、执行新venv和loopback UI。没有提升权限、启用账户、更改真实ACL/服务/调度、部署、实盘或真实正式Test。
+环境：CPython3.13.16，standard GIL，x64，Windows11 build26300；bootstrap可执行文件SHA256=31fe10b4ed82a2f960af0ef9931f46a4b84ff286f8b6ffd9dee098cf4f10f17f。实际sys._is_gil_enabled=true且Py_GIL_DISABLED非启用，版本/系统/已装分发元数据见PRIMARY_ENVIRONMENT.json；PRIMARY_CORE22_LOCK_CHECK.json核实际安装22核心版本与冻结锁全部相等。独立SDK bootstrap与开发方Anaconda环境分列。
+bootstrap：C:/Users/11638/AppData/Local/AQRP/runtime/Python31316/python.exe
+clean installed Python：E:/AQ7/f70d5cd3/aqrp-8fc37842-8ead-43d0-b845-62cf584391e9/venv/Scripts/python.exe
+SDK run_id：aqrp-8fc37842-8ead-43d0-b845-62cf584391e9；开始：2026-10-25T07:59:09.928501+00:00；结束：2026-10-25T09:53:13.125091+00:00。
+原始命令：bootstrap -B -X utf8 E:/WORK/AQRP-audits/p7-ec6bfce/src/tools/ci.py，cwd固定checkout，AQRP_RUN_ROOT=E:/AQ7/f70d5cd3，UTF8/无bytecode配置如SDK_LAUNCH.json。tools/ci.py所记录每一实际子命令、cwd、环境与退出码在SDK根commands.jsonl/commands.log，主审外层stdout/stderr和SDK_COMPLETION另存。
+结果：主审自己的全新wheel/venv完整SDK实际1963 passed，fail/error/skip均0；该完整集合包含P1～P6既有回归，不是1963个新增P7测试，未把开发方或子代理执行代入该数。SDK.complete=true仅为nonbrowser scope，原环境保留browser/fullE2E pending，不回写成已做完整主协议浏览器。
+源Git archive SHA256=f89dcef00ee25a0bbfba6f0177b1388423665cbb9d91e3c5efbaea91d3b0450c；主审wheel SHA256=74a7d01d746d6de77018667e53439444a91b2900c73bd827dd2a6ceb93f61190；core锁SHA256=86c7bf65c9a9690036006360062c8cd10a91279705b4070af7033d7699abffeb；UI锁SHA256=ff28bee3db0e2a4c0b3d3b5037186a5ace5e75836027268424bbe469da4a75a3。wheel打包元数据可致不同宿主外包hash不同，内部成员/RECORD逐个核对才是源码身份依据。
+
+主审额外实际执行：
+- 原20＋4回归：24 passed，复制原脚本与原fixture字节不改；original24-v2.*及XML。首轮fixture漏复制的collection失败保留，不改判。
+- 原91数学：91 passed，原参考脚本未改、未调用未来实现生成expected；original91.*及original-math/。旧脚本历史SHA头保留，以当前外层命令/实际安装成员确认本次S。
+- 两个阻断反例：primary_pollution_probe.py与primary_failed_history_probe.py经当前独立安装86成员hash核验后实际运行，分别记录三个root及healthy/corrupt对照；原命令、stdout/stderr、原业务表和物理事务保留。
+- 主审自写stdlib100位Decimal正交投影oracle，对两个实际主R工件的全部19截面、五stage、标签、OLS beta、Pearson/Spearman ties和分组收益复算：5890检查通过，最大数值绝对差4.839312441156070870580886442104660421546931056908394699464822295061344586726019469597E-14，容差atol1e-12+rtol1e-10*abs(expected)。不用AQRP/开发求解器/候选expected生成答案。PRIMARY_ACTUAL_MATH.json及原日志。
+- 从自己QR选择的10决策推导整手、成交方向/不利价/最低费及原始资金守恒：254项精确Fraction检查通过，两实际B均现金579/权益979/费用15/滑点6，Momentum004=4，Reversal002=4，其他持仓0；15成交数由独立选择/差量推导。PRIMARY_LITERAL_FINANCE.json及原日志。完整逐事务/桶/重放由下述补充复算另列，不混入主审254。
+- 主审读取三份原SDK ZIP的全部105,412成员（27303+39055+39054），每成员流式CRC/长度/SHA并核各根JUnit1963/0/0/0；PRIMARY_ORIGINAL_ARCHIVES.json。原Junit定位假设两次错误原始流保留，成功v3才作为核验依据。
+
+任何重复代码控制root都是同一合成输入下的工程夹具，不能称统计独立样本、最终OOS/Test或金融有效性证据。
+
+四、发现与修复门槛
+
+WORK-P7-G2-001 — Medium blocking — OPEN
+旧 API 和 CLI 遗漏其他 campaign 已消耗但尚无 R trial 的污染历史
+位置：src/aqrp/experiments/ledger.py:666-679；支持位置：src/aqrp/services/research.py:262-263; src/aqrp/services/task_state.py:753-758
+依据：COMMON_BUDGET_ADMISSION_DESIGN.md:82; IMPLEMENTATION_CONTRACT.md:5; INT-003; INT-004; INT-005
+主审实际复现：三套全新独立工程root分别运行旧公开API、真实旧CLI和Task；预登记A/B后提交并在R前取消A，再首次运行B。每套均admitted_units=2、无repeat_of。API/CLI contaminated=false和cross_campaign_data_access=false，Task两者true，prior_other_campaign_attempts=1。
+影响：共同权威保留扣额，但旧入口输出仍把有其他campaign消耗历史的数据标为未污染，破坏跨入口一致性和试验追踪验收；未证明金融批准被授予。
+原件/运行：primary_pollution_probe.py; PRIMARY_POLLUTION_REPRODUCTION.json; pollution-legacy-cli.* 原始真实子进程流
+修复要求：全部受管入口从同一已提交authority按先后顺序导出先前其他campaign/家族准入与访问历史；不能仅依赖投影TRIAL或TaskContext。保留幂等、repeat_of、原家族限制和失败/取消扣额，不回写旧证据。
+必须回归：三独立root无repeat_of混杂的入口对照，R前取消/失败、反向legacy→Task、并发以及投影恢复；应一致保留污染且额度不增加/不退款。
+
+WORK-P7-G2-002 — High blocking — OPEN
+FAILED父Task的成功B物理事务损坏可通过历史迁移并取得新准入
+位置：src/aqrp/services/task_state.py:489-510；支持位置：src/aqrp/services/task_state.py:510-562; src/aqrp/services/tasks.py:41
+依据：COMMON_BUDGET_ADMISSION_DESIGN.md:107; IMPLEMENTATION_CONTRACT.md:6; INT-003; INT-004; INT-005
+主审实际复现：独立healthy/corrupt控制各产生真实gross_max=0风险拒绝：R成功、B成功、P4拒绝、父Task FAILED REQUIRED_STAGE_REJECTED。corrupt仅在最后物理transactions/commit-*.json尾部追加一个ASCII空格；正常financial_result明确TRANSACTION_CHAIN_CORRUPTED。同包catalog/schema历史夹具只去除声明的新控制表/anchor并保留七张原业务SQL表及原文件。两组TaskState迁移均接受并允许新Task QUEUED；损坏组财务读取仍拒绝。
+影响：历史完整性门禁把损坏的已知金融记录认证进新authority；新准入先于财务完整性恢复，违背缺损即拒绝。这里只证明允许入队，没有宣称新任务已执行或受损财务已通过输出。
+原件/运行：primary_failed_history_probe.py; PRIMARY_FAILED_HISTORY_REPRODUCTION.json; healthy/corrupt原最后事务和完整新夹具原件
+修复要求：按实际存在B/E及其可信source检查物理提交前缀，与父Task SUCCEEDED/FAILED/CANCELLED无关；迁移清单覆盖全部事务原字节，损坏必须在新anchor/grant前拒绝。区别合法原始未知财务失败与后来损坏的已知成功B，保留真正P4拒绝语义。
+必须回归：真实FAILED父Task+成功B的healthy/corrupt对照，FAILED replay及source，事务缺失/截断/字节变化；原SUCCEEDED指针与CANCELLED prefix回归；失败不改原业务文件、不重置/返还额度。
+
+002的细节：FAILED是合法P4风险拒绝导致，B本身已知SUCCEEDED；不能用“父任务没有成功”豁免物理金融前缀。只去声明的新控制schema/anchor是在独立同bundle工程历史夹具中复现候选既有strip_control_schema测试，不跨P6 bundle、不替换catalog、不改七张原业务表，不触及开发原件。这里只证实迁移接受及新任务入队，不宣称受损财务已通过输出或新任务已经执行。合法原未知财务失败仍须保留其失败语义，不把全部FAILED强制变为成功才能迁移。
+001未证明金融批准获授；其Medium仍阻断，因为共同受管入口的试验污染/历史语义就是本阶段明确验收条件，且Task与旧API/CLI对严格同逻辑、无repeat_of的独立夹具给出不同结果。
+
+五、36候选与正常完整协议
+
+主审逐项核对原36候选定义不变，84处实现测试引用的函数/行/hash、开发SDK原JUnit testcase，以及10份适用协议工件的实际长度/hash。逐案完整列在PRIMARY_CANDIDATE36.json；每个BUD-001～036均有原指定案例的当前证据。它不是主审另跑36个独立新实验的宣称，也不能证明案例未覆盖的FAILED历史或取消前无TRIAL污染语义正确。BUD018/019/022相关迁移泛化被002反例否定；BUD008/013/023相关共同历史/污染验收仍受001影响。原394抽象设计断言不是产品测试。
+
+原主协议：同一主W12个一单位研究，SDK2、TaskCLI2、AppTest2、旧CLI2、透明SDK2、真实浏览器2。普通主研究19x6观察，P5只取预登记Jan4/6/…/22的10决策，原序号0/2/…/18；每个B及重放E必需10个物理P4且完成屏障核验。透明层是原冻结单截面答案，不能写成19截面。
+另一个事前预登记风险W单列1研究单位，R成功、P4 GROSS拒绝、B成功且0fills、父Task FAILED REQUIRED_STAGE_REJECTED，现金权益1000。主根取消Task无slot/无R/无新trial，CANCELLED；正常replay只有E+10P，不执行R，SUCCEEDED。研究扣额仍12，取消/重放零新增研究；控制admissions行可含零单位记录（实际14行/12研究单位），不能把“零研究单位”误写成SQL行数完全不增。
+原浏览器五Task的SUCCEEDED/FAILED/CANCELLED分别真实保留；worker退出0不等于Task成功，UI cleanup -1不等于账本失败。原比较Momentum/Reversal numeric_equal=false正确，因为持仓不同，不能仅凭579/979相同改判全结果相等。
+
+主审自己的真实浏览器：独立工程W=E:\AQ7\primary-browser-8fbd1408；Task=160cccf5-ded3-49d2-9d61-95b9f5de5d11，单截面R SUCCEEDED；通过真实浏览器下载admission-trial-event-0.json，2524字节，SHA256=866bfa001c2be25c774c9330e8386a1a29a0288d5dec42c5496e7dad7f965cb0，与TaskService实际原工件逐字节一致。界面明确ENGINEERING TEST ONLY / Financial approval NONE；Check formal-entry gate工程拒绝请求实际显示APPROVAL_REQUIRED，未运行正式Test。AX、截图、下载原件和实际服务返回见browser-*、PRIMARY_BROWSER_RESULT。主审仅重跑此受限浏览器探针，没有冒称亲自重跑开发方MAIN12/原五Task全协议。临时tab关闭，唯一自建localhost进程按PID/命令/端口核实后停止，无系统服务改动。
+
+六、官方/开发原始证据与补充独立核验（身份分列）
+
+官方run40155672079/attempt1，head=S；Windows job121056438060与Ubuntu job121056438195实际success。原工件：
+- Windows artifact12586435043，275309999 bytes，SHA2562603e9ae90236f277d0eb50f336839a6799901f395edf17a3d3c9147f5adf19a。
+- Ubuntu artifact12585782016，315458920 bytes，SHA256d58a91c36f667f920a757f72c878d9e026219df5f6738ae13a78739e3feb0f0e。
+- 开发本机原SDK243181626 bytes，SHA2568689e61f3ff82c316a6fde0536b18b494758b7f77e4b429a68f046a31e01fd7e。
+两官方API摘要与主审实际原包hash一致；三份各1963/0/0/0、31条SDK命令exit0。官方ZIP不是开发本机包。主审没有启动远程Windows/Ubuntu，官方运行身份来自成功只读API和认证原件，不能写成主审在双OS亲自执行。
+
+补充子代理分别做只读证据、共同预算静态/探针、金融/浏览器原包复算，全部assistance-*独立列身份。其结果由主审审阅并与主审自己的反例/数值/包核验对照，不能冒充主审执行：
+- 原包精确完整选集/410整子树pytest-current别名每OS、wheel94 RECORD/86py+3data逐成员、原生6072源文件(5977Git+95生成)、原生安装RECORD187行=100有hash载荷+87无hash条目；86外部pyc位于声明的RUN/bytecode且存在，其当前hash不冒充历史认证。原安装89包文件同S。
+- 主浏览器原ZIP74537949 bytes，SHA256eaec6d731ef06055dae059af0ea8e89e3d4df62b8572499dd4e392a44300fdd3，4555成员/4554文件全核；确切200源root名单SHA256ee65651d24d0fefc24416a7d68ada9b36d840f63dd797738fcb99b2c4935edec完整闭合。初始SDK至最终包2156金融文件/524926172原字节不变。149操作记录、真实下载/AX/截图、V3 strict及最终36矩阵、37完成记录、三后置胶囊927/72/75成员和消费者V4实际exit0已核。
+- 金融子代理独立使用stdlib而不import AQRP，对全部12演员及风险/重放的R/P4/物理事务/源请求/SQLite冻结备份，独立75,921断言；主层121commits/15fills、透明层19commits/1fill98.1/998.1、风险17commits/0fills1000、重放121/15均相符。该75,921是补充复算断言，不并入1963产品测试或主审5890+254。
+- 23份旧失败/中止/反例ZIP合计3254731056bytes全外包hash核对，属于保存历史，不是重新运行旧失败或每个旧包全部内成员认证。
+- 收据66绝对引用和Git相对引用有实际核验；285仅生成清单相对条目没有冒称再次取得原生成文件；2份原MIG瞬态WAL/SHM缺失仍NOT VERIFIED。
+详assistance-evidence/SUPPLEMENTAL_EVIDENCE_REPORT.md及assistance-finance-browser/SUPPLEMENTAL_FINANCE_BROWSER_REVIEW.md；这些辅助报告不单独授予G2通过。
+
+七、扫描、兼容与原缺陷处置
+
+SEC001：本轮确实新增并使用.gitleaks-phase7.toml，不能称扫描规则未改。原父配置/扫描器未改，两个既有allowlists原样继承；新增两个已证明公开完整digest只按generic-api-key/AND/secret及确切七路径匹配。17实跑控制区分10检出、5良性精确例外、2父/子共同已知限制。历史P1混合fakePAT例外仍KNOWN_BASELINE_LIMITATION，不当新检出positive或已修复安全漏洞。固定源码完整扫描及末端精确源集合检查实际通过，只证明工程扫描控制，不证明宿主持续隔离。
+SRC001：原Ubuntu缺pyc末端不一致与原本地定位界限保留；只在既有隔离执行-I调用加-B，原302/5016身份保护不改。当前末端检查有原始成功证据，不把旧失败改写。
+HAR001/COMPAT：当前cancel重复键拒绝码精确ADMISSION_IDEMPOTENCY_CONFLICT，不用错误集合混同；原浏览器失败/中止流完整保留。当前本地/双OS完整回归支持已修复指定路径；原失bootstrap输出仍NOT VERIFIED。头less4回归不冒称真实浏览器。
+MIG001：原成功completion指针与CANCELLED物理前缀特定反例的修复有实现和运行证据；但本轮002实证FAILED分支仍遗漏，不能整体宣称历史财务迁移门禁CLOSED。保留“指定旧反例已修复、整体能力仍OPEN”的区分；不伪造原缺失WAL/SHM。
+COV：原1892断言通过但四覆盖门槛失败的SDK仍失败；70新增有意义负例、现门槛/答案/排除项不降；本轮实际完整SDK和双OS通过说明当前覆盖通过，不能回填旧运行。
+G1两设计发现继续CLOSED_DESIGN，不是本轮两个实现缺陷已关闭。P6已审/发布结论不因本报告重写；本阶段扩展共同authority/迁移的缺陷只按S评估。
+
+八、NOT VERIFIED / 延期 / 仍需决定
+
+1. WI-R2-001/002及真实Windows三主体隔离继续DEFERRED / NOT VERIFIED；当前没有启用账户/改ACL/跑管理员脚本。角色对象、API、同用户loopback和端点hash不能代替真实OS隔离。
+2. 真实正式Test NOT RUN、金融批准NONE；正式标准/独立Test权限/部署前提未具备，入口保持失败关闭。正IC/统计显著/合成盈利或工程G2都不授金融批准。
+3. 完整历史宿主复现仍NOT VERIFIED，仅已接受的包/依赖锁/旧Ref及声明重放。新SDK成功不补成旧宿主或旧身份执行。
+4. 真实赛事/源/规则/授权接入未提供；DATA013/INT006只按受限合成profile评价，不猜测真实能力。
+5. 原完整native比较AX失败；完整DOM274012字符/274013byte并非nativeAX。可选CSV超时及两原MIG瞬态文件未核，保持NOT VERIFIED。原失败、首次CAS锁来源未知、capture超时、消费者V2/V3失败及准备勘误保留，V4成功只支持其限定范围。
+6. 官方宿主全部生成源/扫描器二进制未完整上传，执行记录中的hash不等于主审取得原字节；原始远程ACL/符号链接身份也未复现。当前端点闭合不证明持续安全或独立主体。
+7. 主审未在自己浏览器重跑全部原五Task/MAIN12，但已核原真浏览器记录并独立复算实际金融原件，另实跑自己的单截面R/下载/门禁。不能以AppTest冒充真实浏览器。
+8. 当前仍需开发方修复001/002后锁新40位SHA并提供完整新证据。无需为已获授权的工程修复再请求启动许可；真实隔离/部署/金融标准等越界决定仍由用户另行明确，不因本报告授予。
+
+九、可复核文件与封存
+
+REPORT.txt / FINDINGS.json / DEVELOPER_HANDOFF.txt为本轮结果；PRIMARY_SCOPE、PRIMARY_REMOTE_IDENTITY、PRIMARY_ORIGINAL_ARCHIVES、PRIMARY_CANDIDATE36、PRIMARY_ACTUAL_MATH、PRIMARY_LITERAL_FINANCE、PRIMARY_BROWSER_RESULT及两PRIMARY_*_REPRODUCTION均为主审实际结果。
+每条外层argv/cwd/UTC/exit和stdout/stderr按*.command.json/*.stdout.log/*.stderr.log保留；SDK子命令在独立SDK根。主审辅助定位/读取错误、旧fixture复制遗漏、角色模板字段勘误见PRIMARY_HELPER_LIMITS.txt；原错误流不删除、不包装为产品失败，也不以最终修正覆盖原失败结果。
+独立新工程夹具、完整SDK原始选集、审查证据包和每文件清单在封存收据定位；收据分别绑定包长度/SHA和精确成员，避免自指认证。候选最终Git状态需保持S且clean，封存时记录。
+
+G2最终结论：BLOCKED。001与002均OPEN；五项受限工程范围尚不能进入技术G2通过/人工验收/发布。主审没有合并、标签、部署、实盘、运行正式Test、授金融批准或改变真实权限；所有原延期继续保持。

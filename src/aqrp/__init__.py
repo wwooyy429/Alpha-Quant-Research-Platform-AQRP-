@@ -1,3 +1,3 @@
 """AQRP restricted engineering research, portfolio construction and risk controls."""
 
-__version__ = "0.7.0.dev1"
+__version__ = "0.7.0.dev2"

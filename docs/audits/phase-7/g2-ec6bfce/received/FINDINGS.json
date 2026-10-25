@@ -1,0 +1,36 @@
+{
+  "executor": "Primary GPT Work independent G2 reviewer",
+  "fixed_sha": "ec6bfcedc0c424b6fa3e817c9a094385bd971d6f",
+  "verdict": "G2 BLOCKED",
+  "findings": [
+    {
+      "id": "WORK-P7-G2-001",
+      "severity": "Medium blocking",
+      "status": "OPEN",
+      "title": "旧 API 和 CLI 遗漏其他 campaign 已消耗但尚无 R trial 的污染历史",
+      "location": "src/aqrp/experiments/ledger.py:666-679",
+      "supporting_locations": ["src/aqrp/services/research.py:262-263", "src/aqrp/services/task_state.py:753-758"],
+      "basis": ["COMMON_BUDGET_ADMISSION_DESIGN.md:82", "IMPLEMENTATION_CONTRACT.md:5", "INT-003", "INT-004", "INT-005"],
+      "actual_execution": "三套全新独立工程root分别运行旧公开API、真实旧CLI和Task；预登记A/B后提交并在R前取消A，再首次运行B。每套均admitted_units=2、无repeat_of。API/CLI contaminated=false和cross_campaign_data_access=false，Task两者true，prior_other_campaign_attempts=1。",
+      "risk": "共同权威保留扣额，但旧入口输出仍把有其他campaign消耗历史的数据标为未污染，破坏跨入口一致性和试验追踪验收；未证明金融批准被授予。",
+      "reproduction": "primary_pollution_probe.py; PRIMARY_POLLUTION_REPRODUCTION.json; pollution-legacy-cli.* 原始真实子进程流",
+      "repair": "全部受管入口从同一已提交authority按先后顺序导出先前其他campaign/家族准入与访问历史；不能仅依赖投影TRIAL或TaskContext。保留幂等、repeat_of、原家族限制和失败/取消扣额，不回写旧证据。",
+      "required_regression": "三独立root无repeat_of混杂的入口对照，R前取消/失败、反向legacy→Task、并发以及投影恢复；应一致保留污染且额度不增加/不退款。"
+    },
+    {
+      "id": "WORK-P7-G2-002",
+      "severity": "High blocking",
+      "status": "OPEN",
+      "title": "FAILED父Task的成功B物理事务损坏可通过历史迁移并取得新准入",
+      "location": "src/aqrp/services/task_state.py:489-510",
+      "supporting_locations": ["src/aqrp/services/task_state.py:510-562", "src/aqrp/services/tasks.py:41"],
+      "basis": ["COMMON_BUDGET_ADMISSION_DESIGN.md:107", "IMPLEMENTATION_CONTRACT.md:6", "INT-003", "INT-004", "INT-005"],
+      "actual_execution": "独立healthy/corrupt控制各产生真实gross_max=0风险拒绝：R成功、B成功、P4拒绝、父Task FAILED REQUIRED_STAGE_REJECTED。corrupt仅在最后物理transactions/commit-*.json尾部追加一个ASCII空格；正常financial_result明确TRANSACTION_CHAIN_CORRUPTED。同包catalog/schema历史夹具只去除声明的新控制表/anchor并保留七张原业务SQL表及原文件。两组TaskState迁移均接受并允许新Task QUEUED；损坏组财务读取仍拒绝。",
+      "risk": "历史完整性门禁把损坏的已知金融记录认证进新authority；新准入先于财务完整性恢复，违背缺损即拒绝。这里只证明允许入队，没有宣称新任务已执行或受损财务已通过输出。",
+      "reproduction": "primary_failed_history_probe.py; PRIMARY_FAILED_HISTORY_REPRODUCTION.json; healthy/corrupt原最后事务和完整新夹具原件",
+      "repair": "按实际存在B/E及其可信source检查物理提交前缀，与父Task SUCCEEDED/FAILED/CANCELLED无关；迁移清单覆盖全部事务原字节，损坏必须在新anchor/grant前拒绝。区别合法原始未知财务失败与后来损坏的已知成功B，保留真正P4拒绝语义。",
+      "required_regression": "真实FAILED父Task+成功B的healthy/corrupt对照，FAILED replay及source，事务缺失/截断/字节变化；原SUCCEEDED指针与CANCELLED prefix回归；失败不改原业务文件、不重置/返还额度。"
+    }
+  ],
+  "unchanged_limits": "WI-R2-001/002与真实Windows隔离 DEFERRED / NOT VERIFIED；正式Test NOT RUN且正式入口拒绝；金融批准NONE；完整历史宿主仅受限包/锁/旧Ref/重放；没有合并、标签、部署、实盘或真实账户/ACL/服务/调度变更。"
+}

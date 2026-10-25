@@ -35,6 +35,467 @@ FILES = [
     ],
 ]
 PROOF = ROOT / "docs/audits/phase-7/self-review/SEC-001"
+REPAIR_PROOF = ROOT / "docs/audits/phase-7/repairs-g2-001-002/scan-policy"
+REPAIR_PROOF_SHA = "a4a0fa2d65ada964b1ac5546e2e2b5f912c9a0c3215a777a556350f8d14e5eb3"
+REPAIR_FILES = [
+    ["docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json"],
+    ["docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json"],
+    ["docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json"],
+    ["docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json"],
+    ["docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json"],
+    ["docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json"],
+    ["docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json"],
+]
+REPAIR_CONTROL_EXPECTATIONS = [
+    {
+        "name": "g2-public-00-original-child",
+        "expected_exit": 0,
+        "required_rule": None,
+        "classification": "BENIGN_EXACT_EXCEPTION",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 0, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-00-original-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 0, "content": "ORIGINAL", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-00-changed-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 0, "content": "CHANGED", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-00-changed-child",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 0, "content": "CHANGED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-00-wrong-path",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "unrelated/g2-public.json",
+        "source_fixture": {"proof_record": 0, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-00-wrong-pair",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 0, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-00-github-same-path",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 0, "content": "PAT", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-00-mixed-public-github",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 0, "content": "MIXED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-01-original-child",
+        "expected_exit": 0,
+        "required_rule": None,
+        "classification": "BENIGN_EXACT_EXCEPTION",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 1, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-01-original-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 1, "content": "ORIGINAL", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-01-changed-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 1, "content": "CHANGED", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-01-changed-child",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 1, "content": "CHANGED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-01-wrong-path",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "unrelated/g2-public.json",
+        "source_fixture": {"proof_record": 1, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-01-wrong-pair",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 1, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-01-github-same-path",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 1, "content": "PAT", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-01-mixed-public-github",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 1, "content": "MIXED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-02-original-child",
+        "expected_exit": 0,
+        "required_rule": None,
+        "classification": "BENIGN_EXACT_EXCEPTION",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 2, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-02-original-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 2, "content": "ORIGINAL", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-02-changed-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 2, "content": "CHANGED", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-02-changed-child",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 2, "content": "CHANGED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-02-wrong-path",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "unrelated/g2-public.json",
+        "source_fixture": {"proof_record": 2, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-02-wrong-pair",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 2, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-02-github-same-path",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 2, "content": "PAT", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-02-mixed-public-github",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 2, "content": "MIXED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-03-original-child",
+        "expected_exit": 0,
+        "required_rule": None,
+        "classification": "BENIGN_EXACT_EXCEPTION",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 3, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-03-original-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 3, "content": "ORIGINAL", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-03-changed-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 3, "content": "CHANGED", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-03-changed-child",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 3, "content": "CHANGED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-03-wrong-path",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "unrelated/g2-public.json",
+        "source_fixture": {"proof_record": 3, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-03-wrong-pair",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 3, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-03-github-same-path",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 3, "content": "PAT", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-03-mixed-public-github",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 3, "content": "MIXED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-04-original-child",
+        "expected_exit": 0,
+        "required_rule": None,
+        "classification": "BENIGN_EXACT_EXCEPTION",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 4, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-04-original-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 4, "content": "ORIGINAL", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-04-changed-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 4, "content": "CHANGED", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-04-changed-child",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 4, "content": "CHANGED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-04-wrong-path",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "unrelated/g2-public.json",
+        "source_fixture": {"proof_record": 4, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-04-wrong-pair",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 4, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-04-github-same-path",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 4, "content": "PAT", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-04-mixed-public-github",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 4, "content": "MIXED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-05-original-child",
+        "expected_exit": 0,
+        "required_rule": None,
+        "classification": "BENIGN_EXACT_EXCEPTION",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 5, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-05-original-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 5, "content": "ORIGINAL", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-05-changed-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 5, "content": "CHANGED", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-05-changed-child",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 5, "content": "CHANGED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-05-wrong-path",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "unrelated/g2-public.json",
+        "source_fixture": {"proof_record": 5, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-05-wrong-pair",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 5, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-05-github-same-path",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 5, "content": "PAT", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-05-mixed-public-github",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 5, "content": "MIXED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-06-original-child",
+        "expected_exit": 0,
+        "required_rule": None,
+        "classification": "BENIGN_EXACT_EXCEPTION",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 6, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-06-original-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 6, "content": "ORIGINAL", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-06-changed-parent",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 6, "content": "CHANGED", "policy": "PARENT"},
+    },
+    {
+        "name": "g2-public-06-changed-child",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 6, "content": "CHANGED", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-06-wrong-path",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "unrelated/g2-public.json",
+        "source_fixture": {"proof_record": 6, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-06-wrong-pair",
+        "expected_exit": 1,
+        "required_rule": "generic-api-key",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_POLLUTION_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 6, "content": "ORIGINAL", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-06-github-same-path",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 6, "content": "PAT", "policy": "CHILD"},
+    },
+    {
+        "name": "g2-public-06-mixed-public-github",
+        "expected_exit": 1,
+        "required_rule": "github-pat",
+        "classification": "DETECTION_POSITIVE",
+        "relative_path": "docs/audits/phase-7/g2-ec6bfce/received/PRIMARY_FAILED_HISTORY_REPRODUCTION.json",
+        "source_fixture": {"proof_record": 6, "content": "MIXED", "policy": "CHILD"},
+    },
+]
 
 
 def digest(raw):
@@ -83,10 +544,79 @@ def public_identifiers():
     return identifiers
 
 
+def repair_public_identifiers():
+    raw = (REPAIR_PROOF / "PROOF.json").read_bytes()
+    require(digest(raw) == REPAIR_PROOF_SHA, "REPAIR_PUBLIC_PROOF_BYTES")
+    proof = json.loads(raw)
+    require(
+        proof["schema"] == "phase7-G2-public-digest-proof/1"
+        and proof["original_failure_findings"] == 12
+        and len(proof["records"]) == 7,
+        "REPAIR_PUBLIC_PROOF_SCOPE",
+    )
+    values = []
+    for index, record in enumerate(proof["records"]):
+        require(
+            record["preimage"]["file"] == f"preimages/public-digest-{index:02d}.json",
+            "REPAIR_PREIMAGE_PATH",
+        )
+        data = (REPAIR_PROOF / record["preimage"]["file"]).read_bytes()
+        item = json.loads(data)
+        require(
+            canonical(item) == data
+            and len(data) == record["preimage"]["bytes"]
+            and digest(data) == record["preimage"]["sha256"] == record["public_sha256"],
+            "REPAIR_PREIMAGE_RECOMPUTATION",
+        )
+        if record["category"] == "PUBLIC_SYNTHETIC_RESEARCH_CONFIG":
+            require(
+                item["schema"] == "research/1"
+                and item["purpose"] == "ENGINEERING_DEMO"
+                and item["market_id"] == "SYN_A"
+                and item["currency"] == "SYNCCY"
+                and "family" not in item,
+                "REPAIR_PUBLIC_SYNTHETIC_SCOPE",
+            )
+        else:
+            require(
+                record["category"] == "PUBLIC_LOCAL_RUN_OWNER_ID"
+                and set(item) == {"ledger_root", "run_id"}
+                and item["ledger_root"].replace("\\", "/").endswith("/research-runs")
+                and re.fullmatch(r"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}", item["run_id"]),
+                "REPAIR_PUBLIC_OWNER_SCOPE",
+            )
+        require(
+            record["exact_repository_projection_files"] == REPAIR_FILES[index],
+            "REPAIR_EXACT_REPORT_FILES",
+        )
+        values.append(record["public_sha256"])
+    for relative, expected in proof["projection_files"].items():
+        require(relative in sum(REPAIR_FILES, []), "REPAIR_NO_OTHER_REPORT")
+        data = (ROOT / relative).read_bytes()
+        require(
+            len(data) == expected["bytes"] and digest(data) == expected["sha256"],
+            "REPAIR_ORIGINAL_REPORT_BYTES",
+        )
+    require(len(proof["locations"]) == 12, "REPAIR_LOCATION_COUNT")
+    for location in proof["locations"]:
+        require(location["repository_path"] in sum(REPAIR_FILES, []), "REPAIR_LOCATION_PATH")
+        value = json.loads((ROOT / location["repository_path"]).read_bytes())
+        for token in location["json_pointer"].lstrip("/").split("/"):
+            token = token.replace("~1", "/").replace("~0", "~")
+            value = value[int(token)] if isinstance(value, list) else value[token]
+        matching = [r for r in proof["records"] if r["id"] == location["public_digest_id"]]
+        require(
+            len(matching) == 1 and value == matching[0]["public_sha256"],
+            "REPAIR_ORIGINAL_LOCATION_VALUE",
+        )
+    return values
+
+
 def policy():
     parent, child = ROOT / ".gitleaks.toml", ROOT / ".gitleaks-phase7.toml"
     require(digest(parent.read_bytes()) == PARENT_SHA, "PROTECTED_PARENT_CHANGED")
     values = public_identifiers()
+    repair_values = repair_public_identifiers()
     config = tomllib.loads(child.read_text(encoding="utf8"))
     require(
         set(config) == {"title", "extend", "allowlists"}
@@ -95,10 +625,11 @@ def policy():
     )
     parent_policy = tomllib.loads(parent.read_text(encoding="utf8"))["allowlists"]
     require(
-        len(config["allowlists"]) == 4 and config["allowlists"][:2] == parent_policy,
+        len(config["allowlists"]) == 4 + len(repair_values)
+        and config["allowlists"][:2] == parent_policy,
         "EXACT_PARENT_ALLOWLISTS_PRESERVED",
     )
-    for index, entry in enumerate(config["allowlists"][2:]):
+    for index, entry in enumerate(config["allowlists"][2:4]):
         require(
             set(entry)
             == {"targetRules", "description", "condition", "regexTarget", "paths", "regexes"},
@@ -115,10 +646,31 @@ def policy():
             entry["paths"] == ["(^|/)" + re.escape(p) + "$" for p in FILES[index]],
             "EXACT_SEVEN_PATHS_ONLY",
         )
+    for index, entry in enumerate(config["allowlists"][4:]):
+        require(
+            set(entry)
+            == {"targetRules", "description", "condition", "regexTarget", "paths", "regexes"},
+            "REPAIR_NO_OTHER_POLICY_FIELDS",
+        )
+        require(
+            entry["targetRules"] == ["generic-api-key"]
+            and entry["condition"] == "AND"
+            and entry["regexTarget"] == "secret",
+            "REPAIR_EXACT_RULE_AND_CONDITION",
+        )
+        require(
+            entry["regexes"] == ["^" + repair_values[index] + "$"],
+            "REPAIR_FULL_PUBLIC_IDENTIFIER_ONLY",
+        )
+        require(
+            entry["paths"] == ["(^|/)" + re.escape(p) + "$" for p in REPAIR_FILES[index]],
+            "REPAIR_EXACT_REPORT_PAIR_ONLY",
+        )
     return {
         "parent_sha256": PARENT_SHA,
         "child_sha256": digest(child.read_bytes()),
         "public_proof_sha256": digest((PROOF / "PROOF.json").read_bytes()),
+        "repair_public_proof_sha256": REPAIR_PROOF_SHA,
     }, values
 
 
@@ -219,6 +771,39 @@ def scanner(
     if required_rule is not None:
         require(required_rule in {f["RuleID"] for f in findings}, "SCANNER_CONTROL_RULE_" + name)
     return record
+
+
+def capture_repair_controls(executable, out, child, positive):
+    identifiers = repair_public_identifiers()
+    controls = []
+    for expected in REPAIR_CONTROL_EXPECTATIONS:
+        fixture = expected["source_fixture"]
+        index = fixture["proof_record"]
+        raw = (ROOT / REPAIR_FILES[index][0]).read_bytes()
+        if fixture["content"] == "CHANGED":
+            changed = identifiers[index][:-1] + ("0" if identifiers[index][-1] != "0" else "1")
+            raw = raw.replace(identifiers[index].encode(), changed.encode())
+        elif fixture["content"] == "PAT":
+            raw = positive
+        elif fixture["content"] == "MIXED":
+            raw += b"\n" + positive
+        else:
+            require(fixture["content"] == "ORIGINAL", "REPAIR_CONTROL_CONTENT")
+        root = out / "fixtures" / expected["name"]
+        save(root / expected["relative_path"], raw)
+        controls.append(
+            scanner(
+                executable,
+                root,
+                out,
+                expected["name"],
+                ROOT / ".gitleaks.toml" if fixture["policy"] == "PARENT" else child,
+                expected["expected_exit"],
+                expected["required_rule"],
+                expected["classification"],
+            )
+        )
+    return controls
 
 
 def capture(run):
@@ -350,6 +935,7 @@ def capture(run):
     controls.append(
         scanner(executable, all_originals, out, "all-seven-immutable-originals", child, 0)
     )
+    repair_controls = capture_repair_controls(executable, out, child, positive)
     before = source_files()
     source_scan = scanner(executable, ROOT, out, "actual-source-after-build", child, 0)
     after = source_files()
@@ -388,6 +974,23 @@ def capture(run):
                     row["classification"] == "KNOWN_BASELINE_LIMITATION" for row in controls
                 ),
             },
+            "repair_controls": repair_controls,
+            "repair_control_expectations": REPAIR_CONTROL_EXPECTATIONS,
+            "repair_control_counts": {
+                "total": len(repair_controls),
+                "detection_positives": sum(
+                    row["classification"] == "DETECTION_POSITIVE" for row in repair_controls
+                ),
+                "benign_exact_exceptions": sum(
+                    row["classification"] == "BENIGN_EXACT_EXCEPTION" for row in repair_controls
+                ),
+                "known_baseline_limitations": 0,
+            },
+            "repair_original_failed_scan": {
+                "findings": 12,
+                "distinct_public_identifiers": 7,
+                "original_failed_status_rewritten": False,
+            },
             "known_baseline_limitation": {
                 "parent_exit": 0,
                 "child_exit": 0,
@@ -418,6 +1021,19 @@ def verify(run):
         and receipt["effective_policy"] == effective
         and digest(raw) == receipt["scanned_source_manifest_sha256"],
         "CAPTURE_IDENTITY_CHANGED",
+    )
+    require(
+        receipt["repair_control_expectations"] == REPAIR_CONTROL_EXPECTATIONS
+        and len(receipt["repair_controls"]) == len(REPAIR_CONTROL_EXPECTATIONS)
+        and all(
+            actual["name"] == expected["name"]
+            and actual["actual_exit"] == actual["expected_exit"] == expected["expected_exit"]
+            and actual["classification"] == expected["classification"]
+            for actual, expected in zip(
+                receipt["repair_controls"], REPAIR_CONTROL_EXPECTATIONS, strict=True
+            )
+        ),
+        "REPAIR_CONTROL_TABLE_CHANGED",
     )
     manifest = json.loads(raw)
     require(
